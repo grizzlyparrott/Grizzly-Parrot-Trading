@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title>Currency Market Structure (Volume I) - Grizzly Parrot Trading</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Currency Market Structure (Volume I) presents a professional structural framework for understanding the global currency complex: liquidity hierarchy, sessions, and correlation as system behavior.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://grizzlyparrottrading.com/books/currency-market-structure/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Currency Market Structure (Volume I)">
+  <meta property="og:description" content="A structural framework for understanding the global currency complex: liquidity hierarchy, sessions, and correlation as system behavior.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://grizzlyparrottrading.com/books/currency-market-structure/">
+  <meta property="og:site_name" content="Grizzly Parrot Trading">
+  <meta property="og:image" content="https://grizzlyparrottrading.com/books/currency-market-structure/currency-market-structure-cover.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Currency Market Structure (Volume I)">
+  <meta name="twitter:description" content="A professional structural framework for the global currency complex: liquidity hierarchy, sessions, and correlation behavior.">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/books/currency-market-structure/currency-market-structure-cover.png">
+  <meta name="twitter:url" content="https://grizzlyparrottrading.com/books/currency-market-structure/">
+
+  <style>
+    :root {
+      --bg: #050608;
+      --bg-elevated: #0c0f14;
+      --accent: #22ff88;
+      --accent-soft: rgba(34,255,136,0.12);
+      --text-main: #f5f5f5;
+      --text-muted: #a0a4b0;
+      --border-subtle: #20242f;
+      --shadow-soft: 0 24px 60px rgba(0,0,0,0.7);
+      --radius-lg: 18px;
+      --radius-xl: 22px;
+      --radius-pill: 999px;
+      --max-width: 1100px;
+      --transition-fast: 0.16s ease-out;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-serif: "Georgia", "Times New Roman", serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #111320 0, #050608 40%);
+      color: var(--text-main);
+      font-family: var(--font-main);
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+
+    /* Header */
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: radial-gradient(circle at 20% 0%, #22ff88, #0b1b13 55%, #050608);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      box-shadow: 0 0 18px rgba(34,255,136,0.5);
+      flex-shrink: 0;
+    }
+
+    .brand-text-main { font-size: 15px; font-weight: 600; }
+    .brand-text-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+    }
+
+    .top-cta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .top-cta a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(34,255,136,0.5);
+      background: rgba(34,255,136,0.1);
+      color: var(--accent);
+      font-weight: 600;
+      transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+      box-shadow: 0 12px 30px rgba(34,255,136,0.3);
+      white-space: nowrap;
+    }
+
+    .top-cta a:hover {
+      background: var(--accent);
+      color: #021005;
+      transform: translateY(-1px);
+      box-shadow: 0 18px 48px rgba(34,255,136,0.55);
+    }
+
+    .top-cta a span.icon { font-size: 15px; }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-copy {
+      padding: 22px 22px 24px;
+      background: linear-gradient(135deg, rgba(34,255,136,0.07), rgba(5,6,8,0.92));
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(34,255,136,0.35);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at -10% -10%, rgba(34,255,136,0.45), transparent 50%);
+      opacity: 0.42;
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 11px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(34,255,136,0.6);
+      background: rgba(5,6,8,0.9);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(34,255,136,0.9);
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: 34px;
+      line-height: 1.1;
+      margin: 0 0 6px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin: 0 0 16px;
+      position: relative;
+      z-index: 1;
+      line-height: 1.55;
+    }
+
+    .series-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.02);
+      color: var(--text-muted);
+      font-size: 12px;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .series-tag strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .hero-body {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-body p {
+      margin: 0 0 12px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .hero-body p strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+      margin-top: 14px;
+      margin-bottom: 8px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: var(--accent);
+      color: #021005;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 16px 40px rgba(34,255,136,0.4);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 18px 48px rgba(34,255,136,0.55);
+      filter: brightness(1.03);
+    }
+
+    .btn-primary span.icon { font-size: 16px; }
+
+    .hero-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-meta span { margin-right: 16px; }
+    .hero-meta strong { color: var(--text-main); font-weight: 500; }
+
+    /* Cover card */
+
+    .hero-cover {
+      padding: 14px;
+      background: radial-gradient(circle at top, #181b26 0, #050608 60%);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .cover-frame {
+      border-radius: 14px;
+      padding: 10px;
+      background: radial-gradient(circle at top, rgba(34,255,136,0.32), rgba(5,6,8,0.96));
+      border: 1px solid rgba(34,255,136,0.5);
+      box-shadow: 0 12px 34px rgba(0,0,0,0.9);
+    }
+
+    .cover-inner {
+      border-radius: 10px;
+      overflow: hidden;
+      background: #000;
+      aspect-ratio: 3 / 4;
+      display: flex;
+    }
+
+    .cover-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cover-caption {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cover-caption strong { color: var(--text-main); font-weight: 500; }
+
+    .price-tag {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* Sections */
+
+    .section {
+      margin-bottom: 28px;
+      padding: 20px 18px 22px;
+      border-radius: var(--radius-lg);
+      background: rgba(7,9,13,0.96);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .section h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .section p {
+      margin: 4px 0 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .section p strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .pill-row span {
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.01);
+      color: var(--text-muted);
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .detail-card {
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.01);
+    }
+
+    .detail-card .label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .detail-card .value {
+      font-size: 14px;
+      color: var(--text-main);
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    /* Footer */
+
+    .site-footer {
+      margin-top: 16px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-color: rgba(255,255,255,0.18);
+      text-underline-offset: 3px;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .details-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: minmax(0, 1fr); }
+      .hero-cover { order: -1; }
+    }
+
+    @media (max-width: 600px) {
+      .site-header { flex-direction: column; align-items: flex-start; }
+      .hero-copy { padding: 18px 16px 20px; }
+      .hero-title { font-size: 28px; }
+      .details-grid { grid-template-columns: minmax(0, 1fr); }
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) for GA4 + Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JMJVR3G5YN');
+    gtag('config', 'AW-17793230727');
+  </script>
+
+  <!-- Click tracking (set your real Stripe URL below) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      /* TODO: Replace with your real Stripe Checkout URL */
+      var buyUrl = "https://buy.stripe.com/REPLACE_ME";
+
+      var buyLinks = document.querySelectorAll('a[data-track="buy"]');
+      for (var i = 0; i < buyLinks.length; i++) {
+        buyLinks[i].setAttribute("href", buyUrl);
+        buyLinks[i].addEventListener('click', function () {
+          gtag('event', 'buy_book_click', {
+            event_category: 'conversion',
+            event_label: 'Buy Currency Market Structure (Stripe)'
+          });
+        });
+      }
+
+    });
+  </script>
+
+  <!-- Existing Google Ads conversion (page view) -->
+  <script>
+    gtag('event', 'conversion', {
+      send_to: 'AW-17793230727/cO1aCN3Jh88bEIfPvKRC',
+      value: 1.0,
+      currency: 'USD'
+    });
+  </script>
+
+</head>
+
+<body>
+  <main class="page">
+
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark">GP</div>
+        <div>
+          <a href="https://grizzlyparrottrading.com/" target="_blank" rel="noopener">
+            <div class="brand-text-main">Grizzly Parrot Trading</div>
+            <div class="brand-text-sub">Structure · Risk · Execution</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="top-cta">
+        <a data-track="buy" target="_blank" rel="noopener">
+          <span class="icon">↗</span>
+          <span>Buy (PDF + EPUB)</span>
+        </a>
+      </div>
+    </header>
+
+    <section class="hero">
+
+      <div class="hero-copy">
+        <div class="hero-eyebrow">
+          <span class="dot"></span>
+          <span>Research volume · Digital edition</span>
+        </div>
+
+        <h1 class="hero-title">Currency Market Structure</h1>
+
+        <p class="hero-subtitle">
+          The structure of the global currency complex.
+        </p>
+
+        <div class="series-tag">
+          <span><strong>Market Structure Series</strong></span>
+          <span>· Volume I</span>
+        </div>
+
+        <div class="hero-body">
+          <p>
+            Currency markets are not a collection of isolated pairs. They operate as a layered system built on <strong>liquidity hierarchy</strong>, <strong>funding relationships</strong>, <strong>session participation</strong>, and <strong>risk transmission</strong>.
+          </p>
+          <p>
+            Currency Market Structure presents a structural framework for understanding how that system functions. This volume examines how different classes of currency pairs behave, how liquidity conditions shift across trading sessions, and how correlations emerge as system behavior.
+          </p>
+        </div>
+
+        <div class="hero-ctas">
+          <a class="btn-primary" data-track="buy" target="_blank" rel="noopener">
+            <span class="icon">↗</span>
+            <span>Acquire Volume I</span>
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span><strong>Format:</strong> PDF + EPUB</span>
+          <span><strong>Price:</strong> $29</span>
+          <span><strong>Author:</strong> Kyle Parrott</span>
+        </div>
+      </div>
+
+      <aside class="hero-cover" aria-label="Book cover preview">
+        <div class="cover-frame">
+          <div class="cover-inner">
+            <img src="currency-market-structure-cover.png" alt="Book cover: Currency Market Structure (Volume I)">
+          </div>
+        </div>
+        <div class="cover-caption">
+          <div>
+            <strong>Currency Market Structure</strong><br>
+            <span>Digital edition · PDF + EPUB</span>
+          </div>
+          <div class="price-tag">$29</div>
+        </div>
+      </aside>
+
+    </section>
+
+    <section class="section">
+      <h2>Scope of this volume</h2>
+      <p>
+        This work begins with the unit level: what a currency pair represents, how classifications differ, and why liquidity varies across majors, crosses, and exotics.
+      </p>
+      <p>
+        It then develops a session-based framework, examining how Asian, London, and New York participation reshape volatility and spread behavior depending on pair type.
+      </p>
+      <p>
+        From there, the analysis moves into structural groupings within the currency complex, treating each as a behavior class inside a connected system: high-liquidity European crosses, USD-anchored risk currencies, yen funding and safe-haven mechanics, commodity-linked currencies, and exotic pairs where liquidity constraints change execution conditions.
+      </p>
+      <p>
+        The volume culminates in correlation and portfolio structure: how exposure transmits across pairs, how correlation compresses during risk events, when it breaks, and how multi-pair risk must be managed at a structural level.
+      </p>
+
+      <div class="pill-row">
+        <span>Liquidity hierarchy</span>
+        <span>Session participation</span>
+        <span>Funding mechanics</span>
+        <span>Risk transmission</span>
+        <span>Correlation structure</span>
+        <span>Portfolio exposure</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Structural thesis</h2>
+      <p>
+        Currency behavior is driven by liquidity concentration, funding mechanics, and regime-dependent risk flows. Pairs do not move independently. They respond to structural pressures that repeat across environments.
+      </p>
+      <p>
+        This volume provides a framework for recognizing those pressures before applying any trading method.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Intended reader</h2>
+      <p>
+        This work is written for traders and researchers who approach markets as systems. It assumes familiarity with currency markets and focuses on structure, classification, and interconnection rather than introductory concepts.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Edition details</h2>
+      <p>
+        Digital edition delivered as a single purchase.
+      </p>
+
+      <div class="details-grid" role="list">
+        <div class="detail-card" role="listitem">
+          <div class="label">Formats</div>
+          <div class="value">PDF + EPUB</div>
+        </div>
+        <div class="detail-card" role="listitem">
+          <div class="label">Series</div>
+          <div class="value">Market Structure · Volume I</div>
+        </div>
+        <div class="detail-card" role="listitem">
+          <div class="label">Price</div>
+          <div class="value">$29</div>
+        </div>
+      </div>
+
+      <div class="hero-ctas" style="margin-top:14px;">
+        <a class="btn-primary" data-track="buy" target="_blank" rel="noopener">
+          <span class="icon">↗</span>
+          <span>Buy (PDF + EPUB)</span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div>
+        &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="https://grizzlyparrottrading.com/" target="_blank" rel="noopener">Visit Grizzly Parrot Trading</a>
+        <a href="https://grizzlyparrottrading.com/books/probabilistic-execution/" target="_blank" rel="noopener">Probabilistic Execution</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    (function () {
+      var el = document.getElementById("year");
+      if (el) { el.textContent = new Date().getFullYear(); }
+    })();
+  </script>
+
+</body>
+</html>
