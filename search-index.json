@@ -834,6 +834,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Contract Specs That Matter in Lean Hog Trading",
+    "url": "/futures-basics/lean-hog-contract-specs.html",
+    "description": "Lean hog contract specs determine dollar risk, tick value, and execution behavior. This page covers the numbers that actually matter when trading HE futures.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Contract Suspension Rules in Prop Firms During Volatility Events",
     "url": "/prop-firm-trading/contract-suspension-rules.html",
     "description": "A blunt guide to contract suspension rules in prop firms, why certain markets are disabled during volatility, and how traders should prepare.",
@@ -1176,12 +1182,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Futures Basics Article",
-    "url": "/futures-basics/article1.html",
-    "description": "",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Futures Basics | Grizzly Parrot Trading",
     "url": "/futures-basics/index.html",
     "description": "Beginner futures trading basics: contracts, ticks, margin, leverage, and how this junk actually works without the guru fluff.",
@@ -1257,12 +1257,6 @@
     "title": "Futures Slippage Explained: Why Your Orders Fill Worse Than You Expect",
     "url": "/futures-basics/futures-slippage-explained.html",
     "description": "Learn what slippage is in futures, why it happens, how to avoid bad fills, and the exact conditions that make slippage explode for beginners.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "Futures Symbols and Contract Codes Explained for Beginners",
-    "url": "/futures-basics/futures-symbols-and-contract-codes-explained.html",
-    "description": "Learn how futures symbols work, how contract month codes are structured, and how to read full futures contract names without guessing.",
     "category": "Futures Basics"
   },
   {
@@ -1914,6 +1908,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "How Slaughter Capacity Distorts Hog Pricing",
+    "url": "/futures-basics/slaughter-capacity-distorts-hog-pricing.html",
+    "description": "Slaughter capacity bottlenecks control lean hog prices more than supply and demand. When processing plants max out, hog prices collapse regardless of consumer demand.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "How Slippage Actually Works In Futures – Grizzly Parrot Trading",
     "url": "/futures-basics/how-slippage-works.html",
     "description": "A clear breakdown of what slippage is, why it happens, how to calculate it, and how to avoid getting hammered by it when trading futures.",
@@ -2286,6 +2286,18 @@
     "category": "Market Basics"
   },
   {
+    "title": "Lean Hog Spreads and Curve Instability",
+    "url": "/futures-basics/lean-hog-spreads-and-curve-instability.html",
+    "description": "Lean hog spreads snap because curve expectations shift faster than biology. Liquidity and rollover mechanics amplify moves before outright futures react.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Limit Moves and Liquidity Gaps in Lean Hogs",
+    "url": "/futures-basics/limit-moves-liquidity-gaps-lean-hogs.html",
+    "description": "Lean hog futures hit daily price limits and experience liquidity gaps that trap traders. Here",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Limit vs Market Orders – When To Use Which",
     "url": "/futures-basics/limit-vs-market-orders.html",
     "description": "Clear explanation of the difference between limit orders and market orders, when to use each, and the actual trade-offs for futures traders.",
@@ -2324,7 +2336,7 @@
   {
     "title": "Liquidity Migration in Futures Trading: What It Really Means",
     "url": "/market-basics/liquidity-migration-how-liquidity-shifts-through-session.html",
-    "description": "Liquidity migration isn’t a trading technique — it’s a market event. This guide explains what actually causes liquidity to shift in futures markets and how traders should interpret it.",
+    "description": "Liquidity migration isn’t a strategy. It’s a market event. This guide explains what causes liquidity to shift in futures markets and why it matters.",
     "category": "Market Basics"
   },
   {
@@ -2418,6 +2430,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Margin Risk and Position Sizing in Hog Futures",
+    "url": "/futures-basics/margin-risk-position-sizing-hog-futures.html",
+    "description": "Lean hog futures can blow up accounts fast. Here",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Mark-to-Market Explained for Futures Traders",
     "url": "/futures-basics/mark-to-market-explained.html",
     "description": "Understand how mark-to-market works in futures, how daily settlement impacts your balance, and why it matters for margin and risk control.",
@@ -2445,12 +2463,6 @@
     "title": "Market Auction Efficiency vs. Inefficiency: What Drives Clean and Messy Moves",
     "url": "/market-basics/market-auction-efficiency-vs-inefficiency.html",
     "description": "Learn the difference between efficient and inefficient market auctions, why price sometimes moves cleanly and sometimes chaotically, and how to trade both.",
-    "category": "Market Basics"
-  },
-  {
-    "title": "Market Basics Article",
-    "url": "/market-basics/article1.html",
-    "description": "",
     "category": "Market Basics"
   },
   {
@@ -3012,9 +3024,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "NQ Tick Size, Tick Value, and Dollar Risk Explained",
+    "title": "NQ Tick Value: $5 per Tick (Nasdaq Futures Explained)",
     "url": "/futures-basics/nq-tick-value.html",
-    "description": "A precise breakdown of NQ tick size, tick value, and how dollar risk expands faster on NQ than most index futures.",
+    "description": "One NQ futures tick is worth $5. This page explains tick size, tick value, and how Nasdaq futures contracts work.",
     "category": "Futures Basics"
   },
   {
@@ -3486,6 +3498,12 @@
     "category": "Market Basics"
   },
   {
+    "title": "Roll Yield and Front-Month Risk in Hogs",
+    "url": "/futures-basics/roll-yield-front-month-risk-hogs.html",
+    "description": "Rolling lean hog futures positions creates hidden costs through roll yield that can erode profits. Here",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Roll Yield Explained for Futures Traders",
     "url": "/futures-basics/roll-yield-explained.html",
     "description": "A blunt breakdown of roll yield in futures trading: what it is, why it matters, and how it impacts long-term and short-term futures positions.",
@@ -3840,9 +3858,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Ticks, Points, and Dollar Value – Grizzly Parrot Trading",
+    "title": "Ticks vs Points in Futures Trading (With Real Examples)",
     "url": "/futures-basics/ticks-points-dollar-value.html",
-    "description": "Simple breakdown of ticks, points, and dollar values for ES, MES, NQ, and MNQ futures contracts.",
+    "description": "Ticks and points aren’t interchangeable in futures trading. This guide explains how each works, why they matter, and how they translate into real dollar risk.",
     "category": "Futures Basics"
   },
   {
@@ -4068,7 +4086,7 @@
     "category": "Market Basics"
   },
   {
-    "title": "True Position Size Risk Checker",
+    "title": "True Position Size Risk Checker | Grizzly Parrot Trading",
     "url": "/tools/position-size-risk-checker.html",
     "description": "Check your futures position size, dollar risk, and risk percentage before you click buy. Get blunt feedback on whether the trade size is sane or suicidal.",
     "category": "tools"
@@ -4332,6 +4350,12 @@
     "category": "Market Basics"
   },
   {
+    "title": "What ESZ4, NQU4, and CLM5 Mean — Futures Contract Codes Explained",
+    "url": "/futures-basics/futures-symbols-and-contract-codes-explained.html",
+    "description": "If ESZ4, NQU4, or CLM5 looks confusing on your trading platform, this page shows exactly how futures contract codes work — month codes, year codes, and real examples.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "What Is 6A? How AUD/USD Futures Actually Work",
     "url": "/futures-basics/what-is-6a-aud-futures.html",
     "description": "Learn what 6A AUD/USD futures are, how the contract works, and why traders use it to express a view on the Australian dollar with leveraged exposure.",
@@ -4587,6 +4611,24 @@
     "title": "Why Lean Hogs Are Structurally Volatile",
     "url": "/futures-basics/why-lean-hogs-are-structurally-volatile.html",
     "description": "Lean hog futures are volatile by design. Biological lag, thin liquidity, slaughter constraints, and demand shocks create a market that reprices violently.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Why Lean Hogs Are Trader-Hostile Markets",
+    "url": "/futures-basics/why-lean-hogs-trader-hostile.html",
+    "description": "Lean hog futures combine thin liquidity, limit risk, and industry-driven fundamentals that make them structurally harder to trade than most major futures markets.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Why Lean Hogs Decouple From Other Commodities",
+    "url": "/futures-basics/lean-hogs-decouple-commodities.html",
+    "description": "Lean hogs don",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Why Lean Hogs Decouple From Other Commodities",
+    "url": "/futures-basics/why-lean-hogs-decouple-from-other-commodities.html",
+    "description": "Lean hogs decouple because they’re priced by biology, slaughter flow, exports, and disease risk—not the macro forces that move most commodities.",
     "category": "Futures Basics"
   },
   {
