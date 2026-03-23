@@ -79,6 +79,55 @@ body {
     background-color: #111827;
     color: #e5e7eb;
 }
+.hub-book-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 28px;
+  max-width: 760px;
+}
+
+.hub-book-cover-link {
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.hub-book-cover {
+  display: block;
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.hub-book-copy {
+  max-width: 520px;
+}
+
+.hub-book-label {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9fb0c8;
+}
+
+.hub-book-text {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .hub-book-feature {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .hub-book-cover {
+    width: 100px;
+  }
+}
 
 /* Hero */
 
