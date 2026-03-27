@@ -223,8 +223,11 @@ The score isn’t public, but it affects your account behind the scenes.</p>
     </div>
 
     <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
+  &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
+</p>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
   </div>
 </footer>

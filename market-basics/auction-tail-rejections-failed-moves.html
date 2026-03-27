@@ -286,8 +286,11 @@ A tail is only meaningful if it forms at a real auction boundary and flips parti
     </div>
 
     <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
+  &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
+</p>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
   </div>
 </footer>

@@ -220,8 +220,11 @@ If your fills get weird, cross-check this with <a href="data-feed-quality-evalua
     </div>
 
     <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
+  &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
+</p>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
   </div>
 </footer>

@@ -255,8 +255,11 @@ You just say: “If X happens here, I take the trade. If not, I don’t.”</p>
     </div>
 
     <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
+  &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
+</p>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
   </div>
 </footer>
