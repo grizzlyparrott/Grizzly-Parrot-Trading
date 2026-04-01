@@ -5,8 +5,8 @@ from html import unescape
 ROOT = Path(__file__).parent.resolve()
 
 # CHANGE THESE TWO LINES EACH TIME YOU WANT A DIFFERENT INDEX/FOLDER
-INDEX = ROOT / "platforms-tutorials" / "index.html"
-FOLDER = ROOT / "platforms-tutorials"
+INDEX = ROOT / "futures-basics" / "index.html"
+FOLDER = ROOT / "futures-basics"
 
 GRID_OPEN = '<div class="grid grid-3">'
 TITLE_RE = re.compile(r"<title>(.*?)</title>", re.IGNORECASE | re.DOTALL)

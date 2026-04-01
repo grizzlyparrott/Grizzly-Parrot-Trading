@@ -47,13 +47,13 @@ Why Lean Hogs Don’t Behave Like Financial Futures+
 
 Live Cattle (20 articles)
 
-What Live Cattle Futures Actually Represent
+What Live Cattle Futures Actually Represent+
 
-Structural Differences Between Live Cattle and Hogs
+Structural Differences Between Live Cattle and Hogs+
 
-Why Live Cattle Trends Persist Longer
+Why Live Cattle Trends Persist Longer+
 
-Feedlot Dynamics and Futures Pricing
+Feedlot Dynamics and Futures Pricing+
 
 The Role of Feeder Placement in Live Cattle
 
