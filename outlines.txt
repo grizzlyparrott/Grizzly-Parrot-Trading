@@ -69,9 +69,9 @@ Export Demand Sensitivity in Beef Futures+
 
 How Drought and Weather Impact Live Cattle+
 
-Slaughter Rates and Price Lag Effects
+Slaughter Rates and Price Lag Effects+
 
-Live Cattle Curve Structure and Carry
+Live Cattle Curve Structure and Carry+
 
 Why Live Cattle React Differently to Feed Prices
 
