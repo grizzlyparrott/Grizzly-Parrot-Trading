@@ -73,7 +73,7 @@ Slaughter Rates and Price Lag Effects+
 
 Live Cattle Curve Structure and Carry+
 
-Why Live Cattle React Differently to Feed Prices
+Why Live Cattle React Differently to Feed Prices+
 
 Limit Risk and Liquidity in Live Cattle
 
