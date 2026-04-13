@@ -75,7 +75,7 @@ Live Cattle Curve Structure and Carry+
 
 Why Live Cattle React Differently to Feed Prices+
 
-Limit Risk and Liquidity in Live Cattle
+Limit Risk and Liquidity in Live Cattle+
 
 Spread Trading Live Cattle Contracts
 
