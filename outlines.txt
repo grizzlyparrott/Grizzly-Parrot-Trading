@@ -77,9 +77,9 @@ Why Live Cattle React Differently to Feed Prices+
 
 Limit Risk and Liquidity in Live Cattle+
 
-Spread Trading Live Cattle Contracts
+Spread Trading Live Cattle Contracts+
 
-Live Cattle vs Equity and Macro Correlations
+Live Cattle vs Equity and Macro Correlations+
 
 Positioning and Commercial Hedging in Cattle
 
