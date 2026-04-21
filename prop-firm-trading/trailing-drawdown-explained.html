@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
      <!-- Standard Favicon -->
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
@@ -16,197 +16,178 @@
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What Is Trailing Drawdown In Prop Firms? – Grizzly Parrot Trading</title>
-    <meta name="description" content="Clear explanation of trailing drawdown in futures prop firm evaluations, how it is calculated, and why traders fail even when they are profitable.">
-        <!-- Open Graph -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is Trailing Drawdown in Prop Firms?</title>
+<meta name="description" content="Trailing drawdown is the rule that ends most prop firm evaluations. Here's exactly how it works, why it's stricter than it looks, and what traders consistently get wrong.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grizzlyparrottrading.com/prop-firm-trading/what-is-trailing-drawdown-prop-firms.html">
+
+<meta property="og:title" content="What Is Trailing Drawdown in Prop Firms?">
+<meta property="og:description" content="Trailing drawdown is the rule that ends most prop firm evaluations. Here's exactly how it works, why it's stricter than it looks, and what traders consistently get wrong.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/prop-firm-trading/what-is-trailing-drawdown-prop-firms.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
     <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
     <meta property="og:image:width" content="1792">
     <meta property="og:image:height" content="941">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+<meta name="twitter:title" content="What Is Trailing Drawdown in Prop Firms?">
+<meta name="twitter:description" content="Trailing drawdown is the rule that ends most prop firm evaluations. Here's exactly how it looks, why it's stricter than it looks, and what traders consistently get wrong.">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-JMJVR3G5YN');
-    </script>
+<link rel="stylesheet" href="../style.css">
 
-    <link rel="stylesheet" href="../style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "What Is Trailing Drawdown in Prop Firms?",
+"description": "Trailing drawdown is the rule that ends most prop firm evaluations. Here's exactly how it works, why it's stricter than it looks, and what traders consistently get wrong.",
+"author": { "@type": "Person", "name": "Kyle Parrott" },
+"mainEntityOfPage": "https://grizzlyparrottrading.com/prop-firm-trading/what-is-trailing-drawdown-prop-firms.html",
+"datePublished": "2026-01-10",
+"dateModified": "2026-04-12"
+}
+</script>
+
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrottrading.com/" },
+  { "@type": "ListItem", "position": 2, "name": "Prop Firm Trading", "item": "https://grizzlyparrottrading.com/prop-firm-trading/index.html" },
+  { "@type": "ListItem", "position": 3, "name": "What Is Trailing Drawdown in Prop Firms?", "item": "https://grizzlyparrottrading.com/prop-firm-trading/what-is-trailing-drawdown-prop-firms.html" }
+]
+}
+</script>
 
 </head>
-<body>
 
+<body>
 <header class="site-header">
-    <div class="container header-inner">
-        <div class="logo">
-            <span class="logo-mark">GP</span>
-            <span class="logo-text">Grizzly Parrot Trading</span>
-        </div>
-        <nav class="main-nav">
-             <a href="../index.html#articles">Articles</a>
-             <a href="../futures-basics/index.html">Futures Basics</a>
-             <a href="../prop-firm-trading/index.html">Prop Firms</a>
-             <a href="../platforms-tutorials/index.html">Platforms</a>
-             <a href="../market-basics/index.html">Market Basics</a>
-            </nav>
-    </div>
+<div class="container header-inner">
+<div class="logo">
+<a href="/">
+Grizzly Parrot Trading</a>
+</div>
+<nav class="main-nav">
+<ul>
+<li><a href="../futures-basics/index.html">Futures Basics</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+<li><a href="../tools/index.html">Tools</a></li>
+<li><a href="../metals/index.html">Metals</a></li>
+<li><a href="../currencies/index.html">Currencies</a></li>
+</ul>
+</nav>
+</div>
 </header>
 
-<main class="section">
-    <div class="container">
-        <h1>What Is Trailing Drawdown In Prop Firms?</h1>
-        <p class="section-intro">
-            Trailing drawdown is a moving “floor” on your account. 
-            If your balance or equity falls below that floor, you fail the evaluation, even if you were previously profitable.
-        </p>
+<main>
+<section class="section">
+<div class="container article-content">
 
-        <h2>Basic Idea</h2>
-        <p>
-            In most futures prop firm evaluations, your account has:
-        </p>
-        <ul>
-            <li>A <strong>starting balance</strong> (for example, $50,000)</li>
-            <li>A <strong>max trailing drawdown</strong> (for example, $2,500)</li>
-        </ul>
-        <p>
-            The prop firm tracks your **highest profit point** and moves the drawdown level up behind it.
-            If your balance or equity dips below that level, the account is violated.
-        </p>
+<!-- ARTICLE BODY START -->
 
-        <h2>Simple Example</h2>
-        <p>Assume:</p>
-        <ul>
-            <li>Starting balance: <strong>$50,000</strong></li>
-            <li>Max trailing drawdown: <strong>$2,500</strong></li>
-            <li>Initial drawdown floor: <strong>$47,500</strong> ($50,000 − $2,500)</li>
-        </ul>
+<h1>What Is Trailing Drawdown in Prop Firms?</h1>
 
-        <p>Now walk through a few steps:</p>
-        <ol>
-            <li>
-                You make $1,000.  
-                <br>Highest balance so far: <strong>$51,000</strong>  
-                <br>New drawdown floor: <strong>$48,500</strong> ($51,000 − $2,500)
-            </li>
-            <li>
-                You then lose $600.  
-                <br>Balance: <strong>$50,400</strong>  
-                <br>Floor stays at <strong>$48,500</strong> (it does not move down)
-            </li>
-            <li>
-                You make another $800.  
-                <br>Balance: <strong>$51,200</strong>  
-                <br>New drawdown floor: <strong>$48,700</strong> ($51,200 − $2,500)
-            </li>
-        </ol>
+<p><strong>Trailing drawdown is the rule that ends most prop firm evaluations — not bad trading, not bad luck, but a misunderstanding of a mechanic that was working against the trader the entire time.</strong> It is one of the simpler concepts in prop firm evaluations to explain, and one of the most reliably misunderstood in practice. The explanation takes two minutes. The implications take longer to fully absorb.</p>
 
-        <p>
-            If at any point your balance or equity drops below the current floor, you fail the evaluation.
-        </p>
+<p>The core idea: trailing drawdown is a moving floor on your account equity or balance. As you make new profit highs, the floor rises behind you. If your account falls below that floor at any point, the evaluation ends. You do not get credit for having been profitable earlier. The floor is where it is, and if you are below it, you are done.</p>
 
-        <h2>Balance-Based vs Equity-Based Trailing</h2>
-        <p>
-            Different firms use different tracking methods:
-        </p>
-        <ul>
-            <li>
-                <strong>Balance-based trailing:</strong>  
-                The drawdown only updates when trades are closed. Unrealized P&amp;L does not move the floor.
-            </li>
-            <li>
-                <strong>Equity-based trailing:</strong>  
-                The drawdown tracks open profit as well. If you spike up then reverse while still in the trade, the floor may have already moved.
-            </li>
-        </ul>
-        <p>
-            Equity-based trailing is stricter because big open profits can raise the floor, then a reversal can break the rule even if you end near breakeven.
-        </p>
+<h2>How It Works in Practice</h2>
 
-        <h2>End-of-Day Trailing vs Intraday Trailing</h2>
-        <p>
-            Some prop firms only move the drawdown at the **end of the trading day**.  
-            Others adjust it **in real time** as you trade.
-        </p>
-        <ul>
-            <li><strong>End-of-day trailing:</strong> floor updates once per day using the day’s closing balance.</li>
-            <li><strong>Intraday trailing:</strong> floor can move during the session as new highs are made.</li>
-        </ul>
+<p>Start with a simple example. An evaluation account begins at $50,000 with a $2,500 maximum trailing drawdown. Your initial floor is $47,500 — the starting balance minus the drawdown allowance. That floor will never move down. It only moves up.</p>
 
-        <h2>Why Traders Fail Because Of Trailing Drawdown</h2>
-        <p>
-            Common reasons traders violate trailing drawdown:
-        </p>
-        <ul>
-            <li>Not knowing if the firm uses balance, equity, or intraday tracking</li>
-            <li>Letting open profit swing too high relative to their risk per trade</li>
-            <li>Scaling up size after a good run and hitting the floor in one bad move</li>
-            <li>Ignoring the fact that the floor keeps moving up as they make new highs</li>
-        </ul>
+<p>You make $1,000 on your first day. Your account is now at $51,000. The floor follows: it rises to $48,500. You have not locked in any profit — the floor is still $2,500 below your new high. Now you give back $600 the next morning. Balance drops to $50,400. The floor stays at $48,500. It does not follow the account down.</p>
 
-        <h2>Trailing Drawdown vs Static Drawdown</h2>
-        <p>
-            Some evaluations use a <strong>static</strong> drawdown instead:
-        </p>
-        <ul>
-            <li><strong>Trailing drawdown:</strong> floor moves up as you make new highs.</li>
-            <li><strong>Static drawdown:</strong> floor stays in one place for the whole evaluation.</li>
-        </ul>
-        <p>
-            Static drawdown is simpler to track because it does not follow your equity curve.
-        </p>
+<p>You grind out another $800. Balance hits $51,200. Floor rises to $48,700. Then a bad afternoon costs you $2,800. Balance: $48,400. Floor: $48,700. The evaluation is over — not because you lost money overall relative to your starting balance, but because you fell below the floor your own profitable trading created.</p>
 
-        <h2>Check The Exact Rules For Each Firm</h2>
-        <p>
-            The numbers above are examples only. Every prop firm publishes its own rules, including:
-        </p>
-        <ul>
-            <li>Drawdown amount</li>
-            <li>Whether it trails balance or equity</li>
-            <li>Whether it stops trailing at a certain point</li>
-            <li>When it resets or locks in</li>
-        </ul>
-        <p>
-            Always read the firm’s official documentation to see how their drawdown is defined and calculated.
-        </p>
+<p>That last part is the thing traders underestimate. The trailing drawdown does not care that you are still up $1,600 from where you started. It only cares where the floor is now versus where your account is now. You can fail a trailing drawdown evaluation while being net profitable. It happens constantly.</p>
 
-        
-    </div>
-<p><em>All third-party product names, company names, platforms, and trademarks mentioned on this page are the property of their respective owners. This content is for educational purposes only and is not affiliated with, endorsed by, or sponsored by any third party referenced unless explicitly stated otherwise.</em></p>
+<h2>Balance-Based vs Equity-Based Trailing</h2>
+
+<p>This is the variation that creates the most unexpected failures, and firms are not always as clear about it in their documentation as they should be.</p>
+
+<p>Balance-based trailing only updates the floor when trades are closed. Unrealized profit — open positions running in your favor — does not move the floor. If you are up $2,000 on an open trade, the floor has not moved yet. You can let the trade run, take the profit, and then the floor adjusts. The risk is at close, not during the trade.</p>
+
+<p>Equity-based trailing is stricter. It tracks your account equity in real time, including open positions. If your open trade runs to a $2,000 profit, the floor moves immediately — even while the trade is still open. If the trade then reverses and you exit at breakeven, the floor is still $2,000 higher than when you entered. You have used $2,000 of drawdown buffer to make zero dollars.</p>
+
+<p>That is the scenario that blindsides traders who are used to balance-based firms and move to an equity-based one without adjusting their approach. A volatile trade that swings into big open profit and then reverses — the kind of move that feels like a near miss rather than a loss — can permanently narrow your remaining drawdown buffer even if it ultimately closes flat or slightly green.</p>
+
+<h2>End-of-Day vs Intraday Trailing</h2>
+
+<p>A related but separate variation: some firms only update the trailing floor once per day at the closing balance, while others move it continuously throughout the session.</p>
+
+<p>End-of-day trailing gives you more room to maneuver intraday. A session that spikes to a new equity high and then gives it back before the close does not permanently move your floor — only where you actually end the day matters. Intraday trailing treats every new high as a floor adjustment in real time, which means a morning rally followed by an afternoon reversal can leave you with a meaningfully tighter floor even if the day ends flat.</p>
+
+<p>Neither version is inherently better for a trader. End-of-day trailing rewards consistent closing performance. Intraday trailing punishes volatile equity curves regardless of where they end. The right approach in each case is not the same approach, and assuming they are is one of the faster ways to fail an evaluation you were technically capable of passing.</p>
+
+<h2>When the Floor Stops Trailing</h2>
+
+<p>Some firms build in a lock-in feature: once your profit exceeds the drawdown amount, the floor stops trailing and becomes fixed at the starting balance or some defined level. The idea is that once you have cleared the hurdle by enough, you cannot fall back below your starting point regardless of what happens next.</p>
+
+<p>This is favorable when it applies and worth identifying in any evaluation you are considering. It means that a strong early run can effectively convert a trailing drawdown evaluation into a static one — which is a meaningfully different risk profile. A trader who knows they have reached the lock-in threshold can size and hold positions with more confidence that one bad session will not erase the evaluation entirely.</p>
+
+<p>Not all firms offer this. Some trail indefinitely until the evaluation ends or the profit target is hit. Knowing which type you are in changes how you should think about protecting profit versus pressing for the target.</p>
+
+<h2>The Practical Mistakes</h2>
+
+<p>The most common one is scaling up size after a good run. The trader has built a comfortable buffer — the account is well above the floor — and interprets that buffer as permission to take on more risk. What they have actually done is raise the floor. A larger position that goes wrong from an elevated floor is a faster path to failure than the same position would have been from the starting balance. The buffer and the floor move together.</p>
+
+<p>The second is ignoring the distinction between balance-based and equity-based trailing until it matters. Equity-based trailing changes the risk profile of every volatile trade, not just the ones that lose. A trader who lets winners run without understanding that open profit is moving the floor in real time will eventually have the floor catch up to them on a reversal they did not treat as dangerous.</p>
+
+<p>The third is simply not knowing the specific rules of the firm they are evaluating with. Drawdown amount, trailing method, intraday versus end-of-day, lock-in provisions — these are not standard across firms. Reading the documentation once, carefully, before trading a dollar is not optional. It is the minimum.</p>
+
+<div class="highlight-box red">
+  <h3>The Floor Rises. It Does Not Fall.</h3>
+  <p>Trailing drawdown only moves in one direction. Every new profit high raises the floor behind you, permanently. The floor does not care that the market reversed, that you had an unlucky session, or that you are still up overall from where you started. If your account is below the floor, the evaluation is over. The traders who survive trailing drawdown evaluations are not necessarily the most profitable ones — they are the ones who never let the floor catch up to them, which requires understanding exactly where it is at all times and managing their equity curve accordingly.</p>
+</div>
+
+<!-- ARTICLE BODY END -->
+
+</div>
+</section>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
 
     <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="/books/" class="footer-book-link">View All Books</a>
-    </div>
+  <h3>Books</h3>
+  <p>Market structure, risk, and execution frameworks.</p>
+  <a href="/books/" class="footer-book-link">
+    View All Books
+  </a>
+</div>
 
     <div class="footer-links">
       <a href="/about.html">About</a>
       <a href="/disclaimer.html">Disclaimer</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/contact.html">Contact</a>
-      <p class="footer-note">
-        Know how to turn strong content into traffic?
-        <a href="/contact.html">Let’s talk</a>.
-      </p>
     </div>
 
     <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+  &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
+</p>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
   </div>
 </footer>
