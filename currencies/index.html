@@ -758,7 +758,34 @@
   </div>
 </footer>
 
+<script>
+  const searchInput = document.getElementById('site-search-input');
+  const noResultsMessage = document.getElementById('no-results-message');
+  const articleCards = document.querySelectorAll('.grid.grid-3 .card');
 
+  if (searchInput) {
+    searchInput.addEventListener('input', function () {
+      const query = searchInput.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      articleCards.forEach(function (card) {
+        const cardText = card.textContent.toLowerCase();
+        const isMatch = cardText.includes(query);
+
+        if (isMatch || query === '') {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (noResultsMessage) {
+        noResultsMessage.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+    });
+  }
+</script>
 
 </body>
 
