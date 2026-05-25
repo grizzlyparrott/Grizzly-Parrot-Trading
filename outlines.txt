@@ -20,11 +20,11 @@ Links to:
 Linked from:
   https://grizzlyparrottrading.com/energies/cl-tick-size-tick-value-specs.html
   https://grizzlyparrottrading.com/energies/cl-calendar-spreads-contango-backwardation.html
-
-
+****
+****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 2
 File: cl-tick-size-tick-value-specs.html
 URL: https://grizzlyparrottrading.com/energies/cl-tick-size-tick-value-specs.html
@@ -39,11 +39,11 @@ Linked from:
   https://grizzlyparrottrading.com/energies/what-are-crude-oil-futures-cl.html
   https://grizzlyparrottrading.com/energies/cl-common-trader-mistakes.html
   https://grizzlyparrottrading.com/energies/cl-risk-management.html
-
-
+****
+****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 3
 File: cl-fundamental-drivers.html
 URL: https://grizzlyparrottrading.com/energies/cl-fundamental-drivers.html
@@ -63,8 +63,8 @@ Linked from:
   https://grizzlyparrottrading.com/energies/opec-impact-on-cl.html
   https://grizzlyparrottrading.com/energies/cl-geopolitical-supply-risk.html
   https://grizzlyparrottrading.com/energies/cl-calendar-spreads-contango-backwardation.html
-
-
+****
+****
 ------------------------------------------------------------
 
 
