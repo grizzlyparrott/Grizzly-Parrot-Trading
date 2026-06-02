@@ -104,8 +104,8 @@ Linked from:
 ****
 ****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 6
 File: cl-technical-indicators.html
 URL: https://grizzlyparrottrading.com/energies/cl-technical-indicators.html
@@ -120,8 +120,8 @@ Linked from:
   https://grizzlyparrottrading.com/energies/what-are-crude-oil-futures-cl.html
   https://grizzlyparrottrading.com/energies/cl-intraday-strategies.html
   https://grizzlyparrottrading.com/energies/cl-slippage-avoidance.html
-
-
+****
+****
 ------------------------------------------------------------
 
 
