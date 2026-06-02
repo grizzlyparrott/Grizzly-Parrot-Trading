@@ -85,8 +85,8 @@ Linked from:
 ****
 ****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 5
 File: cl-volatility-profile-atr.html
 URL: https://grizzlyparrottrading.com/energies/cl-volatility-profile-atr.html
