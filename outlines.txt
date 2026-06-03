@@ -123,8 +123,8 @@ Linked from:
 ****
 ****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 7
 File: cl-correlations-explained.html
 URL: https://grizzlyparrottrading.com/energies/cl-correlations-explained.html
@@ -137,11 +137,11 @@ Links to:
   https://grizzlyparrottrading.com/energies/cl-market-microstructure.html
 Linked from:
   https://grizzlyparrottrading.com/energies/what-are-crude-oil-futures-cl.html
-
-
+****
+****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 8
 File: cl-seasonality-patterns.html
 URL: https://grizzlyparrottrading.com/energies/cl-seasonality-patterns.html
@@ -156,11 +156,11 @@ Linked from:
   https://grizzlyparrottrading.com/energies/cl-fundamental-drivers.html
   https://grizzlyparrottrading.com/energies/eia-inventory-reports-cl.html
   https://grizzlyparrottrading.com/energies/cl-calendar-spreads-contango-backwardation.html
-
-
+****
+****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 9
 File: cl-market-microstructure.html
 URL: https://grizzlyparrottrading.com/energies/cl-market-microstructure.html
@@ -176,11 +176,11 @@ Linked from:
   https://grizzlyparrottrading.com/energies/cl-correlations-explained.html
   https://grizzlyparrottrading.com/energies/cl-intraday-strategies.html
   https://grizzlyparrottrading.com/energies/cl-orderflow-basics.html
-
-
+****
+****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 10
 File: cl-news-event-reaction.html
 URL: https://grizzlyparrottrading.com/energies/cl-news-event-reaction.html
@@ -197,8 +197,8 @@ Linked from:
   https://grizzlyparrottrading.com/energies/eia-inventory-reports-cl.html
   https://grizzlyparrottrading.com/energies/opec-impact-on-cl.html
   https://grizzlyparrottrading.com/energies/cl-geopolitical-supply-risk.html
-
-
+****
+****
 ------------------------------------------------------------
 
 
