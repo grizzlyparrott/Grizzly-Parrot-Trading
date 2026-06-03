@@ -200,8 +200,8 @@ Linked from:
 ****
 ****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 11
 File: cl-intraday-strategies.html
 URL: https://grizzlyparrottrading.com/energies/cl-intraday-strategies.html
@@ -217,11 +217,11 @@ Linked from:
   https://grizzlyparrottrading.com/energies/cl-best-times-to-trade.html
   https://grizzlyparrottrading.com/energies/cl-technical-indicators.html
   https://grizzlyparrottrading.com/energies/cl-orderflow-basics.html
-
-
+****
+****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 12
 File: cl-common-trader-mistakes.html
 URL: https://grizzlyparrottrading.com/energies/cl-common-trader-mistakes.html
@@ -235,11 +235,11 @@ Links to:
   https://grizzlyparrottrading.com/energies/eia-inventory-reports-cl.html
 Linked from:
   https://grizzlyparrottrading.com/energies/what-are-crude-oil-futures-cl.html
-
-
+****
+****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 13
 File: cl-liquidity-levels-structure.html
 URL: https://grizzlyparrottrading.com/energies/cl-liquidity-levels-structure.html
@@ -254,8 +254,8 @@ Linked from:
   https://grizzlyparrottrading.com/energies/cl-tick-size-tick-value-specs.html
   https://grizzlyparrottrading.com/energies/cl-volatility-profile-atr.html
   https://grizzlyparrottrading.com/energies/cl-orderflow-basics.html
-
-
+****
+****
 ------------------------------------------------------------
 
 
