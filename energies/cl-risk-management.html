@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- PNG Fallbacks -->
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Risk Management for Crude Oil Futures (CL): Sizing, Stops, and Survival</title>
+    <meta name="description" content="A practical risk management framework for crude oil futures (CL): how to size positions, place stops relative to ATR and structure, and avoid the sizing mistakes that end accounts.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grizzlyparrottrading.com/energies/cl-risk-management.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Risk Management for Crude Oil Futures (CL): Sizing, Stops, and Survival">
+    <meta property="og:description" content="A practical risk management framework for crude oil futures (CL): how to size positions, place stops relative to ATR and structure, and avoid the sizing mistakes that end accounts.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://grizzlyparrottrading.com/energies/cl-risk-management.html">
+    <meta property="og:site_name" content="Grizzly Parrot Trading">
+    <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+    <meta property="og:image:width" content="1792">
+    <meta property="og:image:height" content="941">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+    <meta name="twitter:title" content="Risk Management for Crude Oil Futures (CL): Sizing, Stops, and Survival">
+    <meta name="twitter:description" content="CL has a wide range and a high dollar value per tick. Risk management here is not optional. It is the foundation everything else is built on.">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JMJVR3G5YN');
+    </script>
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Risk Management for Crude Oil Futures (CL): Sizing, Stops, and Survival",
+      "description": "A practical risk management framework for crude oil futures (CL): how to size positions, place stops relative to ATR and structure, and avoid the sizing mistakes that end accounts.",
+      "author": {
+        "@type": "Person",
+        "name": "Kyle Parrott"
+      },
+      "mainEntityOfPage": "https://grizzlyparrottrading.com/energies/cl-risk-management.html",
+      "datePublished": "2026-06-03",
+      "dateModified": "2026-06-03"
+    }
+    </script>
+
+    <!-- JSON-LD: Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://grizzlyparrottrading.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Energies",
+          "item": "https://grizzlyparrottrading.com/energies/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Risk Management for Crude Oil Futures (CL): Sizing, Stops, and Survival",
+          "item": "https://grizzlyparrottrading.com/energies/cl-risk-management.html"
+        }
+      ]
+    }
+    </script>
+
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="/">Grizzly Parrot Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../metals/index.html">Metals</a></li>
+        <li><a href="../energies/index.html">Energies</a></li>
+        <li><a href="../currencies/index.html">Currencies</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firms</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+        <li><a href="../tools/index.html">Tools</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Risk Management for Crude Oil Futures (CL): Sizing, Stops, and Survival</h1>
+
+<p>
+Risk management in CL is not a secondary consideration. It is the foundation that everything else sits on. The contract's tick value, daily range, and news sensitivity combine to make poor risk habits more expensive here than in most other futures markets. Traders who survive long enough to develop real edge in CL are not necessarily the ones with the best entries. They are the ones who managed risk well enough to stay in the game while they learned.
+</p>
+
+<h2>Why CL Demands a Different Risk Framework</h2>
+<p>
+Most traders come to CL with a risk framework built around a different market. The habits that developed in equity index futures, forex, or smaller contracts do not transfer cleanly. CL's contract size is large, its daily range is wide, and its reaction to news events can be sudden and severe. A risk approach calibrated to a quieter market will consistently either cut positions too early on normal noise or leave too much exposure on the table when a real adverse move develops.
+</p>
+
+<p>
+The starting point for building a CL risk framework is internalizing what the contract actually costs per unit of movement. Every tick is ten dollars. Every dollar of price movement per barrel is one thousand dollars per contract. Those numbers need to be automatic before any position sizing decision is made. If they are not, the math will surprise a trader at the worst possible moment. That is why <a href="cl-tick-size-tick-value-specs.html">tick size and contract value</a> have to be treated as risk inputs, not background specs.
+</p>
+
+<h2>The Core Principle: Risk Flows From the Stop, Not the Other Way Around</h2>
+<p>
+The correct sequence for any CL trade is to identify the setup, identify the level that proves the trade wrong, place the stop just beyond that level, calculate the dollar risk that stop represents per contract, and then determine how many contracts are appropriate given that risk per contract and the total dollar amount willing to be lost on the trade.
+</p>
+
+<p>
+Most traders do this in reverse. They decide how many contracts to trade first, then place a stop at whatever distance feels comfortable, and end up with a stop that is either too tight for the market's structure or represents far more dollar risk than was actually intended. In CL, the consequences of that reversed logic are severe because the contract's dollar value per tick makes every tick of stop distance meaningful.
+</p>
+
+<h2>Structurally Valid Stops vs Fixed-Dollar Stops</h2>
+<p>
+A fixed-dollar stop in CL is a stop placed at a distance from entry chosen because of how much money it represents rather than because of what the chart says. Fixed-dollar stops are not inherently wrong in concept, but in CL they are usually wrong in practice because CL's structure does not organize itself around dollar amounts. It organizes itself around levels where liquidity sits and decisions get made.
+</p>
+
+<p>
+A fixed-dollar stop of a given amount might place the stop perfectly beyond a structural level on one trade and directly inside the noise band on the next, depending on where the entry happened relative to nearby structure. The result is inconsistent stop placement that sometimes works by coincidence and sometimes gets hit by ordinary movement that had nothing to do with the trade being wrong.
+</p>
+
+<p>
+A structurally valid stop is placed just beyond the level that genuinely invalidates the trade idea. If the setup is a VWAP reclaim from a swept low, the stop belongs just beyond that low. If the setup is a breakout retest, the stop belongs just beyond the level that was broken. That placement makes the stop meaningful: if it gets hit, the trade was actually wrong. The dollar amount that stop represents is a consequence of the structure, not the starting point of the decision.
+</p>
+
+<h2>Using ATR to Validate Stop Distance</h2>
+<p>
+Once a structurally valid stop level is identified, ATR serves as a sanity check on whether that stop is realistic for current market conditions. A stop that is narrower than the relevant ATR reading is likely sitting inside ordinary market noise, which means it will get hit by routine CL movement regardless of whether the directional trade idea was correct. A stop that is many multiples of ATR away from entry may be structurally valid but practically unusable because the risk per contract is too large to size the trade appropriately.
+</p>
+
+<p>
+The goal is a stop that sits beyond a meaningful structural level and is also consistent with the contract's current volatility behavior. When those two conditions align, the stop placement is sound. When they conflict, the trade either needs a different entry point or should not be taken. That is where <a href="cl-volatility-profile-atr.html">CL volatility and ATR</a> matter: they show whether the stop fits the current range or is just sitting inside normal movement.
+</p>
+
+<h2>Position Sizing: Working Backward From Risk</h2>
+<p>
+Once the stop distance is established in ticks, the position size calculation is straightforward. Multiply the number of ticks of stop distance by ten dollars to get the dollar risk per contract. Divide the total dollar amount willing to be risked on the trade by the dollar risk per contract to get the maximum number of contracts. Round down to be conservative.
+</p>
+
+<p>
+That calculation should be done before every trade. Not estimated. Not assumed to be close enough. Done explicitly. CL's range means that a stop distance that seems similar across two different setups can represent meaningfully different dollar risk per contract depending on exactly where the structural invalidation level sits.
+</p>
+
+<p>
+For traders newer to CL or scaling into the contract from smaller markets, starting with a single contract regardless of what the sizing calculation might permit is a sound approach. Understanding how CL moves, how stops interact with its structure, and how news events affect open positions is knowledge that takes real screen time to develop. Taking that screen time with minimum size preserves capital while that understanding is being built.
+</p>
+
+<h2>Daily Loss Limits</h2>
+<p>
+In addition to per-trade risk, CL traders benefit from a daily loss limit that stops trading for the day once a defined threshold is crossed. CL's volatility means that a bad day without a hard stop can compound quickly, particularly around news events where normal structure breaks down and consecutive losing trades can stack up fast.
+</p>
+
+<p>
+A daily loss limit forces a pause when the conditions that day are not working. Sometimes the market is moving in a way that does not fit the setups being used. Sometimes the trader's execution is off. Sometimes both. A daily limit creates an automatic circuit breaker that prevents a difficult session from becoming a catastrophic one. The limit should be set in advance, before the session starts, and it should be treated as absolute rather than as a suggestion that can be overridden if the next setup looks good enough.
+</p>
+
+<h2>Managing Risk Around News Events</h2>
+<p>
+News events in CL create a specific risk management challenge because normal stop placement assumptions break down during liquidity vacuum conditions. A stop that is structurally valid under normal market conditions may be insufficient during an EIA release, where price can gap through stop levels without being filled at the intended price. Slippage on stops during fast markets is a real cost that needs to be accounted for in how much risk is actually being carried into those events.
+</p>
+
+<p>
+The cleanest solution is to be flat before scheduled high-impact events unless there is a specific, plan-based reason to hold. Being flat costs nothing. Being caught on the wrong side of an EIA surprise with a stop that gets filled three dollars away from where it was placed is a different situation entirely. That same mistake sits behind many <a href="cl-common-trader-mistakes.html">common CL trading mistakes</a>: the trader treats normal-session risk and news-event risk as if they are the same thing.
+</p>
+
+<h2>Risk Management as a Daily Habit</h2>
+<p>
+Risk management in CL is not a one-time decision made when the account is first funded. It is a set of habits applied on every trade, every session, without exception. The stop goes in before the entry is placed. The size is calculated from the stop, not assumed. The daily limit is set before the session opens. The event calendar is checked before any position is carried through a scheduled release.
+</p>
+
+<p>
+None of these habits require advanced skill. They require consistency. The traders who last long enough in CL to develop genuine edge are the ones who built these habits early and maintained them even when the temptation to deviate was strong.
+</p>
+
+<div class="highlight-box red">
+  <h3>Survive First. Edge Comes Later.</h3>
+  <p>CL will teach a trader everything they need to know about risk management if they stay in it long enough. The question is whether they survive the education. Correct stop placement, appropriate sizing, and a daily loss limit are not strategies for missing opportunities. They are the conditions under which opportunities can be taken for long enough to matter.</p>
+</div>
+
+<!-- ARTICLE BODY END -->
+
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+
+    <div class="footer-book">
+      <h3>Books</h3>
+      <p>Market structure, risk, and execution frameworks.</p>
+      <a href="/books/" class="footer-book-link">View All Books</a>
+    </div>
+
+    <div class="footer-links">
+      <a href="/about.html">About</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/contact.html">Contact</a>
+      <p class="footer-note">
+        Know how to turn strong content into traffic?
+        <a href="/contact.html">Let's talk</a>.
+      </p>
+    </div>
+
+    <p class="footer-copy">
+      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
+    </p>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+  </div>
+</footer>
+
+</body>
+</html>

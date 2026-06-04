@@ -257,8 +257,8 @@ Linked from:
 ****
 ****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 14
 File: cl-risk-management.html
 URL: https://grizzlyparrottrading.com/energies/cl-risk-management.html
@@ -273,11 +273,11 @@ Linked from:
   https://grizzlyparrottrading.com/energies/cl-volatility-profile-atr.html
   https://grizzlyparrottrading.com/energies/cl-intraday-strategies.html
   https://grizzlyparrottrading.com/energies/cl-common-trader-mistakes.html
-
-
+****
+****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 15
 File: cl-slippage-avoidance.html
 URL: https://grizzlyparrottrading.com/energies/cl-slippage-avoidance.html
@@ -292,11 +292,11 @@ Linked from:
   https://grizzlyparrottrading.com/energies/cl-tick-size-tick-value-specs.html
   https://grizzlyparrottrading.com/energies/cl-technical-indicators.html
   https://grizzlyparrottrading.com/energies/cl-market-microstructure.html
-
-
+****
+****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 16
 File: cl-orderflow-basics.html
 URL: https://grizzlyparrottrading.com/energies/cl-orderflow-basics.html
@@ -309,11 +309,11 @@ Links to:
   https://grizzlyparrottrading.com/energies/cl-intraday-strategies.html
 Linked from:
   https://grizzlyparrottrading.com/energies/cl-intraday-strategies.html
-
-
+****
+****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 17
 File: eia-inventory-reports-cl.html
 URL: https://grizzlyparrottrading.com/energies/eia-inventory-reports-cl.html
@@ -333,8 +333,8 @@ Linked from:
   https://grizzlyparrottrading.com/energies/cl-seasonality-patterns.html
   https://grizzlyparrottrading.com/energies/cl-news-event-reaction.html
   https://grizzlyparrottrading.com/energies/cl-common-trader-mistakes.html
-
-
+****
+****
 ------------------------------------------------------------
 
 
