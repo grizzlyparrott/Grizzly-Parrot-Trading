@@ -336,8 +336,8 @@ Linked from:
 ****
 ****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 18
 File: opec-impact-on-cl.html
 URL: https://grizzlyparrottrading.com/energies/opec-impact-on-cl.html
@@ -352,11 +352,11 @@ Links to:
 Linked from:
   https://grizzlyparrottrading.com/energies/cl-news-event-reaction.html
   https://grizzlyparrottrading.com/energies/cl-geopolitical-supply-risk.html
-
-
+****
+****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 19
 File: cl-geopolitical-supply-risk.html
 URL: https://grizzlyparrottrading.com/energies/cl-geopolitical-supply-risk.html
@@ -372,11 +372,11 @@ Linked from:
   https://grizzlyparrottrading.com/energies/cl-fundamental-drivers.html
   https://grizzlyparrottrading.com/energies/cl-news-event-reaction.html
   https://grizzlyparrottrading.com/energies/opec-impact-on-cl.html
-
-
+****
+****
 ------------------------------------------------------------
-
-
+****
+****
 ARTICLE 20
 File: cl-calendar-spreads-contango-backwardation.html
 URL: https://grizzlyparrottrading.com/energies/cl-calendar-spreads-contango-backwardation.html
@@ -392,8 +392,8 @@ Links to:
 Linked from:
   https://grizzlyparrottrading.com/energies/what-are-crude-oil-futures-cl.html
   https://grizzlyparrottrading.com/energies/cl-fundamental-drivers.html
-
-
+****
+****
 ============================================
 WRITING ORDER RECOMMENDATION
 ============================================
