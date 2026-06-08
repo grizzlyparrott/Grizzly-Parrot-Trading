@@ -591,3 +591,10 @@ a:hover {
 .footer-book-link {
   font-weight: 600;
 }
+.book-volume {
+  font-size: 0.65em;
+  font-weight: 500;
+  color: #9ca3af;
+  margin-left: 0.5rem;
+  white-space: nowrap;
+}
