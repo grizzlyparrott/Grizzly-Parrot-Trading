@@ -1,0 +1,9 @@
+{
+  "name": "grizzly-parrot-paperback-fulfillment",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/index.mjs && node --check src/catalog.mjs && node --check src/lulu.mjs && node --check src/stripe.mjs"
+  }
+}

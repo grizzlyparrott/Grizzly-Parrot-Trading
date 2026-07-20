@@ -232,19 +232,39 @@
         }
       });
 
+      function updatePaperbackButtons() {
+        paperbackButtons.forEach(function (button) {
+          if (paperbackCheckoutUrl) {
+            button.href = paperbackCheckoutUrl;
+            button.target = '_blank';
+            button.rel = 'noopener';
+            button.textContent = 'Buy paperback edition';
+            button.removeAttribute('aria-disabled');
+            button.classList.remove('button-disabled');
+          } else {
+            button.href = '#purchase';
+            button.setAttribute('aria-disabled', 'true');
+            button.classList.add('button-disabled');
+          }
+        });
+      }
+
       paperbackButtons.forEach(function (button) {
-        if (paperbackCheckoutUrl) {
-          button.href = paperbackCheckoutUrl;
-          button.target = '_blank';
-          button.rel = 'noopener';
-          button.removeAttribute('aria-disabled');
-          button.classList.remove('button-disabled');
-        } else {
-          button.addEventListener('click', function (event) {
-            event.preventDefault();
-          });
-        }
+        button.addEventListener('click', function (event) {
+          if (!paperbackCheckoutUrl) event.preventDefault();
+        });
       });
+      updatePaperbackButtons();
+
+      fetch('https://paperback-api.grizzlyparrottrading.com/public-config?bookSlug=equity-market-structure', {credentials: 'omit'})
+        .then(function (response) { return response.ok ? response.json() : null; })
+        .then(function (config) {
+          if (config && config.enabled === true && typeof config.checkoutUrl === 'string' && config.checkoutUrl.indexOf('https://') === 0) {
+            paperbackCheckoutUrl = config.checkoutUrl;
+            updatePaperbackButtons();
+          }
+        })
+        .catch(function () { /* Safe default: the paperback button remains disabled. */ });
 
       if (!checkoutUrl) {
         notes.forEach(function (note) {
