@@ -100,6 +100,7 @@ test("Lulu quote and print-job payload use its API package and hosted PDFs, not 
     if (url.includes("openid-connect/token")) return new Response(JSON.stringify({ access_token: "sandbox-token" }), { status: 200 });
     if (url.endsWith("/print-job-cost-calculations/")) return new Response(JSON.stringify({ currency: "USD", shipping_cost: { total_cost_incl_tax: "7.42" } }), { status: 201 });
     if (url.endsWith("/print-jobs/")) return new Response(JSON.stringify({ id: "sandbox-job-123", status: "CREATED" }), { status: 201 });
+    if (url.endsWith("/print-jobs/sandbox-job-123/status/")) return new Response(JSON.stringify({ name: "CREATED" }), { status: 200 });
     throw new Error(`Unexpected URL ${url}`);
   };
   const env = {
@@ -116,6 +117,8 @@ test("Lulu quote and print-job payload use its API package and hosted PDFs, not 
   assert.equal(shippingCents(quote), 742);
   const job = await client.createPrintJob({ book, quantity: 1, address: validAddress, shippingOption: "MAIL", externalId: "gpt_cs_test" });
   assert.equal(job.id, "sandbox-job-123");
+  const status = await client.status(job.id);
+  assert.equal(status.name, "CREATED");
   const jobRequest = requests.find((request) => request.url.endsWith("/print-jobs/"));
   const payload = JSON.parse(jobRequest.init.body);
   assert.equal(payload.external_id, "gpt_cs_test");
@@ -127,6 +130,7 @@ test("Lulu quote and print-job payload use its API package and hosted PDFs, not 
   assert.equal(payload.line_items[0].interior.source_md5sum, book.assets.interiorMd5);
   assert.equal(payload.line_items[0].cover.source_md5sum, book.assets.coverMd5);
   assert.equal(JSON.stringify(payload).includes(book.luluPublishingProjectId), false);
+  assert.ok(requests.some((request) => request.url.endsWith("/print-jobs/sandbox-job-123/status/")));
 });
 
 test("test checkout creates a Stripe Checkout Session with customer address collection and calculated shipping", async () => {
