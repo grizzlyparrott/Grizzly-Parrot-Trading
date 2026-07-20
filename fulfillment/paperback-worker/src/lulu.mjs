@@ -63,7 +63,7 @@ export class LuluClient {
 
   async quote({ book, quantity, address, shippingOption }) {
     return this.request("/print-job-cost-calculations/", "POST", {
-      line_items: [{ pod_package_id: book.podPackageId, quantity }],
+      line_items: [{ pod_package_id: book.podPackageId, page_count: book.interiorPages, quantity }],
       shipping_address: asLuluAddress(address),
       shipping_option: shippingOption
     });

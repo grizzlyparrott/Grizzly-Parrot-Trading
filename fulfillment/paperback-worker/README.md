@@ -61,7 +61,7 @@ With sandbox secrets and R2 files configured, call the Worker with the private t
 ```powershell
 $headers = @{ "x-paperback-test-token" = "YOUR_TEST_TOKEN"; "Content-Type" = "application/json" }
 $quote = Invoke-RestMethod -Method Post -Uri "https://YOUR-WORKER/paperback/quote" -Headers $headers -Body (@{
-  bookSlug = "currency-market-structure"; buyerEmail = "you@example.com"; quantity = 1; shippingOption = "GROUND";
+  bookSlug = "currency-market-structure"; buyerEmail = "you@example.com"; quantity = 1; shippingOption = "MAIL";
   shippingAddress = @{ name = "Test Reader"; street1 = "123 Test Street"; city = "Raleigh"; stateCode = "NC"; postcode = "27601"; countryCode = "US"; phoneNumber = "+1 919 555 0100" }
 } | ConvertTo-Json -Depth 5)
 Invoke-RestMethod -Method Post -Uri "https://YOUR-WORKER/paperback/checkout" -Headers $headers -Body (@{ quoteId = $quote.quoteId } | ConvertTo-Json)

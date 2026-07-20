@@ -57,7 +57,6 @@ export const PAPERBACK_BOOKS = Object.freeze({
 export const SHIPPING_OPTIONS = Object.freeze({
   MAIL: "Mail",
   PRIORITY_MAIL: "Priority mail",
-  GROUND: "Ground",
   EXPEDITED: "Expedited",
   EXPRESS: "Express"
 });

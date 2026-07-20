@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { getBook, getStripePriceId, POD_PACKAGE_ID } from "../src/catalog.mjs";
+import { getBook, getStripePriceId, POD_PACKAGE_ID, SHIPPING_OPTIONS } from "../src/catalog.mjs";
 import { validateCheckoutRequest, addressesMatch } from "../src/validation.mjs";
 import { hmacHex, verifyStripeSignature, signedAssetUrl, verifyAssetRequest } from "../src/crypto.mjs";
 import { LuluClient, shippingCents } from "../src/lulu.mjs";
@@ -34,6 +34,7 @@ test("all three paperback products map to the real Lulu paperback projects and o
     assert.match(book.assets.interiorMd5, /^[A-F0-9]{32}$/);
     assert.match(book.assets.coverMd5, /^[A-F0-9]{32}$/);
   }
+  assert.deepEqual(Object.keys(SHIPPING_OPTIONS), ["MAIL", "PRIORITY_MAIL", "EXPEDITED", "EXPRESS"]);
 });
 
 test("checkout address validation rejects missing carrier-required phone numbers and accepts a valid address", () => {
@@ -86,14 +87,17 @@ test("Lulu quote and print-job payload use its API package and hosted PDFs, not 
   };
   const client = new LuluClient(env, fakeFetch);
   const book = getBook("currency-market-structure");
-  const quote = await client.quote({ book, quantity: 1, address: validAddress, shippingOption: "GROUND" });
+  const quote = await client.quote({ book, quantity: 1, address: validAddress, shippingOption: "MAIL" });
   assert.equal(shippingCents(quote), 742);
-  const job = await client.createPrintJob({ book, quantity: 1, address: validAddress, shippingOption: "GROUND", externalId: "gpt_cs_test" });
+  const job = await client.createPrintJob({ book, quantity: 1, address: validAddress, shippingOption: "MAIL", externalId: "gpt_cs_test" });
   assert.equal(job.id, "sandbox-job-123");
   const jobRequest = requests.find((request) => request.url.endsWith("/print-jobs/"));
   const payload = JSON.parse(jobRequest.init.body);
   assert.equal(payload.external_id, "gpt_cs_test");
   assert.equal(payload.line_items[0].pod_package_id, POD_PACKAGE_ID);
+  const quoteRequest = requests.find((request) => request.url.endsWith("/print-job-cost-calculations/"));
+  const quotePayload = JSON.parse(quoteRequest.init.body);
+  assert.equal(quotePayload.line_items[0].page_count, book.interiorPages);
   assert.equal(payload.line_items[0].interior.source_md5sum, book.assets.interiorMd5);
   assert.equal(payload.line_items[0].cover.source_md5sum, book.assets.coverMd5);
   assert.equal(JSON.stringify(payload).includes(book.luluPublishingProjectId), false);
@@ -107,7 +111,7 @@ test("test checkout creates a Stripe Checkout Session with customer address coll
   };
   const env = { STRIPE_SECRET_KEY: "sk_test_example", PAPERBACK_SUCCESS_URL: "https://example.com/success", PAPERBACK_CANCEL_URL: "https://example.com/cancel" };
   const book = getBook("equity-market-structure");
-  const quote = { quoteId: "quote-123", quantity: 1, shippingCents: 742, currency: "USD", shippingOption: "GROUND", address: validAddress };
+  const quote = { quoteId: "quote-123", quantity: 1, shippingCents: 742, currency: "USD", shippingOption: "MAIL", address: validAddress };
   const priceId = getStripePriceId(book, { STRIPE_PRICE_EQUITY_PAPERBACK: "price_test_equity" });
   const session = await new StripeClient(env, fakeFetch).createCheckoutSession({ book, quote, priceId, customerEmail: "reader@example.com" });
   assert.equal(session.id, "cs_test_paperback");
@@ -137,7 +141,7 @@ test("order store reports duplicate Stripe session insertion instead of submitti
     }
   };
   const store = new OrderStore(db);
-  const order = { stripeSessionId: "cs_duplicate", stripeEventId: "evt_duplicate", quoteId: "quote", bookSlug: "currency-market-structure", quantity: 1, buyerEmail: "reader@example.com", address: validAddress, shippingOption: "GROUND", shippingCents: 742, currency: "USD", customerTotalCents: 4642, now: "2026-07-20T12:00:00.000Z" };
+  const order = { stripeSessionId: "cs_duplicate", stripeEventId: "evt_duplicate", quoteId: "quote", bookSlug: "currency-market-structure", quantity: 1, buyerEmail: "reader@example.com", address: validAddress, shippingOption: "MAIL", shippingCents: 742, currency: "USD", customerTotalCents: 4642, now: "2026-07-20T12:00:00.000Z" };
   assert.equal(await store.insertPaidOrder(order), true);
   assert.equal(await store.insertPaidOrder(order), false);
 });
