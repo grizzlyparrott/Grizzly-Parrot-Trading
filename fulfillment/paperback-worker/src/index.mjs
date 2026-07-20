@@ -359,6 +359,7 @@ async function pollStatuses(env) {
     try {
       const status = await new LuluClient(env).status(order.lulu_print_job_id);
       const nextStatus = luluStatusFromJob(status);
+      log("lulu_status_polled", { sessionId: order.stripe_session_id, status: nextStatus });
       if (nextStatus !== order.lulu_status) {
         await store.updateLuluStatus(order.stripe_session_id, nextStatus, JSON.stringify(status), nowIso());
         log("lulu_status_changed", { sessionId: order.stripe_session_id, from: order.lulu_status, to: nextStatus });

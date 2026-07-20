@@ -93,7 +93,9 @@ export class LuluClient {
   }
 
   async status(printJobId) {
-    return this.request(`/print-jobs/${encodeURIComponent(printJobId)}/`, "GET");
+    // Lulu exposes the live print state and tracking details from the status
+    // sub-resource, not the full print-job record.
+    return this.request(`/print-jobs/${encodeURIComponent(printJobId)}/status/`, "GET");
   }
 }
 
