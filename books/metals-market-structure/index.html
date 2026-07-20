@@ -1,463 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
-  <title>Metals Market Structure (Volume II) - Grizzly Parrot Trading</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Metals Market Structure explains why gold, silver, copper, platinum, and palladium stop behaving independently during stress — and how the metals complex actually functions as a connected system across regimes.">
+  <title>Metals Market Structure (Volume II) | Grizzly Parrot Trading</title>
+  <meta name="description" content="Metals Market Structure explains how gold, silver, copper, platinum, and palladium function as one connected system across monetary, industrial, liquidity, and supply regimes.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://grizzlyparrottrading.com/books/metals-market-structure/">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <meta property="og:title" content="Metals Market Structure (Volume II)">
-  <meta property="og:description" content="Why metals stop behaving independently during stress — and how the complex actually works across regimes.">
-  <meta property="og:type" content="website">
+  <meta property="og:description" content="A structural field guide to monetary metals, industrial metals, liquidity, supply concentration, and changing macro regimes.">
+  <meta property="og:type" content="book">
   <meta property="og:url" content="https://grizzlyparrottrading.com/books/metals-market-structure/">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/books/metals-market-structure/metals-market-structure-cover.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Metals Market Structure (Volume II)">
-  <meta name="twitter:description" content="Why metals stop behaving independently during stress — and how the complex actually works across regimes.">
+  <meta name="twitter:description" content="Understand metals as a connected system of monetary demand, industrial demand, supply, liquidity, and regime change.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/books/metals-market-structure/metals-market-structure-cover.png">
-  <meta name="twitter:url" content="https://grizzlyparrottrading.com/books/metals-market-structure/">
-
-  <style>
-    :root {
-      --bg: #050608;
-      --accent: #22ff88;
-      --accent-soft: rgba(34,255,136,0.12);
-      --text-main: #f5f5f5;
-      --text-muted: #a0a4b0;
-      --border-subtle: #20242f;
-      --shadow-soft: 0 24px 60px rgba(0,0,0,0.7);
-      --radius-lg: 18px;
-      --radius-xl: 22px;
-      --radius-pill: 999px;
-      --max-width: 1100px;
-      --transition-fast: 0.16s ease-out;
-      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-serif: "Georgia", "Times New Roman", serif;
-    }
-
-    * { box-sizing: border-box; }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: radial-gradient(circle at top, #111320 0, #050608 40%);
-      color: var(--text-main);
-      font-family: var(--font-main);
-    }
-
-    body { min-height: 100vh; display: flex; flex-direction: column; }
-    a { color: inherit; text-decoration: none; }
-
-    .page {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 24px 16px 56px;
-    }
-
-    .site-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 32px;
-    }
-
-    .brand { display: flex; align-items: center; gap: 10px; }
-
-    .brand-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 10px;
-      background: radial-gradient(circle at 20% 0%, #22ff88, #0b1b13 55%, #050608);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 0.04em;
-      box-shadow: 0 0 18px rgba(34,255,136,0.5);
-      flex-shrink: 0;
-    }
-
-    .brand-text-main { font-size: 15px; font-weight: 600; }
-    .brand-text-sub {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-muted);
-    }
-
-    .top-cta a {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(34,255,136,0.5);
-      background: rgba(34,255,136,0.1);
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 13px;
-      transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
-      box-shadow: 0 12px 30px rgba(34,255,136,0.3);
-      white-space: nowrap;
-    }
-
-    .top-cta a:hover {
-      background: var(--accent);
-      color: #021005;
-      transform: translateY(-1px);
-      box-shadow: 0 18px 48px rgba(34,255,136,0.55);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
-      gap: 28px;
-      align-items: start;
-      margin-bottom: 56px;
-    }
-
-    .hero-copy {
-      padding: 28px 26px 30px;
-      background: linear-gradient(135deg, rgba(34,255,136,0.07), rgba(5,6,8,0.92));
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(34,255,136,0.35);
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-copy::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at -10% -10%, rgba(34,255,136,0.45), transparent 50%);
-      opacity: 0.42;
-      pointer-events: none;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 3px 11px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(34,255,136,0.6);
-      background: rgba(5,6,8,0.9);
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-eyebrow span.dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 12px rgba(34,255,136,0.9);
-    }
-
-    .hero-title {
-      font-family: var(--font-serif);
-      font-size: 36px;
-      line-height: 1.08;
-      margin: 0 0 10px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-tension {
-      font-size: 17px;
-      color: var(--text-muted);
-      margin: 0 0 26px;
-      position: relative;
-      z-index: 1;
-      line-height: 1.5;
-    }
-
-    .hero-tension strong { color: var(--text-main); }
-
-    .hero-body {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 26px;
-    }
-
-    .hero-body p {
-      margin: 0;
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.75;
-    }
-
-    .hero-body p strong { color: var(--text-main); font-weight: 600; }
-
-    .hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      position: relative;
-      z-index: 1;
-      margin-bottom: 10px;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 11px 20px;
-      border-radius: var(--radius-pill);
-      border: none;
-      background: var(--accent);
-      color: #021005;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 16px 40px rgba(34,255,136,0.4);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
-      white-space: nowrap;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px) scale(1.01);
-      box-shadow: 0 18px 48px rgba(34,255,136,0.55);
-      filter: brightness(1.03);
-    }
-
-    .hero-meta {
-      font-size: 12px;
-      color: var(--text-muted);
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-meta span { margin-right: 16px; }
-    .hero-meta strong { color: var(--text-main); font-weight: 500; }
-
-    .hero-cover {
-      padding: 14px;
-      background: radial-gradient(circle at top, #181b26 0, #050608 60%);
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(255,255,255,0.05);
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      position: sticky;
-      top: 24px;
-    }
-
-    .cover-frame {
-      border-radius: 14px;
-      padding: 10px;
-      background: radial-gradient(circle at top, rgba(34,255,136,0.32), rgba(5,6,8,0.96));
-      border: 1px solid rgba(34,255,136,0.5);
-      box-shadow: 0 12px 34px rgba(0,0,0,0.9);
-    }
-
-    .cover-inner {
-      border-radius: 10px;
-      overflow: hidden;
-      background: #000;
-      aspect-ratio: 3 / 4;
-      display: flex;
-    }
-
-    .cover-inner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .cover-caption {
-      font-size: 12px;
-      color: var(--text-muted);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .cover-caption strong { color: var(--text-main); font-weight: 500; }
-
-    .price-tag {
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .section {
-      margin-bottom: 36px;
-      padding: 26px 24px 28px;
-      border-radius: var(--radius-lg);
-      background: rgba(7,9,13,0.96);
-      border: 1px solid var(--border-subtle);
-    }
-
-    .section-label {
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-      opacity: 0.8;
-    }
-
-    .section h2 {
-      margin: 0 0 8px;
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .section .takeaway {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin: 0 0 20px;
-      line-height: 1.65;
-      border-left: 2px solid rgba(34,255,136,0.4);
-      padding-left: 14px;
-    }
-
-    .section .takeaway strong { color: var(--text-main); }
-
-    .section p {
-      margin: 0 0 16px;
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.75;
-    }
-
-    .section p:last-child { margin-bottom: 0; }
-    .section p strong { color: var(--text-main); font-weight: 600; }
-
-    .chapter-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .chapter-list li {
-      display: grid;
-      grid-template-columns: 20px 1fr;
-      gap: 16px;
-      align-items: start;
-    }
-
-    .chapter-list li .num {
-      font-size: 11px;
-      color: var(--accent);
-      font-weight: 700;
-      padding-top: 2px;
-      opacity: 0.7;
-    }
-
-    .chapter-list li .content {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .chapter-list li .title {
-      font-size: 14px;
-      color: var(--text-main);
-      font-weight: 600;
-      line-height: 1.3;
-    }
-
-    .chapter-list li .desc {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .details-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .detail-card {
-      padding: 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.01);
-    }
-
-    .detail-card .label {
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .detail-card .value {
-      font-size: 14px;
-      color: var(--text-main);
-      font-weight: 600;
-    }
-
-    .site-footer {
-      margin-top: 16px;
-      padding-top: 8px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 10px;
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .footer-links { display: flex; gap: 10px; flex-wrap: wrap; }
-
-    .footer-links a {
-      text-decoration: underline;
-      text-decoration-color: rgba(255,255,255,0.18);
-      text-underline-offset: 3px;
-    }
-
-    @media (max-width: 900px) {
-      .details-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    @media (max-width: 800px) {
-      .hero { grid-template-columns: minmax(0, 1fr); }
-      .hero-cover { order: -1; position: static; }
-    }
-
-    @media (max-width: 600px) {
-      .site-header { flex-direction: column; align-items: flex-start; }
-      .hero-copy { padding: 20px 16px 22px; }
-      .hero-title { font-size: 28px; }
-      .details-grid { grid-template-columns: minmax(0, 1fr); }
-    }
-  </style>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
@@ -468,310 +31,272 @@
     gtag('config', 'AW-17793230727');
   </script>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var buyUrl = "https://buy.stripe.com/dRmbJ2dSl2061Ta0UE2Nq02";
-      var buyLinks = document.querySelectorAll('a[data-track="buy"]');
-      for (var i = 0; i < buyLinks.length; i++) {
-        buyLinks[i].setAttribute("href", buyUrl);
-        buyLinks[i].addEventListener('click', function () {
-          gtag('event', 'buy_book_click', {
-            event_category: 'conversion',
-            event_label: 'Buy Metals Market Structure (Stripe)'
-          });
-        });
-      }
-    });
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Metals Market Structure",
+    "alternateName": "Market Structure Series, Volume II",
+    "author": {"@type": "Person", "name": "Kyle Parrott"},
+    "bookFormat": "EBook",
+    "inLanguage": "en",
+    "image": "https://grizzlyparrottrading.com/books/metals-market-structure/metals-market-structure-cover.png",
+    "url": "https://grizzlyparrottrading.com/books/metals-market-structure/",
+    "description": "A structural framework for understanding the connected metals complex across contract structure, liquidity, sessions, monetary demand, industrial demand, supply concentration, and changing regimes.",
+    "isPartOf": {
+      "@type": "BookSeries",
+      "name": "Market Structure Series"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "29.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://buy.stripe.com/dRmbJ2dSl2061Ta0UE2Nq02"
+    }
+  }
   </script>
 
-  <script>
-    gtag('event', 'conversion', {
-      send_to: 'AW-17793230727/cO1aCN3Jh88bEIfPvKRC',
-      value: 1.0,
-      currency: 'USD'
-    });
-  </script>
-
+  <link rel="stylesheet" href="../market-structure-series.css">
 </head>
-
 <body>
-  <main class="page">
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/" aria-label="Grizzly Parrot Trading home">
+        <span class="brand-mark">GP</span>
+        <span>
+          <strong>Grizzly Parrot Trading</strong>
+          <small>Market Structure Series</small>
+        </span>
+      </a>
+      <nav class="header-nav" aria-label="Book navigation">
+        <a href="/books/">All three volumes</a>
+        <a class="button button-small js-buy" href="#purchase">Buy digital edition</a>
+      </nav>
+    </div>
+  </header>
 
-    <header class="site-header">
-      <div class="brand">
-        <div class="brand-mark">GP</div>
-        <div>
-          <a href="https://grizzlyparrottrading.com/" target="_blank" rel="noopener">
-            <div class="brand-text-main">Grizzly Parrot Trading</div>
-            <div class="brand-text-sub">Structure · Risk · Execution</div>
-          </a>
-        </div>
-      </div>
-      <div class="top-cta">
-        <a data-track="buy" target="_blank" rel="noopener">
-          <span>↗</span>
-          <span>Buy — $29</span>
-        </a>
-      </div>
-    </header>
-
+  <main>
     <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Market Structure Series &middot; Volume II</p>
+          <h1>Metals Market Structure</h1>
+          <p class="hero-lead">The metals market is not five independent commodities. Gold, silver, copper, platinum, and palladium change roles as monetary stress, industrial demand, supply concentration, and liquidity regimes shift.</p>
+          <p class="hero-detail">This volume maps the mechanisms behind those changing relationships&mdash;why the right view on one metal can still produce the wrong portfolio outcome, why correlations compress during stress, and why a framework that works in one regime can fail in the next.</p>
 
-      <div class="hero-copy">
-        <div class="hero-eyebrow">
-          <span class="dot"></span>
-          <span>Market Structure Series · Volume II</span>
+          <div class="hero-points" aria-label="Book highlights">
+            <div><strong>10</strong><span>structural layers</span></div>
+            <div><strong>PDF + EPUB</strong><span>digital formats</span></div>
+            <div><strong>$29</strong><span>one-time purchase</span></div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="button js-buy" href="#purchase">Buy Volume II &mdash; $29</a>
+            <a class="text-link" href="#inside">See what is inside <span aria-hidden="true">&darr;</span></a>
+          </div>
+          <p class="checkout-note">Secure checkout through Stripe. PDF and EPUB included.</p>
         </div>
 
-        <h1 class="hero-title">Metals Market Structure</h1>
+        <aside class="cover-panel" aria-label="Metals Market Structure book cover and purchase summary">
+          <div class="cover-glow"></div>
+          <img src="metals-market-structure-cover.png" alt="Cover of Metals Market Structure, Volume II by Kyle Parrott">
+          <div class="cover-caption">
+            <span>Digital edition</span>
+            <strong>PDF + EPUB &middot; $29</strong>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-        <p class="hero-tension">
-  You were right about gold. The portfolio still lost.<br>
-  <strong>That gap between being right on a metal and right on the position is what this book maps.</strong>
-</p>
+    <section class="section section-dark">
+      <div class="shell statement-grid">
+        <div>
+          <p class="section-kicker">The central problem</p>
+          <h2>The relationship is real. The regime is temporary.</h2>
+        </div>
+        <div class="statement-copy">
+          <p>Gold responds to real yields until liquidity stress takes control. Silver follows gold until industrial demand overrides its monetary identity. Copper can break while gold holds&mdash;then everything can sell together when cash becomes the only hedge.</p>
+          <p>Those shifts are not random. Each has a structural cause, and the cause is often visible before the relationship breaks.</p>
+        </div>
+      </div>
+    </section>
 
-<div class="hero-body">
-  <p>
-    You've seen it. Gold advances, silver lags, then reverses and accelerates past gold
-    for no reason you can point to. Copper breaks down while your gold position holds,
-    then everything falls together the moment you needed the hedge to work.
-    Platinum trades sideways for three months, gaps overnight, and there's no news.
-    <strong>The move shouldn't have happened. Except it always does, eventually, and usually when liquidity is thin.</strong>
-  </p>
-  <p>
-    The problem isn't the analysis. It's that metals analysis built for one environment
-    stops working the moment the environment changes.
-    Gold's relationship with real yields holds until it doesn't.
-    Silver follows gold until its industrial identity overrides it.
-    Correlations that held for months compress to one during stress,
-    and your diversified metals portfolio becomes a single concentrated bet
-    at exactly the wrong moment.
-  </p>
-  <p>
-    There's a structural explanation for every one of those episodes.
-    Not a pattern. Not a heuristic. <strong>A mechanism that was operating
-    whether you could see it or not.</strong> That mechanism is what this book maps.
-  </p>
-</div>
+    <section class="section" id="inside">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="section-kicker">What the framework covers</p>
+          <h2>From contract mechanics to cross-metal regime shifts.</h2>
+          <p>The chapters build from market depth and session structure into the distinct identities of each metal, then connect them through leadership, correlation, and portfolio risk.</p>
+        </div>
 
-        <div class="hero-ctas">
-          <a class="btn-primary" data-track="buy" target="_blank" rel="noopener">
-            <span>↗</span>
-            <span>Download the Book — $29</span>
+        <div class="topic-grid">
+          <article>
+            <span class="topic-number">01</span>
+            <h3>Contracts and liquidity hierarchy</h3>
+            <p>What specifications mean for position risk, how depth is distributed, and why continuity differs sharply across the complex.</p>
+          </article>
+          <article>
+            <span class="topic-number">02</span>
+            <h3>Session structure</h3>
+            <p>Why gold's central session is New York, copper's begins in Asia, and participation asymmetry changes where price discovery occurs.</p>
+          </article>
+          <article>
+            <span class="topic-number">03</span>
+            <h3>Gold as monetary benchmark</h3>
+            <p>How real yields, the dollar, safe-haven demand, and forced liquidation shape gold across calm, inflationary, and stress regimes.</p>
+          </article>
+          <article>
+            <span class="topic-number">04</span>
+            <h3>Silver as a hybrid metal</h3>
+            <p>Why silver alternates between monetary and industrial identities, and how the dominant identity changes its behavior relative to gold.</p>
+          </article>
+          <article>
+            <span class="topic-number">05</span>
+            <h3>Copper and thin metals</h3>
+            <p>How industrial demand drives copper while concentrated supply and thinner liquidity make platinum and palladium structurally different.</p>
+          </article>
+          <article>
+            <span class="topic-number">06</span>
+            <h3>Leadership, regimes, and risk</h3>
+            <p>How cross-metal leadership changes, when correlations collapse toward one, and why apparent diversification can become concentrated exposure.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-accent">
+      <div class="shell audience-grid">
+        <div>
+          <p class="section-kicker">Built for structural thinkers</p>
+          <h2>This is not a setup book.</h2>
+          <p>It does not sell a signal, chart pattern, or permanent correlation. It explains the market architecture that determines why the same analysis works in one environment and fails in another.</p>
+        </div>
+        <ul class="check-list">
+          <li>Gold and silver traders who want to understand changing leadership</li>
+          <li>Macro traders connecting real yields, the dollar, growth, and liquidity</li>
+          <li>Commodity traders studying industrial demand and supply concentration</li>
+          <li>Portfolio managers who need a clearer view of cross-metal risk</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-heading compact">
+          <p class="section-kicker">The complete collection</p>
+          <h2>One structural method across three market systems.</h2>
+        </div>
+
+        <div class="series-grid">
+          <a href="/books/currency-market-structure/">
+            <span>Volume I</span>
+            <strong>Currency Market Structure</strong>
+            <small>Reserve, funding, haven, and risk currencies</small>
+          </a>
+          <a class="current" href="/books/metals-market-structure/" aria-current="page">
+            <span>Volume II</span>
+            <strong>Metals Market Structure</strong>
+            <small>Monetary, industrial, and physical-market regimes</small>
+          </a>
+          <a href="/books/equity-market-structure/">
+            <span>Volume III</span>
+            <strong>Equity Market Structure</strong>
+            <small>Futures, cash, ETFs, sectors, volatility, and stocks</small>
           </a>
         </div>
-
-        <div class="hero-meta">
-          <span><strong>Format:</strong> PDF + EPUB</span>
-          <span><strong>Author:</strong> Kyle Parrott</span>
-          <span><strong>Delivery:</strong> Instant</span>
-        </div>
-      </div>
-
-      <aside class="hero-cover" aria-label="Book cover preview">
-        <div class="cover-frame">
-          <div class="cover-inner">
-            <img src="metals-market-structure-cover.png" alt="Book cover: Metals Market Structure (Volume II)">
-          </div>
-        </div>
-        <div class="cover-caption">
-          <div>
-            <strong>Metals Market Structure</strong><br>
-            <span>Digital edition · PDF + EPUB</span>
-          </div>
-          <div class="price-tag">$29</div>
-        </div>
-      </aside>
-
-    </section>
-
-    <section class="section">
-  <div class="section-label">The real problem</div>
-  <h2>It's not that metals are unpredictable. It's that most frameworks only work in one regime.</h2>
-  <p class="takeaway"><strong>When the regime shifts, the rules change. Most participants don't know there are regimes.</strong></p>
-
-  <p>
-    Gold's real yield relationship is real. So is copper's sensitivity to Chinese demand.
-    So is silver's tendency to amplify gold. These relationships are structural. They exist for reasons.
-    But they are not permanent. They hold within a regime, and when the regime changes, they transform.
-  </p>
-  <p>
-    During monetary stress, gold leads and silver follows with amplification.
-    During growth stress, copper breaks while gold holds, until liquidity stress hits and everything sells simultaneously.
-    During a supply shock in a thin market, price gaps through levels that looked like support
-    because there was never enough depth there to matter.
-  </p>
-  <p>
-    Each of those episodes has a specific structural cause.
-    The cause was visible before the move, but only if you knew where to look.
-    Most participants don't, because nobody taught them the complex is a system.
-    They were taught the metals individually, which is exactly enough knowledge
-    to be confidently wrong at the worst time.
-  </p>
-</section>
-
-    <section class="section">
-      <div class="section-label">Inside the book</div>
-      <h2>Ten layers you're currently missing.</h2>
-      <p class="takeaway"><strong>These are not topics. They are the structural gaps between what you know and what the market knows.</strong></p>
-
-<ul class="chapter-list">
-  <li>
-    <span class="num">01</span>
-    <div class="content">
-      <span class="title">Contract Structure</span>
-      <span class="desc">What the specifications of each contract actually mean for position-level risk.</span>
-    </div>
-  </li>
-  <li>
-    <span class="num">02</span>
-    <div class="content">
-      <span class="title">Liquidity Hierarchy</span>
-      <span class="desc">How depth is distributed across the complex and what it determines about price behavior.</span>
-    </div>
-  </li>
-  <li>
-    <span class="num">03</span>
-    <div class="content">
-      <span class="title">Session Structure</span>
-      <span class="desc">Why gold's most important session is New York and copper's is Asia — and what that asymmetry produces.</span>
-    </div>
-  </li>
-  <li>
-    <span class="num">04</span>
-    <div class="content">
-      <span class="title">Gold as Monetary Benchmark</span>
-      <span class="desc">Real yield sensitivity, dollar mechanics, and why gold sells off during the stress episodes it was supposed to hedge.</span>
-    </div>
-  </li>
-  <li>
-    <span class="num">05</span>
-    <div class="content">
-      <span class="title">Silver as Hybrid Metal</span>
-      <span class="desc">Silver has two structural identities. Which one is driving determines everything else about how it behaves.</span>
-    </div>
-  </li>
-  <li>
-    <span class="num">06</span>
-    <div class="content">
-      <span class="title">Copper as Industrial Benchmark</span>
-      <span class="desc">The primary driver of copper prices and what copper's behavior relative to gold reveals about the macro environment.</span>
-    </div>
-  </li>
-  <li>
-    <span class="num">07</span>
-    <div class="content">
-      <span class="title">Thin Metals and Supply Concentration</span>
-      <span class="desc">Platinum and palladium supply geography, automotive demand sensitivity, and why these markets move differently than everything above them.</span>
-    </div>
-  </li>
-  <li>
-    <span class="num">08</span>
-    <div class="content">
-      <span class="title">Cross-Metal Interaction</span>
-      <span class="desc">How price leadership is distributed across the complex and the conditions under which the normal relationships break.</span>
-    </div>
-  </li>
-  <li>
-    <span class="num">09</span>
-    <div class="content">
-      <span class="title">Regime Shifts</span>
-      <span class="desc">Four macro regimes, four different cross-metal relationship structures, and the early signals that one is giving way to another.</span>
-    </div>
-  </li>
-  <li>
-    <span class="num">10</span>
-    <div class="content">
-      <span class="title">Risk Management Across Metals</span>
-      <span class="desc">A diversified metals portfolio and a concentrated one can look identical — until the regime shifts.</span>
-    </div>
-  </li>
-</ul>
-    </section>
-
-    <section class="section">
-  <div class="section-label">The reader</div>
-  <h2>You already trade metals. This is what your framework is missing.</h2>
-  <p class="takeaway"><strong>The losses that feel random aren't. They have structural explanations. And those explanations are learnable.</strong></p>
-
-  <p>
-    If you've been right on the direction and wrong on the outcome,
-    if your hedge didn't hold when it was supposed to,
-    if a move happened that "shouldn't have" and you couldn't explain it afterward,
-    the explanation exists. It's structural, it's specific, and it was present before the move occurred.
-  </p>
-  <p>
-    This book doesn't add another layer of analysis on top of what you're already doing.
-    It goes underneath it, to the mechanics that determine why the analysis works
-    in some environments and fails in others.
-  </p>
-  <p>
-    Volume I of this series covered currency market structure.
-    This volume extends the same framework into metals.
-    They're independent, but together they cover the two markets
-    where structural misunderstanding is most expensive.
-  </p>
-</section>
-
-    <section class="section">
-      <div class="section-label">What's not in it</div>
-      <h2>No setups. No signals. No system.</h2>
-      <p class="takeaway"><strong>This is the layer the system sits on — the one that determines when the system stops working.</strong></p>
-      <p>
-        No trade setups. No entry signals. No chart patterns. No conclusions about what to buy.
-        If you want a method, this isn't it.
-      </p>
-      <p>
-        If you want to understand why your method behaves differently across environments —
-        why the same setup produces different outcomes in different conditions —
-        that is exactly what this is.
-      </p>
-    </section>
-
-    <section class="section">
-      <div class="section-label">Edition</div>
-      <h2>Digital edition. Instant delivery.</h2>
-
-      <div class="details-grid" role="list">
-        <div class="detail-card" role="listitem">
-          <div class="label">Formats</div>
-          <div class="value">PDF + EPUB</div>
-        </div>
-        <div class="detail-card" role="listitem">
-          <div class="label">Series</div>
-          <div class="value">Market Structure · Vol. II</div>
-        </div>
-        <div class="detail-card" role="listitem">
-          <div class="label">Price</div>
-          <div class="value">$29</div>
-        </div>
-      </div>
-
-      <div class="hero-ctas" style="margin-top: 20px;">
-        <a class="btn-primary" data-track="buy" target="_blank" rel="noopener">
-          <span>↗</span>
-          <span>Buy (PDF + EPUB) — $29</span>
-        </a>
       </div>
     </section>
 
-    <footer class="site-footer">
-      <div>&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="https://grizzlyparrottrading.com/" target="_blank" rel="noopener">Grizzly Parrot Trading</a>
-        <a href="https://grizzlyparrottrading.com/books/currency-market-structure/" target="_blank" rel="noopener">Currency Market Structure Vol. I</a>
-        <a href="https://grizzlyparrottrading.com/books/equity-market-structure/" target="_blank" rel="noopener">Equity Market Structure Vol. III</a>
+    <section class="purchase-section" id="purchase">
+      <div class="shell purchase-card">
+        <div>
+          <p class="section-kicker">Volume II digital edition</p>
+          <h2>Know what changes when the regime does.</h2>
+          <p>Get the complete Metals Market Structure book in PDF and EPUB formats.</p>
+          <ul>
+            <li>PDF for desktop reading and annotation</li>
+            <li>EPUB for phones, tablets, and e-readers</li>
+            <li>Immediate delivery after secure Stripe checkout</li>
+          </ul>
+        </div>
+        <div class="price-box">
+          <span>Complete digital edition</span>
+          <strong>$29</strong>
+          <small>USD &middot; one-time purchase</small>
+          <a class="button button-wide js-buy" href="#purchase">Buy Metals Market Structure</a>
+          <p>PDF and EPUB included.</p>
+        </div>
       </div>
-    </footer>
+    </section>
 
+    <section class="section faq-section">
+      <div class="shell">
+        <div class="section-heading compact">
+          <p class="section-kicker">Questions</p>
+          <h2>Before you buy</h2>
+        </div>
+        <div class="faq-grid">
+          <details>
+            <summary>What formats are included?</summary>
+            <p>Your purchase includes both the print-ready PDF and reflowable EPUB editions.</p>
+          </details>
+          <details>
+            <summary>Does the book teach trade setups?</summary>
+            <p>No. It explains metals-market structure, liquidity, regimes, and risk. It does not provide signals, entries, or a trading system.</p>
+          </details>
+          <details>
+            <summary>Do I need Volume I first?</summary>
+            <p>No. Volume II stands on its own, while readers of the full series will recognize the same hierarchy-and-regime method applied to metals.</p>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <div>
+        <strong>Grizzly Parrot Trading</strong>
+        <p>Clear market education built around structure, liquidity, and risk.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="/books/">Books</a>
+        <a href="/about.html">About</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <p class="copyright">&copy; <span id="year"></span> Grizzly Parrot Trading</p>
+    </div>
+  </footer>
 
   <script>
     (function () {
-      var el = document.getElementById("year");
-      if (el) { el.textContent = new Date().getFullYear(); }
+      var checkoutUrl = "https://buy.stripe.com/dRmbJ2dSl2061Ta0UE2Nq02";
+      var buttons = document.querySelectorAll('.js-buy');
+
+      buttons.forEach(function (button) {
+        button.href = checkoutUrl;
+        button.target = '_blank';
+        button.rel = 'noopener';
+        button.addEventListener('click', function () {
+          if (typeof gtag === 'function') {
+            gtag('event', 'click', {
+              event_category: 'Book',
+              event_label: 'Buy Metals Market Structure (Stripe)'
+            });
+            gtag('event', 'conversion', {
+              send_to: 'AW-17793230727/cO1aCN3Jh88bEIfPvKRC',
+              value: 29.0,
+              currency: 'USD'
+            });
+          }
+        });
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
     })();
   </script>
-
 </body>
 </html>

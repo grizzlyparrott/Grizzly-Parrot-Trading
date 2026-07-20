@@ -1,509 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
-  <title>Currency Market Structure (Volume I) - Grizzly Parrot Trading</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Currency Market Structure explains why your forex positions move together when you expect them not to — and how the global currency system actually works as a connected structure.">
+  <title>Currency Market Structure (Volume I) | Grizzly Parrot Trading</title>
+  <meta name="description" content="Currency Market Structure explains how liquidity, sessions, funding currencies, commodity exposure, and shared capital flows connect the global currency market.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://grizzlyparrottrading.com/books/currency-market-structure/">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Currency Market Structure (Volume I)">
-  <meta property="og:description" content="Why your forex positions move together when you expect them not to — and how the global currency system actually works.">
-  <meta property="og:type" content="website">
+  <meta property="og:description" content="A structural field guide to liquidity, sessions, funding currencies, correlation, and portfolio-level FX risk.">
+  <meta property="og:type" content="book">
   <meta property="og:url" content="https://grizzlyparrottrading.com/books/currency-market-structure/">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/books/currency-market-structure/currency-market-structure-cover.png">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Currency Market Structure (Volume I)">
-  <meta name="twitter:description" content="Why your forex positions move together when you expect them not to — and how the global currency system actually works.">
+  <meta name="twitter:description" content="Understand currencies as a connected system of liquidity, funding, sessions, correlation, and shared risk.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/books/currency-market-structure/currency-market-structure-cover.png">
-  <meta name="twitter:url" content="https://grizzlyparrottrading.com/books/currency-market-structure/">
 
-  <style>
-    :root {
-      --bg: #050608;
-      --bg-elevated: #0c0f14;
-      --accent: #22ff88;
-      --accent-soft: rgba(34,255,136,0.12);
-      --text-main: #f5f5f5;
-      --text-muted: #a0a4b0;
-      --border-subtle: #20242f;
-      --shadow-soft: 0 24px 60px rgba(0,0,0,0.7);
-      --radius-lg: 18px;
-      --radius-xl: 22px;
-      --radius-pill: 999px;
-      --max-width: 1100px;
-      --transition-fast: 0.16s ease-out;
-      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-serif: "Georgia", "Times New Roman", serif;
-    }
-
-    * { box-sizing: border-box; }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: radial-gradient(circle at top, #111320 0, #050608 40%);
-      color: var(--text-main);
-      font-family: var(--font-main);
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    .page {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 24px 16px 56px;
-    }
-
-    /* Header */
-
-    .site-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 32px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 10px;
-      background: radial-gradient(circle at 20% 0%, #22ff88, #0b1b13 55%, #050608);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 0.04em;
-      box-shadow: 0 0 18px rgba(34,255,136,0.5);
-      flex-shrink: 0;
-    }
-
-    .brand-text-main { font-size: 15px; font-weight: 600; }
-    .brand-text-sub {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-muted);
-    }
-
-    .top-cta {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      font-size: 13px;
-    }
-
-    .top-cta a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 8px 16px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(34,255,136,0.5);
-      background: rgba(34,255,136,0.1);
-      color: var(--accent);
-      font-weight: 600;
-      transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
-      box-shadow: 0 12px 30px rgba(34,255,136,0.3);
-      white-space: nowrap;
-    }
-
-    .top-cta a:hover {
-      background: var(--accent);
-      color: #021005;
-      transform: translateY(-1px);
-      box-shadow: 0 18px 48px rgba(34,255,136,0.55);
-    }
-
-    .top-cta a span.icon { font-size: 15px; }
-
-    /* Hero */
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
-      gap: 28px;
-      align-items: center;
-      margin-bottom: 40px;
-    }
-
-    .hero-copy {
-      padding: 22px 22px 24px;
-      background: linear-gradient(135deg, rgba(34,255,136,0.07), rgba(5,6,8,0.92));
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(34,255,136,0.35);
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-copy::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at -10% -10%, rgba(34,255,136,0.45), transparent 50%);
-      opacity: 0.42;
-      pointer-events: none;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 3px 11px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(34,255,136,0.6);
-      background: rgba(5,6,8,0.9);
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 12px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-eyebrow span.dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 12px rgba(34,255,136,0.9);
-    }
-
-    .hero-title {
-      font-family: var(--font-serif);
-      font-size: 34px;
-      line-height: 1.1;
-      margin: 0 0 6px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-subtitle {
-      font-size: 16px;
-      color: var(--text-muted);
-      margin: 0 0 16px;
-      position: relative;
-      z-index: 1;
-      line-height: 1.55;
-    }
-
-    .series-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.02);
-      color: var(--text-muted);
-      font-size: 12px;
-      margin-bottom: 14px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .series-tag strong {
-      color: var(--text-main);
-      font-weight: 600;
-    }
-
-    .hero-body {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-body p {
-      margin: 0 0 12px;
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.65;
-    }
-
-    .hero-body p strong {
-      color: var(--text-main);
-      font-weight: 600;
-    }
-
-    .hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      position: relative;
-      z-index: 1;
-      margin-top: 14px;
-      margin-bottom: 8px;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 10px 18px;
-      border-radius: var(--radius-pill);
-      border: none;
-      background: var(--accent);
-      color: #021005;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 16px 40px rgba(34,255,136,0.4);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
-      white-space: nowrap;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px) scale(1.01);
-      box-shadow: 0 18px 48px rgba(34,255,136,0.55);
-      filter: brightness(1.03);
-    }
-
-    .btn-primary span.icon { font-size: 16px; }
-
-    .hero-meta {
-      font-size: 12px;
-      color: var(--text-muted);
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-meta span { margin-right: 16px; }
-    .hero-meta strong { color: var(--text-main); font-weight: 500; }
-
-    /* Cover card */
-
-    .hero-cover {
-      padding: 14px;
-      background: radial-gradient(circle at top, #181b26 0, #050608 60%);
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(255,255,255,0.05);
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .cover-frame {
-      border-radius: 14px;
-      padding: 10px;
-      background: radial-gradient(circle at top, rgba(34,255,136,0.32), rgba(5,6,8,0.96));
-      border: 1px solid rgba(34,255,136,0.5);
-      box-shadow: 0 12px 34px rgba(0,0,0,0.9);
-    }
-
-    .cover-inner {
-      border-radius: 10px;
-      overflow: hidden;
-      background: #000;
-      aspect-ratio: 3 / 4;
-      display: flex;
-    }
-
-    .cover-inner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .cover-caption {
-      font-size: 12px;
-      color: var(--text-muted);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .cover-caption strong { color: var(--text-main); font-weight: 500; }
-
-    .price-tag {
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    /* Sections */
-
-    .section {
-      margin-bottom: 28px;
-      padding: 20px 18px 22px;
-      border-radius: var(--radius-lg);
-      background: rgba(7,9,13,0.96);
-      border: 1px solid var(--border-subtle);
-    }
-
-    .section h2 {
-      margin: 0 0 8px;
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    .section p {
-      margin: 4px 0 10px;
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.65;
-    }
-
-    .section p strong {
-      color: var(--text-main);
-      font-weight: 600;
-    }
-
-    .insight-list {
-      list-style: none;
-      margin: 12px 0 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .insight-list li {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .insight-list li .bullet {
-      flex-shrink: 0;
-      margin-top: 4px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 8px rgba(34,255,136,0.7);
-    }
-
-    .insight-list li strong {
-      color: var(--text-main);
-      font-weight: 600;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 8px;
-    }
-
-    .pill-row span {
-      font-size: 12px;
-      padding: 5px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.01);
-      color: var(--text-muted);
-    }
-
-    .details-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .detail-card {
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.01);
-    }
-
-    .detail-card .label {
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .detail-card .value {
-      font-size: 14px;
-      color: var(--text-main);
-      font-weight: 600;
-      line-height: 1.25;
-    }
-
-    /* Footer */
-
-    .site-footer {
-      margin-top: 16px;
-      padding-top: 8px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 10px;
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      text-decoration: underline;
-      text-decoration-color: rgba(255,255,255,0.18);
-      text-underline-offset: 3px;
-    }
-
-    /* Responsive */
-
-    @media (max-width: 900px) {
-      .details-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    @media (max-width: 800px) {
-      .hero { grid-template-columns: minmax(0, 1fr); }
-      .hero-cover { order: -1; }
-    }
-
-    @media (max-width: 600px) {
-      .site-header { flex-direction: column; align-items: flex-start; }
-      .hero-copy { padding: 18px 16px 20px; }
-      .hero-title { font-size: 28px; }
-      .details-grid { grid-template-columns: minmax(0, 1fr); }
-    }
-  </style>
-
-  <!-- Google tag (gtag.js) for GA4 + Google Ads -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -513,213 +31,272 @@
     gtag('config', 'AW-17793230727');
   </script>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var buyUrl = "https://buy.stripe.com/3cI4gA7tX8ou7du1YI2Nq01";
-      var buyLinks = document.querySelectorAll('a[data-track="buy"]');
-      for (var i = 0; i < buyLinks.length; i++) {
-        buyLinks[i].setAttribute("href", buyUrl);
-        buyLinks[i].addEventListener('click', function () {
-          gtag('event', 'buy_book_click', {
-            event_category: 'conversion',
-            event_label: 'Buy Currency Market Structure (Stripe)'
-          });
-        });
-      }
-    });
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Currency Market Structure",
+    "alternateName": "Market Structure Series, Volume I",
+    "author": {"@type": "Person", "name": "Kyle Parrott"},
+    "bookFormat": "EBook",
+    "inLanguage": "en",
+    "image": "https://grizzlyparrottrading.com/books/currency-market-structure/currency-market-structure-cover.png",
+    "url": "https://grizzlyparrottrading.com/books/currency-market-structure/",
+    "description": "A structural framework for understanding the connected currency complex across liquidity tiers, sessions, funding currencies, commodity exposure, correlation, and portfolio risk.",
+    "isPartOf": {
+      "@type": "BookSeries",
+      "name": "Market Structure Series"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "29.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://buy.stripe.com/3cI4gA7tX8ou7du1YI2Nq01"
+    }
+  }
   </script>
 
-  <script>
-    gtag('event', 'conversion', {
-      send_to: 'AW-17793230727/cO1aCN3Jh88bEIfPvKRC',
-      value: 1.0,
-      currency: 'USD'
-    });
-  </script>
-
+  <link rel="stylesheet" href="../market-structure-series.css">
 </head>
-
 <body>
-  <main class="page">
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/" aria-label="Grizzly Parrot Trading home">
+        <span class="brand-mark">GP</span>
+        <span>
+          <strong>Grizzly Parrot Trading</strong>
+          <small>Market Structure Series</small>
+        </span>
+      </a>
+      <nav class="header-nav" aria-label="Book navigation">
+        <a href="/books/">All three volumes</a>
+        <a class="button button-small js-buy" href="#purchase">Buy digital edition</a>
+      </nav>
+    </div>
+  </header>
 
-    <header class="site-header">
-      <div class="brand">
-        <div class="brand-mark">GP</div>
-        <div>
-          <a href="https://grizzlyparrottrading.com/" target="_blank" rel="noopener">
-            <div class="brand-text-main">Grizzly Parrot Trading</div>
-            <div class="brand-text-sub">Structure · Risk · Execution</div>
-          </a>
-        </div>
-      </div>
-
-      <div class="top-cta">
-        <a data-track="buy" target="_blank" rel="noopener">
-          <span class="icon">↗</span>
-          <span>Buy (PDF + EPUB) — $29</span>
-        </a>
-      </div>
-    </header>
-
+  <main>
     <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Market Structure Series &middot; Volume I</p>
+          <h1>Currency Market Structure</h1>
+          <p class="hero-lead">The currency market is not a collection of independent pairs. It is a network of reserve currencies, funding currencies, commodity exposure, sessions, and shared capital flows&mdash;each position carrying more overlap than its ticker suggests.</p>
+          <p class="hero-detail">This volume gives you a structural map for understanding where FX liquidity comes from, why relationships tighten during stress, and how apparently separate trades can become one concentrated position when the underlying driver changes.</p>
 
-      <div class="hero-copy">
-        <div class="hero-eyebrow">
-          <span class="dot"></span>
-          <span>Market Structure Series · Volume I</span>
+          <div class="hero-points" aria-label="Book highlights">
+            <div><strong>10</strong><span>chapters</span></div>
+            <div><strong>PDF + EPUB</strong><span>digital formats</span></div>
+            <div><strong>$29</strong><span>one-time purchase</span></div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="button js-buy" href="#purchase">Buy Volume I &mdash; $29</a>
+            <a class="text-link" href="#inside">See what is inside <span aria-hidden="true">&darr;</span></a>
+          </div>
+          <p class="checkout-note">Secure checkout through Stripe. PDF and EPUB included.</p>
         </div>
 
-        <h1 class="hero-title">Currency Market Structure</h1>
+        <aside class="cover-panel" aria-label="Currency Market Structure book cover and purchase summary">
+          <div class="cover-glow"></div>
+          <img src="currency-market-structure-cover.png" alt="Cover of Currency Market Structure, Volume I by Kyle Parrott">
+          <div class="cover-caption">
+            <span>Digital edition</span>
+            <strong>PDF + EPUB &middot; $29</strong>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-        <p class="hero-subtitle">
-          Most forex traders hold multiple positions and call it diversification.<br>
-          It isn't. This book explains why — and how the currency system actually works.
-        </p>
+    <section class="section section-dark">
+      <div class="shell statement-grid">
+        <div>
+          <p class="section-kicker">The central problem</p>
+          <h2>Diversification disappears when the driver is shared.</h2>
+        </div>
+        <div class="statement-copy">
+          <p>A portfolio can contain five currency pairs and still express one risk. Funding conditions, dollar liquidity, commodity demand, or risk sentiment can run through every position at the same time.</p>
+          <p>When the regime changes, correlations tighten and the independence you thought you owned disappears. This book explains the mechanism before it becomes a drawdown.</p>
+        </div>
+      </div>
+    </section>
 
-        <div class="hero-body">
-          <p>
-            When risk conditions shift, <strong>correlated positions move together regardless of how many pairs you hold.</strong>
-            The apparent diversification disappears because the same underlying driver — funding conditions, risk sentiment,
-            commodity demand — is running through every position simultaneously.
-          </p>
-          <p>
-            Currency Market Structure builds the framework for understanding why this happens: how pairs are classified,
-            how liquidity moves across sessions, how correlations emerge from shared capital flows, and how portfolio
-            exposure compounds when the structure underneath it isn't understood.
-          </p>
-          <p>
-            <strong>No setups. No signals. No indicators.</strong> This is the structural layer that trading methods sit on top of —
-            and that most traders never read.
-          </p>
+    <section class="section" id="inside">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="section-kicker">What the framework covers</p>
+          <h2>From the liquidity hierarchy to portfolio-level exposure.</h2>
+          <p>The chapters move through the currency system in structural order, connecting pair behavior to the capital flows and execution conditions underneath it.</p>
         </div>
 
-        <div class="hero-ctas">
-          <a class="btn-primary" data-track="buy" target="_blank" rel="noopener">
-            <span class="icon">↗</span>
-            <span>Download the Book — $29</span>
+        <div class="topic-grid">
+          <article>
+            <span class="topic-number">01</span>
+            <h3>Pair classification and liquidity</h3>
+            <p>Why majors, crosses, and exotics have different execution costs, depth, continuity, and sensitivity to changing participation.</p>
+          </article>
+          <article>
+            <span class="topic-number">02</span>
+            <h3>Session mechanics</h3>
+            <p>How Asian, London, and New York participation shapes volatility, spreads, price discovery, and daily range formation.</p>
+          </article>
+          <article>
+            <span class="topic-number">03</span>
+            <h3>European crosses</h3>
+            <p>How EUR/USD, EUR/GBP, and EUR/CHF differ from one another and why European flows can separate from the dollar narrative.</p>
+          </article>
+          <article>
+            <span class="topic-number">04</span>
+            <h3>Risk and commodity currencies</h3>
+            <p>How AUD, NZD, and CAD transmit shifts in global risk appetite, oil, iron ore, agriculture, and regional demand.</p>
+          </article>
+          <article>
+            <span class="topic-number">05</span>
+            <h3>Yen and funding dynamics</h3>
+            <p>Why the yen can behave as both a funding currency and a haven, and how carry unwinds reshape the broader FX matrix.</p>
+          </article>
+          <article>
+            <span class="topic-number">06</span>
+            <h3>Correlation and portfolio risk</h3>
+            <p>Where correlation comes from, when it breaks, how triangular arbitrage enforces consistency, and why size multiplies shared exposure.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-accent">
+      <div class="shell audience-grid">
+        <div>
+          <p class="section-kicker">Built for structural thinkers</p>
+          <h2>This is not an introduction to forex.</h2>
+          <p>It does not teach pips, chart patterns, or a fixed setup. It assumes you know the mechanics and want to understand the market infrastructure your method operates inside.</p>
+        </div>
+        <ul class="check-list">
+          <li>Multi-pair FX traders who want to see their true combined exposure</li>
+          <li>Futures and spot traders studying session-specific liquidity</li>
+          <li>Macro traders tracking funding, risk sentiment, and commodity transmission</li>
+          <li>Readers who want context beneath ICT, SMC, or order-flow frameworks</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-heading compact">
+          <p class="section-kicker">The complete collection</p>
+          <h2>One structural method across three market systems.</h2>
+        </div>
+
+        <div class="series-grid">
+          <a class="current" href="/books/currency-market-structure/" aria-current="page">
+            <span>Volume I</span>
+            <strong>Currency Market Structure</strong>
+            <small>Reserve, funding, haven, and risk currencies</small>
+          </a>
+          <a href="/books/metals-market-structure/">
+            <span>Volume II</span>
+            <strong>Metals Market Structure</strong>
+            <small>Monetary, industrial, and physical-market regimes</small>
+          </a>
+          <a href="/books/equity-market-structure/">
+            <span>Volume III</span>
+            <strong>Equity Market Structure</strong>
+            <small>Futures, cash, ETFs, sectors, volatility, and stocks</small>
           </a>
         </div>
-
-        <div class="hero-meta">
-          <span><strong>Format:</strong> PDF + EPUB</span>
-          <span><strong>Author:</strong> Kyle Parrott</span>
-          <span><strong>Delivery:</strong> Instant</span>
-        </div>
-      </div>
-
-      <aside class="hero-cover" aria-label="Book cover preview">
-        <div class="cover-frame">
-          <div class="cover-inner">
-            <img src="currency-market-structure-cover.png" alt="Book cover: Currency Market Structure (Volume I)">
-          </div>
-        </div>
-        <div class="cover-caption">
-          <div>
-            <strong>Currency Market Structure</strong><br>
-            <span>Digital edition · PDF + EPUB</span>
-          </div>
-          <div class="price-tag">$29</div>
-        </div>
-      </aside>
-
-    </section>
-
-    <section class="section">
-      <h2>What this book actually covers</h2>
-      <p>
-        Ten chapters. No filler. Each one builds on the last.
-      </p>
-      <ul class="insight-list">
-        <li><span class="bullet"></span><div><strong>Pair classification and liquidity hierarchy</strong> — why majors, crosses, and exotics behave differently and what that means for execution cost and price continuity.</div></li>
-        <li><span class="bullet"></span><div><strong>Session mechanics</strong> — how Asian, London, and New York participation shapes volatility, spread behavior, and daily range formation for each pair type.</div></li>
-        <li><span class="bullet"></span><div><strong>European crosses</strong> — EUR/USD, EUR/GBP, EUR/CHF: how they differ from USD pairs, why they can decouple from dollar flows, and how their correlation structure works during the London session.</div></li>
-        <li><span class="bullet"></span><div><strong>USD-anchored risk currencies</strong> — AUD, NZD, CAD as risk-on expressions and how risk-off flow changes execution conditions across the whole group simultaneously.</div></li>
-        <li><span class="bullet"></span><div><strong>The yen's dual role</strong> — funding currency mechanics, carry trade dynamics, and why yen strength during stress events is structural, not random.</div></li>
-        <li><span class="bullet"></span><div><strong>Commodity currencies</strong> — how iron ore, oil, and agricultural prices transmit directly into AUD, CAD, and NZD pricing and what that means for execution during commodity volatility.</div></li>
-        <li><span class="bullet"></span><div><strong>Exotic pairs</strong> — why execution is fundamentally different, when exotics are actually tradeable, and what liquidity constraints mean in practice.</div></li>
-        <li><span class="bullet"></span><div><strong>Correlation mechanics</strong> — where correlation comes from, when it tightens, when it breaks, and how triangular arbitrage enforces consistency across the FX matrix.</div></li>
-        <li><span class="bullet"></span><div><strong>Portfolio-level risk</strong> — why position size is a multiplier on correlation, how correlated exposure compounds during stress, and why execution reality defines true risk more accurately than mark-to-market.</div></li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>Who reads this</h2>
-      <p>
-        This book is for traders who already know how to trade but feel like they're missing the layer underneath.
-        You've been in the market long enough to notice that your positions don't behave independently —
-        that something connects them during drawdowns that wasn't obvious when you entered.
-      </p>
-      <p>
-        This is not an introduction to forex. It does not explain what a pip is.
-        It assumes you already know the mechanics of execution and focuses entirely on
-        <strong>why the market behaves the way it does at a structural level.</strong>
-      </p>
-      <p>
-        If you've read ICT material, studied SMC concepts, or spent time on institutional order flow —
-        this book covers the currency-specific infrastructure those frameworks operate inside.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>What it does not contain</h2>
-      <p>
-        No trade setups. No entry signals. No indicator configurations. No "buy gold if X" type conclusions.
-        No promise of a system or edge. No backtest results.
-      </p>
-      <p>
-        If you want a method, this is not it. If you want to understand the structure that methods operate inside —
-        <strong>this is exactly it.</strong>
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>Edition details</h2>
-      <p>
-        Digital edition. Delivered instantly after purchase as both PDF and EPUB.
-      </p>
-
-      <div class="details-grid" role="list">
-        <div class="detail-card" role="listitem">
-          <div class="label">Formats</div>
-          <div class="value">PDF + EPUB</div>
-        </div>
-        <div class="detail-card" role="listitem">
-          <div class="label">Series</div>
-          <div class="value">Market Structure · Volume I</div>
-        </div>
-        <div class="detail-card" role="listitem">
-          <div class="label">Price</div>
-          <div class="value">$29</div>
-        </div>
-      </div>
-
-      <div class="hero-ctas" style="margin-top:14px;">
-        <a class="btn-primary" data-track="buy" target="_blank" rel="noopener">
-          <span class="icon">↗</span>
-          <span>Buy (PDF + EPUB) — $29</span>
-        </a>
       </div>
     </section>
 
-    <footer class="site-footer">
-      <div>
-        &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
+    <section class="purchase-section" id="purchase">
+      <div class="shell purchase-card">
+        <div>
+          <p class="section-kicker">Volume I digital edition</p>
+          <h2>See the system behind every pair.</h2>
+          <p>Get the complete Currency Market Structure book in PDF and EPUB formats.</p>
+          <ul>
+            <li>PDF for desktop reading and annotation</li>
+            <li>EPUB for phones, tablets, and e-readers</li>
+            <li>Immediate delivery after secure Stripe checkout</li>
+          </ul>
+        </div>
+        <div class="price-box">
+          <span>Complete digital edition</span>
+          <strong>$29</strong>
+          <small>USD &middot; one-time purchase</small>
+          <a class="button button-wide js-buy" href="#purchase">Buy Currency Market Structure</a>
+          <p>PDF and EPUB included.</p>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="https://grizzlyparrottrading.com/" target="_blank" rel="noopener">Grizzly Parrot Trading</a>
-        <a href="https://grizzlyparrottrading.com/books/metals-market-structure/" target="_blank" rel="noopener">Metals Market Structure Vol. II</a>
-        <a href="https://grizzlyparrottrading.com/books/equity-market-structure/" target="_blank" rel="noopener">Equity Market Structure Vol. III</a>
-      </div>
-    </footer>
+    </section>
 
+    <section class="section faq-section">
+      <div class="shell">
+        <div class="section-heading compact">
+          <p class="section-kicker">Questions</p>
+          <h2>Before you buy</h2>
+        </div>
+        <div class="faq-grid">
+          <details>
+            <summary>What formats are included?</summary>
+            <p>Your purchase includes both the print-ready PDF and reflowable EPUB editions.</p>
+          </details>
+          <details>
+            <summary>Does the book teach trade setups?</summary>
+            <p>No. It explains currency-market structure, liquidity, correlation, and risk. It does not provide signals, entries, or a trading system.</p>
+          </details>
+          <details>
+            <summary>Who is this written for?</summary>
+            <p>It is written for traders who already understand basic execution and want the structural layer beneath individual pairs and methods.</p>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <div>
+        <strong>Grizzly Parrot Trading</strong>
+        <p>Clear market education built around structure, liquidity, and risk.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="/books/">Books</a>
+        <a href="/about.html">About</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <p class="copyright">&copy; <span id="year"></span> Grizzly Parrot Trading</p>
+    </div>
+  </footer>
 
   <script>
     (function () {
-      var el = document.getElementById("year");
-      if (el) { el.textContent = new Date().getFullYear(); }
+      var checkoutUrl = "https://buy.stripe.com/3cI4gA7tX8ou7du1YI2Nq01";
+      var buttons = document.querySelectorAll('.js-buy');
+
+      buttons.forEach(function (button) {
+        button.href = checkoutUrl;
+        button.target = '_blank';
+        button.rel = 'noopener';
+        button.addEventListener('click', function () {
+          if (typeof gtag === 'function') {
+            gtag('event', 'click', {
+              event_category: 'Book',
+              event_label: 'Buy Currency Market Structure (Stripe)'
+            });
+            gtag('event', 'conversion', {
+              send_to: 'AW-17793230727/cO1aCN3Jh88bEIfPvKRC',
+              value: 29.0,
+              currency: 'USD'
+            });
+          }
+        });
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
     })();
   </script>
-
 </body>
 </html>
