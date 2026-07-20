@@ -132,6 +132,18 @@ a { color: inherit; }
 
 .button-wide { width: 100%; }
 
+.button-secondary {
+  border-color: rgba(60,255,145,.46);
+  background: transparent;
+  color: var(--green);
+  box-shadow: none;
+}
+
+.button-secondary:hover {
+  background: rgba(60,255,145,.08);
+  box-shadow: none;
+}
+
 .button-disabled {
   border-color: #59635d;
   background: #59635d;
@@ -473,6 +485,12 @@ h2 {
   color: var(--muted);
 }
 
+.edition-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
 .price-box {
   padding: 28px;
   border: 1px solid var(--line);
@@ -508,6 +526,15 @@ h2 {
   margin: 10px 0 0;
   color: var(--muted);
   font-size: .72rem;
+}
+
+.price-box.is-paperback {
+  border-color: rgba(60,255,145,.24);
+  background: linear-gradient(160deg, rgba(60,255,145,.07), rgba(0,0,0,.22));
+}
+
+.edition-options .price-box > strong {
+  font-size: clamp(3.4rem, 5vw, 4.4rem);
 }
 
 .faq-section { padding-top: 30px; }
@@ -621,6 +648,8 @@ footer {
   .purchase-section { padding-bottom: 70px; }
 
   .purchase-card { padding: 25px 19px; }
+
+  .edition-options { grid-template-columns: 1fr; }
 
   .footer-inner { grid-template-columns: 1fr; }
 
