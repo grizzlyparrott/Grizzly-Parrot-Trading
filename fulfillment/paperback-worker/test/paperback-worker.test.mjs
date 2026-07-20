@@ -7,7 +7,7 @@ import { hmacHex, verifyStripeSignature, signedAssetUrl, verifyAssetRequest } fr
 import { LuluClient, shippingCents } from "../src/lulu.mjs";
 import { StripeClient } from "../src/stripe.mjs";
 import { OrderStore } from "../src/order-store.mjs";
-import worker from "../src/index.mjs";
+import worker, { luluStatusFromJob, suggestedAddressDiffers } from "../src/index.mjs";
 
 const validAddress = {
   name: "Test Reader",
@@ -49,7 +49,32 @@ test("checkout address validation rejects missing carrier-required phone numbers
 
 test("Stripe address comparison prevents fulfillment when Checkout address differs from the quoted address", () => {
   assert.equal(addressesMatch(validAddress, { name: "Test Reader", phone: "+1 919 555 0100", address: { line1: "123 Test Street", line2: "", city: "Raleigh", state: "NC", postal_code: "27601", country: "US" } }), true);
+  assert.equal(addressesMatch({ ...validAddress, street1: "123 Test St." }, { name: "Test Reader", phone: "+1 919 555 0100", address: { line1: "123 Test Street", line2: "", city: "Raleigh", state: "NC", postal_code: "27601", country: "US" } }), true);
+  assert.equal(addressesMatch({ ...validAddress, postcode: "27601-1234" }, { name: "Test Reader", phone: "+1 919 555 0100", address: { line1: "123 Test Street", line2: "", city: "Raleigh", state: "NC", postal_code: "27601", country: "US" } }), true);
   assert.equal(addressesMatch(validAddress, { name: "Test Reader", address: { line1: "999 Other Street", city: "Raleigh", state: "NC", postal_code: "27601", country: "US" } }), false);
+  assert.equal(addressesMatch(validAddress, { name: "Test Reader", address: { line1: "123 Test Street", city: "Raleigh", state: "NC", postal_code: "99999", country: "US" } }), false);
+});
+
+test("Lulu postal normalization only pauses checkout when it materially changes the address", () => {
+  const sameAddress = {
+    street1: "123 Test Street",
+    street2: "",
+    city: "Raleigh",
+    state_code: "NC",
+    postcode: "27601",
+    country_code: "US"
+  };
+  assert.equal(suggestedAddressDiffers(validAddress, sameAddress), false);
+  assert.equal(suggestedAddressDiffers({ ...validAddress, street1: "123 Test St." }, { ...sameAddress, street1: "123 Test Street" }), false);
+  assert.equal(suggestedAddressDiffers({ ...validAddress, postcode: "27601-1234" }, sameAddress), false);
+  assert.equal(suggestedAddressDiffers(validAddress, { ...sameAddress, street1: "125 Test Street" }), true);
+});
+
+test("Lulu object statuses are normalized before they are saved to D1", () => {
+  assert.equal(luluStatusFromJob({ status: "CREATED" }), "CREATED");
+  assert.equal(luluStatusFromJob({ status: { name: "UNPAID" } }), "UNPAID");
+  assert.equal(luluStatusFromJob({ print_job_status: { value: "SHIPPED" } }), "SHIPPED");
+  assert.equal(luluStatusFromJob({}), "CREATED");
 });
 
 test("Stripe webhook HMAC verification accepts a current signed payload and rejects a tampered one", async () => {
@@ -94,6 +119,7 @@ test("Lulu quote and print-job payload use its API package and hosted PDFs, not 
   const jobRequest = requests.find((request) => request.url.endsWith("/print-jobs/"));
   const payload = JSON.parse(jobRequest.init.body);
   assert.equal(payload.external_id, "gpt_cs_test");
+  assert.equal(payload.line_items[0].title, book.title);
   assert.equal(payload.line_items[0].pod_package_id, POD_PACKAGE_ID);
   const quoteRequest = requests.find((request) => request.url.endsWith("/print-job-cost-calculations/"));
   const quotePayload = JSON.parse(quoteRequest.init.body);

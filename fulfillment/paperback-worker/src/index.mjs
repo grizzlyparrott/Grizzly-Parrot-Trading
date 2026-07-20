@@ -1,5 +1,5 @@
-import { getBook, getStripePriceId, SHIPPING_OPTIONS } from "./catalog.mjs";
-import { validateCheckoutRequest, addressesMatch, normalizeAddress } from "./validation.mjs";
+import { getBook, getStripePriceId, PAPERBACK_BOOKS, SHIPPING_OPTIONS } from "./catalog.mjs";
+import { validateCheckoutRequest, addressesMatch, normalizeAddress, postcodesMatch, streetLinesMatch } from "./validation.mjs";
 import { verifyAssetRequest, constantTimeEqual } from "./crypto.mjs";
 import { LuluApiError, LuluClient, shippingCents } from "./lulu.mjs";
 import { StripeApiError, StripeClient, parseVerifiedStripeEvent } from "./stripe.mjs";
@@ -69,6 +69,24 @@ function assertShippingOption(input) {
     throw new Error("Choose a valid shipping option.");
   }
   return shippingOption;
+}
+
+function suggestedAddressDiffers(address, suggested) {
+  const normalizedSuggestion = normalizeAddress({
+    name: address.name,
+    street1: suggested.street1,
+    street2: suggested.street2,
+    city: suggested.city,
+    stateCode: suggested.state_code,
+    postcode: suggested.postcode,
+    countryCode: suggested.country_code,
+    phoneNumber: address.phoneNumber,
+    isBusiness: address.isBusiness
+  });
+  return ["street2", "city", "stateCode", "countryCode"]
+    .some((field) => normalizedSuggestion[field] !== address[field])
+    || !streetLinesMatch(address.street1, normalizedSuggestion.street1)
+    || !postcodesMatch(address.postcode, normalizedSuggestion.postcode, address.countryCode);
 }
 
 function quoteFromRow(row) {
@@ -173,7 +191,7 @@ async function createQuote(request, env) {
   try {
     const luluQuote = await new LuluClient(env).quote({ book, quantity: validated.quantity, address: validated.address, shippingOption });
     const suggested = luluQuote?.shipping_address?.suggested_address;
-    if (suggested && Object.keys(suggested).length > 0) {
+    if (suggested && Object.keys(suggested).length > 0 && suggestedAddressDiffers(validated.address, suggested)) {
       return json({ ok: false, code: "address_needs_review", message: "Lulu suggested a different shipping address.", suggestedAddress: suggested }, 422, cors(request, env));
     }
     const quote = {
@@ -227,6 +245,14 @@ async function createCheckout(request, env) {
   }
 }
 
+export function luluStatusFromJob(job) {
+  const candidate = job?.status ?? job?.print_job_status;
+  if (typeof candidate === "string") return candidate;
+  if (typeof candidate?.name === "string") return candidate.name;
+  if (typeof candidate?.value === "string") return candidate.value;
+  return "CREATED";
+}
+
 async function submitPaidOrder(store, env, sessionId) {
   const order = orderFromRow(await store.get(sessionId));
   if (!order || !(await store.claimForSubmission(sessionId, nowIso()))) return;
@@ -245,7 +271,7 @@ async function submitPaidOrder(store, env, sessionId) {
     });
     const printJobId = job.id || job.print_job_id;
     if (!printJobId) throw new LuluApiError("lulu_response_invalid", "Lulu accepted the request without a print job ID.");
-    await store.markSubmitted(sessionId, String(printJobId), job.status || "CREATED", nowIso());
+    await store.markSubmitted(sessionId, String(printJobId), luluStatusFromJob(job), nowIso());
     const submitted = orderFromRow(await store.get(sessionId));
     try {
       await emailOrderConfirmation(env, submitted, book);
@@ -314,6 +340,7 @@ async function stripeWebhook(request, env) {
 }
 
 async function pollStatuses(env) {
+  log("lulu_status_poll_started");
   const store = new OrderStore(env.PAPERBACK_ORDERS);
   for (const row of await store.ordersNeedingConfirmation()) {
     const order = orderFromRow(row);
@@ -331,7 +358,7 @@ async function pollStatuses(env) {
     if (!book) continue;
     try {
       const status = await new LuluClient(env).status(order.lulu_print_job_id);
-      const nextStatus = status.status || status.print_job_status || "UNKNOWN";
+      const nextStatus = luluStatusFromJob(status);
       if (nextStatus !== order.lulu_status) {
         await store.updateLuluStatus(order.stripe_session_id, nextStatus, JSON.stringify(status), nowIso());
         log("lulu_status_changed", { sessionId: order.stripe_session_id, from: order.lulu_status, to: nextStatus });
@@ -346,7 +373,7 @@ async function pollStatuses(env) {
         await notifyAdmin(env, "Paperback fulfillment needs review", `<p>Stripe session: ${escapeHtml(order.stripe_session_id)}</p><p>Lulu status: ${escapeHtml(nextStatus)}</p>`);
       }
     } catch (error) {
-      log("lulu_status_poll_failed", { sessionId: order.stripe_session_id, code: error.code || "unknown" });
+      log("lulu_status_poll_failed", { sessionId: order.stripe_session_id, code: error.code || "unknown", message: String(error.message || "") });
     }
   }
 }
@@ -375,7 +402,8 @@ function providerError(error, request, env, action) {
 
 async function serveAsset(request, env, pathname) {
   const assetKey = decodeURIComponent(pathname.slice("/lulu-assets/".length));
-  if (!assetKey || assetKey.includes("..") || !assetKey.startsWith("paperback/")) return new Response("Not found", { status: 404 });
+  const permittedAssetKeys = new Set(Object.values(PAPERBACK_BOOKS).flatMap((book) => [book.assets.interiorKey, book.assets.coverKey]));
+  if (!permittedAssetKeys.has(assetKey)) return new Response("Not found", { status: 404 });
   const url = new URL(request.url);
   const authorized = await verifyAssetRequest(assetKey, url.searchParams.get("expires"), url.searchParams.get("sig"), env.PAPERBACK_ASSET_SIGNING_SECRET || "");
   if (!authorized) return new Response("Not found", { status: 404 });
@@ -409,4 +437,4 @@ export default {
   }
 };
 
-export { createQuote, createCheckout, stripeWebhook, pollStatuses, quoteFromRow, orderFromRow };
+export { createQuote, createCheckout, stripeWebhook, pollStatuses, quoteFromRow, orderFromRow, suggestedAddressDiffers };

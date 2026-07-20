@@ -69,6 +69,40 @@ export function addressesMatch(expected, received) {
     countryCode: received.address?.country ?? received.country_code,
     phoneNumber: received.phone ?? received.phone_number
   });
-  return ["name", "street1", "street2", "city", "stateCode", "postcode", "countryCode"]
-    .every((key) => expected[key] === actual[key]);
+  return ["name", "street2", "city", "stateCode", "countryCode"]
+    .every((key) => expected[key] === actual[key])
+    && streetLinesMatch(expected.street1, actual.street1)
+    && postcodesMatch(expected.postcode, actual.postcode, expected.countryCode);
+}
+
+// Stripe Checkout can normalize a US ZIP+4 to its five-digit delivery ZIP.
+// Those are the same USPS destination, so do not turn an otherwise valid paid
+// order into a manual-review case. Other countries remain exact after normalizing.
+export function postcodesMatch(expected, actual, countryCode) {
+  if (countryCode === "US") {
+    return expected.replace(/\D/g, "").slice(0, 5) === actual.replace(/\D/g, "").slice(0, 5);
+  }
+  return expected === actual;
+}
+
+// Carriers and checkout forms commonly expand a standard USPS suffix ("St" →
+// "Street"). Compare a canonical form without accepting a changed house number
+// or a different street name.
+export function streetLinesMatch(expected, actual) {
+  return canonicalStreetLine(expected) === canonicalStreetLine(actual);
+}
+
+function canonicalStreetLine(value) {
+  const suffixes = {
+    ST: "STREET", RD: "ROAD", AVE: "AVENUE", BLVD: "BOULEVARD", DR: "DRIVE",
+    LN: "LANE", CT: "COURT", PL: "PLACE", PKWY: "PARKWAY", HWY: "HIGHWAY",
+    TER: "TERRACE", CIR: "CIRCLE", WAY: "WAY"
+  };
+  return String(value || "")
+    .toUpperCase()
+    .replace(/[^A-Z0-9 ]/g, " ")
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((part) => suffixes[part] || part)
+    .join(" ");
 }

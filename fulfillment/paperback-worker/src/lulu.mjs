@@ -25,7 +25,9 @@ export class LuluApiError extends Error {
 export class LuluClient {
   constructor(env, fetchImpl = fetch) {
     this.env = env;
-    this.fetch = fetchImpl;
+    // Cloudflare's native fetch requires its original receiver. Wrapping also
+    // keeps injected test doubles working without changing their call shape.
+    this.fetch = (...args) => fetchImpl.call(globalThis, ...args);
     this.baseUrl = env.PAPERBACK_ENVIRONMENT === "production" ? "https://api.lulu.com" : "https://api.sandbox.lulu.com";
   }
 
@@ -81,6 +83,7 @@ export class LuluClient {
       shipping_address: asLuluAddress(address),
       line_items: [{
         external_id: `${externalId}-${book.slug}`,
+        title: book.title,
         pod_package_id: book.podPackageId,
         quantity,
         interior: { source_url: interiorUrl, source_md5sum: book.assets.interiorMd5 },

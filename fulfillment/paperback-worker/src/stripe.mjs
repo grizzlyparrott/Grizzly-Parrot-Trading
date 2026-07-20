@@ -19,7 +19,8 @@ export class StripeApiError extends Error {
 export class StripeClient {
   constructor(env, fetchImpl = fetch) {
     this.env = env;
-    this.fetch = fetchImpl;
+    // Do not detach Cloudflare's native fetch from its required receiver.
+    this.fetch = (...args) => fetchImpl.call(globalThis, ...args);
   }
 
   async request(path, fields, idempotencyKey) {

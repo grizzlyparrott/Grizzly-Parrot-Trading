@@ -14,9 +14,9 @@ export const PAPERBACK_BOOKS = Object.freeze({
     priceCents: 3900,
     priceEnv: "STRIPE_PRICE_CURRENCY_PAPERBACK",
     assets: Object.freeze({
-      interiorKey: "paperback/currency-market-structure/interior.pdf",
+      interiorKey: "Currency-Market-Structure-Volume-I-Lulu-Paperback-Interior.pdf",
       interiorMd5: "FAFB7BF94A27485663E5FBE2C2989A2C",
-      coverKey: "paperback/currency-market-structure/cover.pdf",
+      coverKey: "Currency-Market-Structure-Volume-I-Lulu-Paperback-Cover.pdf",
       coverMd5: "A6CED9A0E5D88EA1AEF3675C7F865CC3"
     })
   }),
@@ -30,9 +30,9 @@ export const PAPERBACK_BOOKS = Object.freeze({
     priceCents: 3900,
     priceEnv: "STRIPE_PRICE_METALS_PAPERBACK",
     assets: Object.freeze({
-      interiorKey: "paperback/metals-market-structure/interior.pdf",
+      interiorKey: "Metals-Market-Structure-Volume-II-Lulu-Paperback-Interior.pdf",
       interiorMd5: "1131F1B9F0726E8298F9E4FB7EADD37D",
-      coverKey: "paperback/metals-market-structure/cover.pdf",
+      coverKey: "Metals-Market-Structure-Volume-II-Lulu-Paperback-Cover.pdf",
       coverMd5: "524E132DB7A67FFCC381678D2E708120"
     })
   }),
@@ -46,9 +46,9 @@ export const PAPERBACK_BOOKS = Object.freeze({
     priceCents: 3900,
     priceEnv: "STRIPE_PRICE_EQUITY_PAPERBACK",
     assets: Object.freeze({
-      interiorKey: "paperback/equity-market-structure/interior.pdf",
+      interiorKey: "Equity-Market-Structure-Volume-III-Lulu-Paperback-Interior.pdf",
       interiorMd5: "01E4E27887150353B45B269316C76A01",
-      coverKey: "paperback/equity-market-structure/cover.pdf",
+      coverKey: "Equity-Market-Structure-Volume-III-Lulu-Paperback-Cover.pdf",
       coverMd5: "C6C7E2F1B886C9AA4CDA303EF7AFDD4C"
     })
   })
