@@ -1,0 +1,41 @@
+name = "grizzly-parrot-paperback-fulfillment"
+main = "src/index.mjs"
+compatibility_date = "2026-07-20"
+workers_dev = false
+
+# Deliberately safe defaults.  A deployment cannot accept a production paperback
+# checkout until PAPERBACK_SALES_ENABLED is explicitly changed to "true".
+[vars]
+PAPERBACK_SALES_ENABLED = "false"
+PAPERBACK_ENVIRONMENT = "sandbox"
+PAPERBACK_BASE_URL = "https://paperback-api.grizzlyparrottrading.com"
+PAPERBACK_SUCCESS_URL = "https://grizzlyparrottrading.com/books/paperback-order-confirmation.html"
+PAPERBACK_CANCEL_URL = "https://grizzlyparrottrading.com/books/"
+PAPERBACK_ALLOWED_ORIGIN = "https://grizzlyparrottrading.com"
+EMAIL_FROM = "Grizzly Parrot Trading <orders@example.com>"
+SHOP_CONTACT_EMAIL = "orders@example.com"
+ADMIN_EMAIL = ""
+
+# Stripe sandbox prices created on 2026-07-20. Price IDs are not secrets.
+# Replace all three with newly created live Stripe Price IDs before a production launch.
+STRIPE_PRICE_CURRENCY_PAPERBACK = "price_1TvNP4IA3p8RBkZIKlVaLG4V"
+STRIPE_PRICE_METALS_PAPERBACK = "price_1TvNQ3IA3p8RBkZIretIKedz"
+STRIPE_PRICE_EQUITY_PAPERBACK = "price_1TvNQrIA3p8RBkZI4SmXnkjj"
+
+# Create these resources in Cloudflare, then replace the placeholders only in
+# the real wrangler.toml / dashboard configuration. Do not commit that file.
+[[d1_databases]]
+binding = "PAPERBACK_ORDERS"
+database_name = "grizzly-parrot-paperback-orders"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+[[r2_buckets]]
+binding = "PRINT_ASSETS"
+bucket_name = "grizzly-parrot-print-assets"
+
+[triggers]
+crons = ["*/15 * * * *"]
+
+# Secrets: STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, LULU_CLIENT_KEY,
+# LULU_CLIENT_SECRET, RESEND_API_KEY, PAPERBACK_TEST_TOKEN, and
+# PAPERBACK_ASSET_SIGNING_SECRET.

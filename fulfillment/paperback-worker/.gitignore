@@ -1,0 +1,9 @@
+# Real Cloudflare configuration and local credentials must never be committed.
+wrangler.toml
+.dev.vars
+.env
+.env.*
+!.env.example
+
+node_modules/
+.wrangler/
