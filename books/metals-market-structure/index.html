@@ -71,7 +71,7 @@
       </a>
       <nav class="header-nav" aria-label="Book navigation">
         <a href="/books/">All three volumes</a>
-        <a class="button button-small js-buy" href="#purchase">Buy digital edition</a>
+        <a class="button button-small" href="#purchase">Choose edition</a>
       </nav>
     </div>
   </header>
@@ -87,23 +87,23 @@
 
           <div class="hero-points" aria-label="Book highlights">
             <div><strong>10</strong><span>structural layers</span></div>
-            <div><strong>PDF + EPUB</strong><span>digital formats</span></div>
-            <div><strong>$29</strong><span>one-time purchase</span></div>
+            <div><strong>Digital + print</strong><span>two editions</span></div>
+            <div><strong>$29 / $39</strong><span>digital / paperback</span></div>
           </div>
 
           <div class="hero-actions">
-            <a class="button js-buy" href="#purchase">Buy Volume II &mdash; $29</a>
+            <a class="button" href="#purchase">Choose your edition</a>
             <a class="text-link" href="#inside">See what is inside <span aria-hidden="true">&darr;</span></a>
           </div>
-          <p class="checkout-note">Secure checkout through Stripe. PDF and EPUB included.</p>
+          <p class="checkout-note">Digital delivery is live. Paperback checkout opens after the print proof is approved.</p>
         </div>
 
         <aside class="cover-panel" aria-label="Metals Market Structure book cover and purchase summary">
           <div class="cover-glow"></div>
           <img src="metals-market-structure-cover.png" alt="Cover of Metals Market Structure, Volume II by Kyle Parrott">
           <div class="cover-caption">
-            <span>Digital edition</span>
-            <strong>PDF + EPUB &middot; $29</strong>
+            <span>Digital + paperback editions</span>
+            <strong>From $29</strong>
           </div>
         </aside>
       </div>
@@ -211,21 +211,30 @@
     <section class="purchase-section" id="purchase">
       <div class="shell purchase-card">
         <div>
-          <p class="section-kicker">Volume II digital edition</p>
+          <p class="section-kicker">Volume II editions</p>
           <h2>Know what changes when the regime does.</h2>
-          <p>Get the complete Metals Market Structure book in PDF and EPUB formats.</p>
+          <p>Choose instant digital delivery or a 6 &times; 9 inch paperback printed and shipped on demand.</p>
           <ul>
-            <li>PDF for desktop reading and annotation</li>
-            <li>EPUB for phones, tablets, and e-readers</li>
-            <li>Immediate delivery after secure Stripe checkout</li>
+            <li>Digital includes both PDF and EPUB files</li>
+            <li>Paperback is a professionally bound physical copy</li>
+            <li>One-time purchase through secure Stripe checkout</li>
           </ul>
         </div>
-        <div class="price-box">
-          <span>Complete digital edition</span>
-          <strong>$29</strong>
-          <small>USD &middot; one-time purchase</small>
-          <a class="button button-wide js-buy" href="#purchase">Buy Metals Market Structure</a>
-          <p>PDF and EPUB included.</p>
+        <div class="edition-options" aria-label="Available editions">
+          <div class="price-box">
+            <span>Digital edition</span>
+            <strong>$29</strong>
+            <small>USD &middot; instant delivery</small>
+            <a class="button button-wide js-buy" href="#purchase">Buy digital edition</a>
+            <p>PDF and EPUB included.</p>
+          </div>
+          <div class="price-box is-paperback">
+            <span>Paperback edition</span>
+            <strong>$39</strong>
+            <small>USD &middot; shipping extra</small>
+            <a class="button button-secondary button-wide button-disabled js-paperback-buy" href="#purchase" aria-disabled="true">Paperback coming shortly</a>
+            <p data-paperback-note>Print proof and fulfillment connection in progress.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -238,8 +247,8 @@
         </div>
         <div class="faq-grid">
           <details>
-            <summary>What formats are included?</summary>
-            <p>Your purchase includes both the print-ready PDF and reflowable EPUB editions.</p>
+            <summary>What editions are available?</summary>
+            <p>The $29 digital edition includes PDF and EPUB files. The $39 paperback is a 6 &times; 9 inch physical book, with shipping added at checkout.</p>
           </details>
           <details>
             <summary>Does the book teach trade setups?</summary>
@@ -274,7 +283,9 @@
   <script>
     (function () {
       var checkoutUrl = "https://buy.stripe.com/dRmbJ2dSl2061Ta0UE2Nq02";
+      var paperbackCheckoutUrl = "";
       var buttons = document.querySelectorAll('.js-buy');
+      var paperbackButtons = document.querySelectorAll('.js-paperback-buy');
 
       buttons.forEach(function (button) {
         button.href = checkoutUrl;
@@ -295,6 +306,19 @@
         });
       });
 
+      paperbackButtons.forEach(function (button) {
+        if (paperbackCheckoutUrl) {
+          button.href = paperbackCheckoutUrl;
+          button.target = '_blank';
+          button.rel = 'noopener';
+          button.removeAttribute('aria-disabled');
+          button.classList.remove('button-disabled');
+        } else {
+          button.addEventListener('click', function (event) {
+            event.preventDefault();
+          });
+        }
+      });
       document.getElementById('year').textContent = new Date().getFullYear();
     })();
   </script>
