@@ -2,6 +2,7 @@ name = "grizzly-parrot-paperback"
 main = "src/index.mjs"
 compatibility_date = "2026-07-20"
 workers_dev = true
+keep_vars = true
 
 # Production is configured now, but this explicit gate keeps every paperback
 # checkout unavailable until the physical proofs are approved.
