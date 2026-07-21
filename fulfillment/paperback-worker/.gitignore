@@ -1,5 +1,5 @@
-# Real Cloudflare configuration and local credentials must never be committed.
-wrangler.toml
+# Local credentials must never be committed. The production wrangler.toml
+# contains only non-secret bindings and keeps the sales gate explicitly false.
 .dev.vars
 .env
 .env.*
@@ -7,3 +7,4 @@ wrangler.toml
 
 node_modules/
 .wrangler/
+.dist/

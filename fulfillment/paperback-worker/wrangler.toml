@@ -1,0 +1,42 @@
+name = "grizzly-parrot-paperback"
+main = "src/index.mjs"
+compatibility_date = "2026-07-20"
+workers_dev = true
+
+# Production is configured now, but this explicit gate keeps every paperback
+# checkout unavailable until the physical proofs are approved.
+[vars]
+PAPERBACK_SALES_ENABLED = "false"
+PAPERBACK_ENVIRONMENT = "production"
+PAPERBACK_BASE_URL = "https://paperback-api.grizzlyparrottrading.com"
+PAPERBACK_SUCCESS_URL = "https://grizzlyparrottrading.com/books/paperback-order-confirmation.html"
+PAPERBACK_CANCEL_URL = "https://grizzlyparrottrading.com/books/"
+PAPERBACK_ALLOWED_ORIGIN = "https://grizzlyparrottrading.com"
+EMAIL_FROM = "Grizzly Parrot Trading <orders@grizzlyparrottrading.com>"
+SHOP_CONTACT_EMAIL = "orders@grizzlyparrottrading.com"
+ADMIN_EMAIL = "grizzlyparrott04@gmail.com"
+
+STRIPE_PRICE_CURRENCY_PAPERBACK = "price_1Tvc5kIA3p8RBkZIifTkKIps"
+STRIPE_PRICE_METALS_PAPERBACK = "price_1TvcfHIA3p8RBkZICIkp2C8c"
+STRIPE_PRICE_EQUITY_PAPERBACK = "price_1TvchoIA3p8RBkZI74lfin4W"
+
+[[d1_databases]]
+binding = "PAPERBACK_ORDERS"
+database_name = "grizzly-parrot-paperback-orders"
+database_id = "2811729d-86b6-45a1-a140-df0d5c02843a"
+
+[[r2_buckets]]
+binding = "PRINT_ASSETS"
+bucket_name = "grizzly-parrot-print-assets"
+
+[triggers]
+crons = ["*/15 * * * *"]
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+# Encrypted dashboard secrets deliberately do not appear here:
+# STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, LULU_CLIENT_KEY,
+# LULU_CLIENT_SECRET, RESEND_API_KEY, PAPERBACK_TEST_TOKEN, and
+# PAPERBACK_ASSET_SIGNING_SECRET.
