@@ -1,14 +1,19 @@
 name = "grizzly-parrot-paperback-fulfillment"
 main = "src/index.mjs"
 compatibility_date = "2026-07-20"
-workers_dev = false
+workers_dev = true
 
 # Deliberately safe defaults.  A deployment cannot accept a production paperback
 # checkout until PAPERBACK_SALES_ENABLED is explicitly changed to "true".
 [vars]
 PAPERBACK_SALES_ENABLED = "false"
+PAPERBACK_PRIVATE_ORDER_ENABLED = "false"
+PAPERBACK_PROOFS_APPROVED = "false"
+PAPERBACK_POLICIES_APPROVED = "false"
+PAPERBACK_ALLOWED_COUNTRIES = "US"
+PAPERBACK_STRIPE_TAX_ENABLED = "false"
 PAPERBACK_ENVIRONMENT = "sandbox"
-PAPERBACK_BASE_URL = "https://paperback-api.grizzlyparrottrading.com"
+PAPERBACK_BASE_URL = "https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev"
 PAPERBACK_SUCCESS_URL = "https://grizzlyparrottrading.com/books/paperback-order-confirmation.html"
 PAPERBACK_CANCEL_URL = "https://grizzlyparrottrading.com/books/"
 PAPERBACK_ALLOWED_ORIGIN = "https://grizzlyparrottrading.com"
@@ -38,4 +43,16 @@ crons = ["*/15 * * * *"]
 
 # Secrets: STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, LULU_CLIENT_KEY,
 # LULU_CLIENT_SECRET, RESEND_API_KEY, PAPERBACK_TEST_TOKEN, and
-# PAPERBACK_ASSET_SIGNING_SECRET.
+# PAPERBACK_ASSET_SIGNING_SECRET, and PAPERBACK_PRIVATE_ORDER_TOKEN.
+
+[secrets]
+required = [
+  "STRIPE_SECRET_KEY",
+  "STRIPE_WEBHOOK_SECRET",
+  "LULU_CLIENT_KEY",
+  "LULU_CLIENT_SECRET",
+  "RESEND_API_KEY",
+  "PAPERBACK_TEST_TOKEN",
+  "PAPERBACK_ASSET_SIGNING_SECRET",
+  "PAPERBACK_PRIVATE_ORDER_TOKEN"
+]

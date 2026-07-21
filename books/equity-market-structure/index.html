@@ -256,7 +256,7 @@
       });
       updatePaperbackButtons();
 
-      fetch('https://paperback-api.grizzlyparrottrading.com/public-config?bookSlug=equity-market-structure', {credentials: 'omit'})
+      fetch('https://grizzly-parrot-paperback.grizzlyparrott04.workers.dev/public-config?bookSlug=equity-market-structure', {credentials: 'omit'})
         .then(function (response) { return response.ok ? response.json() : null; })
         .then(function (config) {
           if (config && config.enabled === true && typeof config.checkoutUrl === 'string' && config.checkoutUrl.indexOf('https://') === 0) {

@@ -4,6 +4,10 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "check": "node --check src/index.mjs && node --check src/catalog.mjs && node --check src/lulu.mjs && node --check src/stripe.mjs"
+    "check": "node --check src/index.mjs && node --check src/catalog.mjs && node --check src/lulu.mjs && node --check src/stripe.mjs",
+    "deploy": "wrangler deploy --config wrangler.toml"
+  },
+  "devDependencies": {
+    "wrangler": "4.112.0"
   }
 }

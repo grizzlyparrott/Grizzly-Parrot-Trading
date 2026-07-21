@@ -12,6 +12,8 @@ CREATE TABLE IF NOT EXISTS paperback_orders (
   shipping_cents INTEGER NOT NULL,
   currency TEXT NOT NULL,
   customer_total_cents INTEGER,
+  tax_cents INTEGER,
+  checkout_mode TEXT NOT NULL DEFAULT 'unknown',
   state TEXT NOT NULL,
   lulu_print_job_id TEXT,
   lulu_status TEXT,

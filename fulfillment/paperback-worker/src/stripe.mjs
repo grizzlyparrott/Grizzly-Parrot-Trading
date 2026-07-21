@@ -43,7 +43,7 @@ export class StripeClient {
     return JSON.parse(text);
   }
 
-  async createCheckoutSession({ book, quote, priceId, customerEmail }) {
+  async createCheckoutSession({ book, quote, priceId, customerEmail, checkoutMode = "unknown" }) {
     const shippingCents = quote.shippingCents;
     const fields = {
       mode: "payment",
@@ -55,6 +55,7 @@ export class StripeClient {
       "metadata[book_slug]": book.slug,
       "metadata[quote_id]": quote.quoteId,
       "metadata[pipeline_version]": "1",
+      "metadata[checkout_mode]": checkoutMode,
       "line_items[0][price]": priceId,
       "line_items[0][quantity]": quote.quantity,
       "shipping_address_collection[allowed_countries][0]": quote.address.countryCode,
@@ -65,6 +66,11 @@ export class StripeClient {
       "shipping_options[0][shipping_rate_data][fixed_amount][currency]": quote.currency.toLowerCase(),
       "shipping_options[0][shipping_rate_data][metadata][lulu_quote_id]": quote.quoteId
     };
+    if (this.env.PAPERBACK_STRIPE_TAX_ENABLED === "true") {
+      fields["automatic_tax[enabled]"] = "true";
+      fields["shipping_options[0][shipping_rate_data][tax_behavior]"] = "exclusive";
+      fields["shipping_options[0][shipping_rate_data][tax_code]"] = "txcd_92010001";
+    }
     return this.request("/checkout/sessions", fields, `paperback-checkout-${quote.quoteId}`);
   }
 }

@@ -7,8 +7,13 @@ workers_dev = true
 # checkout unavailable until the physical proofs are approved.
 [vars]
 PAPERBACK_SALES_ENABLED = "false"
+PAPERBACK_PRIVATE_ORDER_ENABLED = "false"
+PAPERBACK_PROOFS_APPROVED = "false"
+PAPERBACK_POLICIES_APPROVED = "false"
+PAPERBACK_ALLOWED_COUNTRIES = ""
+PAPERBACK_STRIPE_TAX_ENABLED = "pending"
 PAPERBACK_ENVIRONMENT = "production"
-PAPERBACK_BASE_URL = "https://paperback-api.grizzlyparrottrading.com"
+PAPERBACK_BASE_URL = "https://grizzly-parrot-paperback.grizzlyparrott04.workers.dev"
 PAPERBACK_SUCCESS_URL = "https://grizzlyparrottrading.com/books/paperback-order-confirmation.html"
 PAPERBACK_CANCEL_URL = "https://grizzlyparrottrading.com/books/"
 PAPERBACK_ALLOWED_ORIGIN = "https://grizzlyparrottrading.com"
@@ -39,4 +44,16 @@ head_sampling_rate = 1
 # Encrypted dashboard secrets deliberately do not appear here:
 # STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, LULU_CLIENT_KEY,
 # LULU_CLIENT_SECRET, RESEND_API_KEY, PAPERBACK_TEST_TOKEN, and
-# PAPERBACK_ASSET_SIGNING_SECRET.
+# PAPERBACK_ASSET_SIGNING_SECRET, and PAPERBACK_PRIVATE_ORDER_TOKEN.
+
+[secrets]
+required = [
+  "STRIPE_SECRET_KEY",
+  "STRIPE_WEBHOOK_SECRET",
+  "LULU_CLIENT_KEY",
+  "LULU_CLIENT_SECRET",
+  "RESEND_API_KEY",
+  "PAPERBACK_TEST_TOKEN",
+  "PAPERBACK_ASSET_SIGNING_SECRET",
+  "PAPERBACK_PRIVATE_ORDER_TOKEN"
+]

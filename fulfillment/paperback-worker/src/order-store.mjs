@@ -21,11 +21,11 @@ export class OrderStore {
   async insertPaidOrder(order) {
     const result = await this.db.prepare(`INSERT OR IGNORE INTO paperback_orders
       (stripe_session_id, stripe_event_id, quote_id, book_slug, quantity, buyer_email, shipping_address_json,
-       shipping_option, shipping_cents, currency, customer_total_cents, state, created_at, updated_at)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'paid', ?, ?)`)
+       shipping_option, shipping_cents, currency, customer_total_cents, tax_cents, checkout_mode, state, created_at, updated_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'paid', ?, ?)`)
       .bind(order.stripeSessionId, order.stripeEventId, order.quoteId, order.bookSlug, order.quantity, order.buyerEmail,
         JSON.stringify(order.address), order.shippingOption, order.shippingCents, order.currency, order.customerTotalCents,
-        order.now, order.now).run();
+        order.taxCents, order.checkoutMode, order.now, order.now).run();
     return result.meta?.changes === 1;
   }
 

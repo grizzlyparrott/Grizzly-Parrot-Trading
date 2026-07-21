@@ -28,8 +28,46 @@ function allowedOrigin(request, env) {
   return Boolean(origin && origin === env.PAPERBACK_ALLOWED_ORIGIN);
 }
 
+export function allowedCountries(env) {
+  return [...new Set(String(env.PAPERBACK_ALLOWED_COUNTRIES || "")
+    .split(",")
+    .map((value) => value.trim().toUpperCase())
+    .filter((value) => /^[A-Z]{2}$/.test(value)))];
+}
+
+export function productionReadiness(env) {
+  const countries = allowedCountries(env);
+  const stripeTaxDecision = ["true", "false"].includes(env.PAPERBACK_STRIPE_TAX_ENABLED)
+    ? env.PAPERBACK_STRIPE_TAX_ENABLED
+    : "pending";
+  return {
+    proofsApproved: env.PAPERBACK_PROOFS_APPROVED === "true",
+    policiesApproved: env.PAPERBACK_POLICIES_APPROVED === "true",
+    shippingCountriesConfigured: countries.length > 0,
+    allowedCountries: countries,
+    stripeTaxDecision
+  };
+}
+
+function productionPrerequisitesReady(env) {
+  const readiness = productionReadiness(env);
+  return readiness.proofsApproved
+    && readiness.policiesApproved
+    && readiness.shippingCountriesConfigured
+    && readiness.stripeTaxDecision !== "pending";
+}
+
 function productionSalesEnabled(env) {
-  return env.PAPERBACK_ENVIRONMENT === "production" && env.PAPERBACK_SALES_ENABLED === "true";
+  return env.PAPERBACK_ENVIRONMENT === "production"
+    && env.PAPERBACK_SALES_ENABLED === "true"
+    && productionPrerequisitesReady(env);
+}
+
+function privateOrderEnabled(env) {
+  return env.PAPERBACK_ENVIRONMENT === "production"
+    && env.PAPERBACK_SALES_ENABLED !== "true"
+    && env.PAPERBACK_PRIVATE_ORDER_ENABLED === "true"
+    && productionPrerequisitesReady(env);
 }
 
 function testAuthorized(request, env) {
@@ -39,8 +77,16 @@ function testAuthorized(request, env) {
     && constantTimeEqual(supplied, env.PAPERBACK_TEST_TOKEN);
 }
 
+function privateOrderAuthorized(request, env) {
+  const supplied = request.headers.get("x-paperback-private-token") || "";
+  return privateOrderEnabled(env)
+    && Boolean(env.PAPERBACK_PRIVATE_ORDER_TOKEN)
+    && constantTimeEqual(supplied, env.PAPERBACK_PRIVATE_ORDER_TOKEN);
+}
+
 function checkoutAuthorized(request, env) {
   if (testAuthorized(request, env)) return { mode: "test" };
+  if (privateOrderAuthorized(request, env)) return { mode: "private_live_order" };
   const origin = request.headers.get("Origin");
   const workerOrigin = env.PAPERBACK_BASE_URL?.replace(/\/$/, "");
   if (productionSalesEnabled(env) && (allowedOrigin(request, env) || origin === workerOrigin)) {
@@ -54,7 +100,7 @@ function cors(request, env) {
   return {
     "Access-Control-Allow-Origin": env.PAPERBACK_ALLOWED_ORIGIN,
     Vary: "Origin",
-    "Access-Control-Allow-Headers": "content-type, x-paperback-test-token",
+    "Access-Control-Allow-Headers": "content-type, x-paperback-test-token, x-paperback-private-token",
     "Access-Control-Allow-Methods": "POST, OPTIONS"
   };
 }
@@ -184,6 +230,10 @@ async function createQuote(request, env) {
   if (!book) return publicError("unknown_book", "That paperback edition is not available.", 404).response;
   const validated = validateCheckoutRequest(input);
   if (!validated.ok) return json({ ok: false, code: "invalid_address", errors: validated.errors }, 422, cors(request, env));
+  const countries = allowedCountries(env);
+  if (!countries.includes(validated.address.countryCode)) {
+    return json({ ok: false, code: "shipping_country_unavailable", message: "That shipping country is not enabled." }, 422, cors(request, env));
+  }
   let shippingOption;
   try { shippingOption = assertShippingOption(input.shippingOption); }
   catch (error) { return publicError("invalid_shipping_option", error.message).response; }
@@ -236,7 +286,13 @@ async function createCheckout(request, env) {
 
   try {
     const priceId = getStripePriceId(book, env);
-    const session = await new StripeClient(env).createCheckoutSession({ book, quote, priceId, customerEmail: quote.buyerEmail });
+    const session = await new StripeClient(env).createCheckoutSession({
+      book,
+      quote,
+      priceId,
+      customerEmail: quote.buyerEmail,
+      checkoutMode: authorization.mode
+    });
     await store.attachSession(quote.quoteId, session.id);
     log("checkout_created", { mode: authorization.mode, book: book.slug, quoteId: quote.quoteId, sessionId: session.id });
     return json({ ok: true, checkoutUrl: session.url, sessionId: session.id }, 201, cors(request, env));
@@ -320,6 +376,8 @@ async function stripeWebhook(request, env) {
     shippingCents: quote.shippingCents,
     currency: quote.currency,
     customerTotalCents: session.amount_total || null,
+    taxCents: session.total_details?.amount_tax ?? null,
+    checkoutMode: session.metadata?.checkout_mode || "unknown",
     now: nowIso()
   });
   if (!inserted) {
@@ -379,15 +437,20 @@ async function pollStatuses(env) {
   }
 }
 
-function renderCheckoutPage(book, env) {
+function renderCheckoutPage(book, env, { privateOrder = false } = {}) {
   const title = escapeHtml(book.title);
   const slug = JSON.stringify(book.slug);
+  const defaultCountry = escapeHtml(allowedCountries(env)[0] || "");
+  const privateTokenField = privateOrder
+    ? '<label>Private order token<input required type="password" name="privateOrderToken" autocomplete="off"></label>'
+    : "";
+  const privateMode = JSON.stringify(privateOrder);
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Paperback checkout — ${title}</title><style>
     body{margin:0;background:#07100b;color:#f8faf7;font:16px/1.5 system-ui,sans-serif}.wrap{max-width:680px;margin:40px auto;padding:28px;background:#0d1711;border:1px solid #294235;border-radius:18px}h1{font:600 2rem Georgia,serif}label{display:block;margin:14px 0 5px}input,select{box-sizing:border-box;width:100%;padding:11px;border:1px solid #607366;border-radius:7px;font:inherit}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}button{width:100%;margin-top:22px;padding:14px;background:#38f58a;color:#07100b;border:0;border-radius:999px;font-weight:800;font-size:1rem;cursor:pointer}button:disabled{opacity:.55;cursor:wait}.note,#result{color:#c5d0c8}.error{color:#ffb4a7}@media(max-width:600px){.wrap{margin:0;border-radius:0;min-height:100vh}.grid{grid-template-columns:1fr}}</style></head><body><main class="wrap">
     <p class="note">Grizzly Parrot Trading · paperback edition</p><h1>${title}</h1><p>$39.00 plus calculated shipping. Your address is used only to obtain the print-and-delivery quote.</p>
-    <form id="checkout"><label>Email<input required type="email" name="buyerEmail" autocomplete="email"></label><label>Recipient name<input required name="name" autocomplete="name"></label><label>Street address<input required name="street1" autocomplete="address-line1"></label><label>Apartment, suite, etc. (optional)<input name="street2" autocomplete="address-line2"></label><div class="grid"><label>City<input required name="city" autocomplete="address-level2"></label><label>State / province<input required name="stateCode" autocomplete="address-level1" maxlength="2"></label></div><div class="grid"><label>Postal code<input required name="postcode" autocomplete="postal-code"></label><label>Country code<input required name="countryCode" value="US" maxlength="2" autocomplete="country"></label></div><label>Phone number<input required name="phoneNumber" autocomplete="tel"></label><label>Shipping service<select name="shippingOption"><option value="MAIL">Mail</option><option value="PRIORITY_MAIL">Priority mail</option><option value="EXPEDITED">Expedited</option><option value="EXPRESS">Express</option></select></label><button id="submit" type="submit">Calculate shipping and continue</button><p id="result" aria-live="polite"></p></form></main><script>
-    const bookSlug=${slug}; const form=document.getElementById('checkout'); const result=document.getElementById('result'); const button=document.getElementById('submit');
-    form.addEventListener('submit',async(event)=>{event.preventDefault();button.disabled=true;result.className='note';result.textContent='Calculating shipping…';const data=Object.fromEntries(new FormData(form));data.bookSlug=bookSlug;data.quantity=1;data.shippingAddress={name:data.name,street1:data.street1,street2:data.street2,city:data.city,stateCode:data.stateCode.toUpperCase(),postcode:data.postcode,countryCode:data.countryCode.toUpperCase(),phoneNumber:data.phoneNumber};try{const quoteResponse=await fetch('/paperback/quote',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(data)});const quote=await quoteResponse.json();if(!quoteResponse.ok)throw new Error((quote.errors||[quote.message||'Unable to calculate shipping.']).join(' '));result.textContent='Shipping: '+(quote.shipping.cents/100).toFixed(2)+' '+quote.shipping.currency+'. Opening secure checkout…';const checkoutResponse=await fetch('/paperback/checkout',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({quoteId:quote.quoteId})});const checkout=await checkoutResponse.json();if(!checkoutResponse.ok)throw new Error(checkout.message||'Unable to create checkout.');location.assign(checkout.checkoutUrl);}catch(error){result.className='error';result.textContent=error.message;button.disabled=false;}});
+    <form id="checkout">${privateTokenField}<label>Email<input required type="email" name="buyerEmail" autocomplete="email"></label><label>Recipient name<input required name="name" autocomplete="name"></label><label>Street address<input required name="street1" autocomplete="address-line1"></label><label>Apartment, suite, etc. (optional)<input name="street2" autocomplete="address-line2"></label><div class="grid"><label>City<input required name="city" autocomplete="address-level2"></label><label>State / province<input required name="stateCode" autocomplete="address-level1" maxlength="2"></label></div><div class="grid"><label>Postal code<input required name="postcode" autocomplete="postal-code"></label><label>Country code<input required name="countryCode" value="${defaultCountry}" maxlength="2" autocomplete="country"></label></div><label>Phone number<input required name="phoneNumber" autocomplete="tel"></label><label>Shipping service<select name="shippingOption"><option value="MAIL">Mail</option><option value="PRIORITY_MAIL">Priority mail</option><option value="EXPEDITED">Expedited</option><option value="EXPRESS">Express</option></select></label><button id="submit" type="submit">Calculate shipping and continue</button><p id="result" aria-live="polite"></p></form></main><script>
+    const bookSlug=${slug}; const privateOrder=${privateMode}; const form=document.getElementById('checkout'); const result=document.getElementById('result'); const button=document.getElementById('submit');
+    form.addEventListener('submit',async(event)=>{event.preventDefault();button.disabled=true;result.className='note';result.textContent='Calculating shipping…';const data=Object.fromEntries(new FormData(form));const privateOrderToken=data.privateOrderToken||'';delete data.privateOrderToken;const headers={'content-type':'application/json'};if(privateOrder)headers['x-paperback-private-token']=privateOrderToken;data.bookSlug=bookSlug;data.quantity=1;data.shippingAddress={name:data.name,street1:data.street1,street2:data.street2,city:data.city,stateCode:data.stateCode.toUpperCase(),postcode:data.postcode,countryCode:data.countryCode.toUpperCase(),phoneNumber:data.phoneNumber};try{const quoteResponse=await fetch('/paperback/quote',{method:'POST',headers,body:JSON.stringify(data)});const quote=await quoteResponse.json();if(!quoteResponse.ok)throw new Error((quote.errors||[quote.message||'Unable to calculate shipping.']).join(' '));result.textContent='Shipping: '+(quote.shipping.cents/100).toFixed(2)+' '+quote.shipping.currency+'. Opening secure checkout…';const checkoutResponse=await fetch('/paperback/checkout',{method:'POST',headers,body:JSON.stringify({quoteId:quote.quoteId})});const checkout=await checkoutResponse.json();if(!checkoutResponse.ok)throw new Error(checkout.message||'Unable to create checkout.');location.assign(checkout.checkoutUrl);}catch(error){result.className='error';result.textContent=error.message;button.disabled=false;}});
   </script></body></html>`;
 }
 
@@ -417,7 +480,15 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: cors(request, env) });
-    if (request.method === "GET" && url.pathname === "/health") return json({ ok: true, paperbackSalesEnabled: productionSalesEnabled(env), environment: env.PAPERBACK_ENVIRONMENT });
+    if (request.method === "GET" && url.pathname === "/health") {
+      return json({
+        ok: true,
+        paperbackSalesEnabled: productionSalesEnabled(env),
+        privateOrderEnabled: privateOrderEnabled(env),
+        environment: env.PAPERBACK_ENVIRONMENT,
+        readiness: productionReadiness(env)
+      });
+    }
     if (request.method === "GET" && url.pathname === "/public-config") {
       const book = getBook(url.searchParams.get("bookSlug"));
       return json({ enabled: Boolean(book && productionSalesEnabled(env)), checkoutUrl: book && productionSalesEnabled(env) ? `${env.PAPERBACK_BASE_URL.replace(/\/$/, "")}/paperback/checkout?bookSlug=${encodeURIComponent(book.slug)}` : null }, 200, cors(request, env));
@@ -426,6 +497,11 @@ export default {
       const book = getBook(url.searchParams.get("bookSlug"));
       if (!book || !productionSalesEnabled(env)) return new Response("Not found", { status: 404 });
       return new Response(renderCheckoutPage(book, env), { headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" } });
+    }
+    if (request.method === "GET" && url.pathname === "/paperback/private-order") {
+      const book = getBook(url.searchParams.get("bookSlug"));
+      if (!book || !privateOrderEnabled(env)) return new Response("Not found", { status: 404 });
+      return new Response(renderCheckoutPage(book, env, { privateOrder: true }), { headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" } });
     }
     if (request.method === "GET" && url.pathname.startsWith("/lulu-assets/")) return serveAsset(request, env, url.pathname);
     if (request.method === "POST" && url.pathname === "/paperback/quote") return createQuote(request, env);
