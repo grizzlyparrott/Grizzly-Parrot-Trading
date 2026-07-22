@@ -74,4 +74,29 @@ export class OrderStore {
     const column = field === 'shipment' ? 'shipment_emailed_at' : 'confirmation_emailed_at';
     await this.db.prepare(`UPDATE paperback_orders SET ${column} = ? WHERE stripe_session_id = ?`).bind(now, sessionId).run();
   }
+
+  async insertDigitalPurchase(purchase) {
+    const result = await this.db.prepare(`INSERT OR IGNORE INTO digital_purchase_conversions
+      (stripe_session_id, stripe_event_id, stripe_payment_link_id, event_label, amount_total, currency, verified_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?)`)
+      .bind(purchase.stripeSessionId, purchase.stripeEventId, purchase.stripePaymentLinkId,
+        purchase.eventLabel, purchase.amountTotal, purchase.currency, purchase.verifiedAt).run();
+    return result.meta?.changes === 1;
+  }
+
+  async digitalPurchase(sessionId) {
+    return this.db.prepare("SELECT * FROM digital_purchase_conversions WHERE stripe_session_id = ?")
+      .bind(sessionId).first();
+  }
+
+  async claimDigitalConversion(sessionId, now) {
+    const purchase = await this.digitalPurchase(sessionId);
+    if (!purchase) return { status: "not_found", purchase: null };
+    const result = await this.db.prepare(`UPDATE digital_purchase_conversions
+      SET claimed_at = ? WHERE stripe_session_id = ? AND claimed_at IS NULL`)
+      .bind(now, sessionId).run();
+    return result.meta?.changes === 1
+      ? { status: "claimed", purchase: { ...purchase, claimed_at: now } }
+      : { status: "duplicate", purchase };
+  }
 }

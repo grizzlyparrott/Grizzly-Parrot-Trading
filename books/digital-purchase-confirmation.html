@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Digital purchase confirmation | Grizzly Parrot Trading</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .purchase-confirmation{max-width:720px;margin:64px auto;padding:32px}.purchase-confirmation h1{margin-top:0}.purchase-status{padding:18px;border:1px solid #d6ddd8;border-radius:12px;background:#f7faf8}.purchase-status.error{border-color:#b84040;color:#7b1f1f}
+  </style>
+  <script src="/uet.js" defer></script>
+</head>
+<body>
+  <main class="purchase-confirmation">
+    <p><a href="/books/">Grizzly Parrot Trading books</a></p>
+    <h1>Thank you for your purchase.</h1>
+    <div class="purchase-status" id="purchase-status" aria-live="polite">Verifying your completed Stripe payment&hellip;</div>
+    <p>Your digital delivery is handled separately by the purchase system. This page confirms advertising attribution only.</p>
+  </main>
+  <script>
+    (function () {
+      var status = document.getElementById('purchase-status');
+      var sessionId = new URLSearchParams(window.location.search).get('session_id');
+      var attempts = 0;
+      var endpoint = 'https://grizzly-parrot-paperback.grizzlyparrott04.workers.dev/digital-conversion/claim';
+
+      if (!sessionId) {
+        status.textContent = 'No purchase session was supplied. Ordinary page visits are not recorded as purchases.';
+        return;
+      }
+
+      function verify() {
+        attempts += 1;
+        fetch(endpoint, {
+          method: 'POST',
+          credentials: 'omit',
+          headers: {'content-type': 'application/json'},
+          body: JSON.stringify({sessionId: sessionId})
+        }).then(function (response) {
+          if (response.status === 404 && attempts < 11) {
+            window.setTimeout(verify, 2000);
+            return null;
+          }
+          return response.json().then(function (data) { return {response: response, data: data}; });
+        }).then(function (result) {
+          if (!result) return;
+          var data = result.data;
+          if (!result.response.ok) throw new Error('Stripe payment verification is still processing.');
+          if (data.track === true) {
+            window.uetq = window.uetq || [];
+            window.uetq.push('event', 'purchase', {
+              event_label: data.eventLabel,
+              revenue_value: data.value,
+              currency: data.currency
+            });
+            status.textContent = 'Your paid digital purchase has been verified.';
+          } else {
+            status.textContent = 'Your paid digital purchase was already verified.';
+          }
+          window.history.replaceState({}, document.title, window.location.pathname);
+        }).catch(function () {
+          status.className = 'purchase-status error';
+          status.textContent = 'Payment verification is taking longer than expected. Your purchase remains with Stripe; refreshing this page will not create a duplicate conversion.';
+        });
+      }
+
+      verify();
+    })();
+  </script>
+</body>
+</html>

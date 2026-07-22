@@ -7,7 +7,7 @@ import { hmacHex, verifyStripeSignature, signedAssetUrl, verifyAssetRequest } fr
 import { LuluClient, shippingCents } from "../src/lulu.mjs";
 import { StripeClient } from "../src/stripe.mjs";
 import { OrderStore } from "../src/order-store.mjs";
-import worker, { allowedCountries, luluStatusFromJob, productionReadiness, suggestedAddressDiffers } from "../src/index.mjs";
+import worker, { allowedCountries, digitalPurchaseFromSession, luluStatusFromJob, productionReadiness, stripeWebhook, suggestedAddressDiffers } from "../src/index.mjs";
 
 const validAddress = {
   name: "Test Reader",
@@ -96,6 +96,144 @@ test("Stripe webhook HMAC verification accepts a current signed payload and reje
   const signature = await hmacHex(secret, `${timestamp}.${payload}`);
   assert.equal(await verifyStripeSignature(payload, `t=${timestamp},v1=${signature}`, secret), true);
   assert.equal(await verifyStripeSignature(`${payload}x`, `t=${timestamp},v1=${signature}`, secret), false);
+});
+
+test("digital purchases map only paid $29 Checkout Sessions from the three configured Payment Links", () => {
+  const env = {
+    STRIPE_PAYMENT_LINK_CURRENCY_DIGITAL: "plink_currency",
+    STRIPE_PAYMENT_LINK_METALS_DIGITAL: "plink_metals",
+    STRIPE_PAYMENT_LINK_EQUITY_DIGITAL: "plink_equity"
+  };
+  const base = { id: "cs_live_paid", mode: "payment", payment_status: "paid", amount_total: 2900, currency: "usd" };
+  assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_currency" }, env).eventLabel, "currency_market_structure");
+  assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_metals" }, env).eventLabel, "metals_market_structure");
+  assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_equity" }, env).eventLabel, "equity_market_structure");
+  assert.equal(digitalPurchaseFromSession({ ...base, payment_status: "unpaid", payment_link: "plink_currency" }, env), null);
+  assert.equal(digitalPurchaseFromSession({ ...base, amount_total: 2800, payment_link: "plink_currency" }, env), null);
+  assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_other" }, env), null);
+});
+
+test("one signed, paid Stripe event is accepted for each digital title without entering paperback fulfillment", async () => {
+  const purchases = new Map();
+  const db = {
+    prepare(sql) {
+      return {
+        bind(...args) {
+          return {
+            async run() {
+              if (!sql.includes("INSERT OR IGNORE INTO digital_purchase_conversions")) {
+                throw new Error(`Digital test unexpectedly entered paperback SQL: ${sql}`);
+              }
+              if (purchases.has(args[0])) return { meta: { changes: 0 } };
+              purchases.set(args[0], {
+                stripe_session_id: args[0],
+                stripe_event_id: args[1],
+                stripe_payment_link_id: args[2],
+                event_label: args[3],
+                amount_total: args[4],
+                currency: args[5]
+              });
+              return { meta: { changes: 1 } };
+            }
+          };
+        }
+      };
+    }
+  };
+  const secret = "whsec_digital_test";
+  const env = {
+    STRIPE_WEBHOOK_SECRET: secret,
+    STRIPE_PAYMENT_LINK_CURRENCY_DIGITAL: "plink_currency",
+    STRIPE_PAYMENT_LINK_METALS_DIGITAL: "plink_metals",
+    STRIPE_PAYMENT_LINK_EQUITY_DIGITAL: "plink_equity",
+    PAPERBACK_ORDERS: db
+  };
+  const cases = [
+    ["currency", "plink_currency", "currency_market_structure"],
+    ["metals", "plink_metals", "metals_market_structure"],
+    ["equity", "plink_equity", "equity_market_structure"]
+  ];
+
+  for (const [slug, paymentLink, eventLabel] of cases) {
+    const event = {
+      id: `evt_${slug}`,
+      type: "checkout.session.completed",
+      data: { object: {
+        id: `cs_test_${slug}`,
+        mode: "payment",
+        payment_status: "paid",
+        amount_total: 2900,
+        currency: "usd",
+        payment_link: paymentLink
+      } }
+    };
+    const payload = JSON.stringify(event);
+    const timestamp = Math.floor(Date.now() / 1000);
+    const signature = await hmacHex(secret, `${timestamp}.${payload}`);
+    const response = await stripeWebhook(new Request("https://paperback-api.example.com/webhooks/stripe", {
+      method: "POST",
+      headers: { "stripe-signature": `t=${timestamp},v1=${signature}` },
+      body: payload
+    }), env);
+    assert.equal(response.status, 200);
+    assert.deepEqual(await response.json(), { ok: true, digitalPurchase: true, duplicate: false });
+    assert.equal(purchases.get(`cs_test_${slug}`).event_label, eventLabel);
+  }
+  assert.equal(purchases.size, 3);
+});
+
+test("a verified digital Stripe session can be claimed for Microsoft UET only once", async () => {
+  const purchases = new Map();
+  const db = {
+    prepare(sql) {
+      return {
+        bind(...args) {
+          return {
+            async run() {
+              if (sql.includes("INSERT OR IGNORE INTO digital_purchase_conversions")) {
+                if (purchases.has(args[0])) return { meta: { changes: 0 } };
+                purchases.set(args[0], {
+                  stripe_session_id: args[0], stripe_event_id: args[1], stripe_payment_link_id: args[2],
+                  event_label: args[3], amount_total: args[4], currency: args[5], verified_at: args[6], claimed_at: null
+                });
+                return { meta: { changes: 1 } };
+              }
+              if (sql.includes("UPDATE digital_purchase_conversions")) {
+                const purchase = purchases.get(args[1]);
+                if (!purchase || purchase.claimed_at) return { meta: { changes: 0 } };
+                purchase.claimed_at = args[0];
+                return { meta: { changes: 1 } };
+              }
+              throw new Error(`Unexpected SQL: ${sql}`);
+            },
+            async first() {
+              if (!sql.includes("SELECT * FROM digital_purchase_conversions")) throw new Error(`Unexpected SQL: ${sql}`);
+              return purchases.get(args[0]) || null;
+            }
+          };
+        }
+      };
+    }
+  };
+  const store = new OrderStore(db);
+  const purchase = {
+    stripeSessionId: "cs_test_currency", stripeEventId: "evt_currency", stripePaymentLinkId: "plink_currency",
+    eventLabel: "currency_market_structure", amountTotal: 2900, currency: "usd", verifiedAt: "2026-07-21T12:00:00.000Z"
+  };
+  assert.equal(await store.insertDigitalPurchase(purchase), true);
+  assert.equal(await store.insertDigitalPurchase(purchase), false);
+  assert.equal((await store.claimDigitalConversion(purchase.stripeSessionId, "2026-07-21T12:01:00.000Z")).status, "claimed");
+  assert.equal((await store.claimDigitalConversion(purchase.stripeSessionId, "2026-07-21T12:02:00.000Z")).status, "duplicate");
+});
+
+test("ordinary page visits cannot claim or emit a digital purchase conversion", async () => {
+  const env = { PAPERBACK_ALLOWED_ORIGIN: "https://grizzlyparrottrading.com" };
+  const getResponse = await worker.fetch(new Request("https://paperback-api.example.com/digital-conversion/claim?sessionId=cs_test_visit"), env);
+  assert.equal(getResponse.status, 404);
+  const confirmation = await readFile(new URL("../../../books/digital-purchase-confirmation.html", import.meta.url), "utf8");
+  assert.match(confirmation, /if \(!sessionId\)/);
+  assert.match(confirmation, /data\.track === true/);
+  assert.doesNotMatch(confirmation, /addEventListener\(['"]load['"].*purchase/s);
 });
 
 test("print asset source URLs are time-limited and cannot be used after expiry", async () => {

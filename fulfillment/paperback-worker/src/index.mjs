@@ -7,6 +7,9 @@ import { OrderStore } from "./order-store.mjs";
 
 const JSON_HEADERS = { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" };
 const QUOTE_LIFETIME_MS = 30 * 60 * 1000;
+const DIGITAL_PRICE_CENTS = 2900;
+const DIGITAL_CURRENCY = "usd";
+const DIGITAL_EVENT_TYPES = new Set(["checkout.session.completed", "checkout.session.async_payment_succeeded"]);
 
 function nowIso() { return new Date().toISOString(); }
 
@@ -103,6 +106,24 @@ function cors(request, env) {
     "Access-Control-Allow-Headers": "content-type, x-paperback-test-token, x-paperback-private-token",
     "Access-Control-Allow-Methods": "POST, OPTIONS"
   };
+}
+
+function digitalPaymentLinks(env) {
+  return new Map([
+    [env.STRIPE_PAYMENT_LINK_CURRENCY_DIGITAL, "currency_market_structure"],
+    [env.STRIPE_PAYMENT_LINK_METALS_DIGITAL, "metals_market_structure"],
+    [env.STRIPE_PAYMENT_LINK_EQUITY_DIGITAL, "equity_market_structure"]
+  ].filter(([paymentLinkId]) => typeof paymentLinkId === "string" && paymentLinkId.startsWith("plink_")));
+}
+
+function digitalPurchaseFromSession(session, env) {
+  if (!session || session.payment_status !== "paid") return null;
+  if (session.mode && session.mode !== "payment") return null;
+  if (session.amount_total !== DIGITAL_PRICE_CENTS || String(session.currency || "").toLowerCase() !== DIGITAL_CURRENCY) return null;
+  const paymentLinkId = typeof session.payment_link === "string" ? session.payment_link : session.payment_link?.id;
+  const eventLabel = digitalPaymentLinks(env).get(paymentLinkId);
+  if (!eventLabel || typeof session.id !== "string" || !/^cs_(?:live|test)_/.test(session.id)) return null;
+  return { stripeSessionId: session.id, stripePaymentLinkId: paymentLinkId, eventLabel };
 }
 
 async function parseJson(request) {
@@ -352,8 +373,26 @@ async function stripeWebhook(request, env) {
   let event;
   try { event = await parseVerifiedStripeEvent(request, env.STRIPE_WEBHOOK_SECRET); }
   catch (error) { return json({ ok: false, code: error.code || "stripe_webhook_invalid" }, 400); }
-  if (event.type !== "checkout.session.completed") return json({ ok: true, ignored: event.type });
+  if (!DIGITAL_EVENT_TYPES.has(event.type)) return json({ ok: true, ignored: event.type });
   const session = event.data?.object || {};
+  const digitalPurchase = digitalPurchaseFromSession(session, env);
+  if (digitalPurchase) {
+    const store = new OrderStore(env.PAPERBACK_ORDERS);
+    const inserted = await store.insertDigitalPurchase({
+      ...digitalPurchase,
+      stripeEventId: event.id,
+      amountTotal: session.amount_total,
+      currency: String(session.currency).toLowerCase(),
+      verifiedAt: nowIso()
+    });
+    log(inserted ? "digital_purchase_verified" : "digital_purchase_duplicate", {
+      eventId: event.id,
+      sessionId: session.id,
+      eventLabel: digitalPurchase.eventLabel
+    });
+    return json({ ok: true, digitalPurchase: true, duplicate: !inserted });
+  }
+  if (event.type !== "checkout.session.completed") return json({ ok: true, ignored: "not_a_paid_digital_purchase" });
   if (session.payment_status !== "paid" || session.metadata?.order_type !== "paperback") return json({ ok: true, ignored: "not_a_paid_paperback" });
   const quoteId = session.metadata?.quote_id || session.client_reference_id;
   const book = getBook(session.metadata?.book_slug);
@@ -395,6 +434,30 @@ async function stripeWebhook(request, env) {
   }
   await submitPaidOrder(store, env, session.id);
   return json({ ok: true });
+}
+
+async function claimDigitalConversion(request, env) {
+  if (!allowedOrigin(request, env)) return json({ ok: false, code: "origin_forbidden" }, 403);
+  const input = await parseJson(request);
+  const sessionId = typeof input?.sessionId === "string" ? input.sessionId.trim() : "";
+  if (!/^cs_(?:live|test)_[A-Za-z0-9]+$/.test(sessionId)) {
+    return json({ ok: false, code: "session_invalid" }, 400, cors(request, env));
+  }
+  const store = new OrderStore(env.PAPERBACK_ORDERS);
+  const result = await store.claimDigitalConversion(sessionId, nowIso());
+  if (result.status === "not_found") {
+    return json({ ok: false, code: "payment_not_verified" }, 404, cors(request, env));
+  }
+  if (result.status === "duplicate") {
+    return json({ ok: true, track: false, duplicate: true }, 200, cors(request, env));
+  }
+  return json({
+    ok: true,
+    track: true,
+    eventLabel: result.purchase.event_label,
+    value: DIGITAL_PRICE_CENTS / 100,
+    currency: DIGITAL_CURRENCY.toUpperCase()
+  }, 200, cors(request, env));
 }
 
 async function pollStatuses(env) {
@@ -506,6 +569,7 @@ export default {
     if (request.method === "GET" && url.pathname.startsWith("/lulu-assets/")) return serveAsset(request, env, url.pathname);
     if (request.method === "POST" && url.pathname === "/paperback/quote") return createQuote(request, env);
     if (request.method === "POST" && url.pathname === "/paperback/checkout") return createCheckout(request, env);
+    if (request.method === "POST" && url.pathname === "/digital-conversion/claim") return claimDigitalConversion(request, env);
     if (request.method === "POST" && url.pathname === "/webhooks/stripe") return stripeWebhook(request, env);
     return json({ ok: false, code: "not_found" }, 404);
   },
@@ -514,4 +578,4 @@ export default {
   }
 };
 
-export { createQuote, createCheckout, stripeWebhook, pollStatuses, quoteFromRow, orderFromRow, suggestedAddressDiffers };
+export { createQuote, createCheckout, stripeWebhook, claimDigitalConversion, digitalPurchaseFromSession, pollStatuses, quoteFromRow, orderFromRow, suggestedAddressDiffers };

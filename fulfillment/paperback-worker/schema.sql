@@ -52,3 +52,25 @@ CREATE TABLE IF NOT EXISTS paperback_quotes (
 
 CREATE INDEX IF NOT EXISTS paperback_quotes_expiry
   ON paperback_quotes (expires_at);
+
+-- Paid digital Checkout Sessions are written only from a verified Stripe
+-- webhook. The primary key and one-time claim timestamp prevent duplicate UET
+-- purchase events when Stripe retries a webhook or a buyer refreshes the
+-- confirmation page.
+CREATE TABLE IF NOT EXISTS digital_purchase_conversions (
+  stripe_session_id TEXT PRIMARY KEY NOT NULL,
+  stripe_event_id TEXT NOT NULL,
+  stripe_payment_link_id TEXT NOT NULL,
+  event_label TEXT NOT NULL CHECK (event_label IN (
+    'currency_market_structure',
+    'metals_market_structure',
+    'equity_market_structure'
+  )),
+  amount_total INTEGER NOT NULL CHECK (amount_total = 2900),
+  currency TEXT NOT NULL CHECK (currency = 'usd'),
+  verified_at TEXT NOT NULL,
+  claimed_at TEXT
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS digital_purchase_conversions_stripe_event
+  ON digital_purchase_conversions (stripe_event_id);

@@ -18,9 +18,14 @@ PAPERBACK_BASE_URL = "https://grizzly-parrot-paperback.grizzlyparrott04.workers.
 PAPERBACK_SUCCESS_URL = "https://grizzlyparrottrading.com/books/paperback-order-confirmation.html"
 PAPERBACK_CANCEL_URL = "https://grizzlyparrottrading.com/books/"
 PAPERBACK_ALLOWED_ORIGIN = "https://grizzlyparrottrading.com"
+MICROSOFT_UET_TAG_ID = "97257755"
 EMAIL_FROM = "Grizzly Parrot Trading <orders@grizzlyparrottrading.com>"
 SHOP_CONTACT_EMAIL = "orders@grizzlyparrottrading.com"
 ADMIN_EMAIL = "grizzlyparrott04@gmail.com"
+
+STRIPE_PAYMENT_LINK_CURRENCY_DIGITAL = "plink_1T6ckkIA3p8RBkZIbTKBQpYh"
+STRIPE_PAYMENT_LINK_METALS_DIGITAL = "plink_1TDVahIA3p8RBkZIweogwKgN"
+STRIPE_PAYMENT_LINK_EQUITY_DIGITAL = "plink_1TvLgXIA3p8RBkZIZ0x8nKlu"
 
 STRIPE_PRICE_CURRENCY_PAPERBACK = "price_1Tvc5kIA3p8RBkZIifTkKIps"
 STRIPE_PRICE_METALS_PAPERBACK = "price_1TvcfHIA3p8RBkZICIkp2C8c"
