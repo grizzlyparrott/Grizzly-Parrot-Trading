@@ -1,0 +1,39 @@
+{
+  "total_sitemap_urls_before": 845,
+  "total_sitemap_urls_after": 862,
+  "normalized_article_entries_updated": 705,
+  "normalized_article_entries_expected": 705,
+  "missing_article_entries_added": 17,
+  "missing_urls_added": [
+    "https://grizzlyparrottrading.com/futures-basics/atr-position-sizing-6a.html",
+    "https://grizzlyparrottrading.com/futures-basics/best-times-to-trade-6a.html",
+    "https://grizzlyparrottrading.com/futures-basics/china-economic-data-6a-impact.html",
+    "https://grizzlyparrottrading.com/futures-basics/day-trading-breakouts-6a.html",
+    "https://grizzlyparrottrading.com/futures-basics/how-6j-reacts-to-boj-policy.html",
+    "https://grizzlyparrottrading.com/futures-basics/identifying-6a-reversals-volume-spikes.html",
+    "https://grizzlyparrottrading.com/futures-basics/limit-moves-liquidity-gaps-lean-hogs.html",
+    "https://grizzlyparrottrading.com/futures-basics/risk-sentiment-6a-trends.html",
+    "https://grizzlyparrottrading.com/futures-basics/scalping-6j-futures.html",
+    "https://grizzlyparrottrading.com/futures-basics/swing-trading-6a-macro-themes.html",
+    "https://grizzlyparrottrading.com/futures-basics/using-cot-reports-for-6j.html",
+    "https://grizzlyparrottrading.com/futures-basics/weekly-reports-important-for-6a.html",
+    "https://grizzlyparrottrading.com/futures-basics/what-moves-6a-aud-futures.html",
+    "https://grizzlyparrottrading.com/futures-basics/what-moves-6j-futures.html",
+    "https://grizzlyparrottrading.com/futures-basics/why-live-cattle-trends-persist-longer.html",
+    "https://grizzlyparrottrading.com/futures-basics/why-livestock-futures-are-a-separate-risk-class.html",
+    "https://grizzlyparrottrading.com/prop-firm-trading/what-is-trailing-drawdown-prop-firms.html"
+  ],
+  "duplicate_entries_removed": 0,
+  "unrelated_entries_changed_count": 0,
+  "duplicate_canonical_in_changed_set_count": 1,
+  "duplicate_canonical_urls": [
+    "https://grizzlyparrottrading.com/futures-basics/pa-industrial-demand-drivers.html"
+  ],
+  "xml_validation": {
+    "ok": true,
+    "total_duplicates_after": 0
+  },
+  "domain_validation_failures": 0,
+  "duplicate_loc_validation_failures": 0,
+  "invalid_lastmod_count": 0
+}
