@@ -1,0 +1,41 @@
+{
+  "changed_non_html": [
+    {
+      "path": ".gitignore",
+      "status": "A",
+      "classification": "ignore configuration",
+      "action": "retain"
+    },
+    {
+      "path": "__pycache__/normalize_article_html.cpython-314.pyc",
+      "status": "D",
+      "classification": "compiled python cache",
+      "action": "removed (required cleanup)"
+    },
+    {
+      "path": "__pycache__/rollout_article_shell.cpython-314.pyc",
+      "status": "D",
+      "classification": "compiled python cache",
+      "action": "removed (required cleanup)"
+    },
+    {
+      "path": "outputs/sitewide-article-rollout/phase1_excluded_refused_manifest.json",
+      "status": "A",
+      "classification": "phase1/rollout manifest / artifact",
+      "action": "retain"
+    },
+    {
+      "path": "outputs/sitewide-article-rollout/phase1_normalized_article_paths.txt",
+      "status": "A",
+      "classification": "rollout artifact / log",
+      "action": "retain"
+    },
+    {
+      "path": "outputs/sitewide-article-rollout/phase1_normalizer_dry_run_fullproof.log",
+      "status": "A",
+      "classification": "rollout artifact / log",
+      "action": "retain"
+    }
+  ],
+  "path_count": 6
+}

@@ -1,0 +1,987 @@
+{
+  "generated_at": "2026-07-27T20:24:11.828410+00:00",
+  "total_entries": 122,
+  "reason_counts": {
+    "dry-run-tag-imbalance": 3,
+    "metadata-extraction-failed": 26,
+    "missing-markers": 93
+  },
+  "entries": [
+    {
+      "path": "futures-basics/best-indicators-for-pl.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/best-times-to-trade-hg.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/best-times-to-trade-pl.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/breakeven-futures.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/cash-market-vs-futures-divergence-hogs.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/china-demand-copper-hg.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/contract-expiration-and-roll.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/contract-size-risk-impact.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/contract-specs-explained.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/copper-fundamentals-hg.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/copper-market-structure-hg.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/copper-metal-correlations-hg.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/copper-supply-shocks-hg.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/copper-vs-crude-hg-cl.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/copper-vs-gold-price-behavior.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/day-margin-vs-overnight-margin.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/disease-risk-and-tail-events-in-lean-hogs.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/es-vs-mes-vs-nq.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/export-demand-and-its-outsized-impact-on-hogs.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/futures-leverage-explained.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/futures-rollover-explained.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: Expected exactly one @BreadcrumbList JSON-LD block, found 0 (parse failures: 1)",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/gc-correlations-explained.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/gc-fundamental-drivers.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/hg-tick-size-tick-value-margin.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/hog-supply-cycles-and-biological-lag.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/how-feed-costs-transmit-into-hog-prices.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/how-liquidity-voids-move-futures-markets.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: Expected exactly one @BreadcrumbList JSON-LD block, found 0 (parse failures: 1)",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/how-slippage-works.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/lean-hog-contract-specs-that-matter.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/lean-hog-contract-specs.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/lean-hog-spreads-and-curve-instability.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/limit-vs-market-orders.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/limit-vs-stop-orders.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/macro-drivers-influence-pl.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/market-structure-basics.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/mnq-bad-habits.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/nq-best-times.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/nq-earnings-impact.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/nq-execution-mistakes.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/nq-liquidity-windows.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/nq-margin.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/nq-news-volatility.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/nq-position-sizing.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/nq-pullbacks-vs-breakouts.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/nq-volatility-vs-es.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/nq-vs-es.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/pl-automotive-demand-catalyst-cycles.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/pl-common-trading-mistakes.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/pl-geopolitical-supply-risk.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/pl-gold-ratio-guide.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/pl-hedging-use-cases.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/pl-industrial-demand-factors.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/pl-liquidity-traps-guide.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/pl-margin-day-vs-overnight.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/pl-microstructure-algo-behavior.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/pl-seasonality-patterns.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/pl-spread-strategy-overview.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/pl-tick-size-and-contract-specs.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/pl-volatility-profile.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/pl-vs-pa-spread-correlation.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/platinum-supply-chain-price-impact.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/seasonal-patterns-unique-to-lean-hogs.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/tick-value-vs-tick-size-risk.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: Expected exactly one @BreadcrumbList JSON-LD block, found 0 (parse failures: 1)",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/usd-impact-copper-hg.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/what-are-platinum-futures.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/what-is-a-futures-contract.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/what-is-liquidity.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/what-makes-futures-move.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/why-futures-dont-track-spot-price.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: Expected exactly one @BreadcrumbList JSON-LD block, found 0 (parse failures: 0)",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "futures-basics/why-lean-hogs-are-structurally-volatile.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/why-lean-hogs-decouple-from-other-commodities.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/why-lean-hogs-react-violently-to-small-data-changes.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/why-pl-differs-from-gold-silver.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: og:image expected exactly one match, found 0",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "market-basics/market-internals-basics.html",
+      "apparent_page_type": "market-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: Expected exactly one @BreadcrumbList JSON-LD block, found 0 (parse failures: 1)",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "market-basics/mean-reversion-basics.html",
+      "apparent_page_type": "market-basics",
+      "exact_exclusion_reason": "metadata-extraction-failed",
+      "failure_reason": "metadata extraction failed: Expected exactly one @BreadcrumbList JSON-LD block, found 0 (parse failures: 1)",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Fix metadata extraction blockers: add missing required tags (description, OG/Twitter/canonical/JSON-LD fields as per extractor requirements) and rerun normalizer."
+    },
+    {
+      "path": "market-basics/risk-per-trade-small-accounts.html",
+      "apparent_page_type": "market-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "market-basics/trade-management-holding-winners.html",
+      "apparent_page_type": "market-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "market-basics/what-is-drawdown-really.html",
+      "apparent_page_type": "market-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "market-basics/why-good-ideas-still-lose-money.html",
+      "apparent_page_type": "market-basics",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/article1.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/dom-trading-basics.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/ninjatrader-advanced-templates.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/ninjatrader-atm-strategies.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/ninjatrader-basics.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/ninjatrader-chart-linking.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/ninjatrader-chart-replay.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/ninjatrader-data-feed-setup.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/ninjatrader-dom-settings.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/ninjatrader-drawing-tools.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/ninjatrader-hotkeys.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/ninjatrader-indicators.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/ninjatrader-order-entry.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/ninjatrader-price-alerts.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/ninjatrader-workspaces.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/simple-readable-chart-layout.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/tradovate-bracket-orders.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/tradovate-chart-tools.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/tradovate-data-setup.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/tradovate-dom-settings.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/tradovate-for-beginners.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/tradovate-hotkeys.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/tradovate-order-entry.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/tradovate-order-presets.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/tradovate-price-alerts.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "platforms-tutorials/tradovate-workspaces.html",
+      "apparent_page_type": "platforms-tutorials",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "prop-firm-trading/apex-style-rules-by-the-numbers.html",
+      "apparent_page_type": "prop-firm-trading",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "prop-firm-trading/apex-vs-topstep-vs-bulenox.html",
+      "apparent_page_type": "prop-firm-trading",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "prop-firm-trading/article1.html",
+      "apparent_page_type": "prop-firm-trading",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "prop-firm-trading/best-days-and-times-to-trade-evaluations.html",
+      "apparent_page_type": "prop-firm-trading",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "prop-firm-trading/common-evaluation-mistakes.html",
+      "apparent_page_type": "prop-firm-trading",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "prop-firm-trading/daily-loss-and-resets.html",
+      "apparent_page_type": "prop-firm-trading",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "prop-firm-trading/evaluation-reset-strategy.html",
+      "apparent_page_type": "prop-firm-trading",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "prop-firm-trading/how-long-to-pass-evaluation.html",
+      "apparent_page_type": "prop-firm-trading",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "prop-firm-trading/how-prop-firm-evaluations-work.html",
+      "apparent_page_type": "prop-firm-trading",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "prop-firm-trading/multiple-evaluations-strategy.html",
+      "apparent_page_type": "prop-firm-trading",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "prop-firm-trading/overtrading-in-evaluations.html",
+      "apparent_page_type": "prop-firm-trading",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "prop-firm-trading/prop-evaluation-game-plan.html",
+      "apparent_page_type": "prop-firm-trading",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "prop-firm-trading/scaling-after-funding.html",
+      "apparent_page_type": "prop-firm-trading",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "prop-firm-trading/when-to-take-profit-in-evaluations.html",
+      "apparent_page_type": "prop-firm-trading",
+      "exact_exclusion_reason": "missing-markers",
+      "failure_reason": "missing one or both article body markers",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Add both ARTICLE BODY START/END markers to wrap editorial body and rerun normalizer; otherwise skip as non-parseable."
+    },
+    {
+      "path": "futures-basics/es-tick-size-tick-value-and-margin.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "dry-run-tag-imbalance",
+      "failure_reason": "Tag imbalance detected in generated output",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Resolve tag imbalance in article shell manually, then rerun dry-run normalizer to enable automated update."
+    },
+    {
+      "path": "futures-basics/why-gc-trends-differ.html",
+      "apparent_page_type": "futures-basics",
+      "exact_exclusion_reason": "dry-run-tag-imbalance",
+      "failure_reason": "Tag imbalance detected in generated output",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Resolve tag imbalance in article shell manually, then rerun dry-run normalizer to enable automated update."
+    },
+    {
+      "path": "market-basics/false-liquidity-zones-levels-that-look-strong-but-arent.html",
+      "apparent_page_type": "market-basics",
+      "exact_exclusion_reason": "dry-run-tag-imbalance",
+      "failure_reason": "Tag imbalance detected in generated output",
+      "appears_genuine_article": true,
+      "recommended_next_action": "Resolve tag imbalance in article shell manually, then rerun dry-run normalizer to enable automated update."
+    }
+  ]
+}

@@ -1,120 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
 
-        <meta charset="UTF-8">
-     <!-- Standard Favicon -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Standard Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- PNG Fallbacks -->
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
-<!-- Web App Manifest -->
-<link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futures Margin Requirements Explained: Initial vs Maintenance</title>
+  <meta name="description" content="Understand futures margin requirements, the difference between initial and maintenance margin, and what happens when your account triggers a margin call.">
+  <meta name="robots" content="index, follow">
 
-<!-- PNG Fallbacks -->
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/futures-margin-requirements-explained.html">
 
-    <title>Futures Margin Requirements Explained: Initial vs Maintenance</title>
-    <meta name="description" content="Understand futures margin requirements, the difference between initial and maintenance margin, and what happens when your account triggers a margin call.">
-    <meta name="robots" content="index, follow">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Futures Margin Requirements Explained: Initial vs Maintenance">
+  <meta property="og:description" content="Straightforward breakdown of futures margin requirements so you know exactly how much capital you actually need and how to avoid margin calls.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/futures-margin-requirements-explained.html">
+  <meta property="og:site_name" content="Grizzly Parrot Trading">
+  <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+  <meta property="og:image:width" content="1792">
+  <meta property="og:image:height" content="941">
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/futures-margin-requirements-explained.html">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+  <meta name="twitter:title" content="Futures Margin Requirements Explained: Initial vs Maintenance">
+  <meta name="twitter:description" content="Learn how futures margin requirements work, the types of margin you’ll deal with, and what a margin call actually means in real life.">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Futures Margin Requirements Explained: Initial vs Maintenance">
-    <meta property="og:description" content="Straightforward breakdown of futures margin requirements so you know exactly how much capital you actually need and how to avoid margin calls.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/futures-margin-requirements-explained.html">
-    <meta property="og:site_name" content="Grizzly Parrot Trading">
-    <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
-    <meta property="og:image:width" content="1792">
-    <meta property="og:image:height" content="941">
+  <link rel="stylesheet" href="../style.css">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JMJVR3G5YN');
+  </script>
 
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Futures Margin Requirements Explained: Initial vs Maintenance",
+    "description": "Understand futures margin requirements, the difference between initial and maintenance margin, and what happens when your account triggers a margin call.",
+    "author": {
+      "@type": "Person",
+      "name": "Kyle Parrott"
+    },
+    "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/futures-margin-requirements-explained.html",
+    "datePublished": "2025-11-20",
+    "dateModified": "2025-11-20"
+  }
+  </script>
 
-    <!-- Twitter -->
-    
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
-    <meta name="twitter:title" content="Futures Margin Requirements Explained: Initial vs Maintenance">
-    <meta name="twitter:description" content="Learn how futures margin requirements work, the types of margin you’ll deal with, and what a margin call actually means in real life.">
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-JMJVR3G5YN');
-    </script>
-
-    <link rel="stylesheet" href="../style.css">
-
-    <!-- JSON-LD: Article -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Futures Margin Requirements Explained: Initial vs Maintenance",
-      "description": "Understand futures margin requirements, the difference between initial and maintenance margin, and what happens when your account triggers a margin call.",
-      "author": {
-        "@type": "Person",
-        "name": "Kyle Parrott"
+  <!-- JSON-LD: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/"
       },
-      "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/futures-margin-requirements-explained.html",
-      "datePublished": "2025-11-20",
-      "dateModified": "2025-11-20"
-    }
-    </script>
-
-    <!-- JSON-LD: Breadcrumbs -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://grizzlyparrottrading.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Futures Basics",
-          "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Futures Margin Requirements Explained: Initial vs Maintenance",
-          "item": "https://grizzlyparrottrading.com/futures-basics/futures-margin-requirements-explained.html"
-        }
-      ]
-    }
-    </script>
-
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Futures Basics",
+        "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Futures Margin Requirements Explained: Initial vs Maintenance",
+        "item": "https://grizzlyparrottrading.com/futures-basics/futures-margin-requirements-explained.html"
+      }
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
 </head>
 <body>
 
 <header class="site-header">
-    <div class="container header-inner">
-        <div class="logo">
-            <a href="/">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="/">
 Grizzly Parrot Trading</a>
-        </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
         <li><a href="../metals/index.html">Metals</a></li>
         <li><a href="../energies/index.html">Energies</a></li>
         <li><a href="../currencies/index.html">Currencies</a></li>
@@ -122,16 +113,15 @@ Grizzly Parrot Trading</a>
         <li><a href="../platforms-tutorials/index.html">Platforms</a></li>
         <li><a href="../market-basics/index.html">Market Basics</a></li>
         <li><a href="../tools/index.html">Tools</a></li>
-            </ul>
-        </nav>
-    </div>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <main>
-    <section class="section">
-        <div class="container article-content">
-
-            <!-- ARTICLE BODY START -->
+<section class="section">
+<div class="container article-content">
+<!-- ARTICLE BODY START -->
             <!-- YOU PUT ALL H1/H2/H3/P/UL/OL/TABLE CONTENT HERE -->
 
             <h1>Futures Margin Requirements Explained: Initial vs Maintenance</h1>
@@ -258,8 +248,8 @@ Grizzly Parrot Trading</a>
 
 
             <!-- ARTICLE BODY END -->
-
-            </div>
+</div>
+</section>
 </main>
 
 <footer class="site-footer">
@@ -276,7 +266,6 @@ Grizzly Parrot Trading</a>
       <a href="/disclaimer.html">Disclaimer</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/contact.html">Contact</a>
-       
     </div>
 
     <p class="footer-copy">
@@ -288,6 +277,5 @@ Grizzly Parrot Trading</a>
 
   </div>
 </footer>
-
 </body>
 </html>

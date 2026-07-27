@@ -1,92 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
 
-    <meta charset="UTF-8">
-     <!-- Standard Favicon -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Standard Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- PNG Fallbacks -->
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
-<!-- Web App Manifest -->
-<link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmap Workspace Setup: Clean Layout for Futures Traders</title>
+  <meta name="description" content="Set up a clean Bookmap workspace for futures trading. Learn how to arrange the heatmap, DOM columns, indicators, and presets for fast order flow reading.">
+  <meta name="robots" content="index, follow">
 
-<!-- PNG Fallbacks -->
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-   
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bookmap Workspace Setup: Clean Layout for Futures Traders</title>
-<meta name="description" content="Set up a clean Bookmap workspace for futures trading. Learn how to arrange the heatmap, DOM columns, indicators, and presets for fast order flow reading.">
-<meta name="robots" content="index, follow">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://grizzlyparrottrading.com/platforms-tutorials/bookmap-workspace-setup.html">
 
-<link rel="canonical" href="https://grizzlyparrottrading.com/platforms-tutorials/bookmap-workspace-setup.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bookmap Workspace Setup: Clean Layout for Futures Traders">
+  <meta property="og:description" content="A direct guide to building a clean Bookmap workspace layout for futures traders, with heatmap, DOM, and volume tools arranged correctly.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://grizzlyparrottrading.com/platforms-tutorials/bookmap-workspace-setup.html">
+  <meta property="og:site_name" content="Grizzly Parrot Trading">
+  <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+  <meta property="og:image:width" content="1792">
+  <meta property="og:image:height" content="941">
 
-<meta property="og:title" content="Bookmap Workspace Setup: Clean Layout for Futures Traders">
-<meta property="og:description" content="A direct guide to building a clean Bookmap workspace layout for futures traders, with heatmap, DOM, and volume tools arranged correctly.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://grizzlyparrottrading.com/platforms-tutorials/bookmap-workspace-setup.html">
-<meta property="og:site_name" content="Grizzly Parrot Trading">
-    <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
-    <meta property="og:image:width" content="1792">
-    <meta property="og:image:height" content="941">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+  <meta name="twitter:title" content="Bookmap Workspace Setup: Clean Layout for Futures Traders">
+  <meta name="twitter:description" content="Learn how to structure your Bookmap workspace so you can read order flow quickly without clutter or confusion.">
 
+  <link rel="stylesheet" href="../style.css">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JMJVR3G5YN');
+  </script>
 
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bookmap Workspace Setup: Clean Layout for Futures Traders",
+    "description": "Set up a clean Bookmap workspace for futures trading. Learn how to arrange the heatmap, DOM columns, indicators, and presets for fast order flow reading.",
+    "author": {
+      "@type": "Person",
+      "name": "Kyle Parrott"
+    },
+    "mainEntityOfPage": "https://grizzlyparrottrading.com/platforms-tutorials/bookmap-workspace-setup.html",
+    "datePublished": "2025-11-22",
+    "dateModified": "2025-11-22"
+  }
+  </script>
 
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
-<meta name="twitter:title" content="Bookmap Workspace Setup: Clean Layout for Futures Traders">
-<meta name="twitter:description" content="Learn how to structure your Bookmap workspace so you can read order flow quickly without clutter or confusion.">
-
-<link rel="stylesheet" href="../style.css">
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-JMJVR3G5YN');
-</script>
-
-<!-- JSON-LD: Article -->
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"Article",
-"headline":"Bookmap Workspace Setup: Clean Layout for Futures Traders",
-"description":"Set up a clean Bookmap workspace for futures trading. Learn how to arrange the heatmap, DOM columns, indicators, and presets for fast order flow reading.",
-"author":{"@type":"Person","name":"Kyle Parrott"},
-"mainEntityOfPage":"https://grizzlyparrottrading.com/platforms-tutorials/bookmap-workspace-setup.html",
-"datePublished":"2025-11-22",
-"dateModified":"2025-11-22"
-}
-</script>
-
-<!-- JSON-LD: Breadcrumbs -->
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"BreadcrumbList",
-"itemListElement":[
-  {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},
-  {"@type":"ListItem","position":2,"name":"Platforms & Tutorials","item":"https://grizzlyparrottrading.com/platforms-tutorials/index.html"},
-  {"@type":"ListItem","position":3,"name":"Bookmap Workspace Setup: Clean Layout for Futures Traders","item":"https://grizzlyparrottrading.com/platforms-tutorials/bookmap-workspace-setup.html"}
-]}
-</script>
+  <!-- JSON-LD: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Platforms & Tutorials",
+        "item": "https://grizzlyparrottrading.com/platforms-tutorials/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Bookmap Workspace Setup: Clean Layout for Futures Traders",
+        "item": "https://grizzlyparrottrading.com/platforms-tutorials/bookmap-workspace-setup.html"
+      }
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
 </head>
-
 <body>
+
 <header class="site-header">
   <div class="container header-inner">
-    <div class="logo"><a href="/">
-Grizzly Parrot Trading</a></div>
+    <div class="logo">
+      <a href="/">
+Grizzly Parrot Trading</a>
+    </div>
     <nav class="main-nav">
       <ul>
         <li><a href="../futures-basics/index.html">Futures Basics</a></li>
@@ -105,7 +121,6 @@ Grizzly Parrot Trading</a></div>
 <main>
 <section class="section">
 <div class="container article-content">
-
 <!-- ARTICLE BODY START -->
 
 <h1>Bookmap Workspace Setup: Clean Layout for Futures Traders</h1>
@@ -231,8 +246,8 @@ Grizzly Parrot Trading</a></div>
 </div>
 
 <!-- ARTICLE BODY END -->
-
-<p><em>All third-party product names, company names, platforms, and trademarks mentioned on this page are the property of their respective owners. This content is for educational purposes only and is not affiliated with, endorsed by, or sponsored by any third party referenced unless explicitly stated otherwise.</em></p>
+</div>
+</section>
 </main>
 
 <footer class="site-footer">
@@ -249,7 +264,6 @@ Grizzly Parrot Trading</a></div>
       <a href="/disclaimer.html">Disclaimer</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/contact.html">Contact</a>
-       
     </div>
 
     <p class="footer-copy">
