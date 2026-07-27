@@ -126,8 +126,8 @@
       "market-basics/market-internals-basics.html",
       "market-basics/mean-reversion-basics.html"
     ],
-    "already_compliant": 5,
-    "would_change": 701,
+    "already_compliant": 706,
+    "would_change": 0,
     "dry_run_failures": [
       {
         "path": "futures-basics/es-tick-size-tick-value-and-margin.html",
@@ -142,44 +142,7 @@
         "error": "Tag imbalance detected in generated output"
       }
     ],
-    "duplicate_tracking_installations": [
-      {
-        "path": "futures-basics/how-economic-reports-affect-futures.html",
-        "ga_before": 0,
-        "ga_after": 1,
-        "issue": "ga-count-not-equal-to-one"
-      },
-      {
-        "path": "futures-basics/how-futures-gaps-work.html",
-        "ga_before": 0,
-        "ga_after": 1,
-        "issue": "ga-count-not-equal-to-one"
-      },
-      {
-        "path": "futures-basics/how-futures-settlement-works.html",
-        "ga_before": 0,
-        "ga_after": 1,
-        "issue": "ga-count-not-equal-to-one"
-      },
-      {
-        "path": "futures-basics/how-margin-calls-work-in-futures.html",
-        "ga_before": 0,
-        "ga_after": 1,
-        "issue": "ga-count-not-equal-to-one"
-      },
-      {
-        "path": "futures-basics/mark-to-market-explained.html",
-        "ga_before": 0,
-        "ga_after": 1,
-        "issue": "ga-count-not-equal-to-one"
-      },
-      {
-        "path": "platforms-tutorials/tradovate-hotkeys-setup-guide.html",
-        "ga_before": 0,
-        "ga_after": 1,
-        "issue": "ga-count-not-equal-to-one"
-      }
-    ],
+    "duplicate_tracking_installations": [],
     "protected_hash_mismatches": 0,
     "required_correction_touching_body": 0,
     "malformed_shell_findings": [],
@@ -801,7 +764,7 @@
     {
       "path": "energies/cl-best-times-to-trade.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -817,7 +780,7 @@
     {
       "path": "energies/cl-calendar-spreads-contango-backwardation.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -833,7 +796,7 @@
     {
       "path": "energies/cl-common-trader-mistakes.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -849,7 +812,7 @@
     {
       "path": "energies/cl-correlations-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -881,7 +844,7 @@
     {
       "path": "energies/cl-geopolitical-supply-risk.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -897,7 +860,7 @@
     {
       "path": "energies/cl-intraday-strategies.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -913,7 +876,7 @@
     {
       "path": "energies/cl-liquidity-levels-structure.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -929,7 +892,7 @@
     {
       "path": "energies/cl-market-microstructure.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -945,7 +908,7 @@
     {
       "path": "energies/cl-news-event-reaction.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -961,7 +924,7 @@
     {
       "path": "energies/cl-orderflow-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -977,7 +940,7 @@
     {
       "path": "energies/cl-risk-management.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -993,7 +956,7 @@
     {
       "path": "energies/cl-seasonality-patterns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1009,7 +972,7 @@
     {
       "path": "energies/cl-slippage-avoidance.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1025,7 +988,7 @@
     {
       "path": "energies/cl-technical-indicators.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1041,7 +1004,7 @@
     {
       "path": "energies/cl-tick-size-tick-value-specs.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1057,7 +1020,7 @@
     {
       "path": "energies/cl-volatility-profile-atr.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1073,7 +1036,7 @@
     {
       "path": "energies/eia-inventory-reports-cl.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1089,7 +1052,7 @@
     {
       "path": "energies/opec-impact-on-cl.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1105,7 +1068,7 @@
     {
       "path": "energies/what-are-crude-oil-futures-cl.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1137,7 +1100,7 @@
     {
       "path": "futures-basics/6a-chart-patterns-that-work.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1153,7 +1116,7 @@
     {
       "path": "futures-basics/6a-commodity-cycle-impact.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1169,7 +1132,7 @@
     {
       "path": "futures-basics/6a-contract-specs-tick-size-value.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1185,7 +1148,7 @@
     {
       "path": "futures-basics/6a-employment-data-impact.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1201,7 +1164,7 @@
     {
       "path": "futures-basics/6a-gold-correlation-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1217,7 +1180,7 @@
     {
       "path": "futures-basics/6a-gold-correlation.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1233,7 +1196,7 @@
     {
       "path": "futures-basics/6a-price-action-behavior-across-sessions.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1249,7 +1212,7 @@
     {
       "path": "futures-basics/6a-reacts-to-us-rate-announcements.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1265,7 +1228,7 @@
     {
       "path": "futures-basics/6a-seasonality-patterns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1281,7 +1244,7 @@
     {
       "path": "futures-basics/6a-volatility-clusters.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1297,7 +1260,7 @@
     {
       "path": "futures-basics/6a-vs-spot-audusd.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1313,7 +1276,7 @@
     {
       "path": "futures-basics/6b-breakout-levels-how-to-identify-high-probability-zones.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1329,7 +1292,7 @@
     {
       "path": "futures-basics/6b-contract-specs-tick-size-and-margin.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1361,7 +1324,7 @@
     {
       "path": "futures-basics/6b-volatility-compression-and-expansion-patterns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1377,7 +1340,7 @@
     {
       "path": "futures-basics/6c-bank-of-canada-impact.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1393,7 +1356,7 @@
     {
       "path": "futures-basics/6c-best-trading-sessions.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1409,7 +1372,7 @@
     {
       "path": "futures-basics/6c-breakout-behavior.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1425,7 +1388,7 @@
     {
       "path": "futures-basics/6c-correlation-risk-on-risk-off.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1441,7 +1404,7 @@
     {
       "path": "futures-basics/6c-fundamental-analysis-guide.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1457,7 +1420,7 @@
     {
       "path": "futures-basics/6c-margin-and-position-sizing.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1473,7 +1436,7 @@
     {
       "path": "futures-basics/6c-oil-correlation.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1489,7 +1452,7 @@
     {
       "path": "futures-basics/6c-orderflow-behavior.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1505,7 +1468,7 @@
     {
       "path": "futures-basics/6c-scalping-guide.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1521,7 +1484,7 @@
     {
       "path": "futures-basics/6c-support-resistance-levels.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1537,7 +1500,7 @@
     {
       "path": "futures-basics/6c-swing-trading-strategy.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1553,7 +1516,7 @@
     {
       "path": "futures-basics/6c-technical-indicators-that-work.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1569,7 +1532,7 @@
     {
       "path": "futures-basics/6c-tick-size-tick-value.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1585,7 +1548,7 @@
     {
       "path": "futures-basics/6c-us-economic-data-impact.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1601,7 +1564,7 @@
     {
       "path": "futures-basics/6c-volatility-cycles.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1617,7 +1580,7 @@
     {
       "path": "futures-basics/6c-volatility-patterns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1633,7 +1596,7 @@
     {
       "path": "futures-basics/6c-vs-6e-vs-6j.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1649,7 +1612,7 @@
     {
       "path": "futures-basics/6e-atr-behavior-and-why-it-matters.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1665,7 +1628,7 @@
     {
       "path": "futures-basics/6e-gap-behavior-and-how-to-trade-it.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1681,7 +1644,7 @@
     {
       "path": "futures-basics/6e-important-correlations.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1697,7 +1660,7 @@
     {
       "path": "futures-basics/6e-liquidity-zones-where-institutions-place-size.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1713,7 +1676,7 @@
     {
       "path": "futures-basics/6e-market-structure-patterns-traders-miss.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1729,7 +1692,7 @@
     {
       "path": "futures-basics/6e-roll-dates-and-contract-behavior.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1745,7 +1708,7 @@
     {
       "path": "futures-basics/6e-seasonality-patterns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1761,7 +1724,7 @@
     {
       "path": "futures-basics/6e-tick-size-tick-value-margin-requirements.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1777,7 +1740,7 @@
     {
       "path": "futures-basics/6e-vs-eurusd-which-leads.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1793,7 +1756,7 @@
     {
       "path": "futures-basics/6j-and-bond-yields-relationship.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1809,7 +1772,7 @@
     {
       "path": "futures-basics/6j-boj-intervention-signals.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1825,7 +1788,7 @@
     {
       "path": "futures-basics/6j-breakout-events.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1841,7 +1804,7 @@
     {
       "path": "futures-basics/6j-carry-trade-impact.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1857,7 +1820,7 @@
     {
       "path": "futures-basics/6j-contract-specs.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1873,7 +1836,7 @@
     {
       "path": "futures-basics/6j-long-term-cycles.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1889,7 +1852,7 @@
     {
       "path": "futures-basics/6j-macro-events-playbook.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1905,7 +1868,7 @@
     {
       "path": "futures-basics/6j-market-structure-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1921,7 +1884,7 @@
     {
       "path": "futures-basics/6j-mean-reversion-signals.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1937,7 +1900,7 @@
     {
       "path": "futures-basics/6j-safe-haven-behavior.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1953,7 +1916,7 @@
     {
       "path": "futures-basics/6j-thin-liquidity-us-lunch.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1969,7 +1932,7 @@
     {
       "path": "futures-basics/6j-volatility-patterns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -1985,7 +1948,7 @@
     {
       "path": "futures-basics/6j-vs-6s-differences.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2001,7 +1964,7 @@
     {
       "path": "futures-basics/6j-vs-usdjpy-differences.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2017,7 +1980,7 @@
     {
       "path": "futures-basics/6j-yield-spread-model.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2033,7 +1996,7 @@
     {
       "path": "futures-basics/6l-margin-requirements-day-vs-overnight.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2049,7 +2012,7 @@
     {
       "path": "futures-basics/6l-microstructure-why-the-order-book-is-thin-and-how-to-adapt.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2065,7 +2028,7 @@
     {
       "path": "futures-basics/6l-tick-size-and-contract-specs.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2081,7 +2044,7 @@
     {
       "path": "futures-basics/6l-volatility-profile-atr-swing-size-risk-management.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2097,7 +2060,7 @@
     {
       "path": "futures-basics/6m-backtesting.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2113,7 +2076,7 @@
     {
       "path": "futures-basics/6m-best-indicators.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2129,7 +2092,7 @@
     {
       "path": "futures-basics/6m-best-times.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2145,7 +2108,7 @@
     {
       "path": "futures-basics/6m-carry-trade.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2161,7 +2124,7 @@
     {
       "path": "futures-basics/6m-data-traps.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2177,7 +2140,7 @@
     {
       "path": "futures-basics/6m-fundamental-drivers.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2193,7 +2156,7 @@
     {
       "path": "futures-basics/6m-margin-requirements.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2209,7 +2172,7 @@
     {
       "path": "futures-basics/6m-seasonality.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2225,7 +2188,7 @@
     {
       "path": "futures-basics/6m-slippage.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2241,7 +2204,7 @@
     {
       "path": "futures-basics/6m-tick-size.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2257,7 +2220,7 @@
     {
       "path": "futures-basics/6m-trade-and-remittances.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2273,7 +2236,7 @@
     {
       "path": "futures-basics/6m-trading-mistakes.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2289,7 +2252,7 @@
     {
       "path": "futures-basics/6m-trading-plan.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2305,7 +2268,7 @@
     {
       "path": "futures-basics/6m-volatility-profile.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2321,7 +2284,7 @@
     {
       "path": "futures-basics/6m-vs-6e-vs-6j.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2337,7 +2300,7 @@
     {
       "path": "futures-basics/6n-common-mistakes.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2353,7 +2316,7 @@
     {
       "path": "futures-basics/6n-contract-specs-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2369,7 +2332,7 @@
     {
       "path": "futures-basics/6n-correlations.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2385,7 +2348,7 @@
     {
       "path": "futures-basics/6n-interest-rate-impact.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2401,7 +2364,7 @@
     {
       "path": "futures-basics/6n-liquidity-guide.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2417,7 +2380,7 @@
     {
       "path": "futures-basics/6n-multi-timeframe-framework.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2433,7 +2396,7 @@
     {
       "path": "futures-basics/6n-risk-sentiment-impact.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2449,7 +2412,7 @@
     {
       "path": "futures-basics/6n-seasonal-patterns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2465,7 +2428,7 @@
     {
       "path": "futures-basics/6n-spread-trading.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2481,7 +2444,7 @@
     {
       "path": "futures-basics/6n-trading-strategies.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2497,7 +2460,7 @@
     {
       "path": "futures-basics/6n-volatility-patterns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2513,7 +2476,7 @@
     {
       "path": "futures-basics/6n-vs-6a-differences.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2529,7 +2492,7 @@
     {
       "path": "futures-basics/6s-behavior-during-fomc-weeks-not-just-fomc-day.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2545,7 +2508,7 @@
     {
       "path": "futures-basics/6s-best-times-of-day-to-trade-swiss-franc-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2561,7 +2524,7 @@
     {
       "path": "futures-basics/6s-chf-usd-spot-vs-futures-differences.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2577,7 +2540,7 @@
     {
       "path": "futures-basics/6s-contract-specs-tick-size-margin.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2593,7 +2556,7 @@
     {
       "path": "futures-basics/6s-how-6s-reacts-to-snb-rate-decisions.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2609,7 +2572,7 @@
     {
       "path": "futures-basics/6s-how-snb-interventions-still-impact-swiss-franc-today.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2625,7 +2588,7 @@
     {
       "path": "futures-basics/6s-how-us-economic-data-moves-swiss-franc-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2641,7 +2604,7 @@
     {
       "path": "futures-basics/6s-impact-of-global-risk-events-how-chf-reacts-to-shocks.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2657,7 +2620,7 @@
     {
       "path": "futures-basics/6s-intraday-yield-tracking-how-bond-moves-guide-chf-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2673,7 +2636,7 @@
     {
       "path": "futures-basics/6s-london-fix-liquidity-shifts-and-daily-flows.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2689,7 +2652,7 @@
     {
       "path": "futures-basics/6s-macro-triggers-ranking-the-events-that-move-chf-the-most.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2705,7 +2668,7 @@
     {
       "path": "futures-basics/6s-mean-reversion-setups-and-why-they-work.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2721,7 +2684,7 @@
     {
       "path": "futures-basics/6s-safe-haven-flows-and-why-chf-surges-in-market-panics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2737,7 +2700,7 @@
     {
       "path": "futures-basics/6s-safe-haven-vs-jpy-which-leads-in-risk-off.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2753,7 +2716,7 @@
     {
       "path": "futures-basics/6s-session-overlaps-why-europe-us-handover-moves-chf-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2769,7 +2732,7 @@
     {
       "path": "futures-basics/6s-top-correlations-for-swiss-franc-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2785,7 +2748,7 @@
     {
       "path": "futures-basics/6s-typical-liquidity-behavior-sweeps-fakeouts-slow-drifts.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2801,7 +2764,7 @@
     {
       "path": "futures-basics/6s-volatility-compression-and-breakout-behavior.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2817,7 +2780,7 @@
     {
       "path": "futures-basics/6s-what-moves-swiss-franc-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2833,7 +2796,7 @@
     {
       "path": "futures-basics/6s-why-6s-has-low-volatility-and-how-to-trade-it.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2849,7 +2812,7 @@
     {
       "path": "futures-basics/6s-yield-spreads-and-how-interest-rate-differentials-drive-price.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2865,7 +2828,7 @@
     {
       "path": "futures-basics/6z-algorithmic-behavior.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2881,7 +2844,7 @@
     {
       "path": "futures-basics/6z-liquidity-map.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2897,7 +2860,7 @@
     {
       "path": "futures-basics/6z-margin-requirements.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2913,7 +2876,7 @@
     {
       "path": "futures-basics/6z-position-sizing.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2929,7 +2892,7 @@
     {
       "path": "futures-basics/6z-seasonal-patterns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2945,7 +2908,7 @@
     {
       "path": "futures-basics/6z-tick-size-and-value.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2961,7 +2924,7 @@
     {
       "path": "futures-basics/6z-trade-management-guide.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2977,7 +2940,7 @@
     {
       "path": "futures-basics/6z-trading-psychology.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -2993,7 +2956,7 @@
     {
       "path": "futures-basics/6z-volatility-profile.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3009,7 +2972,7 @@
     {
       "path": "futures-basics/6z-vs-6e-vs-6j-differences.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3025,7 +2988,7 @@
     {
       "path": "futures-basics/analyzing-weekly-trends-and-swings-in-6b.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3041,7 +3004,7 @@
     {
       "path": "futures-basics/atr-position-sizing-6a.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3057,7 +3020,7 @@
     {
       "path": "futures-basics/backwardation-deep-dive-futures-pricing.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3073,7 +3036,7 @@
     {
       "path": "futures-basics/banxico-influence-6m.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3089,7 +3052,7 @@
     {
       "path": "futures-basics/banxico-rate-policy-6m.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3105,7 +3068,7 @@
     {
       "path": "futures-basics/best-indicators-for-6z.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3121,7 +3084,7 @@
     {
       "path": "futures-basics/best-indicators-for-pa.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3137,7 +3100,7 @@
     {
       "path": "futures-basics/best-indicators-for-trading-6l-brazilian-real-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3153,7 +3116,7 @@
     {
       "path": "futures-basics/best-technical-indicators-for-si.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3169,7 +3132,7 @@
     {
       "path": "futures-basics/best-time-to-trade-6c.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3185,7 +3148,7 @@
     {
       "path": "futures-basics/best-times-to-trade-6a.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3201,7 +3164,7 @@
     {
       "path": "futures-basics/best-times-to-trade-6l-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3217,7 +3180,7 @@
     {
       "path": "futures-basics/best-times-to-trade-6z-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3233,7 +3196,7 @@
     {
       "path": "futures-basics/best-times-to-trade-es-e-mini-sp500.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3249,7 +3212,7 @@
     {
       "path": "futures-basics/best-times-to-trade-euro-fx-futures-6e.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3265,7 +3228,7 @@
     {
       "path": "futures-basics/best-times-to-trade-gc.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3281,7 +3244,7 @@
     {
       "path": "futures-basics/best-times-to-trade-pa.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3297,7 +3260,7 @@
     {
       "path": "futures-basics/best-times-to-trade-si-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3313,7 +3276,7 @@
     {
       "path": "futures-basics/bid-ask-spread-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3329,7 +3292,7 @@
     {
       "path": "futures-basics/block-trades-in-futures-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3345,7 +3308,7 @@
     {
       "path": "futures-basics/brazilian-interest-rate-policy-and-6l-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3361,7 +3324,7 @@
     {
       "path": "futures-basics/british-pound-volatility-drivers-in-6b.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3377,7 +3340,7 @@
     {
       "path": "futures-basics/calendar-spreads-simplified.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3393,7 +3356,7 @@
     {
       "path": "futures-basics/cash-futures-basis-behavior-live-cattle.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3409,7 +3372,7 @@
     {
       "path": "futures-basics/cash-vs-physical-settlement-in-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3425,7 +3388,7 @@
     {
       "path": "futures-basics/china-economic-data-6a-impact.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3441,7 +3404,7 @@
     {
       "path": "futures-basics/common-6z-trading-mistakes.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3457,7 +3420,7 @@
     {
       "path": "futures-basics/common-liquidity-traps-in-6b-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3473,7 +3436,7 @@
     {
       "path": "futures-basics/common-mistakes-in-si-trading.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3489,7 +3452,7 @@
     {
       "path": "futures-basics/common-mistakes-traders-make-with-6l-brazilian-real-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3505,7 +3468,7 @@
     {
       "path": "futures-basics/contango-deep-dive-futures-pricing.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3521,7 +3484,7 @@
     {
       "path": "futures-basics/contango-vs-backwardation.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3537,7 +3500,7 @@
     {
       "path": "futures-basics/contract-specs-live-cattle-trading.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3553,7 +3516,7 @@
     {
       "path": "futures-basics/copper-emerging-markets-hg.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3569,7 +3532,7 @@
     {
       "path": "futures-basics/copper-inventory-reports-hg.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3585,7 +3548,7 @@
     {
       "path": "futures-basics/copper-primary-vs-recycling-hg.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3601,7 +3564,7 @@
     {
       "path": "futures-basics/copper-recycling-economics-hg.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3617,7 +3580,7 @@
     {
       "path": "futures-basics/copper-renewable-demand-hg.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3633,7 +3596,7 @@
     {
       "path": "futures-basics/copper-scrap-market-hg.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3649,7 +3612,7 @@
     {
       "path": "futures-basics/copper-seasonality-hg.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3665,7 +3628,7 @@
     {
       "path": "futures-basics/corn-soymeal-pass-through-livestock-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3681,7 +3644,7 @@
     {
       "path": "futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3697,7 +3660,7 @@
     {
       "path": "futures-basics/day-trading-breakouts-6a.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3713,7 +3676,7 @@
     {
       "path": "futures-basics/different-volatility-profiles-across-futures-contracts.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3729,7 +3692,7 @@
     {
       "path": "futures-basics/dxy-impact-on-gc.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3745,7 +3708,7 @@
     {
       "path": "futures-basics/economic-reports-that-move-6l-brazilian-real-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3761,7 +3724,7 @@
     {
       "path": "futures-basics/es-atr-behavior-and-volatility-zones.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3777,7 +3740,7 @@
     {
       "path": "futures-basics/es-building-a-simple-trading-plan.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3793,7 +3756,7 @@
     {
       "path": "futures-basics/es-common-retail-trader-mistakes.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3809,7 +3772,7 @@
     {
       "path": "futures-basics/es-gap-behavior-and-how-to-trade-it.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3825,7 +3788,7 @@
     {
       "path": "futures-basics/es-how-to-size-positions-by-account-balance.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3841,7 +3804,7 @@
     {
       "path": "futures-basics/es-intraday-support-and-resistance-levels.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3857,7 +3820,7 @@
     {
       "path": "futures-basics/es-key-economic-reports-that-move-price.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3873,7 +3836,7 @@
     {
       "path": "futures-basics/es-liquidity-pockets-and-order-book-structure.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3889,7 +3852,7 @@
     {
       "path": "futures-basics/es-market-structure-trends-pulls-and-reversals.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3905,7 +3868,7 @@
     {
       "path": "futures-basics/es-mini-vs-mes-micro-which-should-you-trade.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3921,7 +3884,7 @@
     {
       "path": "futures-basics/es-news-events-and-volatility-traps.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3937,7 +3900,7 @@
     {
       "path": "futures-basics/es-opening-range-strategies-for-beginners.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3953,7 +3916,7 @@
     {
       "path": "futures-basics/es-overnight-session-vs-regular-trading-hours.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3969,7 +3932,7 @@
     {
       "path": "futures-basics/es-roll-dates-and-contract-switching.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -3985,7 +3948,7 @@
     {
       "path": "futures-basics/es-scalping-vs-swing-trading-pros-and-cons.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4001,7 +3964,7 @@
     {
       "path": "futures-basics/es-session-highs-lows-and-vwap-usage.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4017,7 +3980,7 @@
     {
       "path": "futures-basics/es-using-dom-and-time-and-sales.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4033,7 +3996,7 @@
     {
       "path": "futures-basics/expiration-risk-physical-vs-cash-settled.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4049,7 +4012,7 @@
     {
       "path": "futures-basics/export-demand-sensitivity-beef-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4065,7 +4028,7 @@
     {
       "path": "futures-basics/fair-value-in-futures-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4081,7 +4044,7 @@
     {
       "path": "futures-basics/fed-impact-on-gc.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4097,7 +4060,7 @@
     {
       "path": "futures-basics/feeder-cattle-futures-as-an-input-market.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4113,7 +4076,7 @@
     {
       "path": "futures-basics/feeder-cattle-vs-live-cattle-pricing-mechanics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4129,7 +4092,7 @@
     {
       "path": "futures-basics/feedlot-dynamics-and-futures-pricing.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4145,7 +4108,7 @@
     {
       "path": "futures-basics/fundamental-drivers-of-6z.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4161,7 +4124,7 @@
     {
       "path": "futures-basics/fundamental-drivers-of-the-brazilian-real-6l-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4177,7 +4140,7 @@
     {
       "path": "futures-basics/futures-contract-specifications-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4193,7 +4156,7 @@
     {
       "path": "futures-basics/futures-implied-volatility-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4209,7 +4172,7 @@
     {
       "path": "futures-basics/futures-limit-up-limit-down-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4225,7 +4188,7 @@
     {
       "path": "futures-basics/futures-liquidity-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4241,7 +4204,7 @@
     {
       "path": "futures-basics/futures-margin-requirements-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4257,7 +4220,7 @@
     {
       "path": "futures-basics/futures-market-holidays-and-shortened-sessions.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4273,7 +4236,7 @@
     {
       "path": "futures-basics/futures-open-interest-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4289,7 +4252,7 @@
     {
       "path": "futures-basics/futures-slippage-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4305,7 +4268,7 @@
     {
       "path": "futures-basics/futures-symbols-and-contract-codes-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4321,7 +4284,7 @@
     {
       "path": "futures-basics/futures-trading-hours-and-sessions-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4337,7 +4300,7 @@
     {
       "path": "futures-basics/futures-volatility-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4353,7 +4316,7 @@
     {
       "path": "futures-basics/futures-whipsaw-mechanics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4369,7 +4332,7 @@
     {
       "path": "futures-basics/gbp-usd-correlation-with-6b-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4385,7 +4348,7 @@
     {
       "path": "futures-basics/gc-best-indicators.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4401,7 +4364,7 @@
     {
       "path": "futures-basics/gc-common-trader-mistakes.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4417,7 +4380,7 @@
     {
       "path": "futures-basics/gc-intraday-strategies.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4433,7 +4396,7 @@
     {
       "path": "futures-basics/gc-liquidity-levels-structure.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4449,7 +4412,7 @@
     {
       "path": "futures-basics/gc-margin-day-vs-overnight.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4465,7 +4428,7 @@
     {
       "path": "futures-basics/gc-market-microstructure.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4481,7 +4444,7 @@
     {
       "path": "futures-basics/gc-news-event-reaction.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4497,7 +4460,7 @@
     {
       "path": "futures-basics/gc-orderflow-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4513,7 +4476,7 @@
     {
       "path": "futures-basics/gc-seasonality-patterns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4529,7 +4492,7 @@
     {
       "path": "futures-basics/gc-slippage-avoidance.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4545,7 +4508,7 @@
     {
       "path": "futures-basics/gc-tick-size-tick-value-specs.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4561,7 +4524,7 @@
     {
       "path": "futures-basics/gc-volatility-profile-atr.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4577,7 +4540,7 @@
     {
       "path": "futures-basics/gc-vs-6e-6j-differences.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4593,7 +4556,7 @@
     {
       "path": "futures-basics/hg-volatility-profile.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4609,7 +4572,7 @@
     {
       "path": "futures-basics/hg-vs-zn-yields-risk.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4625,7 +4588,7 @@
     {
       "path": "futures-basics/hog-cattle-relative-value-intermarket-spreads.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4641,7 +4604,7 @@
     {
       "path": "futures-basics/how-6b-reacts-to-boe-rate-decisions.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4657,7 +4620,7 @@
     {
       "path": "futures-basics/how-6e-reacts-to-european-session-headlines.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4673,7 +4636,7 @@
     {
       "path": "futures-basics/how-6j-reacts-to-boj-policy.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4689,7 +4652,7 @@
     {
       "path": "futures-basics/how-6l-correlates-with-emerging-markets-etfs.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4705,7 +4668,7 @@
     {
       "path": "futures-basics/how-6l-differs-from-6e-and-6j.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4721,7 +4684,7 @@
     {
       "path": "futures-basics/how-businesses-hedge-with-si-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4737,7 +4700,7 @@
     {
       "path": "futures-basics/how-cash-market-moves-lead-futures-price-direction.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4753,7 +4716,7 @@
     {
       "path": "futures-basics/how-comex-inventories-affect-si.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4769,7 +4732,7 @@
     {
       "path": "futures-basics/how-dollar-strength-impacts-si-price.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4785,7 +4748,7 @@
     {
       "path": "futures-basics/how-drought-and-weather-impact-live-cattle.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4801,8 +4764,8 @@
     {
       "path": "futures-basics/how-economic-reports-affect-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
-      "ga_before": 0,
+      "changed": false,
+      "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
       "uet_after": 1,
@@ -4817,7 +4780,7 @@
     {
       "path": "futures-basics/how-em-risk-sentiment-impacts-6l-brazilian-real-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4833,7 +4796,7 @@
     {
       "path": "futures-basics/how-exports-drive-6n-trends.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4849,7 +4812,7 @@
     {
       "path": "futures-basics/how-futures-circuit-breakers-trigger.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4865,7 +4828,7 @@
     {
       "path": "futures-basics/how-futures-clearing-firms-work.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4881,8 +4844,8 @@
     {
       "path": "futures-basics/how-futures-gaps-work.html",
       "status": "dry-run-complete",
-      "changed": true,
-      "ga_before": 0,
+      "changed": false,
+      "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
       "uet_after": 1,
@@ -4897,7 +4860,7 @@
     {
       "path": "futures-basics/how-futures-options-impact-underlying-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4929,8 +4892,8 @@
     {
       "path": "futures-basics/how-futures-settlement-works.html",
       "status": "dry-run-complete",
-      "changed": true,
-      "ga_before": 0,
+      "changed": false,
+      "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
       "uet_after": 1,
@@ -4945,7 +4908,7 @@
     {
       "path": "futures-basics/how-hedgers-use-futures-real-examples.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4961,7 +4924,7 @@
     {
       "path": "futures-basics/how-implied-demand-drives-futures-price-action.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4977,7 +4940,7 @@
     {
       "path": "futures-basics/how-inventory-cycles-influence-futures-trends.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -4993,7 +4956,7 @@
     {
       "path": "futures-basics/how-large-trader-positioning-drives-futures-squeeze-risk.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5009,8 +4972,8 @@
     {
       "path": "futures-basics/how-margin-calls-work-in-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
-      "ga_before": 0,
+      "changed": false,
+      "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
       "uet_after": 1,
@@ -5025,7 +4988,7 @@
     {
       "path": "futures-basics/how-open-interest-signals-futures-trend-strength.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5041,7 +5004,7 @@
     {
       "path": "futures-basics/how-options-flow-influences-6e.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5057,7 +5020,7 @@
     {
       "path": "futures-basics/how-platin-rhodium-influence-pa.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5073,7 +5036,7 @@
     {
       "path": "futures-basics/how-rate-differentials-drive-6e-price.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5089,7 +5052,7 @@
     {
       "path": "futures-basics/how-roll-yield-impacts-futures-returns-over-time.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5105,7 +5068,7 @@
     {
       "path": "futures-basics/how-sarb-influences-6z.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5121,7 +5084,7 @@
     {
       "path": "futures-basics/how-seasonal-patterns-shape-futures-market-behavior.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5137,7 +5100,7 @@
     {
       "path": "futures-basics/how-settlement-price-is-determined.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5153,7 +5116,7 @@
     {
       "path": "futures-basics/how-settlement-windows-impact-intraday-volatility.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5169,7 +5132,7 @@
     {
       "path": "futures-basics/how-soybeans-iron-ore-and-commodity-prices-move-6l-brazilian-real-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5185,7 +5148,7 @@
     {
       "path": "futures-basics/how-the-brazilian-central-bank-influences-6l-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5201,7 +5164,7 @@
     {
       "path": "futures-basics/how-to-read-6b-order-flow-for-clean-entries.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5217,7 +5180,7 @@
     {
       "path": "futures-basics/how-to-read-6n-price-quotes.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5233,7 +5196,7 @@
     {
       "path": "futures-basics/how-to-read-order-flow-on-6e.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5249,7 +5212,7 @@
     {
       "path": "futures-basics/how-to-trade-6n-economic-releases.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5265,7 +5228,7 @@
     {
       "path": "futures-basics/how-uk-cpi-inflation-moves-6b-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5281,7 +5244,7 @@
     {
       "path": "futures-basics/how-uk-economic-data-releases-impact-6b-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5297,7 +5260,7 @@
     {
       "path": "futures-basics/how-uk-gdp-and-employment-data-move-6b.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5313,7 +5276,7 @@
     {
       "path": "futures-basics/how-uk-political-events-affect-6b-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5329,7 +5292,7 @@
     {
       "path": "futures-basics/how-us-dollar-moves-6z.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5345,7 +5308,7 @@
     {
       "path": "futures-basics/how-us-dollar-strength-confirms-or-invalidates-6b-setups.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5361,7 +5324,7 @@
     {
       "path": "futures-basics/how-us-dollar-strength-impacts-6l-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5377,7 +5340,7 @@
     {
       "path": "futures-basics/identifying-6a-reversals-volume-spikes.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5393,7 +5356,7 @@
     {
       "path": "futures-basics/industrial-demand-and-si-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5409,7 +5372,7 @@
     {
       "path": "futures-basics/intraday-liquidity-cycles-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5425,7 +5388,7 @@
     {
       "path": "futures-basics/intraday-vs-exchange-margin.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5441,7 +5404,7 @@
     {
       "path": "futures-basics/lean-hogs-decouple-commodities.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5457,7 +5420,7 @@
     {
       "path": "futures-basics/lean-hogs-feed-grains-correlation.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5473,7 +5436,7 @@
     {
       "path": "futures-basics/lean-hogs-vs-financial-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5489,7 +5452,7 @@
     {
       "path": "futures-basics/limit-moves-liquidity-gaps-lean-hogs.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5505,7 +5468,7 @@
     {
       "path": "futures-basics/limit-risk-and-liquidity-live-cattle.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5521,7 +5484,7 @@
     {
       "path": "futures-basics/live-cattle-curve-structure-and-carry.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5537,7 +5500,7 @@
     {
       "path": "futures-basics/live-cattle-vs-equity-and-macro-correlations.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5553,7 +5516,7 @@
     {
       "path": "futures-basics/london-session-volatility-patterns-in-6b.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5569,7 +5532,7 @@
     {
       "path": "futures-basics/low-volume-futures-contracts-warning.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5585,7 +5548,7 @@
     {
       "path": "futures-basics/m6n-micro-contract-guide.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5601,7 +5564,7 @@
     {
       "path": "futures-basics/margin-risk-position-sizing-hog-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5617,8 +5580,8 @@
     {
       "path": "futures-basics/mark-to-market-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
-      "ga_before": 0,
+      "changed": false,
+      "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
       "uet_after": 1,
@@ -5633,7 +5596,7 @@
     {
       "path": "futures-basics/market-depth-dom-structure.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5649,7 +5612,7 @@
     {
       "path": "futures-basics/market-profile-vs-volume-profile.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5665,7 +5628,7 @@
     {
       "path": "futures-basics/mechanics-of-stop-orders-in-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5681,7 +5644,7 @@
     {
       "path": "futures-basics/micro-6e-vs-standard-6e.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5697,7 +5660,7 @@
     {
       "path": "futures-basics/nq-tick-value.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5713,7 +5676,7 @@
     {
       "path": "futures-basics/nq-what-is-nq.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5729,7 +5692,7 @@
     {
       "path": "futures-basics/open-interest-fluctuations-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5745,7 +5708,7 @@
     {
       "path": "futures-basics/opening-range-trend-direction.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5761,7 +5724,7 @@
     {
       "path": "futures-basics/pa-atr-volatility-profile.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5777,7 +5740,7 @@
     {
       "path": "futures-basics/pa-common-mistakes.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5793,7 +5756,7 @@
     {
       "path": "futures-basics/pa-geopolitical-supply-risks.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5809,7 +5772,7 @@
     {
       "path": "futures-basics/pa-industrial-demand-drivers.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5825,7 +5788,7 @@
     {
       "path": "futures-basics/pa-liquidity-vs-gc-si.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5841,7 +5804,7 @@
     {
       "path": "futures-basics/pa-macro-drivers.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5857,7 +5820,7 @@
     {
       "path": "futures-basics/pa-microstructure.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5873,7 +5836,7 @@
     {
       "path": "futures-basics/pa-pl-vs-pa-spread-trading.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5889,7 +5852,7 @@
     {
       "path": "futures-basics/pa-risk-management.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5905,7 +5868,7 @@
     {
       "path": "futures-basics/pa-seasonality-patterns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5921,7 +5884,7 @@
     {
       "path": "futures-basics/pa-short-squeezes-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5937,7 +5900,7 @@
     {
       "path": "futures-basics/pa-slippage-problems.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5953,7 +5916,7 @@
     {
       "path": "futures-basics/pa-tick-size-and-margins.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5969,7 +5932,7 @@
     {
       "path": "futures-basics/pa-volume-profile-liquidity.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -5985,7 +5948,7 @@
     {
       "path": "futures-basics/pa-vs-spot-arbitrage.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6001,7 +5964,7 @@
     {
       "path": "futures-basics/palladium-futures-overview.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6017,7 +5980,7 @@
     {
       "path": "futures-basics/positioning-and-commercial-hedging-in-cattle.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6033,7 +5996,7 @@
     {
       "path": "futures-basics/reading-short-term-momentum-in-6b.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6049,7 +6012,7 @@
     {
       "path": "futures-basics/risk-sentiment-6a-trends.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6065,7 +6028,7 @@
     {
       "path": "futures-basics/role-of-feeder-placement-in-live-cattle.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6081,7 +6044,7 @@
     {
       "path": "futures-basics/roll-mechanics-live-cattle-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6097,7 +6060,7 @@
     {
       "path": "futures-basics/roll-yield-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6113,7 +6076,7 @@
     {
       "path": "futures-basics/roll-yield-front-month-risk-hogs.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6129,7 +6092,7 @@
     {
       "path": "futures-basics/sarb-rates-impact-6z.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6145,7 +6108,7 @@
     {
       "path": "futures-basics/scalping-6e-vs-swing-trading-6e.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6161,7 +6124,7 @@
     {
       "path": "futures-basics/scalping-6j-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6177,7 +6140,7 @@
     {
       "path": "futures-basics/seasonal-patterns-in-6l-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6193,7 +6156,7 @@
     {
       "path": "futures-basics/seasonality-in-live-cattle-markets.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6209,7 +6172,7 @@
     {
       "path": "futures-basics/settlement-vs-last-traded-price.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6225,7 +6188,7 @@
     {
       "path": "futures-basics/si-calendar-spreads-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6241,7 +6204,7 @@
     {
       "path": "futures-basics/si-dom-reading-guide.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6257,7 +6220,7 @@
     {
       "path": "futures-basics/si-margin-requirements-day-vs-overnight.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6273,7 +6236,7 @@
     {
       "path": "futures-basics/si-risk-management-framework.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6289,7 +6252,7 @@
     {
       "path": "futures-basics/si-seasonality-patterns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6305,7 +6268,7 @@
     {
       "path": "futures-basics/si-tick-size-and-contract-specs.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6321,7 +6284,7 @@
     {
       "path": "futures-basics/si-volatility-and-atr-profile.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6337,7 +6300,7 @@
     {
       "path": "futures-basics/si-vs-sil-vs-slv.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6353,7 +6316,7 @@
     {
       "path": "futures-basics/silver-supply-and-mining-fundamentals.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6369,7 +6332,7 @@
     {
       "path": "futures-basics/slaughter-capacity-distorts-hog-pricing.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6385,7 +6348,7 @@
     {
       "path": "futures-basics/slaughter-rates-and-price-lag-effects-live-cattle.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6401,7 +6364,7 @@
     {
       "path": "futures-basics/speculator-positioning-lean-hogs.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6417,7 +6380,7 @@
     {
       "path": "futures-basics/spread-trading-live-cattle-contracts.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6433,7 +6396,7 @@
     {
       "path": "futures-basics/structural-differences-live-cattle-and-hogs.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6449,7 +6412,7 @@
     {
       "path": "futures-basics/swing-trading-6a-macro-themes.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6465,7 +6428,7 @@
     {
       "path": "futures-basics/tick-ladder-behavior-in-liquid-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6481,7 +6444,7 @@
     {
       "path": "futures-basics/ticks-points-dollar-value.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6497,7 +6460,7 @@
     {
       "path": "futures-basics/understanding-futures-term-structure.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6513,7 +6476,7 @@
     {
       "path": "futures-basics/us-dollar-impact-on-6n.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6529,7 +6492,7 @@
     {
       "path": "futures-basics/us-economic-data-that-moves-si.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6545,7 +6508,7 @@
     {
       "path": "futures-basics/usd-strength-6m.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6561,7 +6524,7 @@
     {
       "path": "futures-basics/using-6n-to-hedge-nzdusd-exposure.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6577,7 +6540,7 @@
     {
       "path": "futures-basics/using-cot-reports-for-6j.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6593,7 +6556,7 @@
     {
       "path": "futures-basics/using-gbpusd-divergence-to-trade-6b-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6609,7 +6572,7 @@
     {
       "path": "futures-basics/weekly-reports-important-for-6a.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6625,7 +6588,7 @@
     {
       "path": "futures-basics/what-are-6l-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6641,7 +6604,7 @@
     {
       "path": "futures-basics/what-are-6m-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6657,7 +6620,7 @@
     {
       "path": "futures-basics/what-are-6n-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6673,7 +6636,7 @@
     {
       "path": "futures-basics/what-are-6z-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6689,7 +6652,7 @@
     {
       "path": "futures-basics/what-are-copper-futures-hg.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6705,7 +6668,7 @@
     {
       "path": "futures-basics/what-are-gold-futures-gc.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6721,7 +6684,7 @@
     {
       "path": "futures-basics/what-are-silver-futures-si.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6737,7 +6700,7 @@
     {
       "path": "futures-basics/what-calendar-spreads-reveal-about-supply-demand-shifts.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6753,7 +6716,7 @@
     {
       "path": "futures-basics/what-dom-skew-really-shows-you.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6769,7 +6732,7 @@
     {
       "path": "futures-basics/what-is-6a-aud-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6785,7 +6748,7 @@
     {
       "path": "futures-basics/what-is-6c-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6801,7 +6764,7 @@
     {
       "path": "futures-basics/what-lean-hog-futures-actually-price.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6817,7 +6780,7 @@
     {
       "path": "futures-basics/what-live-cattle-futures-actually-represent.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6833,7 +6796,7 @@
     {
       "path": "futures-basics/what-moves-6a-aud-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6849,7 +6812,7 @@
     {
       "path": "futures-basics/what-moves-6j-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6865,7 +6828,7 @@
     {
       "path": "futures-basics/what-moves-euro-fx-futures-6e.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6881,7 +6844,7 @@
     {
       "path": "futures-basics/why-6b-reacts-differently-than-6e-in-risk-on-markets.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6897,7 +6860,7 @@
     {
       "path": "futures-basics/why-6b-trends-during-us-session.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6913,7 +6876,7 @@
     {
       "path": "futures-basics/why-6c-moves.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6929,7 +6892,7 @@
     {
       "path": "futures-basics/why-6e-trends-harder-than-other-fx-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6945,7 +6908,7 @@
     {
       "path": "futures-basics/why-6j-trends-during-asian-session.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6961,7 +6924,7 @@
     {
       "path": "futures-basics/why-6l-slippage-hits-harder-and-how-to-avoid-it.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6977,7 +6940,7 @@
     {
       "path": "futures-basics/why-6l-trends-differ-from-major-currencies.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -6993,7 +6956,7 @@
     {
       "path": "futures-basics/why-6m-trades-differently.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7009,7 +6972,7 @@
     {
       "path": "futures-basics/why-6z-slippage-hits-harder.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7025,7 +6988,7 @@
     {
       "path": "futures-basics/why-6z-trades-differently.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7041,7 +7004,7 @@
     {
       "path": "futures-basics/why-feeder-cattle-trade-like-a-hybrid-contract.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7057,7 +7020,7 @@
     {
       "path": "futures-basics/why-futures-gaps-form-orderflow.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7073,7 +7036,7 @@
     {
       "path": "futures-basics/why-futures-lead-the-stock-market.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7089,7 +7052,7 @@
     {
       "path": "futures-basics/why-futures-markets-use-centralized-clearing.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7105,7 +7068,7 @@
     {
       "path": "futures-basics/why-futures-move-overnight.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7121,7 +7084,7 @@
     {
       "path": "futures-basics/why-lean-hogs-trader-hostile.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7137,7 +7100,7 @@
     {
       "path": "futures-basics/why-live-cattle-are-slower-but-heavier-markets.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7153,7 +7116,7 @@
     {
       "path": "futures-basics/why-live-cattle-punish-impatient-traders.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7169,7 +7132,7 @@
     {
       "path": "futures-basics/why-live-cattle-react-differently-to-feed-prices.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7185,7 +7148,7 @@
     {
       "path": "futures-basics/why-live-cattle-trends-persist-longer.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7201,7 +7164,7 @@
     {
       "path": "futures-basics/why-livestock-futures-are-a-separate-risk-class.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7217,7 +7180,7 @@
     {
       "path": "futures-basics/why-open-interest-matters-more-than-volume-for-trend-quality.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7233,7 +7196,7 @@
     {
       "path": "futures-basics/why-pa-is-more-violent.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7249,7 +7212,7 @@
     {
       "path": "futures-basics/why-si-differs-from-gc-volatility-liquidity.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7265,7 +7228,7 @@
     {
       "path": "futures-basics/why-traders-use-6n-futures.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7281,7 +7244,7 @@
     {
       "path": "market-basics/absorption-signals-how-market-eats-aggression.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7297,7 +7260,7 @@
     {
       "path": "market-basics/aggressive-buyer-seller-trap-patterns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7313,7 +7276,7 @@
     {
       "path": "market-basics/auction-curves-how-the-market-seeks-fair-and-unfair-prices.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7329,7 +7292,7 @@
     {
       "path": "market-basics/auction-pressure-points.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7345,7 +7308,7 @@
     {
       "path": "market-basics/auction-tail-rejections-failed-moves.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7361,7 +7324,7 @@
     {
       "path": "market-basics/auction-theory-in-markets.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7377,7 +7340,7 @@
     {
       "path": "market-basics/broad-market-health-indicators-reading-the-overall-strength-behind-price.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7393,7 +7356,7 @@
     {
       "path": "market-basics/buyer-seller-failure-zones-where-control-shifts.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7409,7 +7372,7 @@
     {
       "path": "market-basics/climax-volume-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7425,7 +7388,7 @@
     {
       "path": "market-basics/cumulative-volume-delta-reversals.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7441,7 +7404,7 @@
     {
       "path": "market-basics/disbelief-rallies-and-bear-market-traps.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7457,7 +7420,7 @@
     {
       "path": "market-basics/displacement-candles-and-trend-initiation.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7473,7 +7436,7 @@
     {
       "path": "market-basics/economic-surprise-indexes-and-market-reaction.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7489,7 +7452,7 @@
     {
       "path": "market-basics/excess-at-extremes-auction-termination.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7505,7 +7468,7 @@
     {
       "path": "market-basics/execution-vs-idea.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7521,7 +7484,7 @@
     {
       "path": "market-basics/exhaustion-gaps-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7537,7 +7500,7 @@
     {
       "path": "market-basics/exhaustion-moves-spotting-when-a-trend-is-running-out-of-fuel.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7553,7 +7516,7 @@
     {
       "path": "market-basics/exhaustion-prints-trend-failure-signals.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7569,7 +7532,7 @@
     {
       "path": "market-basics/failed-breakouts-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7585,7 +7548,7 @@
     {
       "path": "market-basics/failed-breakouts-why-markets-snap-back.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7601,7 +7564,7 @@
     {
       "path": "market-basics/failed-continuation-patterns-when-the-trend-pretends-to-continue-but-doesnt.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7617,7 +7580,7 @@
     {
       "path": "market-basics/fair-value-gaps-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7633,7 +7596,7 @@
     {
       "path": "market-basics/false-momentum-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7649,7 +7612,7 @@
     {
       "path": "market-basics/hidden-liquidity-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7665,7 +7628,7 @@
     {
       "path": "market-basics/high-volume-node-rejection-zones.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7681,7 +7644,7 @@
     {
       "path": "market-basics/high-volume-vs-low-volume-paths-least-resistance.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7697,7 +7660,7 @@
     {
       "path": "market-basics/how-economic-reports-move-markets.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7713,7 +7676,7 @@
     {
       "path": "market-basics/how-large-players-move-markets.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7729,7 +7692,7 @@
     {
       "path": "market-basics/how-liquidity-grabs-set-up-reversals.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7745,7 +7708,7 @@
     {
       "path": "market-basics/how-liquidity-pools-act-as-magnets-for-price.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7761,7 +7724,7 @@
     {
       "path": "market-basics/how-liquidity-providers-work.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7777,7 +7740,7 @@
     {
       "path": "market-basics/how-market-regimes-shift.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7793,7 +7756,7 @@
     {
       "path": "market-basics/how-market-sentiment-moves-price.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7809,7 +7772,7 @@
     {
       "path": "market-basics/how-volume-confirms-or-rejects-price-action.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7825,7 +7788,7 @@
     {
       "path": "market-basics/imbalance-to-balance-cycle-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7841,7 +7804,7 @@
     {
       "path": "market-basics/imbalance-vs-balance-zones-how-the-market-rotates.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7857,7 +7820,7 @@
     {
       "path": "market-basics/imbalanced-auction-signals.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7873,7 +7836,7 @@
     {
       "path": "market-basics/impulse-legs-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7889,7 +7852,7 @@
     {
       "path": "market-basics/impulse-vs-rotational-market-behavior.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7905,7 +7868,7 @@
     {
       "path": "market-basics/initiative-responsive-auction-activity.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7921,7 +7884,7 @@
     {
       "path": "market-basics/lead-lag-relationships-markets-move-first.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7937,7 +7900,7 @@
     {
       "path": "market-basics/liquidity-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7953,7 +7916,7 @@
     {
       "path": "market-basics/liquidity-gaps-and-why-they-form.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7969,7 +7932,7 @@
     {
       "path": "market-basics/liquidity-ladder-vertical-absorption.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -7985,7 +7948,7 @@
     {
       "path": "market-basics/liquidity-layers-how-stacked-levels-control-price.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8001,7 +7964,7 @@
     {
       "path": "market-basics/liquidity-levels-how-to-spot-where-the-market-reacts.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8017,7 +7980,7 @@
     {
       "path": "market-basics/liquidity-migration-how-liquidity-shifts-through-session.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8033,7 +7996,7 @@
     {
       "path": "market-basics/liquidity-pools-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8049,7 +8012,7 @@
     {
       "path": "market-basics/liquidity-rebuilds-how-markets-refill-empty-zones.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8065,7 +8028,7 @@
     {
       "path": "market-basics/liquidity-shift-signals.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8081,7 +8044,7 @@
     {
       "path": "market-basics/liquidity-sweeps-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8097,7 +8060,7 @@
     {
       "path": "market-basics/liquidity-voids-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8113,7 +8076,7 @@
     {
       "path": "market-basics/liquidity-voids-price-magnets.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8129,7 +8092,7 @@
     {
       "path": "market-basics/liquidity-voids-what-empty-price-areas-mean-for-future-moves.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8145,7 +8108,7 @@
     {
       "path": "market-basics/liquidity-voids-why-markets-rush-through-empty-space.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8161,7 +8124,7 @@
     {
       "path": "market-basics/market-absorption-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8177,7 +8140,7 @@
     {
       "path": "market-basics/market-anomalies-that-repeat.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8193,7 +8156,7 @@
     {
       "path": "market-basics/market-auction-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8209,7 +8172,7 @@
     {
       "path": "market-basics/market-auction-efficiency-vs-inefficiency.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8225,7 +8188,7 @@
     {
       "path": "market-basics/market-breadth-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8241,7 +8204,7 @@
     {
       "path": "market-basics/market-context-stacking-how-smart-traders-align-multiple-signals.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8257,7 +8220,7 @@
     {
       "path": "market-basics/market-context-why-the-bigger-picture-determines-every-trade.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8273,7 +8236,7 @@
     {
       "path": "market-basics/market-correlation-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8289,7 +8252,7 @@
     {
       "path": "market-basics/market-correlations-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8305,7 +8268,7 @@
     {
       "path": "market-basics/market-depth-and-dom.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8321,7 +8284,7 @@
     {
       "path": "market-basics/market-efficiency-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8337,7 +8300,7 @@
     {
       "path": "market-basics/market-efficiency-vs-inefficiency.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8353,7 +8316,7 @@
     {
       "path": "market-basics/market-elasticity-price-snapback.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8369,7 +8332,7 @@
     {
       "path": "market-basics/market-energy-build-up-how-tension-creates-explosive-moves.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8385,7 +8348,7 @@
     {
       "path": "market-basics/market-exhaustion-signals.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8401,7 +8364,7 @@
     {
       "path": "market-basics/market-failure-patterns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8417,7 +8380,7 @@
     {
       "path": "market-basics/market-gaps-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8433,7 +8396,7 @@
     {
       "path": "market-basics/market-imbalance-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8449,7 +8412,7 @@
     {
       "path": "market-basics/market-imbalances-and-how-they-correct.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8465,7 +8428,7 @@
     {
       "path": "market-basics/market-inefficiency-fill-patterns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8481,7 +8444,7 @@
     {
       "path": "market-basics/market-inefficiency-signals.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8497,7 +8460,7 @@
     {
       "path": "market-basics/market-liquidity-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8513,7 +8476,7 @@
     {
       "path": "market-basics/market-liquidity-shocks.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8529,7 +8492,7 @@
     {
       "path": "market-basics/market-maker-inventory.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8545,7 +8508,7 @@
     {
       "path": "market-basics/market-memory-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8561,7 +8524,7 @@
     {
       "path": "market-basics/market-microstructure-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8577,7 +8540,7 @@
     {
       "path": "market-basics/market-microstructure-noise-filtering.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8593,7 +8556,7 @@
     {
       "path": "market-basics/market-microstructure-the-hidden-engine.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8609,7 +8572,7 @@
     {
       "path": "market-basics/market-momentum-how-to-read-strength-and-exhaustion.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8625,7 +8588,7 @@
     {
       "path": "market-basics/market-momentum-shifts-reading-strength-flips.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8641,7 +8604,7 @@
     {
       "path": "market-basics/market-orderflow-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8657,7 +8620,7 @@
     {
       "path": "market-basics/market-overlap-session-continuity.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8673,7 +8636,7 @@
     {
       "path": "market-basics/market-overreaction-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8689,7 +8652,7 @@
     {
       "path": "market-basics/market-participant-behavior.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8705,7 +8668,7 @@
     {
       "path": "market-basics/market-participants-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8721,7 +8684,7 @@
     {
       "path": "market-basics/market-power-shift.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8737,7 +8700,7 @@
     {
       "path": "market-basics/market-pressure-understanding-buy-vs-sell-pressure.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8753,7 +8716,7 @@
     {
       "path": "market-basics/market-profile-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8769,7 +8732,7 @@
     {
       "path": "market-basics/market-reaction-vs-market-continuation.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8785,7 +8748,7 @@
     {
       "path": "market-basics/market-regime-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8801,7 +8764,7 @@
     {
       "path": "market-basics/market-regimes-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8817,7 +8780,7 @@
     {
       "path": "market-basics/market-rotation-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8833,7 +8796,7 @@
     {
       "path": "market-basics/market-rotation-how-money-moves-between-sectors-and-indexes.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8849,7 +8812,7 @@
     {
       "path": "market-basics/market-rotation-patterns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8865,7 +8828,7 @@
     {
       "path": "market-basics/market-sentiment-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8881,7 +8844,7 @@
     {
       "path": "market-basics/market-sentiment-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8897,7 +8860,7 @@
     {
       "path": "market-basics/market-sentiment-how-traders-measure-fear-and-greed.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8913,7 +8876,7 @@
     {
       "path": "market-basics/market-session-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8929,7 +8892,7 @@
     {
       "path": "market-basics/market-stalling-behavior-how-to-spot-when-momentum-is-dying.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8961,7 +8924,7 @@
     {
       "path": "market-basics/market-structure-breaks-spotting-shifts-in-control.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8977,7 +8940,7 @@
     {
       "path": "market-basics/market-transition-zones.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -8993,7 +8956,7 @@
     {
       "path": "market-basics/market-traps-bull-traps-bear-traps-how-to-spot-them-early.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9009,7 +8972,7 @@
     {
       "path": "market-basics/market-volatility-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9025,7 +8988,7 @@
     {
       "path": "market-basics/market-volatility-cycles.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9041,7 +9004,7 @@
     {
       "path": "market-basics/mean-reversion-traps-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9057,7 +9020,7 @@
     {
       "path": "market-basics/mean-reversion-vs-momentum.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9073,7 +9036,7 @@
     {
       "path": "market-basics/mean-reversion-vs-trend-continuation.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9089,7 +9052,7 @@
     {
       "path": "market-basics/mean-reversion-when-the-market-snaps-back-to-value.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9105,7 +9068,7 @@
     {
       "path": "market-basics/micro-auctions-inside-candles.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9121,7 +9084,7 @@
     {
       "path": "market-basics/micro-pullbacks-tiny-retracements-reveal-intent.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9137,7 +9100,7 @@
     {
       "path": "market-basics/microstructure-imbalance.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9153,7 +9116,7 @@
     {
       "path": "market-basics/momentum-exhaustion-bars-trend-completion-signals.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9169,7 +9132,7 @@
     {
       "path": "market-basics/momentum-traps-when-speed-fakes-traders.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9185,7 +9148,7 @@
     {
       "path": "market-basics/open-auction-types-balanced-test-drive-imbalanced.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9201,7 +9164,7 @@
     {
       "path": "market-basics/opening-drive-vs-opening-reversal.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9217,7 +9180,7 @@
     {
       "path": "market-basics/order-absorption-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9233,7 +9196,7 @@
     {
       "path": "market-basics/order-block-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9249,7 +9212,7 @@
     {
       "path": "market-basics/order-book-depth-and-what-it-reveals.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9265,7 +9228,7 @@
     {
       "path": "market-basics/order-book-dynamics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9281,7 +9244,7 @@
     {
       "path": "market-basics/order-book-spoofing-patterns-recognize.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9297,7 +9260,7 @@
     {
       "path": "market-basics/order-book-walls-large-resting-liquidity-shapes-movement.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9313,7 +9276,7 @@
     {
       "path": "market-basics/order-flow-absorption.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9329,7 +9292,7 @@
     {
       "path": "market-basics/order-flow-continuation-patterns-sustained-pressure.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9345,7 +9308,7 @@
     {
       "path": "market-basics/order-flow-imbalance-aggressive-order-shifts.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9361,7 +9324,7 @@
     {
       "path": "market-basics/order-flow-imbalance-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9377,7 +9340,7 @@
     {
       "path": "market-basics/order-flow-reversals-how-aggression-flips.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9393,7 +9356,7 @@
     {
       "path": "market-basics/order-flow-shifts-how-buyers-and-sellers-take-control.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9409,7 +9372,7 @@
     {
       "path": "market-basics/orderbook-thin-zones.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9425,7 +9388,7 @@
     {
       "path": "market-basics/orderflow-pivots-identifying-shift-points.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9441,7 +9404,7 @@
     {
       "path": "market-basics/parabolic-moves-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9457,7 +9420,7 @@
     {
       "path": "market-basics/pre-market-structure-why-the-opening-tone-is-set-before-the-bell.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9473,7 +9436,7 @@
     {
       "path": "market-basics/price-acceptance-vs-price-rejection-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9489,7 +9452,7 @@
     {
       "path": "market-basics/price-action-compression-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9505,7 +9468,7 @@
     {
       "path": "market-basics/price-action-expansion-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9521,7 +9484,7 @@
     {
       "path": "market-basics/price-discovery-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9537,7 +9500,7 @@
     {
       "path": "market-basics/price-discovery-vs-price-delivery.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9553,7 +9516,7 @@
     {
       "path": "market-basics/price-efficiency-vs-inefficiency.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9569,7 +9532,7 @@
     {
       "path": "market-basics/price-gaps-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9585,7 +9548,7 @@
     {
       "path": "market-basics/price-magnets-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9601,7 +9564,7 @@
     {
       "path": "market-basics/price-whipsaws-why-markets-snap-back-after-sharp-moves.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9617,7 +9580,7 @@
     {
       "path": "market-basics/reaction-zones-areas-where-the-market-has-to-make-a-decision.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9633,7 +9596,7 @@
     {
       "path": "market-basics/relative-performance-how-to-measure-strength-vs-weakness.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9649,7 +9612,7 @@
     {
       "path": "market-basics/repricing-events-what-forces-instant-moves.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9665,7 +9628,7 @@
     {
       "path": "market-basics/risk-events-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9681,7 +9644,7 @@
     {
       "path": "market-basics/risk-on-risk-off-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9697,7 +9660,7 @@
     {
       "path": "market-basics/round-numbers-market-psychology.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9713,7 +9676,7 @@
     {
       "path": "market-basics/session-opens-and-closes.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9729,7 +9692,7 @@
     {
       "path": "market-basics/session-skew-market-profile-strength.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9745,7 +9708,7 @@
     {
       "path": "market-basics/smart-money-accumulation-vs-distribution.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9761,7 +9724,7 @@
     {
       "path": "market-basics/stop-cascade-dynamics-forced-liquidations-extreme-moves.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9777,7 +9740,7 @@
     {
       "path": "market-basics/stop-run-mechanics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9793,7 +9756,7 @@
     {
       "path": "market-basics/stop-runs-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9809,7 +9772,7 @@
     {
       "path": "market-basics/stop-runs-liquidity-hunts.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9825,7 +9788,7 @@
     {
       "path": "market-basics/structural-breaks-when-market-direction-changes.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9841,7 +9804,7 @@
     {
       "path": "market-basics/structural-pivots-identifying-key-turning-points-in-the-market.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9857,7 +9820,7 @@
     {
       "path": "market-basics/structural-shifts-in-market-direction.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9873,7 +9836,7 @@
     {
       "path": "market-basics/swing-highs-and-lows-why-they-matter-in-market-context.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9889,7 +9852,7 @@
     {
       "path": "market-basics/tape-reading-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9905,7 +9868,7 @@
     {
       "path": "market-basics/time-of-day-market-behavior.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9921,7 +9884,7 @@
     {
       "path": "market-basics/time-of-day-volatility-patterns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9937,7 +9900,7 @@
     {
       "path": "market-basics/tpo-clusters-what-they-reveal.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9953,7 +9916,7 @@
     {
       "path": "market-basics/trade-around-whipsaws.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9969,7 +9932,7 @@
     {
       "path": "market-basics/trading-sessions-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -9985,7 +9948,7 @@
     {
       "path": "market-basics/trending-vs-choppy-markets-how-to-spot-the-difference.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10001,7 +9964,7 @@
     {
       "path": "market-basics/two-way-auctions-and-trend-failure-points.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10017,7 +9980,7 @@
     {
       "path": "market-basics/volatility-clustering-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10033,7 +9996,7 @@
     {
       "path": "market-basics/volatility-clustering-in-markets.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10049,7 +10012,7 @@
     {
       "path": "market-basics/volatility-compression-leads-to-expansion.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10065,7 +10028,7 @@
     {
       "path": "market-basics/volatility-cycles-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10081,7 +10044,7 @@
     {
       "path": "market-basics/volume-clusters-dense-trading-areas-shape-movement.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10097,7 +10060,7 @@
     {
       "path": "market-basics/volume-divergence-price-participation-signals.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10113,7 +10076,7 @@
     {
       "path": "market-basics/volume-divergence-when-price-moves-but-participation-doesnt.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10129,7 +10092,7 @@
     {
       "path": "market-basics/volume-nodes-why-some-prices-attract-action-and-others-repel-it.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10145,7 +10108,7 @@
     {
       "path": "market-basics/volume-trend-analysis-participation-guides-bias.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10161,7 +10124,7 @@
     {
       "path": "market-basics/what-creates-midpoint-retests-in-auction-markets.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10177,7 +10140,7 @@
     {
       "path": "market-basics/what-drives-market-volatility-and-why-it-spikes.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10193,7 +10156,7 @@
     {
       "path": "market-basics/what-drives-market-volatility.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10209,7 +10172,7 @@
     {
       "path": "market-basics/what-is-a-market-catalyst.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10225,7 +10188,7 @@
     {
       "path": "market-basics/what-is-market-microstructure.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10241,7 +10204,7 @@
     {
       "path": "market-basics/what-is-slippage-in-trading.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10257,7 +10220,7 @@
     {
       "path": "market-basics/why-consolidation-happens-before-big-moves.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10273,7 +10236,7 @@
     {
       "path": "market-basics/why-markets-consolidate-before-big-moves.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10289,7 +10252,7 @@
     {
       "path": "market-basics/why-markets-overshoot-and-retrace.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10305,7 +10268,7 @@
     {
       "path": "market-basics/why-ta-loses-power-in-low-liquidity-conditions.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10321,7 +10284,7 @@
     {
       "path": "market-basics/why-trends-stall-at-compression-zones.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10337,7 +10300,7 @@
     {
       "path": "market-basics/why-volume-drops-before-major-reversals.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10353,7 +10316,7 @@
     {
       "path": "platforms-tutorials/bookmap-addons-overview.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10369,7 +10332,7 @@
     {
       "path": "platforms-tutorials/bookmap-basics-what-it-is-and-how-it-works.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10385,7 +10348,7 @@
     {
       "path": "platforms-tutorials/bookmap-built-in-alerts.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10401,7 +10364,7 @@
     {
       "path": "platforms-tutorials/bookmap-connections-and-data-feeds.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10417,7 +10380,7 @@
     {
       "path": "platforms-tutorials/bookmap-cvd-guide.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10433,7 +10396,7 @@
     {
       "path": "platforms-tutorials/bookmap-heatmap-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10449,7 +10412,7 @@
     {
       "path": "platforms-tutorials/bookmap-icebergs-and-absorption.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10465,7 +10428,7 @@
     {
       "path": "platforms-tutorials/bookmap-imbalance-columns.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10481,7 +10444,7 @@
     {
       "path": "platforms-tutorials/bookmap-liquidity-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10497,7 +10460,7 @@
     {
       "path": "platforms-tutorials/bookmap-order-book-dom-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10513,7 +10476,7 @@
     {
       "path": "platforms-tutorials/bookmap-order-flow-timeline.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10529,7 +10492,7 @@
     {
       "path": "platforms-tutorials/bookmap-settings-menu-walkthrough.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10545,7 +10508,7 @@
     {
       "path": "platforms-tutorials/bookmap-sweeps-and-stop-runs.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10561,7 +10524,7 @@
     {
       "path": "platforms-tutorials/bookmap-volume-bubbles-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10577,7 +10540,7 @@
     {
       "path": "platforms-tutorials/bookmap-volume-dots-vs-volume-bubbles.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10593,7 +10556,7 @@
     {
       "path": "platforms-tutorials/bookmap-workspace-setup.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10609,7 +10572,7 @@
     {
       "path": "platforms-tutorials/ninjatrader-7-overview-legacy.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10625,7 +10588,7 @@
     {
       "path": "platforms-tutorials/ninjatrader-7-vs-8-differences.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10641,7 +10604,7 @@
     {
       "path": "platforms-tutorials/ninjatrader-8-chart-settings-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10657,7 +10620,7 @@
     {
       "path": "platforms-tutorials/ninjatrader-8-charttrader-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10673,7 +10636,7 @@
     {
       "path": "platforms-tutorials/ninjatrader-8-drawing-tools-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10689,7 +10652,7 @@
     {
       "path": "platforms-tutorials/ninjatrader-8-market-replay-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10705,7 +10668,7 @@
     {
       "path": "platforms-tutorials/ninjatrader-8-platform-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10721,7 +10684,7 @@
     {
       "path": "platforms-tutorials/ninjatrader-alerts-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10737,7 +10700,7 @@
     {
       "path": "platforms-tutorials/ninjatrader-chart-properties-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10753,7 +10716,7 @@
     {
       "path": "platforms-tutorials/ninjatrader-chart-templates-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10769,7 +10732,7 @@
     {
       "path": "platforms-tutorials/ninjatrader-data-series-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10785,7 +10748,7 @@
     {
       "path": "platforms-tutorials/ninjatrader-indicators-window-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10801,7 +10764,7 @@
     {
       "path": "platforms-tutorials/tradovate-alerts-and-notifications-guide.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10817,7 +10780,7 @@
     {
       "path": "platforms-tutorials/tradovate-atm-strategy-setup-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10833,7 +10796,7 @@
     {
       "path": "platforms-tutorials/tradovate-chart-drawing-tools-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10849,7 +10812,7 @@
     {
       "path": "platforms-tutorials/tradovate-chart-settings-complete-guide.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10865,7 +10828,7 @@
     {
       "path": "platforms-tutorials/tradovate-chart-trading-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10881,7 +10844,7 @@
     {
       "path": "platforms-tutorials/tradovate-dom-settings-guide.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10897,7 +10860,7 @@
     {
       "path": "platforms-tutorials/tradovate-drawing-tool-settings-and-customization.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10913,7 +10876,7 @@
     {
       "path": "platforms-tutorials/tradovate-filled-orders-tab-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10929,8 +10892,8 @@
     {
       "path": "platforms-tutorials/tradovate-hotkeys-setup-guide.html",
       "status": "dry-run-complete",
-      "changed": true,
-      "ga_before": 0,
+      "changed": false,
+      "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
       "uet_after": 1,
@@ -10945,7 +10908,7 @@
     {
       "path": "platforms-tutorials/tradovate-order-cancellation-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10961,7 +10924,7 @@
     {
       "path": "platforms-tutorials/tradovate-order-entry-panel-complete-guide.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10977,7 +10940,7 @@
     {
       "path": "platforms-tutorials/tradovate-order-flow-tools-overview.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -10993,7 +10956,7 @@
     {
       "path": "platforms-tutorials/tradovate-order-modification-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11009,7 +10972,7 @@
     {
       "path": "platforms-tutorials/tradovate-order-types-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11025,7 +10988,7 @@
     {
       "path": "platforms-tutorials/tradovate-orders-tab-overview.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11041,7 +11004,7 @@
     {
       "path": "platforms-tutorials/tradovate-positions-tab-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11057,7 +11020,7 @@
     {
       "path": "platforms-tutorials/tradovate-risk-settings-and-max-loss.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11073,7 +11036,7 @@
     {
       "path": "platforms-tutorials/tradovate-time-and-sales-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11089,7 +11052,7 @@
     {
       "path": "platforms-tutorials/tradovate-working-orders-panel-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11105,7 +11068,7 @@
     {
       "path": "platforms-tutorials/tradovate-workspace-setup-basics.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11121,7 +11084,7 @@
     {
       "path": "prop-firm-trading/auto-liquidation-rules.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11137,7 +11100,7 @@
     {
       "path": "prop-firm-trading/automated-strategy-rules-in-prop-firms.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11153,7 +11116,7 @@
     {
       "path": "prop-firm-trading/behavior-risk-scoring.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11169,7 +11132,7 @@
     {
       "path": "prop-firm-trading/best-prop-firm-account-size-for-beginners.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11185,7 +11148,7 @@
     {
       "path": "prop-firm-trading/consistency-metrics-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11201,7 +11164,7 @@
     {
       "path": "prop-firm-trading/consistency-rules-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11217,7 +11180,7 @@
     {
       "path": "prop-firm-trading/contract-suspension-rules.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11233,7 +11196,7 @@
     {
       "path": "prop-firm-trading/daily-profit-throttles.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11249,7 +11212,7 @@
     {
       "path": "prop-firm-trading/data-feed-quality-evaluation.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11265,7 +11228,7 @@
     {
       "path": "prop-firm-trading/evaluation-vs-expresspass-vs-fasttrack.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11281,7 +11244,7 @@
     {
       "path": "prop-firm-trading/evaluation-vs-funded-vs-payout-rules.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11297,7 +11260,7 @@
     {
       "path": "prop-firm-trading/hedging-correlated-markets.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11313,7 +11276,7 @@
     {
       "path": "prop-firm-trading/hidden-prop-firm-rules-and-traps.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11329,7 +11292,7 @@
     {
       "path": "prop-firm-trading/holiday-trading-restrictions.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11345,7 +11308,7 @@
     {
       "path": "prop-firm-trading/how-evaluations-work.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11361,7 +11324,7 @@
     {
       "path": "prop-firm-trading/how-prop-firms-calculate-profit-targets.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11377,7 +11340,7 @@
     {
       "path": "prop-firm-trading/how-prop-firms-track-trade-history-and-violations.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11393,7 +11356,7 @@
     {
       "path": "prop-firm-trading/identity-and-payment-verification.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11409,7 +11372,7 @@
     {
       "path": "prop-firm-trading/instrument-restrictions-in-prop-firms.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11425,7 +11388,7 @@
     {
       "path": "prop-firm-trading/low-liquidity-session-risks.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11441,7 +11404,7 @@
     {
       "path": "prop-firm-trading/low-liquidity-session-rules.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11457,7 +11420,7 @@
     {
       "path": "prop-firm-trading/max-order-frequency-rules.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11473,7 +11436,7 @@
     {
       "path": "prop-firm-trading/max-position-size-rules-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11489,7 +11452,7 @@
     {
       "path": "prop-firm-trading/micro-vs-full-contract-evaluations.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11505,7 +11468,7 @@
     {
       "path": "prop-firm-trading/multi-account-ethics-and-anti-collusion.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11521,7 +11484,7 @@
     {
       "path": "prop-firm-trading/news-trading-restrictions.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11537,7 +11500,7 @@
     {
       "path": "prop-firm-trading/one-contract-evaluation-strategy.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11553,7 +11516,7 @@
     {
       "path": "prop-firm-trading/overnight-margin-spikes-and-forced-flatten.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11569,7 +11532,7 @@
     {
       "path": "prop-firm-trading/payout-model-advancements.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11585,7 +11548,7 @@
     {
       "path": "prop-firm-trading/platform-manipulation-detection.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11601,7 +11564,7 @@
     {
       "path": "prop-firm-trading/policy-change-frequency.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11617,7 +11580,7 @@
     {
       "path": "prop-firm-trading/prop-firm-automated-rule-monitoring.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11633,7 +11596,7 @@
     {
       "path": "prop-firm-trading/prop-firm-detecting-account-merging.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11649,7 +11612,7 @@
     {
       "path": "prop-firm-trading/prop-firm-grid-and-martingale-bans.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11665,7 +11628,7 @@
     {
       "path": "prop-firm-trading/prop-firm-liquidity-provider-routing.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11681,7 +11644,7 @@
     {
       "path": "prop-firm-trading/prop-firm-multi-accounting-identity-fraud-detection.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11697,7 +11660,7 @@
     {
       "path": "prop-firm-trading/prop-firm-news-filter-rules.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11713,7 +11676,7 @@
     {
       "path": "prop-firm-trading/prop-firm-payout-processing-methods.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11729,7 +11692,7 @@
     {
       "path": "prop-firm-trading/prop-firm-payout-schedules.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11745,7 +11708,7 @@
     {
       "path": "prop-firm-trading/prop-firm-refund-policy-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11761,7 +11724,7 @@
     {
       "path": "prop-firm-trading/prop-firm-reset-fees.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11777,7 +11740,7 @@
     {
       "path": "prop-firm-trading/prop-firm-risk-desk-monitoring.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11793,7 +11756,7 @@
     {
       "path": "prop-firm-trading/prop-firm-weekend-maintenance-impact.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11809,7 +11772,7 @@
     {
       "path": "prop-firm-trading/risk-premium-pricing.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11825,7 +11788,7 @@
     {
       "path": "prop-firm-trading/scaling-back-down-after-loss.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11841,7 +11804,7 @@
     {
       "path": "prop-firm-trading/scaling-plans-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11857,7 +11820,7 @@
     {
       "path": "prop-firm-trading/scaling-to-paid-performance-account.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11873,7 +11836,7 @@
     {
       "path": "prop-firm-trading/scaling-violations-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11889,7 +11852,7 @@
     {
       "path": "prop-firm-trading/slippage-tolerance-rules.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11905,7 +11868,7 @@
     {
       "path": "prop-firm-trading/soft-breach-vs-hard-breach.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11921,7 +11884,7 @@
     {
       "path": "prop-firm-trading/soft-breaches-vs-hard-violations.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11937,7 +11900,7 @@
     {
       "path": "prop-firm-trading/static-vs-trailing-drawdown.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11953,7 +11916,7 @@
     {
       "path": "prop-firm-trading/symbol-changeovers-and-rollovers.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11969,7 +11932,7 @@
     {
       "path": "prop-firm-trading/tax-handling-for-prop-traders.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -11985,7 +11948,7 @@
     {
       "path": "prop-firm-trading/trade-copier-rules.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -12001,7 +11964,7 @@
     {
       "path": "prop-firm-trading/trading-halt-rules.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -12017,7 +11980,7 @@
     {
       "path": "prop-firm-trading/trailing-drawdown-explained.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -12033,7 +11996,7 @@
     {
       "path": "prop-firm-trading/weekend-data-drops-and-disconnect-policies.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -12049,7 +12012,7 @@
     {
       "path": "prop-firm-trading/weekend-holding-restrictions.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -12065,7 +12028,7 @@
     {
       "path": "prop-firm-trading/weekend-maintenance-windows.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
@@ -12081,7 +12044,7 @@
     {
       "path": "prop-firm-trading/withdrawal-thresholds-and-requirements.html",
       "status": "dry-run-complete",
-      "changed": true,
+      "changed": false,
       "ga_before": 1,
       "ga_after": 1,
       "uet_before": 1,
