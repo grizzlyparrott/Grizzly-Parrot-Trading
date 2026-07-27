@@ -1,89 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
 
-    <meta charset="UTF-8">
-     <!-- Standard Favicon -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Standard Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- PNG Fallbacks -->
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
-<!-- Web App Manifest -->
-<link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior</title>
+  <meta name="description" content="A detailed breakdown of SI calendar spreads — how Silver futures months interact, what drives the curve, and how spreads affect volatility and price.">
+  <meta name="robots" content="index, follow">
 
-<!-- PNG Fallbacks -->
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-<link rel="icon" href="/favicon.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/si-calendar-spreads-explained.html">
 
-<title>SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior</title>
-<meta name="description" content="A detailed breakdown of SI calendar spreads — how Silver futures months interact, what drives the curve, and how spreads affect volatility and price.">
-<meta name="robots" content="index, follow">
+  <!-- Open Graph -->
+  <meta property="og:title" content="SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior">
+  <meta property="og:description" content="Learn how Silver futures (SI) calendar spreads work, how contract months interact, and how term structure impacts volatility and roll periods.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/si-calendar-spreads-explained.html">
+  <meta property="og:site_name" content="Grizzly Parrot Trading">
+  <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+  <meta property="og:image:width" content="1792">
+  <meta property="og:image:height" content="941">
 
-<!-- Canonical -->
-<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/si-calendar-spreads-explained.html">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+  <meta name="twitter:title" content="SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior">
+  <meta name="twitter:description" content="A no-BS guide to understanding how SI futures months interact through calendar spreads and term structure.">
 
-<!-- Open Graph -->
-<meta property="og:title" content="SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior">
-<meta property="og:description" content="Learn how Silver futures (SI) calendar spreads work, how contract months interact, and how term structure impacts volatility and roll periods.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/si-calendar-spreads-explained.html">
-<meta property="og:site_name" content="Grizzly Parrot Trading">
-<meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
-<meta property="og:image:width" content="1792">
-<meta property="og:image:height" content="941">
+  <link rel="stylesheet" href="../style.css">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
-<meta name="twitter:title" content="SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior">
-<meta name="twitter:description" content="A no-BS guide to understanding how SI futures months interact through calendar spreads and term structure.">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JMJVR3G5YN');
+  </script>
 
-<link rel="stylesheet" href="../style.css">
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior",
+    "description": "A deep explanation of Silver futures (SI) calendar spreads — how term structure, carry, and roll mechanics impact volatility and direction.",
+    "author": {
+      "@type": "Person",
+      "name": "Kyle Parrott"
+    },
+    "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/si-calendar-spreads-explained.html",
+    "datePublished": "2025-11-30",
+    "dateModified": "2025-11-30"
+  }
+  </script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-JMJVR3G5YN');
-</script>
-
-<!-- JSON-LD: Article -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior",
-  "description": "A deep explanation of Silver futures (SI) calendar spreads — how term structure, carry, and roll mechanics impact volatility and direction.",
-  "author": { "@type": "Person", "name": "Kyle Parrott" },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/si-calendar-spreads-explained.html",
-  "datePublished": "2025-11-30",
-  "dateModified": "2025-11-30"
-}
-</script>
-
-<!-- JSON-LD: Breadcrumbs -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrottrading.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Futures Basics", "item": "https://grizzlyparrottrading.com/futures-basics/index.html" },
-    { "@type": "ListItem", "position": 3, "name": "SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior", "item": "https://grizzlyparrottrading.com/futures-basics/si-calendar-spreads-explained.html" }
-  ]
-}
-</script>
-
+  <!-- JSON-LD: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Futures Basics",
+        "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior",
+        "item": "https://grizzlyparrottrading.com/futures-basics/si-calendar-spreads-explained.html"
+      }
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
 </head>
 <body>
+
 <header class="site-header">
   <div class="container header-inner">
     <div class="logo">
@@ -108,7 +121,6 @@ Grizzly Parrot Trading</a>
 <main>
 <section class="section">
 <div class="container article-content">
-
 <!-- ARTICLE BODY START -->
 
 <h1>SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior</h1>
@@ -240,7 +252,8 @@ Half the “weird” SI moves are spread-driven, not technical.</p>
 </div>
 
 <!-- ARTICLE BODY END -->
-
+</div>
+</section>
 </main>
 
 <footer class="site-footer">
@@ -257,7 +270,6 @@ Half the “weird” SI moves are spread-driven, not technical.</p>
       <a href="/disclaimer.html">Disclaimer</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/contact.html">Contact</a>
-       
     </div>
 
     <p class="footer-copy">
