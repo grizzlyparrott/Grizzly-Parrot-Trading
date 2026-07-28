@@ -444,6 +444,12 @@
     "category": "Prop Firm Trading"
   },
   {
+    "title": "Best Technical Indicators for Crude Oil Futures (CL): What Actually Works",
+    "url": "/energies/cl-technical-indicators.html",
+    "description": "A trader-focused breakdown of the technical indicators that actually matter in crude oil futures, including VWAP, ATR, volume profile, and structure levels.",
+    "category": "Energies"
+  },
+  {
     "title": "Best Technical Indicators for GC Futures",
     "url": "/futures-basics/gc-best-indicators.html",
     "description": "The only technical indicators that actually work on Gold futures (GC), and the ones that waste your time. Just what GC respects.",
@@ -502,6 +508,12 @@
     "url": "/futures-basics/best-times-to-trade-6z-futures.html",
     "description": "Detailed breakdown of the best times to trade 6Z South African Rand futures, including volume cycles, session behavior, and risk conditions.",
     "category": "Futures Basics"
+  },
+  {
+    "title": "Best Times to Trade Crude Oil Futures (CL): Session Windows and Dead Zones",
+    "url": "/energies/cl-best-times-to-trade.html",
+    "description": "When to trade CL and when to stay out. A breakdown of crude oil futures session windows, the EIA release, the London overlap, and the dead zones in between.",
+    "category": "Energies"
   },
   {
     "title": "Best Times to Trade ES (E-Mini S&P 500)",
@@ -648,6 +660,12 @@
     "category": "Platforms & Tutorials"
   },
   {
+    "title": "Books | Grizzly Parrot Trading",
+    "url": "/books/",
+    "description": "The complete three-volume Market Structure Series covering currencies, metals, and equities.",
+    "category": "Books"
+  },
+  {
     "title": "Break-Even Math for Futures Traders",
     "url": "/futures-basics/breakeven-futures.html",
     "description": "Learn the exact break-even tick math for MES, MNQ, GC, and more. A blunt guide showing how commissions affect your real profit targets.",
@@ -696,6 +714,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Cash-Futures Basis Behavior in Live Cattle",
+    "url": "/futures-basics/cash-futures-basis-behavior-live-cattle.html",
+    "description": "The basis in live cattle futures is not noise — it",
+    "category": "Futures Basics"
+  },
+  {
     "title": "CHF/USD Spot Market vs 6S Futures: Key Differences Traders Miss",
     "url": "/futures-basics/6s-chf-usd-spot-vs-futures-differences.html",
     "description": "See the real differences between trading CHF/USD spot and 6S Swiss Franc futures so you stop mixing rules and blowing trades for no reason.",
@@ -706,6 +730,54 @@
     "url": "/futures-basics/china-demand-copper-hg.html",
     "description": "China consumes over half the world’s copper. Here’s how its construction cycles, manufacturing trends, credit flows, and stockpiling behavior directly move HG futures.",
     "category": "Futures Basics"
+  },
+  {
+    "title": "CL Calendar Spreads Explained: Contango, Backwardation, and What the Curve Signals",
+    "url": "/energies/cl-calendar-spreads-contango-backwardation.html",
+    "description": "How crude oil futures calendar spreads work, what contango and backwardation signal about supply and demand, how the curve shifts with inventory conditions, and what rollover means for front-month CL traders.",
+    "category": "Energies"
+  },
+  {
+    "title": "CL Correlations: DXY, Gasoline, Natural Gas, and Risk Assets",
+    "url": "/energies/cl-correlations-explained.html",
+    "description": "How crude oil futures (CL) correlate with the U.S. dollar, RBOB gasoline, heating oil, natural gas, and equity markets — and when those correlations fall apart.",
+    "category": "Energies"
+  },
+  {
+    "title": "CL Intraday Strategies That Actually Work: Crude Oil Day Trading Setups",
+    "url": "/energies/cl-intraday-strategies.html",
+    "description": "Practical intraday trading setups for crude oil futures (CL): VWAP reclaim plays, post-EIA fade setups, opening range breakouts, and how to frame entries around structure.",
+    "category": "Energies"
+  },
+  {
+    "title": "CL Liquidity Levels and Market Structure: How Crude Oil Builds and Breaks Levels",
+    "url": "/energies/cl-liquidity-levels-structure.html",
+    "description": "How crude oil futures (CL) form and break structural levels: daily and weekly structure, liquidity pockets, round-number magnets, and sweep-and-reverse behavior explained for active traders.",
+    "category": "Energies"
+  },
+  {
+    "title": "CL Market Microstructure: Liquidity, Stop Runs, and How Crude Oil Actually Trades",
+    "url": "/energies/cl-market-microstructure.html",
+    "description": "A blunt breakdown of CL market microstructure: how liquidity is distributed, why stop runs happen, how EIA releases create vacuums, and what makes crude oil move the way it does intraday.",
+    "category": "Energies"
+  },
+  {
+    "title": "CL Orderflow Basics: Reading Aggression and Imbalance in Crude Oil Futures",
+    "url": "/energies/cl-orderflow-basics.html",
+    "description": "How to read orderflow in crude oil futures (CL): bid and ask aggression, delta imbalance, DOM behavior around key levels, and absorption at support and resistance.",
+    "category": "Energies"
+  },
+  {
+    "title": "CL Tick Size, Tick Value, and Full Crude Oil Contract Specs",
+    "url": "/energies/cl-tick-size-tick-value-specs.html",
+    "description": "The exact tick size, tick value, margin structure, and contract specs for crude oil futures (CL) — what every number means before you place a trade.",
+    "category": "Energies"
+  },
+  {
+    "title": "CL Volatility Profile and ATR Behavior: Crude Oil Risk in Real Terms",
+    "url": "/energies/cl-volatility-profile-atr.html",
+    "description": "A trader-focused breakdown of crude oil futures (CL) volatility behavior, ATR characteristics, and what CL",
+    "category": "Energies"
   },
   {
     "title": "Climax Volume: When Markets Blow Out in One Final Burst",
@@ -736,6 +808,12 @@
     "url": "/futures-basics/6a-chart-patterns-that-work.html",
     "description": "A blunt breakdown of the chart patterns that consistently show up in 6A AUD/USD futures and how to trade them without overthinking.",
     "category": "Futures Basics"
+  },
+  {
+    "title": "Common Crude Oil Futures (CL) Trading Mistakes and How to Fix Them",
+    "url": "/energies/cl-common-trader-mistakes.html",
+    "description": "The mistakes that consistently hurt CL traders: stops too tight for the contract",
+    "category": "Energies"
   },
   {
     "title": "Common ES Retail Trader Mistakes",
@@ -834,9 +912,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Contract Specs That Matter in Lean Hog Trading",
-    "url": "/futures-basics/lean-hog-contract-specs.html",
-    "description": "Lean hog contract specs determine dollar risk, tick value, and execution behavior. This page covers the numbers that actually matter when trading HE futures.",
+    "title": "Contract Specs That Matter in Live Cattle Trading",
+    "url": "/futures-basics/contract-specs-live-cattle-trading.html",
+    "description": "Not all contract specs are equal. In live cattle futures, a handful of details directly affect how you size positions, manage risk, and interpret price moves.",
     "category": "Futures Basics"
   },
   {
@@ -918,10 +996,34 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Corn and Soymeal Pass-Through Into Livestock Futures",
+    "url": "/futures-basics/corn-soymeal-pass-through-livestock-futures.html",
+    "description": "Feed costs don",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Crude Oil Futures Seasonality: Monthly and Quarterly Patterns in CL",
+    "url": "/energies/cl-seasonality-patterns.html",
+    "description": "How seasonal demand cycles shape crude oil futures (CL) price behavior throughout the year, including summer driving season, winter heating demand, and refinery maintenance windows.",
+    "category": "Energies"
+  },
+  {
     "title": "Cumulative Volume Delta Reversals: Clean Signals for Shifts in Control",
     "url": "/market-basics/cumulative-volume-delta-reversals.html",
     "description": "Learn how cumulative volume delta reversals reveal shifts in buyer and seller control and how to use CVD to confirm or fade price moves.",
     "category": "Market Basics"
+  },
+  {
+    "title": "Currency Futures | Grizzly Parrot Trading",
+    "url": "/currencies/",
+    "description": "Currency futures breakdowns — how FX futures actually behave, how they move together, and what matters when you trade 6A, 6B, 6C, 6E, 6J, and 6S.",
+    "category": "Currencies"
+  },
+  {
+    "title": "Currency Market Structure (Volume I) | Grizzly Parrot Trading",
+    "url": "/books/currency-market-structure/",
+    "description": "Currency Market Structure explains how liquidity, sessions, funding currencies, commodity exposure, and shared capital flows connect the global currency market.",
+    "category": "Books"
   },
   {
     "title": "Daily Profit Throttles: The Hidden Limits Some Prop Firms Use",
@@ -966,10 +1068,28 @@
     "category": "Futures Basics"
   },
   {
+    "title": "EIA Inventory Reports: How Weekly Crude Oil Data Moves CL Futures",
+    "url": "/energies/eia-inventory-reports-cl.html",
+    "description": "What the EIA weekly petroleum status report covers, how crude draws and builds move CL futures, how analyst consensus drives the reaction, and how to approach the release as a trader.",
+    "category": "Energies"
+  },
+  {
     "title": "Emerging Market Copper Demand: The Next Growth Engine for HG",
     "url": "/futures-basics/copper-emerging-markets-hg.html",
     "description": "Emerging markets are becoming the fastest-growing source of copper demand. Learn how infrastructure, manufacturing, and electrification in EM nations drive HG futures.",
     "category": "Futures Basics"
+  },
+  {
+    "title": "Energy Futures | Grizzly Parrot Trading",
+    "url": "/energies/",
+    "description": "Energy futures breakdowns — crude oil, natural gas, gasoline, heating oil, inventories, spreads, storage, and the market structure behind energy futures.",
+    "category": "Energies"
+  },
+  {
+    "title": "Equity Market Structure (Volume III) | Grizzly Parrot Trading",
+    "url": "/books/equity-market-structure/",
+    "description": "Equity Market Structure explains how index futures, cash equities, ETFs, sectors, volatility, and individual stocks function as one connected market system.",
+    "category": "Books"
   },
   {
     "title": "ES ATR Behavior and Volatility Zones",
@@ -1104,6 +1224,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Export Demand Sensitivity in Beef Futures",
+    "url": "/futures-basics/export-demand-sensitivity-beef-futures.html",
+    "description": "Export demand is one of the few live cattle price drivers that can move fast. Here",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Failed Breakouts: Why Markets Snap Back After Faking Direction",
     "url": "/market-basics/failed-breakouts-why-markets-snap-back.html",
     "description": "A blunt explanation of failed breakouts, why markets fake direction, and how to trade the snap-back move that catches most traders off guard.",
@@ -1146,6 +1272,24 @@
     "category": "Market Basics"
   },
   {
+    "title": "Feeder Cattle Futures as an Input Market",
+    "url": "/futures-basics/feeder-cattle-futures-as-an-input-market.html",
+    "description": "Feeder cattle futures price the raw material of beef production. Here",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Feeder Cattle vs Live Cattle Pricing Mechanics",
+    "url": "/futures-basics/feeder-cattle-vs-live-cattle-pricing-mechanics.html",
+    "description": "Feeder and live cattle prices are connected by feedlot margin math. Here",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Feedlot Dynamics and Futures Pricing",
+    "url": "/futures-basics/feedlot-dynamics-and-futures-pricing.html",
+    "description": "Feedlot economics drive live cattle futures pricing in ways that most traders never see. Here",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Finding Intraday Support and Resistance on ES",
     "url": "/futures-basics/es-intraday-support-and-resistance-levels.html",
     "description": "A blunt guide to finding intraday support and resistance on ES so beginners stop guessing and start using real structure.",
@@ -1170,6 +1314,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Fundamental Drivers of Crude Oil Futures (CL): What Actually Moves Price",
+    "url": "/energies/cl-fundamental-drivers.html",
+    "description": "A blunt breakdown of the real fundamental drivers behind crude oil futures (CL): supply, demand, OPEC, shale, inventories, and global consumption cycles.",
+    "category": "Energies"
+  },
+  {
     "title": "Fundamental Drivers of GC Futures",
     "url": "/futures-basics/gc-fundamental-drivers.html",
     "description": "A direct breakdown of the real fundamental drivers behind Gold futures (GC): real yields, inflation expectations, the dollar, and global risk flows.",
@@ -1183,7 +1333,7 @@
   },
   {
     "title": "Futures Basics | Grizzly Parrot Trading",
-    "url": "/futures-basics/index.html",
+    "url": "/futures-basics/",
     "description": "Beginner futures trading basics: contracts, ticks, margin, leverage, and how this junk actually works without the guru fluff.",
     "category": "Futures Basics"
   },
@@ -1338,6 +1488,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Geopolitical Supply Risk in Crude Oil Futures: How Conflict and Sanctions Move CL",
+    "url": "/energies/cl-geopolitical-supply-risk.html",
+    "description": "How geopolitical events move crude oil futures (CL): Middle East conflict premium, sanctions on Iran and Russia, the Strait of Hormuz, and how to distinguish spikes that fade from moves that sustain.",
+    "category": "Energies"
+  },
+  {
     "title": "Geopolitical Supply Risks Driving Palladium Futures",
     "url": "/futures-basics/pa-geopolitical-supply-risks.html",
     "description": "A blunt breakdown of the geopolitical supply risks behind Palladium futures, focusing on Russia, South Africa, and why PA reacts violently to global disruptions.",
@@ -1395,6 +1551,12 @@
     "title": "Hog Supply Cycles and Biological Lag",
     "url": "/futures-basics/hog-supply-cycles-and-biological-lag.html",
     "description": "Lean hog futures are shaped by biological lag. Supply decisions made months ago collide with current demand, creating cycles and violent repricing.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Hog–Cattle Relative Value and Intermarket Spreads",
+    "url": "/futures-basics/hog-cattle-relative-value-intermarket-spreads.html",
+    "description": "Lean hogs and live cattle share a sector but not a supply structure. Here",
     "category": "Futures Basics"
   },
   {
@@ -1548,6 +1710,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "How Crude Oil Futures React to Major News: EIA, OPEC, NFP, and Geopolitical Shocks",
+    "url": "/energies/cl-news-event-reaction.html",
+    "description": "How CL futures behave around EIA inventory reports, OPEC announcements, NFP, CPI, and geopolitical events — what to expect, how to prepare, and what gets traders hurt.",
+    "category": "Energies"
+  },
+  {
     "title": "How Dairy and Commodity Exports Drive 6N Futures Trends",
     "url": "/futures-basics/how-exports-drive-6n-trends.html",
     "description": "A blunt breakdown of how New Zealand’s dairy and commodity exports directly influence 6N New Zealand Dollar futures trends.",
@@ -1563,6 +1731,12 @@
     "title": "How Dollar Strength Impacts SI Price Movement",
     "url": "/futures-basics/how-dollar-strength-impacts-si-price.html",
     "description": "A deep, no-nonsense breakdown of how dollar strength drives Silver futures (SI), including correlations, volatility responses, and real trading implications.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "How Drought and Weather Impact Live Cattle",
+    "url": "/futures-basics/how-drought-and-weather-impact-live-cattle.html",
+    "description": "Drought is the most powerful non-market force in live cattle. Here",
     "category": "Futures Basics"
   },
   {
@@ -1780,6 +1954,12 @@
     "url": "/futures-basics/6c-oil-correlation.html",
     "description": "Learn exactly how crude oil affects 6C Canadian Dollar futures, why CAD tracks energy markets, and how to use this correlation in trading.",
     "category": "Futures Basics"
+  },
+  {
+    "title": "How OPEC Decisions Move Crude Oil Futures (CL): Production Cuts, Freezes, and Surprises",
+    "url": "/energies/opec-impact-on-cl.html",
+    "description": "How OPEC and OPEC+ production decisions move CL futures: pre-meeting positioning, announcement behavior, compliance gaps, post-announcement fades, and how to trade around these events.",
+    "category": "Energies"
   },
   {
     "title": "How Open Interest Signals Futures Trend Strength",
@@ -2226,12 +2406,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Industrial Demand Drivers Behind Palladium Futures",
-    "url": "/futures-basics/why-pa-is-more-violent.html",
-    "description": "A blunt breakdown of the industrial demand drivers behind Palladium futures, including catalytic converters, electronics, and chemical applications influencing PA price.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Industrial Demand Shocks and Their Impact on Platinum Futures (PL)",
     "url": "/futures-basics/pl-industrial-demand-factors.html",
     "description": "A futures-focused breakdown of how industrial demand shocks in hydrogen, chemical, and manufacturing sectors move Platinum futures (PL) fast.",
@@ -2292,9 +2466,21 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Lean Hogs vs Feed Grains Correlation Breakdown",
+    "url": "/futures-basics/lean-hogs-feed-grains-correlation.html",
+    "description": "Lean hogs and feed grains correlation is unstable and often inverse. Rising corn prices don",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Limit Moves and Liquidity Gaps in Lean Hogs",
     "url": "/futures-basics/limit-moves-liquidity-gaps-lean-hogs.html",
     "description": "Lean hog futures hit daily price limits and experience liquidity gaps that trap traders. Here",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Limit Risk and Liquidity in Live Cattle",
+    "url": "/futures-basics/limit-risk-and-liquidity-live-cattle.html",
+    "description": "Live cattle futures can hit daily price limits and go illiquid fast. Here",
     "category": "Futures Basics"
   },
   {
@@ -2394,6 +2580,18 @@
     "category": "Market Basics"
   },
   {
+    "title": "Live Cattle Curve Structure and Carry",
+    "url": "/futures-basics/live-cattle-curve-structure-and-carry.html",
+    "description": "The live cattle futures curve is not just a roll schedule. Its shape carries real information about supply expectations and seasonal demand. Here",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Live Cattle vs Equity and Macro Correlations",
+    "url": "/futures-basics/live-cattle-vs-equity-and-macro-correlations.html",
+    "description": "Live cattle futures do not move with equities the way most commodities do. Here",
+    "category": "Futures Basics"
+  },
+  {
     "title": "London Session Volatility Patterns in 6B Futures",
     "url": "/futures-basics/london-session-volatility-patterns-in-6b.html",
     "description": "Learn the exact volatility patterns 6B British Pound futures show during the London session and how to trade the moves without getting chopped up.",
@@ -2467,7 +2665,7 @@
   },
   {
     "title": "Market Basics | Grizzly Parrot Trading",
-    "url": "/market-basics/index.html",
+    "url": "/market-basics/",
     "description": "Foundational market concepts explained in plain English: liquidity, volatility, order flow, market structure, and how markets actually move.",
     "category": "Market Basics"
   },
@@ -2802,7 +3000,7 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Mean Reversion Traps: When \"It’ll Come Back\" Blows Up Accounts",
+    "title": "Mean Reversion Traps: When &quot;It’ll Come Back&quot; Blows Up Accounts",
     "url": "/market-basics/mean-reversion-traps-explained.html",
     "description": "Learn how mean reversion traps form, why traders get stuck in them, and how to avoid blowing up by fading moves that never return.",
     "category": "Market Basics"
@@ -2824,6 +3022,18 @@
     "url": "/market-basics/mean-reversion-when-the-market-snaps-back-to-value.html",
     "description": "Learn how mean reversion works, why markets snap back to value, and how to avoid fighting the moments when price rubber-bands against you.",
     "category": "Market Basics"
+  },
+  {
+    "title": "Metal Futures | Grizzly Parrot Trading",
+    "url": "/metals/",
+    "description": "Metal futures breakdowns — how GC, SI, HG, PL, and other metals actually behave, what moves them, and what matters when you trade them.",
+    "category": "Metals"
+  },
+  {
+    "title": "Metals Market Structure (Volume II) | Grizzly Parrot Trading",
+    "url": "/books/metals-market-structure/",
+    "description": "Metals Market Structure explains how gold, silver, copper, platinum, and palladium function as one connected system across monetary, industrial, liquidity, and supply regimes.",
+    "category": "Books"
   },
   {
     "title": "Micro 6E vs Standard 6E: Which Contract Should You Trade?",
@@ -2913,12 +3123,6 @@
     "title": "NinjaTrader 8 Chart Trader Basics",
     "url": "/platforms-tutorials/ninjatrader-8-charttrader-basics.html",
     "description": "Learn how to place orders directly on a NinjaTrader 8 chart using Chart Trader. Covers order types, ATM usage, scaling, and trade management.",
-    "category": "Platforms & Tutorials"
-  },
-  {
-    "title": "NinjaTrader 8 DOM Basics",
-    "url": "/platforms-tutorials/ninjatrader-8-dom-basics.html",
-    "description": "A blunt walkthrough of NinjaTrader 8 DOM basics. Learn how the SuperDOM works, how to place orders, read depth, flatten, and manage trades fast.",
     "category": "Platforms & Tutorials"
   },
   {
@@ -3241,14 +3445,14 @@
   },
   {
     "title": "Platforms & Tutorials | Grizzly Parrot Trading",
-    "url": "/platforms-tutorials/index.html",
+    "url": "/platforms-tutorials/",
     "description": "Clean, beginner-friendly guides for Tradovate, NinjaTrader, and other trading platforms. Tools, settings, layouts, and tutorials that actually make sense.",
     "category": "Platforms & Tutorials"
   },
   {
     "title": "Platforms / Tutorials Article",
     "url": "/platforms-tutorials/article1.html",
-    "description": "",
+    "description": "Platforms / Tutorials Article | Grizzly Parrot Trading",
     "category": "Platforms & Tutorials"
   },
   {
@@ -3291,6 +3495,12 @@
     "title": "Position Sizing for NQ Futures",
     "url": "/futures-basics/nq-position-sizing.html",
     "description": "A structural explanation of position sizing for NQ futures and why identical risk rules fail when applied mechanically.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Positioning and Commercial Hedging in Cattle",
+    "url": "/futures-basics/positioning-and-commercial-hedging-in-cattle.html",
+    "description": "Commercial hedgers in live cattle are not your counterparty — they are your signal. Here",
     "category": "Futures Basics"
   },
   {
@@ -3416,12 +3626,12 @@
   {
     "title": "Prop Firm Trading Article",
     "url": "/prop-firm-trading/article1.html",
-    "description": "",
+    "description": "Prop Firm Trading Article | Grizzly Parrot Trading",
     "category": "Prop Firm Trading"
   },
   {
     "title": "Prop Firm Trading | Grizzly Parrot Trading",
-    "url": "/prop-firm-trading/index.html",
+    "url": "/prop-firm-trading/",
     "description": "Straight talk about prop firm evaluations, trailing drawdown, scaling rules, payouts, resets, and why most traders fail these challenges.",
     "category": "Prop Firm Trading"
   },
@@ -3474,6 +3684,12 @@
     "category": "Market Basics"
   },
   {
+    "title": "Risk Management for Crude Oil Futures (CL): Sizing, Stops, and Survival",
+    "url": "/energies/cl-risk-management.html",
+    "description": "A practical risk management framework for crude oil futures (CL): how to size positions, place stops relative to ATR and structure, and avoid the sizing mistakes that end accounts.",
+    "category": "Energies"
+  },
+  {
     "title": "Risk Management for Palladium Futures: Sizing and Stops",
     "url": "/futures-basics/pa-risk-management.html",
     "description": "A blunt guide to risk management in Palladium futures: sizing, stops, drawdown control, and how to stay alive in PA’s thin, violent market structure.",
@@ -3496,6 +3712,12 @@
     "url": "/market-basics/risk-on-risk-off-basics.html",
     "description": "Learn Risk-On vs Risk-Off basics—how shifting sentiment impacts futures markets, volatility, and cross-asset rotation.",
     "category": "Market Basics"
+  },
+  {
+    "title": "Roll Mechanics in Live Cattle Futures",
+    "url": "/futures-basics/roll-mechanics-live-cattle-futures.html",
+    "description": "Rolling a live cattle position is not just an administrative task. The roll price, timing, and spread behavior all carry real P&L consequences. Here",
+    "category": "Futures Basics"
   },
   {
     "title": "Roll Yield and Front-Month Risk in Hogs",
@@ -3573,6 +3795,12 @@
     "title": "Seasonal Patterns Unique to Lean Hogs",
     "url": "/futures-basics/seasonal-patterns-unique-to-lean-hogs.html",
     "description": "Lean hog futures follow seasonal patterns driven by biology, weights, slaughter flow, and demand timing rather than trader behavior.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Seasonality in Live Cattle Markets",
+    "url": "/futures-basics/seasonality-in-live-cattle-markets.html",
+    "description": "Live cattle futures follow seasonal patterns driven by demand cycles and production timelines. Here",
     "category": "Futures Basics"
   },
   {
@@ -3654,6 +3882,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Slaughter Rates and Price Lag Effects in Live Cattle",
+    "url": "/futures-basics/slaughter-rates-and-price-lag-effects-live-cattle.html",
+    "description": "Weekly slaughter data is one of the most watched numbers in live cattle — and one of the most misread. Here",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Slippage Tolerance Rules: How Prop Firms Judge Your Executions",
     "url": "/prop-firm-trading/slippage-tolerance-rules.html",
     "description": "A blunt breakdown of slippage tolerance rules in prop firms, how execution slippage is measured, and what triggers a violation or risk flag.",
@@ -3676,6 +3910,18 @@
     "url": "/prop-firm-trading/soft-breaches-vs-hard-violations.html",
     "description": "A blunt breakdown of soft breaches and hard violations in prop firms, how they differ, and what each one means for your account.",
     "category": "Prop Firm Trading"
+  },
+  {
+    "title": "Speculator Positioning Effects in Lean Hogs",
+    "url": "/futures-basics/speculator-positioning-lean-hogs.html",
+    "description": "Speculator positioning in lean hogs creates crowded trades and violent unwinds due to thin liquidity. COT data reveals when speculators are overleveraged and vulnerable to forced liquidation.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Spread Trading Live Cattle Contracts",
+    "url": "/futures-basics/spread-trading-live-cattle-contracts.html",
+    "description": "Calendar spreads in live cattle isolate relative supply comparisons between delivery windows. Here",
+    "category": "Futures Basics"
   },
   {
     "title": "Spread Trading With 6N: AUD/NZD and USD Basket Approaches",
@@ -3718,6 +3964,12 @@
     "url": "/market-basics/structural-breaks-when-market-direction-changes.html",
     "description": "Learn how structural breaks reveal a true shift in market direction and how to identify them without indicators or guesswork.",
     "category": "Market Basics"
+  },
+  {
+    "title": "Structural Differences Between Live Cattle and Hogs",
+    "url": "/futures-basics/structural-differences-live-cattle-and-hogs.html",
+    "description": "Live cattle and lean hogs are both livestock futures, but they behave like completely different markets. Here",
+    "category": "Futures Basics"
   },
   {
     "title": "Structural Pivots: Identifying Key Turning Points in the Market",
@@ -3834,6 +4086,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "The Role of Feeder Placement in Live Cattle",
+    "url": "/futures-basics/role-of-feeder-placement-in-live-cattle.html",
+    "description": "Feeder cattle placement is the earliest forward signal in live cattle futures. Here",
+    "category": "Futures Basics"
+  },
+  {
     "title": "The Truth About Market Overreaction: Why Price Moves Too Far",
     "url": "/market-basics/market-overreaction-explained.html",
     "description": "Market overreaction explained: why price overshoots during news, panic, or hype, and how to trade around exaggerated moves with precision.",
@@ -3858,9 +4116,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Ticks vs Points in Futures Trading (With Real Examples)",
+    "title": "Ticks vs Points in Futures Trading — What the Dollar Risk Actually Is",
     "url": "/futures-basics/ticks-points-dollar-value.html",
-    "description": "Ticks and points aren’t interchangeable in futures trading. This guide explains how each works, why they matter, and how they translate into real dollar risk.",
+    "description": "Points describe price movement. Ticks determine what it costs. Here",
     "category": "Futures Basics"
   },
   {
@@ -3913,7 +4171,7 @@
   },
   {
     "title": "Trading Tools | Grizzly Parrot Trading",
-    "url": "/tools/index.html",
+    "url": "/tools/",
     "description": "Free trading tools for futures traders — position size calculators, risk checkers, leverage visualizers, trailing drawdown simulators, and more.",
     "category": "tools"
   },
@@ -4296,6 +4554,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "What Are Crude Oil Futures (CL)? Complete Contract Breakdown",
+    "url": "/energies/what-are-crude-oil-futures-cl.html",
+    "description": "A blunt, trader-focused breakdown of crude oil futures (CL): contract size, tick value, margin, WTI vs Brent, and what actually moves price.",
+    "category": "Energies"
+  },
+  {
     "title": "What Are Gold Futures (GC)?",
     "url": "/futures-basics/what-are-gold-futures-gc.html",
     "description": "A blunt, beginner-friendly breakdown of what Gold futures (GC) are, how the GC contract works on CME, and why traders use it instead of spot.",
@@ -4404,15 +4668,21 @@
     "category": "Futures Basics"
   },
   {
-    "title": "What Is Trailing Drawdown In Prop Firms? – Grizzly Parrot Trading",
+    "title": "What Is Trailing Drawdown in Prop Firms?",
     "url": "/prop-firm-trading/trailing-drawdown-explained.html",
-    "description": "Clear explanation of trailing drawdown in futures prop firm evaluations, how it is calculated, and why traders fail even when they are profitable.",
+    "description": "Trailing drawdown is the rule that ends most prop firm evaluations. Here",
     "category": "Prop Firm Trading"
   },
   {
     "title": "What Lean Hog Futures Actually Price",
     "url": "/futures-basics/what-lean-hog-futures-actually-price.html",
     "description": "Lean hog futures do not price “a hog.” They price an expected carcass-based pork value for a specific delivery month, shaped by demand, supply, and processing constraints.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "What Live Cattle Futures Actually Represent",
+    "url": "/futures-basics/what-live-cattle-futures-actually-represent.html",
+    "description": "Live cattle futures are not just a beef price bet. They represent a biological production pipeline with fixed timelines. Here",
     "category": "Futures Basics"
   },
   {
@@ -4560,6 +4830,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Why Feeder Cattle Trade Like a Hybrid Contract",
+    "url": "/futures-basics/why-feeder-cattle-trade-like-a-hybrid-contract.html",
+    "description": "Feeder cattle futures respond to corn, live cattle, and their own supply dynamics simultaneously. That hybrid sensitivity is what makes the contract behave unlike anything else.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Why Futures Don’t Track Spot Price: The Real Reasons Behind the Difference",
     "url": "/futures-basics/why-futures-dont-track-spot-price.html",
     "description": "Learn why futures prices don’t match the spot market, how cost-of-carry, expiration, rollover, and liquidity shape the spread between futures and spot.",
@@ -4626,15 +4902,45 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Why Lean Hogs Decouple From Other Commodities",
-    "url": "/futures-basics/why-lean-hogs-decouple-from-other-commodities.html",
-    "description": "Lean hogs decouple because they’re priced by biology, slaughter flow, exports, and disease risk—not the macro forces that move most commodities.",
+    "title": "Why Lean Hogs Don't Behave Like Financial Futures",
+    "url": "/futures-basics/lean-hogs-vs-financial-futures.html",
+    "description": "Lean hog futures operate on biological production cycles and physical market settlement that make them fundamentally different from ES, NQ, or bond futures. Understanding these differences prevents costly assumptions.",
     "category": "Futures Basics"
   },
   {
     "title": "Why Lean Hogs React Violently to Small Data Changes",
     "url": "/futures-basics/why-lean-hogs-react-violently-to-small-data-changes.html",
     "description": "Lean hog futures react violently to small data changes because supply is fixed, demand is marginal, and expectations must reprice immediately.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Why Live Cattle Are Slower but Heavier Markets",
+    "url": "/futures-basics/why-live-cattle-are-slower-but-heavier-markets.html",
+    "description": "Live cattle futures move slowly compared to other commodities, but the dollar weight of those moves is real. Here",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Why Live Cattle Futures Are a Separate Risk Class",
+    "url": "/futures-basics/why-livestock-futures-are-a-separate-risk-class.html",
+    "description": "Live cattle futures don",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Why Live Cattle Punish Impatient Traders",
+    "url": "/futures-basics/why-live-cattle-punish-impatient-traders.html",
+    "description": "Live cattle does not reward urgency. The market moves on its own timeline, and traders who force it pay a specific and predictable price. Here",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Why Live Cattle React Differently to Feed Prices",
+    "url": "/futures-basics/why-live-cattle-react-differently-to-feed-prices.html",
+    "description": "High corn prices don",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Why Live Cattle Trends Persist Longer",
+    "url": "/futures-basics/why-live-cattle-trends-persist-longer.html",
+    "description": "Live cattle futures trends last longer than most commodity markets. The reason is structural, not technical. Here",
     "category": "Futures Basics"
   },
   {
@@ -4708,6 +5014,12 @@
     "url": "/futures-basics/why-si-differs-from-gc-volatility-liquidity.html",
     "description": "A detailed breakdown of why Silver futures (SI) move differently than Gold (GC) by volatility structure, liquidity depth, industrial demand, and order flow.",
     "category": "Futures Basics"
+  },
+  {
+    "title": "Why Slippage Hits Hard in Crude Oil Futures and How to Limit It",
+    "url": "/energies/cl-slippage-avoidance.html",
+    "description": "How slippage works in crude oil futures (CL), when it is worst, why market orders during news events produce bad fills, and the practical habits that limit its impact.",
+    "category": "Energies"
   },
   {
     "title": "Why Slippage Hits Harder in Palladium Futures",
