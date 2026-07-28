@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # build_sitemap.py
 # Generates sitemap.xml using each HTML file's canonical URL.
-# Safe defaults: ignores common build/cache folders, dedupes URLs, skips canonicals ending in /index.html.
+# Safe defaults: ignores common build/cache folders, skips noindex pages,
+# dedupes URLs, and normalizes canonical URLs.
 # lastmod uses the MOST RECENT Git commit date for each file (fallback to filesystem mtime).
 
 from __future__ import annotations
@@ -39,6 +40,10 @@ SKIP_FILES = {
 
 CANONICAL_RE = re.compile(
     r'<link\s+[^>]*rel=["\']canonical["\'][^>]*href=["\']([^"\']+)["\'][^>]*>',
+    re.IGNORECASE,
+)
+ROBOTS_META_RE = re.compile(
+    r'<meta\s+[^>]*name=["\']robots["\'][^>]*content=["\']([^"\']+)["\']',
     re.IGNORECASE,
 )
 
@@ -117,6 +122,12 @@ def get_lastmod(file_path: Path, repo_root: Path) -> str:
         return git_date
     return get_file_modified(file_path)
 
+def is_noindex(text: str) -> bool:
+    m = ROBOTS_META_RE.search(text)
+    if not m:
+        return False
+    return "noindex" in m.group(1).lower()
+
 def should_skip_dir(dirname: str) -> bool:
     return dirname in SKIP_DIRS or dirname.startswith(".")
 
@@ -127,7 +138,7 @@ def main() -> int:
     scanned = 0
     used_fallback = 0
     missing_canonical = 0
-    skipped_index_canonicals = 0
+    skipped_noindex = 0
 
     for root, dirs, files in os.walk(repo_root):
         # prune dirs
@@ -152,6 +163,10 @@ def main() -> int:
             except Exception:
                 continue
 
+            if is_noindex(text):
+                skipped_noindex += 1
+                continue
+
             canonical = find_canonical_in_html(text)
             if canonical is None:
                 missing_canonical += 1
@@ -159,11 +174,6 @@ def main() -> int:
                 used_fallback += 1
 
             canonical = norm_url(canonical)
-
-            # If a page declares /index.html as canonical, skip it
-            if canonical.endswith("/index.html"):
-                skipped_index_canonicals += 1
-                continue
 
             lastmod = get_lastmod(html_path, repo_root)
 
@@ -200,7 +210,7 @@ def main() -> int:
     print(f"Wrote {OUTPUT_FILE} with {len(sorted_items)} URLs.")
     print(f"Scanned HTML files: {scanned}")
     print(f"Missing canonical tags: {missing_canonical} (fallback used: {used_fallback})")
-    print(f"Skipped canonicals ending in /index.html: {skipped_index_canonicals}")
+    print(f"Skipped noindex pages: {skipped_noindex}")
     return 0
 
 if __name__ == "__main__":

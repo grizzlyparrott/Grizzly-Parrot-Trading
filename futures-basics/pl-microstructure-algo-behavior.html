@@ -24,16 +24,16 @@
 
 <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/pl-microstructure-algo-behavior.html">
 
-<meta property="og:title" content="How Algorithmic Traders Exploit Platinum Futures (PL)">
-<meta property="og:description" content="Learn exactly how algos hit stops, sweep the thin PL order book, front-run VWAP tests, and bait retail traders into false breakouts.">
+<meta property="og:title" content="How Algorithmic Traders Exploit Platinum Futures (PL): Liquidity Sweeps, Stop Hunts, and Thin-Book Games">
+<meta property="og:description" content="A blunt guide showing how algorithms exploit Platinum futures (PL): stop runs, thin-book sweeps, liquidity sniping, and predictable retail traps caused by low depth.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/pl-microstructure-algo-behavior.html">
 <meta property="og:site_name" content="Grizzly Parrot Trading">
 
 <meta name="twitter:card" content="summary_large_image"
 >
-<meta name="twitter:title" content="Algorithmic Behavior in PL Futures">
-<meta name="twitter:description" content="A retail-facing guide to PL algos: stop hunts, thin liquidity sweeps, and predictable microstructure traps used against you.">
+<meta name="twitter:title" content="How Algorithmic Traders Exploit Platinum Futures (PL): Liquidity Sweeps, Stop Hunts, and Thin-Book Games">
+<meta name="twitter:description" content="A blunt guide showing how algorithms exploit Platinum futures (PL): stop runs, thin-book sweeps, liquidity sniping, and predictable retail traps caused by low depth.">
 
 <link rel="stylesheet" href="../style.css">
 
@@ -48,46 +48,80 @@ gtag('config', 'G-JMJVR3G5YN');
 
 <script type="application/ld+json">
 {
-"@context":"https://schema.org",
-"@type":"Article",
-"headline":"How Algorithmic Traders Exploit Platinum Futures (PL): Liquidity Sweeps, Stop Hunts, and Thin-Book Games",
-"description":"A blunt guide showing how algorithms exploit Platinum futures: stop runs, liquidity sweeps, thin-depth jumps, and predictable traps caused by PL's fragile order book.",
-"author":{"@type":"Person","name":"Kyle Parrott"},
-"mainEntityOfPage":"https://grizzlyparrottrading.com/futures-basics/pl-microstructure-algo-behavior.html",
-"datePublished":"2025-12-01",
-"dateModified":"2025-12-01"}
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How Algorithmic Traders Exploit Platinum Futures (PL): Liquidity Sweeps, Stop Hunts, and Thin-Book Games",
+  "description": "A blunt guide showing how algorithms exploit Platinum futures (PL): stop runs, thin-book sweeps, liquidity sniping, and predictable retail traps caused by low depth.",
+  "author": {
+    "@type": "Person",
+    "name": "Kyle Parrott",
+    "url": "https://grizzlyparrottrading.com/about.html"
+  },
+  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/pl-microstructure-algo-behavior.html",
+  "datePublished": "2025-12-01",
+  "dateModified": "2025-12-01",
+  "url": "https://grizzlyparrottrading.com/futures-basics/pl-microstructure-algo-behavior.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Grizzly Parrot Trading",
+    "url": "https://grizzlyparrottrading.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://grizzlyparrottrading.com/OG-default.png"
+    }
+  },
+  "image": "https://grizzlyparrottrading.com/OG-default.png"
+}
 </script>
 
 <script type="application/ld+json">
 {
-"@context":"https://schema.org",
-"@type":"BreadcrumbList",
-"itemListElement":[
-  {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},
-  {"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/index.html"},
-  {"@type":"ListItem","position":3,"name":"How Algorithmic Traders Exploit Platinum Futures (PL): Liquidity Sweeps, Stop Hunts, and Thin-Book Games","item":"https://grizzlyparrottrading.com/futures-basics/pl-microstructure-algo-behavior.html"}
-]}
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://grizzlyparrottrading.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Futures Basics",
+      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How Algorithmic Traders Exploit Platinum Futures (PL): Liquidity Sweeps, Stop Hunts, and Thin-Book Games",
+      "item": "https://grizzlyparrottrading.com/futures-basics/pl-microstructure-algo-behavior.html"
+    }
+  ]
+}
 </script>
 
 
   <script src="/uet.js" defer></script>
+<meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
 </head>
 
 <body>
 <header class="site-header">
 <div class="container header-inner">
-<div class="logo"><a href="/">
+<div class="logo"><a href="https://grizzlyparrottrading.com/">
 Grizzly Parrot Trading</a></div>
 <nav class="main-nav">
 <ul>
-<li><a href="../futures-basics/index.html">Futures Basics</a></li>
-        <li><a href="../metals/index.html">Metals</a></li>
-        <li><a href="../energies/index.html">Energies</a></li>
-        <li><a href="../currencies/index.html">Currencies</a></li>
-        <li><a href="../prop-firm-trading/index.html">Prop Firms</a></li>
-        <li><a href="../platforms-tutorials/index.html">Platforms</a></li>
-        <li><a href="../market-basics/index.html">Market Basics</a></li>
-        <li><a href="../tools/index.html">Tools</a></li>
+<li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
+        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
+        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
+        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
+        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
+        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
+        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
+        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
 </ul>
 </nav>
 </div>
@@ -233,7 +267,7 @@ Grizzly Parrot Trading</a></div>
 
 
 <p>To understand why PL is so easy for algos to move, read:  
-<a href="pl-liquidity-traps-guide.html">PL Liquidity Traps</a>.</p>
+<a href="https://grizzlyparrottrading.com/futures-basics/pl-liquidity-traps-guide.html">PL Liquidity Traps</a>.</p>
 
 <h2>Final Take: Algos Don’t Hate You — They Just Eat Where You Stand</h2>
 
@@ -249,14 +283,14 @@ Grizzly Parrot Trading</a></div>
     <div class="footer-book">
       <h3>Books</h3>
       <p>Market structure, risk, and execution frameworks.</p>
-      <a href="/books/" class="footer-book-link">View All Books</a>
+      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
     </div>
 
     <div class="footer-links">
-      <a href="/about.html">About</a>
-      <a href="/disclaimer.html">Disclaimer</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/contact.html">Contact</a>
+      <a href="https://grizzlyparrottrading.com/about.html">About</a>
+      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
+      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
+      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
        
     </div>
 

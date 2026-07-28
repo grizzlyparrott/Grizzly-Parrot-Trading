@@ -25,15 +25,15 @@
 <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/pl-liquidity-traps-guide.html">
 
 <meta property="og:title" content="Liquidity Traps in Platinum Futures (PL): Avoiding Wide Spreads and Thin Books">
-<meta property="og:description" content="A technical guide to PL liquidity: order book depth, sweep dynamics, spread widening, rollover dangers, and how traders avoid getting trapped.">
+<meta property="og:description" content="A deep microstructure breakdown of Platinum futures (PL): thin books, wide spreads, sweep behavior, air pockets, and the exact liquidity traps traders must avoid.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/pl-liquidity-traps-guide.html">
 <meta property="og:site_name" content="Grizzly Parrot Trading">
 
 <meta name="twitter:card" content="summary_large_image"
 >
-<meta name="twitter:title" content="Liquidity Traps in Platinum Futures (PL)">
-<meta name="twitter:description" content="A no-fluff microstructure guide showing exactly how PL traps traders during thin liquidity conditions.">
+<meta name="twitter:title" content="Liquidity Traps in Platinum Futures (PL): Avoiding Wide Spreads and Thin Books">
+<meta name="twitter:description" content="A deep microstructure breakdown of Platinum futures (PL): thin books, wide spreads, sweep behavior, air pockets, and the exact liquidity traps traders must avoid.">
 
 <link rel="stylesheet" href="../style.css">
 
@@ -48,43 +48,75 @@ gtag('config', 'G-JMJVR3G5YN');
 
 <script type="application/ld+json">
 {
-"@context":"https://schema.org",
-"@type":"Article",
-"headline":"Liquidity Traps in Platinum Futures (PL): Avoiding Wide Spreads and Thin Books",
-"description":"A deep microstructure breakdown of Platinum futures (PL): thin books, wide spreads, sweep behavior, air pockets, and the exact liquidity traps traders must avoid.",
-"author":{"@type":"Person","name":"Kyle Parrott"},
-"mainEntityOfPage":"https://grizzlyparrottrading.com/futures-basics/pl-liquidity-traps-guide.html",
-"datePublished":"2025-12-01",
-"dateModified":"2025-12-01"
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Liquidity Traps in Platinum Futures (PL): Avoiding Wide Spreads and Thin Books",
+  "description": "A deep microstructure breakdown of Platinum futures (PL): thin books, wide spreads, sweep behavior, air pockets, and the exact liquidity traps traders must avoid.",
+  "author": {
+    "@type": "Person",
+    "name": "Kyle Parrott",
+    "url": "https://grizzlyparrottrading.com/about.html"
+  },
+  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/pl-liquidity-traps-guide.html",
+  "datePublished": "2025-12-01",
+  "dateModified": "2025-12-01",
+  "url": "https://grizzlyparrottrading.com/futures-basics/pl-liquidity-traps-guide.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Grizzly Parrot Trading",
+    "url": "https://grizzlyparrottrading.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://grizzlyparrottrading.com/OG-default.png"
+    }
+  },
+  "image": "https://grizzlyparrottrading.com/OG-default.png"
 }
 </script>
 
 <script type="application/ld+json">
 {
-"@context":"https://schema.org",
-"@type":"BreadcrumbList",
-"itemListElement":[
-  {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},
-  {"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/index.html"},
-  {"@type":"ListItem","position":3,"name":"Liquidity Traps in Platinum Futures (PL): Avoiding Wide Spreads and Thin Books","item":"https://grizzlyparrottrading.com/futures-basics/pl-liquidity-traps-guide.html"}
-]
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://grizzlyparrottrading.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Futures Basics",
+      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Liquidity Traps in Platinum Futures (PL): Avoiding Wide Spreads and Thin Books",
+      "item": "https://grizzlyparrottrading.com/futures-basics/pl-liquidity-traps-guide.html"
+    }
+  ]
 }
 </script>
 
   <script src="/uet.js" defer></script>
+<meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
 </head>
 
 <body>
 <header class="site-header">
 <div class="container header-inner">
-  <div class="logo"><a href="/">
+  <div class="logo"><a href="https://grizzlyparrottrading.com/">
 Grizzly Parrot Trading</a></div>
   <nav class="main-nav">
     <ul>
-      <li><a href="../futures-basics/index.html">Futures Basics</a></li>
-      <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
-      <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
-      <li><a href="../market-basics/index.html">Market Basics</a></li>
+      <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
+      <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firm Trading</a></li>
+      <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms &amp; Tutorials</a></li>
+      <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
     </ul>
   </nav>
 </div>
@@ -227,7 +259,7 @@ Grizzly Parrot Trading</a></div>
 <p>Once you understand PL microstructure, you stop fighting the market and start avoiding its traps.</p>
 
 
-<p>If you haven’t studied volatility yet, read <a href="pl-volatility-profile.html">PL Volatility Profile</a>. Microstructure and volatility combine to explain every “weird” PL move.</p>
+<p>If you haven’t studied volatility yet, read <a href="https://grizzlyparrottrading.com/futures-basics/pl-volatility-profile.html">PL Volatility Profile</a>. Microstructure and volatility combine to explain every “weird” PL move.</p>
 
 <h2>Final Take: PL Liquidity Isn’t Bad — It’s Conditional</h2>
 <p>Platinum futures aren’t broken. They just run thin liquidity with violent sweep mechanics. If you treat PL like GC, it will bury you. If you respect the microstructure — the shelves, the gaps, the sweep patterns, the dead zones, the roll traps — the contract becomes predictable. Not easy, but predictable.</p>
@@ -241,14 +273,14 @@ Grizzly Parrot Trading</a></div>
     <div class="footer-book">
       <h3>Books</h3>
       <p>Market structure, risk, and execution frameworks.</p>
-      <a href="/books/" class="footer-book-link">View All Books</a>
+      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
     </div>
 
     <div class="footer-links">
-      <a href="/about.html">About</a>
-      <a href="/disclaimer.html">Disclaimer</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/contact.html">Contact</a>
+      <a href="https://grizzlyparrottrading.com/about.html">About</a>
+      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
+      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
+      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
        
     </div>
 

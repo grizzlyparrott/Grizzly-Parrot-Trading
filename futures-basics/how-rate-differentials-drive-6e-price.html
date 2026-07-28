@@ -19,23 +19,23 @@
   <meta name="robots" content="index, follow">
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6e-roll-dates-and-contract-behavior.html">
+  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/how-rate-differentials-drive-6e-price.html">
 
   <!-- Open Graph -->
   <meta property="og:title" content="6E Roll Dates and How Euro FX Futures Behave Around Expiry">
-  <meta property="og:description" content="A direct breakdown of 6E roll mechanics, volume migration and price behavior during contract expiry windows.">
+  <meta property="og:description" content="Learn how 6E behaves around rollover, why liquidity shifts during expiry, and how to avoid getting caught in dead price action during contract roll.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6e-roll-dates-and-contract-behavior.html">
+  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/how-rate-differentials-drive-6e-price.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta name="twitter:title" content="6E Roll Dates and How Euro FX Futures Behave Around Expiry">
-  <meta name="twitter:description" content="Understand 6E rollover, volume shifts and price noise during the contract expiry cycle.">
+  <meta name="twitter:description" content="Learn how 6E behaves around rollover, why liquidity shifts during expiry, and how to avoid getting caught in dead price action during contract roll.">
 
   <link rel="stylesheet" href="../style.css">
 
@@ -50,48 +50,60 @@
 
   <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "6E Roll Dates and How Euro FX Futures Behave Around Expiry",
-    "description": "Learn how 6E behaves around rollover, why liquidity shifts during expiry, and how to avoid getting caught in dead price action during contract roll.",
-    "author": {
-      "@type": "Person",
-      "name": "Kyle Parrott"
-    },
-    "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6e-roll-dates-and-contract-behavior.html",
-    "datePublished": "2025-11-24",
-    "dateModified": "2025-11-24"
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "6E Roll Dates and How Euro FX Futures Behave Around Expiry",
+  "description": "Learn how 6E behaves around rollover, why liquidity shifts during expiry, and how to avoid getting caught in dead price action during contract roll.",
+  "author": {
+    "@type": "Person",
+    "name": "Kyle Parrott",
+    "url": "https://grizzlyparrottrading.com/about.html"
+  },
+  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/how-rate-differentials-drive-6e-price.html",
+  "datePublished": "2025-11-24",
+  "dateModified": "2025-11-24",
+  "url": "https://grizzlyparrottrading.com/futures-basics/how-rate-differentials-drive-6e-price.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Grizzly Parrot Trading",
+    "url": "https://grizzlyparrottrading.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://grizzlyparrottrading.com/OG-default.png"
+    }
+  },
+  "image": "https://grizzlyparrottrading.com/OG-default.png"
+}
+</script>
 
   <!-- JSON-LD: Breadcrumbs -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://grizzlyparrottrading.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Futures Basics",
-        "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "6E Roll Dates and How Euro FX Futures Behave Around Expiry",
-        "item": "https://grizzlyparrottrading.com/futures-basics/6e-roll-dates-and-contract-behavior.html"
-      }
-    ]
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://grizzlyparrottrading.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Futures Basics",
+      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "6E Roll Dates and How Euro FX Futures Behave Around Expiry",
+      "item": "https://grizzlyparrottrading.com/futures-basics/how-rate-differentials-drive-6e-price.html"
+    }
+  ]
+}
+</script>
 
   <script src="/uet.js" defer></script>
 </head>
@@ -100,19 +112,19 @@
 <header class="site-header">
   <div class="container header-inner">
     <div class="logo">
-      <a href="/">
+      <a href="https://grizzlyparrottrading.com/">
 Grizzly Parrot Trading</a>
     </div>
     <nav class="main-nav">
       <ul>
-        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
-        <li><a href="../metals/index.html">Metals</a></li>
-        <li><a href="../energies/index.html">Energies</a></li>
-        <li><a href="../currencies/index.html">Currencies</a></li>
-        <li><a href="../prop-firm-trading/index.html">Prop Firms</a></li>
-        <li><a href="../platforms-tutorials/index.html">Platforms</a></li>
-        <li><a href="../market-basics/index.html">Market Basics</a></li>
-        <li><a href="../tools/index.html">Tools</a></li>
+        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
+        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
+        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
+        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
+        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
+        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
+        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
+        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
       </ul>
     </nav>
   </div>
@@ -155,7 +167,7 @@ Grizzly Parrot Trading</a>
   <li>Volatility collapses intraday</li>
 </ul>
 
-<p>It’s the same logic behind liquidity shifts from <a href="6e-liquidity-zones-where-institutions-place-size.html">institutional liquidity zones</a>—big traders need volume and they follow it to the next contract.</p>
+<p>It’s the same logic behind liquidity shifts from <a href="https://grizzlyparrottrading.com/futures-basics/6e-liquidity-zones-where-institutions-place-size.html">institutional liquidity zones</a>—big traders need volume and they follow it to the next contract.</p>
 
 <h2>Why Price Action Gets Messy During Roll</h2>
 
@@ -198,7 +210,7 @@ Grizzly Parrot Trading</a>
 <p>Intraday noise is worst during roll; HTFs filter it out.</p>
 
 <h3>5. Don’t Overthink Price Differences</h3>
-<p>Spread between contracts is normal due to interest rate expectations (explained in <a href="how-rate-differentials-drive-6e-price.html">rate differential mechanics</a>).</p>
+<p>Spread between contracts is normal due to interest rate expectations (explained in <a href="https://grizzlyparrottrading.com/futures-basics/how-rate-differentials-drive-6e-price.html">rate differential mechanics</a>).</p>
 
 <div class="highlight-box yellow">
   <h3>6E Rollover Creates Traps for the Unaware</h3>
@@ -216,14 +228,14 @@ Grizzly Parrot Trading</a>
     <div class="footer-book">
       <h3>Books</h3>
       <p>Market structure, risk, and execution frameworks.</p>
-      <a href="/books/" class="footer-book-link">View All Books</a>
+      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
     </div>
 
     <div class="footer-links">
-      <a href="/about.html">About</a>
-      <a href="/disclaimer.html">Disclaimer</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/contact.html">Contact</a>
+      <a href="https://grizzlyparrottrading.com/about.html">About</a>
+      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
+      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
+      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
     </div>
 
     <p class="footer-copy">
