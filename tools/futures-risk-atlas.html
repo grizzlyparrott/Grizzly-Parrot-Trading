@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>Futures Risk Atlas: Tick Values & Contract Specs | Grizzly Parrot Trading</title>
+  <meta name="description" content="Source-backed futures contract specifications, tick values, settlement types, risk math, and downloadable CSV/JSON for 55 CME Group contracts.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://grizzlyparrottrading.com/tools/futures-risk-atlas.html">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:title" content="Futures Risk Atlas: 55 Source-Backed Contract Specs">
+  <meta property="og:description" content="Compare tick size, tick value, contract unit, quote convention, and settlement across 55 CME Group futures contracts.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://grizzlyparrottrading.com/tools/futures-risk-atlas.html">
+  <meta property="og:site_name" content="Grizzly Parrot Trading">
+  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Futures Risk Atlas: 55 Source-Backed Contract Specs">
+  <meta name="twitter:description" content="Filter, calculate, download, and cite verified futures contract risk data.">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+  <link rel="stylesheet" href="../style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script src="/uet.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":"Dataset","name":"Grizzly Parrot Futures Risk Atlas","description":"Exchange-source-backed outright tick sizes, tick values, quote conventions, contract units, and settlement methods for 55 CME Group futures contracts.","url":"https://grizzlyparrottrading.com/tools/futures-risk-atlas.html","dateModified":"2026-08-03","creator":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/"},"distribution":[{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://grizzlyparrottrading.com/tools/data/futures-contract-specs.csv"},{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://grizzlyparrottrading.com/tools/data/futures-contract-specs.json"}]},
+      {"@type":"WebApplication","name":"Futures Risk Atlas calculators","applicationCategory":"FinanceApplication","operatingSystem":"Any","url":"https://grizzlyparrottrading.com/tools/futures-risk-atlas.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+      {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Trading Tools","item":"https://grizzlyparrottrading.com/tools/"},{"@type":"ListItem","position":3,"name":"Futures Risk Atlas","item":"https://grizzlyparrottrading.com/tools/futures-risk-atlas.html"}]}
+    ]
+  }
+  </script>
+  <style>
+    .atlas-wrap{max-width:1280px}.atlas-kicker{font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;color:#f6b73c;font-weight:800}.atlas-meta,.atlas-callout,.atlas-panel,.atlas-method{background:#111827;border:1px solid #293548;border-radius:14px}.atlas-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:1.4rem;overflow:hidden}.atlas-stat{padding:1rem 1.15rem;background:#0f172a}.atlas-stat strong{display:block;font-size:1.55rem;color:#fff}.atlas-stat span{color:#b8c2d4;font-size:.9rem}.atlas-toolbar{display:grid;grid-template-columns:minmax(240px,2fr) minmax(190px,1fr) auto;gap:.75rem;align-items:end;margin:1.25rem 0}.atlas-toolbar label,.atlas-panel label{display:block;font-weight:700;margin-bottom:.35rem}.atlas-toolbar input,.atlas-toolbar select,.atlas-panel input,.atlas-panel select{width:100%;box-sizing:border-box;border:1px solid #40506a;border-radius:9px;background:#0b1220;color:#fff;padding:.75rem}.atlas-button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.7rem 1rem;border-radius:9px;border:1px solid #f6b73c;background:#f6b73c;color:#111827;font-weight:800;text-decoration:none;cursor:pointer}.atlas-button.secondary{background:transparent;color:#f6b73c}.atlas-downloads{display:flex;gap:.65rem;flex-wrap:wrap;margin:1rem 0}.atlas-table-wrap{overflow:auto;border:1px solid #293548;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.18)}.atlas-table{width:100%;border-collapse:collapse;min-width:1180px;background:#0b1220}.atlas-table caption{text-align:left;padding:1rem;color:#b8c2d4}.atlas-table th,.atlas-table td{padding:.72rem .75rem;border-bottom:1px solid #243044;text-align:left;vertical-align:top}.atlas-table thead th{position:sticky;top:0;background:#172033;color:#fff;z-index:1}.atlas-table tbody tr:hover{background:#111c2f}.atlas-table a{color:#77c7ff}.symbol-button{border:0;background:transparent;color:#f6b73c;font:inherit;font-weight:900;cursor:pointer;padding:0}.atlas-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.atlas-panel{padding:1.2rem}.atlas-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem}.atlas-result{margin-top:1rem;padding:1rem;background:#08111f;border-left:4px solid #f6b73c;border-radius:8px;min-height:72px}.atlas-callout,.atlas-method{padding:1.2rem;margin:1.2rem 0}.atlas-code{display:block;white-space:pre-wrap;word-break:break-word;background:#08111f;border:1px solid #293548;border-radius:9px;padding:1rem;color:#dbeafe}.atlas-note{color:#b8c2d4}.atlas-hidden{display:none}.atlas-source-list{columns:2;column-gap:2rem}.atlas-source-list li{break-inside:avoid;margin-bottom:.5rem}.atlas-source-list a{word-break:break-word}.copy-status{margin-left:.6rem;color:#b8c2d4}.noscript-warning{padding:1rem;background:#3b1d1d;border:1px solid #7f1d1d;border-radius:9px}
+    @media(max-width:800px){.atlas-meta,.atlas-grid{grid-template-columns:1fr}.atlas-toolbar{grid-template-columns:1fr}.atlas-fields{grid-template-columns:1fr}.atlas-source-list{columns:1}}
+  </style>
+</head>
+<body>
+<header class="site-header"><div class="container header-inner"><div class="logo"><span class="logo-mark">GP</span><span class="logo-text"><a href="https://grizzlyparrottrading.com/">Grizzly Parrot Trading</a></span></div><nav class="main-nav"><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a><a href="https://grizzlyparrottrading.com/tools/">Tools</a></nav></div></header>
+<main>
+  <section class="hero"><div class="container hero-inner"><div class="hero-text"><div class="atlas-kicker">Exchange-sourced reference data</div><h1>Futures Risk Atlas</h1><p>Compare the contract details that turn a price move into real dollars: outright tick size, tick value, quote convention, contract unit, and settlement method. Then use the same verified data for position sizing and move-risk math.</p><div class="atlas-meta"><div class="atlas-stat"><strong>55</strong><span>futures contracts</span></div><div class="atlas-stat"><strong>6</strong><span>asset classes</span></div><div class="atlas-stat"><strong>2026-08-03</strong><span>last source verification</span></div></div></div></div></section>
+
+  <section class="section"><div class="container atlas-wrap">
+    <h2>Search the contract reference</h2>
+    <p class="atlas-note">Every row links to an official CME Group source. Values are for outright futures on CME Globex unless the row note says otherwise; option and spread ticks are deliberately excluded.</p>
+    <div class="atlas-toolbar">
+      <div><label for="atlas-search">Symbol, name, exchange, or contract unit</label><input id="atlas-search" type="search" autocomplete="off" placeholder="Try MES, crude oil, CBOT, or 100 troy ounces"></div>
+      <div><label for="atlas-asset">Asset class</label><select id="atlas-asset"><option value="">All asset classes</option><option>Equity Index</option><option>FX</option><option>Energy</option><option>Metals</option><option>Agriculture</option><option>Interest Rates</option></select></div>
+      <button class="atlas-button secondary" id="atlas-reset" type="button">Reset filters</button>
+    </div>
+    <p id="atlas-count" aria-live="polite">Showing 55 contracts.</p>
+    <div class="atlas-downloads"><a class="atlas-button" href="/tools/data/futures-contract-specs.csv" download>Download CSV</a><a class="atlas-button secondary" href="/tools/data/futures-contract-specs.json" download>Download JSON</a></div>
+    <div class="atlas-table-wrap">
+      <table class="atlas-table" id="atlas-table"><caption>Verified contract specifications. Select a symbol to load it into both calculators.</caption><thead><tr><th scope="col">Symbol</th><th scope="col">Contract</th><th scope="col">Asset</th><th scope="col">Contract unit</th><th scope="col">Quote unit</th><th scope="col">Outright tick</th><th scope="col">USD / tick</th><th scope="col">USD / 1 quote unit</th><th scope="col">Settlement</th><th scope="col">Source</th></tr></thead><tbody><tr data-asset="Equity Index" data-search="es e-mini s&amp;p 500 equity index cme $50 x s&amp;p 500 index financial">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="ES">ES</button></th>
+              <td>E-mini S&amp;P 500</td>
+              <td>Equity Index</td>
+              <td>$50 x S&amp;P 500 Index</td>
+              <td>index points</td>
+              <td>0.25</td>
+              <td>$12.5</td>
+              <td>$50</td>
+              <td>Financial</td>
+              <td><a href="https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Equity Index" data-search="mes micro e-mini s&amp;p 500 equity index cme $5 x s&amp;p 500 index financial">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="MES">MES</button></th>
+              <td>Micro E-mini S&amp;P 500</td>
+              <td>Equity Index</td>
+              <td>$5 x S&amp;P 500 Index</td>
+              <td>index points</td>
+              <td>0.25</td>
+              <td>$1.25</td>
+              <td>$5</td>
+              <td>Financial</td>
+              <td><a href="https://www.cmegroup.com/markets/equities/sp/micro-e-mini-sandp-500.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Equity Index" data-search="nq e-mini nasdaq-100 equity index cme $20 x nasdaq-100 index financial">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="NQ">NQ</button></th>
+              <td>E-mini Nasdaq-100</td>
+              <td>Equity Index</td>
+              <td>$20 x Nasdaq-100 Index</td>
+              <td>index points</td>
+              <td>0.25</td>
+              <td>$5</td>
+              <td>$20</td>
+              <td>Financial</td>
+              <td><a href="https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Equity Index" data-search="mnq micro e-mini nasdaq-100 equity index cme $2 x nasdaq-100 index financial">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="MNQ">MNQ</button></th>
+              <td>Micro E-mini Nasdaq-100</td>
+              <td>Equity Index</td>
+              <td>$2 x Nasdaq-100 Index</td>
+              <td>index points</td>
+              <td>0.25</td>
+              <td>$0.5</td>
+              <td>$2</td>
+              <td>Financial</td>
+              <td><a href="https://www.cmegroup.com/markets/equities/nasdaq/micro-e-mini-nasdaq-100.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Equity Index" data-search="ym e-mini dow equity index cbot $5 x djia index financial">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="YM">YM</button></th>
+              <td>E-mini Dow</td>
+              <td>Equity Index</td>
+              <td>$5 x DJIA Index</td>
+              <td>index points</td>
+              <td>1</td>
+              <td>$5</td>
+              <td>$5</td>
+              <td>Financial</td>
+              <td><a href="https://www.cmegroup.com/markets/equities/dow-jones/e-mini-dow.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Equity Index" data-search="mym micro e-mini dow equity index cbot $0.50 x djia index financial">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="MYM">MYM</button></th>
+              <td>Micro E-mini Dow</td>
+              <td>Equity Index</td>
+              <td>$0.50 x DJIA Index</td>
+              <td>index points</td>
+              <td>1</td>
+              <td>$0.5</td>
+              <td>$0.5</td>
+              <td>Financial</td>
+              <td><a href="https://www.cmegroup.com/markets/equities/dow-jones/micro-e-mini-dow.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Equity Index" data-search="rty e-mini russell 2000 equity index cme $50 x russell 2000 index financial">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="RTY">RTY</button></th>
+              <td>E-mini Russell 2000</td>
+              <td>Equity Index</td>
+              <td>$50 x Russell 2000 Index</td>
+              <td>index points</td>
+              <td>0.1</td>
+              <td>$5</td>
+              <td>$50</td>
+              <td>Financial</td>
+              <td><a href="https://www.cmegroup.com/markets/equities/russell/e-mini-russell-2000.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Equity Index" data-search="m2k micro e-mini russell 2000 equity index cme $5 x russell 2000 index financial">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="M2K">M2K</button></th>
+              <td>Micro E-mini Russell 2000</td>
+              <td>Equity Index</td>
+              <td>$5 x Russell 2000 Index</td>
+              <td>index points</td>
+              <td>0.1</td>
+              <td>$0.5</td>
+              <td>$5</td>
+              <td>Financial</td>
+              <td><a href="https://www.cmegroup.com/markets/equities/russell/micro-e-mini-russell-2000.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="FX" data-search="6e euro fx fx cme 125,000 euro physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="6E">6E</button></th>
+              <td>Euro FX</td>
+              <td>FX</td>
+              <td>125,000 euro</td>
+              <td>USD per euro</td>
+              <td>0.00005</td>
+              <td>$6.25</td>
+              <td>$125,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="FX" data-search="m6e micro eur/usd fx cme 12,500 euro physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="M6E">M6E</button></th>
+              <td>Micro EUR/USD</td>
+              <td>FX</td>
+              <td>12,500 euro</td>
+              <td>USD per euro</td>
+              <td>0.0001</td>
+              <td>$1.25</td>
+              <td>$12,500</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="FX" data-search="6j japanese yen fx cme 12,500,000 yen physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="6J">6J</button></th>
+              <td>Japanese Yen</td>
+              <td>FX</td>
+              <td>12,500,000 yen</td>
+              <td>USD per yen</td>
+              <td>0.0000005</td>
+              <td>$6.25</td>
+              <td>$12,500,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="FX" data-search="mjy micro jpy/usd fx cme 1,250,000 yen physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="MJY">MJY</button></th>
+              <td>Micro JPY/USD</td>
+              <td>FX</td>
+              <td>1,250,000 yen</td>
+              <td>USD per yen</td>
+              <td>0.000001</td>
+              <td>$1.25</td>
+              <td>$1,250,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="FX" data-search="6b british pound fx cme 62,500 pound sterling physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="6B">6B</button></th>
+              <td>British Pound</td>
+              <td>FX</td>
+              <td>62,500 pound sterling</td>
+              <td>USD per pound sterling</td>
+              <td>0.0001</td>
+              <td>$6.25</td>
+              <td>$62,500</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="FX" data-search="m6b micro gbp/usd fx cme 6,250 pound sterling physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="M6B">M6B</button></th>
+              <td>Micro GBP/USD</td>
+              <td>FX</td>
+              <td>6,250 pound sterling</td>
+              <td>USD per pound sterling</td>
+              <td>0.0001</td>
+              <td>$0.625</td>
+              <td>$6,250</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="FX" data-search="6a australian dollar fx cme 100,000 australian dollars physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="6A">6A</button></th>
+              <td>Australian Dollar</td>
+              <td>FX</td>
+              <td>100,000 Australian dollars</td>
+              <td>USD per Australian dollar</td>
+              <td>0.00005</td>
+              <td>$5</td>
+              <td>$100,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="FX" data-search="m6a micro aud/usd fx cme 10,000 australian dollars physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="M6A">M6A</button></th>
+              <td>Micro AUD/USD</td>
+              <td>FX</td>
+              <td>10,000 Australian dollars</td>
+              <td>USD per Australian dollar</td>
+              <td>0.0001</td>
+              <td>$1</td>
+              <td>$10,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="FX" data-search="6c canadian dollar fx cme 100,000 canadian dollars physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="6C">6C</button></th>
+              <td>Canadian Dollar</td>
+              <td>FX</td>
+              <td>100,000 Canadian dollars</td>
+              <td>USD per Canadian dollar</td>
+              <td>0.00005</td>
+              <td>$5</td>
+              <td>$100,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="FX" data-search="mcd micro cad/usd fx cme 10,000 canadian dollars physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="MCD">MCD</button></th>
+              <td>Micro CAD/USD</td>
+              <td>FX</td>
+              <td>10,000 Canadian dollars</td>
+              <td>USD per Canadian dollar</td>
+              <td>0.0001</td>
+              <td>$1</td>
+              <td>$10,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="FX" data-search="6s swiss franc fx cme 125,000 swiss francs physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="6S">6S</button></th>
+              <td>Swiss Franc</td>
+              <td>FX</td>
+              <td>125,000 Swiss francs</td>
+              <td>USD per Swiss franc</td>
+              <td>0.00005</td>
+              <td>$6.25</td>
+              <td>$125,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="FX" data-search="msf micro chf/usd fx cme 12,500 swiss francs physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="MSF">MSF</button></th>
+              <td>Micro CHF/USD</td>
+              <td>FX</td>
+              <td>12,500 Swiss francs</td>
+              <td>USD per Swiss franc</td>
+              <td>0.0001</td>
+              <td>$1.25</td>
+              <td>$12,500</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="FX" data-search="6n new zealand dollar fx cme 100,000 new zealand dollars physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="6N">6N</button></th>
+              <td>New Zealand Dollar</td>
+              <td>FX</td>
+              <td>100,000 New Zealand dollars</td>
+              <td>USD per New Zealand dollar</td>
+              <td>0.00005</td>
+              <td>$5</td>
+              <td>$100,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="FX" data-search="6m mexican peso fx cme 500,000 mexican pesos physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="6M">6M</button></th>
+              <td>Mexican Peso</td>
+              <td>FX</td>
+              <td>500,000 Mexican pesos</td>
+              <td>USD per Mexican peso</td>
+              <td>0.00001</td>
+              <td>$5</td>
+              <td>$500,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="FX" data-search="6z south african rand fx cme 500,000 rand physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="6Z">6Z</button></th>
+              <td>South African Rand</td>
+              <td>FX</td>
+              <td>500,000 rand</td>
+              <td>USD per rand</td>
+              <td>0.000025</td>
+              <td>$12.5</td>
+              <td>$500,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="FX" data-search="6l brazilian real fx cme 100,000 brazilian real financial">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="6L">6L</button></th>
+              <td>Brazilian Real</td>
+              <td>FX</td>
+              <td>100,000 Brazilian real</td>
+              <td>USD per Brazilian real</td>
+              <td>0.00005</td>
+              <td>$5</td>
+              <td>$100,000</td>
+              <td>Financial</td>
+              <td><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Energy" data-search="cl wti crude oil energy nymex 1,000 barrels physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="CL">CL</button></th>
+              <td>WTI Crude Oil</td>
+              <td>Energy</td>
+              <td>1,000 barrels</td>
+              <td>USD per barrel</td>
+              <td>0.01</td>
+              <td>$10</td>
+              <td>$1,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/energy/crude-oil/light-sweet-crude.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Energy" data-search="mcl micro wti crude oil energy nymex 100 barrels financial">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="MCL">MCL</button></th>
+              <td>Micro WTI Crude Oil</td>
+              <td>Energy</td>
+              <td>100 barrels</td>
+              <td>USD per barrel</td>
+              <td>0.01</td>
+              <td>$1</td>
+              <td>$100</td>
+              <td>Financial</td>
+              <td><a href="https://www.cmegroup.com/education/articles-and-reports/micro-wti-crude-oil-futures-faq" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Energy" data-search="ng henry hub natural gas energy nymex 10,000 mmbtu physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="NG">NG</button></th>
+              <td>Henry Hub Natural Gas</td>
+              <td>Energy</td>
+              <td>10,000 MMBtu</td>
+              <td>USD per MMBtu</td>
+              <td>0.001</td>
+              <td>$10</td>
+              <td>$10,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/energy/natural-gas/natural-gas.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Energy" data-search="qg e-mini natural gas energy nymex 2,500 mmbtu financial">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="QG">QG</button></th>
+              <td>E-mini Natural Gas</td>
+              <td>Energy</td>
+              <td>2,500 MMBtu</td>
+              <td>USD per MMBtu</td>
+              <td>0.005</td>
+              <td>$12.5</td>
+              <td>$2,500</td>
+              <td>Financial</td>
+              <td><a href="https://www.cmegroup.com/markets/energy/natural-gas/emini-natural-gas.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Energy" data-search="rb rbob gasoline energy nymex 42,000 gallons physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="RB">RB</button></th>
+              <td>RBOB Gasoline</td>
+              <td>Energy</td>
+              <td>42,000 gallons</td>
+              <td>USD per gallon</td>
+              <td>0.0001</td>
+              <td>$4.2</td>
+              <td>$42,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/education/courses/introduction-to-refined-products/rbob-product-overview" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Energy" data-search="ho ny harbor ulsd energy nymex 42,000 gallons physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="HO">HO</button></th>
+              <td>NY Harbor ULSD</td>
+              <td>Energy</td>
+              <td>42,000 gallons</td>
+              <td>USD per gallon</td>
+              <td>0.0001</td>
+              <td>$4.2</td>
+              <td>$42,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/energy/refined-products/heating-oil.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Metals" data-search="gc gold metals comex 100 troy ounces physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="GC">GC</button></th>
+              <td>Gold</td>
+              <td>Metals</td>
+              <td>100 troy ounces</td>
+              <td>USD per troy ounce</td>
+              <td>0.1</td>
+              <td>$10</td>
+              <td>$100</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/metals/precious/gold.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Metals" data-search="mgc micro gold metals comex 10 troy ounces physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="MGC">MGC</button></th>
+              <td>Micro Gold</td>
+              <td>Metals</td>
+              <td>10 troy ounces</td>
+              <td>USD per troy ounce</td>
+              <td>0.1</td>
+              <td>$1</td>
+              <td>$10</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/microsuite/metals.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Metals" data-search="1oz 1-ounce gold metals comex 1 troy ounce financial">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="1OZ">1OZ</button></th>
+              <td>1-Ounce Gold</td>
+              <td>Metals</td>
+              <td>1 troy ounce</td>
+              <td>USD per troy ounce</td>
+              <td>0.25</td>
+              <td>$0.25</td>
+              <td>$1</td>
+              <td>Financial</td>
+              <td><a href="https://www.cmegroup.com/articles/faqs/faq-1-oz-gold-futures.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Metals" data-search="si silver metals comex 5,000 troy ounces physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="SI">SI</button></th>
+              <td>Silver</td>
+              <td>Metals</td>
+              <td>5,000 troy ounces</td>
+              <td>USD per troy ounce</td>
+              <td>0.005</td>
+              <td>$25</td>
+              <td>$5,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/rulebook/COMEX/1a/112.pdf" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Metals" data-search="sil micro silver metals comex 1,000 troy ounces physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="SIL">SIL</button></th>
+              <td>Micro Silver</td>
+              <td>Metals</td>
+              <td>1,000 troy ounces</td>
+              <td>USD per troy ounce</td>
+              <td>0.01</td>
+              <td>$10</td>
+              <td>$1,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/microsuite/metals.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Metals" data-search="sic 100-ounce silver metals comex 100 troy ounces financial">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="SIC">SIC</button></th>
+              <td>100-Ounce Silver</td>
+              <td>Metals</td>
+              <td>100 troy ounces</td>
+              <td>USD per troy ounce</td>
+              <td>0.01</td>
+              <td>$1</td>
+              <td>$100</td>
+              <td>Financial</td>
+              <td><a href="https://www.cmegroup.com/articles/faqs/frequently-asked-questions-100-ounce-silver-futures.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Metals" data-search="hg copper metals comex 25,000 pounds physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="HG">HG</button></th>
+              <td>Copper</td>
+              <td>Metals</td>
+              <td>25,000 pounds</td>
+              <td>USD per pound</td>
+              <td>0.0005</td>
+              <td>$12.5</td>
+              <td>$25,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/metals/base/copper.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Metals" data-search="mhg micro copper metals comex 2,500 pounds financial">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="MHG">MHG</button></th>
+              <td>Micro Copper</td>
+              <td>Metals</td>
+              <td>2,500 pounds</td>
+              <td>USD per pound</td>
+              <td>0.0005</td>
+              <td>$1.25</td>
+              <td>$2,500</td>
+              <td>Financial</td>
+              <td><a href="https://www.cmegroup.com/markets/microsuite/metals.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Metals" data-search="pl platinum metals nymex 50 troy ounces physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="PL">PL</button></th>
+              <td>Platinum</td>
+              <td>Metals</td>
+              <td>50 troy ounces</td>
+              <td>USD per troy ounce</td>
+              <td>0.1</td>
+              <td>$5</td>
+              <td>$50</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/education/lessons/platinum-product-overview" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Metals" data-search="pa palladium metals nymex 100 troy ounces physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="PA">PA</button></th>
+              <td>Palladium</td>
+              <td>Metals</td>
+              <td>100 troy ounces</td>
+              <td>USD per troy ounce</td>
+              <td>0.5</td>
+              <td>$50</td>
+              <td>$100</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/notices/ser/2020/12/SER-8668R.pdf" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Metals" data-search="pam micro palladium metals nymex 10 troy ounces physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="PAM">PAM</button></th>
+              <td>Micro Palladium</td>
+              <td>Metals</td>
+              <td>10 troy ounces</td>
+              <td>USD per troy ounce</td>
+              <td>0.5</td>
+              <td>$5</td>
+              <td>$10</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/microsuite/metals.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Agriculture" data-search="zc corn agriculture cbot 5,000 bushels physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="ZC">ZC</button></th>
+              <td>Corn</td>
+              <td>Agriculture</td>
+              <td>5,000 bushels</td>
+              <td>US cents per bushel</td>
+              <td>0.25</td>
+              <td>$12.5</td>
+              <td>$50</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/agriculture/grains/corn.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Agriculture" data-search="zw chicago srw wheat agriculture cbot 5,000 bushels physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="ZW">ZW</button></th>
+              <td>Chicago SRW Wheat</td>
+              <td>Agriculture</td>
+              <td>5,000 bushels</td>
+              <td>US cents per bushel</td>
+              <td>0.25</td>
+              <td>$12.5</td>
+              <td>$50</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/agriculture/grains/wheat.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Agriculture" data-search="zs soybeans agriculture cbot 5,000 bushels physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="ZS">ZS</button></th>
+              <td>Soybeans</td>
+              <td>Agriculture</td>
+              <td>5,000 bushels</td>
+              <td>US cents per bushel</td>
+              <td>0.25</td>
+              <td>$12.5</td>
+              <td>$50</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/agriculture/oilseeds/soybean.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Agriculture" data-search="zm soybean meal agriculture cbot 100 short tons physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="ZM">ZM</button></th>
+              <td>Soybean Meal</td>
+              <td>Agriculture</td>
+              <td>100 short tons</td>
+              <td>USD per short ton</td>
+              <td>0.1</td>
+              <td>$10</td>
+              <td>$100</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/agriculture/oilseeds/soybean-meal.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Agriculture" data-search="zl soybean oil agriculture cbot 60,000 pounds physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="ZL">ZL</button></th>
+              <td>Soybean Oil</td>
+              <td>Agriculture</td>
+              <td>60,000 pounds</td>
+              <td>US cents per pound</td>
+              <td>0.01</td>
+              <td>$6</td>
+              <td>$600</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/agriculture/oilseeds/soybean-oil.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Agriculture" data-search="le live cattle agriculture cme 40,000 pounds physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="LE">LE</button></th>
+              <td>Live Cattle</td>
+              <td>Agriculture</td>
+              <td>40,000 pounds</td>
+              <td>US cents per pound</td>
+              <td>0.025</td>
+              <td>$10</td>
+              <td>$400</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/agriculture/livestock/live-cattle.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Agriculture" data-search="he lean hogs agriculture cme 40,000 pounds financial">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="HE">HE</button></th>
+              <td>Lean Hogs</td>
+              <td>Agriculture</td>
+              <td>40,000 pounds</td>
+              <td>US cents per pound</td>
+              <td>0.025</td>
+              <td>$10</td>
+              <td>$400</td>
+              <td>Financial</td>
+              <td><a href="https://www.cmegroup.com/markets/agriculture/livestock/lean-hogs.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Agriculture" data-search="gf feeder cattle agriculture cme 50,000 pounds financial">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="GF">GF</button></th>
+              <td>Feeder Cattle</td>
+              <td>Agriculture</td>
+              <td>50,000 pounds</td>
+              <td>US cents per pound</td>
+              <td>0.025</td>
+              <td>$12.5</td>
+              <td>$500</td>
+              <td>Financial</td>
+              <td><a href="https://www.cmegroup.com/markets/agriculture/livestock/feeder-cattle.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Interest Rates" data-search="zt 2-year u.s. treasury note interest rates cbot $200,000 face value physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="ZT">ZT</button></th>
+              <td>2-Year U.S. Treasury Note</td>
+              <td>Interest Rates</td>
+              <td>$200,000 face value</td>
+              <td>price points</td>
+              <td>0.00390625</td>
+              <td>$7.812</td>
+              <td>$2,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/content/dam/cmegroup/trading/interest-rates/files/us-treasury-futures-delivery-process.pdf" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Interest Rates" data-search="zf 5-year u.s. treasury note interest rates cbot $100,000 face value physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="ZF">ZF</button></th>
+              <td>5-Year U.S. Treasury Note</td>
+              <td>Interest Rates</td>
+              <td>$100,000 face value</td>
+              <td>price points</td>
+              <td>0.0078125</td>
+              <td>$7.812</td>
+              <td>$1,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/content/dam/cmegroup/trading/interest-rates/files/us-treasury-futures-delivery-process.pdf" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Interest Rates" data-search="zn 10-year u.s. treasury note interest rates cbot $100,000 face value physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="ZN">ZN</button></th>
+              <td>10-Year U.S. Treasury Note</td>
+              <td>Interest Rates</td>
+              <td>$100,000 face value</td>
+              <td>price points</td>
+              <td>0.015625</td>
+              <td>$15.625</td>
+              <td>$1,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/content/dam/cmegroup/trading/interest-rates/files/us-treasury-futures-delivery-process.pdf" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Interest Rates" data-search="tn ultra 10-year u.s. treasury note interest rates cbot $100,000 face value physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="TN">TN</button></th>
+              <td>Ultra 10-Year U.S. Treasury Note</td>
+              <td>Interest Rates</td>
+              <td>$100,000 face value</td>
+              <td>price points</td>
+              <td>0.015625</td>
+              <td>$15.625</td>
+              <td>$1,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/content/dam/cmegroup/trading/interest-rates/files/us-treasury-futures-delivery-process.pdf" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Interest Rates" data-search="zb 30-year u.s. treasury bond interest rates cbot $100,000 face value physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="ZB">ZB</button></th>
+              <td>30-Year U.S. Treasury Bond</td>
+              <td>Interest Rates</td>
+              <td>$100,000 face value</td>
+              <td>price points</td>
+              <td>0.03125</td>
+              <td>$31.25</td>
+              <td>$1,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/interest-rates/us-treasury/30-year-us-treasury-bond.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr>
+<tr data-asset="Interest Rates" data-search="ub ultra u.s. treasury bond interest rates cbot $100,000 face value physical">
+              <th scope="row"><button class="symbol-button" type="button" data-symbol="UB">UB</button></th>
+              <td>Ultra U.S. Treasury Bond</td>
+              <td>Interest Rates</td>
+              <td>$100,000 face value</td>
+              <td>price points</td>
+              <td>0.03125</td>
+              <td>$31.25</td>
+              <td>$1,000</td>
+              <td>Physical</td>
+              <td><a href="https://www.cmegroup.com/markets/interest-rates/us-treasury/ultra-t-bond.contractSpecs.html" rel="noopener" target="_blank">Official source</a></td>
+            </tr></tbody></table>
+    </div>
+    <noscript><p class="noscript-warning">The reference table and downloads work without JavaScript. Enable JavaScript only if you want filtering and calculators.</p></noscript>
+  </div></section>
+
+  <section class="section"><div class="container atlas-wrap"><h2>Use the same data for risk math</h2><div class="atlas-grid">
+    <section class="atlas-panel" aria-labelledby="size-heading"><h3 id="size-heading">Position size from a stop in ticks</h3><div class="atlas-fields"><div><label for="size-symbol">Contract</label><select id="size-symbol"><option value="ES">ES - E-mini S&amp;P 500</option>
+<option value="MES">MES - Micro E-mini S&amp;P 500</option>
+<option value="NQ">NQ - E-mini Nasdaq-100</option>
+<option value="MNQ">MNQ - Micro E-mini Nasdaq-100</option>
+<option value="YM">YM - E-mini Dow</option>
+<option value="MYM">MYM - Micro E-mini Dow</option>
+<option value="RTY">RTY - E-mini Russell 2000</option>
+<option value="M2K">M2K - Micro E-mini Russell 2000</option>
+<option value="6E">6E - Euro FX</option>
+<option value="M6E">M6E - Micro EUR/USD</option>
+<option value="6J">6J - Japanese Yen</option>
+<option value="MJY">MJY - Micro JPY/USD</option>
+<option value="6B">6B - British Pound</option>
+<option value="M6B">M6B - Micro GBP/USD</option>
+<option value="6A">6A - Australian Dollar</option>
+<option value="M6A">M6A - Micro AUD/USD</option>
+<option value="6C">6C - Canadian Dollar</option>
+<option value="MCD">MCD - Micro CAD/USD</option>
+<option value="6S">6S - Swiss Franc</option>
+<option value="MSF">MSF - Micro CHF/USD</option>
+<option value="6N">6N - New Zealand Dollar</option>
+<option value="6M">6M - Mexican Peso</option>
+<option value="6Z">6Z - South African Rand</option>
+<option value="6L">6L - Brazilian Real</option>
+<option value="CL">CL - WTI Crude Oil</option>
+<option value="MCL">MCL - Micro WTI Crude Oil</option>
+<option value="NG">NG - Henry Hub Natural Gas</option>
+<option value="QG">QG - E-mini Natural Gas</option>
+<option value="RB">RB - RBOB Gasoline</option>
+<option value="HO">HO - NY Harbor ULSD</option>
+<option value="GC">GC - Gold</option>
+<option value="MGC">MGC - Micro Gold</option>
+<option value="1OZ">1OZ - 1-Ounce Gold</option>
+<option value="SI">SI - Silver</option>
+<option value="SIL">SIL - Micro Silver</option>
+<option value="SIC">SIC - 100-Ounce Silver</option>
+<option value="HG">HG - Copper</option>
+<option value="MHG">MHG - Micro Copper</option>
+<option value="PL">PL - Platinum</option>
+<option value="PA">PA - Palladium</option>
+<option value="PAM">PAM - Micro Palladium</option>
+<option value="ZC">ZC - Corn</option>
+<option value="ZW">ZW - Chicago SRW Wheat</option>
+<option value="ZS">ZS - Soybeans</option>
+<option value="ZM">ZM - Soybean Meal</option>
+<option value="ZL">ZL - Soybean Oil</option>
+<option value="LE">LE - Live Cattle</option>
+<option value="HE">HE - Lean Hogs</option>
+<option value="GF">GF - Feeder Cattle</option>
+<option value="ZT">ZT - 2-Year U.S. Treasury Note</option>
+<option value="ZF">ZF - 5-Year U.S. Treasury Note</option>
+<option value="ZN">ZN - 10-Year U.S. Treasury Note</option>
+<option value="TN">TN - Ultra 10-Year U.S. Treasury Note</option>
+<option value="ZB">ZB - 30-Year U.S. Treasury Bond</option>
+<option value="UB">UB - Ultra U.S. Treasury Bond</option></select></div><div><label for="risk-budget">Maximum dollar risk</label><input id="risk-budget" type="number" min="0" step="0.01" value="250"></div><div><label for="stop-ticks">Stop distance in ticks</label><input id="stop-ticks" type="number" min="0" step="1" value="20"></div></div><button class="atlas-button" id="size-calc" type="button">Calculate position size</button><div class="atlas-result" id="size-result" aria-live="polite"></div></section>
+    <section class="atlas-panel" aria-labelledby="move-heading"><h3 id="move-heading">Dollar effect of a price move</h3><div class="atlas-fields"><div><label for="move-symbol">Contract</label><select id="move-symbol"><option value="ES">ES - E-mini S&amp;P 500</option>
+<option value="MES">MES - Micro E-mini S&amp;P 500</option>
+<option value="NQ">NQ - E-mini Nasdaq-100</option>
+<option value="MNQ">MNQ - Micro E-mini Nasdaq-100</option>
+<option value="YM">YM - E-mini Dow</option>
+<option value="MYM">MYM - Micro E-mini Dow</option>
+<option value="RTY">RTY - E-mini Russell 2000</option>
+<option value="M2K">M2K - Micro E-mini Russell 2000</option>
+<option value="6E">6E - Euro FX</option>
+<option value="M6E">M6E - Micro EUR/USD</option>
+<option value="6J">6J - Japanese Yen</option>
+<option value="MJY">MJY - Micro JPY/USD</option>
+<option value="6B">6B - British Pound</option>
+<option value="M6B">M6B - Micro GBP/USD</option>
+<option value="6A">6A - Australian Dollar</option>
+<option value="M6A">M6A - Micro AUD/USD</option>
+<option value="6C">6C - Canadian Dollar</option>
+<option value="MCD">MCD - Micro CAD/USD</option>
+<option value="6S">6S - Swiss Franc</option>
+<option value="MSF">MSF - Micro CHF/USD</option>
+<option value="6N">6N - New Zealand Dollar</option>
+<option value="6M">6M - Mexican Peso</option>
+<option value="6Z">6Z - South African Rand</option>
+<option value="6L">6L - Brazilian Real</option>
+<option value="CL">CL - WTI Crude Oil</option>
+<option value="MCL">MCL - Micro WTI Crude Oil</option>
+<option value="NG">NG - Henry Hub Natural Gas</option>
+<option value="QG">QG - E-mini Natural Gas</option>
+<option value="RB">RB - RBOB Gasoline</option>
+<option value="HO">HO - NY Harbor ULSD</option>
+<option value="GC">GC - Gold</option>
+<option value="MGC">MGC - Micro Gold</option>
+<option value="1OZ">1OZ - 1-Ounce Gold</option>
+<option value="SI">SI - Silver</option>
+<option value="SIL">SIL - Micro Silver</option>
+<option value="SIC">SIC - 100-Ounce Silver</option>
+<option value="HG">HG - Copper</option>
+<option value="MHG">MHG - Micro Copper</option>
+<option value="PL">PL - Platinum</option>
+<option value="PA">PA - Palladium</option>
+<option value="PAM">PAM - Micro Palladium</option>
+<option value="ZC">ZC - Corn</option>
+<option value="ZW">ZW - Chicago SRW Wheat</option>
+<option value="ZS">ZS - Soybeans</option>
+<option value="ZM">ZM - Soybean Meal</option>
+<option value="ZL">ZL - Soybean Oil</option>
+<option value="LE">LE - Live Cattle</option>
+<option value="HE">HE - Lean Hogs</option>
+<option value="GF">GF - Feeder Cattle</option>
+<option value="ZT">ZT - 2-Year U.S. Treasury Note</option>
+<option value="ZF">ZF - 5-Year U.S. Treasury Note</option>
+<option value="ZN">ZN - 10-Year U.S. Treasury Note</option>
+<option value="TN">TN - Ultra 10-Year U.S. Treasury Note</option>
+<option value="ZB">ZB - 30-Year U.S. Treasury Bond</option>
+<option value="UB">UB - Ultra U.S. Treasury Bond</option></select></div><div><label for="move-contracts">Contracts</label><input id="move-contracts" type="number" min="1" step="1" value="1"></div><div><label for="move-mode">Move entered as</label><select id="move-mode"><option value="ticks">Ticks</option><option value="price">Quoted price units</option></select></div><div><label for="move-amount">Move size</label><input id="move-amount" type="number" min="0" step="any" value="10"></div></div><button class="atlas-button" id="move-calc" type="button">Calculate dollar move</button><div class="atlas-result" id="move-result" aria-live="polite"></div></section>
+  </div></div></section>
+
+  <section class="section"><div class="container atlas-wrap">
+    <h2>Methodology, limits, and citation</h2>
+    <div class="atlas-method"><h3>What is normalized</h3><p>The atlas preserves each market's native displayed quote convention. Grain and livestock increments are shown in U.S. cents because that is how those futures are quoted; Treasury fractions are also shown as decimal point equivalents. The dollar-per-tick value is the common comparison field.</p><h3>What is not included</h3><p>Broker day margins, exchange performance bonds, live prices, options ticks, calendar-spread ticks, fees, and slippage are not included. Those values either change frequently or use different rules. A null or omitted field is never replaced with an estimate.</p><h3>Verification policy</h3><p>Every row requires an official exchange source, internal tick-math reconciliation, and a recorded verification date. Corrections can be sent to <a href="mailto:grizzlyparrott04@gmail.com?subject=Futures%20Risk%20Atlas%20correction">grizzlyparrott04@gmail.com</a>.</p></div>
+    <div class="atlas-callout"><h3>Use or cite this dataset</h3><p>You may quote individual rows, use the CSV/JSON in educational work, or link readers to this reference. Attribute the source so readers can verify the methodology and update date.</p><code class="atlas-code" id="citation-code">Source: &lt;a href="https://grizzlyparrottrading.com/tools/futures-risk-atlas.html"&gt;Grizzly Parrot Trading Futures Risk Atlas&lt;/a&gt; (verified 2026-08-03).</code><button class="atlas-button secondary" id="copy-citation" type="button">Copy citation HTML</button><span class="copy-status" id="copy-status" aria-live="polite"></span></div>
+    <h3>Primary exchange sources</h3><ul class="atlas-source-list"><li><a href="https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html" rel="noopener" target="_blank">CME Group E-mini S&amp;P 500 contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/markets/equities/sp/micro-e-mini-sandp-500.html" rel="noopener" target="_blank">CME Group Micro E-mini S&amp;P 500 overview</a></li>
+<li><a href="https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.contractSpecs.html" rel="noopener" target="_blank">CME Group E-mini Nasdaq-100 contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/markets/equities/nasdaq/micro-e-mini-nasdaq-100.html" rel="noopener" target="_blank">CME Group Micro E-mini Nasdaq-100 overview</a></li>
+<li><a href="https://www.cmegroup.com/markets/equities/dow-jones/e-mini-dow.contractSpecs.html" rel="noopener" target="_blank">CME Group E-mini Dow contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/markets/equities/dow-jones/micro-e-mini-dow.html" rel="noopener" target="_blank">CME Group Micro E-mini Dow overview</a></li>
+<li><a href="https://www.cmegroup.com/markets/equities/russell/e-mini-russell-2000.contractSpecs.html" rel="noopener" target="_blank">CME Group E-mini Russell 2000 contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/markets/equities/russell/micro-e-mini-russell-2000.html" rel="noopener" target="_blank">CME Group Micro E-mini Russell 2000 overview</a></li>
+<li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener" target="_blank">CME Group FX Product Guide 2026</a></li>
+<li><a href="https://www.cmegroup.com/markets/energy/crude-oil/light-sweet-crude.contractSpecs.html" rel="noopener" target="_blank">CME Group WTI Crude Oil contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/education/articles-and-reports/micro-wti-crude-oil-futures-faq" rel="noopener" target="_blank">CME Group Micro WTI Crude Oil futures FAQ</a></li>
+<li><a href="https://www.cmegroup.com/markets/energy/natural-gas/natural-gas.contractSpecs.html" rel="noopener" target="_blank">CME Group Henry Hub Natural Gas contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/markets/energy/natural-gas/emini-natural-gas.contractSpecs.html" rel="noopener" target="_blank">CME Group E-mini Natural Gas contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/education/courses/introduction-to-refined-products/rbob-product-overview" rel="noopener" target="_blank">CME Group RBOB product overview</a></li>
+<li><a href="https://www.cmegroup.com/markets/energy/refined-products/heating-oil.contractSpecs.html" rel="noopener" target="_blank">CME Group NY Harbor ULSD contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/markets/metals/precious/gold.contractSpecs.html" rel="noopener" target="_blank">CME Group Gold contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/markets/microsuite/metals.html" rel="noopener" target="_blank">CME Group Micro Metals contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/articles/faqs/faq-1-oz-gold-futures.html" rel="noopener" target="_blank">CME Group 1-Ounce Gold futures FAQ</a></li>
+<li><a href="https://www.cmegroup.com/rulebook/COMEX/1a/112.pdf" rel="noopener" target="_blank">COMEX Rulebook Chapter 112 - Silver Futures</a></li>
+<li><a href="https://www.cmegroup.com/articles/faqs/frequently-asked-questions-100-ounce-silver-futures.html" rel="noopener" target="_blank">CME Group 100-Ounce Silver futures FAQ</a></li>
+<li><a href="https://www.cmegroup.com/markets/metals/base/copper.contractSpecs.html" rel="noopener" target="_blank">CME Group Copper contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/education/lessons/platinum-product-overview" rel="noopener" target="_blank">CME Group Platinum product overview</a></li>
+<li><a href="https://www.cmegroup.com/notices/ser/2020/12/SER-8668R.pdf" rel="noopener" target="_blank">CME Group Palladium minimum price fluctuation notice</a></li>
+<li><a href="https://www.cmegroup.com/markets/agriculture/grains/corn.contractSpecs.html" rel="noopener" target="_blank">CME Group Corn contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/markets/agriculture/grains/wheat.contractSpecs.html" rel="noopener" target="_blank">CME Group Chicago SRW Wheat contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/markets/agriculture/oilseeds/soybean.contractSpecs.html" rel="noopener" target="_blank">CME Group Soybean contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/markets/agriculture/oilseeds/soybean-meal.contractSpecs.html" rel="noopener" target="_blank">CME Group Soybean Meal contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/markets/agriculture/oilseeds/soybean-oil.contractSpecs.html" rel="noopener" target="_blank">CME Group Soybean Oil contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/markets/agriculture/livestock/live-cattle.contractSpecs.html" rel="noopener" target="_blank">CME Group Live Cattle contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/markets/agriculture/livestock/lean-hogs.contractSpecs.html" rel="noopener" target="_blank">CME Group Lean Hogs contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/markets/agriculture/livestock/feeder-cattle.contractSpecs.html" rel="noopener" target="_blank">CME Group Feeder Cattle contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/content/dam/cmegroup/trading/interest-rates/files/us-treasury-futures-delivery-process.pdf" rel="noopener" target="_blank">CME Group Treasury Futures Delivery Process</a></li>
+<li><a href="https://www.cmegroup.com/markets/interest-rates/us-treasury/30-year-us-treasury-bond.contractSpecs.html" rel="noopener" target="_blank">CME Group 30-Year Treasury Bond contract specifications</a></li>
+<li><a href="https://www.cmegroup.com/markets/interest-rates/us-treasury/ultra-t-bond.contractSpecs.html" rel="noopener" target="_blank">CME Group Ultra Treasury Bond contract specifications</a></li></ul>
+    <p class="atlas-note">Dataset version 1.0.0. First published 2026-08-03. This educational reference is not financial or trading advice.</p>
+  </div></section>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="https://grizzlyparrottrading.com/about.html">About</a><a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a><a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a><a href="https://grizzlyparrottrading.com/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p></div></footer>
+<script id="atlas-data" type="application/json">[{"symbol":"ES","name":"E-mini S&P 500","asset_class":"Equity Index","exchange":"CME","contract_unit":"$50 x S&P 500 Index","quote_unit":"index points","outright_tick_size":0.25,"tick_value_usd":12.5,"usd_per_1_quote_unit":50.0,"settlement":"Financial","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group E-mini S&P 500 contract specifications","source_url":"https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"MES","name":"Micro E-mini S&P 500","asset_class":"Equity Index","exchange":"CME","contract_unit":"$5 x S&P 500 Index","quote_unit":"index points","outright_tick_size":0.25,"tick_value_usd":1.25,"usd_per_1_quote_unit":5.0,"settlement":"Financial","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Micro E-mini S&P 500 overview","source_url":"https://www.cmegroup.com/markets/equities/sp/micro-e-mini-sandp-500.html","verified_on":"2026-08-03"},{"symbol":"NQ","name":"E-mini Nasdaq-100","asset_class":"Equity Index","exchange":"CME","contract_unit":"$20 x Nasdaq-100 Index","quote_unit":"index points","outright_tick_size":0.25,"tick_value_usd":5.0,"usd_per_1_quote_unit":20.0,"settlement":"Financial","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group E-mini Nasdaq-100 contract specifications","source_url":"https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"MNQ","name":"Micro E-mini Nasdaq-100","asset_class":"Equity Index","exchange":"CME","contract_unit":"$2 x Nasdaq-100 Index","quote_unit":"index points","outright_tick_size":0.25,"tick_value_usd":0.5,"usd_per_1_quote_unit":2.0,"settlement":"Financial","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Micro E-mini Nasdaq-100 overview","source_url":"https://www.cmegroup.com/markets/equities/nasdaq/micro-e-mini-nasdaq-100.html","verified_on":"2026-08-03"},{"symbol":"YM","name":"E-mini Dow","asset_class":"Equity Index","exchange":"CBOT","contract_unit":"$5 x DJIA Index","quote_unit":"index points","outright_tick_size":1.0,"tick_value_usd":5.0,"usd_per_1_quote_unit":5.0,"settlement":"Financial","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group E-mini Dow contract specifications","source_url":"https://www.cmegroup.com/markets/equities/dow-jones/e-mini-dow.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"MYM","name":"Micro E-mini Dow","asset_class":"Equity Index","exchange":"CBOT","contract_unit":"$0.50 x DJIA Index","quote_unit":"index points","outright_tick_size":1.0,"tick_value_usd":0.5,"usd_per_1_quote_unit":0.5,"settlement":"Financial","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Micro E-mini Dow overview","source_url":"https://www.cmegroup.com/markets/equities/dow-jones/micro-e-mini-dow.html","verified_on":"2026-08-03"},{"symbol":"RTY","name":"E-mini Russell 2000","asset_class":"Equity Index","exchange":"CME","contract_unit":"$50 x Russell 2000 Index","quote_unit":"index points","outright_tick_size":0.1,"tick_value_usd":5.0,"usd_per_1_quote_unit":50.0,"settlement":"Financial","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group E-mini Russell 2000 contract specifications","source_url":"https://www.cmegroup.com/markets/equities/russell/e-mini-russell-2000.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"M2K","name":"Micro E-mini Russell 2000","asset_class":"Equity Index","exchange":"CME","contract_unit":"$5 x Russell 2000 Index","quote_unit":"index points","outright_tick_size":0.1,"tick_value_usd":0.5,"usd_per_1_quote_unit":5.0,"settlement":"Financial","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Micro E-mini Russell 2000 overview","source_url":"https://www.cmegroup.com/markets/equities/russell/micro-e-mini-russell-2000.html","verified_on":"2026-08-03"},{"symbol":"6E","name":"Euro FX","asset_class":"FX","exchange":"CME","contract_unit":"125,000 euro","quote_unit":"USD per euro","outright_tick_size":5e-05,"tick_value_usd":6.25,"usd_per_1_quote_unit":125000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group FX Product Guide 2026","source_url":"https://www.cmegroup.com/markets/fx/fx-product-guide.html","verified_on":"2026-08-03"},{"symbol":"M6E","name":"Micro EUR/USD","asset_class":"FX","exchange":"CME","contract_unit":"12,500 euro","quote_unit":"USD per euro","outright_tick_size":0.0001,"tick_value_usd":1.25,"usd_per_1_quote_unit":12500.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group FX Product Guide 2026","source_url":"https://www.cmegroup.com/markets/fx/fx-product-guide.html","verified_on":"2026-08-03"},{"symbol":"6J","name":"Japanese Yen","asset_class":"FX","exchange":"CME","contract_unit":"12,500,000 yen","quote_unit":"USD per yen","outright_tick_size":5e-07,"tick_value_usd":6.25,"usd_per_1_quote_unit":12500000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group FX Product Guide 2026","source_url":"https://www.cmegroup.com/markets/fx/fx-product-guide.html","verified_on":"2026-08-03"},{"symbol":"MJY","name":"Micro JPY/USD","asset_class":"FX","exchange":"CME","contract_unit":"1,250,000 yen","quote_unit":"USD per yen","outright_tick_size":1e-06,"tick_value_usd":1.25,"usd_per_1_quote_unit":1250000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group FX Product Guide 2026","source_url":"https://www.cmegroup.com/markets/fx/fx-product-guide.html","verified_on":"2026-08-03"},{"symbol":"6B","name":"British Pound","asset_class":"FX","exchange":"CME","contract_unit":"62,500 pound sterling","quote_unit":"USD per pound sterling","outright_tick_size":0.0001,"tick_value_usd":6.25,"usd_per_1_quote_unit":62500.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group FX Product Guide 2026","source_url":"https://www.cmegroup.com/markets/fx/fx-product-guide.html","verified_on":"2026-08-03"},{"symbol":"M6B","name":"Micro GBP/USD","asset_class":"FX","exchange":"CME","contract_unit":"6,250 pound sterling","quote_unit":"USD per pound sterling","outright_tick_size":0.0001,"tick_value_usd":0.625,"usd_per_1_quote_unit":6250.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group FX Product Guide 2026","source_url":"https://www.cmegroup.com/markets/fx/fx-product-guide.html","verified_on":"2026-08-03"},{"symbol":"6A","name":"Australian Dollar","asset_class":"FX","exchange":"CME","contract_unit":"100,000 Australian dollars","quote_unit":"USD per Australian dollar","outright_tick_size":5e-05,"tick_value_usd":5.0,"usd_per_1_quote_unit":100000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group FX Product Guide 2026","source_url":"https://www.cmegroup.com/markets/fx/fx-product-guide.html","verified_on":"2026-08-03"},{"symbol":"M6A","name":"Micro AUD/USD","asset_class":"FX","exchange":"CME","contract_unit":"10,000 Australian dollars","quote_unit":"USD per Australian dollar","outright_tick_size":0.0001,"tick_value_usd":1.0,"usd_per_1_quote_unit":10000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group FX Product Guide 2026","source_url":"https://www.cmegroup.com/markets/fx/fx-product-guide.html","verified_on":"2026-08-03"},{"symbol":"6C","name":"Canadian Dollar","asset_class":"FX","exchange":"CME","contract_unit":"100,000 Canadian dollars","quote_unit":"USD per Canadian dollar","outright_tick_size":5e-05,"tick_value_usd":5.0,"usd_per_1_quote_unit":100000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group FX Product Guide 2026","source_url":"https://www.cmegroup.com/markets/fx/fx-product-guide.html","verified_on":"2026-08-03"},{"symbol":"MCD","name":"Micro CAD/USD","asset_class":"FX","exchange":"CME","contract_unit":"10,000 Canadian dollars","quote_unit":"USD per Canadian dollar","outright_tick_size":0.0001,"tick_value_usd":1.0,"usd_per_1_quote_unit":10000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group FX Product Guide 2026","source_url":"https://www.cmegroup.com/markets/fx/fx-product-guide.html","verified_on":"2026-08-03"},{"symbol":"6S","name":"Swiss Franc","asset_class":"FX","exchange":"CME","contract_unit":"125,000 Swiss francs","quote_unit":"USD per Swiss franc","outright_tick_size":5e-05,"tick_value_usd":6.25,"usd_per_1_quote_unit":125000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group FX Product Guide 2026","source_url":"https://www.cmegroup.com/markets/fx/fx-product-guide.html","verified_on":"2026-08-03"},{"symbol":"MSF","name":"Micro CHF/USD","asset_class":"FX","exchange":"CME","contract_unit":"12,500 Swiss francs","quote_unit":"USD per Swiss franc","outright_tick_size":0.0001,"tick_value_usd":1.25,"usd_per_1_quote_unit":12500.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group FX Product Guide 2026","source_url":"https://www.cmegroup.com/markets/fx/fx-product-guide.html","verified_on":"2026-08-03"},{"symbol":"6N","name":"New Zealand Dollar","asset_class":"FX","exchange":"CME","contract_unit":"100,000 New Zealand dollars","quote_unit":"USD per New Zealand dollar","outright_tick_size":5e-05,"tick_value_usd":5.0,"usd_per_1_quote_unit":100000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group FX Product Guide 2026","source_url":"https://www.cmegroup.com/markets/fx/fx-product-guide.html","verified_on":"2026-08-03"},{"symbol":"6M","name":"Mexican Peso","asset_class":"FX","exchange":"CME","contract_unit":"500,000 Mexican pesos","quote_unit":"USD per Mexican peso","outright_tick_size":1e-05,"tick_value_usd":5.0,"usd_per_1_quote_unit":500000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group FX Product Guide 2026","source_url":"https://www.cmegroup.com/markets/fx/fx-product-guide.html","verified_on":"2026-08-03"},{"symbol":"6Z","name":"South African Rand","asset_class":"FX","exchange":"CME","contract_unit":"500,000 rand","quote_unit":"USD per rand","outright_tick_size":2.5e-05,"tick_value_usd":12.5,"usd_per_1_quote_unit":500000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group FX Product Guide 2026","source_url":"https://www.cmegroup.com/markets/fx/fx-product-guide.html","verified_on":"2026-08-03"},{"symbol":"6L","name":"Brazilian Real","asset_class":"FX","exchange":"CME","contract_unit":"100,000 Brazilian real","quote_unit":"USD per Brazilian real","outright_tick_size":5e-05,"tick_value_usd":5.0,"usd_per_1_quote_unit":100000.0,"settlement":"Financial","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group FX Product Guide 2026","source_url":"https://www.cmegroup.com/markets/fx/fx-product-guide.html","verified_on":"2026-08-03"},{"symbol":"CL","name":"WTI Crude Oil","asset_class":"Energy","exchange":"NYMEX","contract_unit":"1,000 barrels","quote_unit":"USD per barrel","outright_tick_size":0.01,"tick_value_usd":10.0,"usd_per_1_quote_unit":1000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group WTI Crude Oil contract specifications","source_url":"https://www.cmegroup.com/markets/energy/crude-oil/light-sweet-crude.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"MCL","name":"Micro WTI Crude Oil","asset_class":"Energy","exchange":"NYMEX","contract_unit":"100 barrels","quote_unit":"USD per barrel","outright_tick_size":0.01,"tick_value_usd":1.0,"usd_per_1_quote_unit":100.0,"settlement":"Financial","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Micro WTI Crude Oil futures FAQ","source_url":"https://www.cmegroup.com/education/articles-and-reports/micro-wti-crude-oil-futures-faq","verified_on":"2026-08-03"},{"symbol":"NG","name":"Henry Hub Natural Gas","asset_class":"Energy","exchange":"NYMEX","contract_unit":"10,000 MMBtu","quote_unit":"USD per MMBtu","outright_tick_size":0.001,"tick_value_usd":10.0,"usd_per_1_quote_unit":10000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Henry Hub Natural Gas contract specifications","source_url":"https://www.cmegroup.com/markets/energy/natural-gas/natural-gas.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"QG","name":"E-mini Natural Gas","asset_class":"Energy","exchange":"NYMEX","contract_unit":"2,500 MMBtu","quote_unit":"USD per MMBtu","outright_tick_size":0.005,"tick_value_usd":12.5,"usd_per_1_quote_unit":2500.0,"settlement":"Financial","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group E-mini Natural Gas contract specifications","source_url":"https://www.cmegroup.com/markets/energy/natural-gas/emini-natural-gas.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"RB","name":"RBOB Gasoline","asset_class":"Energy","exchange":"NYMEX","contract_unit":"42,000 gallons","quote_unit":"USD per gallon","outright_tick_size":0.0001,"tick_value_usd":4.2,"usd_per_1_quote_unit":42000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group RBOB product overview","source_url":"https://www.cmegroup.com/education/courses/introduction-to-refined-products/rbob-product-overview","verified_on":"2026-08-03"},{"symbol":"HO","name":"NY Harbor ULSD","asset_class":"Energy","exchange":"NYMEX","contract_unit":"42,000 gallons","quote_unit":"USD per gallon","outright_tick_size":0.0001,"tick_value_usd":4.2,"usd_per_1_quote_unit":42000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group NY Harbor ULSD contract specifications","source_url":"https://www.cmegroup.com/markets/energy/refined-products/heating-oil.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"GC","name":"Gold","asset_class":"Metals","exchange":"COMEX","contract_unit":"100 troy ounces","quote_unit":"USD per troy ounce","outright_tick_size":0.1,"tick_value_usd":10.0,"usd_per_1_quote_unit":100.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Gold contract specifications","source_url":"https://www.cmegroup.com/markets/metals/precious/gold.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"MGC","name":"Micro Gold","asset_class":"Metals","exchange":"COMEX","contract_unit":"10 troy ounces","quote_unit":"USD per troy ounce","outright_tick_size":0.1,"tick_value_usd":1.0,"usd_per_1_quote_unit":10.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Micro Metals contract specifications","source_url":"https://www.cmegroup.com/markets/microsuite/metals.html","verified_on":"2026-08-03"},{"symbol":"1OZ","name":"1-Ounce Gold","asset_class":"Metals","exchange":"COMEX","contract_unit":"1 troy ounce","quote_unit":"USD per troy ounce","outright_tick_size":0.25,"tick_value_usd":0.25,"usd_per_1_quote_unit":1.0,"settlement":"Financial","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group 1-Ounce Gold futures FAQ","source_url":"https://www.cmegroup.com/articles/faqs/faq-1-oz-gold-futures.html","verified_on":"2026-08-03"},{"symbol":"SI","name":"Silver","asset_class":"Metals","exchange":"COMEX","contract_unit":"5,000 troy ounces","quote_unit":"USD per troy ounce","outright_tick_size":0.005,"tick_value_usd":25.0,"usd_per_1_quote_unit":5000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"COMEX Rulebook Chapter 112 - Silver Futures","source_url":"https://www.cmegroup.com/rulebook/COMEX/1a/112.pdf","verified_on":"2026-08-03"},{"symbol":"SIL","name":"Micro Silver","asset_class":"Metals","exchange":"COMEX","contract_unit":"1,000 troy ounces","quote_unit":"USD per troy ounce","outright_tick_size":0.01,"tick_value_usd":10.0,"usd_per_1_quote_unit":1000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Micro Metals contract specifications","source_url":"https://www.cmegroup.com/markets/microsuite/metals.html","verified_on":"2026-08-03"},{"symbol":"SIC","name":"100-Ounce Silver","asset_class":"Metals","exchange":"COMEX","contract_unit":"100 troy ounces","quote_unit":"USD per troy ounce","outright_tick_size":0.01,"tick_value_usd":1.0,"usd_per_1_quote_unit":100.0,"settlement":"Financial","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group 100-Ounce Silver futures FAQ","source_url":"https://www.cmegroup.com/articles/faqs/frequently-asked-questions-100-ounce-silver-futures.html","verified_on":"2026-08-03"},{"symbol":"HG","name":"Copper","asset_class":"Metals","exchange":"COMEX","contract_unit":"25,000 pounds","quote_unit":"USD per pound","outright_tick_size":0.0005,"tick_value_usd":12.5,"usd_per_1_quote_unit":25000.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Copper contract specifications","source_url":"https://www.cmegroup.com/markets/metals/base/copper.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"MHG","name":"Micro Copper","asset_class":"Metals","exchange":"COMEX","contract_unit":"2,500 pounds","quote_unit":"USD per pound","outright_tick_size":0.0005,"tick_value_usd":1.25,"usd_per_1_quote_unit":2500.0,"settlement":"Financial","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Micro Metals contract specifications","source_url":"https://www.cmegroup.com/markets/microsuite/metals.html","verified_on":"2026-08-03"},{"symbol":"PL","name":"Platinum","asset_class":"Metals","exchange":"NYMEX","contract_unit":"50 troy ounces","quote_unit":"USD per troy ounce","outright_tick_size":0.1,"tick_value_usd":5.0,"usd_per_1_quote_unit":50.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Platinum product overview","source_url":"https://www.cmegroup.com/education/lessons/platinum-product-overview","verified_on":"2026-08-03"},{"symbol":"PA","name":"Palladium","asset_class":"Metals","exchange":"NYMEX","contract_unit":"100 troy ounces","quote_unit":"USD per troy ounce","outright_tick_size":0.5,"tick_value_usd":50.0,"usd_per_1_quote_unit":100.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Palladium minimum price fluctuation notice","source_url":"https://www.cmegroup.com/notices/ser/2020/12/SER-8668R.pdf","verified_on":"2026-08-03"},{"symbol":"PAM","name":"Micro Palladium","asset_class":"Metals","exchange":"NYMEX","contract_unit":"10 troy ounces","quote_unit":"USD per troy ounce","outright_tick_size":0.5,"tick_value_usd":5.0,"usd_per_1_quote_unit":10.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Micro Metals contract specifications","source_url":"https://www.cmegroup.com/markets/microsuite/metals.html","verified_on":"2026-08-03"},{"symbol":"ZC","name":"Corn","asset_class":"Agriculture","exchange":"CBOT","contract_unit":"5,000 bushels","quote_unit":"US cents per bushel","outright_tick_size":0.25,"tick_value_usd":12.5,"usd_per_1_quote_unit":50.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Corn contract specifications","source_url":"https://www.cmegroup.com/markets/agriculture/grains/corn.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"ZW","name":"Chicago SRW Wheat","asset_class":"Agriculture","exchange":"CBOT","contract_unit":"5,000 bushels","quote_unit":"US cents per bushel","outright_tick_size":0.25,"tick_value_usd":12.5,"usd_per_1_quote_unit":50.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Chicago SRW Wheat contract specifications","source_url":"https://www.cmegroup.com/markets/agriculture/grains/wheat.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"ZS","name":"Soybeans","asset_class":"Agriculture","exchange":"CBOT","contract_unit":"5,000 bushels","quote_unit":"US cents per bushel","outright_tick_size":0.25,"tick_value_usd":12.5,"usd_per_1_quote_unit":50.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Soybean contract specifications","source_url":"https://www.cmegroup.com/markets/agriculture/oilseeds/soybean.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"ZM","name":"Soybean Meal","asset_class":"Agriculture","exchange":"CBOT","contract_unit":"100 short tons","quote_unit":"USD per short ton","outright_tick_size":0.1,"tick_value_usd":10.0,"usd_per_1_quote_unit":100.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Soybean Meal contract specifications","source_url":"https://www.cmegroup.com/markets/agriculture/oilseeds/soybean-meal.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"ZL","name":"Soybean Oil","asset_class":"Agriculture","exchange":"CBOT","contract_unit":"60,000 pounds","quote_unit":"US cents per pound","outright_tick_size":0.01,"tick_value_usd":6.0,"usd_per_1_quote_unit":600.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Soybean Oil contract specifications","source_url":"https://www.cmegroup.com/markets/agriculture/oilseeds/soybean-oil.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"LE","name":"Live Cattle","asset_class":"Agriculture","exchange":"CME","contract_unit":"40,000 pounds","quote_unit":"US cents per pound","outright_tick_size":0.025,"tick_value_usd":10.0,"usd_per_1_quote_unit":400.0,"settlement":"Physical","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Live Cattle contract specifications","source_url":"https://www.cmegroup.com/markets/agriculture/livestock/live-cattle.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"HE","name":"Lean Hogs","asset_class":"Agriculture","exchange":"CME","contract_unit":"40,000 pounds","quote_unit":"US cents per pound","outright_tick_size":0.025,"tick_value_usd":10.0,"usd_per_1_quote_unit":400.0,"settlement":"Financial","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Lean Hogs contract specifications","source_url":"https://www.cmegroup.com/markets/agriculture/livestock/lean-hogs.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"GF","name":"Feeder Cattle","asset_class":"Agriculture","exchange":"CME","contract_unit":"50,000 pounds","quote_unit":"US cents per pound","outright_tick_size":0.025,"tick_value_usd":12.5,"usd_per_1_quote_unit":500.0,"settlement":"Financial","scope_note":"CME Globex outright futures tick; spreads and options excluded.","source_title":"CME Group Feeder Cattle contract specifications","source_url":"https://www.cmegroup.com/markets/agriculture/livestock/feeder-cattle.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"ZT","name":"2-Year U.S. Treasury Note","asset_class":"Interest Rates","exchange":"CBOT","contract_unit":"$200,000 face value","quote_unit":"price points","outright_tick_size":0.00390625,"tick_value_usd":7.8125,"usd_per_1_quote_unit":2000.0,"settlement":"Physical","scope_note":"Outright tick is 1/8 of 1/32; decimal equivalent shown.","source_title":"CME Group Treasury Futures Delivery Process","source_url":"https://www.cmegroup.com/content/dam/cmegroup/trading/interest-rates/files/us-treasury-futures-delivery-process.pdf","verified_on":"2026-08-03"},{"symbol":"ZF","name":"5-Year U.S. Treasury Note","asset_class":"Interest Rates","exchange":"CBOT","contract_unit":"$100,000 face value","quote_unit":"price points","outright_tick_size":0.0078125,"tick_value_usd":7.8125,"usd_per_1_quote_unit":1000.0,"settlement":"Physical","scope_note":"Outright tick is 1/4 of 1/32; decimal equivalent shown. Calendar-spread tick changed in 2026 and is excluded.","source_title":"CME Group Treasury Futures Delivery Process","source_url":"https://www.cmegroup.com/content/dam/cmegroup/trading/interest-rates/files/us-treasury-futures-delivery-process.pdf","verified_on":"2026-08-03"},{"symbol":"ZN","name":"10-Year U.S. Treasury Note","asset_class":"Interest Rates","exchange":"CBOT","contract_unit":"$100,000 face value","quote_unit":"price points","outright_tick_size":0.015625,"tick_value_usd":15.625,"usd_per_1_quote_unit":1000.0,"settlement":"Physical","scope_note":"Outright tick is 1/2 of 1/32; decimal equivalent shown.","source_title":"CME Group Treasury Futures Delivery Process","source_url":"https://www.cmegroup.com/content/dam/cmegroup/trading/interest-rates/files/us-treasury-futures-delivery-process.pdf","verified_on":"2026-08-03"},{"symbol":"TN","name":"Ultra 10-Year U.S. Treasury Note","asset_class":"Interest Rates","exchange":"CBOT","contract_unit":"$100,000 face value","quote_unit":"price points","outright_tick_size":0.015625,"tick_value_usd":15.625,"usd_per_1_quote_unit":1000.0,"settlement":"Physical","scope_note":"Outright tick is 1/2 of 1/32; decimal equivalent shown.","source_title":"CME Group Treasury Futures Delivery Process","source_url":"https://www.cmegroup.com/content/dam/cmegroup/trading/interest-rates/files/us-treasury-futures-delivery-process.pdf","verified_on":"2026-08-03"},{"symbol":"ZB","name":"30-Year U.S. Treasury Bond","asset_class":"Interest Rates","exchange":"CBOT","contract_unit":"$100,000 face value","quote_unit":"price points","outright_tick_size":0.03125,"tick_value_usd":31.25,"usd_per_1_quote_unit":1000.0,"settlement":"Physical","scope_note":"Outright tick is 1/32; decimal equivalent shown.","source_title":"CME Group 30-Year Treasury Bond contract specifications","source_url":"https://www.cmegroup.com/markets/interest-rates/us-treasury/30-year-us-treasury-bond.contractSpecs.html","verified_on":"2026-08-03"},{"symbol":"UB","name":"Ultra U.S. Treasury Bond","asset_class":"Interest Rates","exchange":"CBOT","contract_unit":"$100,000 face value","quote_unit":"price points","outright_tick_size":0.03125,"tick_value_usd":31.25,"usd_per_1_quote_unit":1000.0,"settlement":"Physical","scope_note":"Outright tick is 1/32; decimal equivalent shown.","source_title":"CME Group Ultra Treasury Bond contract specifications","source_url":"https://www.cmegroup.com/markets/interest-rates/us-treasury/ultra-t-bond.contractSpecs.html","verified_on":"2026-08-03"}]</script>
+<script>
+(() => {
+  'use strict';
+  const data = JSON.parse(document.getElementById('atlas-data').textContent);
+  const bySymbol = new Map(data.map(row => [row.symbol, row]));
+  const money = value => new Intl.NumberFormat('en-US', {style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:3}).format(value);
+  const number = value => new Intl.NumberFormat('en-US', {maximumFractionDigits:9}).format(value);
+  const search = document.getElementById('atlas-search');
+  const asset = document.getElementById('atlas-asset');
+  const rows = [...document.querySelectorAll('#atlas-table tbody tr')];
+  const count = document.getElementById('atlas-count');
+
+  function filterRows() {
+    const query = search.value.trim().toLowerCase();
+    const selectedAsset = asset.value;
+    let visible = 0;
+    rows.forEach(row => {
+      const show = (!query || row.dataset.search.includes(query)) && (!selectedAsset || row.dataset.asset === selectedAsset);
+      row.classList.toggle('atlas-hidden', !show);
+      if (show) visible += 1;
+    });
+    count.textContent = `Showing ${visible} contract${visible === 1 ? '' : 's'}.`;
+  }
+  search.addEventListener('input', filterRows);
+  asset.addEventListener('change', filterRows);
+  document.getElementById('atlas-reset').addEventListener('click', () => { search.value=''; asset.value=''; filterRows(); search.focus(); });
+
+  const sizeSymbol = document.getElementById('size-symbol');
+  const moveSymbol = document.getElementById('move-symbol');
+  function selectSymbol(symbol, scroll) {
+    if (!bySymbol.has(symbol)) return;
+    sizeSymbol.value = symbol;
+    moveSymbol.value = symbol;
+    const url = new URL(window.location.href);
+    url.searchParams.set('symbol', symbol);
+    history.replaceState(null, '', url);
+    calculateSize();
+    calculateMove();
+    if (scroll) document.getElementById('size-heading').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  document.querySelectorAll('.symbol-button').forEach(button => button.addEventListener('click', () => selectSymbol(button.dataset.symbol, true)));
+  sizeSymbol.addEventListener('change', () => selectSymbol(sizeSymbol.value, false));
+  moveSymbol.addEventListener('change', () => selectSymbol(moveSymbol.value, false));
+
+  function calculateSize() {
+    const row = bySymbol.get(sizeSymbol.value);
+    const budget = Number(document.getElementById('risk-budget').value);
+    const stopTicks = Number(document.getElementById('stop-ticks').value);
+    const output = document.getElementById('size-result');
+    if (!row || !Number.isFinite(budget) || budget <= 0 || !Number.isFinite(stopTicks) || stopTicks <= 0) { output.textContent='Enter a positive risk budget and stop distance.'; return; }
+    const riskPerContract = stopTicks * row.tick_value_usd;
+    const contracts = Math.floor(budget / riskPerContract);
+    const used = contracts * riskPerContract;
+    output.innerHTML = contracts < 1 ? `<strong>0 contracts fit.</strong><br>One ${row.symbol} contract risks ${money(riskPerContract)} at a ${number(stopTicks)}-tick stop, above the ${money(budget)} budget.` : `<strong>${contracts} contract${contracts===1?'':'s'}</strong><br>${money(riskPerContract)} per contract; ${money(used)} total planned risk; ${money(budget-used)} budget left unused.`;
+  }
+  document.getElementById('size-calc').addEventListener('click', calculateSize);
+
+  function calculateMove() {
+    const row = bySymbol.get(moveSymbol.value);
+    const contracts = Number(document.getElementById('move-contracts').value);
+    const amount = Number(document.getElementById('move-amount').value);
+    const mode = document.getElementById('move-mode').value;
+    const output = document.getElementById('move-result');
+    if (!row || !Number.isInteger(contracts) || contracts <= 0 || !Number.isFinite(amount) || amount < 0) { output.textContent='Enter a positive whole contract count and a non-negative move.'; return; }
+    const ticks = mode === 'ticks' ? amount : amount / row.outright_tick_size;
+    const dollars = ticks * row.tick_value_usd * contracts;
+    output.innerHTML = `<strong>${money(dollars)} absolute contract-value change</strong><br>${number(ticks)} ticks across ${contracts} ${row.symbol} contract${contracts===1?'':'s'} at ${money(row.tick_value_usd)} per tick.`;
+  }
+  document.getElementById('move-calc').addEventListener('click', calculateMove);
+  ['move-contracts','move-amount','move-mode'].forEach(id => document.getElementById(id).addEventListener('change', calculateMove));
+  ['risk-budget','stop-ticks'].forEach(id => document.getElementById(id).addEventListener('change', calculateSize));
+
+  document.getElementById('copy-citation').addEventListener('click', async () => {
+    const text = document.getElementById('citation-code').textContent;
+    const status = document.getElementById('copy-status');
+    try { await navigator.clipboard.writeText(text); status.textContent='Copied.'; }
+    catch (_) { status.textContent='Copy blocked by the browser; select the text above.'; }
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const requested = new URL(window.location.href).searchParams.get('symbol');
+  selectSymbol(requested && bySymbol.has(requested.toUpperCase()) ? requested.toUpperCase() : 'MES', false);
+})();
+</script>
+</body>
+</html>

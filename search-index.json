@@ -1398,6 +1398,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Futures Risk Atlas: Tick Values & Contract Specs | Grizzly Parrot Trading",
+    "url": "/tools/futures-risk-atlas.html",
+    "description": "Source-backed futures contract specifications, tick values, settlement types, risk math, and downloadable CSV/JSON for 55 CME Group contracts.",
+    "category": "tools"
+  },
+  {
     "title": "Futures Rollover Explained: When and How to Roll Your Contracts",
     "url": "/futures-basics/futures-rollover-explained.html",
     "description": "Learn what futures rollover is, when you should roll your contracts, and the key steps to avoid slippage, bad fills, and getting stuck near expiration.",
