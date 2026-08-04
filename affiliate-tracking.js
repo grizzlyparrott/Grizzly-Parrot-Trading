@@ -1,7 +1,8 @@
 (function () {
   "use strict";
 
-  var LINK_SELECTOR = "a[data-affiliate-program][data-affiliate-location]";
+  var GENERIC_SELECTOR = "a[data-affiliate-program][data-affiliate-location]";
+  var BOOKMAP_SELECTOR = 'a[data-affiliate-partner="bookmap"]';
   var SESSION_KEY = "gpt_affiliate_acquisition_v1";
 
   function safeUrl(value) {
@@ -10,6 +11,10 @@
     } catch (_error) {
       return null;
     }
+  }
+
+  function normalizedText(link) {
+    return (link.textContent || "").replace(/\s+/g, " ").trim().slice(0, 100);
   }
 
   function classifyDevice() {
@@ -34,7 +39,6 @@
     }
 
     if (!document.referrer) return "direct";
-
     var referrer = safeUrl(document.referrer);
     if (!referrer) return "other";
     if (referrer.origin === window.location.origin) return "internal";
@@ -58,34 +62,59 @@
     }
   }
 
-  function sendAffiliateEvent(link) {
+  function emit(name, parameters) {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", name, parameters);
+      return;
+    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({ event: name }, parameters));
+  }
+
+  function recordGenericClick(link) {
     var destination = safeUrl(link.href);
-    var parameters = {
+    emit("affiliate_click", {
       affiliate_program: link.getAttribute("data-affiliate-program") || "unknown",
       link_location: link.getAttribute("data-affiliate-location") || "unknown",
-      link_text: (link.textContent || "").trim().slice(0, 100),
+      link_text: normalizedText(link),
       link_url: destination ? destination.href : link.href,
       outbound_domain: destination ? destination.hostname : "unknown",
       page_path: window.location.pathname,
       device_type: classifyDevice(),
       traffic_channel: sessionAcquisition(),
       transport_type: "beacon"
-    };
-
-    if (typeof window.gtag === "function") {
-      window.gtag("event", "affiliate_click", parameters);
-      return;
-    }
-
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push(Object.assign({ event: "affiliate_click" }, parameters));
+    });
   }
 
-  document.addEventListener("click", function (event) {
+  function recordBookmapClick(link) {
+    var parameters = {
+      affiliate_partner: "bookmap",
+      link_page: window.location.pathname,
+      link_location: link.getAttribute("data-link-location") || "unknown",
+      link_destination: link.getAttribute("data-link-destination") || "bookmap-subscription",
+      link_url: link.href,
+      link_text: normalizedText(link),
+      device_type: classifyDevice(),
+      traffic_channel: sessionAcquisition(),
+      outbound: true,
+      transport_type: "beacon"
+    };
+    emit("bookmap_affiliate_click", parameters);
+    window.dispatchEvent(new CustomEvent("bookmap:affiliate-click", { detail: parameters }));
+  }
+
+  function handleClick(event) {
+    if (event.type === "auxclick" && event.button !== 1) return;
     var target = event.target;
     if (!target || typeof target.closest !== "function") return;
-    var link = target.closest(LINK_SELECTOR);
-    if (!link) return;
-    sendAffiliateEvent(link);
-  }, true);
+
+    var genericLink = target.closest(GENERIC_SELECTOR);
+    if (genericLink) recordGenericClick(genericLink);
+
+    var bookmapLink = target.closest(BOOKMAP_SELECTOR);
+    if (bookmapLink) recordBookmapClick(bookmapLink);
+  }
+
+  document.addEventListener("click", handleClick, false);
+  document.addEventListener("auxclick", handleClick, false);
 }());
