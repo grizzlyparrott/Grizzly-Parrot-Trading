@@ -467,8 +467,10 @@ h2 {
 .purchase-section { padding: 20px 0 100px; }
 
 .purchase-card {
+  grid-template-columns: minmax(280px, .72fr) minmax(600px, 1.28fr);
+  gap: clamp(30px, 4vw, 54px);
   align-items: center;
-  padding: clamp(28px, 6vw, 64px);
+  padding: clamp(32px, 4vw, 50px);
   border: 1px solid rgba(60,255,145,.28);
   border-radius: 26px;
   background:
@@ -492,7 +494,10 @@ h2 {
 }
 
 .price-box {
-  padding: 28px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 18px;
   border: 1px solid var(--line);
   border-radius: 20px;
   background: rgba(0,0,0,.24);
@@ -518,9 +523,24 @@ h2 {
   line-height: 1;
 }
 
-.price-box > small { color: var(--muted); }
+.price-box > small {
+  min-height: 3.2em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  color: var(--muted);
+}
 
-.price-box .button { margin-top: 25px; }
+.price-box .button {
+  min-height: 54px;
+  margin-top: 20px;
+  padding: 10px 12px;
+  font-size: .82rem;
+  line-height: 1.15;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
 
 .price-box p {
   margin: 10px 0 0;
@@ -604,6 +624,10 @@ footer {
 
 .copyright { grid-column: 1 / -1; }
 
+@media (max-width: 1040px) {
+  .purchase-card { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 900px) {
   .hero-grid,
   .statement-grid,
@@ -619,8 +643,10 @@ footer {
   .series-grid { grid-template-columns: repeat(2, 1fr); }
 
   .faq-grid { grid-template-columns: 1fr; }
+}
 
-  .edition-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 760px) {
+  .edition-options { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 620px) {

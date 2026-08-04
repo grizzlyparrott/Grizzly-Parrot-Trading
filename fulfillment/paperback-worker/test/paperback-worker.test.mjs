@@ -476,7 +476,15 @@ test("all three book pages expose fail-closed paperback and hardcover controls",
     assert.match(html, /edition=' \+ item\.edition/);
     assert.match(html, /grizzly-parrot-paperback\.grizzlyparrott04\.workers\.dev/);
     assert.match(html, /Safe default: this print button remains disabled/);
+    assert.match(html, />Buy digital</);
+    assert.match(html, /label: 'Buy paperback'/);
+    assert.match(html, /label: 'Buy hardcover'/);
+    assert.doesNotMatch(html, /Buy (?:digital|paperback|hardcover) edition/);
   }
+  const css = await readFile(new URL("../../../books/market-structure-series.css", import.meta.url), "utf8");
+  assert.match(css, /\.price-box \.button\s*\{[^}]*white-space:\s*normal;/s);
+  assert.match(css, /@media \(max-width:\s*1040px\)\s*\{\s*\.purchase-card\s*\{\s*grid-template-columns:\s*1fr;/s);
+  assert.match(css, /@media \(max-width:\s*760px\)\s*\{\s*\.edition-options\s*\{\s*grid-template-columns:\s*1fr;/s);
 });
 
 test("hardcover activation is independent and returns the exact hardcover checkout", async () => {
