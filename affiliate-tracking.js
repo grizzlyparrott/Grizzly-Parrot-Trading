@@ -89,4 +89,3 @@
     sendAffiliateEvent(link);
   }, true);
 }());
-
