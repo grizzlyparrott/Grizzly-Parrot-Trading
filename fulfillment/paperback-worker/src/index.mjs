@@ -463,6 +463,14 @@ async function claimDigitalConversion(request, env) {
 async function pollStatuses(env) {
   log("lulu_status_poll_started");
   const store = new OrderStore(env.PAPERBACK_ORDERS);
+  try {
+    const deletedQuotes = await store.deleteExpiredQuotes(nowIso());
+    if (deletedQuotes > 0) log("expired_quotes_deleted", { count: deletedQuotes });
+  } catch (error) {
+    // Quote cleanup is important for data minimization, but it must not block
+    // confirmation retries or live fulfillment status polling.
+    log("expired_quote_cleanup_failed", { message: String(error.message || "unknown") });
+  }
   for (const row of await store.ordersNeedingConfirmation()) {
     const order = orderFromRow(row);
     const book = getBook(order.book_slug);

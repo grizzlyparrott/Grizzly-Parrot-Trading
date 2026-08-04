@@ -6,7 +6,11 @@ import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { PAPERBACK_BOOKS } from "../src/catalog.mjs";
 
-const root = resolve(process.argv[2] || "../../../../../outputs/Market_Structure_Series/POD Production");
+const rootArgument = process.argv[2];
+if (!rootArgument) {
+  throw new Error("Usage: node scripts/print-asset-manifest.mjs <absolute path to the proof-approved POD Production directory>");
+}
+const root = resolve(rootArgument);
 const paths = {
   "currency-market-structure": {
     interior: "Volume I - Currency Market Structure/Currency-Market-Structure-Volume-I-Lulu-Paperback-Interior.pdf",
