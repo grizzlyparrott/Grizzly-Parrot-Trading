@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { getBook, getStripePriceId, POD_PACKAGE_ID, SHIPPING_OPTIONS } from "../src/catalog.mjs";
+import { getBook, getStripePriceId, POD_PACKAGE_ID, HARDCOVER_POD_PACKAGE_ID, PRINT_EDITIONS, SHIPPING_OPTIONS } from "../src/catalog.mjs";
 import { validateCheckoutRequest, addressesMatch } from "../src/validation.mjs";
 import { hmacHex, verifyStripeSignature, signedAssetUrl, verifyAssetRequest } from "../src/crypto.mjs";
 import { LuluClient, shippingCents } from "../src/lulu.mjs";
@@ -20,20 +20,25 @@ const validAddress = {
   phoneNumber: "+1 919 555 0100"
 };
 
-test("all three paperback products map to the real Lulu paperback projects and one exact POD package", () => {
+test("all six print editions map to their approved Lulu projects, packages, prices, and source files", () => {
   const expected = {
-    "currency-market-structure": "84mdgqe",
-    "metals-market-structure": "dy4ewg4",
-    "equity-market-structure": "zmnedzn"
+    "currency-market-structure": ["84mdgqe", POD_PACKAGE_ID, 3900],
+    "metals-market-structure": ["dy4ewg4", POD_PACKAGE_ID, 3900],
+    "equity-market-structure": ["zmnedzn", POD_PACKAGE_ID, 3900],
+    "currency-market-structure-hardcover": ["w4g2den", HARDCOVER_POD_PACKAGE_ID, 4900],
+    "metals-market-structure-hardcover": ["dy4ewd4", HARDCOVER_POD_PACKAGE_ID, 4900],
+    "equity-market-structure-hardcover": ["w4g2dgr", HARDCOVER_POD_PACKAGE_ID, 4900]
   };
-  for (const [slug, projectId] of Object.entries(expected)) {
+  for (const [slug, [projectId, podPackageId, priceCents]] of Object.entries(expected)) {
     const book = getBook(slug);
     assert.equal(book.luluPublishingProjectId, projectId);
-    assert.equal(book.podPackageId, POD_PACKAGE_ID);
-    assert.equal(book.priceCents, 3900);
+    assert.equal(book.podPackageId, podPackageId);
+    assert.equal(book.priceCents, priceCents);
     assert.match(book.assets.interiorMd5, /^[A-F0-9]{32}$/);
     assert.match(book.assets.coverMd5, /^[A-F0-9]{32}$/);
   }
+  assert.equal(Object.keys(PRINT_EDITIONS).length, 6);
+  assert.equal(getBook("currency-market-structure", "hardcover").slug, "currency-market-structure-hardcover");
   assert.deepEqual(Object.keys(SHIPPING_OPTIONS), ["MAIL", "PRIORITY_MAIL", "EXPEDITED", "EXPRESS"]);
 });
 
@@ -51,7 +56,8 @@ test("production shipping countries require an explicit valid allowlist", () => 
   assert.deepEqual(allowedCountries({ PAPERBACK_ALLOWED_COUNTRIES: "US, ca,US,invalid" }), ["US", "CA"]);
   assert.deepEqual(allowedCountries({ PAPERBACK_ALLOWED_COUNTRIES: "" }), []);
   assert.deepEqual(productionReadiness({ PAPERBACK_STRIPE_TAX_ENABLED: "pending" }), {
-    proofsApproved: false,
+    paperbackProofsApproved: false,
+    hardcoverProofsApproved: false,
     policiesApproved: false,
     shippingCountriesConfigured: false,
     allowedCountries: [],
@@ -308,7 +314,9 @@ test("test checkout creates a Stripe Checkout Session with customer address coll
   assert.equal(form.get("shipping_options[0][shipping_rate_data][tax_behavior]"), "exclusive");
   assert.equal(form.get("shipping_options[0][shipping_rate_data][tax_code]"), "txcd_92010001");
   assert.equal(form.get("metadata[checkout_mode]"), "unknown");
-  assert.equal(request.headers["Idempotency-Key"], "paperback-checkout-quote-123");
+  assert.equal(form.get("metadata[order_type]"), "print_book");
+  assert.equal(form.get("metadata[edition]"), "paperback");
+  assert.equal(request.headers["Idempotency-Key"], "print-checkout-quote-123");
 });
 
 test("order store reports duplicate Stripe session insertion instead of submitting a second print order", async () => {
@@ -355,15 +363,17 @@ test("scheduled cleanup deletes expired quotes without retaining abandoned custo
   assert.deepEqual(calls[0].args, [now]);
 });
 
-test("default deployment is unable to sell paperbacks and reports sales disabled", async () => {
+test("default deployment is unable to sell either print edition and reports both disabled", async () => {
   const response = await worker.fetch(new Request("https://paperback-api.example.com/health"), { PAPERBACK_SALES_ENABLED: "false", PAPERBACK_ENVIRONMENT: "sandbox" });
   assert.deepEqual(await response.json(), {
     ok: true,
     paperbackSalesEnabled: false,
+    hardcoverSalesEnabled: false,
     privateOrderEnabled: false,
     environment: "sandbox",
     readiness: {
-      proofsApproved: false,
+      paperbackProofsApproved: false,
+      hardcoverProofsApproved: false,
       policiesApproved: false,
       shippingCountriesConfigured: false,
       allowedCountries: [],
@@ -374,7 +384,7 @@ test("default deployment is unable to sell paperbacks and reports sales disabled
     PAPERBACK_SALES_ENABLED: "false",
     PAPERBACK_ENVIRONMENT: "sandbox"
   });
-  assert.deepEqual(await configResponse.json(), { enabled: false, checkoutUrl: null });
+  assert.deepEqual(await configResponse.json(), { enabled: false, checkoutUrl: null, edition: "paperback", priceCents: 3900 });
   const checkoutResponse = await worker.fetch(new Request("https://paperback-api.example.com/paperback/checkout?bookSlug=currency-market-structure"), {
     PAPERBACK_SALES_ENABLED: "false",
     PAPERBACK_ENVIRONMENT: "sandbox"
@@ -395,7 +405,9 @@ test("a public paperback checkout exists only after every explicit production pr
   const configResponse = await worker.fetch(new Request("https://grizzly-parrot-paperback.example.workers.dev/public-config?bookSlug=metals-market-structure"), env);
   assert.deepEqual(await configResponse.json(), {
     enabled: true,
-    checkoutUrl: "https://grizzly-parrot-paperback.example.workers.dev/paperback/checkout?bookSlug=metals-market-structure"
+    checkoutUrl: "https://grizzly-parrot-paperback.example.workers.dev/print/checkout?bookSlug=metals-market-structure&edition=paperback",
+    edition: "paperback",
+    priceCents: 3900
   });
   const checkoutResponse = await worker.fetch(new Request("https://grizzly-parrot-paperback.example.workers.dev/paperback/checkout?bookSlug=metals-market-structure"), env);
   assert.equal(checkoutResponse.status, 200);
@@ -421,7 +433,7 @@ test("the private live-order page can open while every public paperback stays di
     PAPERBACK_BASE_URL: "https://grizzly-parrot-paperback.example.workers.dev"
   };
   const publicConfig = await worker.fetch(new Request("https://grizzly-parrot-paperback.example.workers.dev/public-config?bookSlug=currency-market-structure"), env);
-  assert.deepEqual(await publicConfig.json(), { enabled: false, checkoutUrl: null });
+  assert.deepEqual(await publicConfig.json(), { enabled: false, checkoutUrl: null, edition: "paperback", priceCents: 3900 });
   const privatePage = await worker.fetch(new Request("https://grizzly-parrot-paperback.example.workers.dev/paperback/private-order?bookSlug=currency-market-structure"), env);
   assert.equal(privatePage.status, 200);
   const html = await privatePage.text();
@@ -430,7 +442,7 @@ test("the private live-order page can open while every public paperback stays di
   const unauthorizedQuote = await worker.fetch(new Request("https://grizzly-parrot-paperback.example.workers.dev/paperback/quote", {
     method: "POST",
     headers: { "content-type": "application/json" },
-    body: "{}"
+    body: JSON.stringify({ bookSlug: "currency-market-structure" })
   }), env);
   assert.equal(unauthorizedQuote.status, 403);
 });
@@ -446,10 +458,10 @@ test("a pending tax decision keeps public checkout disabled even if the sales sw
     PAPERBACK_BASE_URL: "https://grizzly-parrot-paperback.example.workers.dev"
   };
   const response = await worker.fetch(new Request("https://grizzly-parrot-paperback.example.workers.dev/public-config?bookSlug=equity-market-structure"), env);
-  assert.deepEqual(await response.json(), { enabled: false, checkoutUrl: null });
+  assert.deepEqual(await response.json(), { enabled: false, checkoutUrl: null, edition: "paperback", priceCents: 3900 });
 });
 
-test("all three public paperback buttons remain disconnected", async () => {
+test("all three book pages expose fail-closed paperback and hardcover controls", async () => {
   const pages = [
     "currency-market-structure/index.html",
     "metals-market-structure/index.html",
@@ -457,11 +469,41 @@ test("all three public paperback buttons remain disconnected", async () => {
   ];
   for (const page of pages) {
     const html = await readFile(new URL(`../../../books/${page}`, import.meta.url), "utf8");
-    assert.match(html, /var paperbackCheckoutUrl = "";/);
     assert.match(html, /button-disabled js-paperback-buy/);
+    assert.match(html, /button-disabled js-hardcover-buy/);
     assert.match(html, /event\.preventDefault\(\);/);
     assert.match(html, /public-config\?bookSlug=/);
+    assert.match(html, /edition=' \+ item\.edition/);
     assert.match(html, /grizzly-parrot-paperback\.grizzlyparrott04\.workers\.dev/);
-    assert.match(html, /Safe default: the paperback button remains disabled/);
+    assert.match(html, /Safe default: this print button remains disabled/);
   }
+});
+
+test("hardcover activation is independent and returns the exact hardcover checkout", async () => {
+  const env = {
+    PAPERBACK_ENVIRONMENT: "production",
+    PAPERBACK_SALES_ENABLED: "false",
+    HARDCOVER_SALES_ENABLED: "true",
+    PAPERBACK_PROOFS_APPROVED: "true",
+    HARDCOVER_PROOFS_APPROVED: "true",
+    PAPERBACK_POLICIES_APPROVED: "true",
+    PAPERBACK_ALLOWED_COUNTRIES: "US",
+    PAPERBACK_STRIPE_TAX_ENABLED: "true",
+    PAPERBACK_BASE_URL: "https://grizzly-parrot-paperback.example.workers.dev"
+  };
+  const paperback = await worker.fetch(new Request("https://grizzly-parrot-paperback.example.workers.dev/public-config?bookSlug=currency-market-structure&edition=paperback"), env);
+  assert.equal((await paperback.json()).enabled, false);
+  const hardcover = await worker.fetch(new Request("https://grizzly-parrot-paperback.example.workers.dev/public-config?bookSlug=currency-market-structure&edition=hardcover"), env);
+  assert.deepEqual(await hardcover.json(), {
+    enabled: true,
+    checkoutUrl: "https://grizzly-parrot-paperback.example.workers.dev/print/checkout?bookSlug=currency-market-structure&edition=hardcover",
+    edition: "hardcover",
+    priceCents: 4900
+  });
+  const page = await worker.fetch(new Request("https://grizzly-parrot-paperback.example.workers.dev/print/checkout?bookSlug=currency-market-structure&edition=hardcover"), env);
+  assert.equal(page.status, 200);
+  const html = await page.text();
+  assert.match(html, /Hardcover checkout/);
+  assert.match(html, /\$49\.00 plus calculated shipping/);
+  assert.match(html, /data\.edition=edition/);
 });
