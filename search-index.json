@@ -4158,6 +4158,12 @@
     "category": "Market Basics"
   },
   {
+    "title": "TraderSync for Futures Traders: Features, Pricing, and Limits",
+    "url": "/platforms-tutorials/tradersync-futures-trading-journal-explained.html",
+    "description": "A factual TraderSync explainer for futures traders covering journal features, supported imports, pricing, replay limits, AI tools, and trial checks.",
+    "category": "Platforms & Tutorials"
+  },
+  {
     "title": "Trading Halt Rules and How Prop Firms Handle Halts",
     "url": "/prop-firm-trading/trading-halt-rules.html",
     "description": "Understand how futures trading halts work, why they happen, and how prop firms enforce rules when markets halt or volatility breakers are triggered.",
