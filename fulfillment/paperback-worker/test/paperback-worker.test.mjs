@@ -476,6 +476,7 @@ test("all three book pages expose fail-closed paperback and hardcover controls",
     assert.match(html, /edition=' \+ item\.edition/);
     assert.match(html, /grizzly-parrot-paperback\.grizzlyparrott04\.workers\.dev/);
     assert.match(html, /Safe default: this print button remains disabled/);
+    assert.match(html, /market-structure-series\.css\?v=20260804-buttonfix/);
     assert.match(html, />Buy digital</);
     assert.match(html, /label: 'Buy paperback'/);
     assert.match(html, /label: 'Buy hardcover'/);
