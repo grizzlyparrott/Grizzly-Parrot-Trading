@@ -1,4 +1,4 @@
-import { getBook, getStripePriceId, PAPERBACK_BOOKS, SHIPPING_OPTIONS } from "./catalog.mjs";
+import { getBook, getStripePriceId, PRINT_EDITIONS, SHIPPING_OPTIONS } from "./catalog.mjs";
 import { validateCheckoutRequest, addressesMatch, normalizeAddress, postcodesMatch, streetLinesMatch } from "./validation.mjs";
 import { verifyAssetRequest, constantTimeEqual } from "./crypto.mjs";
 import { LuluApiError, LuluClient, shippingCents } from "./lulu.mjs";
@@ -19,7 +19,7 @@ function json(body, status = 200, extraHeaders = {}) {
 
 function log(event, details = {}) {
   // Intentionally excludes buyer email and street address.
-  console.log(JSON.stringify({ component: "paperback-fulfillment", event, ...details }));
+  console.log(JSON.stringify({ component: "print-fulfillment", event, ...details }));
 }
 
 function publicError(code, message, status = 400) {
@@ -44,7 +44,8 @@ export function productionReadiness(env) {
     ? env.PAPERBACK_STRIPE_TAX_ENABLED
     : "pending";
   return {
-    proofsApproved: env.PAPERBACK_PROOFS_APPROVED === "true",
+    paperbackProofsApproved: env.PAPERBACK_PROOFS_APPROVED === "true",
+    hardcoverProofsApproved: env.HARDCOVER_PROOFS_APPROVED === "true",
     policiesApproved: env.PAPERBACK_POLICIES_APPROVED === "true",
     shippingCountriesConfigured: countries.length > 0,
     allowedCountries: countries,
@@ -52,25 +53,37 @@ export function productionReadiness(env) {
   };
 }
 
-function productionPrerequisitesReady(env) {
+function productionPrerequisitesReady(env, book) {
   const readiness = productionReadiness(env);
-  return readiness.proofsApproved
+  const proofsApproved = book?.edition === "hardcover"
+    ? readiness.hardcoverProofsApproved
+    : readiness.paperbackProofsApproved;
+  return proofsApproved
     && readiness.policiesApproved
     && readiness.shippingCountriesConfigured
     && readiness.stripeTaxDecision !== "pending";
 }
 
-function productionSalesEnabled(env) {
+function productionSalesEnabled(env, book) {
+  if (!book) return false;
+  const salesFlag = book.edition === "hardcover"
+    ? env.HARDCOVER_SALES_ENABLED
+    : env.PAPERBACK_SALES_ENABLED;
   return env.PAPERBACK_ENVIRONMENT === "production"
-    && env.PAPERBACK_SALES_ENABLED === "true"
-    && productionPrerequisitesReady(env);
+    && salesFlag === "true"
+    && productionPrerequisitesReady(env, book);
 }
 
-function privateOrderEnabled(env) {
+function editionSalesEnabled(env, edition) {
+  const books = Object.values(PRINT_EDITIONS).filter((book) => book.edition === edition);
+  return books.length > 0 && books.every((book) => productionSalesEnabled(env, book));
+}
+
+function privateOrderEnabled(env, book) {
   return env.PAPERBACK_ENVIRONMENT === "production"
-    && env.PAPERBACK_SALES_ENABLED !== "true"
+    && !productionSalesEnabled(env, book)
     && env.PAPERBACK_PRIVATE_ORDER_ENABLED === "true"
-    && productionPrerequisitesReady(env);
+    && productionPrerequisitesReady(env, book);
 }
 
 function testAuthorized(request, env) {
@@ -80,19 +93,19 @@ function testAuthorized(request, env) {
     && constantTimeEqual(supplied, env.PAPERBACK_TEST_TOKEN);
 }
 
-function privateOrderAuthorized(request, env) {
+function privateOrderAuthorized(request, env, book) {
   const supplied = request.headers.get("x-paperback-private-token") || "";
-  return privateOrderEnabled(env)
+  return privateOrderEnabled(env, book)
     && Boolean(env.PAPERBACK_PRIVATE_ORDER_TOKEN)
     && constantTimeEqual(supplied, env.PAPERBACK_PRIVATE_ORDER_TOKEN);
 }
 
-function checkoutAuthorized(request, env) {
+function checkoutAuthorized(request, env, book) {
   if (testAuthorized(request, env)) return { mode: "test" };
-  if (privateOrderAuthorized(request, env)) return { mode: "private_live_order" };
+  if (privateOrderAuthorized(request, env, book)) return { mode: "private_live_order" };
   const origin = request.headers.get("Origin");
   const workerOrigin = env.PAPERBACK_BASE_URL?.replace(/\/$/, "");
-  if (productionSalesEnabled(env) && (allowedOrigin(request, env) || origin === workerOrigin)) {
+  if (productionSalesEnabled(env, book) && (allowedOrigin(request, env) || origin === workerOrigin)) {
     return { mode: "production" };
   }
   return null;
@@ -206,9 +219,9 @@ async function emailOrderConfirmation(env, order, book) {
   const orderRef = order.stripe_session_id.slice(-8).toUpperCase();
   await sendEmail(env, {
     to: order.buyer_email,
-    subject: `Paperback order received — ${book.title}`,
+    subject: `${book.editionLabel} order received — ${book.title}`,
     html: `<p>Thank you for ordering <strong>${escapeHtml(book.title)}</strong>.</p>
-      <p>Your order reference is <strong>${orderRef}</strong>. Your paperback order has been sent to our print partner and we will email you when it ships.</p>
+      <p>Your order reference is <strong>${orderRef}</strong>. Your ${book.edition} order has been sent to our print partner and we will email you when it ships.</p>
       <p>If you need help, reply to this email and include that order reference.</p>`
   });
 }
@@ -218,16 +231,16 @@ async function emailShipmentNotice(env, order, book, status) {
   const detail = tracking.length ? `<p>${tracking.map(escapeHtml).join("<br>")}</p>` : "<p>Lulu has marked the order as shipped. Tracking may be supplied by the carrier shortly.</p>";
   await sendEmail(env, {
     to: order.buyer_email,
-    subject: `Your paperback has shipped — ${book.title}`,
+    subject: `Your ${book.edition} has shipped — ${book.title}`,
     html: `<p>Your copy of <strong>${escapeHtml(book.title)}</strong> has shipped.</p>${detail}`
   });
 }
 
-async function emailOrderNeedsAttention(env, order, reason) {
+async function emailOrderNeedsAttention(env, order, book, reason) {
   await sendEmail(env, {
     to: order.buyer_email,
-    subject: "We need to confirm your paperback shipping details",
-    html: `<p>Thank you for your paperback order. We need to confirm a shipping detail before it is sent to print.</p>
+    subject: `We need to confirm your ${book.edition} shipping details`,
+    html: `<p>Thank you for your ${book.edition} order. We need to confirm a shipping detail before it is sent to print.</p>
       <p>${escapeHtml(reason)}</p><p>Please reply to this email and include your order reference: <strong>${escapeHtml(order.stripe_session_id.slice(-8).toUpperCase())}</strong>.</p>`
   });
 }
@@ -243,12 +256,12 @@ function escapeHtml(value) {
 }
 
 async function createQuote(request, env) {
-  const authorization = checkoutAuthorized(request, env);
-  if (!authorization) return publicError("paperback_checkout_disabled", "Paperback checkout is not enabled.", 403).response;
   const input = await parseJson(request);
   if (!input) return publicError("invalid_json", "Request body must be JSON.").response;
-  const book = getBook(input.bookSlug);
-  if (!book) return publicError("unknown_book", "That paperback edition is not available.", 404).response;
+  const book = getBook(input.bookSlug, input.edition);
+  if (!book) return publicError("unknown_book", "That print edition is not available.", 404).response;
+  const authorization = checkoutAuthorized(request, env, book);
+  if (!authorization) return publicError("print_checkout_disabled", "Print checkout is not enabled for that edition.", 403).response;
   const validated = validateCheckoutRequest(input);
   if (!validated.ok) return json({ ok: false, code: "invalid_address", errors: validated.errors }, 422, cors(request, env));
   const countries = allowedCountries(env);
@@ -283,7 +296,7 @@ async function createQuote(request, env) {
     return json({
       ok: true,
       quoteId: quote.quoteId,
-      book: { slug: book.slug, title: book.title, paperbackCents: book.priceCents },
+      book: { slug: book.slug, seriesSlug: book.seriesSlug, edition: book.edition, title: book.title, priceCents: book.priceCents },
       shipping: { cents: quote.shippingCents, currency: quote.currency, option: shippingOption },
       expiresAt: quote.expiresAt
     }, 201, cors(request, env));
@@ -293,8 +306,6 @@ async function createQuote(request, env) {
 }
 
 async function createCheckout(request, env) {
-  const authorization = checkoutAuthorized(request, env);
-  if (!authorization) return publicError("paperback_checkout_disabled", "Paperback checkout is not enabled.", 403).response;
   const input = await parseJson(request);
   if (!input || typeof input.quoteId !== "string") return publicError("quote_required", "A shipping quote is required.").response;
   const store = new OrderStore(env.PAPERBACK_ORDERS);
@@ -303,7 +314,9 @@ async function createCheckout(request, env) {
   if (Date.parse(quote.expiresAt) < Date.now()) return publicError("quote_expired", "That shipping quote has expired. Please request a new quote.", 409).response;
   if (quote.sessionId) return publicError("checkout_already_created", "Checkout was already created for that quote.", 409).response;
   const book = getBook(quote.bookSlug);
-  if (!book) return publicError("unknown_book", "That paperback edition is not available.", 404).response;
+  if (!book) return publicError("unknown_book", "That print edition is not available.", 404).response;
+  const authorization = checkoutAuthorized(request, env, book);
+  if (!authorization) return publicError("print_checkout_disabled", "Print checkout is not enabled for that edition.", 403).response;
 
   try {
     const priceId = getStripePriceId(book, env);
@@ -356,7 +369,7 @@ async function submitPaidOrder(store, env, sessionId) {
     } catch (error) {
       log("confirmation_email_failed", { sessionId, message: error.message });
     }
-    await notifyAdmin(env, `Paperback order submitted: ${book.title}`, `<p>Stripe session: ${escapeHtml(sessionId)}</p><p>Lulu print job: ${escapeHtml(printJobId)}</p>`);
+    await notifyAdmin(env, `${book.editionLabel} order submitted: ${book.title}`, `<p>Stripe session: ${escapeHtml(sessionId)}</p><p>Lulu print job: ${escapeHtml(printJobId)}</p>`);
     log("lulu_submitted", { sessionId, book: book.slug, printJobId: String(printJobId) });
   } catch (error) {
     // A transport/5xx failure after the request starts is ambiguous: retrying it could
@@ -364,7 +377,7 @@ async function submitPaidOrder(store, env, sessionId) {
     const retryable = error instanceof LuluApiError && error.code === "lulu_auth_failed";
     const state = retryable ? "retryable_failure" : "manual_review";
     await store.markFailure(sessionId, state, error.code || "lulu_submit_failed", error.message, nowIso());
-    await notifyAdmin(env, `Paperback fulfillment needs review`, `<p>Stripe session: ${escapeHtml(sessionId)}</p><p>Reason: ${escapeHtml(error.code || "lulu_submit_failed")}</p>`);
+    await notifyAdmin(env, `${book.editionLabel} fulfillment needs review`, `<p>Stripe session: ${escapeHtml(sessionId)}</p><p>Reason: ${escapeHtml(error.code || "lulu_submit_failed")}</p>`);
     log("lulu_submission_failed", { sessionId, code: error.code || "lulu_submit_failed", state });
   }
 }
@@ -393,14 +406,15 @@ async function stripeWebhook(request, env) {
     return json({ ok: true, digitalPurchase: true, duplicate: !inserted });
   }
   if (event.type !== "checkout.session.completed") return json({ ok: true, ignored: "not_a_paid_digital_purchase" });
-  if (session.payment_status !== "paid" || session.metadata?.order_type !== "paperback") return json({ ok: true, ignored: "not_a_paid_paperback" });
+  const orderType = session.metadata?.order_type;
+  if (session.payment_status !== "paid" || !["print_book", "paperback"].includes(orderType)) return json({ ok: true, ignored: "not_a_paid_print_order" });
   const quoteId = session.metadata?.quote_id || session.client_reference_id;
   const book = getBook(session.metadata?.book_slug);
   const store = new OrderStore(env.PAPERBACK_ORDERS);
   const quote = quoteFromRow(await store.quote(quoteId));
   if (!book || !quote || quote.bookSlug !== book.slug || quote.sessionId !== session.id) {
     log("webhook_manual_review", { eventId: event.id, sessionId: session.id, reason: "quote_or_book_mismatch" });
-    await notifyAdmin(env, "Paperback payment needs review", `<p>Stripe session: ${escapeHtml(session.id || "unknown")}</p><p>Quote or book mapping did not match.</p>`);
+    await notifyAdmin(env, "Print-book payment needs review", `<p>Stripe session: ${escapeHtml(session.id || "unknown")}</p><p>Quote or book mapping did not match.</p>`);
     return json({ ok: true, state: "manual_review" });
   }
   const inserted = await store.insertPaidOrder({
@@ -426,9 +440,9 @@ async function stripeWebhook(request, env) {
   if (!addressesMatch(quote.address, sessionAddress(session))) {
     await store.markFailure(session.id, "address_mismatch", "stripe_address_mismatch", "The Stripe Checkout address did not match the address used for the Lulu shipping quote.", nowIso());
     const paidOrder = orderFromRow(await store.get(session.id));
-    try { await emailOrderNeedsAttention(env, paidOrder, "The address entered at payment did not match the address used to calculate shipping."); }
+    try { await emailOrderNeedsAttention(env, paidOrder, book, "The address entered at payment did not match the address used to calculate shipping."); }
     catch (error) { log("address_email_failed", { sessionId: session.id, message: error.message }); }
-    await notifyAdmin(env, "Paperback paid order has address mismatch", `<p>Stripe session: ${escapeHtml(session.id)}</p><p>Do not submit until the address is resolved.</p>`);
+    await notifyAdmin(env, `${book.editionLabel} paid order has address mismatch`, `<p>Stripe session: ${escapeHtml(session.id)}</p><p>Do not submit until the address is resolved.</p>`);
     log("webhook_address_mismatch", { eventId: event.id, sessionId: session.id });
     return json({ ok: true, state: "address_mismatch" });
   }
@@ -500,7 +514,7 @@ async function pollStatuses(env) {
         } catch (error) { log("shipment_email_failed", { sessionId: order.stripe_session_id, message: error.message }); }
       }
       if (["ERROR", "CANCELLED"].includes(nextStatus)) {
-        await notifyAdmin(env, "Paperback fulfillment needs review", `<p>Stripe session: ${escapeHtml(order.stripe_session_id)}</p><p>Lulu status: ${escapeHtml(nextStatus)}</p>`);
+        await notifyAdmin(env, `${book.editionLabel} fulfillment needs review`, `<p>Stripe session: ${escapeHtml(order.stripe_session_id)}</p><p>Lulu status: ${escapeHtml(nextStatus)}</p>`);
       }
     } catch (error) {
       log("lulu_status_poll_failed", { sessionId: order.stripe_session_id, code: error.code || "unknown", message: String(error.message || "") });
@@ -510,19 +524,22 @@ async function pollStatuses(env) {
 
 function renderCheckoutPage(book, env, { privateOrder = false } = {}) {
   const title = escapeHtml(book.title);
-  const slug = JSON.stringify(book.slug);
+  const seriesSlug = JSON.stringify(book.seriesSlug);
+  const edition = JSON.stringify(book.edition);
+  const editionLabel = escapeHtml(book.editionLabel);
+  const price = (book.priceCents / 100).toFixed(2);
   const defaultCountry = escapeHtml(allowedCountries(env)[0] || "");
   const privateTokenField = privateOrder
     ? '<label>Private order token<input required type="password" name="privateOrderToken" autocomplete="off"></label>'
     : "";
   const privateMode = JSON.stringify(privateOrder);
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Paperback checkout — ${title}</title><style>
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${editionLabel} checkout — ${title}</title><style>
     body{margin:0;background:#07100b;color:#f8faf7;font:16px/1.5 system-ui,sans-serif}.wrap{max-width:680px;margin:40px auto;padding:28px;background:#0d1711;border:1px solid #294235;border-radius:18px}h1{font:600 2rem Georgia,serif}a{color:#38f58a}label{display:block;margin:14px 0 5px}input,select{box-sizing:border-box;width:100%;padding:11px;border:1px solid #607366;border-radius:7px;font:inherit}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.legal{display:flex;align-items:flex-start;gap:10px;margin-top:20px}.legal input{width:auto;margin-top:5px}button{width:100%;margin-top:22px;padding:14px;background:#38f58a;color:#07100b;border:0;border-radius:999px;font-weight:800;font-size:1rem;cursor:pointer}button:disabled{opacity:.55;cursor:wait}.note,#result{color:#c5d0c8}.error{color:#ffb4a7}@media(max-width:600px){.wrap{margin:0;border-radius:0;min-height:100vh}.grid{grid-template-columns:1fr}}</style></head><body><main class="wrap">
-    <p class="note">Grizzly Parrot Trading · paperback edition</p><h1>${title}</h1><p>$39.00 plus calculated shipping.</p>
+    <p class="note">Grizzly Parrot Trading · ${editionLabel.toLowerCase()} edition</p><h1>${title}</h1><p>$${price} plus calculated shipping.</p>
     <p class="note">U.S. shipping only. Your contact and delivery details are used to calculate shipping, fulfill the order, and provide order updates.</p>
     <form id="checkout">${privateTokenField}<label>Email<input required type="email" name="buyerEmail" autocomplete="email"></label><label>Recipient name<input required name="name" autocomplete="name"></label><label>Street address<input required name="street1" autocomplete="address-line1"></label><label>Apartment, suite, etc. (optional)<input name="street2" autocomplete="address-line2"></label><div class="grid"><label>City<input required name="city" autocomplete="address-level2"></label><label>State<input required name="stateCode" autocomplete="address-level1" maxlength="2"></label></div><div class="grid"><label>Postal code<input required name="postcode" autocomplete="postal-code"></label><label>Country code<input required name="countryCode" value="${defaultCountry}" maxlength="2" autocomplete="country" readonly aria-readonly="true"></label></div><label>Phone number<input required name="phoneNumber" autocomplete="tel"></label><label>Shipping service<select name="shippingOption"><option value="MAIL">Mail</option><option value="PRIORITY_MAIL">Priority mail</option><option value="EXPEDITED">Expedited</option><option value="EXPRESS">Express</option></select></label><label class="legal"><input required type="checkbox" name="policyAccepted" value="yes"><span>I agree to the <a href="https://grizzlyparrottrading.com/store-policy.html" target="_blank" rel="noopener">Store Policy</a> and acknowledge the <a href="https://grizzlyparrottrading.com/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span></label><button id="submit" type="submit">Calculate shipping and continue</button><p id="result" aria-live="polite"></p></form></main><script>
-    const bookSlug=${slug}; const privateOrder=${privateMode}; const form=document.getElementById('checkout'); const result=document.getElementById('result'); const button=document.getElementById('submit');
-    form.addEventListener('submit',async(event)=>{event.preventDefault();button.disabled=true;result.className='note';result.textContent='Calculating shipping…';const data=Object.fromEntries(new FormData(form));const privateOrderToken=data.privateOrderToken||'';delete data.privateOrderToken;const headers={'content-type':'application/json'};if(privateOrder)headers['x-paperback-private-token']=privateOrderToken;data.bookSlug=bookSlug;data.quantity=1;data.shippingAddress={name:data.name,street1:data.street1,street2:data.street2,city:data.city,stateCode:data.stateCode.toUpperCase(),postcode:data.postcode,countryCode:data.countryCode.toUpperCase(),phoneNumber:data.phoneNumber};try{const quoteResponse=await fetch('/paperback/quote',{method:'POST',headers,body:JSON.stringify(data)});const quote=await quoteResponse.json();if(!quoteResponse.ok)throw new Error((quote.errors||[quote.message||'Unable to calculate shipping.']).join(' '));result.textContent='Shipping: '+(quote.shipping.cents/100).toFixed(2)+' '+quote.shipping.currency+'. Opening secure checkout…';const checkoutResponse=await fetch('/paperback/checkout',{method:'POST',headers,body:JSON.stringify({quoteId:quote.quoteId})});const checkout=await checkoutResponse.json();if(!checkoutResponse.ok)throw new Error(checkout.message||'Unable to create checkout.');location.assign(checkout.checkoutUrl);}catch(error){result.className='error';result.textContent=error.message;button.disabled=false;}});
+    const bookSlug=${seriesSlug}; const edition=${edition}; const privateOrder=${privateMode}; const form=document.getElementById('checkout'); const result=document.getElementById('result'); const button=document.getElementById('submit');
+    form.addEventListener('submit',async(event)=>{event.preventDefault();button.disabled=true;result.className='note';result.textContent='Calculating shipping…';const data=Object.fromEntries(new FormData(form));const privateOrderToken=data.privateOrderToken||'';delete data.privateOrderToken;const headers={'content-type':'application/json'};if(privateOrder)headers['x-paperback-private-token']=privateOrderToken;data.bookSlug=bookSlug;data.edition=edition;data.quantity=1;data.shippingAddress={name:data.name,street1:data.street1,street2:data.street2,city:data.city,stateCode:data.stateCode.toUpperCase(),postcode:data.postcode,countryCode:data.countryCode.toUpperCase(),phoneNumber:data.phoneNumber};try{const quoteResponse=await fetch('/print/quote',{method:'POST',headers,body:JSON.stringify(data)});const quote=await quoteResponse.json();if(!quoteResponse.ok)throw new Error((quote.errors||[quote.message||'Unable to calculate shipping.']).join(' '));result.textContent='Shipping: '+(quote.shipping.cents/100).toFixed(2)+' '+quote.shipping.currency+'. Opening secure checkout…';const checkoutResponse=await fetch('/print/checkout',{method:'POST',headers,body:JSON.stringify({quoteId:quote.quoteId})});const checkout=await checkoutResponse.json();if(!checkoutResponse.ok)throw new Error(checkout.message||'Unable to create checkout.');location.assign(checkout.checkoutUrl);}catch(error){result.className='error';result.textContent=error.message;button.disabled=false;}});
   </script></body></html>`;
 }
 
@@ -538,7 +555,7 @@ function providerError(error, request, env, action) {
 
 async function serveAsset(request, env, pathname) {
   const assetKey = decodeURIComponent(pathname.slice("/lulu-assets/".length));
-  const permittedAssetKeys = new Set(Object.values(PAPERBACK_BOOKS).flatMap((book) => [book.assets.interiorKey, book.assets.coverKey]));
+  const permittedAssetKeys = new Set(Object.values(PRINT_EDITIONS).flatMap((book) => [book.assets.interiorKey, book.assets.coverKey]));
   if (!permittedAssetKeys.has(assetKey)) return new Response("Not found", { status: 404 });
   const url = new URL(request.url);
   const authorized = await verifyAssetRequest(assetKey, url.searchParams.get("expires"), url.searchParams.get("sig"), env.PAPERBACK_ASSET_SIGNING_SECRET || "");
@@ -555,29 +572,36 @@ export default {
     if (request.method === "GET" && url.pathname === "/health") {
       return json({
         ok: true,
-        paperbackSalesEnabled: productionSalesEnabled(env),
-        privateOrderEnabled: privateOrderEnabled(env),
+        paperbackSalesEnabled: editionSalesEnabled(env, "paperback"),
+        hardcoverSalesEnabled: editionSalesEnabled(env, "hardcover"),
+        privateOrderEnabled: env.PAPERBACK_PRIVATE_ORDER_ENABLED === "true",
         environment: env.PAPERBACK_ENVIRONMENT,
         readiness: productionReadiness(env)
       });
     }
     if (request.method === "GET" && url.pathname === "/public-config") {
-      const book = getBook(url.searchParams.get("bookSlug"));
-      return json({ enabled: Boolean(book && productionSalesEnabled(env)), checkoutUrl: book && productionSalesEnabled(env) ? `${env.PAPERBACK_BASE_URL.replace(/\/$/, "")}/paperback/checkout?bookSlug=${encodeURIComponent(book.slug)}` : null }, 200, cors(request, env));
+      const book = getBook(url.searchParams.get("bookSlug"), url.searchParams.get("edition"));
+      const enabled = Boolean(book && productionSalesEnabled(env, book));
+      const checkoutUrl = enabled
+        ? `${env.PAPERBACK_BASE_URL.replace(/\/$/, "")}/print/checkout?bookSlug=${encodeURIComponent(book.seriesSlug)}&edition=${encodeURIComponent(book.edition)}`
+        : null;
+      return json({ enabled, checkoutUrl, edition: book?.edition || null, priceCents: book?.priceCents || null }, 200, cors(request, env));
     }
-    if (request.method === "GET" && url.pathname === "/paperback/checkout") {
-      const book = getBook(url.searchParams.get("bookSlug"));
-      if (!book || !productionSalesEnabled(env)) return new Response("Not found", { status: 404 });
+    if (request.method === "GET" && ["/print/checkout", "/paperback/checkout"].includes(url.pathname)) {
+      const requestedEdition = url.pathname === "/paperback/checkout" ? "paperback" : url.searchParams.get("edition");
+      const book = getBook(url.searchParams.get("bookSlug"), requestedEdition);
+      if (!book || !productionSalesEnabled(env, book)) return new Response("Not found", { status: 404 });
       return new Response(renderCheckoutPage(book, env), { headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" } });
     }
-    if (request.method === "GET" && url.pathname === "/paperback/private-order") {
-      const book = getBook(url.searchParams.get("bookSlug"));
-      if (!book || !privateOrderEnabled(env)) return new Response("Not found", { status: 404 });
+    if (request.method === "GET" && ["/print/private-order", "/paperback/private-order"].includes(url.pathname)) {
+      const requestedEdition = url.pathname === "/paperback/private-order" ? "paperback" : url.searchParams.get("edition");
+      const book = getBook(url.searchParams.get("bookSlug"), requestedEdition);
+      if (!book || !privateOrderEnabled(env, book)) return new Response("Not found", { status: 404 });
       return new Response(renderCheckoutPage(book, env, { privateOrder: true }), { headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" } });
     }
     if (request.method === "GET" && url.pathname.startsWith("/lulu-assets/")) return serveAsset(request, env, url.pathname);
-    if (request.method === "POST" && url.pathname === "/paperback/quote") return createQuote(request, env);
-    if (request.method === "POST" && url.pathname === "/paperback/checkout") return createCheckout(request, env);
+    if (request.method === "POST" && ["/print/quote", "/paperback/quote"].includes(url.pathname)) return createQuote(request, env);
+    if (request.method === "POST" && ["/print/checkout", "/paperback/checkout"].includes(url.pathname)) return createCheckout(request, env);
     if (request.method === "POST" && url.pathname === "/digital-conversion/claim") return claimDigitalConversion(request, env);
     if (request.method === "POST" && url.pathname === "/webhooks/stripe") return stripeWebhook(request, env);
     return json({ ok: false, code: "not_found" }, 404);

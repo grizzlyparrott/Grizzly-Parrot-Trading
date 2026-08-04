@@ -1,6 +1,6 @@
-# Paperback fulfillment worker
+# Print-book fulfillment worker
 
-This Worker owns paperback fulfillment. It also records a minimal, isolated Microsoft UET attribution row for each verified $29 digital Payment Link purchase; it does **not** replace or modify digital delivery.
+This Worker owns paperback and hardcover fulfillment. It also records a minimal, isolated Microsoft UET attribution row for each verified $29 digital Payment Link purchase; it does **not** replace or modify digital delivery.
 
 ## Safety gate
 
@@ -17,11 +17,11 @@ The default configuration is safe:
 
 ## Architecture
 
-1. A checkout UI sends the buyer's address to `POST /paperback/quote`.
+1. A checkout UI sends the buyer's address and chosen edition to `POST /print/quote`.
 2. The Worker validates the address locally and asks Lulu's Print API for an address-specific shipping quote.
-3. The quote is stored in D1 for 30 minutes. `POST /paperback/checkout` creates one Stripe Checkout Session using the configured paperback Price plus the quoted Lulu shipping amount. Stripe Tax is included only when the explicit tax setting is `true`.
+3. The quote is stored in D1 for 30 minutes. `POST /print/checkout` creates one Stripe Checkout Session using the configured edition Price plus the quoted Lulu shipping amount. Stripe Tax is included only when the explicit tax setting is `true`.
 4. Stripe collects the shipping address again. The webhook verifies Stripe's signature, verifies the address stayed the same, and writes one D1 row keyed by the Stripe Checkout Session ID.
-5. The Worker submits the corresponding Lulu Print API job using the exact paperback POD package and signed R2 PDF URLs. It never uses a Lulu Publishing project ID as an API order ID.
+5. The Worker submits the corresponding Lulu Print API job using the exact paperback or case-wrap hardcover POD package and signed R2 PDF URLs. It never uses a Lulu Publishing project ID as an API order ID.
 6. D1 prevents duplicate Stripe webhook delivery from creating a second print job. Ambiguous Lulu submission failures are held for manual review rather than retried into a possible duplicate print.
 7. A scheduled Worker run polls Lulu status every 15 minutes and sends confirmation/shipment emails through Resend.
 8. The same scheduled run deletes expired shipping quotes, so abandoned checkout emails and addresses are not retained after the 30-minute quote window.
@@ -99,4 +99,4 @@ Do not change the book buttons first. After all three proofs and the store-polic
 5. Set `PAPERBACK_PRIVATE_ORDER_ENABLED=false` after the one private order.
 6. Only after the live order passes, deliberately set `PAPERBACK_SALES_ENABLED=true`. The three book pages remain disabled unless `/public-config` reports every gate ready; no button markup edit is needed.
 
-Hardcovers are intentionally absent from this worker.
+The catalog contains all three approved paperbacks and all three approved case-wrap hardcovers. Paperback and hardcover sales have independent proof and activation gates.

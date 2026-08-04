@@ -7,9 +7,11 @@ keep_vars = true
 # Production is configured now, but this explicit gate keeps every paperback
 # checkout unavailable until the physical proofs are approved.
 [vars]
-PAPERBACK_SALES_ENABLED = "false"
+PAPERBACK_SALES_ENABLED = "true"
+HARDCOVER_SALES_ENABLED = "true"
 PAPERBACK_PRIVATE_ORDER_ENABLED = "false"
 PAPERBACK_PROOFS_APPROVED = "true"
+HARDCOVER_PROOFS_APPROVED = "true"
 PAPERBACK_POLICIES_APPROVED = "true"
 PAPERBACK_ALLOWED_COUNTRIES = "US"
 # Stripe Tax is enabled in Checkout. Stripe calculates tax only for locations
@@ -32,6 +34,9 @@ STRIPE_PAYMENT_LINK_EQUITY_DIGITAL = "plink_1TvLgXIA3p8RBkZIZ0x8nKlu"
 STRIPE_PRICE_CURRENCY_PAPERBACK = "price_1Tvc5kIA3p8RBkZIifTkKIps"
 STRIPE_PRICE_METALS_PAPERBACK = "price_1TvcfHIA3p8RBkZICIkp2C8c"
 STRIPE_PRICE_EQUITY_PAPERBACK = "price_1TvchoIA3p8RBkZI74lfin4W"
+STRIPE_PRICE_CURRENCY_HARDCOVER = "price_1U0r1aIA3p8RBkZI5koICIGI"
+STRIPE_PRICE_METALS_HARDCOVER = "price_1U0qwrIA3p8RBkZIjgMBc1YF"
+STRIPE_PRICE_EQUITY_HARDCOVER = "price_1U0r01IA3p8RBkZIPBv0lOpM"
 
 [[d1_databases]]
 binding = "PAPERBACK_ORDERS"

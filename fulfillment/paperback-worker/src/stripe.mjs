@@ -51,8 +51,10 @@ export class StripeClient {
       cancel_url: this.env.PAPERBACK_CANCEL_URL,
       customer_email: customerEmail,
       client_reference_id: quote.quoteId,
-      "metadata[order_type]": "paperback",
+      "metadata[order_type]": "print_book",
       "metadata[book_slug]": book.slug,
+      "metadata[series_slug]": book.seriesSlug,
+      "metadata[edition]": book.edition,
       "metadata[quote_id]": quote.quoteId,
       "metadata[pipeline_version]": "1",
       "metadata[checkout_mode]": checkoutMode,
@@ -71,7 +73,7 @@ export class StripeClient {
       fields["shipping_options[0][shipping_rate_data][tax_behavior]"] = "exclusive";
       fields["shipping_options[0][shipping_rate_data][tax_code]"] = "txcd_92010001";
     }
-    return this.request("/checkout/sessions", fields, `paperback-checkout-${quote.quoteId}`);
+    return this.request("/checkout/sessions", fields, `print-checkout-${quote.quoteId}`);
   }
 }
 

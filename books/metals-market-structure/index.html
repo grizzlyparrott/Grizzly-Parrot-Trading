@@ -87,21 +87,21 @@
 
           <div class="hero-points" aria-label="Book highlights">
             <div><strong>10</strong><span>chapters</span></div>
-            <div><strong>Digital + print</strong><span>two editions</span></div>
-            <div><strong>$29 / $39</strong><span>digital / paperback</span></div>
+            <div><strong>Digital + print</strong><span>three editions</span></div>
+            <div><strong>$29 / $39 / $49</strong><span>digital / paperback / hardcover</span></div>
           </div>
 
           <div class="hero-actions">
             <a class="button" href="#purchase">Choose your edition</a>
           </div>
-          <p class="checkout-note">Digital delivery is live. Paperback checkout opens after the print proof is approved.</p>
+          <p class="checkout-note">Digital, paperback, and hardcover editions are available now.</p>
         </div>
 
         <aside class="cover-panel" aria-label="Metals Market Structure book cover and purchase summary">
           <div class="cover-glow"></div>
           <img src="metals-market-structure-cover.png" alt="Cover of Metals Market Structure, Volume II by Kyle Parrott">
           <div class="cover-caption">
-            <span>Digital + paperback editions</span>
+            <span>Digital + paperback + hardcover</span>
             <strong>From $29</strong>
           </div>
         </aside>
@@ -165,10 +165,10 @@
       <div class="shell purchase-card">
         <div>
           <h2>Know what changes when the regime does.</h2>
-          <p>Choose instant digital delivery or a 6 &times; 9 inch paperback printed and shipped on demand.</p>
+          <p>Choose instant digital delivery, a 6 &times; 9 inch paperback, or a 6 &times; 9 inch case-wrap hardcover printed and shipped on demand.</p>
           <ul>
             <li>Digital includes both PDF and EPUB files</li>
-            <li>Paperback is a professionally bound physical copy</li>
+            <li>Paperback and hardcover are professionally bound physical copies</li>
             <li>One-time purchase through secure Stripe checkout</li>
           </ul>
         </div>
@@ -184,8 +184,15 @@
             <span>Paperback edition</span>
             <strong>$39</strong>
             <small>USD &middot; shipping extra</small>
-            <a class="button button-secondary button-wide button-disabled js-paperback-buy" href="#purchase" aria-disabled="true">Paperback coming shortly</a>
-            <p data-paperback-note>Print proof and fulfillment connection in progress.</p>
+            <a class="button button-secondary button-wide button-disabled js-paperback-buy" href="#purchase" aria-disabled="true">Loading paperback checkout</a>
+            <p>Printed and shipped on demand.</p>
+          </div>
+          <div class="price-box is-hardcover">
+            <span>Hardcover edition</span>
+            <strong>$49</strong>
+            <small>USD &middot; shipping extra</small>
+            <a class="button button-secondary button-wide button-disabled js-hardcover-buy" href="#purchase" aria-disabled="true">Loading hardcover checkout</a>
+            <p>Case-wrap hardcover, printed and shipped on demand.</p>
           </div>
         </div>
       </div>
@@ -214,9 +221,11 @@
   <script>
     (function () {
       var checkoutUrl = "https://buy.stripe.com/dRmbJ2dSl2061Ta0UE2Nq02";
-      var paperbackCheckoutUrl = "";
       var buttons = document.querySelectorAll('.js-buy');
-      var paperbackButtons = document.querySelectorAll('.js-paperback-buy');
+      var printEditions = [
+        {edition: 'paperback', selector: '.js-paperback-buy', label: 'Buy paperback edition', checkoutUrl: ''},
+        {edition: 'hardcover', selector: '.js-hardcover-buy', label: 'Buy hardcover edition', checkoutUrl: ''}
+      ];
 
       buttons.forEach(function (button) {
         button.href = checkoutUrl;
@@ -237,13 +246,13 @@
         });
       });
 
-      function updatePaperbackButtons() {
-        paperbackButtons.forEach(function (button) {
-          if (paperbackCheckoutUrl) {
-            button.href = paperbackCheckoutUrl;
+      function updatePrintButtons(item) {
+        document.querySelectorAll(item.selector).forEach(function (button) {
+          if (item.checkoutUrl) {
+            button.href = item.checkoutUrl;
             button.target = '_blank';
             button.rel = 'noopener';
-            button.textContent = 'Buy paperback edition';
+            button.textContent = item.label;
             button.removeAttribute('aria-disabled');
             button.classList.remove('button-disabled');
           } else {
@@ -254,22 +263,23 @@
         });
       }
 
-      paperbackButtons.forEach(function (button) {
-        button.addEventListener('click', function (event) {
-          if (!paperbackCheckoutUrl) event.preventDefault();
+      printEditions.forEach(function (item) {
+        document.querySelectorAll(item.selector).forEach(function (button) {
+          button.addEventListener('click', function (event) {
+            if (!item.checkoutUrl) event.preventDefault();
+          });
         });
+        updatePrintButtons(item);
+        fetch('https://grizzly-parrot-paperback.grizzlyparrott04.workers.dev/public-config?bookSlug=metals-market-structure&edition=' + item.edition, {credentials: 'omit'})
+          .then(function (response) { return response.ok ? response.json() : null; })
+          .then(function (config) {
+            if (config && config.enabled === true && typeof config.checkoutUrl === 'string' && config.checkoutUrl.indexOf('https://') === 0) {
+              item.checkoutUrl = config.checkoutUrl;
+              updatePrintButtons(item);
+            }
+          })
+          .catch(function () { /* Safe default: this print button remains disabled. */ });
       });
-      updatePaperbackButtons();
-
-      fetch('https://grizzly-parrot-paperback.grizzlyparrott04.workers.dev/public-config?bookSlug=metals-market-structure', {credentials: 'omit'})
-        .then(function (response) { return response.ok ? response.json() : null; })
-        .then(function (config) {
-          if (config && config.enabled === true && typeof config.checkoutUrl === 'string' && config.checkoutUrl.indexOf('https://') === 0) {
-            paperbackCheckoutUrl = config.checkoutUrl;
-            updatePaperbackButtons();
-          }
-        })
-        .catch(function () { /* Safe default: the paperback button remains disabled. */ });
       document.getElementById('year').textContent = new Date().getFullYear();
     })();
   </script>
