@@ -399,7 +399,13 @@ test("a public paperback checkout exists only after every explicit production pr
   });
   const checkoutResponse = await worker.fetch(new Request("https://grizzly-parrot-paperback.example.workers.dev/paperback/checkout?bookSlug=metals-market-structure"), env);
   assert.equal(checkoutResponse.status, 200);
-  assert.match(await checkoutResponse.text(), /Calculate shipping and continue/);
+  const checkoutHtml = await checkoutResponse.text();
+  assert.match(checkoutHtml, /Calculate shipping and continue/);
+  assert.match(checkoutHtml, /U\.S\. shipping only/);
+  assert.match(checkoutHtml, /store-policy\.html/);
+  assert.match(checkoutHtml, /privacy\.html/);
+  assert.match(checkoutHtml, /name="policyAccepted"/);
+  assert.match(checkoutHtml, /name="countryCode"[^>]+readonly/);
 });
 
 test("the private live-order page can open while every public paperback stays disabled", async () => {
