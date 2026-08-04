@@ -12,7 +12,9 @@ PAPERBACK_PRIVATE_ORDER_ENABLED = "false"
 PAPERBACK_PROOFS_APPROVED = "true"
 PAPERBACK_POLICIES_APPROVED = "true"
 PAPERBACK_ALLOWED_COUNTRIES = "US"
-PAPERBACK_STRIPE_TAX_ENABLED = "pending"
+# Stripe Tax is enabled in Checkout. Stripe calculates tax only for locations
+# with an active registration in the Stripe dashboard.
+PAPERBACK_STRIPE_TAX_ENABLED = "true"
 PAPERBACK_ENVIRONMENT = "production"
 PAPERBACK_BASE_URL = "https://grizzly-parrot-paperback.grizzlyparrott04.workers.dev"
 PAPERBACK_SUCCESS_URL = "https://grizzlyparrottrading.com/books/paperback-order-confirmation.html"
