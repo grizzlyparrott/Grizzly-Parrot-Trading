@@ -335,6 +335,26 @@ test("order store reports duplicate Stripe session insertion instead of submitti
   assert.equal(await store.insertPaidOrder(order), false);
 });
 
+test("scheduled cleanup deletes expired quotes without retaining abandoned customer addresses", async () => {
+  const calls = [];
+  const db = {
+    prepare(sql) {
+      calls.push({ sql, args: null });
+      return {
+        bind(...args) {
+          calls[calls.length - 1].args = args;
+          return { async run() { return { meta: { changes: 3 } }; } };
+        }
+      };
+    }
+  };
+  const store = new OrderStore(db);
+  const now = "2026-08-04T20:00:00.000Z";
+  assert.equal(await store.deleteExpiredQuotes(now), 3);
+  assert.match(calls[0].sql, /DELETE FROM paperback_quotes WHERE expires_at < \?/);
+  assert.deepEqual(calls[0].args, [now]);
+});
+
 test("default deployment is unable to sell paperbacks and reports sales disabled", async () => {
   const response = await worker.fetch(new Request("https://paperback-api.example.com/health"), { PAPERBACK_SALES_ENABLED: "false", PAPERBACK_ENVIRONMENT: "sandbox" });
   assert.deepEqual(await response.json(), {

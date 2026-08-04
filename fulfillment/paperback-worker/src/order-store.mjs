@@ -18,6 +18,12 @@ export class OrderStore {
       .bind(sessionId, quoteId).run();
   }
 
+  async deleteExpiredQuotes(now) {
+    const result = await this.db.prepare("DELETE FROM paperback_quotes WHERE expires_at < ?")
+      .bind(now).run();
+    return Number(result.meta?.changes || 0);
+  }
+
   async insertPaidOrder(order) {
     const result = await this.db.prepare(`INSERT OR IGNORE INTO paperback_orders
       (stripe_session_id, stripe_event_id, quote_id, book_slug, quantity, buyer_email, shipping_address_json,

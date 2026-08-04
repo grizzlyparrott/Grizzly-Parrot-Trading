@@ -24,6 +24,7 @@ The default configuration is safe:
 5. The Worker submits the corresponding Lulu Print API job using the exact paperback POD package and signed R2 PDF URLs. It never uses a Lulu Publishing project ID as an API order ID.
 6. D1 prevents duplicate Stripe webhook delivery from creating a second print job. Ambiguous Lulu submission failures are held for manual review rather than retried into a possible duplicate print.
 7. A scheduled Worker run polls Lulu status every 15 minutes and sends confirmation/shipment emails through Resend.
+8. The same scheduled run deletes expired shipping quotes, so abandoned checkout emails and addresses are not retained after the 30-minute quote window.
 
 Digital Payment Link events take a separate path. A signed Stripe `checkout.session.completed` or `checkout.session.async_payment_succeeded` event is accepted only when it is paid, totals exactly $29 USD, and matches one of the three configured live Payment Link IDs. D1 permits the corresponding UET purchase event to be claimed once, so page visits, checkout opens, unpaid sessions, and confirmation-page refreshes cannot create purchases.
 
@@ -58,7 +59,7 @@ These IDs document the existing proof copies. Lulu Direct's Print API instead ne
 
    Replace all three with new **live** Stripe Price IDs before any production activation.
 5. Apply `migrations/0002_private_launch_and_tax.sql` and `migrations/0003_digital_uet_conversions.sql` once to the existing D1 database.
-6. Run `node scripts/print-asset-manifest.mjs` and execute the generated R2 upload commands only after the physical proofs are approved.
+6. Run `node scripts/print-asset-manifest.mjs "C:\\absolute\\path\\to\\POD Production"` and execute the generated R2 upload commands only after the physical proofs are approved. The explicit path prevents an older or relocated worktree from selecting the wrong files.
 7. In Stripe, send `checkout.session.completed` and `checkout.session.async_payment_succeeded` to `/webhooks/stripe`. Use a sandbox/test endpoint first.
 8. In Lulu's **separate sandbox Print API account**, add a test card on file. Lulu holds API print jobs in `UNPAID` until a card is on file for automatic payment.
 
