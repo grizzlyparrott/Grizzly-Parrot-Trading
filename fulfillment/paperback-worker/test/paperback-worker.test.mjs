@@ -461,7 +461,7 @@ test("a pending tax decision keeps public checkout disabled even if the sales sw
   assert.deepEqual(await response.json(), { enabled: false, checkoutUrl: null, edition: "paperback", priceCents: 3900 });
 });
 
-test("all three book pages expose fail-closed paperback and hardcover controls", async () => {
+test("all book pages keep print controls fail-closed and use the canonical site branding", async () => {
   const pages = [
     "currency-market-structure/index.html",
     "metals-market-structure/index.html",
@@ -476,16 +476,26 @@ test("all three book pages expose fail-closed paperback and hardcover controls",
     assert.match(html, /edition=' \+ item\.edition/);
     assert.match(html, /grizzly-parrot-paperback\.grizzlyparrott04\.workers\.dev/);
     assert.match(html, /Safe default: this print button remains disabled/);
-    assert.match(html, /market-structure-series\.css\?v=20260804-buttonfix/);
+    assert.match(html, /market-structure-series\.css\?v=20260804-site-brand/);
+    assert.match(html, /<div class="logo">\s*<span class="logo-mark" aria-hidden="true">GP<\/span>\s*<span class="logo-text"><a href="https:\/\/grizzlyparrottrading\.com\/">Grizzly Parrot Trading<\/a><\/span>\s*<\/div>/s);
+    assert.doesNotMatch(html, /class="brand-mark"/);
     assert.match(html, />Buy digital</);
     assert.match(html, /label: 'Buy paperback'/);
     assert.match(html, /label: 'Buy hardcover'/);
     assert.doesNotMatch(html, /Buy (?:digital|paperback|hardcover) edition/);
   }
   const css = await readFile(new URL("../../../books/market-structure-series.css", import.meta.url), "utf8");
+  assert.match(css, /\.site-header\s*\{[^}]*background:\s*rgba\(15,23,42,\.95\);/s);
+  assert.match(css, /\.logo-mark\s*\{[^}]*border-radius:\s*999px;/s);
+  assert.doesNotMatch(css, /\.brand-mark/);
   assert.match(css, /\.price-box \.button\s*\{[^}]*white-space:\s*normal;/s);
   assert.match(css, /@media \(max-width:\s*1040px\)\s*\{\s*\.purchase-card\s*\{\s*grid-template-columns:\s*1fr;/s);
   assert.match(css, /@media \(max-width:\s*760px\)\s*\{\s*\.edition-options\s*\{\s*grid-template-columns:\s*1fr;/s);
+
+  const catalog = await readFile(new URL("../../../books/index.html", import.meta.url), "utf8");
+  assert.match(catalog, /<span class="logo-mark" aria-hidden="true">GP<\/span>/);
+  assert.match(catalog, /<span class="logo-text"><a href="https:\/\/grizzlyparrottrading\.com\/">Grizzly Parrot Trading<\/a><\/span>/);
+  assert.doesNotMatch(catalog, /<nav class="main-nav">\s*<ul>/s);
 });
 
 test("hardcover activation is independent and returns the exact hardcover checkout", async () => {
