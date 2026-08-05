@@ -3,43 +3,40 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Static Drawdown vs Trailing Drawdown: What Prop Firm Traders Must Know</title>
-  <meta name="description" content="A blunt breakdown of static drawdown vs trailing drawdown, how each one works, and why most traders fail evaluations because they don’t understand the difference.">
+  <title>Static vs. Trailing Drawdown in Futures Prop Accounts</title>
+  <meta name="description" content="Authoritative guide to static, real-time trailing, and end-of-day drawdown: formulas, enforcement timing, worked examples, and an interactive comparison tool.">
   <meta name="robots" content="index, follow">
 
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/prop-firm-trading/static-vs-trailing-drawdown.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Static Drawdown vs Trailing Drawdown: What Prop Firm Traders Must Know">
-  <meta property="og:description" content="A blunt breakdown of static drawdown vs trailing drawdown, how each one works, and why most traders fail evaluations because they don’t understand the difference.">
+  <meta property="og:title" content="Static vs. Trailing Drawdown in Futures Prop Accounts: The Complete Rule-Mechanics Guide">
+  <meta property="og:description" content="Understand what moves a prop-account breach floor, when it moves, what equity is monitored, and how much usable room actually remains.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/prop-firm-trading/static-vs-trailing-drawdown.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Grizzly Parrot Trading educational futures guide">
+  <meta property="article:published_time" content="2025-11-22">
+  <meta property="article:modified_time" content="2026-08-05">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Static vs. Trailing Drawdown in Futures Prop Accounts">
+  <meta name="twitter:description" content="A rule-first guide to static, intraday trailing, and end-of-day trailing drawdown, with formulas and an interactive comparison tool.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Static Drawdown vs Trailing Drawdown: What Prop Firm Traders Must Know">
-  <meta name="twitter:description" content="A blunt breakdown of static drawdown vs trailing drawdown, how each one works, and why most traders fail evaluations because they don’t understand the difference.">
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading educational futures guide">
 
   <link rel="stylesheet" href="../style.css">
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -48,62 +45,105 @@
     gtag('config', 'G-JMJVR3G5YN');
   </script>
 
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Static Drawdown vs Trailing Drawdown: What Prop Firm Traders Must Know",
-  "description": "A blunt breakdown of static drawdown vs trailing drawdown, how each one works, and why most traders fail evaluations because they don’t understand the difference.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/prop-firm-trading/static-vs-trailing-drawdown.html",
-  "datePublished": "2025-11-22",
-  "dateModified": "2025-11-22",
-  "url": "https://grizzlyparrottrading.com/prop-firm-trading/static-vs-trailing-drawdown.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Static vs. Trailing Drawdown in Futures Prop Accounts: The Complete Rule-Mechanics Guide",
+    "description": "An authoritative guide to static, real-time trailing, and end-of-day trailing drawdown, including formulas, enforcement timing, worked examples, and an interactive comparison tool.",
+    "author": {
+      "@type": "Organization",
+      "name": "Grizzly Parrot Trading",
+      "url": "https://grizzlyparrottrading.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grizzly Parrot Trading",
+      "url": "https://grizzlyparrottrading.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://grizzlyparrottrading.com/OG-default.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://grizzlyparrottrading.com/prop-firm-trading/static-vs-trailing-drawdown.html"
+    },
+    "datePublished": "2025-11-22",
+    "dateModified": "2026-08-05",
+    "url": "https://grizzlyparrottrading.com/prop-firm-trading/static-vs-trailing-drawdown.html",
+    "image": "https://grizzlyparrottrading.com/OG-default.png",
+    "inLanguage": "en"
+  }
+  </script>
 
-  <!-- JSON-LD: Breadcrumbs -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Prop Firm Trading",
-      "item": "https://grizzlyparrottrading.com/prop-firm-trading/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Static Drawdown vs Trailing Drawdown: What Prop Firm Traders Must Know",
-      "item": "https://grizzlyparrottrading.com/prop-firm-trading/static-vs-trailing-drawdown.html"
-    }
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Prop Firm Trading",
+        "item": "https://grizzlyparrottrading.com/prop-firm-trading/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Static vs. Trailing Drawdown",
+        "item": "https://grizzlyparrottrading.com/prop-firm-trading/static-vs-trailing-drawdown.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does end-of-day trailing drawdown mean the account can only breach at the end of the day?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. End of day may describe when the floor is recalculated, not when it is enforced. A firm can establish the floor from an end-of-day balance and still monitor current equity against that floor continuously during the next session."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do unrealized profits move every trailing drawdown floor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. A real-time equity trail may react to unrealized peaks, while an end-of-day balance trail generally waits for its scheduled checkpoint. The official rule must identify the reference value and update time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does every trailing drawdown stop at the starting balance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Some programs cap or lock a trailing floor at a defined level, while others use different limits or phases. The cap, lock, reset, and payout behavior must be confirmed in the current official rules."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What account value should a trader use for position sizing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the current value the rule actually monitors, subtract the current official breach floor, and preserve a separate safety reserve. Position size should be based on that usable room, the stop distance, tick value, and estimated costs."
+        }
+      }
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
 </head>
@@ -112,19 +152,18 @@
 <header class="site-header">
   <div class="container header-inner">
     <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
+      <a href="/">Grizzly Parrot Trading</a>
     </div>
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Primary navigation">
       <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../metals/index.html">Metals</a></li>
+        <li><a href="../energies/index.html">Energies</a></li>
+        <li><a href="../currencies/index.html">Currencies</a></li>
+        <li><a href="index.html" aria-current="page">Prop Firms</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+        <li><a href="../tools/index.html">Tools</a></li>
       </ul>
     </nav>
   </div>
@@ -132,151 +171,712 @@ Grizzly Parrot Trading</a>
 
 <main>
 <section class="section">
-<div class="container article-content">
+<article class="container article-content drawdown-guide">
 <!-- ARTICLE BODY START -->
 
-<h1>Static Drawdown vs Trailing Drawdown: What Prop Firm Traders Must Know</h1>
+<header class="dd-hero">
+  <div class="dd-hero-copy">
+    <p class="dd-kicker">Authoritative futures prop-account guide</p>
+    <h1>Static vs. Trailing Drawdown in Futures Prop Accounts</h1>
+    <p class="dd-hero-lede">The label is only the beginning. To know the real breach risk, identify what value the rule monitors, when the floor moves, how it locks or resets, and when enforcement occurs.</p>
+    <div class="dd-hero-actions">
+      <a class="button-primary" href="#drawdown-lab">Compare the floors</a>
+      <a class="dd-text-link" href="#rule-decoder">Decode a rule</a>
+    </div>
+    <div class="dd-hero-facts" aria-label="Core drawdown questions">
+      <div><span>01</span><strong>What is monitored?</strong></div>
+      <div><span>02</span><strong>When does the floor move?</strong></div>
+      <div><span>03</span><strong>When is a breach enforced?</strong></div>
+    </div>
+  </div>
 
-<p>Most traders fail prop firm evaluations because they don’t understand the difference between static drawdown and trailing drawdown. These two rules control the account’s survival. Blow one, and the evaluation is over — even if your P/L looked good at the time.</p>
+  <figure class="dd-hero-figure">
+    <img src="drawdown-mechanics-visual.svg" width="960" height="680" fetchpriority="high" alt="Comparison chart showing a fixed static drawdown floor, a step-like end-of-day trailing floor, and a real-time trailing floor that follows new equity peaks.">
+    <figcaption>Three floor paths can sit beneath the same account-equity path. The current rule, not the nominal account size, determines the real room.</figcaption>
+  </figure>
+</header>
 
-<h2>The Core Difference</h2>
-<p>Here’s the blunt version:</p>
+<nav class="dd-on-page" aria-label="Guide sections">
+  <span>In this guide</span>
+  <a href="#core-difference">Core difference</a>
+  <a href="#rule-decoder">Six rule inputs</a>
+  <a href="#drawdown-types">Drawdown types</a>
+  <a href="#drawdown-lab">Comparison tool</a>
+  <a href="#worked-examples">Worked examples</a>
+  <a href="#decision-checklist">Checklist</a>
+</nav>
 
-<ul>
-  <li><strong>Static Drawdown</strong> — the limit never moves.</li>
-  <li><strong>Trailing Drawdown</strong> — the limit follows your equity upward until it locks.</li>
-</ul>
+<section class="dd-section" id="core-difference" aria-labelledby="core-difference-title">
+  <div class="dd-section-heading">
+    <p class="dd-kicker">The core difference</p>
+    <h2 id="core-difference-title">Static Describes a Fixed Floor. Trailing Describes a Moving Floor.</h2>
+    <p>A drawdown floor is the account value that must not be reached or crossed under the applicable rule. A <strong>static floor</strong> normally stays at its stated level as profits accumulate. A <strong>trailing floor</strong> can ratchet upward after the account establishes a new reference high.</p>
+  </div>
 
-<p>Trailing is harder. Static is easier. Most eval accounts use trailing because it filters out weak traders faster.</p>
+  <div class="dd-definition-grid" aria-label="Core drawdown definitions">
+    <article>
+      <span>Static drawdown</span>
+      <h3>A fixed failure boundary</h3>
+      <p>The floor does not rise merely because the account makes money. Other rules can still impose daily, position, or consistency limits.</p>
+    </article>
+    <article>
+      <span>Trailing drawdown</span>
+      <h3>A ratcheting failure boundary</h3>
+      <p>The floor rises after a qualifying high. It normally does not fall when the account gives profits back, so room can contract quickly.</p>
+    </article>
+    <article>
+      <span>Enforcement</span>
+      <h3>The actual breach test</h3>
+      <p>The rule must say whether current equity, balance, or another value is compared with the floor—and whether touching or crossing it fails the account.</p>
+    </article>
+  </div>
 
-<h2>Static Drawdown Explained</h2>
-<p>A static drawdown stays at one fixed level below your starting balance.</p>
+  <aside class="dd-callout dd-callout-blue">
+    <strong>The two clocks are separate.</strong>
+    <p><em>Update timing</em> determines when the floor changes. <em>Enforcement timing</em> determines when the account is tested against that floor. “End-of-day trailing” may describe only the first clock.</p>
+  </aside>
+</section>
 
-<p>Example on a $50K account:</p>
+<section class="dd-section dd-formula-section" aria-labelledby="room-title">
+  <div class="dd-section-heading">
+    <p class="dd-kicker">The number that matters</p>
+    <h2 id="room-title">Measure Room Above the Current Floor</h2>
+    <p>The advertised account label is not loss capacity. The operational number is the distance between the rule&rsquo;s monitored account value and the current breach floor, minus a reserve that is never assigned to a planned trade.</p>
+  </div>
 
-<ul>
-  <li>Start: $50,000</li>
-  <li>Static drawdown: $2,500</li>
-  <li>Violation level: $47,500</li>
-</ul>
+  <div class="dd-formula-grid">
+    <article>
+      <span class="dd-formula-number">01</span>
+      <h3>Raw room</h3>
+      <p class="dd-equation">monitored equity &minus; current breach floor</p>
+      <p>This is the unprotected distance to the failure boundary right now.</p>
+    </article>
+    <article>
+      <span class="dd-formula-number">02</span>
+      <h3>Usable room</h3>
+      <p class="dd-equation">raw room &minus; safety reserve</p>
+      <p>The reserve absorbs slippage, rule-display lag, open-position movement, and execution mistakes.</p>
+    </article>
+    <article>
+      <span class="dd-formula-number">03</span>
+      <h3>Planned trade risk</h3>
+      <p class="dd-equation">must remain below usable room</p>
+      <p>Position sizing must also account for stop distance, tick value, commissions, and expected slippage.</p>
+    </article>
+  </div>
+  <p class="dd-inline-link">For the complete contract-sizing calculation, use the companion guide: <a href="../market-basics/risk-per-trade-small-accounts.html">Risk Per Trade for Small Futures Accounts</a>.</p>
+</section>
 
-<p>No matter how much you earn, the line never moves. You can make $10,000 or $100 — the drawdown limit stays exactly $47,500.</p>
+<section class="dd-section" id="rule-decoder" aria-labelledby="decoder-title">
+  <div class="dd-section-heading">
+    <p class="dd-kicker">Read the rule as a risk engine</p>
+    <h2 id="decoder-title">The Six Inputs Required to Decode Any Drawdown Rule</h2>
+    <p>“Static,” “trailing,” and “end of day” are summaries. A usable rule model needs six specific inputs from the firm&rsquo;s current official documentation and the live account dashboard.</p>
+  </div>
 
-<h3>Advantages of static drawdown:</h3>
-<ul>
-  <li>You can stack unrealized P/L without risking the trailing moving up</li>
-  <li>Better for swing traders</li>
-  <li>Good for slow, steady growth</li>
-</ul>
+  <ol class="dd-decoder-list">
+    <li>
+      <div><span>1</span><h3>Reference value</h3></div>
+      <p>What creates a new high: current equity, closed balance, realized profit, end-of-day balance, or another defined measure? If unrealized P/L counts, a temporary favorable excursion may move the floor before the position closes.</p>
+    </li>
+    <li>
+      <div><span>2</span><h3>Update timing</h3></div>
+      <p>Does the floor recalculate tick by tick, after a trade closes, at an end-of-day checkpoint, or only after another event? Record the firm&rsquo;s time zone and session boundary.</p>
+    </li>
+    <li>
+      <div><span>3</span><h3>High-water mark</h3></div>
+      <p>Which highest qualifying value is retained? A ratchet remembers the high even after equity falls, which is why profitable movement can reduce later giveback room.</p>
+    </li>
+    <li>
+      <div><span>4</span><h3>Floor formula</h3></div>
+      <p>How is the breach floor calculated from the high-water mark and allowance? Confirm whether fees, commissions, or withdrawals affect either value.</p>
+    </li>
+    <li>
+      <div><span>5</span><h3>Cap, lock, and reset behavior</h3></div>
+      <p>Does the floor stop trailing at a defined level? Can a payout, new account phase, or withdrawal change the floor or available room? Never assume every program locks at starting balance.</p>
+    </li>
+    <li>
+      <div><span>6</span><h3>Breach condition and enforcement</h3></div>
+      <p>Is the account failed when equity touches the floor, falls below it, or closes below it? Is the test continuous, end of trade, or end of day? Is liquidation automatic?</p>
+    </li>
+  </ol>
 
-<h3>Disadvantages:</h3>
-<ul>
-  <li>Usually offered only in the funded stage, not evaluations</li>
-</ul>
+  <aside class="dd-verification-card">
+    <div>
+      <span class="dd-card-label">Fail-closed rule reading</span>
+      <h3>Unknown Means Not Yet Safe to Trade</h3>
+    </div>
+    <p>If one of these inputs is missing, do not fill it with a convention from another firm, an old social post, or the word “typically.” Save the official rule URL, the date checked, and a screenshot or exact account value before relying on it.</p>
+  </aside>
+</section>
 
-<p>Static drawdown is the “real funded” perk most traders want.</p>
+<section class="dd-section" id="drawdown-types" aria-labelledby="types-title">
+  <div class="dd-section-heading">
+    <p class="dd-kicker">Rule taxonomy</p>
+    <h2 id="types-title">Static, Real-Time Trailing, and End-of-Day Trailing</h2>
+    <p>The formulas below are generic teaching models. A firm&rsquo;s documented cap, lock, reset, payout, touch, and fee rules always control the actual account.</p>
+  </div>
 
-<h2>Trailing Drawdown Explained</h2>
-<p>A trailing drawdown follows your <strong>account equity</strong> upward until it reaches your starting balance. Then it stops.</p>
+  <div class="dd-type-stack">
+    <article class="dd-type-card dd-type-static">
+      <div class="dd-type-heading">
+        <span>Type 01</span>
+        <h3>Static drawdown</h3>
+        <p class="dd-equation">static floor = starting reference &minus; drawdown allowance</p>
+      </div>
+      <div class="dd-type-body">
+        <p>The floor is established from a fixed reference and does not rise solely because the account reaches a new profit high. If a $50,000 reference has a $2,000 static allowance, the generic floor is $48,000. At $51,000 equity, raw room is $3,000; after falling to $49,000, raw room is $1,000.</p>
+        <ul>
+          <li><strong>What profits do:</strong> expand distance above the fixed floor.</li>
+          <li><strong>What profits do not do:</strong> drag the static floor upward.</li>
+          <li><strong>What to verify:</strong> whether a separate daily loss limit, payout rule, or phase change creates another controlling boundary.</li>
+        </ul>
+      </div>
+    </article>
 
-<p>Same $50K example:</p>
+    <article class="dd-type-card dd-type-realtime">
+      <div class="dd-type-heading">
+        <span>Type 02</span>
+        <h3>Real-time equity trailing</h3>
+        <p class="dd-equation">uncapped floor = highest qualifying live equity &minus; allowance</p>
+      </div>
+      <div class="dd-type-body">
+        <p>The high-water mark can update while a position is still open if the rule counts unrealized equity. If equity peaks at $51,400 with a $2,000 allowance, the generic uncapped floor becomes $49,400. A reversal to $50,000 leaves only $600 of raw room even if no profit was closed.</p>
+        <p>For another plain-language walkthrough of this moving-floor behavior, see <a href="https://mimiktrader.com/blog/trailing-drawdown-explained" target="_blank" rel="noopener">MimikTrader&rsquo;s explanation of trailing drawdown</a>.</p>
+        <ul>
+          <li><strong>Main hazard:</strong> open profit can tighten the floor before the trade is exited.</li>
+          <li><strong>Asymmetry:</strong> the floor ratchets up at a qualifying high but normally does not follow equity back down.</li>
+          <li><strong>What to verify:</strong> the exact equity source, update frequency, cap, and whether fees are included.</li>
+        </ul>
+      </div>
+    </article>
 
-<ul>
-  <li>Start: $50,000</li>
-  <li>Trailing drawdown: $2,500</li>
-  <li>Initial violation line: $47,500</li>
-</ul>
+    <article class="dd-type-card dd-type-eod">
+      <div class="dd-type-heading">
+        <span>Type 03</span>
+        <h3>End-of-day trailing</h3>
+        <p class="dd-equation">uncapped floor = highest recorded EOD balance &minus; allowance</p>
+      </div>
+      <div class="dd-type-body">
+        <p>The floor usually steps upward only when the rule takes its end-of-day snapshot. An intraday peak that disappears before the checkpoint may not establish a new floor. But once the next floor is set, the firm may compare live equity against it continuously.</p>
+        <ul>
+          <li><strong>Main benefit:</strong> an unrealized intraday peak does not necessarily move the floor immediately.</li>
+          <li><strong>Main hazard:</strong> yesterday&rsquo;s strong close can raise today&rsquo;s floor and reduce today&rsquo;s giveback room.</li>
+          <li><strong>What to verify:</strong> checkpoint time, balance definition, holiday/session treatment, and intraday enforcement.</li>
+        </ul>
+      </div>
+    </article>
 
-<p>If you make winnings:</p>
+    <article class="dd-type-card dd-type-closed">
+      <div class="dd-type-heading">
+        <span>Variant</span>
+        <h3>Closed-balance or per-trade trailing</h3>
+        <p class="dd-equation">floor updates after a qualifying realized event</p>
+      </div>
+      <div class="dd-type-body">
+        <p>Some rule sets use realized or closed balance rather than every unrealized tick or one daily checkpoint. This is neither identical to live equity trailing nor identical to EOD trailing. The rule must define precisely when a realized result becomes part of the high-water mark.</p>
+        <ul>
+          <li><strong>Main hazard:</strong> assuming “trailing” always means live unrealized equity.</li>
+          <li><strong>What to verify:</strong> partial exits, commissions, multiple simultaneous positions, and cross-account calculations.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
 
-<ul>
-  <li>Your equity goes to $51,000</li>
-  <li>Your trailing drawdown moves to $48,500</li>
-</ul>
+<section class="dd-section" aria-labelledby="comparison-title">
+  <div class="dd-section-heading">
+    <p class="dd-kicker">Side-by-side mechanics</p>
+    <h2 id="comparison-title">What Changes Across the Main Drawdown Models</h2>
+  </div>
+  <div class="dd-table-scroll" role="region" aria-label="Drawdown model comparison" tabindex="0">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Feature</th>
+          <th scope="col">Static</th>
+          <th scope="col">Real-time trailing</th>
+          <th scope="col">End-of-day trailing</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Generic reference</th><td>Starting value</td><td>Highest qualifying live equity</td><td>Highest qualifying EOD balance</td></tr>
+        <tr><th scope="row">Floor movement</th><td>Does not trail profits</td><td>Can ratchet intraday</td><td>Steps at scheduled checkpoints</td></tr>
+        <tr><th scope="row">Unrealized peak moves floor?</th><td>No, by itself</td><td>Yes, when live equity is the reference</td><td>Not before the EOD checkpoint</td></tr>
+        <tr><th scope="row">Profit giveback</th><td>Reduces room only as equity falls</td><td>Can rapidly compress room after a new peak</td><td>Can compress next-session room after a strong close</td></tr>
+        <tr><th scope="row">Breach timing</th><td colspan="3">Provider-specific. Any model can be paired with continuous, event-based, or checkpoint enforcement.</td></tr>
+        <tr><th scope="row">Cap or lock</th><td colspan="3">Provider-specific. Never infer a cap from the category name.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-<p>This continues until the drawdown reaches the starting balance (e.g., $50K). After that, it becomes “static.”</p>
+<section class="dd-section dd-timing-section" aria-labelledby="timing-title">
+  <div class="dd-section-heading">
+    <p class="dd-kicker">The timing distinction that prevents breaches</p>
+    <h2 id="timing-title">Floor Update Timing Is Not Enforcement Timing</h2>
+    <p>Separate the question “When is the floor recalculated?” from “When is the account liquidated or failed?” They can have different answers.</p>
+  </div>
 
-<h2>The Trailing Drawdown Trap</h2>
-<p>Trailing drawdown punishes you for running large open P/L then letting it pull back. This is the #1 reason people fail evaluations.</p>
+  <div class="dd-timing-grid">
+    <article>
+      <span>Real-time equity trail</span>
+      <h3>The floor and enforcement can both move live</h3>
+      <ol>
+        <li><strong>Open:</strong> equity is $50,400; floor is $48,400.</li>
+        <li><strong>Peak:</strong> unrealized equity reaches $51,400; floor ratchets to $49,400.</li>
+        <li><strong>Giveback:</strong> equity falls to $50,000; floor stays $49,400.</li>
+        <li><strong>Room:</strong> only $600 remains before any reserve.</li>
+      </ol>
+    </article>
+    <article>
+      <span>End-of-day-derived trail</span>
+      <h3>The floor can update once and be enforced all session</h3>
+      <ol>
+        <li><strong>Prior close:</strong> EOD balance is $50,800.</li>
+        <li><strong>Next floor:</strong> with a $2,000 allowance, it steps to $48,800.</li>
+        <li><strong>Today:</strong> an intraday high may not move that floor.</li>
+        <li><strong>Enforcement:</strong> live equity can still be tested against $48,800 continuously.</li>
+      </ol>
+    </article>
+  </div>
 
-<h3>Example:</h3>
-<ul>
-  <li>You’re up $1,200 on an open ES trade</li>
-  <li>Your trailing limit moves up accordingly</li>
-  <li>You let the trade pull back $900</li>
-</ul>
+  <div class="dd-official-example">
+    <span class="dd-card-label">Current official examples</span>
+    <p>Topstep describes a Maximum Loss Limit that is recalculated from end-of-day balance while current equity is monitored against the resulting limit in real time. TradeDay likewise distinguishes an end-of-day calculation from intraday breach monitoring. Apex&rsquo;s intraday trailing documentation describes a threshold that can react to realized and unrealized gains in real time. These are examples of different implementations—not universal rules for every product or account phase.</p>
+    <p><a href="#sources">See the dated official sources</a>.</p>
+  </div>
+</section>
 
-<p>You didn’t break daily loss.  
-You didn’t break max size.  
-You didn’t break rules.  
+<section class="dd-section dd-calculator-section" id="drawdown-lab" aria-labelledby="lab-title">
+  <div class="dd-section-heading">
+    <p class="dd-kicker">Interactive teaching tool</p>
+    <h2 id="lab-title">Compare the Same Account Under Three Generic Floors</h2>
+    <p>Enter one account state to see how static, uncapped real-time trailing, and uncapped end-of-day trailing formulas produce different room. The tool runs entirely in your browser and sends no account values anywhere.</p>
+  </div>
 
-But you still violated trailing drawdown. Brutal, but real.</p>
+  <div class="dd-calculator">
+    <form id="drawdown-form" novalidate>
+      <div class="dd-input-grid">
+        <div class="dd-field">
+          <label for="starting-reference">Starting balance or reference</label>
+          <div class="dd-input-wrap"><span aria-hidden="true">$</span><input id="starting-reference" name="starting-reference" type="number" min="0" step="100" value="50000" inputmode="decimal"></div>
+        </div>
+        <div class="dd-field">
+          <label for="drawdown-allowance">Drawdown allowance</label>
+          <div class="dd-input-wrap"><span aria-hidden="true">$</span><input id="drawdown-allowance" name="drawdown-allowance" type="number" min="0" step="100" value="2000" inputmode="decimal"></div>
+        </div>
+        <div class="dd-field">
+          <label for="current-equity">Current monitored equity</label>
+          <div class="dd-input-wrap"><span aria-hidden="true">$</span><input id="current-equity" name="current-equity" type="number" min="0" step="100" value="50600" inputmode="decimal"></div>
+        </div>
+        <div class="dd-field">
+          <label for="intraday-high">Highest qualifying live equity</label>
+          <div class="dd-input-wrap"><span aria-hidden="true">$</span><input id="intraday-high" name="intraday-high" type="number" min="0" step="100" value="51400" inputmode="decimal"></div>
+        </div>
+        <div class="dd-field">
+          <label for="eod-high">Highest recorded EOD balance</label>
+          <div class="dd-input-wrap"><span aria-hidden="true">$</span><input id="eod-high" name="eod-high" type="number" min="0" step="100" value="50800" inputmode="decimal"></div>
+        </div>
+        <div class="dd-field">
+          <label for="comparison-reserve">Safety reserve</label>
+          <div class="dd-input-wrap"><span aria-hidden="true">$</span><input id="comparison-reserve" name="comparison-reserve" type="number" min="0" step="50" value="300" inputmode="decimal"></div>
+        </div>
+      </div>
+      <p class="dd-form-help">All values must be nonnegative. A high-water mark below the starting reference is safely normalized up to the starting reference.</p>
+      <div class="dd-calculator-actions">
+        <button class="button-primary" type="submit">Compare drawdown</button>
+        <button class="dd-reset-button" type="reset">Reset example</button>
+      </div>
+    </form>
 
-<h2>Static vs Trailing Drawdown Side-by-Side</h2>
+    <div class="dd-results" aria-live="polite" aria-atomic="true">
+      <div class="dd-results-heading">
+        <p class="dd-kicker">Calculated comparison</p>
+        <h3>Current account room</h3>
+      </div>
+      <div class="dd-result-cards">
+        <article>
+          <span>Static floor</span>
+          <strong id="result-static-floor">$48,000.00</strong>
+          <dl>
+            <div><dt>Raw room</dt><dd id="result-static-raw">$2,600.00</dd></div>
+            <div><dt>Usable after reserve</dt><dd id="result-static-usable">$2,300.00</dd></div>
+          </dl>
+          <p id="result-static-status" class="dd-model-status is-room">Room remains above reserve.</p>
+        </article>
+        <article>
+          <span>Real-time trailing floor</span>
+          <strong id="result-realtime-floor">$49,400.00</strong>
+          <dl>
+            <div><dt>Raw room</dt><dd id="result-realtime-raw">$1,200.00</dd></div>
+            <div><dt>Usable after reserve</dt><dd id="result-realtime-usable">$900.00</dd></div>
+          </dl>
+          <p id="result-realtime-status" class="dd-model-status is-room">Room remains above reserve.</p>
+        </article>
+        <article>
+          <span>End-of-day trailing floor</span>
+          <strong id="result-eod-floor">$48,800.00</strong>
+          <dl>
+            <div><dt>Raw room</dt><dd id="result-eod-raw">$1,800.00</dd></div>
+            <div><dt>Usable after reserve</dt><dd id="result-eod-usable">$1,500.00</dd></div>
+          </dl>
+          <p id="result-eod-status" class="dd-model-status is-room">Room remains above reserve.</p>
+        </article>
+      </div>
+      <p id="comparison-status" class="dd-comparison-status">Under these inputs, real-time trailing leaves the least usable room.</p>
+    </div>
+  </div>
 
-<table>
-<tr><th>Feature</th><th>Static</th><th>Trailing</th></tr>
-<tr><td>Moves with equity?</td><td>No</td><td>Yes</td></tr>
-<tr><td>Harder to violate?</td><td>Yes</td><td>No</td></tr>
-<tr><td>Swing trading friendly?</td><td>Yes</td><td>No</td></tr>
-<tr><td>Common in evals?</td><td>Rare</td><td>Very common</td></tr>
-<tr><td>Best for beginners?</td><td>Yes</td><td>No</td></tr>
-</table>
+  <aside class="dd-calculator-note">
+    <strong>Teaching model—not a firm-rule calculator.</strong>
+    <p>The trailing formulas are intentionally uncapped. They do not model a provider&rsquo;s floor lock, payout adjustment, daily loss limit, consistency rule, fees, phase change, platform calculation, or touch-versus-below convention. Replace this generic result with the current floor shown by the applicable official rule and live dashboard.</p>
+  </aside>
+</section>
 
-<h2>Why Prop Firms Prefer Trailing Drawdown</h2>
-<p>It protects the firm in two ways:</p>
+<section class="dd-section" id="worked-examples" aria-labelledby="examples-title">
+  <div class="dd-section-heading">
+    <p class="dd-kicker">Worked account mechanics</p>
+    <h2 id="examples-title">Four Examples That Expose the Real Difference</h2>
+    <p>Each example isolates one rule behavior. Dollar amounts are illustrative rather than recommendations or representations of a particular current program.</p>
+  </div>
 
-<ul>
-  <li>Prevents traders from letting big winners turn into large drawdowns</li>
-  <li>Filters out impulsive traders faster</li>
-</ul>
+  <article class="dd-example">
+    <div class="dd-example-copy">
+      <span class="dd-card-label">Example 1 &middot; static floor</span>
+      <h3>Closed profit creates durable room</h3>
+      <p>A $50,000 reference with a $2,000 static allowance creates a $48,000 floor. After equity rises to $51,200, the floor is still $48,000. With a $400 reserve, usable room is $2,800.</p>
+    </div>
+    <div class="dd-table-scroll" role="region" aria-label="Static floor worked example" tabindex="0">
+      <table>
+        <tbody>
+          <tr><th scope="row">Static floor</th><td>$50,000 &minus; $2,000</td><td>$48,000</td></tr>
+          <tr><th scope="row">Raw room</th><td>$51,200 &minus; $48,000</td><td>$3,200</td></tr>
+          <tr class="dd-table-result"><th scope="row">Usable room</th><td>$3,200 &minus; $400 reserve</td><td>$2,800</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
 
-<p>Trailing drawdown is harsh, but it’s predictable once you understand its mechanics.</p>
+  <article class="dd-example dd-example-warn">
+    <div class="dd-example-copy">
+      <span class="dd-card-label">Example 2 &middot; live equity trail</span>
+      <h3>Unrealized profit tightens the floor before exit</h3>
+      <p>Equity reaches an unrealized peak of $51,400, so an uncapped $2,000 trail rises to $49,400. The position reverses and equity is $49,850 before exit. Raw room is only $450; a $300 reserve leaves $150 usable.</p>
+    </div>
+    <div class="dd-table-scroll" role="region" aria-label="Real-time trailing worked example" tabindex="0">
+      <table>
+        <tbody>
+          <tr><th scope="row">Trailing floor</th><td>$51,400 peak &minus; $2,000</td><td>$49,400</td></tr>
+          <tr><th scope="row">Raw room after giveback</th><td>$49,850 &minus; $49,400</td><td>$450</td></tr>
+          <tr class="dd-table-result"><th scope="row">Usable room</th><td>$450 &minus; $300 reserve</td><td>$150</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
 
-<h2>How to Avoid Trailing Drawdown Violations</h2>
-<ul>
-  <li>Lock profits quickly when the trailing gets close</li>
-  <li>Avoid huge unrealized swings</li>
-  <li>Use tighter risk management when in profit</li>
-  <li>Don’t let winners pull back dramatically</li>
-</ul>
+  <article class="dd-example">
+    <div class="dd-example-copy">
+      <span class="dd-card-label">Example 3 &middot; EOD trail</span>
+      <h3>The close sets tomorrow&rsquo;s floor</h3>
+      <p>The highest recorded EOD balance becomes $51,000, creating a $49,000 floor for the next session under an uncapped $2,000 trail. Today&rsquo;s live equity is $49,700. Even if the floor will not recalculate until the next checkpoint, current room is only $700.</p>
+    </div>
+    <div class="dd-table-scroll" role="region" aria-label="End-of-day trailing worked example" tabindex="0">
+      <table>
+        <tbody>
+          <tr><th scope="row">Current EOD-derived floor</th><td>$51,000 EOD high &minus; $2,000</td><td>$49,000</td></tr>
+          <tr><th scope="row">Raw room today</th><td>$49,700 &minus; $49,000</td><td>$700</td></tr>
+          <tr class="dd-table-result"><th scope="row">Usable room</th><td>$700 &minus; $300 reserve</td><td>$400</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
 
-<p>This pairs well with rules explained in <a href="https://grizzlyparrottrading.com/prop-firm-trading/best-prop-firm-account-size-for-beginners.html">account size selection</a>, since smaller accounts choke your room to breathe.</p>
+  <article class="dd-example dd-example-stop">
+    <div class="dd-example-copy">
+      <span class="dd-card-label">Example 4 &middot; no trade</span>
+      <h3>The reserve consumes the remaining room</h3>
+      <p>Current monitored equity is $49,620 and the live floor is $49,400. Raw room is $220, less than the trader&rsquo;s $300 reserve. The correct planned risk is zero—not a smaller arbitrary contract recommendation.</p>
+    </div>
+    <div class="dd-table-scroll" role="region" aria-label="No usable drawdown room worked example" tabindex="0">
+      <table>
+        <tbody>
+          <tr><th scope="row">Raw room</th><td>$49,620 &minus; $49,400</td><td>$220</td></tr>
+          <tr><th scope="row">Reserve requirement</th><td>Protected from trade risk</td><td>$300</td></tr>
+          <tr class="dd-table-result"><th scope="row">Decision</th><td>$220 &minus; $300</td><td>No trade</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+</section>
 
-<div class="highlight-box red">
-  <h3>Know Your Drawdown — Or Watch It Take You Out</h3>
-  <p>Static gives you room. Trailing takes it back as you go. If you don’t know which one you're trading with, you’re not trading — you’re walking into a trap.</p>
-</div>
+<section class="dd-section dd-thin-room" aria-labelledby="thin-room-title">
+  <div>
+    <p class="dd-kicker">When the floor gets close</p>
+    <h2 id="thin-room-title">Contract Size Must Shrink With Usable Room</h2>
+  </div>
+  <div>
+    <p>A breach floor is not a stop-loss target. Orders can slip, dashboards can update after market data, commissions reduce equity, and a live trailing rule may tighten while the position is open. A separate safety reserve keeps those risks outside the planned trade budget.</p>
+    <p>As usable room contracts, the allowed dollar risk and contract count must contract with it. If the technically valid stop for one contract costs more than the planned risk budget, the trade does not fit. Moving the stop closer merely to force a contract into the account changes the trade thesis rather than solving the risk problem.</p>
+    <p>Use the step-by-step calculation in <a href="../market-basics/risk-per-trade-small-accounts.html">the real drawdown-buffer sizing guide</a>, and review <a href="auto-liquidation-rules.html">how automated liquidation rules can end an account</a> before treating any displayed floor as spare capital.</p>
+  </div>
+</section>
+
+<section class="dd-section" aria-labelledby="mistakes-title">
+  <div class="dd-section-heading">
+    <p class="dd-kicker">Rule-reading failures</p>
+    <h2 id="mistakes-title">Common Drawdown Mistakes</h2>
+  </div>
+  <div class="dd-mistakes">
+    <article><strong>Treating the nominal balance as capital</strong><p>A “$50,000 account” can have only a fraction of that amount between current equity and the failure floor.</p></article>
+    <article><strong>Confusing EOD update with EOD enforcement</strong><p>A floor derived at the close may still be enforced against live equity throughout the next session.</p></article>
+    <article><strong>Watching balance when the rule watches equity</strong><p>Closed balance can look safe while unrealized P/L has already brought monitored equity near the floor.</p></article>
+    <article><strong>Assuming every trail locks at breakeven</strong><p>Cap and lock behavior varies by program, product, phase, and current rule version.</p></article>
+    <article><strong>Ignoring payouts and phase changes</strong><p>A withdrawal, transfer, or move from evaluation to funded status can change which rule and floor apply.</p></article>
+    <article><strong>Using the breach floor as the trade stop</strong><p>Execution slippage or a touch rule can fail the account before the intended exit protects it.</p></article>
+    <article><strong>Using a stale dashboard number</strong><p>The high-water mark or current limit can change after a trade, at a session checkpoint, or during an open position.</p></article>
+    <article><strong>Combining separate loss rules</strong><p>Daily loss, drawdown, position size, and consistency rules are separate boundaries; the tightest current one controls.</p></article>
+  </div>
+</section>
+
+<section class="dd-section dd-rule-sheet" aria-labelledby="rule-sheet-title">
+  <div>
+    <p class="dd-kicker">Build a one-page rule sheet</p>
+    <h2 id="rule-sheet-title">Record the Exact Inputs Before the First Order</h2>
+    <p>Copy these fields from the current official rules. Do not rely on a program-comparison blog as the controlling source.</p>
+  </div>
+  <dl>
+    <div><dt>Account and phase</dt><dd>Exact product, evaluation/funded phase, platform, and activation date</dd></div>
+    <div><dt>Reference value</dt><dd>Equity, balance, realized P/L, EOD balance, or other defined input</dd></div>
+    <div><dt>Update rule</dt><dd>Real time, after close, EOD checkpoint, plus the applicable time zone</dd></div>
+    <div><dt>Current floor</dt><dd>Dollar value verified in the live dashboard before trading</dd></div>
+    <div><dt>Cap and reset</dt><dd>Lock level, payout effect, phase transition, fee treatment</dd></div>
+    <div><dt>Breach test</dt><dd>Touch or below, live or checkpoint, liquidation and account consequence</dd></div>
+    <div><dt>Source record</dt><dd>Official URL, date checked, and saved evidence of the applicable wording</dd></div>
+  </dl>
+</section>
+
+<section class="dd-section dd-checklist" id="decision-checklist" aria-labelledby="checklist-title">
+  <div>
+    <p class="dd-kicker">Final decision checklist</p>
+    <h2 id="checklist-title">Before Every Trading Session</h2>
+    <p>Rules change and account state changes. Reconfirm the live boundary instead of assuming yesterday&rsquo;s number survived intact.</p>
+  </div>
+  <ul>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Right rule:</strong> exact account, phase, platform, and current official version.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Right value:</strong> balance or equity matches what enforcement actually monitors.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Right floor:</strong> current dollar breach level verified from the account now.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Right timing:</strong> update checkpoint and breach-monitoring window are separately understood.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Right reserve:</strong> execution and rule uncertainty remain outside trade risk.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Right size:</strong> the valid stop and all costs fit inside usable room; otherwise skip.</p></li>
+  </ul>
+</section>
+
+<section class="dd-section dd-faq" aria-labelledby="faq-title">
+  <div class="dd-section-heading">
+    <p class="dd-kicker">Frequently asked questions</p>
+    <h2 id="faq-title">Static and Trailing Drawdown Questions</h2>
+  </div>
+  <details>
+    <summary>Does end-of-day trailing drawdown mean the account can only breach at the end of the day?</summary>
+    <p>No. End of day may describe when the floor is recalculated, not when it is enforced. A firm can establish the floor from an end-of-day balance and still monitor current equity against that floor continuously during the next session.</p>
+  </details>
+  <details>
+    <summary>Do unrealized profits move every trailing drawdown floor?</summary>
+    <p>No. A real-time equity trail may react to unrealized peaks, while an end-of-day balance trail generally waits for its scheduled checkpoint. The official rule must identify both the reference value and update time.</p>
+  </details>
+  <details>
+    <summary>Does every trailing drawdown stop at the starting balance?</summary>
+    <p>No. Some programs cap or lock a trailing floor at a defined level, while others use different limits or phases. Confirm cap, lock, reset, and payout behavior in the current official rules.</p>
+  </details>
+  <details>
+    <summary>What account value should a trader use for position sizing?</summary>
+    <p>Use the current value the rule actually monitors, subtract the current official breach floor, and preserve a separate safety reserve. Then size from that usable room, the technically valid stop, tick value, and estimated trading costs.</p>
+  </details>
+</section>
+
+<section class="dd-section dd-sources" id="sources" aria-labelledby="sources-title">
+  <div class="dd-section-heading">
+    <p class="dd-kicker">Primary-source disclosure</p>
+    <h2 id="sources-title">Sources and Verification Scope</h2>
+    <p>Firm rules are time-sensitive. The sources below were checked August 5, 2026, and are cited as implementation examples—not as permanent representations of every product or account phase.</p>
+  </div>
+  <ul>
+    <li><a href="https://help.topstep.com/en/articles/8284204-what-is-the-maximum-loss-limit" target="_blank" rel="noopener">Topstep Help Center: What is the Maximum Loss Limit?</a> for an official example of an EOD-balance-derived trailing limit with real-time equity enforcement and a defined lock behavior.</li>
+    <li><a href="https://apextraderfunding.com/help-center/intraday-trailing-drawdown-accounts/intraday-trailing-drawdown-explained/" target="_blank" rel="noopener">Apex Trader Funding Help Center: Intraday Trailing Drawdown Explained</a> for an official example of an intraday threshold affected by realized and unrealized gains.</li>
+    <li><a href="https://tradeday.freshdesk.com/en/support/solutions/articles/103000008855" target="_blank" rel="noopener">TradeDay Help Center: Maximum Drawdown Rule</a> for an official comparison of end-of-day and intraday drawdown calculation with real-time enforcement.</li>
+    <li><a href="https://www.cftc.gov/LearnAndProtect/EducationCenter/checklistbeforeyoutrade.html" target="_blank" rel="noopener">Commodity Futures Trading Commission: Before You Trade checklist</a> for the obligation to identify the risk and loss a trader can sustain before trading futures or options.</li>
+  </ul>
+  <p>This page does not rank, recommend, or endorse a prop firm. Firm names identify cited rule examples only. Always use the current official rule for the exact product and account phase being traded.</p>
+</section>
+
+<aside class="dd-disclaimer" aria-label="Educational and risk disclaimer">
+  <strong>Educational and risk disclaimer</strong>
+  <p>This guide and comparison tool are educational, not individualized financial, legal, tax, brokerage, or prop-account advice. Futures are leveraged and can create rapid losses. Stop orders may fill worse than their trigger price. Prop-account rules, calculations, dashboards, fees, and enforcement can change; verify current official documentation and live account values before trading. No formula or reserve eliminates market, execution, technology, or rule-breach risk.</p>
+</aside>
 
 <!-- ARTICLE BODY END -->
-</div>
+</article>
 </section>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
-
     <div class="footer-book">
       <h3>Books</h3>
       <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
+      <a href="/books/" class="footer-book-link">View All Books</a>
     </div>
-
     <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
+      <a href="/about.html">About</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/contact.html">Contact</a>
     </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+    <p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+  (function () {
+    'use strict';
+
+    var form = document.getElementById('drawdown-form');
+    var fields = {
+      starting: document.getElementById('starting-reference'),
+      allowance: document.getElementById('drawdown-allowance'),
+      current: document.getElementById('current-equity'),
+      intraday: document.getElementById('intraday-high'),
+      eod: document.getElementById('eod-high'),
+      reserve: document.getElementById('comparison-reserve')
+    };
+    var models = {
+      staticModel: {
+        floor: document.getElementById('result-static-floor'),
+        raw: document.getElementById('result-static-raw'),
+        usable: document.getElementById('result-static-usable'),
+        status: document.getElementById('result-static-status'),
+        label: 'Static'
+      },
+      realtime: {
+        floor: document.getElementById('result-realtime-floor'),
+        raw: document.getElementById('result-realtime-raw'),
+        usable: document.getElementById('result-realtime-usable'),
+        status: document.getElementById('result-realtime-status'),
+        label: 'Real-time trailing'
+      },
+      eod: {
+        floor: document.getElementById('result-eod-floor'),
+        raw: document.getElementById('result-eod-raw'),
+        usable: document.getElementById('result-eod-usable'),
+        status: document.getElementById('result-eod-status'),
+        label: 'End-of-day trailing'
+      }
+    };
+    var comparisonStatus = document.getElementById('comparison-status');
+    var money = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+    function readNumber(input) {
+      return Number.parseFloat(input.value);
+    }
+
+    function clearModel(model) {
+      model.floor.textContent = '\u2014';
+      model.raw.textContent = '\u2014';
+      model.usable.textContent = '\u2014';
+      model.status.textContent = 'Enter valid values to compare.';
+      model.status.className = 'dd-model-status is-invalid';
+    }
+
+    function renderModel(model, floor, current, reserve) {
+      var raw = current - floor;
+      var usable = Math.max(0, raw - reserve);
+
+      model.floor.textContent = money.format(floor);
+      model.raw.textContent = money.format(raw);
+      model.usable.textContent = money.format(usable);
+
+      if (raw <= 0) {
+        model.status.textContent = 'At or beyond this generic breach floor.';
+        model.status.className = 'dd-model-status is-breach';
+      } else if (raw <= reserve) {
+        model.status.textContent = 'No usable room remains after reserve.';
+        model.status.className = 'dd-model-status is-thin';
+      } else {
+        model.status.textContent = 'Room remains above reserve.';
+        model.status.className = 'dd-model-status is-room';
+      }
+
+      return { label: model.label, raw: raw, usable: usable };
+    }
+
+    function calculate() {
+      var values = {
+        starting: readNumber(fields.starting),
+        allowance: readNumber(fields.allowance),
+        current: readNumber(fields.current),
+        intraday: readNumber(fields.intraday),
+        eod: readNumber(fields.eod),
+        reserve: readNumber(fields.reserve)
+      };
+      var valid = Object.keys(values).every(function (key) {
+        return Number.isFinite(values[key]) && values[key] >= 0;
+      });
+
+      if (!valid) {
+        Object.keys(models).forEach(function (key) { clearModel(models[key]); });
+        comparisonStatus.textContent = 'Enter nonnegative numbers in every field.';
+        comparisonStatus.className = 'dd-comparison-status is-invalid';
+        return;
+      }
+
+      var intradayHigh = Math.max(values.starting, values.intraday);
+      var eodHigh = Math.max(values.starting, values.eod);
+      var floors = {
+        staticModel: values.starting - values.allowance,
+        realtime: intradayHigh - values.allowance,
+        eod: eodHigh - values.allowance
+      };
+      var results = [
+        renderModel(models.staticModel, floors.staticModel, values.current, values.reserve),
+        renderModel(models.realtime, floors.realtime, values.current, values.reserve),
+        renderModel(models.eod, floors.eod, values.current, values.reserve)
+      ];
+      var breached = results.filter(function (item) { return item.raw <= 0; });
+      var noRoom = results.filter(function (item) { return item.raw > 0 && item.usable <= 0; });
+      var smallest = results.reduce(function (currentSmallest, item) {
+        return item.usable < currentSmallest.usable ? item : currentSmallest;
+      });
+
+      if (breached.length) {
+        comparisonStatus.textContent = breached.map(function (item) { return item.label; }).join(' and ') + ' reaches or exceeds its generic breach condition. Do not use this account state for a new trade.';
+        comparisonStatus.className = 'dd-comparison-status is-breach';
+      } else if (noRoom.length) {
+        comparisonStatus.textContent = noRoom.map(function (item) { return item.label; }).join(' and ') + ' leaves no usable room after the safety reserve.';
+        comparisonStatus.className = 'dd-comparison-status is-thin';
+      } else {
+        comparisonStatus.textContent = 'Under these inputs, ' + smallest.label.toLowerCase() + ' leaves the least usable room: ' + money.format(smallest.usable) + '.';
+        comparisonStatus.className = 'dd-comparison-status is-room';
+      }
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      calculate();
+    });
+    form.addEventListener('input', calculate);
+    form.addEventListener('reset', function () {
+      window.setTimeout(calculate, 0);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    calculate();
+  }());
+</script>
 </body>
 </html>

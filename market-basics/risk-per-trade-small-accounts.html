@@ -331,7 +331,6 @@
   <div>
     <p>Position size should contract as the current floor rises or the balance falls. The same stop can fit five contracts with a $1,500 usable buffer, one contract with a $500 usable buffer, and zero contracts after the buffer shrinks further.</p>
     <p>Do not treat the breach floor as an acceptable stop level. A market order can fill beyond the intended price, a prop dashboard can calculate equity differently from a local platform, and a real-time trail may move while the position is open. Preserve a separate safety reserve and stop opening new risk before that reserve is touched.</p>
-    <p>For a companion explanation of the moving-floor mechanics, read <a href="https://mimiktrader.com/blog/trailing-drawdown-explained" target="_blank" rel="noopener">MimikTrader&rsquo;s explanation of trailing drawdown</a>.</p>
   </div>
 </section>
 
@@ -529,7 +528,6 @@
   <summary>Sources and editorial disclosure</summary>
   <ul>
     <li><a href="https://www.cmegroup.com/articles/faqs/frequently-asked-questions-micro-e-mini-equity-index-futures.html" target="_blank" rel="noopener">CME Group: Micro E-mini Equity Index Futures FAQ</a> for the quoted MES tick specification.</li>
-    <li><a href="https://mimiktrader.com/blog/trailing-drawdown-explained" target="_blank" rel="noopener">MimikTrader: Trailing Drawdown Explained</a> as a companion explanation of trailing-drawdown mechanics.</li>
     <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/static-vs-trailing-drawdown.html">Grizzly Parrot Trading: Static vs. Trailing Drawdown</a> for the internal comparison guide.</li>
   </ul>
   <p>Exchange specification checked August 5, 2026.</p>

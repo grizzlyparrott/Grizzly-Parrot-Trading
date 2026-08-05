@@ -3936,9 +3936,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Static Drawdown vs Trailing Drawdown: What Prop Firm Traders Must Know",
+    "title": "Static vs. Trailing Drawdown in Futures Prop Accounts",
     "url": "/prop-firm-trading/static-vs-trailing-drawdown.html",
-    "description": "A blunt breakdown of static drawdown vs trailing drawdown, how each one works, and why most traders fail evaluations because they don’t understand the difference.",
+    "description": "Authoritative guide to static, real-time trailing, and end-of-day drawdown: formulas, enforcement timing, worked examples, and a comparison tool.",
     "category": "Prop Firm Trading"
   },
   {

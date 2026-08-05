@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="680" viewBox="0 0 960 680" role="img" aria-labelledby="title desc">
+  <title id="title">Static and trailing drawdown floor comparison</title>
+  <desc id="desc">A dark financial chart shows one changing equity path above a fixed static floor, a step-shaped end-of-day trailing floor, and a real-time trailing floor that rises at new equity peaks.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111e"/>
+      <stop offset="1" stop-color="#0c1c31"/>
+    </linearGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#63aefc" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#63aefc" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="960" height="680" rx="28" fill="url(#bg)"/>
+  <circle cx="820" cy="80" r="210" fill="#43dc78" opacity=".035"/>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <text x="54" y="64" fill="#eef5fc" font-size="24" font-weight="800">One equity path. Three different floors.</text>
+    <text x="54" y="93" fill="#92a5ba" font-size="14">The rule mechanics determine how much room survives a profit giveback.</text>
+
+    <g stroke="#29405a" stroke-width="1">
+      <line x1="70" y1="155" x2="900" y2="155"/>
+      <line x1="70" y1="245" x2="900" y2="245"/>
+      <line x1="70" y1="335" x2="900" y2="335"/>
+      <line x1="70" y1="425" x2="900" y2="425"/>
+      <line x1="70" y1="515" x2="900" y2="515"/>
+      <line x1="120" y1="125" x2="120" y2="545"/>
+      <line x1="290" y1="125" x2="290" y2="545"/>
+      <line x1="460" y1="125" x2="460" y2="545"/>
+      <line x1="630" y1="125" x2="630" y2="545"/>
+      <line x1="800" y1="125" x2="800" y2="545"/>
+    </g>
+
+    <g fill="#70849b" font-size="12" font-weight="700">
+      <text x="26" y="159">HIGH</text>
+      <text x="28" y="429">FLOOR</text>
+      <text x="107" y="570">OPEN</text>
+      <text x="272" y="570">PEAK 1</text>
+      <text x="441" y="570">CLOSE</text>
+      <text x="609" y="570">PEAK 2</text>
+      <text x="774" y="570">GIVEBACK</text>
+    </g>
+
+    <path d="M120 390 C170 360 225 322 290 268 C340 300 385 340 460 318 C518 282 566 198 630 178 C675 218 730 282 800 300 C837 308 866 284 900 274 L900 545 L120 545 Z" fill="url(#area)"/>
+    <path d="M120 390 C170 360 225 322 290 268 C340 300 385 340 460 318 C518 282 566 198 630 178 C675 218 730 282 800 300 C837 308 866 284 900 274" fill="none" stroke="#63aefc" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+    <g fill="#d8e8fa" stroke="#63aefc" stroke-width="3">
+      <circle cx="120" cy="390" r="7"/><circle cx="290" cy="268" r="7"/><circle cx="460" cy="318" r="7"/><circle cx="630" cy="178" r="7"/><circle cx="800" cy="300" r="7"/>
+    </g>
+
+    <path d="M120 486 H900" fill="none" stroke="#fb7185" stroke-width="5" stroke-linecap="round"/>
+    <path d="M120 454 H460 V420 H800 V387 H900" fill="none" stroke="#f4c95d" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M120 454 C176 430 235 380 290 352 C348 352 412 351 460 350 C530 308 575 275 630 262 C690 262 748 261 800 261 C836 261 868 261 900 261" fill="none" stroke="#43dc78" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <g>
+      <rect x="58" y="600" width="844" height="48" rx="13" fill="#07101c" stroke="#304761"/>
+      <circle cx="92" cy="624" r="6" fill="#fb7185"/><text x="108" y="629" fill="#dbe5ef" font-size="13" font-weight="750">STATIC</text>
+      <circle cx="244" cy="624" r="6" fill="#f4c95d"/><text x="260" y="629" fill="#dbe5ef" font-size="13" font-weight="750">EOD STEPS</text>
+      <circle cx="429" cy="624" r="6" fill="#43dc78"/><text x="445" y="629" fill="#dbe5ef" font-size="13" font-weight="750">REAL-TIME RATCHET</text>
+      <circle cx="684" cy="624" r="6" fill="#63aefc"/><text x="700" y="629" fill="#dbe5ef" font-size="13" font-weight="750">ACCOUNT EQUITY</text>
+    </g>
+
+    <g>
+      <rect x="666" y="118" width="222" height="68" rx="12" fill="#0a1728" stroke="#34506d"/>
+      <text x="682" y="143" fill="#8ca1b8" font-size="11" font-weight="800" letter-spacing="1.2">NEW LIVE HIGH</text>
+      <text x="682" y="168" fill="#bdf5d0" font-size="14" font-weight="750">Real-time floor rises now</text>
+      <path d="M666 168 L636 178" fill="none" stroke="#43dc78" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
