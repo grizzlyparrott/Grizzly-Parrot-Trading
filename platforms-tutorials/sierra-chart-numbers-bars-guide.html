@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Standard Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- PNG Fallbacks -->
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sierra Chart Numbers Bars: A Practical 6E Setup Guide</title>
+  <meta name="description" content="Set up Sierra Chart Numbers Bars for Euro FX futures with one-tick data, bid x ask footprints, 4:1 imbalances, bar delta, and chart replay.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://grizzlyparrottrading.com/platforms-tutorials/sierra-chart-numbers-bars-guide.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sierra Chart Numbers Bars: A Practical 6E Setup Guide">
+  <meta property="og:description" content="Build a clean Euro FX footprint in Sierra Chart, understand what the numbers show, and practice the setup in Chart Replay.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://grizzlyparrottrading.com/platforms-tutorials/sierra-chart-numbers-bars-guide.html">
+  <meta property="og:site_name" content="Grizzly Parrot Trading">
+  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+  <meta property="og:image:width" content="1792">
+  <meta property="og:image:height" content="941">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+  <meta name="twitter:title" content="Sierra Chart Numbers Bars: A Practical 6E Setup Guide">
+  <meta name="twitter:description" content="Build a clean Euro FX footprint in Sierra Chart, understand what the numbers show, and practice the setup in Chart Replay.">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JMJVR3G5YN');
+  </script>
+
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Sierra Chart Numbers Bars: A Practical 6E Setup Guide",
+    "description": "Set up Sierra Chart Numbers Bars for Euro FX futures with one-tick data, bid x ask footprints, 4:1 imbalances, bar delta, and chart replay.",
+    "author": {
+      "@type": "Person",
+      "name": "Kyle Parrott",
+      "url": "https://grizzlyparrottrading.com/about.html"
+    },
+    "mainEntityOfPage": "https://grizzlyparrottrading.com/platforms-tutorials/sierra-chart-numbers-bars-guide.html",
+    "datePublished": "2026-08-05",
+    "dateModified": "2026-08-05",
+    "url": "https://grizzlyparrottrading.com/platforms-tutorials/sierra-chart-numbers-bars-guide.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grizzly Parrot Trading",
+      "url": "https://grizzlyparrottrading.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://grizzlyparrottrading.com/OG-default.png"
+      }
+    },
+    "image": "https://grizzlyparrottrading.com/OG-default.png"
+  }
+  </script>
+
+  <!-- JSON-LD: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Platforms & Tutorials",
+        "item": "https://grizzlyparrottrading.com/platforms-tutorials/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Sierra Chart Numbers Bars Guide",
+        "item": "https://grizzlyparrottrading.com/platforms-tutorials/sierra-chart-numbers-bars-guide.html"
+      }
+    ]
+  }
+  </script>
+
+  <script src="/uet.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="/">
+Grizzly Parrot Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../metals/index.html">Metals</a></li>
+        <li><a href="../energies/index.html">Energies</a></li>
+        <li><a href="../currencies/index.html">Currencies</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firms</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+        <li><a href="../tools/index.html">Tools</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+<!-- ARTICLE BODY START -->
+
+<header class="sg-hero">
+  <div class="sg-hero-copy">
+    <p class="sg-kicker">Futures platform tutorial</p>
+    <h1>Sierra Chart Numbers Bars: A Practical 6E Setup Guide</h1>
+    <p class="sg-hero-lede"><a href="https://www.sierrachart.com/" target="_blank" rel="noopener">Sierra Chart</a> gives futures traders unusually deep control over chart data, order flow, replay, and execution. This guide turns its Numbers Bars study into a clean Euro FX footprint you can read without confusing traded volume with resting liquidity.</p>
+    <div class="sg-hero-actions">
+      <a class="button-primary" href="#setup">Build the 6E footprint</a>
+      <a class="sg-text-link" href="https://www.sierrachart.com/index.php?page=doc/NumbersBars.php" target="_blank" rel="noopener">Open the official Numbers Bars manual</a>
+    </div>
+    <div class="sg-facts" aria-label="Setup at a glance">
+      <div><span>Primary view</span><strong>Bid volume &times; ask volume</strong></div>
+      <div><span>Data setting</span><strong>Intraday records at 1 tick</strong></div>
+      <div><span>Practice mode</span><strong>Chart Replay + simulation</strong></div>
+    </div>
+  </div>
+
+  <figure class="sg-footprint" aria-labelledby="footprint-caption">
+    <div class="sg-window-bar"><span>6E &middot; 5 MIN</span><span>NUMBERS BARS</span></div>
+    <div class="sg-footprint-scroll" role="region" aria-label="Illustrative 6E footprint table" tabindex="0">
+      <table>
+        <thead><tr><th scope="col">Price</th><th scope="col">08:30</th><th scope="col">08:35</th><th scope="col">08:40</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">1.16420</th><td>14 &times; 38</td><td class="sg-buy">11 &times; 52</td><td>19 &times; 25</td></tr>
+          <tr><th scope="row">1.16415</th><td>31 &times; 46</td><td class="sg-buy">18 &times; 77</td><td>36 &times; 42</td></tr>
+          <tr><th scope="row">1.16410</th><td>54 &times; 41</td><td class="sg-poc">63 &times; 81</td><td>48 &times; 55</td></tr>
+          <tr><th scope="row">1.16405</th><td class="sg-sell">72 &times; 17</td><td>44 &times; 39</td><td>52 &times; 34</td></tr>
+          <tr><th scope="row">1.16400</th><td class="sg-sell">49 &times; 10</td><td>23 &times; 28</td><td>37 &times; 21</td></tr>
+        </tbody>
+        <tfoot><tr><th scope="row">Delta</th><td>-64</td><td class="sg-positive">+142</td><td>-15</td></tr></tfoot>
+      </table>
+    </div>
+    <figcaption id="footprint-caption">Illustrative footprint&mdash;not live market data. Green and red cells show how selected imbalances can be made easy to spot.</figcaption>
+  </figure>
+</header>
+
+<section class="sg-section" aria-labelledby="what-title">
+  <div class="sg-section-heading">
+    <p class="sg-kicker">Start with the platform</p>
+    <h2 id="what-title">What Sierra Chart Actually Is</h2>
+    <p>Sierra Chart is a downloadable desktop charting and trading platform with real-time and historical charts, live and simulated trading, automated studies, a DOM, and direct support for futures-market data services. It is built for control, not instant simplicity.</p>
+  </div>
+  <div class="sg-fit-grid">
+    <article>
+      <span class="sg-card-label">Strong fit</span>
+      <h3>You want precise data and order-flow control</h3>
+      <p>Numbers Bars, tick-by-tick storage, replay, custom studies, chart DOMs, and deep configuration are the point.</p>
+    </article>
+    <article>
+      <span class="sg-card-label">Weak fit</span>
+      <h3>You want a platform that configures itself</h3>
+      <p>The menus are dense, data choices matter, and a bad setting can make a sophisticated chart misleading.</p>
+    </article>
+  </div>
+  <p class="sg-note"><strong>Cost note:</strong> Numbers Bars require a Sierra Chart service package with Advanced features. Real-time exchange data and its fees can be separate, so check the <a href="https://www.sierrachart.com/index.php?page=doc/Packages.php" target="_blank" rel="noopener">current package comparison</a> before subscribing.</p>
+</section>
+
+<section class="sg-section" id="setup" aria-labelledby="setup-title">
+  <div class="sg-section-heading">
+    <p class="sg-kicker">Clean setup first</p>
+    <h2 id="setup-title">Build a Readable 6E Numbers Bars Chart</h2>
+    <p>Do the data work before touching colors. A footprint built from coarse or incomplete records can look convincing while showing the wrong bid-versus-ask detail.</p>
+  </div>
+
+  <div class="sg-prereqs" aria-label="Numbers Bars prerequisites">
+    <article><span>01</span><h3>One-tick storage</h3><p>Maximum accuracy starts with intraday records stored at one tick.</p></article>
+    <article><span>02</span><h3>Active contract</h3><p>Open the current Euro FX contract supplied by your connected data service.</p></article>
+    <article><span>03</span><h3>Bid/ask trade volume</h3><p>The history must identify volume executed at the bid and at the ask.</p></article>
+  </div>
+
+  <ol class="sg-steps">
+    <li>
+      <div>
+        <h3>Store intraday data at one tick</h3>
+        <p>Open <code>Global Settings &gt; Data/Trade Service Settings</code>. Under Common Settings, set <code>Intraday Data Storage Time Unit</code> to <code>1 Tick</code>. If the symbol was already downloaded at a coarser interval, Sierra's documentation says to use <code>Edit &gt; Delete All Data and Download</code> once after changing the setting.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Open the active Euro FX intraday chart</h3>
+        <p>Choose <code>File &gt; Find Symbol</code>, select the active Euro FX futures contract for your data service, then choose <code>Open Intraday Chart</code>. Do not blindly copy somebody else's symbol: Sierra symbol formats vary by service.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Keep the first chart light</h3>
+        <p>In <code>Chart &gt; Chart Settings</code>, verify the symbol's tick size and begin with a small <code>Days to Load</code> value such as 7. Numbers Bars process every price level inside every bar, so loading months of tick data while learning only slows the chart down.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Add the Numbers Bars study</h3>
+        <p>Go to <code>Analysis &gt; Studies</code>, select <code>Numbers Bars</code>, choose <code>Add</code>, then open <code>Settings</code>. Set Column 1 text to <code>Bid Vol x Ask Vol</code>, set Columns 2 and 3 to <code>No Text</code>, and use <code>Volume Profile</code> as the background type for a clean first layout.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Make the numbers readable</h3>
+        <p>Apply the study, then use the Up Arrow to increase horizontal bar spacing. If price levels overlap, adjust or reset the price scale. Save the chartbook once the layout is clean.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Add bar delta and totals</h3>
+        <p>Return to <code>Analysis &gt; Studies</code> and add <code>Numbers Bars Calculated Values</code>. In Subgraphs, keep only the rows you will actually use&mdash;for example Ask Volume minus Bid Volume, total volume, and point-of-control volume&mdash;and set the rest to Ignore.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section class="sg-section sg-imbalance-section" aria-labelledby="imbalance-title">
+  <div class="sg-section-heading">
+    <p class="sg-kicker">Optional visual filter</p>
+    <h2 id="imbalance-title">Highlight a 4:1 Diagonal Imbalance</h2>
+    <p>Sierra's Numbers Bars documentation includes a 4.0, or 400%, example that makes only the strongest configured ratio stand out. It is a display choice, not a universal trade signal.</p>
+  </div>
+  <div class="sg-settings-grid">
+    <dl>
+      <div><dt>Text</dt><dd>Bid Vol x Ask Vol</dd></div>
+      <div><dt>Background</dt><dd>Volume Profile</dd></div>
+      <div><dt>Coloring method</dt><dd>Based on Diagonal Dominant Side AskVol/BidVol Percentage</dd></div>
+      <div><dt>Percent thresholds</dt><dd><code>0, 0, 4</code></dd></div>
+    </dl>
+    <aside>
+      <h3>How to color it</h3>
+      <p>Use the Range 3 Up color for ask-side imbalances and Range 3 Down for bid-side imbalances. Match the other ranges to your normal background so only ratios at or above 4.0 are emphasized.</p>
+      <p class="sg-small">Sierra also documents graded examples using lower thresholds. Test the setting against your own data instead of treating 4:1 as magic.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="sg-section" aria-labelledby="reading-title">
+  <div class="sg-section-heading">
+    <p class="sg-kicker">Read what traded, not what you hoped</p>
+    <h2 id="reading-title">What the Numbers Do&mdash;and Do Not&mdash;Tell You</h2>
+  </div>
+  <div class="sg-reading-grid">
+    <article><span>Bid volume</span><h3>Trades executed at the bid</h3><p>This is completed selling activity at that price, not the number of resting buy orders waiting in the book.</p></article>
+    <article><span>Ask volume</span><h3>Trades executed at the ask</h3><p>This is completed buying activity at that price, not proof that a specific institution entered.</p></article>
+    <article><span>Bar delta</span><h3>Ask volume minus bid volume</h3><p>Delta describes the balance of executed aggression in the bar. It does not guarantee the next move.</p></article>
+    <article><span>Diagonal comparison</span><h3>Opposing volume one tick apart</h3><p>The comparison helps isolate where one side traded at a much larger ratio than the opposing side nearby.</p></article>
+  </div>
+  <div class="sg-context-callout">
+    <div>
+      <p class="sg-kicker">The useful part</p>
+      <h3>Use Numbers Bars at a price level you already care about</h3>
+    </div>
+    <p>A large imbalance in the middle of nowhere is just a large imbalance. Start with session highs and lows, prior reaction levels, and rollover-aware liquidity, then use the footprint to judge the response. The companion <a href="https://grizzlyparrottrading.com/futures-basics/how-to-read-order-flow-on-6e.html">6E order-flow guide</a> covers that reading process.</p>
+  </div>
+</section>
+
+<section class="sg-section" aria-labelledby="replay-title">
+  <div class="sg-section-heading">
+    <p class="sg-kicker">Practice without live risk</p>
+    <h2 id="replay-title">Run the Setup Through Chart Replay</h2>
+    <p>Sierra Chart can replay an intraday chart while Trade Simulation is active. That gives you a controlled way to learn the footprint before attaching money to every colored cell.</p>
+  </div>
+  <div class="sg-replay">
+    <div class="sg-replay-control" aria-hidden="true">
+      <span class="sg-play">&#9654;</span>
+      <div><strong>30&times;</strong><span>Single Chart</span></div>
+      <div class="sg-replay-track"><span></span></div>
+      <time>08:30:00</time>
+    </div>
+    <ol>
+      <li>Open the intraday chart and scroll back to the session you want to study.</li>
+      <li>Choose <code>Chart &gt; Replay Chart &gt; Replay Chart (Control Panel)</code>.</li>
+      <li>For the first run, select <code>Single Chart</code> and start around 30&times; or 60&times; speed.</li>
+      <li>Leave <code>Use Start Date-Time</code> unchecked unless you are deliberately entering an exact start.</li>
+      <li>Press Play, respond to the Clear Trade Data prompt, and use <code>Skip Empty Periods</code> if needed.</li>
+      <li>For an older futures date, use the contract active then or a correctly configured continuous chart.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sg-section" aria-labelledby="mistakes-title">
+  <div class="sg-section-heading">
+    <p class="sg-kicker">Five ways to ruin the chart</p>
+    <h2 id="mistakes-title">Common Numbers Bars Mistakes</h2>
+  </div>
+  <div class="sg-mistakes">
+    <article><strong>Using a Historical Daily chart</strong><p>Numbers Bars are for intraday charts. Start with the correct chart type.</p></article>
+    <article><strong>Keeping coarse stored records</strong><p>Changing the setting does not repair history already stored at a wider interval; redownload it once.</p></article>
+    <article><strong>Calling traded volume "liquidity"</strong><p>Executed bid/ask volume and resting market depth are different datasets.</p></article>
+    <article><strong>Replaying the wrong contract</strong><p>A current contract can be sparse when replayed far outside its active period. Respect the <a href="https://grizzlyparrottrading.com/futures-basics/6e-roll-dates-and-contract-behavior.html">6E roll</a>.</p></article>
+    <article><strong>Treating color as prediction</strong><p>An imbalance identifies what traded. Context determines whether it matters.</p></article>
+  </div>
+</section>
+
+<section class="sg-bottom-line" aria-labelledby="bottom-line-title">
+  <div>
+    <p class="sg-kicker">Bottom line</p>
+    <h2 id="bottom-line-title">Sierra Chart Rewards Careful Setup</h2>
+  </div>
+  <p>For a trader who wants accurate tick data, configurable footprints, calculated values, replay, and room to build a serious workspace, Sierra Chart is hard to dismiss. The tradeoff is a steeper setup process. Get the data right, keep the first chart simple, and add detail only when it answers a specific question.</p>
+  <a class="button-primary" href="https://www.sierrachart.com/index.php?page=doc/GettingStarted.php" target="_blank" rel="noopener">Open Sierra Chart Getting Started</a>
+</section>
+
+<details class="sg-sources">
+  <summary>Official Sierra Chart sources used for this guide</summary>
+  <ul>
+    <li><a href="https://www.sierrachart.com/" target="_blank" rel="noopener">Sierra Chart platform overview</a> and <a href="https://www.sierrachart.com/index.php?page=doc/Packages.php" target="_blank" rel="noopener">service packages</a></li>
+    <li><a href="https://www.sierrachart.com/index.php?page=doc/NumbersBars.php" target="_blank" rel="noopener">Numbers Bars</a> and <a href="https://www.sierrachart.com/index.php?page=doc/TickbyTickDataConfiguration.php" target="_blank" rel="noopener">tick-by-tick data configuration</a></li>
+    <li><a href="https://www.sierrachart.com/index.php?page=doc/ReplayChart.html" target="_blank" rel="noopener">Chart Replay</a>, <a href="https://www.sierrachart.com/index.php?page=doc/TradeSimulation.php" target="_blank" rel="noopener">Trade Simulation</a>, and <a href="https://www.sierrachart.com/index.php?page=doc/ContinuousFuturesContractCharts.html" target="_blank" rel="noopener">continuous futures charts</a></li>
+  </ul>
+  <p>Documentation checked August 5, 2026.</p>
+</details>
+
+<p class="sg-trademark-note">Sierra Chart is a trademark of its respective owner. Grizzly Parrot Trading is not affiliated with, endorsed by, or sponsored by Sierra Chart. This tutorial is educational and uses an original illustrative footprint rather than a platform screenshot.</p>
+
+<!-- ARTICLE BODY END -->
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+
+    <div class="footer-book">
+      <h3>Books</h3>
+      <p>Market structure, risk, and execution frameworks.</p>
+      <a href="/books/" class="footer-book-link">View All Books</a>
+    </div>
+
+    <div class="footer-links">
+      <a href="/about.html">About</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+
+    <p class="footer-copy">
+      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
+    </p>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+  </div>
+</footer>
+</body>
+</html>

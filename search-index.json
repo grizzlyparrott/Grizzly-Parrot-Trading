@@ -3870,6 +3870,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Sierra Chart Numbers Bars: A Practical 6E Setup Guide",
+    "url": "/platforms-tutorials/sierra-chart-numbers-bars-guide.html",
+    "description": "Set up Sierra Chart Numbers Bars for Euro FX futures with one-tick data, bid x ask footprints, 4:1 imbalances, bar delta, and chart replay.",
+    "category": "Platforms & Tutorials"
+  },
+  {
     "title": "Silver Supply and Mining Fundamentals for SI Traders",
     "url": "/futures-basics/silver-supply-and-mining-fundamentals.html",
     "description": "A hard-edged breakdown of global silver supply, mining structure, and what actually matters for Silver futures (SI) traders watching COMEX price.",
