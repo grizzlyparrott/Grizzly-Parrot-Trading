@@ -1,202 +1,677 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
 
-        <meta charset="UTF-8">
-     <!-- Standard Favicon -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Risk Per Trade for Small Futures Accounts | Drawdown Sizing</title>
+  <meta name="description" content="Calculate futures position size from usable drawdown buffer, stop distance, tick value, costs, and safety reserve, with MES and prop examples.">
+  <meta name="robots" content="index, follow">
 
-<!-- Web App Manifest -->
-<link rel="manifest" href="/site.webmanifest">
+  <link rel="canonical" href="https://grizzlyparrottrading.com/market-basics/risk-per-trade-small-accounts.html">
 
-<!-- PNG Fallbacks -->
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Risk Per Trade For Small Accounts – Grizzly Parrot Trading</title>
-    <meta name="description" content="How much you should risk per trade on a small futures account or prop evaluation, and why sizing correctly matters more than win rate.">
-        <!-- Open Graph -->
-    <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-    <meta property="og:image:width" content="1792">
-    <meta property="og:image:height" content="941">
+  <meta property="og:title" content="Risk Per Trade for Small Futures Accounts: Size From the Real Drawdown Buffer">
+  <meta property="og:description" content="Size futures trades from the money that can actually be lost, the valid stop, tick value, trading costs, and a protected safety reserve.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://grizzlyparrottrading.com/market-basics/risk-per-trade-small-accounts.html">
+  <meta property="og:site_name" content="Grizzly Parrot Trading">
+  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+  <meta property="og:image:width" content="1792">
+  <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Grizzly Parrot Trading educational futures guide">
+  <meta property="article:modified_time" content="2026-08-05">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Risk Per Trade for Small Futures Accounts">
+  <meta name="twitter:description" content="A calculation-first guide to sizing from usable drawdown buffer, stop distance, tick value, costs, and reserve.">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading educational futures guide">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-JMJVR3G5YN');
-    </script>
+  <link rel="stylesheet" href="../style.css">
 
-    <link rel="stylesheet" href="../style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JMJVR3G5YN');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Risk Per Trade for Small Futures Accounts: Size From the Real Drawdown Buffer",
+    "description": "A calculation-first guide to futures position sizing using usable drawdown buffer, stop distance, tick value, estimated costs, and a safety reserve.",
+    "author": {
+      "@type": "Organization",
+      "name": "Grizzly Parrot Trading",
+      "url": "https://grizzlyparrottrading.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grizzly Parrot Trading",
+      "url": "https://grizzlyparrottrading.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://grizzlyparrottrading.com/OG-default.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://grizzlyparrottrading.com/market-basics/risk-per-trade-small-accounts.html"
+    },
+    "dateModified": "2026-08-05",
+    "url": "https://grizzlyparrottrading.com/market-basics/risk-per-trade-small-accounts.html",
+    "image": "https://grizzlyparrottrading.com/OG-default.png",
+    "inLanguage": "en"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Market Basics",
+        "item": "https://grizzlyparrottrading.com/market-basics/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Risk Per Trade for Small Futures Accounts",
+        "item": "https://grizzlyparrottrading.com/market-basics/risk-per-trade-small-accounts.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does a $50,000 prop account mean $50,000 is available to lose?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The nominal label is not the loss allowance. Use the account's current balance or equity, subtract the current breach floor, then subtract a separate safety reserve."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should stop placement come before contract count?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Identify the technically valid stop first, convert its distance to dollars per contract, add estimated commissions and slippage, and then calculate how many whole contracts fit. If one does not fit, skip the trade."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is usable drawdown buffer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usable drawdown buffer is current equity or balance minus the current breach floor minus a safety reserve. It is the protected base from which a trader can choose a planned risk budget."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should a futures trade be skipped?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skip the trade when the estimated loss for one contract, using the technically valid stop plus estimated costs, is greater than the maximum planned dollar risk."
+        }
+      }
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
-<link rel="canonical" href="https://grizzlyparrottrading.com/market-basics/risk-per-trade-small-accounts.html">
-<meta property="og:title" content="Risk Per Trade For Small Accounts – Grizzly Parrot Trading">
-<meta property="og:description" content="How much you should risk per trade on a small futures account or prop evaluation, and why sizing correctly matters more than win rate.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://grizzlyparrottrading.com/market-basics/risk-per-trade-small-accounts.html">
-<meta property="og:site_name" content="Grizzly Parrot Trading">
-<meta name="twitter:title" content="Risk Per Trade For Small Accounts – Grizzly Parrot Trading">
-<meta name="twitter:description" content="How much you should risk per trade on a small futures account or prop evaluation, and why sizing correctly matters more than win rate.">
 </head>
-
 <body>
+
 <header class="site-header">
-    <div class="container header-inner">
-        <div class="logo">
-            <span class="logo-mark">GP</span>
-            <span class="logo-text">Grizzly Parrot Trading</span>
-        </div>
-        <nav class="main-nav">
-             <a href="https://grizzlyparrottrading.com/#articles">Articles</a>
-             <a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a>
-             <a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a>
-             <a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a>
-             <a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a>
-            </nav>
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="/">Grizzly Parrot Trading</a>
     </div>
+    <nav class="main-nav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../metals/index.html">Metals</a></li>
+        <li><a href="../energies/index.html">Energies</a></li>
+        <li><a href="../currencies/index.html">Currencies</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firms</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+        <li><a href="../tools/index.html">Tools</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
-<main class="section">
-    <div class="container">
+<main>
+<section class="section">
+<article class="container article-content risk-guide">
+<!-- ARTICLE BODY START -->
 
-        <h1>Risk Per Trade For Small Accounts</h1>
-        <p class="section-intro">
-            Most traders blow up not because their ideas are bad, but because their  
-            position size is too large relative to normal futures volatility.  
-            Here's how to size trades so your account survives long enough to matter.
-        </p>
-
-        <h2>1. Small Accounts Can’t Absorb Normal Futures Movement</h2>
-        <p>
-            A single ES candle can easily move 5–10 points.  
-            That’s <strong>$250–$500 per contract</strong>.  
-        </p>
-        <p>
-            If your entire risk budget is only $100–$200 per trade, you can’t run full-size contracts:
-        </p>
-        <ul>
-            <li><strong>ES</strong> will destroy you</li>
-            <li><strong>NQ</strong> will destroy you faster</li>
-            <li><strong>MES / MNQ</strong> exist specifically for small accounts</li>
-        </ul>
-
-        <h2>2. The 1%–2% Rule Actually Matters In Futures</h2>
-        <p>
-            In futures, “1% per trade” is not a meme — it’s math.  
-        </p>
-        <ul>
-            <li>$2,000 account → $20 max risk per trade</li>
-            <li>$3,000 account → $30 max risk</li>
-            <li>$5,000 account → $50 max risk</li>
-        </ul>
-        <p>
-            If that sounds “too small,” it means you’re used to oversizing.
-        </p>
-
-        <h2>3. Convert Your Risk Into Ticks</h2>
-        <p>
-            Trading is easier when you translate risk into a tick budget.
-        </p>
-
-        <h3>Example: MES</h3>
-        <ul>
-            <li>MES tick = $1.25</li>
-            <li>$50 risk → 40 ticks</li>
-        </ul>
-
-        <p>
-            That means your ENTIRE trade — including wiggle — must survive within 40 ticks.  
-            If your stop requires 60 ticks to be placed safely, the trade is too big for your account.
-        </p>
-
-        <h2>4. Prop Evaluations Make Risk Smaller Than You Think</h2>
-        <ul>
-            <li>Apex 50k daily loss limit ≈ $2,500</li>
-            <li>Realistic “daily risk” should be $300–$500</li>
-            <li>Per-trade risk should be $50–$100 max</li>
-        </ul>
-        <p>
-            You can hit trailing drawdown with 2–3 oversized trades,  
-            even if your ideas are correct overall.
-        </p>
-
-        <h2>5. How Many Contracts Can You Trade?</h2>
-
-        <p><strong>$2k–$4k personal account:</strong></p>
-        <ul>
-            <li>1–2 MES</li>
-            <li>1 MNQ if you can handle bigger swings</li>
-        </ul>
-
-        <p><strong>$5k–$10k personal account:</strong></p>
-        <ul>
-            <li>3–5 MES</li>
-            <li>1–2 MNQ</li>
-        </ul>
-
-        <p><strong>Prop 50k eval:</strong></p>
-        <ul>
-            <li>3–6 MES</li>
-            <li>1 MNQ</li>
-            <li>Never more than 2 MNQ unless you’re asking to fail</li>
-        </ul>
-
-        <h2>6. The Goal Of Small Accounts: Survival First</h2>
-        <p>
-            If you size correctly:
-        </p>
-        <ul>
-            <li>your stop survives normal noise</li>
-            <li>you avoid daily loss limit violations</li>
-            <li>your edge actually has time to play out</li>
-        </ul>
-
-        <p>
-            Your goal is to avoid the behavior that kills most beginners:  
-            <strong>trading a large idea with a small account.</strong>
-        </p>
-
-        
-
+<header class="rp-hero">
+  <div class="rp-hero-copy">
+    <p class="rp-kicker">Futures risk guide</p>
+    <h1>Risk Per Trade for Small Futures Accounts: Size From the Real Drawdown Buffer</h1>
+    <p class="rp-hero-lede">The account label does not decide position size. The money you can actually lose, the technically valid stop, the contract&rsquo;s tick value, and trading costs do.</p>
+    <div class="rp-hero-actions">
+      <a class="button-primary" href="#risk-calculator">Calculate a trade</a>
+      <a class="rp-text-link" href="#worked-examples">See the worked examples</a>
     </div>
-    </main>
+    <div class="rp-hero-facts" aria-label="Sizing sequence">
+      <div><span>01</span><strong>Measure the real buffer</strong></div>
+      <div><span>02</span><strong>Place the valid stop</strong></div>
+      <div><span>03</span><strong>Fit whole contracts</strong></div>
+    </div>
+  </div>
+
+  <figure class="rp-buffer-figure">
+    <img src="risk-buffer-visual.svg" width="960" height="680" fetchpriority="high" alt="Illustration of a current balance above a breach floor, with a safety reserve separating the floor from the usable trading buffer.">
+    <figcaption>Illustrative account geometry. The breach floor is not a stop-loss target.</figcaption>
+  </figure>
+</header>
+
+<section class="rp-section" aria-labelledby="core-principle">
+  <div class="rp-section-heading">
+    <p class="rp-kicker">The governing principle</p>
+    <h2 id="core-principle">Position Size Comes From Risk Capacity, Not the Account Name</h2>
+    <p>A &ldquo;$50,000&rdquo; prop evaluation can have far less loss capacity than a $4,000 personal account. One is a nominal program label; the other is actual cash equity. Treating them as interchangeable produces false precision.</p>
+  </div>
+
+  <div class="rp-account-grid">
+    <article>
+      <span class="rp-card-label">Personal cash account</span>
+      <h3>Start with current equity</h3>
+      <p>Current equity is real capital. A trader may still impose a personal stop-trading floor and must leave room for margin, open-position variation, fees, and errors.</p>
+    </article>
+    <article>
+      <span class="rp-card-label">Prop evaluation or funded account</span>
+      <h3>Start with the current breach floor</h3>
+      <p>The nominal balance is not spendable risk. Use the firm&rsquo;s live balance or equity and its current rule-defined floor. If the floor trails, refresh it before every trade.</p>
+    </article>
+  </div>
+
+  <div class="rp-definition-grid" aria-label="Key risk definitions">
+    <article>
+      <span>Raw buffer</span>
+      <h3>Balance minus floor</h3>
+      <p>The distance between current equity or balance and the level that ends trading under the applicable rule or personal plan.</p>
+    </article>
+    <article>
+      <span>Safety reserve</span>
+      <h3>Room that is not risked</h3>
+      <p>A separate cushion for slippage, gaps, rejected exits, data differences, rule calculations, and ordinary human error.</p>
+    </article>
+    <article>
+      <span>Usable buffer</span>
+      <h3>What remains after reserve</h3>
+      <p>The protected base from which the trader chooses a maximum planned loss for the next trade.</p>
+    </article>
+  </div>
+</section>
+
+<section class="rp-section rp-formula-section" aria-labelledby="formula-title">
+  <div class="rp-section-heading">
+    <p class="rp-kicker">The sizing equations</p>
+    <h2 id="formula-title">Three Calculations, in Order</h2>
+    <p>These equations describe planned risk. They do not guarantee the final fill because markets can gap or slip through a stop.</p>
+  </div>
+
+  <div class="rp-formula-grid">
+    <article>
+      <span class="rp-formula-number">01</span>
+      <h3>Find usable buffer</h3>
+      <p class="rp-equation">usable buffer = current equity or balance &minus; breach floor &minus; safety reserve</p>
+      <p>If this is zero or negative, there is no risk capacity for a new trade.</p>
+    </article>
+    <article>
+      <span class="rp-formula-number">02</span>
+      <h3>Price the planned loss</h3>
+      <p class="rp-equation">planned trade loss = stop ticks &times; tick value &times; contracts + estimated commissions and slippage</p>
+      <p>When costs are entered per contract, multiply those costs by the number of contracts too.</p>
+    </article>
+    <article>
+      <span class="rp-formula-number">03</span>
+      <h3>Fit whole contracts</h3>
+      <p class="rp-equation">maximum contracts = floor(risk budget &divide; estimated loss per contract)</p>
+      <p>Always round down. A result below one means skip the trade.</p>
+    </article>
+  </div>
+</section>
+
+<section class="rp-section" aria-labelledby="stop-first-title">
+  <div class="rp-section-heading">
+    <p class="rp-kicker">Structure before size</p>
+    <h2 id="stop-first-title">Stop Placement Must Come Before Contract Count</h2>
+    <p>A stop belongs where the trade thesis is invalidated, not where a preferred number of contracts makes the dollar loss look comfortable.</p>
+  </div>
+
+  <ol class="rp-steps">
+    <li>
+      <div>
+        <h3>Define the trade and its invalidation</h3>
+        <p>Use market structure, volatility, or another tested method to identify the price that proves the setup wrong. See how <a href="https://grizzlyparrottrading.com/futures-basics/mechanics-of-stop-orders-in-futures.html">futures stop orders work</a> before assuming the stop price is a guaranteed fill.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Convert the stop to ticks</h3>
+        <p>Measure entry to stop in the contract&rsquo;s minimum price increments. Keep <a href="https://grizzlyparrottrading.com/futures-basics/tick-value-vs-tick-size-risk.html">tick size and tick value</a> separate.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Calculate loss per contract</h3>
+        <p>Multiply stop ticks by tick value, then add a conservative estimate for round-turn commissions and <a href="https://grizzlyparrottrading.com/futures-basics/futures-slippage-explained.html">slippage</a>.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Reduce size or pass</h3>
+        <p>Divide the chosen risk budget by loss per contract and round down. Never pull a valid stop closer just to force one more contract into the trade.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section class="rp-section rp-drawdown-section" aria-labelledby="drawdown-title">
+  <div class="rp-section-heading">
+    <p class="rp-kicker">Know which floor moves</p>
+    <h2 id="drawdown-title">Real-Time, End-of-Day, and Static Drawdown Behave Differently</h2>
+    <p>The calculation is only as accurate as the floor entered. Read the current official rules for the specific account; drawdown labels are not standardized across firms.</p>
+  </div>
+
+  <div class="rp-drawdown-grid">
+    <article>
+      <span>Real-time trailing</span>
+      <h3>Unrealized equity can move the floor</h3>
+      <p>If the rule follows peak unrealized equity, an open winner can ratchet the breach floor upward before the position is closed. Giving back that open profit can leave less usable room even after a profitable exit.</p>
+    </article>
+    <article>
+      <span>End-of-day trailing</span>
+      <h3>The floor updates at the stated daily mark</h3>
+      <p>Intraday peaks may not move the trailing reference under an end-of-day method, but the account can still have separate intraday loss or liquidation rules. Verify the exact calculation time.</p>
+    </article>
+    <article>
+      <span>Static drawdown</span>
+      <h3>The floor stays fixed</h3>
+      <p>A static floor does not ratchet upward with profit. It is still a hard boundary, and other limits may apply. Compare the mechanics in the <a href="https://grizzlyparrottrading.com/prop-firm-trading/static-vs-trailing-drawdown.html">static-versus-trailing-drawdown guide</a>.</p>
+    </article>
+  </div>
+</section>
+
+<section class="rp-section rp-thin-buffer" aria-labelledby="thin-buffer-title">
+  <div>
+    <p class="rp-kicker">Protect the account&rsquo;s last room</p>
+    <h2 id="thin-buffer-title">When the Drawdown Buffer Gets Thin.</h2>
+  </div>
+  <div>
+    <p>Position size should contract as the current floor rises or the balance falls. The same stop can fit five contracts with a $1,500 usable buffer, one contract with a $500 usable buffer, and zero contracts after the buffer shrinks further.</p>
+    <p>Do not treat the breach floor as an acceptable stop level. A market order can fill beyond the intended price, a prop dashboard can calculate equity differently from a local platform, and a real-time trail may move while the position is open. Preserve a separate safety reserve and stop opening new risk before that reserve is touched.</p>
+    <p>For a companion explanation of the moving-floor mechanics, read <a href="https://mimiktrader.com/blog/trailing-drawdown-explained" target="_blank" rel="noopener">MimikTrader&rsquo;s explanation of trailing drawdown</a>.</p>
+  </div>
+</section>
+
+<section class="rp-section rp-calculator-section" id="risk-calculator" aria-labelledby="calculator-title">
+  <div class="rp-section-heading">
+    <p class="rp-kicker">Interactive calculator</p>
+    <h2 id="calculator-title">Futures Risk Calculator</h2>
+    <p>Enter the account&rsquo;s current numbers and the stop the setup actually requires. The percentage is your chosen allocation of usable buffer, not a universal recommendation.</p>
+  </div>
+
+  <div class="rp-calculator">
+    <form id="futures-risk-form" aria-describedby="calculator-help" novalidate>
+      <div class="rp-input-grid">
+        <div class="rp-field">
+          <label for="current-balance">Current equity or balance</label>
+          <span class="rp-input-wrap"><span aria-hidden="true">$</span><input id="current-balance" name="current-balance" type="number" inputmode="decimal" min="0" step="0.01" value="4000" required></span>
+        </div>
+        <div class="rp-field">
+          <label for="drawdown-floor">Drawdown or stop-trading floor</label>
+          <span class="rp-input-wrap"><span aria-hidden="true">$</span><input id="drawdown-floor" name="drawdown-floor" type="number" inputmode="decimal" min="0" step="0.01" value="2500" required></span>
+        </div>
+        <div class="rp-field">
+          <label for="safety-reserve">Safety reserve</label>
+          <span class="rp-input-wrap"><span aria-hidden="true">$</span><input id="safety-reserve" name="safety-reserve" type="number" inputmode="decimal" min="0" step="0.01" value="500" required></span>
+        </div>
+        <div class="rp-field">
+          <label for="risk-percent">Chosen risk percentage of usable buffer</label>
+          <span class="rp-input-wrap rp-percent-wrap"><input id="risk-percent" name="risk-percent" type="number" inputmode="decimal" min="0" max="100" step="0.1" value="5" required><span aria-hidden="true">%</span></span>
+        </div>
+        <div class="rp-field">
+          <label for="stop-ticks">Stop distance in ticks</label>
+          <span class="rp-input-wrap"><input id="stop-ticks" name="stop-ticks" type="number" inputmode="decimal" min="0.01" step="0.01" value="32" required></span>
+        </div>
+        <div class="rp-field">
+          <label for="tick-value">Tick value</label>
+          <span class="rp-input-wrap"><span aria-hidden="true">$</span><input id="tick-value" name="tick-value" type="number" inputmode="decimal" min="0.01" step="0.01" value="1.25" required></span>
+        </div>
+        <div class="rp-field rp-field-wide">
+          <label for="estimated-costs">Estimated commissions and slippage per contract</label>
+          <span class="rp-input-wrap"><span aria-hidden="true">$</span><input id="estimated-costs" name="estimated-costs" type="number" inputmode="decimal" min="0" step="0.01" value="4" required></span>
+        </div>
+      </div>
+      <p class="rp-form-help" id="calculator-help">All values must be zero or greater; stop distance and tick value must be greater than zero. Risk percentage cannot exceed 100%.</p>
+      <div class="rp-calculator-actions">
+        <button class="button-primary" type="submit">Calculate position size</button>
+        <button class="rp-reset-button" type="reset">Restore MES example</button>
+      </div>
+    </form>
+
+    <section class="rp-results" aria-labelledby="results-title">
+      <div class="rp-results-heading">
+        <p class="rp-kicker">Calculated result</p>
+        <h3 id="results-title">What fits now</h3>
+      </div>
+      <dl>
+        <div><dt>Remaining raw buffer</dt><dd id="result-raw-buffer">$1,500.00</dd></div>
+        <div><dt>Usable buffer after reserve</dt><dd id="result-usable-buffer">$1,000.00</dd></div>
+        <div><dt>Maximum planned dollar risk</dt><dd id="result-risk-budget">$50.00</dd></div>
+        <div><dt>Estimated loss per contract</dt><dd id="result-loss-contract">$44.00</dd></div>
+        <div class="rp-contract-result"><dt>Maximum whole contracts</dt><dd id="result-contracts">1</dd></div>
+      </dl>
+      <p class="rp-result-status is-fit" id="result-status" role="status" aria-live="polite">1 contract fits the entered assumptions.</p>
+    </section>
+  </div>
+
+  <p class="rp-calculator-note"><strong>Calculator boundary:</strong> this is a planning estimate, not a loss guarantee. Stops can slip, fees vary, and a real-time trailing floor can change while a trade is open.</p>
+</section>
+
+<section class="rp-section" id="worked-examples" aria-labelledby="examples-title">
+  <div class="rp-section-heading">
+    <p class="rp-kicker">Worked examples</p>
+    <h2 id="examples-title">Three Accounts, Three Calculation Outcomes</h2>
+    <p>Each example uses a deliberately chosen reserve and risk allocation. The percentages demonstrate the calculation; they are not recommendations.</p>
+  </div>
+
+  <article class="rp-example">
+    <div class="rp-example-copy">
+      <span class="rp-card-label">Example 1 &middot; Personal cash account</span>
+      <h3>A small account trading one MES</h3>
+      <p>The trader has $4,000 in equity, refuses to trade below $2,500, and keeps another $500 as a safety reserve. A technically valid 32-tick MES stop fits one contract.</p>
+    </div>
+    <div class="rp-table-scroll" role="region" aria-label="Personal MES sizing calculation" tabindex="0">
+      <table>
+        <tbody>
+          <tr><th scope="row">Raw buffer</th><td>$4,000 &minus; $2,500</td><td>$1,500</td></tr>
+          <tr><th scope="row">Usable buffer</th><td>$1,500 &minus; $500 reserve</td><td>$1,000</td></tr>
+          <tr><th scope="row">Chosen risk budget</th><td>5% &times; $1,000</td><td>$50</td></tr>
+          <tr><th scope="row">Loss per MES</th><td>32 ticks &times; $1.25 + $4 costs</td><td>$44</td></tr>
+          <tr class="rp-table-result"><th scope="row">Maximum contracts</th><td>floor($50 &divide; $44)</td><td>1 MES</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+
+  <article class="rp-example">
+    <div class="rp-example-copy">
+      <span class="rp-card-label">Example 2 &middot; Generic trailing drawdown</span>
+      <h3>An unrealized equity peak shrinks the room</h3>
+      <p>Assume a rule trails peak unrealized equity dollar-for-dollar. The balance is $51,350. After an open-position peak moves the floor from $49,500 to $50,500, the same plan drops from five MES to one.</p>
+    </div>
+    <div class="rp-table-scroll" role="region" aria-label="Trailing drawdown before and after comparison" tabindex="0">
+      <table>
+        <thead>
+          <tr><th scope="col">Calculation</th><th scope="col">Before floor rises</th><th scope="col">After floor rises</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Current balance</th><td>$51,350</td><td>$51,350</td></tr>
+          <tr><th scope="row">Current breach floor</th><td>$49,500</td><td>$50,500</td></tr>
+          <tr><th scope="row">Usable after $350 reserve</th><td>$1,500</td><td>$500</td></tr>
+          <tr><th scope="row">Chosen risk budget</th><td>10% = $150</td><td>10% = $50</td></tr>
+          <tr><th scope="row">Loss per MES</th><td>$29</td><td>$29</td></tr>
+          <tr class="rp-table-result"><th scope="row">Maximum contracts</th><td>5 MES</td><td>1 MES</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rp-example-note">This is a mechanism example, not a current rule for any named firm. Check the account provider&rsquo;s official rule page and live dashboard.</p>
+  </article>
+
+  <article class="rp-example rp-example-skip">
+    <div class="rp-example-copy">
+      <span class="rp-card-label">Example 3 &middot; No contract fits</span>
+      <h3>The trade must be skipped</h3>
+      <p>The technically valid stop costs more than the planned risk for one MES. Shrinking the stop would invalidate the setup, so the correct contract count is zero.</p>
+    </div>
+    <div class="rp-table-scroll" role="region" aria-label="Skip trade sizing calculation" tabindex="0">
+      <table>
+        <tbody>
+          <tr><th scope="row">Usable buffer</th><td>($2,050 &minus; $1,800) &minus; $150 reserve</td><td>$100</td></tr>
+          <tr><th scope="row">Chosen risk budget</th><td>20% &times; $100</td><td>$20</td></tr>
+          <tr><th scope="row">Loss per MES</th><td>20 ticks &times; $1.25 + $4 costs</td><td>$29</td></tr>
+          <tr class="rp-table-result"><th scope="row">Maximum contracts</th><td>floor($20 &divide; $29)</td><td>0 &mdash; skip</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+
+  <p class="rp-source-note"><strong>Exchange specification:</strong> CME Group lists the MES outright minimum price fluctuation as 0.25 index points, equal to <strong>$1.25 per tick</strong>. See the official <a href="https://www.cmegroup.com/articles/faqs/frequently-asked-questions-micro-e-mini-equity-index-futures.html" target="_blank" rel="noopener">Micro E-mini Equity Index Futures FAQ</a>. Specification checked August 5, 2026.</p>
+</section>
+
+<section class="rp-section" aria-labelledby="mistakes-title">
+  <div class="rp-section-heading">
+    <p class="rp-kicker">Calculation failures to avoid</p>
+    <h2 id="mistakes-title">Common Futures Sizing Mistakes</h2>
+  </div>
+  <div class="rp-mistakes">
+    <article><strong>Sizing from the nominal label</strong><p>A prop account&rsquo;s advertised balance does not describe the remaining loss allowance.</p></article>
+    <article><strong>Choosing contracts before the stop</strong><p>This reverses the logic and pressures the trader to use a technically weak stop.</p></article>
+    <article><strong>Risking to the breach floor</strong><p>The floor is a failure boundary, not a target fill price. Preserve a reserve above it.</p></article>
+    <article><strong>Ignoring per-contract costs</strong><p>Commissions and slippage scale with contracts and can turn a marginal fit into an oversize trade.</p></article>
+    <article><strong>Using stale drawdown numbers</strong><p>A trailing floor may have changed since the prior trade or during an open position.</p></article>
+    <article><strong>Rounding contracts up</strong><p>Position size is discrete. Always floor the result, even when the decimal is close to the next contract.</p></article>
+  </div>
+</section>
+
+<section class="rp-section rp-checklist" aria-labelledby="checklist-title">
+  <div>
+    <p class="rp-kicker">Final decision checklist</p>
+    <h2 id="checklist-title">Before the Order Is Sent</h2>
+    <p>If any answer is unknown, pause. Unknown inputs do not become safe because the setup looks attractive.</p>
+  </div>
+  <ul>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Current balance or equity:</strong> verified from the account now, not remembered from yesterday.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Current breach floor:</strong> taken from the applicable live rule calculation.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Safety reserve:</strong> held outside the planned risk budget.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Valid stop:</strong> placed where the trade idea is wrong, then converted to ticks.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Tick value and costs:</strong> confirmed for the exact contract and broker schedule.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Whole contracts:</strong> rounded down; zero means skip.</p></li>
+  </ul>
+</section>
+
+<section class="rp-section rp-faq" aria-labelledby="faq-title">
+  <div class="rp-section-heading">
+    <p class="rp-kicker">Frequently asked questions</p>
+    <h2 id="faq-title">Small-Account Futures Risk Questions</h2>
+  </div>
+  <details>
+    <summary>Does a $50,000 prop account mean $50,000 is available to lose?</summary>
+    <p>No. The nominal label is not the loss allowance. Use the account&rsquo;s current balance or equity, subtract the current breach floor, then subtract a separate safety reserve.</p>
+  </details>
+  <details>
+    <summary>Should stop placement come before contract count?</summary>
+    <p>Yes. Identify the technically valid stop first, convert its distance to dollars per contract, add estimated commissions and slippage, and then calculate how many whole contracts fit. If one does not fit, skip the trade.</p>
+  </details>
+  <details>
+    <summary>What is usable drawdown buffer?</summary>
+    <p>Usable drawdown buffer is current equity or balance minus the current breach floor minus a safety reserve. It is the protected base from which a trader can choose a planned risk budget.</p>
+  </details>
+  <details>
+    <summary>When should a futures trade be skipped?</summary>
+    <p>Skip the trade when the estimated loss for one contract, using the technically valid stop plus estimated costs, is greater than the maximum planned dollar risk.</p>
+  </details>
+</section>
+
+<details class="rp-sources">
+  <summary>Sources and editorial disclosure</summary>
+  <ul>
+    <li><a href="https://www.cmegroup.com/articles/faqs/frequently-asked-questions-micro-e-mini-equity-index-futures.html" target="_blank" rel="noopener">CME Group: Micro E-mini Equity Index Futures FAQ</a> for the quoted MES tick specification.</li>
+    <li><a href="https://mimiktrader.com/blog/trailing-drawdown-explained" target="_blank" rel="noopener">MimikTrader: Trailing Drawdown Explained</a> as a companion explanation of trailing-drawdown mechanics.</li>
+    <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/static-vs-trailing-drawdown.html">Grizzly Parrot Trading: Static vs. Trailing Drawdown</a> for the internal comparison guide.</li>
+  </ul>
+  <p>Exchange specification checked August 5, 2026. MimikTrader agreed to place an editorial backlink to this guide; no payment, referral commission, or product endorsement is implied by the contextual link.</p>
+</details>
+
+<aside class="rp-disclaimer" aria-label="Educational and risk disclaimer">
+  <strong>Educational and risk disclaimer</strong>
+  <p>This guide and calculator are educational tools, not individualized financial, legal, tax, brokerage, or prop-account advice. Futures are leveraged and can produce losses greater than the amount deposited. Stop orders can fill worse than their trigger price. Prop-account rules, floors, fees, and enforcement methods can change; verify the current official rules and live account values before trading. No calculation removes market, execution, or rule-breach risk.</p>
+</aside>
+
+<!-- ARTICLE BODY END -->
+</article>
+</section>
+</main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
-
     <div class="footer-book">
       <h3>Books</h3>
       <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
+      <a href="/books/" class="footer-book-link">View All Books</a>
     </div>
-
     <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-       
+      <a href="/about.html">About</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/contact.html">Contact</a>
     </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+    <p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
   </div>
-</footer></body>
+</footer>
+
+<script>
+  (function () {
+    'use strict';
+
+    var form = document.getElementById('futures-risk-form');
+    var fields = {
+      balance: document.getElementById('current-balance'),
+      floor: document.getElementById('drawdown-floor'),
+      reserve: document.getElementById('safety-reserve'),
+      percent: document.getElementById('risk-percent'),
+      stop: document.getElementById('stop-ticks'),
+      tick: document.getElementById('tick-value'),
+      costs: document.getElementById('estimated-costs')
+    };
+    var outputs = {
+      raw: document.getElementById('result-raw-buffer'),
+      usable: document.getElementById('result-usable-buffer'),
+      budget: document.getElementById('result-risk-budget'),
+      loss: document.getElementById('result-loss-contract'),
+      contracts: document.getElementById('result-contracts'),
+      status: document.getElementById('result-status')
+    };
+    var money = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+    function numberFrom(input) {
+      return Number.parseFloat(input.value);
+    }
+
+    function setStatus(message, stateClass) {
+      outputs.status.textContent = message;
+      outputs.status.className = 'rp-result-status ' + stateClass;
+    }
+
+    function clearOutputs() {
+      outputs.raw.textContent = '\u2014';
+      outputs.usable.textContent = '\u2014';
+      outputs.budget.textContent = '\u2014';
+      outputs.loss.textContent = '\u2014';
+      outputs.contracts.textContent = '0';
+    }
+
+    function calculate() {
+      var values = {
+        balance: numberFrom(fields.balance),
+        floor: numberFrom(fields.floor),
+        reserve: numberFrom(fields.reserve),
+        percent: numberFrom(fields.percent),
+        stop: numberFrom(fields.stop),
+        tick: numberFrom(fields.tick),
+        costs: numberFrom(fields.costs)
+      };
+      var finite = Object.keys(values).every(function (key) {
+        return Number.isFinite(values[key]);
+      });
+      var nonnegative = values.balance >= 0 &&
+        values.floor >= 0 &&
+        values.reserve >= 0 &&
+        values.percent >= 0 &&
+        values.stop > 0 &&
+        values.tick > 0 &&
+        values.costs >= 0;
+
+      if (!finite || !nonnegative || values.percent > 100) {
+        clearOutputs();
+        setStatus('Enter valid nonnegative values. Stop distance and tick value must be above zero, and risk percentage cannot exceed 100%.', 'is-invalid');
+        return;
+      }
+
+      var rawBuffer = values.balance - values.floor;
+      var usableBuffer = Math.max(0, rawBuffer - values.reserve);
+      var riskBudget = usableBuffer * (values.percent / 100);
+      var lossPerContract = (values.stop * values.tick) + values.costs;
+      var contracts = lossPerContract > 0 ? Math.floor((riskBudget + Number.EPSILON) / lossPerContract) : 0;
+
+      outputs.raw.textContent = money.format(rawBuffer);
+      outputs.usable.textContent = money.format(usableBuffer);
+      outputs.budget.textContent = money.format(riskBudget);
+      outputs.loss.textContent = money.format(lossPerContract);
+      outputs.contracts.textContent = String(Math.max(0, contracts));
+
+      if (rawBuffer <= 0) {
+        setStatus('Skip this trade: current equity or balance is at or below the entered floor.', 'is-skip');
+      } else if (usableBuffer <= 0) {
+        setStatus('Skip this trade: the safety reserve leaves no usable buffer.', 'is-skip');
+      } else if (riskBudget <= 0) {
+        setStatus('Skip this trade: the chosen risk budget is zero.', 'is-skip');
+      } else if (contracts < 1) {
+        setStatus('Skip this trade: even one contract exceeds the maximum planned dollar risk.', 'is-skip');
+      } else {
+        setStatus(contracts + ' whole contract' + (contracts === 1 ? ' fits' : 's fit') + ' the entered assumptions.', 'is-fit');
+      }
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      calculate();
+    });
+    form.addEventListener('input', calculate);
+    form.addEventListener('reset', function () {
+      window.setTimeout(calculate, 0);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    calculate();
+  }());
+</script>
+</body>
 </html>
