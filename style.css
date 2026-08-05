@@ -2878,7 +2878,7 @@ a:hover {
 }
 
 /* ==========================================================
-   Authoritative Static vs. Trailing Drawdown Guide
+   Static vs. Trailing Drawdown Guide
    ========================================================== */
 
 .drawdown-guide {
@@ -2978,6 +2978,28 @@ a:hover {
   margin: 0;
   font-size: clamp(2.35rem, 5vw, 3.85rem);
   letter-spacing: -0.05em;
+}
+
+.dd-byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.32rem;
+  align-items: center;
+  margin: 0.78rem 0 0;
+  color: #92a5ba;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+
+.dd-byline a {
+  color: #bdcddd;
+  font-weight: 800;
+  text-decoration-color: rgba(189, 205, 221, 0.45);
+}
+
+.dd-byline a:hover {
+  color: #ffffff;
 }
 
 .dd-hero-lede {
