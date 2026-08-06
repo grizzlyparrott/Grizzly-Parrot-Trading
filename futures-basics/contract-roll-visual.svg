@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Futures contract expiration and roll decision map</title>
+  <desc id="desc">A timeline separates liquidity migration, broker cutoffs, last trading day, and settlement while volume shifts from a current contract to the next contract.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08111f"/>
+      <stop offset="0.62" stop-color="#0b1728"/>
+      <stop offset="1" stop-color="#07101d"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2fc978"/>
+      <stop offset="1" stop-color="#70f1a9"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e3a83c"/>
+      <stop offset="1" stop-color="#ffd979"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feColorMatrix in="blur" values="0 0 0 0 0.19 0 0 0 0 0.86 0 0 0 0 0.48 0 0 0 .22 0"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" rx="42" fill="url(#bg)"/>
+  <circle cx="1000" cy="128" r="180" fill="#2fca7b" opacity=".08" filter="url(#glow)"/>
+  <circle cx="190" cy="690" r="140" fill="#f0bc55" opacity=".06" filter="url(#glow)"/>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <text x="64" y="72" fill="#69eda4" font-size="18" font-weight="800" letter-spacing="3">CONTRACT LIFE CYCLE</text>
+    <text x="64" y="112" fill="#f7fbff" font-size="32" font-weight="800">The market moves before the contract disappears</text>
+    <text x="64" y="142" fill="#91a0b5" font-size="16">Expiration is a rulebook date. The practical roll is a liquidity and account decision.</text>
+
+    <rect x="64" y="184" width="1072" height="216" rx="24" fill="#0d1b2d" stroke="#20334a"/>
+    <text x="92" y="220" fill="#aebad0" font-size="14" font-weight="700" letter-spacing="1.4">FOUR EVENTS — NOT ONE DATE</text>
+    <line x1="120" y1="294" x2="1078" y2="294" stroke="#33465e" stroke-width="4" stroke-linecap="round"/>
+
+    <g>
+      <circle cx="148" cy="294" r="17" fill="#18304a" stroke="#5d7897" stroke-width="3"/>
+      <text x="112" y="340" fill="#f7fbff" font-size="17" font-weight="750">Listed</text>
+      <text x="92" y="364" fill="#8495aa" font-size="13">contract trades</text>
+    </g>
+    <g>
+      <circle cx="426" cy="294" r="18" fill="url(#green)"/>
+      <text x="367" y="340" fill="#f7fbff" font-size="17" font-weight="750">Volume shifts</text>
+      <text x="354" y="364" fill="#8495aa" font-size="13">next month gains depth</text>
+    </g>
+    <g>
+      <circle cx="720" cy="294" r="18" fill="url(#gold)"/>
+      <text x="658" y="340" fill="#f7fbff" font-size="17" font-weight="750">Broker cutoff</text>
+      <text x="647" y="364" fill="#8495aa" font-size="13">may precede exchange</text>
+    </g>
+    <g>
+      <circle cx="1036" cy="294" r="18" fill="#f17c7c"/>
+      <text x="970" y="340" fill="#f7fbff" font-size="17" font-weight="750">Last trade</text>
+      <text x="951" y="364" fill="#8495aa" font-size="13">settlement follows terms</text>
+    </g>
+
+    <rect x="64" y="432" width="514" height="292" rx="24" fill="#0d1b2d" stroke="#20334a"/>
+    <text x="92" y="470" fill="#aebad0" font-size="14" font-weight="700" letter-spacing="1.4">VOLUME MIGRATION SNAPSHOT</text>
+    <text x="92" y="508" fill="#f7fbff" font-size="17" font-weight="750">Current contract</text>
+    <rect x="92" y="526" width="396" height="20" rx="10" fill="#172a40"/>
+    <rect x="92" y="526" width="292" height="20" rx="10" fill="#60728a"/>
+    <text x="504" y="542" text-anchor="end" fill="#b6c1d2" font-size="14">43%</text>
+
+    <text x="92" y="584" fill="#f7fbff" font-size="17" font-weight="750">Next contract</text>
+    <rect x="92" y="602" width="396" height="20" rx="10" fill="#172a40"/>
+    <rect x="92" y="602" width="356" height="20" rx="10" fill="url(#green)"/>
+    <text x="504" y="618" text-anchor="end" fill="#b6c1d2" font-size="14">57%</text>
+
+    <rect x="92" y="650" width="396" height="42" rx="13" fill="#102b25" stroke="#2a7154"/>
+    <text x="112" y="676" fill="#71efaa" font-size="14" font-weight="750">Liquidity has migrated in this example</text>
+
+    <rect x="610" y="432" width="526" height="292" rx="24" fill="#0d1b2d" stroke="#20334a"/>
+    <text x="638" y="470" fill="#aebad0" font-size="14" font-weight="700" letter-spacing="1.4">VERIFY THREE CLOCKS</text>
+
+    <g>
+      <rect x="638" y="496" width="470" height="54" rx="14" fill="#122236"/>
+      <circle cx="668" cy="523" r="10" fill="#65efa3"/>
+      <text x="692" y="519" fill="#f7fbff" font-size="16" font-weight="750">Exchange clock</text>
+      <text x="692" y="539" fill="#8899ae" font-size="12">last trade, settlement, delivery rules</text>
+    </g>
+    <g>
+      <rect x="638" y="568" width="470" height="54" rx="14" fill="#122236"/>
+      <circle cx="668" cy="595" r="10" fill="#f3c45e"/>
+      <text x="692" y="591" fill="#f7fbff" font-size="16" font-weight="750">Liquidity clock</text>
+      <text x="692" y="611" fill="#8899ae" font-size="12">volume, depth, spread, open interest</text>
+    </g>
+    <g>
+      <rect x="638" y="640" width="470" height="54" rx="14" fill="#122236"/>
+      <circle cx="668" cy="667" r="10" fill="#f17c7c"/>
+      <text x="692" y="663" fill="#f7fbff" font-size="16" font-weight="750">Account clock</text>
+      <text x="692" y="683" fill="#8899ae" font-size="12">broker or firm cutoff can be earlier</text>
+    </g>
+
+    <text x="64" y="766" fill="#718198" font-size="13">Illustrative volumes only. Always verify the live contract, exchange calendar, and broker policy.</text>
+  </g>
+</svg>

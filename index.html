@@ -1,461 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
 
-    <meta charset="UTF-8">
-     <!-- Standard Favicon -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>Futures Trading Hub | Guides, Markets, Platforms &amp; Tools</title>
+  <meta name="description" content="Search Grizzly Parrot Trading's futures guides, market hubs, platform tutorials, prop-account education, books, and practical risk calculators.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://grizzlyparrottrading.com/">
 
-<!-- Web App Manifest -->
-<link rel="manifest" href="/site.webmanifest">
+  <meta property="og:title" content="The Futures Trading Hub | Grizzly Parrot Trading">
+  <meta property="og:description" content="Search the complete guide library or browse futures basics, markets, platforms, prop-account mechanics, books, and calculators.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://grizzlyparrottrading.com/">
+  <meta property="og:site_name" content="Grizzly Parrot Trading">
+  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+  <meta property="og:image:width" content="1792">
+  <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Grizzly Parrot Trading futures education, risk tools, and market-structure guides.">
 
-<!-- PNG Fallbacks -->
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-    <meta name="format-detection" content="telephone=no">
-   
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading futures education, risk tools, and market-structure guides.">
+  <meta name="twitter:title" content="The Futures Trading Hub | Grizzly Parrot Trading">
+  <meta name="twitter:description" content="Search futures guides, market hubs, platform tutorials, prop-account education, books, and risk calculators.">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home-premium.css?v=20260806-2">
 
-    <title>Grizzly Parrot Trading | Futures & Prop Firm Basics Explained</title>
-    <meta name="description" content="Plain-English futures and prop firm trading education. Contracts, ticks, margin, drawdown, and evaluation rules explained without guru fluff.">
-    <meta name="robots" content="index, follow">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JMJVR3G5YN');
+  </script>
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://grizzlyparrottrading.com/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Grizzly Parrot Trading",
+    "url": "https://grizzlyparrottrading.com/",
+    "logo": "https://grizzlyparrottrading.com/OG-default.png",
+    "description": "A searchable futures education hub covering contract mechanics, risk, execution, market structure, platforms, prop-account rules, books, and calculators."
+  }
+  </script>
 
-    
-    
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Grizzly Parrot Trading | Futures & Prop Firm Basics Explained">
-    <meta property="og:description" content="Plain-English futures and prop firm trading education. Contracts, ticks, margin, drawdown, and evaluation rules explained without guru fluff.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://grizzlyparrottrading.com/">
-    <meta property="og:site_name" content="Grizzly Parrot Trading">
-    <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-    <meta property="og:image:width" content="1792">
-    <meta property="og:image:height" content="941">
-
-
-
-    <!-- Twitter -->
-    
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-    <meta name="twitter:title" content="Grizzly Parrot Trading | Futures & Prop Firm Basics Explained">
-    <meta name="twitter:description" content="Plain-English futures and prop firm trading education. Contracts, ticks, margin, drawdown, and evaluation rules explained without guru fluff.">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-JMJVR3G5YN');
-    </script>
-
-    <link rel="stylesheet" href="style.css">
-
-    <!-- JSON-LD: Website + Organization -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Grizzly Parrot Trading",
+    "url": "https://grizzlyparrottrading.com/",
+    "description": "A searchable hub for futures trading guides, market education, risk calculators, platform tutorials, books, and prop-account rule explanations.",
+    "publisher": {
+      "@type": "Organization",
       "name": "Grizzly Parrot Trading",
-      "url": "https://grizzlyparrottrading.com/"}
-    </script>
+      "url": "https://grizzlyparrottrading.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Grizzly Parrot Trading education hubs",
+    "numberOfItems": 8,
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Futures Basics","url":"https://grizzlyparrottrading.com/futures-basics/"},
+      {"@type":"ListItem","position":2,"name":"Market Basics","url":"https://grizzlyparrottrading.com/market-basics/"},
+      {"@type":"ListItem","position":3,"name":"Prop Firm Trading","url":"https://grizzlyparrottrading.com/prop-firm-trading/"},
+      {"@type":"ListItem","position":4,"name":"Platform Tutorials","url":"https://grizzlyparrottrading.com/platforms-tutorials/"},
+      {"@type":"ListItem","position":5,"name":"Metals","url":"https://grizzlyparrottrading.com/metals/"},
+      {"@type":"ListItem","position":6,"name":"Currencies","url":"https://grizzlyparrottrading.com/currencies/"},
+      {"@type":"ListItem","position":7,"name":"Energies","url":"https://grizzlyparrottrading.com/energies/"},
+      {"@type":"ListItem","position":8,"name":"Trading Tools","url":"https://grizzlyparrottrading.com/tools/"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does Grizzly Parrot Trading teach?",
+        "acceptedAnswer": {"@type":"Answer","text":"Grizzly Parrot Trading teaches futures contract mechanics, tick and point value, position risk, orders, liquidity, market structure, expiration, prop-account drawdown, and practical platform workflows. The material is educational and does not provide individualized trade recommendations."}
+      },
+      {
+        "@type": "Question",
+        "name": "Where should a beginner start?",
+        "acceptedAnswer": {"@type":"Answer","text":"Start with what a futures contract represents, then learn contract specifications, ticks and dollar value, stop-based risk, order behavior, liquidity, and contract expiration. The Futures Basics hub presents those subjects in a structured order."}
+      },
+      {
+        "@type": "Question",
+        "name": "Are the calculators free to use?",
+        "acceptedAnswer": {"@type":"Answer","text":"Yes. The browser-based calculators and simulators on the site are free educational tools. They run client-side and are simplified planning aids, not brokerage systems, live market data, or guarantees of actual fills and results."}
+      },
+      {
+        "@type": "Question",
+        "name": "Does Grizzly Parrot Trading provide financial advice or trade calls?",
+        "acceptedAnswer": {"@type":"Answer","text":"No. The site provides general futures education and research frameworks, not individualized financial, investment, legal, or tax advice and not a trade-call service. Readers must verify current exchange and broker rules and decide whether futures are appropriate for them."}
+      },
+      {
+        "@type": "Question",
+        "name": "How are factual contract claims sourced?",
+        "acceptedAnswer": {"@type":"Answer","text":"Detailed guides cite first-party exchange, regulator, platform, or rulebook sources where factual specifications matter. Because contract terms, margin, schedules, and account rules can change, readers are directed to verify the current official source before acting."}
+      }
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
 </head>
+<body class="home-page">
 
-<body>
-    <!-- Site header -->
-    <header class="site-header">
-        <div class="container header-inner">
-            <div class="logo">
-                <span class="logo-mark">GP</span>
-                <span class="logo-text"><a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a></span>
-            </div>
-            <nav class="main-nav">
-                <a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a>
-                <a href="https://grizzlyparrottrading.com/currencies/">Currencies</a>
-                <a href="https://grizzlyparrottrading.com/metals/">Metals</a>
-                <a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a>
-                <a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a>
-                <a href="https://grizzlyparrottrading.com/tools/">Tools</a>
-                <a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a>
-                <a href="https://grizzlyparrottrading.com/energies/">Energies</a>
-            </nav>
-
-
-           
-        </div>
-    </header>
-
-    <main>
-        <!-- Hero -->
-        <section class="hero">
-            <div class="container hero-inner">
-                <div class="hero-text">
-                    <h1>Futures Markets Explained</h1>
-                    <p>
-                        Metals, currencies, futures contracts, liquidity, execution, and how futures markets actually work.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="https://grizzlyparrottrading.com/books/">Browse Books</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEARCH BAR -->
-<div class="search-wrapper">
-  <div id="search-container">
-    <input id="search-input" type="text" placeholder="Search all articles..." autocomplete="off">
-    <div id="search-results"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo"><a href="/" aria-current="page">Grizzly Parrot Trading</a></div>
+    <nav class="main-nav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="/futures-basics/">Futures Basics</a></li>
+        <li><a href="/metals/">Metals</a></li>
+        <li><a href="/energies/">Energies</a></li>
+        <li><a href="/currencies/">Currencies</a></li>
+        <li><a href="/prop-firm-trading/">Prop Firms</a></li>
+        <li><a href="/platforms-tutorials/">Platforms</a></li>
+        <li><a href="/market-basics/">Market Basics</a></li>
+        <li><a href="/tools/">Tools</a></li>
+      </ul>
+    </nav>
   </div>
+</header>
+
+<main class="home-main">
+<div class="home-shell">
+
+<header class="home-hero">
+  <div class="home-hero-copy">
+    <p class="home-kicker">Searchable futures education library</p>
+    <h1>The Futures Trading Hub</h1>
+    <p class="home-hero-lede">Search the full library or choose a direct path into contracts, dollar risk, execution, market structure, prop-account rules, platforms, and product-specific study. <strong>Every route leads to a guide, topic hub, book, or practical calculator.</strong></p>
+
+    <form id="home-search-form" class="home-search-form home-hero-search" role="search" novalidate>
+      <label for="home-search-input">Search every guide and tool</label>
+      <div class="home-search-row">
+        <input id="home-search-input" type="search" placeholder="Try trailing drawdown, GC liquidity, tick value, NinjaTrader…" autocomplete="off">
+        <button class="home-button" type="submit">Search library</button>
+        <button id="home-search-clear" class="home-search-clear" type="button">Clear</button>
+      </div>
+      <div class="home-search-filters" role="group" aria-label="Filter search results by section">
+        <button type="button" class="is-active" data-category="all" aria-pressed="true">All</button>
+        <button type="button" data-category="Futures Basics" aria-pressed="false">Futures</button>
+        <button type="button" data-category="Market Basics" aria-pressed="false">Market mechanics</button>
+        <button type="button" data-category="Prop Firm Trading" aria-pressed="false">Prop accounts</button>
+        <button type="button" data-category="Platforms &amp; Tutorials" aria-pressed="false">Platforms</button>
+        <button type="button" data-category="Metals" aria-pressed="false">Metals</button>
+        <button type="button" data-category="Currencies" aria-pressed="false">Currencies</button>
+        <button type="button" data-category="Energies" aria-pressed="false">Energies</button>
+        <button type="button" data-category="Tools" aria-pressed="false">Tools</button>
+      </div>
+    </form>
+
+    <p class="home-hero-search-status">Results update below from the site's production guide index.</p>
+    <div class="home-hero-actions">
+      <a class="home-button" href="#topic-hubs">Browse every topic hub</a>
+      <a class="home-text-link" href="/futures-basics/">Follow the beginner learning path</a>
+    </div>
+    <dl class="home-hero-facts">
+      <div><dt>Site-wide search</dt><dd>Queries the production guide index.</dd></div>
+      <div><dt>Eight topic hubs</dt><dd>Browse by mechanic, market, account, or platform.</dd></div>
+      <div><dt>Guides and tools</dt><dd>Move from explanation to an explicit calculation.</dd></div>
+    </dl>
+  </div>
+  <figure class="home-hero-figure">
+    <img src="/home-learning-system.svg" width="1200" height="800" alt="Four-stage futures workflow moving from contract specifications to dollar risk, execution, context, and post-trade review.">
+    <figcaption>A durable process begins with the instrument and ends with review—not with a chart pattern in isolation.</figcaption>
+  </figure>
+</header>
+
+<section class="home-proof" aria-label="Editorial principles">
+  <div><span>01</span><strong>First-party specifications</strong><p>Exchange, regulator, platform, and rulebook sources are cited where factual mechanics matter.</p></div>
+  <div><span>02</span><strong>Worked dollar examples</strong><p>Abstract futures terms are translated into explicit units, formulas, and scenarios.</p></div>
+  <div><span>03</span><strong>Defensive planning tools</strong><p>Accessible client-side calculators reject invalid inputs and preserve whole-contract constraints.</p></div>
+  <div><span>04</span><strong>Education—not trade calls</strong><p>The goal is a better decision process, not certainty, prediction, or personalized advice.</p></div>
+</section>
+
+<section class="home-search-section" id="site-search" aria-labelledby="site-search-title">
+  <div class="home-section-heading">
+    <p class="home-kicker">Live library results</p>
+    <h2 id="site-search-title">Guides, Market Hubs, Platforms, and Tools</h2>
+    <p>The search above queries the site's production index. Start with the featured routes below, enter a specific question, or use a topic filter to narrow the full library.</p>
+  </div>
+  <div class="home-search-meta"><p id="home-search-status" role="status" aria-live="polite">Loading the guide index…</p></div>
+  <div id="home-search-results" class="home-search-results">
+    <a href="/futures-basics/ticks-points-dollar-value.html"><span>Futures Basics</span><strong>Ticks vs Points in Futures</strong><p>Convert price movement into ticks and dollar value.</p></a>
+    <a href="/market-basics/risk-per-trade-small-accounts.html"><span>Market Basics</span><strong>Risk Per Trade for Small Futures Accounts</strong><p>Size from the usable drawdown buffer and actual stop.</p></a>
+    <a href="/prop-firm-trading/static-vs-trailing-drawdown.html"><span>Prop Firm Trading</span><strong>Static vs Trailing Drawdown</strong><p>Compare enforcement timing, floors, and usable room.</p></a>
+    <a href="/futures-basics/contract-expiration-and-roll.html"><span>Futures Basics</span><strong>Contract Expiration and Roll</strong><p>Separate exchange dates, liquidity migration, and broker cutoffs.</p></a>
+  </div>
+  <p id="home-search-empty" class="home-search-empty" hidden>No matching guides. Try a broader term or clear the section filter.</p>
+</section>
+
+<section class="home-section home-teaching" aria-labelledby="teaching-title">
+  <div class="home-section-heading">
+    <p class="home-kicker">A complete decision—not an isolated setup</p>
+    <h2 id="teaching-title">Four Questions Every Futures Trade Must Survive</h2>
+  </div>
+  <div class="home-teaching-grid">
+    <article><span>Instrument</span><h3>What exactly are you trading?</h3><p>Contract unit, quotation, tick size, tick value, trading hours, expiration month, and settlement method.</p><a href="/futures-basics/contract-specs-explained.html">Learn contract specifications</a></article>
+    <article><span>Dollar risk</span><h3>What can the trade actually lose?</h3><p>Technically valid stop distance, tick value, contract count, commissions, slippage, and usable account buffer.</p><a href="/market-basics/risk-per-trade-small-accounts.html">Build the risk calculation</a></article>
+    <article><span>Execution</span><h3>How does the order meet the book?</h3><p>Order type, spread, displayed depth, queue priority, volatility, and the difference between a trigger and a fill.</p><a href="/futures-basics/how-to-read-order-flow-on-6e.html">Study order flow</a></article>
+    <article><span>Context</span><h3>What would invalidate the idea?</h3><p>Location, catalyst, acceptance or rejection, market regime, correlated markets, and an explicit condition for being wrong.</p><a href="/market-basics/trade-around-whipsaws.html">Study confirmation and failure</a></article>
+  </div>
+</section>
+
+<section class="home-section home-path" id="futures" aria-labelledby="path-title">
+  <div class="home-path-copy">
+    <p class="home-kicker">Start here</p>
+    <h2 id="path-title">Build the Foundation in the Right Order</h2>
+    <p>Futures leverage punishes unit errors. Start with the contract's obligations, convert its price increments to dollars, size from the stop, then add execution and contract-life-cycle mechanics.</p>
+    <a class="home-button" href="/futures-basics/">Open the complete Futures Basics hub</a>
+  </div>
+  <ol class="home-path-list">
+    <li><span>01</span><div><strong>What Is a Futures Contract?</strong><p>Standardization, leverage, counterparties, settlement, and why a contract is not the underlying asset.</p><a href="/futures-basics/what-is-a-futures-contract.html">Read the lesson</a></div></li>
+    <li><span>02</span><div><strong>Contract Specifications</strong><p>Find the unit, quote convention, tick, value, hours, month cycle, and settlement terms.</p><a href="/futures-basics/futures-contract-specifications-explained.html">Read the lesson</a></div></li>
+    <li><span>03</span><div><strong>Ticks, Points, and Dollar Value</strong><p>Translate a chart move into the contract's minimum increments and gross dollar movement.</p><a href="/futures-basics/ticks-points-dollar-value.html">Use the calculator</a></div></li>
+    <li><span>04</span><div><strong>Risk Per Trade</strong><p>Choose the technical stop first, estimate loss per contract, and fit only whole contracts.</p><a href="/market-basics/risk-per-trade-small-accounts.html">Calculate position risk</a></div></li>
+    <li><span>05</span><div><strong>Expiration and Roll</strong><p>Track the exchange, liquidity, and broker clocks before the active month changes.</p><a href="/futures-basics/contract-expiration-and-roll.html">Plan the transition</a></div></li>
+  </ol>
+</section>
+
+<section class="home-section" id="articles" aria-labelledby="featured-title">
+  <div class="home-section-heading">
+    <p class="home-kicker">Featured complete guides</p>
+    <h2 id="featured-title">Move From Formula to Market Behavior</h2>
+    <p>These guides combine definitions, worked examples, original visuals, source disclosure, and practical decision tools.</p>
+  </div>
+  <div class="home-featured-grid">
+    <a href="/futures-basics/ticks-points-dollar-value.html"><span>Contract math</span><strong>Ticks vs Points: Convert Any Futures Move to Dollars</strong><p>Use current exchange specifications and an interactive calculator to keep price distance and dollar value separate.</p><i>Read guide →</i></a>
+    <a href="/futures-basics/contract-expiration-and-roll.html"><span>Contract life cycle</span><strong>Futures Contract Expiration and Roll</strong><p>Decode month symbols, follow volume migration, understand settlement, and test a broker-cutoff scenario.</p><i>Read guide →</i></a>
+    <a href="/market-basics/risk-per-trade-small-accounts.html"><span>Position sizing</span><strong>Risk Per Trade for Small Futures Accounts</strong><p>Size from usable equity or drawdown room, a technical stop, tick value, costs, and a safety reserve.</p><i>Read guide →</i></a>
+    <a href="/prop-firm-trading/static-vs-trailing-drawdown.html"><span>Prop-account mechanics</span><strong>Static vs Trailing Drawdown</strong><p>Model how static, real-time trailing, and end-of-day floors change the usable loss buffer.</p><i>Read guide →</i></a>
+    <a href="/futures-basics/how-to-read-order-flow-on-6e.html"><span>Executed flow</span><strong>How to Read 6E Order Flow</strong><p>Separate bid/ask prints, delta, diagonal imbalances, absorption, and data-quality limits.</p><i>Read guide →</i></a>
+    <a href="/futures-basics/gc-market-microstructure.html"><span>Gold futures</span><strong>GC Market Microstructure</strong><p>Understand the order book, queue priority, liquidity, slippage, stops, contract roll, and execution cost.</p><i>Read guide →</i></a>
+    <a href="/market-basics/trade-around-whipsaws.html"><span>Market behavior</span><strong>How to Trade Around Whipsaws</strong><p>Use location, acceptance, rejection, confirmation, structural risk, and an explicit invalidation point.</p><i>Read guide →</i></a>
+    <a href="/futures-basics/how-rate-differentials-drive-6e-price.html"><span>Currency futures</span><strong>How Rate Differentials Drive 6E</strong><p>Connect Fed–ECB expectations, spot, forward points, covered interest parity, and futures pricing.</p><i>Read guide →</i></a>
+  </div>
+</section>
+
+<section class="home-section home-topics" id="topic-hubs" aria-labelledby="topics-title">
+  <div class="home-section-heading">
+    <p class="home-kicker">Choose the problem you are solving</p>
+    <h2 id="topics-title">Browse Eight Futures Trading Hubs</h2>
+    <p>Start with a general mechanic or move directly into a product, account structure, or platform workflow.</p>
+  </div>
+  <div class="home-topic-grid">
+    <a href="/futures-basics/"><span>Foundation</span><strong>Futures Basics</strong><p>Contracts, ticks, margin, orders, liquidity, settlement, expiration, and market-specific mechanics.</p></a>
+    <a id="market" href="/market-basics/"><span>Cross-market</span><strong>Market Basics</strong><p>Auction, risk, volatility, confirmation, behavior, trade management, and execution quality.</p></a>
+    <a id="props" href="/prop-firm-trading/"><span>Account rules</span><strong>Prop Firm Trading</strong><p>Drawdown floors, evaluation constraints, payouts, consistency, automation, and real usable buffer.</p></a>
+    <a id="platforms" href="/platforms-tutorials/"><span>Workflow</span><strong>Platform Tutorials</strong><p>NinjaTrader, Tradovate, Bookmap, Sierra Chart, charts, DOMs, order entry, and troubleshooting.</p></a>
+    <a href="/metals/"><span>Product family</span><strong>Metals</strong><p>Gold, silver, copper, platinum, palladium, COMEX structure, drivers, spreads, and delivery.</p></a>
+    <a href="/currencies/"><span>Product family</span><strong>Currencies</strong><p>Dollar-quoted futures, central banks, rate differentials, sessions, spot relationships, and roll.</p></a>
+    <a href="/energies/"><span>Product family</span><strong>Energies</strong><p>Crude oil, natural gas, products, storage, inventories, curves, settlement, and event risk.</p></a>
+    <a href="/tools/"><span>Decision support</span><strong>Trading Tools</strong><p>Position sizing, drawdown, R-multiples, tick value, margin, leverage, and scenario simulators.</p></a>
+  </div>
+</section>
+
+<section class="home-section home-tools" aria-labelledby="tools-title">
+  <div class="home-tools-copy">
+    <p class="home-kicker">Turn the rule into a number</p>
+    <h2 id="tools-title">Practical Futures Risk Tools</h2>
+    <p>The tools are intentionally narrow. They calculate entered scenarios; they do not pull live market data, place orders, or predict outcomes. Use current contract specifications and realistic execution costs.</p>
+    <a class="home-button" href="/tools/">View every tool</a>
+  </div>
+  <div class="home-tools-grid">
+    <a href="/tools/position-size-calculator.html"><span>01</span><strong>Position Size Calculator</strong><p>Fit whole contracts to a dollar-risk budget.</p></a>
+    <a href="/tools/trailing-drawdown-simulator.html"><span>02</span><strong>Trailing Drawdown Simulator</strong><p>See how a moving floor reacts to a P&amp;L sequence.</p></a>
+    <a href="/tools/tick-value-calculator.html"><span>03</span><strong>Tick Value Calculator</strong><p>Translate price increments across contract size.</p></a>
+    <a href="/tools/r-multiple-calculator.html"><span>04</span><strong>R-Multiple Calculator</strong><p>Measure outcomes relative to planned initial risk.</p></a>
+    <a href="/tools/margin-leverage-visualizer.html"><span>05</span><strong>Margin and Leverage Visualizer</strong><p>Separate notional exposure from posted margin.</p></a>
+    <a href="/tools/position-size-risk-checker.html"><span>06</span><strong>Position Risk Checker</strong><p>Stress-test stop distance, contracts, and costs.</p></a>
+  </div>
+</section>
+
+<section class="home-section home-books" aria-labelledby="books-title">
+  <div class="home-books-copy">
+    <p class="home-kicker">Structured long-form study</p>
+    <h2 id="books-title">The Market Structure Series</h2>
+    <p>The free guides answer specific questions. The books build the full chain across instrument design, participants, liquidity, catalysts, execution, and risk.</p>
+    <a class="home-button" href="/books/">View all books and formats</a>
+  </div>
+  <div class="home-book-grid">
+    <a href="/books/equity-market-structure/"><img src="/books/equity-market-structure/equity-market-structure-cover.png" width="600" height="900" loading="lazy" alt="Cover of Equity Market Structure by Kyle Parrott."><span>Volume I</span><strong>Equity Market Structure</strong></a>
+    <a href="/books/metals-market-structure/"><img src="/books/metals-market-structure/metals-market-structure-cover.png" width="600" height="900" loading="lazy" alt="Cover of Metals Market Structure by Kyle Parrott."><span>Volume II</span><strong>Metals Market Structure</strong></a>
+    <a href="/books/currency-market-structure/"><img src="/books/currency-market-structure/currency-market-structure-cover.png" width="600" height="900" loading="lazy" alt="Cover of Currency Market Structure by Kyle Parrott."><span>Volume III</span><strong>Currency Market Structure</strong></a>
+  </div>
+</section>
+
+<section class="home-section home-standards" aria-labelledby="standards-title">
+  <div class="home-standards-copy">
+    <p class="home-kicker">Editorial standard</p>
+    <h2 id="standards-title">Primary Mechanics Before Market Folklore</h2>
+    <p>Contract specifications, settlement procedures, trading hours, margin requirements, and account rules can change. Detailed guides identify their factual sources and state the limits of simplified examples and calculators. When a current exchange rule, broker notice, or platform document conflicts with an older article, the current first-party source controls.</p>
+  </div>
+  <div class="home-standard-links">
+    <a href="https://www.cftc.gov/LearnAndProtect/EducationCenter/FuturesMarketBasics/index2.htm" target="_blank" rel="noopener"><span>Regulatory foundation</span><strong>CFTC Futures Market Basics</strong><p>Contract obligations, leverage, delivery, cash settlement, and customer risk.</p></a>
+    <a href="https://www.cmegroup.com/education/courses/introduction-to-futures/understanding-futures-expiration-contract-roll" target="_blank" rel="noopener"><span>Exchange education</span><strong>CME Futures Expiration and Roll</strong><p>Offsetting, rolling, settlement, and contract life-cycle choices.</p></a>
+    <a href="/about.html"><span>Site disclosure</span><strong>About Grizzly Parrot Trading</strong><p>Site purpose, author information, editorial scope, and contact path.</p></a>
+  </div>
+</section>
+
+<section class="home-section home-faq" aria-labelledby="faq-title">
+  <div class="home-section-heading"><p class="home-kicker">Frequently asked questions</p><h2 id="faq-title">Using Grizzly Parrot Trading</h2></div>
+  <div class="home-faq-list">
+    <details><summary>What does Grizzly Parrot Trading teach?</summary><p>Grizzly Parrot Trading teaches futures contract mechanics, tick and point value, position risk, orders, liquidity, market structure, expiration, prop-account drawdown, and practical platform workflows. The material is educational and does not provide individualized trade recommendations.</p></details>
+    <details><summary>Where should a beginner start?</summary><p>Start with what a futures contract represents, then learn contract specifications, ticks and dollar value, stop-based risk, order behavior, liquidity, and contract expiration. The Futures Basics hub presents those subjects in a structured order.</p></details>
+    <details><summary>Are the calculators free to use?</summary><p>Yes. The browser-based calculators and simulators on the site are free educational tools. They run client-side and are simplified planning aids, not brokerage systems, live market data, or guarantees of actual fills and results.</p></details>
+    <details><summary>Does Grizzly Parrot Trading provide financial advice or trade calls?</summary><p>No. The site provides general futures education and research frameworks, not individualized financial, investment, legal, or tax advice and not a trade-call service. Readers must verify current exchange and broker rules and decide whether futures are appropriate for them.</p></details>
+    <details><summary>How are factual contract claims sourced?</summary><p>Detailed guides cite first-party exchange, regulator, platform, or rulebook sources where factual specifications matter. Because contract terms, margin, schedules, and account rules can change, readers are directed to verify the current official source before acting.</p></details>
+  </div>
+</section>
+
+<aside class="home-disclaimer" aria-label="Educational and risk disclaimer">
+  <strong>Educational and risk disclaimer</strong>
+  <p>Grizzly Parrot Trading provides general education, not individualized financial, investment, legal, or tax advice. Futures are leveraged, complex, and can produce losses beyond the amount initially deposited. Examples, diagrams, and calculators are simplified planning aids, not live market data, predictions, recommendations, or fill guarantees. Verify current exchange specifications, broker rules, and your own financial capacity before trading; use only risk capital you can afford to lose.</p>
+</aside>
+
 </div>
-
-
-<script>
-async function loadSearchIndex() {
-  const res = await fetch('/search-index.json');
-  return await res.json();
-}
-
-let SEARCH_DATA = [];
-loadSearchIndex().then(d => SEARCH_DATA = d);
-
-const input = document.getElementById('search-input');
-const resultsBox = document.getElementById('search-results');
-
-input.addEventListener('input', () => {
-  const q = input.value.toLowerCase().trim();
-  if (!q) {
-    resultsBox.innerHTML = '';
-    return;
-  }
-
-  const hits = SEARCH_DATA.filter(item =>
-    item.title.toLowerCase().includes(q) ||
-    item.description.toLowerCase().includes(q)
-  ).slice(0, 20); // limit results
-
-  if (hits.length === 0) {
-    resultsBox.innerHTML = '<div class="no-results">No matches</div>';
-    return;
-  }
-
-  resultsBox.innerHTML = hits
-    .map(item => `
-      <a class="search-item" href="${item.url}">
-        <div class="search-title">${item.title}</div>
-        <div class="search-desc">${item.description}</div>
-        <div class="search-cat">${item.category}</div>
-      </a>
-    `)
-    .join('');
-});
-</script>
-
-<style>
-#search-container {
-  margin: 20px 0;
-  max-width: 700px;
-}
-
-#search-input {
-  width: 100%;
-  padding: 12px;
-  font-size: 17px;
-  border: 2px solid #0a3764;
-  border-radius: 6px;
-  outline: none;
-}
-
-#search-results {
-  background: #fff;
-  border: 1px solid #ccc;
-  max-height: 400px;
-  overflow-y: auto;
-  margin-top: 8px;
-  border-radius: 6px;
-}
-
-.search-item {
-  display: block;
-  padding: 10px 12px;
-  border-bottom: 1px solid #eee;
-  text-decoration: none;
-  color: #000;
-}
-
-.search-item:hover {
-  background: #f0f6ff;
-}
-
-.search-title {
-  font-weight: bold;
-}
-
-.search-desc {
-  font-size: 14px;
-  color: #444;
-}
-
-.search-cat {
-  font-size: 12px;
-  color: #0a3764;
-  margin-top: 2px;
-}
-
-.no-results {
-  padding: 10px;
-  color: #666;
-}
-/* OVERRIDE global link hover for search items */
-.search-item:hover {
-  background: #f0f6ff !important;  /* soft blue */
-  color: #000 !important;           /* keep text readable */
-}
-
-</style>
-
-
-        <!-- Category overview -->
-        <section class="section">
-            <div class="container">
-                <h2>Pick Your Topic</h2>
-                <div class="grid grid-6">
-                    <article class="card">
-                    <h3>Metals</h3>
-                        <p>Gold, silver, COMEX mechanics, inventories, and how precious metals futures move.</p>
-                        <a href="https://grizzlyparrottrading.com/metals/">View Metals Guides</a>
-                    </article>
-                    <article class="card">
-                        <h3>Futures Basics</h3>
-                        <p>Contracts, ticks, margin, and how this junk really works.</p>
-                        <a href="https://grizzlyparrottrading.com/futures-basics/">View Futures Basics</a>
-                    </article>
-                    <article class="card">
-                        <h3>Currencies</h3>
-                        <p>Currency futures, global sessions, pair relationships, and how FX liquidity actually behaves.</p>
-                        <a href="https://grizzlyparrottrading.com/currencies/">View Currency Guides</a>
-                    </article>
-                    <article class="card">
-                        <h3>Prop Firm Trading</h3>
-                        <p>Evaluations, trailing drawdown, rules, and common failure points.</p>
-                        <a href="https://grizzlyparrottrading.com/prop-firm-trading/">View Prop Firm Guides</a>
-                    </article>
-
-                    <article class="card">
-                        <h3>Platform Tutorials</h3>
-                        <p>Tradovate, NinjaTrader, DOM trading, and clean chart layouts.</p>
-                        <a href="https://grizzlyparrottrading.com/platforms-tutorials/">View Platform Tutorials</a>
-                    </article>
-
-                    <article class="card">
-                        <h3>Market Basics</h3>
-                        <p>Risk, drawdown, execution, plus how and why most traders bleed out.</p>
-                        <a href="https://grizzlyparrottrading.com/market-basics/">View Market Basics</a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured articles (you can change these anytime) -->
-        <section id="articles" class="section">
-            <div class="container">
-                <h2>Featured Articles</h2>
-                <div class="grid grid-4">
-                    <!-- Futures -->
-                    <article class="card">
-                        <h3><a href="https://grizzlyparrottrading.com/futures-basics/ticks-points-dollar-value.html">Ticks, Points, And Dollar Value</a></h3>
-                        <p>How many ticks are in a point, how much each tick is worth, and what that means in real money.</p>
-                    </article>
-
-                    <!-- Prop firms -->
-                    <article class="card">
-                        <h3><a href="https://grizzlyparrottrading.com/prop-firm-trading/trailing-drawdown-explained.html">Trailing Drawdown Explained</a></h3>
-                        <p>The real mechanics of trailing drawdown and why it silently kills most evaluation accounts.</p>
-                    </article>
-
-                    <!-- Market basics -->
-                    <article class="card">
-                        <h3><a href="https://grizzlyparrottrading.com/market-basics/trade-around-whipsaws.html">How to Trade Around Whipsaws</a></h3>
-                        <p>A practical playbook for avoiding and surviving price whipsaws.</p>
-                    </article>
-                    <!-- Tools -->
-                    <article class="card">
-                        <h3><a href="https://grizzlyparrottrading.com/tools/trailing-drawdown-simulator.html">Trailing Drawdown Simulator</a></h3>
-                        <p>Paste your trade P/L sequence and see exactly when a prop-style trailing liquidation line would have killed the account.</p>
-                    </article>
-
-
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-        <section id="futures" class="section section-alt">
-            <div class="container">
-                <h2>Futures Trading Basics</h2>
-                <p class="section-intro">
-                    Core concepts: contracts, leverage, margin, and how futures differ from stocks and crypto.
-                </p>
-                <div class="grid grid-3">
-                    <article class="card">
-                        <h3><a href="https://grizzlyparrottrading.com/energies/cl-risk-management.html">Risk Management for Crude Oil Futures (CL): Sizing, Stops, and Survival</a></h3>
-                        <p>A practical risk management framework for crude oil futures (CL): how to size positions, place stops...</p>
-                    </article>
-                    <article class="card">
-                        <h3><a href="https://grizzlyparrottrading.com/futures-basics/day-margin-vs-overnight-margin.html">Day Margin vs Overnight Margin</a></h3>
-                        <p>Why your broker lets you trade big size intraday and then slams on the brakes after hours.</p>
-                    </article>
-                    <article class="card">
-                        <h3><a href="https://grizzlyparrottrading.com/futures-basics/contract-expiration-and-roll.html">Contract Expiration And Roll</a></h3>
-                        <p>What rollover means, why charts look weird on roll day, and how to not get blindsided.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Prop firms -->
-        <section id="props" class="section">
-            <div class="container">
-                <h2>Prop Firm Trading</h2>
-                <p class="section-intro">
-                    Evaluations, rules, payouts, and the common ways people burn through accounts.
-                </p>
-                <div class="grid grid-3">
-                    <article class="card">
-                        <h3><a href="https://grizzlyparrottrading.com/prop-firm-trading/how-evaluations-work.html">How Evaluations Work</a></h3>
-                        <p>Profit targets, trailing drawdown, minimum days, and what the firm actually cares about.</p>
-                    </article>
-                    <article class="card">
-                        <h3><a href="https://grizzlyparrottrading.com/prop-firm-trading/common-evaluation-mistakes.html">Common Evaluation Mistakes</a></h3>
-                        <p>Scaling too fast, revenge trading, and not understanding the daily loss limit.</p>
-                    </article>
-                    <article class="card">
-                        <h3><a href="https://grizzlyparrottrading.com/prop-firm-trading/apex-style-rules-by-the-numbers.html">Apex-Style Rules By The Numbers</a></h3>
-                        <p>Example using a typical 50k futures evaluation: limits, risk, and realistic expectations.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Platforms -->
-        <section id="platforms" class="section section-alt">
-            <div class="container">
-                <h2>Platforms And Tutorials</h2>
-                <p class="section-intro">
-                    Basic setup for charting, orders, and risk management on common futures platforms.
-                </p>
-                <div class="grid grid-3">
-                    <article class="card">
-                        <h3><a href="https://grizzlyparrottrading.com/platforms-tutorials/tradovate-for-beginners.html">Tradovate For Beginners</a></h3>
-                        <p>How to set up charts, DOM, and simple hotkeys without overcomplicating everything.</p>
-                    </article>
-                    <article class="card">
-                        <h3><a href="https://grizzlyparrottrading.com/platforms-tutorials/ninjatrader-basics.html">NinjaTrader Basics</a></h3>
-                        <p>Connecting data, placing orders, and avoiding indicator overload.</p>
-                    </article>
-                    <article class="card">
-                        <h3><a href="https://grizzlyparrottrading.com/platforms-tutorials/simple-readable-chart-layout.html">A Simple, Readable Chart Layout</a></h3>
-                        <p>One layout you can actually read in real time instead of a rainbow of nonsense.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Market basics -->
-        <section id="market" class="section">
-            <div class="container">
-                <h2>Market And Risk Basics</h2>
-                <p class="section-intro">
-                    Risk, variance, and why being “right” on direction does not always mean you get paid.
-                </p>
-                <div class="grid grid-3">
-                    <article class="card">
-                        <h3><a href="https://grizzlyparrottrading.com/market-basics/what-is-drawdown-really.html">What Is Drawdown Really?</a></h3>
-                        <p>Not just a number on a dashboard, but what it means for your account staying alive.</p>
-                    </article>
-                    <article class="card">
-                        <h3><a href="https://grizzlyparrottrading.com/market-basics/why-good-ideas-still-lose-money.html">Why Good Ideas Still Lose Money</a></h3>
-                        <p>Slippage, spreads, fills, and the gap between idea and execution.</p>
-                    </article>
-                    <article class="card">
-                        <h3><a href="https://grizzlyparrottrading.com/market-basics/risk-per-trade-small-accounts.html">Risk Per Trade For Small Accounts</a></h3>
-                        <p>How much is too much, and how people quietly blow up without noticing.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
+</main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-       
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+    <div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div>
+    <div class="footer-links"><a href="/about.html">About</a><a href="/affiliate-disclosure.html">Affiliate Disclosure</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div>
+    <p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
   </div>
 </footer>
 
- <script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function () {
-      // Service worker intentionally disabled
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+(function () {
+  'use strict';
+
+  var form = document.getElementById('home-search-form');
+  if (!form) return;
+
+  var input = document.getElementById('home-search-input');
+  var clearButton = document.getElementById('home-search-clear');
+  var status = document.getElementById('home-search-status');
+  var results = document.getElementById('home-search-results');
+  var empty = document.getElementById('home-search-empty');
+  var filterButtons = Array.prototype.slice.call(document.querySelectorAll('.home-search-filters button'));
+  var searchData = [];
+  var activeCategory = 'all';
+  var preferredUrls = [
+    '/futures-basics/ticks-points-dollar-value.html',
+    '/futures-basics/contract-expiration-and-roll.html',
+    '/market-basics/risk-per-trade-small-accounts.html',
+    '/prop-firm-trading/static-vs-trailing-drawdown.html',
+    '/futures-basics/how-to-read-order-flow-on-6e.html',
+    '/futures-basics/gc-market-microstructure.html',
+    '/market-basics/trade-around-whipsaws.html',
+    '/futures-basics/how-rate-differentials-drive-6e-price.html'
+  ];
+
+  function decodeText(value) {
+    var area = document.createElement('textarea');
+    area.innerHTML = String(value || '');
+    return area.value;
+  }
+
+  function normalized(value) {
+    return decodeText(value).toLowerCase().replace(/\s+/g, ' ').trim();
+  }
+
+  function makeResult(item) {
+    var link = document.createElement('a');
+    var category = document.createElement('span');
+    var title = document.createElement('strong');
+    var description = document.createElement('p');
+    link.href = item.url;
+    category.textContent = decodeText(item.category || 'Guide');
+    title.textContent = decodeText(item.title || 'Untitled guide');
+    description.textContent = decodeText(item.description || 'Open this Grizzly Parrot Trading resource.');
+    link.appendChild(category);
+    link.appendChild(title);
+    link.appendChild(description);
+    return link;
+  }
+
+  function selectedDefaults() {
+    var byUrl = new Map(searchData.map(function (item) { return [item.url, item]; }));
+    var selected = preferredUrls.map(function (url) { return byUrl.get(url); }).filter(Boolean);
+    return selected.length ? selected : searchData.slice(0, 8);
+  }
+
+  function render() {
+    if (!searchData.length) return;
+    var query = normalized(input.value);
+    var pool;
+    if (!query && activeCategory === 'all') {
+      pool = selectedDefaults();
+    } else {
+      pool = searchData.filter(function (item) {
+        var categoryMatch = activeCategory === 'all' || decodeText(item.category) === activeCategory;
+        var searchable = normalized(item.title) + ' ' + normalized(item.description) + ' ' + normalized(item.category);
+        return categoryMatch && (!query || searchable.indexOf(query) !== -1);
+      });
+    }
+
+    var visible = pool.slice(0, 12);
+    results.replaceChildren();
+    visible.forEach(function (item) { results.appendChild(makeResult(item)); });
+    empty.hidden = visible.length !== 0;
+    var label = (!query && activeCategory === 'all') ? 'Showing ' + visible.length + ' featured guides' : 'Showing ' + visible.length + ' of ' + pool.length + ' matching resources';
+    status.textContent = label;
+  }
+
+  function setCategory(button) {
+    activeCategory = button.dataset.category;
+    filterButtons.forEach(function (item) {
+      var active = item === button;
+      item.classList.toggle('is-active', active);
+      item.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    render();
+  }
+
+  function clearSearch() {
+    input.value = '';
+    var allButton = filterButtons.find(function (button) { return button.dataset.category === 'all'; });
+    setCategory(allButton);
+    input.focus();
+  }
+
+  function revealResults() {
+    document.getElementById('site-search').scrollIntoView({
+      behavior: 'auto',
+      block: 'start'
     });
   }
+
+  fetch('/search-index.json', {credentials: 'same-origin'})
+    .then(function (response) {
+      if (!response.ok) throw new Error('Search index unavailable');
+      return response.json();
+    })
+    .then(function (data) {
+      if (!Array.isArray(data)) throw new Error('Search index invalid');
+      searchData = data.filter(function (item) { return item && typeof item.url === 'string' && typeof item.title === 'string'; });
+      render();
+    })
+    .catch(function () {
+      status.textContent = 'Search is temporarily unavailable. The featured guides below remain accessible.';
+    });
+
+  form.addEventListener('submit', function (event) { event.preventDefault(); render(); window.setTimeout(revealResults, 0); });
+  input.addEventListener('input', render);
+  input.addEventListener('keydown', function (event) { if (event.key === 'Escape') clearSearch(); });
+  clearButton.addEventListener('click', clearSearch);
+  filterButtons.forEach(function (button) { button.addEventListener('click', function () { setCategory(button); window.setTimeout(revealResults, 0); }); });
+}());
 </script>
-
-
- 
-
 </body>
 </html>
