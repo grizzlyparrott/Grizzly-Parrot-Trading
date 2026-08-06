@@ -1332,12 +1332,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Futures Basics | Grizzly Parrot Trading",
-    "url": "/futures-basics/",
-    "description": "Beginner futures trading basics: contracts, ticks, margin, leverage, and how this junk actually works without the guru fluff.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Futures Contract Specifications Explained",
     "url": "/futures-basics/contract-specs-explained.html",
     "description": "A blunt guide to futures contract specs: tick size, tick value, multiplier, and minimum price fluctuation for popular contracts.",
@@ -1410,6 +1404,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Futures Trading Basics: Contracts, Risk and Execution",
+    "url": "/futures-basics/",
+    "description": "Learn futures trading in the right order: contract specs, tick value, margin, position risk, orders, liquidity, expiration, and curated market guides.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Futures Trading Hours and Sessions Explained for Beginners",
     "url": "/futures-basics/futures-trading-hours-and-sessions-explained.html",
     "description": "Learn how futures trading hours work, what Globex is, and why session changes affect volatility, liquidity, and your strategy.",
@@ -1446,9 +1446,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "GC Market Microstructure Explained",
+    "title": "GC Market Microstructure: Order Book, Liquidity and Execution",
     "url": "/futures-basics/gc-market-microstructure.html",
-    "description": "A blunt breakdown of GC market microstructure: liquidity pockets, orderflow behavior, stop runs, and why Gold futures move the way they do intraday.",
+    "description": "Complete guide to GC gold futures microstructure: contract mechanics, order-book liquidity, queue priority, slippage, roll, examples, and a risk tool.",
     "category": "Futures Basics"
   },
   {

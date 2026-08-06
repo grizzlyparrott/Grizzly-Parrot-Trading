@@ -3,43 +3,38 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GC Market Microstructure Explained</title>
-  <meta name="description" content="A blunt breakdown of GC market microstructure: liquidity pockets, orderflow behavior, stop runs, and why Gold futures move the way they do intraday.">
+  <title>GC Market Microstructure: Order Book, Liquidity &amp; Execution</title>
+  <meta name="description" content="Complete guide to GC gold futures microstructure: contract mechanics, order-book liquidity, queue priority, slippage, roll, examples, and a risk tool.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/gc-market-microstructure.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="GC Market Microstructure Explained">
-  <meta property="og:description" content="A blunt breakdown of GC market microstructure: liquidity pockets, orderflow behavior, stop runs, and why Gold futures move the way they do intraday.">
+  <meta property="og:title" content="GC Market Microstructure: How Gold Futures Actually Trade">
+  <meta property="og:description" content="Understand the GC order book, liquidity, execution, stops, slippage, contract roll, and the limits of what market depth can reveal.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/gc-market-microstructure.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Grizzly Parrot Trading guide to GC gold futures market microstructure.">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading guide to GC gold futures market microstructure.">
   <meta name="twitter:title" content="GC Market Microstructure Explained">
-  <meta name="twitter:description" content="A blunt breakdown of GC market microstructure: liquidity pockets, orderflow behavior, stop runs, and why Gold futures move the way they do intraday.">
+  <meta name="twitter:description" content="A complete guide to how GC gold futures orders queue, trade, slip, roll, and form price on CME Globex.">
 
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="gc-market-microstructure-guide.css?v=20260806-2">
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -48,62 +43,117 @@
     gtag('config', 'G-JMJVR3G5YN');
   </script>
 
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "GC Market Microstructure Explained",
-  "description": "A blunt breakdown of GC market microstructure: liquidity pockets, orderflow behavior, stop runs, and why Gold futures move the way they do intraday.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/gc-market-microstructure.html",
-  "datePublished": "2025-11-30",
-  "dateModified": "2025-11-30",
-  "url": "https://grizzlyparrottrading.com/futures-basics/gc-market-microstructure.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "GC Market Microstructure: How Gold Futures Actually Trade",
+    "description": "A complete guide to GC gold futures contract mechanics, order-book liquidity, queue priority, executed order flow, slippage, stop behavior, contract roll, and execution risk.",
+    "author": {
+      "@type": "Person",
+      "name": "Kyle Parrott",
+      "url": "https://grizzlyparrottrading.com/about.html"
+    },
+    "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/gc-market-microstructure.html",
+    "datePublished": "2025-11-30",
+    "dateModified": "2026-08-06",
+    "url": "https://grizzlyparrottrading.com/futures-basics/gc-market-microstructure.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grizzly Parrot Trading",
+      "url": "https://grizzlyparrottrading.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://grizzlyparrottrading.com/OG-default.png"
+      }
+    },
+    "image": "https://grizzlyparrottrading.com/OG-default.png"
+  }
+  </script>
 
-  <!-- JSON-LD: Breadcrumbs -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "GC Market Microstructure Explained",
-      "item": "https://grizzlyparrottrading.com/futures-basics/gc-market-microstructure.html"
-    }
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Futures Basics",
+        "item": "https://grizzlyparrottrading.com/futures-basics/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "GC Market Microstructure",
+        "item": "https://grizzlyparrottrading.com/futures-basics/gc-market-microstructure.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the tick value of GC gold futures?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CME Group lists standard COMEX Gold futures, symbol GC, at 100 troy ounces with a minimum price fluctuation of 0.10 US dollars per troy ounce. One minimum tick is therefore worth 10 US dollars per contract."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the GC order book show?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The visible order book shows displayed buy and sell limit-order quantity at quoted price levels at that moment. It changes when orders are added, canceled, modified, or executed. It does not reveal every hidden order, participant identity, future cancellation, or trading intent."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does large resting depth guarantee support or resistance in GC?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Displayed depth can be canceled, traded through, replenished, or partly hidden. Treat it as current liquidity information and observe what happens when price reaches the level rather than assuming the quantity will remain."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why can a GC stop order fill worse than its trigger price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A stop trigger is not necessarily a guaranteed fill price. Once activated, the resulting order must trade against available liquidity. During a fast move or a thin book, the available quantity at the first price may be insufficient, so the order can fill across additional levels."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is GC the same market as spot gold?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. GC is a standardized, expiring COMEX futures contract quoted in US dollars per troy ounce. Spot gold, dealer quotes, exchange-traded funds, and other gold derivatives are related markets, but they have different instruments, venues, participants, and pricing mechanics."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does GC liquidity move to another contract month?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Futures contracts expire. Market participants close or roll positions, and trading activity migrates from an expiring month to a later month. Traders should identify the active contract using current volume, open interest, broker notices, and the exchange calendar rather than relying on a fixed roll date for every cycle."
+        }
+      }
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
 </head>
@@ -111,20 +161,17 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
+    <div class="logo"><a href="/">Grizzly Parrot Trading</a></div>
+    <nav class="main-nav" aria-label="Primary navigation">
       <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../metals/index.html">Metals</a></li>
+        <li><a href="../energies/index.html">Energies</a></li>
+        <li><a href="../currencies/index.html">Currencies</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firms</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+        <li><a href="../tools/index.html">Tools</a></li>
       </ul>
     </nav>
   </div>
@@ -132,192 +179,808 @@ Grizzly Parrot Trading</a>
 
 <main>
 <section class="section">
-<div class="container article-content">
+<article class="container article-content gcx-guide">
 <!-- ARTICLE BODY START -->
 
-<h1>GC Market Microstructure Explained</h1>
+<header class="gcx-hero">
+  <div class="gcx-hero-copy">
+    <p class="gcx-kicker">Gold futures market mechanics</p>
+    <h1>GC Market Microstructure: How Gold Futures Actually Trade</h1>
+    <p class="gcx-byline">By <a href="/about.html">Kyle Parrott</a> <span aria-hidden="true">&middot;</span> Updated August 6, 2026</p>
+    <p class="gcx-hero-lede">GC is not a chart pattern with a personality. It is a <strong>standardized contract trading through a live auction</strong>. Price changes when executable orders meet the quantity available in the book. The useful questions are therefore mechanical: which contract is active, what is displayed, what actually traded, how did price respond, and what will the next order cost?</p>
+    <div class="gcx-hero-actions">
+      <a class="gcx-button" href="#planner">Open the execution planner</a>
+      <a class="gcx-text-link" href="#workflow">Use the pre-trade workflow</a>
+    </div>
+    <div class="gcx-hero-facts" aria-label="Gold futures contract facts">
+      <div><span>Standard GC</span><strong>100 troy ounces</strong></div>
+      <div><span>Minimum tick</span><strong>$0.10/oz = $10</strong></div>
+      <div><span>Settlement</span><strong>Physical delivery</strong></div>
+    </div>
+  </div>
 
-<p>
-GC doesn’t move randomly. Its intraday movement follows a predictable microstructure: liquidity pockets, stop pools, orderflow imbalances, and session-based volatility cycles. If you understand these mechanics, GC stops looking chaotic and starts looking like a machine doing the same thing every day.
-</p>
-<p>
-GC’s microstructure only makes full sense when you see how it fits into the broader metals complex. Gold doesn’t move in isolation — it reacts to positioning, macro pressure, and cross-metal flows that shape liquidity across the entire system. A complete breakdown is covered in 
-<a href="https://grizzlyparrottrading.com/books/metals-market-structure/"><strong>Metals Market Structure (Volume II)</strong></a>.
-</p>
-<h2>GC Is Deep, But Not “Too Deep”</h2>
-<p>
-Gold futures have one of the deepest order books on CME, but not so deep that it’s hard to move. This balance creates:
-</p>
+  <figure class="gcx-hero-figure">
+    <img src="gc-microstructure-visual.svg" width="1200" height="800" fetchpriority="high" alt="GC gold futures order-book diagram showing displayed bids and offers, queue position, an incoming market order, and resulting trades.">
+    <figcaption>The quantities and prices are hypothetical. The visual separates resting liquidity from executed order flow.</figcaption>
+  </figure>
+</header>
 
-<ul>
-  <li>smooth trends</li>
-  <li>clean rotations</li>
-  <li>predictable stop-run behavior</li>
-</ul>
+<nav class="gcx-on-page" aria-label="On this page">
+  <span>On this page</span>
+  <a href="#principle">Core principle</a>
+  <a href="#contract">GC contract</a>
+  <a href="#order-book">Order book</a>
+  <a href="#planner">Risk planner</a>
+  <a href="#examples">Examples</a>
+  <a href="#workflow">Workflow</a>
+  <a href="#sources">Sources</a>
+</nav>
 
-<p>
-Unlike silver, GC’s liquidity is thick enough to prevent random 20–30 tick wicks in dead hours, but thin enough that macro players can still move it with size.
-</p>
+<section class="gcx-section gcx-principle" id="principle" aria-labelledby="principle-title">
+  <div>
+    <p class="gcx-kicker">The governing idea</p>
+    <h2 id="principle-title">Microstructure Explains the Auction, Not the Next Direction</h2>
+  </div>
+  <div class="gcx-principle-copy">
+    <p><strong>Market microstructure is the machinery:</strong> the contract rules, venue, price grid, order types, priority rules, displayed book, trade matching, clearing, settlement, and behavior of liquidity through time. It can explain why execution becomes expensive or why a fast order consumes several prices.</p>
+    <p>It cannot turn a large bid, a delta spike, or a sweep of a prior high into certainty about the next move. Those observations are state and event data. Their meaning depends on location, subsequent trades, replenishment, price progress, the active contract, and the risk required to test the idea.</p>
+  </div>
+</section>
 
-<h2>Liquidity Pools Drive Intraday Structure</h2>
-<p>
-GC moves from one liquidity pool to the next. These pools form at well-defined zones, which are mapped in detail in <a href="https://grizzlyparrottrading.com/futures-basics/gc-liquidity-levels-structure.html">GC liquidity levels and structure</a>:
-</p>
+<section class="gcx-section" id="definitions" aria-labelledby="definitions-title">
+  <div class="gcx-section-heading">
+    <p class="gcx-kicker">Six distinctions that prevent bad reads</p>
+    <h2 id="definitions-title">The Vocabulary of the GC Auction</h2>
+    <p>Separate orders waiting to trade from trades that already occurred. Most microstructure mistakes begin by mixing those two records.</p>
+  </div>
 
-<ul>
-  <li>session highs/lows</li>
-  <li>previous day’s key levels</li>
-  <li>consolidation highs/lows</li>
-  <li>news-driven swing points</li>
-</ul>
+  <div class="gcx-definition-grid">
+    <article>
+      <span class="gcx-term">Bid</span>
+      <h3>Highest displayed buying price</h3>
+      <p>The best bid is the highest quoted price where displayed buy limit orders currently rest. Its quantity can change before any trade reaches it.</p>
+    </article>
+    <article>
+      <span class="gcx-term">Ask</span>
+      <h3>Lowest displayed selling price</h3>
+      <p>The best ask is the lowest quoted price where displayed sell limit orders currently rest. A marketable buy normally trades with this side first.</p>
+    </article>
+    <article>
+      <span class="gcx-term">Spread</span>
+      <h3>Best ask minus best bid</h3>
+      <p>The spread is an immediate execution cost, not a fixed property. It can be one tick, wider, or temporarily undefined when one side is absent.</p>
+    </article>
+    <article>
+      <span class="gcx-term">Depth</span>
+      <h3>Displayed quantity waiting by price</h3>
+      <p>Depth is a snapshot of resting orders. It can be added, reduced, canceled, traded, or replenished; it is not a promise that liquidity will remain.</p>
+    </article>
+    <article>
+      <span class="gcx-term">Volume</span>
+      <h3>Contracts that actually traded</h3>
+      <p>Volume counts completed trades. Bid/ask-classified volume describes where executions occurred; it is not the same dataset as resting depth.</p>
+    </article>
+    <article>
+      <span class="gcx-term">Queue</span>
+      <h3>Your place among orders at one price</h3>
+      <p>A limit order can sit at the traded price and remain unfilled when earlier orders consume the available opposing quantity first.</p>
+    </article>
+  </div>
+</section>
 
-<p>
-GC hunts stop clusters with precision. This isn’t manipulation — it’s how all deep futures markets function.
-</p>
+<section class="gcx-section" id="contract" aria-labelledby="contract-title">
+  <div class="gcx-section-heading">
+    <p class="gcx-kicker">Start with the instrument</p>
+    <h2 id="contract-title">GC Is a Specific Expiring Futures Contract</h2>
+    <p>“Gold” is an asset class. GC is a contract. The distinction controls tick value, delivery obligations, expiration, chart continuity, and which order book your order enters.</p>
+  </div>
 
-<table>
-  <tr><th>Liquidity Zone</th><th>GC Behavior</th></tr>
-  <tr><td>Asia session range</td><td>GC sweeps it during London open</td></tr>
-  <tr><td>London high/low</td><td>Retests during NY session</td></tr>
-  <tr><td>NY morning swing</td><td>Defines afternoon continuation</td></tr>
-</table>
+  <div class="gcx-two-column">
+    <div class="gcx-table-wrap">
+      <table>
+        <caption>Selected current COMEX Gold futures specifications</caption>
+        <thead>
+          <tr>
+            <th scope="col">Field</th>
+            <th scope="col">Standard GC</th>
+            <th scope="col">Why it matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Contract unit</th>
+            <td>100 troy ounces</td>
+            <td>A $1.00/oz move changes one contract by $100.</td>
+          </tr>
+          <tr>
+            <th scope="row">Price quotation</th>
+            <td>US dollars and cents per troy ounce</td>
+            <td>The chart price is per ounce, not the contract's full notional value.</td>
+          </tr>
+          <tr>
+            <th scope="row">Minimum fluctuation</th>
+            <td>$0.10 per troy ounce</td>
+            <td>One GC tick equals $10 per contract.</td>
+          </tr>
+          <tr>
+            <th scope="row">Settlement</th>
+            <td>Physical delivery</td>
+            <td>Expiration and broker cutoffs cannot be treated like a perpetual instrument.</td>
+          </tr>
+          <tr>
+            <th scope="row">Trading termination</th>
+            <td>Third-last business day of the delivery month</td>
+            <td>Confirm the current exchange calendar and broker policy before holding near expiry.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-<h2>Stop Runs Are Intentional Liquidity Grabs</h2>
-<p>
-GC often sweeps a prior high/low by 5–15 ticks, fills resting stops, grabs liquidity, and reverses. This isn’t a “fakeout”; it’s how institutions fill size without slipping themselves.
-</p>
+    <aside class="gcx-source-card">
+      <span>Specification check</span>
+      <h3>Verify the contract before calculating risk</h3>
+      <p>CME's Gold fact card and COMEX Rulebook Chapter 113 are the controlling sources cited below. CME also lists Micro Gold (MGC) at 10 troy ounces and a $1 minimum tick. Similar symbols do not have interchangeable dollar risk.</p>
+      <a href="https://www.cmegroup.com/trading/metals/files/fact-card-gold-futures-options.pdf">Read CME's Gold contract specifications <span aria-hidden="true">&nearr;</span></a>
+    </aside>
+  </div>
 
-<p>
-Signs a sweep is happening:</p>
+  <div class="gcx-equation" aria-label="Gold futures tick value formula">
+    <span>Tick value</span>
+    <strong>minimum price change per ounce &times; contract ounces</strong>
+    <code>$0.10 &times; 100 = $10 per GC contract</code>
+  </div>
+</section>
 
-<ul>
-  <li>fast impulse into a known high/low</li>
-  <li>large resting orders get eaten</li>
-  <li>immediate rejection wick</li>
-  <li>momentum flip in the opposite direction</li>
-</ul>
+<section class="gcx-section" id="order-book" aria-labelledby="order-book-title">
+  <div class="gcx-section-heading">
+    <p class="gcx-kicker">Resting orders, marketable orders and trades</p>
+    <h2 id="order-book-title">How an Order Becomes a GC Execution</h2>
+    <p>CME says its liquidity measures are built from the electronic limit order book and that the book updates when an order is created, executed, or canceled. A trader sees a changing state, not a permanent wall.</p>
+  </div>
 
-<p>
-If you don’t know how often GC does this, that’s why your stops keep getting clipped.
-</p>
+  <ol class="gcx-process">
+    <li>
+      <span>01</span>
+      <div>
+        <h3>Limit orders supply displayed liquidity</h3>
+        <p>A non-marketable buy rests at its limit or lower; a non-marketable sell rests at its limit or higher. Orders at the best prices form the inside market.</p>
+      </div>
+    </li>
+    <li>
+      <span>02</span>
+      <div>
+        <h3>Marketable orders demand immediate execution</h3>
+        <p>A market order—or a limit priced through the opposite side—trades against available opposing orders. If the first level lacks enough quantity, the remainder can reach additional prices.</p>
+      </div>
+    </li>
+    <li>
+      <span>03</span>
+      <div>
+        <h3>The trade changes both records</h3>
+        <p>Executed quantity appears in trade data and is removed from displayed depth unless new orders replenish it. A quote update without a trade can instead reflect an add, cancel, or modification.</p>
+      </div>
+    </li>
+    <li>
+      <span>04</span>
+      <div>
+        <h3>Price moves when the best level changes</h3>
+        <p>After available quantity at the inside is consumed or withdrawn, the next available price becomes best bid or ask. The path depends on actual book state when the order arrives.</p>
+      </div>
+    </li>
+  </ol>
 
-<h2>Orderflow Imbalances Push GC From Zone to Zone</h2>
-<p>
-GC’s microstructure is driven by imbalances between buy and sell pressure. These imbalances are visible in real time through delta and execution flow, which is covered in <a href="https://grizzlyparrottrading.com/futures-basics/gc-orderflow-basics.html">GC orderflow basics</a>.
-</p>
+  <div class="gcx-comparison">
+    <article>
+      <p class="gcx-label">The DOM can show</p>
+      <h3>Displayed state now</h3>
+      <ul>
+        <li>best bid and ask</li>
+        <li>displayed quantity by level</li>
+        <li>changes in quoted depth</li>
+        <li>the spread and visible gaps</li>
+      </ul>
+    </article>
+    <article>
+      <p class="gcx-label">Time and sales can show</p>
+      <h3>Trades that occurred</h3>
+      <ul>
+        <li>execution price and quantity</li>
+        <li>trade sequence and pace</li>
+        <li>bid/ask classification when available</li>
+        <li>volume at price</li>
+      </ul>
+    </article>
+    <article>
+      <p class="gcx-label">Neither proves by itself</p>
+      <h3>Intent or future direction</h3>
+      <ul>
+        <li>who owns every order</li>
+        <li>whether a quote will remain</li>
+        <li>all hidden or reserved quantity</li>
+        <li>where the next trade must occur</li>
+      </ul>
+    </article>
+  </div>
 
-<p>Common imbalance triggers:</p>
+  <aside class="gcx-callout">
+    <p class="gcx-kicker">A better interpretation</p>
+    <h3>Replace “that wall will hold” with a testable observation</h3>
+    <p>“The offer displayed large quantity. Buyers traded into it, price advanced only one tick, the offer replenished, and the next rotation returned below the level.” That statement records evidence. It still needs an invalidation point and a position size that fits.</p>
+  </aside>
+</section>
 
-<ul>
-  <li>DXY momentum shifts</li>
-  <li>bond yield reversals</li>
-  <li>institutional block trades</li>
-  <li>session opens (London and COMEX)</li>
-</ul>
+<section class="gcx-section gcx-planner-section" id="planner" aria-labelledby="planner-title">
+  <div class="gcx-section-heading">
+    <p class="gcx-kicker">Interactive execution and risk tool</p>
+    <h2 id="planner-title">GC Execution-Cost Planner</h2>
+    <p>Estimate the loss allowed by a technical stop plus slippage and fees. The spread output is shown separately as a liquidity diagnostic so it is not silently double-counted.</p>
+  </div>
 
-<p>
-When imbalance kicks in, GC rarely drifts — it rotates fast and decisively.
-</p>
+  <div class="gcx-planner">
+    <form id="gcx-form" class="gcx-form" novalidate>
+      <div class="gcx-field gcx-field-wide">
+        <label for="gcx-contract">Contract and tick value</label>
+        <select id="gcx-contract" name="contract">
+          <option value="10">GC — standard Gold ($10 per tick)</option>
+          <option value="1">MGC — Micro Gold ($1 per tick)</option>
+        </select>
+      </div>
 
-<h2>Session Opens Reshape the Order Book</h2>
-<p>
-Three microstructure resets happen daily:</p>
+      <div class="gcx-field">
+        <label for="gcx-budget">Maximum dollar risk</label>
+        <div class="gcx-input-prefix"><span aria-hidden="true">$</span><input id="gcx-budget" name="budget" type="number" min="0" step="0.01" value="350" inputmode="decimal" required></div>
+      </div>
 
-<ul>
-  <li><strong>3:00 am ET — London open</strong></li>
-  <li><strong>8:20 am ET — COMEX open</strong></li>
-  <li><strong>1:30 pm ET — Treasury market reopen</strong></li>
-</ul>
+      <div class="gcx-field">
+        <label for="gcx-stop">Stop distance in ticks</label>
+        <input id="gcx-stop" name="stop" type="number" min="0.01" step="0.01" value="20" inputmode="decimal" required>
+      </div>
 
-<p>
-Each reset adds new volume, new liquidity, and new institutional positioning. GC structure built in Asia usually gets destroyed at London. GC structure from premarket often gets wiped at COMEX.
-</p>
+      <div class="gcx-field">
+        <label for="gcx-spread">Observed spread in ticks</label>
+        <input id="gcx-spread" name="spread" type="number" min="0" step="0.01" value="1" inputmode="decimal" required>
+      </div>
 
-<p>
-If you don’t understand these timing mechanics, read <a href="https://grizzlyparrottrading.com/futures-basics/best-times-to-trade-gc.html">the GC timing article</a>.
-</p>
+      <div class="gcx-field">
+        <label for="gcx-entry-slip">Entry slippage in ticks</label>
+        <input id="gcx-entry-slip" name="entrySlip" type="number" min="0" step="0.01" value="0.5" inputmode="decimal" required>
+      </div>
 
-<h2>The “Pass-Off” Between Sessions</h2>
-<p>
-GC structure transitions look like a relay race:</p>
+      <div class="gcx-field">
+        <label for="gcx-exit-slip">Stop-exit slippage in ticks</label>
+        <input id="gcx-exit-slip" name="exitSlip" type="number" min="0" step="0.01" value="1" inputmode="decimal" required>
+      </div>
 
-<ul>
-  <li>Asia builds the box</li>
-  <li>London breaks the box</li>
-  <li>New York picks the trend</li>
-</ul>
+      <div class="gcx-field">
+        <label for="gcx-fees">Round-trip fees per contract</label>
+        <div class="gcx-input-prefix"><span aria-hidden="true">$</span><input id="gcx-fees" name="fees" type="number" min="0" step="0.01" value="5" inputmode="decimal" required></div>
+      </div>
 
-<p>
-This is why Asia signals are usually trash while New York produces trend legs.
-</p>
+      <p id="gcx-error" class="gcx-error" role="alert" hidden>Enter finite, non-negative values and a stop distance greater than zero.</p>
 
-<h2>GC Loves Clean Rotations</h2>
-<p>
-Because GC liquidity is balanced, not extreme, its rotations follow a tighter pattern than other metals:
-</p>
+      <div class="gcx-form-actions">
+        <button class="gcx-button" type="submit">Calculate plan</button>
+        <button class="gcx-reset" type="reset">Reset example</button>
+      </div>
+    </form>
 
-<ul>
-  <li>impulse → pullback → continuation</li>
-  <li>micro double tops/bottoms</li>
-  <li>smooth stair-step climbs/drops</li>
-</ul>
+    <section class="gcx-results" aria-labelledby="gcx-results-title" aria-live="polite">
+      <div>
+        <p class="gcx-kicker">Calculated from your inputs</p>
+        <h3 id="gcx-results-title">Execution-aware risk</h3>
+      </div>
 
-<p>
-This is part of why GC is one of the most traded metals in the world: the structure is readable.
-</p>
+      <dl>
+        <div><dt>Tick value</dt><dd id="gcx-tick-value">$10.00</dd></div>
+        <div><dt>Visible spread cost / contract</dt><dd id="gcx-spread-cost">$10.00</dd></div>
+        <div><dt>Stop risk / contract</dt><dd id="gcx-stop-risk">$200.00</dd></div>
+        <div><dt>Slippage + fees / contract</dt><dd id="gcx-execution-cost">$20.00</dd></div>
+        <div class="gcx-result-primary"><dt>Estimated loss / contract</dt><dd id="gcx-loss-per-contract">$220.00</dd></div>
+        <div class="gcx-result-primary"><dt>Maximum whole contracts</dt><dd id="gcx-max-contracts">1</dd></div>
+      </dl>
 
-<h2>Microstructure During News: Controlled Chaos</h2>
-<p>
-GC explodes around CPI, NFP, PCE, and FOMC releases. Its behavior during these events follows a different microstructure regime, broken down in <a href="https://grizzlyparrottrading.com/futures-basics/gc-news-event-reaction.html">how GC reacts to news events</a>. Liquidity evaporates temporarily, spreads widen, and priority goes to macro algos.
-</p>
+      <div id="gcx-status" class="gcx-status gcx-status-fit">
+        <strong>One contract fits the entered budget.</strong>
+        <span>Estimated planned loss: $220.00 of $350.00.</span>
+      </div>
+    </section>
+  </div>
 
-<p>Typical behavior:</p>
+  <div class="gcx-notes">
+    <p><strong>How the estimate works:</strong> stop ticks &times; tick value + entry slippage + exit slippage + round-trip fees. Maximum contracts = floor(risk budget &divide; estimated loss per contract).</p>
+    <p><strong>Spread treatment:</strong> the displayed spread is a diagnostic, not an extra line in planned loss. If your stop distance begins at the actual expected fill, adding the spread again would double-count part of entry cost. If you measure from midpoint, last price, or a non-executable chart reference, adjust your entry allowance.</p>
+    <p><strong>Limits:</strong> no calculator can guarantee a stop fill. Gaps, order rejections, platform failure, fast markets, price limits, and insufficient book depth can produce a larger loss.</p>
+  </div>
+</section>
 
-<ul>
-  <li>liquidity holes</li>
-  <li>fast 40–100 tick bursts</li>
-  <li>rapid liquidity refill</li>
-  <li>trend direction revealed 5–15 min later</li>
-</ul>
+<section class="gcx-section" id="liquidity" aria-labelledby="liquidity-title">
+  <div class="gcx-section-heading">
+    <p class="gcx-kicker">Liquidity is conditional</p>
+    <h2 id="liquidity-title">The Same GC Order Can Have a Different Cost Five Minutes Later</h2>
+    <p>Liquidity is not just daily volume. Execution quality depends on the spread, depth, queue, volatility, order size, and how quickly the book changes when the order arrives.</p>
+  </div>
 
-<p>
-If you size wrong here, GC will ruin your morning.
-</p>
+  <div class="gcx-regime-grid">
+    <article>
+      <span>Routine two-sided auction</span>
+      <h3>Tighter spread, steadier replenishment</h3>
+      <p>Competing bids and offers can support smaller immediate price impact. A limit order may still wait behind substantial queue, and displayed size may still cancel.</p>
+      <strong>Measure:</strong>
+      <p>spread, top-of-book depth, fill rate, adverse selection after entry</p>
+    </article>
+    <article>
+      <span>Scheduled macro release</span>
+      <h3>Quotes can reprice faster than manual reaction</h3>
+      <p>Orders can be canceled, spreads can widen, and marketable flow can consume several levels. A stop trigger does not create liquidity at the requested price.</p>
+      <strong>Measure:</strong>
+      <p>event calendar, pre-event spread, actual slippage distribution, rejection rules</p>
+    </article>
+    <article>
+      <span>Session transition or quiet period</span>
+      <h3>Displayed depth and trade pace can change</h3>
+      <p>Nearly continuous trading does not mean uniform participation. Compare each time window with its own history instead of treating the whole session as one regime.</p>
+      <strong>Measure:</strong>
+      <p>time-of-day volume, spread percentile, book gaps, typical rotation size</p>
+    </article>
+    <article>
+      <span>Contract migration</span>
+      <h3>The active auction moves to another expiry</h3>
+      <p>Volume and open interest shift as participants roll. A chart on the old month can show weaker liquidity even when the overall gold market remains active.</p>
+      <strong>Measure:</strong>
+      <p>volume by expiry, open interest, calendar spread, broker roll notice</p>
+    </article>
+  </div>
+</section>
 
-<div class="highlight-box green">
-  <h3>GC Moves with Intent, Not Noise</h3>
-  <p>Gold futures sweep, fill, rebalance, and trend — same routine, different day. Understand the mechanics, and GC stops looking chaotic. It starts trading like the structured liquidity engine it actually is.</p>
-</div>
+<section class="gcx-section" id="stops" aria-labelledby="stops-title">
+  <div class="gcx-section-heading">
+    <p class="gcx-kicker">Mechanics without mythology</p>
+    <h2 id="stops-title">A Sweep Does Not Prove an Intentional “Stop Hunt”</h2>
+    <p>Prior highs and lows often attract orders because they are obvious reference points. That clustering can produce rapid execution, but the tape alone rarely identifies the motive or owner behind every order.</p>
+  </div>
+
+  <div class="gcx-stop-flow" aria-label="Sequence from a crowded price level to a possible reversal or continuation">
+    <div><span>1</span><strong>Orders cluster</strong><p>Stops, breakout entries, profit targets, and passive orders may coexist near a visible level.</p></div>
+    <span aria-hidden="true">&rarr;</span>
+    <div><span>2</span><strong>Trigger creates flow</strong><p>When conditions are met, some stop orders become eligible and add marketable demand or supply.</p></div>
+    <span aria-hidden="true">&rarr;</span>
+    <div><span>3</span><strong>Liquidity is tested</strong><p>The book absorbs, replenishes, withdraws, or is consumed across prices.</p></div>
+    <span aria-hidden="true">&rarr;</span>
+    <div><span>4</span><strong>Outcome resolves</strong><p>Price may accept beyond the level, reject it, or rotate while the auction rebuilds.</p></div>
+  </div>
+
+  <div class="gcx-evidence-table gcx-table-wrap">
+    <table>
+      <caption>Evidence-based readings around a prior high</caption>
+      <thead>
+        <tr>
+          <th scope="col">Observation</th>
+          <th scope="col">What it supports</th>
+          <th scope="col">What it does not prove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fast trades print above the high and price holds there</td>
+          <td>Temporary acceptance and successful execution beyond the reference</td>
+          <td>That continuation must persist</td>
+        </tr>
+        <tr>
+          <td>Heavy buying prints but price cannot advance</td>
+          <td>Possible passive selling or declining marginal impact</td>
+          <td>The seller's identity, size, or ability to remain</td>
+        </tr>
+        <tr>
+          <td>Price trades above, returns below, and fails on retest</td>
+          <td>Rejection is stronger than the first wick alone</td>
+          <td>A risk-free short or a universal target</td>
+        </tr>
+        <tr>
+          <td>Displayed offer disappears before contact</td>
+          <td>Quoted supply changed</td>
+          <td>Illegal spoofing or manipulative intent without further evidence</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="gcx-section" id="price-formation" aria-labelledby="price-formation-title">
+  <div class="gcx-section-heading">
+    <p class="gcx-kicker">One gold theme, several instruments</p>
+    <h2 id="price-formation-title">GC, Spot Gold and the Futures Curve Are Related—Not Identical</h2>
+    <p>Gold information can enter through futures, dealer markets, exchange-traded products, options, currencies, rates, or physical flows. A GC chart is one venue and one expiry inside that wider system.</p>
+  </div>
+
+  <div class="gcx-layer-grid">
+    <article>
+      <span>Underlying reference</span>
+      <h3>Cash and wholesale gold markets</h3>
+      <p>Spot references represent immediate or near-immediate gold pricing through different venues and conventions. There is no single universal retail “spot” order book equivalent to the GC book.</p>
+    </article>
+    <article>
+      <span>Standardized derivative</span>
+      <h3>A specific GC expiry</h3>
+      <p>The futures price reflects expectations and financing, storage, time, delivery terms, and market positioning through that contract's horizon.</p>
+    </article>
+    <article>
+      <span>Curve relationship</span>
+      <h3>The spread between expiries</h3>
+      <p>Two GC months can trade at different prices. Rolling changes the instrument, so raw front-month charts can jump when the data series switches.</p>
+    </article>
+    <article>
+      <span>Execution venue</span>
+      <h3>The live GC order book</h3>
+      <p>Your fill depends on executable orders in the selected expiry at the time your order reaches the venue—not on a delayed quote or another gold product.</p>
+    </article>
+  </div>
+
+  <p class="gcx-inline-note">For macro context, use the <a href="/futures-basics/gc-correlations-explained.html">GC correlations guide</a> and <a href="/futures-basics/gc-fundamental-drivers.html">fundamental drivers of gold futures</a>. Correlation is conditional; confirm the relationship over the horizon you trade.</p>
+</section>
+
+<section class="gcx-section" id="volume-roll" aria-labelledby="volume-roll-title">
+  <div class="gcx-section-heading">
+    <p class="gcx-kicker">Participation and contract life cycle</p>
+    <h2 id="volume-roll-title">Volume, Open Interest and Roll Answer Different Questions</h2>
+    <p>A liquid-looking continuous chart can hide the fact that the order book for one expiry is losing participation.</p>
+  </div>
+
+  <div class="gcx-metric-grid">
+    <article>
+      <span>Volume</span>
+      <h3>How much traded in the period?</h3>
+      <p>Every completed contract contributes to volume. High volume does not reveal whether both traders opened positions, both closed, or one replaced the other.</p>
+    </article>
+    <article>
+      <span>Open interest</span>
+      <h3>How many contracts remain open?</h3>
+      <p>Open interest measures outstanding contracts, commonly reported after the session. It is not a live directional vote and should not be equated with traded volume.</p>
+    </article>
+    <article>
+      <span>Roll</span>
+      <h3>Where is the active auction migrating?</h3>
+      <p>Compare current and next-month volume, open interest, spread, and depth. The right switch point is an execution decision, not a universal calendar slogan.</p>
+    </article>
+  </div>
+
+  <ol class="gcx-roll-checklist">
+    <li><span>01</span><p>Read the exact symbol and expiry on the chart, DOM, order ticket, and position window.</p></li>
+    <li><span>02</span><p>Compare volume and spread across the current and next relevant contracts.</p></li>
+    <li><span>03</span><p>Check the exchange expiration calendar and your broker's earlier liquidation or delivery policy.</p></li>
+    <li><span>04</span><p>Move orders, alerts, studies, and risk calculations to the chosen contract deliberately.</p></li>
+    <li><span>05</span><p>Do not interpret a back-adjusted continuous-chart jump as an executable price move.</p></li>
+  </ol>
+</section>
+
+<section class="gcx-section" id="examples" aria-labelledby="examples-title">
+  <div class="gcx-section-heading">
+    <p class="gcx-kicker">Worked microstructure cases</p>
+    <h2 id="examples-title">Four Examples That Separate Evidence From Storytelling</h2>
+    <p>All prices and quantities below are hypothetical. The calculations show mechanics, not a claim about typical GC behavior.</p>
+  </div>
+
+  <div class="gcx-example-stack">
+    <article>
+      <div class="gcx-example-number">01</div>
+      <div>
+        <p class="gcx-label">Queue priority</p>
+        <h3>Price traded, but the limit order did not fill</h3>
+        <p>The best bid displays 800 contracts. A trader adds a 10-contract buy behind the existing queue. Sell orders trade 300 contracts at that price and no other liquidity change occurs. The trader can remain unfilled because earlier quantity was ahead.</p>
+      </div>
+      <dl>
+        <div><dt>Displayed ahead</dt><dd>800</dd></div>
+        <div><dt>Traded at price</dt><dd>300</dd></div>
+        <div><dt>Guaranteed fill?</dt><dd>No</dd></div>
+      </dl>
+    </article>
+
+    <article>
+      <div class="gcx-example-number">02</div>
+      <div>
+        <p class="gcx-label">Effort versus result</p>
+        <h3>Aggressive buying does not produce price progress</h3>
+        <p>Buyers repeatedly trade at the offer near a prior high, but the best offer replenishes and price advances only one tick before closing back below the level. That sequence supports possible absorption; a failed retest would add evidence. The first delta burst alone is not the short signal.</p>
+      </div>
+      <dl>
+        <div><dt>Buyer aggression</dt><dd>High</dd></div>
+        <div><dt>Price progress</dt><dd>1 tick</dd></div>
+        <div><dt>Conclusion</dt><dd>Conditional</dd></div>
+      </dl>
+    </article>
+
+    <article>
+      <div class="gcx-example-number">03</div>
+      <div>
+        <p class="gcx-label">Stop and slippage math</p>
+        <h3>A 16-tick stop loses more than $160</h3>
+        <p>One GC contract has a stop trigger 16 ticks from the actual fill. The exit averages two ticks beyond the trigger and round-trip fees are $4.50. Estimated loss is (16 &times; $10) + (2 &times; $10) + $4.50 = <strong>$184.50</strong>. A faster book can be worse.</p>
+      </div>
+      <dl>
+        <div><dt>Price risk</dt><dd>$160.00</dd></div>
+        <div><dt>Exit slippage</dt><dd>$20.00</dd></div>
+        <div><dt>Estimated loss</dt><dd>$184.50</dd></div>
+      </dl>
+    </article>
+
+    <article>
+      <div class="gcx-example-number">04</div>
+      <div>
+        <p class="gcx-label">Contract migration</p>
+        <h3>The next expiry becomes more executable</h3>
+        <p>The current month still appears on a continuous chart, but the next listed month now has greater volume, a steadier inside market, and more useful depth. The trader switches analysis and orders to that expiry while tracking the calendar spread instead of assuming both price series should match.</p>
+      </div>
+      <dl>
+        <div><dt>Decision input</dt><dd>Live liquidity</dd></div>
+        <div><dt>Chart action</dt><dd>Change expiry</dd></div>
+        <div><dt>Risk</dt><dd>Wrong-month order</dd></div>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<section class="gcx-section" id="workflow" aria-labelledby="workflow-title">
+  <div class="gcx-section-heading">
+    <p class="gcx-kicker">From contract selection to review</p>
+    <h2 id="workflow-title">The GC Microstructure Workflow</h2>
+    <p>Use the same sequence before every trade. It forces contract, execution, and risk questions to come before a persuasive story.</p>
+  </div>
+
+  <ol class="gcx-workflow">
+    <li><span>01</span><div><h3>Name the exact contract</h3><p>Confirm root, expiry, contract size, tick value, trading status, settlement type, and broker cutoff. Do not size from the letters “gold” alone.</p></div></li>
+    <li><span>02</span><div><h3>Identify the current liquidity regime</h3><p>Record spread, top levels, time of day, event risk, and recent trade pace. Compare them with the same session segment—not an all-day average.</p></div></li>
+    <li><span>03</span><div><h3>Mark the auction location first</h3><p>Choose a prior extreme, value boundary, breakout level, volume reference, or curve relationship before reading individual book changes.</p></div></li>
+    <li><span>04</span><div><h3>Separate displayed from executed</h3><p>Use DOM changes for resting liquidity and time-and-sales or footprint data for completed trades. Do not treat a canceled quote as executed volume.</p></div></li>
+    <li><span>05</span><div><h3>Judge effort against price result</h3><p>Ask how much price advanced for the aggressive quantity and whether liquidity replenished. Then demand acceptance, rejection, or a failed retest.</p></div></li>
+    <li><span>06</span><div><h3>Choose the technically valid stop</h3><p>The stop belongs where the trade thesis fails. Estimate slippage around the current regime instead of assuming the trigger is the fill.</p></div></li>
+    <li><span>07</span><div><h3>Reduce size or skip</h3><p>Use the planner above or the <a href="/market-basics/risk-per-trade-small-accounts.html">real drawdown-buffer sizing guide</a>. If one contract exceeds the risk budget, the trade does not fit.</p></div></li>
+    <li><span>08</span><div><h3>Archive the full evidence</h3><p>Save the contract, time zone, DOM, executions, entry, stop, estimated cost, actual fill, and subsequent path. Review prediction and execution separately.</p></div></li>
+  </ol>
+</section>
+
+<section class="gcx-section" aria-labelledby="mistakes-title">
+  <div class="gcx-section-heading">
+    <p class="gcx-kicker">Common sizing and interpretation failures</p>
+    <h2 id="mistakes-title">GC Microstructure Mistakes That Create False Certainty</h2>
+  </div>
+
+  <div class="gcx-mistake-grid">
+    <article><span>01</span><h3>Calling every sweep manipulation</h3><p>A price-level sweep describes a path. It does not identify intent, legality, or the participants responsible.</p></article>
+    <article><span>02</span><h3>Treating displayed size as committed</h3><p>Quotes can cancel or replenish. Judge the interaction when price arrives and the response afterward.</p></article>
+    <article><span>03</span><h3>Reading delta as direction</h3><p>Delta records classified aggression. Price can stall or reverse when passive liquidity absorbs it.</p></article>
+    <article><span>04</span><h3>Ignoring queue position</h3><p>Touching a limit price does not guarantee a fill, especially when meaningful quantity was already resting there.</p></article>
+    <article><span>05</span><h3>Using margin as the risk number</h3><p>Margin controls performance-bond requirements. Planned loss comes from stop distance, tick value, size, and execution cost.</p></article>
+    <article><span>06</span><h3>Trading the wrong expiry</h3><p>A stale month can have weaker depth and worse fills even when a continuous chart looks normal.</p></article>
+    <article><span>07</span><h3>Backtesting with unavailable book data</h3><p>Bar data cannot reconstruct every historical add, cancel, queue event, or hidden order. Match claims to stored data.</p></article>
+    <article><span>08</span><h3>Assuming a stop caps the loss</h3><p>A trigger activates an order; it does not manufacture a counterparty at the desired price.</p></article>
+  </div>
+</section>
+
+<section class="gcx-section gcx-checklist" id="checklist" aria-labelledby="checklist-title">
+  <div class="gcx-section-heading">
+    <p class="gcx-kicker">Final decision gate</p>
+    <h2 id="checklist-title">Before Sending a GC Order</h2>
+  </div>
+
+  <ul>
+    <li><span aria-hidden="true">&#10003;</span><p>I verified the exact GC or MGC expiry, tick value, and broker trading status.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p>I checked current spread, depth, trade pace, scheduled events, and contract migration.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p>I can state what was displayed, what executed, and what price did afterward.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p>I am not treating a wall, sweep, imbalance, or delta print as a guaranteed direction.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p>My stop invalidates the trade idea rather than merely matching an affordable dollar amount.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p>My risk estimate includes tick value, plausible entry and exit slippage, and fees.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p>I will reduce contracts or skip if the valid stop does not fit the available risk budget.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p>I know the order type, cancellation rule, and maximum failure I will tolerate if conditions change.</p></li>
+  </ul>
+</section>
+
+<section class="gcx-section gcx-faq" aria-labelledby="faq-title">
+  <div class="gcx-section-heading">
+    <p class="gcx-kicker">Frequently asked questions</p>
+    <h2 id="faq-title">GC Market Microstructure Questions</h2>
+  </div>
+
+  <div class="gcx-faq-list">
+    <details>
+      <summary>What is the tick value of GC gold futures?</summary>
+      <p>CME Group lists standard COMEX Gold futures, symbol GC, at 100 troy ounces with a minimum price fluctuation of $0.10 per troy ounce. One minimum tick is therefore worth $10 per contract.</p>
+    </details>
+    <details>
+      <summary>What does the GC order book show?</summary>
+      <p>The visible order book shows displayed buy and sell limit-order quantity at quoted price levels at that moment. It changes when orders are added, canceled, modified, or executed. It does not reveal every hidden order, participant identity, future cancellation, or trading intent.</p>
+    </details>
+    <details>
+      <summary>Does large resting depth guarantee support or resistance in GC?</summary>
+      <p>No. Displayed depth can be canceled, traded through, replenished, or partly hidden. Treat it as current liquidity information and observe what happens when price reaches the level rather than assuming the quantity will remain.</p>
+    </details>
+    <details>
+      <summary>Why can a GC stop order fill worse than its trigger price?</summary>
+      <p>A stop trigger is not necessarily a guaranteed fill price. Once activated, the resulting order must trade against available liquidity. During a fast move or a thin book, the available quantity at the first price may be insufficient, so the order can fill across additional levels.</p>
+    </details>
+    <details>
+      <summary>Is GC the same market as spot gold?</summary>
+      <p>No. GC is a standardized, expiring COMEX futures contract quoted in US dollars per troy ounce. Spot gold, dealer quotes, exchange-traded funds, and other gold derivatives are related markets, but they have different instruments, venues, participants, and pricing mechanics.</p>
+    </details>
+    <details>
+      <summary>Why does GC liquidity move to another contract month?</summary>
+      <p>Futures contracts expire. Market participants close or roll positions, and trading activity migrates from an expiring month to a later month. Identify the active contract using current volume, open interest, broker notices, and the exchange calendar rather than relying on a fixed roll date for every cycle.</p>
+    </details>
+  </div>
+</section>
+
+<section class="gcx-related" aria-labelledby="related-title">
+  <div>
+    <p class="gcx-kicker">Continue the gold workflow</p>
+    <h2 id="related-title">From Mechanics to Context and Execution</h2>
+  </div>
+  <div class="gcx-related-grid">
+    <a href="/futures-basics/gc-liquidity-levels-structure.html"><span>Location</span><strong>GC Liquidity Levels and Structure</strong><small>Map references before reading order-book reaction.</small></a>
+    <a href="/futures-basics/gc-orderflow-basics.html"><span>Execution</span><strong>GC Order Flow Basics</strong><small>Separate aggressive trades from passive response.</small></a>
+    <a href="/futures-basics/gc-slippage-avoidance.html"><span>Cost</span><strong>GC Slippage and Fill Quality</strong><small>Plan for execution when the book changes quickly.</small></a>
+    <a href="/books/metals-market-structure/"><span>Book</span><strong>Metals Market Structure</strong><small>A deeper framework across gold, silver, copper, and platinum.</small></a>
+  </div>
+</section>
+
+<section class="gcx-sources" id="sources" aria-labelledby="sources-title">
+  <p class="gcx-kicker">Source disclosure</p>
+  <h2 id="sources-title">Official and Primary Sources</h2>
+  <p>Contract specifications and exchange mechanics were checked against the sources below on August 6, 2026. Exchange rules, hours, margins, and product definitions can change; confirm the current contract page, rulebook, calendar, and broker policy before trading.</p>
+  <ul>
+    <li><a href="https://www.cmegroup.com/trading/metals/files/fact-card-gold-futures-options.pdf">CME Group — Gold Futures and Options fact card</a> (GC size, quote, minimum fluctuation, hours, settlement, and termination)</li>
+    <li><a href="https://www.cmegroup.com/rulebook/COMEX/1a/113.pdf">CME Group — COMEX Rulebook Chapter 113: Gold Futures</a> (controlling contract and delivery specifications)</li>
+    <li><a href="https://www.cmegroup.com/education/courses/event-contracts-underlying-markets/product-gold">CME Group — Gold Product Overview</a> (GC and MGC contract units and minimum tick values)</li>
+    <li><a href="https://www.cmegroup.com/education/articles-and-reports/understanding-the-cme-liquidity-tool-methodology">CME Group — Understanding the CME Liquidity Tool Methodology</a> (electronic order-book inputs, spread, and depth)</li>
+    <li><a href="https://www.cmegroup.com/education/files/a-traders-guide-to-futures.pdf">CME Group — A Trader's Guide to Futures</a> (order types, market depth, contract mechanics, and risk)</li>
+    <li><a href="https://www.cmegroup.com/education/courses/introduction-to-futures/understanding-futures-expiration-contract-roll">CME Group — Understanding Futures Expiration and Contract Roll</a> (offset, roll, and settlement choices)</li>
+    <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/FuturesMarketBasics/index.htm">US Commodity Futures Trading Commission — Basics of Futures Trading</a> (customer obligations and leveraged risk)</li>
+  </ul>
+</section>
+
+<aside class="gcx-disclaimer" aria-label="Educational and risk disclaimer">
+  <strong>Educational and risk disclaimer</strong>
+  <p>This guide is general education, not individualized financial, investment, legal, or tax advice. Futures are leveraged and can produce losses beyond the amount initially deposited. Examples are hypothetical, exclude many real-world failure modes, and do not promise a fill or trading outcome. Verify current exchange specifications and your broker's rules, and trade only risk capital you can afford to lose.</p>
+</aside>
 
 <!-- ARTICLE BODY END -->
-</div>
+</article>
 </section>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
-
     <div class="footer-book">
       <h3>Books</h3>
       <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
+      <a href="/books/" class="footer-book-link">View All Books</a>
     </div>
-
     <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
+      <a href="/about.html">About</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/contact.html">Contact</a>
     </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+    <p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+  (function () {
+    const form = document.getElementById('gcx-form');
+    const error = document.getElementById('gcx-error');
+    const fields = {
+      contract: document.getElementById('gcx-contract'),
+      budget: document.getElementById('gcx-budget'),
+      stop: document.getElementById('gcx-stop'),
+      spread: document.getElementById('gcx-spread'),
+      entrySlip: document.getElementById('gcx-entry-slip'),
+      exitSlip: document.getElementById('gcx-exit-slip'),
+      fees: document.getElementById('gcx-fees')
+    };
+    const output = {
+      tickValue: document.getElementById('gcx-tick-value'),
+      spreadCost: document.getElementById('gcx-spread-cost'),
+      stopRisk: document.getElementById('gcx-stop-risk'),
+      executionCost: document.getElementById('gcx-execution-cost'),
+      lossPerContract: document.getElementById('gcx-loss-per-contract'),
+      maxContracts: document.getElementById('gcx-max-contracts'),
+      status: document.getElementById('gcx-status')
+    };
+
+    const money = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+    function readNumber(field) {
+      if (field.value.trim() === '') return NaN;
+      return Number(field.value);
+    }
+
+    function setUnavailable() {
+      output.tickValue.textContent = '—';
+      output.spreadCost.textContent = '—';
+      output.stopRisk.textContent = '—';
+      output.executionCost.textContent = '—';
+      output.lossPerContract.textContent = '—';
+      output.maxContracts.textContent = '—';
+      output.status.className = 'gcx-status gcx-status-skip';
+      output.status.innerHTML = '<strong>Fix the highlighted inputs.</strong><span>The planner will not calculate from missing, negative, or non-finite values.</span>';
+    }
+
+    function calculate() {
+      const values = {
+        tick: readNumber(fields.contract),
+        budget: readNumber(fields.budget),
+        stop: readNumber(fields.stop),
+        spread: readNumber(fields.spread),
+        entrySlip: readNumber(fields.entrySlip),
+        exitSlip: readNumber(fields.exitSlip),
+        fees: readNumber(fields.fees)
+      };
+
+      const valid = Object.values(values).every(Number.isFinite) &&
+        values.tick > 0 &&
+        values.budget >= 0 &&
+        values.stop > 0 &&
+        values.spread >= 0 &&
+        values.entrySlip >= 0 &&
+        values.exitSlip >= 0 &&
+        values.fees >= 0;
+
+      error.hidden = valid;
+      Object.values(fields).forEach(function (field) {
+        if (field.tagName !== 'SELECT') field.setAttribute('aria-invalid', 'false');
+      });
+
+      if (!valid) {
+        Object.entries(values).forEach(function (entry) {
+          const key = entry[0];
+          const value = entry[1];
+          if (key !== 'tick' && (!Number.isFinite(value) || value < 0 || (key === 'stop' && value <= 0))) {
+            fields[key].setAttribute('aria-invalid', 'true');
+          }
+        });
+        setUnavailable();
+        return;
+      }
+
+      const spreadCost = values.spread * values.tick;
+      const stopRisk = values.stop * values.tick;
+      const executionCost = (values.entrySlip + values.exitSlip) * values.tick + values.fees;
+      const lossPerContract = stopRisk + executionCost;
+      const maxContracts = lossPerContract > 0 ? Math.floor(values.budget / lossPerContract) : 0;
+      const plannedLoss = maxContracts * lossPerContract;
+
+      output.tickValue.textContent = money.format(values.tick);
+      output.spreadCost.textContent = money.format(spreadCost);
+      output.stopRisk.textContent = money.format(stopRisk);
+      output.executionCost.textContent = money.format(executionCost);
+      output.lossPerContract.textContent = money.format(lossPerContract);
+      output.maxContracts.textContent = maxContracts.toLocaleString('en-US');
+
+      if (maxContracts === 0) {
+        output.status.className = 'gcx-status gcx-status-skip';
+        output.status.innerHTML = '<strong>Skip this trade at the entered risk.</strong><span>One contract is estimated at ' + money.format(lossPerContract) + ', above the ' + money.format(values.budget) + ' budget.</span>';
+      } else {
+        output.status.className = 'gcx-status gcx-status-fit';
+        output.status.innerHTML = '<strong>' + maxContracts.toLocaleString('en-US') + ' whole contract' + (maxContracts === 1 ? '' : 's') + ' fit the entered budget.</strong><span>Estimated planned loss: ' + money.format(plannedLoss) + ' of ' + money.format(values.budget) + '.</span>';
+      }
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      calculate();
+    });
+    form.addEventListener('input', calculate);
+    form.addEventListener('change', calculate);
+    form.addEventListener('reset', function () {
+      window.setTimeout(calculate, 0);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    calculate();
+  }());
+</script>
 </body>
 </html>

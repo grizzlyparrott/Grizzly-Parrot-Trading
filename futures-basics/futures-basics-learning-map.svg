@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Five-stage futures learning map</title>
+  <desc id="desc">A structured path from contract specifications to dollar risk, execution, market context, and post-trade review, with a central decision to size or skip the trade.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset=".58" stop-color="#0a1524"/>
+      <stop offset="1" stop-color="#030812"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6ee7a0"/>
+      <stop offset="1" stop-color="#22c55e"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8ec5ff"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe59a"/>
+      <stop offset="1" stop-color="#d8aa38"/>
+    </linearGradient>
+    <pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M 46 0 L 0 0 0 46" fill="none" stroke="#8ca2bd" stroke-opacity=".055" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#000814" flood-opacity=".6"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#4ade80"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="800" rx="28" fill="url(#bg)"/>
+  <rect width="1200" height="800" rx="28" fill="url(#grid)"/>
+  <circle cx="1015" cy="80" r="220" fill="#4ade80" opacity=".05"/>
+  <circle cx="125" cy="690" r="230" fill="#60a5fa" opacity=".045"/>
+
+  <g font-family="Inter, Segoe UI, Arial, sans-serif">
+    <text x="64" y="67" fill="#4ade80" font-size="18" font-weight="800" letter-spacing="3">FUTURES LEARNING SYSTEM</text>
+    <text x="64" y="114" fill="#f8fafc" font-size="39" font-weight="800" letter-spacing="-1.5">Build the decision in the right order</text>
+    <text x="64" y="148" fill="#93a4ba" font-size="18">Instrument first. Contract count last.</text>
+
+    <path d="M207 304 C260 225 350 215 425 251 C495 285 511 360 600 378 C689 396 711 320 782 281 C863 236 958 258 1000 337" fill="none" stroke="#4ade80" stroke-opacity=".36" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 13"/>
+
+    <g transform="translate(58 214)" filter="url(#shadow)">
+      <rect width="270" height="176" rx="22" fill="#0a1524" stroke="#60a5fa" stroke-opacity=".36"/>
+      <circle cx="45" cy="45" r="24" fill="#60a5fa" opacity=".13"/>
+      <text x="45" y="52" fill="#8ec5ff" font-size="17" font-weight="850" text-anchor="middle">01</text>
+      <text x="82" y="40" fill="#60a5fa" font-size="12" font-weight="850" letter-spacing="1.7">CONTRACT</text>
+      <text x="82" y="66" fill="#f8fafc" font-size="20" font-weight="780">Name the instrument</text>
+      <line x1="24" y1="90" x2="246" y2="90" stroke="#64748b" stroke-opacity=".28"/>
+      <text x="24" y="117" fill="#a2b0c2" font-size="15">Unit · quote · tick value</text>
+      <text x="24" y="143" fill="#a2b0c2" font-size="15">Expiry · hours · settlement</text>
+    </g>
+
+    <g transform="translate(350 214)" filter="url(#shadow)">
+      <rect width="270" height="176" rx="22" fill="#0a1524" stroke="#4ade80" stroke-opacity=".38"/>
+      <circle cx="45" cy="45" r="24" fill="#4ade80" opacity=".13"/>
+      <text x="45" y="52" fill="#6ee7a0" font-size="17" font-weight="850" text-anchor="middle">02</text>
+      <text x="82" y="40" fill="#4ade80" font-size="12" font-weight="850" letter-spacing="1.7">DOLLAR RISK</text>
+      <text x="82" y="66" fill="#f8fafc" font-size="20" font-weight="780">Translate the stop</text>
+      <line x1="24" y1="90" x2="246" y2="90" stroke="#64748b" stroke-opacity=".28"/>
+      <text x="24" y="117" fill="#a2b0c2" font-size="15">Ticks × tick value</text>
+      <text x="24" y="143" fill="#a2b0c2" font-size="15">+ slippage + fees</text>
+    </g>
+
+    <g transform="translate(642 214)" filter="url(#shadow)">
+      <rect width="270" height="176" rx="22" fill="#0a1524" stroke="#f4c95d" stroke-opacity=".38"/>
+      <circle cx="45" cy="45" r="24" fill="#f4c95d" opacity=".13"/>
+      <text x="45" y="52" fill="#f8d873" font-size="17" font-weight="850" text-anchor="middle">03</text>
+      <text x="82" y="40" fill="#f4c95d" font-size="12" font-weight="850" letter-spacing="1.7">EXECUTION</text>
+      <text x="82" y="66" fill="#f8fafc" font-size="20" font-weight="780">Choose the order</text>
+      <line x1="24" y1="90" x2="246" y2="90" stroke="#64748b" stroke-opacity=".28"/>
+      <text x="24" y="117" fill="#a2b0c2" font-size="15">Spread · depth · queue</text>
+      <text x="24" y="143" fill="#a2b0c2" font-size="15">Fill risk · stop behavior</text>
+    </g>
+
+    <g transform="translate(934 214)" filter="url(#shadow)">
+      <rect width="208" height="176" rx="22" fill="#0a1524" stroke="#60a5fa" stroke-opacity=".36"/>
+      <circle cx="40" cy="45" r="24" fill="#60a5fa" opacity=".13"/>
+      <text x="40" y="52" fill="#8ec5ff" font-size="17" font-weight="850" text-anchor="middle">04</text>
+      <text x="76" y="40" fill="#60a5fa" font-size="12" font-weight="850" letter-spacing="1.5">CONTEXT</text>
+      <text x="76" y="66" fill="#f8fafc" font-size="19" font-weight="780">Test the thesis</text>
+      <line x1="24" y1="90" x2="184" y2="90" stroke="#64748b" stroke-opacity=".28"/>
+      <text x="24" y="117" fill="#a2b0c2" font-size="14">Driver · location</text>
+      <text x="24" y="143" fill="#a2b0c2" font-size="14">Acceptance · invalidation</text>
+    </g>
+
+    <g transform="translate(58 454)" filter="url(#shadow)">
+      <rect width="372" height="205" rx="24" fill="#07111f" stroke="#4ade80" stroke-opacity=".34"/>
+      <text x="28" y="38" fill="#4ade80" font-size="12" font-weight="850" letter-spacing="1.8">THE SIZE GATE</text>
+      <text x="28" y="76" fill="#f8fafc" font-size="27" font-weight="820">How many whole contracts fit?</text>
+      <rect x="28" y="101" width="316" height="43" rx="10" fill="#020812" stroke="#4ade80" stroke-opacity=".24"/>
+      <text x="186" y="128" fill="#d7fbe3" font-size="15" font-weight="750" text-anchor="middle">floor(risk budget ÷ loss per contract)</text>
+      <g transform="translate(28 160)">
+        <rect width="142" height="28" rx="14" fill="#14532d" opacity=".72"/>
+        <text x="71" y="19" fill="#bbf7d0" font-size="12" font-weight="850" text-anchor="middle">SIZE FITS</text>
+        <rect x="174" width="142" height="28" rx="14" fill="#7f1d1d" opacity=".68"/>
+        <text x="245" y="19" fill="#fecdd3" font-size="12" font-weight="850" text-anchor="middle">OR SKIP</text>
+      </g>
+    </g>
+
+    <g transform="translate(458 454)" filter="url(#shadow)">
+      <rect width="684" height="205" rx="24" fill="#07111f" stroke="#64748b" stroke-opacity=".32"/>
+      <text x="28" y="38" fill="#8da0b7" font-size="12" font-weight="850" letter-spacing="1.8">05 · REVIEW THE PROCESS</text>
+
+      <g transform="translate(28 63)">
+        <rect width="188" height="109" rx="16" fill="#0b1726" stroke="#60a5fa" stroke-opacity=".24"/>
+        <text x="18" y="30" fill="#8ec5ff" font-size="13" font-weight="800">CONTRACT</text>
+        <text x="18" y="58" fill="#e7eef7" font-size="15" font-weight="700">Right expiry?</text>
+        <text x="18" y="82" fill="#8d9db0" font-size="13">Right tick value?</text>
+      </g>
+      <g transform="translate(234 63)">
+        <rect width="188" height="109" rx="16" fill="#0b1726" stroke="#4ade80" stroke-opacity=".24"/>
+        <text x="18" y="30" fill="#6ee7a0" font-size="13" font-weight="800">EXECUTION</text>
+        <text x="18" y="58" fill="#e7eef7" font-size="15" font-weight="700">Expected fill?</text>
+        <text x="18" y="82" fill="#8d9db0" font-size="13">Actual slippage?</text>
+      </g>
+      <g transform="translate(440 63)">
+        <rect width="216" height="109" rx="16" fill="#0b1726" stroke="#f4c95d" stroke-opacity=".24"/>
+        <text x="18" y="30" fill="#f8d873" font-size="13" font-weight="800">THESIS</text>
+        <text x="18" y="58" fill="#e7eef7" font-size="15" font-weight="700">What invalidated?</text>
+        <text x="18" y="82" fill="#8d9db0" font-size="13">What survives review?</text>
+      </g>
+    </g>
+
+    <path d="M430 556 H451" fill="none" stroke="#4ade80" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+    <text x="600" y="720" fill="#71839a" font-size="15" text-anchor="middle">A setup is useful only after the contract, dollars, execution, and failure point are defined.</text>
+  </g>
+</svg>
