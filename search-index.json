@@ -2190,9 +2190,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How to Read Order Flow on 6E Using Footprints, Imbalances and Delta",
+    "title": "How to Read Order Flow on 6E: Footprints, Imbalances and Delta",
     "url": "/futures-basics/how-to-read-order-flow-on-6e.html",
-    "description": "A blunt guide to reading 6E order flow using footprint charts, imbalances and delta so you can see where real buying and selling hits the Euro FX futures tape.",
+    "description": "Complete guide to reading 6E order flow with footprint charts, diagonal imbalances, delta, absorption, data-quality checks, examples, and an interactive decoder.",
     "category": "Futures Basics"
   },
   {
@@ -2250,9 +2250,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How to Trade Around Whipsaws",
+    "title": "How to Trade Around Whipsaws: Location, Confirmation and Risk",
     "url": "/market-basics/trade-around-whipsaws.html",
-    "description": "Practical methods to trade around price whipsaws: filters, timing rules, confirmation tools, and ways to avoid getting chopped to death.",
+    "description": "Complete futures whipsaw guide covering false-break conditions, acceptance and rejection, structural stops, order types, position sizing, and an interactive plan lab.",
     "category": "Market Basics"
   },
   {

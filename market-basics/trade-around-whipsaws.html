@@ -3,43 +3,37 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Trade Around Whipsaws</title>
-  <meta name="description" content="Practical methods to trade around price whipsaws: filters, timing rules, confirmation tools, and ways to avoid getting chopped to death.">
+  <title>How to Trade Around Whipsaws | Futures Execution Guide</title>
+  <meta name="description" content="Complete futures whipsaw guide: false-break conditions, acceptance and rejection, structural stops, order types, risk sizing, and an interactive plan lab.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/market-basics/trade-around-whipsaws.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="How to Trade Around Whipsaws">
-  <meta property="og:description" content="Practical methods to trade around price whipsaws: filters, timing rules, confirmation tools, and ways to avoid getting chopped to death.">
+  <meta property="og:title" content="How to Trade Around Whipsaws: Location, Confirmation and Risk">
+  <meta property="og:description" content="A context-first playbook for false breakouts, liquidity sweeps, event volatility, confirmation, order choice, structural stops, and position sizing.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/market-basics/trade-around-whipsaws.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Grizzly Parrot Trading guide to false breakouts, whipsaws, and futures risk control.">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta name="twitter:title" content="How to Trade Around Whipsaws">
-  <meta name="twitter:description" content="Practical methods to trade around price whipsaws: filters, timing rules, confirmation tools, and ways to avoid getting chopped to death.">
+  <meta name="twitter:description" content="Use location, volatility context, acceptance or rejection, structural stops, and real dollar risk to navigate futures whipsaws.">
 
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="whipsaw-guide.css">
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -48,62 +42,117 @@
     gtag('config', 'G-JMJVR3G5YN');
   </script>
 
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How to Trade Around Whipsaws",
-  "description": "Practical methods to trade around price whipsaws: filters, timing rules, confirmation tools, and ways to avoid getting chopped to death.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/market-basics/trade-around-whipsaws.html",
-  "datePublished": "2025-11-30",
-  "dateModified": "2025-11-30",
-  "url": "https://grizzlyparrottrading.com/market-basics/trade-around-whipsaws.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Trade Around Whipsaws: Location, Confirmation and Risk",
+    "description": "A complete guide to navigating futures whipsaws with auction location, volatility and event context, acceptance or rejection, order-type mechanics, structural stops, position sizing, worked examples, and an interactive plan lab.",
+    "author": {
+      "@type": "Person",
+      "name": "Kyle Parrott",
+      "url": "https://grizzlyparrottrading.com/about.html"
+    },
+    "mainEntityOfPage": "https://grizzlyparrottrading.com/market-basics/trade-around-whipsaws.html",
+    "datePublished": "2025-11-30",
+    "dateModified": "2026-08-05",
+    "url": "https://grizzlyparrottrading.com/market-basics/trade-around-whipsaws.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grizzly Parrot Trading",
+      "url": "https://grizzlyparrottrading.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://grizzlyparrottrading.com/OG-default.png"
+      }
+    },
+    "image": "https://grizzlyparrottrading.com/OG-default.png"
+  }
+  </script>
 
-  <!-- JSON-LD: Breadcrumbs -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Market Basics",
-      "item": "https://grizzlyparrottrading.com/market-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How to Trade Around Whipsaws",
-      "item": "https://grizzlyparrottrading.com/market-basics/trade-around-whipsaws.html"
-    }
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Market Basics",
+        "item": "https://grizzlyparrottrading.com/market-basics/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "How to Trade Around Whipsaws",
+        "item": "https://grizzlyparrottrading.com/market-basics/trade-around-whipsaws.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a whipsaw in futures trading?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A whipsaw is a rapid directional move that reverses enough to invalidate or stop out a position, often around a range boundary, breakout level, scheduled event, or thin-liquidity period. The label describes the path after the fact; it is not a standalone setup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can a trader distinguish a breakout from a false breakout?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No single test can guarantee the distinction. Useful evidence includes a close beyond the level, time and volume accepted outside the prior range, a retest that holds, and continued progress. Rejection evidence includes a sweep, close back inside, and a failed attempt to reclaim the level."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should a trader always wait a fixed number of minutes after economic news?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No universal waiting period fits every product, release, and market regime. Check the official event time, define a tested blackout rule in advance, and require stable structure and executable risk before entering."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should stops be widened to survive whipsaws?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A stop should be placed where the trade idea is technically invalid. If that location is farther away, the dollar loss per contract increases, so contract count must fall. Widening a stop without reducing size simply increases planned risk."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a stop order guarantee the intended exit price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Stop and stop-limit behavior depends on the order type, broker, exchange rules, liquidity, and market conditions. A stop-limit can remain unfilled after activation, while other stop implementations can fill away from the trigger within applicable protections."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should a whipsaw trade be skipped?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skip when the location is undefined, event risk is not controlled, price has not supplied the confirmation required by the plan, the stop location is arbitrary, or even one contract exceeds the available dollar-risk budget after costs."
+        }
+      }
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
 </head>
@@ -111,20 +160,17 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
+    <div class="logo"><a href="/">Grizzly Parrot Trading</a></div>
+    <nav class="main-nav" aria-label="Primary navigation">
       <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../metals/index.html">Metals</a></li>
+        <li><a href="../energies/index.html">Energies</a></li>
+        <li><a href="../currencies/index.html">Currencies</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firms</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+        <li><a href="../tools/index.html">Tools</a></li>
       </ul>
     </nav>
   </div>
@@ -132,203 +178,625 @@ Grizzly Parrot Trading</a>
 
 <main>
 <section class="section">
-<div class="container article-content">
+<article class="container article-content whipsaw-guide">
 <!-- ARTICLE BODY START -->
 
-<h1>How to Trade Around Whipsaws</h1>
+<header class="ws-hero">
+  <div class="ws-hero-copy">
+    <p class="ws-kicker">Futures execution and risk guide</p>
+    <h1>How to Trade Around Whipsaws: Location, Confirmation and Risk</h1>
+    <p class="ws-byline">By <a href="/about.html">Kyle Parrott</a> <span aria-hidden="true">&middot;</span> Updated August 5, 2026</p>
+    <p class="ws-hero-lede">You cannot remove false breaks from an auction. You can stop treating the first move as proof. Define the level, identify the volatility and event regime, require the kind of acceptance or rejection your plan demands, place the real invalidation stop, and size from its dollar cost.</p>
+    <div class="ws-hero-actions">
+      <a class="ws-button" href="#plan-lab">Build a whipsaw plan</a>
+      <a class="ws-text-link" href="#playbook">Use the execution playbook</a>
+    </div>
+    <div class="ws-hero-facts" aria-label="Whipsaw planning principles">
+      <div><span>First filter</span><strong>Location</strong></div>
+      <div><span>Required evidence</span><strong>Acceptance or rejection</strong></div>
+      <div><span>Final constraint</span><strong>Dollar risk per contract</strong></div>
+    </div>
+  </div>
 
-<p>
-Whipsaws are not going away. You either learn to trade around them or you keep donating. This isn’t about predicting every fake move. It’s about building filters, timing rules, and confirmation steps so whipsaws hit you less often and for less damage when they do.
-</p>
+  <figure class="ws-hero-figure">
+    <img src="whipsaw-decision-visual.svg" width="960" height="680" fetchpriority="high" alt="Conceptual futures chart showing a false breakout above a range, rejection back inside, and a separate breakout that earns acceptance after a retest.">
+    <figcaption>The diagram is conceptual. A sweep, close, or retest can still fail; none is a guaranteed signal.</figcaption>
+  </figure>
+</header>
 
-<h2>Step 1: Stop Trading in the Worst Locations</h2>
+<nav class="ws-on-page" aria-label="On this page">
+  <span>On this page</span>
+  <a href="#principle">Core principle</a>
+  <a href="#conditions">Conditions</a>
+  <a href="#playbook">Playbook</a>
+  <a href="#plan-lab">Plan lab</a>
+  <a href="#examples">Examples</a>
+  <a href="#checklist">Checklist</a>
+</nav>
 
-<p>
-Most whipsaw pain comes from terrible trade locations, not bad “signals.” You’re entering:
-</p>
+<section class="ws-section ws-principle" id="principle" aria-labelledby="principle-title">
+  <div>
+    <p class="ws-kicker">The governing rule</p>
+    <h2 id="principle-title">A Whipsaw Is a Path, Not a Predictable Shape</h2>
+  </div>
+  <div>
+    <p>A breakout that succeeds and one that fails can look identical at the first tick through a level. The distinction appears later: price either attracts enough participation to hold outside the prior auction, or it is rejected and returns.</p>
+    <p>The objective is not to predict every reversal. It is to define what evidence your plan requires <em>before</em> entry, what price would invalidate the idea, and whether that distance fits the account. Confirmation reduces some uncertainty; it never removes risk.</p>
+  </div>
+</section>
 
-<ul>
-  <li>in the middle of ranges</li>
-  <li>into prior day highs/lows</li>
-  <li>into overnight highs/lows</li>
-  <li>right before scheduled news</li>
-</ul>
+<section class="ws-section" aria-labelledby="definitions-title">
+  <div class="ws-section-heading">
+    <p class="ws-kicker">Precise definitions</p>
+    <h2 id="definitions-title">Six Terms That Keep the Diagnosis Honest</h2>
+    <p>These concepts overlap, but they are not interchangeable. Name the observed behavior instead of applying “whipsaw” to every losing trade.</p>
+  </div>
 
-<p>
-If you can’t even say what structure you’re trading around, you’re basically flipping a coin. Go read your own mechanics article in <a href="https://grizzlyparrottrading.com/futures-basics/futures-whipsaw-mechanics.html">Whipsaws in Futures: Liquidity and Algos</a> if that isn’t clear yet.
-</p>
+  <div class="ws-definition-grid">
+    <article><span>Whipsaw</span><h3>Move, reversal, invalidation</h3><p>Price moves far enough in one direction to invite or trigger participation, then reverses enough to invalidate that directional attempt.</p></article>
+    <article><span>False breakout</span><h3>Excursion without acceptance</h3><p>Price trades beyond a defined boundary but cannot sustain the auction outside it and returns into the prior range or value area.</p></article>
+    <article><span>Liquidity sweep</span><h3>Trade through a visible reference</h3><p>Price crosses a prior high, low, or clustered trigger area. A sweep describes the path; it does not prove manipulation or the identity of participants.</p></article>
+    <article><span>Acceptance</span><h3>Trade sustains beyond the level</h3><p>Evidence can include closes, time, volume, follow-through, and a retest that holds outside the prior auction.</p></article>
+    <article><span>Rejection</span><h3>Price cannot remain outside</h3><p>The excursion returns through the boundary, often followed by a failed reclaim and renewed trade inside the prior range.</p></article>
+    <article><span>Chop</span><h3>Repeated two-way rotation</h3><p>Price crosses the same references without directional progress. A whipsaw can occur inside chop, but not every rotation is a breakout failure.</p></article>
+  </div>
 
-<h2>Step 2: Add a Volatility Filter</h2>
+  <p class="ws-inline-note">For the order-book and stop-cascade mechanics behind many failed breaks, read <a href="/futures-basics/futures-whipsaw-mechanics.html">Whipsaws in Futures: Liquidity, Stops and Algorithmic Repricing</a>.</p>
+</section>
 
-<p>
-You don’t need a full quant model. You just need a hard rule like:
-</p>
+<section class="ws-section" id="conditions" aria-labelledby="conditions-title">
+  <div class="ws-section-heading">
+    <p class="ws-kicker">Risk begins with environment</p>
+    <h2 id="conditions-title">Conditions That Make Directional Proof Harder</h2>
+    <p>None of these guarantees a reversal. They change the burden of proof and the cost of being wrong.</p>
+  </div>
 
-<ul>
-  <li>“If ATR on my entry timeframe is below X, I don’t trade.”</li>
-  <li>“If ATR just doubled in the last 10 bars, I wait for things to cool off.”</li>
-</ul>
+  <div class="ws-condition-grid">
+    <article>
+      <span>01</span>
+      <h3>Middle of a balanced range</h3>
+      <p>There is little asymmetry, nearby references exist on both sides, and the same price can be crossed repeatedly. A directional signal here has more room to be noise.</p>
+    </article>
+    <article>
+      <span>02</span>
+      <h3>Compression at an obvious boundary</h3>
+      <p>Repeated tests can consume displayed liquidity, attract stop entries, and concentrate protective stops. The first break may expand cleanly or snap back.</p>
+    </article>
+    <article>
+      <span>03</span>
+      <h3>Scheduled macro release</h3>
+      <p>Consensus error, revisions, statement details, and cross-asset repricing can reverse the first reaction. Fill quality and spread behavior can change at the same time.</p>
+    </article>
+    <article>
+      <span>04</span>
+      <h3>Session transition or thin participation</h3>
+      <p>A move through a level with limited participation can be easier to reverse when a larger session opens or liquidity returns.</p>
+    </article>
+    <article>
+      <span>05</span>
+      <h3>Range shock</h3>
+      <p>A current bar far larger than the trader's tested baseline increases stop distance, slippage exposure, and the chance that a late entry is structurally misplaced.</p>
+    </article>
+    <article>
+      <span>06</span>
+      <h3>Repeated benchmark crossings</h3>
+      <p>Price rotating through VWAP, an opening price, or the same high-volume area without displacement is evidence of two-way trade, not trend confirmation.</p>
+    </article>
+  </div>
 
-<p>
-Low volatility = fake breakouts and slow-motion whipsaws.  
-Hyper-volatility = violent spikes and news traps.  
-You want the middle: enough range to move, not enough chaos to whip you apart.
-</p>
+  <aside class="ws-boundary">
+    <strong>There is no universal news blackout.</strong>
+    <p>A fixed “wait five minutes” or “stop trading fifteen minutes before” rule is not an exchange fact. Products, releases, liquidity, and strategies differ. Use the official <a href="https://www.bls.gov/schedule/news_release/cpi.htm" target="_blank" rel="noopener">BLS release schedule</a>, <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">FOMC calendar</a>, and <a href="https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html" target="_blank" rel="noopener">ECB meeting calendar</a>; then define and test your own event rule before the session.</p>
+  </aside>
+</section>
 
-<h2>Step 3: Use Time Filters Around News</h2>
+<section class="ws-section" id="playbook" aria-labelledby="playbook-title">
+  <div class="ws-section-heading">
+    <p class="ws-kicker">From level to executable plan</p>
+    <h2 id="playbook-title">The Whipsaw-Aware Execution Playbook</h2>
+    <p>Every step can result in no trade. That is a valid output, not a failure to participate.</p>
+  </div>
 
-<p>
-You already know news creates whipsaws. So stop trading right into it. Set basic rules:
-</p>
+  <ol class="ws-playbook">
+    <li><span>01</span><div><h3>Map the level before price arrives</h3><p>Define the boundary, why it matters, and what lies beyond it. Prior session extremes, value boundaries, opening ranges, and event anchors are hypotheses, not automatic entries.</p></div></li>
+    <li><span>02</span><div><h3>Name the market regime</h3><p>Compare current range and participation with a tested baseline from the same product and session segment. Check scheduled catalysts and session transitions.</p></div></li>
+    <li><span>03</span><div><h3>Choose the evidence required</h3><p>A first-touch strategy, close-beyond strategy, and retest strategy accept different risks. Do not enter on the first break and later claim the plan required a retest.</p></div></li>
+    <li><span>04</span><div><h3>Distinguish acceptance from rejection</h3><p>Acceptance can show through continued trade outside, a close that holds, and a successful retest. Rejection can show through a sweep, return inside, failed reclaim, and progress away from the boundary.</p></div></li>
+    <li><span>05</span><div><h3>Define structural invalidation</h3><p>Place the stop where the chosen thesis is wrong. A reclaim trade and a breakout-hold trade usually have different invalidation levels even if the entries are nearby.</p></div></li>
+    <li><span>06</span><div><h3>Convert the stop into dollars</h3><p>Planned loss per contract equals stop distance in ticks times tick value plus estimated commissions and slippage. Reduce contracts or skip when the result exceeds the budget.</p></div></li>
+    <li><span>07</span><div><h3>Choose the order type deliberately</h3><p>Market, limit, stop, and stop-limit orders trade fill certainty against price control in different ways. Know the broker and exchange implementation before the event.</p></div></li>
+    <li><span>08</span><div><h3>Limit re-entry logic</h3><p>Define whether one failed attempt ends the idea or whether a new structure can create a second, independent setup. Immediate revenge re-entry is not confirmation.</p></div></li>
+  </ol>
+</section>
 
-<ul>
-  <li>no new trades 15 minutes before tier-one events</li>
-  <li>no new trades for 5–10 minutes after the initial spike</li>
-</ul>
+<section class="ws-section" aria-labelledby="acceptance-title">
+  <div class="ws-section-heading">
+    <p class="ws-kicker">Evidence, not certainty</p>
+    <h2 id="acceptance-title">What Acceptance and Rejection Look Like</h2>
+    <p>No single candle owns the definition. Use a combination that is explicit enough to review later.</p>
+  </div>
 
-<p>
-If you insist on gambling the first candle of CPI or NFP, that’s on you.
-</p>
+  <div class="ws-evidence-grid">
+    <article class="is-acceptance">
+      <span>Acceptance evidence</span>
+      <h3>The auction builds outside the old boundary</h3>
+      <ul>
+        <li>Price closes beyond the level and continues to trade there.</li>
+        <li>Pullbacks cannot regain the old range for long.</li>
+        <li>A retest holds with less opposing progress.</li>
+        <li>Volume and range expand without immediate full retracement.</li>
+        <li>The invalidation level remains structurally clear.</li>
+      </ul>
+    </article>
+    <article class="is-rejection">
+      <span>Rejection evidence</span>
+      <h3>The excursion cannot sustain trade outside</h3>
+      <ul>
+        <li>Price sweeps the reference and closes back inside.</li>
+        <li>A reclaim attempt fails at or just beyond the boundary.</li>
+        <li>Opposite-side progress expands back through the range.</li>
+        <li>Aggressive order flow produces little progress at the extreme.</li>
+        <li>The failure point supplies a defined invalidation level.</li>
+      </ul>
+    </article>
+  </div>
 
-<h2>Step 4: Demand Confirmation, Not Just “Touch”</h2>
+  <p class="ws-inline-note">Footprints can help judge aggressive effort versus price result at the level. Use the companion <a href="/futures-basics/how-to-read-order-flow-on-6e.html">6E order-flow guide</a> for the distinction between executed bid/ask volume, delta, absorption, and resting liquidity.</p>
+</section>
 
-<p>
-Whipsaws thrive on traders who buy the first touch of a level or break and hope. Force the market to prove itself:
-</p>
+<section class="ws-section ws-plan-section" id="plan-lab" aria-labelledby="plan-title">
+  <div class="ws-section-heading">
+    <p class="ws-kicker">Interactive planning tool</p>
+    <h2 id="plan-title">Whipsaw Plan and Position-Size Lab</h2>
+    <p>Use your own tested volatility band and real risk budget. The lab checks whether the plan is internally complete; it does not predict the next move or recommend a trade.</p>
+  </div>
 
-<ul>
-  <li>wait for a sweep and reclaim instead of a blind break</li>
-  <li>wait for a higher low after a fake breakdown</li>
-  <li>wait for a lower high after a fake breakout</li>
-</ul>
+  <div class="ws-lab-shell">
+    <form class="ws-lab-form" id="ws-plan-form" novalidate>
+      <fieldset>
+        <legend>Structure and event context</legend>
+        <div class="ws-field">
+          <label for="ws-location">Entry location</label>
+          <select id="ws-location" name="location">
+            <option value="boundary">At a preselected, tested boundary</option>
+            <option value="outside">Outside the boundary after displacement</option>
+            <option value="middle">Middle of the current range</option>
+            <option value="unknown">Location not defined</option>
+          </select>
+        </div>
+        <div class="ws-field">
+          <label for="ws-confirmation">Evidence currently present</label>
+          <select id="ws-confirmation" name="confirmation">
+            <option value="retest">Retest or reclaim/failure is complete</option>
+            <option value="close">Close beyond or back inside is complete</option>
+            <option value="first">Only the first touch or break</option>
+            <option value="none">No defined confirmation rule</option>
+          </select>
+        </div>
+        <div class="ws-field">
+          <label for="ws-event">Scheduled-event state</label>
+          <select id="ws-event" name="eventState">
+            <option value="clear">Outside my tested blackout window</option>
+            <option value="soon">Inside my pre-event caution window</option>
+            <option value="active">Release or press conference is active</option>
+            <option value="unknown">Calendar not checked</option>
+          </select>
+        </div>
+      </fieldset>
 
-<p>
-Yes, you’ll miss some moves. Good. Missing clean trends is still cheaper than getting mauled in chop.
-</p>
+      <fieldset>
+        <legend>Your volatility filter</legend>
+        <div class="ws-field">
+          <label for="ws-typical-range">Typical comparison-bar range</label>
+          <div class="ws-input-suffix"><input id="ws-typical-range" name="typicalRange" type="number" min="0.000001" step="0.1" value="12" inputmode="decimal"><span>ticks</span></div>
+        </div>
+        <div class="ws-field">
+          <label for="ws-current-range">Current bar range</label>
+          <div class="ws-input-suffix"><input id="ws-current-range" name="currentRange" type="number" min="0" step="0.1" value="15" inputmode="decimal"><span>ticks</span></div>
+        </div>
+        <div class="ws-field">
+          <label for="ws-min-ratio">Your minimum range ratio</label>
+          <input id="ws-min-ratio" name="minRatio" type="number" min="0.01" max="100" step="0.05" value="0.70" inputmode="decimal">
+        </div>
+        <div class="ws-field">
+          <label for="ws-max-ratio">Your maximum range ratio</label>
+          <input id="ws-max-ratio" name="maxRatio" type="number" min="0.01" max="100" step="0.05" value="1.80" inputmode="decimal">
+        </div>
+        <p class="ws-field-help">The defaults are illustrative inputs, not universal or validated thresholds. Replace them with values derived from your product, bar type, session, and testing.</p>
+      </fieldset>
 
-<h2>Step 5: Change How You Enter</h2>
+      <fieldset>
+        <legend>Structural loss per contract</legend>
+        <div class="ws-field">
+          <label for="ws-stop-ticks">Technically valid stop distance</label>
+          <div class="ws-input-suffix"><input id="ws-stop-ticks" name="stopTicks" type="number" min="0" step="0.1" value="18" inputmode="decimal"><span>ticks</span></div>
+        </div>
+        <div class="ws-field">
+          <label for="ws-tick-value">Tick value</label>
+          <div class="ws-input-prefix"><span>$</span><input id="ws-tick-value" name="tickValue" type="number" min="0" step="0.01" value="6.25" inputmode="decimal"></div>
+        </div>
+        <div class="ws-field">
+          <label for="ws-costs">Estimated commissions and slippage</label>
+          <div class="ws-input-prefix"><span>$</span><input id="ws-costs" name="costs" type="number" min="0" step="0.01" value="5" inputmode="decimal"></div>
+        </div>
+        <div class="ws-field">
+          <label for="ws-risk-budget">Maximum planned dollar risk</label>
+          <div class="ws-input-prefix"><span>$</span><input id="ws-risk-budget" name="riskBudget" type="number" min="0" step="0.01" value="150" inputmode="decimal"></div>
+        </div>
+      </fieldset>
 
-<p>
-The way you enter matters as much as the level. If all your trades are:
-</p>
+      <div class="ws-actions">
+        <button type="submit">Evaluate the plan</button>
+        <button type="reset">Reset example</button>
+      </div>
+    </form>
 
-<ul>
-  <li>stop entries right above obvious highs</li>
-  <li>stop entries right below obvious lows</li>
-  <li>market orders during breakout candles</li>
-</ul>
+    <section class="ws-lab-results" aria-labelledby="lab-results-title">
+      <div class="ws-results-heading">
+        <span>Planning output</span>
+        <h3 id="lab-results-title">Does the setup pass your own filters?</h3>
+      </div>
+      <dl>
+        <div><dt>Current / typical range</dt><dd id="ws-result-ratio">1.25&times;</dd></div>
+        <div><dt>Your accepted band</dt><dd id="ws-result-band">0.70&times;&ndash;1.80&times;</dd></div>
+        <div><dt>Estimated loss per contract</dt><dd id="ws-result-loss">$117.50</dd></div>
+        <div><dt>Maximum whole contracts</dt><dd id="ws-result-contracts">1</dd></div>
+      </dl>
+      <div class="ws-result-status is-ready" id="ws-result-status" role="status" aria-live="polite">
+        <strong id="ws-result-label">Eligible for further evaluation</strong>
+        <p id="ws-result-message">The selected location, evidence, event state, volatility band, and dollar-risk test are internally consistent. This is not a forecast or entry signal.</p>
+      </div>
+      <ul class="ws-result-reasons" id="ws-result-reasons" aria-label="Plan evaluation details">
+        <li>Location is defined at a preselected boundary.</li>
+        <li>A retest or reclaim/failure is complete.</li>
+        <li>The current range is inside the user-entered band.</li>
+      </ul>
+    </section>
+  </div>
 
-<p>
-—then you’re volunteering to be whipsaw food.
-</p>
+  <aside class="ws-lab-note">
+    <strong>Formula used:</strong>
+    <p>Estimated loss per contract = stop distance in ticks &times; tick value + estimated commissions and slippage. Maximum whole contracts = floor(risk budget &divide; estimated loss per contract). Stop placement comes before contract count.</p>
+  </aside>
+</section>
 
-<p>
-Better options:
-</p>
+<section class="ws-section" aria-labelledby="orders-title">
+  <div class="ws-section-heading">
+    <p class="ws-kicker">Execution mechanics</p>
+    <h2 id="orders-title">Order Choice Changes the Failure Mode</h2>
+    <p>No order type makes a whipsaw harmless. Each exchanges one form of uncertainty for another.</p>
+  </div>
 
-<ul>
-  <li>limit orders on retests after the break (not the first spike)</li>
-  <li>entries after confirmed reclaim/failure of a level</li>
-  <li>smaller size at first, add only if structure proves itself</li>
-</ul>
+  <div class="ws-order-grid">
+    <article><span>Market-style execution</span><h3>Higher fill priority, uncertain price</h3><p>The order seeks available liquidity. In fast or thin conditions, the average fill can differ from the decision price and displayed quote.</p></article>
+    <article><span>Limit order</span><h3>Price control, uncertain fill</h3><p>A limit protects the worst eligible price but can miss the trade, fill only partially, or provide a fill precisely because price is moving through the level.</p></article>
+    <article><span>Stop order</span><h3>Trigger first, execution second</h3><p>The stop activates only after its trigger condition. The post-trigger order and price protection depend on the exchange and broker implementation.</p></article>
+    <article><span>Stop-limit order</span><h3>Exit-price boundary, non-fill risk</h3><p>After activation it becomes a limit order. A fast move can leave it working without an execution while the market continues away.</p></article>
+  </div>
 
-<h2>Step 6: Use Simple Confirmation Tools</h2>
+  <aside class="ws-source-note">
+    <strong>Verify the exact implementation.</strong>
+    CME Group's <a href="https://www.cmegroup.com/education/courses/futures-trading-mechanics-and-regulation/futures-order-types" target="_blank" rel="noopener">Futures Order Types</a> explains market, limit, stop-limit, and stop-with-protection mechanics. Broker interfaces and supported qualifiers can differ. A stop trigger is not a guaranteed fill at the trigger price.</p>
+  </aside>
+</section>
 
-<p>
-You don’t need 14 indicators. A few tools used properly beat a crowded chart:
-</p>
+<section class="ws-section" id="examples" aria-labelledby="examples-title">
+  <div class="ws-section-heading">
+    <p class="ws-kicker">Worked scenarios</p>
+    <h2 id="examples-title">Four Whipsaw Decisions With Different Correct Outputs</h2>
+    <p>These are hypothetical planning examples, not recommendations. The point is to show how evidence and risk change the decision.</p>
+  </div>
 
-<ul>
-  <li><strong>VWAP:</strong> trade with the side holding VWAP more often</li>
-  <li><strong>Volume/Delta:</strong> don’t buy breakouts on dying volume</li>
-  <li><strong>Session highs/lows:</strong> respect who’s defending them</li>
-</ul>
+  <div class="ws-table-scroll" role="region" aria-label="Worked futures whipsaw scenarios" tabindex="0">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Scenario</th>
+          <th scope="col">Evidence</th>
+          <th scope="col">Risk test</th>
+          <th scope="col">Plan output</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Sweep and rejection at prior high</th>
+          <td>Trades above, closes back inside, failed reclaim, then lower high</td>
+          <td>Stop belongs beyond the failed reclaim; calculated dollar loss fits one contract</td>
+          <td>Eligible for the trader's rejection plan, if all other rules pass. The sweep alone was not the entry.</td>
+        </tr>
+        <tr>
+          <th scope="row">Breakout holds after retest</th>
+          <td>Close above range, controlled retest, renewed progress outside</td>
+          <td>Stop below the retest is wider than a stop at the breakout tick, so contract count falls</td>
+          <td>Acceptance evidence is present. Size is determined from the structural stop, not from desired exposure.</td>
+        </tr>
+        <tr>
+          <th scope="row">First seconds after CPI</th>
+          <td>Large two-way bars cross the level repeatedly while the release is active</td>
+          <td>Fill and stop distance are unstable; planned slippage cannot be estimated confidently</td>
+          <td>Wait under the example plan. Resume only when the trader's tested event rule and structure permit it.</td>
+        </tr>
+        <tr>
+          <th scope="row">One 6E contract does not fit</th>
+          <td>Rejection is clear, but valid stop is 24 ticks away</td>
+          <td>24 &times; $6.25 + $5 costs = $155 estimated loss; budget is $120</td>
+          <td><strong>Skip this trade.</strong> Moving the stop closer would change the thesis; keeping it would exceed the budget.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-<p>
-If price is breaking out but volume and delta are fading, that “breakout” is a whipsaw candidate.
-</p>
+  <p class="ws-inline-note">For the full sizing framework&mdash;including cash equity, prop-account breach floors, safety reserves, and real drawdown room&mdash;use <a href="/market-basics/risk-per-trade-small-accounts.html">Risk Per Trade for Small Futures Accounts</a>.</p>
+</section>
 
-<h2>Step 7: Fix Your Stop Placement</h2>
+<section class="ws-section" aria-labelledby="mistakes-title">
+  <div class="ws-section-heading">
+    <p class="ws-kicker">Common failure modes</p>
+    <h2 id="mistakes-title">Whipsaw “Fixes” That Quietly Increase Risk</h2>
+  </div>
 
-<p>
-Whipsaws hurt most when your stop is:
-</p>
+  <div class="ws-mistakes">
+    <article><strong>Adding arbitrary indicators</strong><p>More confirmation lines can restate the same price history without improving location, invalidation, or execution.</p></article>
+    <article><strong>Using fixed blackout minutes as a market law</strong><p>A time rule can be part of a tested plan, but it is not universally safe across releases or products.</p></article>
+    <article><strong>Buying the first tick above an obvious high</strong><p>That may be a valid first-break strategy only if its failure rate, stop, sizing, and event filters were defined in advance.</p></article>
+    <article><strong>Waiting for “confirmation” with no definition</strong><p>If any later candle qualifies, confirmation becomes hindsight instead of a reproducible rule.</p></article>
+    <article><strong>Widening the stop and keeping the size</strong><p>A wider structural stop raises loss per contract. Contract count must be recalculated.</p></article>
+    <article><strong>Moving the stop inside noise to fit more contracts</strong><p>Desired size cannot determine invalidation. If the real stop does not fit, skip.</p></article>
+    <article><strong>Assuming stop-limit means safe exit</strong><p>Price protection creates non-fill risk after activation. Understand the implementation before relying on it.</p></article>
+    <article><strong>Immediate revenge re-entry</strong><p>A second trade needs new structure and a fresh risk decision, not frustration with the first stop.</p></article>
+  </div>
+</section>
 
-<ul>
-  <li>exactly at the prior high/low</li>
-  <li>exactly at the round number</li>
-  <li>inside obvious liquidity pools</li>
-</ul>
+<section class="ws-section ws-checklist" id="checklist" aria-labelledby="checklist-title">
+  <div>
+    <p class="ws-kicker">Final decision checklist</p>
+    <h2 id="checklist-title">Before Trading a Break, Sweep or Reclaim</h2>
+    <p>A “no” or “unknown” can be the reason to wait or skip.</p>
+  </div>
+  <ul>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Location:</strong> The boundary was defined before price crossed it.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Regime:</strong> Current range, liquidity, session, and scheduled-event state fit the tested plan.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Evidence:</strong> Acceptance or rejection is defined in observable terms and is currently present.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Order:</strong> Trigger, price protection, fill uncertainty, and non-fill risk are understood.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Stop:</strong> The exit is where the thesis is wrong, not where the desired contract count fits.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Risk:</strong> Stop distance, tick value, costs, and whole-contract count fit the available dollar budget.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Re-entry:</strong> The maximum attempts and conditions for a new setup were decided in advance.</p></li>
+  </ul>
+</section>
 
-<p>
-Move stops to where you’re wrong on the idea, not where it “feels safe.” Combine this with realistic risk math like you already did in things like <a href="https://grizzlyparrottrading.com/futures-basics/roll-yield-explained.html">Roll Yield Explained</a>—same concept: hidden costs matter.
-</p>
+<section class="ws-section ws-faq" aria-labelledby="faq-title">
+  <div class="ws-section-heading">
+    <p class="ws-kicker">Frequently asked questions</p>
+    <h2 id="faq-title">Futures Whipsaw Questions</h2>
+  </div>
 
-<h2>Step 8: Reduce Size in Known Whipsaw Conditions</h2>
+  <details>
+    <summary>What is a whipsaw in futures trading?</summary>
+    <p>A whipsaw is a rapid directional move that reverses enough to invalidate or stop out a position, often around a range boundary, breakout level, scheduled event, or thin-liquidity period. The label describes the path after the fact; it is not a standalone setup.</p>
+  </details>
+  <details>
+    <summary>How can a trader distinguish a breakout from a false breakout?</summary>
+    <p>No single test can guarantee the distinction. Useful evidence includes a close beyond the level, time and volume accepted outside the prior range, a retest that holds, and continued progress. Rejection evidence includes a sweep, close back inside, and a failed attempt to reclaim the level.</p>
+  </details>
+  <details>
+    <summary>Should a trader always wait a fixed number of minutes after economic news?</summary>
+    <p>No universal waiting period fits every product, release, and market regime. Check the official event time, define a tested blackout rule in advance, and require stable structure and executable risk before entering.</p>
+  </details>
+  <details>
+    <summary>Should stops be widened to survive whipsaws?</summary>
+    <p>A stop should be placed where the trade idea is technically invalid. If that location is farther away, the dollar loss per contract increases, so contract count must fall. Widening a stop without reducing size simply increases planned risk.</p>
+  </details>
+  <details>
+    <summary>Does a stop order guarantee the intended exit price?</summary>
+    <p>No. Stop and stop-limit behavior depends on the order type, broker, exchange rules, liquidity, and market conditions. A stop-limit can remain unfilled after activation, while other stop implementations can fill away from the trigger within applicable protections.</p>
+  </details>
+  <details>
+    <summary>When should a whipsaw trade be skipped?</summary>
+    <p>Skip when the location is undefined, event risk is not controlled, price has not supplied the confirmation required by the plan, the stop location is arbitrary, or even one contract exceeds the available dollar-risk budget after costs.</p>
+  </details>
+</section>
 
-<p>
-You don’t have to be all-in or all-out. When you know conditions are sketchy:
-</p>
+<section class="ws-sources" aria-labelledby="sources-title">
+  <p class="ws-kicker">Sources and methodology</p>
+  <h2 id="sources-title">Official and Primary Sources</h2>
+  <ul>
+    <li><a href="https://www.cmegroup.com/education/courses/futures-trading-mechanics-and-regulation/futures-order-types" target="_blank" rel="noopener">CME Group: Futures Order Types</a> for market, limit, stop-limit, and stop-with-protection mechanics.</li>
+    <li><a href="https://www.cmegroup.com/education/courses/things-to-know-before-trading-cme-futures/what-happens-when-you-submit-an-order" target="_blank" rel="noopener">CME Group: What happens when you submit an order?</a> for exchange price controls and order validation context.</li>
+    <li><a href="https://www.bls.gov/schedule/news_release/cpi.htm" target="_blank" rel="noopener">U.S. Bureau of Labor Statistics: CPI release schedule</a>, <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">Federal Reserve: FOMC calendar</a>, and <a href="https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html" target="_blank" rel="noopener">European Central Bank: Governing Council calendar</a> for official event timing.</li>
+    <li><a href="https://www.cmegroup.com/markets/fx/g10/euro-fx.contractSpecs.html" target="_blank" rel="noopener">CME Group: Euro FX futures contract specifications</a> for the $6.25 standard 6E outright tick used in the worked skip example.</li>
+    <li><a href="https://www.nfa.futures.org/investors/investor-resources/files/investor-best-practices.html" target="_blank" rel="noopener">National Futures Association: Investor Best Practices</a> for leverage and risk-capital disclosure.</li>
+  </ul>
+  <p>Official calendars and exchange pages were checked August 5, 2026. Worked scenarios and calculator defaults are illustrative. The lab uses user-entered thresholds and transparent arithmetic; it applies no predictive model.</p>
+</section>
 
-<ul>
-  <li>trade half size</li>
-  <li>widen stops a bit</li>
-  <li>tighten profit targets</li>
-</ul>
-
-<p>
-Then, when you catch a clean environment, you size back up and press the advantage.
-</p>
-
-<h2>Step 9: Separate “Probe Trades” From Conviction Trades</h2>
-
-<p>
-Most people treat every trade like it has to be a home run. Instead:
-</p>
-
-<ul>
-  <li>use small “probe” trades in uncertain structure</li>
-  <li>only add size when price confirms bias (higher low / lower high, reclaim, etc.)</li>
-</ul>
-
-<p>
-That way whipsaws only clip the small test, not your full risk.
-</p>
-
-<div class="highlight-box yellow">
-  <h3>You Can’t Delete Whipsaws — But You Can Dodge Most</h3>
-  <p>Whipsaws aren’t going away. But bad timing, dumb stops, and zero filters make them deadly. Add volatility rules and smarter entries, and they go from lethal to forgettable.</p>
-</div>
+<aside class="ws-disclaimer" aria-label="Educational and risk disclaimer">
+  <strong>Educational and risk disclaimer</strong>
+  <p>This guide and planning lab are educational tools, not individualized financial, investment, legal, tax, brokerage, or trading advice. Futures are leveraged and can produce losses greater than the amount deposited. Stops, price protections, and confirmation rules cannot guarantee an exit price or prevent loss. Market conditions, exchange controls, broker implementations, contract specifications, and official release schedules can change. Verify current sources, broker rules, live liquidity, and your own risk limits before trading.</p>
+</aside>
 
 <!-- ARTICLE BODY END -->
-</div>
+</article>
 </section>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
-
     <div class="footer-book">
       <h3>Books</h3>
       <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
+      <a href="/books/" class="footer-book-link">View All Books</a>
     </div>
-
     <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
+      <a href="/about.html">About</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/contact.html">Contact</a>
     </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+    <p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+  (function () {
+    'use strict';
+
+    var form = document.getElementById('ws-plan-form');
+    var fields = {
+      location: document.getElementById('ws-location'),
+      confirmation: document.getElementById('ws-confirmation'),
+      eventState: document.getElementById('ws-event'),
+      typicalRange: document.getElementById('ws-typical-range'),
+      currentRange: document.getElementById('ws-current-range'),
+      minRatio: document.getElementById('ws-min-ratio'),
+      maxRatio: document.getElementById('ws-max-ratio'),
+      stopTicks: document.getElementById('ws-stop-ticks'),
+      tickValue: document.getElementById('ws-tick-value'),
+      costs: document.getElementById('ws-costs'),
+      riskBudget: document.getElementById('ws-risk-budget')
+    };
+    var outputs = {
+      ratio: document.getElementById('ws-result-ratio'),
+      band: document.getElementById('ws-result-band'),
+      loss: document.getElementById('ws-result-loss'),
+      contracts: document.getElementById('ws-result-contracts'),
+      status: document.getElementById('ws-result-status'),
+      label: document.getElementById('ws-result-label'),
+      message: document.getElementById('ws-result-message'),
+      reasons: document.getElementById('ws-result-reasons')
+    };
+    var money = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+    function valueOf(input) {
+      return Number.parseFloat(input.value);
+    }
+
+    function setReasons(items) {
+      while (outputs.reasons.firstChild) {
+        outputs.reasons.removeChild(outputs.reasons.firstChild);
+      }
+      items.forEach(function (item) {
+        var li = document.createElement('li');
+        li.textContent = item;
+        outputs.reasons.appendChild(li);
+      });
+    }
+
+    function setStatus(label, message, stateClass) {
+      outputs.label.textContent = label;
+      outputs.message.textContent = message;
+      outputs.status.className = 'ws-result-status ' + stateClass;
+    }
+
+    function clearOutputs() {
+      outputs.ratio.textContent = '\u2014';
+      outputs.band.textContent = '\u2014';
+      outputs.loss.textContent = '\u2014';
+      outputs.contracts.textContent = '\u2014';
+    }
+
+    function evaluatePlan() {
+      var typicalRange = valueOf(fields.typicalRange);
+      var currentRange = valueOf(fields.currentRange);
+      var minRatio = valueOf(fields.minRatio);
+      var maxRatio = valueOf(fields.maxRatio);
+      var stopTicks = valueOf(fields.stopTicks);
+      var tickValue = valueOf(fields.tickValue);
+      var costs = valueOf(fields.costs);
+      var riskBudget = valueOf(fields.riskBudget);
+      var values = [typicalRange, currentRange, minRatio, maxRatio, stopTicks, tickValue, costs, riskBudget];
+      var valid = values.every(Number.isFinite) &&
+        typicalRange > 0 && currentRange >= 0 &&
+        minRatio > 0 && maxRatio > 0 && minRatio <= maxRatio && maxRatio <= 100 &&
+        stopTicks > 0 && tickValue > 0 && costs >= 0 && riskBudget >= 0;
+
+      if (!valid) {
+        clearOutputs();
+        setStatus('Fix the plan inputs', 'Enter nonnegative values, a typical range above zero, a valid minimum-to-maximum band, and a stop distance and tick value above zero.', 'is-invalid');
+        setReasons(['No planning result is calculated until every numeric input is valid.']);
+        return;
+      }
+
+      var rangeRatio = currentRange / typicalRange;
+      var lossPerContract = (stopTicks * tickValue) + costs;
+      var contracts = lossPerContract > 0 ? Math.floor(riskBudget / lossPerContract) : 0;
+      var insideBand = rangeRatio >= minRatio && rangeRatio <= maxRatio;
+      var reasons = [];
+      var blockers = [];
+      var cautions = [];
+
+      outputs.ratio.textContent = rangeRatio.toFixed(2) + '\u00d7';
+      outputs.band.textContent = minRatio.toFixed(2) + '\u00d7\u2013' + maxRatio.toFixed(2) + '\u00d7';
+      outputs.loss.textContent = money.format(lossPerContract);
+      outputs.contracts.textContent = String(contracts);
+
+      if (fields.location.value === 'middle') {
+        blockers.push('Entry is in the middle of the current range.');
+      } else if (fields.location.value === 'unknown') {
+        blockers.push('Entry location is not defined.');
+      } else if (fields.location.value === 'outside') {
+        reasons.push('Price is outside the boundary after displacement.');
+      } else {
+        reasons.push('Location is defined at a preselected boundary.');
+      }
+
+      if (fields.confirmation.value === 'first') {
+        blockers.push('Only the first touch or break is present.');
+      } else if (fields.confirmation.value === 'none') {
+        blockers.push('No confirmation rule is defined.');
+      } else if (fields.confirmation.value === 'close') {
+        reasons.push('The selected close-based evidence is present.');
+      } else {
+        reasons.push('A retest or reclaim/failure is complete.');
+      }
+
+      if (fields.eventState.value === 'active') {
+        blockers.push('The scheduled release or press conference is active.');
+      } else if (fields.eventState.value === 'unknown') {
+        blockers.push('The official event calendar has not been checked.');
+      } else if (fields.eventState.value === 'soon') {
+        cautions.push('The setup is inside the trader-defined pre-event caution window.');
+      } else {
+        reasons.push('The setup is outside the trader-defined blackout window.');
+      }
+
+      if (insideBand) {
+        reasons.push('The current range is inside the user-entered band.');
+      } else {
+        cautions.push('The current range is outside the user-entered volatility band.');
+      }
+
+      if (contracts === 0) {
+        reasons.push('Even one contract exceeds the entered dollar-risk budget.');
+        setStatus('Skip this trade', 'The technically valid stop and estimated costs do not fit one whole contract. Do not move the stop merely to manufacture size.', 'is-skip');
+      } else if (blockers.length > 0) {
+        setStatus('Wait: the plan is incomplete', blockers[0] + ' Under these inputs, do not treat the current move as an eligible setup.', 'is-wait');
+      } else if (cautions.length > 0) {
+        setStatus('Caution: a user-entered filter is not met', cautions[0] + ' Reassess or wait; the lab is not a signal generator.', 'is-caution');
+      } else {
+        setStatus('Eligible for further evaluation', 'The selected location, evidence, event state, volatility band, and dollar-risk test are internally consistent. This is not a forecast or entry signal.', 'is-ready');
+      }
+
+      setReasons(blockers.concat(cautions, reasons));
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      evaluatePlan();
+    });
+    form.addEventListener('input', evaluatePlan);
+    form.addEventListener('change', evaluatePlan);
+    form.addEventListener('reset', function () {
+      window.setTimeout(evaluatePlan, 0);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    evaluatePlan();
+  }());
+</script>
 </body>
 </html>

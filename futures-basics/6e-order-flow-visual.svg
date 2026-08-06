@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="680" viewBox="0 0 960 680" role="img" aria-labelledby="title desc">
+  <title id="title">Context-first Euro FX footprint reading</title>
+  <desc id="desc">A hypothetical bid by ask footprint at a prior high, with diagonal buy imbalances, positive delta, and a panel asking whether price gains acceptance or is absorbed.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#091a2e"/>
+      <stop offset="1" stop-color="#04101f"/>
+    </linearGradient>
+    <linearGradient id="greenGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#41e58b" stop-opacity="0.04"/>
+      <stop offset="1" stop-color="#41e58b" stop-opacity="0.28"/>
+    </linearGradient>
+    <linearGradient id="redGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fb7185" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#fb7185" stop-opacity="0.03"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000814" flood-opacity="0.45"/>
+    </filter>
+    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#94a3b8" stroke-opacity="0.07"/>
+    </pattern>
+  </defs>
+
+  <rect width="960" height="680" rx="28" fill="url(#bg)"/>
+  <rect width="960" height="680" rx="28" fill="url(#grid)"/>
+  <circle cx="145" cy="100" r="170" fill="#41e58b" opacity="0.045"/>
+  <circle cx="875" cy="610" r="210" fill="#60a5fa" opacity="0.05"/>
+
+  <g font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+    <text x="58" y="64" fill="#41e58b" font-size="16" font-weight="800" letter-spacing="2">EXECUTION + LOCATION + RESPONSE</text>
+    <text x="58" y="101" fill="#f8fafc" font-size="30" font-weight="800">Read effort, then judge the result</text>
+    <text x="58" y="130" fill="#93a4ba" font-size="15">Hypothetical 6E footprint at a preselected prior-session high</text>
+
+    <g transform="translate(58 168)" filter="url(#shadow)">
+      <rect width="490" height="440" rx="20" fill="#061423" stroke="#5f7797" stroke-opacity="0.34"/>
+      <rect x="20" y="20" width="450" height="40" rx="10" fill="#0c2035"/>
+      <text x="83" y="45" fill="#8192a9" font-size="13" font-weight="800" text-anchor="middle">BID</text>
+      <text x="244" y="45" fill="#b9c6d8" font-size="13" font-weight="800" text-anchor="middle">PRICE</text>
+      <text x="403" y="45" fill="#8192a9" font-size="13" font-weight="800" text-anchor="middle">ASK</text>
+
+      <g transform="translate(20 73)" font-size="17" font-weight="750">
+        <g transform="translate(0 0)">
+          <rect width="450" height="50" rx="9" fill="#07182a"/>
+          <text x="82" y="31" fill="#f7a4b2" text-anchor="middle">68</text>
+          <text x="224" y="31" fill="#eef4fa" text-anchor="middle">1.16220</text>
+          <text x="382" y="31" fill="#8fe7b2" text-anchor="middle">42</text>
+        </g>
+        <g transform="translate(0 58)">
+          <rect width="450" height="50" rx="9" fill="url(#greenGlow)" stroke="#41e58b" stroke-opacity="0.42"/>
+          <text x="82" y="31" fill="#f7a4b2" text-anchor="middle">126</text>
+          <text x="224" y="31" fill="#eef4fa" text-anchor="middle">1.16215</text>
+          <text x="382" y="31" fill="#54f39b" text-anchor="middle" font-size="21">408</text>
+          <circle cx="426" cy="25" r="12" fill="#41e58b" fill-opacity="0.18" stroke="#41e58b"/>
+          <path d="M421 28l5-7 5 7" fill="none" stroke="#68f5aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <g transform="translate(0 116)">
+          <rect width="450" height="50" rx="9" fill="url(#greenGlow)" stroke="#41e58b" stroke-opacity="0.42"/>
+          <text x="82" y="31" fill="#f7a4b2" text-anchor="middle">118</text>
+          <text x="224" y="31" fill="#eef4fa" text-anchor="middle">1.16210</text>
+          <text x="382" y="31" fill="#54f39b" text-anchor="middle" font-size="21">372</text>
+          <circle cx="426" cy="25" r="12" fill="#41e58b" fill-opacity="0.18" stroke="#41e58b"/>
+          <path d="M421 28l5-7 5 7" fill="none" stroke="#68f5aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <g transform="translate(0 174)">
+          <rect width="450" height="50" rx="9" fill="#07182a"/>
+          <text x="82" y="31" fill="#f7a4b2" text-anchor="middle">141</text>
+          <text x="224" y="31" fill="#eef4fa" text-anchor="middle">1.16205</text>
+          <text x="382" y="31" fill="#8fe7b2" text-anchor="middle">176</text>
+        </g>
+        <g transform="translate(0 232)">
+          <rect width="450" height="50" rx="9" fill="url(#redGlow)"/>
+          <text x="82" y="31" fill="#ff91a4" text-anchor="middle" font-size="20">205</text>
+          <text x="224" y="31" fill="#eef4fa" text-anchor="middle">1.16200</text>
+          <text x="382" y="31" fill="#8fe7b2" text-anchor="middle">134</text>
+        </g>
+      </g>
+
+      <path d="M410 252C353 260 341 301 291 309" fill="none" stroke="#41e58b" stroke-width="2.5" stroke-dasharray="5 6"/>
+      <circle cx="410" cy="252" r="4" fill="#41e58b"/>
+      <circle cx="291" cy="309" r="4" fill="#41e58b"/>
+      <text x="297" y="287" fill="#6af0a8" font-size="12" font-weight="800">DIAGONAL COMPARE</text>
+      <text x="297" y="304" fill="#91a1b6" font-size="11">ask ÷ bid one tick below</text>
+
+      <rect x="20" y="373" width="214" height="48" rx="12" fill="#0b2034" stroke="#5f7797" stroke-opacity="0.3"/>
+      <text x="38" y="394" fill="#8596ad" font-size="11" font-weight="800">BAR DELTA</text>
+      <text x="38" y="413" fill="#41e58b" font-size="18" font-weight="850">+274</text>
+      <rect x="244" y="373" width="226" height="48" rx="12" fill="#0b2034" stroke="#5f7797" stroke-opacity="0.3"/>
+      <text x="262" y="394" fill="#8596ad" font-size="11" font-weight="800">BUY DIAGONALS</text>
+      <text x="262" y="413" fill="#f8fafc" font-size="18" font-weight="850">2 adjacent</text>
+    </g>
+
+    <g transform="translate(578 168)" filter="url(#shadow)">
+      <rect width="324" height="202" rx="20" fill="#07182a" stroke="#60a5fa" stroke-opacity="0.34"/>
+      <text x="24" y="34" fill="#69a9ff" font-size="12" font-weight="800" letter-spacing="1.4">LOCATION</text>
+      <text x="24" y="62" fill="#f8fafc" font-size="21" font-weight="800">Prior-session high</text>
+      <line x1="24" y1="112" x2="300" y2="112" stroke="#f6c75a" stroke-width="2" stroke-dasharray="8 6"/>
+      <text x="24" y="103" fill="#f6c75a" font-size="11" font-weight="800">PRESELECTED LEVEL</text>
+      <path d="M28 168C69 162 83 139 120 145s45 35 84 21 50-47 91-45" fill="none" stroke="#69a9ff" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="295" cy="121" r="6" fill="#69a9ff" filter="url(#softGlow)"/>
+      <text x="24" y="190" fill="#91a1b6" font-size="12">The level exists before the footprint print.</text>
+    </g>
+
+    <g transform="translate(578 390)" filter="url(#shadow)">
+      <rect width="324" height="218" rx="20" fill="#07182a" stroke="#41e58b" stroke-opacity="0.32"/>
+      <text x="24" y="34" fill="#41e58b" font-size="12" font-weight="800" letter-spacing="1.4">PRICE RESPONSE</text>
+      <text x="24" y="64" fill="#f8fafc" font-size="21" font-weight="800">What happened next?</text>
+
+      <g transform="translate(24 88)">
+        <rect width="276" height="45" rx="11" fill="#0b2133" stroke="#41e58b" stroke-opacity="0.28"/>
+        <circle cx="23" cy="22.5" r="8" fill="#41e58b"/>
+        <path d="M19 23l3 3 6-8" fill="none" stroke="#04110b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="43" y="20" fill="#f8fafc" font-size="13" font-weight="800">Acceptance</text>
+        <text x="43" y="36" fill="#91a1b6" font-size="11">hold above, retest survives</text>
+      </g>
+      <g transform="translate(24 143)">
+        <rect width="276" height="45" rx="11" fill="#211625" stroke="#fb7185" stroke-opacity="0.3"/>
+        <circle cx="23" cy="22.5" r="8" fill="#fb7185"/>
+        <path d="M19 19l8 8m0-8l-8 8" fill="none" stroke="#2a0710" stroke-width="2" stroke-linecap="round"/>
+        <text x="43" y="20" fill="#f8fafc" font-size="13" font-weight="800">Absorption / rejection</text>
+        <text x="43" y="36" fill="#91a1b6" font-size="11">high effort, no progress</text>
+      </g>
+      <text x="24" y="207" fill="#f6c75a" font-size="11" font-weight="800">THE NUMBERS ALONE CANNOT CHOOSE.</text>
+    </g>
+
+    <path d="M548 276h28" stroke="#69a9ff" stroke-width="2"/>
+    <path d="M568 268l8 8-8 8" fill="none" stroke="#69a9ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M740 374v14" stroke="#41e58b" stroke-width="2"/>
+    <path d="M732 380l8 8 8-8" fill="none" stroke="#41e58b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <text x="58" y="646" fill="#73839a" font-size="12">Educational illustration. Prints, levels and delta are hypothetical; contract tick value is based on current CME specifications.</text>
+  </g>
+</svg>

@@ -3,43 +3,37 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Read Order Flow on 6E Using Footprints, Imbalances and Delta</title>
-  <meta name="description" content="A blunt guide to reading 6E order flow using footprint charts, imbalances and delta so you can see where real buying and selling hits the Euro FX futures tape.">
+  <title>How to Read 6E Order Flow | Footprints, Delta &amp; Imbalances</title>
+  <meta name="description" content="Complete guide to 6E order flow: footprint charts, diagonal imbalances, delta, absorption, data-quality checks, examples, and an interactive decoder.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/how-to-read-order-flow-on-6e.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="How to Read Order Flow on 6E Using Footprints, Imbalances and Delta">
-  <meta property="og:description" content="A blunt guide to reading 6E order flow using footprint charts, imbalances and delta so you can see where real buying and selling hits the Euro FX futures tape.">
+  <meta property="og:title" content="How to Read Order Flow on 6E: Footprints, Imbalances and Delta">
+  <meta property="og:description" content="Read aggressive execution in context: footprint anatomy, diagonal imbalance math, delta, absorption, follow-through, and a complete 6E workflow.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/how-to-read-order-flow-on-6e.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Grizzly Parrot Trading guide to reading Euro FX futures order flow.">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="How to Read Order Flow on 6E Using Footprints, Imbalances and Delta">
-  <meta name="twitter:description" content="A blunt guide to reading 6E order flow using footprint charts, imbalances and delta so you can see where real buying and selling hits the Euro FX futures tape.">
+  <meta name="twitter:title" content="How to Read 6E Order Flow">
+  <meta name="twitter:description" content="A complete guide to footprints, diagonal imbalances, delta, absorption, data quality, and context-first execution in Euro FX futures.">
 
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="order-flow-guide.css">
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -48,62 +42,117 @@
     gtag('config', 'G-JMJVR3G5YN');
   </script>
 
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How to Read Order Flow on 6E Using Footprints, Imbalances and Delta",
-  "description": "A blunt guide to reading 6E order flow using footprint charts, imbalances and delta so you can see where real buying and selling hits the Euro FX futures tape.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/how-to-read-order-flow-on-6e.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/how-to-read-order-flow-on-6e.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Read Order Flow on 6E: Footprints, Imbalances and Delta",
+    "description": "A complete guide to reading Euro FX futures order flow with footprint charts, diagonal imbalances, delta, absorption, exhaustion, data-quality controls, worked examples, and an interactive decoder.",
+    "author": {
+      "@type": "Person",
+      "name": "Kyle Parrott",
+      "url": "https://grizzlyparrottrading.com/about.html"
+    },
+    "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/how-to-read-order-flow-on-6e.html",
+    "datePublished": "2025-11-24",
+    "dateModified": "2026-08-05",
+    "url": "https://grizzlyparrottrading.com/futures-basics/how-to-read-order-flow-on-6e.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grizzly Parrot Trading",
+      "url": "https://grizzlyparrottrading.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://grizzlyparrottrading.com/OG-default.png"
+      }
+    },
+    "image": "https://grizzlyparrottrading.com/OG-default.png"
+  }
+  </script>
 
-  <!-- JSON-LD: Breadcrumbs -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How to Read Order Flow on 6E Using Footprints, Imbalances and Delta",
-      "item": "https://grizzlyparrottrading.com/futures-basics/how-to-read-order-flow-on-6e.html"
-    }
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Futures Basics",
+        "item": "https://grizzlyparrottrading.com/futures-basics/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "How to Read Order Flow on 6E",
+        "item": "https://grizzlyparrottrading.com/futures-basics/how-to-read-order-flow-on-6e.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does a footprint chart show in 6E?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A footprint chart distributes executed volume across the price levels inside each bar, commonly separating volume classified at the bid from volume classified at the ask. It is a record of trades, not a complete record of resting orders or trader intent."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is delta on a 6E footprint chart?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Delta is ask-classified volume minus bid-classified volume for the selected price, bar, or session. Positive delta means more volume was classified at the ask; negative delta means more was classified at the bid. Delta does not prove that price must move in the same direction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is a diagonal bid-ask imbalance calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A common diagonal method compares ask volume at one price with bid volume one tick below for a buy-side comparison, or bid volume at one price with ask volume one tick above for a sell-side comparison. The platform's threshold and zero-volume rules determine whether it is highlighted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does positive delta mean 6E will rise?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Positive delta records aggressive buying, but price can fail to rise when passive sellers absorb that buying. Location, price progress, the close, and subsequent acceptance or rejection are required context."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do footprint charts require market-depth data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not necessarily. Footprints are built from executed trades classified at bid or ask. Sierra Chart states that its Numbers Bars do not require market-depth data, but accurate intraday bid-ask volume still depends on the data feed, classification method, and sufficiently granular stored data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the tick value of standard 6E futures?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CME lists the standard Euro FX futures contract at 125,000 euros with an outright minimum price increment of 0.00005 US dollars per euro. That increment is worth 6.25 US dollars per contract."
+        }
+      }
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
 </head>
@@ -111,20 +160,17 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
+    <div class="logo"><a href="/">Grizzly Parrot Trading</a></div>
+    <nav class="main-nav" aria-label="Primary navigation">
       <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../metals/index.html">Metals</a></li>
+        <li><a href="../energies/index.html">Energies</a></li>
+        <li><a href="../currencies/index.html">Currencies</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firms</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+        <li><a href="../tools/index.html">Tools</a></li>
       </ul>
     </nav>
   </div>
@@ -132,167 +178,601 @@ Grizzly Parrot Trading</a>
 
 <main>
 <section class="section">
-<div class="container article-content">
+<article class="container article-content order-flow-guide">
 <!-- ARTICLE BODY START -->
 
-<h1>How to Read Order Flow on 6E Using Footprints, Imbalances and Delta</h1>
+<header class="of-hero">
+  <div class="of-hero-copy">
+    <p class="of-kicker">6E execution and auction guide</p>
+    <h1>How to Read Order Flow on 6E: Footprints, Imbalances and Delta</h1>
+    <p class="of-byline">By <a href="/about.html">Kyle Parrott</a> <span aria-hidden="true">&middot;</span> Updated August 5, 2026</p>
+    <p class="of-hero-lede">A footprint tells you <strong>where aggressive orders executed</strong>. It does not tell you why they traded, how much liquidity was hidden or cancelled, or what price must do next. The useful read comes from combining execution, location, price response, and follow-through.</p>
+    <div class="of-hero-actions">
+      <a class="of-button" href="#decoder">Open the order-flow decoder</a>
+      <a class="of-text-link" href="#reading-sequence">Use the reading sequence</a>
+    </div>
+    <div class="of-hero-facts" aria-label="Euro FX order-flow facts">
+      <div><span>Contract</span><strong>125,000 EUR</strong></div>
+      <div><span>Outright tick</span><strong>0.00005 = $6.25</strong></div>
+      <div><span>Core question</span><strong>Effort versus result</strong></div>
+    </div>
+  </div>
 
-<p>Most 6E traders stare at candles and pretend they know what's happening. Order flow actually shows you who’s hitting the bid or lifting the offer. If you can read footprints, imbalances and delta, you stop guessing and start reacting to real buying and selling.</p>
+  <figure class="of-hero-figure">
+    <img src="6e-order-flow-visual.svg" width="960" height="680" fetchpriority="high" alt="Illustrated Euro FX footprint ladder comparing bid and ask volume, diagonal imbalance, delta, and price response at a prior high.">
+    <figcaption>The numbers are hypothetical. The diagram shows the reading process, not a trade setup.</figcaption>
+  </figure>
+</header>
 
-<h2>Why Order Flow Matters in 6E</h2>
+<nav class="of-on-page" aria-label="On this page">
+  <span>On this page</span>
+  <a href="#principle">Core principle</a>
+  <a href="#anatomy">Footprint anatomy</a>
+  <a href="#decoder">Decoder</a>
+  <a href="#patterns">Patterns</a>
+  <a href="#examples">Examples</a>
+  <a href="#checklist">Checklist</a>
+</nav>
 
-<p>6E is heavily influenced by institutional flow tied to EUR/USD and macro news. Order flow lets you see those players hitting the tape in real time—not after the candle closes. This builds on the correlations from <a href="https://grizzlyparrottrading.com/futures-basics/6e-important-correlations.html">key 6E correlations</a>.</p>
+<section class="of-section of-principle" id="principle" aria-labelledby="principle-title">
+  <div>
+    <p class="of-kicker">The governing rule</p>
+    <h2 id="principle-title">Read Aggression, Then Judge the Result</h2>
+  </div>
+  <div>
+    <p>Every trade has a buyer and a seller. Footprint language labels the side that crossed the spread: a market buy lifts the offer and is usually counted as ask volume; a market sell hits the bid and is usually counted as bid volume. That classification measures <em>aggression</em>, not which side is smarter.</p>
+    <p>At a preselected level, ask three questions in order: <strong>Who crossed the spread? Did price make proportional progress? Did the market accept or reject the new prices afterward?</strong> An imbalance without location is a colored number. Delta without price response is incomplete evidence.</p>
+  </div>
+</section>
 
-<ul>
-  <li>You see aggression: buyers lifting offers, sellers slamming bids.</li>
-  <li>You see absorption: big players sitting on levels soaking up orders.</li>
-  <li>You see exhaustion: when one side runs out of fuel.</li>
-</ul>
+<section class="of-section" id="definitions" aria-labelledby="definitions-title">
+  <div class="of-section-heading">
+    <p class="of-kicker">Precise definitions</p>
+    <h2 id="definitions-title">The Vocabulary Behind a 6E Footprint</h2>
+    <p>Use these terms literally. Loose definitions make different chart settings look like the same signal when they are not.</p>
+  </div>
 
-<p>Price doesn't move because of indicators. Price moves because orders hit the book. Order flow shows the cause, not just the result.</p>
+  <div class="of-definition-grid">
+    <article>
+      <span>Bid volume</span>
+      <h3>Trades classified at the bid</h3>
+      <p>Usually interpreted as aggressive selling because the seller accepted the best displayed bid. It is executed volume, not the number of passive buy orders waiting there.</p>
+    </article>
+    <article>
+      <span>Ask volume</span>
+      <h3>Trades classified at the ask</h3>
+      <p>Usually interpreted as aggressive buying because the buyer accepted the best displayed offer. It does not reveal the buyer's holding period or motive.</p>
+    </article>
+    <article>
+      <span>Delta</span>
+      <h3>Ask volume minus bid volume</h3>
+      <p>Delta can be calculated at one price, across a bar, or cumulatively across a session. The selected scope must be stated before interpreting the number.</p>
+    </article>
+    <article>
+      <span>Imbalance</span>
+      <h3>A configured volume comparison</h3>
+      <p>Platforms highlight a ratio or difference that exceeds a threshold. Same-price and diagonal comparisons are different calculations.</p>
+    </article>
+    <article>
+      <span>Absorption</span>
+      <h3>High effort, limited price progress</h3>
+      <p>Repeated aggressive volume trades into passive liquidity, but price cannot continue through the area. Confirmation requires rejection or failure to advance.</p>
+    </article>
+    <article>
+      <span>Exhaustion</span>
+      <h3>Declining participation at an extreme</h3>
+      <p>Volume or aggression contracts as price extends. Low volume alone is not enough; it must be read against auction location and the subsequent response.</p>
+    </article>
+  </div>
 
-<h2>Footprint Charts: Your First Real Look Inside a Candle</h2>
+  <aside class="of-source-note">
+    <strong>Official 6E specification:</strong>
+    CME Group lists the standard Euro FX futures contract at 125,000 euros. Its outright minimum increment is 0.00005 USD per EUR, worth $6.25 per contract. See the current <a href="https://www.cmegroup.com/markets/fx/g10/euro-fx.contractSpecs.html" target="_blank" rel="noopener">CME Euro FX contract page</a> and <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME FX Product Guide</a>. Specifications checked August 5, 2026.
+  </aside>
+</section>
 
-<p>A footprint chart breaks each price level into two numbers:</p>
+<section class="of-section" id="anatomy" aria-labelledby="anatomy-title">
+  <div class="of-section-heading">
+    <p class="of-kicker">Inside one bar</p>
+    <h2 id="anatomy-title">How to Read a Footprint Without Reversing the Math</h2>
+    <p>A common bid-by-ask display prints bid-classified volume on the left and ask-classified volume on the right at each price. Confirm the layout in your platform before interpreting colors.</p>
+  </div>
 
-<ul>
-  <li><strong>Bid volume</strong> – trades executed at the bid.</li>
-  <li><strong>Ask volume</strong> – trades executed at the ask.</li>
-</ul>
+  <div class="of-anatomy-grid">
+    <div class="of-footprint-demo" role="img" aria-label="Hypothetical bid by ask footprint with buy-side diagonal imbalances at 1.16210 and 1.16215">
+      <div class="of-demo-head"><span>Bid</span><span>Price</span><span>Ask</span></div>
+      <div class="of-demo-row"><span>68</span><strong>1.16220</strong><span>42</span></div>
+      <div class="of-demo-row of-buy-row"><span>126</span><strong>1.16215</strong><span>408</span></div>
+      <div class="of-demo-row of-buy-row"><span>118</span><strong>1.16210</strong><span>372</span></div>
+      <div class="of-demo-row"><span>141</span><strong>1.16205</strong><span>176</span></div>
+      <div class="of-demo-row"><span>205</span><strong>1.16200</strong><span>134</span></div>
+      <div class="of-demo-summary"><span>Bar delta</span><strong>+274</strong></div>
+    </div>
 
-<table>
-  <tr>
-    <th>Signal</th>
-    <th>Meaning</th>
-  </tr>
-  <tr>
-    <td>Large ask volume</td>
-    <td>Aggressive buyers</td>
-  </tr>
-  <tr>
-    <td>Large bid volume</td>
-    <td>Aggressive sellers</td>
-  </tr>
-  <tr>
-    <td>Heavy bid but price doesn’t drop</td>
-    <td>Absorption → potential reversal</td>
-  </tr>
-</table>
+    <div class="of-anatomy-copy">
+      <article>
+        <span>Same-price comparison</span>
+        <h3>Ask at price versus bid at the same price</h3>
+        <p>This identifies dominance within a row. It is not the same calculation as the diagonal comparison commonly used for imbalance highlighting.</p>
+      </article>
+      <article>
+        <span>Buy-side diagonal</span>
+        <h3>Ask at price &divide; bid one tick below</h3>
+        <p>For example, 408 ask at 1.16215 compared with 118 bid at 1.16210 is about 346%. Whether it is colored depends on the platform threshold and minimum-volume rules.</p>
+      </article>
+      <article>
+        <span>Sell-side diagonal</span>
+        <h3>Bid at price &divide; ask one tick above</h3>
+        <p>This mirrors the buy-side calculation. Always document the exact comparison, threshold, treatment of zeros, and volume filter used in the chart.</p>
+      </article>
+    </div>
+  </div>
 
-<p>Once you learn to read these numbers, you'll never look at a candle the same way again.</p>
+  <div class="of-formula-row">
+    <div><span>Bar delta</span><strong>&Sigma; ask volume &minus; &Sigma; bid volume</strong></div>
+    <div><span>Delta percentage used here</span><strong>delta &divide; total executed volume &times; 100</strong></div>
+    <div><span>Buy diagonal ratio</span><strong>ask at price &divide; bid one tick below</strong></div>
+  </div>
 
-<h2>Imbalances: Where One Side Overpowers the Other</h2>
+  <aside class="of-boundary">
+    <strong>A footprint is not the order book.</strong>
+    <p>Footprints summarize executed trades. Market depth shows displayed resting orders that may be added, cancelled, moved, refreshed, or partially hidden. Sierra Chart's documentation states that Numbers Bars do not require market-depth data; they depend on intraday trade data and recommends one-tick storage for accuracy. Do not describe a footprint print as proof of every resting order that was present.</p>
+  </aside>
+</section>
 
-<p>An imbalance occurs when ask volume overwhelms bid volume at a price level (or vice versa). Platforms usually flag these 3:1 or 4:1 ratios with color heatmaps. These zones show exactly where the market tipped.</p>
+<section class="of-section of-decoder-section" id="decoder" aria-labelledby="decoder-title">
+  <div class="of-section-heading">
+    <p class="of-kicker">Interactive teaching tool</p>
+    <h2 id="decoder-title">Footprint Ratio and Delta Decoder</h2>
+    <p>Enter one diagonal comparison and the total bid/ask volume for its bar. The tool performs the math only. It does not identify location, absorption, acceptance, or a trade.</p>
+  </div>
 
-<h3>Why imbalances matter in 6E:</h3>
-<ul>
-  <li>They show where buyers or sellers got aggressive.</li>
-  <li>They often create future support/resistance.</li>
-  <li>They highlight breakout levels with real participation, not fake retail buying.</li>
-</ul>
+  <div class="of-decoder-shell">
+    <form class="of-decoder-form" id="of-decoder-form" novalidate>
+      <div class="of-field of-field-wide">
+        <label for="of-direction">Comparison direction</label>
+        <select id="of-direction" name="direction">
+          <option value="buy">Buy-side diagonal: ask versus bid one tick below</option>
+          <option value="sell">Sell-side diagonal: bid versus ask one tick above</option>
+        </select>
+      </div>
+      <div class="of-field">
+        <label for="of-aggressive" id="of-aggressive-label">Ask volume at selected price</label>
+        <input id="of-aggressive" name="aggressive" type="number" min="0" step="1" value="420" inputmode="numeric">
+      </div>
+      <div class="of-field">
+        <label for="of-comparison" id="of-comparison-label">Bid volume one tick below</label>
+        <input id="of-comparison" name="comparison" type="number" min="0" step="1" value="120" inputmode="numeric">
+      </div>
+      <div class="of-field">
+        <label for="of-threshold">Highlight threshold</label>
+        <div class="of-input-suffix"><input id="of-threshold" name="threshold" type="number" min="1" max="10000" step="1" value="300" inputmode="decimal"><span>%</span></div>
+      </div>
+      <div class="of-field">
+        <label for="of-bar-ask">Total ask volume in bar</label>
+        <input id="of-bar-ask" name="barAsk" type="number" min="0" step="1" value="3250" inputmode="numeric">
+      </div>
+      <div class="of-field">
+        <label for="of-bar-bid">Total bid volume in bar</label>
+        <input id="of-bar-bid" name="barBid" type="number" min="0" step="1" value="2440" inputmode="numeric">
+      </div>
+      <div class="of-actions">
+        <button type="submit">Decode the numbers</button>
+        <button type="reset">Reset example</button>
+      </div>
+    </form>
 
-<p>You’ll see clean imbalances during news spikes like CPI and NFP, which ties back to <a href="https://grizzlyparrottrading.com/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html">how news events hit 6E</a>.</p>
+    <section class="of-decoder-results" aria-labelledby="decoder-results-title">
+      <div class="of-results-heading">
+        <span>Calculated output</span>
+        <h3 id="decoder-results-title">What the print says&mdash;and does not say</h3>
+      </div>
+      <dl>
+        <div><dt>Diagonal ratio</dt><dd id="of-result-ratio">350.0%</dd></div>
+        <div><dt>Threshold test</dt><dd id="of-result-test">Met</dd></div>
+        <div><dt>Bar delta</dt><dd id="of-result-delta">+810</dd></div>
+        <div><dt>Delta percentage</dt><dd id="of-result-delta-pct">+14.2%</dd></div>
+      </dl>
+      <p class="of-result-status is-met" id="of-result-status" role="status" aria-live="polite">The selected buy-side ratio meets the configured threshold. That describes aggressive execution at this comparison; it does not prove support, continuation, or a long trade.</p>
+    </section>
+  </div>
 
-<h2>Delta: The Net Battle Between Buyers and Sellers</h2>
+  <aside class="of-decoder-note">
+    <strong>Why platforms may disagree</strong>
+    <p>Bid/ask classification, session boundaries, bar construction, tick aggregation, minimum-volume filters, zero-denominator handling, and missing historical data can all change the display. Use the same feed and settings when comparing screenshots or backtests.</p>
+  </aside>
+</section>
 
-<p>Delta = ask volume − bid volume. It tells you who is in control across an entire bar or session.</p>
+<section class="of-section" id="delta" aria-labelledby="delta-title">
+  <div class="of-section-heading">
+    <p class="of-kicker">Read delta as a relationship</p>
+    <h2 id="delta-title">Delta Measures Aggression, Not Guaranteed Direction</h2>
+    <p>Positive delta means more volume was classified at the ask; negative delta means more was classified at the bid. The next question is whether that aggression produced and retained price movement.</p>
+  </div>
 
-<table>
-  <tr>
-    <th>Delta Behavior</th>
-    <th>Interpretation</th>
-  </tr>
-  <tr>
-    <td>Positive delta + rising price</td>
-    <td>Strong buying, trend continuation</td>
-  </tr>
-  <tr>
-    <td>Negative delta + falling price</td>
-    <td>Strong selling, trend continuation</td>
-  </tr>
-  <tr>
-    <td>Positive delta but price falling</td>
-    <td>Absorption by sellers</td>
-  </tr>
-  <tr>
-    <td>Negative delta but price rising</td>
-    <td>Absorption by buyers</td>
-  </tr>
-</table>
+  <div class="of-matrix">
+    <article>
+      <span>Price rises + delta positive</span>
+      <h3>Aggression and progress align</h3>
+      <p>This is consistent with buyers lifting offers and price auctioning higher. Continuation still requires acceptance above the relevant level.</p>
+    </article>
+    <article>
+      <span>Price stalls + delta positive</span>
+      <h3>Possible sell-side absorption</h3>
+      <p>Aggressive buyers are active but cannot make proportional progress. Rejection, a failed retest, or rotation lower is needed before calling it absorption.</p>
+    </article>
+    <article>
+      <span>Price falls + delta negative</span>
+      <h3>Aggression and progress align</h3>
+      <p>This is consistent with sellers hitting bids while price auctions lower. A low close alone does not guarantee another lower bar.</p>
+    </article>
+    <article>
+      <span>Price holds + delta negative</span>
+      <h3>Possible buy-side absorption</h3>
+      <p>Aggressive sellers trade into passive buying without breaking the area. The defense matters only if it survives subsequent testing.</p>
+    </article>
+  </div>
 
-<p>Absorption signals are often early warnings that the current trend is weakening.</p>
+  <div class="of-cumulative">
+    <div>
+      <p class="of-kicker">Cumulative delta</p>
+      <h3>Useful for sequence, dangerous as a standalone divergence</h3>
+    </div>
+    <p>Cumulative delta adds bar delta across a chosen session. A divergence can reveal that aggressive effort is not translating into price progress, but it is sensitive to the reset time and does not include every venue in the global EUR/USD market. Standard 6E and spot EUR/USD are related markets, not the same order book. Use the companion <a href="/futures-basics/6e-vs-eurusd-which-leads.html">6E versus EUR/USD guide</a> before comparing their flow.</p>
+  </div>
+</section>
 
-<h2>Identifying Absorption in 6E</h2>
+<section class="of-section" id="patterns" aria-labelledby="patterns-title">
+  <div class="of-section-heading">
+    <p class="of-kicker">Pattern logic</p>
+    <h2 id="patterns-title">Absorption, Exhaustion and Stacked Imbalances</h2>
+    <p>These are descriptions of auction behavior, not named candles. Each needs location and confirmation.</p>
+  </div>
 
-<p>Absorption is where big players sit on the bid or ask and soak up everything thrown at them. It's one of the most powerful reversal signals in 6E order flow.</p>
+  <div class="of-pattern-grid">
+    <article class="of-pattern-card">
+      <span>Absorption</span>
+      <h3>Large aggression, small result</h3>
+      <ul>
+        <li>Occurs at a level that matters before the print appears.</li>
+        <li>Repeated aggressive volume fails to extend price.</li>
+        <li>The bar closes away from the extreme or the next test fails.</li>
+        <li>Invalidated if price accepts through the defended area.</li>
+      </ul>
+    </article>
+    <article class="of-pattern-card">
+      <span>Exhaustion</span>
+      <h3>Diminishing participation at an extreme</h3>
+      <ul>
+        <li>The auction extends into a preselected target or thin area.</li>
+        <li>Volume and aggressive prints contract near the edge.</li>
+        <li>Price cannot attract enough new participation to continue.</li>
+        <li>Invalidated when new volume enters and price accepts beyond the edge.</li>
+      </ul>
+    </article>
+    <article class="of-pattern-card">
+      <span>Stacked imbalance</span>
+      <h3>Several adjacent thresholds are met</h3>
+      <ul>
+        <li>Shows concentrated aggression across multiple prices.</li>
+        <li>Can accompany a breakout, climax, or trapped late entry.</li>
+        <li>Becomes more useful when price holds beyond the stack.</li>
+        <li>Is not automatic support or resistance after the fact.</li>
+      </ul>
+    </article>
+  </div>
+</section>
 
-<ul>
-  <li>Large bid volume but price won't drop → buyer absorption.</li>
-  <li>Large ask volume but price won't rise → seller absorption.</li>
-  <li>Delta diverges from price → imbalance of effort vs. result.</li>
-</ul>
+<section class="of-section" id="examples" aria-labelledby="examples-title">
+  <div class="of-section-heading">
+    <p class="of-kicker">Worked 6E examples</p>
+    <h2 id="examples-title">The Same Imbalance Can Mean Four Different Things</h2>
+    <p>All figures below are hypothetical and use a 300% diagonal threshold. The difference is the surrounding auction, not the color of the cell.</p>
+  </div>
 
-<p>Absorption often shows up at major FX levels in EUR/USD spot, reinforcing the lead/lag from <a href="https://grizzlyparrottrading.com/futures-basics/6e-vs-eurusd-which-leads.html">6E vs EUR/USD</a>.</p>
+  <div class="of-table-scroll" role="region" aria-label="Worked Euro FX order-flow examples" tabindex="0">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Context</th>
+          <th scope="col">Footprint evidence</th>
+          <th scope="col">Price response</th>
+          <th scope="col">Defensible read</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Break above prior session high</th>
+          <td>Three adjacent buy diagonals from 315% to 430%; bar delta +1,140</td>
+          <td>Closes near the high; retest trades lower volume and holds above the old high</td>
+          <td>Buy aggression gained acceptance. The retest, not the first green cell, supplies confirmation.</td>
+        </tr>
+        <tr>
+          <th scope="row">Test of weekly resistance</th>
+          <td>Ask volume repeatedly exceeds 500 contracts; delta +1,620</td>
+          <td>Price advances one tick, closes back inside value, then fails on retest</td>
+          <td>Possible sell-side absorption: high buying effort produced little result and was rejected.</td>
+        </tr>
+        <tr>
+          <th scope="row">CPI release spike</th>
+          <td>Extreme prints and stacked imbalances on both sides across seconds</td>
+          <td>Price crosses the level repeatedly; fills and spreads are unstable</td>
+          <td>No clean directional inference. Event liquidity and rapid repricing overwhelm a static footprint snapshot.</td>
+        </tr>
+        <tr>
+          <th scope="row">Late breakout from a narrow range</th>
+          <td>One 360% buy diagonal at the high; total bar volume below recent breakout bars</td>
+          <td>Next bar returns below the range boundary and cannot reclaim it</td>
+          <td>The isolated imbalance did not earn acceptance; late aggressive buyers may be trapped.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-<h2>Exhaustion: When a Move Runs Out of Fuel</h2>
+  <p class="of-inline-note">Scheduled releases can compress several auction phases into seconds. Review the <a href="/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html">CPI, NFP, FOMC and ECB guide for 6E</a> before treating a news footprint like an ordinary session bar.</p>
+</section>
 
-<p>Exhaustion shows up as the exact opposite of absorption—buyers or sellers try to push, but volume collapses. On a footprint chart this looks like:</p>
+<section class="of-section" id="data-quality" aria-labelledby="data-quality-title">
+  <div class="of-section-heading">
+    <p class="of-kicker">Data before interpretation</p>
+    <h2 id="data-quality-title">A Footprint Is Only as Trustworthy as Its Feed and Settings</h2>
+    <p>If two platforms disagree, inspect the inputs before debating the pattern. A footprint is a calculation built from a specific stream of trades.</p>
+  </div>
 
-<ul>
-  <li>Very small bid volume during a sell move → sellers tiring.</li>
-  <li>Very small ask volume during a buy move → buyers drying up.</li>
-  <li>Low volume nodes at the top or bottom of a swing.</li>
-</ul>
+  <div class="of-quality-grid">
+    <article><span>1</span><h3>Confirm bid/ask classification</h3><p>Prefer exchange-provided aggressor information when the feed supports it. Otherwise the platform may infer trade side from price and quote updates.</p></article>
+    <article><span>2</span><h3>Store one-tick intraday data</h3><p>Aggregated historical records can lose the sequence required for accurate volume-at-price and bid/ask reconstruction.</p></article>
+    <article><span>3</span><h3>Match the session template</h3><p>Bar delta and cumulative delta change when the session starts, pauses, or resets. State the time zone and reset point.</p></article>
+    <article><span>4</span><h3>Document bar construction</h3><p>Time, range, reversal, volume, and event-based bars group the same trade stream differently. Patterns are not portable without the construction rule.</p></article>
+    <article><span>5</span><h3>Audit reconnect gaps</h3><p>A chart can look complete while missing trade records after a disconnect. Reload historical data and compare suspicious bars before analysis.</p></article>
+    <article><span>6</span><h3>Keep markets separate</h3><p>6E futures volume is not aggregate global spot-FX volume. A spot feed, futures feed, and dealer venue can show different activity.</p></article>
+  </div>
 
-<p>Exhaustion signals often form at the tail end of news-driven spikes, where all that's left is trapped traders and fading momentum.</p>
+  <p class="of-inline-note">For Sierra Chart configuration and the data requirements behind Numbers Bars, use the complete <a href="/platforms-tutorials/sierra-chart-numbers-bars-guide.html">Sierra Chart Numbers Bars guide</a>.</p>
+</section>
 
-<h2>How to Use Order Flow With Levels</h2>
+<section class="of-section" id="reading-sequence" aria-labelledby="sequence-title">
+  <div class="of-section-heading">
+    <p class="of-kicker">A repeatable workflow</p>
+    <h2 id="sequence-title">The Context-First 6E Reading Sequence</h2>
+    <p>The sequence prevents a bright footprint cell from becoming a post-hoc reason for a trade.</p>
+  </div>
 
-<p>Order flow doesn’t replace technical structure. It refines it. Combine:</p>
+  <ol class="of-sequence">
+    <li><span>01</span><div><h3>Name the contract, session and event risk</h3><p>Record the active 6E expiry, chart time zone, session template, and scheduled US or euro-area releases. Check <a href="/futures-basics/best-times-to-trade-euro-fx-futures-6e.html">6E session behavior</a> rather than comparing every hour to the same volume baseline.</p></div></li>
+    <li><span>02</span><div><h3>Preselect the auction location</h3><p>Mark prior highs and lows, value boundaries, a tested breakout level, or a macro reference before reading the footprint. Middle-of-range prints deserve less weight.</p></div></li>
+    <li><span>03</span><div><h3>Read the aggressive side</h3><p>Note bid/ask volume, diagonal ratios, stacked imbalances, and bar delta using documented settings. Compare with recent bars from the same session segment.</p></div></li>
+    <li><span>04</span><div><h3>Measure price progress</h3><p>Ask how far price moved for the amount of aggression. A large delta with a one-tick advance is different from the same delta through a clean range expansion.</p></div></li>
+    <li><span>05</span><div><h3>Demand acceptance or rejection</h3><p>Use the close, next bar, retest, and time spent beyond the level. Confirmation can fail; define what invalidates the interpretation.</p></div></li>
+    <li><span>06</span><div><h3>Place the valid stop before sizing</h3><p>The stop belongs beyond the structure that disproves the trade, not beside a colored cell. Convert the stop to dollars with the <a href="/market-basics/risk-per-trade-small-accounts.html">real drawdown-buffer sizing framework</a>. If one contract does not fit, skip the trade.</p></div></li>
+    <li><span>07</span><div><h3>Save the evidence</h3><p>Capture the footprint, settings, level, entry logic, invalidation, and subsequent path. Review whether the pattern added information beyond location and price alone.</p></div></li>
+  </ol>
+</section>
 
-<ul>
-  <li>Major FX levels from EUR/USD spot</li>
-  <li>Session timing from <a href="https://grizzlyparrottrading.com/futures-basics/best-times-to-trade-euro-fx-futures-6e.html">best times to trade 6E</a></li>
-  <li>Order flow confirmation at the level</li>
-</ul>
+<section class="of-section" aria-labelledby="mistakes-title">
+  <div class="of-section-heading">
+    <p class="of-kicker">Common sizing and reading failures</p>
+    <h2 id="mistakes-title">Order-Flow Mistakes That Manufacture Certainty</h2>
+  </div>
 
-<p>That combination stops you from guessing and lets you trade where real money is positioned.</p>
+  <div class="of-mistakes">
+    <article><strong>Calling every ask print “buyers in control”</strong><p>A market buy and passive sell occur together. Control is inferred from price response, not from one side of the classification.</p></article>
+    <article><strong>Confusing executed volume with resting depth</strong><p>A footprint does not reveal every displayed, cancelled, refreshed, or hidden limit order.</p></article>
+    <article><strong>Using one universal imbalance threshold</strong><p>A ratio that is rare in one session or bar type can be routine in another. Test thresholds against the exact feed and construction.</p></article>
+    <article><strong>Ignoring absolute volume</strong><p>A 400% ratio can be 4 versus 1. The percentage is large while the participation is trivial.</p></article>
+    <article><strong>Reading divergence without a reset rule</strong><p>Cumulative delta changes when the session start changes. A divergence without a defined window is not reproducible.</p></article>
+    <article><strong>Trading the first imbalance at news</strong><p>Rapid repricing, spread changes, and data bursts can create extreme cells on both sides before a stable auction forms.</p></article>
+    <article><strong>Moving the stop to fit desired contracts</strong><p>Order flow can refine timing; it cannot make an invalid stop technically correct.</p></article>
+    <article><strong>Backfilling intent after the move</strong><p>“Institutions absorbed it” is not evidence unless the level, effort, result, and confirmation were defined before the outcome.</p></article>
+  </div>
+</section>
 
-<div class="highlight-box green">
-  <h3>Order Flow Shows You Who’s in Control</h3>
-  <p>Order flow isn’t a crystal ball — it’s a reality check. Footprints, imbalances, and delta reveal who's pushing the market and who’s getting steamrolled. On 6E, that insight replaces vague candle guesses with real-time reads on aggression and absorption. It’s not magic. It’s just clarity.</p>
-</div>
+<section class="of-section of-checklist" id="checklist" aria-labelledby="checklist-title">
+  <div>
+    <p class="of-kicker">Final decision checklist</p>
+    <h2 id="checklist-title">Before an Order-Flow Read Becomes a Trade</h2>
+    <p>If any input is unknown, the interpretation remains incomplete.</p>
+  </div>
+  <ul>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Data:</strong> Feed, trade classification, tick storage, and reconnect history are trustworthy.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Settings:</strong> Bar type, session reset, diagonal method, threshold, and minimum-volume filter are documented.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Location:</strong> The level mattered before the footprint print appeared.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Effort:</strong> I can state who crossed the spread and by how much.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Result:</strong> I compared aggressive volume with price progress, close, and follow-through.</p></li>
+    <li><span aria-hidden="true">&#10003;</span><p><strong>Invalidation:</strong> The stop is beyond the structure that disproves the idea and fits the dollar-risk budget.</p></li>
+  </ul>
+</section>
+
+<section class="of-section of-faq" aria-labelledby="faq-title">
+  <div class="of-section-heading">
+    <p class="of-kicker">Frequently asked questions</p>
+    <h2 id="faq-title">6E Order-Flow Questions</h2>
+  </div>
+
+  <details>
+    <summary>What does a footprint chart show in 6E?</summary>
+    <p>A footprint chart distributes executed volume across the price levels inside each bar, commonly separating volume classified at the bid from volume classified at the ask. It is a record of trades, not a complete record of resting orders or trader intent.</p>
+  </details>
+  <details>
+    <summary>What is delta on a 6E footprint chart?</summary>
+    <p>Delta is ask-classified volume minus bid-classified volume for the selected price, bar, or session. Positive delta means more volume was classified at the ask; negative delta means more was classified at the bid. Delta does not prove that price must move in the same direction.</p>
+  </details>
+  <details>
+    <summary>How is a diagonal bid-ask imbalance calculated?</summary>
+    <p>A common diagonal method compares ask volume at one price with bid volume one tick below for a buy-side comparison, or bid volume at one price with ask volume one tick above for a sell-side comparison. The platform's threshold and zero-volume rules determine whether it is highlighted.</p>
+  </details>
+  <details>
+    <summary>Does positive delta mean 6E will rise?</summary>
+    <p>No. Positive delta records aggressive buying, but price can fail to rise when passive sellers absorb that buying. Location, price progress, the close, and subsequent acceptance or rejection are required context.</p>
+  </details>
+  <details>
+    <summary>Do footprint charts require market-depth data?</summary>
+    <p>Not necessarily. Footprints are built from executed trades classified at bid or ask. Sierra Chart states that its Numbers Bars do not require market-depth data, but accurate intraday bid-ask volume still depends on the data feed, classification method, and sufficiently granular stored data.</p>
+  </details>
+  <details>
+    <summary>What is the tick value of standard 6E futures?</summary>
+    <p>CME lists the standard Euro FX futures contract at 125,000 euros with an outright minimum price increment of 0.00005 US dollars per euro. That increment is worth $6.25 per contract.</p>
+  </details>
+</section>
+
+<section class="of-sources" aria-labelledby="sources-title">
+  <p class="of-kicker">Sources and methodology</p>
+  <h2 id="sources-title">Official and Primary Sources</h2>
+  <ul>
+    <li><a href="https://www.cmegroup.com/markets/fx/g10/euro-fx.contractSpecs.html" target="_blank" rel="noopener">CME Group: Euro FX futures contract specifications</a> and <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME FX Product Guide</a> for contract size, quote convention, tick increment, and central-limit-order-book context.</li>
+    <li><a href="https://www.sierrachart.com/index.php?page=doc/NumbersBars.php" target="_blank" rel="noopener">Sierra Chart: Numbers Bars documentation</a> for bid/ask volume definitions, diagonal comparisons, configuration choices, and one-tick intraday data guidance.</li>
+    <li><a href="https://www.sierrachart.com/index.php?page=doc/NumbersBars.php#NumbersBarsAccuracy" target="_blank" rel="noopener">Sierra Chart: Numbers Bars accuracy and data considerations</a> for feed, storage, and historical-data limitations.</li>
+    <li><a href="https://www.nfa.futures.org/investors/investor-resources/files/investor-best-practices.html" target="_blank" rel="noopener">National Futures Association: Investor Best Practices</a> for leverage and risk-capital disclosure.</li>
+  </ul>
+  <p>Contract and documentation pages were checked August 5, 2026. Worked prints are explicitly hypothetical. The interactive decoder exposes its formulas and applies no predictive model.</p>
+</section>
+
+<aside class="of-disclaimer" aria-label="Educational and risk disclaimer">
+  <strong>Educational and risk disclaimer</strong>
+  <p>This guide and decoder are educational tools, not individualized financial, investment, legal, tax, brokerage, or trading advice. Futures are leveraged and can produce losses greater than the amount deposited. Footprint classifications, data feeds, platform settings, and exchange specifications can change or contain gaps. An imbalance, delta reading, absorption hypothesis, or worked example is not a guarantee, recommendation, or trade signal. Verify current official specifications, live data, broker rules, and your own risk limits before trading.</p>
+</aside>
 
 <!-- ARTICLE BODY END -->
-</div>
+</article>
 </section>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
-
     <div class="footer-book">
       <h3>Books</h3>
       <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
+      <a href="/books/" class="footer-book-link">View All Books</a>
     </div>
-
     <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
+      <a href="/about.html">About</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/contact.html">Contact</a>
     </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+    <p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+  (function () {
+    'use strict';
+
+    var form = document.getElementById('of-decoder-form');
+    var fields = {
+      direction: document.getElementById('of-direction'),
+      aggressive: document.getElementById('of-aggressive'),
+      comparison: document.getElementById('of-comparison'),
+      threshold: document.getElementById('of-threshold'),
+      barAsk: document.getElementById('of-bar-ask'),
+      barBid: document.getElementById('of-bar-bid')
+    };
+    var outputs = {
+      ratio: document.getElementById('of-result-ratio'),
+      test: document.getElementById('of-result-test'),
+      delta: document.getElementById('of-result-delta'),
+      deltaPct: document.getElementById('of-result-delta-pct'),
+      status: document.getElementById('of-result-status')
+    };
+    var labels = {
+      aggressive: document.getElementById('of-aggressive-label'),
+      comparison: document.getElementById('of-comparison-label')
+    };
+
+    function valueOf(input) {
+      return Number.parseFloat(input.value);
+    }
+
+    function signed(value, digits, suffix) {
+      var normalized = Math.abs(value) < Math.pow(10, -digits) / 2 ? 0 : value;
+      return (normalized > 0 ? '+' : '') + normalized.toFixed(digits) + (suffix || '');
+    }
+
+    function setStatus(message, stateClass) {
+      outputs.status.textContent = message;
+      outputs.status.className = 'of-result-status ' + stateClass;
+    }
+
+    function clearOutputs() {
+      outputs.ratio.textContent = '\u2014';
+      outputs.test.textContent = '\u2014';
+      outputs.delta.textContent = '\u2014';
+      outputs.deltaPct.textContent = '\u2014';
+    }
+
+    function updateLabels() {
+      if (fields.direction.value === 'sell') {
+        labels.aggressive.textContent = 'Bid volume at selected price';
+        labels.comparison.textContent = 'Ask volume one tick above';
+      } else {
+        labels.aggressive.textContent = 'Ask volume at selected price';
+        labels.comparison.textContent = 'Bid volume one tick below';
+      }
+    }
+
+    function calculate() {
+      updateLabels();
+      var aggressive = valueOf(fields.aggressive);
+      var comparison = valueOf(fields.comparison);
+      var threshold = valueOf(fields.threshold);
+      var barAsk = valueOf(fields.barAsk);
+      var barBid = valueOf(fields.barBid);
+      var values = [aggressive, comparison, threshold, barAsk, barBid];
+      var valid = values.every(Number.isFinite) &&
+        aggressive >= 0 && comparison >= 0 && barAsk >= 0 && barBid >= 0 &&
+        threshold >= 1 && threshold <= 10000;
+
+      if (!valid) {
+        clearOutputs();
+        setStatus('Enter nonnegative whole-volume values and a threshold from 1% to 10,000%.', 'is-invalid');
+        return;
+      }
+
+      var total = barAsk + barBid;
+      var delta = barAsk - barBid;
+      var deltaPct = total > 0 ? (delta / total) * 100 : 0;
+      outputs.delta.textContent = signed(delta, 0, '');
+      outputs.deltaPct.textContent = total > 0 ? signed(deltaPct, 1, '%') : 'N/A';
+
+      var directionName = fields.direction.value === 'sell' ? 'sell-side' : 'buy-side';
+      if (comparison === 0) {
+        if (aggressive === 0) {
+          outputs.ratio.textContent = 'N/A';
+          outputs.test.textContent = 'Not testable';
+          setStatus('Both sides of the diagonal comparison are zero, so no meaningful ratio can be calculated.', 'is-neutral');
+        } else {
+          outputs.ratio.textContent = '\u221e';
+          outputs.test.textContent = 'Zero denominator';
+          setStatus('The comparison volume is zero, so the ratio is unbounded. Platform zero rules and an absolute-volume filter matter here; do not treat infinity as infinite conviction.', 'is-caution');
+        }
+        return;
+      }
+
+      var ratio = (aggressive / comparison) * 100;
+      var met = ratio >= threshold;
+      outputs.ratio.textContent = ratio.toFixed(1) + '%';
+      outputs.test.textContent = met ? 'Met' : 'Not met';
+
+      if (met) {
+        setStatus('The selected ' + directionName + ' ratio meets the configured threshold. That describes aggressive execution at this comparison; it does not prove support, continuation, or a trade.', 'is-met');
+      } else {
+        setStatus('The selected ' + directionName + ' ratio does not meet the configured threshold. The underlying volume can still matter in context; a color threshold is not the market itself.', 'is-not-met');
+      }
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      calculate();
+    });
+    form.addEventListener('input', calculate);
+    form.addEventListener('change', calculate);
+    form.addEventListener('reset', function () {
+      window.setTimeout(calculate, 0);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    calculate();
+  }());
+</script>
 </body>
 </html>
