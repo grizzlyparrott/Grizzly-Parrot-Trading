@@ -389,7 +389,32 @@
       <div class="rd-input-grid">
         <div class="rd-field">
           <label for="rd-spot">EUR/USD spot price</label>
-          <input id="rd-spot" name="rd…405 tokens truncated…arry</h3>
+          <input id="rd-spot" name="rd-spot" type="number" inputmode="decimal" min="0.00001" step="0.00001" value="1.16000" required>
+        </div>
+        <div class="rd-field">
+          <label for="rd-usd-rate">Annualized USD rate</label>
+          <span class="rd-input-wrap"><input id="rd-usd-rate" name="rd-usd-rate" type="number" inputmode="decimal" min="-99.99" max="100" step="0.01" value="4.25" required><span aria-hidden="true">%</span></span>
+        </div>
+        <div class="rd-field">
+          <label for="rd-eur-rate">Annualized EUR rate</label>
+          <span class="rd-input-wrap"><input id="rd-eur-rate" name="rd-eur-rate" type="number" inputmode="decimal" min="-99.99" max="100" step="0.01" value="2.25" required><span aria-hidden="true">%</span></span>
+        </div>
+        <div class="rd-field">
+          <label for="rd-days">Calendar days to maturity</label>
+          <input id="rd-days" name="rd-days" type="number" inputmode="numeric" min="0" max="730" step="1" value="90" required>
+        </div>
+      </div>
+      <p class="rd-form-help" id="rate-calculator-help">Spot must be above zero. Rates may be negative but must be greater than -100%. Days must be between 0 and 730.</p>
+      <div class="rd-calculator-actions">
+        <button class="button-primary" type="submit">Calculate theoretical forward</button>
+        <button class="rd-reset-button" type="reset">Restore example</button>
+      </div>
+    </form>
+
+    <section class="rd-results" aria-labelledby="results-title">
+      <div class="rd-results-heading">
+        <p class="rd-kicker">Simplified result</p>
+        <h3 id="results-title">Matched-maturity carry</h3>
       </div>
       <dl>
         <div><dt>USD &minus; EUR rate differential</dt><dd id="rd-result-differential">+2.00%</dd></div>
