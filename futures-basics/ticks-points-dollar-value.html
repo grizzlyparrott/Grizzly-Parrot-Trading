@@ -3,107 +3,156 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ticks vs Points in Futures Trading — What the Dollar Risk Actually Is</title>
-  <meta name="description" content="Points describe price movement. Ticks determine what it costs. Here's how tick value works across futures markets and why it's the only unit that matters for position sizing.">
+  <title>Ticks vs Points in Futures | Tick Value &amp; Dollar Risk</title>
+  <meta name="description" content="Understand futures ticks, points, tick size, and tick value. Compare ES, MES, NQ, MNQ, RTY, CL, GC, and 6E, then calculate dollar P&amp;L.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/ticks-points-dollar-value.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Ticks vs Points in Futures Trading — What the Dollar Risk Actually Is">
-  <meta property="og:description" content="Points describe price movement. Ticks determine what it costs. Here's how tick value works across futures markets and why it's the only unit that matters for position sizing.">
+  <meta property="og:title" content="Ticks vs Points in Futures: Convert Price Movement to Dollars">
+  <meta property="og:description" content="A complete guide to tick size, tick value, points, contract multipliers, and dollar P&amp;L—with an interactive calculator and current contract examples.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/ticks-points-dollar-value.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Grizzly Parrot Trading guide to futures ticks, points, and dollar value.">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Ticks vs Points in Futures Trading — What the Dollar Risk Actually Is">
-  <meta name="twitter:description" content="Points describe price movement. Ticks determine what it costs. Size your positions in ticks or you are guessing at risk.">
+  <meta name="twitter:title" content="Ticks vs Points in Futures">
+  <meta name="twitter:description" content="Convert any futures price move into ticks, points, and dollar P&amp;L without guessing at contract risk.">
 
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="ticks-points-guide.css">
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){window.dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-JMJVR3G5YN');
   </script>
 
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Ticks vs Points in Futures Trading — What the Dollar Risk Actually Is",
-  "description": "Points describe price movement. Ticks determine what it costs. Here's how tick value works across futures markets and why it's the only unit that matters for position sizing.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/ticks-points-dollar-value.html",
-  "datePublished": "2025-10-28",
-  "dateModified": "2026-04-12",
-  "url": "https://grizzlyparrottrading.com/futures-basics/ticks-points-dollar-value.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Ticks vs Points in Futures: Tick Size, Tick Value and Dollar Risk",
+    "description": "A complete guide to futures ticks, points, tick size, tick value, contract multipliers, and dollar profit or loss, with current contract examples and an interactive calculator.",
+    "author": {
+      "@type": "Person",
+      "name": "Kyle Parrott",
+      "url": "https://grizzlyparrottrading.com/about.html"
+    },
+    "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/ticks-points-dollar-value.html",
+    "datePublished": "2025-10-28",
+    "dateModified": "2026-08-06",
+    "url": "https://grizzlyparrottrading.com/futures-basics/ticks-points-dollar-value.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grizzly Parrot Trading",
+      "url": "https://grizzlyparrottrading.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://grizzlyparrottrading.com/OG-default.png"
+      }
+    },
+    "image": "https://grizzlyparrottrading.com/OG-default.png"
+  }
+  </script>
 
-  <!-- JSON-LD: Breadcrumbs -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Ticks vs Points in Futures Trading",
-      "item": "https://grizzlyparrottrading.com/futures-basics/ticks-points-dollar-value.html"
-    }
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Futures Basics",
+        "item": "https://grizzlyparrottrading.com/futures-basics/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Ticks vs Points in Futures",
+        "item": "https://grizzlyparrottrading.com/futures-basics/ticks-points-dollar-value.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between a tick and a point in futures?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A tick is the exchange-defined minimum price increment for a contract. A point is one full unit of the quoted price and can contain several ticks. For ES and NQ, one point contains four 0.25-point ticks; for RTY, one point contains ten 0.10-point ticks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you calculate the dollar value of a futures move?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Divide the absolute entry-to-exit price difference by the contract's tick size, then multiply the resulting number of ticks by the dollar value per tick and the number of contracts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many ticks are in one point?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no universal answer. One point is four ticks when the tick size is 0.25, ten ticks when the tick size is 0.10, and one hundred ticks when the tick size is 0.01. Always use the specification for the exact contract."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do ES and MES have the same tick size but different tick values?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ES and MES both trade in 0.25-index-point increments, but MES has a contract multiplier one tenth the size of ES. One ES tick is $12.50 while one MES tick is $1.25."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is one pip in 6E the same as one futures tick?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The standard 6E outright futures tick is 0.00005 USD per EUR and is worth $6.25. A 0.00010 move, often described as one pip-sized move in spot FX language, equals two 6E ticks and $12.50 per contract."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do futures options and calendar spreads use the same tick as outright futures?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not always. Options, calendar spreads, and certain price ranges can use different minimum increments from the outright futures contract. Verify the exact instrument and order type in the current exchange specification."
+        }
+      }
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
 </head>
@@ -111,20 +160,17 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
+    <div class="logo"><a href="/">Grizzly Parrot Trading</a></div>
+    <nav class="main-nav" aria-label="Primary navigation">
       <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../metals/index.html">Metals</a></li>
+        <li><a href="../energies/index.html">Energies</a></li>
+        <li><a href="../currencies/index.html">Currencies</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firms</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+        <li><a href="../tools/index.html">Tools</a></li>
       </ul>
     </nav>
   </div>
@@ -132,87 +178,652 @@ Grizzly Parrot Trading</a>
 
 <main>
 <section class="section">
-<div class="container article-content">
+<article class="container article-content ticks-points-guide">
 <!-- ARTICLE BODY START -->
 
-<h1>Ticks vs Points in Futures Trading</h1>
+<header class="tp-hero">
+  <div class="tp-hero-copy">
+    <p class="tp-kicker">Futures contract math</p>
+    <h1>Ticks vs Points: Convert Any Futures Move to Dollars</h1>
+    <p class="tp-byline">By <a href="/about.html">Kyle Parrott</a> <span aria-hidden="true">&middot;</span> Updated August 6, 2026</p>
+    <p class="tp-hero-lede">A point tells you how far price moved. A tick tells you the contract&rsquo;s minimum tradable step. <strong>Tick value and contract count determine what that move is worth in dollars.</strong></p>
+    <div class="tp-hero-actions">
+      <a class="tp-button" href="#tick-calculator">Calculate a move</a>
+      <a class="tp-text-link" href="#contract-table">Compare contracts</a>
+    </div>
+    <div class="tp-hero-facts" aria-label="Quick tick and point examples">
+      <div><span>ES</span><strong>1 point = 4 ticks = $50</strong></div>
+      <div><span>RTY</span><strong>1 point = 10 ticks = $50</strong></div>
+      <div><span>6E</span><strong>0.00010 = 2 ticks = $12.50</strong></div>
+    </div>
+  </div>
 
-<p><strong>Futures markets do not move in dollars. They move in ticks.</strong> Points are just a shorthand way of describing several ticks at once — a convenience label, not a unit of risk. Traders who size positions based on points without understanding what each tick is actually worth in dollars are guessing at their exposure rather than measuring it. That gap between what a move looks like on a chart and what it actually costs tends to close at the worst possible moment.</p>
+  <figure class="tp-hero-figure">
+    <img src="ticks-points-visual.svg" width="960" height="680" fetchpriority="high" alt="Price ladder showing four quarter-point ticks between 5000 and 5001, with one point worth 50 dollars in ES and 5 dollars in MES.">
+    <figcaption>The price path is identical. The contract multiplier changes the dollar result.</figcaption>
+  </figure>
+</header>
 
-<p>The concept is simple. The implications are not always, and getting comfortable with both is foundational before trading any futures market seriously.</p>
+<nav class="tp-on-page" aria-label="On this page">
+  <span>On this page</span>
+  <a href="#definitions">Definitions</a>
+  <a href="#formula">Formula</a>
+  <a href="#tick-calculator">Calculator</a>
+  <a href="#contract-table">Contract table</a>
+  <a href="#execution-cost">Execution cost</a>
+  <a href="#workflow">Risk workflow</a>
+</nav>
 
-<h2>What a Tick Is</h2>
+<section class="tp-section" id="definitions" aria-labelledby="definitions-title">
+  <div class="tp-section-heading">
+    <p class="tp-kicker">Four terms, four different jobs</p>
+    <h2 id="definitions-title">Tick, Tick Size, Tick Value and Point</h2>
+    <p>These terms are related, but they are not interchangeable. Confusing them is how a small-looking chart move becomes a much larger dollar gain or loss than expected.</p>
+  </div>
 
-<p>A tick is the smallest price increment a futures contract is permitted to move. The exchange sets it, it does not change, and every contract has its own. When the E-mini S&P 500 moves from 5000.00 to 5000.25, that is one tick — a quarter point. When crude oil moves from 80.00 to 80.01, that is one tick — one cent per barrel.</p>
+  <div class="tp-definition-grid">
+    <article>
+      <span>Tick</span>
+      <h3>One minimum price step</h3>
+      <p>The smallest permitted move in the outright futures price. If ES moves from 6000.00 to 6000.25, it moved one tick.</p>
+    </article>
+    <article>
+      <span>Tick size</span>
+      <h3>The quoted size of that step</h3>
+      <p>ES and MES use 0.25 index points. RTY and M2K use 0.10. CL and MCL use $0.01 per barrel.</p>
+    </article>
+    <article>
+      <span>Tick value</span>
+      <h3>Dollars per tick, per contract</h3>
+      <p>One ES tick is $12.50. One MES tick is $1.25. The tick size is the same; the contract multiplier is not.</p>
+    </article>
+    <article>
+      <span>Point</span>
+      <h3>One full quoted price unit</h3>
+      <p>In index futures, traders commonly call a 1.00 move one point. The number of ticks inside that point depends on tick size.</p>
+    </article>
+  </div>
 
-<p>What makes ticks matter is that each one has a fixed dollar value, and that value is different for every contract. A one-tick move in the E-mini S&P 500 is worth $12.50. A one-tick move in the Micro E-mini S&P 500 is worth $1.25 — the same price increment, one tenth the dollar consequence. A one-tick move in crude oil is worth $10.00. A one-tick move in natural gas is worth $10.00 too, but natural gas moves in ticks far more frequently in a session than crude oil does, so the daily dollar range is completely different even though the per-tick value is identical.</p>
+  <aside class="tp-source-note">
+    <strong>Exchange definition:</strong>
+    CME Group defines the minimum price fluctuation as the contract&rsquo;s tick and uses ES as a direct example: 0.25 index points multiplied by the $50 index multiplier equals <a href="https://www.cmegroup.com/education/courses/introduction-to-futures/tick-movements-understanding-how-they-work.%20hideHeader.hideSubnav.educationIframe.html.html.html?hideAddThisExt=y&amp;hideFooter=y&amp;hideHeader=y&amp;hideRightRail=y" target="_blank" rel="noopener">$12.50 per tick</a>.
+  </aside>
+</section>
 
-<p>The tick value is what determines how fast money moves. Not the chart. Not the percentage move. The tick.</p>
+<section class="tp-section tp-principle" aria-labelledby="principle-title">
+  <div>
+    <p class="tp-kicker">The distinction that matters</p>
+    <h2 id="principle-title">Points Describe Distance. Ticks Price the Move.</h2>
+  </div>
+  <div>
+    <p>&ldquo;Ten points&rdquo; is incomplete risk information. Ten ES points equal $500 per contract. Ten MES points equal $50. Ten NQ points equal $200. Ten MNQ points equal $20.</p>
+    <p>The chart distance can be identical while the dollar exposure differs by a factor of ten. Contract symbol, tick size, tick value and contract count must stay attached to every stop, target and performance result.</p>
+  </div>
+</section>
 
-<h2>What a Point Is</h2>
+<section class="tp-section" id="formula" aria-labelledby="formula-title">
+  <div class="tp-section-heading">
+    <p class="tp-kicker">The complete conversion</p>
+    <h2 id="formula-title">From Price Difference to Dollar P&amp;L</h2>
+    <p>Use the exact contract specification and keep the calculation in this order. A valid outright futures price should land on the contract&rsquo;s tick grid.</p>
+  </div>
 
-<p>A point is a collection of ticks grouped into a rounder number for convenience. In most equity index futures, one point equals four ticks. A ten-point move in the E-mini S&P 500 is forty ticks, worth $500 per contract. A ten-point move sounds modest. Forty ticks at $12.50 each makes the math concrete in a way that "ten points" does not.</p>
+  <div class="tp-formula-flow" aria-label="Three-step futures tick value formula">
+    <article>
+      <span>01</span>
+      <h3>Measure price movement</h3>
+      <p class="tp-equation">price move = |exit &minus; entry|</p>
+      <p>Use the actual quoted prices, not the visual height of the candle.</p>
+    </article>
+    <article>
+      <span>02</span>
+      <h3>Convert price to ticks</h3>
+      <p class="tp-equation">ticks = price move &divide; tick size</p>
+      <p>If the answer is not a whole number, one of the prices or the selected tick size is wrong.</p>
+    </article>
+    <article>
+      <span>03</span>
+      <h3>Convert ticks to dollars</h3>
+      <p class="tp-equation">dollars = ticks &times; tick value &times; contracts</p>
+      <p>Apply long or short direction, then subtract commissions and slippage for net P&amp;L.</p>
+    </article>
+  </div>
 
-<p>Points are useful for describing price levels and ranges in conversation and analysis. A trader saying "the market sold off fifteen points from the open" is communicating something meaningful about the scale of the move. But when they go to size the trade, the relevant question is not how many points — it is how many ticks, and what each one costs. Points describe. Ticks determine.</p>
+  <div class="tp-worked-example">
+    <div>
+      <p class="tp-kicker">Worked MES example</p>
+      <h3>6000.00 to 6003.25, two contracts</h3>
+    </div>
+    <ol>
+      <li><span>Price move</span><strong>3.25 points</strong></li>
+      <li><span>Ticks</span><strong>3.25 &divide; 0.25 = 13</strong></li>
+      <li><span>Per contract</span><strong>13 &times; $1.25 = $16.25</strong></li>
+      <li><span>Two contracts</span><strong>$16.25 &times; 2 = $32.50</strong></li>
+    </ol>
+  </div>
+</section>
 
-<h2>Why the Same Chart Move Means Different Things in Different Markets</h2>
+<section class="tp-section tp-calculator-section" id="tick-calculator" aria-labelledby="calculator-title">
+  <div class="tp-section-heading">
+    <p class="tp-kicker">Interactive calculator</p>
+    <h2 id="calculator-title">Calculate Ticks, Price Movement and Dollar P&amp;L</h2>
+    <p>Select a common outright contract or enter a custom tick size and tick value. The calculator does not include commissions, exchange fees, spread cost or slippage.</p>
+  </div>
 
-<p>This is where traders coming from equities or forex get surprised. In stocks, a one-dollar move is a one-dollar move regardless of which stock you are in — the dollar denomination is the same everywhere. In futures, a one-point move in one contract can be worth $50 and a one-point move in a different contract can be worth $1,000, because the contract sizes, tick values, and point definitions are all set independently by the exchange for each product.</p>
+  <div class="tp-calculator-shell">
+    <form class="tp-calculator-form" id="tp-calculator-form" novalidate>
+      <div class="tp-field tp-field-wide">
+        <label for="tp-contract">Contract preset</label>
+        <select id="tp-contract" name="contract">
+          <option value="MES" selected>MES &mdash; Micro E-mini S&amp;P 500</option>
+          <option value="ES">ES &mdash; E-mini S&amp;P 500</option>
+          <option value="MNQ">MNQ &mdash; Micro E-mini Nasdaq-100</option>
+          <option value="NQ">NQ &mdash; E-mini Nasdaq-100</option>
+          <option value="M2K">M2K &mdash; Micro E-mini Russell 2000</option>
+          <option value="RTY">RTY &mdash; E-mini Russell 2000</option>
+          <option value="MCL">MCL &mdash; Micro WTI Crude Oil</option>
+          <option value="CL">CL &mdash; WTI Crude Oil</option>
+          <option value="MGC">MGC &mdash; Micro Gold</option>
+          <option value="GC">GC &mdash; Gold</option>
+          <option value="6E">6E &mdash; Euro FX</option>
+          <option value="CUSTOM">Custom contract</option>
+        </select>
+      </div>
 
-<p>A ten-point stop in the E-mini S&P 500 is $500 of risk per contract. A ten-point stop in the full-size S&P 500 futures contract is $2,500. The chart looks identical. The position does not behave identically. A trader who moves between these two contracts without recalibrating their stop sizing to tick value rather than point count will be either dramatically over-risked or dramatically under-risked without realizing it until the trade is already on.</p>
+      <div class="tp-field">
+        <label for="tp-side">Position side</label>
+        <select id="tp-side" name="side">
+          <option value="long" selected>Long</option>
+          <option value="short">Short</option>
+        </select>
+      </div>
 
-<p>The same problem appears across completely different asset classes. Live cattle futures move in quarter-cent ticks worth $10 each. A three-cent stop is $1,200 per contract — twelve ticks per cent, three cents, $10 per tick. Crude oil moves in one-cent ticks worth $10 each. A three-dollar stop is $3,000 per contract — one hundred ticks, $10 per tick. Both stops are described in "a few dollars" of price movement. The dollar risk is a factor of two and a half apart.</p>
+      <div class="tp-field">
+        <label for="tp-contracts">Contracts</label>
+        <input id="tp-contracts" name="contracts" type="number" min="1" max="10000" step="1" value="2" inputmode="numeric">
+      </div>
 
-<h2>How to Actually Calculate Dollar Risk</h2>
+      <div class="tp-field">
+        <label for="tp-entry">Entry price</label>
+        <input id="tp-entry" name="entry" type="number" step="any" value="6000.00" inputmode="decimal">
+      </div>
 
-<p>The calculation is straightforward once the habit is in place. You need three numbers: the tick size for the contract, the dollar value per tick, and the distance from your entry to your stop in ticks.</p>
+      <div class="tp-field">
+        <label for="tp-exit">Exit price</label>
+        <input id="tp-exit" name="exit" type="number" step="any" value="6003.25" inputmode="decimal">
+      </div>
 
-<p>Divide the distance from entry to stop by the tick size to get the number of ticks. Multiply by the dollar value per tick to get the dollar risk per contract. Divide your total intended dollar risk by that number to get the number of contracts. That sequence — ticks, not points — is the correct unit of risk calculation for every futures position. Doing it in points and then converting is an extra step that introduces rounding errors and, more importantly, keeps the trader one abstraction layer away from the actual number that matters.</p>
+      <div class="tp-field">
+        <label for="tp-tick-size">Tick size</label>
+        <input id="tp-tick-size" name="tickSize" type="number" min="0" step="any" value="0.25" inputmode="decimal">
+      </div>
 
-<p>If that arithmetic feels like friction before every trade, the <a href="https://grizzlyparrottrading.com/tools/tick-value-calculator.html">Tick Value &amp; P/L Calculator</a> in the Tools section handles it directly — enter entry, exit, and contract, and it returns ticks, points, and dollar P&amp;L immediately. The goal is to make the correct calculation the path of least resistance, not to rely on approximations that are close enough until they are not.</p>
+      <div class="tp-field">
+        <label for="tp-tick-value">Tick value ($)</label>
+        <input id="tp-tick-value" name="tickValue" type="number" min="0" step="any" value="1.25" inputmode="decimal">
+      </div>
 
-<h2>The Position Sizing Consequence</h2>
+      <div class="tp-form-actions">
+        <button class="tp-calculate" type="submit">Calculate</button>
+        <button class="tp-reset" type="reset">Restore MES example</button>
+      </div>
+    </form>
 
-<p>Understanding tick value is not just about knowing what a loss costs. It determines how many contracts you should be trading in the first place.</p>
+    <section class="tp-calculator-results" aria-labelledby="results-title">
+      <p class="tp-kicker">Calculated result</p>
+      <h3 id="results-title">What the move is worth</h3>
+      <div class="tp-results-grid">
+        <div>
+          <span>Position-adjusted move</span>
+          <strong id="tp-result-move">+3.25 index points</strong>
+        </div>
+        <div>
+          <span>Ticks</span>
+          <strong id="tp-result-ticks">+13</strong>
+        </div>
+        <div>
+          <span>P&amp;L per contract</span>
+          <strong id="tp-result-per-contract">+$16.25</strong>
+        </div>
+        <div class="tp-result-total">
+          <span>Total P&amp;L</span>
+          <strong id="tp-result-total">+$32.50</strong>
+        </div>
+      </div>
+      <p class="tp-result-status is-valid" id="tp-result-status" role="status" aria-live="polite">The entry-to-exit distance equals 13 whole MES ticks.</p>
+      <p class="tp-calculator-boundary">Planning boundary: this is gross mathematical P&amp;L. Actual fills, commissions, fees and slippage change the realized result.</p>
+    </section>
+  </div>
+</section>
 
-<p>Two traders with the same account size take the same setup in two different contracts. Trader A is in the E-mini S&P 500 with a ten-point stop — $500 risk per contract. Trader B is in the full-size S&P 500 with the same ten-point stop — $2,500 risk per contract. If both traders are targeting two percent account risk per trade on a $50,000 account, Trader A can trade two contracts. Trader B cannot trade even one without exceeding their risk limit. The setup is identical. The contract selection determined whether the trade was executable within their risk parameters.</p>
+<section class="tp-section" id="contract-table" aria-labelledby="contract-table-title">
+  <div class="tp-section-heading">
+    <p class="tp-kicker">Common outright contracts</p>
+    <h2 id="contract-table-title">Tick Size and Tick Value Are Contract-Specific</h2>
+    <p>The table uses outright futures increments. Calendar spreads and options can trade in different increments. Exchange specifications can change, so confirm the live product page before trading.</p>
+  </div>
 
-<p>This is not a theoretical edge case. It is the routine reality of trading multiple futures markets, and it is why tick value needs to be the first number a trader looks up when entering a new market — not the margin requirement, not the daily range in points, but the dollar value of a single tick and how many ticks their intended stop represents.</p>
+  <div class="tp-table-block">
+    <h3>Equity index futures</h3>
+    <div class="tp-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Contract</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Tick size</th>
+            <th scope="col">Tick value</th>
+            <th scope="col">One-point conversion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Micro E-mini S&amp;P 500</td><td><strong>MES</strong></td><td>0.25</td><td>$1.25</td><td>4 ticks = $5</td></tr>
+          <tr><td>E-mini S&amp;P 500</td><td><strong>ES</strong></td><td>0.25</td><td>$12.50</td><td>4 ticks = $50</td></tr>
+          <tr><td>Micro E-mini Nasdaq-100</td><td><strong>MNQ</strong></td><td>0.25</td><td>$0.50</td><td>4 ticks = $2</td></tr>
+          <tr><td>E-mini Nasdaq-100</td><td><strong>NQ</strong></td><td>0.25</td><td>$5.00</td><td>4 ticks = $20</td></tr>
+          <tr><td>Micro E-mini Russell 2000</td><td><strong>M2K</strong></td><td>0.10</td><td>$0.50</td><td>10 ticks = $5</td></tr>
+          <tr><td>E-mini Russell 2000</td><td><strong>RTY</strong></td><td>0.10</td><td>$5.00</td><td>10 ticks = $50</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-<div class="highlight-box yellow">
-  <h3>Ticks Are the Unit of Risk. Points Are the Unit of Description.</h3>
-  <p>Every futures position you put on has a dollar risk that is determined by ticks, not points. Points describe where the market is. Ticks determine what movement costs. Until you are thinking in tick value automatically — knowing that your stop is X ticks at Y dollars per tick before you enter the order — you are measuring risk in the wrong unit. That gap is small when trades go your way. It is not small when they do not.</p>
-</div>
+  <div class="tp-table-block">
+    <h3>Energy, metals and FX futures</h3>
+    <div class="tp-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Contract</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Tick size</th>
+            <th scope="col">Tick value</th>
+            <th scope="col">Useful conversion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Micro WTI Crude Oil</td><td><strong>MCL</strong></td><td>$0.01 per barrel</td><td>$1.00</td><td>$1.00 move = 100 ticks = $100</td></tr>
+          <tr><td>WTI Crude Oil</td><td><strong>CL</strong></td><td>$0.01 per barrel</td><td>$10.00</td><td>$1.00 move = 100 ticks = $1,000</td></tr>
+          <tr><td>Micro Gold</td><td><strong>MGC</strong></td><td>$0.10 per ounce</td><td>$1.00</td><td>$1.00 move = 10 ticks = $10</td></tr>
+          <tr><td>Gold</td><td><strong>GC</strong></td><td>$0.10 per ounce</td><td>$10.00</td><td>$1.00 move = 10 ticks = $100</td></tr>
+          <tr><td>Euro FX</td><td><strong>6E</strong></td><td>0.00005 USD per EUR</td><td>$6.25</td><td>0.00010 move = 2 ticks = $12.50</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <aside class="tp-spec-warning">
+    <strong>Do not copy a tick table into your platform and forget it.</strong>
+    <p>Use it to learn the relationships, then verify the current exchange specification for the exact outright, spread or option you are trading. Different order types and price ranges can use different minimum increments.</p>
+  </aside>
+</section>
+
+<section class="tp-section" aria-labelledby="same-move-title">
+  <div class="tp-section-heading">
+    <p class="tp-kicker">Same chart distance, different money</p>
+    <h2 id="same-move-title">What a 10-Point Move Means Across Index Futures</h2>
+    <p>All six rows describe the same quoted distance: 10.00 index points. Dollar value changes with the contract multiplier.</p>
+  </div>
+
+  <div class="tp-comparison-grid">
+    <article><span>MES</span><strong>$50</strong><p>40 ticks &times; $1.25</p></article>
+    <article><span>ES</span><strong>$500</strong><p>40 ticks &times; $12.50</p></article>
+    <article><span>MNQ</span><strong>$20</strong><p>40 ticks &times; $0.50</p></article>
+    <article><span>NQ</span><strong>$200</strong><p>40 ticks &times; $5.00</p></article>
+    <article><span>M2K</span><strong>$50</strong><p>100 ticks &times; $0.50</p></article>
+    <article><span>RTY</span><strong>$500</strong><p>100 ticks &times; $5.00</p></article>
+  </div>
+</section>
+
+<section class="tp-section tp-execution-section" id="execution-cost" aria-labelledby="execution-title">
+  <div class="tp-execution-copy">
+    <p class="tp-kicker">Applied tick math</p>
+    <h2 id="execution-title">One Tick of Slippage Can Multiply Across Accounts</h2>
+    <p>A one-tick fill difference sounds small until it is multiplied by contracts and follower accounts. On NQ, one tick is $5 per contract. Two contracts copied to three follower accounts turn one tick into $30 of aggregate difference. If entry and exit each lose one tick, the round-trip difference becomes $60.</p>
+    <p>Tradecovex&rsquo;s <a href="https://tradecovex.com/guides/trade-copier-latency" target="_blank" rel="noopener">trade-copier latency guide</a> applies this same conversion to copier slippage: ticks &times; tick value &times; contracts &times; accounts. Its execution examples are a useful application of the contract math; CME remains the source for the tick specifications themselves.</p>
+  </div>
+  <div class="tp-execution-math" aria-label="Multi-account slippage example">
+    <span>NQ example</span>
+    <strong>1 &times; $5 &times; 2 &times; 3</strong>
+    <p>1 tick &times; tick value &times; contracts &times; follower accounts</p>
+    <output>$30 per copied fill</output>
+  </div>
+</section>
+
+<section class="tp-section" id="workflow" aria-labelledby="workflow-title">
+  <div class="tp-section-heading">
+    <p class="tp-kicker">Use tick value before the order</p>
+    <h2 id="workflow-title">A Position-Sizing Workflow That Keeps the Units Straight</h2>
+    <p>Tick math is not merely a post-trade P&amp;L calculation. It is the bridge between a technically valid stop and a contract count the account can actually support.</p>
+  </div>
+
+  <ol class="tp-workflow">
+    <li>
+      <span>01</span>
+      <div><h3>Verify the contract</h3><p>Confirm the symbol, contract month, outright tick size and tick value from the current exchange specification.</p></div>
+    </li>
+    <li>
+      <span>02</span>
+      <div><h3>Place the structural stop</h3><p>Choose the price that invalidates the setup. Do not move the stop closer merely to make a preferred size fit.</p></div>
+    </li>
+    <li>
+      <span>03</span>
+      <div><h3>Convert the stop to ticks</h3><p>Divide entry-to-stop distance by tick size. The result should be a whole number for a valid quoted price.</p></div>
+    </li>
+    <li>
+      <span>04</span>
+      <div><h3>Price one contract</h3><p>Multiply stop ticks by tick value, then add a conservative allowance for commissions and slippage.</p></div>
+    </li>
+    <li>
+      <span>05</span>
+      <div><h3>Fit whole contracts</h3><p>Divide the trade&rsquo;s dollar risk budget by estimated loss per contract and round down. A result below one means pass.</p></div>
+    </li>
+  </ol>
+
+  <div class="tp-related-tools">
+    <a href="https://grizzlyparrottrading.com/market-basics/risk-per-trade-small-accounts.html">
+      <span>Full sizing framework</span>
+      <strong>Risk Per Trade for Small Futures Accounts</strong>
+      <p>Start with the live drawdown buffer, preserve a reserve, price the structural stop and fit whole contracts.</p>
+    </a>
+    <a href="https://grizzlyparrottrading.com/tools/tick-value-calculator.html">
+      <span>Dedicated tool</span>
+      <strong>Tick Value &amp; P/L Calculator</strong>
+      <p>Use the broader contract tool when you want a fast standalone conversion outside this guide.</p>
+    </a>
+  </div>
+</section>
+
+<section class="tp-section" aria-labelledby="mistakes-title">
+  <div class="tp-section-heading">
+    <p class="tp-kicker">Common unit errors</p>
+    <h2 id="mistakes-title">Six Ways Traders Misprice a Futures Move</h2>
+  </div>
+
+  <div class="tp-mistakes-grid">
+    <article><span>01</span><h3>Assuming every point has four ticks</h3><p>That is true for ES and NQ outright futures, not for RTY, CL, GC, 6E or every other contract.</p></article>
+    <article><span>02</span><h3>Using margin as maximum loss</h3><p>Margin is collateral, not a stop. Dollar risk comes from stop ticks, tick value, contract count and execution costs.</p></article>
+    <article><span>03</span><h3>Ignoring micro versus E-mini size</h3><p>MES and ES share a 0.25 tick size, but one ES tick is ten times the dollar value of one MES tick.</p></article>
+    <article><span>04</span><h3>Forgetting the contract multiplier</h3><p>Price movement alone does not produce dollar P&amp;L. The multiplier is what gives the move financial weight.</p></article>
+    <article><span>05</span><h3>Mixing outrights, spreads and options</h3><p>The same product family can use different tick increments for calendar spreads, option premiums or reduced-tick price ranges.</p></article>
+    <article><span>06</span><h3>Rounding before the final step</h3><p>Carry exact tick counts and per-contract risk through the calculation. Round the final contract count down, not the stop math.</p></article>
+  </div>
+</section>
+
+<section class="tp-section tp-checklist" aria-labelledby="checklist-title">
+  <div>
+    <p class="tp-kicker">Ten-second pre-trade check</p>
+    <h2 id="checklist-title">Know These Five Numbers Before Entry</h2>
+  </div>
+  <ul>
+    <li><span>01</span><strong>Exact contract symbol and month</strong></li>
+    <li><span>02</span><strong>Outright tick size</strong></li>
+    <li><span>03</span><strong>Dollar value per tick</strong></li>
+    <li><span>04</span><strong>Stop distance in whole ticks</strong></li>
+    <li><span>05</span><strong>Total dollars at risk after costs</strong></li>
+  </ul>
+</section>
+
+<section class="tp-section tp-faq" aria-labelledby="faq-title">
+  <div class="tp-section-heading">
+    <p class="tp-kicker">Frequently asked questions</p>
+    <h2 id="faq-title">Ticks, Points and Dollar Value FAQ</h2>
+  </div>
+
+  <details>
+    <summary>What is the difference between a tick and a point?</summary>
+    <p>A tick is the exchange-defined minimum price increment. A point is one full unit of the quoted price and may contain several ticks. ES has four 0.25 ticks per point; RTY has ten 0.10 ticks per point.</p>
+  </details>
+  <details>
+    <summary>How do I calculate the dollar value of a futures move?</summary>
+    <p>Divide the absolute entry-to-exit difference by tick size. Multiply the resulting ticks by tick value and contract count. Apply direction for long or short P&amp;L, then account for commissions, fees and slippage.</p>
+  </details>
+  <details>
+    <summary>How many ticks are in one point?</summary>
+    <p>It depends on tick size. A 0.25 tick produces four ticks per point. A 0.10 tick produces ten. A 0.01 tick produces one hundred. Do not assume an index-futures convention applies to another market.</p>
+  </details>
+  <details>
+    <summary>Why do ES and MES move together but pay differently?</summary>
+    <p>They track the same underlying index and use the same 0.25-point tick size, but MES has a multiplier one tenth the size of ES. That makes MES $1.25 per tick and ES $12.50 per tick.</p>
+  </details>
+  <details>
+    <summary>Is one pip in 6E the same as one futures tick?</summary>
+    <p>No. The standard 6E outright tick is 0.00005 USD per EUR and $6.25. A 0.00010 move is two ticks and $12.50 per contract.</p>
+  </details>
+  <details>
+    <summary>Do options and calendar spreads use the outright tick?</summary>
+    <p>Not always. Some option premiums, calendar spreads and special price ranges use different minimum increments. Verify the exact instrument in the current exchange specification.</p>
+  </details>
+</section>
+
+<section class="tp-sources" aria-labelledby="sources-title">
+  <p class="tp-kicker">Sources and methodology</p>
+  <h2 id="sources-title">Official Contract Sources and Scope</h2>
+  <p>Contract values below were checked August 6, 2026. They cover the named outright futures. They do not establish option, reduced-tick or calendar-spread increments.</p>
+  <ul>
+    <li><a href="https://www.cmegroup.com/education/courses/introduction-to-futures/tick-movements-understanding-how-they-work.%20hideHeader.hideSubnav.educationIframe.html.html.html?hideAddThisExt=y&amp;hideFooter=y&amp;hideHeader=y&amp;hideRightRail=y" target="_blank" rel="noopener">CME Group: Tick Movements</a> for the exchange definition and ES/WTI examples.</li>
+    <li><a href="https://www.cmegroup.com/articles/faqs/frequently-asked-questions-micro-e-mini-equity-index-futures.html" target="_blank" rel="noopener">CME Group: Micro E-mini Equity Index Futures FAQ</a> for MES, MNQ and M2K increments and values.</li>
+    <li><a href="https://www.cmegroup.com/education/courses/learn-about-e-mini-russell-2000-futures/introduction-to-e-mini-russell-2000" target="_blank" rel="noopener">CME Group: E-mini Russell 2000 Introduction</a> for the RTY multiplier and tick.</li>
+    <li><a href="https://www.cmegroup.com/education/articles-and-reports/micro-wti-crude-oil-futures-faq" target="_blank" rel="noopener">CME Group: Micro WTI Crude Oil Futures FAQ</a> for the MCL and CL comparison.</li>
+    <li><a href="https://www.cmegroup.com/education/courses/understanding-micro-futures-contracts-at-cme-group/micro-gold-and-silver-futures/micro-gold-and-micro-silver-futures-product-overview" target="_blank" rel="noopener">CME Group: Micro Gold Product Overview</a> for the MGC and GC relationship.</li>
+    <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group: FX Product Guide</a> for the 6E contract size and outright tick.</li>
+    <li><a href="https://tradecovex.com/guides/trade-copier-latency" target="_blank" rel="noopener">Tradecovex: Trade Copier Latency Explained</a> for the third-party applied example converting tick slippage into multi-account dollar cost.</li>
+  </ul>
+</section>
+
+<section class="tp-related" aria-labelledby="related-title">
+  <p class="tp-kicker">Continue the risk workflow</p>
+  <h2 id="related-title">Related Grizzly Parrot Guides</h2>
+  <div>
+    <a href="futures-contract-specifications-explained.html"><strong>Futures Contract Specifications</strong><span>Read multipliers, delivery units, tick rules and expiration terms.</span></a>
+    <a href="../market-basics/risk-per-trade-small-accounts.html"><strong>Risk Per Trade for Small Accounts</strong><span>Turn tick risk and drawdown capacity into a whole-contract position size.</span></a>
+    <a href="futures-slippage-explained.html"><strong>Futures Slippage Explained</strong><span>Understand why realized P&amp;L can differ from clean tick math.</span></a>
+  </div>
+</section>
+
+<aside class="tp-disclaimer" aria-label="Educational and risk disclaimer">
+  <strong>Educational and risk disclaimer</strong>
+  <p>This guide and calculator are educational tools, not individualized trading, investment, brokerage, legal or tax advice. Futures are leveraged and can produce losses greater than the amount deposited. Tick specifications, fees and product terms can change. Verify the current exchange specification and your broker&rsquo;s live contract details before placing an order.</p>
+</aside>
 
 <!-- ARTICLE BODY END -->
-</div>
+</article>
 </section>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
-
     <div class="footer-book">
       <h3>Books</h3>
       <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
+      <a href="/books/" class="footer-book-link">View All Books</a>
     </div>
-
     <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
+      <a href="/about.html">About</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/contact.html">Contact</a>
     </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+    <p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+  (function () {
+    'use strict';
+
+    var presets = {
+      MES: { tickSize: 0.25, tickValue: 1.25, unit: 'index points', decimals: 2, entry: 6000.00, exit: 6003.25 },
+      ES: { tickSize: 0.25, tickValue: 12.50, unit: 'index points', decimals: 2, entry: 6000.00, exit: 6003.25 },
+      MNQ: { tickSize: 0.25, tickValue: 0.50, unit: 'index points', decimals: 2, entry: 22000.00, exit: 22003.25 },
+      NQ: { tickSize: 0.25, tickValue: 5.00, unit: 'index points', decimals: 2, entry: 22000.00, exit: 22003.25 },
+      M2K: { tickSize: 0.10, tickValue: 0.50, unit: 'index points', decimals: 2, entry: 2300.00, exit: 2303.20 },
+      RTY: { tickSize: 0.10, tickValue: 5.00, unit: 'index points', decimals: 2, entry: 2300.00, exit: 2303.20 },
+      MCL: { tickSize: 0.01, tickValue: 1.00, unit: 'dollars per barrel', decimals: 2, entry: 70.00, exit: 70.35 },
+      CL: { tickSize: 0.01, tickValue: 10.00, unit: 'dollars per barrel', decimals: 2, entry: 70.00, exit: 70.35 },
+      MGC: { tickSize: 0.10, tickValue: 1.00, unit: 'dollars per ounce', decimals: 1, entry: 3400.0, exit: 3403.2 },
+      GC: { tickSize: 0.10, tickValue: 10.00, unit: 'dollars per ounce', decimals: 1, entry: 3400.0, exit: 3403.2 },
+      '6E': { tickSize: 0.00005, tickValue: 6.25, unit: 'USD per EUR', decimals: 5, entry: 1.17000, exit: 1.17100 }
+    };
+
+    var form = document.getElementById('tp-calculator-form');
+    var fields = {
+      contract: document.getElementById('tp-contract'),
+      side: document.getElementById('tp-side'),
+      contracts: document.getElementById('tp-contracts'),
+      entry: document.getElementById('tp-entry'),
+      exit: document.getElementById('tp-exit'),
+      tickSize: document.getElementById('tp-tick-size'),
+      tickValue: document.getElementById('tp-tick-value')
+    };
+    var outputs = {
+      move: document.getElementById('tp-result-move'),
+      ticks: document.getElementById('tp-result-ticks'),
+      perContract: document.getElementById('tp-result-per-contract'),
+      total: document.getElementById('tp-result-total'),
+      status: document.getElementById('tp-result-status')
+    };
+    var money = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+    function numberFrom(field) {
+      return Number.parseFloat(field.value);
+    }
+
+    function signedNumber(value, digits) {
+      var threshold = Math.pow(10, -digits) / 2;
+      var normalized = Math.abs(value) < threshold ? 0 : value;
+      return (normalized > 0 ? '+' : '') + normalized.toFixed(digits);
+    }
+
+    function signedMoney(value) {
+      if (Math.abs(value) < 0.005) {
+        return money.format(0);
+      }
+      return (value > 0 ? '+' : '-') + money.format(Math.abs(value));
+    }
+
+    function currentUnit() {
+      var preset = presets[fields.contract.value];
+      return preset ? preset.unit : 'price units';
+    }
+
+    function currentDecimals() {
+      var preset = presets[fields.contract.value];
+      if (preset) {
+        return preset.decimals;
+      }
+      var tickSize = numberFrom(fields.tickSize);
+      if (!Number.isFinite(tickSize) || tickSize <= 0) {
+        return 2;
+      }
+      var text = tickSize.toString();
+      if (text.indexOf('e-') > -1) {
+        return Math.min(8, Number.parseInt(text.split('e-')[1], 10));
+      }
+      return Math.min(8, (text.split('.')[1] || '').length);
+    }
+
+    function clearOutputs() {
+      outputs.move.textContent = '\u2014';
+      outputs.ticks.textContent = '\u2014';
+      outputs.perContract.textContent = '\u2014';
+      outputs.total.textContent = '\u2014';
+    }
+
+    function setStatus(message, stateClass) {
+      outputs.status.textContent = message;
+      outputs.status.className = 'tp-result-status ' + stateClass;
+    }
+
+    function applyPreset() {
+      var preset = presets[fields.contract.value];
+      if (!preset) {
+        calculate();
+        return;
+      }
+      fields.tickSize.value = preset.tickSize;
+      fields.tickValue.value = preset.tickValue.toFixed(2);
+      fields.entry.value = preset.entry.toFixed(preset.decimals);
+      fields.exit.value = preset.exit.toFixed(preset.decimals);
+      calculate();
+    }
+
+    function calculate() {
+      var entry = numberFrom(fields.entry);
+      var exit = numberFrom(fields.exit);
+      var tickSize = numberFrom(fields.tickSize);
+      var tickValue = numberFrom(fields.tickValue);
+      var contracts = numberFrom(fields.contracts);
+      var values = [entry, exit, tickSize, tickValue, contracts];
+      var valid = values.every(Number.isFinite) &&
+        entry >= 0 &&
+        exit >= 0 &&
+        tickSize > 0 &&
+        tickValue > 0 &&
+        Number.isInteger(contracts) &&
+        contracts >= 1 &&
+        contracts <= 10000;
+
+      if (!valid) {
+        clearOutputs();
+        setStatus('Enter nonnegative prices, a tick size and tick value above zero, and 1 to 10,000 whole contracts.', 'is-invalid');
+        return;
+      }
+
+      var sideMultiplier = fields.side.value === 'short' ? -1 : 1;
+      var signedMove = (exit - entry) * sideMultiplier;
+      var rawTicks = signedMove / tickSize;
+      var nearestTicks = Math.round(rawTicks);
+      var wholeTickDistance = Math.abs(rawTicks - nearestTicks) < 0.000001;
+      var displayTicks = wholeTickDistance ? nearestTicks : rawTicks;
+      var perContract = displayTicks * tickValue;
+      var total = perContract * contracts;
+      var decimals = currentDecimals();
+      var symbol = fields.contract.value === 'CUSTOM' ? 'custom contract' : fields.contract.value;
+
+      outputs.move.textContent = signedNumber(signedMove, decimals) + ' ' + currentUnit();
+      outputs.ticks.textContent = (displayTicks > 0 ? '+' : '') + (wholeTickDistance ? displayTicks.toFixed(0) : displayTicks.toFixed(3));
+      outputs.perContract.textContent = signedMoney(perContract);
+      outputs.total.textContent = signedMoney(total);
+
+      if (!wholeTickDistance) {
+        setStatus('The entry-to-exit distance is not a whole number of ticks for this tick size. Verify the prices and contract specification.', 'is-warning');
+      } else if (displayTicks > 0) {
+        setStatus('The position gained ' + Math.abs(displayTicks).toFixed(0) + ' whole ' + symbol + ' ticks before costs.', 'is-valid');
+      } else if (displayTicks < 0) {
+        setStatus('The position lost ' + Math.abs(displayTicks).toFixed(0) + ' whole ' + symbol + ' ticks before costs.', 'is-loss');
+      } else {
+        setStatus('Entry and exit are equal, so the gross price P&L is flat before costs.', 'is-flat');
+      }
+    }
+
+    fields.contract.addEventListener('change', applyPreset);
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      calculate();
+    });
+    form.addEventListener('input', function (event) {
+      if (event.target !== fields.contract) {
+        calculate();
+      }
+    });
+    form.addEventListener('reset', function () {
+      window.setTimeout(function () {
+        fields.contract.value = 'MES';
+        fields.side.value = 'long';
+        fields.contracts.value = '2';
+        applyPreset();
+      }, 0);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    calculate();
+  }());
+</script>
 </body>
 </html>

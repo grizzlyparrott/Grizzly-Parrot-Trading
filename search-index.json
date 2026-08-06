@@ -84,12 +84,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How Rate Differentials Drive 6E: Fed, ECB and Euro FX Futures",
-    "url": "/futures-basics/how-rate-differentials-drive-6e-price.html",
-    "description": "Understand how Fed-ECB rate expectations, spot repricing, forward points, and covered interest parity affect Euro FX futures.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "6E Tick Size, Tick Value and Margin Requirements Explained",
     "url": "/futures-basics/6e-tick-size-tick-value-margin-requirements.html",
     "description": "Get a clear breakdown of 6E tick size, tick value, and margin requirements so you know exactly how much each move in Euro FX futures really costs you.",
@@ -1404,7 +1398,7 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Futures Trading Basics: Contracts, Risk and Execution",
+    "title": "Futures Trading Basics: Contracts, Risk &amp; Execution",
     "url": "/futures-basics/",
     "description": "Learn futures trading in the right order: contract specs, tick value, margin, position risk, orders, liquidity, expiration, and curated market guides.",
     "category": "Futures Basics"
@@ -1446,7 +1440,7 @@
     "category": "Futures Basics"
   },
   {
-    "title": "GC Market Microstructure: Order Book, Liquidity and Execution",
+    "title": "GC Market Microstructure: Order Book, Liquidity &amp; Execution",
     "url": "/futures-basics/gc-market-microstructure.html",
     "description": "Complete guide to GC gold futures microstructure: contract mechanics, order-book liquidity, queue priority, slippage, roll, examples, and a risk tool.",
     "category": "Futures Basics"
@@ -2052,6 +2046,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "How Rate Differentials Drive 6E | Fed, ECB &amp; Futures",
+    "url": "/futures-basics/how-rate-differentials-drive-6e-price.html",
+    "description": "How Fed-ECB rate expectations move Euro FX futures, with spot versus forward pricing, covered interest parity, scenarios, and an interactive calculator.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "How Risk-On vs Risk-Off Sentiment Drives 6A AUD/USD Futures Trends",
     "url": "/futures-basics/risk-sentiment-6a-trends.html",
     "description": "A blunt breakdown of how global risk-on and risk-off sentiment shifts push 6A AUD/USD futures up or down and why AUD reacts harder than most currencies.",
@@ -2184,15 +2184,15 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How to Read 6N Price Quotes Without Getting Confused",
-    "url": "/futures-basics/how-to-read-6n-price-quotes.html",
-    "description": "A blunt guide showing beginners exactly how 6N New Zealand Dollar futures quotes work, including decimals, ticks, and real-dollar impact.",
+    "title": "How to Read 6E Order Flow | Footprints, Delta &amp; Imbalances",
+    "url": "/futures-basics/how-to-read-order-flow-on-6e.html",
+    "description": "Complete guide to 6E order flow: footprint charts, diagonal imbalances, delta, absorption, data-quality checks, examples, and an interactive decoder.",
     "category": "Futures Basics"
   },
   {
-    "title": "How to Read Order Flow on 6E: Footprints, Imbalances and Delta",
-    "url": "/futures-basics/how-to-read-order-flow-on-6e.html",
-    "description": "Complete guide to reading 6E order flow with footprint charts, diagonal imbalances, delta, absorption, data-quality checks, examples, and an interactive decoder.",
+    "title": "How to Read 6N Price Quotes Without Getting Confused",
+    "url": "/futures-basics/how-to-read-6n-price-quotes.html",
+    "description": "A blunt guide showing beginners exactly how 6N New Zealand Dollar futures quotes work, including decimals, ticks, and real-dollar impact.",
     "category": "Futures Basics"
   },
   {
@@ -2250,9 +2250,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How to Trade Around Whipsaws: Location, Confirmation and Risk",
+    "title": "How to Trade Around Whipsaws | Futures Execution Guide",
     "url": "/market-basics/trade-around-whipsaws.html",
-    "description": "Complete futures whipsaw guide covering false-break conditions, acceptance and rejection, structural stops, order types, position sizing, and an interactive plan lab.",
+    "description": "Complete futures whipsaw guide: false-break conditions, acceptance and rejection, structural stops, order types, risk sizing, and an interactive plan lab.",
     "category": "Market Basics"
   },
   {
@@ -3696,9 +3696,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Risk Per Trade For Small Accounts – Grizzly Parrot Trading",
+    "title": "Risk Per Trade for Small Futures Accounts | Drawdown Sizing",
     "url": "/market-basics/risk-per-trade-small-accounts.html",
-    "description": "How much you should risk per trade on a small futures account or prop evaluation, and why sizing correctly matters more than win rate.",
+    "description": "Calculate futures position size from usable drawdown buffer, stop distance, tick value, costs, and safety reserve, with MES and prop examples.",
     "category": "Market Basics"
   },
   {
@@ -3938,7 +3938,7 @@
   {
     "title": "Static vs. Trailing Drawdown in Futures Prop Accounts",
     "url": "/prop-firm-trading/static-vs-trailing-drawdown.html",
-    "description": "Complete guide to static, real-time trailing, and end-of-day drawdown: formulas, enforcement timing, worked examples, and a comparison tool.",
+    "description": "Complete guide to static, real-time trailing, and end-of-day drawdown: formulas, enforcement timing, worked examples, and an interactive comparison tool.",
     "category": "Prop Firm Trading"
   },
   {
@@ -4122,9 +4122,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Ticks vs Points in Futures Trading — What the Dollar Risk Actually Is",
+    "title": "Ticks vs Points in Futures | Tick Value &amp; Dollar Risk",
     "url": "/futures-basics/ticks-points-dollar-value.html",
-    "description": "Points describe price movement. Ticks determine what it costs. Here",
+    "description": "Understand futures ticks, points, tick size, and tick value. Compare ES, MES, NQ, MNQ, RTY, CL, GC, and 6E, then calculate dollar P&amp;L.",
     "category": "Futures Basics"
   },
   {
