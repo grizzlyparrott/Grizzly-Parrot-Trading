@@ -3,107 +3,156 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Futures Slippage Explained: Why Your Orders Fill Worse Than You Expect</title>
-  <meta name="description" content="Learn what slippage is in futures, why it happens, how to avoid bad fills, and the exact conditions that make slippage explode for beginners.">
+  <title>Futures Slippage Explained | Calculate Fill Cost in Ticks</title>
+  <meta name="description" content="Learn how futures slippage works, separate it from spread and fees, compare order types, and calculate fill cost in ticks and dollars.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/futures-slippage-explained.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Futures Slippage Explained: Why Your Orders Fill Worse Than You Expect">
-  <meta property="og:description" content="Learn what slippage is in futures, why it happens, how to avoid bad fills, and the exact conditions that make slippage explode for beginners.">
+  <meta property="og:title" content="Futures Slippage Explained: From Order Book to Dollar Cost">
+  <meta property="og:description" content="A precise guide to benchmarks, order types, queue mechanics, market impact, fill measurement, and futures slippage in dollars.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/futures-slippage-explained.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Grizzly Parrot Trading guide to futures slippage and execution cost.">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Futures Slippage Explained: Why Your Orders Fill Worse Than You Expect">
-  <meta name="twitter:description" content="Learn what slippage is in futures, why it happens, how to avoid bad fills, and the exact conditions that make slippage explode for beginners.">
+  <meta name="twitter:title" content="Futures Slippage Explained">
+  <meta name="twitter:description" content="Measure the gap between a documented benchmark and your average fill, then convert it into ticks and dollars.">
 
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="futures-slippage-guide.css">
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){window.dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-JMJVR3G5YN');
   </script>
 
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Futures Slippage Explained: Why Your Orders Fill Worse Than You Expect",
-  "description": "Learn what slippage is in futures, why it happens, how to avoid bad fills, and the exact conditions that make slippage explode for beginners.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/futures-slippage-explained.html",
-  "datePublished": "2025-11-20",
-  "dateModified": "2025-11-20",
-  "url": "https://grizzlyparrottrading.com/futures-basics/futures-slippage-explained.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Futures Slippage Explained: From Order Book to Dollar Cost",
+    "description": "A precise guide to futures slippage benchmarks, order types, queue mechanics, market impact, fill measurement, and dollar cost.",
+    "author": {
+      "@type": "Person",
+      "name": "Kyle Parrott",
+      "url": "https://grizzlyparrottrading.com/about.html"
+    },
+    "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/futures-slippage-explained.html",
+    "datePublished": "2025-11-20",
+    "dateModified": "2026-08-07",
+    "url": "https://grizzlyparrottrading.com/futures-basics/futures-slippage-explained.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grizzly Parrot Trading",
+      "url": "https://grizzlyparrottrading.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://grizzlyparrottrading.com/OG-default.png"
+      }
+    },
+    "image": "https://grizzlyparrottrading.com/OG-default.png"
+  }
+  </script>
 
-  <!-- JSON-LD: Breadcrumbs -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Futures Slippage Explained: Why Your Orders Fill Worse Than You Expect",
-      "item": "https://grizzlyparrottrading.com/futures-basics/futures-slippage-explained.html"
-    }
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Futures Basics",
+        "item": "https://grizzlyparrottrading.com/futures-basics/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Futures Slippage Explained",
+        "item": "https://grizzlyparrottrading.com/futures-basics/futures-slippage-explained.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is futures slippage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Futures slippage is the direction-adjusted difference between a documented benchmark price and the volume-weighted average price of the actual fill. Positive ticks represent an adverse difference; negative ticks represent price improvement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a futures limit order fill worse than its limit price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A buy limit order should execute at its limit price or lower, and a sell limit order at its limit price or higher. Its tradeoff is execution uncertainty: it may fill partially or not at all. Product, broker, and platform rules should still be verified."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why can a stop order fill beyond its trigger price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The stop price is a trigger, not necessarily the execution price. Once triggered, a stop-market or stop-with-protection instruction seeks available liquidity under its venue rules, so a fast or thin book can produce a fill beyond the trigger."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you calculate futures slippage in dollars?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For a buy, subtract the benchmark from the average fill; for a sell, subtract the average fill from the benchmark. Divide by tick size, then multiply the tick result by tick value and contract count."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the bid-ask spread the same as slippage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The spread is the difference between the best displayed bid and offer. Slippage is a benchmark-to-fill measurement. A benchmark such as the midpoint or bid can include some or all of the spread, which is why the benchmark must be named."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a footprint chart predict my exact fill?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. A footprint summarizes executed bid and ask volume. It can help interpret aggression, absorption, and imbalance, but it does not by itself reveal your exact queue position, future cancellations, network delay, or final average fill."
+        }
+      }
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
 </head>
@@ -111,20 +160,17 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
+    <div class="logo"><a href="/">Grizzly Parrot Trading</a></div>
+    <nav class="main-nav" aria-label="Primary navigation">
       <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../metals/index.html">Metals</a></li>
+        <li><a href="../energies/index.html">Energies</a></li>
+        <li><a href="../currencies/index.html">Currencies</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firms</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+        <li><a href="../tools/index.html">Tools</a></li>
       </ul>
     </nav>
   </div>
@@ -132,156 +178,669 @@ Grizzly Parrot Trading</a>
 
 <main>
 <section class="section">
-<div class="container article-content">
+<article class="container article-content slippage-guide">
 <!-- ARTICLE BODY START -->
 
-<h1>Futures Slippage Explained: Why Your Orders Fill Worse Than You Expect</h1>
+<header class="sl-hero">
+  <div class="sl-hero-copy">
+    <p class="sl-kicker">Execution mechanics</p>
+    <h1>Futures Slippage, From Order Book to Dollar Cost</h1>
+    <p class="sl-byline">By <a href="/about.html">Kyle Parrott</a> <span aria-hidden="true">&middot;</span> Updated August 7, 2026</p>
+    <p class="sl-hero-lede">Slippage is not simply &ldquo;the price you wanted versus the price you got.&rdquo; It is the <strong>direction-adjusted difference between a named benchmark and the volume-weighted average price of your actual fill.</strong> The benchmark makes the measurement meaningful; the order book explains how the difference arose.</p>
+    <div class="sl-hero-actions">
+      <a class="sl-button" href="#slippage-calculator">Calculate fill cost</a>
+      <a class="sl-text-link" href="#order-types">Compare order types</a>
+    </div>
+    <div class="sl-hero-facts" aria-label="Slippage essentials">
+      <div><span>Benchmark</span><strong>Name it before comparing fills</strong></div>
+      <div><span>Average fill</span><strong>Weight every partial execution</strong></div>
+      <div><span>Dollar cost</span><strong>Ticks &times; tick value &times; contracts</strong></div>
+    </div>
+  </div>
 
-<p>
-Slippage is the difference between the price you wanted and the price you actually got. It’s one of the fastest ways beginners lose money in futures. Slippage gets worse during volatility, low liquidity, gaps, and session transitions — all topics you already learned in <a href="https://grizzlyparrottrading.com/futures-basics/futures-liquidity-explained.html">liquidity basics</a> and <a href="https://grizzlyparrottrading.com/futures-basics/how-futures-gaps-work.html">gap mechanics</a>.
-</p>
+  <figure class="sl-book-card" aria-labelledby="book-example-title">
+    <div class="sl-book-heading">
+      <span id="book-example-title">Hypothetical ES order book</span>
+      <small>8-lot market buy</small>
+    </div>
+    <div class="sl-ladder" aria-label="Eight-contract buy consumes one contract at 5300.25, two at 5300.50, and five at 5300.75">
+      <div class="sl-level ask is-filled" style="--depth: 72%;"><span class="sl-side">ASK</span><strong class="sl-price">5300.75</strong><span class="sl-qty">5 filled</span></div>
+      <div class="sl-level ask is-filled" style="--depth: 40%;"><span class="sl-side">ASK</span><strong class="sl-price">5300.50</strong><span class="sl-qty">2 filled</span></div>
+      <div class="sl-level ask is-filled is-best" style="--depth: 24%;"><span class="sl-side">ASK</span><strong class="sl-price">5300.25</strong><span class="sl-qty">1 filled</span></div>
+      <div class="sl-book-spread">One-tick displayed spread</div>
+      <div class="sl-level bid" style="--depth: 86%;"><span class="sl-side">BID</span><strong class="sl-price">5300.00</strong><span class="sl-qty">14</span></div>
+      <div class="sl-level bid" style="--depth: 96%;"><span class="sl-side">BID</span><strong class="sl-price">5299.75</strong><span class="sl-qty">21</span></div>
+    </div>
+    <div class="sl-fill-summary">
+      <div><span>Arrival ask</span><strong>5300.25</strong></div>
+      <div><span>Average fill</span><strong>5300.625</strong></div>
+      <div><span>Adverse cost</span><strong>1.5 ticks avg.</strong></div>
+    </div>
+    <p class="sl-book-note">At $12.50 per ES tick, 1.5 adverse ticks across 8 contracts equal $150. This static ladder is illustrative; live orders, cancellations, and matching occur continuously.</p>
+  </figure>
+</header>
 
-<h2>What Slippage Really Is</h2>
-<p>
-Slippage happens because your order hits a thinner part of the book than you expected. If there’s not enough liquidity at your price, the platform fills you at the next available level.
-</p>
+<nav class="sl-on-page" aria-label="On this page">
+  <span>On this page</span>
+  <a href="#definition">Definition</a>
+  <a href="#costs">Cost terms</a>
+  <a href="#order-types">Order types</a>
+  <a href="#mechanics">Book mechanics</a>
+  <a href="#slippage-calculator">Calculator</a>
+  <a href="#footprints-and-fills">Footprints</a>
+  <a href="#measurement">Measurement</a>
+</nav>
 
-<p>Slippage can hit:</p>
-<ul>
-    <li>Market orders</li>
-    <li>Stop orders (which convert to market orders)</li>
-    <li>Limit orders during fast markets</li>
-</ul>
+<section class="sl-section sl-definition" id="definition" aria-labelledby="definition-title">
+  <div>
+    <p class="sl-kicker">Start with a measurable definition</p>
+    <h2 id="definition-title">A Fill Is Only &ldquo;Worse&rdquo; Relative to Something</h2>
+  </div>
+  <div>
+    <p>A buy filled above its benchmark has adverse slippage; a buy below it has price improvement. The signs reverse for a sell. If the benchmark changes from the best offer to the midpoint, decision price, trigger price, or chart price, the result changes too.</p>
+    <div class="sl-formula" aria-label="Directional slippage formulas">
+      <span>Directional price difference</span>
+      <code>buy: average fill &minus; benchmark</code>
+      <code>sell: benchmark &minus; average fill</code>
+      <span>Dollar conversion</span>
+      <code>(price difference &divide; tick size) &times; tick value &times; contracts</code>
+    </div>
+  </div>
+</section>
 
-<h2>Why Futures Are Prone to Slippage</h2>
-<p>
-Futures move fast. They’re leveraged. And order books can change instantly, especially around news or low-volume periods.
-</p>
+<section class="sl-section" aria-labelledby="benchmark-title">
+  <div class="sl-section-heading">
+    <p class="sl-kicker">Choose the comparison first</p>
+    <h2 id="benchmark-title">Four Useful Benchmarks Answer Four Different Questions</h2>
+    <p>There is no universal expected price. Record the benchmark name and timestamp with the number so later comparisons remain apples-to-apples.</p>
+  </div>
 
-<h3>Main causes of slippage:</h3>
-<ul>
-    <li>Low liquidity</li>
-    <li>Fast volatility spikes</li>
-    <li>Thin overnight sessions</li>
-    <li>Holidays or early closes</li>
-    <li>Large orders in small accounts</li>
-    <li>Stop hunts in volatile markets</li>
-</ul>
+  <div class="sl-benchmark-grid">
+    <article>
+      <span>Decision price</span>
+      <h3>What did delay cost?</h3>
+      <p>The observable price when the trade decision was made. This can include strategy, human, network, and routing delay before the order reaches the venue.</p>
+    </article>
+    <article>
+      <span>Arrival price</span>
+      <h3>What did execution cost?</h3>
+      <p>The market state when the order reaches the venue or broker. Best bid, best offer, or midpoint must be specified rather than blended together.</p>
+    </article>
+    <article>
+      <span>Trigger price</span>
+      <h3>How far did the stop fill?</h3>
+      <p>The price that activates a stop instruction. It is a condition for activation, not a promise that the execution will occur at that exact price.</p>
+    </article>
+    <article>
+      <span>Limit price</span>
+      <h3>Did execution respect the cap?</h3>
+      <p>The maximum buy price or minimum sell price. It measures price protection, while partial or missing fills must be tracked separately.</p>
+    </article>
+  </div>
 
-<h2>Slippage Examples (Realistic Scenarios)</h2>
+  <aside class="sl-note"><strong>Do not use the candle close as a convenient substitute.</strong> A bar aggregates time and can conceal the bid, offer, queue, trigger sequence, and multiple prices involved in the execution.</aside>
+</section>
 
-<table>
-    <thead>
+<section class="sl-section" id="costs" aria-labelledby="costs-title">
+  <div class="sl-section-heading">
+    <p class="sl-kicker">Similar symptoms, different costs</p>
+    <h2 id="costs-title">Spread, Slippage, Impact, Fees and Adverse Selection</h2>
+    <p>These terms often get collapsed into &ldquo;bad fills.&rdquo; Keeping them separate is the only way to diagnose whether the issue came from market conditions, order design, size, infrastructure, or a post-fill price move.</p>
+  </div>
+
+  <div class="sl-table-wrap">
+    <table>
+      <thead>
         <tr>
-            <th>Situation</th>
-            <th>Expected Fill</th>
-            <th>Actual Fill</th>
+          <th scope="col">Term</th>
+          <th scope="col">What it measures</th>
+          <th scope="col">Where it appears</th>
+          <th scope="col">Common measurement error</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Market order in fast NQ</td>
-            <td>18,450.00</td>
-            <td>18,452.75</td>
-        </tr>
-        <tr>
-            <td>Stop order triggered on CL</td>
-            <td>78.10</td>
-            <td>78.52</td>
-        </tr>
-        <tr>
-            <td>Overnight MES entry</td>
-            <td>5400.00</td>
-            <td>5401.25</td>
-        </tr>
-    </tbody>
-</table>
+      </thead>
+      <tbody>
+        <tr><td><strong>Bid-ask spread</strong></td><td>Difference between the best displayed bid and offer.</td><td>Cost of demanding immediate liquidity; passive orders may attempt to earn or avoid it.</td><td>Calling the entire benchmark-to-fill gap slippage when the benchmark was the bid or midpoint.</td></tr>
+        <tr><td><strong>Slippage</strong></td><td>Direction-adjusted difference between a named benchmark and average fill.</td><td>Reported in price units, ticks, basis points, or dollars.</td><td>Using the last partial fill instead of the quantity-weighted average fill.</td></tr>
+        <tr><td><strong>Market impact</strong></td><td>Price or liquidity change associated with executing the order.</td><td>Often rises as order size becomes large relative to available depth and replenishment.</td><td>Treating impact as a fixed property of a contract rather than size and conditions.</td></tr>
+        <tr><td><strong>Commissions and fees</strong></td><td>Broker, exchange, clearing, and regulatory charges.</td><td>Account statement or broker schedule.</td><td>Mixing fixed charges into a price-slippage statistic without labeling the total.</td></tr>
+        <tr><td><strong>Adverse selection</strong></td><td>Price moves against the position after a fill.</td><td>Post-fill outcome over a selected horizon.</td><td>Calling a valid limit fill &ldquo;slippage&rdquo; because price moved immediately afterward.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-<h2>Which Contracts Slip the Most</h2>
-<ul>
-    <li><strong>NG</strong> – wild volatility, thin book</li>
-    <li><strong>CL</strong> – fast moves, aggressive algos</li>
-    <li><strong>GC</strong> – jumpy around news</li>
-    <li><strong>Micro contracts</strong> – lower liquidity than full-size</li>
-</ul>
+<section class="sl-section" id="order-types" aria-labelledby="order-types-title">
+  <div class="sl-section-heading">
+    <p class="sl-kicker">Price certainty and execution certainty trade off</p>
+    <h2 id="order-types-title">Order Type Determines Which Risk You Accept</h2>
+    <p>The old shorthand &ldquo;use limits to avoid slippage&rdquo; is incomplete. A limit controls the worst acceptable execution price, but it introduces partial-fill and no-fill risk. A market-style instruction prioritizes execution, but it does not specify one exact fill price.</p>
+  </div>
 
-<p>
-Index futures like ES have less slippage because liquidity is massive, but it still happens during news.
-</p>
+  <div class="sl-order-grid">
+    <article class="sl-order-card">
+      <header><h3>Market order</h3><span class="sl-tradeoff">Execution first</span></header>
+      <p>Immediately seeks available opposing liquidity under the venue&rsquo;s rules. A buy executes against offers; a sell executes against bids. Size can fill at multiple price levels.</p>
+      <dl><dt>Controls</dt><dd>Urgency and quantity</dd><dt>Exposes</dt><dd>Fill-price uncertainty</dd><dt>Track</dt><dd>Arrival quote and average fill</dd></dl>
+    </article>
 
-<h2>Why Slippage Happens During News</h2>
-<p>
-During news releases, thousands of orders hit the book at once.  
-Liquidity vanishes.  
-Every order becomes a market order into an empty ladder.
-</p>
+    <article class="sl-order-card">
+      <header><h3>Limit order</h3><span class="sl-tradeoff">Price first</span></header>
+      <p>A buy specifies the maximum acceptable price; a sell specifies the minimum. It may rest in the book or execute immediately if marketable, but it should not trade worse than the limit.</p>
+      <dl><dt>Controls</dt><dd>Worst execution price</dd><dt>Exposes</dt><dd>Partial-fill and no-fill risk</dd><dt>Track</dt><dd>Queue, filled quantity, and opportunity cost</dd></dl>
+    </article>
 
-<p>
-This is why beginners get destroyed trading CPI, NFP, and FOMC.
-</p>
+    <article class="sl-order-card">
+      <header><h3>Stop-market / stop with protection</h3><span class="sl-tradeoff">Trigger, then execute</span></header>
+      <p>The instruction remains dormant until its trigger condition is met, then becomes a market-style or protected order according to product and venue rules. The trigger price is not the guaranteed fill price.</p>
+      <dl><dt>Controls</dt><dd>Activation condition</dd><dt>Exposes</dt><dd>Trigger-to-fill difference</dd><dt>Track</dt><dd>Trigger time, activation, and all partial fills</dd></dl>
+    </article>
 
-<h2>How to Reduce Slippage</h2>
+    <article class="sl-order-card">
+      <header><h3>Stop-limit order</h3><span class="sl-tradeoff">Trigger, then cap</span></header>
+      <p>Activation submits a limit order. It prevents execution beyond the specified limit, but a fast move can pass through the allowed range and leave the order partially filled or unfilled.</p>
+      <dl><dt>Controls</dt><dd>Trigger and worst price</dd><dt>Exposes</dt><dd>Failure to exit or enter</dd><dt>Track</dt><dd>Triggered status and residual quantity</dd></dl>
+    </article>
+  </div>
 
-<h3>1. Trade During High Liquidity Sessions</h3>
-<p>
-U.S. session (8 AM–4 PM ET) has the best fills.  
-Asian session has the worst — spreads blow out and books thin out.
-</p>
+  <aside class="sl-protection-note"><strong>CME Globex nuance:</strong> supported types include Market with Protection and Stop with Protection, which use an exchange-defined protected range; availability varies by product. Protection is not the same as a guaranteed fill at the best quote, and remaining quantity may rest at the protection limit. Verify the current exchange, broker, and platform implementation for the exact contract.</aside>
+</section>
 
-<h3>2. Use Limit Orders Whenever Possible</h3>
-<p>
-Limits protect you from running into bad fills, but they won’t save you during extreme volatility.
-</p>
+<section class="sl-section" id="mechanics" aria-labelledby="mechanics-title">
+  <div class="sl-section-heading">
+    <p class="sl-kicker">Why the screen is not a fill promise</p>
+    <h2 id="mechanics-title">The Book Can Change Between Observation and Execution</h2>
+    <p>Displayed depth is a live set of orders, not reserved inventory. New orders arrive, existing orders trade or cancel, hidden quantity can replenish, and each product&rsquo;s matching algorithm determines how executable quantity is allocated.</p>
+  </div>
 
-<h3>3. Avoid News Releases</h3>
-<p>
-Most beginners should never trade news. Ever.
-</p>
+  <div class="sl-mechanics">
+    <div class="sl-mechanics-copy">
+      <p>A market-by-price display aggregates quantity at each price and may show only a limited number of levels. It generally cannot establish your exact place in line. Market-by-order data can provide order-level granularity and priority identifiers, but the feed, platform, and order type still matter.</p>
+      <ol class="sl-sequence">
+        <li><span>01</span><div><h3>You observe a quote</h3><p>The platform renders a bid, offer, and depth snapshot using received market-data messages.</p></div></li>
+        <li><span>02</span><div><h3>Your instruction travels</h3><p>Human reaction, strategy logic, local processing, network transit, broker risk checks, and routing can add delay.</p></div></li>
+        <li><span>03</span><div><h3>The matching engine receives it</h3><p>The live book may now differ. The order interacts with currently eligible opposing interest under that market&rsquo;s rules.</p></div></li>
+        <li><span>04</span><div><h3>Executions return</h3><p>One order can produce multiple fills. The correct comparison uses total filled quantity and the volume-weighted average price.</p></div></li>
+      </ol>
+    </div>
 
-<h3>4. Avoid Holidays and Shortened Sessions</h3>
-<p>
-Holiday slippage is some of the ugliest on the entire CME calendar.
-</p>
+    <aside class="sl-queue-card" aria-labelledby="queue-title">
+      <p class="sl-kicker">Resting limit example</p>
+      <h3 id="queue-title">Price Touch Does Not Guarantee Your Fill</h3>
+      <div class="sl-queue-stack" aria-label="Illustrative queue at one price">
+        <div class="sl-queue-item"><span>01</span><strong>Earlier order</strong><small>7 contracts</small></div>
+        <div class="sl-queue-item"><span>02</span><strong>Earlier order</strong><small>4 contracts</small></div>
+        <div class="sl-queue-item you"><span>03</span><strong>Your limit</strong><small>2 contracts</small></div>
+        <div class="sl-queue-item"><span>04</span><strong>Later order</strong><small>8 contracts</small></div>
+      </div>
+      <p class="sl-queue-arrow">If only 6 contracts trade at this price under a FIFO example, earlier quantity consumes the executions before your order. Other futures can use different allocation algorithms, so do not assume every product is pure FIFO.</p>
+    </aside>
+  </div>
+</section>
 
-<h3>5. Trade the Right Contracts</h3>
-<p>
-If you’re new, don’t touch NG or thin commodities. Stick to ES, MES, NQ, and maybe CL once you’re experienced.
-</p>
+<section class="sl-section" aria-labelledby="drivers-title">
+  <div class="sl-section-heading">
+    <p class="sl-kicker">Conditions, not contract stereotypes</p>
+    <h2 id="drivers-title">Six Reasons Slippage Expands</h2>
+    <p>No contract or session has a permanent slippage number. Measure the combination of spread, depth, replenishment, volatility, size, and infrastructure at the time and in the contract month actually traded.</p>
+  </div>
 
-<div class="highlight-box red">
-  <h3>Slippage Isn’t Random — It’s a Penalty</h3>
-  <p>Trade into thin markets, chase news, or click through dead sessions, and slippage will quietly drain your edge. It’s not a bug — it’s the cost of ignoring execution conditions. Clean fills start with timing and liquidity, not luck.</p>
-</div>
+  <div class="sl-driver-grid">
+    <article><span>01</span><h3>Order size versus depth</h3><p>An aggressive order larger than available quantity at the best price must consume additional levels or stop at a protection limit.</p></article>
+    <article><span>02</span><h3>Scheduled or surprise events</h3><p>Prices, cancellations, and new orders can change rapidly when information reaches the market. A prior snapshot may become stale immediately.</p></article>
+    <article><span>03</span><h3>Wide spread or shallow book</h3><p>Lower visible quantity and wider first prices increase the cost of demanding immediacy, especially for multiple contracts.</p></article>
+    <article><span>04</span><h3>Contract migration and expiration</h3><p>Liquidity can shift between delivery months. Trading the wrong month can mean a materially different book even when the root symbol looks familiar.</p></article>
+    <article><span>05</span><h3>Session transitions and halts</h3><p>Reopens, maintenance boundaries, shortened sessions, and price-limit conditions can alter continuity and available liquidity.</p></article>
+    <article><span>06</span><h3>End-to-end latency</h3><p>Strategy, device, connection, broker, and route delays widen the gap between decision, observation, arrival, and execution benchmarks.</p></article>
+  </div>
+</section>
+
+<section class="sl-section sl-calculator-section" id="slippage-calculator" aria-labelledby="calculator-title">
+  <div class="sl-section-heading">
+    <p class="sl-kicker">Interactive execution-cost calculator</p>
+    <h2 id="calculator-title">Convert a Fill Difference Into Ticks and Dollars</h2>
+    <p>Select the exact benchmark you documented, then enter the volume-weighted average fill. Positive results are adverse; negative results are price improvement. Presets use common outright contract values for instruction, not a substitute for current specifications.</p>
+  </div>
+
+  <div class="sl-calculator-shell">
+    <form class="sl-calculator-form" id="sl-calculator-form">
+      <div class="sl-field sl-field-wide">
+        <label for="sl-contract">Contract preset</label>
+        <select id="sl-contract" name="contract">
+          <option value="MES" selected>MES &mdash; Micro E-mini S&amp;P 500</option>
+          <option value="ES">ES &mdash; E-mini S&amp;P 500</option>
+          <option value="MNQ">MNQ &mdash; Micro E-mini Nasdaq-100</option>
+          <option value="NQ">NQ &mdash; E-mini Nasdaq-100</option>
+          <option value="MCL">MCL &mdash; Micro WTI Crude Oil</option>
+          <option value="CL">CL &mdash; WTI Crude Oil</option>
+          <option value="MGC">MGC &mdash; Micro Gold</option>
+          <option value="GC">GC &mdash; Gold</option>
+          <option value="6E">6E &mdash; Euro FX</option>
+          <option value="CUSTOM">Custom contract</option>
+        </select>
+      </div>
+
+      <div class="sl-field">
+        <label for="sl-side">Order side</label>
+        <select id="sl-side" name="side">
+          <option value="buy" selected>Buy</option>
+          <option value="sell">Sell</option>
+        </select>
+      </div>
+
+      <div class="sl-field">
+        <label for="sl-contracts">Contracts filled</label>
+        <input id="sl-contracts" name="contracts" type="number" min="1" max="100000" step="1" value="4" inputmode="numeric">
+      </div>
+
+      <div class="sl-field">
+        <label for="sl-benchmark">Benchmark price</label>
+        <input id="sl-benchmark" name="benchmark" type="number" min="0" step="any" value="6000.00" inputmode="decimal">
+        <small>For example, arrival offer for a buy.</small>
+      </div>
+
+      <div class="sl-field">
+        <label for="sl-fill">Average fill price</label>
+        <input id="sl-fill" name="fill" type="number" min="0" step="any" value="6000.50" inputmode="decimal">
+        <small>Use quantity-weighted average price.</small>
+      </div>
+
+      <div class="sl-field">
+        <label for="sl-tick-size">Tick size</label>
+        <input id="sl-tick-size" name="tickSize" type="number" min="0" step="any" value="0.25" inputmode="decimal">
+      </div>
+
+      <div class="sl-field">
+        <label for="sl-tick-value">Tick value ($)</label>
+        <input id="sl-tick-value" name="tickValue" type="number" min="0" step="any" value="1.25" inputmode="decimal">
+      </div>
+
+      <div class="sl-form-actions">
+        <button class="sl-calculate" type="submit">Calculate slippage</button>
+        <button class="sl-reset" type="reset">Restore MES example</button>
+      </div>
+    </form>
+
+    <section class="sl-calculator-results" aria-labelledby="results-title">
+      <p class="sl-kicker">Calculated result</p>
+      <h3 id="results-title">Direction-adjusted fill difference</h3>
+      <div class="sl-results-grid">
+        <div><span>Price difference</span><strong id="sl-result-price">+0.50</strong></div>
+        <div><span>Average ticks</span><strong id="sl-result-ticks">+2.000</strong></div>
+        <div><span>Per contract</span><strong id="sl-result-per-contract">+$2.50</strong></div>
+        <div class="sl-result-total"><span>Total fill difference</span><strong id="sl-result-total">+$10.00</strong></div>
+      </div>
+      <p class="sl-result-status is-adverse" id="sl-result-status" role="status" aria-live="polite">The MES buy filled 2 average ticks above the selected benchmark: $10.00 adverse across 4 contracts.</p>
+      <p class="sl-calculator-boundary">Measurement boundary: the result excludes commissions, exchange and clearing fees, post-fill price movement, and any opportunity cost from unfilled orders.</p>
+    </section>
+  </div>
+</section>
+
+<section class="sl-section" aria-labelledby="examples-title">
+  <div class="sl-section-heading">
+    <p class="sl-kicker">Worked examples</p>
+    <h2 id="examples-title">The Same Tick Count Produces Different Dollar Costs</h2>
+    <p>Each example is hypothetical and compares a completed average fill with a documented benchmark. The arithmetic is deterministic; the future fill is not.</p>
+  </div>
+
+  <div class="sl-worked-grid">
+    <article class="sl-worked-card">
+      <span>ES market buy</span>
+      <h3>Two adverse ticks, 2 contracts</h3>
+      <dl><dt>Arrival offer</dt><dd>5300.00</dd><dt>Average fill</dt><dd>5300.50</dd><dt>Tick value</dt><dd>$12.50</dd><dd class="sl-worked-result">2 &times; $12.50 &times; 2 = $50</dd></dl>
+    </article>
+    <article class="sl-worked-card">
+      <span>CL sell stop</span>
+      <h3>Four adverse ticks, 3 contracts</h3>
+      <dl><dt>Stop trigger</dt><dd>78.10</dd><dt>Average fill</dt><dd>78.06</dd><dt>Tick value</dt><dd>$10.00</dd><dd class="sl-worked-result">4 &times; $10.00 &times; 3 = $120</dd></dl>
+    </article>
+    <article class="sl-worked-card">
+      <span>MES limit buy</span>
+      <h3>One tick improved, 10 contracts</h3>
+      <dl><dt>Buy limit</dt><dd>6000.00</dd><dt>Average fill</dt><dd>5999.75</dd><dt>Tick value</dt><dd>$1.25</dd><dd class="sl-worked-result">&minus;1 &times; $1.25 &times; 10 = &minus;$12.50</dd></dl>
+    </article>
+  </div>
+</section>
+
+<section class="sl-section sl-footprint-section" id="footprints-and-fills" aria-labelledby="footprints-title">
+  <div class="sl-footprint-copy">
+    <p class="sl-kicker">Order flow versus execution evidence</p>
+    <h2 id="footprints-title">Footprints Explain the Auction&mdash;Not Your Exact Fill</h2>
+    <p>A footprint chart summarizes executed volume at bid and ask. It can help you study aggressive participation, delta, imbalance, absorption, exhaustion, and acceptance. It does not by itself reveal the future book, your complete queue position, network delay, broker handling, or the price of an order that has not executed.</p>
+    <p>For a visual checklist of common footprint structures, see <a href="https://tapedelta.com/blog/how-to-read-footprint-chart-patterns" target="_blank" rel="noopener">Tape Delta&rsquo;s guide to eight footprint-chart patterns</a>. Then use our <a href="how-to-read-order-flow-on-6e.html">6E order-flow guide</a> for bid/ask classification, diagonal imbalance math, data-quality limits, and context-first interpretation.</p>
+  </div>
+  <aside class="sl-footprint-card">
+    <span>What each dataset can establish</span>
+    <h3>Use the right record for the question</h3>
+    <ul>
+      <li><strong>Footprint:</strong> executed bid/ask volume by price</li>
+      <li><strong>Depth feed:</strong> displayed book state and updates</li>
+      <li><strong>Order log:</strong> submissions, acknowledgments, fills, and cancels</li>
+      <li><strong>Account statement:</strong> final executions and charges</li>
+      <li><strong>None alone:</strong> a guaranteed future fill</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="sl-section" id="measurement" aria-labelledby="measurement-title">
+  <div class="sl-section-heading">
+    <p class="sl-kicker">Build a fill dataset, not a memory</p>
+    <h2 id="measurement-title">Measure Slippage by Setup, Size and Market State</h2>
+    <p>One dramatic fill is not a distribution. Capture the same fields for every eligible order, preserve partial fills, and compare like with like. Separate entries from exits, passive from aggressive orders, and routine conditions from scheduled events.</p>
+  </div>
+
+  <div class="sl-journal-layout">
+    <div class="sl-journal-copy">
+      <p>Use exchange or broker timestamps when available and label locally observed times separately. If the platform cannot export a needed field, record it as unavailable rather than reconstructing a precise value from a chart.</p>
+      <p>Useful summaries include median, 75th and 95th percentile adverse ticks, price-improvement rate, partial-fill rate, and results stratified by order type, contract month, size, session, and event window.</p>
+    </div>
+    <div class="sl-journal-fields" aria-label="Recommended slippage journal fields">
+      <div><span>Instrument</span><strong>Symbol and exact contract month</strong></div>
+      <div><span>Instruction</span><strong>Side, order type, quantity, limit, and trigger</strong></div>
+      <div><span>Benchmark</span><strong>Name, price, source, and timestamp</strong></div>
+      <div><span>Execution</span><strong>Every partial fill and weighted average</strong></div>
+      <div><span>Market state</span><strong>Bid, offer, spread, depth, session, and event</strong></div>
+      <div><span>Infrastructure</span><strong>Platform, connection, route, and order ID</strong></div>
+      <div><span>Cost</span><strong>Ticks, dollars, commissions, and fees separately</strong></div>
+      <div><span>Outcome</span><strong>Filled, partial, canceled, rejected, or unfilled</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="sl-section" aria-labelledby="reduce-title">
+  <div class="sl-section-heading">
+    <p class="sl-kicker">Improve the process, not the hindsight</p>
+    <h2 id="reduce-title">Ways to Reduce Slippage Without Pretending It Disappears</h2>
+    <p>Every mitigation changes a tradeoff. The goal is to make execution consistent with the strategy&rsquo;s urgency, size, and risk limits&mdash;then measure the result.</p>
+  </div>
+
+  <ol class="sl-reduction-list">
+    <li><span>01</span><div><h3>Match order type to urgency</h3><p>Use a limit when missing the trade is acceptable and the price boundary matters more. Use market-style execution only when immediacy is worth the price uncertainty and venue protections are understood.</p></div></li>
+    <li><span>02</span><div><h3>Size against available and replenishing liquidity</h3><p>Compare quantity with the spread and depth, but treat displayed size as conditional. Large orders may require staged execution, which introduces timing, information, and additional-fee tradeoffs.</p></div></li>
+    <li><span>03</span><div><h3>Trade the intended active month</h3><p>Confirm the exact contract, roll state, expiration schedule, and live book. Root symbols and continuous charts can hide the delivery month actually being routed.</p></div></li>
+    <li><span>04</span><div><h3>Define event rules in advance</h3><p>If a strategy has not been tested during release windows, reopens, halts, or shortened sessions, exclude those states rather than assuming normal fills.</p></div></li>
+    <li><span>05</span><div><h3>Measure end-to-end latency</h3><p>Separate decision, submission, acknowledgment, arrival, and fill times where authoritative timestamps exist. Optimize only after identifying which segment actually contributes to delay.</p></div></li>
+    <li><span>06</span><div><h3>Model slippage conservatively</h3><p>Backtests that assume every touch fills, ignore queue, or assign a fixed zero cost overstate execution quality. Use measured distributions and stress cases; simulator fills are practice evidence, not live certification.</p></div></li>
+  </ol>
+</section>
+
+<section class="sl-section" aria-labelledby="mistakes-title">
+  <div class="sl-section-heading">
+    <p class="sl-kicker">Common execution errors</p>
+    <h2 id="mistakes-title">Six Claims That Corrupt Slippage Analysis</h2>
+  </div>
+
+  <div class="sl-mistakes-grid">
+    <article><span>01</span><h3>&ldquo;The chart traded there, so I should fill.&rdquo;</h3><p>A trade at the price does not prove enough eligible quantity reached your place in the queue.</p></article>
+    <article><span>02</span><h3>&ldquo;Limit orders slip in fast markets.&rdquo;</h3><p>A valid limit constrains execution price; partial, missing, or delayed fills are different risks and should be labeled that way.</p></article>
+    <article><span>03</span><h3>&ldquo;The stop price is my exit price.&rdquo;</h3><p>The stop is an activation condition. The resulting order must still interact with available liquidity under venue rules.</p></article>
+    <article><span>04</span><h3>&ldquo;One tick is negligible.&rdquo;</h3><p>Tick value, contracts, accounts, and both sides of a round trip can turn one average tick into a material recurring cost.</p></article>
+    <article><span>05</span><h3>&ldquo;This contract always fills cleanly.&rdquo;</h3><p>Liquidity changes by delivery month, session, event, volatility, and order size. Contract reputation is not execution evidence.</p></article>
+    <article><span>06</span><h3>&ldquo;A simulator proves live execution.&rdquo;</h3><p>Simulation can teach order behavior, but fill models may not reproduce queue position, latency, partials, or live market impact.</p></article>
+  </div>
+</section>
+
+<section class="sl-section sl-checklist" aria-labelledby="checklist-title">
+  <div>
+    <p class="sl-kicker">Ten-second fill audit</p>
+    <h2 id="checklist-title">Before You Call It Slippage</h2>
+  </div>
+  <ul>
+    <li><span>01</span><strong>Identify side, order type, quantity, and exact contract month</strong></li>
+    <li><span>02</span><strong>Name the benchmark and its timestamp</strong></li>
+    <li><span>03</span><strong>Calculate the quantity-weighted average fill</strong></li>
+    <li><span>04</span><strong>Apply buy/sell direction before counting ticks</strong></li>
+    <li><span>05</span><strong>Keep spread, fees, impact, and post-fill movement distinct</strong></li>
+    <li><span>06</span><strong>Compare the result with similar orders, not a single anecdote</strong></li>
+  </ul>
+</section>
+
+<section class="sl-section sl-faq" aria-labelledby="faq-title">
+  <div class="sl-section-heading">
+    <p class="sl-kicker">Frequently asked questions</p>
+    <h2 id="faq-title">Futures Slippage FAQ</h2>
+  </div>
+
+  <details>
+    <summary>What is futures slippage?</summary>
+    <p>Futures slippage is the direction-adjusted difference between a documented benchmark and the volume-weighted average price of the actual fill. Positive ticks represent an adverse difference; negative ticks represent price improvement. Always name the benchmark.</p>
+  </details>
+  <details>
+    <summary>Can a futures limit order fill worse than its limit price?</summary>
+    <p>A buy limit order should execute at its limit price or lower, and a sell limit at its limit price or higher. The tradeoff is execution uncertainty: the order may fill partially or not at all. Confirm product, broker, and platform rules.</p>
+  </details>
+  <details>
+    <summary>Why can a stop order fill beyond its trigger price?</summary>
+    <p>The stop price is a trigger, not necessarily the execution price. Once triggered, a stop-market or stop-with-protection instruction seeks available liquidity under its venue rules. A fast or thin book can therefore produce an average fill beyond the trigger.</p>
+  </details>
+  <details>
+    <summary>How do I calculate futures slippage in dollars?</summary>
+    <p>For a buy, subtract benchmark from average fill. For a sell, subtract average fill from benchmark. Divide the directional price difference by tick size, then multiply by tick value and contracts. A positive result is adverse; a negative result is improvement.</p>
+  </details>
+  <details>
+    <summary>Is the bid-ask spread the same as slippage?</summary>
+    <p>No. The spread is the difference between the best displayed bid and offer. Slippage is a benchmark-to-fill measurement. A buy compared with the bid or midpoint includes some or all of the spread, while a buy compared with the arrival offer answers a narrower execution question.</p>
+  </details>
+  <details>
+    <summary>Can a footprint chart predict my exact fill?</summary>
+    <p>No. A footprint summarizes executed bid and ask volume. It can help interpret aggression, absorption, and imbalance, but it cannot by itself establish your future queue position, future cancellations, network delay, or exact average fill.</p>
+  </details>
+</section>
+
+<section class="sl-sources" aria-labelledby="sources-title">
+  <p class="sl-kicker">Sources and methodology</p>
+  <h2 id="sources-title">Official Execution Sources and Scope</h2>
+  <p>Exchange mechanics and common outright tick examples were checked August 7, 2026. Order-type availability, protection ranges, matching algorithms, specifications, and broker handling can change and can differ by product.</p>
+  <ul>
+    <li><a href="https://www.cmegroup.com/education/files/a-traders-guide-to-futures.pdf" target="_blank" rel="noopener">CME Group: A Trader&rsquo;s Guide to Futures</a> for limit and stop order definitions.</li>
+    <li><a href="https://www.cmegroup.com/tools-information/webhelp/cmeone-cmed-mobile/Content/Enter-Orders.html" target="_blank" rel="noopener">CME Group: Enter Orders</a> for Market with Protection, Market-Limit, Stop with Protection, Stop-Limit, display quantity, and time-in-force fields.</li>
+    <li><a href="https://www.cmegroup.com/articles/faqs/market-by-order-mbo.html" target="_blank" rel="noopener">CME Group: Market by Order</a> for market-by-price aggregation, order-level depth, queue position, PriorityID, and hidden-quantity behavior.</li>
+    <li><a href="https://www.cmegroup.com/education/articles-and-reports/understanding-the-cme-liquidity-tool-methodology" target="_blank" rel="noopener">CME Group: Liquidity Tool Methodology</a> for order-book updates, depth, bid, offer, and spread measures.</li>
+    <li><a href="https://www.cmegroup.com/tools-information/lookups/advisories/market-regulation/SER-5014.html" target="_blank" rel="noopener">CME Group Rule 580 advisory</a> for the use of multiple Globex matching algorithms by product.</li>
+    <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CFTCGlossary/index.htm" target="_blank" rel="noopener">CFTC Futures Glossary</a> for stop, stop-limit, matching-algorithm, and spread terminology.</li>
+    <li><a href="https://www.cmegroup.com/education/courses/introduction-to-futures/tick-movements-understanding-how-they-work.%20hideHeader.hideSubnav.educationIframe.html.html.html?hideAddThisExt=y&amp;hideFooter=y&amp;hideHeader=y&amp;hideRightRail=y" target="_blank" rel="noopener">CME Group: Tick Movements</a> for ES and WTI tick-size and tick-value examples.</li>
+    <li><a href="https://www.nfa.futures.org/investors/investor-resources/files/investor-best-practices.html" target="_blank" rel="noopener">National Futures Association: Investor Best Practices</a> for leverage, loss, and risk-capital guidance.</li>
+    <li><a href="https://tapedelta.com/blog/how-to-read-footprint-chart-patterns" target="_blank" rel="noopener">Tape Delta: How to Read a Footprint Chart</a> as a supplemental third-party visual pattern guide; it is not used as the authority for exchange order types or contract specifications.</li>
+  </ul>
+</section>
+
+<section class="sl-related" aria-labelledby="related-title">
+  <p class="sl-kicker">Continue the execution workflow</p>
+  <h2 id="related-title">Related Grizzly Parrot Guides</h2>
+  <div>
+    <a href="ticks-points-dollar-value.html"><strong>Ticks vs Points in Futures</strong><span>Convert any quoted price movement into ticks and dollars with verified contract examples.</span></a>
+    <a href="futures-liquidity-explained.html"><strong>Futures Liquidity Explained</strong><span>Read spread, volume, open interest, and depth without reducing liquidity to one statistic.</span></a>
+    <a href="how-to-read-order-flow-on-6e.html"><strong>How to Read 6E Order Flow</strong><span>Decode footprints, diagonal imbalances, delta, absorption, and data-quality boundaries.</span></a>
+  </div>
+</section>
+
+<aside class="sl-disclaimer" aria-label="Educational and risk disclaimer">
+  <strong>Educational and risk disclaimer</strong>
+  <p>This guide and calculator are educational tools, not individualized financial, investment, legal, tax, brokerage, or trading advice. Futures are leveraged and can produce losses greater than the amount deposited. Displayed liquidity can change or cancel, order types and exchange protections vary, and no order method guarantees execution or prevents loss. Verify current exchange specifications, broker rules, platform behavior, and your own risk limits before trading.</p>
+</aside>
 
 <!-- ARTICLE BODY END -->
-</div>
+</article>
 </section>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
-
     <div class="footer-book">
       <h3>Books</h3>
       <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
+      <a href="/books/" class="footer-book-link">View All Books</a>
     </div>
-
     <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
+      <a href="/about.html">About</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/contact.html">Contact</a>
     </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+    <p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+  (function () {
+    'use strict';
+
+    var presets = {
+      MES: { tickSize: 0.25, tickValue: 1.25, decimals: 2, benchmark: 6000.00, fill: 6000.50 },
+      ES: { tickSize: 0.25, tickValue: 12.50, decimals: 2, benchmark: 6000.00, fill: 6000.50 },
+      MNQ: { tickSize: 0.25, tickValue: 0.50, decimals: 2, benchmark: 22000.00, fill: 22000.50 },
+      NQ: { tickSize: 0.25, tickValue: 5.00, decimals: 2, benchmark: 22000.00, fill: 22000.50 },
+      MCL: { tickSize: 0.01, tickValue: 1.00, decimals: 2, benchmark: 70.00, fill: 70.04 },
+      CL: { tickSize: 0.01, tickValue: 10.00, decimals: 2, benchmark: 70.00, fill: 70.04 },
+      MGC: { tickSize: 0.10, tickValue: 1.00, decimals: 1, benchmark: 3400.0, fill: 3400.4 },
+      GC: { tickSize: 0.10, tickValue: 10.00, decimals: 1, benchmark: 3400.0, fill: 3400.4 },
+      '6E': { tickSize: 0.00005, tickValue: 6.25, decimals: 5, benchmark: 1.17000, fill: 1.17010 }
+    };
+
+    var form = document.getElementById('sl-calculator-form');
+    var fields = {
+      contract: document.getElementById('sl-contract'),
+      side: document.getElementById('sl-side'),
+      contracts: document.getElementById('sl-contracts'),
+      benchmark: document.getElementById('sl-benchmark'),
+      fill: document.getElementById('sl-fill'),
+      tickSize: document.getElementById('sl-tick-size'),
+      tickValue: document.getElementById('sl-tick-value')
+    };
+    var outputs = {
+      price: document.getElementById('sl-result-price'),
+      ticks: document.getElementById('sl-result-ticks'),
+      perContract: document.getElementById('sl-result-per-contract'),
+      total: document.getElementById('sl-result-total'),
+      status: document.getElementById('sl-result-status')
+    };
+    var money = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+    function numberFrom(field) {
+      return Number.parseFloat(field.value);
+    }
+
+    function currentDecimals() {
+      var preset = presets[fields.contract.value];
+      if (preset) {
+        return preset.decimals;
+      }
+      var tickSize = numberFrom(fields.tickSize);
+      if (!Number.isFinite(tickSize) || tickSize <= 0) {
+        return 2;
+      }
+      var text = tickSize.toString();
+      if (text.indexOf('e-') > -1) {
+        return Math.min(8, Number.parseInt(text.split('e-')[1], 10));
+      }
+      return Math.min(8, (text.split('.')[1] || '').length);
+    }
+
+    function signedNumber(value, digits) {
+      var threshold = Math.pow(10, -digits) / 2;
+      var normalized = Math.abs(value) < threshold ? 0 : value;
+      return (normalized > 0 ? '+' : '') + normalized.toFixed(digits);
+    }
+
+    function signedMoney(value) {
+      if (Math.abs(value) < 0.005) {
+        return money.format(0);
+      }
+      return (value > 0 ? '+' : '-') + money.format(Math.abs(value));
+    }
+
+    function clearOutputs() {
+      outputs.price.textContent = '\u2014';
+      outputs.ticks.textContent = '\u2014';
+      outputs.perContract.textContent = '\u2014';
+      outputs.total.textContent = '\u2014';
+    }
+
+    function setStatus(message, stateClass) {
+      outputs.status.textContent = message;
+      outputs.status.className = 'sl-result-status ' + stateClass;
+    }
+
+    function applyPreset() {
+      var preset = presets[fields.contract.value];
+      if (!preset) {
+        calculate();
+        return;
+      }
+      fields.tickSize.value = preset.tickSize;
+      fields.tickValue.value = preset.tickValue.toFixed(2);
+      fields.benchmark.value = preset.benchmark.toFixed(preset.decimals);
+      fields.fill.value = preset.fill.toFixed(preset.decimals);
+      calculate();
+    }
+
+    function calculate() {
+      var benchmark = numberFrom(fields.benchmark);
+      var fill = numberFrom(fields.fill);
+      var tickSize = numberFrom(fields.tickSize);
+      var tickValue = numberFrom(fields.tickValue);
+      var contracts = numberFrom(fields.contracts);
+      var values = [benchmark, fill, tickSize, tickValue, contracts];
+      var valid = values.every(Number.isFinite) &&
+        benchmark >= 0 && fill >= 0 && tickSize > 0 && tickValue > 0 &&
+        Number.isInteger(contracts) && contracts >= 1 && contracts <= 100000;
+
+      if (!valid) {
+        clearOutputs();
+        setStatus('Enter nonnegative prices, a tick size and tick value above zero, and 1 to 100,000 whole contracts.', 'is-invalid');
+        return;
+      }
+
+      var directionalDifference = fields.side.value === 'sell' ? benchmark - fill : fill - benchmark;
+      var rawTicks = directionalDifference / tickSize;
+      var perContract = rawTicks * tickValue;
+      var total = perContract * contracts;
+      var decimals = currentDecimals();
+      var symbol = fields.contract.value === 'CUSTOM' ? 'custom-contract' : fields.contract.value;
+      var sideName = fields.side.value === 'sell' ? 'sell' : 'buy';
+      var absoluteTicks = Math.abs(rawTicks);
+      var tickLabel = absoluteTicks === 1 ? 'tick' : 'ticks';
+
+      outputs.price.textContent = signedNumber(directionalDifference, decimals);
+      outputs.ticks.textContent = signedNumber(rawTicks, 3);
+      outputs.perContract.textContent = signedMoney(perContract);
+      outputs.total.textContent = signedMoney(total);
+
+      if (rawTicks > 0.0000001) {
+        setStatus('The ' + symbol + ' ' + sideName + ' filled ' + absoluteTicks.toFixed(3).replace(/\.000$/, '') + ' average ' + tickLabel + ' beyond the selected benchmark: ' + money.format(Math.abs(total)) + ' adverse across ' + contracts + ' contracts.', 'is-adverse');
+      } else if (rawTicks < -0.0000001) {
+        setStatus('The ' + symbol + ' ' + sideName + ' received ' + absoluteTicks.toFixed(3).replace(/\.000$/, '') + ' average ' + tickLabel + ' of price improvement: ' + money.format(Math.abs(total)) + ' across ' + contracts + ' contracts.', 'is-improved');
+      } else {
+        setStatus('The average fill equals the selected benchmark, so measured price slippage is zero before fees.', 'is-flat');
+      }
+    }
+
+    fields.contract.addEventListener('change', applyPreset);
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      calculate();
+    });
+    form.addEventListener('input', function (event) {
+      if (event.target !== fields.contract) {
+        calculate();
+      }
+    });
+    form.addEventListener('reset', function () {
+      window.setTimeout(function () {
+        fields.contract.value = 'MES';
+        fields.side.value = 'buy';
+        fields.contracts.value = '4';
+        applyPreset();
+      }, 0);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    calculate();
+  }());
+</script>
 </body>
 </html>

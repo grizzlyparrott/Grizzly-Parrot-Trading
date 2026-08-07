@@ -1392,9 +1392,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Futures Slippage Explained: Why Your Orders Fill Worse Than You Expect",
+    "title": "Futures Slippage Explained: From Order Book to Dollar Cost",
     "url": "/futures-basics/futures-slippage-explained.html",
-    "description": "Learn what slippage is in futures, why it happens, how to avoid bad fills, and the exact conditions that make slippage explode for beginners.",
+    "description": "Learn how futures slippage works, separate it from spread and fees, compare order types, and calculate fill cost in ticks and dollars.",
     "category": "Futures Basics"
   },
   {
