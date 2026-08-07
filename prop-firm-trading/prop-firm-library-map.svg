@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Prop Firm Trading account map</title>
+  <desc id="desc">A prop-account map separates the nominal account label from evaluation rules, drawdown floor, usable buffer, trade risk, payout conditions, and platform operations.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#081625"/></linearGradient>
+    <linearGradient id="buffer" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#4ade80"/><stop offset=".72" stop-color="#60a5fa"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#60a5fa" stop-opacity=".2"/><stop offset="1" stop-color="#60a5fa" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#a9c8df" stroke-opacity=".05"/></pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="20" flood-opacity=".35"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#60a5fa"/></marker>
+    <style>
+      .eyebrow{font:800 14px Inter,Segoe UI,sans-serif;letter-spacing:3px}.headline{font:900 34px Inter,Segoe UI,sans-serif;letter-spacing:-1px}.label{font:900 13px Inter,Segoe UI,sans-serif;letter-spacing:2px}.title{font:800 22px Inter,Segoe UI,sans-serif}.copy{font:500 16px Inter,Segoe UI,sans-serif}.big{font:900 30px Inter,Segoe UI,sans-serif}.number{font:900 25px Inter,Segoe UI,sans-serif}
+    </style>
+  </defs>
+  <rect width="1200" height="800" rx="28" fill="url(#bg)"/>
+  <rect width="1200" height="800" rx="28" fill="url(#grid)"/>
+  <circle cx="600" cy="405" r="340" fill="url(#glow)"/>
+  <rect x="30" y="30" width="1140" height="740" rx="22" fill="none" stroke="#294257" stroke-width="2"/>
+  <text x="64" y="79" class="eyebrow" fill="#60a5fa">PROP-ACCOUNT MAP</text>
+  <text x="64" y="121" class="headline" fill="#fff">THE ACCOUNT LABEL IS NOT THE LOSS BUFFER</text>
+  <path d="M60 139H1140" stroke="#2b4358"/>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="178" width="315" height="140" rx="20" fill="#0e2033" stroke="#2c4860" stroke-width="2"/>
+    <text x="98" y="212" class="label" fill="#8ebfff">NOMINAL LABEL</text>
+    <text x="98" y="258" class="big" fill="#fff">“50K Account”</text>
+    <text x="98" y="290" class="copy" fill="#93a6ba">Program name · not spendable equity</text>
+  </g>
+  <path d="M405 248H485" stroke="#60a5fa" stroke-width="4" marker-end="url(#arrow)"/>
+  <g filter="url(#shadow)">
+    <rect x="500" y="178" width="630" height="140" rx="20" fill="#0d2131" stroke="#4c799a" stroke-width="2"/>
+    <text x="530" y="212" class="label" fill="#4ade80">REAL ROOM STARTS HERE</text>
+    <rect x="530" y="239" width="560" height="25" rx="12.5" fill="#142436"/>
+    <rect x="530" y="239" width="375" height="25" rx="12.5" fill="url(#buffer)"/>
+    <path d="M905 232V274" stroke="#fb7185" stroke-width="3"/>
+    <text x="530" y="296" class="copy" fill="#b3c1d0">Current equity − breach floor − safety reserve = usable buffer</text>
+  </g>
+
+  <path d="M228 318V390" stroke="#4ade80" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M815 318V390" stroke="#60a5fa" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="405" width="315" height="150" rx="20" fill="#0e2033" stroke="#2c4860" stroke-width="2"/>
+    <circle cx="115" cy="449" r="23" fill="#143b2d"/><text x="115" y="458" text-anchor="middle" class="number" fill="#4ade80">1</text>
+    <text x="153" y="444" class="label" fill="#4ade80">EVALUATION</text>
+    <text x="99" y="495" class="title" fill="#fff">Objectives &amp; Timing</text>
+    <text x="99" y="527" class="copy" fill="#94a8bc">Targets · stages · eligible activity</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="443" y="405" width="315" height="150" rx="20" fill="#0e2033" stroke="#2c4860" stroke-width="2"/>
+    <circle cx="488" cy="449" r="23" fill="#142f48"/><text x="488" y="458" text-anchor="middle" class="number" fill="#60a5fa">2</text>
+    <text x="526" y="444" class="label" fill="#60a5fa">DRAWDOWN &amp; RISK</text>
+    <text x="472" y="495" class="title" fill="#fff">Floor &amp; Position Size</text>
+    <text x="472" y="527" class="copy" fill="#94a8bc">Equity timing · reserve · trade loss</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="815" y="405" width="315" height="150" rx="20" fill="#0e2033" stroke="#2c4860" stroke-width="2"/>
+    <circle cx="860" cy="449" r="23" fill="#35284b"/><text x="860" y="458" text-anchor="middle" class="number" fill="#c4b5fd">3</text>
+    <text x="898" y="444" class="label" fill="#c4b5fd">RULES &amp; OPERATIONS</text>
+    <text x="844" y="495" class="title" fill="#fff">Compliance &amp; Payouts</text>
+    <text x="844" y="527" class="copy" fill="#94a8bc">Conduct · platform · withdrawal terms</text>
+  </g>
+
+  <path d="M385 480H428" stroke="#5d7893" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M758 480H800" stroke="#5d7893" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="70" y="610" width="1060" height="105" rx="20" fill="#0d1c2e" stroke="#2b455b"/>
+    <text x="100" y="648" class="label" fill="#f4c95d">VERIFY BEFORE TRADING</text>
+    <text x="100" y="687" class="title" fill="#fff">Official agreement</text><circle cx="318" cy="679" r="5" fill="#4ade80"/>
+    <text x="342" y="687" class="title" fill="#fff">Enforcement timing</text><circle cx="582" cy="679" r="5" fill="#60a5fa"/>
+    <text x="606" y="687" class="title" fill="#fff">Usable room</text><circle cx="766" cy="679" r="5" fill="#a78bfa"/>
+    <text x="790" y="687" class="title" fill="#fff">Operational conditions</text>
+  </g>
+</svg>

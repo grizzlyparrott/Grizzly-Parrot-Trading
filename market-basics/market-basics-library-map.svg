@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Market Basics learning map</title>
+  <desc id="desc">Market Basics connects auction and structure, order flow and liquidity, volatility and behavior, context and sentiment, and risk and trade management.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#061827"/></linearGradient>
+    <linearGradient id="center" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#13382c"/><stop offset="1" stop-color="#0b2130"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#4ade80" stop-opacity=".2"/><stop offset="1" stop-color="#4ade80" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#a9c8df" stroke-opacity=".05"/></pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="20" flood-opacity=".35"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#4ade80"/></marker>
+    <style>
+      .eyebrow{font:800 14px Inter,Segoe UI,sans-serif;letter-spacing:3px}.headline{font:900 34px Inter,Segoe UI,sans-serif;letter-spacing:-1px}.label{font:900 13px Inter,Segoe UI,sans-serif;letter-spacing:2px}.title{font:800 23px Inter,Segoe UI,sans-serif}.copy{font:500 16px Inter,Segoe UI,sans-serif}.center-title{font:900 31px Inter,Segoe UI,sans-serif}.center-copy{font:600 17px Inter,Segoe UI,sans-serif}
+    </style>
+  </defs>
+  <rect width="1200" height="800" rx="28" fill="url(#bg)"/>
+  <rect width="1200" height="800" rx="28" fill="url(#grid)"/>
+  <circle cx="600" cy="410" r="335" fill="url(#glow)"/>
+  <rect x="30" y="30" width="1140" height="740" rx="22" fill="none" stroke="#294257" stroke-width="2"/>
+  <text x="64" y="79" class="eyebrow" fill="#4ade80">MARKET BASICS MAP</text>
+  <text x="64" y="121" class="headline" fill="#fff">FROM PRICE FORMATION TO DEFINED RISK</text>
+  <path d="M60 139H1140" stroke="#2b4358"/>
+
+  <path d="M420 286C465 310 485 326 515 350" fill="none" stroke="#4ade80" stroke-width="3" stroke-opacity=".7" marker-end="url(#arrow)"/>
+  <path d="M780 286C735 310 715 326 685 350" fill="none" stroke="#60a5fa" stroke-width="3" stroke-opacity=".7" marker-end="url(#arrow)"/>
+  <path d="M420 575C470 550 490 525 520 493" fill="none" stroke="#f4c95d" stroke-width="3" stroke-opacity=".72" marker-end="url(#arrow)"/>
+  <path d="M780 575C730 550 710 525 680 493" fill="none" stroke="#a78bfa" stroke-width="3" stroke-opacity=".72" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="60" y="170" width="360" height="122" rx="18" fill="#0e2033" stroke="#2a465c" stroke-width="2"/>
+    <rect x="60" y="170" width="7" height="122" rx="3.5" fill="#4ade80"/>
+    <text x="90" y="205" class="label" fill="#4ade80">PRICE ORGANIZATION</text>
+    <text x="90" y="242" class="title" fill="#fff">Auction &amp; Structure</text>
+    <text x="90" y="269" class="copy" fill="#94a8bc">Value · balance · discovery · failure</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="780" y="170" width="360" height="122" rx="18" fill="#0e2033" stroke="#2a465c" stroke-width="2"/>
+    <rect x="1133" y="170" width="7" height="122" rx="3.5" fill="#60a5fa"/>
+    <text x="810" y="205" class="label" fill="#60a5fa">TRADABILITY</text>
+    <text x="810" y="242" class="title" fill="#fff">Order Flow &amp; Liquidity</text>
+    <text x="810" y="269" class="copy" fill="#94a8bc">Depth · aggression · absorption · cost</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="60" y="535" width="360" height="122" rx="18" fill="#0e2033" stroke="#2a465c" stroke-width="2"/>
+    <rect x="60" y="535" width="7" height="122" rx="3.5" fill="#f4c95d"/>
+    <text x="90" y="570" class="label" fill="#f4c95d">MARKET CONDITION</text>
+    <text x="90" y="607" class="title" fill="#fff">Volatility &amp; Behavior</text>
+    <text x="90" y="634" class="copy" fill="#94a8bc">Expansion · compression · trend · rotation</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="780" y="535" width="360" height="122" rx="18" fill="#0e2033" stroke="#2a465c" stroke-width="2"/>
+    <rect x="1133" y="535" width="7" height="122" rx="3.5" fill="#a78bfa"/>
+    <text x="810" y="570" class="label" fill="#c4b5fd">INTERPRETATION</text>
+    <text x="810" y="607" class="title" fill="#fff">Context &amp; Sentiment</text>
+    <text x="810" y="634" class="copy" fill="#94a8bc">Session · catalyst · regime · participation</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="420" y="325" width="360" height="195" rx="26" fill="url(#center)" stroke="#4ade80" stroke-width="2"/>
+    <circle cx="500" cy="420" r="44" fill="#143a2d" stroke="#4ade80" stroke-width="2"/>
+    <path d="M476 431L493 414 507 424 527 398" fill="none" stroke="#68ee9a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="560" y="375" class="label" fill="#4ade80">GRIZZLY PARROT TRADING</text>
+    <text x="560" y="416" class="center-title" fill="#fff">Market Basics</text>
+    <text x="560" y="449" class="center-copy" fill="#b1c0d0">Search one mechanic.</text>
+    <text x="560" y="478" class="center-copy" fill="#b1c0d0">Build the whole framework.</text>
+  </g>
+
+  <g>
+    <rect x="60" y="695" width="1080" height="50" rx="14" fill="#0d1c2e" stroke="#2b455b"/>
+    <circle cx="92" cy="720" r="7" fill="#fb7185"/>
+    <text x="113" y="726" class="title" font-size="18" fill="#fff">RISK &amp; TRADE MANAGEMENT</text>
+    <text x="452" y="726" class="copy" fill="#96a9bd">A market read becomes a decision only after invalidation, size, and cost are defined.</text>
+  </g>
+</svg>
