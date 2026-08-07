@@ -3,107 +3,155 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6E Tick Size, Tick Value and Margin Requirements Explained</title>
-  <meta name="description" content="Get a clear breakdown of 6E tick size, tick value, and margin requirements so you know exactly how much each move in Euro FX futures really costs you.">
+  <title>6E Tick Size &amp; Tick Value | Euro FX Contract Math</title>
+  <meta name="description" content="Calculate 6E ticks, pips, P&amp;L and notional exposure. Verify Euro FX contract size, margin mechanics, physical delivery and M6E differences.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6e-tick-size-tick-value-margin-requirements.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="6E Tick Size, Tick Value and Margin Requirements Explained">
-  <meta property="og:description" content="Get a clear breakdown of 6E tick size, tick value, and margin requirements so you know exactly how much each move in Euro FX futures really costs you.">
+  <meta property="og:title" content="6E Tick Size, Tick Value and Margin: The Contract Math">
+  <meta property="og:description" content="Turn the official Euro FX futures specification into ticks, pips, P&amp;L, hedge ratios, margin decisions and delivery awareness.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6e-tick-size-tick-value-margin-requirements.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
+  <meta property="og:image" content="https://grizzlyparrottrading.com/futures-basics/6e-contract-math-og.png">
+  <meta property="og:image:width" content="1728">
+  <meta property="og:image:height" content="910">
+  <meta property="og:image:alt" content="6E contract math: 125,000 euros, a 0.00005 tick and a $6.25 tick value">
+  <meta property="article:published_time" content="2025-11-24">
+  <meta property="article:modified_time" content="2026-08-07">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6E Tick Size, Tick Value and Margin Requirements Explained">
-  <meta name="twitter:description" content="Get a clear breakdown of 6E tick size, tick value, and margin requirements so you know exactly how much each move in Euro FX futures really costs you.">
+  <meta name="twitter:title" content="6E Tick Size, Tick Value and Margin">
+  <meta name="twitter:description" content="Official specifications, executable formulas, hedge examples and a 6E P&amp;L calculator.">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/futures-basics/6e-contract-math-og.png">
+  <meta name="twitter:image:alt" content="6E contract math: 125,000 euros, a 0.00005 tick and a $6.25 tick value">
 
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="6e-contract-specs-guide.css">
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){window.dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-JMJVR3G5YN');
   </script>
 
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6E Tick Size, Tick Value and Margin Requirements Explained",
-  "description": "Get a clear breakdown of 6E tick size, tick value, and margin requirements so you know exactly how much each move in Euro FX futures really costs you.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6e-tick-size-tick-value-margin-requirements.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6e-tick-size-tick-value-margin-requirements.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "6E Tick Size, Tick Value and Margin: The Contract Math",
+    "description": "A source-backed guide to Euro FX futures contract size, tick and pip value, profit and loss, hedge sizing, margin, physical delivery and Micro Euro FX differences.",
+    "author": {
+      "@type": "Person",
+      "name": "Kyle Parrott",
+      "url": "https://grizzlyparrottrading.com/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grizzly Parrot Trading",
+      "url": "https://grizzlyparrottrading.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://grizzlyparrottrading.com/OG-default.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://grizzlyparrottrading.com/futures-basics/6e-tick-size-tick-value-margin-requirements.html"
+    },
+    "datePublished": "2025-11-24",
+    "dateModified": "2026-08-07",
+    "url": "https://grizzlyparrottrading.com/futures-basics/6e-tick-size-tick-value-margin-requirements.html",
+    "image": "https://grizzlyparrottrading.com/futures-basics/6e-contract-math-og.png",
+    "inLanguage": "en-US"
+  }
+  </script>
 
-  <!-- JSON-LD: Breadcrumbs -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6E Tick Size, Tick Value and Margin Requirements Explained",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6e-tick-size-tick-value-margin-requirements.html"
-    }
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Futures Basics",
+        "item": "https://grizzlyparrottrading.com/futures-basics/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "6E Tick Size, Tick Value and Margin",
+        "item": "https://grizzlyparrottrading.com/futures-basics/6e-tick-size-tick-value-margin-requirements.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the tick size and tick value of standard Euro FX futures (6E)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The CME Globex outright minimum price increment for standard Euro FX futures is 0.00005 U.S. dollars per euro. With a contract size of 125,000 euros, one outright tick is worth 6.25 U.S. dollars per contract."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much is one pip worth in 6E?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "One pip is 0.00010 U.S. dollars per euro, equal to two 6E outright ticks and 12.50 U.S. dollars per standard contract."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the 6E margin requirement equal the maximum possible loss?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Futures margin is a performance bond, not a maximum-loss amount or a down payment on the underlying currency. Leveraged losses can exceed the initial margin deposit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the 6E Euro FX futures contract physically settled?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. CME lists standard Euro FX futures as physically settled. Traders who do not intend to participate in delivery generally offset or roll before their broker's deadline."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between 6E and Micro Euro FX futures (M6E)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard 6E represents 125,000 euros and has a 0.00005 outright tick worth 6.25 dollars. M6E represents 12,500 euros and has a 0.0001 outright tick worth 1.25 dollars."
+        }
+      }
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
 </head>
@@ -111,20 +159,17 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
+    <div class="logo"><a href="/">Grizzly Parrot Trading</a></div>
+    <nav class="main-nav" aria-label="Primary navigation">
       <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../metals/index.html">Metals</a></li>
+        <li><a href="../energies/index.html">Energies</a></li>
+        <li><a href="../currencies/index.html">Currencies</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firms</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+        <li><a href="../tools/index.html">Tools</a></li>
       </ul>
     </nav>
   </div>
@@ -132,180 +177,538 @@ Grizzly Parrot Trading</a>
 
 <main>
 <section class="section">
-<div class="container article-content">
+<article class="container article-content euro-contract-guide">
 <!-- ARTICLE BODY START -->
 
-<h1>6E Tick Size, Tick Value and Margin Requirements Explained</h1>
+<header class="e6-hero">
+  <div class="e6-hero-copy">
+    <p class="e6-kicker">Euro FX contract guide</p>
+    <h1>6E Tick Size, Tick Value and Margin: The Contract Math</h1>
+    <p class="e6-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 7, 2026</p>
+    <p class="e6-hero-lede">One standard 6E contract represents &euro;125,000. The outright market moves in 0.00005 increments, making each tick worth $6.25. Those two facts drive the contract&rsquo;s P&amp;L, hedge ratio, notional exposure and risk.</p>
+    <div class="e6-hero-actions">
+      <a class="button-primary" href="#pnl-calculator">Calculate a 6E trade</a>
+      <a class="e6-text-link" href="#hedging-with-6e">See the hedge example</a>
+    </div>
+    <dl class="e6-hero-facts" aria-label="Core standard Euro FX futures specifications">
+      <div><dt>Contract</dt><dd>&euro;125,000</dd></div>
+      <div><dt>Outright tick</dt><dd>0.00005</dd></div>
+      <div><dt>Tick value</dt><dd>$6.25</dd></div>
+      <div><dt>One pip</dt><dd>$12.50</dd></div>
+    </dl>
+  </div>
 
-<p>If you trade Euro FX futures and don’t know the exact 6E tick size, tick value, and margin requirements, you’re guessing with real money. This page strips the contract down to the numbers so you know exactly what each move in 6E costs or pays you.</p>
+  <div class="e6-quote-board" aria-label="Illustration of one 6E tick">
+    <div class="e6-board-topline">
+      <span>6E outright</span>
+      <strong>USD per EUR</strong>
+    </div>
+    <div class="e6-price-stack" aria-hidden="true">
+      <div class="is-next"><span>1.10510</span><small>+1 tick</small></div>
+      <div class="is-current"><span>1.10505</span><small>reference</small></div>
+      <div><span>1.10500</span><small>&minus;1 tick</small></div>
+    </div>
+    <div class="e6-board-equation">
+      <span>0.00005</span>
+      <i aria-hidden="true">&times;</i>
+      <span>&euro;125,000</span>
+      <i aria-hidden="true">=</i>
+      <strong>$6.25</strong>
+    </div>
+    <p>The displayed ladder is explanatory, not a live quote.</p>
+  </div>
+</header>
 
-<h2>Why 6E Tick Size and Tick Value Matter</h2>
-<p>6E tick size and tick value define the minimum price move and how many dollars that move is worth. If you don’t respect those numbers, your position sizing is nonsense and your risk management is fake.</p>
+<nav class="e6-jump-nav" aria-label="On this page">
+  <a href="#contract-specs">Specifications</a>
+  <a href="#tick-math">Tick math</a>
+  <a href="#pnl-calculator">Calculator</a>
+  <a href="#hedging-with-6e">Hedging</a>
+  <a href="#margin">Margin</a>
+  <a href="#delivery">Delivery</a>
+  <a href="#six-e-vs-micro">6E vs. M6E</a>
+</nav>
 
-<ul>
-  <li><strong>Tick size</strong> = smallest price increment 6E can move.</li>
-  <li><strong>Tick value</strong> = cash value of one tick.</li>
-  <li><strong>Margin</strong> = capital your broker/exchange holds to let you open the trade.</li>
-</ul>
+<section class="e6-section" id="contract-specs" aria-labelledby="specs-title">
+  <div class="e6-section-heading">
+    <p class="e6-kicker">The specification first</p>
+    <h2 id="specs-title">What One Standard 6E Contract Actually Represents</h2>
+    <p>Euro FX futures are quoted in U.S. dollars per euro. Multiply the quoted price by the contract&rsquo;s &euro;125,000 unit to estimate its dollar notional. That notional is exposure&mdash;not the cash required to open the position and not the maximum possible loss.</p>
+  </div>
 
-<p>This article builds on the big-picture view from <a href="https://grizzlyparrottrading.com/futures-basics/what-moves-euro-fx-futures-6e.html">What Moves Euro FX Futures (6E)?</a> and goes straight into contract specs and risk.</p>
+  <div class="e6-spec-layout">
+    <div class="e6-table-scroll" role="region" aria-label="Standard Euro FX futures specifications" tabindex="0">
+      <table class="e6-spec-table">
+        <tbody>
+          <tr><th scope="row">CME Globex code</th><td><strong>6E</strong></td></tr>
+          <tr><th scope="row">Rule chapter</th><td>261</td></tr>
+          <tr><th scope="row">Contract unit</th><td>&euro;125,000</td></tr>
+          <tr><th scope="row">Price quotation</th><td>U.S. dollars per euro</td></tr>
+          <tr><th scope="row">Globex outright tick</th><td>0.00005 USD per EUR</td></tr>
+          <tr><th scope="row">Outright tick value</th><td>$6.25 per contract</td></tr>
+          <tr><th scope="row">One pip</th><td>0.00010 = two ticks = $12.50</td></tr>
+          <tr><th scope="row">Final settlement</th><td>Physical delivery</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-<h2>Core 6E Contract Specs</h2>
-<p>Here are the key numbers for the standard Euro FX futures contract (6E):</p>
+    <aside class="e6-source-card" aria-label="Specification source">
+      <span class="e6-card-label">Primary source</span>
+      <h3>CME FX Product Guide 2026</h3>
+      <p>CME&rsquo;s current guide distinguishes the 0.00005 outright tick from the smaller increments used for Globex spreads and certain ClearPort transactions.</p>
+      <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">Verify the current 6E specification at CME Group</a>
+      <small>Specification checked August 7, 2026.</small>
+    </aside>
+  </div>
 
-<table>
-  <tr>
-    <th>Parameter</th>
-    <th>Value</th>
-  </tr>
-  <tr>
-    <td>Underlying</td>
-    <td>Euro vs U.S. Dollar</td>
-  </tr>
-  <tr>
-    <td>Contract size</td>
-    <td>125,000 euros</td>
-  </tr>
-  <tr>
-    <td>Price quotation</td>
-    <td>USD per euro (e.g., 1.1050)</td>
-  </tr>
-  <tr>
-    <td>Tick size</td>
-    <td>0.00005</td>
-  </tr>
-  <tr>
-    <td>Tick value</td>
-    <td>$6.25 per tick</td>
-  </tr>
-</table>
+  <div class="e6-distinction" role="note">
+    <strong>Do not reuse the outright tick for every 6E instrument.</strong>
+    <p>The standard 6E outright on Globex uses 0.00005 ($6.25). CME&rsquo;s 2026 guide lists 0.00002 ($2.50) for other Globex spreads and 0.00001 ($1.25) for qualifying ClearPort trades. Read the product and order type shown by your platform before converting a move into dollars.</p>
+  </div>
+</section>
 
-<p>Commit these numbers to memory. If someone asks you, “What’s a tick in 6E?” you should answer: “Half a pip, worth $6.25 per contract.”</p>
+<section class="e6-section" id="tick-math" aria-labelledby="math-title">
+  <div class="e6-section-heading">
+    <p class="e6-kicker">From quote to dollars</p>
+    <h2 id="math-title">The Four Calculations Behind Every 6E Position</h2>
+  </div>
 
-<h2>How 6E Tick Size Translates into Dollars</h2>
-<p>6E tick size is 0.00005. That means every time price moves by 0.00005, the contract gains or loses one tick. The math is simple:</p>
+  <div class="e6-formula-grid">
+    <article>
+      <span>01</span>
+      <h3>Price move</h3>
+      <code>exit price &minus; entry price</code>
+      <p>Reverse the sign for a short position so favorable movement remains positive.</p>
+    </article>
+    <article>
+      <span>02</span>
+      <h3>Ticks moved</h3>
+      <code>price move &divide; 0.00005</code>
+      <p>A 0.00100 move is 20 standard 6E outright ticks.</p>
+    </article>
+    <article>
+      <span>03</span>
+      <h3>Gross P&amp;L</h3>
+      <code>ticks &times; $6.25 &times; contracts</code>
+      <p>Subtract commissions, fees and actual execution costs separately.</p>
+    </article>
+    <article>
+      <span>04</span>
+      <h3>Entry notional</h3>
+      <code>entry price &times; &euro;125,000 &times; contracts</code>
+      <p>Notional describes exposure. Margin is only the performance bond supporting it.</p>
+    </article>
+  </div>
 
-<ul>
-  <li>1 tick = 0.00005</li>
-  <li>1 pip = 0.00010 = 2 ticks</li>
-  <li>1 pip move = 2 × $6.25 = $12.50 per contract</li>
-</ul>
+  <article class="e6-worked-move">
+    <div>
+      <span class="e6-card-label">Worked directional trade</span>
+      <h3>Long one 6E from 1.09500 to 1.09825</h3>
+      <p>The quote rises 0.00325, or 32.5 pips. At two ticks per pip, that is 65 ticks.</p>
+    </div>
+    <dl>
+      <div><dt>Price move</dt><dd>+0.00325</dd></div>
+      <div><dt>Ticks</dt><dd>65</dd></div>
+      <div><dt>Gross P&amp;L</dt><dd>65 &times; $6.25 = <strong>$406.25</strong></dd></div>
+      <div><dt>Entry notional</dt><dd>1.09500 &times; &euro;125,000 = <strong>$136,875</strong></dd></div>
+    </dl>
+  </article>
+</section>
 
-<p>If 6E moves from 1.10000 to 1.10100, that’s a 10 pip move = 20 ticks = $125 per contract. There’s nothing “mysterious” about it; it’s just multiplication.</p>
+<section class="e6-section e6-calculator-section" id="pnl-calculator" aria-labelledby="calculator-title">
+  <div class="e6-section-heading">
+    <p class="e6-kicker">Interactive worksheet</p>
+    <h2 id="calculator-title">6E Tick, Pip and P&amp;L Calculator</h2>
+    <p>Enter prices aligned to the 0.00005 outright increment. The result is mechanical contract math, not a fill guarantee or a recommendation.</p>
+  </div>
 
-<h2>Example: Real 6E Trade and P&amp;L</h2>
-<p>Say you go long 1 contract of 6E at 1.09500 and exit at 1.09825.</p>
+  <div class="e6-calculator-shell">
+    <form class="e6-calculator-form" id="e6-pnl-form" novalidate>
+      <div class="e6-field-grid">
+        <label>
+          <span>Direction</span>
+          <select id="e6-direction" name="direction">
+            <option value="long">Long</option>
+            <option value="short">Short</option>
+          </select>
+        </label>
+        <label>
+          <span>Contracts</span>
+          <input id="e6-contracts" name="contracts" type="number" min="1" max="1000" step="1" value="1" inputmode="numeric" required>
+        </label>
+        <label>
+          <span>Entry price</span>
+          <input id="e6-entry" name="entry" type="number" min="0.00005" step="0.00005" value="1.09500" inputmode="decimal" required>
+        </label>
+        <label>
+          <span>Exit price</span>
+          <input id="e6-exit" name="exit" type="number" min="0.00005" step="0.00005" value="1.09825" inputmode="decimal" required>
+        </label>
+        <label class="e6-field-wide">
+          <span>Estimated round-turn costs per contract</span>
+          <span class="e6-input-money"><i aria-hidden="true">$</i><input id="e6-costs" name="costs" type="number" min="0" step="0.01" value="0.00" inputmode="decimal" required></span>
+          <small>Optional estimate for commissions, fees and slippage. Use your own records.</small>
+        </label>
+      </div>
+      <div class="e6-form-actions">
+        <button class="button-primary" type="submit">Calculate trade</button>
+        <button class="e6-reset" type="reset">Restore example</button>
+      </div>
+      <p class="e6-form-message" id="e6-form-message" role="alert"></p>
+    </form>
 
-<table>
-  <tr>
-    <th>Item</th>
-    <th>Value</th>
-  </tr>
-  <tr>
-    <td>Entry</td>
-    <td>1.09500</td>
-  </tr>
-  <tr>
-    <td>Exit</td>
-    <td>1.09825</td>
-  </tr>
-  <tr>
-    <td>Price difference</td>
-    <td>0.00325</td>
-  </tr>
-  <tr>
-    <td>Pips</td>
-    <td>32.5 pips</td>
-  </tr>
-  <tr>
-    <td>Ticks</td>
-    <td>65 ticks</td>
-  </tr>
-  <tr>
-    <td>P&amp;L</td>
-    <td>65 × $6.25 = $406.25 before fees</td>
-  </tr>
-</table>
+    <section class="e6-results" aria-labelledby="result-title" aria-live="polite">
+      <p class="e6-card-label">Calculated result</p>
+      <h3 id="result-title">One standard 6E contract</h3>
+      <dl>
+        <div><dt>Raw price move</dt><dd id="e6-result-move">+0.00325</dd></div>
+        <div><dt>Directional pips</dt><dd id="e6-result-pips">+32.5</dd></div>
+        <div><dt>Directional ticks</dt><dd id="e6-result-ticks">+65</dd></div>
+        <div><dt>Entry notional</dt><dd id="e6-result-notional">$136,875.00</dd></div>
+        <div><dt>Gross P&amp;L</dt><dd id="e6-result-gross">+$406.25</dd></div>
+        <div><dt>Estimated costs</dt><dd id="e6-result-costs">&minus;$0.00</dd></div>
+        <div class="e6-result-total"><dt>Estimated net P&amp;L</dt><dd id="e6-result-net">+$406.25</dd></div>
+      </dl>
+      <p class="e6-result-status is-positive" id="e6-result-status">The entered long position gains 65 ticks before costs.</p>
+    </section>
+  </div>
+</section>
 
-<p>That’s how 6E tick size and tick value turn into actual cash. No indicators, no guessing—just math.</p>
+<section class="e6-section" id="hedging-with-6e" aria-labelledby="hedge-title">
+  <div class="e6-section-heading">
+    <p class="e6-kicker">From textbook hedge to listed contract</p>
+    <h2 id="hedge-title">How 6E Converts a Euro Exposure Into Whole Contracts</h2>
+    <p>Andrew Carr&rsquo;s <a href="https://biz.libretexts.org/Courses/Aurora_University/Principles_of_Financial_Management/11%3A_International_Financial_Management/11.04%3A_Managing_Exchange_Rate_Risk" target="_blank" rel="noopener">Managing Exchange Rate Risk</a> section distinguishes customized forwards from standardized, exchange-traded futures. The practical futures constraint is indivisibility: a hedge must use whole contracts.</p>
+  </div>
 
-<h2>Margin Requirements on 6E</h2>
-<p>Margin is the capital you must post to open a 6E position. There are three main concepts you need to separate in your head:</p>
+  <div class="e6-hedge-direction">
+    <article>
+      <span class="e6-card-label">Future euro receivable</span>
+      <h3>Risk: the euro weakens</h3>
+      <p>A U.S. firm expecting euros can sell 6E. A decline in EUR/USD reduces the receivable&rsquo;s dollar value while a short futures position gains, subject to basis, timing, quantity and execution differences.</p>
+    </article>
+    <article>
+      <span class="e6-card-label">Future euro payable</span>
+      <h3>Risk: the euro strengthens</h3>
+      <p>A U.S. firm owing euros can buy 6E. A rise in EUR/USD increases the payable&rsquo;s dollar cost while a long futures position gains, with the same hedge-effectiveness limits.</p>
+    </article>
+  </div>
 
-<ul>
-  <li><strong>Exchange margin</strong> – baseline required by the clearinghouse.</li>
-  <li><strong>Broker margin</strong> – often higher than the exchange, broker-controlled.</li>
-  <li><strong>Day-trade / intraday margin</strong> – reduced margin for intraday trades, also broker-controlled.</li>
-</ul>
+  <article class="e6-hedge-example">
+    <div class="e6-hedge-copy">
+      <span class="e6-card-label">Simplified offset example</span>
+      <h3>Hedging a &euro;250,000 receivable with two 6E contracts</h3>
+      <p>Two standard contracts match the expected euro amount exactly: &euro;250,000 &divide; &euro;125,000 = 2. If EUR/USD falls from 1.1000 to 1.0880, the receivable loses $3,000 of dollar value relative to the starting quote. A two-contract short 6E position gains $3,000 before costs.</p>
+      <p class="e6-fine-print">This deliberately matched example isolates the contract math. A real hedge can differ because the exposure amount or date changes, futures and spot prices do not move identically, futures are marked to market daily, contracts are discrete, and transaction costs apply.</p>
+    </div>
+    <div class="e6-offset-visual" aria-label="Simplified hedge offset">
+      <div class="is-loss"><span>Receivable translation</span><strong>&minus;$3,000</strong><small>&euro;250,000 &times; &minus;0.0120</small></div>
+      <i aria-hidden="true">+</i>
+      <div class="is-gain"><span>Short 2 6E</span><strong>+$3,000</strong><small>240 ticks &times; $6.25 &times; 2</small></div>
+      <i aria-hidden="true">=</i>
+      <div class="is-offset"><span>Illustrative offset</span><strong>$0</strong><small>before basis and costs</small></div>
+    </div>
+  </article>
 
-<p>Your broker decides what you actually see in your platform. One broker might let you trade 6E intraday with a small margin requirement, another might be much stricter. Either way, just because the margin is low doesn’t mean the risk is low.</p>
+  <div class="e6-hedge-formula"><strong>Starting contract count</strong><code>euro exposure &divide; &euro;125,000</code><p>When the result is not a whole number, rounding down leaves some exposure unhedged; rounding up can over-hedge. The correct choice depends on the risk objective, tolerance and authorization.</p></div>
+</section>
 
-<h2>How Margin Interacts with 6E Tick Value</h2>
-<p>Here’s where traders screw up: they look at the intraday margin and ignore how fast 6E can move in ticks. Example:</p>
+<section class="e6-section" id="margin" aria-labelledby="margin-title">
+  <div class="e6-section-heading">
+    <p class="e6-kicker">Performance bond, not purchase price</p>
+    <h2 id="margin-title">What a 6E Margin Requirement Does&mdash;and Does Not&mdash;Tell You</h2>
+    <p>CME describes futures margin as a performance bond that supports contractual obligations. It is not a down payment on &euro;125,000, a stop-loss distance or a cap on losses.</p>
+  </div>
 
-<ul>
-  <li>Tick value: $6.25</li>
-  <li>Reasonable stop: 20 ticks</li>
-  <li>Risk per contract: 20 × $6.25 = $125</li>
-</ul>
+  <div class="e6-margin-grid">
+    <article>
+      <span>Initial margin</span>
+      <h3>Funds required to initiate</h3>
+      <p>The amount required when a position is opened with the clearing firm. Requirements can change with product risk and market volatility.</p>
+    </article>
+    <article>
+      <span>Maintenance margin</span>
+      <h3>Minimum account level</h3>
+      <p>If margin equity falls below maintenance, additional funds may be required to restore the account to the applicable initial level.</p>
+    </article>
+    <article>
+      <span>Broker requirement</span>
+      <h3>Your actual trading threshold</h3>
+      <p>An FCM or broker can require more than the exchange minimum and can impose separate intraday, liquidation and delivery policies.</p>
+    </article>
+  </div>
 
-<p>If you only have $500 in the account and you’re risking $125 on one trade, you’re risking 25% of your account on a single idea. That’s not “aggressive”; that’s suicidal.</p>
+  <div class="e6-margin-warning">
+    <div>
+      <strong>Margin is not risk.</strong>
+      <p>At a 1.1000 quote, one 6E contract has approximately $137,500 of notional exposure. A $0.0100 adverse move equals 200 ticks, or a $1,250 loss per contract before costs&mdash;regardless of the amount posted as margin.</p>
+    </div>
+    <ul>
+      <li>Check the current <a href="https://www.cmegroup.com/markets/fx/g10/euro-fx.margins.html" target="_blank" rel="noopener">CME Euro FX margin page</a>.</li>
+      <li>Check the broker&rsquo;s current initial, maintenance, intraday and liquidation rules.</li>
+      <li>Size risk from a valid exit distance, tick value and costs&mdash;not from available buying power.</li>
+    </ul>
+  </div>
 
-<h2>Position Sizing with 6E Tick Value</h2>
-<p>To size your trades correctly, you reverse the process using 6E tick value:</p>
+  <p class="e6-source-note">CME&rsquo;s <a href="https://www.cmegroup.com/solutions/risk-management/performance-bonds-margins/faq-performance-bonds-margins.html" target="_blank" rel="noopener">Performance Bonds/Margins FAQ</a> explains initial and maintenance margin. The CFTC notes that FCMs may require more than exchange levels and that leveraged losses can exceed the initial deposit.</p>
+</section>
 
-<ol>
-  <li>Decide how much you’re willing to risk per trade (in dollars).</li>
-  <li>Define your stop in ticks based on structure, not feelings.</li>
-  <li>Use this simple formula:</li>
-</ol>
+<section class="e6-section" id="delivery" aria-labelledby="delivery-title">
+  <div class="e6-section-heading">
+    <p class="e6-kicker">The obligation behind the ticker</p>
+    <h2 id="delivery-title">6E Is Physically Settled</h2>
+    <p>CME lists Euro FX as physically settled. Its delivery guidance says the major currency contracts support all twelve calendar months, generally stop trading on the second business day before the third Wednesday and use the third Wednesday as the physical value date.</p>
+  </div>
 
-<p><strong>Contracts = (Dollar risk per trade) ÷ (Tick risk × $6.25)</strong></p>
+  <div class="e6-delivery-track" aria-label="Simplified Euro FX expiration sequence">
+    <article><span>Before expiry</span><strong>Offset or roll</strong><p>Most customers close or roll rather than enter delivery.</p></article>
+    <i aria-hidden="true">&rarr;</i>
+    <article><span>Trading termination</span><strong>Usually two business days before</strong><p>Confirm the exact listed contract and broker cutoff.</p></article>
+    <i aria-hidden="true">&rarr;</i>
+    <article><span>Value date</span><strong>Third Wednesday</strong><p>Fully funded clearing arrangements are required for delivery.</p></article>
+  </div>
 
-<p>Example: you want to risk $100 per trade, and your stop is 16 ticks.</p>
+  <div class="e6-delivery-note">
+    <p><strong>A retail platform may impose an earlier deadline.</strong> If delivery is not intended, verify the broker&rsquo;s policy before the contract enters its restricted or liquidation window.</p>
+    <a href="https://www.cmegroup.com/markets/fx/fx-delivery.html" target="_blank" rel="noopener">Read CME&rsquo;s FX delivery process</a>
+    <a href="6e-roll-dates-and-contract-behavior.html">See the 6E rollover guide</a>
+  </div>
+</section>
 
-<ul>
-  <li>Tick risk × tick value = 16 × $6.25 = $100</li>
-  <li>You can trade exactly 1 contract to stay inside your risk limit.</li>
-</ul>
+<section class="e6-section" id="six-e-vs-micro" aria-labelledby="micro-title">
+  <div class="e6-section-heading">
+    <p class="e6-kicker">The code changes the math</p>
+    <h2 id="micro-title">Standard 6E vs. Micro Euro FX (M6E)</h2>
+    <p>M6E is one-tenth the standard contract size, but its outright tick increment is not one-tenth of the 6E increment. Always use the specification attached to the code actually traded.</p>
+  </div>
 
-<p>This is how serious traders look at 6E tick size and tick value. They don’t say “it feels okay.” They do the math and size accordingly.</p>
+  <div class="e6-table-scroll" role="region" aria-label="Standard and Micro Euro FX comparison" tabindex="0">
+    <table class="e6-compare-table">
+      <thead>
+        <tr><th scope="col">Specification</th><th scope="col">Standard Euro FX</th><th scope="col">Micro Euro FX</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Globex code</th><td>6E</td><td>M6E</td></tr>
+        <tr><th scope="row">Contract unit</th><td>&euro;125,000</td><td>&euro;12,500</td></tr>
+        <tr><th scope="row">Outright tick</th><td>0.00005</td><td>0.00010</td></tr>
+        <tr><th scope="row">Tick value</th><td>$6.25</td><td>$1.25</td></tr>
+        <tr><th scope="row">Ticks per pip</th><td>2</td><td>1</td></tr>
+        <tr><th scope="row">One-pip value</th><td>$12.50</td><td>$1.25</td></tr>
+        <tr><th scope="row">Final settlement</th><td>Physical</td><td>Physical</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="e6-source-note">Both specifications come from the <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME FX Product Guide 2026</a>. Specification checked August 7, 2026.</p>
+</section>
 
+<section class="e6-section" aria-labelledby="errors-title">
+  <div class="e6-section-heading">
+    <p class="e6-kicker">Calculation failures to avoid</p>
+    <h2 id="errors-title">Six Ways Traders Misstate 6E Risk</h2>
+  </div>
+  <div class="e6-error-grid">
+    <article><strong>Treating one tick as one pip</strong><p>Standard 6E uses two 0.00005 ticks per 0.00010 pip.</p></article>
+    <article><strong>Using margin as maximum loss</strong><p>The performance bond supports the position; it does not cap the position&rsquo;s loss.</p></article>
+    <article><strong>Applying the outright tick to spreads</strong><p>Globex spreads and qualifying ClearPort transactions can use different increments.</p></article>
+    <article><strong>Forgetting whole-contract rounding</strong><p>A standardized hedge rarely matches an arbitrary exposure without residual risk.</p></article>
+    <article><strong>Ignoring the contract month</strong><p>A correct ticker with the wrong expiry can have different liquidity and delivery timing.</p></article>
+    <article><strong>Assuming the stop price is guaranteed</strong><p>A stop can fill beyond its trigger. Include estimated slippage and costs in planned risk.</p></article>
+  </div>
+  <p class="e6-related">For a full account-level calculation, use the <a href="../market-basics/risk-per-trade-small-accounts.html">risk-per-trade guide and whole-contract sizing calculator</a>. For execution costs, see <a href="futures-slippage-explained.html">Futures Slippage Explained</a>.</p>
+</section>
 
-<div class="highlight-box green">
-  <h3>6E Contract Specs Define Risk</h3>
-  <p>Tick size, tick value, and margin shape how positions behave in Euro FX futures. Understanding these parameters provides clarity on exposure and structural constraints without implying guaranteed outcomes.</p>
-</div>
+<section class="e6-section e6-faq" aria-labelledby="faq-title">
+  <div class="e6-section-heading">
+    <p class="e6-kicker">Frequently asked questions</p>
+    <h2 id="faq-title">Euro FX Contract Questions</h2>
+  </div>
+  <details>
+    <summary>What is the tick size and tick value of 6E?</summary>
+    <p>The CME Globex outright minimum price increment for standard Euro FX futures is 0.00005 USD per EUR. Multiplied by the &euro;125,000 contract unit, that equals $6.25 per tick per contract.</p>
+  </details>
+  <details>
+    <summary>How much is one pip worth in standard 6E?</summary>
+    <p>One pip is 0.00010, which equals two standard 6E outright ticks. Two ticks at $6.25 each equal $12.50 per contract.</p>
+  </details>
+  <details>
+    <summary>Does a low intraday margin make 6E low risk?</summary>
+    <p>No. Intraday margin is a broker-controlled capital requirement. It does not change the $6.25 tick value, the &euro;125,000 contract unit, slippage risk or the possibility that losses exceed the initial deposit.</p>
+  </details>
+  <details>
+    <summary>Is 6E cash settled or physically delivered?</summary>
+    <p>Standard Euro FX futures are physically settled. Traders who do not intend to participate in delivery generally offset or roll before the applicable broker deadline.</p>
+  </details>
+  <details>
+    <summary>Is M6E exactly one-tenth of 6E in every respect?</summary>
+    <p>No. Its &euro;12,500 contract unit is one-tenth of standard 6E, but M6E uses a 0.00010 outright tick worth $1.25. Standard 6E uses a 0.00005 outright tick worth $6.25.</p>
+  </details>
+</section>
+
+<details class="e6-sources">
+  <summary>Sources and editorial disclosure</summary>
+  <ul>
+    <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group: FX Product Guide 2026</a> for 6E and M6E codes, contract units, tick increments and settlement type.</li>
+    <li><a href="https://www.cmegroup.com/markets/fx/g10/euro-fx.contractSpecs.html" target="_blank" rel="noopener">CME Group: Euro FX futures product and contract specifications</a> for the current product reference.</li>
+    <li><a href="https://www.cmegroup.com/solutions/risk-management/performance-bonds-margins/faq-performance-bonds-margins.html" target="_blank" rel="noopener">CME Group: Performance Bonds/Margins FAQ</a> for initial and maintenance margin terminology.</li>
+    <li><a href="https://www.cmegroup.com/markets/fx/fx-delivery.html" target="_blank" rel="noopener">CME Group: FX futures delivery process</a> for physical settlement, termination and value-date mechanics.</li>
+    <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/economicpurpose.html" target="_blank" rel="noopener">CFTC: Economic Purpose of Futures Markets and How They Work</a> for standardization, performance bonds and daily mark-to-market.</li>
+    <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/understandcontractobligations.html" target="_blank" rel="noopener">CFTC: Understand Your Contractual Obligations</a> for leverage, fees and losses beyond initial margin.</li>
+    <li><a href="https://biz.libretexts.org/Courses/Aurora_University/Principles_of_Financial_Management/11%3A_International_Financial_Management/11.04%3A_Managing_Exchange_Rate_Risk" target="_blank" rel="noopener">Business LibreTexts / Aurora University: Managing Exchange Rate Risk</a> for the managerial comparison of forwards, futures and other hedges.</li>
+  </ul>
+  <p>Exchange specifications checked August 7, 2026. Dynamic requirements such as margin must be checked again before use. Grizzly Parrot Trading has no paid relationship with the cited educational or regulatory sources.</p>
+</details>
+
+<aside class="e6-disclaimer" aria-label="Educational and risk disclaimer">
+  <strong>Educational and risk disclaimer</strong>
+  <p>This guide and calculator are educational tools, not individualized trading, investment, legal, accounting, tax, brokerage or hedging advice. Futures are leveraged, can move rapidly and can produce losses greater than the initial margin deposit. Calculator results exclude any costs not entered and cannot predict execution price, basis behavior, margin changes, broker liquidation or hedge effectiveness. Verify the current CME specification, broker rules and your own exposure before acting.</p>
+</aside>
 
 <!-- ARTICLE BODY END -->
-</div>
+</article>
 </section>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
-
     <div class="footer-book">
       <h3>Books</h3>
       <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
+      <a href="/books/" class="footer-book-link">View All Books</a>
     </div>
-
     <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
+      <a href="/about.html">About</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/contact.html">Contact</a>
     </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+    <p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+  (function () {
+    'use strict';
+
+    var TICK_SIZE = 0.00005;
+    var TICK_VALUE = 6.25;
+    var PIP_SIZE = 0.00010;
+    var CONTRACT_UNITS = 125000;
+
+    var form = document.getElementById('e6-pnl-form');
+    var direction = document.getElementById('e6-direction');
+    var contracts = document.getElementById('e6-contracts');
+    var entry = document.getElementById('e6-entry');
+    var exit = document.getElementById('e6-exit');
+    var costs = document.getElementById('e6-costs');
+    var message = document.getElementById('e6-form-message');
+    var result = {
+      move: document.getElementById('e6-result-move'),
+      pips: document.getElementById('e6-result-pips'),
+      ticks: document.getElementById('e6-result-ticks'),
+      notional: document.getElementById('e6-result-notional'),
+      gross: document.getElementById('e6-result-gross'),
+      costs: document.getElementById('e6-result-costs'),
+      net: document.getElementById('e6-result-net'),
+      status: document.getElementById('e6-result-status')
+    };
+
+    var money = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+    function signed(value, digits) {
+      var clean = Math.abs(value) < Math.pow(10, -digits) / 2 ? 0 : value;
+      return (clean > 0 ? '+' : clean < 0 ? '\u2212' : '') + Math.abs(clean).toFixed(digits);
+    }
+
+    function signedMoney(value) {
+      var clean = Math.abs(value) < 0.005 ? 0 : value;
+      return (clean > 0 ? '+' : clean < 0 ? '\u2212' : '') + money.format(Math.abs(clean));
+    }
+
+    function isOnTick(price) {
+      var ticks = price / TICK_SIZE;
+      return Math.abs(ticks - Math.round(ticks)) < 0.000001;
+    }
+
+    function invalidate(text) {
+      message.textContent = text;
+      result.status.textContent = 'Correct the calculator inputs to produce a result.';
+      result.status.className = 'e6-result-status is-invalid';
+    }
+
+    function calculate() {
+      var count = Number(contracts.value);
+      var entryPrice = Number(entry.value);
+      var exitPrice = Number(exit.value);
+      var costPerContract = Number(costs.value);
+
+      if (!Number.isInteger(count) || count < 1 || count > 1000) {
+        invalidate('Contracts must be a whole number from 1 through 1,000.');
+        return;
+      }
+      if (!Number.isFinite(entryPrice) || !Number.isFinite(exitPrice) || entryPrice <= 0 || exitPrice <= 0) {
+        invalidate('Enter positive entry and exit prices.');
+        return;
+      }
+      if (!isOnTick(entryPrice) || !isOnTick(exitPrice)) {
+        invalidate('Entry and exit must align to the standard 6E outright tick of 0.00005.');
+        return;
+      }
+      if (!Number.isFinite(costPerContract) || costPerContract < 0) {
+        invalidate('Estimated round-turn costs must be zero or greater.');
+        return;
+      }
+
+      message.textContent = '';
+      var rawMove = exitPrice - entryPrice;
+      var directionalMove = direction.value === 'short' ? -rawMove : rawMove;
+      var directionalTicks = directionalMove / TICK_SIZE;
+      var directionalPips = directionalMove / PIP_SIZE;
+      var notional = entryPrice * CONTRACT_UNITS * count;
+      var gross = directionalTicks * TICK_VALUE * count;
+      var estimatedCosts = costPerContract * count;
+      var net = gross - estimatedCosts;
+
+      result.move.textContent = signed(rawMove, 5);
+      result.pips.textContent = signed(directionalPips, 1);
+      result.ticks.textContent = signed(directionalTicks, 0);
+      result.notional.textContent = money.format(notional);
+      result.gross.textContent = signedMoney(gross);
+      result.costs.textContent = '\u2212' + money.format(estimatedCosts);
+      result.net.textContent = signedMoney(net);
+
+      var side = direction.value === 'short' ? 'short' : 'long';
+      var absoluteTicks = Math.abs(Math.round(directionalTicks));
+      var tickWord = absoluteTicks === 1 ? ' tick' : ' ticks';
+      if (directionalTicks > 0) {
+        result.status.textContent = 'The entered ' + side + ' position gains ' + absoluteTicks + tickWord + ' before costs.' + (net < 0 ? ' Entered costs make the estimated net result negative.' : '');
+        result.status.className = net < 0 ? 'e6-result-status is-mixed' : 'e6-result-status is-positive';
+      } else if (directionalTicks < 0) {
+        result.status.textContent = 'The entered ' + side + ' position loses ' + absoluteTicks + tickWord + ' before costs.';
+        result.status.className = 'e6-result-status is-negative';
+      } else {
+        result.status.textContent = estimatedCosts > 0 ? 'The price move is flat; entered costs create the estimated net loss.' : 'The estimated result is flat before and after entered costs.';
+        result.status.className = estimatedCosts > 0 ? 'e6-result-status is-negative' : 'e6-result-status is-flat';
+      }
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      calculate();
+    });
+    form.addEventListener('input', calculate);
+    form.addEventListener('change', calculate);
+    form.addEventListener('reset', function () {
+      window.setTimeout(calculate, 0);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    calculate();
+  }());
+</script>
 </body>
 </html>
