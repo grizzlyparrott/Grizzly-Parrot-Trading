@@ -3,107 +3,147 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How BOJ Intervention Shows Up on the 6J Chart</title>
-  <meta name="description" content="A blunt breakdown of how BOJ currency interventions appear on the 6J Yen futures chart and the signals that warn you before they hit.">
+  <title>Yen Intervention &amp; 6J Futures | Verified Event Study</title>
+  <meta name="description" content="A source-linked study of seven confirmed Japanese yen-intervention dates in 2022 and 2024, measured daily FX responses, 6J implications and evidence limits.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6j-boj-intervention-signals.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="How BOJ Intervention Shows Up on the 6J Chart">
-  <meta property="og:description" content="A blunt breakdown of how BOJ currency interventions appear on the 6J Yen futures chart and the signals that warn you before they hit.">
+  <meta property="og:title" content="Japan's Yen Intervention and 6J Futures: A Verified Event Study">
+  <meta property="og:description" content="Official operation dates and amounts, daily market responses, institutional roles and the limits of what public data can prove.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6j-boj-intervention-signals.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
+  <meta property="og:image" content="https://grizzlyparrottrading.com/futures-basics/6j-intervention-study-og.png">
+  <meta property="og:image:width" content="1728">
+  <meta property="og:image:height" content="910">
+  <meta property="og:image:alt" content="Verified Japanese yen intervention event study covering seven operation dates and four clusters">
+  <meta property="article:published_time" content="2025-11-24">
+  <meta property="article:modified_time" content="2026-08-07">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="How BOJ Intervention Shows Up on the 6J Chart">
-  <meta name="twitter:description" content="A blunt breakdown of how BOJ currency interventions appear on the 6J Yen futures chart and the signals that warn you before they hit.">
+  <meta name="twitter:title" content="Japan's Yen Intervention and 6J Futures">
+  <meta name="twitter:description" content="A verified 2022-2024 event study using official MOF records and Federal Reserve daily FX observations.">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/futures-basics/6j-intervention-study-og.png">
+  <meta name="twitter:image:alt" content="Verified Japanese yen intervention event study">
 
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="6j-evidence-guides.css">
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){window.dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-JMJVR3G5YN');
   </script>
 
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How BOJ Intervention Shows Up on the 6J Chart",
-  "description": "A blunt breakdown of how BOJ currency interventions appear on the 6J Yen futures chart and the signals that warn you before they hit.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6j-boj-intervention-signals.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6j-boj-intervention-signals.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Japan's Yen Intervention and 6J Futures: A Verified 2022-2024 Event Study",
+    "description": "An original event study of seven confirmed Japanese foreign-exchange intervention dates in 2022 and 2024 using Ministry of Finance records and Federal Reserve daily exchange-rate observations.",
+    "author": {
+      "@type": "Person",
+      "name": "Kyle Parrott",
+      "url": "https://grizzlyparrottrading.com/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grizzly Parrot Trading",
+      "url": "https://grizzlyparrottrading.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://grizzlyparrottrading.com/OG-default.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://grizzlyparrottrading.com/futures-basics/6j-boj-intervention-signals.html"
+    },
+    "datePublished": "2025-11-24",
+    "dateModified": "2026-08-07",
+    "url": "https://grizzlyparrottrading.com/futures-basics/6j-boj-intervention-signals.html",
+    "image": "https://grizzlyparrottrading.com/futures-basics/6j-intervention-study-og.png",
+    "inLanguage": "en-US"
+  }
+  </script>
 
-  <!-- JSON-LD: Breadcrumbs -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Market Basics",
-      "item": "https://grizzlyparrottrading.com/market-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How BOJ Intervention Shows Up on the 6J Chart",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6j-boj-intervention-signals.html"
-    }
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Futures Basics",
+        "item": "https://grizzlyparrottrading.com/futures-basics/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Yen Intervention Event Study",
+        "item": "https://grizzlyparrottrading.com/futures-basics/6j-boj-intervention-signals.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does the Bank of Japan decide when to intervene in the yen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Japan's Ministry of Finance decides and directs foreign-exchange intervention. The Bank of Japan executes the transaction as the Ministry's agent."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many confirmed yen-buying intervention dates occurred in 2022 and 2024?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Japan's Ministry of Finance records seven dates: September 22, October 21 and October 24, 2022; April 29, May 1, July 11 and July 12, 2024. The displayed daily amounts total 24.5113 trillion yen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does every confirmed intervention make 6J rise immediately?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Federal Reserve daily noon observations show mixed event-date responses, and those data cannot isolate exact intervention timing, intraday highs and lows or causation. Expectations, macro releases and later trading can overlap with an operation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does a stronger yen usually mean a higher 6J price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard CME Japanese Yen futures are quoted in U.S. dollars per yen, while USD/JPY spot is quoted in yen per U.S. dollar. They therefore move in opposite quote directions, subject to futures basis and contract timing."
+        }
+      }
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
 </head>
@@ -111,20 +151,17 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
+    <div class="logo"><a href="/">Grizzly Parrot Trading</a></div>
+    <nav class="main-nav" aria-label="Primary navigation">
       <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../metals/index.html">Metals</a></li>
+        <li><a href="../energies/index.html">Energies</a></li>
+        <li><a href="../currencies/index.html">Currencies</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firms</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+        <li><a href="../tools/index.html">Tools</a></li>
       </ul>
     </nav>
   </div>
@@ -132,191 +169,373 @@ Grizzly Parrot Trading</a>
 
 <main>
 <section class="section">
-<div class="container article-content">
+<article class="container article-content yen-evidence">
 <!-- ARTICLE BODY START -->
 
-
-
-<h1>How BOJ Intervention Shows Up on the 6J Chart</h1>
-
-
-
-<p>When the <strong>Bank of Japan intervenes</strong> in the currency market, <strong>6J futures</strong> react instantly. These aren’t normal moves — they’re vertical, violent, and unmistakable if you know what to look for. Intervention leaves a signature on the chart that no other event can replicate.</p>
-
-
-
-<h2>1. The Initial Vertical Spike</h2>
-
-<p>The first sign is a massive candle that looks completely out of place relative to the rest of the session.</p>
-
-
-
-<ul>
-
-<li>zero pullback</li>
-
-<li>straight-line movement</li>
-
-<li>volume explosion</li>
-
-</ul>
-
-
-
-<p>This isn’t “momentum.” It’s the BOJ slamming billions into the market to defend the yen, usually after extreme USDJPY levels.</p>
-
-
-
-<h2>2. DOM and Volume Behavior Goes Insane</h2>
-
-<p>The DOM thins, then fills, then vanishes — all in seconds. Volume prints blocks far larger than any institutional trader normally uses.</p>
-
-
-
-<ul>
-
-<li>size appears mid-range instantly</li>
-
-<li>market orders sweep multiple levels</li>
-
-<li>algos shut off because the tape breaks correlation</li>
-
-</ul>
-
-
-
-<p>If you’ve studied <a href="https://grizzlyparrottrading.com/market-basics/liquidity-voids-why-markets-rush-through-empty-space.html">liquidity void behavior</a>, intervention basically creates the biggest void possible.</p>
-
-
-
-<h2>3. Correlations Break Immediately</h2>
-
-<p>During intervention:</p>
-
-
-
-<ul>
-
-<li>U.S. yields temporarily stop mattering</li>
-
-<li>ES/NQ correlations break</li>
-
-<li>USDJPY disconnects from normal levels</li>
-
-</ul>
-
-
-
-<p>Everything you know from <a href="https://grizzlyparrottrading.com/futures-basics/6j-and-bond-yields-relationship.html">6J–yield dynamics</a> pauses for a few minutes.</p>
-
-
-
-<h2>4. The Follow-Through Move Is Always One-Sided</h2>
-
-<p>Intervention isn’t subtle. It forces price to move. You’ll see:</p>
-
-
-
-<ul>
-
-<li>an initial ripping candle</li>
-
-<li>small retrace (if any)</li>
-
-<li>a second impulse wave</li>
-
-</ul>
-
-
-
-<p>This two-stage pattern is one of the most reliable signatures of BOJ action.</p>
-
-
-
-<h2>5. When It Usually Happens</h2>
-
-<p>BOJ intervention almost always hits during:</p>
-
-
-
-<ul>
-
-<li>Tokyo hours</li>
-
-<li>Tokyo–Singapore overlap</li>
-
-<li>major USDJPY “line in the sand” levels</li>
-
-</ul>
-
-
-
-<p>These windows align with the volatility behavior outlined in <a href="https://grizzlyparrottrading.com/futures-basics/6j-volatility-patterns.html">your volatility article</a>.</p>
-
-
-
-<h2>6. The Warning Signs Before Intervention Hits</h2>
-
-<p>Smart desks catch intervention hints early. Here’s what they watch:</p>
-
-
-
-<ul>
-
-<li>USDJPY approaching historic “danger levels”</li>
-
-<li>BOJ officials making sudden public comments</li>
-
-<li>news agencies reporting “BOJ watching FX closely”</li>
-
-<li>options market pricing huge IV jumps</li>
-
-</ul>
-
-
-
-<p>When these line up, liquidity dries just before the BOJ hits the button.</p>
-
-
-
-<div class="highlight-box yellow">
-
-  <h3>BOJ Intervention Leaves Distinct Market Signals</h3>
-
-  <p>Spikes, broken correlations, extreme volume, and extended one-direction moves mark intervention events in 6J. Recognizing these patterns provides context for unusual price behavior without implying prediction or guaranteed outcomes.</p>
-
-</div>
-
-
+<header class="yj-hero">
+  <div class="yj-hero-copy">
+    <p class="yj-kicker">Official-record event study &middot; 6J / JPY-USD</p>
+    <h1>Japan&rsquo;s Yen Intervention and 6J Futures: A Verified 2022&ndash;2024 Event Study</h1>
+    <p class="yj-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 7, 2026</p>
+    <p class="yj-hero-lede">Japan intervened to buy yen on seven confirmed dates across 2022 and 2024. The official record proves the dates and amounts. Public daily exchange-rate data show what followed at a coarse frequency&mdash;and why a dramatic chart move alone cannot authenticate an operation.</p>
+    <div class="yj-hero-actions">
+      <a class="button-primary" href="#official-record">Inspect every operation</a>
+      <a class="yj-text-link" href="#event-atlas">See the four event clusters</a>
+    </div>
+    <dl class="yj-hero-metrics" aria-label="Event study summary">
+      <div><dt>Confirmed dates</dt><dd>7</dd></div>
+      <div><dt>Displayed total</dt><dd>&yen;24.5113T</dd></div>
+      <div><dt>Event clusters</dt><dd>4</dd></div>
+      <div><dt>Operation years</dt><dd>2022 &amp; 2024</dd></div>
+    </dl>
+  </div>
+
+  <div class="yj-hero-visual">
+    <div class="yj-market-board">
+      <div class="yj-board-head"><span>July 2024 cluster</span><strong>Daily JPY/USD direction</strong></div>
+      <svg class="yj-board-chart" viewBox="0 0 520 220" role="img" aria-labelledby="intervention-hero-title intervention-hero-desc">
+        <title id="intervention-hero-title">JPY/USD directional proxy around the July 11 and July 12, 2024 intervention dates</title>
+        <desc id="intervention-hero-desc">The daily proxy strengthened across the two confirmed operation dates, but noon observations cannot isolate exact execution timing or causation.</desc>
+        <line class="grid-line" x1="20" y1="40" x2="500" y2="40"></line>
+        <line class="grid-line" x1="20" y1="115" x2="500" y2="115"></line>
+        <line class="grid-line" x1="20" y1="190" x2="500" y2="190"></line>
+        <line class="intervention-rule" x1="230" y1="28" x2="230" y2="190"></line>
+        <line class="intervention-rule" x1="270" y1="28" x2="270" y2="190"></line>
+        <polyline class="yen-line" points="28,145 68,129 109,130 149,143 189,150 230,84 270,69 311,69 351,84 391,40 432,49 472,58"></polyline>
+        <circle class="intervention-marker" cx="230" cy="84" r="7"></circle>
+        <circle class="intervention-marker" cx="270" cy="69" r="7"></circle>
+        <text x="230" y="211" text-anchor="middle">Jul 11</text>
+        <text x="270" y="211" text-anchor="middle">Jul 12</text>
+      </svg>
+      <div class="yj-board-legend" aria-hidden="true"><span class="is-yen">100 &divide; USD/JPY</span><span class="is-event">Official operation date</span></div>
+      <p class="yj-board-foot"><span>Daily noon observations</span><span>Source: Federal Reserve H.10</span></p>
+    </div>
+  </div>
+</header>
+
+<nav class="yj-jump-nav" aria-label="On this page">
+  <a href="#bottom-line">Bottom line</a>
+  <a href="#institutional-roles">Who does what</a>
+  <a href="#methodology">Method</a>
+  <a href="#official-record">7 dates</a>
+  <a href="#event-atlas">Event atlas</a>
+  <a href="#evidence-limits">Proof limits</a>
+  <a href="#trader-checklist">Checklist</a>
+  <a href="#faq">FAQ</a>
+</nav>
+
+<section class="yj-section" id="bottom-line" aria-labelledby="bottom-line-title">
+  <div class="yj-section-heading">
+    <p class="yj-kicker">Direct answer</p>
+    <h2 id="bottom-line-title">Intervention Is an Official Act, Not a Candle Pattern</h2>
+    <p>A sudden yen rally may be consistent with intervention, but the chart does not establish who traded, why it moved or whether an official operation occurred. Confirmation comes from Japan&rsquo;s Ministry of Finance. The seven 2022&ndash;2024 dates in this study are confirmed because they appear in the Ministry&rsquo;s historical intervention record.</p>
+  </div>
+
+  <div class="yj-two-column">
+    <article class="yj-panel">
+      <p class="yj-card-label">What is verified</p>
+      <h3>Dates, direction and yen amounts</h3>
+      <p>The Ministry reports dollar-selling, yen-buying operations on seven dates. The displayed daily amounts sum to &yen;24.5113 trillion and group naturally into four short clusters.</p>
+    </article>
+    <article class="yj-panel">
+      <p class="yj-card-label">What remains unverified</p>
+      <h3>Exact intraday market mechanics</h3>
+      <p>Daily noon observations cannot prove the precise execution minute, order-book behavior, trading venue, futures volume response, maximum excursion or how much of a move the operation caused.</p>
+    </article>
+  </div>
+
+  <div class="yj-caution">
+    <strong>Terminology correction</strong>
+    <p>&ldquo;BOJ intervention&rdquo; is common market shorthand, but institutionally incomplete. Japan&rsquo;s <strong>Ministry of Finance decides and directs</strong> foreign-exchange intervention. The <strong>Bank of Japan executes</strong> the transaction as the Ministry&rsquo;s agent.</p>
+  </div>
+</section>
+
+<section class="yj-section" id="institutional-roles" aria-labelledby="roles-title">
+  <div class="yj-section-heading">
+    <p class="yj-kicker">Institutional chain</p>
+    <h2 id="roles-title">From Government Decision to a 6J-Relevant Price Move</h2>
+    <p>The official division of responsibility matters. It keeps the evidence chain precise and prevents a market rumor from being reported as government action.</p>
+  </div>
+
+  <div class="yj-process" aria-label="Yen intervention institutional and market transmission chain">
+    <article><span>Step 1</span><h3>Ministry of Finance</h3><p>Decides whether to intervene and gives the instruction under Japan&rsquo;s foreign-exchange framework.</p></article>
+    <article><span>Step 2</span><h3>Bank of Japan</h3><p>Acts as the Ministry&rsquo;s agent and conducts the foreign-exchange transaction.</p></article>
+    <article><span>Step 3</span><h3>FX counterparties</h3><p>The official transaction enters the cash foreign-exchange market through the executing channel.</p></article>
+    <article><span>Step 4</span><h3>Spot and futures</h3><p>Arbitrage and repricing can transmit yen strength into the USD-per-yen direction relevant to 6J.</p></article>
+  </div>
+
+  <p class="yj-source-note">This sequence describes institutional responsibility and a plausible market-transmission channel. It is not a claim that every observed futures tick was caused by the official transaction.</p>
+</section>
+
+<section class="yj-section" id="methodology" aria-labelledby="method-title">
+  <div class="yj-section-heading">
+    <p class="yj-kicker">Reproducible method</p>
+    <h2 id="method-title">Official Operations Matched to Public Daily FX Data</h2>
+    <p>The study separates what the government confirms from what the daily market series can measure. It does not reconstruct an intraday tape from daily observations.</p>
+  </div>
+
+  <div class="yj-method">
+    <div>
+      <h3>Event-study construction</h3>
+      <p>Take every dollar-selling, yen-buying date in the Ministry of Finance historical CSV for 2022 and 2024. Match each date to the Federal Reserve H.10 daily USD/JPY series. Convert spot into 6J direction with <strong>100 &divide; USD/JPY</strong>, then compare the prior available observation with the event-date noon observation and the fifth available observation after it.</p>
+    </div>
+    <dl>
+      <div><dt>Official dates</dt><dd>7</dd></div>
+      <div><dt>Daily series</dt><dd>DEXJPUS</dd></div>
+      <div><dt>Event groups</dt><dd>4 clusters</dd></div>
+      <div><dt>Accessed</dt><dd>Aug. 7, 2026</dd></div>
+    </dl>
+  </div>
+
+  <div class="yj-check-grid" style="margin-top:1.2rem">
+    <article><strong>Event-date move</strong><p>Percentage change in 100 &divide; USD/JPY from the prior available H.10 observation to the event-date observation.</p></article>
+    <article><strong>Five-observation move</strong><p>Percentage change from the same pre-event reference through the fifth available H.10 observation after the event date.</p></article>
+    <article><strong>Positive means yen strength</strong><p>A positive transformed return points in the same broad quote direction as a higher 6J price, before futures basis and timing differences.</p></article>
+  </div>
+
+  <div class="yj-caution">
+    <strong>Timing boundary</strong>
+    <p>H.10 observations are daily noon buying rates in New York. They are not official execution prices or complete session bars. If an operation occurs before or after the observation, the event-date measurement can omit part of the move or include unrelated trading.</p>
+  </div>
+</section>
+
+<section class="yj-section" id="official-record" aria-labelledby="record-title">
+  <div class="yj-section-heading">
+    <p class="yj-kicker">Seven confirmed operation dates</p>
+    <h2 id="record-title">The Official Record and the Measured Daily Response</h2>
+    <p>Every amount comes from Japan&rsquo;s Ministry of Finance. Exchange-rate changes are Grizzly Parrot Trading calculations from Federal Reserve daily observations and are rounded for display.</p>
+  </div>
+
+  <div class="yj-table-scroll" role="region" aria-label="Confirmed yen intervention dates, official amounts and measured daily responses" tabindex="0">
+    <table class="yj-table">
+      <thead>
+        <tr><th scope="col">Operation date</th><th scope="col">Official amount</th><th scope="col">USD/JPY: prior &rarr; event observation</th><th scope="col">6J-direction proxy: event date</th><th scope="col">Through fifth later observation</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Sep. 22, 2022</th><td>&yen;2.8382T</td><td>144.14 &rarr; 142.16</td><td class="is-positive">+1.39%</td><td class="is-negative">&minus;0.21%</td></tr>
+        <tr><th scope="row">Oct. 21, 2022</th><td>&yen;5.6202T</td><td>149.82 &rarr; 146.35</td><td class="is-positive">+2.37%</td><td class="is-positive">+1.45%</td></tr>
+        <tr><th scope="row">Oct. 24, 2022</th><td>&yen;0.7296T</td><td>146.35 &rarr; 148.76</td><td class="is-negative">&minus;1.62%</td><td class="is-negative">&minus;1.53%</td></tr>
+        <tr><th scope="row">Apr. 29, 2024</th><td>&yen;5.9185T</td><td>157.62 &rarr; 156.71</td><td class="is-positive">+0.58%</td><td class="is-positive">+2.45%</td></tr>
+        <tr><th scope="row">May 1, 2024</th><td>&yen;3.8700T</td><td>157.54 &rarr; 157.65</td><td class="is-negative">&minus;0.07%</td><td class="is-positive">+1.36%</td></tr>
+        <tr><th scope="row">Jul. 11, 2024</th><td>&yen;3.1678T</td><td>161.73 &rarr; 158.58</td><td class="is-positive">+1.99%</td><td class="is-positive">+3.03%</td></tr>
+        <tr><th scope="row">Jul. 12, 2024</th><td>&yen;2.3670T</td><td>158.58 &rarr; 157.88</td><td class="is-positive">+0.44%</td><td class="is-positive">+0.76%</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><th scope="row">Displayed total</th><td><strong>&yen;24.5113T</strong></td><td colspan="3">Seven dates across four clusters; overlapping windows are not independent observations.</td></tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <p class="yj-source-note">The table measures each date separately even when operations occurred on adjacent market days. That makes the individual five-observation windows overlap. Do not sum or average them as if they were seven independent trades.</p>
+</section>
+
+<section class="yj-section" id="event-atlas" aria-labelledby="atlas-title">
+  <div class="yj-section-heading">
+    <p class="yj-kicker">Four event clusters</p>
+    <h2 id="atlas-title">The Yen Strengthened Through Three of Four Cluster Endpoints</h2>
+    <p>Grouping adjacent operation dates avoids treating overlapping windows as separate episodes. Each small chart shows the same transformed daily series; gold dots mark confirmed dates.</p>
+  </div>
+
+  <div class="yj-atlas">
+    <article class="yj-event-card">
+      <div class="yj-event-head"><h3>September 2022</h3><strong>&yen;2.8382T</strong></div>
+      <svg class="yj-event-chart" viewBox="0 0 500 185" role="img" aria-labelledby="sep-chart-title sep-chart-desc">
+        <title id="sep-chart-title">JPY/USD directional proxy around September 22, 2022</title>
+        <desc id="sep-chart-desc">The daily proxy strengthened on the confirmed date and later surrendered the initial gain within five observations.</desc>
+        <line class="event-grid" x1="28" y1="40" x2="472" y2="40"></line><line class="event-grid" x1="28" y1="95" x2="472" y2="95"></line><line class="event-grid" x1="28" y1="150" x2="472" y2="150"></line>
+        <line class="event-rule" x1="250" y1="24" x2="250" y2="156"></line>
+        <polyline class="event-path" points="28,101 72,78 117,91 161,104 206,126 250,40 294,84 339,139 383,150 428,126 472,139"></polyline>
+        <circle class="event-marker" cx="250" cy="40" r="7"></circle>
+        <text x="28" y="176">Before</text><text x="250" y="176" text-anchor="middle">Sep 22</text><text x="472" y="176" text-anchor="end">After</text>
+      </svg>
+      <div class="yj-event-metrics"><div><span>Through operation date</span><strong>+1.39%</strong></div><div><span>Through fifth later obs.</span><strong>&minus;0.21%</strong></div></div>
+    </article>
+
+    <article class="yj-event-card">
+      <div class="yj-event-head"><h3>October 2022</h3><strong>&yen;6.3498T</strong></div>
+      <svg class="yj-event-chart" viewBox="0 0 500 185" role="img" aria-labelledby="oct-chart-title oct-chart-desc">
+        <title id="oct-chart-title">JPY/USD directional proxy around October 21 and October 24, 2022</title>
+        <desc id="oct-chart-desc">The daily proxy strengthened sharply on the first confirmed date, reversed on the second and remained modestly stronger than the pre-cluster reference five observations later.</desc>
+        <line class="event-grid" x1="28" y1="40" x2="472" y2="40"></line><line class="event-grid" x1="28" y1="95" x2="472" y2="95"></line><line class="event-grid" x1="28" y1="150" x2="472" y2="150"></line>
+        <line class="event-rule" x1="230" y1="24" x2="230" y2="156"></line><line class="event-rule" x1="270" y1="24" x2="270" y2="156"></line>
+        <polyline class="event-path" points="28,111 68,118 109,133 149,149 189,150 230,50 270,120 311,94 351,54 391,40 432,89 472,116"></polyline>
+        <circle class="event-marker" cx="230" cy="50" r="7"></circle><circle class="event-marker" cx="270" cy="120" r="7"></circle>
+        <text x="28" y="176">Before</text><text x="230" y="176" text-anchor="middle">Oct 21</text><text x="270" y="176" text-anchor="middle">Oct 24</text><text x="472" y="176" text-anchor="end">After</text>
+      </svg>
+      <div class="yj-event-metrics"><div><span>Through cluster close</span><strong>+0.71%</strong></div><div><span>Through fifth later obs.</span><strong>+0.80%</strong></div></div>
+    </article>
+
+    <article class="yj-event-card">
+      <div class="yj-event-head"><h3>April&ndash;May 2024</h3><strong>&yen;9.7885T</strong></div>
+      <svg class="yj-event-chart" viewBox="0 0 500 185" role="img" aria-labelledby="spring-chart-title spring-chart-desc">
+        <title id="spring-chart-title">JPY/USD directional proxy around April 29 and May 1, 2024</title>
+        <desc id="spring-chart-desc">The transformed daily series was almost unchanged through the second event-date observation and stronger five observations later.</desc>
+        <line class="event-grid" x1="28" y1="40" x2="472" y2="40"></line><line class="event-grid" x1="28" y1="95" x2="472" y2="95"></line><line class="event-grid" x1="28" y1="150" x2="472" y2="150"></line>
+        <line class="event-rule" x1="213" y1="24" x2="213" y2="156"></line><line class="event-rule" x1="287" y1="24" x2="287" y2="156"></line>
+        <polyline class="event-path" points="28,85 65,86 102,93 139,102 176,149 213,129 250,148 287,150 324,62 361,40 398,63 435,81 472,100"></polyline>
+        <circle class="event-marker" cx="213" cy="129" r="7"></circle><circle class="event-marker" cx="287" cy="150" r="7"></circle>
+        <text x="28" y="176">Before</text><text x="213" y="176" text-anchor="middle">Apr 29</text><text x="287" y="176" text-anchor="middle">May 1</text><text x="472" y="176" text-anchor="end">After</text>
+      </svg>
+      <div class="yj-event-metrics"><div><span>Through cluster close</span><strong>&minus;0.02%</strong></div><div><span>Through fifth later obs.</span><strong>+1.42%</strong></div></div>
+    </article>
+
+    <article class="yj-event-card">
+      <div class="yj-event-head"><h3>July 2024</h3><strong>&yen;5.5348T</strong></div>
+      <svg class="yj-event-chart" viewBox="0 0 500 185" role="img" aria-labelledby="july-chart-title july-chart-desc">
+        <title id="july-chart-title">JPY/USD directional proxy around July 11 and July 12, 2024</title>
+        <desc id="july-chart-desc">The daily proxy strengthened through both confirmed dates and was stronger five observations later, while a United States CPI release created an important same-day confounder on July 11.</desc>
+        <line class="event-grid" x1="28" y1="40" x2="472" y2="40"></line><line class="event-grid" x1="28" y1="95" x2="472" y2="95"></line><line class="event-grid" x1="28" y1="150" x2="472" y2="150"></line>
+        <line class="event-rule" x1="230" y1="24" x2="230" y2="156"></line><line class="event-rule" x1="270" y1="24" x2="270" y2="156"></line>
+        <polyline class="event-path" points="28,145 68,129 109,130 149,143 189,150 230,84 270,69 311,69 351,84 391,40 432,49 472,58"></polyline>
+        <circle class="event-marker" cx="230" cy="84" r="7"></circle><circle class="event-marker" cx="270" cy="69" r="7"></circle>
+        <text x="28" y="176">Before</text><text x="230" y="176" text-anchor="middle">Jul 11</text><text x="270" y="176" text-anchor="middle">Jul 12</text><text x="472" y="176" text-anchor="end">After</text>
+      </svg>
+      <div class="yj-event-metrics"><div><span>Through cluster close</span><strong>+2.44%</strong></div><div><span>Through fifth later obs.</span><strong>+2.76%</strong></div></div>
+    </article>
+  </div>
+
+  <div class="yj-caution">
+    <strong>July 11 had a major confounder</strong>
+    <p>The U.S. Bureau of Labor Statistics released the June 2024 Consumer Price Index at 8:30 a.m. Eastern on July 11. The daily response therefore cannot be assigned entirely to intervention, even though the Ministry later confirmed an operation on that date.</p>
+  </div>
+</section>
+
+<section class="yj-section" id="evidence-limits" aria-labelledby="proof-title">
+  <div class="yj-section-heading">
+    <p class="yj-kicker">Evidence discipline</p>
+    <h2 id="proof-title">What the Record Proves&mdash;and What It Cannot Prove</h2>
+    <p>Intervention analysis becomes unreliable when official facts, market observations and causal stories are blended together. Keep them separate.</p>
+  </div>
+
+  <div class="yj-proof-grid">
+    <article class="yj-proof">
+      <h3>Supported by the cited evidence</h3>
+      <ul>
+        <li>The Ministry of Finance directed seven dollar-selling, yen-buying operations on the listed dates.</li>
+        <li>The Bank of Japan acts as the Ministry&rsquo;s agent for intervention execution.</li>
+        <li>The official displayed daily amounts total &yen;24.5113 trillion.</li>
+        <li>The transformed daily cash proxy moved in the displayed directions over the stated observation windows.</li>
+        <li>Standard 6J&rsquo;s USD-per-yen quote direction is inverse to the usual USD/JPY spot quote.</li>
+      </ul>
+    </article>
+    <article class="yj-proof is-limit">
+      <h3>Not established by this study</h3>
+      <ul>
+        <li>The exact minute, venue, dealer flow or execution price of an official transaction.</li>
+        <li>A unique candle shape, volume signature, DOM pattern or algorithmic reaction that authenticates intervention.</li>
+        <li>The share of any daily or intraday move caused by intervention rather than news, positioning or ordinary order flow.</li>
+        <li>A guaranteed follow-through pattern, durable price floor or profitable trading rule.</li>
+        <li>Exact continuous-futures returns, because the public series is cash USD/JPY rather than a rolled 6J settlement history.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="yj-section" id="contract-translation" aria-labelledby="translation-title">
+  <div class="yj-section-heading">
+    <p class="yj-kicker">Quote translation</p>
+    <h2 id="translation-title">Why Yen Strength Points Up for 6J and Down for USD/JPY</h2>
+    <p>Most news coverage uses USD/JPY: yen per U.S. dollar. CME&rsquo;s standard Japanese Yen futures use the reciprocal economic direction: U.S. dollars per yen.</p>
+  </div>
+
+  <div class="yj-formula" aria-label="USD JPY and 6J directional relationship">
+    <code>USD/JPY falls</code>
+    <i aria-hidden="true">&rarr;</i>
+    <code>JPY/USD and 6J direction rise</code>
+  </div>
+
+  <div class="yj-stat-grid" style="margin-top:1.25rem">
+    <article class="yj-stat"><span>6J</span><strong>CME product code</strong><p>Standard Japanese Yen futures.</p></article>
+    <article class="yj-stat"><span>12.5M</span><strong>Contract yen</strong><p>The standard contract unit is &yen;12,500,000.</p></article>
+    <article class="yj-stat"><span>0.0000005</span><strong>Outright tick</strong><p>U.S. dollars per yen, per the CME product guide.</p></article>
+    <article class="yj-stat"><span>$6.25</span><strong>Tick value</strong><p>Contract size multiplied by the outright minimum price increment.</p></article>
+  </div>
+
+  <p class="yj-source-note">Cash inversion explains direction, not an exact tradable futures price. A dated 6J contract also reflects interest-rate basis, time to delivery, contract selection and execution.</p>
+</section>
+
+<section class="yj-section" id="trader-checklist" aria-labelledby="checklist-title">
+  <div class="yj-section-heading">
+    <p class="yj-kicker">Verification workflow</p>
+    <h2 id="checklist-title">How to Evaluate an Intervention Claim Without Guessing</h2>
+    <p>Use observable labels while the event is unfolding, then upgrade the conclusion only when an authoritative record supports it.</p>
+  </div>
+
+  <div class="yj-check-grid">
+    <article><strong>1. Label the move, not the actor</strong><p>Describe price, time and liquidity as observed. Call it a suspected or intervention-like move until official confirmation exists.</p></article>
+    <article><strong>2. Check official statements</strong><p>Look first to Japan&rsquo;s Ministry of Finance and then to Bank of Japan material explaining execution responsibility.</p></article>
+    <article><strong>3. Check the scheduled-news clock</strong><p>Record CPI, central-bank decisions and other releases that could explain some or all of the move.</p></article>
+    <article><strong>4. Translate the quote correctly</strong><p>A falling USD/JPY quote generally means a strengthening yen and a rising 6J direction, subject to futures basis.</p></article>
+    <article><strong>5. Identify the exact contract</strong><p>Use the relevant 6J expiry and verify its liquidity, spread, price increment and broker treatment before trading.</p></article>
+    <article><strong>6. Wait for the formal record</strong><p>Use the Ministry&rsquo;s intervention releases and historical CSV for final confirmation, amount and operation date.</p></article>
+  </div>
+
+  <div class="yj-related"><strong>Related research:</strong> Intervention can temporarily overpower macro relationships. Compare this event study with the <a href="6j-yield-spread-model.html">318-month U.S.-Japan yield-spread study</a> and its documented regime limits.</div>
+</section>
+
+<section class="yj-section yj-faq" id="faq" aria-labelledby="faq-title">
+  <div class="yj-section-heading">
+    <p class="yj-kicker">Frequently asked questions</p>
+    <h2 id="faq-title">Yen Intervention and 6J Questions</h2>
+  </div>
+  <details>
+    <summary>Is &ldquo;BOJ intervention&rdquo; the correct term?</summary>
+    <p>It is familiar market shorthand, but the Ministry of Finance is the decision-maker. The Bank of Japan conducts the operation as the Ministry&rsquo;s agent, so &ldquo;Japan&rsquo;s yen intervention&rdquo; or &ldquo;MOF-directed intervention&rdquo; is institutionally clearer.</p>
+  </details>
+  <details>
+    <summary>Did all seven confirmed dates produce an immediate yen rally in the daily data?</summary>
+    <p>No. Five event-date comparisons were positive in the 6J-direction proxy and two were negative. Adjacent dates and daily noon timing complicate that count, so it is descriptive rather than a success-rate statistic.</p>
+  </details>
+  <details>
+    <summary>Can a trader confirm intervention from a large candle or unusual volume?</summary>
+    <p>No. Those observations may motivate a hypothesis, but they do not identify the actor. Official Ministry of Finance reporting is the confirmation source used here.</p>
+  </details>
+  <details>
+    <summary>Why not report exact 6J event returns?</summary>
+    <p>The reproducible public series used here is daily USD/JPY cash data. Reporting exact continuous-futures returns would require an explicit 6J contract-selection and roll method plus authorized futures settlement or intraday data. This study does not substitute spot for that missing evidence.</p>
+  </details>
+</section>
+
+<details class="yj-sources">
+  <summary>Sources, calculations and editorial disclosure</summary>
+  <ul>
+    <li><a href="https://www.mof.go.jp/english/policy/international_policy/reference/feio/foreign_exchange_intervention_operations.csv" target="_blank" rel="noopener">Japan Ministry of Finance: Foreign Exchange Intervention Operations historical CSV</a> for official daily direction and amounts.</li>
+    <li><a href="https://www.mof.go.jp/english/policy/international_policy/reference/feio/quarter/index.html" target="_blank" rel="noopener">Japan Ministry of Finance: quarterly intervention-operation releases</a>, including the April&ndash;June and July&ndash;September 2024 reporting periods.</li>
+    <li><a href="https://www.boj.or.jp/en/about/education/oshiete/intl/g19.htm" target="_blank" rel="noopener">Bank of Japan: Who decides and conducts foreign exchange intervention?</a> for the Ministry&rsquo;s decision authority and the Bank&rsquo;s agent role.</li>
+    <li><a href="https://www.boj.or.jp/en/intl_finance/outline/expkainyu.htm" target="_blank" rel="noopener">Bank of Japan: Outline of the Bank&rsquo;s Foreign Exchange Intervention Operations</a> for operational context.</li>
+    <li><a href="https://fred.stlouisfed.org/series/DEXJPUS" target="_blank" rel="noopener">Federal Reserve Board H.10 / FRED: Japanese Yen to U.S. Dollar Spot Exchange Rate (DEXJPUS)</a>, daily noon buying rates in New York.</li>
+    <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> for the 6J code, 12,500,000-yen contract size, USD-per-JPY quotation, outright tick and physical-settlement specification.</li>
+    <li><a href="https://www.bls.gov/schedule/2024/home.htm" target="_blank" rel="noopener">U.S. Bureau of Labor Statistics 2024 release calendar</a> for the July 11, 2024 Consumer Price Index release time.</li>
+    <li><a href="https://www.bis.org/publ/work77.htm" target="_blank" rel="noopener">Bank for International Settlements Working Paper 77: Perceived Central Bank Intervention and Market Expectations</a> for research on trader perceptions and intervention-related uncertainty.</li>
+  </ul>
+  <p>Official and market series were accessed August 7, 2026. Grizzly Parrot Trading converted the Ministry&rsquo;s reported amounts to trillions of yen, grouped adjacent operation dates, inverted USD/JPY for 6J direction and calculated the displayed percentage changes. Values are rounded for display; calculations used unrounded source observations. This is original editorial analysis, not sponsored research, and there is no paid relationship with the cited institutions.</p>
+</details>
+
+<aside class="yj-disclaimer" aria-label="Educational and risk disclaimer">
+  <strong>Educational and risk disclaimer</strong>
+  <p>This article is educational, not individualized trading, investment, legal, accounting, tax, hedging or brokerage advice. It does not identify a live intervention signal or recommend trading an official operation. Futures are leveraged, can gap or move through stops and can produce losses greater than the initial margin deposit. Verify current official reporting, scheduled news, exchange specifications, contract month, liquidity, broker rules and your own risk before acting.</p>
+</aside>
 
 <!-- ARTICLE BODY END -->
-</div>
+</article>
 </section>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
-
     <div class="footer-book">
       <h3>Books</h3>
       <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
+      <a href="/books/" class="footer-book-link">View All Books</a>
     </div>
-
     <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
+      <a href="/about.html">About</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/contact.html">Contact</a>
     </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+    <p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </div>
 </footer>
 </body>

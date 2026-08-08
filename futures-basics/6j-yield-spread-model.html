@@ -3,107 +3,147 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Yield Spread Model: Predicting 6J Direction Using Rate Differentials</title>
-  <meta name="description" content="A blunt guide showing how U.S.–Japan yield spreads predict 6J direction with brutal accuracy and how traders can model it in real time.">
+  <title>6J Yield Spread Study | U.S.-Japan Rates &amp; Yen Futures</title>
+  <meta name="description" content="A 318-month study of U.S.-Japan 10-year yield spreads and 6J direction, with regime results, transparent methodology, limitations and a calculator.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6j-yield-spread-model.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="The Yield Spread Model: Predicting 6J Direction Using Rate Differentials">
-  <meta property="og:description" content="A blunt guide showing how U.S.–Japan yield spreads predict 6J direction with brutal accuracy and how traders can model it in real time.">
+  <meta property="og:title" content="U.S.-Japan Yield Spreads and 6J Futures: What the Data Shows">
+  <meta property="og:description" content="Twenty-six years of monthly evidence show a real inverse relationship, but not a mechanical timing signal. See the data, regimes and limits.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6j-yield-spread-model.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
+  <meta property="og:image" content="https://grizzlyparrottrading.com/futures-basics/6j-yield-spread-study-og.png">
+  <meta property="og:image:width" content="1728">
+  <meta property="og:image:height" content="910">
+  <meta property="og:image:alt" content="U.S.-Japan yield spread study with 318 monthly observations and measured 6J-direction correlations">
+  <meta property="article:published_time" content="2025-11-24">
+  <meta property="article:modified_time" content="2026-08-07">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="The Yield Spread Model: Predicting 6J Direction Using Rate Differentials">
-  <meta name="twitter:description" content="A blunt guide showing how U.S.–Japan yield spreads predict 6J direction with brutal accuracy and how traders can model it in real time.">
+  <meta name="twitter:title" content="U.S.-Japan Yield Spreads and 6J Futures">
+  <meta name="twitter:description" content="A reproducible 2000-2026 study of the rate-spread relationship, regime shifts and practical limits.">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/futures-basics/6j-yield-spread-study-og.png">
+  <meta name="twitter:image:alt" content="U.S.-Japan yield spread study with 318 monthly observations">
 
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="6j-evidence-guides.css">
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){window.dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-JMJVR3G5YN');
   </script>
 
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "The Yield Spread Model: Predicting 6J Direction Using Rate Differentials",
-  "description": "A blunt guide showing how U.S.–Japan yield spreads predict 6J direction with brutal accuracy and how traders can model it in real time.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6j-yield-spread-model.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6j-yield-spread-model.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "U.S.-Japan Yield Spreads and 6J Futures: What the Data Actually Shows",
+    "description": "An original 318-month study of U.S.-Japan 10-year yield spreads and the JPY/USD cash-market direction relevant to 6J futures, including regime analysis and limitations.",
+    "author": {
+      "@type": "Person",
+      "name": "Kyle Parrott",
+      "url": "https://grizzlyparrottrading.com/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grizzly Parrot Trading",
+      "url": "https://grizzlyparrottrading.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://grizzlyparrottrading.com/OG-default.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://grizzlyparrottrading.com/futures-basics/6j-yield-spread-model.html"
+    },
+    "datePublished": "2025-11-24",
+    "dateModified": "2026-08-07",
+    "url": "https://grizzlyparrottrading.com/futures-basics/6j-yield-spread-model.html",
+    "image": "https://grizzlyparrottrading.com/futures-basics/6j-yield-spread-study-og.png",
+    "inLanguage": "en-US"
+  }
+  </script>
 
-  <!-- JSON-LD: Breadcrumbs -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "The Yield Spread Model: Predicting 6J Direction Using Rate Differentials",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6j-yield-spread-model.html"
-    }
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Futures Basics",
+        "item": "https://grizzlyparrottrading.com/futures-basics/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "6J Yield Spread Study",
+        "item": "https://grizzlyparrottrading.com/futures-basics/6j-yield-spread-model.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do wider U.S.-Japan yield spreads always make 6J fall?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The 2000-2026 monthly sample shows an inverse relationship on average, but its strength changes materially across regimes. Intervention, risk aversion, policy surprises, term premiums and futures basis can overpower the spread relationship."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does this study use a JPY/USD cash-market proxy instead of a continuous 6J futures series?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The study uses open, reproducible Federal Reserve and OECD monthly data. It converts USD/JPY spot into the same direction as 6J using 100 divided by USD/JPY. That proxy does not include futures basis, expiry or roll effects and is not represented as a continuous futures backtest."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What correlation did the 6J yield-spread study find?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Across 318 monthly observations from January 2000 through June 2026, the correlation between the U.S.-Japan 10-year spread and the JPY/USD directional proxy was -0.54 in levels. The correlation between 12-month spread changes and 12-month proxy returns was -0.44."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the yield spread be used as a standalone 6J entry signal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The evidence does not support treating it as a standalone timing signal. Monthly data describe a macro regime, while trade timing also depends on expectations, event risk, liquidity, contract basis, execution and risk controls."
+        }
+      }
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
 </head>
@@ -111,20 +151,17 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
+    <div class="logo"><a href="/">Grizzly Parrot Trading</a></div>
+    <nav class="main-nav" aria-label="Primary navigation">
       <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../metals/index.html">Metals</a></li>
+        <li><a href="../energies/index.html">Energies</a></li>
+        <li><a href="../currencies/index.html">Currencies</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firms</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+        <li><a href="../tools/index.html">Tools</a></li>
       </ul>
     </nav>
   </div>
@@ -132,163 +169,367 @@ Grizzly Parrot Trading</a>
 
 <main>
 <section class="section">
-<div class="container article-content">
+<article class="container article-content yen-evidence">
 <!-- ARTICLE BODY START -->
 
-
-
-<h1>The Yield Spread Model: Predicting 6J Direction Using Rate Differentials</h1>
-
-
-
-<p>If you want to predict <strong>6J futures</strong> reliably, stop staring at the chart and start watching <strong>yield spreads</strong>. Every major yen move is driven by one thing: the difference between U.S. and Japanese interest rates.</p>
-
-
-
-<h2>Why Yield Spreads Drive 6J</h2>
-
-<p>Currency value is based on relative yield. If the U.S. pays more interest than Japan, money flows into USD and out of JPY. If the spread collapses, the yen strengthens.</p>
-
-
-
-<table>
-
-<tr><th>Spread Behavior</th><th>6J Reaction</th></tr>
-
-<tr><td>U.S.–Japan spread widens</td><td>6J drops</td></tr>
-
-<tr><td>U.S.–Japan spread narrows</td><td>6J rises</td></tr>
-
-</table>
-
-
-
-<p>This is the mechanical core you covered in <a href="https://grizzlyparrottrading.com/futures-basics/6j-and-bond-yields-relationship.html">your yield correlation article</a>.</p>
-
-
-
-<h2>The Exact Spread You Should Track</h2>
-
-<p>The most important number is:</p>
-
-
-
-<p><strong>10-Year U.S. Treasury Yield − 10-Year Japan Government Bond Yield</strong></p>
-
-
-
-<p>This spread predicts 6J direction more accurately than any indicator on your platform.</p>
-
-
-
-<h2>How to Build a Simple Yield Spread Model</h2>
-
-<p>You don’t need quant tools. You need four inputs:</p>
-
-
-
-<ul>
-
-<li>U.S. 10-year yield</li>
-
-<li>Japan 10-year yield</li>
-
-<li>Daily spread movement</li>
-
-<li>Momentum of the spread</li>
-
-</ul>
-
-
-
-<p>When the spread accelerates upward, 6J begins trend-down behavior.  
-
-When the spread reverses sharply, 6J mean reverts — matching the behavior in <a href="https://grizzlyparrottrading.com/futures-basics/6j-mean-reversion-signals.html">your mean reversion article</a>.</p>
-
-
-
-<h2>Yield Spread Shocks</h2>
-
-<p>When spreads move aggressively, 6J reacts instantly. These shocks come from:</p>
-
-
-
-<ul>
-
-<li>CPI / PPI</li>
-
-<li>NFP</li>
-
-<li>FOMC</li>
-
-<li>Bond auctions</li>
-
-<li>Unexpected BOJ comments</li>
-
-</ul>
-
-
-
-<p>These are the same macro catalysts you listed in <a href="https://grizzlyparrottrading.com/futures-basics/6j-breakout-events.html">major breakout events</a>.</p>
-
-
-
-<h2>Best Times to Model Spread Impact</h2>
-
-
-
-<ul>
-
-<li>Tokyo open — Japan reacts first</li>
-
-<li>London session — spread repricing begins</li>
-
-<li>New York morning — U.S. data hits the tape</li>
-
-</ul>
-
-
-
-<p>The spread moves globally long before 6J reacts locally.</p>
-
-<div class="highlight-box green">
-
-  <h3>Yen Moves Start in the Spread</h3>
-
-  <p>If you're waiting for the chart to show you the trade, you're already late. Yield spread momentum sets the tone for 6J — track it early, and you'll be front-running the herd instead of chasing it.</p>
-
-</div>
-
-
+<header class="yj-hero">
+  <div class="yj-hero-copy">
+    <p class="yj-kicker">Original data study &middot; 6J / JPY-USD</p>
+    <h1>U.S.-Japan Yield Spreads and 6J Futures: What the Data Actually Shows</h1>
+    <p class="yj-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 7, 2026</p>
+    <p class="yj-hero-lede">The U.S.-Japan 10-year yield spread is useful context for Japanese yen futures, but it is not a mechanical forecast. A 318-month open-data study finds a meaningful inverse relationship, large regime shifts and no defensible basis for claiming perfect accuracy.</p>
+    <div class="yj-hero-actions">
+      <a class="button-primary" href="#study-results">See the measured results</a>
+      <a class="yj-text-link" href="#spread-calculator">Use the conversion worksheet</a>
+    </div>
+    <dl class="yj-hero-metrics" aria-label="Study summary">
+      <div><dt>Sample</dt><dd>318 months</dd></div>
+      <div><dt>Level correlation</dt><dd>&minus;0.54</dd></div>
+      <div><dt>12-month changes</dt><dd>&minus;0.44</dd></div>
+      <div><dt>Study period</dt><dd>2000&ndash;2026</dd></div>
+    </dl>
+  </div>
+
+  <div class="yj-hero-visual">
+    <div class="yj-market-board">
+      <div class="yj-board-head"><span>Normalized annual June observations</span><strong>Shape, not price scale</strong></div>
+      <svg class="yj-board-chart" viewBox="0 0 520 220" role="img" aria-labelledby="yield-chart-title yield-chart-desc">
+        <title id="yield-chart-title">U.S.-Japan 10-year spread and JPY/USD directional proxy, 2000 to 2026</title>
+        <desc id="yield-chart-desc">Two independently normalized lines show that higher spreads often align with a weaker yen proxy, while the fit varies across periods.</desc>
+        <line class="grid-line" x1="20" y1="40" x2="500" y2="40"></line>
+        <line class="grid-line" x1="20" y1="115" x2="500" y2="115"></line>
+        <line class="grid-line" x1="20" y1="190" x2="500" y2="190"></line>
+        <polyline class="spread-line" points="20,40 38,52 57,73 75,106 94,101 112,103 131,89 149,90 168,118 186,123 205,133 223,141 242,185 260,159 278,135 297,142 315,143 334,133 352,102 371,128 389,190 408,159 426,101 445,83 463,87 482,99 500,146"></polyline>
+        <polyline class="yen-line" points="20,115 38,144 57,146 75,138 94,121 112,120 131,131 149,145 168,116 186,93 205,77 223,44 242,40 260,95 278,106 297,146 315,113 334,124 352,123 371,119 389,118 408,123 426,161 445,170 463,187 482,174 500,190"></polyline>
+        <text x="20" y="211">2000</text>
+        <text x="242" y="211" text-anchor="middle">2012</text>
+        <text x="500" y="211" text-anchor="end">2026</text>
+      </svg>
+      <div class="yj-board-legend" aria-hidden="true"><span>U.S. 10Y minus Japan 10Y</span><span class="is-yen">JPY/USD directional proxy</span></div>
+      <p class="yj-board-foot"><span>Each series normalized independently</span><span>Sources: Fed, OECD via FRED</span></p>
+    </div>
+  </div>
+</header>
+
+<nav class="yj-jump-nav" aria-label="On this page">
+  <a href="#bottom-line">Bottom line</a>
+  <a href="#methodology">Method</a>
+  <a href="#study-results">Results</a>
+  <a href="#regimes">Regimes</a>
+  <a href="#spread-calculator">Worksheet</a>
+  <a href="#limitations">Limits</a>
+  <a href="#faq">FAQ</a>
+</nav>
+
+<section class="yj-section" id="bottom-line" aria-labelledby="bottom-line-title">
+  <div class="yj-section-heading">
+    <p class="yj-kicker">Direct answer</p>
+    <h2 id="bottom-line-title">The Spread Is a Regime Variable, Not a Trade Trigger</h2>
+    <p>When U.S. 10-year yields rise relative to Japanese 10-year yields, the dollar becomes more attractive at the margin and yen-funded carry trades can become more appealing. Because 6J is quoted as U.S. dollars per yen, that environment often aligns with lower 6J prices. The word <em>often</em> matters.</p>
+  </div>
+
+  <div class="yj-two-column">
+    <article class="yj-panel">
+      <p class="yj-card-label">What the sample supports</p>
+      <h3>Directionally useful macro context</h3>
+      <p>The full-sample relationship is negative, and the most extreme spread-widening observations had materially weaker median yen-proxy returns than the strongest narrowing observations.</p>
+    </article>
+    <article class="yj-panel">
+      <p class="yj-card-label">What it does not support</p>
+      <h3>Guaranteed timing or a fixed coefficient</h3>
+      <p>The rolling relationship weakened to nearly zero in one 36-month window. A spread level cannot reveal whether expectations are already priced, whether a policy surprise is coming or where a futures order will fill.</p>
+    </article>
+  </div>
+
+  <div class="yj-formula" aria-label="Yield spread and yen proxy formulas">
+    <code>spread = U.S. 10Y &minus; Japan 10Y</code>
+    <i aria-hidden="true">&rarr;</i>
+    <code>JPY/USD proxy = 100 &divide; USD/JPY</code>
+  </div>
+  <p class="yj-source-note">CME quotes standard Japanese Yen futures in U.S. dollars per yen. The study scales the cash-market inverse by 100 for readability; that scaling changes the displayed level, not returns or correlations.</p>
+</section>
+
+<section class="yj-section" id="methodology" aria-labelledby="methodology-title">
+  <div class="yj-section-heading">
+    <p class="yj-kicker">Reproducible method</p>
+    <h2 id="methodology-title">Three Monthly Series, One Honest Proxy</h2>
+    <p>The analysis uses only public monthly observations available through FRED. It does not splice expiring futures contracts or represent a cash-market transformation as a continuous 6J settlement series.</p>
+  </div>
+
+  <div class="yj-method">
+    <div>
+      <h3>Study construction</h3>
+      <p>For each month from January 2000 through June 2026, subtract Japan&rsquo;s 10-year benchmark government-bond yield from the U.S. 10-year Treasury yield. Convert the Federal Reserve&rsquo;s monthly USD/JPY spot average into JPY/USD direction using <strong>100 &divide; USD/JPY</strong>. Align by month, then calculate Pearson correlations in levels and in 1-, 3-, 6-, 12- and 24-month changes.</p>
+    </div>
+    <dl>
+      <div><dt>Frequency</dt><dd>Monthly</dd></div>
+      <div><dt>Window</dt><dd>Jan. 2000&ndash;Jun. 2026</dd></div>
+      <div><dt>Complete rows</dt><dd>318</dd></div>
+      <div><dt>Accessed</dt><dd>Aug. 7, 2026</dd></div>
+    </dl>
+  </div>
+
+  <div class="yj-check-grid" style="margin-top:1.2rem">
+    <article><strong>U.S. yield</strong><p>FRED series GS10: monthly 10-year Treasury constant-maturity yield from the Federal Reserve Board.</p></article>
+    <article><strong>Japanese yield</strong><p>FRED series IRLTLT01JPM156N: OECD monthly 10-year benchmark government-bond yield for Japan.</p></article>
+    <article><strong>Exchange rate</strong><p>FRED series EXJPUS: Federal Reserve monthly average Japanese yen per U.S. dollar.</p></article>
+  </div>
+
+  <div class="yj-caution">
+    <strong>Proxy boundary</strong>
+    <p>Spot and futures share currency direction, but a dated 6J contract also reflects the interest-rate basis, time to delivery, contract selection and roll. Therefore, these results describe the macro relationship relevant to 6J; they are not a futures-return backtest.</p>
+  </div>
+</section>
+
+<section class="yj-section" id="study-results" aria-labelledby="results-title">
+  <div class="yj-section-heading">
+    <p class="yj-kicker">Measured findings</p>
+    <h2 id="results-title">A Real Inverse Relationship&mdash;With Plenty of Noise</h2>
+    <p>Negative coefficients mean that wider U.S.-Japan spreads tended to align with a lower JPY/USD proxy, which is the same broad direction as lower 6J.</p>
+  </div>
+
+  <div class="yj-stat-grid">
+    <article class="yj-stat"><span>&minus;0.54</span><strong>Level correlation</strong><p>Spread level versus the scaled JPY/USD cash proxy across all 318 months.</p></article>
+    <article class="yj-stat"><span>&minus;0.41</span><strong>One-month changes</strong><p>Contemporaneous monthly spread changes versus monthly proxy returns.</p></article>
+    <article class="yj-stat"><span>&minus;0.44</span><strong>Twelve-month changes</strong><p>Year-over-year spread changes versus year-over-year proxy returns.</p></article>
+    <article class="yj-stat"><span>&minus;0.55</span><strong>Twenty-four-month changes</strong><p>The strongest measured horizon in this descriptive comparison.</p></article>
+  </div>
+
+  <div class="yj-findings-grid">
+    <article class="yj-panel">
+      <p class="yj-card-label">Horizon comparison</p>
+      <h3>The relationship does not become a clean short-term signal</h3>
+      <div class="yj-table-scroll" role="region" aria-label="Correlation by measurement horizon" tabindex="0">
+        <table class="yj-table">
+          <thead><tr><th scope="col">Change horizon</th><th scope="col">Observations</th><th scope="col">Correlation</th><th scope="col">Reading</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">1 month</th><td>317</td><td>&minus;0.41</td><td>Moderate inverse</td></tr>
+            <tr><th scope="row">3 months</th><td>315</td><td>&minus;0.46</td><td>Moderate inverse</td></tr>
+            <tr><th scope="row">6 months</th><td>312</td><td>&minus;0.44</td><td>Moderate inverse</td></tr>
+            <tr><th scope="row">12 months</th><td>306</td><td>&minus;0.44</td><td>Moderate inverse</td></tr>
+            <tr><th scope="row">24 months</th><td>294</td><td>&minus;0.55</td><td>Stronger, still incomplete</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="yj-source-note">These are descriptive Pearson correlations. Overlapping multi-month returns are not independent observations and should not be treated as separate trades.</p>
+    </article>
+
+    <article class="yj-panel">
+      <p class="yj-card-label">Twelve-month change buckets</p>
+      <h3>Extreme widening and narrowing produced different medians</h3>
+      <p>Each tail contains 77 observations. The center contains 152. Returns are for the scaled JPY/USD proxy.</p>
+      <div class="yj-bars" aria-label="Median twelve-month yen-proxy return by spread-change bucket">
+        <div class="yj-bar-row"><span>Spread narrowed most</span><div class="yj-bar-track"><i class="is-positive" style="width:31.5%"></i></div><strong class="is-positive">+3.23%</strong></div>
+        <div class="yj-bar-row"><span>Middle half</span><div class="yj-bar-track"><i style="width:9.1%"></i></div><strong class="is-negative">&minus;0.93%</strong></div>
+        <div class="yj-bar-row"><span>Spread widened most</span><div class="yj-bar-track"><i style="width:50%"></i></div><strong class="is-negative">&minus;5.13%</strong></div>
+      </div>
+      <p class="yj-source-note">Tail cutoffs were a 12-month spread change of &minus;0.544 percentage point or less and +0.334 point or more. Buckets describe this historical sample; they do not define future thresholds.</p>
+    </article>
+  </div>
+</section>
+
+<section class="yj-section" id="regimes" aria-labelledby="regimes-title">
+  <div class="yj-section-heading">
+    <p class="yj-kicker">Regime dependence</p>
+    <h2 id="regimes-title">The Same Model Did Not Work Equally Well in Every Era</h2>
+    <p>A full-sample coefficient hides the most important fact: the relationship strengthened and weakened as monetary frameworks, term premiums, risk conditions and carry positioning changed.</p>
+  </div>
+
+  <div class="yj-table-scroll" role="region" aria-label="Yield-spread relationship by era" tabindex="0">
+    <table class="yj-table">
+      <thead><tr><th scope="col">Era</th><th scope="col">Months</th><th scope="col">Level correlation</th><th scope="col">12-month-change correlation</th><th scope="col">Evidence-based reading</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">2000&ndash;2007</th><td>96</td><td>&minus;0.05</td><td>&minus;0.07</td><td>Near-zero fit in this split</td></tr>
+        <tr><th scope="row">2008&ndash;2012</th><td>60</td><td>&minus;0.69</td><td>&minus;0.26</td><td>Strong level relationship, weaker changes</td></tr>
+        <tr><th scope="row">2013&ndash;2019</th><td>84</td><td>&minus;0.28</td><td>&minus;0.25</td><td>Present but modest</td></tr>
+        <tr><th scope="row">2020&ndash;Jun. 2026</th><td>78</td><td>&minus;0.81</td><td>&minus;0.75</td><td>Exceptionally strong recent regime</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="yj-two-column">
+    <article class="yj-panel">
+      <p class="yj-card-label">Rolling 36-month monthly-change correlation</p>
+      <h3>From &minus;0.85 to &minus;0.03</h3>
+      <p>The strongest window ended December 2023. The weakest ended March 2016. The latest window ending June 2026 measured &minus;0.52.</p>
+      <div class="yj-correlation-scale" aria-label="Rolling correlation range from negative 0.85 to negative 0.03">
+        <span class="yj-correlation-marker" style="left:15%" data-label="Strongest -0.85"></span>
+        <span class="yj-correlation-marker" style="left:48%" data-label="Latest -0.52"></span>
+        <span class="yj-correlation-marker" style="left:97%" data-label="Weakest -0.03"></span>
+        <div class="yj-correlation-line"></div>
+        <div class="yj-scale-labels"><span>&minus;1.00</span><span>&minus;0.50</span><span>0.00</span></div>
+      </div>
+    </article>
+    <article class="yj-panel">
+      <p class="yj-card-label">Why recent fit can mislead</p>
+      <h3>2020&ndash;2026 should not be universalized</h3>
+      <p>The post-2020 period combined large policy divergence, Japan&rsquo;s transition away from yield-curve control, substantial yen-funded carry activity and official intervention. A model calibrated only to that period risks assuming the regime will persist.</p>
+      <p class="yj-source-note">The Bank of Japan ended its negative-rate and yield-curve-control framework in March 2024. BIS research also describes carry-trade transmission as state-dependent rather than fixed.</p>
+    </article>
+  </div>
+</section>
+
+<section class="yj-section" id="spread-calculator" aria-labelledby="calculator-title">
+  <div class="yj-section-heading">
+    <p class="yj-kicker">Transparent worksheet</p>
+    <h2 id="calculator-title">Yield Spread and 6J-Direction Converter</h2>
+    <p>This worksheet performs only the arithmetic used in the study. It does not estimate a fair value, target, probability or trade direction.</p>
+  </div>
+
+  <div class="yj-calculator">
+    <form id="yj-spread-form" novalidate>
+      <div class="yj-fields">
+        <label><span>U.S. 10-year yield (%)</span><input id="yj-us-yield" type="number" min="-5" max="30" step="0.01" value="4.47" inputmode="decimal" required></label>
+        <label><span>Japan 10-year yield (%)</span><input id="yj-jp-yield" type="number" min="-5" max="30" step="0.01" value="2.67" inputmode="decimal" required></label>
+        <label class="yj-field-wide"><span>USD/JPY spot reference</span><input id="yj-usdjpy" type="number" min="1" max="1000" step="0.01" value="160.77" inputmode="decimal" required></label>
+      </div>
+      <div class="yj-calc-actions">
+        <button class="button-primary" type="submit">Calculate</button>
+        <button class="yj-secondary-button" type="reset">Restore June 2026 example</button>
+      </div>
+      <p id="yj-calc-message" role="alert"></p>
+    </form>
+
+    <section class="yj-results" aria-live="polite" aria-labelledby="calc-results-title">
+      <p class="yj-card-label">Mechanical output</p>
+      <h3 id="calc-results-title">June 2026 source-data example</h3>
+      <dl>
+        <div><dt>U.S.-Japan spread</dt><dd id="yj-result-spread">1.80 pp</dd></div>
+        <div><dt>JPY/USD per yen</dt><dd id="yj-result-one">0.0062201</dd></div>
+        <div><dt>JPY/USD per 100 yen</dt><dd id="yj-result-hundred">0.62201</dd></div>
+        <div><dt>Quote direction</dt><dd id="yj-result-direction">Inverse of USD/JPY</dd></div>
+      </dl>
+      <p id="yj-result-note">A dated 6J future will not equal spot inversion exactly because futures basis and time to delivery matter.</p>
+    </section>
+  </div>
+</section>
+
+<section class="yj-section" id="limitations" aria-labelledby="limits-title">
+  <div class="yj-section-heading">
+    <p class="yj-kicker">Failure modes</p>
+    <h2 id="limits-title">Six Reasons the Spread Can Stop Explaining 6J</h2>
+    <p>A useful macro relationship can still fail as a trading model. These are not edge cases; they are part of the market being measured.</p>
+  </div>
+
+  <div class="yj-limit-grid">
+    <article><strong>Expectations move first</strong><p>Exchange rates respond to surprises in the expected policy path. A visible yield level may already be priced.</p></article>
+    <article><strong>Long yields contain term premium</strong><p>The 10-year spread is not a pure policy-rate differential. Supply, inflation risk and bond term premiums matter.</p></article>
+    <article><strong>Risk-off flow can dominate</strong><p>Carry unwinds, deleveraging and safe-haven demand can strengthen the yen without a matching spread move.</p></article>
+    <article><strong>Intervention is discontinuous</strong><p>Official dollar sales and yen purchases can move the currency abruptly. See the <a href="6j-boj-intervention-signals.html">verified intervention event study</a>.</p></article>
+    <article><strong>Spot is not a dated future</strong><p>6J includes basis, expiry and roll. Contract selection and execution can differ from the cash proxy.</p></article>
+    <article><strong>Correlation is not causation</strong><p>Both yields and the yen react to common macro news. The study is descriptive and does not identify a structural causal coefficient.</p></article>
+  </div>
+
+  <div class="yj-caution">
+    <strong>Practical interpretation</strong>
+    <p>Use the spread to describe the macro backdrop, then separately verify policy expectations, risk conditions, event timing, contract month, liquidity and position risk. The evidence does not justify using one spread threshold as an automatic 6J entry or exit.</p>
+  </div>
+</section>
+
+<section class="yj-section yj-faq" id="faq" aria-labelledby="faq-title">
+  <div class="yj-section-heading">
+    <p class="yj-kicker">Frequently asked questions</p>
+    <h2 id="faq-title">6J Yield-Spread Questions</h2>
+  </div>
+  <details>
+    <summary>Do wider U.S.-Japan yields always make 6J fall?</summary>
+    <p>No. They aligned with lower JPY/USD values on average in this sample, but the relationship ranged from strong to nearly absent across rolling windows. Other information can dominate.</p>
+  </details>
+  <details>
+    <summary>Why use 100 divided by USD/JPY?</summary>
+    <p>The Federal Reserve series reports yen per U.S. dollar. Standard 6J is quoted in U.S. dollars per yen, so inversion puts the cash-market series in the same direction. Multiplying by 100 makes the small number easier to read without changing returns or correlation.</p>
+  </details>
+  <details>
+    <summary>Is the &minus;0.54 correlation a prediction score?</summary>
+    <p>No. It is a full-sample contemporaneous level correlation. It does not measure out-of-sample forecast accuracy, fill quality, profitability or risk-adjusted returns.</p>
+  </details>
+  <details>
+    <summary>Why not claim this is a continuous 6J futures backtest?</summary>
+    <p>Because it is not one. A continuous futures series requires an explicit contract-selection and roll method plus licensed or otherwise authorized settlement data. This study deliberately uses a reproducible public cash proxy and labels that limitation.</p>
+  </details>
+</section>
+
+<details class="yj-sources">
+  <summary>Sources, calculations and editorial disclosure</summary>
+  <ul>
+    <li><a href="https://fred.stlouisfed.org/series/GS10" target="_blank" rel="noopener">Federal Reserve Bank of St. Louis: 10-Year Treasury Constant Maturity Rate (GS10)</a>, monthly, sourced from the Board of Governors of the Federal Reserve System.</li>
+    <li><a href="https://fred.stlouisfed.org/series/IRLTLT01JPM156N" target="_blank" rel="noopener">FRED / OECD: Japan 10-Year Benchmark Government Bond Yield (IRLTLT01JPM156N)</a>, monthly.</li>
+    <li><a href="https://fred.stlouisfed.org/series/EXJPUS" target="_blank" rel="noopener">Federal Reserve Board H.10: Japanese Yen to U.S. Dollar Spot Exchange Rate (EXJPUS)</a>, monthly averages of daily noon buying rates.</li>
+    <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> for the 6J code, 12,500,000-yen contract size, USD-per-JPY quotation, tick and physical-settlement specification.</li>
+    <li><a href="https://www.federalreserve.gov/econres/notes/ifdp-notes/the-sensitivity-of-the-us-dollar-exchange-rate-to-changes-in-monetary-policy-expectations-20170922.htm" target="_blank" rel="noopener">Federal Reserve IFDP Note: The Sensitivity of the U.S. Dollar Exchange Rate to Changes in Monetary Policy Expectations</a> for evidence that surprise effects vary across currencies and time.</li>
+    <li><a href="https://www.bis.org/publ/bisbull124.htm" target="_blank" rel="noopener">Bank for International Settlements: Monetary Policy Transmission to Exchange Rates&mdash;The Role of Currency Carry Trades</a> for state-dependent carry-trade transmission.</li>
+    <li><a href="https://www.boj.or.jp/en/mopo/mpmdeci/state_2024/k240319a.htm" target="_blank" rel="noopener">Bank of Japan: Changes in the Monetary Policy Framework, March 19, 2024</a> for the end of the negative-rate and yield-curve-control framework.</li>
+  </ul>
+  <p>Source series were accessed August 7, 2026. Grizzly Parrot Trading aligned the monthly observations and calculated the transformations, correlations, quartiles, medians and era splits shown above. Values are rounded for display; calculations used unrounded source observations. This is original editorial analysis, not sponsored research, and there is no paid relationship with the cited institutions.</p>
+</details>
+
+<aside class="yj-disclaimer" aria-label="Educational and risk disclaimer">
+  <strong>Educational and risk disclaimer</strong>
+  <p>This article and worksheet are educational, not individualized trading, investment, legal, accounting, tax, hedging or brokerage advice. Correlation does not establish causation or forecast future returns. Futures are leveraged, can move rapidly and can produce losses greater than the initial margin deposit. Verify current exchange specifications, data, broker rules, contract month, liquidity and your own risk before acting.</p>
+</aside>
+
+<script>
+(function () {
+  const form = document.getElementById('yj-spread-form');
+  if (!form) return;
+
+  const usYield = document.getElementById('yj-us-yield');
+  const jpYield = document.getElementById('yj-jp-yield');
+  const usdJpy = document.getElementById('yj-usdjpy');
+  const message = document.getElementById('yj-calc-message');
+  const spreadOut = document.getElementById('yj-result-spread');
+  const oneOut = document.getElementById('yj-result-one');
+  const hundredOut = document.getElementById('yj-result-hundred');
+
+  function calculate() {
+    const us = Number(usYield.value);
+    const jp = Number(jpYield.value);
+    const fx = Number(usdJpy.value);
+    if (![us, jp, fx].every(Number.isFinite) || fx <= 0) {
+      message.textContent = 'Enter finite yields and a USD/JPY value greater than zero.';
+      return;
+    }
+    if (us < -5 || us > 30 || jp < -5 || jp > 30 || fx < 1 || fx > 1000) {
+      message.textContent = 'One or more values are outside the worksheet bounds.';
+      return;
+    }
+    message.textContent = '';
+    spreadOut.textContent = (us - jp).toFixed(2) + ' pp';
+    oneOut.textContent = (1 / fx).toFixed(7);
+    hundredOut.textContent = (100 / fx).toFixed(5);
+  }
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    calculate();
+  });
+  form.addEventListener('reset', function () {
+    window.setTimeout(calculate, 0);
+  });
+  calculate();
+}());
+</script>
 
 <!-- ARTICLE BODY END -->
-</div>
+</article>
 </section>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
-
     <div class="footer-book">
       <h3>Books</h3>
       <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
+      <a href="/books/" class="footer-book-link">View All Books</a>
     </div>
-
     <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
+      <a href="/about.html">About</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/contact.html">Contact</a>
     </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+    <p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </div>
 </footer>
 </body>

@@ -120,6 +120,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "6J Yield Spread Study | U.S.-Japan Rates &amp; Yen Futures",
+    "url": "/futures-basics/6j-yield-spread-model.html",
+    "description": "A 318-month study of U.S.-Japan 10-year yield spreads and 6J direction, with regime results, transparent methodology, limitations and a calculator.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "6L Margin Requirements: Day vs. Overnight Explained",
     "url": "/futures-basics/6l-margin-requirements-day-vs-overnight.html",
     "description": "A full breakdown of 6L Brazilian Real futures margin requirements, including day trading margin, overnight margin, and risk implications.",
@@ -1647,12 +1653,6 @@
     "title": "How Bank of Canada Decisions Impact 6C Futures",
     "url": "/futures-basics/6c-bank-of-canada-impact.html",
     "description": "A blunt breakdown of how Bank of Canada rate decisions move 6C Canadian Dollar futures and how traders should position around them.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "How BOJ Intervention Shows Up on the 6J Chart",
-    "url": "/futures-basics/6j-boj-intervention-signals.html",
-    "description": "A blunt breakdown of how BOJ currency interventions appear on the 6J Yen futures chart and the signals that warn you before they hit.",
     "category": "Futures Basics"
   },
   {
@@ -4110,12 +4110,6 @@
     "category": "Market Basics"
   },
   {
-    "title": "The Yield Spread Model: Predicting 6J Direction Using Rate Differentials",
-    "url": "/futures-basics/6j-yield-spread-model.html",
-    "description": "A blunt guide showing how U.S.–Japan yield spreads predict 6J direction with brutal accuracy and how traders can model it in real time.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Tick Value & P/L Calculator | Grizzly Parrot Trading",
     "url": "/tools/tick-value-calculator.html",
     "description": "Quick futures tick and P/L calculator. Pick a contract, enter entry and exit, see ticks, points, and dollar profit or loss immediately.",
@@ -5086,5 +5080,11 @@
     "url": "/prop-firm-trading/withdrawal-thresholds-and-requirements.html",
     "description": "Learn the withdrawal thresholds and requirements prop firms use before they allow payouts, including minimum profits, trade days, and rule checks.",
     "category": "Prop Firm Trading"
+  },
+  {
+    "title": "Yen Intervention &amp; 6J Futures | Verified Event Study",
+    "url": "/futures-basics/6j-boj-intervention-signals.html",
+    "description": "A source-linked study of seven confirmed Japanese yen-intervention dates in 2022 and 2024, measured daily FX responses, 6J implications and evidence limits.",
+    "category": "Futures Basics"
   }
 ]
