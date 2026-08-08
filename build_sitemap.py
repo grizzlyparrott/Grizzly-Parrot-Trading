@@ -104,7 +104,7 @@ def get_git_last_commit(file_path: Path, repo_root: Path) -> str | None:
         if result.returncode == 0 and result.stdout.strip():
             line = result.stdout.strip().split("\n")[0]
             dt = datetime.fromisoformat(line.replace("Z", "+00:00"))
-            return dt.strftime("%Y-%m-%dT%H:%M:%SZ")
+            return dt.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         return None
     except (subprocess.SubprocessError, ValueError, OSError):
         return None

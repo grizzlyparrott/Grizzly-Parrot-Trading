@@ -47,6 +47,21 @@ The site includes sections for:
 - Bing Webmaster Tools
 - Google Analytics
 
+## IndexNow
+
+The site publishes its IndexNow ownership key at the domain root. After each successful `pages-build-deployment` run on `main`, `.github/workflows/indexnow.yml` verifies that the live key and sitemap match the deployed revision and then submits only added, updated, or removed page URLs. A manual `all` run is available for an initial or recovery backfill of the complete sitemap.
+
+The submission client fails closed on an invalid key, an off-domain sitemap URL, a stale live deployment, or a non-success API response. Each workflow run retains a JSON report for 30 days and distinguishes a completed submission from an HTTP 202 response that is still pending key validation.
+
+`build_sitemap.py` converts Git commit timestamps to UTC before writing each `<lastmod>` value, so the sitemap never labels a local wall-clock time as UTC.
+
+Local validation does not send data:
+
+```powershell
+py -3 -m unittest discover -s tests -v
+py -3 scripts/submit_indexnow.py --all --dry-run --skip-live-check
+```
+
 ## Purpose
 
 The goal of this project is to create a useful futures trading education site built around clear explanations, structured learning paths, and practical market education.
