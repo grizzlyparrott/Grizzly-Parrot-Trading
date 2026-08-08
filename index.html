@@ -35,7 +35,7 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/home-premium.css?v=20260806-4">
+  <link rel="stylesheet" href="/home-premium.css?v=20260807-5">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
@@ -92,6 +92,7 @@
   </script>
 
   <script src="/uet.js" defer></script>
+  <script src="/home-search.js?v=20260807-1" defer></script>
 </head>
 <body class="home-page">
 
@@ -127,7 +128,7 @@
     <form id="home-search-form" class="home-search-form home-hero-search" role="search" novalidate>
       <label for="home-search-input">Search every guide and tool</label>
       <div class="home-search-row">
-        <input id="home-search-input" type="search" placeholder="Try trailing drawdown, GC liquidity, tick value…" autocomplete="off" aria-describedby="home-search-help">
+        <input id="home-search-input" type="search" placeholder="Ask: how much is one 6E tick worth?" autocomplete="off" enterkeyhint="search" spellcheck="false" aria-controls="home-search-results" aria-describedby="home-search-help">
         <button class="home-button" type="submit">Search site</button>
         <button id="home-search-clear" class="home-search-clear" type="button">Clear</button>
       </div>
@@ -142,9 +143,16 @@
         <button type="button" data-category="Energies" aria-pressed="false">Energies</button>
         <button type="button" data-category="tools" aria-pressed="false">Tools</button>
       </div>
+      <div class="home-search-examples" aria-label="Example searches">
+        <span>Try:</span>
+        <button type="button" data-search-query="how much is one 6E tick worth">6E tick value</button>
+        <button type="button" data-search-query="how do trailing drawdowns work">Trailing drawdown</button>
+        <button type="button" data-search-query="NinjaTrader ATM orders">NinjaTrader ATM</button>
+        <button type="button" data-search-query="best time to trade gold">Gold trading hours</button>
+      </div>
     </form>
 
-    <p id="home-search-help" class="home-hero-search-status">Search results update below from the site's full production index.</p>
+    <p id="home-search-help" class="home-hero-search-status">Ask a natural question, use a contract symbol, or enter a topic. Minor misspellings are okay.</p>
     <div class="home-hero-actions">
       <a class="home-button" href="#topic-hubs">Explore the site</a>
       <a class="home-text-link" href="/futures-basics/">New to futures? Start here</a>
@@ -187,10 +195,10 @@
   <div class="home-section-heading">
     <p class="home-kicker">Site-wide search</p>
     <h2 id="site-search-title">Search the Whole Site</h2>
-    <p>Use the search box above to query the production index. Results cover educational guides, section hubs, books, product research, platform tutorials, and client-side tools.</p>
+    <p>Ask a question or enter a topic above. Results are ranked across educational guides, section hubs, books, product research, platform tutorials, and client-side tools.</p>
   </div>
-  <div class="home-search-meta"><p id="home-search-status" role="status" aria-live="polite">Loading the site index…</p></div>
-  <div id="home-search-results" class="home-search-results">
+  <div class="home-search-meta"><p id="home-search-status" role="status" aria-live="polite" aria-atomic="true">Loading the site index…</p></div>
+  <div id="home-search-results" class="home-search-results" aria-busy="true">
     <a href="/platforms-tutorials/sierra-chart-numbers-bars-guide.html"><span>Platforms &amp; Tutorials</span><strong>Sierra Chart Numbers Bars</strong><p>Build and interpret a practical footprint-chart workflow.</p></a>
     <a href="/market-basics/risk-per-trade-small-accounts.html"><span>Market Basics</span><strong>Risk Per Trade for Small Futures Accounts</strong><p>Size from the usable buffer, actual stop, tick value, and estimated costs.</p></a>
     <a href="/prop-firm-trading/static-vs-trailing-drawdown.html"><span>Prop Firm Trading</span><strong>Static vs Trailing Drawdown</strong><p>Compare fixed, real-time trailing, and end-of-day account floors.</p></a>
@@ -299,154 +307,5 @@
   </div>
 </footer>
 
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-
-(function () {
-  'use strict';
-
-  var form = document.getElementById('home-search-form');
-  if (!form) return;
-
-  var input = document.getElementById('home-search-input');
-  var clearButton = document.getElementById('home-search-clear');
-  var status = document.getElementById('home-search-status');
-  var results = document.getElementById('home-search-results');
-  var empty = document.getElementById('home-search-empty');
-  var total = document.getElementById('home-library-total');
-  var heroHelp = document.getElementById('home-search-help');
-  var filterButtons = Array.prototype.slice.call(document.querySelectorAll('.home-search-filters button'));
-  var searchData = [];
-  var activeCategory = 'all';
-  var preferredUrls = [
-    '/platforms-tutorials/sierra-chart-numbers-bars-guide.html',
-    '/market-basics/risk-per-trade-small-accounts.html',
-    '/prop-firm-trading/static-vs-trailing-drawdown.html',
-    '/futures-basics/ticks-points-dollar-value.html',
-    '/futures-basics/contract-expiration-and-roll.html',
-    '/futures-basics/gc-market-microstructure.html',
-    '/futures-basics/how-rate-differentials-drive-6e-price.html',
-    '/futures-basics/how-to-read-order-flow-on-6e.html'
-  ];
-
-  function decodeText(value) {
-    var area = document.createElement('textarea');
-    area.innerHTML = String(value || '');
-    return area.value;
-  }
-
-  function normalized(value) {
-    return decodeText(value).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
-  }
-
-  function makeResult(item) {
-    var link = document.createElement('a');
-    var category = document.createElement('span');
-    var title = document.createElement('strong');
-    var description = document.createElement('p');
-    link.href = item.url;
-    category.textContent = decodeText(item.category || 'Resource');
-    title.textContent = decodeText(item.title || 'Untitled resource');
-    description.textContent = decodeText(item.description || 'Open this Grizzly Parrot Trading resource.');
-    link.appendChild(category);
-    link.appendChild(title);
-    link.appendChild(description);
-    return link;
-  }
-
-  function selectedDefaults() {
-    var byUrl = new Map(searchData.map(function (item) { return [item.url, item]; }));
-    var selected = preferredUrls.map(function (url) { return byUrl.get(url); }).filter(Boolean);
-    return selected.length ? selected : searchData.slice(0, 8);
-  }
-
-  function render() {
-    if (!searchData.length) return;
-    var query = normalized(input.value);
-    var terms = query ? query.split(' ').filter(Boolean) : [];
-    var pool;
-
-    if (!terms.length && activeCategory === 'all') {
-      pool = selectedDefaults();
-    } else {
-      pool = searchData.filter(function (item) {
-        var itemCategory = decodeText(item.category || '');
-        var categoryMatch = activeCategory === 'all' || itemCategory === activeCategory;
-        var searchable = normalized(item.title) + ' ' + normalized(item.description) + ' ' + normalized(item.category);
-        var termMatch = !terms.length || terms.every(function (term) { return searchable.indexOf(term) !== -1; });
-        return categoryMatch && termMatch;
-      });
-    }
-
-    var visible = pool.slice(0, 12);
-    results.replaceChildren();
-    visible.forEach(function (item) { results.appendChild(makeResult(item)); });
-    empty.hidden = visible.length !== 0;
-
-    if (!terms.length && activeCategory === 'all') {
-      status.textContent = 'Showing ' + visible.length + ' featured resources from ' + searchData.length.toLocaleString() + ' indexed items.';
-    } else {
-      status.textContent = 'Showing ' + visible.length + ' of ' + pool.length + ' matching resources.';
-    }
-  }
-
-  function setCategory(button) {
-    activeCategory = button.dataset.category;
-    filterButtons.forEach(function (item) {
-      var active = item === button;
-      item.classList.toggle('is-active', active);
-      item.setAttribute('aria-pressed', active ? 'true' : 'false');
-    });
-    render();
-  }
-
-  function clearSearch() {
-    input.value = '';
-    var allButton = filterButtons.find(function (button) { return button.dataset.category === 'all'; });
-    setCategory(allButton);
-    input.focus();
-  }
-
-  function revealResults() {
-    document.getElementById('site-search').scrollIntoView({behavior: 'auto', block: 'start'});
-  }
-
-  fetch('/search-index.json', {credentials: 'same-origin'})
-    .then(function (response) {
-      if (!response.ok) throw new Error('Search index unavailable');
-      return response.json();
-    })
-    .then(function (data) {
-      if (!Array.isArray(data)) throw new Error('Search index invalid');
-      searchData = data.filter(function (item) {
-        return item && typeof item.url === 'string' && typeof item.title === 'string';
-      });
-      total.textContent = searchData.length.toLocaleString() + ' indexed resources';
-      heroHelp.textContent = 'Search ' + searchData.length.toLocaleString() + ' indexed resources across the whole site.';
-      render();
-    })
-    .catch(function () {
-      status.textContent = 'Search is temporarily unavailable. The featured resources below remain accessible.';
-      heroHelp.textContent = 'Search is temporarily unavailable; browse the site sections below.';
-    });
-
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    render();
-    window.setTimeout(revealResults, 0);
-  });
-  input.addEventListener('input', render);
-  input.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') clearSearch();
-  });
-  clearButton.addEventListener('click', clearSearch);
-  filterButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      setCategory(button);
-      window.setTimeout(revealResults, 0);
-    });
-  });
-}());
-</script>
 </body>
 </html>
