@@ -257,6 +257,30 @@ class IndexNowTests(unittest.TestCase):
                 sleeper=lambda delay: None,
             )
 
+    def test_pending_site_verification_is_retried_with_a_bounded_delay(self) -> None:
+        responses = iter(
+            [
+                HttpResult(
+                    403,
+                    '{"errorCode":"SiteVerificationNotCompleted","message":"wait"}',
+                ),
+                HttpResult(200, ""),
+            ]
+        )
+        sleeps: list[float] = []
+
+        result = post_with_retry(
+            "https://api.indexnow.org/indexnow",
+            {},
+            request_timeout=1,
+            max_attempts=2,
+            post_json=lambda endpoint, payload, timeout: next(responses),
+            sleeper=sleeps.append,
+        )
+
+        self.assertEqual(result.status, 200)
+        self.assertEqual(sleeps, [15.0])
+
     def test_batches_respect_protocol_limit(self) -> None:
         urls = [f"{BASE_URL}{index}.html" for index in range(MAX_URLS_PER_REQUEST + 1)]
         batches = chunk_urls(urls)

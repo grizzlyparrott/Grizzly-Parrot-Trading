@@ -387,12 +387,36 @@ def _http_post_json(endpoint: str, payload: dict[str, object], timeout: float) -
 
 
 def _retry_delay(result: HttpResult | None, attempt: int) -> float:
+    if result and _response_error_code(result) == "SiteVerificationNotCompleted":
+        return min(15.0 * attempt, 60.0)
     if result and result.retry_after:
         try:
             return min(max(float(result.retry_after), 0.0), 60.0)
         except ValueError:
             pass
     return min(2.0 ** (attempt - 1), 30.0)
+
+
+def _response_error_code(result: HttpResult) -> str | None:
+    try:
+        payload = json.loads(result.body)
+    except (json.JSONDecodeError, TypeError):
+        return None
+    if not isinstance(payload, dict):
+        return None
+    error_code = payload.get("errorCode")
+    return error_code if isinstance(error_code, str) else None
+
+
+def _is_retryable_response(result: HttpResult) -> bool:
+    return (
+        result.status == 429
+        or 500 <= result.status <= 599
+        or (
+            result.status == 403
+            and _response_error_code(result) == "SiteVerificationNotCompleted"
+        )
+    )
 
 
 def post_with_retry(
@@ -414,7 +438,7 @@ def post_with_retry(
             result = post_json(endpoint, payload, request_timeout)
             if result.status in {200, 202}:
                 return result
-            retryable = result.status == 429 or 500 <= result.status <= 599
+            retryable = _is_retryable_response(result)
             if not retryable:
                 detail = result.body.strip()[:500] or "no response body"
                 raise IndexNowError(f"IndexNow returned HTTP {result.status}: {detail}")
@@ -430,7 +454,20 @@ def post_with_retry(
             raise IndexNowError(
                 f"IndexNow request failed after {max_attempts} attempts: {last_network_error}"
             )
-        sleeper(_retry_delay(result, attempt))
+        delay = _retry_delay(result, attempt)
+        if result is not None:
+            print(
+                f"IndexNow returned transient HTTP {result.status}; retrying in {delay:g} seconds "
+                f"(attempt {attempt + 1}/{max_attempts}).",
+                file=sys.stderr,
+            )
+        else:
+            print(
+                f"IndexNow request failed transiently; retrying in {delay:g} seconds "
+                f"(attempt {attempt + 1}/{max_attempts}).",
+                file=sys.stderr,
+            )
+        sleeper(delay)
 
     raise AssertionError("unreachable")
 
