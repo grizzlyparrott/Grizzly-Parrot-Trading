@@ -34,30 +34,131 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Book",
-    "name": "Metals Market Structure",
-    "alternateName": "Market Structure Series, Volume II",
-    "author": {"@type": "Person", "name": "Kyle Parrott"},
-    "bookFormat": "EBook",
-    "inLanguage": "en",
-    "image": "https://grizzlyparrottrading.com/books/metals-market-structure/metals-market-structure-cover.png",
-    "url": "https://grizzlyparrottrading.com/books/metals-market-structure/",
-    "description": "A structural framework for understanding the connected metals complex across contract structure, liquidity, sessions, monetary demand, industrial demand, supply concentration, and changing regimes.",
-    "isPartOf": {
-      "@type": "BookSeries",
-      "name": "Market Structure Series"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "29.00",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "url": "https://buy.stripe.com/dRmbJ2dSl2061Ta0UE2Nq02"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://grizzlyparrottrading.com/#organization",
+        "name": "Grizzly Parrot Trading",
+        "url": "https://grizzlyparrottrading.com/",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "merchantReturnLink": "https://grizzlyparrottrading.com/store-policy.html"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://grizzlyparrottrading.com/about.html#kyle-parrott",
+        "name": "Kyle Parrott"
+      },
+      {
+        "@type": "BookSeries",
+        "@id": "https://grizzlyparrottrading.com/books/#market-structure-series",
+        "name": "Market Structure Series",
+        "url": "https://grizzlyparrottrading.com/books/"
+      },
+      {
+        "@type": "Book",
+        "@id": "https://grizzlyparrottrading.com/books/metals-market-structure/#work",
+        "name": "Metals Market Structure",
+        "alternateName": "Market Structure Series, Volume II",
+        "author": {"@id": "https://grizzlyparrottrading.com/about.html#kyle-parrott"},
+        "inLanguage": "en-US",
+        "image": "https://grizzlyparrottrading.com/books/metals-market-structure/metals-market-structure-cover.png",
+        "url": "https://grizzlyparrottrading.com/books/metals-market-structure/",
+        "description": "A structural framework for understanding the connected metals complex across contract structure, liquidity, sessions, monetary demand, industrial demand, supply concentration, and changing regimes.",
+        "isPartOf": {"@id": "https://grizzlyparrottrading.com/books/#market-structure-series"},
+        "publisher": {"@id": "https://grizzlyparrottrading.com/#organization"},
+        "workExample": [
+          {"@id": "https://grizzlyparrottrading.com/books/metals-market-structure/#digital"},
+          {"@id": "https://grizzlyparrottrading.com/books/metals-market-structure/#paperback"},
+          {"@id": "https://grizzlyparrottrading.com/books/metals-market-structure/#hardcover"}
+        ]
+      },
+      {
+        "@type": "Book",
+        "@id": "https://grizzlyparrottrading.com/books/metals-market-structure/#digital",
+        "name": "Metals Market Structure: Volume II — Digital Edition",
+        "bookEdition": "Digital edition",
+        "bookFormat": "https://schema.org/EBook",
+        "inLanguage": "en-US",
+        "image": "https://grizzlyparrottrading.com/books/metals-market-structure/metals-market-structure-cover.png",
+        "url": "https://grizzlyparrottrading.com/books/metals-market-structure/?edition=digital#purchase",
+        "author": {"@id": "https://grizzlyparrottrading.com/about.html#kyle-parrott"},
+        "publisher": {"@id": "https://grizzlyparrottrading.com/#organization"},
+        "exampleOfWork": {"@id": "https://grizzlyparrottrading.com/books/metals-market-structure/#work"},
+        "offers": {
+          "@type": "Offer",
+          "url": "https://grizzlyparrottrading.com/books/metals-market-structure/?edition=digital#purchase",
+          "price": "29.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {"@id": "https://grizzlyparrottrading.com/#organization"}
+        }
+      },
+      {
+        "@type": ["Book", "Product"],
+        "@id": "https://grizzlyparrottrading.com/books/metals-market-structure/#paperback",
+        "name": "Metals Market Structure: Volume II — Paperback",
+        "description": "The paperback edition of Metals Market Structure, a practical framework for understanding gold, silver, copper, platinum, and palladium as one connected complex.",
+        "sku": "metals-market-structure-paperback",
+        "isbn": "978-1-105-03858-7",
+        "gtin13": "9781105038587",
+        "numberOfPages": 108,
+        "bookEdition": "Paperback edition",
+        "bookFormat": "https://schema.org/Paperback",
+        "inLanguage": "en-US",
+        "image": "https://grizzlyparrottrading.com/books/metals-market-structure/metals-market-structure-cover.png",
+        "url": "https://grizzlyparrottrading.com/books/metals-market-structure/?edition=paperback#purchase",
+        "author": {"@id": "https://grizzlyparrottrading.com/about.html#kyle-parrott"},
+        "brand": {"@id": "https://grizzlyparrottrading.com/#organization"},
+        "publisher": {"@id": "https://grizzlyparrottrading.com/#organization"},
+        "exampleOfWork": {"@id": "https://grizzlyparrottrading.com/books/metals-market-structure/#work"},
+        "offers": {
+          "@type": "Offer",
+          "url": "https://grizzlyparrottrading.com/books/metals-market-structure/?edition=paperback#purchase",
+          "price": "39.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {"@id": "https://grizzlyparrottrading.com/#organization"}
+        }
+      },
+      {
+        "@type": ["Book", "Product"],
+        "@id": "https://grizzlyparrottrading.com/books/metals-market-structure/#hardcover",
+        "name": "Metals Market Structure: Volume II — Hardcover",
+        "description": "The case-wrap hardcover edition of Metals Market Structure, a practical framework for understanding gold, silver, copper, platinum, and palladium as one connected complex.",
+        "sku": "metals-market-structure-hardcover",
+        "isbn": "978-1-105-03854-9",
+        "gtin13": "9781105038549",
+        "numberOfPages": 108,
+        "bookEdition": "Hardcover edition",
+        "bookFormat": "https://schema.org/Hardcover",
+        "inLanguage": "en-US",
+        "image": "https://grizzlyparrottrading.com/books/metals-market-structure/metals-market-structure-cover.png",
+        "url": "https://grizzlyparrottrading.com/books/metals-market-structure/?edition=hardcover#purchase",
+        "author": {"@id": "https://grizzlyparrottrading.com/about.html#kyle-parrott"},
+        "brand": {"@id": "https://grizzlyparrottrading.com/#organization"},
+        "publisher": {"@id": "https://grizzlyparrottrading.com/#organization"},
+        "exampleOfWork": {"@id": "https://grizzlyparrottrading.com/books/metals-market-structure/#work"},
+        "offers": {
+          "@type": "Offer",
+          "url": "https://grizzlyparrottrading.com/books/metals-market-structure/?edition=hardcover#purchase",
+          "price": "49.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {"@id": "https://grizzlyparrottrading.com/#organization"}
+        }
+      }
+    ]
   }
   </script>
 
-  <link rel="stylesheet" href="../market-structure-series.css?v=20260804-site-brand">
+  <link rel="stylesheet" href="../market-structure-series.css?v=20260811-google-books">
   <script src="/uet.js" defer></script>
 </head>
 <body>
@@ -170,21 +271,21 @@
           </ul>
         </div>
         <div class="edition-options" aria-label="Available editions">
-          <div class="price-box">
+          <div class="price-box" data-edition="digital">
             <span>Digital edition</span>
             <strong>$29</strong>
             <small>USD &middot; instant delivery</small>
             <a class="button button-wide js-buy" href="#purchase">Buy digital</a>
             <p>PDF and EPUB included.</p>
           </div>
-          <div class="price-box is-paperback">
+          <div class="price-box is-paperback" data-edition="paperback">
             <span>Paperback edition</span>
             <strong>$39</strong>
             <small>USD &middot; shipping extra</small>
             <a class="button button-secondary button-wide button-disabled js-paperback-buy" href="#purchase" aria-disabled="true">Loading paperback checkout</a>
             <p>Printed and shipped on demand.</p>
           </div>
-          <div class="price-box is-hardcover">
+          <div class="price-box is-hardcover" data-edition="hardcover">
             <span>Hardcover edition</span>
             <strong>$49</strong>
             <small>USD &middot; shipping extra</small>
@@ -223,6 +324,15 @@
         {edition: 'paperback', selector: '.js-paperback-buy', label: 'Buy paperback', checkoutUrl: ''},
         {edition: 'hardcover', selector: '.js-hardcover-buy', label: 'Buy hardcover', checkoutUrl: ''}
       ];
+
+      var requestedEdition = new URLSearchParams(window.location.search).get('edition');
+      if (['digital', 'paperback', 'hardcover'].indexOf(requestedEdition) !== -1) {
+        document.querySelectorAll('.price-box[data-edition]').forEach(function (box) {
+          var isSelected = box.getAttribute('data-edition') === requestedEdition;
+          box.classList.toggle('is-selected', isSelected);
+          if (isSelected) box.setAttribute('aria-current', 'true');
+        });
+      }
 
       buttons.forEach(function (button) {
         button.href = checkoutUrl;

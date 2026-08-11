@@ -33,23 +33,131 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Book",
-    "name": "Equity Market Structure",
-    "alternateName": "Market Structure Series, Volume III",
-    "author": {"@type": "Person", "name": "Kyle Parrott"},
-    "bookFormat": "EBook",
-    "inLanguage": "en",
-    "image": "https://grizzlyparrottrading.com/books/equity-market-structure/equity-market-structure-cover.png",
-    "url": "https://grizzlyparrottrading.com/books/equity-market-structure/",
-    "description": "A structural framework for understanding the connected equity complex across index futures, cash equities, ETFs, sectors, volatility, and individual stocks.",
-    "isPartOf": {
-      "@type": "BookSeries",
-      "name": "Market Structure Series"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://grizzlyparrottrading.com/#organization",
+        "name": "Grizzly Parrot Trading",
+        "url": "https://grizzlyparrottrading.com/",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "merchantReturnLink": "https://grizzlyparrottrading.com/store-policy.html"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://grizzlyparrottrading.com/about.html#kyle-parrott",
+        "name": "Kyle Parrott"
+      },
+      {
+        "@type": "BookSeries",
+        "@id": "https://grizzlyparrottrading.com/books/#market-structure-series",
+        "name": "Market Structure Series",
+        "url": "https://grizzlyparrottrading.com/books/"
+      },
+      {
+        "@type": "Book",
+        "@id": "https://grizzlyparrottrading.com/books/equity-market-structure/#work",
+        "name": "Equity Market Structure",
+        "alternateName": "Market Structure Series, Volume III",
+        "author": {"@id": "https://grizzlyparrottrading.com/about.html#kyle-parrott"},
+        "inLanguage": "en-US",
+        "image": "https://grizzlyparrottrading.com/books/equity-market-structure/equity-market-structure-cover.png",
+        "url": "https://grizzlyparrottrading.com/books/equity-market-structure/",
+        "description": "A structural framework for understanding the connected equity complex across index futures, cash equities, ETFs, sectors, volatility, and individual stocks.",
+        "isPartOf": {"@id": "https://grizzlyparrottrading.com/books/#market-structure-series"},
+        "publisher": {"@id": "https://grizzlyparrottrading.com/#organization"},
+        "workExample": [
+          {"@id": "https://grizzlyparrottrading.com/books/equity-market-structure/#digital"},
+          {"@id": "https://grizzlyparrottrading.com/books/equity-market-structure/#paperback"},
+          {"@id": "https://grizzlyparrottrading.com/books/equity-market-structure/#hardcover"}
+        ]
+      },
+      {
+        "@type": "Book",
+        "@id": "https://grizzlyparrottrading.com/books/equity-market-structure/#digital",
+        "name": "Equity Market Structure: Volume III — Digital Edition",
+        "bookEdition": "Digital edition",
+        "bookFormat": "https://schema.org/EBook",
+        "inLanguage": "en-US",
+        "image": "https://grizzlyparrottrading.com/books/equity-market-structure/equity-market-structure-cover.png",
+        "url": "https://grizzlyparrottrading.com/books/equity-market-structure/?edition=digital#purchase",
+        "author": {"@id": "https://grizzlyparrottrading.com/about.html#kyle-parrott"},
+        "publisher": {"@id": "https://grizzlyparrottrading.com/#organization"},
+        "exampleOfWork": {"@id": "https://grizzlyparrottrading.com/books/equity-market-structure/#work"},
+        "offers": {
+          "@type": "Offer",
+          "url": "https://grizzlyparrottrading.com/books/equity-market-structure/?edition=digital#purchase",
+          "price": "29.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {"@id": "https://grizzlyparrottrading.com/#organization"}
+        }
+      },
+      {
+        "@type": ["Book", "Product"],
+        "@id": "https://grizzlyparrottrading.com/books/equity-market-structure/#paperback",
+        "name": "Equity Market Structure: Volume III — Paperback",
+        "description": "The paperback edition of Equity Market Structure, a practical framework for understanding index futures, cash equities, ETFs, sectors, volatility, and individual stocks as one connected system.",
+        "sku": "equity-market-structure-paperback",
+        "isbn": "978-1-105-03848-8",
+        "gtin13": "9781105038488",
+        "numberOfPages": 156,
+        "bookEdition": "Paperback edition",
+        "bookFormat": "https://schema.org/Paperback",
+        "inLanguage": "en-US",
+        "image": "https://grizzlyparrottrading.com/books/equity-market-structure/equity-market-structure-cover.png",
+        "url": "https://grizzlyparrottrading.com/books/equity-market-structure/?edition=paperback#purchase",
+        "author": {"@id": "https://grizzlyparrottrading.com/about.html#kyle-parrott"},
+        "brand": {"@id": "https://grizzlyparrottrading.com/#organization"},
+        "publisher": {"@id": "https://grizzlyparrottrading.com/#organization"},
+        "exampleOfWork": {"@id": "https://grizzlyparrottrading.com/books/equity-market-structure/#work"},
+        "offers": {
+          "@type": "Offer",
+          "url": "https://grizzlyparrottrading.com/books/equity-market-structure/?edition=paperback#purchase",
+          "price": "39.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {"@id": "https://grizzlyparrottrading.com/#organization"}
+        }
+      },
+      {
+        "@type": ["Book", "Product"],
+        "@id": "https://grizzlyparrottrading.com/books/equity-market-structure/#hardcover",
+        "name": "Equity Market Structure: Volume III — Hardcover",
+        "description": "The case-wrap hardcover edition of Equity Market Structure, a practical framework for understanding index futures, cash equities, ETFs, sectors, volatility, and individual stocks as one connected system.",
+        "sku": "equity-market-structure-hardcover",
+        "isbn": "978-1-105-03842-6",
+        "gtin13": "9781105038426",
+        "numberOfPages": 156,
+        "bookEdition": "Hardcover edition",
+        "bookFormat": "https://schema.org/Hardcover",
+        "inLanguage": "en-US",
+        "image": "https://grizzlyparrottrading.com/books/equity-market-structure/equity-market-structure-cover.png",
+        "url": "https://grizzlyparrottrading.com/books/equity-market-structure/?edition=hardcover#purchase",
+        "author": {"@id": "https://grizzlyparrottrading.com/about.html#kyle-parrott"},
+        "brand": {"@id": "https://grizzlyparrottrading.com/#organization"},
+        "publisher": {"@id": "https://grizzlyparrottrading.com/#organization"},
+        "exampleOfWork": {"@id": "https://grizzlyparrottrading.com/books/equity-market-structure/#work"},
+        "offers": {
+          "@type": "Offer",
+          "url": "https://grizzlyparrottrading.com/books/equity-market-structure/?edition=hardcover#purchase",
+          "price": "49.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {"@id": "https://grizzlyparrottrading.com/#organization"}
+        }
+      }
+    ]
   }
   </script>
 
-  <link rel="stylesheet" href="../market-structure-series.css?v=20260804-site-brand">
+  <link rel="stylesheet" href="../market-structure-series.css?v=20260811-google-books">
   <script src="/uet.js" defer></script>
 </head>
 <body>
@@ -162,21 +270,21 @@
           </ul>
         </div>
         <div class="edition-options" aria-label="Available editions">
-          <div class="price-box">
+          <div class="price-box" data-edition="digital">
             <span>Digital edition</span>
             <strong>$29</strong>
             <small>USD &middot; instant delivery</small>
             <a class="button button-wide js-buy" href="#purchase" data-checkout-url="">Buy digital</a>
             <p data-checkout-note>PDF and EPUB included.</p>
           </div>
-          <div class="price-box is-paperback">
+          <div class="price-box is-paperback" data-edition="paperback">
             <span>Paperback edition</span>
             <strong>$39</strong>
             <small>USD &middot; shipping extra</small>
             <a class="button button-secondary button-wide button-disabled js-paperback-buy" href="#purchase" aria-disabled="true">Loading paperback checkout</a>
             <p>Printed and shipped on demand.</p>
           </div>
-          <div class="price-box is-hardcover">
+          <div class="price-box is-hardcover" data-edition="hardcover">
             <span>Hardcover edition</span>
             <strong>$49</strong>
             <small>USD &middot; shipping extra</small>
@@ -216,6 +324,15 @@
         {edition: 'hardcover', selector: '.js-hardcover-buy', label: 'Buy hardcover', checkoutUrl: ''}
       ];
       var notes = document.querySelectorAll('[data-checkout-note]');
+
+      var requestedEdition = new URLSearchParams(window.location.search).get('edition');
+      if (['digital', 'paperback', 'hardcover'].indexOf(requestedEdition) !== -1) {
+        document.querySelectorAll('.price-box[data-edition]').forEach(function (box) {
+          var isSelected = box.getAttribute('data-edition') === requestedEdition;
+          box.classList.toggle('is-selected', isSelected);
+          if (isSelected) box.setAttribute('aria-current', 'true');
+        });
+      }
 
       buttons.forEach(function (button) {
         if (checkoutUrl) {
