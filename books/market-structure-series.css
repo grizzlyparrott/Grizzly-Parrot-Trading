@@ -498,6 +498,7 @@ h2 {
 }
 
 .price-box {
+  position: relative;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -506,6 +507,7 @@ h2 {
   border-radius: 20px;
   background: rgba(0,0,0,.24);
   text-align: center;
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
 }
 
 .price-box > span,
@@ -560,6 +562,29 @@ h2 {
 .price-box.is-hardcover {
   border-color: rgba(196, 165, 97, .4);
   background: linear-gradient(160deg, rgba(196, 165, 97, .12), rgba(0,0,0,.22));
+}
+
+.price-box.is-selected {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(60,255,145,.16), 0 18px 46px rgba(0,0,0,.34);
+  transform: translateY(-3px);
+}
+
+.price-box.is-selected::before {
+  content: "Selected edition";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--green);
+  color: #041109;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+  white-space: nowrap;
 }
 
 .edition-options .price-box > strong {
