@@ -2,251 +2,163 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6E ATR Behavior and Why It Matters for Euro FX Futures</title>
-  <meta name="description" content="A blunt breakdown of ATR behavior in 6E, how daily and session ranges shape volatility, and how to use ATR to time trades in Euro FX futures.">
+  <title>6E ATR: Measuring Euro FX Volatility Without Guesswork</title>
+  <meta name="description" content="Learn how ATR is calculated for 6E Euro FX futures, how timeframe and session choices change it, and how to use volatility regimes without inventing direction.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6e-atr-behavior-and-why-it-matters.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6E ATR Behavior and Why It Matters for Euro FX Futures">
-  <meta property="og:description" content="A blunt breakdown of ATR behavior in 6E, how daily and session ranges shape volatility, and how to use ATR to time trades in Euro FX futures.">
+  <meta property="og:title" content="6E ATR: Measuring Euro FX Volatility Without Guesswork">
+  <meta property="og:description" content="A practical guide to true range, Wilder ATR, units, session choices, and volatility-regime testing in Euro FX futures.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6e-atr-behavior-and-why-it-matters.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="article:published_time" content="2025-11-24">
+  <meta property="article:modified_time" content="2026-08-12">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6E ATR Behavior and Why It Matters for Euro FX Futures">
-  <meta name="twitter:description" content="A blunt breakdown of ATR behavior in 6E, how daily and session ranges shape volatility, and how to use ATR to time trades in Euro FX futures.">
-
+  <meta name="twitter:title" content="6E ATR: Measuring Euro FX Volatility Without Guesswork">
+  <meta name="twitter:description" content="Use 6E ATR as a measured volatility input, not a direction signal or a universal stop formula.">
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="6e-evidence-guides.css?v=20260812a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"6E ATR: Measuring Euro FX Volatility Without Guesswork",
+    "description":"Learn how ATR is calculated for 6E Euro FX futures, how timeframe and session choices change it, and how to use volatility regimes without inventing direction.",
+    "author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},
+    "publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},
+    "image":"https://grizzlyparrottrading.com/OG-default.png",
+    "mainEntityOfPage":"https://grizzlyparrottrading.com/futures-basics/6e-atr-behavior-and-why-it-matters.html",
+    "url":"https://grizzlyparrottrading.com/futures-basics/6e-atr-behavior-and-why-it-matters.html",
+    "datePublished":"2025-11-24",
+    "dateModified":"2026-08-12"
+  }
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6E ATR Behavior and Why It Matters for Euro FX Futures",
-  "description": "A blunt breakdown of ATR behavior in 6E, how daily and session ranges shape volatility, and how to use ATR to time trades in Euro FX futures.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6e-atr-behavior-and-why-it-matters.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6e-atr-behavior-and-why-it-matters.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},
+    {"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/index.html"},
+    {"@type":"ListItem","position":3,"name":"6E ATR","item":"https://grizzlyparrottrading.com/futures-basics/6e-atr-behavior-and-why-it-matters.html"}
+  ]}
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6E ATR Behavior and Why It Matters for Euro FX Futures",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6e-atr-behavior-and-why-it-matters.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Does ATR predict whether 6E will rise or fall?","acceptedAnswer":{"@type":"Answer","text":"No. ATR measures the size of recent price movement, not its direction. Rising ATR can occur during a rally, a selloff, or violent two-way trade."}},
+    {"@type":"Question","name":"Does true range use only the current bar high and low?","acceptedAnswer":{"@type":"Answer","text":"No. True range is the greatest of the current high minus low, the absolute current high minus the prior close, and the absolute current low minus the prior close."}},
+    {"@type":"Question","name":"What ATR period should a 6E trader use?","acceptedAnswer":{"@type":"Answer","text":"There is no universal best period. Fourteen bars is a common Wilder convention, but the period, bar interval, session template, and intended holding period must be fixed before testing."}},
+    {"@type":"Question","name":"Can ATR set a complete 6E stop by itself?","acceptedAnswer":{"@type":"Answer","text":"No. ATR can normalize distance for the current volatility regime, but a valid stop also needs a trade-invalidating price level, position-size math, expected slippage, and a maximum loss."}},
+    {"@type":"Question","name":"Should 6E ATR be recorded in ticks, pips, or price?","acceptedAnswer":{"@type":"Answer","text":"Any unit can work if it is labeled and converted consistently. Price units are native to the chart, ticks connect directly to the futures contract, and pips are common FX language but must not be confused with the minimum 6E tick."}}
+  ]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="https://grizzlyparrottrading.com/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container euro-evidence">
+<article>
+  <header class="eu-hero">
+    <div class="eu-hero-copy">
+      <p class="eu-kicker">6E volatility measurement</p>
+      <h1>6E ATR: Measure Volatility Without Guessing Direction</h1>
+      <p class="eu-byline">By <a href="/about.html">Kyle Parrott</a> · Published November 24, 2025 · Updated August 12, 2026</p>
+      <p class="eu-hero-lede">Average True Range tells you how large recent 6E bars have been. That is useful. It does not tell you whether the next bar goes up, whether a breakout is real, or where your stop belongs. Keep the tool in its lane and it becomes much harder to misuse.</p>
+      <dl class="eu-hero-metrics"><div><dt>Measures</dt><dd>Range</dd></div><div><dt>Predicts</dt><dd>No direction</dd></div><div><dt>Inputs</dt><dd>H, L, prior C</dd></div><div><dt>Key control</dt><dd>Session template</dd></div></dl>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+    <div class="eu-market-board" aria-label="Illustration of changing true ranges, not measured market data">
+      <div class="eu-board-head"><span>Range regime</span><strong>Illustration only</strong></div>
+      <svg class="eu-board-chart" viewBox="0 0 520 240" role="img" aria-labelledby="atr-chart-title atr-chart-desc"><title id="atr-chart-title">Compressed and expanded range illustration</title><desc id="atr-chart-desc">An illustrative line with smaller movement followed by wider movement. It is not a historical 6E study.</desc><path class="grid-line" d="M20 50H500M20 120H500M20 190H500"/><path class="spread-line" d="M20 130L65 123L110 137L155 126L200 131L245 90L290 154L335 68L380 176L425 84L500 142"/><line class="event-line" x1="245" y1="25" x2="245" y2="210"/><text x="35" y="42">compressed</text><text x="350" y="42">expanded</text></svg>
+      <div class="eu-board-foot">Same indicator · different bars and sessions</div>
+    </div>
+  </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+  <nav class="eu-jump-nav" aria-label="Article sections"><a href="#definition">Definition</a><a href="#units">Units</a><a href="#settings">Settings</a><a href="#use">Use</a><a href="#test">Test</a><a href="#faq">FAQ</a></nav>
 
-<h1>6E ATR Behavior and Why It Matters for Euro FX Futures</h1>
+  <section class="eu-section" id="definition" aria-labelledby="definition-title">
+    <div class="eu-section-heading"><p class="eu-kicker">Start with the math</p><h2 id="definition-title">True Range Is More Than High Minus Low</h2><p>The prior close matters because a bar can open away from it. A simple high-low calculation misses that jump.</p></div>
+    <div class="eu-formula"><code>TR<sub>t</sub> = max(H<sub>t</sub> − L<sub>t</sub>, |H<sub>t</sub> − C<sub>t−1</sub>|, |L<sub>t</sub> − C<sub>t−1</sub>|)</code></div>
+    <p>For every bar, calculate all three distances and keep the largest. Suppose the prior close is 1.17000, the next bar opens higher, trades from 1.17080 to 1.17120, and closes inside that range. High minus low is only 0.00040. The distance from the high to the prior close is 0.00120, so true range is 0.00120. The formula captures the discontinuity that high-low alone would ignore.</p>
+    <p>Welles Wilder's original smoothing convention starts with an arithmetic average of the first <em>n</em> true ranges. Each later value uses the prior ATR:</p>
+    <div class="eu-formula"><code>ATR<sub>t</sub> = ((ATR<sub>t−1</sub> × (n−1)) + TR<sub>t</sub>) ÷ n</code></div>
+    <p>That recursive smoothing is often labeled RMA or Wilder smoothing. A simple moving average of true range and an exponential moving average are different indicators. None is automatically wrong, but two traders cannot compare readings unless the formula, lookback, bars, and session template match.</p>
+    <aside class="eu-caution"><strong>ATR is descriptive, not causal.</strong><p>A high reading says recent ranges were large. It does not tell you whether rate expectations, a data release, thin liquidity, or a bad data print caused them. It also does not convert volatility into trend.</p></aside>
+  </section>
 
-<p>ATR isn’t a magic indicator. It’s just a measurement of how far 6E actually moves. But if you ignore ATR, you’re ignoring volatility cycles, session behavior and the basic math that decides whether your targets get hit or your stop gets clipped. ATR tells you if today is a trend day, a slow grind, or a dead market.</p>
+  <section class="eu-section" id="units" aria-labelledby="units-title">
+    <div class="eu-section-heading"><p class="eu-kicker">Label the denominator</p><h2 id="units-title">Price, Ticks, Pips, and Dollars Are Not Interchangeable</h2><p>ATR comes off the chart in price units. Converting it is straightforward, but sloppy labels create tenfold mistakes.</p></div>
+    <div class="eu-table-scroll" role="region" aria-label="Hypothetical 6E ATR unit conversions" tabindex="0"><table class="eu-table"><caption>Ways to express a hypothetical 6E ATR of 0.00400</caption><thead><tr><th scope="col">Unit</th><th scope="col">Conversion</th><th scope="col">Result</th><th scope="col">What it communicates</th></tr></thead><tbody>
+      <tr><th scope="row">Price</th><td>Native chart value</td><td>0.00400 USD per EUR</td><td>Clean input for price-level comparisons</td></tr>
+      <tr><th scope="row">Pips</th><td>0.00400 ÷ 0.0001</td><td>40 pips</td><td>Common spot-FX language</td></tr>
+      <tr><th scope="row">6E ticks</th><td>0.00400 ÷ 0.00005</td><td>80 ticks</td><td>Distance in the standard futures minimum increment</td></tr>
+      <tr><th scope="row">Gross dollars</th><td>80 × $6.25</td><td>$500 per contract</td><td>Full-range dollar equivalent, not a recommended stop or expected loss</td></tr>
+    </tbody></table></div>
+    <p>The tick conversion above uses the standard 6E outright contract specification checked on August 12, 2026. Contract specifications can change, so verify the current exchange page. The dedicated <a href="/futures-basics/6e-tick-size-tick-value-margin-requirements.html">6E tick, value, and margin guide</a> owns that arithmetic. ATR only supplies a distance.</p>
+  </section>
 
-<h2>What ATR Actually Measures</h2>
+  <section class="eu-section" id="settings" aria-labelledby="settings-title">
+    <div class="eu-section-heading"><p class="eu-kicker">Define the measurement</p><h2 id="settings-title">The Same Market Can Produce Several Correct ATR Values</h2><p>A “14 ATR” is incomplete. Fourteen what? Built from which trading hours? Ending at what time?</p></div>
+    <div class="eu-check-grid">
+      <article><strong>Bar interval</strong><p>A 14-bar ATR on five-minute bars measures a different horizon from a 14-day ATR. Match the bar to the decision you are testing.</p></article>
+      <article><strong>Session template</strong><p>An exchange-session daily bar, a broker-defined day, and a cash-session bar can have different highs, lows, and prior closes.</p></article>
+      <article><strong>Contract series</strong><p>A single delivery month, unadjusted continuous series, and back-adjusted series handle the roll differently. Roll jumps can contaminate true range.</p></article>
+    </div>
+    <p>Daylight-saving changes add another trap. If a custom “European session” is stored in a fixed local timezone, the UTC boundaries can shift. A test can quietly include a different slice of trading on part of the sample. The <a href="/futures-basics/best-times-to-trade-euro-fx-futures-6e.html">6E session guide</a> explains why US and European clock changes need explicit treatment.</p>
+    <p>Do not compare a live partial bar with a completed historical bar as though they are equal observations. Intraday true range can only increase until that bar closes. If you use “ATR so far” as a risk control, label it as provisional and test the rule that actually existed at decision time.</p>
+    <p>Warm-up is part of the specification too. A recursive ATR carries information from earlier bars, so starting the calculation on the first day of a test can leave the early values dependent on an arbitrary initialization. Load enough prior true ranges, state how many observations were used for warm-up, and exclude unstable startup values. When two platforms disagree, compare one bar at a time: timestamp, high, low, prior close, true range, then smoothing. That audit usually finds a session, roll, or rounding difference before it finds a mysterious market effect.</p>
+  </section>
 
-<p>ATR (Average True Range) tracks the average distance between high and low over a set number of days. For 6E, ATR tells you the contract’s “typical” daily move.</p>
+  <section class="eu-section" id="use" aria-labelledby="use-title">
+    <div class="eu-section-heading"><p class="eu-kicker">Useful jobs</p><h2 id="use-title">What ATR Can Do in a 6E Process</h2><p>ATR is strongest as a normalizer: it lets you compare distances across volatility regimes without pretending every day is the same.</p></div>
+    <div class="eu-two-column">
+      <div class="eu-panel"><h3>Normalize a setup</h3><p>Divide a setup's distance by a lagged ATR. A 0.00100 move is 0.25 ATR when ATR is 0.00400 and 0.50 ATR when ATR is 0.00200. That describes relative size; it does not prove quality.</p><p>Use only information available before entry. If today's completed range is included in the denominator after the trade, the test leaks future information.</p></div>
+      <div class="eu-panel"><h3>Separate regimes</h3><p>Rank lagged ATR against its own history, then test the setup separately in lower, middle, and upper buckets. Percentile buckets adapt better than permanent labels such as “40 ticks is quiet.”</p><p>Report sample count, costs, and dispersion inside each bucket. A better average from twelve trades is not a robust regime.</p></div>
+      <div class="eu-panel"><h3>Scale a candidate distance</h3><p>An ATR multiple can create a volatility-aware candidate stop or target, but market structure still determines whether the level invalidates the trade. Position size must be recalculated from the resulting dollar risk.</p></div>
+      <div class="eu-panel"><h3>Flag abnormal movement</h3><p>A bar whose true range is unusually large relative to prior ATR deserves review. Check scheduled releases, data integrity, contract roll, and liquidity before assigning a story. For event planning, use the <a href="/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html">6E macro-event workflow</a>.</p></div>
+    </div>
+    <p>Rising ATR does not automatically favor breakouts, and falling ATR does not automatically favor fades. Those are strategy hypotheses. The only honest route is to define the setup, run it across regimes, include transaction costs, and see whether the conditional results survive.</p>
+  </section>
 
-<table>
-<tr><th>ATR State</th><th>What It Means</th></tr>
-<tr><td>High ATR</td><td>Volatile market, bigger ranges, faster moves</td></tr>
-<tr><td>Low ATR</td><td>Compressed market, smaller ranges, choppy conditions</td></tr>
-</table>
+  <section class="eu-section" id="test" aria-labelledby="test-title">
+    <div class="eu-section-heading"><p class="eu-kicker">Reproducible method</p><h2 id="test-title">A Clean ATR Test Has to Freeze Its Rules</h2><p>“ATR works on 6E” is not a testable statement. This is.</p></div>
+    <div class="eu-process">
+      <article><span>Step 1</span><h3>Freeze the bars</h3><p>Name the contract series, timezone, session, bar interval, roll rule, and missing-data treatment.</p></article>
+      <article><span>Step 2</span><h3>Freeze the indicator</h3><p>Name the true-range formula, smoothing method, period, warm-up, and whether the value is lagged.</p></article>
+      <article><span>Step 3</span><h3>Freeze the decision</h3><p>Define the setup, entry, invalidation, sizing, costs, and ATR-regime threshold before looking at results.</p></article>
+      <article><span>Step 4</span><h3>Audit stability</h3><p>Report counts and dispersion; rerun by year, session, and nearby parameter choices rather than one lucky setting.</p></article>
+    </div>
+    <div class="eu-method"><div><h3>What this page verifies</h3><p>The true-range definition, Wilder smoothing equation, unit conversions, and required test controls are transparent. The numeric example is hypothetical and is not a study of 6E performance.</p></div><dl><div><dt>Historical probability</dt><dd>Not claimed</dd></div><div><dt>Universal ATR band</dt><dd>Not claimed</dd></div><div><dt>Directional edge</dt><dd>Not claimed</dd></div></dl></div>
+    <p class="eu-related"><strong>Keep the pages separate:</strong> use <a href="/futures-basics/how-rate-differentials-drive-6e-price.html">rate-differential mechanics</a> for macro transmission, <a href="/futures-basics/how-to-read-order-flow-on-6e.html">the order-flow guide</a> for aggression and price response, and <a href="/futures-basics/6e-gap-behavior-and-how-to-trade-it.html">the gap guide</a> for reopening and roll discontinuities.</p>
+  </section>
 
-<p>ATR gives context for setups. A breakout strategy is suicide in a low-ATR market. Fade setups get murdered in high-ATR markets.</p>
+  <section class="eu-section eu-faq" id="faq" aria-labelledby="faq-title">
+    <div class="eu-section-heading"><p class="eu-kicker">Common questions</p><h2 id="faq-title">6E ATR FAQ</h2></div>
+    <details><summary>Does ATR predict whether 6E will rise or fall?</summary><p>No. ATR measures the size of recent price movement, not its direction. Rising ATR can occur during a rally, a selloff, or violent two-way trade.</p></details>
+    <details><summary>Does true range use only the current bar high and low?</summary><p>No. True range is the greatest of the current high minus low, the absolute current high minus the prior close, and the absolute current low minus the prior close.</p></details>
+    <details><summary>What ATR period should a 6E trader use?</summary><p>There is no universal best period. Fourteen bars is a common Wilder convention, but the period, bar interval, session template, and intended holding period must be fixed before testing.</p></details>
+    <details><summary>Can ATR set a complete 6E stop by itself?</summary><p>No. ATR can normalize distance for the current volatility regime, but a valid stop also needs a trade-invalidating price level, position-size math, expected slippage, and a maximum loss.</p></details>
+    <details><summary>Should 6E ATR be recorded in ticks, pips, or price?</summary><p>Any unit can work if it is labeled and converted consistently. Price units are native to the chart, ticks connect directly to the futures contract, and pips are common FX language but must not be confused with the minimum 6E tick.</p></details>
+  </section>
 
-<h2>Typical ATR Range for 6E</h2>
-
-<p>6E doesn’t move like crude oil or gold. It’s steadier, and its ATR usually falls into predictable bands:</p>
-
-<ul>
-  <li><strong>Quiet periods:</strong> 40–60 ticks</li>
-  <li><strong>Normal volatility:</strong> 60–90 ticks</li>
-  <li><strong>High volatility:</strong> 100–150+ ticks</li>
-</ul>
-
-<p>ATR spikes almost always line up with CPI, NFP, FOMC and ECB events—the same drivers explained in <a href="https://grizzlyparrottrading.com/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html">the 6E news-impact guide</a>.</p>
-
-<h2>How ATR Cycles Work in 6E</h2>
-
-<p>6E volatility doesn’t stay constant. ATR rises and falls in cycles based on macro conditions:</p>
-
-<ul>
-  <li>Compression → expansion → trend → exhaustion → compression</li>
-</ul>
-
-<p>This cycle shows up clearly during major rate shifts described in <a href="https://grizzlyparrottrading.com/futures-basics/how-rate-differentials-drive-6e-price.html">rate differential mechanics</a>.</p>
-
-<h2>ATR and Session Behavior</h2>
-
-<p>Daily ATR isn’t evenly distributed across the trading day. Most of 6E’s move happens during:</p>
-
-<ul>
-  <li><strong>London open</strong> (European data + liquidity)</li>
-  <li><strong>U.S. economic releases</strong> (CPI, NFP, PMI)</li>
-  <li><strong>New York open</strong> (spot FX flows)</li>
-</ul>
-
-<p>This lines up with <a href="https://grizzlyparrottrading.com/futures-basics/best-times-to-trade-euro-fx-futures-6e.html">best 6E trading windows</a>. If ATR is elevated, these windows become explosive. If ATR is depressed, they become fakeouts.</p>
-
-<h2>How ATR Helps You Set Targets and Stops</h2>
-
-<h3>1. Don’t use the same stop every day</h3>
-<p>If ATR is 50 ticks and your stop is 30 ticks, you’re risking way too much. If ATR is 120 ticks and your stop is 10 ticks, you’re getting clipped for no reason.</p>
-
-<h3>2. Reward-to-risk must change with volatility</h3>
-<p>You’ll never hit a 40-tick target in a 30-tick ATR market.</p>
-
-<h3>3. ATR helps you avoid overtrading dead markets</h3>
-<p>Low ATR = grindy price action = trap city.</p>
-
-<h2>ATR and Trend Strength</h2>
-
-<p>High ATR doesn’t automatically mean a trend, but trends rarely happen without elevated ATR. Strong 6E trends often start immediately after ATR spikes—especially after macro events.</p>
-
-<p>When ATR rises at the same time rate spreads shift (see <a href="https://grizzlyparrottrading.com/futures-basics/why-6e-trends-harder-than-other-fx-futures.html">why 6E trends harder</a>), that’s where the big moves come from.</p>
-
-<h2>How to Use ATR in 6E Trading</h2>
-
-<ul>
-  <li><strong>ATR rising → use breakout/pullback strategies</strong></li>
-  <li><strong>ATR falling → use range or fade strategies</strong></li>
-  <li><strong>ATR extremes → size down, volatility unreliable</strong></li>
-  <li><strong>ATR shifts after news → new trend cycle forming</strong></li>
-</ul>
-
-<p>ATR isn’t predictive, but it’s damn good at telling you what not to trade.</p>
-
-<div class="highlight-box yellow">
-  <h3>ATR Provides Context, Not a Crystal Ball</h3>
-  <p>Average True Range highlights the market’s current volatility, showing where price moves are meaningful versus quiet. Using it offers context for activity without implying a direction or guaranteed outcome.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
+  <details class="eu-sources" open><summary>Sources and methodology</summary><ul>
+    <li><a href="https://www.cmegroup.com/markets/fx/g10/euro-fx.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME Group: Euro FX contract specifications</a> for current contract terms and trading-unit context.</li>
+    <li><a href="https://www.cmegroup.com/markets/fx/g10/euro-fx.settlements.html" target="_blank" rel="noopener noreferrer">CME Group: Euro FX daily settlements</a> as an official reference for settlement data.</li>
+    <li><a href="https://www.cmegroup.com/market-data/datamine-historical-data.html" target="_blank" rel="noopener noreferrer">CME DataMine</a> for exchange historical-data availability and product coverage.</li>
+    <li><a href="https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/atr" target="_blank" rel="noopener noreferrer">Fidelity: Average True Range</a> for the true-range definition and Wilder recursive calculation.</li>
+  </ul><p>Contract references were checked August 12, 2026. Formula examples on this page are disclosed calculations, not backtest results. Any empirical ATR claim should identify its exact dataset and controls.</p></details>
+  <aside class="eu-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This material explains volatility measurement for general education; it is not a personal recommendation or a substitute for individualized financial, investment, legal, tax, or brokerage advice. Futures are leveraged and can produce losses greater than the amount deposited. ATR is a backward-looking calculation, not a forecast or guarantee. Verify current exchange and broker information, test rules with costs, and define a maximum loss before trading.</p></aside>
+</article>
 </main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

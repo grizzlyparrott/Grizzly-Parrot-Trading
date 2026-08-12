@@ -2,234 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seasonality Patterns in Euro FX Futures (6E)</title>
-  <meta name="description" content="Learn the real seasonality patterns in Euro FX futures (6E) so you can anticipate when the contract tends to trend, stall or reverse each year.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6e-seasonality-patterns.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Seasonality Patterns in Euro FX Futures (6E)">
-  <meta property="og:description" content="Learn the real seasonality patterns in Euro FX futures (6E) so you can anticipate when the contract tends to trend, stall or reverse each year.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6e-seasonality-patterns.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Seasonality Patterns in Euro FX Futures (6E)">
-  <meta name="twitter:description" content="Learn the real seasonality patterns in Euro FX futures (6E) so you can anticipate when the contract tends to trend, stall or reverse each year.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <title>6E Seasonality: How to Test It Without Folklore</title>
+  <meta name="description" content="Build a reproducible 6E seasonality study with clean contract rolls, defined returns, uncertainty, regime tests, and no invented monthly rankings.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6e-seasonality-patterns.html">
+  <meta property="og:title" content="6E Seasonality: How to Test It Without Folklore"><meta property="og:description" content="A transparent research blueprint for month-of-year, event-window and calendar effects in Euro FX futures."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6e-seasonality-patterns.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-12">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6E Seasonality Without Folklore"><meta name="twitter:description" content="A reproducible framework for testing calendar patterns in Euro FX futures."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="6e-evidence-guides.css?v=20260812a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"6E Seasonality: How to Test It Without Folklore","description":"A reproducible research framework for testing monthly and calendar patterns in Euro FX futures without invented rankings or hidden roll bias.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6e-seasonality-patterns.html"},"datePublished":"2025-11-24","dateModified":"2026-08-12","url":"https://grizzlyparrottrading.com/futures-basics/6e-seasonality-patterns.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Seasonality Patterns in Euro FX Futures (6E)",
-  "description": "Learn the real seasonality patterns in Euro FX futures (6E) so you can anticipate when the contract tends to trend, stall or reverse each year.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6e-seasonality-patterns.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6e-seasonality-patterns.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6E Seasonality Patterns","item":"https://grizzlyparrottrading.com/futures-basics/6e-seasonality-patterns.html"}]}
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Seasonality Patterns in Euro FX Futures (6E)",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6e-seasonality-patterns.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is seasonality in 6E futures?","acceptedAnswer":{"@type":"Answer","text":"Seasonality is a repeated difference in a defined 6E outcome across calendar groups, such as months, weekdays or event-relative windows. It is a historical conditional pattern, not proof of a cause or a forecast for the next occurrence."}},
+    {"@type":"Question","name":"Which month is best for 6E futures?","acceptedAnswer":{"@type":"Answer","text":"This page does not publish a best-month ranking because no controlled 6E dataset is analyzed here. Any ranking must state the sample, contract-roll rule, return definition, costs, uncertainty and whether the month was selected after testing all twelve."}},
+    {"@type":"Question","name":"Can a continuous 6E chart be used for seasonality?","acceptedAnswer":{"@type":"Answer","text":"Only if its contract-selection and adjustment rules are known and suitable for the outcome. Raw stitches can inject roll gaps, while back-adjusted series change historical price levels. Execution tests should use actual contracts and explicit roll trades."}},
+    {"@type":"Question","name":"How many years are needed for a 6E seasonal test?","acceptedAnswer":{"@type":"Answer","text":"There is no universal number. Each month contributes only one independent month-level observation per year, and policy regimes can change. Report the exact count, uncertainty and sensitivity to start date instead of treating a long sample as automatically reliable."}},
+    {"@type":"Question","name":"Does a historical 6E seasonal pattern create a trading edge?","acceptedAnswer":{"@type":"Answer","text":"Not by itself. The pattern may be noise, unstable across regimes, too small after costs or discovered through multiple testing. It needs a plausible mechanism, out-of-sample confirmation and realistic execution before any trading claim."}}
+  ]}
+  </script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container euro-evidence"><article>
 <!-- ARTICLE BODY START -->
+<header class="eu-hero"><div class="eu-hero-copy"><p class="eu-kicker">Calendar research &middot; 6E</p><h1>6E Seasonality: How to Test It Without Folklore</h1><p class="eu-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 12, 2026</p><p class="eu-hero-lede">If you want to know whether 6E has a January effect, a quarter-end bias or a recurring event window, build the test first. A colorful monthly chart with no contract chain, sample count or uncertainty is decoration, not evidence.</p><div class="eu-hero-actions"><a class="button-primary" href="#protocol">Build the protocol</a><a class="eu-text-link" href="#report">See the required report</a></div><dl class="eu-hero-metrics" aria-label="Seasonality research principles"><div><dt>Unit</dt><dd>Defined return</dd></div><div><dt>Roll</dt><dd>Explicit</dd></div><div><dt>Selection</dt><dd>Predeclared</dd></div><div><dt>Ranking here</dt><dd>None</dd></div></dl></div>
+<div class="eu-hero-visual"><div class="eu-market-board"><div class="eu-board-head"><span>Research order</span><strong>Results come last</strong></div><div class="eu-formula"><code>hypothesis</code><i aria-hidden="true">&rarr;</i><code>clean data</code><i aria-hidden="true">&rarr;</i><code>uncertainty</code></div><p>Choose the calendar rule, return, roll method, costs and test family before looking for the strongest month.</p><p class="eu-board-foot"><span>No retrofitted story</span><span>No invented rank</span></p></div></div></header>
 
-<h1>Seasonality Patterns in Euro FX Futures (6E)</h1>
+<nav class="eu-jump-nav" aria-label="On this page"><a href="#answer">Direct answer</a><a href="#definitions">Definitions</a><a href="#protocol">Protocol</a><a href="#roll">Roll bias</a><a href="#inference">Inference</a><a href="#report">Report</a><a href="#faq">FAQ</a></nav>
 
-<p>Most traders obsess over indicators and ignore seasonality. Big mistake. 6E shows consistent month-to-month tendencies because European and U.S. economic cycles follow predictable reporting schedules, budget cycles and policy windows. Seasonality won't predict every move, but it gives you a statistical backbone so you stop treating every chart like a surprise.</p>
+<section class="eu-section" id="answer" aria-labelledby="answer-title"><div class="eu-section-heading"><p class="eu-kicker">Direct answer</p><h2 id="answer-title">6E Seasonality Is Possible to Test and Easy to Overstate</h2><p>The euro-dollar market has recurring calendars: central-bank meetings, economic releases, month-end hedging, holidays and futures expiration. That makes calendar hypotheses reasonable. It does not make any specific monthly direction true. A pattern can be caused by a few crisis years, a roll artifact, a changing policy regime or the fact that twelve months were searched and only the winner was shown.</p></div>
+<div class="eu-two-column"><article class="eu-panel"><p class="eu-card-label">Valid question</p><h3>Did a predeclared 6E outcome differ by calendar group?</h3><p>Define the outcome, group, sample, timestamp, contract selection and inference before calculating. Then publish every group, not just the strongest one.</p></article><article class="eu-panel"><p class="eu-card-label">Invalid shortcut</p><h3>"6E usually rallies in month X"</h3><p>Without counts, distribution, roll handling and uncertainty, that sentence cannot be audited. This article deliberately publishes no month ranking because it does not run a controlled dataset.</p></article></div>
+<div class="eu-caution"><strong>Seasonality is conditional</strong><p>A historical month average combines policy regimes, crises and calm periods. Even a precisely estimated average does not tell you what will happen when current inflation, rates, positioning and risk differ from the old sample.</p></div></section>
 
-<h2>Why 6E Has Seasonal Behavior</h2>
+<section class="eu-section" id="definitions" aria-labelledby="definitions-title"><div class="eu-section-heading"><p class="eu-kicker">Choose one hypothesis</p><h2 id="definitions-title">"Seasonality" Covers Several Different Tests</h2><p>Do not mix these into one chart. Each needs a separate unit of observation and null hypothesis.</p></div>
+<div class="eu-table-scroll" role="region" aria-label="6E seasonality hypothesis types" tabindex="0"><table class="eu-table"><thead><tr><th scope="col">Hypothesis family</th><th scope="col">Example outcome</th><th scope="col">Observation unit</th><th scope="col">Key confound</th></tr></thead><tbody>
+<tr><th scope="row">Month of year</th><td>Calendar-month compounded return</td><td>One value per month per year</td><td>Small count and crisis-year dominance</td></tr>
+<tr><th scope="row">Day of week</th><td>Fixed-session close-to-close return</td><td>Eligible trading day</td><td>Holiday and scheduled-release imbalance</td></tr>
+<tr><th scope="row">Turn of month</th><td>Return over predeclared business-day window</td><td>Month boundary</td><td>Overlapping windows and month-end benchmarks</td></tr>
+<tr><th scope="row">Central-bank calendar</th><td>Pre/post announcement return or range</td><td>Official meeting event</td><td>Expectation, unscheduled news and timestamp errors</td></tr>
+<tr><th scope="row">Futures expiration</th><td>Volume, spread or return around roll</td><td>Contract cycle</td><td>Mixing liquidity migration with directional price effect</td></tr>
+<tr><th scope="row">Time of day</th><td>Return or realized range in a session slice</td><td>Intraday interval</td><td>Daylight-saving shifts and event concentration</td></tr>
+</tbody></table></div>
+<p class="eu-source-note">A volatility calendar is different from a directional calendar. Use the <a href="6e-atr-behavior-and-why-it-matters.html">6E ATR guide</a> for range definitions and the <a href="cpi-nfp-fomc-ecb-impact-on-6e-volatility.html">6E event-volatility guide</a> for scheduled-event framing.</p></section>
 
-<p>Seasonality in 6E comes from repeated macro patterns:</p>
-<ul>
-  <li>Quarterly ECB and Fed meetings landing in predictable windows</li>
-  <li>Major annual European budget cycles</li>
-  <li>Eurozone and U.S. reporting cadence (CPI, GDP, PMIs, jobs data)</li>
-  <li>Year-end FX hedging by institutions</li>
-</ul>
+<section class="eu-section" id="protocol" aria-labelledby="protocol-title"><div class="eu-section-heading"><p class="eu-kicker">Pre-analysis plan</p><h2 id="protocol-title">A Reproducible Month-of-Year Protocol</h2><p>This is a template for research, not a result. Freeze it before downloading the outcome if you want a clean confirmatory test.</p></div>
+<div class="eu-process"><article><span>1</span><h3>State the hypothesis</h3><p>Example: calendar-month 6E returns have the same distribution across all twelve months.</p></article><article><span>2</span><h3>Freeze the sample</h3><p>Publish start and end dates, data version, exclusions, time zone and eligible trading calendar.</p></article><article><span>3</span><h3>Build contract returns</h3><p>Use exact expirations, a no-look-ahead active-month rule and explicit roll transactions.</p></article><article><span>4</span><h3>Estimate and challenge</h3><p>Report all months, uncertainty, multiple-test controls, subperiods and untouched validation years.</p></article></div>
+<div class="eu-method"><div><h3>Return definition</h3><p>For each eligible trading day, calculate the log return within the same actual contract from the prior settlement to the current settlement. On a roll, keep the old contract's return through the chosen exit, the new contract's return after entry and the explicit calendar-spread execution cost. Compound the daily portfolio returns into calendar months.</p></div><dl><div><dt>Price field</dt><dd>Official settlement</dd></div><div><dt>Contract</dt><dd>Stored daily</dd></div><div><dt>Roll gap</dt><dd>Not an outright return</dd></div></dl></div>
+<div class="eu-check-grid"><article><strong>Data lineage</strong><p>Preserve raw CME-derived records, vendor adjustments, download date, corrections and license. Never silently replace history.</p></article><article><strong>Calendar alignment</strong><p>Define the trade date and time zone. Handle holidays and daylight-saving transitions with exchange calendars.</p></article><article><strong>Missing observations</strong><p>Do not forward-fill a settlement into a return. Flag missing or duplicate records and publish exclusion counts.</p></article><article><strong>Costs</strong><p>If the claim is tradable, include commission, spread, roll execution and slippage assumptions with sensitivity ranges.</p></article></div></section>
 
-<p>These aren’t guesses—they show up in decades of Euro FX historical data. It fits with the macro direction explained in <a href="https://grizzlyparrottrading.com/futures-basics/why-6e-trends-harder-than-other-fx-futures.html">why 6E trends harder</a>.</p>
+<section class="eu-section" id="roll" aria-labelledby="roll-title"><div class="eu-section-heading"><p class="eu-kicker">Contract-chain control</p><h2 id="roll-title">The Roll Can Manufacture a Seasonal Pattern</h2><p>6E is a dated future. Different expirations can have different prices because of carry and time to delivery. If the series jumps from one expiration to another around a recurring calendar date, the stitch can masquerade as a monthly or quarterly return.</p></div>
+<div class="eu-proof-grid"><article class="eu-proof"><h3>Defensible construction</h3><ul><li>Store exact contract month and raw settlement.</li><li>Choose the active contract without future volume knowledge.</li><li>Model the old-to-new spread as a roll transaction.</li><li>Repeat the test under at least one alternative roll rule.</li></ul></article><article class="eu-proof is-limit"><h3>Construction that fails</h3><ul><li>Use a vendor continuous close without knowing its adjustment.</li><li>Count the splice gap as an overnight directional return.</li><li>Switch on the best-looking date after viewing results.</li><li>Back-adjust prices, then simulate fills at synthetic levels.</li></ul></article></div>
+<div class="eu-related">Use <a href="6e-roll-dates-and-contract-behavior.html">6E Roll Dates, Expiry, and Contract Behavior</a> to select and document the chain before any calendar analysis.</div></section>
 
-<h2>Month-by-Month 6E Tendencies</h2>
+<section class="eu-section" id="inference" aria-labelledby="inference-title"><div class="eu-section-heading"><p class="eu-kicker">Uncertainty and stability</p><h2 id="inference-title">Averages Need Counts, Distributions and a Reality Check</h2><p>For each month, publish sample size, arithmetic mean, median, standard deviation, positive-return share, quantiles and a confidence interval. Show every year. A mean driven by one extreme observation should look different from a stable distribution.</p></div>
+<div class="eu-table-scroll" role="region" aria-label="Required seasonality robustness checks" tabindex="0"><table class="eu-table"><thead><tr><th scope="col">Check</th><th scope="col">What it tests</th><th scope="col">What failure means</th></tr></thead><tbody>
+<tr><th scope="row">Leave-one-year-out</th><td>Dependence on a single year</td><td>The reported month is fragile</td></tr>
+<tr><th scope="row">Early versus late sample</th><td>Temporal stability</td><td>The full-sample average hides a regime change</td></tr>
+<tr><th scope="row">Mean versus median</th><td>Outlier dependence and skew</td><td>A few large moves dominate the mean</td></tr>
+<tr><th scope="row">Alternative roll rules</th><td>Contract-construction sensitivity</td><td>The pattern may be a stitch artifact</td></tr>
+<tr><th scope="row">All twelve months</th><td>Selection and multiple testing</td><td>A lone winner may be a false discovery</td></tr>
+<tr><th scope="row">Out-of-sample years</th><td>Forward stability after selection</td><td>The discovered effect did not reproduce</td></tr>
+</tbody></table></div>
+<div class="eu-caution"><strong>Bootstrap the right unit</strong><p>Resampling individual days can destroy within-month and within-year dependence. For month-level seasonality, consider resampling years or blocks that preserve the calendar structure. Publish the method and seed. Statistical significance still does not establish economic value after costs.</p></div>
+<p class="eu-source-note">If you condition on macro regimes, define them without future information and keep enough observations per group. The <a href="what-moves-euro-fx-futures-6e.html">6E driver map</a> supplies hypotheses; it does not authorize retrofitting a regime that rescues a weak result.</p></section>
 
-<p>These are not trade signals. These are probabilities you use to align expectations.</p>
+<section class="eu-section" id="report" aria-labelledby="report-title"><div class="eu-section-heading"><p class="eu-kicker">Publication gate</p><h2 id="report-title">What a Credible Seasonal Claim Must Show</h2><p>Do not publish "best month" until the evidence packet can answer each item below.</p></div>
+<div class="eu-limit-grid"><article><strong>Exact universe</strong><p>6E root, expirations, data source, fields, sample dates and observation counts.</p></article><article><strong>Exact rule</strong><p>Entry, exit, time zone, holiday handling, roll selection and missing-data treatment.</p></article><article><strong>Full distribution</strong><p>Every month, every year, mean, median, dispersion, tails and uncertainty.</p></article><article><strong>Search disclosure</strong><p>All tested months, windows, filters, lags and regime splits, not just the winner.</p></article><article><strong>Execution model</strong><p>Actual-contract prices, spread, commissions, roll and slippage if tradability is claimed.</p></article><article><strong>Validation</strong><p>Untouched later sample or a clearly labeled failure to reproduce.</p></article></div>
+<div class="eu-caution"><strong>Bottom line</strong><p>Until that packet exists, seasonality is a research lead. It is not a calendar instruction, probability or edge. "No robust difference found" is a useful result and should remain publishable.</p></div>
+<div class="eu-related">A related claim that 6E is unusually trend-friendly needs the same discipline. See <a href="why-6e-trends-harder-than-other-fx-futures.html">Does 6E Trend More?</a> for controlled cross-contract metrics.</div></section>
 
-<table>
-<tr><th>Month</th><th>Typical 6E Behavior</th></tr>
-<tr><td>January</td><td>Strong volatility as funds reposition; sharp early trends</td></tr>
-<tr><td>February</td><td>Continuation of macro themes; cleaner trends</td></tr>
-<tr><td>March</td><td>Heavy central bank impact; breakout month</td></tr>
-<tr><td>April</td><td>Often bullish due to strong Eurozone data cycles</td></tr>
-<tr><td>May</td><td>Mixed; consolidation common as markets digest Q1 data</td></tr>
-<tr><td>June</td><td>High volatility around summer ECB/Fed meetings</td></tr>
-<tr><td>July</td><td>Thinner liquidity; fakeouts increase</td></tr>
-<tr><td>August</td><td>Low liquidity → unreliable trends</td></tr>
-<tr><td>September</td><td>Strongest trending month; big macro resets</td></tr>
-<tr><td>October</td><td>High volatility tied to fiscal updates</td></tr>
-<tr><td>November</td><td>USD seasonally stronger → bearish 6E tendencies</td></tr>
-<tr><td>December</td><td>Year-end hedging; chopped-up price action</td></tr>
-</table>
-
-<h2>Why September Is the Most Important Month for 6E</h2>
-
-<p>Every year, September delivers some of the cleanest trending behavior. You get:</p>
-<ul>
-  <li>Fresh Eurozone and U.S. economic outlooks</li>
-  <li>Big institutional FX rebalancing</li>
-  <li>Major rate guidance updates</li>
-</ul>
-
-<p>If you’re picking one month to push size (with discipline), September is it.</p>
-
-<h2>How to Actually Use Seasonality in 6E</h2>
-
-<h3>1. Adjust expectations, not entries</h3>
-<p>Seasonality doesn’t replace your setups. It tells you when your trend setups have more juice and when chop risk is higher.</p>
-
-<h3>2. Combine with macro themes</h3>
-<p>Seasonality is strongest when it aligns with interest rate direction, which ties back to <a href="https://grizzlyparrottrading.com/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html">macro event impact on 6E</a>.</p>
-
-<h3>3. Size differently based on the month</h3>
-<ul>
-  <li>High-probability months → normal size</li>
-  <li>Low-probability months (August/December) → smaller size</li>
-</ul>
-
-<div class="highlight-box yellow">
-  <h3>6E Seasonality Highlights Patterns in Participation</h3>
-  <p>Historical data shows periods of higher and lower activity. Observing these tendencies provides context for when market momentum is typically stronger or weaker, without suggesting certainty about any specific move.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="eu-section eu-faq" id="faq" aria-labelledby="faq-title"><div class="eu-section-heading"><p class="eu-kicker">Frequently asked questions</p><h2 id="faq-title">6E Seasonality: Quick Answers</h2></div>
+<details><summary>What is seasonality in 6E futures?</summary><p>Seasonality is a repeated difference in a defined 6E outcome across calendar groups, such as months, weekdays or event-relative windows. It is a historical conditional pattern, not proof of a cause or a forecast for the next occurrence.</p></details>
+<details><summary>Which month is best for 6E futures?</summary><p>This page does not publish a best-month ranking because no controlled 6E dataset is analyzed here. Any ranking must state the sample, contract-roll rule, return definition, costs, uncertainty and whether the month was selected after testing all twelve.</p></details>
+<details><summary>Can a continuous 6E chart be used for seasonality?</summary><p>Only if its contract-selection and adjustment rules are known and suitable for the outcome. Raw stitches can inject roll gaps, while back-adjusted series change historical price levels. Execution tests should use actual contracts and explicit roll trades.</p></details>
+<details><summary>How many years are needed for a 6E seasonal test?</summary><p>There is no universal number. Each month contributes only one independent month-level observation per year, and policy regimes can change. Report the exact count, uncertainty and sensitivity to start date instead of treating a long sample as automatically reliable.</p></details>
+<details><summary>Does a historical 6E seasonal pattern create a trading edge?</summary><p>Not by itself. The pattern may be noise, unstable across regimes, too small after costs or discovered through multiple testing. It needs a plausible mechanism, out-of-sample confirmation and realistic execution before any trading claim.</p></details>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
-</body>
-</html>
+<details class="eu-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+<li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener">CME DataMine</a> for exchange historical-data access and dataset documentation.</li>
+<li><a href="https://www.cmegroup.com/daily_bulletin/current/Section07_Currency_Futures.pdf" target="_blank" rel="noopener">CME Currency Futures Daily Bulletin</a> for official settlement, volume and open-interest reference.</li>
+<li><a href="https://www.cmegroup.com/trading/fx/g10/monthlies.html" target="_blank" rel="noopener">CME FX Monthly Futures</a> for current 6E month, tick and expiration context.</li>
+<li><a href="https://www.ecb.europa.eu/press/govcdec/mopo/html/index.en.html" target="_blank" rel="noopener">ECB monetary policy decisions</a> and <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">Federal Reserve FOMC calendars</a> for authoritative event dates when event seasonality is studied.</li>
+</ul><p>This page contains a proposed research protocol and no measured month-of-year, weekday, session or event-window results. It therefore makes no direction, ranking, probability or profitability claim. CME sources were reviewed August 12, 2026. DataMine products may require licensing; no paid data were requested for this article.</p></details>
+<aside class="eu-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This article is educational, not individualized trading, investment, statistical, legal, tax or brokerage advice. Futures are leveraged and can produce losses greater than the initial margin deposit. Historical calendar patterns can fail, reverse or disappear after costs. Verify current contract rules, data rights, roll logic, broker requirements and your own risk controls before trading.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>
