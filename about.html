@@ -522,9 +522,13 @@
     }
 
     .about-books {
-      padding: clamp(4rem, 7vw, 6rem) 0;
+      padding: clamp(3rem, 5vw, 4.25rem) 0;
       background: var(--about-cream);
       color: var(--about-ink);
+    }
+
+    .about-books .about-section-header {
+      margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
     }
 
     .about-books .about-section-marker {
@@ -545,8 +549,8 @@
 
     .about-books-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: clamp(2rem, 4vw, 3.75rem);
+      grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+      gap: clamp(1.75rem, 3vw, 2.75rem);
     }
 
     .about-book {
@@ -555,8 +559,8 @@
 
     .about-book-cover {
       display: block;
-      max-width: 220px;
-      margin-bottom: 1.3rem;
+      max-width: 180px;
+      margin-bottom: 1rem;
       color: var(--about-ink);
       text-decoration: none;
       text-shadow: none;
@@ -582,10 +586,10 @@
     }
 
     .about-book h3 {
-      margin: 0.55rem 0 0;
+      margin: 0.45rem 0 0;
       color: var(--about-ink);
       font-family: Georgia, Cambria, "Times New Roman", serif;
-      font-size: clamp(1.45rem, 2.5vw, 2rem);
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
       font-weight: 500;
       letter-spacing: -0.03em;
       line-height: 1.15;
@@ -603,10 +607,10 @@
     }
 
     .about-book p {
-      margin: 0.85rem 0 0;
+      margin: 0.65rem 0 0;
       color: var(--about-ink-muted);
-      font-size: 0.91rem;
-      line-height: 1.7;
+      font-size: 0.86rem;
+      line-height: 1.55;
     }
 
     .about-book .about-text-link {
@@ -622,8 +626,8 @@
       gap: 1.25rem;
       align-items: center;
       justify-content: flex-end;
-      margin-top: clamp(2.5rem, 5vw, 4rem);
-      padding-top: 1.5rem;
+      margin-top: clamp(2rem, 3.5vw, 2.75rem);
+      padding-top: 1rem;
       border-top: 1px solid rgba(20, 34, 27, 0.22);
     }
 
@@ -888,8 +892,8 @@
         <div>
           <p class="about-eyebrow">About</p>
           <h1 id="kyle-parrott">Kyle Parrott</h1>
-          <p class="about-hero-role">Independent market researcher, author, and publisher of Grizzly Parrot Trading.</p>
-          <p class="about-hero-lede">Kyle researches futures, currencies, market structure, liquidity, execution, risk, and related market behavior. He publishes original studies, educational guides, and books through Grizzly Parrot Trading.</p>
+          <p class="about-hero-role">I’m an independent market researcher, author, and publisher of Grizzly Parrot Trading.</p>
+          <p class="about-hero-lede">I research futures, currencies, market structure, liquidity, execution, risk, and related market behavior. I publish original studies, educational guides, and books through Grizzly Parrot Trading.</p>
         </div>
       </div>
     </section>
@@ -912,8 +916,8 @@
         <header class="about-section-header">
           <span class="about-section-marker">Research focus</span>
           <div>
-            <h2 id="focus-title">What Kyle researches</h2>
-            <p>The work focuses on how financial markets function, how their underlying mechanics shape price and execution, and how those relationships change over time.</p>
+            <h2 id="focus-title">What I research</h2>
+            <p>My work focuses on how financial markets function, how their underlying mechanics shape price and execution, and how those relationships change over time.</p>
           </div>
         </header>
 
@@ -957,8 +961,8 @@
         <header class="about-section-header">
           <span class="about-section-marker">Selected research</span>
           <div>
-            <h2 id="research-title">Examples of the work</h2>
-            <p>A small selection from the full research library.</p>
+            <h2 id="research-title">Examples of my work</h2>
+            <p>A small selection from my research library.</p>
           </div>
         </header>
 
@@ -984,7 +988,7 @@
           <span class="about-section-marker">Books</span>
           <div>
             <h2 id="books-title">The Market Structure Series</h2>
-            <p>Kyle Parrott is the author of the three-volume Market Structure Series, published by Grizzly Parrot Trading.</p>
+            <p>I’m the author of the three-volume Market Structure Series, published by Grizzly Parrot Trading.</p>
           </div>
         </header>
 
@@ -996,7 +1000,7 @@
             <div class="about-book-copy">
               <span class="about-book-volume">Volume I</span>
               <h3><a href="/books/currency-market-structure/">Currency Market Structure</a></h3>
-              <p>Liquidity, global sessions, funding currencies, and the flows connecting currency markets.</p>
+              <p>Currency liquidity, global sessions, funding currencies, and connected capital flows.</p>
             </div>
           </article>
 
@@ -1007,7 +1011,7 @@
             <div class="about-book-copy">
               <span class="about-book-volume">Volume II</span>
               <h3><a href="/books/metals-market-structure/">Metals Market Structure</a></h3>
-              <p>Gold, silver, copper, platinum, and palladium across monetary, industrial, and supply regimes.</p>
+              <p>Five major metals across monetary, industrial, and supply regimes.</p>
             </div>
           </article>
 
@@ -1018,7 +1022,7 @@
             <div class="about-book-copy">
               <span class="about-book-volume">Volume III</span>
               <h3><a href="/books/equity-market-structure/">Equity Market Structure</a></h3>
-              <p>Index futures, cash equities, ETFs, sectors, volatility, and stocks as one connected system.</p>
+              <p>Index futures, equities, ETFs, sectors, and volatility as one connected system.</p>
             </div>
           </article>
         </div>
