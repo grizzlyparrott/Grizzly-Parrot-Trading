@@ -2,288 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How CPI, NFP, FOMC and ECB Events Hit 6E Volatility</title>
-  <meta name="description" content="See exactly how CPI, NFP, FOMC and ECB decisions impact 6E volatility so you stop getting blindsided by Euro FX futures news spikes.">
+  <title>6E Macro Events: CPI, NFP, FOMC, and ECB Playbook</title>
+  <meta name="description" content="Plan 6E trading around CPI, payrolls, FOMC, and ECB events using surprise, revisions, policy-path repricing, official sources, and pre/during/post risk rules.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="How CPI, NFP, FOMC and ECB Events Hit 6E Volatility">
-  <meta property="og:description" content="See exactly how CPI, NFP, FOMC and ECB decisions impact 6E volatility so you stop getting blindsided by Euro FX futures news spikes.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="How CPI, NFP, FOMC and ECB Events Hit 6E Volatility">
-  <meta name="twitter:description" content="See exactly how CPI, NFP, FOMC and ECB decisions impact 6E volatility so you stop getting blindsided by Euro FX futures news spikes.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <meta property="og:title" content="6E Macro Events: CPI, NFP, FOMC, and ECB Playbook"><meta property="og:description" content="A scheduled-event framework for 6E that separates the headline, surprise, revision, policy path, and execution risk."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:width" content="1792"><meta property="og:image:height" content="941"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-12">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:title" content="6E Macro Events: CPI, NFP, FOMC, and ECB Playbook"><meta name="twitter:description" content="Trade the information change, not an economic-calendar label. A source-first 6E event-risk workflow.">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="6e-evidence-guides.css?v=20260812a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"6E Macro Events: CPI, NFP, FOMC, and ECB Playbook","description":"Plan 6E trading around CPI, payrolls, FOMC, and ECB events using surprise, revisions, policy-path repricing, official sources, and pre/during/post risk rules.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"image":"https://grizzlyparrottrading.com/OG-default.png","mainEntityOfPage":"https://grizzlyparrottrading.com/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html","url":"https://grizzlyparrottrading.com/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html","datePublished":"2025-11-24","dateModified":"2026-08-12"}
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How CPI, NFP, FOMC and ECB Events Hit 6E Volatility",
-  "description": "See exactly how CPI, NFP, FOMC and ECB decisions impact 6E volatility so you stop getting blindsided by Euro FX futures news spikes.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/index.html"},{"@type":"ListItem","position":3,"name":"6E Macro Events","item":"https://grizzlyparrottrading.com/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html"}]}
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How CPI, NFP, FOMC and ECB Events Hit 6E Volatility",
-      "item": "https://grizzlyparrottrading.com/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Does hotter US CPI always push 6E lower?","acceptedAnswer":{"@type":"Answer","text":"No. The reaction depends on the result versus expectations, revisions and composition, prior positioning, the change in expected Fed policy relative to ECB policy, and broader risk conditions."}},
+    {"@type":"Question","name":"Is the NFP headline the entire Employment Situation report?","acceptedAnswer":{"@type":"Answer","text":"No. Payroll employment, unemployment, labor-force measures, average hourly earnings, hours, and prior-month revisions can send different signals. Some fields come from different BLS surveys."}},
+    {"@type":"Question","name":"Why can 6E reverse during an FOMC or ECB event?","acceptedAnswer":{"@type":"Answer","text":"The rate decision is only one information stage. The statement, implementation details, projections when released, press conference, and later answers can change the expected policy path after the first move."}},
+    {"@type":"Question","name":"Which event moves 6E the most?","acceptedAnswer":{"@type":"Answer","text":"This page makes no universal ranking. A defensible answer requires a dated event study with synchronized 6E data, pre-release expectations, revisions, contract-roll controls, comparable reaction windows, and execution costs."}},
+    {"@type":"Question","name":"What should a 6E trader record after a macro event?","acceptedAnswer":{"@type":"Answer","text":"Record the official source and timestamp, consensus source, actual and prior values, revisions, contract month, pre-event spread and depth, decision and fill prices, slippage, policy-path proxies, and rule-based outcome."}}
+  ]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="https://grizzlyparrottrading.com/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container euro-evidence">
+<article>
+  <header class="eu-hero">
+    <div class="eu-hero-copy"><p class="eu-kicker">Scheduled 6E event risk</p><h1>6E Macro Events: CPI, NFP, FOMC, and ECB</h1><p class="eu-byline">By <a href="/about.html">Kyle Parrott</a> · Published November 24, 2025 · Updated August 12, 2026</p><p class="eu-hero-lede">The calendar tells you when information arrives. It does not tell you the direction. 6E reacts to the surprise, the revision, and what both sides of the news do to the expected Fed-versus-ECB policy path. Your job is to prepare the decision tree before the timestamp—not explain the candle afterward.</p><dl class="eu-hero-metrics"><div><dt>Event classes</dt><dd>4</dd></div><div><dt>Core input</dt><dd>Surprise</dd></div><div><dt>Hidden input</dt><dd>Revision</dd></div><div><dt>Direction</dt><dd>Conditional</dd></div></dl></div>
+    <div class="eu-market-board" aria-label="Illustration of staged event repricing, not measured historical data"><div class="eu-board-head"><span>Information stages</span><strong>Concept only</strong></div><svg class="eu-board-chart" viewBox="0 0 520 240" role="img" aria-labelledby="macro-chart-title macro-chart-desc"><title id="macro-chart-title">Illustrative macro-event reaction</title><desc id="macro-chart-desc">A line moves at the release, changes again as details are processed, and settles later. It is not a 6E event study.</desc><path class="grid-line" d="M20 50H500M20 120H500M20 190H500"/><path class="spread-line" d="M20 142L95 137L170 145L225 82L275 111L330 74L390 96L450 91L500 106"/><line class="event-line" x1="225" y1="25" x2="225" y2="210"/><text x="186" y="38">release</text><text x="260" y="196">details</text><text x="410" y="55">path</text></svg><div class="eu-board-foot">Actual · revision · policy path</div></div>
+  </header>
+  <nav class="eu-jump-nav" aria-label="Article sections"><a href="#taxonomy">Events</a><a href="#surprise">Surprise</a><a href="#policy">Policy</a><a href="#workflow">Workflow</a><a href="#study">Study</a><a href="#faq">FAQ</a></nav>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
+  <section class="eu-section" id="taxonomy" aria-labelledby="taxonomy-title">
+    <div class="eu-section-heading"><p class="eu-kicker">Know the payload</p><h2 id="taxonomy-title">Four Calendar Labels, Four Different Information Sets</h2><p>Do not reduce a multi-field release or policy event to one green or red number.</p></div>
+    <div class="eu-table-scroll" role="region" aria-label="Scheduled macro-event taxonomy for 6E" tabindex="0"><table class="eu-table"><caption>Scheduled event taxonomy for 6E preparation</caption><thead><tr><th scope="col">Event</th><th scope="col">Primary payload</th><th scope="col">Fields beyond the headline</th><th scope="col">First-order channel to test</th></tr></thead><tbody>
+      <tr><th scope="row">US CPI</th><td>BLS Consumer Price Index release</td><td>Headline and less-food-and-energy measures; monthly and 12-month changes; category details; seasonal status; prior revisions when applicable</td><td>Change in expected US inflation and Fed path relative to Europe</td></tr>
+      <tr><th scope="row">US Employment Situation</th><td>BLS establishment and household survey results</td><td>Payroll revisions, unemployment, participation, earnings, workweek, sector mix, survey distinctions</td><td>Change in expected US growth, inflation pressure, and Fed path</td></tr>
+      <tr><th scope="row">FOMC</th><td>Federal Reserve decision and statement</td><td>Implementation note, guidance language, vote, press conference, projections at designated meetings, later minutes</td><td>Repricing of the expected US policy path and risk outlook</td></tr>
+      <tr><th scope="row">ECB</th><td>ECB monetary policy decision and statement</td><td>Three policy rates, operative date, balance-sheet terms, staff projections at selected meetings, press conference and Q&amp;A</td><td>Repricing of the expected euro-area policy path and transmission outlook</td></tr>
+    </tbody></table></div>
+    <p>Other releases can matter, but this page owns these four scheduled event families. European national and unscheduled headlines belong in the <a href="/futures-basics/how-6e-reacts-to-european-session-headlines.html">European headline verification guide</a>.</p>
+  </section>
+
+  <section class="eu-section" id="surprise" aria-labelledby="surprise-title">
+    <div class="eu-section-heading"><p class="eu-kicker">Actual minus expected</p><h2 id="surprise-title">The Surprise Is the Starting Point, Not the Whole Answer</h2><p>An actual value can be historically high and still disappoint a market that expected more.</p></div>
+    <div class="eu-formula"><code>Raw surprise = released value − pre-release consensus</code></div>
+    <p>Record the consensus vendor, snapshot time, respondent count if available, and units. Consensus estimates can change before the release, and copying a post-release calendar can overwrite the expectation that existed when 6E traded.</p>
+    <p>When comparing different series, researchers sometimes standardize the surprise:</p>
+    <div class="eu-formula"><code>Standardized surprise = (actual − expected) ÷ historical standard deviation of surprises</code></div>
+    <p>That denominator must use only prior events available at the time. A full-sample standard deviation leaks future volatility into earlier observations. The estimate can also be unstable after methodology changes or sparse samples. Keep raw units beside the standardized value so an impressive score cannot hide a data error.</p>
+    <div class="eu-two-column">
+      <div class="eu-panel"><h3>Revisions are new information</h3><p>A payroll headline above consensus can arrive with downward revisions to prior months. A trader who stores only the latest vintage destroys the release-time record. Preserve the originally published value, every revision, and the timestamp at which each became known.</p></div>
+      <div class="eu-panel"><h3>Composition changes the read</h3><p>Headline CPI, core measures, shelter, services, energy, earnings, hours, and participation do not carry identical implications. Do not invent an interpretation after seeing price. Define the fields and decision rules before the event.</p></div>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+    <aside class="eu-caution"><strong>No deterministic direction rule</strong><p>Hotter US inflation may raise expected US rates and pressure 6E in a first-order read. But prior pricing, revisions, risk sentiment, European repricing, positioning, and credibility can change the result. The same applies in reverse. A scenario is not a guarantee.</p></aside>
+  </section>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+  <section class="eu-section" id="policy" aria-labelledby="policy-title">
+    <div class="eu-section-heading"><p class="eu-kicker">Decisions are sequences</p><h2 id="policy-title">FOMC and ECB Events Have More Than One Timestamp</h2><p>The first rate number can be old news. Language and the expected path often carry the new information.</p></div>
+    <div class="eu-process">
+      <article><span>Stage 1</span><h3>Decision</h3><p>Rates and operative terms hit. Compare every field with the expected decision, not last meeting alone.</p></article>
+      <article><span>Stage 2</span><h3>Statement</h3><p>Participants parse guidance, mandate risks, balance-sheet terms, and changes from prior language.</p></article>
+      <article><span>Stage 3</span><h3>Press conference</h3><p>Prepared remarks and answers can clarify or complicate the path implied by the statement.</p></article>
+      <article><span>Stage 4</span><h3>Later record</h3><p>Minutes, accounts, speeches, and new data can alter the market's interpretation after event day.</p></article>
+    </div>
+    <div class="eu-table-scroll" role="region" aria-label="July 2026 ECB and FOMC policy snapshots" tabindex="0"><table class="eu-table"><caption>Dated July 2026 policy snapshots</caption><thead><tr><th scope="col">Authority</th><th scope="col">Decision</th><th scope="col">Important context</th><th scope="col">Use</th></tr></thead><tbody>
+      <tr><th scope="row">ECB, July 23, 2026</th><td>Held deposit facility at 2.25%, main refinancing operations at 2.40%, and marginal lending facility at 2.65%</td><td>Data-dependent, meeting-by-meeting; no pre-commitment to a rate path</td><td>Dated baseline only; refresh at the next decision</td></tr>
+      <tr><th scope="row">FOMC, July 29, 2026</th><td>Held the federal funds target range at 3.50%–3.75%</td><td>Approved 9–3; three voters preferred a 25-basis-point increase</td><td>Dated baseline only; compare the whole statement and expected path</td></tr>
+    </tbody></table></div>
+    <p>Those official snapshots show why “unchanged” is incomplete. The vote, rationale, guidance, and relative starting points matter. The protected <a href="/futures-basics/how-rate-differentials-drive-6e-price.html">Fed-ECB rate-differential guide</a> explains spot, forwards, carry, and matched-maturity policy-path comparison without reducing 6E to two headline rates.</p>
+  </section>
 
-<h1>How CPI, NFP, FOMC and ECB Events Hit 6E Volatility</h1>
+  <section class="eu-section" id="workflow" aria-labelledby="workflow-title">
+    <div class="eu-section-heading"><p class="eu-kicker">Before, during, after</p><h2 id="workflow-title">The Event Plan Belongs on Paper Before the Release</h2><p>If the first decision is made after the candle expands, you are reacting without a controlled rule.</p></div>
+    <div class="eu-table-scroll" role="region" aria-label="6E scheduled-event operating plan" tabindex="0"><table class="eu-table"><caption>6E scheduled-event operating plan</caption><thead><tr><th scope="col">Phase</th><th scope="col">Required work</th><th scope="col">Execution control</th><th scope="col">Do not do this</th></tr></thead><tbody>
+      <tr><th scope="row">Pre-event</th><td>Verify the official timestamp; convert source time to UTC/local; save consensus; list fields and revision rules; confirm active 6E month and known follow-up stages.</td><td>Set blackout, maximum spread, maximum size, permitted orders, maximum dollar loss, and resume condition.</td><td>Assume a recurring calendar time never changes.</td></tr>
+      <tr><th scope="row">At release</th><td>Capture official actuals, prior values, revisions, document version, and feed timestamps; check quote and trade-feed health.</td><td>Follow the predeclared rule. Treat missing or conflicting fields as a no-new-risk state.</td><td>Chase a headline because the first bar is large.</td></tr>
+      <tr><th scope="row">During reaction</th><td>Track spread, depth, trades, fills, and staged communications; separate aggression from price response.</td><td>Do not widen the loss cap. Cancel stale orders whose original context is gone.</td><td>Assume the visible stop trigger was an available fill.</td></tr>
+      <tr><th scope="row">Post-event</th><td>Archive source data, expectation vintage, contract, decision/arrival/fill prices, slippage, later revisions, and rule adherence.</td><td>Resume normal trading only under a defined time, liquidity, or volatility condition.</td><td>Rewrite the setup definition to make the outcome look planned.</td></tr>
+    </tbody></table></div>
+    <p>The <a href="/futures-basics/best-times-to-trade-euro-fx-futures-6e.html">6E session guide</a> handles clocks and participation. The <a href="/futures-basics/how-to-read-order-flow-on-6e.html">6E order-flow guide</a> handles trades, quotes, and price response. A bar can show historical range; it cannot prove the spread, queue, or fill available to you.</p>
+    <p>Convert the stop to dollars before the event using the <a href="/futures-basics/6e-tick-size-tick-value-margin-requirements.html">6E contract-math guide</a>. Margin is the broker or clearing requirement, not a maximum acceptable loss.</p>
+  </section>
 
-<p>Euro FX futures don’t randomly explode. Big spikes in 6E volatility almost always line up with CPI, NFP, FOMC or ECB events. If you trade 6E without knowing when these are scheduled, you’re not trading news, you’re getting run over by it.</p>
-<p>
-These events don’t act in isolation. CPI, NFP, FOMC and ECB decisions all feed into a broader system of rate expectations, currency flows, and cross-market positioning. That system is what actually drives sustained moves in 6E, not just the headline itself. A full breakdown of how these forces interact is covered in 
-<a href="https://grizzlyparrottrading.com/books/currency-market-structure/"><strong>Currency Market Structure (Volume I)</strong></a>.
-</p>
-<h2>Why These Events Dominate 6E Volatility</h2>
+  <section class="eu-section" id="study" aria-labelledby="study-title">
+    <div class="eu-section-heading"><p class="eu-kicker">Evidence standard</p><h2 id="study-title">What a Real 6E Event Study Must Disclose</h2><p>Without expectation data and time alignment, an “event reaction” study is just a collection of candles.</p></div>
+    <div class="eu-check-grid">
+      <article><strong>Event vintages</strong><p>Store official release timestamps, consensus snapshots, actuals, original priors, revisions, methodology changes, and policy document stages.</p></article>
+      <article><strong>Market data</strong><p>Name the 6E contracts, roll rule, timestamp precision, timezone, quote/trade definitions, bad-data controls, and reaction windows.</p></article>
+      <article><strong>Performance rules</strong><p>Define signal, entry delay, spread, slippage, fees, size, stops, exits, overlapping events, and excluded observations in advance.</p></article>
+    </div>
+    <p>Report observation counts, median and tail reactions, pre-event movement, adverse excursion, and results by event, year, surprise sign, and policy regime. Correct for trying many fields and windows. Keep an out-of-sample period or a pre-registered final specification.</p>
+    <p>The <a href="/futures-basics/6e-atr-behavior-and-why-it-matters.html">6E ATR guide</a> can normalize movement using a lagged volatility measure, but ATR does not supply direction. A raw event bar divided by an ATR calculated with that same completed bar leaks part of the reaction into its own denominator.</p>
+    <div class="eu-method"><div><h3>Claims this guide does not make</h3><p>No event is declared the largest 6E mover. No fixed direction is assigned to hot, cold, hawkish, or dovish outcomes. No latency edge, probability, average range, or profitable setup is asserted without a disclosed study.</p></div><dl><div><dt>Reaction ranking</dt><dd>Not claimed</dd></div><div><dt>Guaranteed direction</dt><dd>Not claimed</dd></div><div><dt>Tradable latency</dt><dd>Not claimed</dd></div></dl></div>
+  </section>
 
-<p>6E tracks the tug-of-war between the euro and the dollar. CPI, NFP, FOMC and ECB decisions all change expectations for future interest rates. Rate expectations are one of the core drivers of 6E volatility, right alongside the fundamentals you saw in <a href="https://grizzlyparrottrading.com/futures-basics/what-moves-euro-fx-futures-6e.html">what moves Euro FX futures</a>.</p>
-
-<table>
-  <tr>
-    <th>Event</th>
-    <th>Primary Impact</th>
-  </tr>
-  <tr>
-    <td>CPI</td>
-    <td>Inflation expectations → rate path</td>
-  </tr>
-  <tr>
-    <td>NFP</td>
-    <td>Labor strength → growth and Fed stance</td>
-  </tr>
-  <tr>
-    <td>FOMC</td>
-    <td>Direct rate decisions and guidance</td>
-  </tr>
-  <tr>
-    <td>ECB</td>
-    <td>Eurozone policy, outlook and balance sheet</td>
-  </tr>
-</table>
-
-<p>Every one of these can turn a quiet 6E day into a full-range trend or a violent whipsaw within minutes.</p>
-
-<h2>How CPI Reports Shock 6E Volatility</h2>
-
-<p>CPI is the market’s inflation scoreboard. A hot CPI print tells traders inflation is still a problem, which usually pushes the Fed toward tighter policy. That’s dollar bullish and often bearish for 6E volatility direction.</p>
-
-<h3>Typical CPI reaction patterns in 6E:</h3>
-<ul>
-  <li><strong>Hot CPI (above forecast)</strong> – USD rips, DXY spikes, 6E dumps.</li>
-  <li><strong>Soft CPI (below forecast)</strong> – USD sells off, 6E squeezes higher.</li>
-  <li><strong>Inline CPI</strong> – less directional, but you still get a volatility burst.</li>
-</ul>
-
-<p>During CPI, 6E volatility jumps, spreads can widen, and your stop can get hit instantly. You either trade it on purpose with smaller size, or stay flat and let the dust settle. The “hold and hope” approach is how you blow accounts.</p>
-
-<h2>NFP and Its Effect on 6E Volatility</h2>
-
-<p>NFP is the market’s favorite circus. It’s a single headline that tries to summarize the entire U.S. labor market in one number. Strong jobs data supports rate hikes or slower cuts. Weak jobs data supports easing or slower hikes. That feeds straight into 6E volatility.</p>
-
-<table>
-  <tr>
-    <th>NFP Outcome</th>
-    <th>Bias in 6E</th>
-  </tr>
-  <tr>
-    <td>Much stronger than expected</td>
-    <td>Bearish 6E (USD strength)</td>
-  </tr>
-  <tr>
-    <td>Much weaker than expected</td>
-    <td>Bullish 6E (USD weakness)</td>
-  </tr>
-  <tr>
-    <td>Mixed signal (revisions, wages conflict)</td>
-    <td>Choppy 6E with fake breaks</td>
-  </tr>
-</table>
-
-<p>NFP can create huge one-minute candles followed by instant reversals. If you’re going to trade that kind of 6E volatility, you need a rule set, not vibes. Many traders wait for the first spike, then trade the second move once direction is clear.</p>
-
-<h2>FOMC Decisions and 6E Volatility Clusters</h2>
-
-<p>FOMC meetings are where the Fed officially changes rates and signals future policy. 6E volatility doesn’t just show up on the decision candle; it usually clusters around the entire event window.</p>
-
-<h3>Three stages of FOMC impact on 6E:</h3>
-<ul>
-  <li><strong>Pre-FOMC</strong> – 6E often coils into tighter ranges as traders de-risk.</li>
-  <li><strong>Statement release</strong> – violent initial spike, algo-driven reactions.</li>
-  <li><strong>Press conference</strong> – secondary moves as comments are digested.</li>
-</ul>
-
-<p>Direction matters less than surprise. If the Fed is more hawkish than expected, 6E volatility usually breaks lower. If the Fed sounds dovish or signals cuts sooner, 6E can rip higher for the rest of the session.</p>
-
-<h2>ECB Meetings: The Euro-Side Volatility Driver</h2>
-
-<p>Everyone obsesses over the Fed, but 6E volatility also reacts hard to ECB decisions. When the ECB is clearly more hawkish or dovish than priced in, the euro reprices fast.</p>
-
-<ul>
-  <li>Rate hikes or hawkish language → euro strength → bullish 6E.</li>
-  <li>Rate cuts or dovish guidance → euro weakness → bearish 6E.</li>
-  <li>Balance sheet comments and forecasts can matter as much as the rate line.</li>
-</ul>
-
-<p>On ECB days, 6E volatility can wake up in the European session long before U.S. traders even log in. If you only watch the U.S. open, you’ll sometimes walk into a market that already used up half its fuel.</p>
-
-<h2>6E Volatility and Cross-Market Confirmation</h2>
-
-<p>None of these events happen in isolation. CPI, NFP, FOMC and ECB all hit DXY, EUR/USD spot and U.S. bond yields first, then feed into 6E volatility. I already broke down those relationships in <a href="https://grizzlyparrottrading.com/futures-basics/6e-important-correlations.html">key 6E correlations</a>, and this is where it all connects.</p>
-
-<ul>
-  <li>CPI spike → watch U.S. yields and DXY explode → 6E follows the move.</li>
-  <li>NFP surprise → EUR/USD spot rips or dumps → 6E prints the futures version.</li>
-  <li>FOMC/ECB → big shifts in rate expectations → trend days in 6E.</li>
-</ul>
-
-<p>If you’re serious, you track the event, its surprise versus forecast, and the cross-market reaction before touching the buy/sell buttons.</p>
-
-<h2>Planning Around 6E Volatility Instead of Complaining About It</h2>
-
-<p>You don’t control CPI, NFP, FOMC or the ECB. You only control whether you’re in the market when 6E volatility detonates. You can build a schedule around the best news windows using what you learned in <a href="https://grizzlyparrottrading.com/futures-basics/best-times-to-trade-euro-fx-futures-6e.html">the best times to trade Euro FX futures</a> and treat these events as planned opportunities, not random chaos you whine about after the fact.</p>
-
-<div class="highlight-box yellow">
-  <h3>Volatility in 6E Isn’t a Surprise — It’s Scheduled</h3>
-  <p>Big moves in 6E usually come with big events. If you're not anchored to the calendar, you're reacting instead of preparing. Size down, stand aside, or engage with intent — but leave hope out of it.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
+  <section class="eu-section eu-faq" id="faq" aria-labelledby="faq-title"><div class="eu-section-heading"><p class="eu-kicker">Common questions</p><h2 id="faq-title">6E Macro-Event FAQ</h2></div>
+    <details><summary>Does hotter US CPI always push 6E lower?</summary><p>No. The reaction depends on the result versus expectations, revisions and composition, prior positioning, the change in expected Fed policy relative to ECB policy, and broader risk conditions.</p></details>
+    <details><summary>Is the NFP headline the entire Employment Situation report?</summary><p>No. Payroll employment, unemployment, labor-force measures, average hourly earnings, hours, and prior-month revisions can send different signals. Some fields come from different BLS surveys.</p></details>
+    <details><summary>Why can 6E reverse during an FOMC or ECB event?</summary><p>The rate decision is only one information stage. The statement, implementation details, projections when released, press conference, and later answers can change the expected policy path after the first move.</p></details>
+    <details><summary>Which event moves 6E the most?</summary><p>This page makes no universal ranking. A defensible answer requires a dated event study with synchronized 6E data, pre-release expectations, revisions, contract-roll controls, comparable reaction windows, and execution costs.</p></details>
+    <details><summary>What should a 6E trader record after a macro event?</summary><p>Record the official source and timestamp, consensus source, actual and prior values, revisions, contract month, pre-event spread and depth, decision and fill prices, slippage, policy-path proxies, and rule-based outcome.</p></details>
+  </section>
+  <details class="eu-sources" open><summary>Official sources and methodology</summary><ul>
+    <li><a href="https://www.bls.gov/schedule/" target="_blank" rel="noopener noreferrer">US Bureau of Labor Statistics: release calendar</a>, <a href="https://www.bls.gov/cpi/" target="_blank" rel="noopener noreferrer">Consumer Price Index</a>, and <a href="https://www.bls.gov/news.release/empsit.toc.htm" target="_blank" rel="noopener noreferrer">Employment Situation</a>.</li>
+    <li><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">Federal Reserve: FOMC calendars and event materials</a> and <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm" target="_blank" rel="noopener noreferrer">July 29, 2026 FOMC statement</a>.</li>
+    <li><a href="https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html" target="_blank" rel="noopener noreferrer">ECB: Governing Council calendar</a> and <a href="https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp260723~29f24d99bc.en.html" target="_blank" rel="noopener noreferrer">July 23, 2026 monetary policy decisions</a>.</li>
+    <li><a href="https://ec.europa.eu/eurostat/news/release-calendar" target="_blank" rel="noopener noreferrer">Eurostat: release calendar</a> for scheduled euro-area statistics.</li>
+  </ul><p>Official sources and July policy snapshots were checked August 12, 2026. The equations are methodological examples. No proprietary consensus series, historical event-return sample, or performance estimate is presented.</p></details>
+  <aside class="eu-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This scheduled-event framework is general education, not individualized financial, investment, legal, tax, brokerage, or trading advice. Futures are leveraged; macro releases can produce gaps, depleted depth, rejected orders, and fills beyond stop triggers. Verify every dated source, define a maximum loss, and do not trade an event merely because it is on the calendar.</p></aside>
+</article>
 </main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

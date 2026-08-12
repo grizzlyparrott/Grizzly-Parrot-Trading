@@ -2,256 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6E Gap Behavior: Why Euro FX Futures Gap and How to Trade It</title>
-  <meta name="description" content="A direct breakdown of why 6E gaps, when gaps happen, and how to trade Euro FX futures gaps without getting trapped.">
+  <title>6E Gaps Explained: Weekend, Roll, Data, and Event Gaps</title>
+  <meta name="description" content="Separate real 6E reopening gaps from contract-roll jumps, vendor gaps, and event moves, then test gap behavior without invented fill-rate claims.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6e-gap-behavior-and-how-to-trade-it.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6E Gap Behavior: Why Euro FX Futures Gap and How to Trade It">
-  <meta property="og:description" content="A direct breakdown of why 6E gaps, when gaps happen, and how to trade Euro FX futures gaps without getting trapped.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6e-gap-behavior-and-how-to-trade-it.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6E Gap Behavior: Why Euro FX Futures Gap and How to Trade It">
-  <meta name="twitter:description" content="A direct breakdown of why 6E gaps, when gaps happen, and how to trade Euro FX futures gaps without getting trapped.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <meta property="og:title" content="6E Gaps Explained: Weekend, Roll, Data, and Event Gaps"><meta property="og:description" content="A practical framework for classifying and testing gaps in Euro FX futures without confusing market movement with chart construction."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6e-gap-behavior-and-how-to-trade-it.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:width" content="1792"><meta property="og:image:height" content="941">
+  <meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-12">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:title" content="6E Gaps Explained: Weekend, Roll, Data, and Event Gaps"><meta name="twitter:description" content="Classify a 6E gap before trying to trade it. Reopening, roll, event, and bad-data gaps are different objects.">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="6e-evidence-guides.css?v=20260812a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"6E Gaps Explained: Weekend, Roll, Data, and Event Gaps","description":"Separate real 6E reopening gaps from contract-roll jumps, vendor gaps, and event moves, then test gap behavior without invented fill-rate claims.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"image":"https://grizzlyparrottrading.com/OG-default.png","mainEntityOfPage":"https://grizzlyparrottrading.com/futures-basics/6e-gap-behavior-and-how-to-trade-it.html","url":"https://grizzlyparrottrading.com/futures-basics/6e-gap-behavior-and-how-to-trade-it.html","datePublished":"2025-11-24","dateModified":"2026-08-12"}
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6E Gap Behavior: Why Euro FX Futures Gap and How to Trade It",
-  "description": "A direct breakdown of why 6E gaps, when gaps happen, and how to trade Euro FX futures gaps without getting trapped.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6e-gap-behavior-and-how-to-trade-it.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6e-gap-behavior-and-how-to-trade-it.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/index.html"},{"@type":"ListItem","position":3,"name":"6E Gaps Explained","item":"https://grizzlyparrottrading.com/futures-basics/6e-gap-behavior-and-how-to-trade-it.html"}]}
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6E Gap Behavior: Why Euro FX Futures Gap and How to Trade It",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6e-gap-behavior-and-how-to-trade-it.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Does spot EUR/USD trade continuously all weekend?","acceptedAnswer":{"@type":"Answer","text":"No. Normal institutional and retail spot FX trading is not a continuous, centralized weekend market. Prices visible during the closure may be indicative, broker-specific, or from another product rather than executable interbank EUR/USD."}},
+    {"@type":"Question","name":"Is every jump on a continuous 6E chart a market gap?","acceptedAnswer":{"@type":"Answer","text":"No. A continuous chart can jump when it switches from one delivery month to the next. That roll discontinuity reflects two different contracts and must be separated from a same-contract reopening gap."}},
+    {"@type":"Question","name":"What does it mean for a 6E gap to fill?","acceptedAnswer":{"@type":"Answer","text":"A test must define the reference price and deadline. One defensible definition is that the same contract trades at or through the last eligible pre-gap price within a fixed number of bars, after accounting for executable prices and costs."}},
+    {"@type":"Question","name":"Do most 6E weekend gaps fill?","acceptedAnswer":{"@type":"Answer","text":"This page makes no universal fill-rate claim. The answer depends on the sample, contract series, minimum gap size, fill definition, time window, session template, and transaction-cost assumptions."}},
+    {"@type":"Question","name":"Can a missing bar create a false 6E gap?","acceptedAnswer":{"@type":"Answer","text":"Yes. Feed outages, filtered overnight sessions, bad ticks, timezone mistakes, and vendor stitching rules can all create apparent gaps that were not tradable market discontinuities."}}
+  ]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="https://grizzlyparrottrading.com/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container euro-evidence">
+<article>
+  <header class="eu-hero">
+    <div class="eu-hero-copy"><p class="eu-kicker">6E discontinuity field guide</p><h1>6E Gaps: Classify the Jump Before You Trade It</h1><p class="eu-byline">By <a href="/about.html">Kyle Parrott</a> · Published November 24, 2025 · Updated August 12, 2026</p><p class="eu-hero-lede">A blank space on a chart is not one setup. It may be a weekend reopening, a contract roll, a missing feed, or a fast event move between sampled bars. If you mix those together, your gap statistics are junk before the backtest starts.</p><dl class="eu-hero-metrics"><div><dt>First check</dt><dd>Same contract?</dd></div><div><dt>Second check</dt><dd>Feed complete?</dd></div><div><dt>Third check</dt><dd>Tradable?</dd></div><div><dt>Fill odds</dt><dd>Must be tested</dd></div></dl></div>
+    <div class="eu-market-board" aria-label="Illustration of a price discontinuity, not historical data"><div class="eu-board-head"><span>Two observations</span><strong>Not a backtest</strong></div><svg class="eu-board-chart" viewBox="0 0 520 240" role="img" aria-labelledby="gap-chart-title gap-chart-desc"><title id="gap-chart-title">Illustrative gap between observations</title><desc id="gap-chart-desc">A line ends at a lower level and resumes later at a higher level, leaving a discontinuity.</desc><path class="grid-line" d="M20 50H500M20 120H500M20 190H500"/><path class="secondary-line" d="M20 162L75 148L130 155L185 139L220 145"/><path class="spread-line" d="M300 82L350 91L405 73L455 86L500 66"/><line class="event-line" x1="260" y1="25" x2="260" y2="210"/><text x="168" y="188">last print</text><text x="300" y="45">next print</text></svg><div class="eu-board-foot">Cause unknown until classified</div></div>
+  </header>
+  <nav class="eu-jump-nav" aria-label="Article sections"><a href="#types">Four types</a><a href="#weekend">Weekend</a><a href="#audit">Audit</a><a href="#test">Test</a><a href="#execution">Execution</a><a href="#faq">FAQ</a></nav>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
+  <section class="eu-section" id="types" aria-labelledby="types-title">
+    <div class="eu-section-heading"><p class="eu-kicker">Identity first</p><h2 id="types-title">Four Different Things Get Called a Gap</h2><p>The label describes a chart appearance. It does not identify the mechanism.</p></div>
+    <div class="eu-table-scroll" role="region" aria-label="6E gap categories and verification checks" tabindex="0"><table class="eu-table"><caption>6E gap classes and the first verification step</caption><thead><tr><th scope="col">Gap class</th><th scope="col">What changed</th><th scope="col">First check</th><th scope="col">Main trap</th></tr></thead><tbody>
+      <tr><th scope="row">Weekly reopening</th><td>The same delivery month resumes after the scheduled weekly closure at a different price.</td><td>Compare the last and first eligible trades in the same contract.</td><td>Treating an indicative weekend quote as executable spot.</td></tr>
+      <tr><th scope="row">Contract roll</th><td>A chart switches from the expiring month to the next delivery month.</td><td>Inspect both contracts at the switch timestamp.</td><td>Calling a calendar-basis difference an overnight return.</td></tr>
+      <tr><th scope="row">Data or vendor gap</th><td>Observations are missing, filtered, timestamped incorrectly, or stitched differently.</td><td>Cross-check another authorized feed and the exchange session.</td><td>Backtesting a price path that never existed.</td></tr>
+      <tr><th scope="row">Event jump</th><td>Price moves between recorded observations while the market is open.</td><td>Use finer data with bid, ask, trade, and sequence information.</td><td>Assuming the blank chart space was executable.</td></tr>
+    </tbody></table></div>
+    <p>There is also a fifth, simpler case: a chart deliberately excludes overnight trading. The next displayed bar may open away from the prior displayed close even though 6E traded through the missing hours. That is a session-filter gap, not proof of a discontinuous market.</p>
+  </section>
+
+  <section class="eu-section" id="weekend" aria-labelledby="weekend-title">
+    <div class="eu-section-heading"><p class="eu-kicker">Correct the weekend myth</p><h2 id="weekend-title">Spot EUR/USD Does Not Trade Normally All Weekend</h2><p>FX is decentralized, but decentralized does not mean there is a deep, continuous, standardized weekend market.</p></div>
+    <p>Normal institutional spot liquidity winds down at the end of the global Friday session and returns as the new trading week opens. A broker may display an indicative quote, an internal weekend product, or a price inferred from another instrument. That quote is not automatically a firm, executable interbank EUR/USD market, and it is not evidence that CME 6E could have traded during its closure.</p>
+    <p>News can still develop while the major venues are closed. Politics, conflict, emergency policy announcements, and other information may change participants' reservation prices. When futures and ordinary spot trading resume, the first executable prices can be away from Friday's last trades. That is a genuine reopening discontinuity, but the first quote can arrive with thin depth and a wide spread.</p>
+    <aside class="eu-caution"><strong>Use official hours, not a memorized clock.</strong><p>CME schedules, maintenance windows, and holiday sessions can change. Daylight-saving transitions also change how exchange time maps to UTC and a trader's local clock. Check the current exchange schedule for the specific date.</p></aside>
+    <p>The <a href="/futures-basics/best-times-to-trade-euro-fx-futures-6e.html">6E session-liquidity guide</a> handles participation and clock alignment. This page owns only the discontinuity and the test.</p>
+  </section>
+
+  <section class="eu-section" id="audit" aria-labelledby="audit-title">
+    <div class="eu-section-heading"><p class="eu-kicker">Chart forensics</p><h2 id="audit-title">Audit the Print Before Inventing a Story</h2><p>A good gap review is boring. It checks identity, time, and data provenance before looking for a trade.</p></div>
+    <div class="eu-process">
+      <article><span>Step 1</span><h3>Name the contract</h3><p>Record the exact 6E delivery month on both sides. If it changed, stop calling the difference a same-contract gap.</p></article>
+      <article><span>Step 2</span><h3>Name the prices</h3><p>State whether each observation is a trade, bid, ask, midpoint, settlement, or bar open. Do not mix them.</p></article>
+      <article><span>Step 3</span><h3>Name the clocks</h3><p>Store timestamps in UTC plus the source timezone and session definition. Resolve DST and holiday changes.</p></article>
+      <article><span>Step 4</span><h3>Verify the feed</h3><p>Check missing sequence ranges, reconnects, filtered sessions, bad ticks, and a second authorized source.</p></article>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+    <p>A continuous chart deserves special suspicion. Back-adjusted series modify historical prices to smooth the roll. Ratio-adjusted and difference-adjusted histories behave differently. Unadjusted continuous series preserve a jump between contracts. Those are useful charting choices, but none should be confused with a tradable position held in one contract.</p>
+    <p>For the contract-month process, expiry, and volume migration, use the dedicated <a href="/futures-basics/6e-roll-dates-and-contract-behavior.html">6E roll guide</a>. For a visible fast move during trading hours, the <a href="/futures-basics/how-to-read-order-flow-on-6e.html">6E order-flow guide</a> explains why aggressive execution and price response still do not reveal trader identity or motive.</p>
+  </section>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+  <section class="eu-section" id="test" aria-labelledby="test-title">
+    <div class="eu-section-heading"><p class="eu-kicker">Define before counting</p><h2 id="test-title">A Gap-Fill Rate Is Meaningless Without the Rules</h2><p>There is no defensible universal “6E gaps fill X percent of the time” number. Change the definition and the answer changes.</p></div>
+    <div class="eu-method"><div><h3>One reproducible reopening-gap definition</h3><p>For one named 6E delivery month, define the gap as the first eligible Sunday-session trade minus the last eligible Friday-session trade. Require an absolute minimum size set before analysis. Call it filled only if a subsequent eligible trade reaches or passes the Friday reference price within a fixed number of bars.</p></div><dl><div><dt>Price type</dt><dd>Trades, fixed in advance</dd></div><div><dt>Contract</dt><dd>Same month</dd></div><div><dt>Deadline</dt><dd>Fixed bars or time</dd></div></dl></div>
+    <p>That is only a starting definition. A trader attempting to enter after the open cannot transact at the first historical print after seeing it. A realistic test needs an entry delay or executable bid/ask, spread, slippage, fees, stop logic, and a rule for markets that move through the reference before an order can be placed.</p>
+    <div class="eu-check-grid">
+      <article><strong>Normalize size</strong><p>Report raw price, standard 6E ticks, and the gap divided by a lagged volatility measure. The <a href="/futures-basics/6e-atr-behavior-and-why-it-matters.html">6E ATR guide</a> shows the required controls.</p></article>
+      <article><strong>Stratify honestly</strong><p>Separate weekly reopenings, holidays, scheduled roll periods, and major weekend events. Do not create categories after seeing profits.</p></article>
+      <article><strong>Report the distribution</strong><p>Show count, median time to fill, non-fills, adverse excursion, costs, and results by year. A hit rate alone hides the losses.</p></article>
+    </div>
+    <p>Use only information available at the decision timestamp. Labeling a weekend “high-news” after observing Monday's move is look-ahead. Picking the eventual front month with future volume data is also leakage. Freeze the roll rule and event labels first.</p>
+  </section>
 
-<h1>6E Gap Behavior: Why Euro FX Futures Gap and How to Trade It</h1>
+  <section class="eu-section" id="execution" aria-labelledby="execution-title">
+    <div class="eu-section-heading"><p class="eu-kicker">Tradeability test</p><h2 id="execution-title">A Visible Gap Is Not Automatically an Available Trade</h2><p>The open can be the exact moment when historical bars look cleanest and actual execution is least forgiving.</p></div>
+    <div class="eu-two-column">
+      <div class="eu-panel"><h3>If fading toward the old price</h3><p>Define what invalidates the reversion thesis. “It has not filled yet” is not invalidation. Check live spread and depth, cap order size, and calculate the dollar risk using current contract specifications. A limit order reduces price uncertainty but may not fill; a marketable order increases execution certainty but not price certainty.</p></div>
+      <div class="eu-panel"><h3>If trading away from the old price</h3><p>Define acceptance without using future bars. For example, require a fixed elapsed time or a close outside a predeclared range. That still needs testing. A gap can continue, reverse, or whip both ways; the label itself supplies no direction.</p></div>
+    </div>
+    <p>Do not park an oversized stop order into the weekly reopen and assume the historical chart price is your fill. Gap risk can produce worse execution than the trigger, and futures losses can exceed the amount deposited. Use the <a href="/futures-basics/6e-tick-size-tick-value-margin-requirements.html">6E contract-math guide</a> to convert distance to dollars, then apply your own account-level loss cap.</p>
+    <p class="eu-related"><strong>Event moves are a separate problem:</strong> for scheduled CPI, payrolls, FOMC, and ECB releases, use the <a href="/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html">6E macro-event playbook</a>. It covers surprise, revisions, policy-path repricing, and execution hazards while the market is open.</p>
+  </section>
 
-<p>Most beginners think 6E gaps because “the market opened weird.” No. Gaps in Euro FX futures come from rollover mechanics, weekend FX flows, and the difference between CME futures hours and the 24/5 spot FX market. If you don’t understand these drivers, you’ll get smoked trying to fade or chase gaps blindly.</p>
-
-<h2>The Three Types of Gaps in 6E</h2>
-
-<p>6E only has three real gap types:</p>
-
-<ul>
-  <li><strong>Weekend gaps</strong> (spot forex moves while CME is closed)</li>
-  <li><strong>Rollover gaps</strong> (contract pricing differences)</li>
-  <li><strong>Microstructure gaps</strong> (thin liquidity in off-hours)</li>
-</ul>
-
-<h2>Weekend Gaps: The Most Common</h2>
-
-<p>Spot EUR/USD trades all weekend. 6E does not. When CME opens, futures adjust instantly to catch up with the spot price.</p>
-
-<table>
-<tr><th>Cause</th><th>Effect on 6E</th></tr>
-<tr><td>Geopolitical headlines</td><td>Large gaps at Sunday open</td></tr>
-<tr><td>Rate rumors</td><td>Sharp directional gaps</td></tr>
-<tr><td>Macro surprises</td><td>Big re-pricing against low liquidity</td></tr>
-</table>
-
-<p>This is the same relationship explained in <a href="https://grizzlyparrottrading.com/futures-basics/6e-vs-eurusd-which-leads.html">6E vs spot flow</a>.</p>
-
-<h2>Rollover Gaps: Pricing Differences Between Contracts</h2>
-
-<p>When the front-month contract rolls to the next contract, slight pricing differences appear because of interest rate expectations. This can create what looks like a gap on the chart, but it’s mechanical—nothing more.</p>
-
-<p>For rollover behavior, see <a href="https://grizzlyparrottrading.com/futures-basics/6e-roll-dates-and-contract-behavior.html">the 6E expiry guide</a>.</p>
-
-<h2>Microstructure Gaps During Thin Liquidity</h2>
-
-<p>These show up during:</p>
-
-<ul>
-  <li>Low-liquidity Asia session</li>
-  <li>Holiday trading</li>
-  <li>Minutes after big news releases</li>
-</ul>
-
-<p>Thin liquidity can make price jump over levels, leaving “gaps” on footprint or candle charts.</p>
-
-<h2>Do 6E Gaps Fill?</h2>
-
-<p>Here’s the honest answer: <strong>Usually, but not always.</strong></p>
-
-<h3>Weekend gaps</h3>
-<ul>
-  <li>Fill rate: ~70–80%</li>
-  <li>Mostly fill within the first 24 hours</li>
-</ul>
-
-<h3>Microstructure gaps</h3>
-<ul>
-  <li>Fill rate: high</li>
-  <li>Often fill the same session</li>
-</ul>
-
-<h3>Rollover gaps</h3>
-<ul>
-  <li>May never fully “fill” because the difference is contract-based</li>
-</ul>
-
-<h2>How to Trade 6E Gaps Without Getting Trapped</h2>
-
-<h3>1. Don’t fade gaps blindly</h3>
-<p>A gap is not “overextended price.” It’s a re-price to new information.</p>
-
-<h3>2. Watch spot EUR/USD first</h3>
-<p>Spot leads. If spot is still trending hard, the gap won’t fill anytime soon.</p>
-
-<h3>3. Use order flow to confirm the fade</h3>
-<p>Footprint imbalance or delta shift gives confirmation—covered in <a href="https://grizzlyparrottrading.com/futures-basics/how-to-read-order-flow-on-6e.html">6E order flow</a>.</p>
-
-<h3>4. Don’t hold into dead liquidity</h3>
-<p>If you’re fading a weekend gap, wait until London opens. Asia won’t give you the fill.</p>
-
-<h3>5. Always consider macro catalysts</h3>
-<p>If the gap was caused by major news, expect continuation first, fill later.</p>
-
-<div class="highlight-box yellow">
-  <h3>6E Gaps Reflect Market Mechanics</h3>
-  <p>Gaps occur due to structural shifts in liquidity and positioning. Observing how and where gaps form provides context for market behavior, highlighting areas of potential activity without implying certainty about direction or timing.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
+  <section class="eu-section eu-faq" id="faq" aria-labelledby="faq-title"><div class="eu-section-heading"><p class="eu-kicker">Common questions</p><h2 id="faq-title">6E Gap FAQ</h2></div>
+    <details><summary>Does spot EUR/USD trade continuously all weekend?</summary><p>No. Normal institutional and retail spot FX trading is not a continuous, centralized weekend market. Prices visible during the closure may be indicative, broker-specific, or from another product rather than executable interbank EUR/USD.</p></details>
+    <details><summary>Is every jump on a continuous 6E chart a market gap?</summary><p>No. A continuous chart can jump when it switches from one delivery month to the next. That roll discontinuity reflects two different contracts and must be separated from a same-contract reopening gap.</p></details>
+    <details><summary>What does it mean for a 6E gap to fill?</summary><p>A test must define the reference price and deadline. One defensible definition is that the same contract trades at or through the last eligible pre-gap price within a fixed number of bars, after accounting for executable prices and costs.</p></details>
+    <details><summary>Do most 6E weekend gaps fill?</summary><p>This page makes no universal fill-rate claim. The answer depends on the sample, contract series, minimum gap size, fill definition, time window, session template, and transaction-cost assumptions.</p></details>
+    <details><summary>Can a missing bar create a false 6E gap?</summary><p>Yes. Feed outages, filtered overnight sessions, bad ticks, timezone mistakes, and vendor stitching rules can all create apparent gaps that were not tradable market discontinuities.</p></details>
+  </section>
+  <details class="eu-sources" open><summary>Official sources and methodology</summary><ul>
+    <li><a href="https://www.cmegroup.com/markets/fx/g10/euro-fx.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME Group: Euro FX contract specifications and trading information</a>.</li>
+    <li><a href="https://www.cmegroup.com/tools-information/holiday-calendar.html" target="_blank" rel="noopener noreferrer">CME Group: holiday calendar</a> for date-specific schedule verification.</li>
+    <li><a href="https://www.cmegroup.com/education/courses/introduction-to-fx/understanding-fx-quote-conventions.html" target="_blank" rel="noopener noreferrer">CME Group: FX quote conventions</a> for product and quotation context.</li>
+    <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/fraudadv_forex.html" target="_blank" rel="noopener noreferrer">CFTC: foreign-currency trading advisory</a> for OTC venue and counterparty context.</li>
+  </ul><p>Official schedule and product pages were checked August 12, 2026. This page specifies a test design but does not publish a historical gap-fill estimate.</p></details>
+  <aside class="eu-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This page is a general educational discussion of 6E gaps. It is not a recommendation tailored to any trader or a substitute for individualized financial, investment, legal, tax, or brokerage advice. Futures are leveraged, opening liquidity can be poor, and stop orders can fill materially away from their trigger. Verify the contract, schedule, feed, and live market before acting. No gap-fill probability or trading outcome is guaranteed.</p></aside>
+</article>
 </main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

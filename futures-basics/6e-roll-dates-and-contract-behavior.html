@@ -2,253 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How Rate Differentials Drive 6E Price Direction</title>
-  <meta name="description" content="A blunt explanation of how U.S.–Eurozone interest rate differentials control 6E direction and why the Euro FX contract trends so hard around policy shifts.">
+  <title>6E Roll Dates, Expiry, and Contract Behavior</title>
+  <meta name="description" content="Plan the 6E roll with current expiry rules, month codes, volume migration, delivery awareness, roll gaps, and defensible continuous-series methods.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6e-roll-dates-and-contract-behavior.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="How Rate Differentials Drive 6E Price Direction">
-  <meta property="og:description" content="A blunt explanation of how U.S.–Eurozone interest rate differentials control 6E direction and why the Euro FX contract trends so hard around policy shifts.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6e-roll-dates-and-contract-behavior.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="How Rate Differentials Drive 6E Price Direction">
-  <meta name="twitter:description" content="A blunt explanation of how U.S.–Eurozone interest rate differentials control 6E direction and why the Euro FX contract trends so hard around policy shifts.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <meta property="og:title" content="6E Roll Dates, Expiry, and Contract Behavior"><meta property="og:description" content="A practical guide to choosing the active 6E contract, reading the calendar and keeping roll mechanics from corrupting charts and tests.">
+  <meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6e-roll-dates-and-contract-behavior.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-12">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6E Roll Dates and Contract Behavior"><meta name="twitter:description" content="Expiry rules, active-month selection, volume migration, delivery and continuous data for Euro FX futures."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="6e-evidence-guides.css?v=20260812a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"6E Roll Dates, Expiry, and Contract Behavior","description":"A current, evidence-led guide to 6E expiration, volume migration, active-month selection, physical delivery and continuous futures data.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6e-roll-dates-and-contract-behavior.html"},"datePublished":"2025-11-24","dateModified":"2026-08-12","url":"https://grizzlyparrottrading.com/futures-basics/6e-roll-dates-and-contract-behavior.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How Rate Differentials Drive 6E Price Direction",
-  "description": "A blunt explanation of how U.S.–Eurozone interest rate differentials control 6E direction and why the Euro FX contract trends so hard around policy shifts.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6e-roll-dates-and-contract-behavior.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6e-roll-dates-and-contract-behavior.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6E Roll Dates and Contract Behavior","item":"https://grizzlyparrottrading.com/futures-basics/6e-roll-dates-and-contract-behavior.html"}]}
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How Rate Differentials Drive 6E Price Direction",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6e-roll-dates-and-contract-behavior.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Which months are listed for 6E futures?","acceptedAnswer":{"@type":"Answer","text":"Current CME delivery material lists Euro FX futures in all 12 calendar months. March, June, September and December remain the familiar quarterly months, but traders should inspect actual volume and open interest rather than assume a quarterly contract is always active."}},
+    {"@type":"Question","name":"When does trading end in an expiring 6E contract?","acceptedAnswer":{"@type":"Answer","text":"CME's current monthly FX specifications state that 6E trading ends at 9:16 a.m. Central Time on the second business day immediately before the third Wednesday of the contract month, usually Monday. Holidays can change the calendar, so verify the exchange calendar for the exact contract."}},
+    {"@type":"Question","name":"Is there one official 6E roll date?","acceptedAnswer":{"@type":"Answer","text":"No. Expiration is rule-based, but the practical roll is a liquidity decision. Compare volume, open interest, bid-ask spread and depth in the old and new contracts, then document the rule you use."}},
+    {"@type":"Question","name":"Why does a continuous 6E chart show a gap at the roll?","acceptedAnswer":{"@type":"Answer","text":"Different 6E expirations can trade at different prices because they have different delivery dates and carry. A raw splice preserves that difference, while a back-adjusted or ratio-adjusted series changes history to reduce the visual jump. The method must be disclosed."}},
+    {"@type":"Question","name":"Can a retail trader hold 6E into physical delivery?","acceptedAnswer":{"@type":"Answer","text":"6E is physically settled, but a broker may impose earlier liquidation, funding, position or delivery restrictions. Check CME rules and your broker's written policy well before the last trading day; do not assume platform access means delivery access."}}
+  ]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container euro-evidence"><article>
 <!-- ARTICLE BODY START -->
+<header class="eu-hero"><div class="eu-hero-copy">
+  <p class="eu-kicker">Contract mechanics &middot; 6E roll</p><h1>6E Roll Dates, Expiry, and Contract Behavior</h1>
+  <p class="eu-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 12, 2026</p>
+  <p class="eu-hero-lede">The expiration date is fixed by exchange rules. The day you should roll is not. Your job is to know the calendar, watch liquidity migrate, avoid accidental delivery exposure and keep your data vendor's stitching choice from becoming a fake trading signal.</p>
+  <div class="eu-hero-actions"><a class="button-primary" href="#calendar">Read the calendar</a><a class="eu-text-link" href="#active-month">Choose the active month</a></div>
+  <dl class="eu-hero-metrics" aria-label="6E roll facts"><div><dt>Listed expiries</dt><dd>12 months</dd></div><div><dt>Settlement</dt><dd>Physical</dd></div><div><dt>Value date</dt><dd>3rd Wednesday</dd></div><div><dt>Roll date</dt><dd>Liquidity-based</dd></div></dl>
+</div><div class="eu-hero-visual"><div class="eu-market-board"><div class="eu-board-head"><span>Two clocks</span><strong>Do not mix them</strong></div><div class="eu-formula"><code>exchange expiry</code><i aria-hidden="true">&ne;</i><code>liquidity roll</code></div><p>Expiry tells you when trading terminates and delivery follows. The liquidity roll tells you when another expiration becomes the better market for your execution or analysis.</p><p class="eu-board-foot"><span>Calendar rule</span><span>Market observation</span></p></div></div></header>
 
-<h1>How Rate Differentials Drive 6E Price Direction</h1>
+<nav class="eu-jump-nav" aria-label="On this page"><a href="#bottom-line">Direct answer</a><a href="#calendar">Calendar</a><a href="#active-month">Active month</a><a href="#gaps">Roll gaps</a><a href="#continuous">Continuous data</a><a href="#delivery">Delivery</a><a href="#faq">FAQ</a></nav>
 
-<p>Euro FX futures don’t trend because of magic or luck. They trend because interest rate spreads between the U.S. and the Eurozone widen or tighten. If you don’t understand rate differentials, you don’t understand 6E—period.</p>
-
-<h2>What Is a Rate Differential?</h2>
-
-<p>A rate differential is the difference between U.S. interest rates and Eurozone interest rates. When that spread shifts, EUR/USD reprices immediately—and 6E follows.</p>
-
-<table>
-<tr><th>Rate Situation</th><th>6E Bias</th></tr>
-<tr><td>U.S. rates rising faster</td><td>Bearish 6E</td></tr>
-<tr><td>Eurozone rates rising faster</td><td>Bullish 6E</td></tr>
-<tr><td>Rates diverge sharply</td><td>Strong multi-month trends</td></tr>
-</table>
-
-<p>This is the same macro foundation behind <a href="https://grizzlyparrottrading.com/futures-basics/why-6e-trends-harder-than-other-fx-futures.html">why 6E trends harder</a>. Rate spreads are the gasoline.</p>
-
-<h2>How Rate Spreads Drive Capital Flow</h2>
-
-<p>Money chases yield. When U.S. rates go up relative to Eurozone rates, institutions rotate capital into USD. When Eurozone yields rise faster, they rotate into EUR. This flow directly pushes EUR/USD—and 6E—up or down.</p>
-
-<h3>When U.S. rates rise faster:</h3>
-<ul>
-  <li>USD strengthens</li>
-  <li>EUR/USD drops</li>
-  <li>6E sells off</li>
-</ul>
-
-<h3>When Eurozone rates rise faster:</h3>
-<ul>
-  <li>EUR strengthens</li>
-  <li>EUR/USD climbs</li>
-  <li>6E rallies</li>
-</ul>
-
-<h2>The Role of CPI, NFP, FOMC and ECB</h2>
-
-<p>These events don’t move markets because traders like drama. They move markets because they change rate expectations. That’s why you saw massive volatility connections in <a href="https://grizzlyparrottrading.com/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html">how news impacts 6E</a>.</p>
-
-<ul>
-  <li><strong>CPI</strong> shifts inflation expectations → shifts Fed/ECB policy probability.</li>
-  <li><strong>NFP</strong> influences growth outlook → impacts rate paths.</li>
-  <li><strong>FOMC</strong> defines the U.S. path explicitly.</li>
-  <li><strong>ECB</strong> defines the Eurozone path explicitly.</li>
-</ul>
-
-<p>These differences add up to pure directional pressure on 6E.</p>
-
-<h2>Why Rate Differentials Create Massive 6E Trends</h2>
-
-<p>Rate cycles don’t flip every week—they last months or years. That creates long, sustained directional movement in EUR/USD spot and 6E futures.</p>
-
-<h3>Common Trend Scenarios</h3>
-<ul>
-  <li><strong>U.S. hiking cycle vs ECB on hold</strong> → brutal 6E downtrend.</li>
-  <li><strong>ECB hiking while Fed pauses</strong> → 6E moon mission.</li>
-  <li><strong>Both easing together</strong> → choppier, weaker trends.</li>
-</ul>
-
-<p>Understanding this removes the guesswork from 6E trading.</p>
-
-<h2>How to Trade 6E Using Rate Differentials</h2>
-
-<h3>1. Track Fed vs ECB Policy Expectations</h3>
-<p>You don’t need a PhD. Just follow:</p>
-<ul>
-  <li>Dot plots</li>
-  <li>ECB guidance</li>
-  <li>Yield curve shifts</li>
-  <li>Market-implied rate probabilities</li>
-</ul>
-
-<h3>2. Trade in the Direction of the Spread</h3>
-<p>If the U.S. is out-hiking Europe, shorting 6E is the path of least resistance. If Europe out-hikes the U.S., longs have the wind at their back.</p>
-
-<h3>3. Confirm Direction Using EUR/USD Spot</h3>
-<p>This ties back to <a href="https://grizzlyparrottrading.com/futures-basics/6e-vs-eurusd-which-leads.html">spot leading 6E</a>. Spot will always reflect rate spreads first.</p>
-
-<h3>4. Use Order Flow to Time Entries</h3>
-<p>Use imbalances, delta and absorption from <a href="https://grizzlyparrottrading.com/futures-basics/how-to-read-order-flow-on-6e.html">order flow</a> to enter with precision.</p>
-<div class="highlight-box green">
-  <h3>Rate Differentials Drive 6E Dynamics</h3>
-  <p>Interest rate spreads influence Euro FX futures by shaping capital flows and positioning. Observing these differences provides context for market behavior without implying exact price movements.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="eu-section" id="bottom-line" aria-labelledby="bottom-line-title">
+  <div class="eu-section-heading"><p class="eu-kicker">Direct answer</p><h2 id="bottom-line-title">Roll When Tradable Liquidity Moves, Not Because a Website Names a Magic Day</h2><p>Current CME material lists Euro FX futures for all 12 calendar months. Each contract has a defined termination and delivery schedule, but no exchange rule says every trader must switch on one universal roll date. A scalper cares about the tightest spread and deepest near-touch book. A hedger may care about matching a particular maturity. A researcher needs a deterministic stitching rule that can be reproduced.</p></div>
+  <div class="eu-two-column"><article class="eu-panel"><p class="eu-card-label">Fixed</p><h3>Expiration and delivery rules</h3><p>CME states that 6E trading terminates at 9:16 a.m. Central Time on the second business day immediately before the third Wednesday of the contract month. Physical value date is normally that third Wednesday, subject to the exchange's holiday rules.</p></article><article class="eu-panel"><p class="eu-card-label">Observed</p><h3>Volume, open interest and execution quality</h3><p>The active contract is the one that best fits your documented liquidity rule. Volume can shift during the session. Open interest is useful confirmation, but it is generally an end-of-day measure and should not be treated as an intraday depth feed.</p></article></div>
+  <div class="eu-caution"><strong>Current-spec correction</strong><p>Some older CME educational text describes Euro futures as quarterly only. Current CME FX delivery and monthly-futures pages list 6E across all 12 calendar months. Use the current product calendar and rulebook for the contract you plan to trade.</p></div>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<section class="eu-section" id="calendar" aria-labelledby="calendar-title">
+  <div class="eu-section-heading"><p class="eu-kicker">Expiry calendar</p><h2 id="calendar-title">Month Codes Tell You the Contract; Rules Tell You the Deadline</h2><p>The root symbol alone is not enough. Record the month code and year on every order, screenshot and dataset. Platform symbols vary, so confirm the vendor mapping before assuming a ticker refers to the month you intended.</p></div>
+  <div class="eu-table-scroll" role="region" aria-label="6E futures month-code calendar" tabindex="0"><table class="eu-table"><thead><tr><th scope="col">Contract month</th><th scope="col">Code</th><th scope="col">Contract month</th><th scope="col">Code</th><th scope="col">Contract month</th><th scope="col">Code</th></tr></thead><tbody>
+    <tr><th scope="row">January</th><td>F</td><th scope="row">May</th><td>K</td><th scope="row">September</th><td>U</td></tr>
+    <tr><th scope="row">February</th><td>G</td><th scope="row">June</th><td>M</td><th scope="row">October</th><td>V</td></tr>
+    <tr><th scope="row">March</th><td>H</td><th scope="row">July</th><td>N</td><th scope="row">November</th><td>X</td></tr>
+    <tr><th scope="row">April</th><td>J</td><th scope="row">August</th><td>Q</td><th scope="row">December</th><td>Z</td></tr>
+  </tbody></table></div>
+  <div class="eu-method"><div><h3>Build the exact date from the official calendar</h3><p>Find the third Wednesday of the contract month, count back two business days using the applicable exchange calendar, then confirm CME's listed last-trade date and time. Do not count weekends or assume a Monday when a holiday intervenes.</p></div><dl><div><dt>Termination</dt><dd>9:16 a.m. CT</dd></div><div><dt>Rule</dt><dd>2 business days before</dd></div><div><dt>Value date</dt><dd>3rd Wednesday</dd></div></dl></div>
+  <p class="eu-source-note">CME notes that if the third Wednesday is a holiday in the country of delivery or a bank holiday in Chicago or New York, the value date moves to the next business day. Treat the exchange's contract calendar as authoritative for each expiration.</p>
+</section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
+<section class="eu-section" id="active-month" aria-labelledby="active-month-title">
+  <div class="eu-section-heading"><p class="eu-kicker">Active-month decision</p><h2 id="active-month-title">Use a Written Liquidity Rule You Can Apply Again</h2><p>"Front month" can mean nearest listed month, nearest non-expired month or the most actively traded month, depending on the platform. That ambiguity is how wrong-chart errors happen. Define your term.</p></div>
+  <div class="eu-process"><article><span>1</span><h3>Identify both contracts</h3><p>Write down root, month and year for the old and candidate new contract. Confirm both with CME or your data vendor.</p></article><article><span>2</span><h3>Compare live execution</h3><p>Check bid-ask spread, displayed depth, recent trades and volume at the time you actually trade.</p></article><article><span>3</span><h3>Confirm migration</h3><p>Review contract-level volume and open interest rather than a continuous symbol that hides its underlying month.</p></article><article><span>4</span><h3>Record the switch</h3><p>Save the date, timestamp, rule, prices and contract identifiers so the choice is auditable.</p></article></div>
+  <div class="eu-check-grid"><article><strong>Execution rule</strong><p>Example: switch when the next contract has both greater recent volume and no worse quoted spread during your trading window.</p></article><article><strong>Research rule</strong><p>Example: select the highest-volume eligible contract at a fixed daily timestamp, with no look-ahead to the final daily total.</p></article><article><strong>Hedge rule</strong><p>Choose the expiration that matches the exposure horizon, then measure basis and execution cost explicitly.</p></article><article><strong>Fail-closed rule</strong><p>If volume, timestamps or contract identifiers are missing, label the day unresolved rather than guessing the active month.</p></article></div>
+  <div class="eu-related">Before sizing the replacement position, recheck <a href="6e-tick-size-tick-value-margin-requirements.html">6E tick value and risk math</a>. If you trade the calendar spread itself, remember that spread tick increments can differ from outright increments; verify the current CME specification.</div>
+</section>
 
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
+<section class="eu-section" id="gaps" aria-labelledby="gaps-title">
+  <div class="eu-section-heading"><p class="eu-kicker">Contract-to-contract difference</p><h2 id="gaps-title">A Roll Gap Is Usually Basis, Not a Free Price Jump</h2><p>Two 6E expirations settle on different future dates. Their prices can differ because the euro-dollar forward curve reflects time and relative funding. When a chart switches from one contract to the next, that difference can appear as a gap even though neither contract made that move.</p></div>
+  <div class="eu-formula"><code>new-contract price</code><i aria-hidden="true">&minus;</i><code>old-contract price</code><i aria-hidden="true">=</i><code>calendar spread</code></div>
+  <div class="eu-two-column"><article class="eu-panel"><p class="eu-card-label">Real market object</p><h3>The spread is tradable relative value</h3><p>The difference between expirations is observable and can change. It is not an error. But it is also not the same as an outright return earned merely because a chart vendor changed symbols.</p></article><article class="eu-panel"><p class="eu-card-label">Chart artifact risk</p><h3>The stitch can manufacture a visual move</h3><p>If Friday is the old contract and Monday is the new contract, a raw close-to-close return crosses two instruments. Attribute that jump to the roll unless you have separately measured each contract's return.</p></article></div>
+  <p class="eu-source-note">The deeper carry mechanism belongs in <a href="how-rate-differentials-drive-6e-price.html">How Rate Differentials Drive 6E Price</a>. This page's job is narrower: prevent the curve and the stitch from being mistaken for an outright signal.</p>
+</section>
 
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+<section class="eu-section" id="continuous" aria-labelledby="continuous-title">
+  <div class="eu-section-heading"><p class="eu-kicker">Data engineering</p><h2 id="continuous-title">Every Continuous 6E Series Makes a Choice</h2><p>A continuous ticker is synthetic. Ask exactly how it chooses contracts, when it switches and whether it changes history. If the vendor cannot answer, do not use that series for evidence-grade testing.</p></div>
+  <div class="eu-table-scroll" role="region" aria-label="Continuous futures construction methods" tabindex="0"><table class="eu-table"><thead><tr><th scope="col">Method</th><th scope="col">What it does</th><th scope="col">Useful for</th><th scope="col">Main limitation</th></tr></thead><tbody>
+    <tr><th scope="row">Raw splice</th><td>Switches contracts and preserves both price levels</td><td>Seeing actual quoted levels and roll differences</td><td>Creates discontinuities that contaminate returns across the stitch</td></tr>
+    <tr><th scope="row">Back adjustment</th><td>Adds or subtracts roll differences from earlier history</td><td>Some return and chart studies</td><td>Historical price levels become synthetic and can drift far from traded prices</td></tr>
+    <tr><th scope="row">Ratio adjustment</th><td>Scales earlier history by a roll ratio</td><td>Preserving proportional changes</td><td>Still synthetic and sensitive to switch timing</td></tr>
+    <tr><th scope="row">Weighted blend</th><td>Gradually mixes old and new contracts</td><td>Smoother exposure models</td><td>Produces prices and fills that no single contract traded</td></tr>
+  </tbody></table></div>
+  <div class="eu-caution"><strong>Backtest requirement</strong><p>Store the underlying contract, raw price, roll timestamp, adjustment amount and selection rule. Calculate execution and slippage on the actual contract, not on a back-adjusted synthetic level. Rebuild the series without future volume information to avoid look-ahead.</p></div>
+  <div class="eu-related">A hidden roll can distort a <a href="6e-seasonality-patterns.html">6E seasonality test</a>, an <a href="6e-important-correlations.html">estimated correlation</a> or a claim that <a href="why-6e-trends-harder-than-other-fx-futures.html">6E trends differently</a>. Clean the contract chain before computing any of them.</div>
+</section>
 
-  </div>
-</footer>
-</body>
-</html>
+<section class="eu-section" id="delivery" aria-labelledby="delivery-title">
+  <div class="eu-section-heading"><p class="eu-kicker">Delivery awareness</p><h2 id="delivery-title">Physical Settlement Is Not a Footnote</h2><p>CME's product guide classifies standard 6E as physically settled. CME's delivery material says eligible FX deliveries use paired settlement through CLS under its rules and thresholds. That exchange process does not guarantee your retail account can or will participate.</p></div>
+  <div class="eu-limit-grid"><article><strong>Broker cutoff</strong><p>Your broker may require exit or roll before CME's last trading time. Obtain the policy in writing.</p></article><article><strong>Funding</strong><p>A futures margin balance is not the same as having the currencies and operational setup required for delivery.</p></article><article><strong>Holiday handling</strong><p>Bank and currency holidays can affect value dates. Use the exact contract calendar, not a generic reminder.</p></article><article><strong>Spread risk</strong><p>Rolling creates two executions or one spread execution. Measure bid-ask, fees and slippage.</p></article><article><strong>Order identity</strong><p>Confirm month and year on every ticket. Continuous symbols are for display or analysis, not a delivery instruction.</p></article><article><strong>Uncertainty</strong><p>If the broker cannot confirm treatment, close or roll early enough to remove the delivery question.</p></article></div>
+</section>
+
+<section class="eu-section eu-faq" id="faq" aria-labelledby="faq-title"><div class="eu-section-heading"><p class="eu-kicker">Frequently asked questions</p><h2 id="faq-title">6E Roll and Expiry: Quick Answers</h2></div>
+  <details><summary>Which months are listed for 6E futures?</summary><p>Current CME delivery material lists Euro FX futures in all 12 calendar months. March, June, September and December remain the familiar quarterly months, but traders should inspect actual volume and open interest rather than assume a quarterly contract is always active.</p></details>
+  <details><summary>When does trading end in an expiring 6E contract?</summary><p>CME's current monthly FX specifications state that 6E trading ends at 9:16 a.m. Central Time on the second business day immediately before the third Wednesday of the contract month, usually Monday. Holidays can change the calendar, so verify the exchange calendar for the exact contract.</p></details>
+  <details><summary>Is there one official 6E roll date?</summary><p>No. Expiration is rule-based, but the practical roll is a liquidity decision. Compare volume, open interest, bid-ask spread and depth in the old and new contracts, then document the rule you use.</p></details>
+  <details><summary>Why does a continuous 6E chart show a gap at the roll?</summary><p>Different 6E expirations can trade at different prices because they have different delivery dates and carry. A raw splice preserves that difference, while a back-adjusted or ratio-adjusted series changes history to reduce the visual jump. The method must be disclosed.</p></details>
+  <details><summary>Can a retail trader hold 6E into physical delivery?</summary><p>6E is physically settled, but a broker may impose earlier liquidation, funding, position or delivery restrictions. Check CME rules and your broker's written policy well before the last trading day; do not assume platform access means delivery access.</p></details>
+</section>
+
+<details class="eu-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+  <li><a href="https://www.cmegroup.com/trading/fx/g10/monthlies.html" target="_blank" rel="noopener">CME FX Monthly Futures</a> for 6E size, quote, outright and consecutive-month spread ticks, and last-trading-day rule.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-delivery.html" target="_blank" rel="noopener">CME FX Futures Deliveries</a> for all-12-month support, termination conventions, value date, physical settlement and CLS context.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> for current standard 6E contract specifications.</li>
+  <li><a href="https://www.cmegroup.com/daily_bulletin/current/Section07_Currency_Futures.pdf" target="_blank" rel="noopener">CME Currency Futures Daily Bulletin</a> for contract-level volume, open interest and settlement reference.</li>
+</ul><p>No universal roll day or liquidity threshold is claimed. Example selection rules are disclosed as procedures, not empirical recommendations. Month codes are standard futures month identifiers; vendor symbol formats can differ. Official pages were checked August 12, 2026. Verify the exact contract calendar and broker delivery policy before acting.</p></details>
+<aside class="eu-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This guide is educational, not individualized trading, investment, legal, accounting, tax, delivery or brokerage advice. Futures are leveraged and can produce losses greater than the initial margin deposit. Rolling adds spread, fee, slippage, liquidity and operational risk. Exchange rules, calendars and broker cutoffs can change. Confirm the exact contract, current CME documents and your broker's written requirements.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>
