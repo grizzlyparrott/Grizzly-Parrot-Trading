@@ -50,7 +50,7 @@
         "@id": "https://grizzlyparrottrading.com/about.html#kyle-parrott",
         "name": "Kyle Parrott",
         "url": "https://grizzlyparrottrading.com/about.html#kyle-parrott",
-        "jobTitle": "Independent market researcher and author",
+        "jobTitle": "Independent market researcher, author, and publisher",
         "description": "Kyle Parrott is an independent market researcher and author who publishes original market studies, books, and educational material through Grizzly Parrot Trading."
       },
       {
@@ -67,7 +67,7 @@
         "@id": "https://grizzlyparrottrading.com/about.html#webpage",
         "url": "https://grizzlyparrottrading.com/about.html",
         "name": "Kyle Parrott | Independent Market Research & Author",
-        "description": "About Kyle Parrott, his independent market research, published studies, books, methodology, and Grizzly Parrot Trading.",
+        "description": "About Kyle Parrott, his independent market research, published studies, books, and Grizzly Parrot Trading.",
         "isPartOf": {
           "@id": "https://grizzlyparrottrading.com/#website"
         },
@@ -214,11 +214,10 @@
 
     .about-hero-inner {
       display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(17rem, 0.62fr);
-      gap: clamp(3rem, 7vw, 7rem);
-      align-items: end;
-      min-height: 650px;
-      padding: clamp(5.5rem, 9vw, 8.5rem) 0 clamp(4.5rem, 7vw, 6.5rem);
+      grid-template-columns: minmax(0, 52rem);
+      align-items: center;
+      min-height: 510px;
+      padding: clamp(4.75rem, 8vw, 7rem) 0;
     }
 
     .about-eyebrow {
@@ -232,39 +231,31 @@
     }
 
     .about-hero h1 {
-      max-width: 860px;
       margin: 0;
       color: #f5f5ef;
       font-family: Georgia, Cambria, "Times New Roman", serif;
-      font-size: clamp(4rem, 9.2vw, 7.7rem);
+      font-size: clamp(3.25rem, 6.2vw, 5.25rem);
       font-weight: 500;
-      letter-spacing: -0.065em;
-      line-height: 0.88;
+      letter-spacing: -0.055em;
+      line-height: 0.98;
     }
 
     .about-hero-role {
-      max-width: 760px;
-      margin: 2rem 0 0;
+      max-width: 780px;
+      margin: 1.5rem 0 0;
       color: var(--about-text);
-      font-size: clamp(1.25rem, 2.3vw, 1.75rem);
+      font-size: clamp(1.15rem, 2vw, 1.5rem);
       font-weight: 650;
       letter-spacing: -0.02em;
       line-height: 1.35;
     }
 
     .about-hero-lede {
-      max-width: 720px;
-      margin: 1.25rem 0 0;
+      max-width: 760px;
+      margin: 1rem 0 0;
       color: var(--about-muted);
       font-size: clamp(1rem, 1.4vw, 1.13rem);
       line-height: 1.75;
-    }
-
-    .about-hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 2rem;
     }
 
     .about-button {
@@ -301,45 +292,6 @@
       border-color: #93f2be;
       background: #93f2be;
       color: #062013;
-    }
-
-    .about-dossier {
-      padding: 0 0 0.25rem 1.65rem;
-      border-left: 1px solid var(--about-line-strong);
-    }
-
-    .about-dossier-label {
-      margin: 0 0 1.35rem;
-      color: var(--about-muted);
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    .about-dossier dl {
-      margin: 0;
-    }
-
-    .about-dossier div {
-      padding: 1rem 0;
-      border-top: 1px solid var(--about-line);
-    }
-
-    .about-dossier dt {
-      margin-bottom: 0.35rem;
-      color: var(--about-green);
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-    }
-
-    .about-dossier dd {
-      margin: 0;
-      color: #dfe8e2;
-      font-size: 0.96rem;
-      line-height: 1.55;
     }
 
     .about-index {
@@ -384,7 +336,7 @@
     }
 
     .about-section {
-      padding: clamp(5rem, 9vw, 8rem) 0;
+      padding: clamp(4rem, 7vw, 6rem) 0;
       border-bottom: 1px solid var(--about-line);
       background: var(--about-bg);
     }
@@ -393,11 +345,15 @@
       background: var(--about-panel);
     }
 
+    .about-section--tonal .about-section-header {
+      margin-bottom: 0;
+    }
+
     .about-section-header {
       display: grid;
-      grid-template-columns: minmax(11rem, 0.42fr) minmax(0, 1fr);
-      gap: clamp(2rem, 7vw, 7rem);
-      margin-bottom: clamp(3rem, 6vw, 5rem);
+      grid-template-columns: minmax(10rem, 0.32fr) minmax(0, 1fr);
+      gap: clamp(1.5rem, 5vw, 4.5rem);
+      margin-bottom: clamp(2.25rem, 4vw, 3.5rem);
     }
 
     .about-section-marker {
@@ -424,7 +380,7 @@
       margin: 0;
       color: var(--about-text);
       font-family: Georgia, Cambria, "Times New Roman", serif;
-      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      font-size: clamp(2rem, 3.8vw, 3.35rem);
       font-weight: 500;
       letter-spacing: -0.045em;
       line-height: 1.02;
@@ -441,7 +397,7 @@
     .about-focus-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0 3.5rem;
+      gap: 0 2.75rem;
       list-style: none;
     }
 
@@ -449,7 +405,7 @@
       display: grid;
       grid-template-columns: 2.7rem minmax(0, 1fr);
       gap: 1rem;
-      padding: 1.65rem 0 1.8rem;
+      padding: 1.4rem 0 1.5rem;
       border-top: 1px solid var(--about-line);
     }
 
@@ -474,6 +430,20 @@
       line-height: 1.7;
     }
 
+    .about-method-note {
+      max-width: 900px;
+      margin: 2.5rem 0 0;
+      padding: 1.4rem 0 0;
+      border-top: 1px solid var(--about-line-strong);
+      color: #c8d4ce;
+      font-size: 0.96rem;
+      line-height: 1.75;
+    }
+
+    .about-method-note strong {
+      color: var(--about-text);
+    }
+
     .about-focus-grid a {
       color: #dce9e1;
       text-decoration-color: rgba(110, 231, 168, 0.42);
@@ -488,145 +458,24 @@
       text-shadow: none;
     }
 
-    .about-method-statement {
-      max-width: 1020px;
-      margin: 0 0 clamp(3.5rem, 7vw, 6rem);
-      color: #f4f3ec;
-      font-family: Georgia, Cambria, "Times New Roman", serif;
-      font-size: clamp(2rem, 4.5vw, 4rem);
-      letter-spacing: -0.04em;
-      line-height: 1.12;
-    }
-
-    .about-method-statement em {
-      color: var(--about-green);
-      font-style: normal;
-    }
-
-    .about-method-grid {
+    .about-study-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0 3.5rem;
-      margin: 0;
-      list-style: none;
-      counter-reset: method;
-    }
-
-    .about-method-grid li {
-      position: relative;
-      padding: 1.6rem 0 1.8rem 3.75rem;
-      border-top: 1px solid var(--about-line);
-      counter-increment: method;
-    }
-
-    .about-method-grid li::before {
-      position: absolute;
-      top: 1.55rem;
-      left: 0;
-      color: var(--about-green);
-      content: "0" counter(method);
-      font-family: Georgia, Cambria, "Times New Roman", serif;
-      font-size: 1.05rem;
-    }
-
-    .about-method-grid h3 {
-      margin: 0 0 0.45rem;
-      color: var(--about-text);
-      font-size: 1.04rem;
-    }
-
-    .about-method-grid p {
-      margin: 0;
-      color: var(--about-muted);
-      font-size: 0.93rem;
-      line-height: 1.7;
-    }
-
-    .about-source-line {
-      margin: 3rem 0 0;
-      padding: 1.25rem 0;
-      border-top: 1px solid var(--about-line);
-      border-bottom: 1px solid var(--about-line);
-      color: #d5dfda;
-      font-size: 0.92rem;
-      line-height: 1.75;
-    }
-
-    .about-source-line strong {
-      color: var(--about-green);
-    }
-
-    .about-evidence-key {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      margin-top: 2rem;
-      border-top: 1px solid var(--about-line-strong);
-      border-bottom: 1px solid var(--about-line-strong);
-    }
-
-    .about-evidence-key div {
-      padding: 1.4rem 1.4rem 1.45rem 0;
-    }
-
-    .about-evidence-key div + div {
-      padding-left: 1.4rem;
-      border-left: 1px solid var(--about-line);
-    }
-
-    .about-evidence-key span {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: var(--about-green);
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .about-evidence-key p {
-      margin: 0;
-      color: var(--about-muted);
-      font-size: 0.88rem;
-      line-height: 1.65;
-    }
-
-    .about-study-list {
-      border-top: 1px solid var(--about-line-strong);
+      gap: 1.5rem;
     }
 
     .about-study {
-      display: grid;
-      grid-template-columns: minmax(13rem, 0.38fr) minmax(0, 1fr);
-      gap: clamp(2rem, 6vw, 6rem);
-      padding: clamp(2.5rem, 5vw, 4.5rem) 0;
-      border-bottom: 1px solid var(--about-line-strong);
-    }
-
-    .about-study-index {
-      color: var(--about-muted);
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .about-study-index strong {
       display: block;
-      margin-top: 0.85rem;
-      color: var(--about-green);
-      font-family: Georgia, Cambria, "Times New Roman", serif;
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
-      font-weight: 500;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      text-transform: none;
+      padding: clamp(1.6rem, 3vw, 2.2rem);
+      border: 1px solid var(--about-line-strong);
+      background: rgba(255, 255, 255, 0.018);
     }
 
     .about-study h3 {
       max-width: 780px;
       margin: 0;
       font-family: Georgia, Cambria, "Times New Roman", serif;
-      font-size: clamp(1.8rem, 3.6vw, 3.1rem);
+      font-size: clamp(1.45rem, 2.6vw, 2.1rem);
       font-weight: 500;
       letter-spacing: -0.035em;
       line-height: 1.12;
@@ -645,23 +494,10 @@
 
     .about-study-summary {
       max-width: 790px;
-      margin: 1.2rem 0 0;
+      margin: 1rem 0 0;
       color: var(--about-muted);
       font-size: 1rem;
       line-height: 1.75;
-    }
-
-    .about-study-sources {
-      max-width: 790px;
-      margin: 1.25rem 0 0;
-      padding-top: 1rem;
-      border-top: 1px solid var(--about-line);
-      color: #c9d4ce;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.035em;
-      line-height: 1.6;
-      text-transform: uppercase;
     }
 
     .about-text-link {
@@ -685,70 +521,8 @@
       text-shadow: none;
     }
 
-    .about-reference-heading {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      margin: 4rem 0 1.5rem;
-      color: var(--about-muted);
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .about-reference-heading::after {
-      height: 1px;
-      flex: 1;
-      content: "";
-      background: var(--about-line);
-    }
-
-    .about-reference-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
-    }
-
-    .about-reference-grid article {
-      padding-top: 1.3rem;
-      border-top: 2px solid var(--about-line-strong);
-    }
-
-    .about-reference-grid span {
-      color: var(--about-green);
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-    }
-
-    .about-reference-grid h3 {
-      margin: 0.65rem 0 0;
-      font-size: 1.05rem;
-      line-height: 1.4;
-    }
-
-    .about-reference-grid h3 a {
-      color: var(--about-text);
-      text-decoration: none;
-      text-shadow: none;
-    }
-
-    .about-reference-grid h3 a:hover {
-      color: var(--about-green);
-      text-shadow: none;
-    }
-
-    .about-reference-grid p {
-      margin: 0.65rem 0 0;
-      color: var(--about-muted);
-      font-size: 0.89rem;
-      line-height: 1.65;
-    }
-
     .about-books {
-      padding: clamp(5rem, 9vw, 8rem) 0;
+      padding: clamp(4rem, 7vw, 6rem) 0;
       background: var(--about-cream);
       color: var(--about-ink);
     }
@@ -781,8 +555,8 @@
 
     .about-book-cover {
       display: block;
-      max-width: 265px;
-      margin-bottom: 1.5rem;
+      max-width: 220px;
+      margin-bottom: 1.3rem;
       color: var(--about-ink);
       text-decoration: none;
       text-shadow: none;
@@ -847,8 +621,8 @@
       display: flex;
       gap: 1.25rem;
       align-items: center;
-      justify-content: space-between;
-      margin-top: clamp(3.5rem, 7vw, 6rem);
+      justify-content: flex-end;
+      margin-top: clamp(2.5rem, 5vw, 4rem);
       padding-top: 1.5rem;
       border-top: 1px solid rgba(20, 34, 27, 0.22);
     }
@@ -871,56 +645,8 @@
       color: #fff;
     }
 
-    .about-publication-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr);
-      gap: clamp(3rem, 8vw, 8rem);
-      align-items: start;
-    }
-
-    .about-publication-copy p {
-      max-width: 720px;
-      margin: 0;
-      color: var(--about-muted);
-      font-size: 1.02rem;
-      line-height: 1.8;
-    }
-
-    .about-publication-copy p + p {
-      margin-top: 1.35rem;
-    }
-
-    .about-publication-copy strong {
-      color: var(--about-text);
-    }
-
-    .about-publication-standards {
-      margin: 0;
-      border-top: 1px solid var(--about-line-strong);
-    }
-
-    .about-publication-standards div {
-      padding: 1.25rem 0;
-      border-bottom: 1px solid var(--about-line);
-    }
-
-    .about-publication-standards dt {
-      color: var(--about-green);
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-    }
-
-    .about-publication-standards dd {
-      margin: 0.4rem 0 0;
-      color: #d2ddd7;
-      font-size: 0.9rem;
-      line-height: 1.65;
-    }
-
     .about-contact {
-      padding: clamp(5rem, 9vw, 8rem) 0;
+      padding: clamp(4rem, 7vw, 5.5rem) 0;
       background:
         linear-gradient(115deg, rgba(50, 200, 121, 0.12), transparent 58%),
         var(--about-bg-deep);
@@ -928,9 +654,9 @@
 
     .about-contact-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.48fr);
-      gap: clamp(3rem, 8vw, 8rem);
-      align-items: end;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: clamp(2rem, 6vw, 6rem);
+      align-items: center;
       padding-top: 2rem;
       border-top: 1px solid var(--about-green);
     }
@@ -940,7 +666,7 @@
       margin: 0;
       color: #f4f3ec;
       font-family: Georgia, Cambria, "Times New Roman", serif;
-      font-size: clamp(2.5rem, 5.5vw, 5rem);
+      font-size: clamp(2rem, 4vw, 3.4rem);
       font-weight: 500;
       letter-spacing: -0.05em;
       line-height: 1;
@@ -955,28 +681,8 @@
     }
 
     .about-contact-aside {
-      padding-left: 1.5rem;
-      border-left: 1px solid var(--about-line-strong);
-    }
-
-    .about-contact-aside p {
-      margin: 0 0 1.25rem;
-      color: #d4dfd9;
-      font-size: 0.89rem;
-      line-height: 1.65;
-    }
-
-    .about-citation-note {
-      padding: 1.25rem 0;
-      border-top: 1px solid var(--about-line);
-      border-bottom: 1px solid var(--about-line);
-      color: var(--about-muted);
-      font-size: 0.84rem;
-      line-height: 1.7;
-    }
-
-    .about-citation-note strong {
-      color: var(--about-text);
+      padding: 0;
+      border: 0;
     }
 
     .about-disclaimer {
@@ -1032,36 +738,12 @@
         min-height: auto;
       }
 
-      .about-dossier {
-        max-width: 700px;
-        padding: 1.5rem 0 0;
-        border-top: 1px solid var(--about-line-strong);
-        border-left: 0;
-      }
-
-      .about-dossier dl {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1.25rem;
-      }
-
       .about-section-header {
         grid-template-columns: 1fr;
         gap: 1.35rem;
       }
 
-      .about-study {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .about-study-index strong {
-        display: inline;
-        margin: 0 0 0 0.5rem;
-        font-size: 1rem;
-      }
-
-      .about-reference-grid {
+      .about-study-list {
         grid-template-columns: 1fr;
       }
 
@@ -1069,15 +751,14 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .about-publication-grid,
       .about-contact-grid {
         grid-template-columns: 1fr;
       }
 
       .about-contact-aside {
         max-width: 680px;
-        padding: 1.5rem 0 0;
-        border-top: 1px solid var(--about-line-strong);
+        padding: 0;
+        border-top: 0;
         border-left: 0;
       }
     }
@@ -1092,7 +773,7 @@
       }
 
       .about-hero h1 {
-        font-size: clamp(3.35rem, 17vw, 5.2rem);
+        font-size: clamp(2.9rem, 14vw, 4.4rem);
       }
 
       .about-index-inner {
@@ -1103,24 +784,8 @@
         margin-top: 0.4rem;
       }
 
-      .about-focus-grid,
-      .about-method-grid {
+      .about-focus-grid {
         grid-template-columns: 1fr;
-      }
-
-      .about-evidence-key {
-        grid-template-columns: 1fr;
-      }
-
-      .about-evidence-key div + div {
-        padding-left: 0;
-        border-top: 1px solid var(--about-line);
-        border-left: 0;
-      }
-
-      .about-dossier dl {
-        grid-template-columns: 1fr;
-        gap: 0;
       }
 
       .about-books-grid {
@@ -1162,11 +827,7 @@
       }
 
       .about-hero h1 {
-        font-size: clamp(3rem, 19vw, 4.5rem);
-      }
-
-      .about-hero-actions {
-        display: grid;
+        font-size: clamp(2.75rem, 17vw, 4rem);
       }
 
       .about-button {
@@ -1225,33 +886,11 @@
     <section class="about-hero" aria-labelledby="kyle-parrott">
       <div class="about-shell about-hero-inner">
         <div>
-          <p class="about-eyebrow">Independent market research · Authorship · Publishing</p>
+          <p class="about-eyebrow">About</p>
           <h1 id="kyle-parrott">Kyle Parrott</h1>
           <p class="about-hero-role">Independent market researcher, author, and publisher of Grizzly Parrot Trading.</p>
-          <p class="about-hero-lede">Kyle researches futures, currencies, market structure, liquidity, execution, risk, and cross-market behavior. He publishes original studies, long-form market work, books, and practical educational material through Grizzly Parrot Trading.</p>
-          <div class="about-hero-actions">
-            <a class="about-button about-button--primary" href="#research">Explore original research</a>
-            <a class="about-button" href="/books/">View published books</a>
-          </div>
+          <p class="about-hero-lede">Kyle researches futures, currencies, market structure, liquidity, execution, risk, and related market behavior. He publishes original studies, educational guides, and books through Grizzly Parrot Trading.</p>
         </div>
-
-        <aside class="about-dossier" aria-label="Research profile">
-          <p class="about-dossier-label">Research profile</p>
-          <dl>
-            <div>
-              <dt>Primary markets</dt>
-              <dd>Futures and foreign exchange, with related work across metals, energy, equities, and rates.</dd>
-            </div>
-            <div>
-              <dt>Core questions</dt>
-              <dd>How contracts, liquidity, policy, execution, risk, and cross-market relationships work in practice.</dd>
-            </div>
-            <div>
-              <dt>Publishing standard</dt>
-              <dd>Primary sources where available, transparent calculations, and explicit limits on what the evidence can establish.</dd>
-            </div>
-          </dl>
-        </aside>
       </div>
     </section>
 
@@ -1260,11 +899,10 @@
         <span class="about-index-label">On this page</span>
         <nav aria-label="About page sections">
           <a href="#focus">Research focus</a>
-          <a href="#methodology">Methodology</a>
-          <a href="#research">Published studies</a>
+          <a href="#research">Selected research</a>
           <a href="#books">Books</a>
-          <a href="#publication">The publication</a>
-          <a href="#publishers">Publisher resources</a>
+          <a href="#publication">Grizzly Parrot Trading</a>
+          <a href="#contact">Contact</a>
         </nav>
       </div>
     </div>
@@ -1272,10 +910,10 @@
     <section class="about-section" id="focus" aria-labelledby="focus-title">
       <div class="about-shell">
         <header class="about-section-header">
-          <span class="about-section-marker">01 · Research focus</span>
+          <span class="about-section-marker">Research focus</span>
           <div>
-            <h2 id="focus-title">Markets are studied as systems, not isolated charts.</h2>
-            <p>The work starts with the mechanics underneath price: what the instrument represents, where liquidity forms, which institution controls the relevant rule or record, and when relationships change across regimes.</p>
+            <h2 id="focus-title">What Kyle researches</h2>
+            <p>The work focuses on how financial markets function, how their underlying mechanics shape price and execution, and how those relationships change over time.</p>
           </div>
         </header>
 
@@ -1284,154 +922,57 @@
             <span class="about-focus-number">01</span>
             <div>
               <h3>Futures and contract mechanics</h3>
-              <p>Contract specifications, tick value, expiration, settlement, delivery, margin, and liquidity migration across delivery months. Browse the <a href="/futures-basics/">futures research library</a>.</p>
+              <p>Contract specifications, tick value, expiration, settlement, margin, and liquidity across delivery months.</p>
             </div>
           </li>
           <li>
             <span class="about-focus-number">02</span>
             <div>
               <h3>Currencies and central-bank policy</h3>
-              <p>Foreign-exchange futures, rate differentials, policy transmission, official intervention, quote conventions, and the links between cash and futures markets. Explore <a href="/currencies/">currency research</a>.</p>
+              <p>Foreign-exchange futures, rate differentials, policy transmission, intervention, and the links between cash and futures markets.</p>
             </div>
           </li>
           <li>
             <span class="about-focus-number">03</span>
             <div>
-              <h3>Liquidity, execution, and order mechanics</h3>
-              <p>Order books, queue priority, spread, slippage, order types, market impact, and the difference between a displayed price and an executable result.</p>
+              <h3>Market structure, liquidity, and execution</h3>
+              <p>Order books, spreads, slippage, market impact, and the difference between a displayed price and an executable result.</p>
             </div>
           </li>
           <li>
             <span class="about-focus-number">04</span>
             <div>
-              <h3>Risk and practical measurement</h3>
-              <p>Position sizing, drawdown, leverage, contract exposure, execution cost, and the units required to turn a market move into a defensible dollar estimate.</p>
-            </div>
-          </li>
-          <li>
-            <span class="about-focus-number">05</span>
-            <div>
-              <h3>Cross-market and regime behavior</h3>
-              <p>Relationships among yields, currencies, <a href="/metals/">metals</a>, <a href="/energies/">energy</a>, and equities—and the reasons a useful historical relationship can weaken or reverse.</p>
-            </div>
-          </li>
-          <li>
-            <span class="about-focus-number">06</span>
-            <div>
-              <h3>Historical and institutional records</h3>
-              <p>Government actions, central-bank roles, exchange rules, regulatory definitions, and historical market data examined with clearly defined samples and scope.</p>
+              <h3>Cross-market and historical research</h3>
+              <p>Relationships among yields, currencies, metals, energy, and equities across different events and market regimes.</p>
             </div>
           </li>
         </ul>
-      </div>
-    </section>
 
-    <section class="about-section about-section--tonal" id="methodology" aria-labelledby="methodology-title">
-      <div class="about-shell">
-        <header class="about-section-header">
-          <span class="about-section-marker">02 · Methodology</span>
-          <div>
-            <h2 id="methodology-title">Evidence first. Interpretation second.</h2>
-            <p>Research is designed to show its work. A reader should be able to identify the source, understand the calculation, see the limits, and decide whether the conclusion is supported.</p>
-          </div>
-        </header>
-
-        <p class="about-method-statement">The question is not whether a market story sounds plausible. It is <em>what the record establishes.</em></p>
-
-        <ol class="about-method-grid">
-          <li>
-            <h3>Define the question and scope</h3>
-            <p>Set the market, instrument, dates, event definition, frequency, and comparison before drawing a conclusion.</p>
-          </li>
-          <li>
-            <h3>Start with the controlling source</h3>
-            <p>Use the government, central bank, exchange, regulator, or first-party record responsible for the fact whenever one is available.</p>
-          </li>
-          <li>
-            <h3>Make calculations inspectable</h3>
-            <p>Identify the input series, transformations, formulas, windows, and rounding so calculated results can be reproduced or challenged.</p>
-          </li>
-          <li>
-            <h3>Keep categories distinct</h3>
-            <p>Documented facts, observable data, calculated values, market interpretation, and practical implications are not treated as interchangeable.</p>
-          </li>
-          <li>
-            <h3>State what the evidence misses</h3>
-            <p>A daily observation does not become an intraday timestamp. A cash-market proxy does not become a continuous futures backtest. Missing evidence stays missing.</p>
-          </li>
-          <li>
-            <h3>Avoid promises of certainty</h3>
-            <p>Historical relationships and event responses are presented as evidence within a defined sample—not as guaranteed forecasts or trade signals.</p>
-          </li>
-        </ol>
-
-        <p class="about-source-line"><strong>Sources commonly used:</strong> government and central-bank records; exchange specifications and rulebooks; regulatory material; official historical datasets; public market data; contract documentation; and other first-party records relevant to the question.</p>
-
-        <div class="about-evidence-key" aria-label="Editorial evidence distinctions">
-          <div>
-            <span>Documented fact</span>
-            <p>A claim directly supported by an authoritative record, specification, release, or rule.</p>
-          </div>
-          <div>
-            <span>Observed or calculated</span>
-            <p>A value taken from data or derived with a disclosed method and defined sample.</p>
-          </div>
-          <div>
-            <span>Interpretation</span>
-            <p>An explanation of what the evidence may mean, kept separate from what it proves.</p>
-          </div>
-        </div>
+        <p class="about-method-note"><strong>Research approach.</strong> Work published by Grizzly Parrot Trading generally starts with primary or authoritative records where available, including government and central-bank records, exchange documentation, regulatory material, historical datasets, and market data. Calculations, assumptions, sample definitions, and limitations are stated where they materially affect the result.</p>
       </div>
     </section>
 
     <section class="about-section" id="research" aria-labelledby="research-title">
       <div class="about-shell">
         <header class="about-section-header">
-          <span class="about-section-marker">03 · Original research</span>
+          <span class="about-section-marker">Selected research</span>
           <div>
-            <h2 id="research-title">Published studies with sources, methods, and limits in view.</h2>
-            <p>The strongest research pages are built to be useful beyond trading commentary. They define the sample, link the underlying records, disclose transformations, and separate supported findings from claims the data cannot make.</p>
+            <h2 id="research-title">Examples of the work</h2>
+            <p>A small selection from the full research library.</p>
           </div>
         </header>
 
         <div class="about-study-list">
           <article class="about-study">
-            <div class="about-study-index">Official-record event study<strong>10 dates</strong></div>
-            <div>
-              <h3><a href="/futures-basics/6j-boj-intervention-signals.html">Japan’s Yen Intervention and 6J Futures</a></h3>
-              <p class="about-study-summary">A defined study of 10 confirmed dollar-selling, yen-buying dates in 2022, 2024, and 2026. The research matches Japan Ministry of Finance intervention records to Federal Reserve daily exchange-rate observations, explains the Ministry and Bank of Japan roles, translates the quote direction for 6J, and states why daily data cannot establish exact intraday timing or causation.</p>
-              <p class="about-study-sources">Primary record set · Japan Ministry of Finance · Bank of Japan · Federal Reserve H.10 · CME Group</p>
-              <a class="about-text-link" href="/futures-basics/6j-boj-intervention-signals.html">Read the verified event study</a>
-            </div>
+            <h3><a href="/futures-basics/6j-boj-intervention-signals.html">Japan’s Yen Intervention and 6J Futures</a></h3>
+            <p class="about-study-summary">An event study matching confirmed Japanese intervention dates with daily yen observations and 6J futures context.</p>
+            <a class="about-text-link" href="/futures-basics/6j-boj-intervention-signals.html">Read research</a>
           </article>
 
           <article class="about-study">
-            <div class="about-study-index">Cross-market historical study<strong>318 months</strong></div>
-            <div>
-              <h3><a href="/futures-basics/6j-yield-spread-model.html">U.S.–Japan Yield Spreads and 6J Direction</a></h3>
-              <p class="about-study-summary">A January 2000 through June 2026 monthly study of U.S. and Japanese 10-year yields and a JPY/USD-direction cash proxy. It reports descriptive correlations across horizons and regimes, identifies overlapping-window and proxy limitations, and does not present the result as a continuous-futures backtest or fixed trading rule.</p>
-              <p class="about-study-sources">Open data · Federal Reserve Board · OECD via FRED · Bank for International Settlements · CME Group</p>
-              <a class="about-text-link" href="/futures-basics/6j-yield-spread-model.html">Read the yield-spread study</a>
-            </div>
-          </article>
-        </div>
-
-        <h3 class="about-reference-heading">Selected source-based reference work</h3>
-        <div class="about-reference-grid">
-          <article>
-            <span>Market structure</span>
-            <h3><a href="/futures-basics/gc-market-microstructure.html">GC Gold Futures Microstructure</a></h3>
-            <p>Contract rules, order-book mechanics, queue priority, liquidity, roll, slippage, and execution cost grounded in CME and CFTC material.</p>
-          </article>
-          <article>
-            <span>Execution research</span>
-            <h3><a href="/futures-basics/futures-slippage-explained.html">Futures Slippage: Order Book to Dollar Cost</a></h3>
-            <p>A practical framework for benchmarks, spread, market impact, queue risk, order types, fill records, and conservative cost measurement.</p>
-          </article>
-          <article>
-            <span>Contract mechanics</span>
-            <h3><a href="/futures-basics/contract-expiration-and-roll.html">Futures Expiration and Roll</a></h3>
-            <p>Exchange clocks, liquidity migration, contract codes, settlement, delivery, and continuous-chart limits tied to official exchange sources.</p>
+            <h3><a href="/futures-basics/6j-yield-spread-model.html">U.S.–Japan Yield Spreads and 6J Direction</a></h3>
+            <p class="about-study-summary">A monthly study of U.S.–Japan 10-year yield spreads and yen direction across different market regimes.</p>
+            <a class="about-text-link" href="/futures-basics/6j-yield-spread-model.html">Read research</a>
           </article>
         </div>
       </div>
@@ -1440,10 +981,10 @@
     <section class="about-books" id="books" aria-labelledby="books-title">
       <div class="about-shell">
         <header class="about-section-header">
-          <span class="about-section-marker">04 · Books and long-form work</span>
+          <span class="about-section-marker">Books</span>
           <div>
             <h2 id="books-title">The Market Structure Series</h2>
-            <p>Written by Kyle Parrott and published by Grizzly Parrot Trading, the three-volume series connects instruments, participants, liquidity, catalysts, correlations, execution, and risk across major market systems.</p>
+            <p>Kyle Parrott is the author of the three-volume Market Structure Series, published by Grizzly Parrot Trading.</p>
           </div>
         </header>
 
@@ -1455,8 +996,7 @@
             <div class="about-book-copy">
               <span class="about-book-volume">Volume I</span>
               <h3><a href="/books/currency-market-structure/">Currency Market Structure</a></h3>
-              <p>Liquidity tiers, global sessions, funding currencies, commodity exposure, and the shared capital flows that connect the currency complex.</p>
-              <a class="about-text-link" href="/books/currency-market-structure/">View the book</a>
+              <p>Liquidity, global sessions, funding currencies, and the flows connecting currency markets.</p>
             </div>
           </article>
 
@@ -1467,8 +1007,7 @@
             <div class="about-book-copy">
               <span class="about-book-volume">Volume II</span>
               <h3><a href="/books/metals-market-structure/">Metals Market Structure</a></h3>
-              <p>Gold, silver, copper, platinum, and palladium examined as a connected system across monetary, industrial, liquidity, and supply regimes.</p>
-              <a class="about-text-link" href="/books/metals-market-structure/">View the book</a>
+              <p>Gold, silver, copper, platinum, and palladium across monetary, industrial, and supply regimes.</p>
             </div>
           </article>
 
@@ -1479,15 +1018,13 @@
             <div class="about-book-copy">
               <span class="about-book-volume">Volume III</span>
               <h3><a href="/books/equity-market-structure/">Equity Market Structure</a></h3>
-              <p>Index futures, cash equities, ETFs, sectors, volatility, and individual stocks treated as one connected equity-market system.</p>
-              <a class="about-text-link" href="/books/equity-market-structure/">View the book</a>
+              <p>Index futures, cash equities, ETFs, sectors, volatility, and stocks as one connected system.</p>
             </div>
           </article>
         </div>
 
         <div class="about-books-footer">
-          <p>The site’s shorter research answers focused questions. The books connect those mechanics into longer frameworks for studying liquidity hierarchies, market regimes, and cross-market behavior.</p>
-          <a class="about-button" href="/books/">Explore all three volumes</a>
+          <a class="about-button" href="/books/">View all books →</a>
         </div>
       </div>
     </section>
@@ -1495,58 +1032,28 @@
     <section class="about-section about-section--tonal" id="publication" aria-labelledby="publication-title">
       <div class="about-shell">
         <header class="about-section-header">
-          <span class="about-section-marker">05 · The publication</span>
+          <span class="about-section-marker">The publication</span>
           <div>
             <h2 id="publication-title">About Grizzly Parrot Trading</h2>
-            <p>An independent publication and searchable market library built around detailed research, long-form work, and practical market education.</p>
+            <p>Grizzly Parrot Trading is an independent market research and education publication created by Kyle Parrott. It publishes original studies, market-structure research, reference material, educational guides, and long-form work focused primarily on futures and related financial markets.</p>
           </div>
         </header>
-
-        <div class="about-publication-grid">
-          <div class="about-publication-copy">
-            <p><strong>Research is the publication’s central identity.</strong> Grizzly Parrot Trading studies how futures and related markets are structured, how contracts and institutions shape the available evidence, and how liquidity, policy, execution, and risk interact.</p>
-            <p>The broader library also includes focused educational guides, calculators, and reference material. Those resources translate market mechanics into usable terms without turning the publication into a promise of predictions, shortcuts, or certainty.</p>
-            <p>Authority here comes from the work itself: source-linked claims, defined samples, disclosed calculations, careful wording, and visible limitations.</p>
-          </div>
-
-          <dl class="about-publication-standards">
-            <div>
-              <dt>Independent</dt>
-              <dd>Published under the Grizzly Parrot Trading name, without claiming institutional employment or professional designations.</dd>
-            </div>
-            <div>
-              <dt>Research-oriented</dt>
-              <dd>Built around records, market data, specifications, and mechanics rather than dramatic forecasts.</dd>
-            </div>
-            <div>
-              <dt>Practical</dt>
-              <dd>Written so readers can trace the evidence and apply the concepts to real instruments and questions.</dd>
-            </div>
-            <div>
-              <dt>Open to correction</dt>
-              <dd>Questions, corrections, and source clarifications can be submitted through the contact page.</dd>
-            </div>
-          </dl>
-        </div>
       </div>
     </section>
 
-    <section class="about-contact" id="publishers" aria-labelledby="publishers-title">
+    <section class="about-contact" id="contact" aria-labelledby="contact-title">
       <div class="about-shell">
         <div class="about-contact-grid">
           <div>
-            <p class="about-eyebrow">For publishers, journalists, and researchers</p>
-            <h2 id="publishers-title">Citations and serious research inquiries are welcome.</h2>
-            <p>Journalists, financial publishers, brokers, researchers, educators, and financial organizations may contact Kyle regarding sources, methodology, datasets, calculations, corrections, or published studies.</p>
+            <p class="about-eyebrow">Contact</p>
+            <h2 id="contact-title">Get in touch</h2>
+            <p>Questions, corrections, or business inquiries can be sent through the contact page.</p>
           </div>
 
           <aside class="about-contact-aside">
-            <p>For the clearest context, include the title or URL of the study and the specific claim, figure, source, or method you are asking about.</p>
-            <a class="about-button about-button--primary" href="/contact.html">Contact Kyle Parrott</a>
+            <a class="about-button about-button--primary" href="/contact.html">Contact →</a>
           </aside>
         </div>
-
-        <p class="about-citation-note"><strong>Citing the work:</strong> Link to the original research page whenever possible so readers can review the source list, sample, methodology, calculations, and stated limitations in context.</p>
       </div>
     </section>
 
