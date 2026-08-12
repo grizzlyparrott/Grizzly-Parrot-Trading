@@ -2,294 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reading Market Structure in 6J: Swing Points, Breaks, and Imbalances</title>
-  <meta name="description" content="A blunt guide to reading market structure in 6J—swing highs, swing lows, breaks of structure, imbalances, and how Yen trends actually form.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6j-market-structure-basics.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Reading Market Structure in 6J: Swing Points, Breaks, and Imbalances">
-  <meta property="og:description" content="A blunt guide to reading market structure in 6J—swing highs, swing lows, breaks of structure, imbalances, and how Yen trends actually form.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6j-market-structure-basics.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Reading Market Structure in 6J: Swing Points, Breaks, and Imbalances">
-  <meta name="twitter:description" content="A blunt guide to reading market structure in 6J—swing highs, swing lows, breaks of structure, imbalances, and how Yen trends actually form.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Reading Market Structure in 6J: Swing Points, Breaks, and Imbalances",
-  "description": "A blunt guide to reading market structure in 6J—swing highs, swing lows, breaks of structure, imbalances, and how Yen trends actually form.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6j-market-structure-basics.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6j-market-structure-basics.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Market Basics",
-      "item": "https://grizzlyparrottrading.com/market-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Reading Market Structure in 6J: Swing Points, Breaks, and Imbalances",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6j-market-structure-basics.html"
-    }
-  ]
-}
-</script>
-
+  <title>6J Market Structure | Objective Trend, Range &amp; Break Rules</title>
+  <meta name="description" content="Objective 6J market structure: define swings, trends, ranges, acceptance, failed breaks, imbalance context, timeframes and invalidation.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6j-market-structure-basics.html">
+  <meta property="og:title" content="6J Market Structure: Define the Chart Before You Trade It"><meta property="og:description" content="Replace hindsight labels with testable swing, trend, range, acceptance, failed-break, timeframe and invalidation rules."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6j-market-structure-basics.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-12">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6J Market Structure Without Hindsight"><meta name="twitter:description" content="Objective definitions for 6J swings, trends, ranges, acceptance, failed breaks, imbalance and invalidation."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="6j-evidence-guides.css?v=20260807b">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){window.dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6J Market Structure: Objective Trend, Range and Break Rules","description":"A testable Japanese Yen futures market-structure framework covering swing definitions, trends, ranges, close-and-acceptance, failed breaks, imbalance context, multiple timeframes, sessions, macro overlays and invalidation.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6j-market-structure-basics.html"},"datePublished":"2025-11-24","dateModified":"2026-08-12","url":"https://grizzlyparrottrading.com/futures-basics/6j-market-structure-basics.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6J Market Structure","item":"https://grizzlyparrottrading.com/futures-basics/6j-market-structure-basics.html"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What defines an uptrend in 6J market structure?","acceptedAnswer":{"@type":"Answer","text":"A testable definition is a sequence of confirmed swing highs and swing lows in which the latest confirmed high and low are both above their prior counterparts on the selected timeframe. The swing algorithm and timeframe must be fixed before analysis."}},{"@type":"Question","name":"Does a wick through a 6J level confirm a breakout?","acceptedAnswer":{"@type":"Answer","text":"Not under a close-and-acceptance rule. A wick records that price traded beyond the level, but confirmation requires a defined close beyond it plus the chosen acceptance condition, such as time held, a retest or additional closes."}},{"@type":"Question","name":"Is a fair value gap in 6J proof of institutional orders?","acceptedAnswer":{"@type":"Answer","text":"No. A three-bar price gap or imbalance is an observable chart pattern, not proof of who traded, why they traded or that price must return. Treat it as context and test its behavior with explicit rules."}},{"@type":"Question","name":"Which timeframe is best for 6J market structure?","acceptedAnswer":{"@type":"Answer","text":"No timeframe is universally best. Use a fixed hierarchy tied to the holding period, such as a higher timeframe for regime and major levels, an intermediate timeframe for structure and a lower timeframe for execution."}}]}</script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main><section class="section"><article class="container article-content yen-evidence">
 <!-- ARTICLE BODY START -->
+<header class="yj-hero"><div class="yj-hero-copy"><p class="yj-kicker">Price framework &middot; 6J / JPY-USD</p><h1>6J Market Structure: Define the Chart Before You Trade It</h1><p class="yj-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 12, 2026</p><p class="yj-hero-lede">Market structure is useful only when two people can label the same 6J chart the same way without seeing the future. Define swings, trend, range, acceptance and failure in advance. Otherwise every losing break becomes a &ldquo;liquidity grab&rdquo; after the fact and nothing can be tested.</p><div class="yj-hero-actions"><a class="button-primary" href="#definitions">Use the objective definitions</a><a class="yj-text-link" href="#workflow">Run the chart workflow</a></div><dl class="yj-hero-metrics"><div><dt>Swing rule</dt><dd>Fixed</dd></div><div><dt>Break rule</dt><dd>Close + accept</dd></div><div><dt>Actor inference</dt><dd>None</dd></div><div><dt>Invalidation</dt><dd>Required</dd></div></dl></div>
+<div class="yj-hero-visual"><div class="yj-market-board"><div class="yj-board-head"><span>Hypothetical sequence</span><strong>Observation before narrative</strong></div><svg class="yj-board-chart" viewBox="0 0 520 220" role="img" aria-labelledby="structure-chart-title structure-chart-desc"><title id="structure-chart-title">Hypothetical higher-high and higher-low sequence</title><desc id="structure-chart-desc">A simplified line shows two confirmed higher swing highs and higher swing lows, followed by a close below the latest higher low that invalidates the sequence.</desc><line class="grid-line" x1="20" y1="45" x2="500" y2="45"></line><line class="grid-line" x1="20" y1="115" x2="500" y2="115"></line><line class="grid-line" x1="20" y1="185" x2="500" y2="185"></line><polyline class="yen-line" points="25,170 95,70 155,135 230,50 300,110 380,32 450,128 495,160"></polyline><text x="95" y="62">SH1</text><text x="155" y="151">SL1</text><text x="230" y="42">SH2</text><text x="300" y="126">SL2</text><text x="380" y="24">SH3</text><text x="450" y="144">Break</text></svg><div class="yj-board-legend"><span class="is-yen">Observed swing path</span><span>Labels require a fixed rule</span></div><p class="yj-board-foot"><span>Illustration only</span><span>Not a live signal</span></p></div></div></header>
 
+<nav class="yj-jump-nav" aria-label="On this page"><a href="#bottom-line">Bottom line</a><a href="#definitions">Definitions</a><a href="#acceptance">Breaks</a><a href="#timeframes">Timeframes</a><a href="#imbalance">Imbalance</a><a href="#macro">Macro</a><a href="#workflow">Workflow</a><a href="#faq">FAQ</a></nav>
 
+<section class="yj-section" id="bottom-line" aria-labelledby="bottom-title"><div class="yj-section-heading"><p class="yj-kicker">Direct answer</p><h2 id="bottom-title">Structure Describes Price; It Does Not Identify the Trader</h2><p>Price and time are observable. A bar high, close, range boundary and futures volume can be measured. &ldquo;Institutions hunted stops here&rdquo; is an actor-and-intent claim that the chart alone cannot prove. Keep the description clean, then build a hypothesis that can fail.</p></div><div class="yj-caution"><strong>Use the exact contract</strong><p>A continuous 6J series can splice expiries and may back-adjust history. That is useful for some analysis but can alter visible price levels. Mark structure and execute from the exact contract month, and document any roll adjustment used in research.</p></div></section>
 
-<h1>Reading Market Structure in 6J: Swing Points, Breaks, and Imbalances</h1>
-
-
-
-<p><strong>6J futures</strong> have some of the cleanest market structure on the entire CME currency board. Trends are clearer, reversals are sharper, and imbalances stand out more than they do in something noisy like ES or NQ. If you can read structure, you can trade 6J profitably.</p>
-
-
-
-<h2>Identifying Swing Highs and Swing Lows</h2>
-
-<p>6J produces clean, well-defined swing points because liquidity is centralized and the market respects institutional levels. A valid swing is simply:</p>
-
-
-
-<ul>
-
-<li>price pushes in one direction</li>
-
-<li>fails to continue</li>
-
-<li>reverses cleanly</li>
-
-</ul>
-
-
-
-<p>If you need more background, check the article on <a href="https://grizzlyparrottrading.com/market-basics/market-auction-basics.html">market auction basics</a> — swings form where auction efficiency breaks down.</p>
-
-
-
-<h2>Break of Structure (BOS) in 6J</h2>
-
-<p>Because 6J trends so well during Asian hours, BOS events tend to stick. When price breaks a previous swing high or low with strength, the trend usually continues.</p>
-
-
-
-<table>
-
-<tr><th>BOS Type</th><th>Meaning</th></tr>
-
-<tr><td>Bullish BOS</td><td>Fresh demand entering the market</td></tr>
-
-<tr><td>Bearish BOS</td><td>Fresh supply pushing down</td></tr>
-
-</table>
-
-
-
-<p>This pattern shows up constantly around BOJ windows, which you covered in <a href="https://grizzlyparrottrading.com/futures-basics/how-6j-reacts-to-boj-policy.html">your BOJ policy article</a>.</p>
-
-
-
-<h2>Imbalances and Inefficiencies</h2>
-
-<p>6J prints some of the cleanest imbalances of any FX-related future. Thin areas, gaps, and liquidity voids act like magnets for price. These inefficiencies form when:</p>
-
-
-
-<ul>
-
-<li>news hits during low-liquidity periods</li>
-
-<li>BOJ comments shock the market</li>
-
-<li>U.S. Treasury yields spike unexpectedly</li>
-
-</ul>
-
-
-
-<p>For deeper detail, tie this into your existing <a href="https://grizzlyparrottrading.com/market-basics/liquidity-voids-what-empty-price-areas-mean-for-future-moves.html">liquidity void</a> content.</p>
-
-
-
-<h2>Trend Structure in 6J</h2>
-
-<p>Clean trends in 6J follow a simple pattern:</p>
-
-
-
-<ul>
-
-<li>Higher highs + higher lows = bullish</li>
-
-<li>Lower highs + lower lows = bearish</li>
-
-</ul>
-
-
-
-<p>The Tokyo–Singapore overlap is where these trend structures form most reliably, which lines up with <a href="https://grizzlyparrottrading.com/futures-basics/why-6j-trends-during-asian-session.html">your Asian session article</a>.</p>
-
-
-
-<h2>Where Traders Get Market Structure Wrong</h2>
-
-<ul>
-
-<li>Drawing swings too close together</li>
-
-<li>Ignoring BOS confirmations</li>
-
-<li>Mistaking liquidity grabs for reversals</li>
-
-<li>Trading inside consolidation instead of waiting for expansion</li>
-
-</ul>
-
-
-
-<p>Structure only matters when paired with context — which you covered in <a href="https://grizzlyparrottrading.com/market-basics/market-context-stacking-how-smart-traders-align-multiple-signals.html">context stacking</a>.</p>
-
-
-
-<div class="highlight-box green">
-
-  <h3>Institutional Flow Shapes 6J Structure</h3>
-
-  <p>Swings, breaks of structure, and imbalances reflect dominant market participation. Observing these elements provides context for trend development and highlights how the market organizes itself without implying guaranteed timing.</p>
-
-</div>
-
-
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="yj-section" id="definitions" aria-labelledby="definitions-title"><div class="yj-section-heading"><p class="yj-kicker">A reproducible vocabulary</p><h2 id="definitions-title">Objective Swing, Trend and Range Rules</h2><p>These definitions are examples, not natural laws. Pick one version before testing and keep it unchanged across the sample.</p></div>
+<div class="yj-table-scroll" role="region" aria-label="Objective 6J market-structure definitions" tabindex="0"><table class="yj-table"><thead><tr><th scope="col">Term</th><th scope="col">Example objective definition</th><th scope="col">What it does not prove</th></tr></thead><tbody>
+<tr><th scope="row">Swing high</th><td>A bar whose high exceeds the highs of the two completed bars on each side; confirmed only after the two right-side bars complete</td><td>That sellers are institutional or the level must hold</td></tr><tr><th scope="row">Swing low</th><td>A bar whose low is below the lows of the two completed bars on each side; confirmed after two right-side bars</td><td>That buyers absorbed every order</td></tr><tr><th scope="row">Uptrend</th><td>Latest two confirmed swing highs and lows are each higher than their prior counterpart</td><td>That the next bar or trade will rise</td></tr><tr><th scope="row">Downtrend</th><td>Latest two confirmed swing highs and lows are each lower than their prior counterpart</td><td>That a short entry has positive expectancy</td></tr><tr><th scope="row">Range</th><td>Price remains between fixed confirmed boundaries for a minimum bar count, with at least two tests of each side and no accepted close outside</td><td>That fading either edge is profitable</td></tr><tr><th scope="row">Transition</th><td>Neither trend nor range definition currently passes</td><td>That a new regime can already be named</td></tr>
+</tbody></table></div>
+<p class="yj-source-note">A fractal swing rule confirms late by design. That delay prevents future bars from silently relabeling the past. Other algorithms are valid if they are timestamp-safe and fixed before evaluation.</p>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<section class="yj-section" id="acceptance" aria-labelledby="acceptance-title"><div class="yj-section-heading"><p class="yj-kicker">A trade through is not automatically a break</p><h2 id="acceptance-title">Wick, Close, Acceptance and Failed Break</h2><p>A wick beyond a boundary says only that price traded there. A close says the selected bar ended beyond it. Acceptance adds a persistence rule. The rule can use elapsed time, additional closes, a retest hold or volume, but it must be chosen before the outcome.</p></div>
+<div class="yj-two-column"><article class="yj-panel"><h3>Example close-and-acceptance rule</h3><p>For a five-minute range, call the upside broken only after one five-minute close above the boundary by at least the tested buffer and either a second close above or a retest that does not close back inside. The buffer can be a fixed number of ticks or a fraction of recent true range. Test both; do not optimize it on the same outcomes used to judge performance.</p></article><article class="yj-panel"><h3>Example failed-break rule</h3><p>After price trades and closes beyond the boundary, call the attempt failed if a five-minute bar closes back inside within the next three completed bars and later trades through the opposite side of the breakout bar. Invalidation for a fade belongs beyond the excursion or the rule&rsquo;s volatility buffer, not at an arbitrary universal distance.</p></article></div>
+<p>These labels solve a common chart-reading problem: the difference between a momentary probe and price persisting beyond a reference. They do not supply an entry by themselves. A breakout strategy and a failed-break strategy still need costs, position sizing, event rules and out-of-sample results.</p>
+</section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
+<section class="yj-section" id="timeframes" aria-labelledby="timeframes-title"><div class="yj-section-heading"><p class="yj-kicker">Hierarchy without cherry-picking</p><h2 id="timeframes-title">Give Each Timeframe One Job</h2><p>If every timeframe gets a vote after the trade, one will always justify the decision. Fix the hierarchy to the expected holding period.</p></div>
+<div class="yj-process"><article><span>1</span><h3>Regime frame</h3><p>Example: four-hour chart defines the dominant swing sequence and major weekly levels.</p></article><article><span>2</span><h3>Structure frame</h3><p>Example: 15-minute chart defines the active range, break and invalidation.</p></article><article><span>3</span><h3>Execution frame</h3><p>Example: one- or five-minute chart supplies a prewritten trigger, never the larger thesis.</p></article><article><span>4</span><h3>Review frame</h3><p>Use the same hierarchy in every journal entry and backtest row.</p></article></div>
+<p>Session anchors belong in the same plan. Prior session high and low, the current CME trade date, Tokyo activity, the European open and U.S. data windows can all be useful references. Define their timestamps, timezone and daylight-saving handling. A session label is context, not proof that a level contains special orders.</p>
+</section>
 
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
+<section class="yj-section" id="imbalance" aria-labelledby="imbalance-title"><div class="yj-section-heading"><p class="yj-kicker">Describe the pattern you can see</p><h2 id="imbalance-title">Imbalance and Fair Value Gaps Are Context, Not Magnets</h2><p>A common three-bar &ldquo;fair value gap&rdquo; definition marks an upside gap when bar three&rsquo;s low is above bar one&rsquo;s high, with a strong middle bar between them; reverse it for downside. That is a measurable pattern. It does not prove unfilled institutional orders, fair value or a requirement that price revisit the area.</p></div>
+<div class="yj-proof-grid"><article class="yj-proof"><h3>Testable fields</h3><ul><li>Gap size in ticks and as a fraction of recent true range.</li><li>Session and scheduled-event label at formation.</li><li>Trend, range or transition regime at formation.</li><li>Time until first touch and percentage filled.</li><li>Outcome after touch using fixed horizons and costs.</li></ul></article><article class="yj-proof is-limit"><h3>Claims the bars cannot establish</h3><ul><li>The identity or motive of buyers and sellers.</li><li>That the area is an exchange-wide record of resting orders.</li><li>That all gaps must fill.</li><li>That a touch is a profitable entry.</li><li>That hindsight-selected examples represent the full population.</li></ul></article></div>
+</section>
 
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+<section class="yj-section" id="macro" aria-labelledby="macro-title"><div class="yj-section-heading"><p class="yj-kicker">Price can reprice faster than the label</p><h2 id="macro-title">Overlay Rates, Policy and Intervention Risk</h2><p>6J structure can change abruptly when U.S.-Japan rate expectations move, the BOJ changes guidance, U.S. data reprices yields or Japan intervenes. That does not make structure useless. It means the event state belongs in the record and risk plan.</p></div>
+<div class="yj-check-grid"><article><strong>Scheduled policy</strong><p>Flag BOJ decisions and key U.S. releases before the session. Do not apply ordinary fill and acceptance assumptions through an untested event window.</p></article><article><strong>Rate regime</strong><p>Use measured U.S.-Japan spreads as context, with the documented limits in the site&rsquo;s yield-spread study. A macro relationship is not an intraday trigger.</p></article><article><strong>Intervention claims</strong><p>Call a fast move observed until official MOF records confirm intervention. A candle shape, DOM change or volume spike cannot authenticate the actor.</p></article><article><strong>Futures basis</strong><p>6J is a dated futures contract. Spot inversion describes broad direction, but short-rate basis, expiry and roll can affect exact price levels.</p></article></div>
+<div class="yj-related"><strong>Evidence guides:</strong> Read the <a href="6j-yield-spread-model.html">318-month U.S.-Japan yield-spread study</a> and the <a href="6j-boj-intervention-signals.html">official-record intervention event study</a> for the boundaries between measured context and unsupported causation.</div>
+</section>
 
-  </div>
-</footer>
-</body>
-</html>
+<section class="yj-section" id="workflow" aria-labelledby="workflow-title"><div class="yj-section-heading"><p class="yj-kicker">Annotated hypothetical workflow</p><h2 id="workflow-title">From Blank Chart to Falsifiable Trade Plan</h2><p>Suppose the 15-minute 6J chart has confirmed swings at 0.0066800 high, 0.0066500 low, 0.0066760 lower high and 0.0066530 higher low. Under the definitions above, it is not a clean trend. Treat it as compression inside a 0.0066500&ndash;0.0066800 range until acceptance proves otherwise.</p></div>
+<div class="yj-table-scroll" role="region" aria-label="Hypothetical 6J structure workflow" tabindex="0"><table class="yj-table"><thead><tr><th scope="col">Step</th><th scope="col">Recorded observation</th><th scope="col">Decision</th></tr></thead><tbody>
+<tr><th scope="row">1. Contract</th><td>Exact active expiry; normal spread and no roll migration</td><td>Structure levels are valid for the instrument traded</td></tr><tr><th scope="row">2. Higher frame</th><td>Four-hour sequence is up, but below a prior weekly high</td><td>Context favors upside, not permission to buy anywhere</td></tr><tr><th scope="row">3. Structure frame</th><td>15-minute compression between stated boundaries</td><td>No trend label; wait at an edge or for acceptance</td></tr><tr><th scope="row">4. Event gate</th><td>U.S. release in 12 minutes</td><td>No entry under the ordinary playbook; wait through blackout</td></tr><tr><th scope="row">5. Post-event observation</th><td>Close above 0.0066800, retest holds, spread normalizes</td><td>Upside acceptance rule passes</td></tr><tr><th scope="row">6. Invalidation</th><td>Retest swing low plus tested volatility buffer</td><td>Calculate ticks and dollar risk before order</td></tr><tr><th scope="row">7. Failure</th><td>Close back inside range inside three bars</td><td>Break thesis fails; exit under written rule</td></tr>
+</tbody></table></div>
+<p class="yj-source-note">All prices are hypothetical. The sequence demonstrates classification and invalidation, not a profitable setup or current market view.</p>
+</section>
+
+<section class="yj-section yj-faq" id="faq" aria-labelledby="faq-title"><div class="yj-section-heading"><p class="yj-kicker">Frequently asked questions</p><h2 id="faq-title">6J Market Structure Questions</h2></div>
+<details><summary>What defines an uptrend in 6J market structure?</summary><p>A testable definition is a sequence of confirmed swing highs and swing lows in which the latest confirmed high and low are both above their prior counterparts on the selected timeframe. The swing algorithm and timeframe must be fixed before analysis.</p></details>
+<details><summary>Does a wick through a 6J level confirm a breakout?</summary><p>Not under a close-and-acceptance rule. A wick records that price traded beyond the level, but confirmation requires a defined close beyond it plus the chosen acceptance condition, such as time held, a retest or additional closes.</p></details>
+<details><summary>Is a fair value gap in 6J proof of institutional orders?</summary><p>No. A three-bar price gap or imbalance is an observable chart pattern, not proof of who traded, why they traded or that price must return. Treat it as context and test its behavior with explicit rules.</p></details>
+<details><summary>Which timeframe is best for 6J market structure?</summary><p>No timeframe is universally best. Use a fixed hierarchy tied to the holding period, such as a higher timeframe for regime and major levels, an intermediate timeframe for structure and a lower timeframe for execution.</p></details>
+</section>
+
+<details class="yj-sources"><summary>Sources, methodology and editorial disclosure</summary><ul>
+<li><a href="https://www.cmegroup.com/ja/markets/fx/g10/japanese-yen.volume.html" target="_blank" rel="noopener">CME Group: Japanese Yen futures</a>, <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">FX Product Guide 2026</a> and <a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener">trading-hours calendar</a> for contract and session mechanics.</li>
+<li><a href="https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm" target="_blank" rel="noopener">Bank of Japan monetary-policy meeting schedule</a> for the official policy calendar.</li>
+<li><a href="https://www.boj.or.jp/en/about/education/oshiete/intl/g19.htm" target="_blank" rel="noopener">Bank of Japan: Who decides and conducts intervention?</a> for MOF and BOJ institutional roles.</li>
+<li><a href="https://www.bls.gov/schedule/news_release/" target="_blank" rel="noopener">U.S. Bureau of Labor Statistics release calendar</a> for scheduled U.S. data.</li>
+<li><a href="6j-yield-spread-model.html">Grizzly Parrot Trading 6J yield-spread study</a> and <a href="6j-boj-intervention-signals.html">yen-intervention event study</a> for site-canon empirical boundaries.</li>
+</ul><p>Sources were checked August 12, 2026. Swing, range, acceptance, failed-break and fair-value-gap definitions in this article are explicit hypothetical research conventions, not exchange definitions or validated trading edges. No institutional actor, profitability, win rate or universal timeframe claim is inferred from chart patterns. Grizzly Parrot Trading is not sponsored by the cited institutions.</p></details>
+<aside class="yj-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This article is educational, not individualized trading, investment, legal, tax, accounting, hedging or brokerage advice. Futures are leveraged, can gap or trade through stop prices and can produce losses greater than the margin deposit. Chart labels can fail, market data can differ and specifications or hours can change. Verify the exact contract, current sources and your own risk before trading.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></section></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

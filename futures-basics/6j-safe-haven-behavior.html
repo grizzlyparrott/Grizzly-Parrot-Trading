@@ -2,298 +2,107 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why 6J Acts as a Safe-Haven: Yen Behavior in Risk-Off Markets</title>
-  <meta name="description" content="A blunt breakdown of why 6J Yen futures behave as a safe-haven during global risk-off events and what actually causes the spikes.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6j-safe-haven-behavior.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Why 6J Acts as a Safe-Haven: Yen Behavior in Risk-Off Markets">
-  <meta property="og:description" content="A blunt breakdown of why 6J Yen futures behave as a safe-haven during global risk-off events and what actually causes the spikes.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6j-safe-haven-behavior.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Why 6J Acts as a Safe-Haven: Yen Behavior in Risk-Off Markets">
-  <meta name="twitter:description" content="A blunt breakdown of why 6J Yen futures behave as a safe-haven during global risk-off events and what actually causes the spikes.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Why 6J Acts as a Safe-Haven: Yen Behavior in Risk-Off Markets",
-  "description": "A blunt breakdown of why 6J Yen futures behave as a safe-haven during global risk-off events and what actually causes the spikes.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6j-safe-haven-behavior.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6j-safe-haven-behavior.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Market Basics",
-      "item": "https://grizzlyparrottrading.com/market-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Why 6J Acts as a Safe-Haven: Yen Behavior in Risk-Off Markets",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6j-safe-haven-behavior.html"
-    }
-  ]
-}
-</script>
-
+  <title>Is 6J a Safe Haven? When the Yen Rallies&mdash;and Fails</title>
+  <meta name="description" content="Why 6J Japanese yen futures can rise in risk-off markets, why the safe-haven relationship fails, and how to confirm carry, funding and rate channels.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6j-safe-haven-behavior.html">
+  <meta property="og:title" content="Is 6J a Safe Haven? When the Yen Rallies&mdash;and When It Fails"><meta property="og:description" content="Funding-currency unwinds, external assets, repatriation nuance, dollar liquidity and a confirmation dashboard for risk-off 6J moves."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6j-safe-haven-behavior.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-12">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Is 6J a Safe Haven?"><meta name="twitter:description" content="Why the yen can rally in risk-off markets, why it sometimes does not, and what to verify."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="6j-evidence-guides.css?v=20260807b">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){window.dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Is 6J a Safe Haven? When the Yen Rallies—and When It Fails","description":"An evidence-led guide to yen safe-haven behavior, carry unwinds, Japan's external assets, dollar funding stress, exceptions and confirmation for 6J futures.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6j-safe-haven-behavior.html"},"datePublished":"2025-11-24","dateModified":"2026-08-12","url":"https://grizzlyparrottrading.com/futures-basics/6j-safe-haven-behavior.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6J Safe-Haven Behavior","item":"https://grizzlyparrottrading.com/futures-basics/6j-safe-haven-behavior.html"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Is the Japanese yen always a safe-haven currency?","acceptedAnswer":{"@type":"Answer","text":"No. The yen has strengthened during important risk-off episodes, but the response depends on carry positioning, the source of the shock, relative policy expectations, Japan-specific risk and global demand for U.S. dollars."}},
+    {"@type":"Question","name":"Why can 6J rise when stocks fall?","acceptedAnswer":{"@type":"Answer","text":"Risk aversion can force investors to reduce leveraged yen-funded positions and buy yen to close or hedge the funding leg. Because standard 6J is quoted in U.S. dollars per yen, broad yen buying can align with higher 6J prices."}},
+    {"@type":"Question","name":"Does Japan's net international investment position cause automatic repatriation?","acceptedAnswer":{"@type":"Answer","text":"No. The international investment position is a stock, not a transaction. Investors may hedge, hold, sell or add foreign assets, and valuation changes can alter the stock without creating immediate yen demand."}},
+    {"@type":"Question","name":"Why can the yen weaken during a global panic?","acceptedAnswer":{"@type":"Answer","text":"A scramble for U.S. dollar funding can support the dollar broadly, including against the yen. The yen can also weaken when the shock is concentrated in Japan, when U.S. yields reprice higher, or when carry positions are not large enough to force meaningful covering."}},
+    {"@type":"Question","name":"Is a higher VIX enough to buy 6J?","acceptedAnswer":{"@type":"Answer","text":"No. A volatility index is one risk proxy. Confirm the 6J and USD/JPY response, relative yields, dollar funding conditions, equities and credit, and evidence of carry reduction before assigning a yen-safe-haven explanation."}}
+  ]}</script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main><section class="section"><article class="container article-content yen-evidence">
 <!-- ARTICLE BODY START -->
-
-
-
-<h1>Why 6J Acts as a Safe-Haven: Yen Behavior in Risk-Off Markets</h1>
-
-
-
-<p>The <strong>Japanese yen</strong> has been a global safe-haven for decades, and <strong>6J futures</strong> reflect that every time markets panic. When investors dump risk, they run to the yen. If you trade 6J, you need to know why this happens and what signals to watch.</p>
-
-
-
-<h2>The Core Reason: Japan’s Massive Foreign Asset Holdings</h2>
-
-<p>Japan is the world’s largest net creditor nation. Japanese institutions hold trillions in foreign bonds and equities.  
-
-When markets panic, they pull capital back home.</p>
-
-
-
-<ul>
-
-<li>Foreign assets sold</li>
-
-<li>Capital repatriated to Japan</li>
-
-<li>Demand for yen spikes</li>
-
-<li>6J rallies hard</li>
-
-</ul>
-
-
-
-<p>This “repatriation flow” is the engine of yen safe-haven behavior.</p>
-
-
-
-<h2>Risk-Off Events That Trigger 6J Surges</h2>
-
-<p>Not every headline creates safe-haven flow. The ones that matter are tied to global systemic fear:</p>
-
-
-
-<ul>
-
-<li>global equity sell-offs</li>
-
-<li>banking stress</li>
-
-<li>major geopolitical shocks</li>
-
-<li>U.S. Treasury market volatility</li>
-
-</ul>
-
-
-
-<p>This lines up perfectly with what you saw in <a href="https://grizzlyparrottrading.com/futures-basics/6j-volatility-patterns.html">your volatility window article</a>.</p>
-
-
-
-<h2>Why 6J Reacts Faster Than USDJPY During Panic</h2>
-
-<p>USDJPY is filtered through the fragmented FX market.  
-
-6J is centralized on the CME, so fear hits the futures book immediately.</p>
-
-
-
-<table>
-
-<tr><th>Market</th><th>Response Speed</th></tr>
-
-<tr><td>6J Futures</td><td>Fast, unified reaction</td></tr>
-
-<tr><td>USDJPY FX</td><td>Slightly slower, more fragmented</td></tr>
-
-</table>
-
-
-
-<p>This makes 6J one of the cleanest instruments for reading risk sentiment in real time.</p>
-
-
-
-<h2>The Role of U.S. Treasury Yields</h2>
-
-<p>When yields collapse, the yen rallies. Period.  
-
-This is why 6J pops during panic: falling yields kill carry trades and force unwind.</p>
-
-
-
-<p>If you need a refresher on why yield shifts ripple into currency futures, see <a href="https://grizzlyparrottrading.com/futures-basics/6j-and-bond-yields-relationship.html">your Treasury yields breakdown</a>.</p>
-
-
-
-<h2>How to Use Safe-Haven Flow in Trading</h2>
-
-<p>You don’t need to predict fear — you just need to read it quickly.</p>
-
-
-
-<ul>
-
-<li>Watch S&P futures for sudden downside bursts</li>
-
-<li>Track Treasury yields for fast drops</li>
-
-<li>Monitor VIX spikes</li>
-
-<li>Check market breadth collapses</li>
-
-</ul>
-
-
-
-<p>When these align, 6J often starts a clean upside drive with minimal noise.</p>
-
-
-
-<div class="highlight-box green">
-
-  <h3>6J Reflects Safe-Haven Demand</h3>
-
-  <p>Global risk events often trigger repatriation flows into yen, creating notable moves in 6J. Observing this behavior provides context for how the market reacts during periods of heightened uncertainty without implying predictive certainty.</p>
-
-</div>
-
-
-
-<!-- ARTICLE BODY END -->
-</div>
+<header class="yj-hero">
+  <div class="yj-hero-copy"><p class="yj-kicker">Risk-off mechanics &middot; exceptions first</p><h1>Is 6J a Safe Haven? When the Yen Rallies&mdash;and When It Fails</h1><p class="yj-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 12, 2026</p><p class="yj-hero-lede">The yen can strengthen during market stress, but "stocks down, 6J up" is not a law. Safe-haven behavior is an outcome produced by funding, positioning, relative shocks and liquidity. If those channels are absent&mdash;or dollar demand is stronger&mdash;the yen can disappoint.</p><div class="yj-hero-actions"><a class="button-primary" href="#channels">Trace the channels</a><a class="yj-text-link" href="#dashboard">Confirm the move</a></div><dl class="yj-hero-metrics" aria-label="Safe-haven framework"><div><dt>Core channel</dt><dd>Carry unwind</dd></div><div><dt>Structural fact</dt><dd>Net creditor</dd></div><div><dt>Competing haven</dt><dd>U.S. dollar</dd></div><div><dt>Rule</dt><dd>Never automatic</dd></div></dl></div>
+  <div class="yj-hero-visual"><div class="yj-market-board"><div class="yj-board-head"><span>Risk-off fork</span><strong>Find the dominant funding flow</strong></div><div class="yj-two-column"><article class="yj-panel"><p class="yj-card-label">Yen funded</p><h3 role="heading" aria-level="2">Carry is cut</h3><p>Buying yen to close funding can lift 6J.</p></article><article class="yj-panel"><p class="yj-card-label">Dollar funded</p><h3 role="heading" aria-level="2">Cash is demanded</h3><p>A dollar scramble can pressure 6J.</p></article></div><p class="yj-board-foot"><span>Same panic, different currency result</span><span>Confirm in price and rates</span></p></div></div>
+</header>
+<nav class="yj-jump-nav" aria-label="On this page"><a href="#bottom-line">Direct answer</a><a href="#channels">Why it rallies</a><a href="#external">External assets</a><a href="#failures">Why it fails</a><a href="#dashboard">Dashboard</a><a href="#cases">Cases</a><a href="#faq">FAQ</a></nav>
+
+<section class="yj-section" id="bottom-line" aria-labelledby="bottom-line-title"><div class="yj-section-heading"><p class="yj-kicker">Direct answer</p><h2 id="bottom-line-title">6J Is a Conditional Safe-Haven Trade</h2><p>Standard 6J usually rises when the yen strengthens because the contract is quoted in U.S. dollars per yen. During some global shocks, investors close yen-funded positions, reduce foreign risk and buy yen. That can make 6J rally while equities fall. But the result depends on who is funded in what currency, where the shock starts and how relative policy expectations change.</p></div>
+  <div class="yj-two-column"><article class="yj-panel"><p class="yj-card-label">Supported mechanism</p><h3>Funding-currency shorts can amplify tightening</h3><p><a href="https://www.bis.org/publ/bisbull124.htm" target="_blank" rel="noopener">BIS research</a> supports the funding-unwind channel: when short funding positions are substantial, leveraged carry can amplify a currency&rsquo;s response to policy tightening. That is a mechanism, not a promise that every selloff produces yen strength.</p></article><article class="yj-panel"><p class="yj-card-label">Supported caution</p><h3>Several explanations can fit the same chart</h3><p>An <a href="https://www.imf.org/external/pubs/ft/wp/2013/wp13228.pdf" target="_blank" rel="noopener">IMF study of yen safe-haven behavior</a> evaluates carry, external balances and onshore behavior and finds the subject more complicated than simple repatriation folklore.</p></article></div>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="yj-section" id="channels" aria-labelledby="channels-title"><div class="yj-section-heading"><p class="yj-kicker">Why the yen can strengthen</p><h2 id="channels-title">Four Channels Behind a Risk-Off 6J Rally</h2><p>These channels can operate together, but they are not interchangeable. Label the one you can actually observe.</p></div>
+  <div class="yj-limit-grid">
+    <article><strong>1. Yen-funded carry unwind</strong><p>Investors sell target assets and reverse yen funding. Buying the funding currency can lift the yen and 6J. Leverage makes the closing flow faster than the buildup.</p></article>
+    <article><strong>2. Currency-hedge adjustment</strong><p>Asset values, hedge ratios and volatility change during a shock. Japanese institutions may adjust foreign-currency hedges, creating yen demand without selling every foreign asset.</p></article>
+    <article><strong>3. Relative-policy repricing</strong><p>A growth scare can pull expected U.S. rates down faster than expected Japanese rates. The relative return gap narrows, which can support the yen.</p></article>
+    <article><strong>4. Perceived balance-sheet resilience</strong><p>Japan's external creditor position may reduce external-funding vulnerability in some shocks. That structural fact can affect investor behavior, but it does not create an automatic trade.</p></article>
   </div>
-</footer>
-</body>
-</html>
+  <div class="yj-caution"><strong>Direction check</strong><p>Cash USD/JPY is quoted as yen per U.S. dollar, so yen strength normally appears as a lower cash quote. Standard 6J is quoted as U.S. dollars per yen, so yen strength normally appears as a higher futures price. They are directionally inverse, not identical, because a dated future includes basis and time to delivery.</p></div>
+</section>
+
+<section class="yj-section" id="external" aria-labelledby="external-title"><div class="yj-section-heading"><p class="yj-kicker">External-assets nuance</p><h2 id="external-title">Japan Is a Net Creditor. That Still Does Not Prove Repatriation.</h2><p>Japan's Ministry of Finance reported total external assets above total external liabilities and a positive net international investment position at year-end 2025. That is an official balance-sheet fact. It is not evidence that residents sold foreign assets and bought yen on a particular day.</p></div>
+  <div class="yj-stat-grid"><article class="yj-stat"><span>&yen;1,805.6T</span><strong>Total external assets</strong><p>Official year-end 2025 stock, rounded from MOF data.</p></article><article class="yj-stat"><span>&yen;1,243.9T</span><strong>Total external liabilities</strong><p>Official year-end 2025 stock, rounded from MOF data.</p></article><article class="yj-stat"><span>&yen;561.8T</span><strong>Net position</strong><p>Assets minus liabilities, rounded from the official table.</p></article></div>
+  <p class="yj-source-note">Source: <a href="https://www.mof.go.jp/english/policy/international_policy/reference/iip/e2025.htm" target="_blank" rel="noopener">Ministry of Finance, International Investment Position of Japan at year-end 2025</a>, released May 26, 2026. These are stocks measured in yen, subject to valuation and statistical revision. They are not daily flow data.</p>
+  <div class="yj-two-column"><article class="yj-panel"><p class="yj-card-label">What the stock supports</p><h3>Japan owns substantial claims on the rest of the world</h3><p>A positive net position can reduce dependence on foreign financing and generates cross-border investment income. It is relevant to the country's external balance and potential hedging behavior.</p></article><article class="yj-panel"><p class="yj-card-label">What it does not support</p><h3>"Japanese money comes home whenever stocks fall"</h3><p>Investors can keep foreign assets, change hedges, receive income abroad or respond differently across sectors. Exchange-rate valuation can alter the yen value of the stock without a purchase or sale. Use transaction data before claiming repatriation.</p></article></div>
+</section>
+
+<section class="yj-section" id="failures" aria-labelledby="failures-title"><div class="yj-section-heading"><p class="yj-kicker">Failure modes</p><h2 id="failures-title">Five Reasons Risk-Off Can Fail to Lift 6J</h2><p>The word "haven" encourages traders to skip the plumbing. The plumbing is exactly where the exceptions come from.</p></div>
+  <div class="yj-table-scroll" role="region" aria-label="Safe-haven failure modes" tabindex="0"><table class="yj-table"><thead><tr><th scope="col">Failure mode</th><th scope="col">Market mechanism</th><th scope="col">What to verify</th></tr></thead><tbody>
+    <tr><th scope="row">Dollar funding squeeze</th><td>Institutions need dollars to meet liabilities or margins, supporting the dollar broadly</td><td>Funding spreads, FX basis and central-bank dollar operations</td></tr>
+    <tr><th scope="row">Japan-specific shock</th><td>The source of risk directly weakens Japanese assets or expected policy credibility</td><td>Domestic equities, JGBs, BOJ response and regional currencies</td></tr>
+    <tr><th scope="row">U.S. yields rise in the shock</th><td>Inflation or supply concern lifts U.S. relative returns instead of producing a bond rally</td><td>2Y, 10Y, real yields and Japan-relative changes</td></tr>
+    <tr><th scope="row">No crowded yen funding</th><td>There is little forced yen buying because the vulnerable position is elsewhere</td><td>CFTC categories, options skew and cross-asset behavior, all with limits</td></tr>
+    <tr><th scope="row">Official or portfolio counterflow</th><td>Hedging, asset rebalancing or policy flow offsets the carry unwind</td><td>Official releases and measured transaction data, not rumor</td></tr>
+  </tbody></table></div>
+  <div class="yj-caution"><strong>Dollar liquidity can win</strong><p>The Federal Reserve maintains standing dollar swap lines with the BOJ and four other major central banks to improve U.S. dollar liquidity. The existence of that <a href="https://www.federalreserve.gov/monetarypolicy/central-bank-liquidity-swaps.htm" target="_blank" rel="noopener">official backstop</a> reflects a real market problem: global stress can be a demand-for-dollars event, not automatically a demand-for-yen event.</p></div>
+</section>
+
+<section class="yj-section" id="dashboard" aria-labelledby="dashboard-title"><div class="yj-section-heading"><p class="yj-kicker">Confirmation dashboard</p><h2 id="dashboard-title">Do Not Call It a Safe-Haven Move Until the Channels Confirm</h2><p>One red equity candle is not enough. Use a multi-market check and keep the conclusion conditional.</p></div>
+  <div class="yj-table-scroll" role="region" aria-label="Risk-off yen confirmation dashboard" tabindex="0"><table class="yj-table"><thead><tr><th scope="col">Check</th><th scope="col">Consistent with yen-safe-haven demand</th><th scope="col">Contradiction or ambiguity</th></tr></thead><tbody>
+    <tr><th scope="row">6J and cash direction</th><td>6J rises while USD/JPY falls</td><td>They diverge beyond normal basis/contract noise</td></tr>
+    <tr><th scope="row">Relative rates</th><td>U.S. expected rates fall faster than Japan's</td><td>U.S. real or nominal yields rise relative to Japan</td></tr>
+    <tr><th scope="row">Risk assets</th><td>Equities and credit weaken broadly</td><td>Shock is narrow or concentrated in Japan</td></tr>
+    <tr><th scope="row">Volatility</th><td>FX/equity volatility rises with evidence of deleveraging</td><td>Volatility rises but yen-funded exposure is not being reduced</td></tr>
+    <tr><th scope="row">Dollar funding</th><td>No dominant broad dollar shortage</td><td>Dollar funding stress overwhelms other haven flows</td></tr>
+    <tr><th scope="row">Positioning</th><td>Vulnerable yen shorts are reduced</td><td>Weekly data are stale, mixed or do not cover the relevant market</td></tr>
+  </tbody></table></div>
+  <p class="yj-source-note">The CFTC report is weekly and describes covered futures positions as of Tuesday, usually released Friday. It cannot confirm an intraday unwind. Use it as background, not a timestamp.</p>
+</section>
+
+<section class="yj-section" id="cases" aria-labelledby="cases-title"><div class="yj-section-heading"><p class="yj-kicker">Three scenario tests</p><h2 id="cases-title">Same Headline, Different 6J Outcome</h2><p>Scenario analysis is more honest than declaring that risk-off has one currency result.</p></div>
+  <div class="yj-findings-grid">
+    <article class="yj-panel"><p class="yj-card-label">Classic unwind</p><h3>Equities fall, U.S. yields drop, volatility spikes</h3><p>Leveraged target assets lose value, relative U.S. rate support fades and yen funding is closed. A higher 6J price would fit the mechanism. It still needs price confirmation.</p></article>
+    <article class="yj-panel"><p class="yj-card-label">Inflation shock</p><h3>Equities fall, but U.S. yields and the dollar rise</h3><p>The shock tightens financial conditions through higher expected rates. Dollar return and funding demand can pressure 6J even though equities are red. Calling the yen "broken" misses the different shock.</p></article>
+    <article class="yj-panel"><p class="yj-card-label">Japan-specific stress</p><h3>Domestic risk rises while global markets stay calmer</h3><p>Japan's currency can weaken if the shock damages domestic growth, policy credibility or asset demand. Safe-haven labels do not immunize a currency from its home-country risk.</p></article>
+    <article class="yj-panel"><p class="yj-card-label">Funding squeeze</p><h3>Everything liquid is sold for dollars</h3><p>In a severe dollar scramble, both risky assets and other haven currencies can lose against the dollar. Monitor official liquidity operations and cross-currency funding rather than assuming all havens rise together.</p></article>
+  </div>
+  <div class="yj-caution"><strong>Practical checklist</strong><p>Identify the shock source. Check whether the vulnerable trade is yen-funded. Compare U.S. and Japanese rate repricing. Look for broad dollar funding stress. Confirm 6J up and USD/JPY down. Separate external-asset stocks from actual flows. Treat weekly positioning as background. If the channels disagree, call the safe-haven conclusion unverified.</p></div>
+</section>
+
+<section class="yj-section yj-faq" id="faq" aria-labelledby="faq-title"><div class="yj-section-heading"><p class="yj-kicker">Frequently asked questions</p><h2 id="faq-title">6J Safe-Haven Questions</h2></div>
+  <details><summary>Is the Japanese yen always a safe-haven currency?</summary><p>No. The yen has strengthened during important risk-off episodes, but the response depends on carry positioning, the source of the shock, relative policy expectations, Japan-specific risk and global demand for U.S. dollars.</p></details>
+  <details><summary>Why can 6J rise when stocks fall?</summary><p>Risk aversion can force investors to reduce leveraged yen-funded positions and buy yen to close or hedge the funding leg. Because standard 6J is quoted in U.S. dollars per yen, broad yen buying can align with higher 6J prices.</p></details>
+  <details><summary>Does Japan's net international investment position cause automatic repatriation?</summary><p>No. The international investment position is a stock, not a transaction. Investors may hedge, hold, sell or add foreign assets, and valuation changes can alter the stock without creating immediate yen demand.</p></details>
+  <details><summary>Why can the yen weaken during a global panic?</summary><p>A scramble for U.S. dollar funding can support the dollar broadly, including against the yen. The yen can also weaken when the shock is concentrated in Japan, when U.S. yields reprice higher, or when carry positions are not large enough to force meaningful covering.</p></details>
+  <details><summary>Is a higher VIX enough to buy 6J?</summary><p>No. A volatility index is one risk proxy. Confirm the 6J and USD/JPY response, relative yields, dollar funding conditions, equities and credit, and evidence of carry reduction before assigning a yen-safe-haven explanation.</p></details>
+</section>
+
+<details class="yj-sources"><summary>Sources, calculations and editorial disclosure</summary><ul>
+  <li><a href="https://www.bis.org/publ/bisbull124.htm" target="_blank" rel="noopener">BIS Bulletin 124: Monetary Policy Transmission to Exchange Rates&mdash;The Role of Currency Carry Trades</a>.</li>
+  <li><a href="https://www.imf.org/external/pubs/ft/wp/2013/wp13228.pdf" target="_blank" rel="noopener">IMF Working Paper 13/228: The Curious Case of the Yen as a Safe Haven Currency</a>.</li>
+  <li><a href="https://www.mof.go.jp/english/policy/international_policy/reference/iip/e2025.htm" target="_blank" rel="noopener">Japan Ministry of Finance: International Investment Position of Japan at Year-End 2025</a>.</li>
+  <li><a href="https://www.federalreserve.gov/monetarypolicy/central-bank-liquidity-swaps.htm" target="_blank" rel="noopener">Federal Reserve: Central Bank Liquidity Swaps</a> for the standing U.S. dollar liquidity backstop.</li>
+  <li><a href="https://www.federalreserve.gov/publications/2020-may-financial-stability-report-overview.htm" target="_blank" rel="noopener">Federal Reserve Financial Stability Report, May 2020 overview</a> for documented offshore dollar-funding stress during March 2020.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> for 6J quotation and contract specifications.</li>
+</ul><p>The year-end 2025 external-position figures are rounded from the official MOF table and are not used as a trading signal. No original event study or intraday causal claim is made. Cash USD/JPY is discussed only as a directional proxy, not continuous 6J. Sources were reviewed August 12, 2026. This is original, unsponsored editorial analysis.</p></details>
+<aside class="yj-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This article is educational, not individualized trading, investment, legal, accounting, tax, hedging or brokerage advice. Futures are leveraged, can move rapidly and can produce losses greater than the initial margin deposit. Safe-haven relationships are conditional and can reverse. Verify current source data, exchange specifications, broker rules, contract month, liquidity and your own risk before acting.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></section></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

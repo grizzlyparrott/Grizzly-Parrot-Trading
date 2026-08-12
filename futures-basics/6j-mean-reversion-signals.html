@@ -2,270 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mean Reversion Signals in 6J: When Yen Snaps Back Hard</title>
-  <meta name="description" content="A blunt guide to mean reversion signals in 6J Yen futures—failed breakouts, yield snaps, and liquidity vacuums that force sharp reversals.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6j-mean-reversion-signals.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Mean Reversion Signals in 6J: When Yen Snaps Back Hard">
-  <meta property="og:description" content="A blunt guide to mean reversion signals in 6J Yen futures—failed breakouts, yield snaps, and liquidity vacuums that force sharp reversals.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6j-mean-reversion-signals.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Mean Reversion Signals in 6J: When Yen Snaps Back Hard">
-  <meta name="twitter:description" content="A blunt guide to mean reversion signals in 6J Yen futures—failed breakouts, yield snaps, and liquidity vacuums that force sharp reversals.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Mean Reversion Signals in 6J: When Yen Snaps Back Hard",
-  "description": "A blunt guide to mean reversion signals in 6J Yen futures—failed breakouts, yield snaps, and liquidity vacuums that force sharp reversals.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6j-mean-reversion-signals.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6j-mean-reversion-signals.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Mean Reversion Signals in 6J: When Yen Snaps Back Hard",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6j-mean-reversion-signals.html"
-    }
-  ]
-}
-</script>
-
+  <title>6J Mean Reversion Signals | Testable Setups &amp; Risk Rules</title>
+  <meta name="description" content="A testable 6J mean-reversion framework: define the mean and regime, specify entries, invalidation, targets, time stops and position risk.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6j-mean-reversion-signals.html">
+  <meta property="og:title" content="6J Mean Reversion Signals: Define the Mean Before You Fade"><meta property="og:description" content="Three hypothetical, falsifiable 6J mean-reversion setups with regime gates, risk math, cross-market context and hard no-fade conditions."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6j-mean-reversion-signals.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-12">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6J Mean Reversion Without Blind Fading"><meta name="twitter:description" content="Define the mean, pass a regime gate and use explicit entry, invalidation, target, time-stop and sizing rules."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="6j-evidence-guides.css?v=20260807b">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){window.dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6J Mean Reversion Signals: Define the Mean Before You Fade","description":"A testable Japanese Yen futures mean-reversion framework covering mean definitions, regime filters, three hypothetical setups, entry, invalidation, targets, time stops, sizing, cross-market context and no-fade conditions.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6j-mean-reversion-signals.html"},"datePublished":"2025-11-24","dateModified":"2026-08-12","url":"https://grizzlyparrottrading.com/futures-basics/6j-mean-reversion-signals.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6J Mean Reversion Signals","item":"https://grizzlyparrottrading.com/futures-basics/6j-mean-reversion-signals.html"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What mean should I use for 6J mean reversion?","acceptedAnswer":{"@type":"Answer","text":"There is no universal mean. Session VWAP, a fixed rolling average and a pre-defined range midpoint answer different questions. Choose one before testing, calculate it without future data and do not switch after seeing the trade outcome."}},{"@type":"Question","name":"Are 6J mean-reversion signals reliable?","acceptedAnswer":{"@type":"Answer","text":"Reliability is not established by this article. A setup needs timestamp-safe historical testing, realistic bid-ask costs, slippage, exact contract rolls, regime labels and out-of-sample validation before any expectancy claim."}},{"@type":"Question","name":"When should a trader avoid fading 6J?","acceptedAnswer":{"@type":"Answer","text":"Avoid an ordinary fade during untested BOJ or U.S. data windows, suspected or confirmed intervention, persistent rate repricing, accepted range breaks, abnormal spread or depth, and any trend regime that fails the strategy's prewritten gate."}},{"@type":"Question","name":"How should a 6J mean-reversion trade be sized?","acceptedAnswer":{"@type":"Answer","text":"Measure the distance from entry to structural invalidation in ticks, multiply by $6.25 and add estimated slippage and fees. Divide the account's fixed risk allowance by that per-contract risk and round down; skip the trade if one contract is too large."}}]}</script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main><section class="section"><article class="container article-content yen-evidence">
 <!-- ARTICLE BODY START -->
+<header class="yj-hero"><div class="yj-hero-copy"><p class="yj-kicker">Research framework &middot; 6J / JPY-USD</p><h1>6J Mean Reversion Signals: Define the Mean Before You Fade</h1><p class="yj-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 12, 2026</p><p class="yj-hero-lede">&ldquo;6J is stretched&rdquo; is not a trade. Stretched from what mean, over what window, in what regime, and invalidated where? Mean reversion can be tested only after those choices are frozen. During genuine policy or rate repricing, yesterday&rsquo;s mean may be the wrong destination entirely.</p><div class="yj-hero-actions"><a class="button-primary" href="#setups">Inspect three testable setups</a><a class="yj-text-link" href="#no-fade">See the no-fade rules</a></div><dl class="yj-hero-metrics"><div><dt>Candidate means</dt><dd>3</dd></div><div><dt>Hypothetical setups</dt><dd>3</dd></div><div><dt>6J tick</dt><dd>$6.25</dd></div><div><dt>Validated edge</dt><dd>Not claimed</dd></div></dl></div>
+<div class="yj-hero-visual"><div class="yj-market-board"><div class="yj-board-head"><span>Mean-reversion sequence</span><strong>Gate before signal</strong></div><div class="yj-process" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem"><article><span>1</span><h3 role="heading" aria-level="2">Define mean</h3><p>One formula</p></article><article><span>2</span><h3 role="heading" aria-level="2">Gate regime</h3><p>Range, not repricing</p></article><article><span>3</span><h3 role="heading" aria-level="2">Trigger</h3><p>Observable close</p></article><article><span>4</span><h3 role="heading" aria-level="2">Kill idea</h3><p>Price and time</p></article></div><p class="yj-board-foot"><span>Hypothesis workflow</span><span>Not a performance claim</span></p></div></div></header>
 
+<nav class="yj-jump-nav" aria-label="On this page"><a href="#bottom-line">Bottom line</a><a href="#means">Means</a><a href="#regime">Regime</a><a href="#setups">Setups</a><a href="#sizing">Sizing</a><a href="#confirmation">Context</a><a href="#no-fade">No-fade</a><a href="#faq">FAQ</a></nav>
 
+<section class="yj-section" id="bottom-line" aria-labelledby="bottom-title"><div class="yj-section-heading"><p class="yj-kicker">Direct answer</p><h2 id="bottom-title">Mean Reversion Is a Conditional Hypothesis</h2><p>The hypothesis is that, under a defined range or stationary-enough regime, an extreme away from a fixed reference will move back toward that reference before invalidation or a time stop. It is not the belief that price &ldquo;has gone too far&rdquo; or that every gap fills.</p></div><div class="yj-caution"><strong>Never average into an undefined trend</strong><p>A lower entry does not improve a long thesis when the mean has shifted and structure keeps accepting lower prices. Total size, add levels and worst-case invalidation must be fixed before the first order. If they are not, adding is simply increasing risk while evidence moves against you.</p></div></section>
 
-<h1>Mean Reversion Signals in 6J: When Yen Snaps Back Hard</h1>
-
-
-
-<p><strong>6J futures</strong> trend clean, but when they snap back, they snap hard. Mean reversion in 6J isn’t random; it’s tied to very specific conditions involving liquidity, yields, and failed macro expectations.</p>
-
-
-
-<h2>1. Failed Breakouts During Tokyo–Singapore Overlap</h2>
-
-<p>6J trends hardest during the overlap. When a breakout fails during this window, it's almost always a trapped-flow reversal.</p>
-
-
-
-<ul>
-
-<li>breakout wick</li>
-
-<li>instant reclaim of the level</li>
-
-<li>fast follow-through the other way</li>
-
-</ul>
-
-
-
-<p>If you study <a href="https://grizzlyparrottrading.com/futures-basics/6j-market-structure-basics.html">6J structure</a>, you’ll recognize this pattern immediately.</p>
-
-
-
-<h2>2. U.S. Treasury Yield Snaps</h2>
-
-<p>If yields reverse sharply after a CPI or NFP spike, 6J will often mean revert within seconds.</p>
-
-
-
-<table>
-
-<tr><th>Yield Move</th><th>6J Reaction</th></tr>
-
-<tr><td>Yields rip up then fade</td><td>6J spikes upward</td></tr>
-
-<tr><td>Yields dump then bounce</td><td>6J drops</td></tr>
-
-</table>
-
-
-
-<p>This ties into your deeper rate-spread breakdown from <a href="https://grizzlyparrottrading.com/futures-basics/6j-and-bond-yields-relationship.html">your yield relationship article</a>.</p>
-
-
-
-<h2>3. Liquidity Vacuums After News</h2>
-
-<p>Huge news candles leave imbalances. When price has no liquidity behind it, it often snaps back to refill the void.</p>
-
-
-
-<p>The logic behind this concept is covered in <a href="https://grizzlyparrottrading.com/market-basics/liquidity-voids-what-empty-price-areas-mean-for-future-moves.html">liquidity voids</a>.</p>
-
-
-
-<h2>4. Failed BOJ Narrative Days</h2>
-
-<p>Sometimes markets price in BOJ hawkishness or intervention risk and… nothing happens. When expectations fail, 6J mean reverts violently.</p>
-
-
-
-<ul>
-
-<li>Yen expectations unwind</li>
-
-<li>Carry trade resumes</li>
-
-<li>6J reverses the entire move</li>
-
-</ul>
-
-
-
-<h2>5. Overextended Moves in Dead Zones</h2>
-
-<p>Moves during low-liquidity U.S. lunch hours tend to retrace fully once real liquidity returns.</p>
-
-
-
-<p>This matches the timing patterns in <a href="https://grizzlyparrottrading.com/futures-basics/6j-thin-liquidity-us-lunch.html">your lunch liquidity article</a>.</p>
-
-
-
-<div class="highlight-box yellow">
-
-  <h3>6J Reversions Follow Market Flow</h3>
-
-  <p>Failed breakouts, yield changes, liquidity gaps, and shifts in BOJ expectations coincide with sharp reversals. Observing these conditions provides context for price behavior without implying precise timing or guaranteed outcomes.</p>
-
-</div>
-
-
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="yj-section" id="means" aria-labelledby="means-title"><div class="yj-section-heading"><p class="yj-kicker">Name the destination</p><h2 id="means-title">Three Different Means, Three Different Questions</h2><p>Do not swap the reference after entry. If a session VWAP fade fails, changing the target to a 50-bar average does not rescue the original test.</p></div>
+<div class="yj-table-scroll" role="region" aria-label="6J mean definitions and limitations" tabindex="0"><table class="yj-table"><thead><tr><th scope="col">Mean</th><th scope="col">Timestamp-safe definition</th><th scope="col">Main limitation</th></tr></thead><tbody>
+<tr><th scope="row">Session VWAP</th><td>Cumulative sum of trade price &times; trade volume divided by cumulative volume from a fixed session start</td><td>Depends on session boundary and trade feed; it resets and can migrate during a trend</td></tr><tr><th scope="row">Rolling average</th><td>Simple or exponential average of the last N completed bars, using a fixed N and bar interval</td><td>Lags and follows price; optimizing N on the same sample invites overfit</td></tr><tr><th scope="row">Range midpoint</th><td>(pre-confirmed range high + range low) &divide; 2, frozen until the range breaks or expires</td><td>The reference becomes invalid after accepted breakout or structural transition</td></tr>
+</tbody></table></div>
+<p class="yj-source-note">For VWAP research, use actual trade volume from the selected 6J contract. Tick volume from another feed or spot venue is a different input and must be labeled separately.</p>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<section class="yj-section" id="regime" aria-labelledby="regime-title"><div class="yj-section-heading"><p class="yj-kicker">The signal does not outrank the regime</p><h2 id="regime-title">Pass a Range Gate Before Looking for an Extreme</h2><p>Reject the setup when structure or macro conditions suggest price discovery rather than oscillation. The gate itself must use completed data.</p></div>
+<div class="yj-check-grid"><article><strong>Range structure passes</strong><p>Fixed boundaries have multiple tests, sufficient elapsed bars and no accepted close outside under the prewritten break rule.</p></article><article><strong>Trend filter passes</strong><p>Higher-timeframe slope, swing sequence or directional-efficiency measure stays inside the strategy&rsquo;s tested neutral band.</p></article><article><strong>Volatility passes</strong><p>Current range is neither too small to clear costs nor above the strategy&rsquo;s tested shock threshold.</p></article><article><strong>Event gate passes</strong><p>No BOJ decision, major U.S. release or other scheduled event sits inside the blackout. No unscheduled policy headline is moving the market.</p></article><article><strong>Execution passes</strong><p>Spread, depth and recent slippage remain inside measured limits for the selected expiry.</p></article><article><strong>Mean remains valid</strong><p>The reference was calculated from available data and has not been invalidated by a session reset, accepted break or time expiry.</p></article></div>
+</section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
+<section class="yj-section" id="setups" aria-labelledby="setups-title"><div class="yj-section-heading"><p class="yj-kicker">Falsifiable examples</p><h2 id="setups-title">Three Hypothetical 6J Mean-Reversion Setups</h2><p>These are research specifications, not validated signals. Test every rule with realistic bid-ask execution, fees, slippage, roll handling and an untouched out-of-sample period.</p></div>
+<div class="yj-panel"><h3>Setup 1: session VWAP rejection</h3><p><strong>Mean:</strong> trade-weighted VWAP from the chosen CME session boundary. <strong>Regime:</strong> 15-minute structure remains a confirmed range; no event blackout; VWAP slope is inside a pretested neutral threshold. <strong>Extreme:</strong> price closes at least one pretested deviation unit above VWAP, where the unit is either rolling standard deviation or completed-bar ATR fixed before testing. <strong>Entry:</strong> short only after a one-minute close returns inside the deviation band and the next trade breaks that bar&rsquo;s low. <strong>Invalidation:</strong> above the excursion high plus the strategy&rsquo;s volatility buffer. <strong>Target:</strong> first touch of VWAP or the nearer internal range level. <strong>Time stop:</strong> exit after ten one-minute bars if price has not reached halfway to VWAP. Mirror the rules for a long. Skip if the mean is moving sharply toward the extreme.</p></div>
+<div class="yj-two-column" style="margin-top:1.25rem"><article class="yj-panel"><h3>Setup 2: failed range breakout</h3><p><strong>Mean:</strong> midpoint of a pre-confirmed 30-minute range. <strong>Regime:</strong> no accepted higher-timeframe trend break and no scheduled event in the window. <strong>Entry:</strong> after price closes beyond the range, closes back inside within three completed bars, then breaks the return bar toward the midpoint. <strong>Invalidation:</strong> beyond the failed-break extreme plus a measured buffer. <strong>Target:</strong> midpoint first; optional remainder only if tested toward the opposite quartile. <strong>Time stop:</strong> exit if midpoint is not touched within six 5-minute bars. If price closes back beyond the boundary under the acceptance rule, exit rather than widen.</p></article>
+<article class="yj-panel"><h3>Setup 3: fixed-average overshoot</h3><p><strong>Mean:</strong> 20-bar simple average of completed 15-minute closes. <strong>Regime:</strong> 4-hour swing state is neutral and the 20-bar average slope is inside the tested band. <strong>Extreme:</strong> close more than a fixed multiple of 20-bar residual volatility from the mean. <strong>Entry:</strong> next bar must close back toward the average and inside the extreme threshold. <strong>Invalidation:</strong> a new extreme close beyond a second threshold or a structural swing break, whichever comes first. <strong>Target:</strong> the average. <strong>Time stop:</strong> four completed 15-minute bars. Do not keep a stale trade while the rolling mean chases price.</p></article></div>
+<p class="yj-source-note">Every threshold above is intentionally unnamed. Supplying a made-up &ldquo;best&rdquo; ATR multiple, slope band or holding period would turn an example into an unsupported recommendation.</p>
+</section>
 
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
+<section class="yj-section" id="sizing" aria-labelledby="sizing-title"><div class="yj-section-heading"><p class="yj-kicker">Risk from invalidation, not conviction</p><h2 id="sizing-title">Size the Structural Stop in Dollars</h2><p>Standard 6J pays or loses $6.25 per outright tick. The per-contract risk estimate is stop ticks &times; $6.25 + expected adverse slippage + round-turn costs. Position size is the account&rsquo;s fixed trade-risk allowance divided by that estimate, rounded down.</p></div>
+<div class="yj-method"><div><h3>Hypothetical sizing example</h3><p>Suppose the entry-to-invalidation distance is 36 ticks. Gross stop risk is 36 &times; $6.25 = $225. Add two ticks of modeled adverse stop slippage ($12.50) and $5.40 in fees: <strong>$242.90 estimated risk per contract</strong>. With a $500 trade-risk cap, two contracts estimate $485.80; three estimate $728.70 and fail the cap. A worse fill can still exceed the estimate.</p></div><dl><div><dt>Structure stop</dt><dd>36 ticks</dd></div><div><dt>Gross risk</dt><dd>$225.00</dd></div><div><dt>Modeled costs</dt><dd>$17.90</dd></div><div><dt>Per contract</dt><dd>$242.90</dd></div></dl></div>
+<p class="yj-source-note">Costs are hypothetical and must be replaced with account-specific realized data. If one contract exceeds the risk limit, skip standard 6J or evaluate a genuinely smaller instrument after verifying its separate specifications and liquidity.</p>
+</section>
 
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+<section class="yj-section" id="confirmation" aria-labelledby="confirmation-title"><div class="yj-section-heading"><p class="yj-kicker">Confirmation should add information</p><h2 id="confirmation-title">Use Cross-Market Context Without Double Counting</h2><p>USD/JPY spot, U.S. and Japanese rates, broad dollar measures and equity volatility can help identify repricing. They do not confirm a trade merely because a transformed chart looks similar to 6J.</p></div>
+<div class="yj-table-scroll" role="region" aria-label="Cross-market context for 6J mean reversion" tabindex="0"><table class="yj-table"><thead><tr><th scope="col">Context</th><th scope="col">Useful question</th><th scope="col">Boundary</th></tr></thead><tbody>
+<tr><th scope="row">USD/JPY spot</th><td>Does synchronized reciprocal spot agree with the broad direction?</td><td>Account for inverse quote, timestamp, venue and futures basis</td></tr><tr><th scope="row">U.S.-Japan rates</th><td>Is the expected rate differential repricing persistently?</td><td>A macro relationship is not an intraday entry signal</td></tr><tr><th scope="row">Dollar basket / crosses</th><td>Is the move yen-specific or dollar-wide?</td><td>Shared USD exposure makes many series statistically dependent</td></tr><tr><th scope="row">Risk assets / volatility</th><td>Is deleveraging changing the regime?</td><td>&ldquo;Risk-off&rdquo; is not a deterministic yen rule</td></tr><tr><th scope="row">6J volume and depth</th><td>Is the selected expiry showing normal execution conditions?</td><td>Volume does not reveal trader identity or intent</td></tr>
+</tbody></table></div>
+<div class="yj-related"><strong>Proxy boundary:</strong> The <a href="6j-vs-usdjpy-differences.html">6J versus USD/JPY guide</a> explains reciprocal conversion and basis. The <a href="6j-yield-spread-model.html">yield-spread study</a> documents why rate context is useful but not a mechanical timing signal.</div>
+</section>
 
-  </div>
-</footer>
-</body>
-</html>
+<section class="yj-section" id="no-fade" aria-labelledby="no-fade-title"><div class="yj-section-heading"><p class="yj-kicker">The most important signal is sometimes stop</p><h2 id="no-fade-title">When Not to Fade 6J</h2><p>Mean reversion is structurally vulnerable when new information moves the market&rsquo;s reference price. Default to no trade in these states unless a separate event strategy has its own evidence.</p></div>
+<div class="yj-proof-grid"><article class="yj-proof is-limit"><h3>Policy and intervention</h3><ul><li>BOJ decision, press conference or material guidance surprise.</li><li>Suspected or confirmed Japanese FX intervention.</li><li>Official comments producing abnormal spread, range or depth.</li><li>Do not authenticate intervention from a candle; use MOF records.</li></ul></article><article class="yj-proof is-limit"><h3>Rates and structure</h3><ul><li>Persistent U.S.-Japan rate repricing.</li><li>Accepted break from the range that defined the mean.</li><li>Higher-timeframe swing sequence becomes directional.</li><li>Rolling average accelerates toward price rather than remaining a stable reference.</li></ul></article></div>
+<p>Also stop when the data or platform state is uncertain, the active contract is rolling, the spread exceeds the model, the daily loss limit is hit or actual slippage leaves the tested range. A strategy cannot recover evidence discipline by trading more often.</p>
+</section>
+
+<section class="yj-section yj-faq" id="faq" aria-labelledby="faq-title"><div class="yj-section-heading"><p class="yj-kicker">Frequently asked questions</p><h2 id="faq-title">6J Mean Reversion Questions</h2></div>
+<details><summary>What mean should I use for 6J mean reversion?</summary><p>There is no universal mean. Session VWAP, a fixed rolling average and a pre-defined range midpoint answer different questions. Choose one before testing, calculate it without future data and do not switch after seeing the trade outcome.</p></details>
+<details><summary>Are 6J mean-reversion signals reliable?</summary><p>Reliability is not established by this article. A setup needs timestamp-safe historical testing, realistic bid-ask costs, slippage, exact contract rolls, regime labels and out-of-sample validation before any expectancy claim.</p></details>
+<details><summary>When should a trader avoid fading 6J?</summary><p>Avoid an ordinary fade during untested BOJ or U.S. data windows, suspected or confirmed intervention, persistent rate repricing, accepted range breaks, abnormal spread or depth, and any trend regime that fails the strategy's prewritten gate.</p></details>
+<details><summary>How should a 6J mean-reversion trade be sized?</summary><p>Measure the distance from entry to structural invalidation in ticks, multiply by $6.25 and add estimated slippage and fees. Divide the account's fixed risk allowance by that per-contract risk and round down; skip the trade if one contract is too large.</p></details>
+</section>
+
+<details class="yj-sources"><summary>Sources, methodology and editorial disclosure</summary><ul>
+<li><a href="https://www.cmegroup.com/ja/markets/fx/g10/japanese-yen.volume.html" target="_blank" rel="noopener">CME Group: Japanese Yen futures</a>, <a href="https://www.cmegroup.com/ja/markets/fx/g10/japanese-yen.calendar.html" target="_blank" rel="noopener">contract specifications</a> and <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">FX Product Guide 2026</a> for the contract, quote and tick math.</li>
+<li><a href="https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm" target="_blank" rel="noopener">Bank of Japan monetary-policy meeting schedule</a> and <a href="https://www.bls.gov/schedule/news_release/" target="_blank" rel="noopener">U.S. Bureau of Labor Statistics release calendar</a> for scheduled-event controls.</li>
+<li><a href="https://www.boj.or.jp/en/about/education/oshiete/intl/g19.htm" target="_blank" rel="noopener">Bank of Japan: intervention roles</a> and <a href="https://www.mof.go.jp/english/policy/international_policy/reference/feio/index.html" target="_blank" rel="noopener">Japan Ministry of Finance intervention operations</a> for confirmation authority and records.</li>
+<li><a href="https://www.cmegroup.com/education/courses/introduction-to-fx/importance-of-fx-futures-pricing-and-basis" target="_blank" rel="noopener">CME Group: FX futures pricing and basis</a> for the distinction between dated futures and spot.</li>
+</ul><p>Sources were checked August 12, 2026. All setup prices, thresholds, costs and risk calculations are hypothetical examples. No backtest was performed for this article and no reliability, expectancy, profitability or best-parameter claim is made. A valid study would require timestamp-safe contract data, a disclosed roll method, bid-ask execution, costs, regime labels and out-of-sample results. Grizzly Parrot Trading is not sponsored by the cited institutions.</p></details>
+<aside class="yj-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This article is educational, not individualized trading, investment, legal, tax, accounting, hedging or brokerage advice. Futures are leveraged, can gap or trade through stop prices and can produce losses greater than the margin deposit. Mean-reversion assumptions can fail abruptly during policy, intervention and rate shocks. Verify current sources, exact contracts, broker rules and your own risk before trading.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></section></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>
