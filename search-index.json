@@ -96,27 +96,27 @@
     "category": "Futures Basics"
   },
   {
-    "title": "6J Contract Specs: Tick Size, Tick Value, and Margin Explained",
+    "title": "6J Contract Specs | Tick Value, Margin, Hours &amp; Delivery",
     "url": "/futures-basics/6j-contract-specs.html",
-    "description": "A straight, no-bull explanation of 6J Japanese Yen futures contract specs including tick size, tick value, margin, and how they affect real trading risk.",
+    "description": "Current CME 6J Japanese yen futures specifications, exact tick and P&amp;L math, hours, listed months, last trade, physical delivery, margin and roll risk.",
     "category": "Futures Basics"
   },
   {
-    "title": "6J Volatility Patterns: What Time of Day Actually Matters",
+    "title": "6J Volatility by Time of Day | Honest Session Guide",
     "url": "/futures-basics/6j-volatility-patterns.html",
-    "description": "A blunt breakdown of the real volatility patterns in 6J Japanese Yen futures and which times of day consistently move the market.",
+    "description": "Understand 6J time-of-day behavior without fake rankings: realized volatility, volume, depth, spreads, event windows, DST, maintenance and roll.",
     "category": "Futures Basics"
   },
   {
-    "title": "6J vs 6S: Key Differences Between Yen and Swiss Franc Futures",
+    "title": "6J vs 6S Futures | Yen and Swiss Franc Compared",
     "url": "/futures-basics/6j-vs-6s-differences.html",
-    "description": "A blunt comparison of 6J Yen futures vs 6S Swiss Franc futures—volatility, safe-haven flows, rate sensitivity, and liquidity cycles.",
+    "description": "Compare 6J yen and 6S Swiss franc futures: current contract specs, BOJ and SNB policy channels, safe-haven mechanics, execution and roll.",
     "category": "Futures Basics"
   },
   {
-    "title": "6J vs USDJPY: Key Differences Traders Must Understand",
+    "title": "6J vs USD/JPY | Quotes, Ticks, Basis, Roll &amp; Execution",
     "url": "/futures-basics/6j-vs-usdjpy-differences.html",
-    "description": "A blunt comparison of 6J futures vs USDJPY spot forex—pricing, leverage, liquidity cycles, and why the markets don’t move identically.",
+    "description": "6J futures versus USD/JPY spot: reciprocal quotes, centralized versus OTC execution, ticks versus pips, futures basis, expiry and roll.",
     "category": "Futures Basics"
   },
   {
@@ -1596,9 +1596,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How 6J Futures React to Bank of Japan Policy Announcements",
+    "title": "How BOJ Policy Moves 6J Futures | Decision-Day Guide",
     "url": "/futures-basics/how-6j-reacts-to-boj-policy.html",
-    "description": "A direct breakdown of how 6J Yen futures react to Bank of Japan policy announcements, yield curve control, rate changes, and intervention.",
+    "description": "A practical guide to BOJ decision days in 6J futures: current policy framework, surprise scenarios, release sequence, execution risks and evidence limits.",
     "category": "Futures Basics"
   },
   {
@@ -1668,9 +1668,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How Carry Trades Impact 6J Futures: The Real Engine Behind Yen Trends",
+    "title": "Yen Carry Trades and 6J Futures | Mechanics &amp; Unwinds",
     "url": "/futures-basics/6j-carry-trade-impact.html",
-    "description": "A blunt explanation of how global carry trades drive major trends in 6J Yen futures and why unwinds create explosive reversals.",
+    "description": "How yen-funded carry trades affect 6J futures: funding and asset legs, leverage, volatility, crowding, unwinds, observable proxies and hard limits.",
     "category": "Futures Basics"
   },
   {
@@ -2604,9 +2604,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Long-Term Cycles in 6J: How Multi-Year Yen Trends Form",
+    "title": "Long-Term 6J Cycles | How Multi-Year Yen Regimes Form",
     "url": "/futures-basics/6j-long-term-cycles.html",
-    "description": "A blunt breakdown of the long-term macro cycles that drive multi-year trends in 6J Yen futures and how traders can read them.",
+    "description": "How multi-year 6J yen regimes form through relative monetary policy, inflation, real yields, carry, external balances and structural change.",
     "category": "Futures Basics"
   },
   {
@@ -2628,9 +2628,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Macro Events That Trigger Major 6J Breakouts",
+    "title": "6J Event Breakouts | Range, Acceptance &amp; False Breaks",
     "url": "/futures-basics/6j-breakout-events.html",
-    "description": "A blunt breakdown of the macro events that reliably trigger major breakouts in 6J Yen futures, including BOJ policy, U.S. inflation, and bond volatility.",
+    "description": "Define and evaluate 6J event breakouts with pre-event ranges, acceptance, retests, confirmation limits, false-break rules and execution controls.",
     "category": "Futures Basics"
   },
   {
@@ -3000,9 +3000,9 @@
     "category": "Market Basics"
   },
   {
-    "title": "Mean Reversion Signals in 6J: When Yen Snaps Back Hard",
+    "title": "6J Mean Reversion Signals | Testable Setups &amp; Risk Rules",
     "url": "/futures-basics/6j-mean-reversion-signals.html",
-    "description": "A blunt guide to mean reversion signals in 6J Yen futures—failed breakouts, yield snaps, and liquidity vacuums that force sharp reversals.",
+    "description": "A testable 6J mean-reversion framework: define the mean and regime, specify entries, invalidation, targets, time stops and position risk.",
     "category": "Futures Basics"
   },
   {
@@ -3654,9 +3654,9 @@
     "category": "Market Basics"
   },
   {
-    "title": "Reading Market Structure in 6J: Swing Points, Breaks, and Imbalances",
+    "title": "6J Market Structure | Objective Trend, Range &amp; Break Rules",
     "url": "/futures-basics/6j-market-structure-basics.html",
-    "description": "A blunt guide to reading market structure in 6J—swing highs, swing lows, breaks of structure, imbalances, and how Yen trends actually form.",
+    "description": "Objective 6J market structure: define swings, trends, ranges, acceptance, failed breaks, imbalance context, timeframes and invalidation.",
     "category": "Futures Basics"
   },
   {
@@ -3780,9 +3780,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Scalping 6J Futures: Ideal Tick Targets and Best Hours",
+    "title": "Scalping 6J Futures | A Risk-Controlled Process",
     "url": "/futures-basics/scalping-6j-futures.html",
-    "description": "A blunt guide to scalping 6J futures—tick targets, timing, volatility windows, and how to avoid getting chopped alive.",
+    "description": "A risk-controlled 6J scalping process with tick math, regime filters, two testable setups, structure-based stops, cost breakeven and hard loss rules.",
     "category": "Futures Basics"
   },
   {
@@ -4026,15 +4026,15 @@
     "category": "Futures Basics"
   },
   {
-    "title": "The 6J Macro Events Playbook: How Major News Moves Yen Futures",
+    "title": "6J Macro Events Playbook | Yen Futures News Guide",
     "url": "/futures-basics/6j-macro-events-playbook.html",
-    "description": "A blunt guide to how major macro events—CPI, NFP, FOMC, BOJ—move 6J Yen futures and the exact reactions to expect.",
+    "description": "Plan 6J futures around U.S., Japan and unscheduled macro events with official calendars, surprise mechanics, time-zone conversions and execution controls.",
     "category": "Futures Basics"
   },
   {
-    "title": "The 6J–Bond Yield Relationship: Why Yen Tracks U.S. Rates",
+    "title": "6J and Bond Yields | An Intraday Confirmation Workflow",
     "url": "/futures-basics/6j-and-bond-yields-relationship.html",
-    "description": "A blunt explanation of why 6J Yen futures react directly to U.S. Treasury yields and how rate spreads drive every major move.",
+    "description": "How U.S. Treasury and Japanese bond yields transmit macro surprises into 6J futures, with maturity selection, real-yield caveats and divergences.",
     "category": "Futures Basics"
   },
   {
@@ -4422,9 +4422,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Using COT Reports to Read Sentiment in 6J Futures",
+    "title": "How to Use COT Reports for 6J | Yen Positioning Guide",
     "url": "/futures-basics/using-cot-reports-for-6j.html",
-    "description": "Learn how to use the COT report to read real-money positioning in 6J Japanese Yen futures and spot major sentiment shifts.",
+    "description": "A precise guide to CFTC Traders in Financial Futures data for 6J: Tuesday-Friday lag, categories, net and gross exposure, open interest and percentiles.",
     "category": "Futures Basics"
   },
   {
@@ -4716,9 +4716,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "What Moves 6J Futures? Key Economic Forces Behind the Yen",
+    "title": "What Moves 6J Futures? A Japanese Yen Driver Map",
     "url": "/futures-basics/what-moves-6j-futures.html",
-    "description": "Learn the real forces that move 6J Japanese Yen futures—interest rates, risk sentiment, bond yields, and Bank of Japan policy.",
+    "description": "A practical map of what moves 6J Japanese yen futures: quote direction, rate expectations, BOJ policy, carry, risk, intervention and a daily workflow.",
     "category": "Futures Basics"
   },
   {
@@ -4770,21 +4770,21 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Why 6J Acts as a Safe-Haven: Yen Behavior in Risk-Off Markets",
+    "title": "Is 6J a Safe Haven? When the Yen Rallies&mdash;and Fails",
     "url": "/futures-basics/6j-safe-haven-behavior.html",
-    "description": "A blunt breakdown of why 6J Yen futures behave as a safe-haven during global risk-off events and what actually causes the spikes.",
+    "description": "Why 6J Japanese yen futures can rise in risk-off markets, why the safe-haven relationship fails, and how to confirm carry, funding and rate channels.",
     "category": "Futures Basics"
   },
   {
-    "title": "Why 6J Liquidity Thins During U.S. Lunch Hours",
+    "title": "6J During U.S. Lunch | Liquidity &amp; Execution Guide",
     "url": "/futures-basics/6j-thin-liquidity-us-lunch.html",
-    "description": "A blunt explanation of why 6J Yen futures lose liquidity during U.S. lunch hours and how that affects volatility, spreads, and trade quality.",
+    "description": "A practical 6J guide for 11:30 a.m.–1:30 p.m. ET: liquidity measures, normal versus news days, order consequences, DST conversions and skip rules.",
     "category": "Futures Basics"
   },
   {
-    "title": "Why 6J Often Trends During Asian Session Overlaps",
+    "title": "When 6J Trends in Asian Hours—and When It Doesn't",
     "url": "/futures-basics/why-6j-trends-during-asian-session.html",
-    "description": "A blunt breakdown explaining why 6J Japanese Yen futures often trend during Asian session overlaps and what drives the volatility.",
+    "description": "A sober guide to 6J during Asian hours: exact JST, UTC and ET clocks, Tokyo cash and JGB activity, trend conditions, failure cases and intervention limits.",
     "category": "Futures Basics"
   },
   {

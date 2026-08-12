@@ -2,264 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why 6J Liquidity Thins During U.S. Lunch Hours</title>
-  <meta name="description" content="A blunt explanation of why 6J Yen futures lose liquidity during U.S. lunch hours and how that affects volatility, spreads, and trade quality.">
+  <title>6J During U.S. Lunch | Liquidity &amp; Execution Guide</title>
+  <meta name="description" content="A practical 6J guide for 11:30 a.m.–1:30 p.m. ET: liquidity measures, normal versus news days, order consequences, DST conversions and skip rules.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6j-thin-liquidity-us-lunch.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Why 6J Liquidity Thins During U.S. Lunch Hours">
-  <meta property="og:description" content="A blunt explanation of why 6J Yen futures lose liquidity during U.S. lunch hours and how that affects volatility, spreads, and trade quality.">
+  <meta property="og:title" content="6J During U.S. Lunch: Liquidity and Execution Without the Myths">
+  <meta property="og:description" content="The midday window can be quieter, but volume, depth, spread and volatility are different—and news can erase the pattern.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6j-thin-liquidity-us-lunch.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-24">
+  <meta property="article:modified_time" content="2026-08-12">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="6J During U.S. Lunch">
+  <meta name="twitter:description" content="How to judge volume, depth, spreads, slippage and event risk in the U.S. midday window.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Why 6J Liquidity Thins During U.S. Lunch Hours">
-  <meta name="twitter:description" content="A blunt explanation of why 6J Yen futures lose liquidity during U.S. lunch hours and how that affects volatility, spreads, and trade quality.">
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
 
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="6j-evidence-guides.css?v=20260807b">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){window.dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"6J During U.S. Lunch: Liquidity and Execution Without the Myths","description":"A practical guide to market quality, event risk and order consequences in 6J Japanese yen futures from 11:30 a.m. to 1:30 p.m. Eastern Time.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6j-thin-liquidity-us-lunch.html"},"datePublished":"2025-11-24","dateModified":"2026-08-12","url":"https://grizzlyparrottrading.com/futures-basics/6j-thin-liquidity-us-lunch.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Why 6J Liquidity Thins During U.S. Lunch Hours",
-  "description": "A blunt explanation of why 6J Yen futures lose liquidity during U.S. lunch hours and how that affects volatility, spreads, and trade quality.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6j-thin-liquidity-us-lunch.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6j-thin-liquidity-us-lunch.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6J During U.S. Lunch","item":"https://grizzlyparrottrading.com/futures-basics/6j-thin-liquidity-us-lunch.html"}]}
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Market Basics",
-      "item": "https://grizzlyparrottrading.com/market-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Why 6J Liquidity Thins During U.S. Lunch Hours",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6j-thin-liquidity-us-lunch.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is the U.S. lunch window for 6J futures?","acceptedAnswer":{"@type":"Answer","text":"This guide uses 11:30 a.m. to 1:30 p.m. Eastern Time as a fixed research and planning window. It is not an official CME session. The definition should be kept fixed when testing and converted correctly for daylight saving."}},
+    {"@type":"Question","name":"Is 6J always illiquid during U.S. lunch?","acceptedAnswer":{"@type":"Answer","text":"No. Midday can show lower participation than the U.S. data window on ordinary days, but scheduled auctions, policy remarks, geopolitics, position adjustments and other news can produce heavy trading. Directly inspect spread, depth, volume and fills."}},
+    {"@type":"Question","name":"Does low 6J volume mean spreads will be wide?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. Volume counts completed trades, while the quoted spread and displayed depth describe different parts of market quality. Low volume can coexist with a narrow top-of-book spread, although available size and price impact may still be poor."}},
+    {"@type":"Question","name":"What order type is safest in thin 6J conditions?","acceptedAnswer":{"@type":"Answer","text":"No order type is universally safest. A market order prioritizes execution but not price; a limit controls price but may not fill; a stop can trigger and execute with slippage. The defensible choice depends on the plan, size, book and willingness to miss the trade."}}
+  ]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<main><section class="section"><article class="container article-content yen-evidence">
 <!-- ARTICLE BODY START -->
 
+<header class="yj-hero">
+  <div class="yj-hero-copy">
+    <p class="yj-kicker">Execution guide &middot; 6J midday</p>
+    <h1>6J During U.S. Lunch: Liquidity Without the Myths</h1>
+    <p class="yj-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 12, 2026</p>
+    <p class="yj-hero-lede">From 11:30 a.m. to 1:30 p.m. ET, 6J can trade more quietly than it did around U.S. data or the cash open. That does not mean Europe is &ldquo;dead,&rdquo; every desk is at lunch or every move is a stop hunt. Judge the book in front of you.</p>
+    <div class="yj-hero-actions"><a class="button-primary" href="#market-quality">Check market quality</a><a class="yj-text-link" href="#checklist">Use the size-or-skip checklist</a></div>
+    <dl class="yj-hero-metrics" aria-label="U.S. lunch planning window"><div><dt>Window</dt><dd>11:30&ndash;1:30 ET</dd></div><div><dt>During EDT</dt><dd>15:30&ndash;17:30 UTC</dd></div><div><dt>During EST</dt><dd>16:30&ndash;18:30 UTC</dd></div><div><dt>Official session?</dt><dd>No</dd></div></dl>
+  </div>
+  <div class="yj-hero-visual"><div class="yj-market-board"><div class="yj-board-head"><span>Midday decision</span><strong>Measure, then act</strong></div><div class="yj-check-grid" style="margin-top:1rem"><article><strong>Spread</strong><p>Cost at top of book</p></article><article><strong>Depth</strong><p>Displayed size</p></article><article><strong>Volume</strong><p>Trades completed</p></article><article><strong>Slippage</strong><p>Your actual fill</p></article></div><p class="yj-board-foot"><span>Quiet is not deep</span><span>Fast is not liquid</span></p></div></div>
+</header>
 
+<nav class="yj-jump-nav" aria-label="On this page"><a href="#bottom-line">Bottom line</a><a href="#clock">Clock</a><a href="#market-quality">Market quality</a><a href="#day-types">Day types</a><a href="#orders">Orders</a><a href="#checklist">Checklist</a><a href="#faq">FAQ</a></nav>
 
-<h1>Why 6J Liquidity Thins During U.S. Lunch Hours</h1>
+<section class="yj-section" id="bottom-line" aria-labelledby="bottom-line-title">
+  <div class="yj-section-heading"><p class="yj-kicker">Direct answer</p><h2 id="bottom-line-title">Midday Is a Participation Handoff, Not a Guaranteed Dead Zone</h2><p>By late U.S. morning, many scheduled 8:30 a.m. ET releases have already produced their first rates and currency repricing, Tokyo is closed, and European participants are later in their day. That can reduce fresh two-way urgency on an ordinary session. It can also make a modest order matter more if displayed depth is shallow. Neither outcome is automatic.</p></div>
+  <div class="yj-two-column"><article class="yj-panel"><p class="yj-card-label">Normal day</p><h3>Less new information can mean rotation</h3><p>Price may trade around the morning range, realized movement may slow and completed volume may decline. A smaller target does not make a weak setup good; it only changes the environment.</p></article><article class="yj-panel"><p class="yj-card-label">Active day</p><h3>News can erase the clock effect</h3><p>Treasury auctions, policy remarks, geopolitics, a delayed response to morning data or large portfolio adjustments can reactivate 6J. The label &ldquo;lunch&rdquo; is never a reason to ignore live risk.</p></article></div>
+</section>
 
+<section class="yj-section" id="clock" aria-labelledby="clock-title">
+  <div class="yj-section-heading"><p class="yj-kicker">Precise window</p><h2 id="clock-title">Define 11:30 a.m.&ndash;1:30 p.m. ET Before You Measure It</h2><p>This is an editorial research window, not an exchange-defined session. Using a fixed window prevents &ldquo;lunch&rdquo; from expanding or shrinking after the chart is known.</p></div>
+  <div class="yj-table-scroll" role="region" aria-label="U.S. lunch clock conversions for 6J" tabindex="0"><table class="yj-table">
+    <thead><tr><th scope="col">Clock</th><th scope="col">During U.S. daylight time</th><th scope="col">During U.S. standard time</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Eastern</th><td>11:30 a.m.&ndash;1:30 p.m. EDT</td><td>11:30 a.m.&ndash;1:30 p.m. EST</td></tr>
+      <tr><th scope="row">Central</th><td>10:30 a.m.&ndash;12:30 p.m. CDT</td><td>10:30 a.m.&ndash;12:30 p.m. CST</td></tr>
+      <tr><th scope="row">UTC</th><td>3:30&ndash;5:30 p.m.</td><td>4:30&ndash;6:30 p.m.</td></tr>
+      <tr><th scope="row">Japan Standard Time</th><td>12:30&ndash;2:30 a.m. next day</td><td>1:30&ndash;3:30 a.m. next day</td></tr>
+    </tbody>
+  </table></div>
+  <p>CME&rsquo;s standard 6J schedule is anchored in Central Time. The normal daily Globex break begins later, at 4:00 p.m. CT / 5:00 p.m. ET, according to the <a href="https://www.cmegroup.com/markets/fx/g10/japanese-yen.contractSpecs.html" target="_blank" rel="noopener">CME contract specification</a>. Do not confuse midday conditions with the scheduled maintenance halt.</p>
+  <div class="yj-caution"><strong>DST boundary</strong><p>New York and Chicago shift together, while Japan does not. Europe changes clocks on a different schedule for part of March and autumn. Store data in UTC or exchange time and treat local clocks as displays, especially when comparing European participation across seasons.</p></div>
+</section>
 
+<section class="yj-section" id="market-quality" aria-labelledby="market-quality-title">
+  <div class="yj-section-heading"><p class="yj-kicker">Four separate measures</p><h2 id="market-quality-title">Low Volume, Shallow Depth, Wide Spreads and High Slippage Are Not the Same</h2><p>A midday chart can look quiet while execution quality is poor. It can also show a quick price jump with little total volume. Use the right word for the thing you measured.</p></div>
+  <div class="yj-table-scroll" role="region" aria-label="6J midday market quality measures" tabindex="0"><table class="yj-table">
+    <thead><tr><th scope="col">Measure</th><th scope="col">What it means</th><th scope="col">What to check before an order</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Volume</th><td>Contracts traded during a defined interval</td><td>Current pace versus the same window on comparable days</td></tr>
+      <tr><th scope="row">Displayed depth</th><td>Visible resting quantity at selected price levels</td><td>Size at and beyond the best quote; how quickly it cancels or replenishes</td></tr>
+      <tr><th scope="row">Quoted spread</th><td>Distance between best bid and offer</td><td>Current width and how often it widens during small price moves</td></tr>
+      <tr><th scope="row">Realized volatility</th><td>Observed price variation over the window</td><td>Return or range measure, kept separate from liquidity</td></tr>
+      <tr><th scope="row">Slippage / impact</th><td>Difference between expected and actual fill, including movement through levels</td><td>Your size relative to available book and recent fill history</td></tr>
+    </tbody>
+  </table></div>
+  <p>A narrow one-tick spread does not guarantee enough size. A thick top level can cancel before your order reaches it. Heavy volume can come from aggressive trading that also produces high volatility. There is no single &ldquo;liquidity&rdquo; number that settles every execution question.</p>
+  <p>This article does not contain a proprietary depth-and-spread dataset, so it does not claim that every 11:30&ndash;1:30 window is statistically thinner than every other window. The <a href="6j-volatility-patterns.html">6J time-of-day methodology guide</a> shows how to build that comparison honestly.</p>
+</section>
 
-<p><strong>6J futures</strong> get thin, slow, and borderline untradeable during the U.S. lunchtime window. If you’ve ever wondered why the market suddenly dies between 11:30 AM–1:30 PM EST, here’s the blunt truth: the players who actually move yen futures are offline.</p>
+<section class="yj-section" id="day-types" aria-labelledby="day-types-title">
+  <div class="yj-section-heading"><p class="yj-kicker">Normal versus news day</p><h2 id="day-types-title">Classify the Day Before Applying a Midday Expectation</h2></div>
+  <div class="yj-table-scroll" role="region" aria-label="Normal and active U.S. lunch conditions in 6J" tabindex="0"><table class="yj-table">
+    <thead><tr><th scope="col">Condition</th><th scope="col">Ordinary-day reading</th><th scope="col">Active-day warning</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Morning data</th><td>Initial move has stabilized; yields and 6J rotate</td><td>Details or revisions keep the rates move extending</td></tr>
+      <tr><th scope="row">Scheduled calendar</th><td>No known high-impact item inside the window</td><td>Treasury auction, official testimony, remarks or another release is scheduled</td></tr>
+      <tr><th scope="row">Cross-market behavior</th><td>Treasury yields and USD/JPY remain contained</td><td>Rates, dollar or risk assets break morning structure</td></tr>
+      <tr><th scope="row">Order book</th><td>Spread stable; depth replenishes after small trades</td><td>Quotes pull, spread widens or price gaps between prints</td></tr>
+      <tr><th scope="row">Price structure</th><td>Repeated return toward value or morning midpoint</td><td>Acceptance outside the morning range or one-way repricing</td></tr>
+    </tbody>
+  </table></div>
+  <p>Check the <a href="https://www.bls.gov/schedule/news_release/" target="_blank" rel="noopener">BLS</a>, <a href="https://www.bea.gov/news/schedule" target="_blank" rel="noopener">BEA</a> and <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">Federal Reserve</a> calendars. U.S. Treasury auction announcements and results are available through <a href="https://treasurydirect.gov/auctions/announcements-data-results/" target="_blank" rel="noopener">TreasuryDirect</a>. None of these sources covers every unscheduled headline.</p>
+</section>
 
+<section class="yj-section" id="orders" aria-labelledby="orders-title">
+  <div class="yj-section-heading"><p class="yj-kicker">Order consequences</p><h2 id="orders-title">Every Order Type Has a Failure Mode</h2></div>
+  <div class="yj-check-grid">
+    <article><strong>Market order</strong><p>Prioritizes getting filled, not the price. Shallow depth can turn small screen movement into larger slippage.</p></article>
+    <article><strong>Limit order</strong><p>Controls the worst price but does not guarantee a fill. You may miss the move or receive only part of the intended size.</p></article>
+    <article><strong>Stop market</strong><p>Triggers into an order seeking execution. A gap can produce a fill well beyond the stop price.</p></article>
+    <article><strong>Stop limit</strong><p>Adds a price boundary after trigger but can leave the position unfilled while the market continues through it.</p></article>
+    <article><strong>Passive exit</strong><p>May reduce spread cost if filled, but queue position and adverse selection matter when the market turns.</p></article>
+    <article><strong>No order</strong><p>Skipping is a valid execution decision when spread, depth or event risk makes the planned loss unreliable.</p></article>
+  </div>
+  <div class="yj-caution"><strong>&ldquo;Stop hunt&rdquo; is not a diagnosis</strong><p>A move through an obvious level can reflect aggressive orders, resting-stop activation, dealer hedging, news or a shallow book. Without order-level evidence, calling it manipulation explains nothing. Record the break, book conditions and fill; leave motive unclaimed.</p></div>
+</section>
 
+<section class="yj-section" id="checklist" aria-labelledby="checklist-title">
+  <div class="yj-section-heading"><p class="yj-kicker">Size-or-skip checklist</p><h2 id="checklist-title">Make the Midday Decision Before You Click</h2></div>
+  <div class="yj-process">
+    <article><span>01</span><div><h3>Confirm the calendar</h3><p>Check scheduled data, Fed events, Treasury auctions, contract roll and exchange notices. Note that unscheduled risk remains.</p></div></article>
+    <article><span>02</span><div><h3>Read the live book</h3><p>Spread, depth and recent replenishment should support the intended size. If your platform lacks depth, admit the missing evidence.</p></div></article>
+    <article><span>03</span><div><h3>Stress the fill</h3><p>Calculate loss at planned exit plus additional slippage. If that number is unacceptable, cut size or skip.</p></div></article>
+    <article><span>04</span><div><h3>Demand a real setup</h3><p>Use objective structure, not the time label. Midday by itself is neither a long nor short signal.</p></div></article>
+    <article><span>05</span><div><h3>Set a time stop</h3><p>If the thesis depends on midday behavior, define when the window ends and what happens before the next participation handoff.</p></div></article>
+    <article><span>06</span><div><h3>Log actual execution</h3><p>Record decision price, order type, fill, spread and slippage. Your fills are better evidence than a screenshot of the bar.</p></div></article>
+  </div>
+</section>
 
-<h2>1. Asia Is Closed — No Real Yen Flow</h2>
+<section class="yj-section" id="limits" aria-labelledby="limits-title"><div class="yj-section-heading"><p class="yj-kicker">Evidence boundary</p><h2 id="limits-title">What This Guide Does Not Claim</h2><p>It does not claim all desks leave, Europe stops trading, stops are deliberately hunted or no U.S. news occurs in the window. It does not provide a measured volume, depth, spread or realized-volatility ranking. It defines a precise window, separates the variables and uses a conservative size-or-skip process until quality-checked intraday evidence exists.</p></div></section>
 
-<p>Japan and Singapore closed hours ago. The banks, exporters, and institutions that generate real yen flow are done for the day.</p>
+<section class="yj-section yj-faq" id="faq" aria-labelledby="faq-title"><div class="yj-section-heading"><p class="yj-kicker">Frequently asked questions</p><h2 id="faq-title">6J U.S.-Lunch Questions</h2></div>
+  <details><summary>What is the U.S. lunch window for 6J futures?</summary><p>This guide uses 11:30 a.m. to 1:30 p.m. Eastern Time as a fixed research and planning window. It is not an official CME session. The definition should be kept fixed when testing and converted correctly for daylight saving.</p></details>
+  <details><summary>Is 6J always illiquid during U.S. lunch?</summary><p>No. Midday can show lower participation than the U.S. data window on ordinary days, but scheduled auctions, policy remarks, geopolitics, position adjustments and other news can produce heavy trading. Directly inspect spread, depth, volume and fills.</p></details>
+  <details><summary>Does low 6J volume mean spreads will be wide?</summary><p>Not necessarily. Volume counts completed trades, while the quoted spread and displayed depth describe different parts of market quality. Low volume can coexist with a narrow top-of-book spread, although available size and price impact may still be poor.</p></details>
+  <details><summary>What order type is safest in thin 6J conditions?</summary><p>No order type is universally safest. A market order prioritizes execution but not price; a limit controls price but may not fill; a stop can trigger and execute with slippage. The defensible choice depends on the plan, size, book and willingness to miss the trade.</p></details>
+</section>
 
+<details class="yj-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+  <li><a href="https://www.cmegroup.com/markets/fx/g10/japanese-yen.contractSpecs.html" target="_blank" rel="noopener">CME Group: Japanese Yen futures contract specifications</a> and <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">FX Product Guide 2026</a>.</li>
+  <li><a href="https://www.bls.gov/schedule/news_release/" target="_blank" rel="noopener">U.S. Bureau of Labor Statistics release calendar</a>, <a href="https://www.bea.gov/news/schedule" target="_blank" rel="noopener">BEA schedule</a> and <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">Federal Reserve FOMC calendar</a>.</li>
+  <li><a href="https://treasurydirect.gov/auctions/announcements-data-results/" target="_blank" rel="noopener">U.S. Treasury / TreasuryDirect: auction announcements, data and results</a>.</li>
+  <li><a href="https://www.bis.org/statistics/rpfx25_fx.htm" target="_blank" rel="noopener">Bank for International Settlements: 2025 Triennial Survey FX turnover commentary</a> for global, cross-border market context.</li>
+  <li><a href="https://www.nfa.futures.org/investors/index.html" target="_blank" rel="noopener">National Futures Association: investor education and resources</a> for general futures risk and due-diligence context.</li>
+</ul><p>Sources were checked August 12, 2026. The 11:30 a.m.&ndash;1:30 p.m. ET interval is an explicitly defined planning window, not an official exchange session or a measured profitability claim. Clock conversions use EDT at UTC&minus;4, EST at UTC&minus;5 and JST at UTC+9. No proprietary order-book study is represented. This is original editorial analysis, not sponsored research.</p></details>
 
-
-<ul>
-
-<li>No BOJ inputs</li>
-
-<li>No commercial hedging</li>
-
-<li>No fund rebalancing</li>
-
-</ul>
-
-
-
-<p>This matches the logic from <a href="https://grizzlyparrottrading.com/futures-basics/why-6j-trends-during-asian-session.html">your Asian session article</a> — real yen liquidity exists in Asian hours, not U.S. lunch hours.</p>
-
-
-
-<h2>2. Europe Is Dead During This Window</h2>
-
-<p>London isn’t closed yet, but liquidity collapses because European desks are basically winding down.</p>
-
-
-
-<ul>
-
-<li>no fresh macro flow</li>
-
-<li>no London-driven volatility</li>
-
-<li>no major data releases</li>
-
-</ul>
-
-
-
-<h2>3. U.S. Desks Are Literally at Lunch</h2>
-
-<p>New York FX and macro desks reduce activity aggressively during lunch. Futures volume dries up, DOM depth thins, and algos start dominating the book.</p>
-
-
-
-<table>
-
-<tr><th>Time (EST)</th><th>Behavior in 6J</th></tr>
-
-<tr><td>11:30 AM–12:00 PM</td><td>Sharp volume drop</td></tr>
-
-<tr><td>12:00 PM–1:00 PM</td><td>Dead zone, chop-heavy</td></tr>
-
-<tr><td>1:00 PM–1:30 PM</td><td>Slow recovery</td></tr>
-
-</table>
-
-
-
-<h2>4. Thin Liquidity = More Stop Hunts</h2>
-
-<p>With fewer real orders in the book, algos rip through thin liquidity pockets. This is where traders get destroyed assuming “breakouts” that are really just liquidity grabs.</p>
-
-
-
-<p>If you study <a href="https://grizzlyparrottrading.com/market-basics/liquidity-voids-why-markets-rush-through-empty-space.html">liquidity void behavior</a>, you’ll recognize exactly what’s happening here.</p>
-
-
-
-<h2>5. No Major U.S. Data Releases in This Window</h2>
-
-<p>The big U.S. drivers — CPI, PPI, NFP, FOMC — all release early in the morning. The lunch window rarely has meaningful catalysts, so there’s nothing to push 6J.</p>
-
-
-
-<div class="highlight-box red">
-
-  <h3>Lunch Hours Are Low-Liquidity Traps in 6J</h3>
-
-  <p>When Asia, Europe, and the U.S. are inactive simultaneously, liquidity dries up. Price reacts more to small orders, spreads widen, and slippage increases. Trading during this window carries higher risk of unexpected moves and losses.</p>
-
-</div>
-
-
+<aside class="yj-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This article is educational, not individualized trading, investment, legal, accounting, tax, hedging or brokerage advice. Futures are leveraged, can move rapidly and can produce losses greater than the initial margin deposit. Thin or fast conditions can cause gaps, partial fills, missed limits and slippage beyond a stop. Verify exchange hours, contract month, broker rules, live liquidity and your own risk before acting.</p></aside>
 
 <!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
+</article></section></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

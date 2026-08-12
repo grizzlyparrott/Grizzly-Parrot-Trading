@@ -2,268 +2,164 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why 6J Often Trends During Asian Session Overlaps</title>
-  <meta name="description" content="A blunt breakdown explaining why 6J Japanese Yen futures often trend during Asian session overlaps and what drives the volatility.">
+  <title>When 6J Trends in Asian Hours—and When It Doesn't</title>
+  <meta name="description" content="A sober guide to 6J during Asian hours: exact JST, UTC and ET clocks, Tokyo cash and JGB activity, trend conditions, failure cases and intervention limits.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/why-6j-trends-during-asian-session.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Why 6J Often Trends During Asian Session Overlaps">
-  <meta property="og:description" content="A blunt breakdown explaining why 6J Japanese Yen futures often trend during Asian session overlaps and what drives the volatility.">
+  <meta property="og:title" content="When 6J Trends During Asian Hours—and When It Doesn't">
+  <meta property="og:description" content="Tokyo releases and local market opens can organize yen futures, but the session does not guarantee a trend.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/why-6j-trends-during-asian-session.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-24">
+  <meta property="article:modified_time" content="2026-08-12">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="When 6J Trends During Asian Hours">
+  <meta name="twitter:description" content="Exact clocks, market-structure mechanics and failure conditions for 6J in the Tokyo trading day.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Why 6J Often Trends During Asian Session Overlaps">
-  <meta name="twitter:description" content="A blunt breakdown explaining why 6J Japanese Yen futures often trend during Asian session overlaps and what drives the volatility.">
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
 
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="6j-evidence-guides.css?v=20260807b">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){window.dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"When 6J Trends During Asian Hours—and When It Doesn't","description":"A source-based guide to clocks, Tokyo cash and JGB activity, releases, regional participation, trend conditions and failure cases in Japanese yen futures.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/why-6j-trends-during-asian-session.html"},"datePublished":"2025-11-24","dateModified":"2026-08-12","url":"https://grizzlyparrottrading.com/futures-basics/why-6j-trends-during-asian-session.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Why 6J Often Trends During Asian Session Overlaps",
-  "description": "A blunt breakdown explaining why 6J Japanese Yen futures often trend during Asian session overlaps and what drives the volatility.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/why-6j-trends-during-asian-session.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/why-6j-trends-during-asian-session.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6J During Asian Hours","item":"https://grizzlyparrottrading.com/futures-basics/why-6j-trends-during-asian-session.html"}]}
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Why 6J Often Trends During Asian Session Overlaps",
-      "item": "https://grizzlyparrottrading.com/futures-basics/why-6j-trends-during-asian-session.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Does 6J usually trend during the Asian session?","acceptedAnswer":{"@type":"Answer","text":"That claim is not established here. Asian hours can produce sustained movement when Japanese information, rates and regional flows align, but they can also produce balance and false breaks. A measured answer requires a contract-aware intraday study that separates event and ordinary days."}},
+    {"@type":"Question","name":"What time does the Tokyo market open in Eastern Time?","acceptedAnswer":{"@type":"Answer","text":"Tokyo cash equities open at 9:00 a.m. JST, which is 00:00 UTC. That is 8:00 p.m. EDT or 7:00 p.m. EST on the previous New York calendar date. Japan does not observe daylight saving, while New York does."}},
+    {"@type":"Question","name":"Why can Japanese bond trading matter for 6J?","acceptedAnswer":{"@type":"Answer","text":"JGB prices and yields help express expectations for Japanese inflation, policy and term premium. When Japanese yields move relative to U.S. yields, the rate-spread backdrop relevant to the yen can change, but yields do not explain every 6J move."}},
+    {"@type":"Question","name":"Can a sudden 6J rally during Tokyo hours confirm intervention?","acceptedAnswer":{"@type":"Answer","text":"No. Price action alone cannot confirm intervention. In Japan the Ministry of Finance directs foreign-exchange intervention and the Bank of Japan executes as agent; confirmation comes from official MOF records, which are released on a lag."}}
+  ]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<main><section class="section"><article class="container article-content yen-evidence">
 <!-- ARTICLE BODY START -->
 
-
-
-<h1>Why 6J Often Trends During Asian Session Overlaps</h1>
-
-
-
-<p><strong>6J futures</strong> trend hardest during the Asian session overlap because that’s when real yen liquidity hits the market. Banks, exporters, carry traders, and the Bank of Japan all execute size during these hours. When the flows are aligned, 6J starts trending and doesn’t look back.</p>
-
-
-
-<h2>The Overlap: Tokyo + Singapore = Real Volume</h2>
-
-<p>When Tokyo and Singapore are open at the same time, you get the highest concentration of yen-focused institutional order flow. This means:</p>
-
-
-
-<ul>
-
-<li>actual commercial hedging</li>
-
-<li>government-linked flows</li>
-
-<li>exporter and importer adjustments</li>
-
-<li>fund rebalancing</li>
-
-</ul>
-
-
-
-<p>All of these operations create sustained directional pressure. If you’ve studied <a href="https://grizzlyparrottrading.com/market-basics/market-auction-basics.html">market auction mechanics</a>, you know trending days come from one-sided participation — exactly what this overlap provides.</p>
-
-
-
-<h2>BOJ and MOF Activity Happens in This Window</h2>
-
-<p>The Bank of Japan and Japan’s Ministry of Finance communicate, intervene, and adjust policy expectations during Tokyo hours. That makes the overlap the “flashpoint window” for yen volatility.</p>
-
-
-
-<table>
-
-<tr><th>Event Type</th><th>Impact on 6J</th></tr>
-
-<tr><td>BOJ comments</td><td>Immediate spike or dump</td></tr>
-
-<tr><td>Leak-based guidance</td><td>Slow trend forming</td></tr>
-
-<tr><td>Intervention</td><td>Explosive one-direction moves</td></tr>
-
-</table>
-
-
-
-<p>This ties directly into the <a href="https://grizzlyparrottrading.com/futures-basics/how-6j-reacts-to-boj-policy.html">BOJ reaction article</a>.</p>
-
-
-
-<h2>Lower Competition From Western Market Noise</h2>
-
-<p>During the Asian overlap, U.S. traders are asleep and Europe is closed. That means:</p>
-
-
-
-<ul>
-
-<li>less algo chop</li>
-
-<li>fewer liquidity-hunting spikes</li>
-
-<li>no U.S. economic releases</li>
-
-</ul>
-
-
-
-<p>Cleaner conditions = easier trends.</p>
-
-
-
-<h2>Macro Traders Position for U.S. and European Sessions</h2>
-
-<p>Funds use Asian hours to build positions ahead of major U.S. data like CPI or NFP. This creates pre-positioning flows that often produce slow, steady migrations in price.</p>
-
-
-
-<p>If you know how <a href="https://grizzlyparrottrading.com/market-basics/market-context-stacking-how-smart-traders-align-multiple-signals.html">context stacking</a> works, you understand why this window gives cleaner trend setups.</p>
-
-
-
-<div class="highlight-box yellow">
-
-  <h3>6J Trends Best When Asia Wakes Up</h3>
-
-  <p>The Asian overlap is when 6J actually comes alive — real yen liquidity returns, BOJ policy flow hits, and other markets back off. That’s when clean trends form and noise fades. If you’re trading 6J intraday, this is the window that matters most.</p>
-
-</div>
-
-
+<header class="yj-hero">
+  <div class="yj-hero-copy">
+    <p class="yj-kicker">Asian-hours guide &middot; 6J / JPY-USD</p>
+    <h1>When 6J Trends During Asian Hours—and When It Doesn't</h1>
+    <p class="yj-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 12, 2026</p>
+    <p class="yj-hero-lede">Tokyo hours matter because Japanese releases, JGB trading, cash equities and local risk decisions become active together. Sometimes that produces a directional 6J move. Sometimes it produces a range. The clock organizes participation; it does not guarantee trend.</p>
+    <div class="yj-hero-actions"><a class="button-primary" href="#clock-map">See the exact clocks</a><a class="yj-text-link" href="#conditions">Compare conditions</a></div>
+    <dl class="yj-hero-metrics" aria-label="Tokyo market clock"><div><dt>Japan time</dt><dd>UTC+9</dd></div><div><dt>Japan DST</dt><dd>None</dd></div><div><dt>JGB futures open</dt><dd>8:45 JST</dd></div><div><dt>Cash equities</dt><dd>9:00 JST</dd></div></dl>
+  </div>
+  <div class="yj-hero-visual"><div class="yj-market-board"><div class="yj-board-head"><span>Tokyo morning sequence</span><strong>Local time</strong></div><div class="yj-check-grid" style="margin-top:1rem"><article><strong>8:30</strong><p>Many official releases</p></article><article><strong>8:45</strong><p>JGB futures open</p></article><article><strong>9:00</strong><p>Cash equities open</p></article><article><strong>11:30</strong><p>Cash morning close</p></article></div><p class="yj-board-foot"><span>JST &middot; no DST</span><span>Verify holidays</span></p></div></div>
+</header>
+
+<nav class="yj-jump-nav" aria-label="On this page"><a href="#bottom-line">Bottom line</a><a href="#clock-map">Clock map</a><a href="#mechanics">Mechanics</a><a href="#conditions">Trend vs range</a><a href="#workflow">Workflow</a><a href="#intervention">Intervention</a><a href="#faq">FAQ</a></nav>
+
+<section class="yj-section" id="bottom-line" aria-labelledby="bottom-line-title">
+  <div class="yj-section-heading"><p class="yj-kicker">Direct answer</p><h2 id="bottom-line-title">Asian Hours Can Carry a Trend When New Information and Participation Align</h2><p>A directional move is more plausible when a genuine surprise changes the expected BOJ path or Japanese yields, 6J breaks a meaningful reference range, spot USD/JPY confirms in the inverse direction and pullbacks hold. A range is more plausible when there is no fresh information, yields are flat, price repeatedly returns through the opening area and the first break is rejected.</p></div>
+  <div class="yj-two-column"><article class="yj-panel"><p class="yj-card-label">What the clock supports</p><h3>A concentrated local information window</h3><p>Official releases, JGB and equity opens occur within a tight JST window. That creates a defensible reason to study Tokyo morning separately from the rest of the CME session.</p></article><article class="yj-panel"><p class="yj-card-label">What the clock does not support</p><h3>A universal trend claim</h3><p>This page does not contain a proprietary intraday futures study. Without one, &ldquo;6J trends best in Asia&rdquo; is an assertion—not evidence. Treat the session as context and test any entry rule independently.</p></article></div>
+</section>
+
+<section class="yj-section" id="clock-map" aria-labelledby="clock-map-title">
+  <div class="yj-section-heading"><p class="yj-kicker">Exact clock map</p><h2 id="clock-map-title">Store JST and UTC; Display ET as a Conversion</h2><p>Japan Standard Time is UTC+9 all year. Eastern Time is UTC&minus;4 during EDT and UTC&minus;5 during EST. The New York calendar date is often one day earlier than the Tokyo date.</p></div>
+  <div class="yj-table-scroll" role="region" aria-label="Tokyo session time conversions for 6J traders" tabindex="0"><table class="yj-table">
+    <thead><tr><th scope="col">Tokyo event</th><th scope="col">JST</th><th scope="col">UTC</th><th scope="col">EDT / EST</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Common Japan data time</th><td>8:30 a.m.</td><td>11:30 p.m. prior UTC date</td><td>7:30 p.m. EDT / 6:30 p.m. EST, prior New York date</td></tr>
+      <tr><th scope="row">JGB futures day open</th><td>8:45 a.m.</td><td>11:45 p.m. prior UTC date</td><td>7:45 p.m. EDT / 6:45 p.m. EST, prior New York date</td></tr>
+      <tr><th scope="row">Tokyo cash-equity open</th><td>9:00 a.m.</td><td>12:00 a.m.</td><td>8:00 p.m. EDT / 7:00 p.m. EST, prior New York date</td></tr>
+      <tr><th scope="row">Cash morning close</th><td>11:30 a.m.</td><td>2:30 a.m.</td><td>10:30 p.m. EDT / 9:30 p.m. EST, prior New York date</td></tr>
+      <tr><th scope="row">Afternoon reopen</th><td>12:30 p.m.</td><td>3:30 a.m.</td><td>11:30 p.m. EDT / 10:30 p.m. EST, prior New York date</td></tr>
+      <tr><th scope="row">JGB futures day close</th><td>3:02 p.m.</td><td>6:02 a.m.</td><td>2:02 a.m. EDT / 1:02 a.m. EST</td></tr>
+      <tr><th scope="row">Cash-equity close</th><td>3:30 p.m.</td><td>6:30 a.m.</td><td>2:30 a.m. EDT / 1:30 a.m. EST</td></tr>
+    </tbody>
+  </table></div>
+  <p class="yj-source-note"><a href="https://www.jpx.co.jp/english/derivatives/rules/trading-hours/index.html" target="_blank" rel="noopener">JPX lists</a> JGB futures day trading at 8:45&ndash;11:02 a.m. and 12:30&ndash;3:02 p.m. JST, with a night session. <a href="https://www.jpx.co.jp/english/equities/trading/domestic/01.html" target="_blank" rel="noopener">Tokyo cash equities</a> trade 9:00&ndash;11:30 a.m. and 12:30&ndash;3:30 p.m. JST. Holidays and special schedules still need verification.</p>
+  <div class="yj-caution"><strong>BOJ timing is different</strong><p>BOJ meeting dates are scheduled, but the decision does not arrive at one fixed minute. Monitor the <a href="https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm" target="_blank" rel="noopener">official meeting page</a> and store the actual release timestamp. Do not backfill every BOJ day with the time from the last meeting.</p></div>
+</section>
+
+<section class="yj-section" id="mechanics" aria-labelledby="mechanics-title">
+  <div class="yj-section-heading"><p class="yj-kicker">Why the window matters</p><h2 id="mechanics-title">Four Channels Can Reinforce—or Cancel—Each Other</h2></div>
+  <div class="yj-check-grid">
+    <article><strong>Official information</strong><p>National and Tokyo CPI, wages, GDP, Tankan and BOJ materials can change inflation and policy expectations. The surprise and revisions matter.</p></article>
+    <article><strong>Japanese rates</strong><p>JGB trading can reveal how the local rates market reads policy, inflation and term premium. Relative U.S.-Japan yields are context, not a complete 6J model.</p></article>
+    <article><strong>Local portfolios</strong><p>Japanese banks, insurers, exporters, importers and asset managers may hedge or rebalance. Their flows are not visible from a candle and should not be invented after the fact.</p></article>
+    <article><strong>Regional participation</strong><p>Singapore, Hong Kong and other Asian centers are active, but FX is global and cross-border. A Tokyo clock label does not mean every order originates in Japan.</p></article>
+  </div>
+  <p>The <a href="https://www.bis.org/statistics/rpfx25_fx.htm" target="_blank" rel="noopener">2025 BIS Triennial Survey</a> found that 63% of global OTC FX turnover was cross-border and that Singapore and Hong Kong were among the four largest sales-desk locations. That supports regional-participation nuance. It does not measure CME 6J volume by minute or prove a Tokyo-Singapore trend rule.</p>
+  <p>Direction also needs correct quoting. Rising 6J means the yen strengthens in USD-per-JPY terms; falling USD/JPY spot also means yen strength. Futures basis and contract expiry keep the two from being exact reciprocals at every instant.</p>
+</section>
+
+<section class="yj-section" id="conditions" aria-labelledby="conditions-title">
+  <div class="yj-section-heading"><p class="yj-kicker">Conditional playbook</p><h2 id="conditions-title">Trend Conditions Versus Range Conditions</h2><p>This matrix is a planning framework, not a measured classifier or promise of follow-through.</p></div>
+  <div class="yj-table-scroll" role="region" aria-label="Asian-hours trend and range conditions for 6J" tabindex="0"><table class="yj-table">
+    <thead><tr><th scope="col">Observation</th><th scope="col">More consistent with trend</th><th scope="col">More consistent with balance or failure</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Information</th><td>Clear surprise that changes the expected policy path</td><td>No release, mixed details or outcome already priced</td></tr>
+      <tr><th scope="row">Opening range</th><td>Break, acceptance outside and shallow retest</td><td>Repeated re-entry and rejection of both edges</td></tr>
+      <tr><th scope="row">Rates</th><td>Japanese or relative yields broadly confirm</td><td>Yield move fades or contradicts price</td></tr>
+      <tr><th scope="row">Spot/futures</th><td>6J and USD/JPY move consistently under inverse quoting</td><td>Temporary divergence or futures move without spot follow-through</td></tr>
+      <tr><th scope="row">Pullbacks</th><td>Old boundary holds and adverse excursions contract</td><td>Each push travels less before returning to the midpoint</td></tr>
+      <tr><th scope="row">Execution</th><td>Spread and depth support intended size</td><td>Shallow book, widening spread or repeated slippage</td></tr>
+    </tbody>
+  </table></div>
+  <p>A range can still break later when Europe or the United States enters. An Asian-hours trend can also reverse at the next regional handoff. Define the measurement window and exit condition instead of silently extending the label until the chart agrees.</p>
+</section>
+
+<section class="yj-section" id="workflow" aria-labelledby="workflow-title">
+  <div class="yj-section-heading"><p class="yj-kicker">Practical workflow</p><h2 id="workflow-title">A Session Plan That Survives the Clock Change</h2></div>
+  <div class="yj-process">
+    <article><span>01</span><div><h3>Use the Tokyo date</h3><p>List official releases in JST and UTC. Add ET only for display, with EDT or EST stated explicitly.</p></div></article>
+    <article><span>02</span><div><h3>Mark the reference structure</h3><p>Record the CME-session open, prior day levels and a fixed pre-Tokyo range. Do not redraw the range after the move.</p></div></article>
+    <article><span>03</span><div><h3>Tag the day</h3><p>BOJ, CPI, Tankan, intervention-confirmed, holiday, roll or ordinary. Do not average different information regimes blindly.</p></div></article>
+    <article><span>04</span><div><h3>Demand acceptance</h3><p>Use a predefined time or close rule outside the range. See the <a href="6j-breakout-events.html">6J breakout framework</a> for objective definitions.</p></div></article>
+    <article><span>05</span><div><h3>Plan the handoff</h3><p>Decide before Europe enters whether the position is an Asian-window trade or a broader thesis. The risk horizon should not expand by accident.</p></div></article>
+  </div>
+</section>
+
+<section class="yj-section" id="intervention" aria-labelledby="intervention-title">
+  <div class="yj-section-heading"><p class="yj-kicker">Hard evidence limit</p><h2 id="intervention-title">Never Diagnose Intervention From the Candle</h2><p>The <a href="https://www.boj.or.jp/en/about/education/oshiete/intl/g19.htm" target="_blank" rel="noopener">Bank of Japan states</a> that intervention is carried out under the authority of the Minister of Finance, with the BOJ acting on the minister&rsquo;s instructions. The <a href="https://www.mof.go.jp/english/policy/international_policy/reference/feio/index.html" target="_blank" rel="noopener">MOF publishes official totals and details</a> on a lag.</p></div>
+  <div class="yj-caution"><strong>Correct label</strong><p>A sudden Asian-hours 6J rally can be marked &ldquo;unexplained fast move&rdquo; or &ldquo;suspected intervention&rdquo; if that is useful to the research. It cannot be marked confirmed intervention until the official record supports it. Use the <a href="6j-boj-intervention-signals.html">verified intervention-event study</a> for the full disclosure and event-label method.</p></div>
+</section>
+
+<section class="yj-section" id="limits" aria-labelledby="limits-title"><div class="yj-section-heading"><p class="yj-kicker">Evidence boundary</p><h2 id="limits-title">What Remains Unproven</h2><p>No proprietary intraday 6J dataset underlies this article. It does not establish that Asian hours trend more often than other windows, that Tokyo plus Singapore is the &ldquo;highest-volume overlap,&rdquo; or that a particular opening-range rule is profitable after costs. Those claims require contract-aware futures data, event labels, roll rules, realistic fills and out-of-sample tests.</p></div><div class="yj-limit-grid"><article><strong>Selection bias</strong><p>Memorable BOJ moves can dominate perception of ordinary sessions.</p></article><article><strong>Time-zone drift</strong><p>ET changes while JST does not, shifting chart labels twice a year.</p></article><article><strong>Event contamination</strong><p>U.S. headlines and geopolitics can land during Tokyo hours.</p></article><article><strong>Basis</strong><p>6J futures and spot USD/JPY are related, not identical instruments.</p></article><article><strong>Roll</strong><p>Activity migrates between contracts and can distort fixed-symbol analysis.</p></article><article><strong>Fill uncertainty</strong><p>Bar prices do not prove available size or achievable execution.</p></article></div></section>
+
+<section class="yj-section yj-faq" id="faq" aria-labelledby="faq-title"><div class="yj-section-heading"><p class="yj-kicker">Frequently asked questions</p><h2 id="faq-title">6J Asian-Hours Questions</h2></div>
+  <details><summary>Does 6J usually trend during the Asian session?</summary><p>That claim is not established here. Asian hours can produce sustained movement when Japanese information, rates and regional flows align, but they can also produce balance and false breaks. A measured answer requires a contract-aware intraday study that separates event and ordinary days.</p></details>
+  <details><summary>What time does the Tokyo market open in Eastern Time?</summary><p>Tokyo cash equities open at 9:00 a.m. JST, which is 00:00 UTC. That is 8:00 p.m. EDT or 7:00 p.m. EST on the previous New York calendar date. Japan does not observe daylight saving, while New York does.</p></details>
+  <details><summary>Why can Japanese bond trading matter for 6J?</summary><p>JGB prices and yields help express expectations for Japanese inflation, policy and term premium. When Japanese yields move relative to U.S. yields, the rate-spread backdrop relevant to the yen can change, but yields do not explain every 6J move.</p></details>
+  <details><summary>Can a sudden 6J rally during Tokyo hours confirm intervention?</summary><p>No. Price action alone cannot confirm intervention. In Japan the Ministry of Finance directs foreign-exchange intervention and the Bank of Japan executes as agent; confirmation comes from official MOF records, which are released on a lag.</p></details>
+</section>
+
+<details class="yj-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+  <li><a href="https://www.jpx.co.jp/english/derivatives/rules/trading-hours/index.html" target="_blank" rel="noopener">Japan Exchange Group: derivatives trading hours</a> and <a href="https://www.jpx.co.jp/english/equities/trading/domestic/01.html" target="_blank" rel="noopener">domestic cash-equity trading hours</a>.</li>
+  <li><a href="https://www.stat.go.jp/english/data/cpi/1585.htm" target="_blank" rel="noopener">Statistics Bureau of Japan: CPI release timing</a> and <a href="https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm" target="_blank" rel="noopener">BOJ monetary-policy meeting page</a>.</li>
+  <li><a href="https://www.bis.org/statistics/rpfx25_fx.htm" target="_blank" rel="noopener">Bank for International Settlements: OTC foreign exchange turnover in April 2025</a> for cross-border and regional-hub context.</li>
+  <li><a href="https://www.boj.or.jp/en/about/education/oshiete/intl/g19.htm" target="_blank" rel="noopener">Bank of Japan: intervention authority and execution</a> and <a href="https://www.mof.go.jp/english/policy/international_policy/reference/feio/index.html" target="_blank" rel="noopener">MOF intervention records</a>.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> for 6J contract and quotation context.</li>
+</ul><p>Sources were checked August 12, 2026. Clock conversions use JST at UTC+9, EDT at UTC&minus;4 and EST at UTC&minus;5. The trend and range conditions are a planning framework, not measured probabilities. No proprietary intraday or order-book study is represented. This is original editorial analysis, not sponsored research.</p></details>
+
+<aside class="yj-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This article is educational, not individualized trading, investment, legal, accounting, tax, hedging or brokerage advice. Futures are leveraged, can move rapidly and can produce losses greater than the initial margin deposit. Session patterns can fail, and gaps, spread changes and slippage can make actual losses worse than planned. Verify official release times, exchange hours, contract month, broker rules, liquidity and your own risk before acting.</p></aside>
 
 <!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
+</article></section></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>
