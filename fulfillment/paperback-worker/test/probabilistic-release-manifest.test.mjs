@@ -49,6 +49,12 @@ function completeFixture() {
     userProofAccepted: true,
     privateLiveOrderVerified: true,
     salesActivationApproved: true,
+    salesActivationScope: "grizzly-direct-site",
+    salesActivationApprovedAt: "2026-08-13",
+    directSiteAssetsUploaded: true,
+    directSiteAssetsReadbackVerified: true,
+    directSiteSalesEnabled: true,
+    directCheckoutUrl: "https://grizzly-parrot-paperback.grizzlyparrott04.workers.dev/print/checkout?bookSlug=probabilistic-execution&edition=paperback",
     merchantItemId: "online-en-US-probabilistic-paperback",
     merchantStatus: "approved"
   });
@@ -71,6 +77,12 @@ function completeFixture() {
     userProofAccepted: true,
     privateLiveOrderVerified: true,
     salesActivationApproved: true,
+    salesActivationScope: "grizzly-direct-site",
+    salesActivationApprovedAt: "2026-08-13",
+    directSiteAssetsUploaded: true,
+    directSiteAssetsReadbackVerified: true,
+    directSiteSalesEnabled: true,
+    directCheckoutUrl: "https://grizzly-parrot-paperback.grizzlyparrott04.workers.dev/print/checkout?bookSlug=probabilistic-execution&edition=hardcover",
     merchantItemId: "online-en-US-probabilistic-hardcover",
     merchantStatus: "approved"
   });
@@ -85,7 +97,9 @@ function completeFixture() {
     canonicalLiveVerified: true,
     workerLiveVerified: true,
     existingBooksRegressionVerified: true,
-    independentPostDeploymentVerified: true
+    independentPostDeploymentVerified: true,
+    directSitePrintSalesLiveVerified: true,
+    directSitePrintSalesConfigurationId: "worker_123456789"
   });
   return manifest;
 }
@@ -105,13 +119,14 @@ function digitalReleaseFixture() {
   return manifest;
 }
 
-test("the tracked release manifest records paid proof orders while later release gates remain closed", () => {
+test("the tracked release manifest records the corrected combined proof order while physical-proof and retailer gates remain closed", () => {
   const report = validateReleaseManifest(stagedManifest);
   assert.equal(report.readiness.local, true);
   assert.equal(report.readiness.provider, false);
   assert.equal(report.readiness.proof, false);
   assert.equal(report.readiness.private, false);
   assert.equal(report.readiness.release, false);
+  assert.equal(report.readiness.direct, false);
   const providerErrors = report.directErrors.provider.join("\n");
   assert.doesNotMatch(providerErrors, /isbnPolicy/);
   assert.doesNotMatch(providerErrors, /bibliographic publisher/);
@@ -124,8 +139,10 @@ test("the tracked release manifest records paid proof orders while later release
   assert.equal(stagedManifest.distribution.luluBookstoreAccess, "private");
   assert.equal(stagedManifest.distribution.retailerAvailabilityActive, false);
   assert.equal(stagedManifest.distribution.reviewFeePaymentsVerified, true);
-  assert.equal(stagedManifest.print.paperback.proofOrderId, "USD-C4285059");
-  assert.equal(stagedManifest.print.hardcover.proofOrderId, "USD-C4285060");
+  assert.equal(stagedManifest.print.paperback.proofOrderId, "USD-C4288608");
+  assert.equal(stagedManifest.print.hardcover.proofOrderId, "USD-C4288608");
+  assert.equal(stagedManifest.print.paperback.salesActivationApproved, true);
+  assert.equal(stagedManifest.print.hardcover.salesActivationApproved, true);
   assert.doesNotMatch(report.directErrors.proof.join("\n"), /distribution review fee payments/);
   assert.match(report.directErrors.proof.join("\n"), /proof has not been received/);
   assert.doesNotMatch(report.directErrors.private.join("\n"), /assets have not been uploaded/);
@@ -158,7 +175,8 @@ test("release readiness requires one internally consistent set of provider IDs, 
     proof: true,
     private: true,
     release: true,
-    digital: true
+    digital: true,
+    direct: true
   });
 
   complete.isbnPolicy = "user-owned";
@@ -239,7 +257,7 @@ test("release readiness requires one internally consistent set of provider IDs, 
   assert.match(duplicate.directErrors.provider.join("\n"), /two distinct valid ISBNs/);
 });
 
-test("digital release readiness can pass while every unaccepted print gate stays closed", () => {
+test("digital readiness can pass while physical-proof and retailer gates stay closed independently of direct-site approval", () => {
   const digitalOnly = digitalReleaseFixture();
   const report = validateReleaseManifest(digitalOnly);
   assert.equal(report.readiness.digital, true);
@@ -248,8 +266,10 @@ test("digital release readiness can pass while every unaccepted print gate stays
   assert.equal(report.readiness.private, false);
   assert.equal(report.readiness.release, false);
   assert.equal(digitalOnly.digital.privateLiveDeliveryVerified, false);
-  assert.equal(digitalOnly.print.paperback.salesActivationApproved, false);
-  assert.equal(digitalOnly.print.hardcover.salesActivationApproved, false);
+  assert.equal(digitalOnly.print.paperback.salesActivationApproved, true);
+  assert.equal(digitalOnly.print.hardcover.salesActivationApproved, true);
+  assert.equal(digitalOnly.print.paperback.proofReceived, false);
+  assert.equal(digitalOnly.print.hardcover.proofReceived, false);
 
   digitalOnly.digital.paymentLinkActive = false;
   const inactiveCheckout = validateReleaseManifest(digitalOnly);

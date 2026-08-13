@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const STAGES = Object.freeze(["local", "provider", "proof", "private", "release"]);
-const SELECTABLE_STAGES = Object.freeze([...STAGES, "digital"]);
+const SELECTABLE_STAGES = Object.freeze([...STAGES, "digital", "direct"]);
 const EXPECTED = Object.freeze({
   book: Object.freeze({
     slug: "probabilistic-execution",
@@ -16,14 +16,14 @@ const EXPECTED = Object.freeze({
     reviewedMasterSha256: "859CE56ABC8FD412C00B7FC84309FCFC2F19C1DDB12A860E3195605DCF9D7D0B",
     reportSha256: "01F5D34A5C4E31C44F72CB429366B0D0777E4A4E2BAE8C4D9044121D784BC555",
     correctionsLedgerSha256: "F31BC9FB865FFB01CB8672E1CA272AC4AB1FDB2F1669F7B273AF60D552CE552E",
-    postAdjudicationMasterSha256: "DEB166A98EB512B82FD0DEF23FAA4D3A08CB6A656B7B1A305FB5923A3CB71019"
+    postAdjudicationMasterSha256: "6D17E31911779F8FFFCE9CD66D37057FB6D3F292E68162880619D497C3CA236B"
   }),
   digital: Object.freeze({
     priceCents: 2900,
     currency: "USD",
     pdf: Object.freeze({
       filename: "Probabilistic-Execution-Digital.pdf",
-      sha256: "6859F32798DD82D119ED9685B15D290CB0548440B40FC4CC835871C1EC59D9F3"
+      sha256: "1D834086444030212CE763A02471A5BEFB78BCC4FFFCD1F21FE66AC2883B78B3"
     }),
     epub: Object.freeze({
       filename: "Probabilistic-Execution-Digital.epub",
@@ -38,7 +38,7 @@ const EXPECTED = Object.freeze({
       coverFilename: "Probabilistic-Execution-Lulu-Paperback-Cover.pdf",
       preIsbnInteriorMd5: "66FAD12D58D3297F868B8C92B5299677",
       preIsbnCoverMd5: "0CE8353FE6433F49995763DE1B92A4CF",
-      finalInteriorMd5: "243BC3729F9C95B76780A6E0AF3EB064",
+      finalInteriorMd5: "2660805CD72253BC9315A3C082AC1A62",
       finalCoverMd5: "5E98FA34140EA9CF97ACF575AEF6501B",
       proofQuote: Object.freeze({
         quantity: 1,
@@ -57,7 +57,7 @@ const EXPECTED = Object.freeze({
       coverFilename: "Probabilistic-Execution-Lulu-Hardcover-Cover.pdf",
       preIsbnInteriorMd5: "216F1DA3D01E94A97DB10370BDA1F2CB",
       preIsbnCoverMd5: "54F235F2C4800C907430E952975FC64C",
-      finalInteriorMd5: "AB4CE571C3FED8931EEB6788A9E0ED99",
+      finalInteriorMd5: "410B05415AD1433753AB9158F2E8ACB5",
       finalCoverMd5: "70162A861C8524468D579E068C2E2137",
       proofQuote: Object.freeze({
         quantity: 1,
@@ -110,6 +110,19 @@ function validCheckoutUrl(value) {
       && parsed.hostname === "buy.stripe.com"
       && parsed.pathname.length > 6
       && !/(?:test|example|placeholder)/i.test(parsed.pathname);
+  } catch {
+    return false;
+  }
+}
+
+function validPrintCheckoutUrl(value, edition) {
+  try {
+    const parsed = new URL(value);
+    return parsed.protocol === "https:"
+      && parsed.hostname === "grizzly-parrot-paperback.grizzlyparrott04.workers.dev"
+      && parsed.pathname === "/print/checkout"
+      && parsed.searchParams.get("bookSlug") === "probabilistic-execution"
+      && parsed.searchParams.get("edition") === edition;
   } catch {
     return false;
   }
@@ -364,6 +377,40 @@ function digitalReleaseChecks(manifest) {
   return errors;
 }
 
+function directSiteReleaseChecks(manifest) {
+  const errors = [];
+  for (const binding of ["paperback", "hardcover"]) {
+    const record = manifest?.print?.[binding];
+    add(errors, record?.filesValidated === true, `${binding} final print files are not validated`);
+    add(errors, record?.directSiteAssetsUploaded === true, `${binding} direct-site print assets are not fully uploaded`);
+    add(errors, record?.directSiteAssetsReadbackVerified === true, `${binding} direct-site print assets have not passed remote readback verification`);
+    add(errors, realIdentifier(record?.stripePriceId, "price_"), `${binding} Stripe Price ID is missing or placeholder`);
+    add(
+      errors,
+      Number.isInteger(record?.retailPriceCents) && record.retailPriceCents > record.manufacturingCostCents,
+      `${binding} retail price is missing or does not exceed the verified manufacturing cost`
+    );
+    add(errors, record?.salesActivationApproved === true, `${binding} direct-site sales activation is not approved`);
+    add(errors, record?.salesActivationScope === "grizzly-direct-site", `${binding} sales approval scope must be grizzly-direct-site`);
+    add(errors, /^\d{4}-\d{2}-\d{2}$/.test(record?.salesActivationApprovedAt || ""), `${binding} direct-site sales approval date is missing`);
+    add(errors, record?.directSiteSalesEnabled === true, `${binding} direct-site sales are not enabled`);
+    add(errors, validPrintCheckoutUrl(record?.directCheckoutUrl, binding), `${binding} direct checkout URL is missing or invalid`);
+    add(errors, typeof record?.proofReceived === "boolean", `${binding}.proofReceived must remain an explicit provider state`);
+    add(errors, typeof record?.userProofAccepted === "boolean", `${binding}.userProofAccepted must remain an explicit user state`);
+  }
+  for (const field of [
+    "canonicalLiveVerified",
+    "workerLiveVerified",
+    "existingBooksRegressionVerified",
+    "independentPostDeploymentVerified",
+    "directSitePrintSalesLiveVerified"
+  ]) {
+    add(errors, manifest?.publication?.[field] === true, `publication.${field} is not verified for the direct-site print release`);
+  }
+  add(errors, realIdentifier(manifest?.publication?.directSitePrintSalesConfigurationId, ""), "direct-site print Worker configuration ID is missing or placeholder");
+  return errors;
+}
+
 function releaseChecks(manifest) {
   const errors = [];
   add(
@@ -417,7 +464,8 @@ export function validateReleaseManifest(manifest) {
     proof: proofChecks(manifest),
     private: privateChecks(manifest),
     release: releaseChecks(manifest),
-    digital: digitalReleaseChecks(manifest)
+    digital: digitalReleaseChecks(manifest),
+    direct: directSiteReleaseChecks(manifest)
   };
   const cumulativeErrors = {};
   let accumulated = [];
@@ -426,8 +474,10 @@ export function validateReleaseManifest(manifest) {
     cumulativeErrors[stage] = accumulated;
   }
   cumulativeErrors.digital = [...directErrors.local, ...directErrors.digital];
+  cumulativeErrors.direct = [...directErrors.local, ...directErrors.direct];
   const readiness = Object.fromEntries(STAGES.map(stage => [stage, cumulativeErrors[stage].length === 0]));
   readiness.digital = cumulativeErrors.digital.length === 0;
+  readiness.direct = cumulativeErrors.direct.length === 0;
   return {
     readiness,
     directErrors,
@@ -441,7 +491,7 @@ async function main() {
   const requestedStage = stageIndex >= 0 ? args[stageIndex + 1] : "release";
   const manifestPath = args.find((value, index) => value !== "--stage" && index !== stageIndex + 1);
   if (!manifestPath || !SELECTABLE_STAGES.includes(requestedStage)) {
-    console.error("Usage: node scripts/validate-probabilistic-release.mjs <manifest.json> [--stage local|provider|proof|private|release|digital]");
+    console.error("Usage: node scripts/validate-probabilistic-release.mjs <manifest.json> [--stage local|provider|proof|private|release|digital|direct]");
     process.exitCode = 2;
     return;
   }

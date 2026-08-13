@@ -125,15 +125,17 @@ export const HARDCOVER_BOOKS = Object.freeze({
 });
 
 // These records pin the ISBN-final production files and verified Lulu identity
-// and list-price data. A staged edition remains visible to /public-config only as
-// unavailable and can never quote, check out, or reach Lulu until validation,
-// proof, Stripe, and release gates are supplied explicitly.
-export const STAGED_PRINT_EDITIONS = Object.freeze({
+// and list-price data. They are release-controlled catalog entries: direct-site
+// checkout remains fail-closed until file validation, direct-sales approval,
+// Stripe, policy, and title-specific sales gates are supplied explicitly.
+// Physical-proof and retail-distribution state is tracked separately and is not
+// misrepresented by the direct-site approval gate.
+export const PROBABILISTIC_EXECUTION_PRINT_EDITIONS = Object.freeze({
   "probabilistic-execution": Object.freeze({
     slug: "probabilistic-execution",
     seriesSlug: "probabilistic-execution",
     releaseKey: "PROBABILISTIC_EXECUTION",
-    catalogStatus: "staged",
+    catalogStatus: "release-controlled",
     edition: "paperback",
     editionLabel: "Paperback",
     title: "Probabilistic Execution: Tactics to Avoid the Guillotine",
@@ -144,8 +146,8 @@ export const STAGED_PRINT_EDITIONS = Object.freeze({
     priceCents: 3900,
     priceEnv: "STRIPE_PRICE_PROBABILISTIC_PAPERBACK",
     assets: Object.freeze({
-      interiorKey: "Probabilistic-Execution-Lulu-Paperback-Interior.pdf",
-      interiorMd5: "243BC3729F9C95B76780A6E0AF3EB064",
+      interiorKey: "probabilistic-execution/list-restart-2026-08-13/Probabilistic-Execution-Lulu-Paperback-Interior.pdf",
+      interiorMd5: "2660805CD72253BC9315A3C082AC1A62",
       coverKey: "Probabilistic-Execution-Lulu-Paperback-Cover.pdf",
       coverMd5: "5E98FA34140EA9CF97ACF575AEF6501B"
     })
@@ -154,7 +156,7 @@ export const STAGED_PRINT_EDITIONS = Object.freeze({
     slug: "probabilistic-execution-hardcover",
     seriesSlug: "probabilistic-execution",
     releaseKey: "PROBABILISTIC_EXECUTION",
-    catalogStatus: "staged",
+    catalogStatus: "release-controlled",
     edition: "hardcover",
     editionLabel: "Hardcover",
     title: "Probabilistic Execution: Tactics to Avoid the Guillotine",
@@ -165,16 +167,20 @@ export const STAGED_PRINT_EDITIONS = Object.freeze({
     priceCents: 4900,
     priceEnv: "STRIPE_PRICE_PROBABILISTIC_HARDCOVER",
     assets: Object.freeze({
-      interiorKey: "Probabilistic-Execution-Lulu-Hardcover-Interior.pdf",
-      interiorMd5: "AB4CE571C3FED8931EEB6788A9E0ED99",
+      interiorKey: "probabilistic-execution/list-restart-2026-08-13/Probabilistic-Execution-Lulu-Hardcover-Interior.pdf",
+      interiorMd5: "410B05415AD1433753AB9158F2E8ACB5",
       coverKey: "Probabilistic-Execution-Lulu-Hardcover-Cover.pdf",
       coverMd5: "70162A861C8524468D579E068C2E2137"
     })
   })
 });
 
-export const PRINT_EDITIONS = Object.freeze({ ...PAPERBACK_BOOKS, ...HARDCOVER_BOOKS });
-export const ALL_PRINT_EDITIONS = Object.freeze({ ...PRINT_EDITIONS, ...STAGED_PRINT_EDITIONS });
+export const PRINT_EDITIONS = Object.freeze({
+  ...PAPERBACK_BOOKS,
+  ...HARDCOVER_BOOKS,
+  ...PROBABILISTIC_EXECUTION_PRINT_EDITIONS
+});
+export const ALL_PRINT_EDITIONS = PRINT_EDITIONS;
 
 export const SHIPPING_OPTIONS = Object.freeze({
   MAIL: "Mail",

@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { getBook, getStripePriceId, catalogReady, POD_PACKAGE_ID, HARDCOVER_POD_PACKAGE_ID, PRINT_EDITIONS, STAGED_PRINT_EDITIONS, ALL_PRINT_EDITIONS, SHIPPING_OPTIONS } from "../src/catalog.mjs";
+import { getBook, getStripePriceId, catalogReady, POD_PACKAGE_ID, HARDCOVER_POD_PACKAGE_ID, PRINT_EDITIONS, PROBABILISTIC_EXECUTION_PRINT_EDITIONS, ALL_PRINT_EDITIONS, SHIPPING_OPTIONS } from "../src/catalog.mjs";
 import { validateCheckoutRequest, addressesMatch } from "../src/validation.mjs";
 import { hmacHex, verifyStripeSignature, signedAssetUrl, verifyAssetRequest } from "../src/crypto.mjs";
 import { LuluClient, shippingCents } from "../src/lulu.mjs";
@@ -20,7 +20,7 @@ const validAddress = {
   phoneNumber: "+1 919 555 0100"
 };
 
-test("all six print editions map to their approved Lulu projects, packages, prices, and source files", () => {
+test("all established print editions map to their approved Lulu projects, packages, prices, and source files", () => {
   const expected = {
     "currency-market-structure": ["84mdgqe", POD_PACKAGE_ID, 3900],
     "metals-market-structure": ["dy4ewg4", POD_PACKAGE_ID, 3900],
@@ -37,13 +37,13 @@ test("all six print editions map to their approved Lulu projects, packages, pric
     assert.match(book.assets.interiorMd5, /^[A-F0-9]{32}$/);
     assert.match(book.assets.coverMd5, /^[A-F0-9]{32}$/);
   }
-  assert.equal(Object.keys(PRINT_EDITIONS).length, 6);
+  assert.equal(Object.keys(PRINT_EDITIONS).length, 8);
   assert.equal(getBook("currency-market-structure", "hardcover").slug, "currency-market-structure-hardcover");
   assert.deepEqual(Object.keys(SHIPPING_OPTIONS), ["MAIL", "PRIORITY_MAIL", "EXPEDITED", "EXPRESS"]);
 });
 
-test("Probabilistic Execution print files are staged but cannot masquerade as sale-ready catalog records", async () => {
-  assert.equal(Object.keys(STAGED_PRINT_EDITIONS).length, 2);
+test("Probabilistic Execution print checkout requires its independent direct-site approval and every production gate", async () => {
+  assert.equal(Object.keys(PROBABILISTIC_EXECUTION_PRINT_EDITIONS).length, 2);
   assert.equal(Object.keys(ALL_PRINT_EDITIONS).length, 8);
   const stagedProjectIds = {
     paperback: "yvep5mw",
@@ -59,13 +59,13 @@ test("Probabilistic Execution print files are staged but cannot masquerade as sa
   };
   for (const edition of ["paperback", "hardcover"]) {
     const book = getBook("probabilistic-execution", edition);
-    assert.equal(book.catalogStatus, "staged");
+    assert.equal(book.catalogStatus, "release-controlled");
     assert.equal(book.interiorPages, 148);
     assert.equal(book.luluPublishingProjectId, stagedProjectIds[edition]);
     assert.equal(book.isbn, stagedIsbns[edition]);
     assert.equal(book.priceCents, stagedPrices[edition]);
-    assert.equal(catalogReady(book), false);
-    assert.equal(productionSalesEnabled({
+    assert.equal(catalogReady(book), true);
+    const configured = {
       PAPERBACK_ENVIRONMENT: "production",
       PAPERBACK_SALES_ENABLED: "true",
       HARDCOVER_SALES_ENABLED: "true",
@@ -76,12 +76,22 @@ test("Probabilistic Execution print files are staged but cannot masquerade as sa
       PAPERBACK_STRIPE_TAX_ENABLED: "true",
       PROBABILISTIC_EXECUTION_PAPERBACK_FILES_VALIDATED: "true",
       PROBABILISTIC_EXECUTION_HARDCOVER_FILES_VALIDATED: "true",
-      PROBABILISTIC_EXECUTION_PAPERBACK_PROOF_APPROVED: "true",
-      PROBABILISTIC_EXECUTION_HARDCOVER_PROOF_APPROVED: "true",
+      PROBABILISTIC_EXECUTION_PAPERBACK_PROOF_APPROVED: "false",
+      PROBABILISTIC_EXECUTION_HARDCOVER_PROOF_APPROVED: "false",
+      PROBABILISTIC_EXECUTION_PAPERBACK_DIRECT_SALES_APPROVED: "true",
+      PROBABILISTIC_EXECUTION_HARDCOVER_DIRECT_SALES_APPROVED: "true",
       PROBABILISTIC_EXECUTION_PAPERBACK_SALES_ENABLED: "true",
-      PROBABILISTIC_EXECUTION_HARDCOVER_SALES_ENABLED: "true"
+      PROBABILISTIC_EXECUTION_HARDCOVER_SALES_ENABLED: "true",
+      STRIPE_PRICE_PROBABILISTIC_PAPERBACK: "price_probabilistic_paperback",
+      STRIPE_PRICE_PROBABILISTIC_HARDCOVER: "price_probabilistic_hardcover"
+    };
+    assert.equal(productionSalesEnabled(configured, book), true);
+    assert.equal(getStripePriceId(book, configured), configured[book.priceEnv]);
+    assert.equal(productionSalesEnabled({
+      ...configured,
+      [`PROBABILISTIC_EXECUTION_${edition.toUpperCase()}_DIRECT_SALES_APPROVED`]: "false",
+      [`PROBABILISTIC_EXECUTION_${edition.toUpperCase()}_PROOF_APPROVED`]: "true"
     }, book), false);
-    assert.throws(() => getStripePriceId(book, {}), /catalog is incomplete/i);
   }
 
   const config = await worker.fetch(new Request("https://paperback-api.example.com/public-config?bookSlug=probabilistic-execution&edition=paperback"), {
@@ -91,14 +101,16 @@ test("Probabilistic Execution print files are staged but cannot masquerade as sa
     PAPERBACK_POLICIES_APPROVED: "true",
     PAPERBACK_ALLOWED_COUNTRIES: "US",
     PAPERBACK_STRIPE_TAX_ENABLED: "true",
-    PAPERBACK_BASE_URL: "https://paperback-api.example.com"
+    PAPERBACK_BASE_URL: "https://paperback-api.example.com",
+    PROBABILISTIC_EXECUTION_PAPERBACK_FILES_VALIDATED: "true",
+    PROBABILISTIC_EXECUTION_PAPERBACK_DIRECT_SALES_APPROVED: "true",
+    PROBABILISTIC_EXECUTION_PAPERBACK_SALES_ENABLED: "true"
   });
   assert.deepEqual(await config.json(), {
-    enabled: false,
-    checkoutUrl: null,
+    enabled: true,
+    checkoutUrl: "https://paperback-api.example.com/print/checkout?bookSlug=probabilistic-execution&edition=paperback",
     edition: "paperback",
-    priceCents: 3900,
-    catalogStatus: "staged"
+    priceCents: 3900
   });
 });
 
@@ -144,7 +156,7 @@ test("a release-keyed print edition cannot inherit another title's proof or sale
   assert.equal(productionSalesEnabled({
     ...globalApproval,
     RELEASE_ISOLATION_TEST_PAPERBACK_FILES_VALIDATED: "true",
-    RELEASE_ISOLATION_TEST_PAPERBACK_PROOF_APPROVED: "true",
+    RELEASE_ISOLATION_TEST_PAPERBACK_DIRECT_SALES_APPROVED: "true",
     RELEASE_ISOLATION_TEST_PAPERBACK_SALES_ENABLED: "true"
   }, book), true);
 });
@@ -610,15 +622,21 @@ test("all book pages keep print controls fail-closed and use the canonical site 
 
   const probabilistic = await readFile(new URL("../../../books/probabilistic-execution/index.html", import.meta.url), "utf8");
   assert.match(probabilistic, /button-disabled js-digital-buy/);
-  assert.equal((probabilistic.match(/<strong class="coming-soon">Coming soon<\/strong>/g) || []).length, 2);
-  assert.doesNotMatch(probabilistic, /js-paperback-buy|js-hardcover-buy/);
+  assert.match(probabilistic, /button-disabled js-paperback-buy/);
+  assert.match(probabilistic, /button-disabled js-hardcover-buy/);
+  assert.doesNotMatch(probabilistic, /Coming soon|Sales have not opened/);
   assert.match(probabilistic, /digital-config\?bookSlug=probabilistic-execution/);
-  assert.doesNotMatch(probabilistic, /public-config\?bookSlug=probabilistic-execution&edition=/);
-  assert.doesNotMatch(probabilistic, /data-price-paperback|data-price-hardcover/);
+  assert.match(probabilistic, /public-config\?bookSlug=probabilistic-execution&edition=/);
+  assert.match(probabilistic, /data-price-paperback/);
+  assert.match(probabilistic, /data-price-hardcover/);
   assert.match(probabilistic, /Safe default: digital checkout remains disabled/);
-  assert.match(probabilistic, /Digital now\. Print coming soon\./);
+  assert.match(probabilistic, /Safe default: this print button remains disabled/);
+  assert.match(probabilistic, /Choose your edition\./);
+  assert.match(probabilistic, /<strong data-price-paperback>\$39<\/strong>/);
+  assert.match(probabilistic, /<strong data-price-hardcover>\$49<\/strong>/);
   assert.doesNotMatch(probabilistic, /buy\.stripe\.com\/[A-Za-z0-9]/);
-  assert.doesNotMatch(probabilistic, /"isbn"|"gtin13"/);
+  assert.match(probabilistic, /"isbn": "9780557956548"/);
+  assert.match(probabilistic, /"isbn": "9780557956531"/);
 });
 
 test("hardcover activation is independent and returns the exact hardcover checkout", async () => {

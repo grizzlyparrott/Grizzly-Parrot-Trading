@@ -4,8 +4,9 @@ compatibility_date = "2026-07-20"
 workers_dev = true
 keep_vars = true
 
-# Production is configured now, but this explicit gate keeps every paperback
-# checkout unavailable until the physical proofs are approved.
+# Production is configured. Existing books retain their established global
+# proof approvals; release-keyed titles additionally require their own scoped
+# direct-sales approval and cannot inherit another title's state.
 [vars]
 PAPERBACK_SALES_ENABLED = "true"
 HARDCOVER_SALES_ENABLED = "true"
@@ -44,18 +45,21 @@ STRIPE_PRICE_EQUITY_HARDCOVER = "price_1U0r01IA3p8RBkZIPBv0lOpM"
 STRIPE_PRICE_PROBABILISTIC_PAPERBACK = "price_1U3lIEIA3p8RBkZIFBnsS6FG"
 STRIPE_PRICE_PROBABILISTIC_HARDCOVER = "price_1U3lJYIA3p8RBkZICjKLQtt0"
 
-# Probabilistic Execution digital delivery is approved for release. The print
-# editions remain independently staged until their physical proof gates pass.
+# Probabilistic Execution digital delivery and Grizzly direct-site print sales
+# are approved. Physical-proof state remains false and separate because the
+# proofs have not been received; it is not required by Lulu's Print API.
 PROBABILISTIC_EXECUTION_DIGITAL_SALES_ENABLED = "true"
 PROBABILISTIC_EXECUTION_DIGITAL_DELIVERY_ENABLED = "true"
-PROBABILISTIC_EXECUTION_PAPERBACK_FILES_VALIDATED = "false"
+PROBABILISTIC_EXECUTION_PAPERBACK_FILES_VALIDATED = "true"
 PROBABILISTIC_EXECUTION_PAPERBACK_PROOF_APPROVED = "false"
+PROBABILISTIC_EXECUTION_PAPERBACK_DIRECT_SALES_APPROVED = "true"
 PROBABILISTIC_EXECUTION_PAPERBACK_PRIVATE_ORDER_ENABLED = "false"
-PROBABILISTIC_EXECUTION_PAPERBACK_SALES_ENABLED = "false"
-PROBABILISTIC_EXECUTION_HARDCOVER_FILES_VALIDATED = "false"
+PROBABILISTIC_EXECUTION_PAPERBACK_SALES_ENABLED = "true"
+PROBABILISTIC_EXECUTION_HARDCOVER_FILES_VALIDATED = "true"
 PROBABILISTIC_EXECUTION_HARDCOVER_PROOF_APPROVED = "false"
+PROBABILISTIC_EXECUTION_HARDCOVER_DIRECT_SALES_APPROVED = "true"
 PROBABILISTIC_EXECUTION_HARDCOVER_PRIVATE_ORDER_ENABLED = "false"
-PROBABILISTIC_EXECUTION_HARDCOVER_SALES_ENABLED = "false"
+PROBABILISTIC_EXECUTION_HARDCOVER_SALES_ENABLED = "true"
 
 [[d1_databases]]
 binding = "PAPERBACK_ORDERS"

@@ -69,11 +69,11 @@ function productionPrerequisitesReady(env, book) {
     : readiness.paperbackProofsApproved;
   const releaseFilesValidated = !book.releaseKey
     || env[`${book.releaseKey}_${book.edition.toUpperCase()}_FILES_VALIDATED`] === "true";
-  const releaseProofApproved = !book.releaseKey
-    || env[`${book.releaseKey}_${book.edition.toUpperCase()}_PROOF_APPROVED`] === "true";
-  return proofsApproved
+  const releaseDirectSalesApproved = !book.releaseKey
+    || env[`${book.releaseKey}_${book.edition.toUpperCase()}_DIRECT_SALES_APPROVED`] === "true";
+  const bindingApprovalReady = book.releaseKey ? releaseDirectSalesApproved : proofsApproved;
+  return bindingApprovalReady
     && releaseFilesValidated
-    && releaseProofApproved
     && readiness.policiesApproved
     && readiness.shippingCountriesConfigured
     && readiness.stripeTaxDecision !== "pending";
