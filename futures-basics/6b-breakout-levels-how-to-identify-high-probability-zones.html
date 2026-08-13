@@ -2,252 +2,124 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6B Breakout Levels: How to Identify High-Probability Zones</title>
-  <meta name="description" content="A blunt guide showing how to identify high-probability breakout levels in 6B British Pound futures using structure, sessions, and volatility cues.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6b-breakout-levels-how-to-identify-high-probability-zones.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6B Breakout Levels: How to Identify High-Probability Zones">
-  <meta property="og:description" content="A blunt guide showing how to identify high-probability breakout levels in 6B British Pound futures using structure, sessions, and volatility cues.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6b-breakout-levels-how-to-identify-high-probability-zones.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6B Breakout Levels: How to Identify High-Probability Zones">
-  <meta name="twitter:description" content="A blunt guide showing how to identify high-probability breakout levels in 6B British Pound futures using structure, sessions, and volatility cues.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6B Breakout Levels: How to Identify High-Probability Zones",
-  "description": "A blunt guide showing how to identify high-probability breakout levels in 6B British Pound futures using structure, sessions, and volatility cues.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6b-breakout-levels-how-to-identify-high-probability-zones.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6b-breakout-levels-how-to-identify-high-probability-zones.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6B Breakout Levels: How to Identify High-Probability Zones",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6b-breakout-levels-how-to-identify-high-probability-zones.html"
-    }
-  ]
-}
-</script>
-
+  <title>6B Breakout Levels: A Testable Decision Process</title>
+  <meta name="description" content="Build and reject 6B breakout candidates with predeclared level provenance, market-quality gates, triggers, invalidation, position math and review fields.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6b-breakout-levels-how-to-identify-high-probability-zones.html">
+  <meta property="og:title" content="6B Breakout Levels: A Testable Decision Process"><meta property="og:description" content="Replace high-probability breakout claims with a level-first 6B workflow that can reject weak candidates before capital is at risk."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6b-breakout-levels-how-to-identify-high-probability-zones.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-13">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="A Decision Process for 6B Breakouts"><meta name="twitter:description" content="Define the level, gate the market, require a trigger, size the invalidation and preserve every rejected candidate."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="6b-research-library.css?v=20260813a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6B Breakout Levels: A Testable Decision Process","description":"Build and reject 6B breakout candidates with predeclared level provenance, market-quality gates, triggers, invalidation, position math and review fields.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6b-breakout-levels-how-to-identify-high-probability-zones.html"},"datePublished":"2025-11-24","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/6b-breakout-levels-how-to-identify-high-probability-zones.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6B Breakout Levels","item":"https://grizzlyparrottrading.com/futures-basics/6b-breakout-levels-how-to-identify-high-probability-zones.html"}]}</script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container sterling-library"><article>
 <!-- ARTICLE BODY START -->
+<header class="gb-hero">
+  <div class="gb-hero-copy"><p class="gb-kicker">Execution decision workflow</p><h1>6B Breakout Levels: A Testable Decision Process</h1><p class="gb-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p><p class="gb-hero-lede">Price trades two ticks above yesterday's high, but the bid-ask spread has widened, the quote feed just recovered from a gap and the next scheduled release is seconds away. That is not a breakout to upgrade. It is a candidate to reject.</p><div class="gb-hero-actions"><a class="button-primary" href="#decision-card">Use the decision card</a><a class="gb-text-link" href="#worked-example">See the risk math</a></div></div>
+  <div class="gb-hero-visual"><div class="gb-market-board"><div class="gb-board-head"><span>Candidate 07:29:58 CT</span><strong>REJECT</strong></div><div class="gb-proof is-limit"><strong>Level: prior-session high</strong><span>Provenance passes</span></div><div class="gb-proof is-limit"><strong>Market-quality gate</strong><span>Fails: feed gap + spread expansion + event window</span></div><div class="gb-proof"><strong>Decision</strong><span>No order. Preserve the rejection in the journal.</span></div><p class="gb-board-foot"><span>A touch is not acceptance</span><span>No performance claim</span></p></div></div>
+</header>
+<nav class="gb-jump-nav" aria-label="On this page"><a href="#objective">Objective</a><a href="#provenance">Level source</a><a href="#quality">Quality gate</a><a href="#trigger">Trigger</a><a href="#worked-example">Risk math</a><a href="#decision-card">Decision card</a><a href="#review">Review</a></nav>
 
-<h1>6B Breakout Levels: How to Identify High-Probability Zones</h1>
-
-<p>Breakouts in 6B look obvious after they happen, but spotting the real breakout zones in advance is what separates winning trades from fakeout losses. 6B respects structure extremely well, so once you know the levels institutions care about, you’ll stop taking low-quality breakouts.</p>
-
-<h2>The Levels That Matter Most in 6B</h2>
-<p>Not all highs and lows are created equal. The high-probability breakout zones come from:</p>
-
-<ul>
-  <li>London session highs and lows</li>
-  <li>New York session impulse extremes</li>
-  <li>Pre-news consolidation levels</li>
-  <li>Previous day’s high and low</li>
-  <li>Breakout levels created during UK data drops</li>
-</ul>
-
-<p>These levels align with the session rules you described in <a href="https://grizzlyparrottrading.com/market-basics/market-session-basics.html">Market Session Basics: RTH vs Globex and Why It Matters</a>.</p>
-
-<h2>How 6B Builds a Breakout</h2>
-<p>6B rarely breaks randomly. There’s always a structure leading into the breakout:</p>
-
-<ul>
-  <li><strong>Repeated taps on the level</strong></li>
-  <li><strong>Shallow pullbacks</strong></li>
-  <li><strong>Growing pressure</strong></li>
-  <li><strong>Reduced volatility right before expansion</strong></li>
-</ul>
-
-<p>This matches the volatility-coil behavior from <a href="https://grizzlyparrottrading.com/futures-basics/6b-volatility-compression-and-expansion-patterns.html">Volatility Compression and Expansion Patterns in 6B Futures</a>.</p>
-
-<h2>High-Probability Breakout Behavior</h2>
-<p>The real breakouts in 6B usually show:</p>
-
-<ul>
-  <li><strong>Explosive momentum</strong></li>
-  <li><strong>Fast acceptance beyond the breakout</strong></li>
-  <li><strong>Retest that doesn’t retrace deep</strong></li>
-</ul>
-
-<table>
-  <tr>
-    <th>Clean Breakout</th>
-    <th>Fake Breakout</th>
-  </tr>
-  <tr>
-    <td>Large impulse candle</td>
-    <td>Weak push followed by rejection</td>
-  </tr>
-  <tr>
-    <td>Shallow revisit of level</td>
-    <td>Violent snap back</td>
-  </tr>
-  <tr>
-    <td>Strong follow-through</td>
-    <td>Chop and reversal</td>
-  </tr>
-</table>
-
-<h2>The Best Breakout Zones in 6B</h2>
-<p>Based on structure across thousands of sessions, these are the zones that consistently produce strong moves:</p>
-
-<ul>
-  <li><strong>The London high or low</strong></li>
-  <li><strong>New York opening range</strong></li>
-  <li><strong>Pre-news range</strong> before CPI, GDP, NFP</li>
-  <li><strong>Prior day’s range extremes</strong></li>
-</ul>
-
-<p>These levels tie closely to the concepts in <a href="https://grizzlyparrottrading.com/market-basics/market-structure-basics.html">Market Structure Basics: The Framework Behind Every Price Move</a>.</p>
-
-<h2>The Only Time You Should Avoid Breakouts</h2>
-<p>Avoid breakout trades when:</p>
-
-<ul>
-  <li>Volatility is collapsing</li>
-  <li>Spread widens during news</li>
-  <li>Price keeps wicking both sides of the level</li>
-  <li>Momentum is dying across GBP/USD</li>
-</ul>
-
-<div class="highlight-box green">
-  <h3>Breakouts Work Where Structure and Momentum Align</h3>
-  <p>Not every high or low is tradable. When levels are meaningful, structure is tight, and momentum builds, breakouts reflect real participation. Focus on defended zones, and your entries align with institutional activity instead of noise.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="gb-section" id="objective" aria-labelledby="objective-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Define the claim</p><h2 id="objective-title">"High Probability" Is Not an Observable Level Property</h2><p>A price can be visible and still have no demonstrated trading edge. The useful objective is narrower: define a breakout candidate before the test, determine whether current data and execution conditions make the observation trustworthy, specify what confirms or rejects it, and size the planned failure point.</p></div>
+  <div class="gb-proof-grid"><div class="gb-proof"><h3>Observable facts</h3><ul><li>The dated 6B contract and exact price level.</li><li>When and from which session the level was formed.</li><li>Trades, quotes, volume and spread in the chosen CME feed.</li><li>The entry, invalidation and order outcomes actually recorded.</li></ul></div><div class="gb-proof is-limit"><h3>Claims that require a study</h3><ul><li>That prior highs break more often than they reject.</li><li>That volume confirmation improves expectancy.</li><li>That a retest entry is superior to a close-through entry.</li><li>That any filter creates a stable win rate after costs.</li></ul></div></div>
+  <div class="gb-caution"><strong>This page reports no original breakout result</strong><p>The framework creates reproducible decisions and a research-ready event log. It does not establish that a named level, time window or confirmation rule is profitable.</p></div>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<section class="gb-section" id="provenance" aria-labelledby="provenance-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Level provenance</p><h2 id="provenance-title">A Level Needs a Timestamp, Contract and Construction Rule</h2><p>Write the source while the level is still ahead of price. A line added after the move is an annotation, not decision-time evidence. Use the actual dated contract for execution and reconcile any continuous-chart level around a roll.</p></div>
+  <div class="gb-table-scroll" role="region" aria-label="Breakout level provenance table" tabindex="0"><table class="gb-table"><thead><tr><th scope="col">Candidate source</th><th scope="col">Predeclared construction</th><th scope="col">Required check</th><th scope="col">Common failure</th></tr></thead><tbody>
+    <tr><th scope="row">Prior session high or low</th><td>Named session clock, timezone and dated contract</td><td>Holiday/short-session status and data completeness</td><td>Mixing electronic-session and local-calendar definitions</td></tr>
+    <tr><th scope="row">Prior settlement area</th><td>Official settlement plus a fixed tolerance in outright ticks</td><td>Use CME settlement, not an arbitrary chart close</td><td>Treating settlement as a single guaranteed turning price</td></tr>
+    <tr><th scope="row">Multi-test auction boundary</th><td>Minimum touches, separation, tolerance and lookback fixed in advance</td><td>No future bar may create or relocate an earlier boundary</td><td>Drawing through failures until the line looks clean</td></tr>
+    <tr><th scope="row">Scheduled-event extreme</th><td>Exact release window and first causally available high/low</td><td>Clock synchronization and feed status</td><td>Using a bar whose final high was unknown at entry time</td></tr>
+    <tr><th scope="row">Weekly swing</th><td>Fixed pivot algorithm and confirmation delay</td><td>Dated-versus-continuous contract reconciliation</td><td>Repainting a pivot with later bars</td></tr>
+    <tr><th scope="row">Round price</th><td>Exact increment and maximum distance from price</td><td>Test separately from levels with auction provenance</td><td>Assuming visual salience equals participant interest</td></tr>
+  </tbody></table></div>
+  <div class="gb-related">For a causally defined higher-timeframe map, use the <a href="analyzing-weekly-trends-and-swings-in-6b.html">weekly trends and swings workflow</a>. For research on pre-break range state, see <a href="6b-volatility-compression-and-expansion-patterns.html">6B compression and expansion testing</a>.</div>
+</section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="gb-section" id="quality" aria-labelledby="quality-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Before the trigger</p><h2 id="quality-title">The Market-Quality Gate Can Cancel a Good Level</h2><p>The gate is not a directional opinion. It answers whether the current observation can support the planned order and whether the planned risk is executable. Thresholds must be written before seeing the outcome.</p></div>
+  <div class="gb-check-grid">
+    <article><strong>Correct instrument</strong><p>Exact 6B or M6B month matches the order ticket; no continuous alias is being traded.</p></article>
+    <article><strong>Feed integrity</strong><p>No unexplained timestamp reversal, missing interval, duplicate burst or stale best bid/offer around the test.</p></article>
+    <article><strong>Spread threshold</strong><p>Inside spread is no wider than the predeclared limit for this setup and session.</p></article>
+    <article><strong>Depth and prints</strong><p>The feed supports the intended observation; a top-of-book feed cannot validate full-depth claims.</p></article>
+    <article><strong>Event policy</strong><p>The order is permitted, reduced or prohibited under the written scheduled-news window.</p></article>
+    <article><strong>Expiry and roll</strong><p>The contract is not inside a prohibited delivery/roll window and liquidity has not migrated elsewhere.</p></article>
   </div>
-</footer>
-</body>
-</html>
+  <div class="gb-method" style="margin-top:1.25rem"><div><h3>Fail closed on missing evidence</h3><p>If quote timestamps cannot be trusted, spread cannot be measured or the contract identity is uncertain, classify the candidate as <strong>unobservable</strong>, not as a win, loss or discretionary pass. Missing data cannot be repaired with the later chart.</p></div><dl><div><dt>Pass</dt><dd>All required fields present</dd></div><div><dt>Fail</dt><dd>Threshold violated</dd></div><div><dt>N/A</dt><dd>Feature not in this rule</dd></div><div><dt>Unknown</dt><dd>Stand aside</dd></div></dl></div>
+</section>
+
+<section class="gb-section" id="trigger" aria-labelledby="trigger-title">
+  <div class="gb-section-heading"><p class="gb-kicker">State transition</p><h2 id="trigger-title">Separate Probe, Break, Acceptance and Failure</h2><p>A single trade beyond a line is different from a completed bar, sustained trade or a retest. Choose one causal trigger family; do not promote a failed trigger into another family after the outcome is visible.</p></div>
+  <div class="gb-process">
+    <article><span>State 1</span><h3>Approach</h3><p>Price is inside the predeclared distance. No breakout has occurred.</p></article>
+    <article><span>State 2</span><h3>Probe</h3><p>At least one eligible trade crosses the boundary; acceptance is unproven.</p></article>
+    <article><span>State 3</span><h3>Declared trigger</h3><p>The exact close, hold-time, volume or retest rule completes.</p></article>
+    <article><span>State 4</span><h3>Invalid or expired</h3><p>Price crosses failure level, quality gate fails or time limit ends.</p></article>
+  </div>
+  <div class="gb-table-scroll" role="region" aria-label="Breakout trigger tradeoffs" tabindex="0"><table class="gb-table"><thead><tr><th scope="col">Trigger family</th><th scope="col">Information required</th><th scope="col">Tradeoff</th><th scope="col">Must be invalidated by</th></tr></thead><tbody>
+    <tr><th scope="row">First eligible trade beyond zone</th><td>Reliable time and sales</td><td>Fastest, most exposed to brief probes and slippage</td><td>Predeclared return or structural failure</td></tr>
+    <tr><th scope="row">Bar close beyond zone</th><td>Fixed bar construction and close timestamp</td><td>More delay and potentially wider entry distance</td><td>Close-back or price level specified before entry</td></tr>
+    <tr><th scope="row">Acceptance for N seconds/minutes</th><td>Synchronized trades plus an exact duration rule</td><td>Filters brief probes but can enter after extension</td><td>Loss of boundary plus time expiry</td></tr>
+    <tr><th scope="row">Break and retest</th><td>Break state, return tolerance and rejection rule</td><td>May improve location; many moves never retest</td><td>Retest trades through the structural boundary</td></tr>
+  </tbody></table></div>
+  <p class="gb-source-note">Volume, delta or depth may be predeclared features, but they do not reveal motive and do not transform a trigger into proof. The <a href="how-to-read-6b-order-flow-for-clean-entries.html">6B order-flow guide</a> defines what CME futures feeds can and cannot observe.</p>
+</section>
+
+<section class="gb-section" id="worked-example" aria-labelledby="worked-example-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Position math</p><h2 id="worked-example-title">Size the Failure Point, Then Decide Whether a Trade Exists</h2><p>This hypothetical example demonstrates arithmetic only. It does not show that the breakout rule has positive expectancy.</p></div>
+  <div class="gb-two-column">
+    <div class="gb-panel"><h3>Declared plan</h3><ul><li>Instrument: dated standard 6B.</li><li>Boundary: 1.2846 prior-session high.</li><li>Trigger: eligible close at 1.2851.</li><li>Structural invalidation: 1.2835.</li><li>Distance: 0.0016 = 16 outright ticks.</li><li>Per-contract price risk: 16 &times; $6.25 = $100.</li></ul></div>
+    <div class="gb-panel"><h3>Account constraint</h3><ul><li>Maximum planned loss budget: $240.</li><li>Cost/slippage allowance for the position: $18.</li><li>Budget left for price risk: $222.</li><li><code>floor($222 / $100) = 2</code> standard contracts.</li><li>Planned total: $200 + $18 = $218.</li><li>Unused buffer: $22; it is not permission to widen the stop.</li></ul></div>
+  </div>
+  <div class="gb-formula"><code>contracts = floor((risk cap - cost allowance) / (stop ticks &times; tick value))</code><i aria-hidden="true">&rarr;</i><code>floor((240 - 18) / (16 &times; 6.25)) = 2</code></div>
+  <div class="gb-caution"><strong>Planned loss is not guaranteed loss</strong><p>A stop can trigger into a gap or a thin order book and fill worse than 1.2835. If the plan has no explicit adverse-fill allowance and response to a rejected order, it is incomplete. See the <a href="6b-contract-specs-tick-size-and-margin.html">canonical 6B/M6B contract math</a> before sizing either product.</p></div>
+</section>
+
+<section class="gb-section" id="decision-card" aria-labelledby="decision-card-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Pass or stand aside</p><h2 id="decision-card-title">The Breakout Decision Card</h2><p>Complete the card before entry. A blank required field is a stand-aside result.</p></div>
+  <div class="gb-table-scroll" role="region" aria-label="6B breakout pass or stand-aside decision card" tabindex="0"><table class="gb-table"><thead><tr><th scope="col">Gate</th><th scope="col">Pass condition</th><th scope="col">Stand aside when</th><th scope="col">Journal field</th></tr></thead><tbody>
+    <tr><th scope="row">Identity</th><td>Dated contract, venue and feed match</td><td>Symbol mapping or roll status is uncertain</td><td><code>contract_id</code></td></tr>
+    <tr><th scope="row">Provenance</th><td>Level existed before approach under frozen rule</td><td>Line was moved, backfilled or depends on future bars</td><td><code>level_rule</code>, <code>level_price</code></td></tr>
+    <tr><th scope="row">Quality</th><td>All required spread, feed, event and liquidity gates pass</td><td>Any required measure fails or is unknown</td><td><code>quality_vector</code></td></tr>
+    <tr><th scope="row">Trigger</th><td>One named causal trigger completes before expiry</td><td>Only a probe occurs or trigger arrives after expiry</td><td><code>trigger_ts</code>, <code>trigger_type</code></td></tr>
+    <tr><th scope="row">Invalidation</th><td>Objective level and order response are defined</td><td>Stop is selected from desired dollar risk rather than structure</td><td><code>invalid_price</code></td></tr>
+    <tr><th scope="row">Size</th><td>Whole-contract size fits risk cap after allowances</td><td>Calculated size is zero or margin/liquidity rules fail</td><td><code>risk_cap</code>, <code>qty</code></td></tr>
+    <tr><th scope="row">Decision</th><td>All required gates pass</td><td>One required gate fails</td><td><code>pass</code> / <code>stand_aside_reason</code></td></tr>
+  </tbody></table></div>
+</section>
+
+<section class="gb-section" id="review" aria-labelledby="review-title">
+  <div class="gb-section-heading"><p class="gb-kicker">After the event</p><h2 id="review-title">Preserve Rejections, Non-Fills and Data Failures</h2><p>A screenshot folder of successful breaks cannot answer whether the rule works. The event set must include every eligible approach and the reason each one passed, failed, expired or could not be observed.</p></div>
+  <div class="gb-limit-grid">
+    <article><strong>Decision-time snapshot</strong><p>Candidate level, timestamp, current contract, spread, event state and trigger status before outcome.</p></article>
+    <article><strong>Order record</strong><p>Submitted type and price, acknowledgment, modifications, partial fills, cancellations, rejections and timestamps.</p></article>
+    <article><strong>Excursion record</strong><p>Maximum favorable and adverse excursion from a frozen reference, without changing the exit rule.</p></article>
+    <article><strong>Cost record</strong><p>Commissions, fees, spread paid and slippage relative to the decision-time executable quote.</p></article>
+    <article><strong>Data-quality record</strong><p>Sequence gaps, stale quote flags, contract-map issues and any vendor correction.</p></article>
+    <article><strong>Rule-integrity record</strong><p>Parameter version, exception used and whether any interpretation changed after seeing the result.</p></article>
+  </div>
+  <div class="gb-method" style="margin-top:1.25rem"><div><h3>Research handoff</h3><p>Only after the event log is complete should the rule be tested against a predeclared baseline, with costs, overlapping-event treatment, roll controls, session and news splits, untouched validation dates and parameter sensitivity. A neat decision process is useful operationally, but it is not itself evidence of expectancy.</p></div><dl><div><dt>Finding</dt><dd>Requires completed study</dd></div><div><dt>Framework</dt><dd>Provided here</dd></div><div><dt>Win rate</dt><dd>Unknown</dd></div><div><dt>Promise</dt><dd>None</dd></div></dl></div>
+</section>
+
+<details class="gb-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> for current 6B/M6B codes, units, increments and physical-settlement classification.</li>
+  <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/251/251.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 251</a> for standard 6B contract mechanics and trading-termination rules.</li>
+  <li><a href="https://www.cmegroup.com/trading/about-time-sales.html" target="_blank" rel="noopener">CME Time &amp; Sales description</a> for exchange trade price, time, trade size and conditionally represented bid/offer fields.</li>
+  <li><a href="https://www.cmegroup.com/market-data/daily-settlements.html" target="_blank" rel="noopener">CME daily settlements</a> for authoritative settlement-data access and the distinction between settlement and an arbitrary chart close.</li>
+  <li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener">CME holiday and trading-hours resource</a> for current session and holiday verification.</li>
+  <li><a href="https://www.cmegroup.com/solutions/risk-management/performance-bonds-margins.html" target="_blank" rel="noopener">CME performance bonds and margins</a> for the changing collateral framework.</li>
+</ul><p>Sources and exchange terms were reviewed August 13, 2026. The level taxonomy, gates, hypothetical prices and $240 risk example are editorial illustrations, not exchange rules or tested findings. This page presents no original event sample, win rate, expectancy or trading recommendation. Any performance claim requires a complete reproducible study on licensed data with realistic fills and costs.</p></details>
+<aside class="gb-disclaimer" aria-label="Educational and breakout risk disclaimer"><strong>Educational and execution-risk disclaimer</strong><p>This material is educational, not individualized trading, investment, statistical or brokerage advice. Futures are leveraged and losses can exceed the initial margin deposit. Breakouts can fail, stops can slip, feeds can be incomplete and orders can be rejected. Verify current CME terms, the exact contract, data entitlements, broker rules and your own risk limits.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

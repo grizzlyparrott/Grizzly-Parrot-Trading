@@ -26,13 +26,13 @@
   {
     "title": "6A Commodity Cycles: Terms of Trade and AUD",
     "url": "/futures-basics/6a-commodity-cycle-impact.html",
-    "description": "Learn how export prices, Australia's terms of trade and commodity regimes can influence 6A, plus the lags, shared drivers and failure cases traders miss.",
+    "description": "Learn how export prices, Australia",
     "category": "Futures Basics"
   },
   {
-    "title": "6A Contract Specs, Tick Value and P&L Math",
+    "title": "6A Contract Specs, Tick Value and P&amp;L Math",
     "url": "/futures-basics/6a-contract-specs-tick-size-value.html",
-    "description": "Verify current 6A contract size, tick value, P&L, notional exposure, physical delivery, roll mechanics, margin limits and Micro M6A differences.",
+    "description": "Verify current 6A contract size, tick value, P&amp;L, notional exposure, physical delivery, roll mechanics, margin limits and Micro M6A differences.",
     "category": "Futures Basics"
   },
   {
@@ -78,21 +78,39 @@
     "category": "Futures Basics"
   },
   {
-    "title": "6B Breakout Levels: How to Identify High-Probability Zones",
+    "title": "6B Breakout Levels: A Testable Decision Process",
     "url": "/futures-basics/6b-breakout-levels-how-to-identify-high-probability-zones.html",
-    "description": "A blunt guide showing how to identify high-probability breakout levels in 6B British Pound futures using structure, sessions, and volatility cues.",
+    "description": "Build and reject 6B breakout candidates with predeclared level provenance, market-quality gates, triggers, invalidation, position math and review fields.",
     "category": "Futures Basics"
   },
   {
-    "title": "6B Contract Specs, Tick Size, and Margin Requirements Explained",
+    "title": "6B Compression and Expansion: A Reproducible Test",
+    "url": "/futures-basics/6b-volatility-compression-and-expansion-patterns.html",
+    "description": "Define and test 6B volatility compression and later expansion with frozen thresholds, session and event controls, execution costs, and holdouts.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6B Contract Specs, Tick Value and Margin Limits",
     "url": "/futures-basics/6b-contract-specs-tick-size-and-margin.html",
-    "description": "A direct breakdown of 6B British Pound futures contract specs, tick size, margin requirements, and what these numbers actually mean for your trading.",
+    "description": "Verify current CME 6B and M6B units, tick values, P&amp;L math, listed months, expiry, physical delivery and the limits of every margin number.",
     "category": "Futures Basics"
   },
   {
-    "title": "6B Pullbacks: What Clean Retracements Look Like",
+    "title": "6B Liquidity Traps: Test the Auction, Not the Story",
+    "url": "/futures-basics/common-liquidity-traps-in-6b-futures.html",
+    "description": "Replace 6B stop-hunt stories with observable order-book hypotheses, rival explanations, a replay protocol, live risk gates, and failure review.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6B Pullbacks: Define and Test a Clean Retracement",
     "url": "/futures-basics/6b-pullbacks-what-clean-retracements-look-like.html",
-    "description": "A blunt breakdown of how clean pullbacks form in 6B British Pound futures and how to separate real retracements from traps.",
+    "description": "Turn a clean 6B pullback into measurable variables, a reproducible event study, realistic execution tests, and explicit failure conditions.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6B Weekly Trends and Swings: A Context Workflow",
+    "url": "/futures-basics/analyzing-weekly-trends-and-swings-in-6b.html",
+    "description": "Build weekly 6B context with a causal swing algorithm, dated-contract and continuous-chart controls, scenario branches, intraday handoff and review worksheet.",
     "category": "Futures Basics"
   },
   {
@@ -156,7 +174,7 @@
     "category": "Futures Basics"
   },
   {
-    "title": "6E Market Structure | Objective Swing, Range & Break Rules",
+    "title": "6E Market Structure | Objective Swing, Range &amp; Break Rules",
     "url": "/futures-basics/6e-market-structure-patterns-traders-miss.html",
     "description": "Read 6E market structure with fixed swing, trend, range, acceptance, rejection and failed-break rules—without order-block or smart-money mythology.",
     "category": "Futures Basics"
@@ -168,7 +186,7 @@
     "category": "Futures Basics"
   },
   {
-    "title": "6E Scalping vs Swing Trading | Costs, Risk & Fit",
+    "title": "6E Scalping vs Swing Trading | Costs, Risk &amp; Fit",
     "url": "/futures-basics/scalping-6e-vs-swing-trading-6e.html",
     "description": "Compare 6E scalping and swing trading by holding period, transaction costs, event risk, overnight exposure, roll mechanics, testing and trader fit.",
     "category": "Futures Basics"
@@ -180,9 +198,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "6E Tick Size, Tick Value and Margin: The Contract Math",
+    "title": "6E Tick Size &amp; Tick Value | Euro FX Contract Math",
     "url": "/futures-basics/6e-tick-size-tick-value-margin-requirements.html",
-    "description": "Contract math for 6E: 125,000 euro notional, $6.25 outright tick, P&L calculator, hedge sizing, margin, delivery and M6E comparison.",
+    "description": "Calculate 6E ticks, pips, P&amp;L and notional exposure. Verify Euro FX contract size, margin mechanics, physical delivery and M6E differences.",
     "category": "Futures Basics"
   },
   {
@@ -466,12 +484,6 @@
     "url": "/market-basics/aggressive-buyer-seller-trap-patterns.html",
     "description": "Learn the key DOM trap patterns that expose aggressive buyers or sellers getting stuck and how these traps create clean reversal opportunities.",
     "category": "Market Basics"
-  },
-  {
-    "title": "Analyzing Weekly Trends and Swings in 6B Futures",
-    "url": "/futures-basics/analyzing-weekly-trends-and-swings-in-6b.html",
-    "description": "A blunt breakdown of how to analyze weekly trends and swing structure in 6B British Pound futures for higher-timeframe direction.",
-    "category": "Futures Basics"
   },
   {
     "title": "Apex vs Topstep vs Bulenox | Grizzly Parrot Trading",
@@ -812,7 +824,7 @@
   {
     "title": "Books | Grizzly Parrot Trading",
     "url": "/books/",
-    "description": "The complete three-volume Market Structure Series covering currencies, metals, and equities.",
+    "description": "Books by Kyle Parrott on futures execution, risk, market structure, liquidity, and evidence-based trading decisions.",
     "category": "Books"
   },
   {
@@ -987,12 +999,6 @@
     "title": "Common GC Trader Mistakes and How to Fix Them",
     "url": "/futures-basics/gc-common-trader-mistakes.html",
     "description": "The most common mistakes traders make on Gold futures (GC)—from sizing errors to trading the wrong sessions—and how to fix them fast.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "Common Liquidity Traps in 6B Futures",
-    "url": "/futures-basics/common-liquidity-traps-in-6b-futures.html",
-    "description": "A blunt breakdown of the most common liquidity traps in 6B British Pound futures and how to avoid getting caught in them.",
     "category": "Futures Basics"
   },
   {
@@ -1198,6 +1204,12 @@
     "url": "/market-basics/displacement-candles-and-trend-initiation.html",
     "description": "Learn what displacement candles really mean, how they signal trend initiation, and how to trade them without guessing.",
     "category": "Market Basics"
+  },
+  {
+    "title": "Does 6B Trend in the Early U.S. Session? Test It",
+    "url": "/futures-basics/why-6b-trends-during-us-session.html",
+    "description": "Test whether 6B trends from 08:00 to 11:30 New York time using fixed trend metrics, dated contracts, event controls, baselines, and falsification.",
+    "category": "Futures Basics"
   },
   {
     "title": "Does 6E Trend More? A Controlled Comparison",
@@ -1484,7 +1496,7 @@
   {
     "title": "Futures Contract Expiration and Roll | Complete Guide",
     "url": "/futures-basics/contract-expiration-and-roll.html",
-    "description": "Learn futures expiration, last trade, settlement, delivery, volume migration, rolling, contract codes, and continuous charts with examples and a roll planner.",
+    "description": "Learn futures expiration, last trade, settlement, delivery, volume migration, rolling, contract codes, and continuous charts—with examples and a roll planner.",
     "category": "Futures Basics"
   },
   {
@@ -1554,15 +1566,15 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Futures Slippage Explained: From Order Book to Dollar Cost",
+    "title": "Futures Slippage Explained | Calculate Fill Cost in Ticks",
     "url": "/futures-basics/futures-slippage-explained.html",
     "description": "Learn how futures slippage works, separate it from spread and fees, compare order types, and calculate fill cost in ticks and dollars.",
     "category": "Futures Basics"
   },
   {
-    "title": "Futures Trading Guide Library",
+    "title": "Futures Trading Guide Library | Grizzly Parrot Trading",
     "url": "/futures-basics/",
-    "description": "Search and browse the complete Futures Basics library by contract, market, risk, execution, lifecycle topic, and product family.",
+    "description": "Search and browse the complete Grizzly Parrot Trading futures-basics library by contract, market, risk, execution, and lifecycle topic.",
     "category": "Futures Basics"
   },
   {
@@ -1575,6 +1587,18 @@
     "title": "Futures Volatility Explained: Why Some Contracts Move Like Crazy",
     "url": "/futures-basics/futures-volatility-explained.html",
     "description": "Learn what futures volatility really is, why some markets explode while others drift, and how volatility affects risk, margin, and strategy.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "GBP/USD and 6B Futures: Basis Before Correlation",
+    "url": "/futures-basics/gbp-usd-correlation-with-6b-futures.html",
+    "description": "Compare GBP/USD with 6B futures through instrument identity, dated-futures basis, synchronized returns, data controls, and appropriate use.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "GBP/USD vs 6B Divergence: Reconcile Before Trading",
+    "url": "/futures-basics/using-gbpusd-divergence-to-trade-6b-futures.html",
+    "description": "Triage a GBP/USD and 6B screen discrepancy by checking symbols, timestamps, quotes, futures basis, data quality, and costed forward tests.",
     "category": "Futures Basics"
   },
   {
@@ -1722,12 +1746,6 @@
     "category": "Prop Firm Trading"
   },
   {
-    "title": "How 6B Futures React to Bank of England Rate Decisions",
-    "url": "/futures-basics/how-6b-reacts-to-boe-rate-decisions.html",
-    "description": "Learn how 6B British Pound futures react to Bank of England rate decisions, including volatility patterns, common traps, and key levels to watch.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "How 6E Reacts to European Headlines: A Verification Guide",
     "url": "/futures-basics/how-6e-reacts-to-european-session-headlines.html",
     "description": "Verify scheduled European releases and unscheduled headlines before trading 6E, then separate expectations, reaction phases, and execution risk.",
@@ -1779,6 +1797,12 @@
     "title": "How Bank of Canada Decisions Impact 6C Futures",
     "url": "/futures-basics/6c-bank-of-canada-impact.html",
     "description": "A blunt breakdown of how Bank of Canada rate decisions move 6C Canadian Dollar futures and how traders should position around them.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "How Bank of England Decisions Reprice 6B Futures",
+    "url": "/futures-basics/how-6b-reacts-to-boe-rate-decisions.html",
+    "description": "Read BoE decisions through the prior, vote, guidance, forecast and UK-US rate response—not the Bank Rate headline alone.",
     "category": "Futures Basics"
   },
   {
@@ -1926,12 +1950,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How GBP/USD Correlates With 6B Futures Movement",
-    "url": "/futures-basics/gbp-usd-correlation-with-6b-futures.html",
-    "description": "A clear breakdown of how GBP/USD price action drives 6B futures movement and how to read both markets together without overcomplicating it.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "How GC Reacts to Major News Events",
     "url": "/futures-basics/gc-news-event-reaction.html",
     "description": "A blunt breakdown of how Gold futures behave during CPI, NFP, FOMC, and geopolitical shocks. Learn the exact volatility patterns GC repeats every time.",
@@ -2076,7 +2094,7 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How Options Flow Can Influence 6E | Evidence & Limits",
+    "title": "How Options Flow Can Influence 6E | Evidence &amp; Limits",
     "url": "/futures-basics/how-options-flow-influences-6e.html",
     "description": "How listed and OTC FX options may transmit into 6E through hedging, expiry and volatility—plus what strike open interest cannot tell you.",
     "category": "Futures Basics"
@@ -2085,12 +2103,6 @@
     "title": "How Platinum and Rhodium Influence Palladium Futures",
     "url": "/futures-basics/how-platin-rhodium-influence-pa.html",
     "description": "A blunt breakdown of how platinum and rhodium prices influence Palladium futures, including substitution dynamics, industrial overlap, and cross-metal volatility transmission.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "How Political Events in the UK Affect 6B Futures",
-    "url": "/futures-basics/how-uk-political-events-affect-6b-futures.html",
-    "description": "A blunt breakdown of how political events in the UK move 6B British Pound futures and which scenarios trigger the biggest volatility spikes.",
     "category": "Futures Basics"
   },
   {
@@ -2268,9 +2280,9 @@
     "category": "Platforms & Tutorials"
   },
   {
-    "title": "How to Read 6B Order Flow for Clean Entries",
+    "title": "How to Read 6B Order Flow Without Overclaiming",
     "url": "/futures-basics/how-to-read-6b-order-flow-for-clean-entries.html",
-    "description": "A no-bullshit guide to reading 6B British Pound futures order flow so you can time entries with precision instead of guessing.",
+    "description": "Read CME 6B trades, footprint, delta and depth with the right data gates, a level-first decision tree, invalidation, replay and clear OTC FX limits.",
     "category": "Futures Basics"
   },
   {
@@ -2283,12 +2295,6 @@
     "title": "How to Read 6N Price Quotes Without Getting Confused",
     "url": "/futures-basics/how-to-read-6n-price-quotes.html",
     "description": "A blunt guide showing beginners exactly how 6N New Zealand Dollar futures quotes work, including decimals, ticks, and real-dollar impact.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "How to Read Short-Term Momentum in 6B Futures",
-    "url": "/futures-basics/reading-short-term-momentum-in-6b.html",
-    "description": "A blunt guide on reading short-term momentum in 6B British Pound futures using price behavior, volatility cues, and structure shifts.",
     "category": "Futures Basics"
   },
   {
@@ -2370,12 +2376,6 @@
     "category": "Platforms & Tutorials"
   },
   {
-    "title": "How U.S. Dollar Strength Confirms or Invalidates 6B Setups",
-    "url": "/futures-basics/how-us-dollar-strength-confirms-or-invalidates-6b-setups.html",
-    "description": "A blunt guide on how U.S. Dollar strength or weakness confirms or kills 6B British Pound futures setups.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "How U.S. Dollar Strength Impacts 6L Futures",
     "url": "/futures-basics/how-us-dollar-strength-impacts-6l-futures.html",
     "description": "A deep, blunt explanation of how U.S. dollar strength directly affects 6L Brazilian Real futures, including correlations, macro drivers, and real trade impact.",
@@ -2406,21 +2406,21 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How UK CPI Inflation Reports Move 6B Futures",
+    "title": "How UK CPI Inflation Can Move 6B Futures",
     "url": "/futures-basics/how-uk-cpi-inflation-moves-6b-futures.html",
-    "description": "A blunt breakdown of how UK CPI inflation numbers impact 6B British Pound futures and what traders should expect right after the release.",
+    "description": "Read UK CPI through the surprise, composition, persistence and relative-rate channel, including why the first 6B reaction can reverse.",
     "category": "Futures Basics"
   },
   {
-    "title": "How UK Economic Data Releases Impact 6B Futures",
-    "url": "/futures-basics/how-uk-economic-data-releases-impact-6b-futures.html",
-    "description": "A blunt guide showing exactly how UK economic data releases move 6B British Pound futures and which reports actually matter.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "How UK GDP and Employment Data Move 6B Futures",
+    "title": "How UK GDP and Labour Data Can Move 6B",
     "url": "/futures-basics/how-uk-gdp-and-employment-data-move-6b.html",
-    "description": "A direct breakdown of how UK GDP and employment reports move 6B British Pound futures and the volatility patterns traders should expect.",
+    "description": "Contrast UK GDP, payroll, unemployment, wage and vacancy evidence, including revisions, measurement limits and conditional 6B scenarios.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "How UK Political Events Can Affect 6B Futures",
+    "url": "/futures-basics/how-uk-political-events-affect-6b-futures.html",
+    "description": "Translate UK political news into fiscal, institutional, trade and policy-continuity channels, then verify the gilt, rates, GBP and 6B response.",
     "category": "Futures Basics"
   },
   {
@@ -2508,9 +2508,9 @@
     "category": "Market Basics"
   },
   {
-    "title": "Insignia Futures & Options Overview | Grizzly Parrot Trading",
+    "title": "Insignia Futures &amp; Options Overview | Grizzly Parrot Trading",
     "url": "/platforms-tutorials/insignia-futures-options-overview.html",
-    "description": "An independent overview of Insignia Futures & Options, including its trading platforms, account styles, education, managed services, fees, and due-diligence points.",
+    "description": "An independent overview of Insignia Futures &amp; Options, including its trading platforms, account styles, education, managed services, fees, and due-diligence points.",
     "category": "Platforms & Tutorials"
   },
   {
@@ -2688,9 +2688,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "London Session Volatility Patterns in 6B Futures",
+    "title": "London-Window Volatility in 6B: A Session Study",
     "url": "/futures-basics/london-session-volatility-patterns-in-6b.html",
-    "description": "Learn the exact volatility patterns 6B British Pound futures show during the London session and how to trade the moves without getting chopped up.",
+    "description": "Study 6B volatility from 07:00 to 11:00 Europe/London with DST-safe clocks, minute data, event controls, regime splits, and execution measures.",
     "category": "Futures Basics"
   },
   {
@@ -2708,7 +2708,7 @@
   {
     "title": "M6E vs 6E | Micro and Standard Euro FX Compared",
     "url": "/futures-basics/micro-6e-vs-standard-6e.html",
-    "description": "Compare M6E and standard 6E contract size, tick value, P&L, sizing, costs, liquidity, margin, delivery and roll risk with worked examples.",
+    "description": "Compare M6E and standard 6E contract size, tick value, P&amp;L, sizing, costs, liquidity, margin, delivery and roll risk with worked examples.",
     "category": "Futures Basics"
   },
   {
@@ -2760,9 +2760,9 @@
     "category": "Market Basics"
   },
   {
-    "title": "Market Basics | Grizzly Parrot Trading",
+    "title": "Market Basics Guide Library | Grizzly Parrot Trading",
     "url": "/market-basics/",
-    "description": "Foundational market concepts explained in plain English: liquidity, volatility, order flow, market structure, and how markets actually move.",
+    "description": "Search 200 Market Basics guides covering auction, liquidity, order flow, volatility, market structure, risk, sentiment, execution, and trade management.",
     "category": "Market Basics"
   },
   {
@@ -3648,6 +3648,12 @@
     "category": "Market Basics"
   },
   {
+    "title": "Probabilistic Execution | Futures Risk &amp; Execution Book",
+    "url": "/books/probabilistic-execution/",
+    "description": "Probabilistic Execution by Kyle Parrott is a blunt, practical futures trading book about mechanics, leverage, risk, execution, order flow, and testing an edge without fairy tales.",
+    "category": "Books"
+  },
+  {
     "title": "Prop Firm Daily Loss Limits & Resets | Grizzly Parrot Trading",
     "url": "/prop-firm-trading/daily-loss-and-resets.html",
     "description": "How prop firm daily loss limits and resets actually work, how much you can lose before a reset, and how to set your own daily max loss.",
@@ -3714,9 +3720,9 @@
     "category": "Prop Firm Trading"
   },
   {
-    "title": "Prop Firm Trading | Grizzly Parrot Trading",
+    "title": "Prop Firm Trading Guide Library | Grizzly Parrot Trading",
     "url": "/prop-firm-trading/",
-    "description": "Straight talk about prop firm evaluations, trailing drawdown, scaling rules, payouts, resets, and why most traders fail these challenges.",
+    "description": "Search 75 Prop Firm Trading guides covering evaluations, drawdown, risk, rule violations, funding, payouts, platforms, and account operations.",
     "category": "Prop Firm Trading"
   },
   {
@@ -3730,6 +3736,12 @@
     "url": "/market-basics/reaction-zones-areas-where-the-market-has-to-make-a-decision.html",
     "description": "Learn how to identify reaction zones where the market has to make a decision, and use them to plan cleaner entries, stops, and targets.",
     "category": "Market Basics"
+  },
+  {
+    "title": "Read Short-Term Momentum in 6B With Observable Inputs",
+    "url": "/futures-basics/reading-short-term-momentum-in-6b.html",
+    "description": "Classify short-term 6B momentum with price displacement, path efficiency, range, CME participation, execution quality, invalidation and a one-page workflow.",
+    "category": "Futures Basics"
   },
   {
     "title": "Reading the SI Depth of Market (DOM) Like a Pro",
@@ -4122,12 +4134,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "The Real Drivers Behind British Pound Volatility in 6B Futures",
-    "url": "/futures-basics/british-pound-volatility-drivers-in-6b.html",
-    "description": "A blunt breakdown of what actually drives volatility in 6B British Pound futures and how traders should read these major catalysts.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "The Role of Feeder Placement in Live Cattle",
     "url": "/futures-basics/role-of-feeder-placement-in-live-cattle.html",
     "description": "Feeder cattle placement is the earliest forward signal in live cattle futures. Here",
@@ -4440,6 +4446,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Use USD Strength to Test 6B Setups Without Circularity",
+    "url": "/futures-basics/how-us-dollar-strength-confirms-or-invalidates-6b-setups.html",
+    "description": "Test 6B setups with ex-GBP dollar breadth and relative-rate evidence, identify circular GBP/USD comparisons, align timestamps and resolve conflicts.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Using 6N Futures to Hedge NZD/USD Exposure",
     "url": "/futures-basics/using-6n-to-hedge-nzdusd-exposure.html",
     "description": "A blunt guide to using 6N futures as a hedge against NZD/USD currency exposure for traders, investors, and businesses.",
@@ -4449,12 +4461,6 @@
     "title": "Using ES Session Highs, Lows, and VWAP to Frame Trades",
     "url": "/futures-basics/es-session-highs-lows-and-vwap-usage.html",
     "description": "A blunt guide to using ES session highs, lows, and VWAP so beginners can frame trades with real structure instead of guessing.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "Using GBP/USD Divergence to Trade 6B Futures",
-    "url": "/futures-basics/using-gbpusd-divergence-to-trade-6b-futures.html",
-    "description": "A blunt guide to using GBP/USD divergence as a confirmation tool for trading 6B British Pound futures.",
     "category": "Futures Basics"
   },
   {
@@ -4474,12 +4480,6 @@
     "url": "/market-basics/volatility-clustering-basics.html",
     "description": "Learn volatility clustering basics: why markets flip between quiet and explosive periods, and how to read shifting volatility conditions.",
     "category": "Market Basics"
-  },
-  {
-    "title": "Volatility Compression and Expansion Patterns in 6B Futures",
-    "url": "/futures-basics/6b-volatility-compression-and-expansion-patterns.html",
-    "description": "A direct breakdown of volatility compression and expansion patterns in 6B British Pound futures and how to trade the breakouts cleanly.",
-    "category": "Futures Basics"
   },
   {
     "title": "Volatility Compression Leads to Expansion: Why Tight Markets Explode",
@@ -4638,6 +4638,12 @@
     "category": "Market Basics"
   },
   {
+    "title": "What Drives Volatility in 6B British Pound Futures?",
+    "url": "/futures-basics/british-pound-volatility-drivers-in-6b.html",
+    "description": "Map the rate, data, fiscal, political, dollar and liquidity channels that can move 6B without treating a volatility catalyst as a directional forecast.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "What ESZ4, NQU4, and CLM5 Mean — Futures Contract Codes Explained",
     "url": "/futures-basics/futures-symbols-and-contract-codes-explained.html",
     "description": "If ESZ4, NQU4, or CLM5 looks confusing on your trading platform, this page shows exactly how futures contract codes work — month codes, year codes, and real examples.",
@@ -4758,21 +4764,21 @@
     "category": "Prop Firm Trading"
   },
   {
+    "title": "Which UK Data Releases Matter for 6B Futures?",
+    "url": "/futures-basics/how-uk-economic-data-releases-impact-6b-futures.html",
+    "description": "Rank UK data releases for 6B by the live policy question, surprise, revisions and cross-market response, with links to CPI and GDP-labour depth guides.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Whipsaws in Futures: Liquidity and Algos",
     "url": "/futures-basics/futures-whipsaw-mechanics.html",
     "description": "A blunt breakdown of whipsaws in futures: how liquidity, news, and algorithmic behavior create fake moves that stop traders out.",
     "category": "Futures Basics"
   },
   {
-    "title": "Why 6B Often Trends During the Early U.S. Session",
-    "url": "/futures-basics/why-6b-trends-during-us-session.html",
-    "description": "A blunt breakdown of why 6B British Pound futures frequently trend during the early U.S. session and how to take advantage of the move.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "Why 6B Reacts Differently Than 6E During Risk-On Markets",
+    "title": "Why 6B and 6E Differ on Risk-On Days",
     "url": "/futures-basics/why-6b-reacts-differently-than-6e-in-risk-on-markets.html",
-    "description": "A blunt explanation of why 6B British Pound futures behave differently than 6E Euro futures during risk-on environments and what that means for traders.",
+    "description": "Compare 6B and 6E through common USD, BoE-ECB policy, relative growth, external-balance and event channels without relying on fixed risk-on stereotypes.",
     "category": "Futures Basics"
   },
   {
