@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the Market Structure book catalog, product markup, and Merchant feed."""
+"""Validate the live book catalog, staged title markup, and Merchant feed."""
 
 from __future__ import annotations
 
@@ -20,6 +20,8 @@ BOOK_SLUGS = (
     "metals-market-structure",
     "equity-market-structure",
 )
+PROBABILISTIC_SLUG = "probabilistic-execution"
+HUB_BOOK_SLUGS = (PROBABILISTIC_SLUG, *BOOK_SLUGS)
 EDITIONS = ("paperback", "hardcover")
 G_NS = "{http://base.google.com/ns/1.0}"
 
@@ -40,7 +42,10 @@ class Audit:
             for error in self.errors:
                 print(f"  - {error}", file=sys.stderr)
             raise SystemExit(1)
-        print(f"PASS: {self.checks} Google Books checks; 3 books and 6 physical products are synchronized.")
+        print(
+            f"PASS: {self.checks} book-commerce checks; 4 books, 6 live physical "
+            "products, and 2 staged Probabilistic Execution print files are synchronized."
+        )
 
 
 @dataclass(frozen=True)
@@ -116,7 +121,7 @@ def parse_catalog(path: Path, audit: Audit) -> dict[tuple[str, str], CatalogEntr
     start_re = re.compile(r'^  "([^"]+)": Object\.freeze\(\{$')
     end_re = re.compile(r"^  \}\)(?:,)?$")
     field_re = re.compile(
-        r'^    (seriesSlug|edition|title|isbn|interiorPages|priceCents): (.+?)(?:,)?$'
+        r'^    (seriesSlug|catalogStatus|edition|title|isbn|interiorPages|priceCents): (.+?)(?:,)?$'
     )
     raw_entries: list[tuple[str, dict[str, Any]]] = []
     current_key: str | None = None
@@ -134,7 +139,10 @@ def parse_catalog(path: Path, audit: Audit) -> dict[tuple[str, str], CatalogEntr
         if field:
             name, raw_value = field.groups()
             raw_value = raw_value.rstrip(",")
-            current[name] = json.loads(raw_value) if raw_value.startswith('"') else int(raw_value)
+            if raw_value == "null" or raw_value.startswith('"'):
+                current[name] = json.loads(raw_value)
+            else:
+                current[name] = int(raw_value)
         if end_re.match(line):
             raw_entries.append((current_key, current))
             current_key = None
@@ -144,6 +152,11 @@ def parse_catalog(path: Path, audit: Audit) -> dict[tuple[str, str], CatalogEntr
     for key, raw in raw_entries:
         required = {"seriesSlug", "edition", "title", "isbn", "interiorPages", "priceCents"}
         if not required.issubset(raw):
+            continue
+        # Staged records may contain verified provider identity and list-price
+        # data, but they remain explicitly excluded from the live Merchant
+        # catalog until publication, proof, checkout, and release gates pass.
+        if raw.get("catalogStatus") == "staged" or raw.get("isbn") is None or raw.get("priceCents") is None:
             continue
         entry = CatalogEntry(
             key=key,
@@ -231,8 +244,8 @@ def validate_hub(root: Path, audit: Audit) -> None:
     item_list = page.get("mainEntity", {})
     audit.require(item_list.get("@type") == "ItemList", "books hub mainEntity must be an ItemList")
     items = item_list.get("itemListElement", [])
-    audit.require(item_list.get("numberOfItems") == 3 and len(items) == 3, "books hub ItemList must contain three books")
-    for position, slug in enumerate(BOOK_SLUGS, start=1):
+    audit.require(item_list.get("numberOfItems") == 4 and len(items) == 4, "books hub ItemList must contain four books")
+    for position, slug in enumerate(HUB_BOOK_SLUGS, start=1):
         if position > len(items):
             break
         item = items[position - 1]
@@ -242,8 +255,67 @@ def validate_hub(root: Path, audit: Audit) -> None:
         audit.require(book.get("@type") == "Book", f"hub item is not a Book for {slug}")
         audit.require(book.get("@id") == f"{page_url}#work", f"hub @id is wrong for {slug}")
         audit.require(book.get("url") == page_url, f"hub URL is wrong for {slug}")
-        audit.require(book.get("image") == f"{page_url}{slug}-cover.png", f"hub image is wrong for {slug}")
+        expected_image = (
+            f"{page_url}probabilistic-execution-cover.jpg"
+            if slug == PROBABILISTIC_SLUG
+            else f"{page_url}{slug}-cover.png"
+        )
+        audit.require(book.get("image") == expected_image, f"hub image is wrong for {slug}")
     audit.require("156 pages" in source, "equity book page count on the hub must match the 156-page print catalog")
+
+
+def validate_probabilistic_staging(root: Path, audit: Audit) -> None:
+    path = root / "books" / PROBABILISTIC_SLUG / "index.html"
+    parser, documents, source = parse_html(path, audit)
+    base = f"{BASE_URL}/books/{PROBABILISTIC_SLUG}/"
+    nodes = flatten_nodes(documents)
+    by_id = {str(node["@id"]): node for node in nodes if node.get("@id")}
+
+    audit.require(parser.canonicals == [base], "probabilistic-execution: canonical URL is wrong")
+    audit.require(set(parser.data_editions) == {"digital", "paperback", "hardcover"}, "probabilistic-execution: all three edition selectors are required")
+    audit.require(len(parser.data_editions) == 3, "probabilistic-execution: edition selectors must be unique")
+    audit.require(any("probabilistic-execution.css?v=20260812-digital-live" in href for href in parser.stylesheets), "probabilistic-execution: stylesheet cache key is wrong")
+
+    required_ids = {
+        f"{BASE_URL}/#organization",
+        f"{BASE_URL}/about.html#kyle-parrott",
+        f"{base}#breadcrumb",
+        f"{base}#work",
+        f"{base}#digital",
+    }
+    audit.require(required_ids.issubset(by_id), "probabilistic-execution: JSON-LD is missing required entities")
+    if not required_ids.issubset(by_id):
+        return
+
+    work = by_id[f"{base}#work"]
+    audit.require(node_types(work) == {"Book"}, "probabilistic-execution: work entity must be a Book")
+    audit.require(work.get("url") == base, "probabilistic-execution: work URL is wrong")
+    audit.require(work.get("workExample") == [{"@id": f"{base}#digital"}], "probabilistic-execution: only the live digital edition may be linked before print release")
+
+    digital = by_id[f"{base}#digital"]
+    offer = digital.get("offers", {})
+    audit.require(digital.get("bookFormat") == "https://schema.org/EBook", "probabilistic-execution: digital format is wrong")
+    audit.require(offer.get("price") == "29.00" and offer.get("priceCurrency") == "USD", "probabilistic-execution: preserved digital price is wrong")
+    audit.require(offer.get("availability") == "https://schema.org/InStock", "probabilistic-execution: live digital checkout must claim in-stock availability")
+
+    node_ids = set(by_id)
+    audit.require(f"{base}#paperback" not in node_ids and f"{base}#hardcover" not in node_ids, "probabilistic-execution: physical Product entities require real ISBNs and prices")
+    audit.require('"isbn"' not in source and '"gtin13"' not in source, "probabilistic-execution: ISBN or GTIN was invented")
+    audit.require("button-disabled js-digital-buy" in source, "probabilistic-execution: digital checkout must default disabled")
+    audit.require(source.count('<strong class="coming-soon">Coming soon</strong>') == 2, "probabilistic-execution: both print editions must say Coming soon")
+    audit.require("js-paperback-buy" not in source and "js-hardcover-buy" not in source, "probabilistic-execution: print checkout controls must not exist before print release")
+    audit.require("digital-config?bookSlug=probabilistic-execution" in source, "probabilistic-execution: digital readiness endpoint is missing")
+    audit.require("public-config?bookSlug=probabilistic-execution&edition=" not in source, "probabilistic-execution: print readiness code must not be able to activate coming-soon cards")
+    audit.require("data-price-paperback" not in source and "data-price-hardcover" not in source, "probabilistic-execution: coming-soon print editions must not show or fetch prices")
+    audit.require(not re.search(r'href=["\']https://buy\.stripe\.com/', source), "probabilistic-execution: a static Stripe link bypasses the readiness gate")
+    audit.require((root / "books" / PROBABILISTIC_SLUG / "probabilistic-execution-cover.jpg").is_file(), "probabilistic-execution: web cover image is missing")
+    success_path = root / "books" / PROBABILISTIC_SLUG / "success.html"
+    audit.require(success_path.is_file(), "probabilistic-execution: private-delivery confirmation page is missing")
+    if success_path.is_file():
+        success_source = success_path.read_text(encoding="utf-8")
+        audit.require("emailed as private attachments" in success_source, "probabilistic-execution: confirmation copy must match attachment delivery")
+        audit.require("private download links" not in success_source.lower(), "probabilistic-execution: obsolete download-link copy remains")
+        audit.require(not re.search(r'href=["\'][^"\']+\.(?:pdf|epub)(?:[?#][^"\']*)?["\']', success_source, re.I), "probabilistic-execution: confirmation page exposes a paid-file URL")
 
 
 def validate_book_pages(
@@ -382,10 +454,13 @@ def validate_sitemap_and_policy(root: Path, audit: Audit) -> None:
         node.findtext("s:loc", "", namespace): node.findtext("s:lastmod", "", namespace)
         for node in sitemap.getroot().findall("s:url", namespace)
     }
-    required = [f"{BASE_URL}/books/"] + [f"{BASE_URL}/books/{slug}/" for slug in BOOK_SLUGS]
+    required = [f"{BASE_URL}/books/"] + [f"{BASE_URL}/books/{slug}/" for slug in HUB_BOOK_SLUGS]
     for url in required:
         audit.require(url in records, f"sitemap is missing {url}")
-        audit.require(records.get(url, "").startswith("2026-08-11T"), f"sitemap lastmod was not refreshed for {url}")
+        audit.require(
+            bool(re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z", records.get(url, ""))),
+            f"sitemap lastmod is invalid for {url}",
+        )
 
     policy_path = root / "store-policy.html"
     policy = policy_path.read_text(encoding="utf-8").lower()
@@ -400,6 +475,7 @@ def main() -> None:
     audit = Audit()
     entries = parse_catalog(root / "fulfillment" / "paperback-worker" / "src" / "catalog.mjs", audit)
     validate_hub(root, audit)
+    validate_probabilistic_staging(root, audit)
     page_products = validate_book_pages(root, entries, audit)
     validate_feed(root, entries, page_products, audit)
     validate_sitemap_and_policy(root, audit)

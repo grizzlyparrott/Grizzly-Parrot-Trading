@@ -94,6 +94,30 @@ def find_canonical_in_html(text: str) -> str | None:
 def get_git_last_commit(file_path: Path, repo_root: Path) -> str | None:
     """Get the MOST RECENT commit date for a file using Git."""
     try:
+        tracked = subprocess.run(
+            ["git", "ls-files", "--error-unmatch", "--", str(file_path)],
+            cwd=repo_root,
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+        # A restored path can have historical commits even though its current
+        # working-tree file is new. Do not label that new page with the old
+        # deletion or pre-deletion timestamp.
+        if tracked.returncode != 0:
+            return None
+        dirty = subprocess.run(
+            ["git", "diff", "--quiet", "HEAD", "--", str(file_path)],
+            cwd=repo_root,
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+        # A tracked page changed in the working tree after its latest commit.
+        # Its previous commit time is stale, so use the file timestamp until
+        # the change is committed and has an authoritative Git timestamp.
+        if dirty.returncode != 0:
+            return None
         result = subprocess.run(
             ["git", "log", "-1", "--format=%cI", "--", str(file_path)],
             cwd=repo_root,

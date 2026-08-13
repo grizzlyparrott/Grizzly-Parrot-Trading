@@ -1,15 +1,23 @@
-import { getBook, getStripePriceId, PRINT_EDITIONS, SHIPPING_OPTIONS } from "./catalog.mjs";
+import { getBook, getStripePriceId, catalogReady, PRINT_EDITIONS, ALL_PRINT_EDITIONS, SHIPPING_OPTIONS } from "./catalog.mjs";
 import { validateCheckoutRequest, addressesMatch, normalizeAddress, postcodesMatch, streetLinesMatch } from "./validation.mjs";
 import { verifyAssetRequest, constantTimeEqual } from "./crypto.mjs";
 import { LuluApiError, LuluClient, shippingCents } from "./lulu.mjs";
 import { StripeApiError, StripeClient, parseVerifiedStripeEvent } from "./stripe.mjs";
 import { OrderStore } from "./order-store.mjs";
+import {
+  DigitalDeliveryError,
+  digitalDeliveryConfigured,
+  normalizeDigitalBuyerEmail,
+  sendProbabilisticDigitalDelivery
+} from "./digital-delivery.mjs";
 
 const JSON_HEADERS = { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" };
 const QUOTE_LIFETIME_MS = 30 * 60 * 1000;
 const DIGITAL_PRICE_CENTS = 2900;
 const DIGITAL_CURRENCY = "usd";
 const DIGITAL_EVENT_TYPES = new Set(["checkout.session.completed", "checkout.session.async_payment_succeeded"]);
+const DIGITAL_DELIVERY_LEASE_MS = 10 * 60 * 1000;
+const DIGITAL_DELIVERY_RETRY_MS = [15 * 60 * 1000, 60 * 60 * 1000];
 
 function nowIso() { return new Date().toISOString(); }
 
@@ -54,11 +62,18 @@ export function productionReadiness(env) {
 }
 
 function productionPrerequisitesReady(env, book) {
+  if (!catalogReady(book)) return false;
   const readiness = productionReadiness(env);
   const proofsApproved = book?.edition === "hardcover"
     ? readiness.hardcoverProofsApproved
     : readiness.paperbackProofsApproved;
+  const releaseFilesValidated = !book.releaseKey
+    || env[`${book.releaseKey}_${book.edition.toUpperCase()}_FILES_VALIDATED`] === "true";
+  const releaseProofApproved = !book.releaseKey
+    || env[`${book.releaseKey}_${book.edition.toUpperCase()}_PROOF_APPROVED`] === "true";
   return proofsApproved
+    && releaseFilesValidated
+    && releaseProofApproved
     && readiness.policiesApproved
     && readiness.shippingCountriesConfigured
     && readiness.stripeTaxDecision !== "pending";
@@ -69,8 +84,11 @@ function productionSalesEnabled(env, book) {
   const salesFlag = book.edition === "hardcover"
     ? env.HARDCOVER_SALES_ENABLED
     : env.PAPERBACK_SALES_ENABLED;
+  const releaseSalesEnabled = !book.releaseKey
+    || env[`${book.releaseKey}_${book.edition.toUpperCase()}_SALES_ENABLED`] === "true";
   return env.PAPERBACK_ENVIRONMENT === "production"
     && salesFlag === "true"
+    && releaseSalesEnabled
     && productionPrerequisitesReady(env, book);
 }
 
@@ -80,9 +98,12 @@ function editionSalesEnabled(env, edition) {
 }
 
 function privateOrderEnabled(env, book) {
+  const releasePrivateOrderEnabled = !book?.releaseKey
+    || env[`${book.releaseKey}_${book.edition.toUpperCase()}_PRIVATE_ORDER_ENABLED`] === "true";
   return env.PAPERBACK_ENVIRONMENT === "production"
     && !productionSalesEnabled(env, book)
     && env.PAPERBACK_PRIVATE_ORDER_ENABLED === "true"
+    && releasePrivateOrderEnabled
     && productionPrerequisitesReady(env, book);
 }
 
@@ -101,6 +122,7 @@ function privateOrderAuthorized(request, env, book) {
 }
 
 function checkoutAuthorized(request, env, book) {
+  if (!catalogReady(book)) return null;
   if (testAuthorized(request, env)) return { mode: "test" };
   if (privateOrderAuthorized(request, env, book)) return { mode: "private_live_order" };
   const origin = request.headers.get("Origin");
@@ -125,8 +147,31 @@ function digitalPaymentLinks(env) {
   return new Map([
     [env.STRIPE_PAYMENT_LINK_CURRENCY_DIGITAL, "currency_market_structure"],
     [env.STRIPE_PAYMENT_LINK_METALS_DIGITAL, "metals_market_structure"],
-    [env.STRIPE_PAYMENT_LINK_EQUITY_DIGITAL, "equity_market_structure"]
+    [env.STRIPE_PAYMENT_LINK_EQUITY_DIGITAL, "equity_market_structure"],
+    [env.STRIPE_PAYMENT_LINK_PROBABILISTIC_DIGITAL, "probabilistic_execution"]
   ].filter(([paymentLinkId]) => typeof paymentLinkId === "string" && paymentLinkId.startsWith("plink_")));
+}
+
+function digitalCheckoutConfig(slug, env) {
+  if (slug !== "probabilistic-execution") return null;
+  const paymentLinkId = env.STRIPE_PAYMENT_LINK_PROBABILISTIC_DIGITAL;
+  const checkoutUrl = env.STRIPE_CHECKOUT_URL_PROBABILISTIC_DIGITAL;
+  const validPaymentLinkId = typeof paymentLinkId === "string"
+    && /^plink_[A-Za-z0-9]{8,}$/.test(paymentLinkId)
+    && !/(?:test|example|placeholder|dummy)/i.test(paymentLinkId);
+  let validCheckoutUrl = false;
+  try {
+    const parsed = new URL(checkoutUrl);
+    validCheckoutUrl = parsed.protocol === "https:"
+      && parsed.hostname === "buy.stripe.com"
+      && parsed.pathname.length > 6
+      && !/(?:test|example|placeholder|dummy)/i.test(parsed.pathname);
+  } catch { /* An absent or malformed URL must remain unavailable. */ }
+  const enabled = env.PROBABILISTIC_EXECUTION_DIGITAL_SALES_ENABLED === "true"
+    && digitalDeliveryConfigured(env)
+    && validPaymentLinkId
+    && validCheckoutUrl;
+  return { enabled, checkoutUrl: enabled ? checkoutUrl : null, priceCents: DIGITAL_PRICE_CENTS };
 }
 
 function digitalPurchaseFromSession(session, env) {
@@ -213,6 +258,81 @@ async function notifyAdmin(env, subject, html) {
   if (!env.ADMIN_EMAIL) return;
   try { await sendEmail(env, { to: env.ADMIN_EMAIL, subject, html }); }
   catch (error) { log("admin_email_failed", { message: error.message }); }
+}
+
+async function attemptProbabilisticDigitalDelivery(store, env, sessionId, {
+  send = sendProbabilisticDigitalDelivery
+} = {}) {
+  const startedAt = nowIso();
+  const leaseExpiresAt = new Date(Date.parse(startedAt) + DIGITAL_DELIVERY_LEASE_MS).toISOString();
+  const claimed = await store.claimDigitalDelivery(sessionId, startedAt, leaseExpiresAt);
+  if (!claimed) {
+    const existing = await store.digitalDelivery(sessionId);
+    return { state: existing?.status || "not_queued", attempted: false };
+  }
+  try {
+    const sent = await send(env, claimed);
+    const completedAt = nowIso();
+    await store.markDigitalDeliverySent(sessionId, sent.messageId, completedAt);
+    log("digital_delivery_sent", { sessionId, provider: sent.provider, attempts: claimed.attempts });
+    return { state: "sent", attempted: true, provider: sent.provider };
+  } catch (error) {
+    const deliveryError = error instanceof DigitalDeliveryError
+      ? error
+      : new DigitalDeliveryError("digital_delivery_unknown", String(error?.message || "Unknown digital delivery failure."));
+    const attemptCount = Number(claimed.attempts || 1);
+    const retryable = deliveryError.retryable && attemptCount < 3;
+    const state = retryable ? "retryable_failure" : "manual_review";
+    const failedAt = nowIso();
+    const retryDelay = DIGITAL_DELIVERY_RETRY_MS[Math.min(attemptCount - 1, DIGITAL_DELIVERY_RETRY_MS.length - 1)];
+    const nextAttemptAt = retryable ? new Date(Date.parse(failedAt) + retryDelay).toISOString() : null;
+    await store.markDigitalDeliveryFailure(
+      sessionId,
+      state,
+      deliveryError.code,
+      deliveryError.message,
+      nextAttemptAt,
+      failedAt
+    );
+    log("digital_delivery_failed", { sessionId, code: deliveryError.code, state, attempts: attemptCount });
+    if (state === "manual_review") {
+      await notifyAdmin(
+        env,
+        "Probabilistic Execution digital delivery needs review",
+        `<p>Stripe session: ${escapeHtml(sessionId)}</p><p>Reason: ${escapeHtml(deliveryError.code)}</p>`
+      );
+    }
+    return { state, attempted: true, code: deliveryError.code, nextAttemptAt };
+  }
+}
+
+async function retryDigitalDeliveries(store, env) {
+  const scanAt = nowIso();
+  const expired = await store.digitalDeliveriesExpiredSending(scanAt);
+  for (const delivery of expired) {
+    const movedToReview = await store.markExpiredDigitalDeliveryForReview(
+      delivery.stripe_session_id,
+      scanAt
+    );
+    if (!movedToReview) continue;
+    log("digital_delivery_lease_expired", { sessionId: delivery.stripe_session_id });
+    await notifyAdmin(
+      env,
+      "Probabilistic Execution digital delivery needs review",
+      `<p>Stripe session: ${escapeHtml(delivery.stripe_session_id)}</p><p>Reason: digital_delivery_lease_expired</p>`
+    );
+  }
+
+  const due = await store.digitalDeliveriesDue(scanAt);
+  for (const delivery of due) {
+    try { await attemptProbabilisticDigitalDelivery(store, env, delivery.stripe_session_id); }
+    catch (error) {
+      log("digital_delivery_retry_crashed", {
+        sessionId: delivery.stripe_session_id,
+        message: String(error?.message || "unknown")
+      });
+    }
+  }
 }
 
 async function emailOrderConfirmation(env, order, book) {
@@ -382,7 +502,10 @@ async function submitPaidOrder(store, env, sessionId) {
   }
 }
 
-async function stripeWebhook(request, env) {
+async function stripeWebhook(request, env, {
+  storeFactory = (db) => new OrderStore(db),
+  sendDigital = sendProbabilisticDigitalDelivery
+} = {}) {
   let event;
   try { event = await parseVerifiedStripeEvent(request, env.STRIPE_WEBHOOK_SECRET); }
   catch (error) { return json({ ok: false, code: error.code || "stripe_webhook_invalid" }, 400); }
@@ -390,7 +513,7 @@ async function stripeWebhook(request, env) {
   const session = event.data?.object || {};
   const digitalPurchase = digitalPurchaseFromSession(session, env);
   if (digitalPurchase) {
-    const store = new OrderStore(env.PAPERBACK_ORDERS);
+    const store = storeFactory(env.PAPERBACK_ORDERS);
     const inserted = await store.insertDigitalPurchase({
       ...digitalPurchase,
       stripeEventId: event.id,
@@ -403,6 +526,30 @@ async function stripeWebhook(request, env) {
       sessionId: session.id,
       eventLabel: digitalPurchase.eventLabel
     });
+    if (digitalPurchase.eventLabel === "probabilistic_execution") {
+      const buyerEmail = normalizeDigitalBuyerEmail(session);
+      await store.ensureDigitalDelivery(
+        session.id,
+        buyerEmail,
+        nowIso(),
+        buyerEmail ? "queued" : "manual_review"
+      );
+      if (!buyerEmail) {
+        await notifyAdmin(
+          env,
+          "Probabilistic Execution payment is missing a delivery email",
+          `<p>Stripe session: ${escapeHtml(session.id)}</p><p>Delivery requires manual review.</p>`
+        );
+        return json({ ok: true, digitalPurchase: true, duplicate: !inserted, deliveryState: "manual_review" });
+      }
+      const delivery = await attemptProbabilisticDigitalDelivery(store, env, session.id, { send: sendDigital });
+      return json({
+        ok: true,
+        digitalPurchase: true,
+        duplicate: !inserted,
+        deliveryState: delivery.state
+      });
+    }
     return json({ ok: true, digitalPurchase: true, duplicate: !inserted });
   }
   if (event.type !== "checkout.session.completed") return json({ ok: true, ignored: "not_a_paid_digital_purchase" });
@@ -474,9 +621,13 @@ async function claimDigitalConversion(request, env) {
   }, 200, cors(request, env));
 }
 
-async function pollStatuses(env) {
+async function pollStatuses(env, {
+  storeFactory = (db) => new OrderStore(db)
+} = {}) {
   log("lulu_status_poll_started");
-  const store = new OrderStore(env.PAPERBACK_ORDERS);
+  const store = storeFactory(env.PAPERBACK_ORDERS);
+  try { await retryDigitalDeliveries(store, env); }
+  catch (error) { log("digital_delivery_retry_scan_failed", { message: String(error?.message || "unknown") }); }
   try {
     const deletedQuotes = await store.deleteExpiredQuotes(nowIso());
     if (deletedQuotes > 0) log("expired_quotes_deleted", { count: deletedQuotes });
@@ -555,7 +706,7 @@ function providerError(error, request, env, action) {
 
 async function serveAsset(request, env, pathname) {
   const assetKey = decodeURIComponent(pathname.slice("/lulu-assets/".length));
-  const permittedAssetKeys = new Set(Object.values(PRINT_EDITIONS).flatMap((book) => [book.assets.interiorKey, book.assets.coverKey]));
+  const permittedAssetKeys = new Set(Object.values(ALL_PRINT_EDITIONS).flatMap((book) => [book.assets.interiorKey, book.assets.coverKey]));
   if (!permittedAssetKeys.has(assetKey)) return new Response("Not found", { status: 404 });
   const url = new URL(request.url);
   const authorized = await verifyAssetRequest(assetKey, url.searchParams.get("expires"), url.searchParams.get("sig"), env.PAPERBACK_ASSET_SIGNING_SECRET || "");
@@ -576,7 +727,8 @@ export default {
         hardcoverSalesEnabled: editionSalesEnabled(env, "hardcover"),
         privateOrderEnabled: env.PAPERBACK_PRIVATE_ORDER_ENABLED === "true",
         environment: env.PAPERBACK_ENVIRONMENT,
-        readiness: productionReadiness(env)
+        readiness: productionReadiness(env),
+        probabilisticDigitalDeliveryReady: digitalDeliveryConfigured(env)
       });
     }
     if (request.method === "GET" && url.pathname === "/public-config") {
@@ -585,7 +737,13 @@ export default {
       const checkoutUrl = enabled
         ? `${env.PAPERBACK_BASE_URL.replace(/\/$/, "")}/print/checkout?bookSlug=${encodeURIComponent(book.seriesSlug)}&edition=${encodeURIComponent(book.edition)}`
         : null;
-      return json({ enabled, checkoutUrl, edition: book?.edition || null, priceCents: book?.priceCents || null }, 200, cors(request, env));
+      const response = { enabled, checkoutUrl, edition: book?.edition || null, priceCents: book?.priceCents || null };
+      if (book?.catalogStatus === "staged") response.catalogStatus = "staged";
+      return json(response, 200, cors(request, env));
+    }
+    if (request.method === "GET" && url.pathname === "/digital-config") {
+      const config = digitalCheckoutConfig(url.searchParams.get("bookSlug"), env);
+      return json(config || { enabled: false, checkoutUrl: null, priceCents: null }, 200, cors(request, env));
     }
     if (request.method === "GET" && ["/print/checkout", "/paperback/checkout"].includes(url.pathname)) {
       const requestedEdition = url.pathname === "/paperback/checkout" ? "paperback" : url.searchParams.get("edition");
@@ -611,4 +769,18 @@ export default {
   }
 };
 
-export { createQuote, createCheckout, stripeWebhook, claimDigitalConversion, digitalPurchaseFromSession, pollStatuses, quoteFromRow, orderFromRow, suggestedAddressDiffers };
+export {
+  attemptProbabilisticDigitalDelivery,
+  createQuote,
+  createCheckout,
+  stripeWebhook,
+  claimDigitalConversion,
+  digitalPurchaseFromSession,
+  digitalCheckoutConfig,
+  productionSalesEnabled,
+  pollStatuses,
+  quoteFromRow,
+  orderFromRow,
+  retryDigitalDeliveries,
+  suggestedAddressDiffers
+};

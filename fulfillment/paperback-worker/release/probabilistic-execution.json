@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "manifestPurpose": "Fail-closed release evidence for one title; the digital edition can release independently while unresolved print gates remain false.",
+  "book": {
+    "slug": "probabilistic-execution",
+    "title": "Probabilistic Execution",
+    "subtitle": "Tactics to Avoid the Guillotine",
+    "author": "Kyle Parrott",
+    "publisher": "Grizzly Parrot Trading"
+  },
+  "printProvider": "lulu",
+  "distribution": {
+    "salesMode": "grizzly-direct-plus-lulu-global-distribution",
+    "grizzlyDirectLuluPrintApiTarget": true,
+    "luluBookstoreTarget": true,
+    "luluGlobalDistributionTarget": true,
+    "amazonRetailViaLuluTarget": true,
+    "reviewFeeCentsPerBinding": 499,
+    "reviewFeeVerifiedAt": "2026-08-12",
+    "reviewFeePaymentsVerified": true,
+    "luluPrivatePublicationCompleted": true,
+    "luluBookstoreAccess": "private",
+    "retailerAvailabilityActive": false,
+    "luluGlobalDistributionSubmitted": false,
+    "luluGlobalDistributionApproved": false,
+    "luluBookstorePublished": false,
+    "amazonKdpUsed": false
+  },
+  "editorialReview": {
+    "required": true,
+    "reviewerType": "independent-codex-agent",
+    "reviewedMasterSha256": "859CE56ABC8FD412C00B7FC84309FCFC2F19C1DDB12A860E3195605DCF9D7D0B",
+    "reportSha256": "01F5D34A5C4E31C44F72CB429366B0D0777E4A4E2BAE8C4D9044121D784BC555",
+    "correctionsLedgerSha256": "F31BC9FB865FFB01CB8672E1CA272AC4AB1FDB2F1669F7B273AF60D552CE552E",
+    "completed": true,
+    "findingsAdjudicated": true,
+    "postAdjudicationMasterSha256": "DEB166A98EB512B82FD0DEF23FAA4D3A08CB6A656B7B1A305FB5923A3CB71019",
+    "acceptedCorrectionsPropagated": true
+  },
+  "isbnPolicy": "lulu-free",
+  "isbnBibliographicPublisher": "Lulu.com",
+  "isbnAssignmentVerified": true,
+  "digital": {
+    "priceCents": 2900,
+    "currency": "USD",
+    "assets": {
+      "pdf": {
+        "filename": "Probabilistic-Execution-Digital.pdf",
+        "sha256": "6859F32798DD82D119ED9685B15D290CB0548440B40FC4CC835871C1EC59D9F3"
+      },
+      "epub": {
+        "filename": "Probabilistic-Execution-Digital.epub",
+        "sha256": "FD0AF7994539BD106D01BE2755CF069A8D10B2AADCCD287390D7EA41C778495E"
+      }
+    },
+    "stripeProductId": "prod_V3srxa7RUc6r4L",
+    "stripePriceId": "price_1U3l5aIA3p8RBkZI2wwqXILV",
+    "paymentLinkId": "plink_1U3l6oIA3p8RBkZIwwzIcM95",
+    "checkoutUrl": "https://buy.stripe.com/3cIdRabKd6gm8hydHq2Nq04",
+    "paymentLinkActive": true,
+    "paymentLinkActivatedAt": "2026-08-12",
+    "providerConfigurationVerifiedAt": "2026-08-12",
+    "deliveryProvider": "resend",
+    "deliveryMode": "private-email-attachments",
+    "deliveryAssetsUploaded": true,
+    "deliveryMigrationApplied": true,
+    "deliveryWorkerDeployed": true,
+    "deliveryConfigurationId": "c9b2e311-15ce-4b1c-b6c6-92482a7a61e8",
+    "deliveryWorkerDeployedAt": "2026-08-12",
+    "testDeliveryVerified": true,
+    "privateLiveDeliveryVerified": false,
+    "salesActivationApproved": true,
+    "salesActivationApprovedAt": "2026-08-12"
+  },
+  "print": {
+    "paperback": {
+      "edition": "paperback",
+      "podPackageId": "0600X0900.BW.STD.PB.060UW444.MXX",
+      "pageCount": 148,
+      "luluPublishingProjectId": "yvep5mw",
+      "isbn": "978-0-557-95654-8",
+      "fileStage": "isbn-final",
+      "interior": {
+        "filename": "Probabilistic-Execution-Lulu-Paperback-Interior.pdf",
+        "md5": "243BC3729F9C95B76780A6E0AF3EB064"
+      },
+      "cover": {
+        "filename": "Probabilistic-Execution-Lulu-Paperback-Cover.pdf",
+        "md5": "5E98FA34140EA9CF97ACF575AEF6501B"
+      },
+      "distributionCover": {
+        "filename": null,
+        "templateVerified": false,
+        "md5": null,
+        "filesValidated": false
+      },
+      "filesValidated": true,
+      "manufacturingCostCents": 569,
+      "manufacturingCostVerifiedAt": "2026-08-12",
+      "retailPriceCents": 3900,
+      "stripeProductId": "prod_V3t4w7nEracpbY",
+      "stripePriceId": "price_1U3lIEIA3p8RBkZIFBnsS6FG",
+      "proofQuote": {
+        "quotedAt": "2026-08-12",
+        "quantity": 1,
+        "printingCents": 569,
+        "distributionFeeCents": 499,
+        "shippingCents": 569,
+        "taxCents": 81,
+        "totalCents": 1718,
+        "shippingMethod": "Mail"
+      },
+      "proofOrderId": "USD-C4285059",
+      "proofReceived": false,
+      "userProofAccepted": false,
+      "privateLiveOrderVerified": false,
+      "salesActivationApproved": false,
+      "merchantItemId": null,
+      "merchantStatus": "not-submitted"
+    },
+    "hardcover": {
+      "edition": "hardcover",
+      "podPackageId": "0600X0900.BW.STD.CW.060UW444.MXX",
+      "pageCount": 148,
+      "luluPublishingProjectId": "7kz7vk8",
+      "isbn": "978-0-557-95653-1",
+      "fileStage": "isbn-final",
+      "interior": {
+        "filename": "Probabilistic-Execution-Lulu-Hardcover-Interior.pdf",
+        "md5": "AB4CE571C3FED8931EEB6788A9E0ED99"
+      },
+      "cover": {
+        "filename": "Probabilistic-Execution-Lulu-Hardcover-Cover.pdf",
+        "md5": "70162A861C8524468D579E068C2E2137"
+      },
+      "distributionCover": {
+        "filename": null,
+        "templateVerified": false,
+        "md5": null,
+        "filesValidated": false
+      },
+      "filesValidated": true,
+      "manufacturingCostCents": 1438,
+      "manufacturingCostVerifiedAt": "2026-08-12",
+      "retailPriceCents": 4900,
+      "stripeProductId": "prod_V3t578cbE7wL3u",
+      "stripePriceId": "price_1U3lJYIA3p8RBkZICjKLQtt0",
+      "proofQuote": {
+        "quotedAt": "2026-08-12",
+        "quantity": 1,
+        "printingCents": 1438,
+        "distributionFeeCents": 499,
+        "shippingCents": 569,
+        "taxCents": 148,
+        "totalCents": 2654,
+        "shippingMethod": "Mail"
+      },
+      "proofOrderId": "USD-C4285060",
+      "proofReceived": false,
+      "userProofAccepted": false,
+      "privateLiveOrderVerified": false,
+      "salesActivationApproved": false,
+      "merchantItemId": null,
+      "merchantStatus": "not-submitted"
+    }
+  },
+  "publication": {
+    "canonicalLiveVerified": false,
+    "workerLiveVerified": true,
+    "existingBooksRegressionVerified": true,
+    "independentPostDeploymentVerified": false
+  }
+}
