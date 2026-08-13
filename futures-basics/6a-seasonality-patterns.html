@@ -2,364 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seasonality Patterns in 6A AUD/USD Futures</title>
-  <meta name="description" content="A blunt breakdown of real seasonality tendencies in 6A AUD/USD futures and how traders use recurring patterns without overfitting nonsense.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6a-seasonality-patterns.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Seasonality Patterns in 6A AUD/USD Futures">
-  <meta property="og:description" content="A blunt breakdown of real seasonality tendencies in 6A AUD/USD futures and how traders use recurring patterns without overfitting nonsense.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6a-seasonality-patterns.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Seasonality Patterns in 6A AUD/USD Futures">
-  <meta name="twitter:description" content="A blunt breakdown of real seasonality tendencies in 6A AUD/USD futures and how traders use recurring patterns without overfitting nonsense.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Seasonality Patterns in 6A AUD/USD Futures",
-  "description": "A blunt breakdown of real seasonality tendencies in 6A AUD/USD futures and how traders use recurring patterns without overfitting nonsense.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6a-seasonality-patterns.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6a-seasonality-patterns.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Market Basics",
-      "item": "https://grizzlyparrottrading.com/market-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Seasonality Patterns in 6A AUD/USD Futures",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6a-seasonality-patterns.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6A Seasonality: How to Test Calendar Effects</title>
+  <meta name="description" content="Test 6A seasonality with documented contracts, returns, roll rules, adequate samples, holdouts and multiple-testing controls instead of invented month stories.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6a-seasonality-patterns.html">
+  <meta property="og:title" content="6A Seasonality: How to Test Calendar Effects"><meta property="og:description" content="A reproducible framework for testing monthly and calendar effects in Australian Dollar futures without data-mined folklore."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6a-seasonality-patterns.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-13">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Testing 6A Seasonality"><meta name="twitter:description" content="Build an auditable calendar-effect test before trusting a seasonal chart."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="6a-evidence-guides.css?v=20260813a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6A Seasonality: How to Test Calendar Effects","description":"A reproducible framework for testing monthly and calendar effects in Australian Dollar futures without data-mined folklore.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6a-seasonality-patterns.html"},"datePublished":"2025-11-24","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/6a-seasonality-patterns.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6A Seasonality","item":"https://grizzlyparrottrading.com/futures-basics/6a-seasonality-patterns.html"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Does 6A have a reliable best or worst month?","acceptedAnswer":{"@type":"Answer","text":"No month claim is established on this page because no original 6A seasonal dataset was run here. A reliable claim would need a documented price series, enough independent years, realistic costs, multiple-testing control and stability in unseen data."}},
+    {"@type":"Question","name":"Should 6A seasonality be tested with prices or returns?","acceptedAnswer":{"@type":"Answer","text":"Use returns for the statistical test. Price levels can trend and create spurious calendar relationships, while settlement-to-settlement simple or log returns provide comparable changes across different price regimes."}},
+    {"@type":"Question","name":"How should contract rolls be handled in a 6A seasonal study?","acceptedAnswer":{"@type":"Answer","text":"Use individual contracts or a continuous series with a fully documented roll and adjustment rule. Test nearby roll choices because a stitch, back adjustment or liquidity migration can create or erase an apparent calendar effect."}},
+    {"@type":"Question","name":"How many years are needed to test 6A seasonality?","acceptedAnswer":{"@type":"Answer","text":"There is no magic minimum. Twelve monthly observations require twelve years, and those observations may still share the same macro regimes. Report the count, dependence, uncertainty and performance across subperiods rather than relying on a small average."}},
+    {"@type":"Question","name":"Can a seasonal pattern be used as a standalone 6A signal?","acceptedAnswer":{"@type":"Answer","text":"A calendar label alone is weak evidence. If a pattern survives out-of-sample testing, treat it as one conditional input alongside current rates, risk, commodities, liquidity and execution cost, with a predefined invalidation rule."}}
+  ]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container aussie-evidence"><article>
 <!-- ARTICLE BODY START -->
+<header class="au-hero"><div class="au-hero-copy"><p class="au-kicker">Returns &middot; rolls &middot; multiple testing</p><h1>6A Seasonality: How to Test Calendar Effects</h1><p class="au-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p><p class="au-hero-lede">A colorful monthly chart is not evidence of a durable 6A seasonal edge. The result changes when you alter the contract roll, sample start, return definition or months inspected. Write the hypothesis first, test returns instead of price levels, control the search and reserve unseen data. Anything less is a story fitted to a calendar.</p><div class="au-hero-actions"><a class="button-primary" href="#answer">Read the direct answer</a><a class="au-text-link" href="#protocol">Run the protocol</a></div><dl class="au-hero-metrics" aria-label="6A seasonality research principles"><div><dt>Result reported</dt><dd>None</dd></div><div><dt>Test variable</dt><dd>Returns</dd></div><div><dt>Roll rule</dt><dd>Documented</dd></div><div><dt>Validation</dt><dd>Unseen data</dd></div></dl></div><div class="au-hero-visual"><div class="au-market-board"><div class="au-board-head"><span>Seasonal test</span><strong>Hypothesis before chart</strong></div><div class="au-process"><article><span>1</span><h2>Define</h2><p>One calendar rule</p></article><article><span>2</span><h2>Build</h2><p>Auditable series</p></article><article><span>3</span><h2>Test</h2><p>Return distribution</p></article><article><span>4</span><h2>Hold out</h2><p>Unseen years</p></article></div><p class="au-board-foot"><span>No invented month bias</span><span>Costs stay in</span></p></div></div></header>
 
+<nav class="au-jump-nav" aria-label="On this page"><a href="#answer">Direct answer</a><a href="#hypothesis">Hypothesis</a><a href="#data">Data</a><a href="#protocol">Protocol</a><a href="#controls">Controls</a><a href="#limits">Limits</a><a href="#faq">FAQ</a></nav>
 
+<section class="au-section" id="answer" aria-labelledby="answer-title"><div class="au-section-heading"><p class="au-kicker">Direct answer</p><h2 id="answer-title">Seasonality Is a Testable Hypothesis, Not a List of Favorite Months</h2><p>6A may show calendar differences in a particular sample, but this page does not claim that any month is reliably bullish or bearish. No original seasonal dataset or coefficient was produced for this article. The defensible job is to explain how to test a narrow calendar claim without letting hindsight, roll artifacts or repeated searching manufacture the result.</p></div><div class="au-two-column"><article class="au-panel"><p class="au-card-label">Valid question</p><h3>Does one predefined calendar bucket differ out of sample?</h3><p>Specify the return interval, contract series, roll rule, sample, benchmark and test before calculating the answer. Then report effect size and uncertainty, not just a winning percentage.</p></article><article class="au-panel"><p class="au-card-label">Invalid shortcut</p><h3>Which month looks best on the full chart?</h3><p>Scanning every month, weekday, week-of-month and holding period uses the same history to invent and verify the idea. The best-looking cell will usually overstate reality.</p></article></div><div class="au-caution"><strong>Contract anchor</strong><p>Standard 6A represents 100,000 AUD and quotes U.S. dollars per AUD. The current CME Globex outright tick is 0.00005, worth $5. A 0.0001 pip is two ticks, or $10. Final settlement is physical. Seasonal research must still identify the dated contract and roll because the continuous symbol is not itself a tradable expiry.</p></div></section>
 
-<h1>Seasonality Patterns in 6A AUD/USD Futures</h1>
+<section class="au-section" id="hypothesis" aria-labelledby="hypothesis-title"><div class="au-section-heading"><p class="au-kicker">Pre-registration</p><h2 id="hypothesis-title">Write One Falsifiable Claim Before Opening the Results</h2><p>A useful template is: “Using official daily settlements and the stated roll rule, the average 6A return during calendar bucket A differs from benchmark bucket B over the training sample and remains economically meaningful in a held-out sample after costs.” The bucket might be a month, part of a month or days around a recurring event. Do not name the winning bucket after looking.</p></div><div class="au-check-grid"><article><strong>Instrument</strong><p>Specify standard 6A, exact expiries and whether the rule may hold through roll. Do not mix spot AUD/USD and futures silently.</p></article><article><strong>Return</strong><p>Define settlement-to-settlement simple or log returns. State inclusion rules for missing or holiday observations.</p></article><article><strong>Calendar bucket</strong><p>Freeze month, day or event-relative boundaries and the timezone used to assign them.</p></article><article><strong>Benchmark</strong><p>Choose all other observations, a matched regime sample or another predeclared comparator.</p></article><article><strong>Decision statistic</strong><p>Preselect mean difference, median, regression coefficient or another justified statistic and its uncertainty measure.</p></article><article><strong>Economic hurdle</strong><p>Set the minimum after-cost effect that would matter. Statistical significance alone does not pay spread or slippage.</p></article></div><p>If you want to examine twelve months, admit that you are testing twelve related hypotheses. Adding entry days, holding periods and filters multiplies the search again.</p></section>
 
+<section class="au-section" id="data" aria-labelledby="data-title"><div class="au-section-heading"><p class="au-kicker">Series construction</p><h2 id="data-title">The Roll Rule Is Part of the Result</h2><p>CME's continuous price series documentation distinguishes mappings such as active and front contracts and uses official settlements. Any vendor series can apply its own mapping and adjustment. Record the methodology, retain raw dated contracts and rerun the test under plausible alternatives.</p></div><div class="au-table-scroll" role="region" aria-label="Data decisions for a reproducible 6A seasonality study" tabindex="0"><table class="au-table"><thead><tr><th scope="col">Decision</th><th scope="col">Defensible treatment</th><th scope="col">Failure if ignored</th></tr></thead><tbody>
+<tr><th scope="row">Settlement field</th><td>Use the same official or verified vendor settlement definition throughout</td><td>Mixing last trade and settlement shifts returns</td></tr>
+<tr><th scope="row">Contract selection</th><td>Define front, active or liquidity-based mapping before the test</td><td>Look-ahead can choose the winner after the fact</td></tr>
+<tr><th scope="row">Roll date</th><td>Apply an observable volume, open-interest or fixed-calendar rule</td><td>Price jumps and volume migration contaminate the bucket</td></tr>
+<tr><th scope="row">Adjustment</th><td>State none, difference or ratio adjustment and why</td><td>Back adjustment can alter long-horizon levels and returns</td></tr>
+<tr><th scope="row">Timezone</th><td>Use the settlement trading date consistently</td><td>Local midnight rules move returns across months</td></tr>
+<tr><th scope="row">Missing days</th><td>Publish holiday and missing-data handling</td><td>Unequal intervals are treated as ordinary daily returns</td></tr>
+</tbody></table></div><p>The RBA publishes historical AUD exchange rates that can be a useful robustness series, but spot and futures are different instruments with different timestamps and carry. Agreement strengthens context; disagreement requires investigation rather than cherry-picking.</p></section>
 
+<section class="au-section" id="protocol" aria-labelledby="protocol-title"><div class="au-section-heading"><p class="au-kicker">Testing workflow</p><h2 id="protocol-title">A Seven-Step Seasonal Protocol</h2><p>Keep a dated research memo and code version so another person can reproduce the output.</p></div><div class="au-process"><article><span>1</span><h3>Freeze the question</h3><p>Write the bucket, comparison, return, sample dates, roll and statistic before viewing the seasonal table.</p></article><article><span>2</span><h3>Audit the raw data</h3><p>Check duplicates, gaps, impossible returns, expiry transitions and settlement-field changes.</p></article><article><span>3</span><h3>Calculate returns</h3><p>Use the declared formula. Keep gross price movement separate from dollar profit and loss.</p></article><article><span>4</span><h3>Describe the sample</h3><p>Report count, mean, median, dispersion, tails and results by year. Plot observations, not only averages.</p></article><article><span>5</span><h3>Control the search</h3><p>Adjust for the hypotheses inspected or use a formal data-snooping procedure. Disclose every rejected variation.</p></article><article><span>6</span><h3>Hold out data</h3><p>Reserve later years or use rolling validation. Do not retune the rule whenever the holdout disappoints.</p></article><article><span>7</span><h3>Apply costs and risk</h3><p>Convert commission, spread and slippage into ticks. Stress gaps and contract-roll execution before considering use.</p></article></div><div class="au-related">For regime labels, pair this protocol with the <a href="6a-volatility-clusters.html">6A volatility-cluster guide</a>. For the broader economic inputs that can overwhelm a calendar average, use <a href="what-moves-6a-aud-futures.html">what moves 6A</a>.</div></section>
 
-<p>
+<section class="au-section" id="controls" aria-labelledby="controls-title"><div class="au-section-heading"><p class="au-kicker">Robustness</p><h2 id="controls-title">Ask Whether the Calendar Is Only a Proxy</h2><p>A month can line up with recurring policy meetings, commodity cycles, fiscal dates or shifts in global risk without being the cause. Compare the calendar coefficient before and after relevant controls. The goal is not to force significance; it is to learn what the label is capturing.</p></div><div class="au-two-column"><article class="au-panel"><p class="au-card-label">Macro controls</p><h3>Relative rates, commodities and the U.S. dollar</h3><p>The RBA identifies relative interest rates, commodity prices and risk sentiment among important AUD drivers. Use observable measures known at the time. The <a href="6a-commodity-cycle-impact.html">commodity-cycle guide</a> explains why one commodity is not the whole export story.</p></article><article class="au-panel"><p class="au-card-label">Market controls</p><h3>Volatility, liquidity, events and positioning</h3><p>Tag major releases, roll windows and volatility states. Historical CFTC Commitments of Traders data can provide weekly positioning context, but its categories and reporting lag do not identify who caused a daily move.</p></article></div><p>Repeat the test with alternative reasonable roll dates, simple versus log returns, winsorized versus raw tails, and spot AUD/USD as a robustness check. Publish disagreement. Robustness is not the act of trying variations until one passes.</p></section>
 
-6A AUD/USD futures show recurring seasonal behavior because Australia’s economy is tied to commodities, global risk cycles, and predictable calendar events. These aren’t magic signals—they’re tendencies. Know them, but don’t worship them.
+<section class="au-section" id="limits" aria-labelledby="limits-title"><div class="au-section-heading"><p class="au-kicker">Failure modes</p><h2 id="limits-title">Most Seasonal Errors Are Research-Design Errors</h2><p>The calendar story is often cleaner than the evidence.</p></div><div class="au-limit-grid"><article><strong>Price-level correlation</strong><p>Trending levels make unrelated variables look connected. Test returns.</p></article><article><strong>Twelve tiny samples</strong><p>One monthly observation per year creates fragile estimates and wide uncertainty.</p></article><article><strong>Data snooping</strong><p>The best of many tested rules inherits selection bias even if its isolated p-value looks impressive.</p></article><article><strong>Regime dependence</strong><p>A relationship from one rate, commodity or policy era may disappear in the next.</p></article><article><strong>Roll leakage</strong><p>Future volume or an undocumented stitch can embed information unavailable in real time.</p></article><article><strong>Costs omitted</strong><p>A small average return can vanish after spread, commission, slippage and failed execution.</p></article></div><div class="au-caution"><strong>Blunt conclusion</strong><p>If a seasonal effect cannot survive a documented series, search correction, unseen data and costs, call it a historical pattern, not an edge. A clean negative result is better than a market myth.</p></div></section>
 
-</p>
-
-
-
-<h2>Why 6A shows seasonality in the first place</h2>
-
-
-
-<p>
-
-AUD is a risk currency tied to commodity demand and Asian market flows. Seasonality shows up because:
-
-</p>
-
-
-
-<ul>
-
-  <li>Commodity demand cycles follow the same annual patterns</li>
-
-  <li>China releases major data on a consistent yearly rhythm</li>
-
-  <li>Risk sentiment often shifts at quarter boundaries</li>
-
-  <li>Australia’s domestic economy has predictable hot and cold periods</li>
-
-</ul>
-
-
-
-<p>
-
-If you want a refresher on the fundamental forces behind these moves, see the <a href="https://grizzlyparrottrading.com/market-basics/market-correlation-explained.html">market correlation guide</a>.
-
-</p>
-
-
-
-
-
-<h2>Common seasonal tendencies in 6A</h2>
-
-
-
-<p>
-
-Across multiple years, these patterns show up more often than not:
-
-</p>
-
-
-
-<ul>
-
-  <li><strong>Early-year strength</strong> — 6A often catches a bid in January–February as risk-on flows return.</li>
-
-  <li><strong>Q2 choppiness</strong> — Commodity markets enter recalibration mode; AUD ranges.</li>
-
-  <li><strong>Mid-year weakness</strong> — China slowdown scares typically emerge in June–August.</li>
-
-  <li><strong>Late-year strength</strong> — AUD often firm as commodities stabilize into Q4.</li>
-
-</ul>
-
-
-
-<p>
-
-None of this replaces actual analysis. These are tendencies, not guarantees.
-
-</p>
-
-
-
-<h2>Commodity seasonality drives AUD seasonality</h2>
-
-
-
-<p>
-
-Iron ore, coal, copper, and gold each have their own seasonality. Because Australia exports all of them, 6A gets indirect seasonality from:
-
-</p>
-
-
-
-<ul>
-
-  <li>Mining production cycles</li>
-
-  <li>Chinese fiscal spending waves</li>
-
-  <li>Global manufacturing seasonality</li>
-
-</ul>
-
-
-
-<p>
-
-If commodities boom in early-year demand cycles, AUD rides the wave. If they slump mid-year, AUD slumps too. This ties into <a href="https://grizzlyparrottrading.com/futures-basics/6a-commodity-cycle-impact.html">How Commodity Cycles Impact 6A AUD/USD Futures</a>.
-
-</p>
-
-
-
-<h2>Quarterly flows matter more than monthly tendencies</h2>
-
-
-
-<p>
-
-Large funds rebalance at quarterly boundaries. That creates real, measurable shifts in AUD positioning, usually hitting:
-
-</p>
-
-
-
-<ul>
-
-  <li>End of March</li>
-
-  <li>End of June</li>
-
-  <li>End of September</li>
-
-  <li>End of December</li>
-
-</ul>
-
-
-
-<p>
-
-These flows often cause the cleanest seasonal directional pushes.
-
-</p>
-
-
-
-<h2>How traders actually use 6A seasonality</h2>
-
-
-
-<p>
-
-Professionals don’t trade off seasonality alone. They use it for:
-
-</p>
-
-
-
-<ul>
-
-  <li>Context when price is at major levels</li>
-
-  <li>Filtering out trades that contradict long-term flow</li>
-
-  <li>Position bias for swing trades</li>
-
-</ul>
-
-
-
-<p>
-
-If seasonality, commodities, and macro all point one way, 6A tends to follow.
-
-</p>
-
-
-
-<div class="highlight-box yellow">
-
-  <h3>Seasonality Is Context, Not a Signal</h3>
-
-  <p>
-
-    6A AUD/USD futures show clear seasonal tendencies driven by commodity cycles, Asian demand rhythms, and global risk flows. Use seasonality as context—not as a signal—and you’ll avoid most of the nonsense traps beginners fall into.
-
-  </p>
-
-</div>
-
-
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="au-section au-faq" id="faq" aria-labelledby="faq-title"><div class="au-section-heading"><p class="au-kicker">Frequently asked questions</p><h2 id="faq-title">6A Seasonality Questions</h2></div>
+<details><summary>Does 6A have a reliable best or worst month?</summary><p>No month claim is established on this page because no original 6A seasonal dataset was run here. A reliable claim would need a documented price series, enough independent years, realistic costs, multiple-testing control and stability in unseen data.</p></details>
+<details><summary>Should 6A seasonality be tested with prices or returns?</summary><p>Use returns for the statistical test. Price levels can trend and create spurious calendar relationships, while settlement-to-settlement simple or log returns provide comparable changes across different price regimes.</p></details>
+<details><summary>How should contract rolls be handled in a 6A seasonal study?</summary><p>Use individual contracts or a continuous series with a fully documented roll and adjustment rule. Test nearby roll choices because a stitch, back adjustment or liquidity migration can create or erase an apparent calendar effect.</p></details>
+<details><summary>How many years are needed to test 6A seasonality?</summary><p>There is no magic minimum. Twelve monthly observations require twelve years, and those observations may still share the same macro regimes. Report the count, dependence, uncertainty and performance across subperiods rather than relying on a small average.</p></details>
+<details><summary>Can a seasonal pattern be used as a standalone 6A signal?</summary><p>A calendar label alone is weak evidence. If a pattern survives out-of-sample testing, treat it as one conditional input alongside current rates, risk, commodities, liquidity and execution cost, with a predefined invalidation rule.</p></details>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
-</body>
-</html>
+<details class="au-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+<li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> for 6A specifications.</li>
+<li><a href="https://www.cmegroup.com/market-data/cme-group-continuous-price-series.html" target="_blank" rel="noopener">CME Group Continuous Price Series</a> for official-settlement and contract-mapping methodology.</li>
+<li><a href="https://www.rba.gov.au/statistics/historical-data.html" target="_blank" rel="noopener">RBA historical data</a> for official AUD exchange-rate robustness data.</li>
+<li><a href="https://www.rba.gov.au/education/resources/explainers/drivers-of-the-aud-exchange-rate.html" target="_blank" rel="noopener">RBA Explainer: Drivers of the Australian Dollar Exchange Rate</a> for macro control variables.</li>
+<li><a href="https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm" target="_blank" rel="noopener">CFTC historical Commitments of Traders data</a> for optional positioning context.</li>
+<li><a href="https://doi.org/10.1111/1468-0262.00152" target="_blank" rel="noopener">White (2000), A Reality Check for Data Snooping</a> for multiple-testing risk.</li>
+</ul><p>No original seasonal return, month ranking, coefficient, p-value or backtested trade is reported here. The examples are research-design templates, not findings. Sources and time-sensitive facts were reviewed August 13, 2026. This is original, unsponsored editorial analysis.</p></details>
+<aside class="au-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This article is educational and is not individualized trading, investment, legal, tax, hedging or brokerage advice. Currency futures are leveraged, can gap or trade through stop prices and can produce losses greater than the initial margin deposit. Historical seasonal relationships can fail, and simulated results can omit execution frictions. Verify data licensing, contract rules, active expiry, costs and your own risk limits before acting.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

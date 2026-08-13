@@ -2,362 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Volatility Clusters in 6A AUD/USD Futures</title>
-  <meta name="description" content="A blunt breakdown of volatility clusters in 6A AUD/USD futures—why big moves group together and how to trade around them without getting smoked.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6a-volatility-clusters.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Volatility Clusters in 6A AUD/USD Futures">
-  <meta property="og:description" content="A blunt breakdown of volatility clusters in 6A AUD/USD futures—why big moves group together and how to trade around them without getting smoked.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6a-volatility-clusters.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Volatility Clusters in 6A AUD/USD Futures">
-  <meta name="twitter:description" content="A blunt breakdown of volatility clusters in 6A AUD/USD futures—why big moves group together and how to trade around them without getting smoked.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Volatility Clusters in 6A AUD/USD Futures",
-  "description": "A blunt breakdown of volatility clusters in 6A AUD/USD futures—why big moves group together and how to trade around them without getting smoked.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6a-volatility-clusters.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6a-volatility-clusters.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Market Basics",
-      "item": "https://grizzlyparrottrading.com/market-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Volatility Clusters in 6A AUD/USD Futures",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6a-volatility-clusters.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6A Volatility Clusters: Measure the Regime</title>
+  <meta name="description" content="Measure 6A volatility clustering with returns, realized range, event and session controls, then use the regime for sizing and execution without timing claims.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6a-volatility-clusters.html">
+  <meta property="og:title" content="6A Volatility Clusters: Measure the Regime"><meta property="og:description" content="A practical guide to detecting persistent high- and low-volatility conditions in 6A without treating them as a directional signal."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6a-volatility-clusters.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-13">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6A Volatility Clusters"><meta name="twitter:description" content="Measure the current 6A volatility state before adapting risk and execution."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="6a-evidence-guides.css?v=20260813a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6A Volatility Clusters: Measure the Regime","description":"A practical guide to detecting persistent high- and low-volatility conditions in 6A without treating them as a directional signal.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6a-volatility-clusters.html"},"datePublished":"2025-11-24","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/6a-volatility-clusters.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6A Volatility Clusters","item":"https://grizzlyparrottrading.com/futures-basics/6a-volatility-clusters.html"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is volatility clustering in 6A futures?","acceptedAnswer":{"@type":"Answer","text":"Volatility clustering means large absolute 6A returns tend to occur near other large absolute returns, while small moves tend to occur near small moves. It describes persistence in movement size, not persistence in direction."}},
+    {"@type":"Question","name":"Does high 6A volatility predict whether price will rise or fall?","acceptedAnswer":{"@type":"Answer","text":"No. A high-volatility state can contain sharp rallies, selloffs or reversals. The regime can inform sizing, stop research and execution planning, but direction requires a separate, independently tested signal."}},
+    {"@type":"Question","name":"How can I measure a 6A volatility cluster?","acceptedAnswer":{"@type":"Answer","text":"Calculate consistent returns or realized ranges, compare them with a rolling or expanding historical distribution, and require a predefined persistence rule. Keep session, event, holiday and roll observations labeled rather than mixing them blindly."}},
+    {"@type":"Question","name":"Is ATR enough to identify 6A volatility regimes?","acceptedAnswer":{"@type":"Answer","text":"ATR is a useful range summary, but it depends on timeframe and lookback and does not measure liquidity or direction. Compare it with returns, spreads, depth and event context before changing a trading rule."}},
+    {"@type":"Question","name":"Can volatility clustering tell me when the next 6A spike will happen?","acceptedAnswer":{"@type":"Answer","text":"No exact timing claim is justified. Clustering says conditional variance can remain elevated or subdued; it does not schedule the next shock. Official calendars identify known event times, while unscheduled news remains unpredictable."}}
+  ]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container aussie-evidence"><article>
 <!-- ARTICLE BODY START -->
+<header class="au-hero"><div class="au-hero-copy"><p class="au-kicker">Conditional variance &middot; regime &middot; execution</p><h1>6A Volatility Clusters: Measure the Regime</h1><p class="au-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p><p class="au-hero-lede">Volatility clustering is simple in concept: large 6A moves tend to be surrounded by large moves, and quiet tape tends to stay quiet for stretches. It is not a promise about the next candle. Measure the state, label the event and session confounds, then decide whether the current size and execution plan still make sense.</p><div class="au-hero-actions"><a class="button-primary" href="#answer">Read the direct answer</a><a class="au-text-link" href="#workflow">Measure the state</a></div><dl class="au-hero-metrics" aria-label="6A volatility-regime orientation"><div><dt>Direction signal</dt><dd>No</dd></div><div><dt>6A tick</dt><dd>$5</dd></div><div><dt>Core variable</dt><dd>Return magnitude</dd></div><div><dt>Output</dt><dd>Conditional state</dd></div></dl></div><div class="au-hero-visual"><div class="au-market-board"><div class="au-board-head"><span>Volatility state</span><strong>Magnitude, not direction</strong></div><div class="au-process"><article><span>1</span><h2>Return</h2><p>Freeze interval</p></article><article><span>2</span><h2>Scale</h2><p>Compare history</p></article><article><span>3</span><h2>Label</h2><p>Event and session</p></article><article><span>4</span><h2>Adapt</h2><p>Risk and orders</p></article></div><p class="au-board-foot"><span>No actor inference</span><span>No spike timer</span></p></div></div></header>
 
+<nav class="au-jump-nav" aria-label="On this page"><a href="#answer">Direct answer</a><a href="#meaning">Meaning</a><a href="#measures">Measures</a><a href="#confounds">Confounds</a><a href="#workflow">Workflow</a><a href="#limits">Limits</a><a href="#faq">FAQ</a></nav>
 
+<section class="au-section" id="answer" aria-labelledby="answer-title"><div class="au-section-heading"><p class="au-kicker">Direct answer</p><h2 id="answer-title">A Cluster Says Movement Has Memory, Not Direction</h2><p>In financial returns, conditional variance often changes through time. A large absolute return raises the probability that nearby returns will also be large relative to ordinary periods, without saying whether they will be positive or negative. Engle's ARCH work formalized this kind of time-varying variance. For a 6A trader, the practical point is narrower: a risk setting calibrated in a quiet state may be wrong after a shock.</p></div><div class="au-two-column"><article class="au-panel"><p class="au-card-label">Useful conclusion</p><h3>The distribution of movement is conditional</h3><p>Recent realized movement, scheduled events and the trading window can change the relevant range, slippage and stop-distance distribution. Use a regime label to select the correct comparison set.</p></article><article class="au-panel"><p class="au-card-label">Unsupported conclusion</p><h3>Someone is accumulating or a breakout is due</h3><p>Price and volume alone do not identify the actor, motive or timing of the next shock. Quiet clustering can persist. High volatility can decay or intensify.</p></article></div><div class="au-caution"><strong>Contract anchor</strong><p>Standard 6A is 100,000 AUD, quoted in U.S. dollars per AUD. The current outright increment is 0.00005 and $5 per contract. A 0.0001 pip is two ticks, or $10. Final settlement is physical. A 0.00040 move is eight ticks and $40 per contract before costs; that is a dollar conversion, not a capture assumption.</p></div></section>
 
-<h1>Volatility Clusters in 6A AUD/USD Futures</h1>
+<section class="au-section" id="meaning" aria-labelledby="meaning-title"><div class="au-section-heading"><p class="au-kicker">Interpretation</p><h2 id="meaning-title">Separate Level, Persistence and Cause</h2><p>Three questions often get collapsed. First, is current volatility high or low relative to a defined history? Second, how persistent has that state been? Third, what observable information coincided with the change? The first two are measurement. The third needs evidence and may remain unknown.</p></div><div class="au-check-grid"><article><strong>Volatility level</strong><p>Place a current return, range or variance estimate within a frozen historical distribution. A percentile is more transparent than “wild.”</p></article><article><strong>Persistence</strong><p>Define how many adjacent observations must exceed or fall below a threshold. Avoid choosing the run length after seeing the chart.</p></article><article><strong>Direction</strong><p>Track signed returns separately. Volatility can stay high while price whipsaws around the same level.</p></article><article><strong>Event</strong><p>Tag RBA, ABS, China and U.S. releases using official times. An event association still does not prove every move was caused by it.</p></article><article><strong>Liquidity</strong><p>Spread and depth describe execution conditions, not volatility itself. The two can worsen together around shocks but need not.</p></article><article><strong>Regime transition</strong><p>A threshold crossing is an analyst-defined state change. It is not proof that the underlying process has permanently shifted.</p></article></div><p>CME's CVOL methodology is an options-based forward-looking measure and can provide separate context. Historical realized volatility comes from past underlying returns. Do not present one as the other.</p></section>
 
+<section class="au-section" id="measures" aria-labelledby="measures-title"><div class="au-section-heading"><p class="au-kicker">Measurement choices</p><h2 id="measures-title">Use More Than One Lens, but Do Not Mix Their Meanings</h2><p>The correct measure depends on the holding period and question. Intraday execution research needs finer data than a daily risk regime. Freeze the sampling interval so a five-minute observation is never compared directly with a daily bar.</p></div><div class="au-table-scroll" role="region" aria-label="Measures for identifying 6A volatility clusters" tabindex="0"><table class="au-table"><thead><tr><th scope="col">Measure</th><th scope="col">Calculation</th><th scope="col">Strength</th><th scope="col">Limit</th></tr></thead><tbody>
+<tr><th scope="row">Absolute return</th><td>Absolute log or simple return over fixed intervals</td><td>Simple, comparable magnitude series</td><td>One close can hide the path</td></tr>
+<tr><th scope="row">Squared return</th><td>Square each fixed-interval return</td><td>Emphasizes large observations for variance models</td><td>Outliers receive very large weight</td></tr>
+<tr><th scope="row">High-low range</th><td>Bar high minus low, optionally scaled by prior close</td><td>Uses intrabar extremes</td><td>Does not show sequence or execution</td></tr>
+<tr><th scope="row">ATR</th><td>Average true range over a declared lookback</td><td>Includes gaps in a familiar range measure</td><td>Lagging and sensitive to bar length</td></tr>
+<tr><th scope="row">Realized variance</th><td>Sum of squared intraday returns over a day</td><td>Uses the intraday path</td><td>Needs clean granular data and sampling controls</td></tr>
+<tr><th scope="row">Option-implied CVOL</th><td>CME methodology applied to option prices</td><td>Forward-looking market pricing context</td><td>Not a realized 6A direction forecast</td></tr>
+</tbody></table></div><p>The <a href="atr-position-sizing-6a.html">6A ATR sizing guide</a> translates a range estimate into a position-size workflow. It cannot guarantee that the next move will stay inside the historical range.</p></section>
 
+<section class="au-section" id="confounds" aria-labelledby="confounds-title"><div class="au-section-heading"><p class="au-kicker">Conditioning variables</p><h2 id="confounds-title">Session, Events and Roll Can Create False Regime Stories</h2><p>A full-day volatility series pools unlike observations. The Australian data window, the U.S. data window, a holiday reopening and an ordinary hour do not share the same information set or market quality.</p></div><div class="au-two-column"><article class="au-panel"><p class="au-card-label">Clock and event</p><h3>Known timing changes the baseline</h3><p>Use the <a href="6a-price-action-behavior-across-sessions.html">6A session map</a> to define comparable windows. Tag RBA meetings, ABS releases and FOMC dates from primary calendars, and compare event observations with matched non-event observations.</p></article><article class="au-panel"><p class="au-card-label">Contract and market</p><h3>Liquidity migration can look like a signal</h3><p>Track the actual expiry, days to roll, spread and depth. A continuous chart can hide the point where volume moved to the next contract or introduce a stitch artifact.</p></article></div><p>Also separate overnight gaps from continuous intraday movement, holidays from normal weekdays and data outages from genuine zero activity. If the threshold mostly selects one session or event type, it may be a clock classifier rather than a general volatility regime.</p></section>
 
-<p>
+<section class="au-section" id="workflow" aria-labelledby="workflow-title"><div class="au-section-heading"><p class="au-kicker">Reproducible workflow</p><h2 id="workflow-title">Measure the 6A State in Seven Steps</h2><p>This method produces a conditional risk label, not an entry.</p></div><div class="au-process"><article><span>1</span><h3>Choose the horizon</h3><p>Match bars and return intervals to the intended holding period. State the timezone and trading-day boundary.</p></article><article><span>2</span><h3>Build the series</h3><p>Use dated contracts with a documented roll. Audit gaps, duplicates, bad ticks and settlement changes.</p></article><article><span>3</span><h3>Compute magnitude</h3><p>Calculate one primary measure and at least one robustness measure without changing definitions mid-sample.</p></article><article><span>4</span><h3>Set thresholds</h3><p>Use training-sample percentiles or a fitted conditional-variance model. Freeze persistence and exit rules.</p></article><article><span>5</span><h3>Add labels</h3><p>Tag session, event, holiday, roll and liquidity conditions. Measure how each changes the classification.</p></article><article><span>6</span><h3>Validate forward</h3><p>Test stability on unseen dates. Report false transitions, duration and tails, not only average fit.</p></article><article><span>7</span><h3>Adapt cautiously</h3><p>Translate the state into maximum size, allowed orders or stand-aside rules, then verify against live spread and depth.</p></article></div><div class="au-related">Use the <a href="best-times-to-trade-6a.html">best-times framework</a> when regime and clock must agree. Use the <a href="6a-reacts-to-us-rate-announcements.html">U.S. rate guide</a> or <a href="6a-employment-data-impact.html">employment guide</a> to classify specific catalysts without inventing motives.</div></section>
 
-6A AUD/USD futures rarely move in a smooth, even rhythm. Volatility comes in bursts—quiet periods followed by violent expansions. These are volatility clusters, and if you don’t recognize them, you’ll get caught trading size during the worst possible moments.
+<section class="au-section" id="limits" aria-labelledby="limits-title"><div class="au-section-heading"><p class="au-kicker">Failure modes</p><h2 id="limits-title">A Volatility Model Can Be Precise and Still Be Wrong for the Trade</h2><p>Measurement error, regime breaks and execution costs remain.</p></div><div class="au-limit-grid"><article><strong>Lookback overfit</strong><p>The chosen window perfectly separates the past and fails immediately when conditions change.</p></article><article><strong>Bar mismatch</strong><p>A daily regime is used to claim precision about the next one-minute move.</p></article><article><strong>Outlier domination</strong><p>One crisis or data error sets thresholds that classify every ordinary year as quiet.</p></article><article><strong>Liquidity omitted</strong><p>The price range looks attractive while spread, depth and slippage make execution unacceptable.</p></article><article><strong>Direction smuggled in</strong><p>High variance is treated as bullish, bearish or a breakout promise without a separate test.</p></article><article><strong>Actor storytelling</strong><p>Clusters are attributed to banks, hedgers or algorithms without participant-level evidence.</p></article></div><div class="au-caution"><strong>Blunt conclusion</strong><p>Volatility state changes the size of the problem, not the answer. If the regime label cannot survive reasonable windows, event controls and unseen data, it is not ready to control live risk.</p></div></section>
 
-</p>
-
-
-
-<h2>Why volatility clusters show up in 6A</h2>
-
-
-
-<p>
-
-AUD is a risk-sensitive currency heavily tied to macro catalysts. That means volatility groups together around:
-
-</p>
-
-
-
-<ul>
-
-  <li>U.S. economic releases</li>
-
-  <li>RBA decisions</li>
-
-  <li>China PMI and GDP drops</li>
-
-  <li>Commodity market shocks</li>
-
-</ul>
-
-
-
-<p>
-
-To understand why news hits this hard, check the <a href="https://grizzlyparrottrading.com/market-basics/how-economic-reports-move-markets.html">economic report impact guide</a>.
-
-</p>
-
-
-
-
-
-<h2>Common cluster patterns in 6A</h2>
-
-
-
-<p>
-
-Across sessions and weeks, 6A repeats the same volatility rhythm:
-
-</p>
-
-
-
-<ul>
-
-  <li><strong>Calm → spike → digestion → secondary move</strong></li>
-
-  <li><strong>Low-volume drift → sudden breakout on regional data</strong></li>
-
-  <li><strong>Trend day → multi-hour compression → another burst</strong></li>
-
-</ul>
-
-
-
-<p>
-
-These patterns happen because institutional players enter at the same windows every day.
-
-</p>
-
-
-
-<h2>Session-driven volatility clusters</h2>
-
-
-
-<p>
-
-6A’s volatility clusters align with liquidity windows:
-
-</p>
-
-
-
-<ul>
-
-  <li><strong>Tokyo open:</strong> First burst from Asia and China data.</li>
-
-  <li><strong>London open:</strong> FX volume spike generates chop or breakout.</li>
-
-  <li><strong>New York data:</strong> Biggest volatility cluster of the day.</li>
-
-</ul>
-
-
-
-<p>
-
-Sydney almost never creates notable clusters—liquidity is too low.
-
-</p>
-
-
-
-<h2>Macro-driven clusters: when the market explodes</h2>
-
-
-
-<p>
-
-Some events generate oversized clusters compared to normal:
-
-</p>
-
-
-
-<ul>
-
-  <li>FOMC announcements</li>
-
-  <li>RBA surprises</li>
-
-  <li>China growth shocks</li>
-
-  <li>Commodity collapses or spikes</li>
-
-</ul>
-
-
-
-<p>
-
-These create multi-hour waves of volatility, not just single candles.
-
-</p>
-
-
-
-<h2>How traders use volatility clusters to time entries</h2>
-
-
-
-<p>
-
-Pros don’t trade during the initial explosion—they wait for:
-
-</p>
-
-
-
-<ul>
-
-  <li>The first pullback</li>
-
-  <li>The liquidity sweep</li>
-
-  <li>The retest of the breakout/breakdown area</li>
-
-</ul>
-
-
-
-<p>
-
-This avoids the sloppy part of the cluster and lines up with how real trend moves develop.
-
-</p>
-
-
-
-<div class="highlight-box yellow">
-
-  <h3>Volatility Isn’t Random — It Clusters</h3>
-
-  <p>
-
-    Volatility clusters are baked into 6A’s personality. They show up around session opens, macro releases, and commodity shocks. Recognize the patterns and you’ll know when to size up, when to wait, and when to stay the hell out.
-
-  </p>
-
-</div>
-
-
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="au-section au-faq" id="faq" aria-labelledby="faq-title"><div class="au-section-heading"><p class="au-kicker">Frequently asked questions</p><h2 id="faq-title">6A Volatility-Cluster Questions</h2></div>
+<details><summary>What is volatility clustering in 6A futures?</summary><p>Volatility clustering means large absolute 6A returns tend to occur near other large absolute returns, while small moves tend to occur near small moves. It describes persistence in movement size, not persistence in direction.</p></details>
+<details><summary>Does high 6A volatility predict whether price will rise or fall?</summary><p>No. A high-volatility state can contain sharp rallies, selloffs or reversals. The regime can inform sizing, stop research and execution planning, but direction requires a separate, independently tested signal.</p></details>
+<details><summary>How can I measure a 6A volatility cluster?</summary><p>Calculate consistent returns or realized ranges, compare them with a rolling or expanding historical distribution, and require a predefined persistence rule. Keep session, event, holiday and roll observations labeled rather than mixing them blindly.</p></details>
+<details><summary>Is ATR enough to identify 6A volatility regimes?</summary><p>ATR is a useful range summary, but it depends on timeframe and lookback and does not measure liquidity or direction. Compare it with returns, spreads, depth and event context before changing a trading rule.</p></details>
+<details><summary>Can volatility clustering tell me when the next 6A spike will happen?</summary><p>No exact timing claim is justified. Clustering says conditional variance can remain elevated or subdued; it does not schedule the next shock. Official calendars identify known event times, while unscheduled news remains unpredictable.</p></details>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
-</body>
-</html>
+<details class="au-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+<li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> for 6A specifications.</li>
+<li><a href="https://doi.org/10.2307/1912773" target="_blank" rel="noopener">Engle (1982), Autoregressive Conditional Heteroscedasticity</a> for the foundational conditional-variance framework.</li>
+<li><a href="https://www.cmegroup.com/market-data/cme-group-benchmark-administration/files/cvol-methodology.pdf" target="_blank" rel="noopener">CME Group CVOL methodology</a> for options-implied volatility context.</li>
+<li><a href="https://www.rba.gov.au/statistics/historical-data.html" target="_blank" rel="noopener">RBA historical data</a> for official AUD robustness series.</li>
+<li><a href="https://www.rba.gov.au/schedules-events/board-meeting-schedules.html" target="_blank" rel="noopener">RBA Board meeting schedules</a>.</li>
+<li><a href="https://www.abs.gov.au/release-calendar/future-releases" target="_blank" rel="noopener">Australian Bureau of Statistics release calendar</a>.</li>
+<li><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">Federal Reserve FOMC calendars</a>.</li>
+</ul><p>No original volatility model, threshold, forecast, actor attribution or backtested trade is reported here. Threshold examples and the workflow are methods, not empirical 6A findings. Sources and time-sensitive facts were reviewed August 13, 2026. This is original, unsponsored editorial analysis.</p></details>
+<aside class="au-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This article is educational and is not individualized trading, investment, legal, tax, hedging or brokerage advice. Currency futures are leveraged, can gap or trade through stop prices and can produce losses greater than the initial margin deposit. Volatility estimates are backward-looking or model-dependent and can fail during shocks. Verify the active contract, live liquidity, event calendar, margin and your own loss limits before acting.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

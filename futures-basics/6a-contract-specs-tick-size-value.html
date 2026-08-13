@@ -2,341 +2,188 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6A Contract Specs: Tick Size, Tick Value, and Notional Explained</title>
-  <meta name="description" content="A blunt breakdown of 6A AUD/USD futures contract specs: tick size, tick value, margins, and notional exposure so you know exactly what you're trading.">
+  <title>6A Contract Specs, Tick Value and P&amp;L Math</title>
+  <meta name="description" content="Verify current 6A contract size, tick value, P&amp;L, notional exposure, physical delivery, roll mechanics, margin limits and Micro M6A differences.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6a-contract-specs-tick-size-value.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6A Contract Specs: Tick Size, Tick Value, and Notional Explained">
-  <meta property="og:description" content="Understand the real numbers behind 6A AUD/USD futures: tick size, tick value, and how much notional you're controlling with one contract.">
+  <meta property="og:title" content="6A Contract Specs, Tick Value and P&amp;L Math">
+  <meta property="og:description" content="Current CME 6A mechanics with exact tick arithmetic, notional and P&amp;L formulas, physical delivery, margin limits and M6A comparison.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6a-contract-specs-tick-size-value.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-24">
+  <meta property="article:modified_time" content="2026-08-13">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="6A Contract Specs, Tick Value and P&amp;L Math">
+  <meta name="twitter:description" content="Calculate standard 6A and Micro M6A exposure correctly, then account for margin, roll and physical delivery risk.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6A Contract Specs: Tick Size, Tick Value, and Notional Explained">
-  <meta name="twitter:description" content="Blunt, exact specs for the 6A AUD/USD futures contract so you know the numbers before you trade.">
-
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="6a-evidence-guides.css?v=20260813a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"6A Contract Specs, Tick Value and P&L Math",
+    "description":"Current contract mechanics and arithmetic for standard 6A and Micro M6A Australian Dollar futures.",
+    "author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},
+    "publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6a-contract-specs-tick-size-value.html"},
+    "datePublished":"2025-11-24",
+    "dateModified":"2026-08-13",
+    "url":"https://grizzlyparrottrading.com/futures-basics/6a-contract-specs-tick-size-value.html",
+    "image":"https://grizzlyparrottrading.com/OG-default.png",
+    "inLanguage":"en-US"
+  }
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6A Contract Specs: Tick Size, Tick Value, and Notional Explained",
-  "description": "A blunt breakdown of 6A AUD/USD futures contract specs: tick size, tick value, margins, and notional exposure so you know exactly what you're trading.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6a-contract-specs-tick-size-value.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6a-contract-specs-tick-size-value.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},
+    {"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},
+    {"@type":"ListItem","position":3,"name":"6A Contract Specs, Tick Value and P&L Math","item":"https://grizzlyparrottrading.com/futures-basics/6a-contract-specs-tick-size-value.html"}
+  ]}
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Market Basics",
-      "item": "https://grizzlyparrottrading.com/market-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6A Contract Specs: Tick Size, Tick Value, and Notional Explained",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6a-contract-specs-tick-size-value.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is the current standard 6A tick value?","acceptedAnswer":{"@type":"Answer","text":"CME's 2026 FX Product Guide lists the standard 6A outright minimum increment as 0.00005 U.S. dollar per Australian dollar. With a 100,000 AUD contract, that equals $5 per outright tick."}},
+    {"@type":"Question","name":"Is one 6A pip worth $10?","acceptedAnswer":{"@type":"Answer","text":"Yes, if pip means a 0.0001 price move. That move equals two current standard 6A outright ticks of 0.00005, and two $5 ticks equal $10 per contract."}},
+    {"@type":"Question","name":"How do you calculate 6A profit and loss?","acceptedAnswer":{"@type":"Answer","text":"Multiply the exit price minus the entry price by 100,000 AUD and by the signed number of contracts. For a long position moving from 0.6500 to 0.6512, the result is 0.0012 times 100,000, or $120 before costs."}},
+    {"@type":"Question","name":"Does 6A settle in cash?","acceptedAnswer":{"@type":"Answer","text":"No. CME lists standard 6A as physically settled. A trader who does not intend delivery should close or roll before the applicable exchange and broker deadlines, which must be checked for the specific contract month."}},
+    {"@type":"Question","name":"Does the broker's 6A day margin show maximum risk?","acceptedAnswer":{"@type":"Answer","text":"No. Exchange performance bond and broker day margin are funding requirements, not loss limits. Stop distance, contract quantity, slippage, gaps, liquidity and liquidation rules determine the realized loss."}}
+  ]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container aussie-evidence">
+<article>
+<!-- ARTICLE BODY START -->
+<header class="au-hero">
+  <div class="au-hero-copy">
+    <p class="au-kicker">Contract mechanics &middot; 6A / M6A</p>
+    <h1>6A Contract Specs, Tick Value and P&amp;L Math</h1>
+    <p class="au-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="au-hero-lede">The current standard 6A outright tick is 0.00005 and worth $5. A 0.0001 pip is two ticks and worth $10. Get that distinction right, then deal with the bigger risks: leverage, the wrong contract month and physical delivery.</p>
+    <div class="au-hero-actions"><a class="button-primary" href="#specs">See the verified specs</a><a class="au-text-link" href="#math">Run the P&amp;L math</a></div>
+    <dl class="au-hero-metrics" aria-label="Standard 6A contract specifications"><div><dt>Contract unit</dt><dd>100,000 AUD</dd></div><div><dt>Outright tick</dt><dd>0.00005</dd></div><div><dt>Tick value</dt><dd>$5</dd></div><div><dt>Settlement</dt><dd>Physical</dd></div></dl>
   </div>
+  <div class="au-hero-visual"><div class="au-market-board"><div class="au-board-head"><span>Current outright math</span><strong>Standard 6A</strong></div><div class="au-formula"><code>100,000 AUD</code><i aria-hidden="true">&times;</i><code>0.00005</code><i aria-hidden="true">=</i><code>$5</code></div><p>A 0.0001 move is not one current outright tick. It is two 0.00005 ticks, so one conventional pip is $10 on one standard contract.</p><p class="au-board-foot"><span>One tick $5</span><span>One pip $10</span></p></div></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-
-
-        <h1>6A Contract Specs: Tick Size, Tick Value, and Notional Explained</h1>
-
-
-
-        <p>
-
-          Before you trade 6A AUD/USD futures, you need to know the actual numbers: the tick size, the tick value, and how much notional exposure one contract really controls. If you don’t know these basics, you’re trading blind. This is the blunt breakdown so you don’t screw it up.
-
-        </p>
-
-
-
-        <h2>The core structure of the 6A AUD/USD futures contract</h2>
-
-
-
-        <p>
-
-          6A tracks the AUD/USD exchange rate. Every minimum price move—every tick—adjusts your P&amp;L whether you like it or not. The entire contract is built around standardized CME terms, and learning them removes guesswork from your risk.
-
-        </p>
-
-
-
-        <table>
-
-          <thead>
-
-            <tr>
-
-              <th>Spec</th>
-
-              <th>Meaning</th>
-
-            </tr>
-
-          </thead>
-
-          <tbody>
-
-            <tr>
-
-              <td>Underlying</td>
-
-              <td>Australian dollar vs U.S. dollar (AUD/USD)</td>
-
-            </tr>
-
-            <tr>
-
-              <td>Contract Size</td>
-
-              <td>100,000 AUD</td>
-
-            </tr>
-
-            <tr>
-
-              <td>Price Format</td>
-
-              <td>Quoted like spot AUD/USD (0.6500, etc.)</td>
-
-            </tr>
-
-            <tr>
-
-              <td>Tick Size</td>
-
-              <td>0.0001</td>
-
-            </tr>
-
-            <tr>
-
-              <td>Tick Value</td>
-
-              <td>$10 per tick</td>
-
-            </tr>
-
-            <tr>
-
-              <td>Trading Hours</td>
-
-              <td>Nearly 24/5 with a daily maintenance window</td>
-
-            </tr>
-
-            <tr>
-
-              <td>Expiration</td>
-
-              <td>Financial settlement</td>
-
-            </tr>
-
-          </tbody>
-
-        </table>
-
-
-
-        <h2>The tick value is what actually hits your account</h2>
-
-
-
-        <p>
-
-          A tick is the minimum price increment. On 6A, that increment is 0.0001. Every one of those ticks equals <strong>$10</strong> per contract. So a move from 0.6500 to 0.6510 is 10 ticks, or $100. Easy math, but dangerously easy to underestimate when you start stacking contracts.
-
-        </p>
-
-
-
-
-
-
-
-
-        <h2>Notional value: how big the position really is</h2>
-
-
-
-        <p>
-
-          One 6A contract controls 100,000 AUD. To understand how large that is, multiply it by the current AUD/USD price. If AUD/USD is trading at 0.6500:
-
-        </p>
-
-
-
-        <p><strong>100,000 × 0.6500 = $65,000 notional exposure.</strong></p>
-
-
-
-        <p>
-
-          That’s why a “tiny” tick matters. You’re basically holding a $65k position that moves every time the exchange rate budges a fraction of a cent.
-
-        </p>
-
-
-
-        <h2>Why understanding specs keeps you alive</h2>
-
-
-
-        <p>
-
-          Futures margins vary by broker, but they’re always a fraction of the notional value, which means high leverage by default. Respect that leverage or your account will disappear faster than you expect. For a refresher on how this connects to broader market mechanics, see the <a href="https://grizzlyparrottrading.com/market-basics/market-liquidity-basics.html">market liquidity basics guide</a>.
-
-        </p>
-
-
-
-
-
-
-
-        <h2>Know Your Specs or 6A Will Wreck You</h2>
-
-
-
-<p>
-
-Before you trade 6A, memorize the tick size, tick value, and contract size. These numbers determine everything—your risk, your sizing, your breakeven, and your margin pressure.
-
-</p>
-
-
-
-        <!-- ARTICLE BODY END -->
-</div>
+<nav class="au-jump-nav" aria-label="On this page"><a href="#specs">Specs</a><a href="#math">P&amp;L</a><a href="#notional">Notional</a><a href="#micro">M6A</a><a href="#margin">Margin</a><a href="#delivery">Delivery</a><a href="#faq">FAQ</a></nav>
+
+<section class="au-section" id="specs" aria-labelledby="specs-title">
+  <div class="au-section-heading"><p class="au-kicker">Verified contract card</p><h2 id="specs-title">The 2026 CME Guide Corrects Two Common 6A Errors</h2><p>CME's current FX Product Guide lists standard AUD/USD futures under rule chapter 255 with Globex code 6A, a 100,000 AUD unit, physical final settlement and a 0.00005 outright Globex increment. Older summaries that state a 0.0001 minimum or cash settlement are stale.</p></div>
+  <div class="au-table-scroll" role="region" aria-label="Current standard 6A specifications" tabindex="0"><table class="au-table"><thead><tr><th scope="col">Specification</th><th scope="col">Current standard 6A term</th><th scope="col">Trading consequence</th></tr></thead><tbody>
+    <tr><th scope="row">Underlying unit</th><td>100,000 Australian dollars</td><td>Every 0.00001 price move represents $1 of contract value, even when that increment is not an outright order tick</td></tr>
+    <tr><th scope="row">Quote</th><td>U.S. dollars per Australian dollar</td><td>A rising quote means AUD strengthens relative to USD</td></tr>
+    <tr><th scope="row">Globex code</th><td>6A</td><td>The full symbol also includes a contract month and year</td></tr>
+    <tr><th scope="row">Outright minimum increment</th><td>0.00005 USD per AUD</td><td>$5 per standard-contract tick</td></tr>
+    <tr><th scope="row">Other spread increments</th><td>May differ from the outright increment</td><td>Calendar-spread math must use the applicable market increment</td></tr>
+    <tr><th scope="row">Final settlement</th><td>Physical</td><td>Close, roll or prepare for delivery under exchange and broker rules</td></tr>
+  </tbody></table></div>
+  <p class="au-source-note">Specifications can change. This page uses CME's 2026 guide reviewed August 13, 2026. Before an order, check the product page, rulebook, current contract calendar and your broker's earlier operating deadlines. If the lifecycle itself is unfamiliar, start with <a href="what-is-6a-aud-futures.html">what 6A is and how a dated futures contract works</a>.</p>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="au-section" id="math" aria-labelledby="math-title">
+  <div class="au-section-heading"><p class="au-kicker">Price-to-dollar conversion</p><h2 id="math-title">Use the Contract Multiplier, Not a Memorized Nickname</h2><p>The robust calculation is simple: price change &times; 100,000 AUD &times; signed contract quantity. Tick counting is a shortcut after you verify which increment applies.</p></div>
+  <div class="au-two-column">
+    <article class="au-panel"><p class="au-card-label">Long-position formula</p><h3>Exit minus entry</h3><div class="au-formula"><code>(exit - entry) &times; 100,000 &times; contracts</code></div><p>A long from 0.6500 to 0.6512 gains 0.0012 &times; 100,000 = $120 before commissions and fees. That move is 24 outright ticks, and 24 &times; $5 also equals $120.</p></article>
+    <article class="au-panel"><p class="au-card-label">Short-position formula</p><h3>Entry minus exit</h3><div class="au-formula"><code>(entry - exit) &times; 100,000 &times; contracts</code></div><p>A short from 0.6500 to 0.6512 loses $120 before costs. Multiplying by two contracts makes the loss $240. Direction changes the sign; it does not change the contract value.</p></article>
   </div>
-</footer>
+  <div class="au-table-scroll" role="region" aria-label="Standard 6A price movement examples" tabindex="0"><table class="au-table"><thead><tr><th scope="col">Price move</th><th scope="col">Outright ticks</th><th scope="col">One 6A</th><th scope="col">Three 6A</th></tr></thead><tbody>
+    <tr><th scope="row">0.00005</th><td>1</td><td>$5</td><td>$15</td></tr>
+    <tr><th scope="row">0.00010</th><td>2</td><td>$10</td><td>$30</td></tr>
+    <tr><th scope="row">0.00050</th><td>10</td><td>$50</td><td>$150</td></tr>
+    <tr><th scope="row">0.00120</th><td>24</td><td>$120</td><td>$360</td></tr>
+    <tr><th scope="row">0.00500</th><td>100</td><td>$500</td><td>$1,500</td></tr>
+  </tbody></table></div>
+  <div class="au-caution"><strong>Platform labels can blur tick and pip</strong><p>Some platforms call 0.0001 a tick because that was a familiar convention or because they display pips. For current standard 6A outright orders, CME lists 0.00005. Verify the ladder increment and calculate from contract size instead of trusting the label.</p></div>
+</section>
+
+<section class="au-section" id="notional" aria-labelledby="notional-title">
+  <div class="au-section-heading"><p class="au-kicker">Exposure</p><h2 id="notional-title">Notional Value Changes With the AUD/USD Quote</h2><p>One contract always represents 100,000 AUD, but its U.S.-dollar notional changes with price. At 0.6500, the notional is $65,000. At 0.7000, it is $70,000. This is exposure, not the amount you paid and not a forecast of loss.</p></div>
+  <div class="au-process">
+    <article><span>1</span><h3>Calculate notional</h3><p>Multiply 100,000 AUD by the current USD-per-AUD futures quote. Use the actual contract price, not a stale spot screenshot.</p></article>
+    <article><span>2</span><h3>Define invalidation</h3><p>Choose a stop based on where the trade thesis fails, then measure the price distance from the planned entry.</p></article>
+    <article><span>3</span><h3>Convert to dollars</h3><p>Multiply that price distance by 100,000 and include a realistic allowance for fees and adverse fills.</p></article>
+    <article><span>4</span><h3>Choose an integer size</h3><p>Divide the risk budget by dollars per contract and round down. If the result is zero, use M6A or skip the trade.</p></article>
+  </div>
+  <div class="au-related">For a complete volatility-based sizing process, use the <a href="atr-position-sizing-6a.html">6A ATR position-sizing guide</a> and verify the result with the <a href="../tools/position-size-risk-checker.html">position-size risk checker</a>.</div>
+</section>
+
+<section class="au-section" id="micro" aria-labelledby="micro-title">
+  <div class="au-section-heading"><p class="au-kicker">Smaller contract</p><h2 id="micro-title">M6A Gives Finer Risk Granularity, Not a Different AUD Thesis</h2><p>CME's 2026 guide lists Micro AUD/USD futures as 10,000 AUD with a 0.0001 outright increment. That makes one micro tick $1. The contract unit is one-tenth of standard 6A, while its current minimum increment is twice as wide in price terms.</p></div>
+  <div class="au-table-scroll" role="region" aria-label="Standard 6A and Micro M6A comparison" tabindex="0"><table class="au-table"><thead><tr><th scope="col">Item</th><th scope="col">6A</th><th scope="col">M6A</th><th scope="col">Important nuance</th></tr></thead><tbody>
+    <tr><th scope="row">Contract unit</th><td>100,000 AUD</td><td>10,000 AUD</td><td>Ten M6A equal the same AUD unit as one 6A</td></tr>
+    <tr><th scope="row">Outright increment</th><td>0.00005</td><td>0.0001</td><td>Do not transfer the standard tick count to the micro</td></tr>
+    <tr><th scope="row">Tick value</th><td>$5</td><td>$1</td><td>Use the applicable ladder</td></tr>
+    <tr><th scope="row">0.0012 move</th><td>$120</td><td>$12</td><td>24 standard ticks versus 12 micro ticks</td></tr>
+    <tr><th scope="row">Settlement</th><td>Physical</td><td>Physical</td><td>Both require expiry discipline</td></tr>
+  </tbody></table></div>
+  <p class="au-source-note">Smaller does not mean liquid at every moment or appropriate at every broker. Compare spread, depth, commissions and total contract count. Ten micros can recreate one standard contract's price exposure with more tickets and potentially different costs.</p>
+</section>
+
+<section class="au-section" id="margin" aria-labelledby="margin-title">
+  <div class="au-section-heading"><p class="au-kicker">Funding versus loss</p><h2 id="margin-title">Performance Bond, Broker Margin and Trade Risk Are Three Different Numbers</h2><p>The exchange sets performance-bond requirements through its risk framework. A clearing firm or retail broker can require more. Some brokers advertise lower intraday requirements and raise them near the close, around events or when a position becomes overnight. None of those numbers is your stop risk.</p></div>
+  <div class="au-check-grid">
+    <article><strong>Exchange performance bond</strong><p>A collateral requirement tied to portfolio risk methodology. It can change as market conditions change.</p></article>
+    <article><strong>Broker requirement</strong><p>The amount your intermediary requires, which can exceed the exchange level and can differ intraday versus overnight.</p></article>
+    <article><strong>Planned trade risk</strong><p>Entry-to-invalidation distance multiplied by contract value and quantity, plus costs and an adverse-fill allowance.</p></article>
+    <article><strong>Tail loss</strong><p>The loss possible when price gaps past a stop, liquidity disappears or liquidation occurs later and worse than planned.</p></article>
+  </div>
+  <div class="au-caution"><strong>A low day margin can be the most dangerous number on the screen</strong><p>It tells you how little collateral the broker may accept, not how much exposure your account can responsibly carry. Size from risk first, then confirm that funding requirements are also satisfied.</p></div>
+</section>
+
+<section class="au-section" id="delivery" aria-labelledby="delivery-title">
+  <div class="au-section-heading"><p class="au-kicker">Expiry and roll</p><h2 id="delivery-title">Physical Settlement Makes Calendar Discipline Non-Negotiable</h2><p>Most short-horizon traders close or roll rather than enter delivery. That common behavior does not convert the contract into cash settlement. CME Chapter 255 governs the contract, and brokers can impose earlier deadlines or liquidate accounts that are not approved for delivery.</p></div>
+  <ol class="au-method">
+    <li><strong>Identify the exact month.</strong><span>Continuous charts are research conveniences, not positions.</span></li>
+    <li><strong>Read the current calendar.</strong><span>Confirm last trade, delivery and holiday effects from CME materials.</span></li>
+    <li><strong>Read the broker policy.</strong><span>Use the broker's cutoff if it is earlier than the exchange deadline.</span></li>
+    <li><strong>Compare outright exit and calendar spread.</strong><span>A roll changes the contract month and can realize basis, spread and transaction costs.</span></li>
+    <li><strong>Recalculate the new position.</strong><span>Do not assume the next contract has identical spread, liquidity or thesis invalidation.</span></li>
+  </ol>
+  <div class="au-limit-grid">
+    <article><strong>Specifications can change</strong><p>A dated guide is evidence for its review date, not permission to stop checking the exchange.</p></article>
+    <article><strong>Margins can change</strong><p>Neither this page nor yesterday's broker screen guarantees tomorrow's requirement.</p></article>
+    <article><strong>Continuous charts can distort</strong><p>Back-adjustment can change historical levels and hide the actual roll gap.</p></article>
+    <article><strong>P&amp;L examples exclude costs</strong><p>Commissions, fees, spread, slippage and conversion effects can reduce or reverse a small theoretical gain.</p></article>
+  </div>
+</section>
+
+<section class="au-section au-faq" id="faq" aria-labelledby="faq-title">
+  <div class="au-section-heading"><p class="au-kicker">Frequently asked questions</p><h2 id="faq-title">6A Contract Math: Quick Answers</h2></div>
+  <details><summary>What is the current standard 6A tick value?</summary><p>CME's 2026 FX Product Guide lists the standard 6A outright minimum increment as 0.00005 U.S. dollar per Australian dollar. With a 100,000 AUD contract, that equals $5 per outright tick.</p></details>
+  <details><summary>Is one 6A pip worth $10?</summary><p>Yes, if pip means a 0.0001 price move. That move equals two current standard 6A outright ticks of 0.00005, and two $5 ticks equal $10 per contract.</p></details>
+  <details><summary>How do you calculate 6A profit and loss?</summary><p>Multiply the exit price minus the entry price by 100,000 AUD and by the signed number of contracts. For a long position moving from 0.6500 to 0.6512, the result is 0.0012 times 100,000, or $120 before costs.</p></details>
+  <details><summary>Does 6A settle in cash?</summary><p>No. CME lists standard 6A as physically settled. A trader who does not intend delivery should close or roll before the applicable exchange and broker deadlines, which must be checked for the specific contract month.</p></details>
+  <details><summary>Does the broker's 6A day margin show maximum risk?</summary><p>No. Exchange performance bond and broker day margin are funding requirements, not loss limits. Stop distance, contract quantity, slippage, gaps, liquidity and liquidation rules determine the realized loss.</p></details>
+</section>
+
+<details class="au-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> for 6A and M6A units, quote increments, codes and settlement method.</li>
+  <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/255/255.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 255</a> for governing Australian Dollar futures rules and delivery terms.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/g10/australian-dollar.contractSpecs.html" target="_blank" rel="noopener">CME Australian Dollar contract resources</a> for current product listings and related exchange tools.</li>
+  <li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener">CME trading hours and holiday schedules</a> for current session verification.</li>
+  <li><a href="https://www.cmegroup.com/clearing/risk-management/performance-bonds-margins.html" target="_blank" rel="noopener">CME performance bonds and margins</a> for the exchange's collateral framework.</li>
+</ul><p>Sources were reviewed August 13, 2026. All P&amp;L and notional examples are transparent arithmetic from the stated exchange terms; they omit commissions, fees, bid-ask spread and slippage. This page reports no broker margin quote, return study or trading recommendation. Current exchange specifications and intermediary rules take precedence. This is original editorial work and is not sponsored by CME or any broker.</p></details>
+
+<aside class="au-disclaimer" aria-label="Educational and contract risk disclaimer"><strong>Educational and contract risk disclaimer</strong><p>This article is educational, not individualized trading, investment, legal, tax, accounting, hedging or brokerage advice. Futures are leveraged and losses can exceed the initial margin deposit. Stops can fill worse than expected. Standard 6A and M6A are physically settled products with expiration and delivery procedures. Verify the current contract, exchange rules, performance bond, broker requirements, liquidity and your own risk limits before trading.</p></aside>
+<!-- ARTICLE BODY END -->
+</article>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

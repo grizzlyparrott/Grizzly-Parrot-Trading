@@ -1,14 +1,80 @@
 [
   {
-    "title": "6A Contract Specs: Tick Size, Tick Value, and Notional Explained",
-    "url": "/futures-basics/6a-contract-specs-tick-size-value.html",
-    "description": "A blunt breakdown of 6A AUD/USD futures contract specs: tick size, tick value, margins, and notional exposure so you know exactly what you",
+    "title": "6A and Gold Correlation: A Testing Framework",
+    "url": "/futures-basics/6a-gold-correlation.html",
+    "description": "Test 6A and gold correlation with synchronized returns, documented futures rolls, rolling windows, regime checks and shared-dollar controls instead of price charts.",
     "category": "Futures Basics"
   },
   {
-    "title": "6A Futures vs Spot AUD/USD: What Traders Must Understand",
+    "title": "6A Breakouts: A Rule-Based Execution Plan",
+    "url": "/futures-basics/day-trading-breakouts-6a.html",
+    "description": "Build a 6A breakout plan with predeclared levels, acceptance, retest, failure, entry, invalidation and costs instead of chasing every boundary touch.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6A by Trading Session: Liquidity, Volatility and Events",
+    "url": "/futures-basics/6a-price-action-behavior-across-sessions.html",
+    "description": "Compare 6A across Asian, European and U.S. hours using volume, depth, spread, realized volatility and event data instead of session stereotypes.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6A Chart Patterns: Define, Test, Then Trade",
+    "url": "/futures-basics/6a-chart-patterns-that-work.html",
+    "description": "Turn 6A chart patterns into objective, testable rules with context, validation, costs and failure logic instead of hindsight drawings and win-rate claims.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6A Commodity Cycles: Terms of Trade and AUD",
+    "url": "/futures-basics/6a-commodity-cycle-impact.html",
+    "description": "Learn how export prices, Australia's terms of trade and commodity regimes can influence 6A, plus the lags, shared drivers and failure cases traders miss.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6A Contract Specs, Tick Value and P&L Math",
+    "url": "/futures-basics/6a-contract-specs-tick-size-value.html",
+    "description": "Verify current 6A contract size, tick value, P&L, notional exposure, physical delivery, roll mechanics, margin limits and Micro M6A differences.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6A Economic Calendar: A Weekly Preparation Guide",
+    "url": "/futures-basics/weekly-reports-important-for-6a.html",
+    "description": "Build a factual 6A weekly plan from official RBA, ABS, Fed, U.S. labor, China, commodity and CFTC calendars without inventing recurring reports.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6A Futures vs Spot AUD/USD: Venue and Basis",
     "url": "/futures-basics/6a-vs-spot-audusd.html",
-    "description": "A blunt comparison of 6A AUD/USD futures and spot forex AUD/USD so you know the real differences in pricing, leverage, execution, and market structure.",
+    "description": "Compare 6A futures with spot AUD/USD across venue, pricing basis, expiry, roll, leverage, execution data, counterparty structure and practical fit.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6A in Asian Hours: Sydney, Tokyo and Event Risk",
+    "url": "/futures-basics/6a-asian-session-behavior.html",
+    "description": "Trade 6A Asian hours with accurate Sydney and Tokyo clocks, DST handling, Australia and China event maps, liquidity checks and no-trend conditions.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6A Risk Sentiment: A Multi-Market Framework",
+    "url": "/futures-basics/risk-sentiment-6a-trends.html",
+    "description": "Build a regime-aware view of 6A risk sentiment using rates, funding, equities, credit, commodities and the dollar without assuming a permanent beta.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6A Seasonality: How to Test Calendar Effects",
+    "url": "/futures-basics/6a-seasonality-patterns.html",
+    "description": "Test 6A seasonality with documented contracts, returns, roll rules, adequate samples, holdouts and multiple-testing controls instead of invented month stories.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6A Volatility Clusters: Measure the Regime",
+    "url": "/futures-basics/6a-volatility-clusters.html",
+    "description": "Measure 6A volatility clustering with returns, realized range, event and session controls, then use the regime for sizing and execution without timing claims.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6A Volume Reversals: Evidence, Not Motive",
+    "url": "/futures-basics/identifying-6a-reversals-volume-spikes.html",
+    "description": "Study 6A reversal candidates with venue-specific relative volume, price response and structural confirmation without pretending volume reveals trader motive.",
     "category": "Futures Basics"
   },
   {
@@ -66,6 +132,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "6E Correlations: A Regime-Aware Testing Guide",
+    "url": "/futures-basics/6e-important-correlations.html",
+    "description": "Test 6E correlations with returns, aligned timestamps and rolling windows while avoiding DXY double counting, yield shortcuts and false causality.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "6E Gaps Explained: Weekend, Roll, Data, and Event Gaps",
     "url": "/futures-basics/6e-gap-behavior-and-how-to-trade-it.html",
     "description": "Separate real 6E reopening gaps from contract-roll jumps, vendor gaps, and event moves, then test gap behavior without invented fill-rate claims.",
@@ -78,9 +150,33 @@
     "category": "Futures Basics"
   },
   {
+    "title": "6E Macro Events: CPI, NFP, FOMC, and ECB Playbook",
+    "url": "/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html",
+    "description": "Plan 6E trading around CPI, payrolls, FOMC, and ECB events using surprise, revisions, policy-path repricing, official sources, and pre/during/post risk rules.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "6E Market Structure | Objective Swing, Range & Break Rules",
     "url": "/futures-basics/6e-market-structure-patterns-traders-miss.html",
     "description": "Read 6E market structure with fixed swing, trend, range, acceptance, rejection and failed-break rules—without order-block or smart-money mythology.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6E Roll Dates, Expiry, and Contract Behavior",
+    "url": "/futures-basics/6e-roll-dates-and-contract-behavior.html",
+    "description": "Plan the 6E roll with current expiry rules, month codes, volume migration, delivery awareness, roll gaps, and defensible continuous-series methods.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6E Scalping vs Swing Trading | Costs, Risk & Fit",
+    "url": "/futures-basics/scalping-6e-vs-swing-trading-6e.html",
+    "description": "Compare 6E scalping and swing trading by holding period, transaction costs, event risk, overnight exposure, roll mechanics, testing and trader fit.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6E Seasonality: How to Test It Without Folklore",
+    "url": "/futures-basics/6e-seasonality-patterns.html",
+    "description": "Build a reproducible 6E seasonality study with clean contract rolls, defined returns, uncertainty, regime tests, and no invented monthly rankings.",
     "category": "Futures Basics"
   },
   {
@@ -96,9 +192,45 @@
     "category": "Futures Basics"
   },
   {
+    "title": "6J and Bond Yields | An Intraday Confirmation Workflow",
+    "url": "/futures-basics/6j-and-bond-yields-relationship.html",
+    "description": "How U.S. Treasury and Japanese bond yields transmit macro surprises into 6J futures, with maturity selection, real-yield caveats and divergences.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "6J Contract Specs | Tick Value, Margin, Hours &amp; Delivery",
     "url": "/futures-basics/6j-contract-specs.html",
     "description": "Current CME 6J Japanese yen futures specifications, exact tick and P&amp;L math, hours, listed months, last trade, physical delivery, margin and roll risk.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6J During U.S. Lunch | Liquidity &amp; Execution Guide",
+    "url": "/futures-basics/6j-thin-liquidity-us-lunch.html",
+    "description": "A practical 6J guide for 11:30 a.m.–1:30 p.m. ET: liquidity measures, normal versus news days, order consequences, DST conversions and skip rules.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6J Event Breakouts | Range, Acceptance &amp; False Breaks",
+    "url": "/futures-basics/6j-breakout-events.html",
+    "description": "Define and evaluate 6J event breakouts with pre-event ranges, acceptance, retests, confirmation limits, false-break rules and execution controls.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6J Macro Events Playbook | Yen Futures News Guide",
+    "url": "/futures-basics/6j-macro-events-playbook.html",
+    "description": "Plan 6J futures around U.S., Japan and unscheduled macro events with official calendars, surprise mechanics, time-zone conversions and execution controls.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6J Market Structure | Objective Trend, Range &amp; Break Rules",
+    "url": "/futures-basics/6j-market-structure-basics.html",
+    "description": "Objective 6J market structure: define swings, trends, ranges, acceptance, failed breaks, imbalance context, timeframes and invalidation.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6J Mean Reversion Signals | Testable Setups &amp; Risk Rules",
+    "url": "/futures-basics/6j-mean-reversion-signals.html",
+    "description": "A testable 6J mean-reversion framework: define the mean and regime, specify entries, invalidation, targets, time stops and position risk.",
     "category": "Futures Basics"
   },
   {
@@ -354,6 +486,12 @@
     "category": "Prop Firm Trading"
   },
   {
+    "title": "ATR Position Sizing for 6A Australian Dollar Futures",
+    "url": "/futures-basics/atr-position-sizing-6a.html",
+    "description": "Size 6A and M6A positions from ATR, thesis invalidation and a fixed risk budget with current $5 tick math, slippage allowances and zero-contract rules.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Auction Curves: How the Market Seeks Fair and Unfair Prices",
     "url": "/market-basics/auction-curves-how-the-market-seeks-fair-and-unfair-prices.html",
     "description": "Learn how auction curves explain trending, ranging, and rotational behavior by showing how the market searches for fair and unfair prices.",
@@ -370,6 +508,12 @@
     "url": "/market-basics/auction-tail-rejections-failed-moves.html",
     "description": "Learn how auction tail rejections work, what long wicks actually mean in the auction process, and how to identify failed directional pushes with precision.",
     "category": "Market Basics"
+  },
+  {
+    "title": "Australian Employment Data and 6A Futures",
+    "url": "/futures-basics/6a-employment-data-impact.html",
+    "description": "Read the monthly ABS Labour Force release for 6A using employment, unemployment, participation, hours, revisions, expectations and relative rate repricing.",
+    "category": "Futures Basics"
   },
   {
     "title": "Auto-Liquidation Rules in Prop Firms: How Forced Exits Actually Work",
@@ -480,6 +624,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Best Time to Trade 6E? A Session Liquidity Framework",
+    "url": "/futures-basics/best-times-to-trade-euro-fx-futures-6e.html",
+    "description": "Plan 6E Euro FX trading around session participation, spread, depth, volume, release risk, CT and UTC clocks, and US-Europe daylight-saving mismatches.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Best Times of Day to Trade NQ Futures",
     "url": "/futures-basics/nq-best-times.html",
     "description": "A session-by-session breakdown of when NQ produces real opportunity and when it turns hostile.",
@@ -489,6 +639,12 @@
     "title": "Best Times of Day to Trade Palladium Futures (PA)",
     "url": "/futures-basics/best-times-to-trade-pa.html",
     "description": "A blunt breakdown of the best times of day to trade Palladium futures, including RTH volatility windows, dead zones, and when PA liquidity is stable enough to avoid getting steamrolled.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Best Times to Trade 6A: A Decision Framework",
+    "url": "/futures-basics/best-times-to-trade-6a.html",
+    "description": "Choose when to trade 6A by matching your objective with event timing, live liquidity, expected movement, execution cost and personal risk limits.",
     "category": "Futures Basics"
   },
   {
@@ -519,12 +675,6 @@
     "title": "Best Times to Trade ES (E-Mini S&P 500)",
     "url": "/futures-basics/best-times-to-trade-es-e-mini-sp500.html",
     "description": "A blunt breakdown of the best times to trade ES so beginners stop trading dead zones and stick to the high-probability sessions.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "Best Time to Trade 6E? A Session Liquidity Framework",
-    "url": "/futures-basics/best-times-to-trade-euro-fx-futures-6e.html",
-    "description": "Plan 6E Euro FX trading around session participation, spread, depth, volume, release risk, CT and UTC clocks, and US-Europe daylight-saving mismatches.",
     "category": "Futures Basics"
   },
   {
@@ -726,6 +876,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "China Data and 6A: A Release-Day Framework",
+    "url": "/futures-basics/china-economic-data-6a-impact.html",
+    "description": "Learn how official China data can reach 6A through demand, commodities and risk expectations, with a release-day plan that avoids fixed AUD signals.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "China’s Copper Demand: How the World’s Biggest Buyer Moves HG Futures",
     "url": "/futures-basics/china-demand-copper-hg.html",
     "description": "China consumes over half the world’s copper. Here’s how its construction cycles, manufacturing trends, credit flows, and stockpiling behavior directly move HG futures.",
@@ -801,12 +957,6 @@
     "title": "Common 6Z Trading Mistakes",
     "url": "/futures-basics/common-6z-trading-mistakes.html",
     "description": "A blunt breakdown of the most common mistakes traders make with 6Z South African Rand futures and how to avoid getting blown out by volatility and thin liquidity.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "Common Chart Patterns That Actually Show Up in 6A AUD/USD Futures",
-    "url": "/futures-basics/6a-chart-patterns-that-work.html",
-    "description": "A blunt breakdown of the chart patterns that consistently show up in 6A AUD/USD futures and how to trade them without overthinking.",
     "category": "Futures Basics"
   },
   {
@@ -897,12 +1047,6 @@
     "title": "Contango vs Backwardation: What Futures Traders Must Understand",
     "url": "/futures-basics/contango-vs-backwardation.html",
     "description": "Understand contango vs backwardation, how futures curve structure works, and why it impacts rollover cost, pricing, and long-term profitability.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "Futures Contract Expiration and Roll | Complete Guide",
-    "url": "/futures-basics/contract-expiration-and-roll.html",
-    "description": "Learn futures expiration, last trade, settlement, delivery, volume migration, rolling, contract codes, and continuous charts with examples and a roll planner.",
     "category": "Futures Basics"
   },
   {
@@ -1054,6 +1198,12 @@
     "url": "/market-basics/displacement-candles-and-trend-initiation.html",
     "description": "Learn what displacement candles really mean, how they signal trend initiation, and how to trade them without guessing.",
     "category": "Market Basics"
+  },
+  {
+    "title": "Does 6E Trend More? A Controlled Comparison",
+    "url": "/futures-basics/why-6e-trends-harder-than-other-fx-futures.html",
+    "description": "Turn the claim that 6E trends more than other FX futures into a controlled test using efficiency, persistence, regimes, rolls, and trading costs.",
+    "category": "Futures Basics"
   },
   {
     "title": "DOM Trading For Beginners – Grizzly Parrot Trading",
@@ -1332,6 +1482,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Futures Contract Expiration and Roll | Complete Guide",
+    "url": "/futures-basics/contract-expiration-and-roll.html",
+    "description": "Learn futures expiration, last trade, settlement, delivery, volume migration, rolling, contract codes, and continuous charts with examples and a roll planner.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Futures Contract Specifications Explained",
     "url": "/futures-basics/contract-specs-explained.html",
     "description": "A blunt guide to futures contract specs: tick size, tick value, multiplier, and minimum price fluctuation for popular contracts.",
@@ -1566,24 +1722,6 @@
     "category": "Prop Firm Trading"
   },
   {
-    "title": "How 6A AUD/USD Futures React to U.S. Interest Rate Announcements",
-    "url": "/futures-basics/6a-reacts-to-us-rate-announcements.html",
-    "description": "A blunt breakdown of how 6A AUD/USD futures respond to Federal Reserve interest rate announcements and why USD-driven volatility dominates the move.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "How 6A AUD/USD Price Action Changes Across Each Trading Session",
-    "url": "/futures-basics/6a-price-action-behavior-across-sessions.html",
-    "description": "A blunt breakdown of how 6A AUD/USD price action behaves differently in Sydney, Tokyo, London, and New York—and how to trade each one.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "How 6A Trades During the Sydney and Asian Sessions",
-    "url": "/futures-basics/6a-asian-session-behavior.html",
-    "description": "A blunt explanation of how 6A AUD/USD futures behave during the Sydney and Asian sessions, including volatility patterns and liquidity shifts.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "How 6B Futures React to Bank of England Rate Decisions",
     "url": "/futures-basics/how-6b-reacts-to-boe-rate-decisions.html",
     "description": "Learn how 6B British Pound futures react to Bank of England rate decisions, including volatility patterns, common traps, and key levels to watch.",
@@ -1593,12 +1731,6 @@
     "title": "How 6E Reacts to European Headlines: A Verification Guide",
     "url": "/futures-basics/how-6e-reacts-to-european-session-headlines.html",
     "description": "Verify scheduled European releases and unscheduled headlines before trading 6E, then separate expectations, reaction phases, and execution risk.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "How BOJ Policy Moves 6J Futures | Decision-Day Guide",
-    "url": "/futures-basics/how-6j-reacts-to-boj-policy.html",
-    "description": "A practical guide to BOJ decision days in 6J futures: current policy framework, surprise scenarios, release sequence, execution risks and evidence limits.",
     "category": "Futures Basics"
   },
   {
@@ -1638,12 +1770,6 @@
     "category": "Market Basics"
   },
   {
-    "title": "How Australian Employment Data Impacts 6A AUD/USD Futures",
-    "url": "/futures-basics/6a-employment-data-impact.html",
-    "description": "A straight breakdown of how Australian employment reports move 6A AUD/USD futures and why jobs data hits the Aussie harder than most releases.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "How Automotive Demand Cycles Drive Platinum Futures (PL)",
     "url": "/futures-basics/pl-automotive-demand-catalyst-cycles.html",
     "description": "A detailed breakdown of how catalytic converter demand, auto production cycles, and emission standards directly move Platinum futures (PL).",
@@ -1653,6 +1779,12 @@
     "title": "How Bank of Canada Decisions Impact 6C Futures",
     "url": "/futures-basics/6c-bank-of-canada-impact.html",
     "description": "A blunt breakdown of how Bank of Canada rate decisions move 6C Canadian Dollar futures and how traders should position around them.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "How BOJ Policy Moves 6J Futures | Decision-Day Guide",
+    "url": "/futures-basics/how-6j-reacts-to-boj-policy.html",
+    "description": "A practical guide to BOJ decision days in 6J futures: current policy framework, surprise scenarios, release sequence, execution risks and evidence limits.",
     "category": "Futures Basics"
   },
   {
@@ -1668,39 +1800,15 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Yen Carry Trades and 6J Futures | Mechanics &amp; Unwinds",
-    "url": "/futures-basics/6j-carry-trade-impact.html",
-    "description": "How yen-funded carry trades affect 6J futures: funding and asset legs, leverage, volatility, crowding, unwinds, observable proxies and hard limits.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "How Cash Market Moves Lead Futures Price Direction",
     "url": "/futures-basics/how-cash-market-moves-lead-futures-price-direction.html",
     "description": "A blunt breakdown of how cash market pricing leads futures direction, why futures follow physical markets, and how to read cash signals early.",
     "category": "Futures Basics"
   },
   {
-    "title": "How China’s Economic Data Impacts 6A AUD/USD Futures",
-    "url": "/futures-basics/china-economic-data-6a-impact.html",
-    "description": "A blunt breakdown of how China’s economic data moves 6A AUD/USD futures and which reports actually matter for real trading.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "How Commodity Cycles Impact 6A AUD/USD Futures",
-    "url": "/futures-basics/6a-commodity-cycle-impact.html",
-    "description": "A blunt explanation of how global commodity cycles drive 6A AUD/USD futures through Australia",
-    "category": "Futures Basics"
-  },
-  {
     "title": "How Contract Size Impacts Real Risk in Futures Trading",
     "url": "/futures-basics/contract-size-risk-impact.html",
     "description": "Learn how contract size directly affects real risk, position sizing, and account survival in futures trading. Beginners always overlook this.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "6E Macro Events: CPI, NFP, FOMC, and ECB Playbook",
-    "url": "/futures-basics/cpi-nfp-fomc-ecb-impact-on-6e-volatility.html",
-    "description": "Plan 6E trading around CPI, payrolls, FOMC, and ECB events using surprise, revisions, policy-path repricing, official sources, and pre/during/post risk rules.",
     "category": "Futures Basics"
   },
   {
@@ -1776,6 +1884,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "How FOMC Decisions Reprice 6A Futures",
+    "url": "/futures-basics/6a-reacts-to-us-rate-announcements.html",
+    "description": "Learn how FOMC expectations, the statement, projections and press conference can reprice 6A, with a risk-first workflow for event-day whipsaw.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "How Futures Circuit Breakers Trigger: Price Bands You Must Know",
     "url": "/futures-basics/how-futures-circuit-breakers-trigger.html",
     "description": "A blunt breakdown of how futures circuit breakers work, the exact price bands that trigger them, and why these levels can freeze your position instantly.",
@@ -1836,9 +1950,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How Gold Prices Influence 6A AUD/USD Futures",
+    "title": "How Gold Influences 6A Futures: The Real Channels",
     "url": "/futures-basics/6a-gold-correlation-explained.html",
-    "description": "A blunt breakdown of how gold prices impact 6A AUD/USD futures and why AUD tracks gold more closely than most traders realize.",
+    "description": "Learn how gold can influence 6A through Australian export income, the U.S. dollar, real yields and risk sentiment—and why those channels often conflict.",
     "category": "Futures Basics"
   },
   {
@@ -2040,21 +2154,9 @@
     "category": "Prop Firm Trading"
   },
   {
-    "title": "6E Roll Dates, Expiry, and Contract Behavior",
-    "url": "/futures-basics/6e-roll-dates-and-contract-behavior.html",
-    "description": "Plan the 6E roll with current expiry rules, month codes, volume migration, delivery awareness, roll gaps, and defensible continuous-series methods.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "How Rate Differentials Drive 6E | Fed, ECB &amp; Futures",
     "url": "/futures-basics/how-rate-differentials-drive-6e-price.html",
     "description": "How Fed-ECB rate expectations move Euro FX futures, with spot versus forward pricing, covered interest parity, scenarios, and an interactive calculator.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "How Risk-On vs Risk-Off Sentiment Drives 6A AUD/USD Futures Trends",
-    "url": "/futures-basics/risk-sentiment-6a-trends.html",
-    "description": "A blunt breakdown of how global risk-on and risk-off sentiment shifts push 6A AUD/USD futures up or down and why AUD reacts harder than most currencies.",
     "category": "Futures Basics"
   },
   {
@@ -2154,18 +2256,6 @@
     "category": "Platforms & Tutorials"
   },
   {
-    "title": "How to Day Trade Breakouts in 6A AUD/USD Futures",
-    "url": "/futures-basics/day-trading-breakouts-6a.html",
-    "description": "A blunt breakdown of how to day trade breakouts in 6A AUD/USD futures with clean levels, proper timing, and zero hesitation.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "How to Identify Reversals in 6A AUD/USD Using Volume Spikes",
-    "url": "/futures-basics/identifying-6a-reversals-volume-spikes.html",
-    "description": "A blunt breakdown of how volume spikes signal reversals in 6A AUD/USD futures and how to separate real shifts from random noise.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "How to Place Orders in NinjaTrader | Grizzly Parrot Trading",
     "url": "/platforms-tutorials/ninjatrader-order-entry.html",
     "description": "Beginner-friendly guide showing how to place market, limit, and stop orders in NinjaTrader from the chart and the DOM.",
@@ -2232,12 +2322,6 @@
     "category": "Platforms & Tutorials"
   },
   {
-    "title": "How to Swing Trade 6A AUD/USD Futures Using Macro Themes",
-    "url": "/futures-basics/swing-trading-6a-macro-themes.html",
-    "description": "A blunt breakdown of how to swing trade 6A AUD/USD futures using major macro themes like commodities, China data, and U.S. rate cycles.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "How to Trade 6N Around Economic Releases",
     "url": "/futures-basics/how-to-trade-6n-economic-releases.html",
     "description": "A blunt guide to trading 6N futures during RBNZ announcements, CPI, GDP, and jobs data without getting blindsided.",
@@ -2266,6 +2350,12 @@
     "url": "/platforms-tutorials/ninjatrader-chart-replay.html",
     "description": "Clean guide on how to use Chart Replay (Market Replay) in NinjaTrader to practice entries, exits, and DOM flow without risking real money.",
     "category": "Platforms & Tutorials"
+  },
+  {
+    "title": "How to Use COT Reports for 6J | Yen Positioning Guide",
+    "url": "/futures-basics/using-cot-reports-for-6j.html",
+    "description": "A precise guide to CFTC Traders in Financial Futures data for 6J: Tuesday-Friday lag, categories, net and gross exposure, open interest and percentiles.",
+    "category": "Futures Basics"
   },
   {
     "title": "How to Use DOM and Time &amp; Sales on ES",
@@ -2448,9 +2538,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "6E Correlations: A Regime-Aware Testing Guide",
-    "url": "/futures-basics/6e-important-correlations.html",
-    "description": "Test 6E correlations with returns, aligned timestamps and rolling windows while avoiding DXY double counting, yield shortcuts and false causality.",
+    "title": "Is 6J a Safe Haven? When the Yen Rallies&mdash;and Fails",
+    "url": "/futures-basics/6j-safe-haven-behavior.html",
+    "description": "Why 6J Japanese yen futures can rise in risk-off markets, why the safe-haven relationship fails, and how to confirm carry, funding and rate channels.",
     "category": "Futures Basics"
   },
   {
@@ -2616,6 +2706,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "M6E vs 6E | Micro and Standard Euro FX Compared",
+    "url": "/futures-basics/micro-6e-vs-standard-6e.html",
+    "description": "Compare M6E and standard 6E contract size, tick value, P&L, sizing, costs, liquidity, margin, delivery and roll risk with worked examples.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Macro Drivers of Palladium Futures: Rates, Inflation, and Auto Demand",
     "url": "/futures-basics/pa-macro-drivers.html",
     "description": "A blunt breakdown of the macro drivers behind Palladium futures, including interest rates, inflation trends, and global auto sales that directly shape PA demand and volatility.",
@@ -2625,12 +2721,6 @@
     "title": "Macro Drivers of Platinum Futures (PL): Rates, USD Strength, and Inflation Forces",
     "url": "/futures-basics/macro-drivers-influence-pl.html",
     "description": "A deep macro breakdown of how interest rates, USD strength, inflation, and global growth cycles drive Platinum futures (PL) volatility and long-term price direction.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "6J Event Breakouts | Range, Acceptance &amp; False Breaks",
-    "url": "/futures-basics/6j-breakout-events.html",
-    "description": "Define and evaluate 6J event breakouts with pre-event ranges, acceptance, retests, confirmation limits, false-break rules and execution controls.",
     "category": "Futures Basics"
   },
   {
@@ -3000,12 +3090,6 @@
     "category": "Market Basics"
   },
   {
-    "title": "6J Mean Reversion Signals | Testable Setups &amp; Risk Rules",
-    "url": "/futures-basics/6j-mean-reversion-signals.html",
-    "description": "A testable 6J mean-reversion framework: define the mean and regime, specify entries, invalidation, targets, time stops and position risk.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Mean Reversion Traps: When &quot;It’ll Come Back&quot; Blows Up Accounts",
     "url": "/market-basics/mean-reversion-traps-explained.html",
     "description": "Learn how mean reversion traps form, why traders get stuck in them, and how to avoid blowing up by fading moves that never return.",
@@ -3040,12 +3124,6 @@
     "url": "/books/metals-market-structure/",
     "description": "Metals Market Structure explains how gold, silver, copper, platinum, and palladium function as one connected system across monetary, industrial, liquidity, and supply regimes.",
     "category": "Books"
-  },
-  {
-    "title": "M6E vs 6E | Micro and Standard Euro FX Compared",
-    "url": "/futures-basics/micro-6e-vs-standard-6e.html",
-    "description": "Compare M6E and standard 6E contract size, tick value, P&L, sizing, costs, liquidity, margin, delivery and roll risk with worked examples.",
-    "category": "Futures Basics"
   },
   {
     "title": "Micro Auctions Inside Candles: Understanding Internal Rotation",
@@ -3654,12 +3732,6 @@
     "category": "Market Basics"
   },
   {
-    "title": "6J Market Structure | Objective Trend, Range &amp; Break Rules",
-    "url": "/futures-basics/6j-market-structure-basics.html",
-    "description": "Objective 6J market structure: define swings, trends, ranges, acceptance, failed breaks, imbalance context, timeframes and invalidation.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Reading the SI Depth of Market (DOM) Like a Pro",
     "url": "/futures-basics/si-dom-reading-guide.html",
     "description": "A blunt guide to reading the SI DOM—liquidity pockets, spoofing, spreads, and how Silver futures actually trade under the surface.",
@@ -3774,12 +3846,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "6E Scalping vs Swing Trading | Costs, Risk & Fit",
-    "url": "/futures-basics/scalping-6e-vs-swing-trading-6e.html",
-    "description": "Compare 6E scalping and swing trading by holding period, transaction costs, event risk, overnight exposure, roll mechanics, testing and trader fit.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Scalping 6J Futures | A Risk-Controlled Process",
     "url": "/futures-basics/scalping-6j-futures.html",
     "description": "A risk-controlled 6J scalping process with tick math, regime filters, two testable setups, structure-based stops, cost breakeven and hard loss rules.",
@@ -3807,18 +3873,6 @@
     "title": "Seasonality in Live Cattle Markets",
     "url": "/futures-basics/seasonality-in-live-cattle-markets.html",
     "description": "Live cattle futures follow seasonal patterns driven by demand cycles and production timelines. Here",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "Seasonality Patterns in 6A AUD/USD Futures",
-    "url": "/futures-basics/6a-seasonality-patterns.html",
-    "description": "A blunt breakdown of real seasonality tendencies in 6A AUD/USD futures and how traders use recurring patterns without overfitting nonsense.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "6E Seasonality: How to Test It Without Folklore",
-    "url": "/futures-basics/6e-seasonality-patterns.html",
-    "description": "Build a reproducible 6E seasonality study with clean contract rolls, defined returns, uncertainty, regime tests, and no invented monthly rankings.",
     "category": "Futures Basics"
   },
   {
@@ -4002,6 +4056,12 @@
     "category": "Market Basics"
   },
   {
+    "title": "Swing Trading 6A With a Falsifiable Macro Thesis",
+    "url": "/futures-basics/swing-trading-6a-macro-themes.html",
+    "description": "Build a 6A swing trade from a falsifiable macro thesis, dated catalysts, independent evidence, technical trigger, invalidation, risk size and review plan.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Swing Trading 6C Futures: A Clean Strategy for CAD/USD",
     "url": "/futures-basics/6c-swing-trading-strategy.html",
     "description": "A blunt guide to swing trading 6C Canadian Dollar futures with clear structure, trend logic, and risk control for multi-hour and multi-day moves.",
@@ -4026,24 +4086,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "6J Macro Events Playbook | Yen Futures News Guide",
-    "url": "/futures-basics/6j-macro-events-playbook.html",
-    "description": "Plan 6J futures around U.S., Japan and unscheduled macro events with official calendars, surprise mechanics, time-zone conversions and execution controls.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "6J and Bond Yields | An Intraday Confirmation Workflow",
-    "url": "/futures-basics/6j-and-bond-yields-relationship.html",
-    "description": "How U.S. Treasury and Japanese bond yields transmit macro surprises into 6J futures, with maturity selection, real-yield caveats and divergences.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "The Best Times of Day to Trade 6A AUD/USD Futures",
-    "url": "/futures-basics/best-times-to-trade-6a.html",
-    "description": "A blunt breakdown of the highest-quality trading hours for 6A AUD/USD futures and why liquidity and volatility shift through each session.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "The Best Times of Day to Trade 6S Swiss Franc Futures",
     "url": "/futures-basics/6s-best-times-of-day-to-trade-swiss-franc-futures.html",
     "description": "Learn the exact times of day when 6S Swiss Franc futures show real liquidity, clean structure, and reliable volatility. Trade 6S when it actually moves.",
@@ -4053,12 +4095,6 @@
     "title": "The Best Times to Trade Copper Futures: When HG Actually Moves",
     "url": "/futures-basics/best-times-to-trade-hg.html",
     "description": "Learn the real session windows when copper futures (HG) actually move, why volatility clusters form, and how to time trades without guessing.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "The Correlation Between 6A and Gold Prices Explained",
-    "url": "/futures-basics/6a-gold-correlation.html",
-    "description": "A blunt breakdown of why 6A AUD/USD futures often move with gold prices and how traders use this correlation to confirm direction or spot reversals.",
     "category": "Futures Basics"
   },
   {
@@ -4083,12 +4119,6 @@
     "title": "The Mechanics of Stop Orders in Futures",
     "url": "/futures-basics/mechanics-of-stop-orders-in-futures.html",
     "description": "A blunt explanation of how stop orders work in futures, how they trigger, and why they behave differently from stock stops.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "The Most Important Weekly Reports for 6A AUD/USD Futures Traders",
-    "url": "/futures-basics/weekly-reports-important-for-6a.html",
-    "description": "A blunt breakdown of the weekly reports that actually move 6A AUD/USD futures and how to prepare for each one.",
     "category": "Futures Basics"
   },
   {
@@ -4416,18 +4446,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Using ATR to Size Trades in 6A AUD/USD Futures",
-    "url": "/futures-basics/atr-position-sizing-6a.html",
-    "description": "A blunt breakdown of how to use ATR to size positions in 6A AUD/USD futures so you stop oversizing and blowing trades on normal volatility.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "How to Use COT Reports for 6J | Yen Positioning Guide",
-    "url": "/futures-basics/using-cot-reports-for-6j.html",
-    "description": "A precise guide to CFTC Traders in Financial Futures data for 6J: Tuesday-Friday lag, categories, net and gross exposure, open interest and percentiles.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Using ES Session Highs, Lows, and VWAP to Frame Trades",
     "url": "/futures-basics/es-session-highs-lows-and-vwap-usage.html",
     "description": "A blunt guide to using ES session highs, lows, and VWAP so beginners can frame trades with real structure instead of guessing.",
@@ -4456,12 +4474,6 @@
     "url": "/market-basics/volatility-clustering-basics.html",
     "description": "Learn volatility clustering basics: why markets flip between quiet and explosive periods, and how to read shifting volatility conditions.",
     "category": "Market Basics"
-  },
-  {
-    "title": "Volatility Clusters in 6A AUD/USD Futures",
-    "url": "/futures-basics/6a-volatility-clusters.html",
-    "description": "A blunt breakdown of volatility clusters in 6A AUD/USD futures—why big moves group together and how to trade around them without getting smoked.",
-    "category": "Futures Basics"
   },
   {
     "title": "Volatility Compression and Expansion Patterns in 6B Futures",
@@ -4632,9 +4644,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "What Is 6A? How AUD/USD Futures Actually Work",
+    "title": "What Is 6A? Australian Dollar Futures Explained",
     "url": "/futures-basics/what-is-6a-aud-futures.html",
-    "description": "Learn what 6A AUD/USD futures are, how the contract works, and why traders use it to express a view on the Australian dollar with leveraged exposure.",
+    "description": "Learn how CME 6A Australian Dollar futures work, what the quote means, why contracts expire, and how leverage, delivery and the M6A micro differ.",
     "category": "Futures Basics"
   },
   {
@@ -4710,9 +4722,15 @@
     "category": "Market Basics"
   },
   {
-    "title": "What Moves 6A? Key Drivers Behind AUD/USD Futures",
+    "title": "What Moves 6A Australian Dollar Futures? Driver Map",
     "url": "/futures-basics/what-moves-6a-aud-futures.html",
-    "description": "A blunt breakdown of the real forces that move 6A AUD/USD futures: RBA policy, USD strength, commodities, and global risk sentiment.",
+    "description": "Learn how to rank the RBA-Fed path, Australian and China data, commodities, risk, positioning and contract mechanics that can move 6A futures.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "What Moves 6E Euro FX Futures? A Driver Map",
+    "url": "/futures-basics/what-moves-euro-fx-futures-6e.html",
+    "description": "Learn what moves 6E Euro FX futures, how to rank ECB-Fed repricing, data, risk and positioning, and when to reject a neat market narrative.",
     "category": "Futures Basics"
   },
   {
@@ -4728,9 +4746,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "What Moves 6E Euro FX Futures? A Driver Map",
-    "url": "/futures-basics/what-moves-euro-fx-futures-6e.html",
-    "description": "Learn what moves 6E Euro FX futures, how to rank ECB-Fed repricing, data, risk and positioning, and when to reject a neat market narrative.",
+    "title": "When 6J Trends in Asian Hours—and When It Doesn't",
+    "url": "/futures-basics/why-6j-trends-during-asian-session.html",
+    "description": "A sober guide to 6J during Asian hours: exact JST, UTC and ET clocks, Tokyo cash and JGB activity, trend conditions, failure cases and intervention limits.",
     "category": "Futures Basics"
   },
   {
@@ -4761,30 +4779,6 @@
     "title": "Why 6C Moves: Key Economic Drivers Behind Canadian Dollar Futures",
     "url": "/futures-basics/why-6c-moves.html",
     "description": "A blunt breakdown of what actually moves 6C Canadian Dollar futures—oil, interest rates, USD strength, and macro flows.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "Does 6E Trend More? A Controlled Comparison",
-    "url": "/futures-basics/why-6e-trends-harder-than-other-fx-futures.html",
-    "description": "Turn the claim that 6E trends more than other FX futures into a controlled test using efficiency, persistence, regimes, rolls, and trading costs.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "Is 6J a Safe Haven? When the Yen Rallies&mdash;and Fails",
-    "url": "/futures-basics/6j-safe-haven-behavior.html",
-    "description": "Why 6J Japanese yen futures can rise in risk-off markets, why the safe-haven relationship fails, and how to confirm carry, funding and rate channels.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "6J During U.S. Lunch | Liquidity &amp; Execution Guide",
-    "url": "/futures-basics/6j-thin-liquidity-us-lunch.html",
-    "description": "A practical 6J guide for 11:30 a.m.–1:30 p.m. ET: liquidity measures, normal versus news days, order consequences, DST conversions and skip rules.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "When 6J Trends in Asian Hours—and When It Doesn't",
-    "url": "/futures-basics/why-6j-trends-during-asian-session.html",
-    "description": "A sober guide to 6J during Asian hours: exact JST, UTC and ET clocks, Tokyo cash and JGB activity, trend conditions, failure cases and intervention limits.",
     "category": "Futures Basics"
   },
   {
@@ -5080,6 +5074,12 @@
     "url": "/prop-firm-trading/withdrawal-thresholds-and-requirements.html",
     "description": "Learn the withdrawal thresholds and requirements prop firms use before they allow payouts, including minimum profits, trade days, and rule checks.",
     "category": "Prop Firm Trading"
+  },
+  {
+    "title": "Yen Carry Trades and 6J Futures | Mechanics &amp; Unwinds",
+    "url": "/futures-basics/6j-carry-trade-impact.html",
+    "description": "How yen-funded carry trades affect 6J futures: funding and asset legs, leverage, volatility, crowding, unwinds, observable proxies and hard limits.",
+    "category": "Futures Basics"
   },
   {
     "title": "Yen Intervention &amp; 6J Futures | Verified Event Study",
