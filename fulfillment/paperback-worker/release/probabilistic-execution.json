@@ -165,9 +165,11 @@
     }
   },
   "publication": {
-    "canonicalLiveVerified": false,
+    "canonicalLiveVerified": true,
     "workerLiveVerified": true,
     "existingBooksRegressionVerified": true,
-    "independentPostDeploymentVerified": false
+    "independentPostDeploymentVerified": true,
+    "verifiedAt": "2026-08-12",
+    "pagesCommitSha": "5da0da5f769b0a75482a6549a46154a498c536da"
   }
 }
