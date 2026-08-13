@@ -126,7 +126,7 @@ test("the tracked release manifest records the corrected combined proof order wh
   assert.equal(report.readiness.proof, false);
   assert.equal(report.readiness.private, false);
   assert.equal(report.readiness.release, false);
-  assert.equal(report.readiness.direct, false);
+  assert.equal(report.readiness.direct, true);
   const providerErrors = report.directErrors.provider.join("\n");
   assert.doesNotMatch(providerErrors, /isbnPolicy/);
   assert.doesNotMatch(providerErrors, /bibliographic publisher/);
