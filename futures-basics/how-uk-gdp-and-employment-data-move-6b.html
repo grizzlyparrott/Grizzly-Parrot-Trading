@@ -2,225 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How UK GDP and Employment Data Move 6B Futures</title>
-  <meta name="description" content="A direct breakdown of how UK GDP and employment reports move 6B British Pound futures and the volatility patterns traders should expect.">
+  <title>How UK GDP and Labour Data Can Move 6B</title>
+  <meta name="description" content="Contrast UK GDP, payroll, unemployment, wage and vacancy evidence, including revisions, measurement limits and conditional 6B scenarios.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/how-uk-gdp-and-employment-data-move-6b.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="How UK GDP and Employment Data Move 6B Futures">
-  <meta property="og:description" content="A direct breakdown of how UK GDP and employment reports move 6B British Pound futures and the volatility patterns traders should expect.">
+  <meta property="og:title" content="How UK GDP and Labour Data Can Move 6B">
+  <meta property="og:description" content="A two-axis framework for separating UK growth evidence from labour and wage pressure before interpreting the BoE and 6B response.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/how-uk-gdp-and-employment-data-move-6b.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-24">
+  <meta property="article:modified_time" content="2026-08-13">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UK GDP, Labour Data and 6B">
+  <meta name="twitter:description" content="Read output, payrolls, unemployment, wages and revisions as separate evidence—not one “strong” or “weak” signal.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="How UK GDP and Employment Data Move 6B Futures">
-  <meta name="twitter:description" content="A direct breakdown of how UK GDP and employment reports move 6B British Pound futures and the volatility patterns traders should expect.">
-
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="6b-research-library.css?v=20260813a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"How UK GDP and Labour Data Can Move 6B","description":"Contrast UK GDP, payroll, unemployment, wage and vacancy evidence, including revisions, measurement limits and conditional 6B scenarios.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/how-uk-gdp-and-employment-data-move-6b.html"},"datePublished":"2025-11-24","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/how-uk-gdp-and-employment-data-move-6b.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How UK GDP and Employment Data Move 6B Futures",
-  "description": "A direct breakdown of how UK GDP and employment reports move 6B British Pound futures and the volatility patterns traders should expect.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/how-uk-gdp-and-employment-data-move-6b.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/how-uk-gdp-and-employment-data-move-6b.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How UK GDP and Employment Data Move 6B Futures",
-      "item": "https://grizzlyparrottrading.com/futures-basics/how-uk-gdp-and-employment-data-move-6b.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"UK GDP, Labour and 6B","item":"https://grizzlyparrottrading.com/futures-basics/how-uk-gdp-and-employment-data-move-6b.html"}]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container sterling-library">
+<article>
+<!-- ARTICLE BODY START -->
+<header class="gb-hero">
+  <div class="gb-hero-copy">
+    <p class="gb-kicker">Growth versus labour &middot; Two-axis reading</p>
+    <h1>How UK GDP and Labour Data Can Move 6B</h1>
+    <p class="gb-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="gb-hero-lede">GDP beats expectations, but earlier months are revised lower. Payrolled employees fall, unemployment rises, and regular-pay growth remains firm. Is that strong or weak for sterling? Neither label is adequate. Growth momentum and labour-cost pressure are separate axes, built from estimates with different coverage and revision behavior.</p>
+    <div class="gb-hero-actions"><a class="button-primary" href="#two-maps">Trace both channels</a><a class="gb-text-link" href="#matrix">Use the two-axis matrix</a></div>
+    <dl class="gb-hero-metrics" aria-label="GDP and labour analysis orientation"><div><dt>GDP</dt><dd>Output path</dd></div><div><dt>Labour</dt><dd>People + jobs</dd></div><div><dt>Wages</dt><dd>Cost pressure</dd></div><div><dt>Rule</dt><dd>Keep separate</dd></div></dl>
+  </div>
+  <div class="gb-hero-visual">
+    <div class="gb-market-board">
+      <div class="gb-board-head"><span>Mixed-data state</span><strong>No single verdict</strong></div>
+      <div class="gb-proof"><strong>Growth axis</strong><span>Momentum, breadth, revisions, capacity</span></div>
+      <div class="gb-proof"><strong>Labour axis</strong><span>Employment, slack, wages, productivity</span></div>
+      <p>Only after both axes are classified should the expected BoE path and GBP/USD response be interpreted.</p>
+      <p class="gb-board-foot"><span>Different measures</span><span>Conditional 6B</span></p>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
   </div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="gb-jump-nav" aria-label="On this page"><a href="#two-maps">Two channels</a><a href="#gdp">GDP construction</a><a href="#labour">Labour suite</a><a href="#wages">Wages</a><a href="#revisions">Revisions</a><a href="#confirmation">Confirmation</a><a href="#matrix">Scenario matrix</a></nav>
 
-<h1>How UK GDP and Employment Data Move 6B Futures</h1>
-
-<p>UK GDP and employment reports hit 6B futures harder than most traders expect. These numbers shape the economic outlook for the UK, and the Bank of England reacts to them directly when deciding rate policy. That means 6B reprices instantly when the data hits.</p>
-
-<h2>Why GDP Matters for 6B</h2>
-<p>GDP tells the market whether the UK economy is expanding or stalling. Strong GDP boosts expectations of rate hikes, while weak GDP does the opposite. Since 6B tracks rate expectations, you’ll see immediate volatility on every GDP print.</p>
-
-<h2>How Employment Reports Impact the Pound</h2>
-<p>Employment data — especially wage growth — is a major inflation input. Faster wage growth increases inflation pressure, making rate hikes more likely. Higher expected rates = stronger Pound = bullish 6B.</p>
-
-<ul>
-  <li><strong>Unemployment rate</strong> — signals economic strength or weakness</li>
-  <li><strong>Wage growth</strong> — big market mover</li>
-  <li><strong>Jobless claims</strong> — short-term volatility sparks</li>
-</ul>
-
-<h2>Typical Volatility Patterns on Release</h2>
-
-<table>
-  <tr>
-    <th>Data Reaction</th>
-    <th>6B Behavior</th>
-  </tr>
-  <tr>
-    <td>Strong GDP / strong jobs</td>
-    <td>Fast upside push, strong continuation</td>
-  </tr>
-  <tr>
-    <td>Weak GDP / weak jobs</td>
-    <td>Sharp drop, bearish follow-through</td>
-  </tr>
-  <tr>
-    <td>Mixed numbers</td>
-    <td>Chop, whipsaws, later trend</td>
-  </tr>
-</table>
-
-<h2>How to Trade Post-Release Moves</h2>
-<p>The smart play is always the same: let the initial spike complete. The market does a liquidity sweep almost every time. The real setup usually appears 3–10 minutes later.</p>
-
-<p>This behavior mirrors the structures in <a href="https://grizzlyparrottrading.com/market-basics/market-structure-breaks-spotting-shifts-in-control.html">Market Structure Breaks: Spotting Shifts in Control</a>.</p>
-
-<h2>Key Levels to Watch on GDP and Employment Days</h2>
-<p>These levels act as magnets during high-impact macro releases:</p>
-
-<ul>
-  <li>Pre-release high and low</li>
-  <li>Previous day's close</li>
-  <li>London session high</li>
-  <li>First 1- and 5-minute candle extremes</li>
-</ul>
-
-<div class="highlight-box yellow">
-  <h3>6B Reacts Fast to GDP and Jobs Data</h3>
-  <p>GDP and employment releases often trigger sharp initial moves in 6B — not just because of the numbers, but because they shift BOE policy expectations. The first spike is rarely the trade. The cleaner opportunity usually comes after the dust settles, when direction and liquidity return.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="gb-section" id="two-maps" aria-labelledby="two-maps-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Do not collapse the signals</p><h2 id="two-maps-title">GDP and Labour Reach 6B Through Different Maps</h2><p>Both can change expected Bank of England policy, but they begin with different economic questions.</p></div>
+  <div class="gb-two-column">
+    <article class="gb-panel"><p class="gb-card-label">Growth-output map</p><h3>Activity → capacity → expected returns</h3><p>Broad, persistent growth can improve expected income, investment and asset returns. If activity runs beyond productive capacity, it can also raise inflation pressure and the expected Bank Rate path. Weak growth can do the reverse, but a supply-driven contraction may coexist with inflation.</p><div class="gb-formula"><code>output news</code><i aria-hidden="true">&rarr;</i><code>growth / slack</code><i aria-hidden="true">&rarr;</i><code>relative rates + GBP</code></div></article>
+    <article class="gb-panel"><p class="gb-card-label">Labour-wage map</p><h3>Slack + pay → domestic cost pressure</h3><p>Employment, unemployment, inactivity, vacancies and hours describe different parts of labour demand and supply. Wages interact with productivity and margins to influence unit costs and services inflation. A tight labour market is therefore evidence, not a mechanical 6B buy signal.</p><div class="gb-formula"><code>labour news</code><i aria-hidden="true">&rarr;</i><code>wages / demand</code><i aria-hidden="true">&rarr;</i><code>BoE path + GBP</code></div></article>
   </div>
-</footer>
+  <div class="gb-caution"><strong>Bilateral break condition</strong><p>Even a coherent UK repricing can be offset if U.S. growth or Federal Reserve expectations move further. 6B is quoted in U.S. dollars per pound; a UK-only story is incomplete.</p></div>
+</section>
+
+<section class="gb-section" id="gdp" aria-labelledby="gdp-title">
+  <div class="gb-section-heading"><p class="gb-kicker">GDP is a sequence</p><h2 id="gdp-title">Monthly Output, First Quarterly GDP and National Accounts Are Not the Same Release</h2><p>The ONS produces timely estimates first and incorporates more complete information later. Speed and completeness trade off, so revisions are part of the product rather than an embarrassment to ignore.</p></div>
+  <div class="gb-table-scroll" role="region" aria-label="UK GDP release stages and interpretation for 6B" tabindex="0">
+    <table class="gb-table"><thead><tr><th scope="col">GDP product</th><th scope="col">What it emphasizes</th><th scope="col">Useful reading</th><th scope="col">Limit</th></tr></thead><tbody>
+      <tr><th scope="row">Monthly GDP estimate</th><td>Timely output-based estimate for a month and rolling three-month period</td><td>Services, production and construction contributions; monthly versus three-month path</td><td>One month can be volatile and later revised</td></tr>
+      <tr><th scope="row">First quarterly estimate</th><td>Initial quarter with output, expenditure and income information</td><td>Breadth across approaches, real GDP, GDP per head and prior-quarter revisions</td><td>Early expenditure and income data are less complete</td></tr>
+      <tr><th scope="row">Quarterly national accounts</th><td>Updated quarter with a fuller integrated accounts dataset</td><td>Whether the first estimate survives additional source data and balancing</td><td>Still subject to later annual revisions</td></tr>
+      <tr><th scope="row">Blue Book and annual reconciliation</th><td>Benchmarking, supply-use balancing and methodological updates</td><td>Long-history comparability and revised economic structure</td><td>Not the vintage available to traders at the original release</td></tr>
+    </tbody></table>
+  </div>
+  <div class="gb-check-grid" style="margin-top:1.25rem">
+    <article><strong>Level or growth?</strong><p>A positive monthly rate does not prove output is above its prior trend or per-person level.</p></article>
+    <article><strong>Monthly or three-month?</strong><p>A volatile month can conflict with the smoother rolling period. Record both without choosing after the move.</p></article>
+    <article><strong>Output or demand?</strong><p>Production by industry and expenditure by households, firms and government answer different questions.</p></article>
+    <article><strong>Nominal or real?</strong><p>Current-price growth can reflect inflation; chained-volume measures target changes in real activity.</p></article>
+    <article><strong>Aggregate or per head?</strong><p>Total GDP and GDP per head can diverge when population changes.</p></article>
+    <article><strong>Current or vintage?</strong><p>A backtest must use the estimate and revision history known at each event date.</p></article>
+  </div>
+</section>
+
+<section class="gb-section" id="labour" aria-labelledby="labour-title">
+  <div class="gb-section-heading"><p class="gb-kicker">A suite, not one jobs number</p><h2 id="labour-title">People, Payrolls, Jobs and Vacancies Measure Different Things</h2><p>Conflicting labour indicators are not automatically data failure. They can reflect different populations, concepts, reference periods and sampling or administrative processes.</p></div>
+  <div class="gb-table-scroll" role="region" aria-label="UK labour market measures and limits for 6B interpretation" tabindex="0">
+    <table class="gb-table"><thead><tr><th scope="col">Measure</th><th scope="col">Concept and coverage</th><th scope="col">Best diagnostic use</th><th scope="col">Important limit</th></tr></thead><tbody>
+      <tr><th scope="row">Labour Force Survey</th><td>Household survey of employment, unemployment and inactivity under international definitions</td><td>People's labour-market status and detailed characteristics</td><td>Sampling, non-response, population weighting and rolling-period uncertainty</td></tr>
+      <tr><th scope="row">PAYE Real Time Information</th><td>Administrative payroll data for people paid through PAYE</td><td>Timely payrolled-employee and pay evidence</td><td>Excludes self-employment outside payroll and does not equal all employment</td></tr>
+      <tr><th scope="row">Workforce Jobs</th><td>Jobs compiled mainly from business surveys, including multiple jobs</td><td>Industry and workplace job counts</td><td>Jobs are not people; one person can hold more than one</td></tr>
+      <tr><th scope="row">Vacancy Survey</th><td>Unfilled roles reported by businesses</td><td>Labour-demand and tightness context</td><td>A vacancy is not a hire and the series is sampled</td></tr>
+      <tr><th scope="row">Claimant Count</th><td>People claiming specified unemployment-related benefits</td><td>Administrative context on claims</td><td>Rules and coverage differ from the international unemployment definition</td></tr>
+      <tr><th scope="row">Hours worked</th><td>Actual or usual hours from survey evidence</td><td>Intensive-margin labour demand beyond headcount</td><td>Volatile absences and reporting effects can matter</td></tr>
+    </tbody></table>
+  </div>
+  <p class="gb-source-note"><strong>Established measurement distinction:</strong> LFS employment counts people under a survey definition; PAYE RTI counts people receiving pay through payroll; Workforce Jobs counts jobs. A “disagreement” can be conceptually valid.</p>
+</section>
+
+<section class="gb-section" id="wages" aria-labelledby="wages-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Wage pressure with denominators</p><h2 id="wages-title">Average Pay Growth Is Not a Direct Price Forecast</h2><p>ONS Average Weekly Earnings is the lead monthly measure of average weekly earnings per employee in Great Britain. The Bank uses wage evidence in its inflation assessment, but wages interact with productivity, import costs and firms' margins.</p></div>
+  <div class="gb-atlas">
+    <article class="gb-event-card"><div class="gb-event-head"><h3>Regular pay</h3><strong>Excludes bonuses</strong></div><div class="gb-event-metrics"><div><span>Use</span><strong>Underlying pay pace</strong></div><div><span>Limit</span><strong>Composition</strong></div></div><p style="padding:0 1.2rem 1.2rem;margin:0">Changing industry or workforce mix can move average earnings even when individual wage rates do not move by the same amount.</p></article>
+    <article class="gb-event-card"><div class="gb-event-head"><h3>Total pay</h3><strong>Includes bonuses</strong></div><div class="gb-event-metrics"><div><span>Use</span><strong>Full pay bill</strong></div><div><span>Limit</span><strong>Bonus volatility</strong></div></div><p style="padding:0 1.2rem 1.2rem;margin:0">Bonus timing and sector concentration can make total-pay growth less representative of persistent broad wage pressure.</p></article>
+    <article class="gb-event-card gb-event-card--centered"><div class="gb-event-head"><h3>Unit labour-cost logic</h3><strong>Wages minus productivity</strong></div><div class="gb-event-metrics"><div><span>Higher productivity</span><strong>Absorbs more pay</strong></div><div><span>Margins</span><strong>Change pass-through</strong></div></div><p style="padding:0 1.2rem 1.2rem;margin:0">The relevant mechanism is not “wages up, prices up one-for-one.” Output per unit of labour and firms' willingness or ability to adjust margins affect domestic price pressure.</p></article>
+  </div>
+  <div class="gb-related">For the inflation composition and persistence channel, continue to <a href="how-uk-cpi-inflation-moves-6b-futures.html">how UK CPI can move 6B futures</a>.</div>
+</section>
+
+<section class="gb-section" id="revisions" aria-labelledby="revisions-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Data quality is market information</p><h2 id="revisions-title">Early Estimates Buy Timeliness With Uncertainty</h2><p>The ONS publishes revision policies and quality documentation because later data, seasonal adjustment, benchmarking and methodological improvements can change the history. A responsible interpretation carries the vintage with the number.</p></div>
+  <div class="gb-proof-grid">
+    <article class="gb-proof"><h3>Minimum revision record</h3><ul><li>Current actual and consensus for the exact series.</li><li>Previous published value and current revised value.</li><li>Net two-period surprise when that measure was declared before the event.</li><li>Revision window and reason stated by the ONS.</li><li>Correction notices distinct from scheduled revisions.</li></ul></article>
+    <article class="gb-proof is-limit"><h3>Invalid shortcuts</h3><ul><li>Backfilling revised GDP into an event study as if traders knew it.</li><li>Mixing flash payroll estimates with later final values.</li><li>Using LFS and PAYE interchangeably because both mention employment.</li><li>Calling every revision an error.</li><li>Discarding inconvenient historical vintages after seeing 6B.</li></ul></article>
+  </div>
+  <div class="gb-caution"><strong>Honest uncertainty can reduce confidence</strong><p>If an estimate has wide sampling uncertainty, exceptional volatility or a substantial scheduled revision risk, the conclusion should become less precise. Relabeling an uncertain input as a “confirmed trend” does not improve it.</p></div>
+</section>
+
+<section class="gb-section" id="confirmation" aria-labelledby="confirmation-title">
+  <div class="gb-section-heading"><p class="gb-kicker">From data to market</p><h2 id="confirmation-title">Observe Which Part of the Story the Market Reprices</h2><p>A growth beat can lift yields because the expected policy path rises, or lower them if the detail is judged temporary. Wage pressure can support sterling through rates, or hurt it through a worse inflation-growth trade-off.</p></div>
+  <div class="gb-process">
+    <article><span>Release</span><h3>Classify both axes</h3><p>Growth momentum and labour-cost pressure can be positive, negative or unresolved independently.</p></article>
+    <article><span>Rates</span><h3>Separate horizon and premium</h3><p>Compare policy-sensitive UK rates with equivalent U.S. rates and inspect curve shape.</p></article>
+    <article><span>Currency</span><h3>Check GBP breadth</h3><p>GBP crosses help distinguish pound-specific news from a dollar-only move.</p></article>
+    <article><span>Futures</span><h3>Verify executable 6B</h3><p>Confirm active month, spread, depth and persistence; price movement alone does not prove cause.</p></article>
+  </div>
+  <p class="gb-source-note">For the complete family-level calendar process, use <a href="how-uk-economic-data-releases-impact-6b-futures.html">which UK data releases matter for 6B</a>. For the broad causal context, use <a href="british-pound-volatility-drivers-in-6b.html">the 6B volatility-driver map</a>.</p>
+</section>
+
+<section class="gb-section" id="matrix" aria-labelledby="matrix-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Ending: two-axis scenarios</p><h2 id="matrix-title">Growth and Labour Pressure Can Form Four Different States</h2><p>The table gives first hypotheses to test, not directional guarantees.</p></div>
+  <div class="gb-table-scroll" role="region" aria-label="Two-axis UK growth and labour scenario matrix for 6B" tabindex="0">
+    <table class="gb-table"><thead><tr><th scope="col">Growth evidence</th><th scope="col">Labour and wage evidence</th><th scope="col">Conditional BoE interpretation</th><th scope="col">6B confirmation and break</th></tr></thead><tbody>
+      <tr><th scope="row">Stronger, broad, revisions supportive</th><td>Tight or firmer; wage pressure persistent</td><td>Higher or longer-restrictive path may become more plausible</td><td>Confirm relative UK rates and GBP breadth; break if U.S. repricing dominates or risk-off overwhelms</td></tr>
+      <tr><th scope="row">Stronger</th><td>Cooling; wage pressure easing</td><td>Better growth with less inflation tension can improve the mix</td><td>Confirm GBP without disorderly gilt repricing; break if growth is narrow or temporary</td></tr>
+      <tr><th scope="row">Weaker</th><td>Tight or wage pressure persistent</td><td>Stagflation-like trade-off creates policy uncertainty</td><td>Expect competing channels and require stronger confirmation; no fixed 6B sign</td></tr>
+      <tr><th scope="row">Weaker, revisions negative</th><td>Cooling; wages easing</td><td>Lower future-rate path may become more plausible</td><td>Potential GBP pressure if UK rates fall relative to U.S.; break if the dollar weakens more</td></tr>
+      <tr><th scope="row">Mixed or low-quality</th><td>Mixed or low-quality</td><td>Confidence should fall; wait for corroboration or later vintages</td><td>“Unresolved” is the correct classification when measures and markets conflict</td></tr>
+    </tbody></table>
+  </div>
+  <div class="gb-caution"><strong>Final test</strong><p>If the conclusion depends on treating GDP, payrolls, employment, unemployment and wages as one interchangeable indicator, rebuild it. Each measure must contribute a defined piece of evidence, and every revision must remain visible.</p></div>
+</section>
+
+<details class="gb-sources"><summary>Primary sources and editorial method</summary><ul>
+  <li><a href="https://www.ons.gov.uk/economy/grossdomesticproductgdp" target="_blank" rel="noopener">ONS gross domestic product portal</a> for monthly, first-quarterly and quarterly national-accounts releases.</li>
+  <li><a href="https://www.ons.gov.uk/economy/grossdomesticproductgdp/methodologies/grossdomesticproductgdpqmi" target="_blank" rel="noopener">ONS GDP quality and methodology information</a> for release stages, data completeness, revisions and limitations.</li>
+  <li><a href="https://www.ons.gov.uk/methodology/methodologytopicsandstatisticalconcepts/revisions/revisionspoliciesforeconomicstatistics/nationalaccountsrevisionspolicyupdateddecember2017" target="_blank" rel="noopener">ONS National Accounts revisions policy</a> for scheduled revision windows and the distinction between revisions and corrections.</li>
+  <li><a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/uklabourmarket/latest" target="_blank" rel="noopener">ONS labour market overview</a> for the current suite, quality notes and official-status disclosures.</li>
+  <li><a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/comparisonoflabourmarketdatasources" target="_blank" rel="noopener">ONS comparison of labour market data sources</a> for LFS, PAYE RTI, Workforce Jobs, earnings and vacancy coverage differences.</li>
+  <li><a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/averageweeklyearningsingreatbritain/latest" target="_blank" rel="noopener">ONS Average Weekly Earnings in Great Britain</a> for regular, total and real-pay measures, revisions and survey coverage.</li>
+  <li><a href="https://www.bankofengland.co.uk/monetary-policy-report/2026/february-2026" target="_blank" rel="noopener">Bank of England February 2026 Monetary Policy Report</a> for the wage, productivity, margins and inflation-persistence framework.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group 2026 FX Product Guide</a> for the 6B instrument anchor.</li>
+</ul><p>The mixed-data opening is illustrative, not a description of a specific release. This page reports no original GDP or labour event-window return, direction, range or trading expectancy. Quantitative claims require vintage forecasts and releases, synchronized markets, roll handling and realistic costs. Sources were reviewed August 13, 2026.</p></details>
+
+<aside class="gb-disclaimer" aria-label="Educational and event-risk disclaimer"><strong>Educational and event-risk disclaimer</strong><p>This material is educational and is not individualized trading, investment, legal, tax or brokerage advice. Futures are leveraged and losses can exceed the initial margin deposit. GDP and labour releases can produce gaps, spread expansion, rejected orders and slippage. Confirm official data, current contract specifications and broker rules before participating.</p></aside>
+<!-- ARTICLE BODY END -->
+</article>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

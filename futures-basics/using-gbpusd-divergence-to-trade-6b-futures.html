@@ -2,222 +2,157 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Using GBP/USD Divergence to Trade 6B Futures</title>
-  <meta name="description" content="A blunt guide to using GBP/USD divergence as a confirmation tool for trading 6B British Pound futures.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/using-gbpusd-divergence-to-trade-6b-futures.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Using GBP/USD Divergence to Trade 6B Futures">
-  <meta property="og:description" content="A blunt guide to using GBP/USD divergence as a confirmation tool for trading 6B British Pound futures.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/using-gbpusd-divergence-to-trade-6b-futures.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Using GBP/USD Divergence to Trade 6B Futures">
-  <meta name="twitter:description" content="A blunt guide to using GBP/USD divergence as a confirmation tool for trading 6B British Pound futures.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Using GBP/USD Divergence to Trade 6B Futures",
-  "description": "A blunt guide to using GBP/USD divergence as a confirmation tool for trading 6B British Pound futures.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/using-gbpusd-divergence-to-trade-6b-futures.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/using-gbpusd-divergence-to-trade-6b-futures.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Using GBP/USD Divergence to Trade 6B Futures",
-      "item": "https://grizzlyparrottrading.com/futures-basics/using-gbpusd-divergence-to-trade-6b-futures.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>GBP/USD vs 6B Divergence: Reconcile Before Trading</title>
+  <meta name="description" content="Triage a GBP/USD and 6B screen discrepancy by checking symbols, timestamps, quotes, futures basis, data quality, and costed forward tests.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/using-gbpusd-divergence-to-trade-6b-futures.html">
+  <meta property="og:title" content="GBP/USD vs 6B Divergence: Reconcile Before Trading"><meta property="og:description" content="A decision tree for separating stale data, basis, contract choice, liquidity, and a genuinely testable residual."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/using-gbpusd-divergence-to-trade-6b-futures.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-13">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Reconcile GBP/USD and 6B Divergence"><meta name="twitter:description" content="Most screen gaps are data, quote, contract, or basis problems until proved otherwise."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="6b-research-library.css?v=20260813a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"GBP/USD vs 6B Divergence: Reconcile Before Trading","description":"Triage a GBP/USD and 6B screen discrepancy by checking symbols, timestamps, quotes, futures basis, data quality, and costed forward tests.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/using-gbpusd-divergence-to-trade-6b-futures.html"},"datePublished":"2025-11-24","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/using-gbpusd-divergence-to-trade-6b-futures.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"GBP/USD vs 6B Divergence","item":"https://grizzlyparrottrading.com/futures-basics/using-gbpusd-divergence-to-trade-6b-futures.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container sterling-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="gb-hero">
+  <div class="gb-hero-copy">
+    <p class="gb-kicker">Two-screen triage &middot; comparable basis &middot; residual test</p>
+    <h1>GBP/USD vs 6B Divergence: Reconcile Before Trading</h1>
+    <p class="gb-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="gb-hero-lede">One screen shows spot GBP/USD at 1.28000. Another shows a September 6B last trade at 1.28240. The timestamps differ by 700 milliseconds, the first number is a midpoint, the second is a last trade, and the future has a later value date. The 0.00240 gap&mdash;24 standard 6B ticks&mdash;is not yet a signal.</p>
+    <div class="gb-hero-actions"><a class="button-primary" href="#freeze">Freeze the discrepancy</a><a class="gb-text-link" href="#gate">Go to the decision gate</a></div>
+  </div>
+  <div class="gb-hero-visual">
+    <div class="gb-market-board" aria-label="Illustrative two-screen discrepancy">
+      <div class="gb-board-head"><span>Illustrative only</span><strong>Not live market data</strong></div>
+      <div class="gb-event-metrics">
+        <div><span>Spot midpoint</span><strong>1.28000</strong></div><div><span>Sep 6B last</span><strong>1.28240</strong></div>
+        <div><span>Clock mismatch</span><strong>700 ms</strong></div><div><span>Raw gap</span><strong>24 ticks</strong></div>
+      </div>
+      <p class="gb-board-foot"><span>Different quote fields</span><span>Basis not removed</span></p>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
   </div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-<h1>Using GBP/USD Divergence to Trade 6B Futures</h1>
-
-<p>6B is the futures version of GBP/USD. When the two diverge, it’s a signal that one side of the market is lying. GBP/USD usually reveals the truth first. If you ignore divergence, you’ll take trades that never follow through — or get blindsided by reversals.</p>
-
-<h2>Why GBP/USD Leads 6B</h2>
-<p>Spot forex trades 24 hours, deeper liquidity, tighter spreads, and reacts faster. 6B follows spot — not the other way around. When GBP/USD breaks a level first, 6B usually follows seconds later.</p>
-
-<h2>Types of Divergence Between GBP/USD and 6B</h2>
-
-<h3>1. Price Divergence</h3>
-<p>Spot breaks a level but 6B hesitates. This usually means 6B is about to follow spot.</p>
-
-<h3>2. Momentum Divergence</h3>
-<p>GBP/USD shows clean trend structure while 6B chops. This is a warning that 6B breakout attempts will fail.</p>
-
-<h3>3. Reversal Divergence</h3>
-<p>Spot prints higher lows while 6B still makes lower lows. 6B is lagging — reversal incoming.</p>
-
-<h2>How to Use Divergence in Real Trades</h2>
-
-<ul>
-  <li><strong>Spot leads breakouts</strong> — only trade 6B if GBP/USD agrees</li>
-  <li><strong>Spot warns of fakeouts</strong> — if GBP/USD rejects a level, 6B breaks will fail</li>
-  <li><strong>Spot shows momentum first</strong> — use it for confirmation</li>
-</ul>
-
-<p>This fits into the logic laid out in the <a href="https://grizzlyparrottrading.com/market-basics/market-stalling-behavior-how-to-spot-when-momentum-is-dying.html">market stalling behavior guide</a>.</p>
-
-<h2>Table: Divergence and What It Means</h2>
-
-<table>
-  <tr>
-    <th>Divergence Type</th>
-    <th>Signal</th>
-  </tr>
-  <tr>
-    <td>Spot breaks first</td>
-    <td>6B will likely follow</td>
-  </tr>
-  <tr>
-    <td>Spot rejects breakout</td>
-    <td>6B breakout likely fake</td>
-  </tr>
-  <tr>
-    <td>Spot trends while 6B stalls</td>
-    <td>Momentum not strong enough yet</td>
-  </tr>
-</table>
-
-<div class="highlight-box green">
-  <h3>Spot Divergence Filters the Noise in 6B</h3>
-  <p>GBP/USD spot often reveals the truth behind 6B futures moves. When they align, momentum tends to follow through. When they diverge, traps are common. Use spot as your confirmation layer — not as a prediction tool, but as a filter that keeps you out of bad trades.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="gb-section" id="freeze" aria-labelledby="freeze-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">First response</p>
+    <h2 id="freeze-title">Freeze the Screen Before Explaining It</h2>
+    <p>Save enough evidence to reproduce what each system knew. A later screenshot can show revised bars, a new front contract, or a refreshed quote and erase the original discrepancy.</p>
   </div>
-</footer>
-</body>
-</html>
+  <div class="gb-check-grid">
+    <article><strong>Exact symbol</strong><p>Vendor, venue, pair orientation, 6B contract month, security ID, and whether a continuous symbol was used.</p></article>
+    <article><strong>Price field</strong><p>Bid, ask, midpoint, last trade, settlement, indicative quote, or chart close; include displayed precision.</p></article>
+    <article><strong>Time field</strong><p>Exchange event time, vendor time, receipt time, local display timezone, and bar-close convention.</p></article>
+    <article><strong>Market state</strong><p>Open, maintenance, holiday, halted, stale, crossed, or thin; include spread and depth when available.</p></article>
+    <article><strong>Delivery terms</strong><p>Spot value date, futures delivery month, days to expiry, and observed or modeled forward points.</p></article>
+    <article><strong>Feed health</strong><p>Sequence gaps, reconnects, conflation, delayed permissions, outlier filters, and last successful update.</p></article>
+  </div>
+  <div class="gb-caution"><strong>The opening numbers are hypothetical</strong><p>They demonstrate how a plausible-looking difference can combine value-date basis and asynchronous fields. They are not August 2026 market prices, a fair-value estimate, or an invitation to trade.</p></div>
+</section>
+
+<section class="gb-section" id="comparable" aria-labelledby="comparable-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Comparable values</p>
+    <h2 id="comparable-title">Put Both Prices on the Same Clock, Side, and Value-Date Basis</h2>
+    <p>6B and standard GBP/USD share the U.S.-dollars-per-pound direction. The reconciliation problem is therefore not an inversion problem; it is a timestamp, quote, contract, and carry problem.</p>
+  </div>
+  <div class="gb-table-scroll" role="region" aria-label="Sequence for reconciling a GBP USD and 6B discrepancy" tabindex="0">
+    <table class="gb-table">
+      <thead><tr><th scope="col">Check in order</th><th scope="col">Pass condition</th><th scope="col">If it fails</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">1. Instrument</th><td>GBP/USD and the intended dated 6B contract are both identified</td><td>Correct the symbol; discard the screen comparison</td></tr>
+        <tr><th scope="row">2. Timestamp</th><td>Prices are aligned to a declared common UTC grid within known clock error</td><td>Resample; classify as asynchronous data</td></tr>
+        <tr><th scope="row">3. Quote side</th><td>Midpoint is compared with midpoint, or executable buy/sell sides are paired</td><td>Recompute; do not use a last-versus-bid residual</td></tr>
+        <tr><th scope="row">4. Data integrity</th><td>Both feeds are fresh and sequence/recovery checks pass</td><td>Discard or mark unobservable; never fill missing data with the story</td></tr>
+        <tr><th scope="row">5. Dated basis</th><td>Observed forward points or a documented term-matched model is removed</td><td>Classify the raw gap as unreconciled basis</td></tr>
+        <tr><th scope="row">6. Friction band</th><td>Residual exceeds both markets&rsquo; spread, latency, and model-uncertainty band</td><td>Classify as ordinary non-executable noise</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="gb-formula" aria-label="Basis-adjusted residual formula">
+    <code>residual = 6B midpoint</code><i aria-hidden="true">&minus;</i><code>(spot midpoint + expected dated basis)</code>
+  </div>
+  <p>Expected basis is not a constant. CME describes FX futures pricing as spot adjusted for the short-term interest-rate differential and time to expiry. A practical implementation should prefer observable term-matched forward points when available and preserve model uncertainty. The canonical <a href="gbp-usd-correlation-with-6b-futures.html">GBP/USD and 6B comparison</a> explains the relationship in detail.</p>
+</section>
+
+<section class="gb-section" id="classify" aria-labelledby="classify-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Residual taxonomy</p>
+    <h2 id="classify-title">Classify the Residual Before Assigning a Forecast</h2>
+    <p>The classification is an output. Most observed differences should end here rather than become trades.</p>
+  </div>
+  <div class="gb-stat-grid">
+    <article class="gb-stat"><span>A</span><strong>Data mismatch</strong><p>Wrong symbol, stale field, clock offset, feed gap, bar artifact, or different quote sides. Correct or discard.</p></article>
+    <article class="gb-stat"><span>B</span><strong>Contractual basis</strong><p>The difference is consistent with value date, rates, forward points, and time to expiry. Monitor, do not call divergence.</p></article>
+    <article class="gb-stat"><span>C</span><strong>Liquidity residual</strong><p>The gap lies within executable spread, depth, latency, or temporary market-fragmentation costs. Usually untradeable.</p></article>
+    <article class="gb-stat"><span>D</span><strong>Research residual</strong><p>A synchronized, basis-adjusted difference survives integrity and friction checks. It qualifies for testing, not automatic entry.</p></article>
+  </div>
+  <p>Store the raw gap and every adjustment separately. A pipeline that outputs only the final residual cannot show whether a result came from changed forward points, a spot-feed substitution, a futures quote update, or a model revision.</p>
+</section>
+
+<section class="gb-section" id="test" aria-labelledby="test-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Forward-outcome research</p>
+    <h2 id="test-title">Test Whether the Surviving Residual Predicts Anything</h2>
+    <p>There are at least three distinct hypotheses: futures catches up to spot, spot catches up to futures, or both move toward a joint value. Choose one before scoring the event. &ldquo;The gap closes&rdquo; is not a complete trade direction.</p>
+  </div>
+  <div class="gb-method">
+    <div>
+      <h3>Minimum study design</h3>
+      <p>Build simultaneous quote observations for a dated 6B contract and at least one documented spot source. Estimate basis without future information. Define a residual threshold on the training sample, impose a cooldown so one episode is not counted repeatedly, and measure both legs&rsquo; forward returns on chronological validation and holdout dates.</p>
+    </div>
+    <dl>
+      <div><dt>Unit</dt><dd>Independent residual episode</dd></div>
+      <div><dt>Outcomes</dt><dd>Spot, futures, and basis</dd></div>
+      <div><dt>Controls</dt><dd>Event, roll, spread, depth</dd></div>
+      <div><dt>Economics</dt><dd>One- and two-leg costs</dd></div>
+    </dl>
+  </div>
+  <div class="gb-table-scroll" role="region" aria-label="Tests for a basis-adjusted GBP USD and 6B residual" tabindex="0">
+    <table class="gb-table">
+      <thead><tr><th scope="col">Question</th><th scope="col">Required output</th><th scope="col">Failure condition</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Does 6B move next?</th><td>Forward 6B return conditional on signed residual, with confidence interval</td><td>Effect vanishes after timestamp offsets or event controls</td></tr>
+        <tr><th scope="row">Does spot move next?</th><td>Forward spot midpoint and executable-side changes from the same anchor</td><td>Only one delayed vendor feed appears to catch up</td></tr>
+        <tr><th scope="row">Does basis normalize?</th><td>Residual half-life or threshold-crossing distribution</td><td>Convergence is slower than the holding period or unstable near roll</td></tr>
+        <tr><th scope="row">Is it executable?</th><td>Net two-leg P&amp;L with spread, slippage, commission, funding, margin, and leg risk</td><td>Gross residual is smaller than realistic friction</td></tr>
+        <tr><th scope="row">Is it robust?</th><td>Multiple feeds, thresholds, sampling intervals, contract months, and untouched dates</td><td>Signal depends on one vendor or one fitted threshold</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>A lead-lag study at millisecond horizons requires clock synchronization and latency measurement at least as precise as the claimed lead. If the uncertainty band is larger than the lead, the direction of information arrival is unresolved. Control for multiple offsets and horizons; testing each one until a peak appears is data snooping.</p>
+  <div class="gb-caution"><strong>Execution friction is part of the hypothesis</strong><p>A two-leg strategy can face different counterparties, funding conventions, margin systems, holidays, and value dates. A one-leg &ldquo;catch-up&rdquo; strategy is exposed to the common GBP/USD move. Backtests must model the actual accessible products, not an ideal institutional spot midpoint.</p></div>
+</section>
+
+<section class="gb-section" id="gate" aria-labelledby="gate-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Four-way decision gate</p>
+    <h2 id="gate-title">Reconcile, Discard, Investigate, or Test&mdash;Never Automatic Trade</h2>
+    <p>End the workflow with the least aggressive action supported by the evidence.</p>
+  </div>
+  <div class="gb-proof-grid">
+    <article class="gb-proof"><h3>Reconcile</h3><p>A known quote, timestamp, contract, or basis difference explains the screen gap. Correct the display or calculation and log the cause.</p></article>
+    <article class="gb-proof is-limit"><h3>Discard</h3><p>Data integrity, market state, or clock uncertainty prevents a defensible comparison. Mark the episode unavailable; do not impute a price.</p></article>
+    <article class="gb-proof"><h3>Investigate</h3><p>A residual remains but is inside the friction or model-uncertainty band. Monitor more venues, forward points, spreads, and feed health.</p></article>
+    <article class="gb-proof is-limit"><h3>Test</h3><p>A clean residual exceeds frozen gates. Add it to the complete event sample and wait for out-of-sample evidence before any live rule.</p></article>
+  </div>
+  <div class="gb-caution"><strong>Research status</strong><p>No original synchronized dataset, residual distribution, threshold, lead-lag estimate, basis trade, backtest or live result is reported here. The illustrative two-screen prices are fabricated for explanation, not current observations or signals. A future claim must disclose feeds, timestamp semantics, clock error, basis construction, event counts, exclusions, search space, holdout and complete execution costs.</p></div>
+</section>
+
+<details class="gb-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+  <li><a href="https://www.cmegroup.com/education/courses/introduction-to-fx/importance-of-fx-futures-pricing-and-basis" target="_blank" rel="noopener">CME Group guide to FX futures pricing and basis</a> for spot, interest-differential, time-to-expiry, and convergence mechanics.</li>
+  <li><a href="https://www.cmegroup.com/education/lessons/fx-link-what-is-it" target="_blank" rel="noopener">CME Group FX Link documentation</a> for futures-minus-spot basis quotation and the GBP/USD pair.</li>
+  <li><a href="https://www.cmegroup.com/education/lessons/british-pound-product-overview" target="_blank" rel="noopener">CME Group British Pound product overview</a> for standard 6B contract identity and quotation.</li>
+  <li><a href="https://www.bis.org/statistics/rpfx25_fx.pdf" target="_blank" rel="noopener">BIS 2025 Triennial Central Bank Survey of OTC foreign-exchange turnover</a> for the fragmented OTC market context.</li>
+  <li><a href="https://cmegroupclientsite.atlassian.net/wiki/spaces/EPICSANDBOX/pages/457222936/" target="_blank" rel="noopener">CME Group MDP 3.0 dissemination documentation</a> for futures bid, ask, trade, event-time, and recovery data.</li>
+</ul><p>Sources and time-sensitive facts were reviewed August 13, 2026. This is original, unsponsored editorial analysis.</p></details>
+<aside class="gb-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This article is educational and is not individualized trading, investment, legal, tax, hedging, funding, or brokerage advice. Currency futures and leveraged spot products can lose more than the initial deposit. Data feeds can be delayed or wrong, basis can change, and two-leg trades add funding, margin, settlement, and leg risk. Verify the instruments, live executable prices, data integrity, current basis, margin, and loss limits before acting.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

@@ -1,250 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Read 6B Order Flow for Clean Entries</title>
-  <meta name="description" content="A no-bullshit guide to reading 6B British Pound futures order flow so you can time entries with precision instead of guessing.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/how-to-read-6b-order-flow-for-clean-entries.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="How to Read 6B Order Flow for Clean Entries">
-  <meta property="og:description" content="A no-bullshit guide to reading 6B British Pound futures order flow so you can time entries with precision instead of guessing.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/how-to-read-6b-order-flow-for-clean-entries.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="How to Read 6B Order Flow for Clean Entries">
-  <meta name="twitter:description" content="A no-bullshit guide to reading 6B British Pound futures order flow so you can time entries with precision instead of guessing.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How to Read 6B Order Flow for Clean Entries",
-  "description": "A no-bullshit guide to reading 6B British Pound futures order flow so you can time entries with precision instead of guessing.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/how-to-read-6b-order-flow-for-clean-entries.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/how-to-read-6b-order-flow-for-clean-entries.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How to Read 6B Order Flow for Clean Entries",
-      "item": "https://grizzlyparrottrading.com/futures-basics/how-to-read-6b-order-flow-for-clean-entries.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <meta charset="UTF-8"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>How to Read 6B Order Flow Without Overclaiming</title>
+  <meta name="description" content="Read CME 6B trades, footprint, delta and depth with the right data gates, a level-first decision tree, invalidation, replay and clear OTC FX limits.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/how-to-read-6b-order-flow-for-clean-entries.html">
+  <meta property="og:title" content="How to Read 6B Order Flow Without Overclaiming"><meta property="og:description" content="A practical guide to what centralized CME British Pound futures order flow observes, what it misses and how to use it in a falsifiable entry process."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/how-to-read-6b-order-flow-for-clean-entries.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-13">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Read CME 6B Order Flow in Context"><meta name="twitter:description" content="Know the feed, anchor the level, classify the observation, define failure and replay the exact decision."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="6b-research-library.css?v=20260813a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Read 6B Order Flow Without Pretending It Sees the Whole Pound Market","description":"Read CME 6B trades, footprint, delta and depth with the right data gates, a level-first decision tree, invalidation, replay and clear OTC FX limits.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/how-to-read-6b-order-flow-for-clean-entries.html"},"datePublished":"2025-11-24","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/how-to-read-6b-order-flow-for-clean-entries.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"How to Read 6B Order Flow","item":"https://grizzlyparrottrading.com/futures-basics/how-to-read-6b-order-flow-for-clean-entries.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container sterling-library"><article>
 <!-- ARTICLE BODY START -->
+<header class="gb-hero">
+  <div class="gb-hero-copy"><p class="gb-kicker">Execution evidence &middot; venue-bounded</p><h1>How to Read 6B Order Flow Without Pretending It Sees the Whole Pound Market</h1><p class="gb-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p><p class="gb-hero-lede">6B order flow is a venue-bounded record of eligible CME futures trades and entitled quote or depth updates. Time and sales, footprints, delta, DOM and profiles transform that record in different ways. Their practical job is to answer a predeclared question at a predeclared futures level.</p><div class="gb-hero-actions"><a class="button-primary" href="#field-of-view">Define the field of view</a><a class="gb-text-link" href="#decision-tree">Use the decision tree</a></div></div>
+  <div class="gb-hero-visual"><div class="gb-market-board"><div class="gb-board-head"><span>Field of view</span><strong>CME 6B only</strong></div><div class="gb-proof"><strong>Can observe</strong><span>Eligible CME futures trades and entitled quote/depth events.</span></div><div class="gb-proof is-limit"><strong>Cannot observe</strong><span>The complete OTC GBP/USD market, hidden motives or guaranteed future liquidity.</span></div><div class="gb-proof"><strong>Valid use</strong><span>Testable evidence at a predeclared futures level.</span></div><p class="gb-board-foot"><span>Venue-specific</span><span>Data-method specific</span></p></div></div>
+</header>
+<nav class="gb-jump-nav" aria-label="On this page"><a href="#field-of-view">Field of view</a><a href="#inputs">Data inputs</a><a href="#tools">Tools</a><a href="#observations">Observations</a><a href="#decision-tree">Decision tree</a><a href="#example">Example</a><a href="#replay">Replay</a></nav>
 
-<h1>How to Read 6B Order Flow for Clean Entries</h1>
-
-<p>6B order flow tells you where real buyers and sellers are sitting. If you can read imbalance, absorption, and delta shifts, you can time entries with precision instead of getting faked out. Most traders stare at candles when they should be watching where volume actually trades.</p>
-
-<h2>The Three Pillars of 6B Order Flow</h2>
-<p>Every clean entry in 6B is supported by at least one of these:</p>
-
-<ul>
-  <li><strong>Imbalance</strong> — aggressive buying or selling pressure</li>
-  <li><strong>Absorption</strong> — big players absorbing opposite orders</li>
-  <li><strong>Delta shifts</strong> — buyers or sellers taking control</li>
-</ul>
-
-<p>These mechanics match the structure principles laid out in the <a href="https://grizzlyparrottrading.com/market-basics/market-structure-breaks-spotting-shifts-in-control.html">market structure breaks guide</a>.</p>
-
-<h2>Imbalance: The Easiest Signal to Read</h2>
-<p>Imbalance shows where one side overwhelms the other. In 6B, the best entries often come right after a strong imbalance prints and price pulls back into that zone.</p>
-
-<h3>What clean imbalance looks like:</h3>
-<ul>
-  <li>3+ stacked bid or ask imbalances</li>
-  <li>Fast expansion candle</li>
-  <li>Reduced counter-trade volume</li>
-</ul>
-
-<h2>Absorption: The Hidden Clue</h2>
-<p>Absorption shows where large traders are grabbing liquidity without moving price. You see heavy volume hitting one side, but price barely moves. That’s a warning the next move will be strong.</p>
-
-<ul>
-  <li>Absorption at highs → likely reversal</li>
-  <li>Absorption at lows → potential squeeze</li>
-</ul>
-
-<h2>Delta Shifts: The Takeover Signal</h2>
-<p>Delta shows who is winning the battle. A sudden flip in delta often marks the exact moment control changes hands.</p>
-
-<table>
-  <tr>
-    <th>Delta Behavior</th>
-    <th>Signal</th>
-  </tr>
-  <tr>
-    <td>Rising delta in a pullback</td>
-    <td>Buyers defending the dip</td>
-  </tr>
-  <tr>
-    <td>Falling delta into highs</td>
-    <td>Weak breakout / fakeout risk</td>
-  </tr>
-  <tr>
-    <td>Delta reversal at a key level</td>
-    <td>Trend shift</td>
-  </tr>
-</table>
-
-<h2>How to Combine Order Flow with Levels</h2>
-<p>Order flow only matters when price is at a meaningful level — prior day high/low, session extremes, or structural pivot points. Order flow confirms the reaction.</p>
-
-<ul>
-  <li><strong>See imbalance at a key level?</strong> → high-probability breakout.</li>
-  <li><strong>See absorption?</strong> → likely reversal.</li>
-  <li><strong>See delta shift?</strong> → momentum is switching.</li>
-</ul>
-
-<h2>The Best Order Flow Setup in 6B</h2>
-<p>The highest-probability setup looks like this:</p>
-
-<ol>
-  <li>Price taps a key level</li>
-  <li>Absorption appears</li>
-  <li>Delta shifts in the opposite direction</li>
-  <li>Imbalance prints to confirm</li>
-</ol>
-
-<p>When all three align, the move hits fast.</p>
-
-<div class="highlight-box green">
-  <h3>Order Flow Turns Noise Into Signal</h3>
-  <p>In 6B, watching order flow — imbalance, absorption, and delta shifts — reveals intent before the candle confirms it. It’s not about predicting the move, it’s about seeing it form in real time. This is how experienced futures traders cut down on guessing and start timing entries with precision.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="gb-section" id="field-of-view" aria-labelledby="field-of-view-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Centralized futures, fragmented spot</p><h2 id="field-of-view-title">CME Futures Data Defines the 6B Field of View</h2><p>CME 6B is an exchange-traded GBP/USD futures contract with a central limit order book and CME Clearing. By contrast, the BIS describes spot and most FX derivatives as OTC, decentralized and fragmented across dealers, customers and venues. CFTC guidance likewise distinguishes regulated exchange-traded currency futures from off-exchange retail forex.</p></div>
+  <div class="gb-table-scroll" role="region" aria-label="CME futures and OTC foreign exchange field of view" tabindex="0"><table class="gb-table"><thead><tr><th scope="col">Question</th><th scope="col">CME 6B data can answer</th><th scope="col">It cannot establish</th></tr></thead><tbody>
+    <tr><th scope="row">What traded?</th><td>Price, time and size of trades represented in the entitled CME feed</td><td>Every GBP/USD trade across banks, dealers, platforms and internal pools</td></tr>
+    <tr><th scope="row">What was displayed?</th><td>Entitled levels or orders in the CME futures book, depending on feed type</td><td>All undisplayed interest, OTC quotes or future willingness to trade</td></tr>
+    <tr><th scope="row">Who initiated?</th><td>A documented or vendor-derived classification can label trades relative to quotes</td><td>Participant identity, motive, hedge relationship or ultimate risk transfer</td></tr>
+    <tr><th scope="row">What does delta mean?</th><td>Difference between volumes assigned to two aggressor categories under one method</td><td>Net global GBP demand, open-position change or a directional guarantee</td></tr>
+    <tr><th scope="row">Will liquidity remain?</th><td>Current and historical displayed/printed conditions can be measured</td><td>That resting size will not cancel or that a stop will fill at its trigger</td></tr>
+  </tbody></table></div>
+  <div class="gb-caution"><strong>Do not merge unlike feeds</strong><p>A spot GBP/USD quote can help check broad price alignment, but it is not the order book that generated the 6B footprint. Label every panel by venue, instrument, contract month, feed and timestamp.</p></div>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="gb-section" id="inputs" aria-labelledby="inputs-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Data prerequisites</p><h2 id="inputs-title">Feed Scope and Classification Define Every Display</h2><p>Before reading a single imbalance, document what arrived from the exchange and what the platform derived. A screenshot without those details cannot be reproduced.</p></div>
+  <div class="gb-check-grid">
+    <article><strong>Exact security</strong><p>Dated 6B or M6B month, exchange code and roll state. Never aggregate two expiries as one tape without declaring it.</p></article>
+    <article><strong>Feed scope</strong><p>Top of book, market by price or market by order; real time versus delayed; direct versus redistributed.</p></article>
+    <article><strong>Sequence integrity</strong><p>Session reset, packet/sequence gaps, reconnects, duplicates and corrections are detected and logged.</p></article>
+    <article><strong>Clock integrity</strong><p>Exchange and local timestamps, timezone, daylight-saving handling and synchronization tolerance are known.</p></article>
+    <article><strong>Trade classification</strong><p>The method for assigning bid/ask or buyer/seller initiation is documented, including unclassified prints.</p></article>
+    <article><strong>Historical equivalence</strong><p>Replay contains the same depth, messages and transformations the live decision used.</p></article>
   </div>
-</footer>
-</body>
-</html>
+  <div class="gb-proof-grid" style="margin-top:1.25rem"><div class="gb-proof"><h3>Exchange-origin fields</h3><ul><li>Security identity and contract month.</li><li>Trade and quote/depth messages in the subscribed feed.</li><li>Exchange sequence and event semantics defined by CME.</li><li>Official settlement and contract rules.</li></ul></div><div class="gb-proof is-limit"><h3>Platform-derived fields</h3><ul><li>Footprint bar boundaries and diagonal imbalance rules.</li><li>Aggressor-side classification when inferred.</li><li>Cumulative-delta reset and filtering.</li><li>Absorption, exhaustion and divergence labels.</li></ul></div></div>
+</section>
+
+<section class="gb-section" id="tools" aria-labelledby="tools-title">
+  <div class="gb-section-heading"><p class="gb-kicker">What each display represents</p><h2 id="tools-title">Each Order-Flow Display Answers a Specific Question</h2><p>No display earns a directional interpretation by itself. Each is an aggregation with a scope, reset and failure mode.</p></div>
+  <div class="gb-table-scroll" role="region" aria-label="6B order flow tool definitions and limits" tabindex="0"><table class="gb-table"><thead><tr><th scope="col">Display</th><th scope="col">Calculation or content</th><th scope="col">Useful question</th><th scope="col">Invalid shortcut</th></tr></thead><tbody>
+    <tr><th scope="row">Time and sales</th><td>Chronological trade price, time and size, plus any fields supplied by the feed/report</td><td>Did eligible trading actually occur through the level?</td><td>Every large print is informed directional intent</td></tr>
+    <tr><th scope="row">Footprint</th><td>Executed volume grouped by bar, price and chosen side classification</td><td>Where did classified aggressive activity cluster?</td><td>A highlighted cell predicts continuation</td></tr>
+    <tr><th scope="row">Bar delta</th><td>Classified ask volume minus classified bid volume for one bar/window</td><td>Was classified aggression one-sided within this window?</td><td>Negative delta means new shorts or positive delta means new longs</td></tr>
+    <tr><th scope="row">Cumulative delta</th><td>Running sum of the chosen delta series from a declared reset</td><td>Is price moving with or against persistent classified aggression?</td><td>A divergence has one universal interpretation</td></tr>
+    <tr><th scope="row">Depth/DOM</th><td>Currently displayed resting quantity at entitled CME price levels</td><td>What liquidity is visible now and how does it change?</td><td>Displayed size is committed to remain</td></tr>
+    <tr><th scope="row">Volume profile</th><td>Executed CME futures volume grouped by price over a chosen sample</td><td>Where did this venue transact most or least in the sample?</td><td>Profile nodes represent the global OTC market</td></tr>
+    <tr><th scope="row">Open interest</th><td>Outstanding contracts under exchange reporting conventions</td><td>How much open exposure remains at the reporting point?</td><td>Intraday trade direction or buyer-versus-seller dominance</td></tr>
+  </tbody></table></div>
+  <div class="gb-method" style="margin-top:1.25rem"><div><h3>Delta arithmetic is simple; meaning is conditional</h3><p>If a hypothetical window contains 1,840 contracts classified at the ask and 2,110 at the bid, displayed delta is <strong>1,840 - 2,110 = -270</strong>. That is a fact about the platform's classification and window. It does not say 270 net contracts were newly short, because every futures trade has both a buyer and seller.</p></div><dl><div><dt>Ask-classified</dt><dd>1,840</dd></div><div><dt>Bid-classified</dt><dd>2,110</dd></div><div><dt>Window delta</dt><dd>-270</dd></div><div><dt>Global GBP flow</dt><dd>Unknown</dd></div></dl></div>
+</section>
+
+<section class="gb-section" id="observations" aria-labelledby="observations-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Tool-specific readings</p><h2 id="observations-title">Four Displays Produce Four Different Evidence Records</h2><p>At a predeclared level, record the tool&rsquo;s native measurement before combining displays. These examples show what each tool contributes to a level-first decision without turning the display into a participant-intent claim.</p></div>
+  <div class="gb-atlas">
+    <article class="gb-event-card"><div class="gb-event-head"><h3>Time and sales</h3><strong>Trade sequence</strong></div><div class="gb-event-metrics"><div><span>Question</span><strong>Did trades cross?</strong></div><div><span>Record</span><strong>Price, time, size</strong></div><div><span>Window</span><strong>Level contact onward</strong></div><div><span>Next</span><strong>Acceptance clock</strong></div></div></article>
+    <article class="gb-event-card"><div class="gb-event-head"><h3>Footprint</h3><strong>Price-by-side volume</strong></div><div class="gb-event-metrics"><div><span>Question</span><strong>Where clustered?</strong></div><div><span>Record</span><strong>Cells and bar rule</strong></div><div><span>Scope</span><strong>Completed bar</strong></div><div><span>Next</span><strong>Price response</strong></div></div></article>
+    <article class="gb-event-card"><div class="gb-event-head"><h3>Depth / DOM</h3><strong>Displayed book now</strong></div><div class="gb-event-metrics"><div><span>Question</span><strong>What is quoted?</strong></div><div><span>Record</span><strong>Updates by level</strong></div><div><span>Scope</span><strong>Entitled depth</strong></div><div><span>Limit</span><strong>Can cancel</strong></div></div></article>
+    <article class="gb-event-card"><div class="gb-event-head"><h3>Volume profile</h3><strong>Executed-volume map</strong></div><div class="gb-event-metrics"><div><span>Question</span><strong>Where transacted?</strong></div><div><span>Record</span><strong>Sample and prices</strong></div><div><span>Use</span><strong>Context level</strong></div><div><span>Next</span><strong>Live tape test</strong></div></div></article>
+  </div>
+  <div class="gb-related">When the question changes from what a tool recorded to why a sweep reversed or whether a trap mechanism is repeatable, hand the event to <a href="common-liquidity-traps-in-6b-futures.html">the 6B liquidity-trap taxonomy and replay protocol</a>.</div>
+</section>
+
+<section class="gb-section" id="decision-tree" aria-labelledby="decision-tree-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Level first, tape second</p><h2 id="decision-tree-title">Use Order Flow to Answer a Predeclared Question at a Predeclared Level</h2><p>Watching the tape everywhere invites storytelling. Constrain attention to a level and a time window, then require the same sequence every time.</p></div>
+  <div class="gb-process">
+    <article><span>1 &middot; Context</span><h3>Why this level?</h3><p>Source, contract, timestamp and zone width recorded before contact.</p></article>
+    <article><span>2 &middot; Quality</span><h3>Can the feed answer?</h3><p>Entitlement, sequence, clock, spread and event policy pass.</p></article>
+    <article><span>3 &middot; Observation</span><h3>What actually printed?</h3><p>Raw trades/quotes first; derived label and alternative second.</p></article>
+    <article><span>4 &middot; Decision</span><h3>Trigger, failure, size</h3><p>Order only after price confirms; zero size means no trade.</p></article>
+  </div>
+  <div class="gb-table-scroll" role="region" aria-label="Level-first order flow decision branches" tabindex="0"><table class="gb-table"><thead><tr><th scope="col">At the level</th><th scope="col">Branch</th><th scope="col">Permitted response</th><th scope="col">Stand aside when</th></tr></thead><tbody>
+    <tr><th scope="row">Quality passes; trades cross and acceptance completes</th><td>Breakout/continuation candidate</td><td>Use the frozen trigger and invalidation if size fits</td><td>Entry is too extended or spread/slippage budget fails</td></tr>
+    <tr><th scope="row">Aggressive selling prints; price fails to continue lower; response trigger completes</th><td>Absorption/rejection candidate</td><td>Consider the declared counter-move setup</td><td>No response trigger or structural low breaks</td></tr>
+    <tr><th scope="row">Delta diverges but price stays inside noise band</th><td>Unresolved</td><td>Observe until price condition or expiry</td><td>Divergence alone is the only reason</td></tr>
+    <tr><th scope="row">Feed gap, stale book, unknown aggressor logic or wrong month</th><td>Unobservable</td><td>Log data failure; no directional inference</td><td>Always</td></tr>
+  </tbody></table></div>
+</section>
+
+<section class="gb-section" id="example" aria-labelledby="example-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Hypothetical decision record</p><h2 id="example-title">An Absorption Label Does Not Authorize the Entry</h2><p>Suppose a predeclared standard 6B support zone spans 1.2758-1.2761. Bid-classified volume increases inside the zone while price makes limited downward progress. That is the observation. The working absorption hypothesis remains unconfirmed until price completes the separate response trigger.</p></div>
+  <div class="gb-two-column"><div class="gb-panel"><h3>Evidence packet</h3><ul><li>Dated 6B contract and feed sequence pass.</li><li>Zone existed before contact.</li><li>Spread remains within the written limit.</li><li>Classification method and 60-second window are recorded.</li><li>Price closes back above 1.2764, completing the chosen response trigger.</li><li>Alternative explanation: temporary replenishment or two-way event flow.</li></ul></div><div class="gb-panel"><h3>Risk packet</h3><ul><li>Hypothetical entry reference: 1.2764.</li><li>Structural invalidation: 1.2753.</li><li>Distance: 0.0011 = 11 outright ticks.</li><li>One 6B price risk: 11 &times; $6.25 = $68.75.</li><li>Add costs and adverse-fill allowance before quantity.</li><li>If the complete size calculation exceeds the risk cap, no trade exists.</li></ul></div></div>
+  <div class="gb-caution"><strong>What would falsify the interpretation?</strong><p>Trading through 1.2753 under valid data rejects this specific long setup. It does not prove the participants' motive, and it does not validate the opposite trade. The current 6B/M6B tick math is documented in the <a href="6b-contract-specs-tick-size-and-margin.html">contract specification guide</a>.</p></div>
+</section>
+
+<section class="gb-section" id="replay" aria-labelledby="replay-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Decision provenance</p><h2 id="replay-title">Archive the Feed Transformations Behind Each Decision</h2><p>A finished footprint contains the full bar, so the durable order-flow record preserves the inputs and transformations that were available at decision time.</p></div>
+  <div class="gb-process" aria-label="Order-flow decision archive">
+    <article><span>Raw</span><h3>Preserve source events</h3><p>Security ID, exchange sequence, trades, quotes, depth scope and gap flags.</p></article>
+    <article><span>Derived</span><h3>Version the display</h3><p>Bar boundaries, side classification, filters, delta reset and profile sample.</p></article>
+    <article><span>Decision</span><h3>Store the level-first read</h3><p>Frozen level, tool observation, price trigger, invalidation, expiry and data gate.</p></article>
+    <article><span>Execution</span><h3>Record the actual order</h3><p>Decision-time bid/offer, latency, order type, fills, fees, slippage and no-fill state.</p></article>
+  </div>
+  <div class="gb-related">Neutral sweep reconstruction, rival explanations, matched controls and a failure-code catalog belong to the <a href="common-liquidity-traps-in-6b-futures.html">liquidity-trap replay guide</a>. This page ends at a reproducible tool reading and level-first execution record.</div>
+</section>
+
+<details class="gb-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+  <li><a href="https://www.cmegroup.com/markets/fx/g10/british-pound.contractSpecs.html" target="_blank" rel="noopener">CME British Pound product page</a> for the central-limit-order-book and clearing context.</li>
+  <li><a href="https://www.cmegroup.com/trading/about-time-sales.html" target="_blank" rel="noopener">CME Time &amp; Sales description</a> for the exchange report's trade price, time, size and conditional bid/offer representation.</li>
+  <li><a href="https://www.cmegroup.com/market-data/distributor/market-data-platform.html" target="_blank" rel="noopener">CME Market Data Platform</a> for direct access and MDP 3.0 event-based futures and options market data.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> and <a href="https://www.cmegroup.com/rulebook/CME/III/250/251/251.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 251</a> for current 6B contract mechanics.</li>
+  <li><a href="https://www.bis.org/publ/qtrpdf/r_qt2512v.htm" target="_blank" rel="noopener">BIS analysis of the 2025 FX execution landscape</a> for the decentralized and fragmented structure of spot and most OTC FX derivatives.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CustomerAdvisory_MustKnowForex.html" target="_blank" rel="noopener">CFTC advisory distinguishing exchange-traded currency futures from off-exchange retail forex</a>.</li>
+</ul><p>Sources and contract terms were reviewed August 13, 2026. Footprint, delta, absorption and example rules are editorial definitions whose exact implementation depends on the feed and platform. The hypothetical volumes and prices are not market findings. No order-flow configuration, win rate or return is endorsed.</p></details>
+<aside class="gb-disclaimer" aria-label="Educational and order flow risk disclaimer"><strong>Educational and data-risk disclaimer</strong><p>This article is educational, not individualized trading, investment, data-vendor or brokerage advice. Futures are leveraged and losses can exceed the initial margin deposit. Displayed liquidity can cancel, feeds can fail, classifications can differ and stops can slip. Verify the exact contract, CME rules, data entitlement and transformations, broker policies and risk limits.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

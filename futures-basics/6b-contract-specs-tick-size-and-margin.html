@@ -2,231 +2,275 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6B Contract Specs, Tick Size, and Margin Requirements Explained</title>
-  <meta name="description" content="A direct breakdown of 6B British Pound futures contract specs, tick size, margin requirements, and what these numbers actually mean for your trading.">
+  <title>6B Contract Specs, Tick Value and Margin Limits</title>
+  <meta name="description" content="Verify current CME 6B and M6B units, tick values, P&amp;L math, listed months, expiry, physical delivery and the limits of every margin number.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6b-contract-specs-tick-size-and-margin.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6B Contract Specs, Tick Size, and Margin Requirements Explained">
-  <meta property="og:description" content="A direct breakdown of 6B British Pound futures contract specs, tick size, margin requirements, and what these numbers actually mean for your trading.">
+  <meta property="og:title" content="6B Contract Specs, Tick Value and Margin Limits">
+  <meta property="og:description" content="Current CME 6B and M6B mechanics with exact tick and notional arithmetic, expiry, physical delivery and a clear separation of margin from trade loss.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6b-contract-specs-tick-size-and-margin.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-24">
+  <meta property="article:modified_time" content="2026-08-13">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="6B and M6B Contract Math">
+  <meta name="twitter:description" content="Calculate British Pound futures exposure correctly, then handle changing margin, contract-month and physical-delivery risk.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6B Contract Specs, Tick Size, and Margin Requirements Explained">
-  <meta name="twitter:description" content="A direct breakdown of 6B British Pound futures contract specs, tick size, margin requirements, and what these numbers actually mean for your trading.">
-
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="6b-research-library.css?v=20260813a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"6B Contract Specs, Tick Value and Margin Limits",
+    "description":"Verify current CME 6B and M6B units, tick values, P&L math, listed months, expiry, physical delivery and the limits of every margin number.",
+    "author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},
+    "publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6b-contract-specs-tick-size-and-margin.html"},
+    "datePublished":"2025-11-24",
+    "dateModified":"2026-08-13",
+    "url":"https://grizzlyparrottrading.com/futures-basics/6b-contract-specs-tick-size-and-margin.html",
+    "image":"https://grizzlyparrottrading.com/OG-default.png",
+    "inLanguage":"en-US"
+  }
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6B Contract Specs, Tick Size, and Margin Requirements Explained",
-  "description": "A direct breakdown of 6B British Pound futures contract specs, tick size, margin requirements, and what these numbers actually mean for your trading.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6b-contract-specs-tick-size-and-margin.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6b-contract-specs-tick-size-and-margin.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},
+    {"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},
+    {"@type":"ListItem","position":3,"name":"6B Contract Specs, Tick Value and Margin Limits","item":"https://grizzlyparrottrading.com/futures-basics/6b-contract-specs-tick-size-and-margin.html"}
+  ]}
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6B Contract Specs, Tick Size, and Margin Requirements Explained",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6b-contract-specs-tick-size-and-margin.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is one standard 6B tick worth?","acceptedAnswer":{"@type":"Answer","text":"CME's 2026 FX Product Guide and Rulebook Chapter 251 specify a 62,500 GBP contract and a 0.0001 USD-per-GBP outright Globex increment. Multiplying them gives $6.25 per tick."}},
+    {"@type":"Question","name":"What is one Micro M6B tick worth?","acceptedAnswer":{"@type":"Answer","text":"M6B represents 6,250 GBP and its minimum price fluctuation is 0.0001 USD per GBP, so one tick is $0.625 per contract."}},
+    {"@type":"Question","name":"Is broker day margin the maximum loss on 6B?","acceptedAnswer":{"@type":"Answer","text":"No. Exchange performance bond and broker margin are collateral requirements, not loss limits. Actual loss depends on price movement, size, costs, slippage, gaps and liquidation outcomes, and can exceed the initial deposit."}},
+    {"@type":"Question","name":"Are 6B and M6B cash settled?","acceptedAnswer":{"@type":"Answer","text":"No. CME currently classifies both standard 6B and Micro M6B as physically settled. Traders who do not intend delivery must close or roll before applicable exchange and broker deadlines."}},
+    {"@type":"Question","name":"Do ten M6B contracts equal one 6B contract?","acceptedAnswer":{"@type":"Answer","text":"They equal one standard contract's GBP unit and directional price exposure: ten times 6,250 GBP equals 62,500 GBP. Execution costs, book depth, fills and broker treatment can still differ."}}
+  ]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container sterling-library">
+<article>
+<!-- ARTICLE BODY START -->
+<header class="gb-hero">
+  <div class="gb-hero-copy">
+    <p class="gb-kicker">Verified contract reference &middot; 6B / M6B</p>
+    <h1>6B Contract Specs, Tick Value and Margin Limits</h1>
+    <p class="gb-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="gb-hero-lede">Standard 6B represents 62,500 British pounds and its normal outright Globex increment is 0.0001 USD/GBP, fixing the tick value at <strong>$6.25</strong>. Micro M6B represents 6,250 GBP and <strong>$0.625</strong> per tick. Margin is a separate, variable collateral requirement; neither tick value nor margin caps a trade&rsquo;s loss.</p>
+    <div class="gb-hero-actions"><a class="button-primary" href="#verified-specs">See verified specs</a><a class="gb-text-link" href="#calculator">Calculate exposure</a></div>
+    <dl class="gb-hero-metrics" aria-label="Standard 6B contract highlights"><div><dt>Unit</dt><dd>62,500 GBP</dd></div><div><dt>Outright tick</dt><dd>0.0001</dd></div><div><dt>Tick value</dt><dd>$6.25</dd></div><div><dt>Settlement</dt><dd>Physical</dd></div></dl>
+  </div>
+  <div class="gb-hero-visual">
+    <div class="gb-market-board">
+      <div class="gb-board-head"><span>Outright Globex math</span><strong>CME 2026 terms</strong></div>
+      <div class="gb-formula"><code>62,500 GBP</code><i aria-hidden="true">&times;</i><code>0.0001 USD/GBP</code></div>
+      <div class="gb-proof"><strong>= $6.25 per 6B tick</strong><span>M6B is one-tenth the unit and one-tenth the tick value.</span></div>
+      <p class="gb-board-foot"><span>Quote: USD per GBP</span><span>Review: 2026-08-13</span></p>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
   </div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="gb-jump-nav" aria-label="On this page"><a href="#verified-specs">Specs</a><a href="#math">P&amp;L math</a><a href="#calculator">Calculator</a><a href="#micro">6B vs M6B</a><a href="#margin">Margin</a><a href="#expiry">Expiry</a><a href="#faq">FAQ</a></nav>
 
-<h1>6B Contract Specs, Tick Size, and Margin Requirements Explained</h1>
-
-<p>If you don’t know the exact specs of 6B British Pound futures, you’re guessing your risk. This contract is simple once you understand how each number affects your position size and how fast the market can move against you.</p>
-
-<h2>6B Contract Specifications</h2>
-<p>Here’s what you’re trading when you trade a single 6B contract:</p>
-
-<table>
-  <tr>
-    <th>Spec</th>
-    <th>Value</th>
-  </tr>
-  <tr>
-    <td>Contract Size</td>
-    <td>£62,500</td>
-  </tr>
-  <tr>
-    <td>Minimum Tick</td>
-    <td>0.0001</td>
-  </tr>
-  <tr>
-    <td>Tick Value</td>
-    <td>$6.25 per tick</td>
-  </tr>
-  <tr>
-    <td>Trading Hours (CME Globex)</td>
-    <td>Sun–Fri, nearly 24 hours</td>
-  </tr>
-</table>
-
-<p>This setup is similar to the rhythm described in <a href="https://grizzlyparrottrading.com/market-basics/market-liquidity-basics.html">market liquidity cycles</a>.</p>
-
-<h2>Tick Size and Why It Matters</h2>
-<p>Every 0.0001 move = $6.25. A full 0.0100 shift in price = 100 ticks = $625.  
-On BOE or CPI days, you can see 6B jump 80–120 ticks in under a minute. If your sizing is sloppy, you’ll get steamrolled instantly.</p>
-
-<h2>Initial Margin vs Maintenance Margin</h2>
-<p>The CME sets baseline margins, but brokers and prop firms tend to adjust these numbers depending on volatility.</p>
-
-<ul>
-  <li><strong>Initial margin</strong> — upfront capital required to enter</li>
-  <li><strong>Maintenance margin</strong> — minimum balance you must keep</li>
-</ul>
-
-<p>Prop firms may treat these differently, which ties into your existing article <a href="https://grizzlyparrottrading.com/prop-firm-trading/policy-change-frequency.html">margin policy differences</a>.</p>
-
-<h2>How to Size Positions in 6B</h2>
-<p>The math is straightforward:</p>
-
-<ul>
-  <li>1 tick = $6.25</li>
-  <li>10 ticks = $62.50</li>
-  <li>20 ticks = $125</li>
-  <li>40 ticks = $250</li>
-</ul>
-
-<p>Most clean intraday moves run 20–40 ticks before pulling back. If a 40-tick stop feels too large for you, you’re trading too big.</p>
-
-<div class="highlight-box green">
-  <h3>6B Contracts Have Clear Specs</h3>
-  <p>The 6B market features a £62,500 contract size, $6.25 tick value, and moderate margin requirements. These parameters define how the market behaves and how price moves within its structure.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="gb-section" id="verified-specs" aria-labelledby="verified-specs-title">
+  <div class="gb-section-heading"><p class="gb-kicker">The contract card</p><h2 id="verified-specs-title">Contract Units and Outright Increments Fix the Tick Values</h2><p>CME's 2026 FX Product Guide and governing rule chapters agree on the standard and micro units, outright increments and physical settlement. Standard 6B also has smaller permitted increments for specific calendar-spread and ClearPort transactions; those are not the minimum increment for a normal outright Globex order.</p></div>
+  <div class="gb-table-scroll" role="region" aria-label="Current 6B and M6B contract specifications" tabindex="0">
+    <table class="gb-table">
+      <thead><tr><th scope="col">Term</th><th scope="col">Standard 6B</th><th scope="col">Micro M6B</th><th scope="col">What it means</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Governing rule chapter</th><td>CME Chapter 251</td><td>CME Chapter 290</td><td>The rulebook, not a broker symbol description, governs the contract</td></tr>
+        <tr><th scope="row">Globex code</th><td>6B</td><td>M6B</td><td>Month and year codes are appended by the platform</td></tr>
+        <tr><th scope="row">ClearPort code</th><td>BP</td><td>M6B</td><td>Do not assume every venue uses the same display root</td></tr>
+        <tr><th scope="row">Contract unit</th><td>62,500 British pounds</td><td>6,250 British pounds</td><td>M6B is one-tenth of standard 6B's GBP unit</td></tr>
+        <tr><th scope="row">Quotation</th><td>U.S. dollars per British pound</td><td>U.S. dollars per British pound</td><td>A higher quoted price means GBP is stronger versus USD</td></tr>
+        <tr><th scope="row">Outright Globex increment</th><td>0.0001 USD/GBP</td><td>0.0001 USD/GBP</td><td>One conventional GBP/USD pip is one outright tick</td></tr>
+        <tr><th scope="row">Outright tick value</th><td>$6.25</td><td>$0.625</td><td>Unit &times; minimum outright price increment</td></tr>
+        <tr><th scope="row">Other listed increments</th><td>0.000025 for qualifying intra-currency spreads; 0.00001 through ClearPort</td><td>0.0001 for spreads and ClearPort in the 2026 guide</td><td>Order context determines which increment applies</td></tr>
+        <tr><th scope="row">Final settlement</th><td>Physical delivery</td><td>Physical delivery</td><td>Neither product is a cash-settled retail proxy</td></tr>
+      </tbody>
+    </table>
   </div>
-</footer>
+  <div class="gb-caution"><strong>Platform precision is not contract precision</strong><p>A chart or data vendor may display extra decimal places. That does not turn every displayed increment into a tradeable outright tick. Confirm the order type, venue and contract in the CME guide and your platform.</p></div>
+</section>
+
+<section class="gb-section" id="math" aria-labelledby="math-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Price, ticks and dollars</p><h2 id="math-title">Three Equivalent P&amp;L Calculations Should Reconcile</h2><p>For a long position, theoretical gross P&amp;L equals <code>(exit price - entry price) &times; contract unit &times; contracts</code>. Reverse the sign for a short. Tick arithmetic should reach the same result.</p></div>
+  <div class="gb-method">
+    <div><h3>Worked standard 6B example</h3><p>A long entered at 1.2740 and exited at 1.2792. The move is 0.0052 USD/GBP, or 52 outright ticks. Before costs, <strong>0.0052 &times; 62,500 = $325</strong>. The tick route agrees: <strong>52 &times; $6.25 = $325</strong>.</p></div>
+    <dl><div><dt>Price move</dt><dd>0.0052</dd></div><div><dt>Outright ticks</dt><dd>52</dd></div><div><dt>Gross P&amp;L</dt><dd>$325</dd></div></dl>
+  </div>
+  <div class="gb-two-column">
+    <div class="gb-panel"><h3>Notional is price dependent</h3><p>At 1.3500, one standard contract represents <strong>62,500 GBP &times; 1.3500 = $84,375</strong> of notional currency exposure. One M6B represents <strong>$8,437.50</strong>. Notional changes with the futures price; the tick value does not change while contract terms remain unchanged.</p></div>
+    <div class="gb-panel"><h3>A stop estimate is not a loss guarantee</h3><p>A 23-tick planned stop is $143.75 per standard contract or $14.375 per micro before commissions and fees. A stop order can fill beyond its trigger, especially through a gap or thin book, so actual loss can be larger.</p></div>
+  </div>
+  <div class="gb-table-scroll" role="region" aria-label="6B and M6B price move examples" tabindex="0">
+    <table class="gb-table">
+      <thead><tr><th scope="col">Price move</th><th scope="col">Outright ticks</th><th scope="col">One 6B</th><th scope="col">One M6B</th></tr></thead>
+      <tbody><tr><th scope="row">0.0001</th><td>1</td><td>$6.25</td><td>$0.625</td></tr><tr><th scope="row">0.0010</th><td>10</td><td>$62.50</td><td>$6.25</td></tr><tr><th scope="row">0.0025</th><td>25</td><td>$156.25</td><td>$15.625</td></tr><tr><th scope="row">0.0100</th><td>100</td><td>$625</td><td>$62.50</td></tr></tbody>
+    </table>
+  </div>
+  <p class="gb-source-note">The examples are exact arithmetic from the exchange unit and outright tick. They are not forecasts and exclude commissions, exchange and data fees, bid-ask spread, slippage and any broker liquidation charge.</p>
+</section>
+
+<section class="gb-section" id="calculator" aria-labelledby="calculator-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Transparent calculator</p><h2 id="calculator-title">Reconcile Price Change, Tick Count, Notional and Gross P&amp;L</h2><p>Use this for arithmetic, not for a fill promise. The result assumes the stated entry and exit both fill and applies the current outright terms above.</p></div>
+  <form class="gb-calculator" id="gb-contract-calculator">
+    <div>
+      <div class="gb-fields">
+        <label>Instrument<select id="gb-calc-instrument" name="instrument"><option value="6B">Standard 6B</option><option value="M6B">Micro M6B</option></select></label>
+        <label>Direction<select id="gb-calc-direction" name="direction"><option value="1">Long</option><option value="-1">Short</option></select></label>
+        <label>Entry price<input id="gb-calc-entry" name="entry" type="number" min="0.0001" step="0.0001" value="1.2740" inputmode="decimal" required></label>
+        <label>Exit price<input id="gb-calc-exit" name="exit" type="number" min="0.0001" step="0.0001" value="1.2792" inputmode="decimal" required></label>
+        <label class="gb-field-wide">Number of contracts<input id="gb-calc-quantity" name="quantity" type="number" min="1" step="1" value="1" inputmode="numeric" required></label>
+      </div>
+      <div class="gb-calc-actions"><button class="button-primary" type="submit">Calculate</button><button class="gb-secondary-button" type="reset">Reset example</button></div>
+    </div>
+    <div class="gb-results" aria-live="polite" aria-atomic="true">
+      <h3>Calculated result</h3>
+      <dl><div><dt>Contract unit</dt><dd id="gb-result-unit">62,500 GBP</dd></div><div><dt>Entry notional</dt><dd id="gb-result-notional">$79,625.00</dd></div><div><dt>Raw price ticks</dt><dd id="gb-result-ticks">52</dd></div><div><dt>Gross position P&amp;L</dt><dd id="gb-result-pnl">$325.00</dd></div></dl>
+      <p id="gb-result-note">Before commissions, fees, spread and slippage. Margin is not used in this calculation.</p>
+    </div>
+  </form>
+</section>
+
+<section class="gb-section" id="micro" aria-labelledby="micro-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Choosing the unit</p><h2 id="micro-title">Ten Micros Match One Standard's Price Exposure, Not Its Execution</h2><p>Ten M6B contracts represent 62,500 GBP, so their directional notional and tick exposure match one 6B. That identity does not guarantee the same spread, depth, queue position, commission schedule or fill.</p></div>
+  <div class="gb-check-grid">
+    <article><strong>Granularity benefit</strong><p>M6B lets a trader change exposure in 6,250 GBP steps rather than 62,500 GBP steps.</p></article>
+    <article><strong>Cost tradeoff</strong><p>Ten tickets can incur more total per-contract commissions and fees than one standard ticket.</p></article>
+    <article><strong>Liquidity tradeoff</strong><p>Visible depth and spread must be checked in the exact M6B month; standard 6B liquidity does not transfer automatically.</p></article>
+    <article><strong>Risk expression</strong><p>Smaller tick value can make an objectively placed invalidation fit a risk cap without moving the technical level.</p></article>
+    <article><strong>Broker treatment</strong><p>Broker eligibility, day-margin policy, liquidation rules and delivery cutoff can differ by product and account.</p></article>
+    <article><strong>Net exposure</strong><p>Mixed 6B and M6B positions require signed unit arithmetic. Do not count contracts without accounting for their 10:1 unit ratio.</p></article>
+  </div>
+</section>
+
+<section class="gb-section" id="margin" aria-labelledby="margin-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Collateral is not risk</p><h2 id="margin-title">Exchange Performance Bond, Broker Margin and Trade Loss Are Different</h2><p>CME describes performance bond as collateral intended to support clearing obligations and varies it with product and market volatility. A clearing firm or retail broker can require more, can offer a separate intraday amount, and can change or withdraw that treatment. None is a maximum-loss figure.</p></div>
+  <div class="gb-process" aria-label="Four margin and risk layers">
+    <article><span>Layer 1</span><h3>Exchange methodology</h3><p>CME's risk framework determines portfolio performance-bond requirements and can change.</p></article>
+    <article><span>Layer 2</span><h3>Clearing and broker rules</h3><p>The intermediary can add house requirements, event add-ons and earlier cutoffs.</p></article>
+    <article><span>Layer 3</span><h3>Planned trade risk</h3><p>Invalidation distance &times; tick value &times; quantity, plus an explicit cost and slippage allowance.</p></article>
+    <article><span>Layer 4</span><h3>Tail loss</h3><p>Gaps, rejected orders, thin liquidity and forced liquidation can push loss beyond the plan.</p></article>
+  </div>
+  <div class="gb-proof-grid" style="margin-top:1.25rem">
+    <div class="gb-proof"><h3>What can be verified</h3><ul><li>CME publishes its margin framework and a product-margin resource.</li><li>Initial and maintenance requirements serve different account states.</li><li>Requirements vary with risk and may change.</li><li>Your broker's written policy controls the account-facing requirement.</li></ul></div>
+    <div class="gb-proof is-limit"><h3>What this page will not certify</h3><ul><li>A permanent dollar margin for 6B or M6B.</li><li>A broker's promotional day margin as exchange margin.</li><li>Margin divided by tick value as a safe stop distance.</li><li>Liquidation at the intended stop or at any quoted price.</li></ul></div>
+  </div>
+  <div class="gb-caution"><strong>Why there is no "current margin" number in the spec card</strong><p>CME's FX catalog visible during this review surfaced 6B/M6B margin estimates that it explicitly dated July 1, 2025. That timestamp is stale relative to August 13, 2026, so those estimates are not presented here as current requirements. Check CME's current product-margin tool and the broker's live written requirement immediately before placing an order.</p></div>
+</section>
+
+<section class="gb-section" id="expiry" aria-labelledby="expiry-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Month, termination and delivery</p><h2 id="expiry-title">Match Every Position to Its Dated Contract and Termination Rule</h2><p>Effective for trade date May 11, 2026, CME expanded standard 6B to 20 consecutive March-cycle quarterly contracts plus serial contracts listed for 16 months. That is the current exchange schedule, not the older three-serial-month strip still repeated in stale summaries. M6B's rulebook leaves its scheduled months to the exchange; the exact live micro strip must be read from the current product calendar or bulletin.</p></div>
+  <div class="gb-table-scroll" role="region" aria-label="6B and M6B expiry and delivery rules" tabindex="0">
+    <table class="gb-table">
+      <thead><tr><th scope="col">Question</th><th scope="col">Authoritative rule or current evidence</th><th scope="col">Trader action</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Which month is held?</th><td>The order confirmation must identify a dated futures contract, not a continuous-chart alias</td><td>Record product, month and year before entry</td></tr>
+        <tr><th scope="row">When does trading terminate?</th><td>Chapters 251 and 290: second business day immediately preceding the third Wednesday of the contract month, with stated bank-holiday adjustment</td><td>Calculate from the official calendar and observe any earlier broker cutoff</td></tr>
+        <tr><th scope="row">When is delivery?</th><td>Third Wednesday of the contract month, adjusted to the next qualifying business day when the rule's holiday conditions apply</td><td>Close or roll before the applicable deadline unless approved and operationally prepared for delivery</td></tr>
+        <tr><th scope="row">What is delivered?</th><td>Physical currency: 62,500 GBP per 6B or 6,250 GBP per M6B against the final USD value</td><td>Do not assume the broker permits customer delivery</td></tr>
+        <tr><th scope="row">How is standard 6B's final price formed?</th><td>CME's current delivery page describes a VWAP of Globex trades during the final 30 seconds, 9:15:30-9:16:00 a.m. CT</td><td>Do not model a last screen quote as guaranteed final settlement</td></tr>
+        <tr><th scope="row">Which expiries are live?</th><td>Standard 6B: 20 consecutive quarterly expiries plus 16 serial months under the May 11, 2026 schedule. Chapter 290 says M6B months are determined by the exchange</td><td>Still use the live CME calendar/bulletin, then compare volume, open interest and spread</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ol class="gb-method" style="display:grid;grid-template-columns:1fr;margin-top:1.25rem">
+    <li><strong>Name the contract.</strong> Save the exact root, month and year from the order ticket.</li>
+    <li><strong>Read two clocks.</strong> Check CME termination/delivery dates and the broker's earlier close-out or delivery deadline.</li>
+    <li><strong>Inspect the next month.</strong> Compare spread, depth, volume, open interest and futures-basis difference before rolling.</li>
+    <li><strong>Treat the roll as two trades.</strong> Account for both legs, realized basis and transaction costs.</li>
+    <li><strong>Recalculate risk.</strong> The new contract price, technical invalidation and execution quality can differ.</li>
+  </ol>
+  <div class="gb-related">Continuous-series construction can move historical levels around a roll. The <a href="analyzing-weekly-trends-and-swings-in-6b.html">weekly 6B context workflow</a> explains how to keep dated-contract and continuous-chart evidence separate.</div>
+</section>
+
+<section class="gb-section gb-faq" id="faq" aria-labelledby="faq-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Frequently asked questions</p><h2 id="faq-title">6B and M6B Mechanics: Quick Answers</h2></div>
+  <details><summary>What is one standard 6B tick worth?</summary><p>CME's 2026 FX Product Guide and Rulebook Chapter 251 specify a 62,500 GBP contract and a 0.0001 USD-per-GBP outright Globex increment. Multiplying them gives $6.25 per tick.</p></details>
+  <details><summary>What is one Micro M6B tick worth?</summary><p>M6B represents 6,250 GBP and its minimum price fluctuation is 0.0001 USD per GBP, so one tick is $0.625 per contract.</p></details>
+  <details><summary>Is broker day margin the maximum loss on 6B?</summary><p>No. Exchange performance bond and broker margin are collateral requirements, not loss limits. Actual loss depends on price movement, size, costs, slippage, gaps and liquidation outcomes, and can exceed the initial deposit.</p></details>
+  <details><summary>Are 6B and M6B cash settled?</summary><p>No. CME currently classifies both standard 6B and Micro M6B as physically settled. Traders who do not intend delivery must close or roll before applicable exchange and broker deadlines.</p></details>
+  <details><summary>Do ten M6B contracts equal one 6B contract?</summary><p>They equal one standard contract's GBP unit and directional price exposure: ten times 6,250 GBP equals 62,500 GBP. Execution costs, book depth, fills and broker treatment can still differ.</p></details>
+</section>
+
+<details class="gb-sources"><summary>Sources, verification notes and editorial disclosure</summary><ul>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> for current 6B/M6B units, codes, outright and spread increments, ClearPort increments and physical settlement.</li>
+  <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/251/251.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 251: British Pound Sterling/U.S. Dollar Futures</a> for the standard 6B unit, increments, trading termination and delivery rule.</li>
+  <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/290/290.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 290: Micro GBP/USD Futures</a> for M6B's unit, tick, scheduled-month authority, trading termination and physical delivery.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-delivery.html" target="_blank" rel="noopener">CME FX futures delivery and settlement resource</a> for supported standard GBP expirations, delivery date mechanics and the current standard 6B final-settlement window.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/g10/british-pound.contractSpecs.html" target="_blank" rel="noopener">CME British Pound product page</a> for the current monthly/quarterly product description and central-limit-order-book context.</li>
+  <li><a href="https://www.cmegroup.com/en/notices/electronic-trading/2026/04/20260420.html" target="_blank" rel="noopener">CME Globex Notice dated April 20, 2026</a> for the standard 6B listing-cycle expansion effective for trade date May 11, 2026.</li>
+  <li><a href="https://www.cmegroup.com/daily_bulletin/current/Section06_Currency_Futures.pdf" target="_blank" rel="noopener">CME Daily Bulletin, Currency Futures section</a> for the live listed-contract check; a bulletin snapshot is not a permanent listing rule.</li>
+  <li><a href="https://www.cmegroup.com/solutions/risk-management/performance-bonds-margins.html" target="_blank" rel="noopener">CME performance bonds and margins</a> and <a href="https://www.cmegroup.com/solutions/risk-management/performance-bonds-margins/faq-performance-bonds-margins.html" target="_blank" rel="noopener">CME margin FAQ</a> for collateral purpose, initial/maintenance distinctions and changing requirements.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-futures.html" target="_blank" rel="noopener">CME FX futures catalog</a> for the margin-estimate timestamp disclosed in the margin limitation above.</li>
+</ul><p>Exchange materials and calculations were reviewed August 13, 2026. Tick, notional and P&amp;L examples are transparent arithmetic from the stated exchange terms. No dynamic margin amount, broker policy, performance result or return claim is certified. The live CME rulebook, product calendar, margin system and intermediary terms take precedence. This page is independent editorial work and is not sponsored by CME or a broker.</p></details>
+
+<aside class="gb-disclaimer" aria-label="Educational and futures contract risk disclaimer"><strong>Educational and contract risk disclaimer</strong><p>This article is educational, not individualized trading, investment, legal, tax, accounting, delivery or brokerage advice. Futures are leveraged; losses can exceed the initial margin deposit. Stops can fill worse than expected. 6B and M6B are physically settled expiring contracts. Verify current exchange specifications, the exact contract month, margin requirements, broker cutoff, liquidity and risk limits before placing an order.</p></aside>
+<!-- ARTICLE BODY END -->
+</article>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+<script>
+(function(){
+  var form=document.getElementById('gb-contract-calculator');
+  if(!form){return;}
+  var instrument=document.getElementById('gb-calc-instrument');
+  var direction=document.getElementById('gb-calc-direction');
+  var entry=document.getElementById('gb-calc-entry');
+  var exitPrice=document.getElementById('gb-calc-exit');
+  var quantity=document.getElementById('gb-calc-quantity');
+  var unitOut=document.getElementById('gb-result-unit');
+  var notionalOut=document.getElementById('gb-result-notional');
+  var ticksOut=document.getElementById('gb-result-ticks');
+  var pnlOut=document.getElementById('gb-result-pnl');
+  var noteOut=document.getElementById('gb-result-note');
+  var money=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:3});
+  var integer=new Intl.NumberFormat('en-US',{maximumFractionDigits:0});
+  function calculate(event){
+    if(event){event.preventDefault();}
+    var contractUnit=instrument.value==='M6B'?6250:62500;
+    var entryValue=Number(entry.value);
+    var exitValue=Number(exitPrice.value);
+    var count=Number(quantity.value);
+    var side=Number(direction.value);
+    if(!Number.isFinite(entryValue)||entryValue<=0||!Number.isFinite(exitValue)||exitValue<=0||!Number.isInteger(count)||count<1){
+      noteOut.textContent='Enter positive prices and a whole number of contracts.';
+      return;
+    }
+    var rawTicks=(exitValue-entryValue)/0.0001;
+    var grossPnl=(exitValue-entryValue)*contractUnit*count*side;
+    unitOut.textContent=integer.format(contractUnit)+' GBP each';
+    notionalOut.textContent=money.format(entryValue*contractUnit*count);
+    ticksOut.textContent=rawTicks.toFixed(1).replace(/\.0$/,'');
+    pnlOut.textContent=money.format(grossPnl);
+    noteOut.textContent='Before commissions, fees, spread and slippage. Margin is not used in this calculation.';
+  }
+  form.addEventListener('submit',calculate);
+  form.addEventListener('reset',function(){window.setTimeout(calculate,0);});
+  instrument.addEventListener('change',calculate);
+  direction.addEventListener('change',calculate);
+  calculate();
+}());
+</script>
 </body>
 </html>

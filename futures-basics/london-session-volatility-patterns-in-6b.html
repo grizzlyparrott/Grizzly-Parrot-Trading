@@ -2,248 +2,191 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>London Session Volatility Patterns in 6B Futures</title>
-  <meta name="description" content="Learn the exact volatility patterns 6B British Pound futures show during the London session and how to trade the moves without getting chopped up.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/london-session-volatility-patterns-in-6b.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="London Session Volatility Patterns in 6B Futures">
-  <meta property="og:description" content="Learn the exact volatility patterns 6B British Pound futures show during the London session and how to trade the moves without getting chopped up.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/london-session-volatility-patterns-in-6b.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="London Session Volatility Patterns in 6B Futures">
-  <meta name="twitter:description" content="Learn the exact volatility patterns 6B British Pound futures show during the London session and how to trade the moves without getting chopped up.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "London Session Volatility Patterns in 6B Futures",
-  "description": "Learn the exact volatility patterns 6B British Pound futures show during the London session and how to trade the moves without getting chopped up.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/london-session-volatility-patterns-in-6b.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/london-session-volatility-patterns-in-6b.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "London Session Volatility Patterns in 6B Futures",
-      "item": "https://grizzlyparrottrading.com/futures-basics/london-session-volatility-patterns-in-6b.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>London-Window Volatility in 6B: A Session Study</title>
+  <meta name="description" content="Study 6B volatility from 07:00 to 11:00 Europe/London with DST-safe clocks, minute data, event controls, regime splits, and execution measures.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/london-session-volatility-patterns-in-6b.html">
+  <meta property="og:title" content="London-Window Volatility in 6B: A Session Study"><meta property="og:description" content="A reproducible method for testing British Pound futures behavior in a defined London-morning window without claiming a universal session pattern."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/london-session-volatility-patterns-in-6b.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-13">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Study 6B&rsquo;s London-Morning Window"><meta name="twitter:description" content="Freeze the clock, sample, metrics, controls, and execution assumptions before testing."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="6b-research-library.css?v=20260813a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"London-Window Volatility in 6B: A Session Study","description":"Study 6B volatility from 07:00 to 11:00 Europe/London with DST-safe clocks, minute data, event controls, regime splits, and execution measures.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/london-session-volatility-patterns-in-6b.html"},"datePublished":"2025-11-24","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/london-session-volatility-patterns-in-6b.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"London-Window Volatility in 6B","item":"https://grizzlyparrottrading.com/futures-basics/london-session-volatility-patterns-in-6b.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container sterling-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="gb-hero">
+  <div class="gb-hero-copy">
+    <p class="gb-kicker">Timezone integrity &middot; minute sample &middot; matched controls</p>
+    <h1>London-Window Volatility in 6B: A Session Study</h1>
+    <p class="gb-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="gb-hero-lede">This study fixes the primary window at 07:00 through 10:59:59 in <code>Europe/London</code>. It maps to 07:00&ndash;11:00 UTC under GMT and 06:00&ndash;10:00 UTC under BST, keeping the same London labels while the UTC offset changes. Each minute therefore carries its local label, UTC timestamp and active offset.</p>
+    <div class="gb-hero-actions"><a class="button-primary" href="#clock">Define the clock</a><a class="gb-text-link" href="#protocol">Follow the protocol</a></div>
+  </div>
+  <div class="gb-hero-visual">
+    <div class="gb-market-board" aria-label="London-window study definition">
+      <div class="gb-board-head"><span>Primary research window</span><strong>Not an exchange session</strong></div>
+      <dl class="gb-hero-metrics">
+        <div><dt>Local start</dt><dd>07:00</dd></div><div><dt>Local end</dt><dd>11:00</dd></div>
+        <div><dt>Timezone</dt><dd>Europe/London</dd></div><div><dt>Data</dt><dd>Dated 6B</dd></div>
+      </dl>
+      <p class="gb-board-foot"><span>Four local hours</span><span>Protocol, not finding</span></p>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
   </div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="gb-jump-nav" aria-label="On this page"><a href="#clock">Clock</a><a href="#sample">Sample</a><a href="#metrics">Metrics</a><a href="#calendar">Calendar</a><a href="#regimes">Regimes</a><a href="#execution">Execution</a><a href="#protocol">Protocol</a></nav>
 
-<h1>London Session Volatility Patterns in 6B Futures</h1>
-
-<p>The London session is where 6B British Pound futures actually wake up. If you’re only watching the U.S. session, you’re missing the cleanest directional moves this contract offers. London liquidity brings range expansion, breakouts, and plenty of fakeouts if you’re not paying attention.</p>
-
-<h2>Why the London Session Moves 6B So Aggressively</h2>
-<p>London is the core hub for GBP liquidity. Major banks, money markets, and the BOE all operate during London hours, so volume explodes. This often resets whatever chop happened overnight and establishes the day’s real direction.</p>
-
-
-<h2>The Three Phases of London Volatility</h2>
-
-<h3>1. London Open (first 15–30 minutes)</h3>
-<p>This is pure expansion. Stops get cleared on both sides as liquidity providers reset books. Expect:</p>
-<ul>
-  <li>Fast spikes</li>
-  <li>Whipsaw candles</li>
-  <li>False breakouts</li>
-</ul>
-
-<h3>2. Trend Establishment Window</h3>
-<p>After the opening chaos, 6B usually reveals its hand. This is when:</p>
-<ul>
-  <li>A clear higher-high or lower-low forms</li>
-  <li>Volume stabilizes</li>
-  <li>Direction aligns with UK macro expectations</li>
-</ul>
-
-<p>This behavior mirrors what you documented in <a href="https://grizzlyparrottrading.com/market-basics/market-structure-breaks-spotting-shifts-in-control.html">Market Structure Breaks: Spotting Shifts in Control</a>.</p>
-
-<h3>3. Pre-NY Overlap Slowdown</h3>
-<p>Volatility contracts as London winds down. Retracements form here before New York pushes a second wave. Avoid overtrading this chop.</p>
-
-<h2>Key Levels That Matter in London</h2>
-<p>These levels consistently act as magnets during the London expansion:</p>
-
-<ul>
-  <li><strong>Asian session high/low</strong></li>
-  <li><strong>Previous London session close</strong></li>
-  <li><strong>Liquidity pockets left from the prior day</strong></li>
-  <li><strong>Major UK news release times</strong></li>
-</ul>
-
-<table>
-  <tr>
-    <th>Level Type</th>
-    <th>Impact on 6B</th>
-  </tr>
-  <tr>
-    <td>Asian high</td>
-    <td>Often swept at London open</td>
-  </tr>
-  <tr>
-    <td>Asian low</td>
-    <td>Same story — stop-hunt zone</td>
-  </tr>
-  <tr>
-    <td>Prior London close</td>
-    <td>Directional reclaim or rejection</td>
-  </tr>
-</table>
-
-<h2>Typical London-Session Setups in 6B</h2>
-<p>Three patterns show up almost every day:</p>
-
-<ul>
-  <li><strong>Stop-clearing spike → real move begins</strong></li>
-  <li><strong>Break of Asian range → trend continuation</strong></li>
-  <li><strong>Strong London push → retrace → NY continuation</strong></li>
-</ul>
-
-<p>These behaviors match the volatility cycles in <a href="https://grizzlyparrottrading.com/market-basics/market-volatility-cycles.html">Market Volatility Cycles: How Volatility Expands and Contracts</a>.</p>
-
-<div class="highlight-box yellow">
-  <h3>London Session Sets the Pace for 6B</h3>
-  <p>6B opens strong with London — volatility hits early, trends tend to emerge mid-session, and momentum often fades before New York takes over. If you understand that rhythm, you can avoid the chop and focus on the windows where clean structure and follow-through are most likely.</p>
-</div>
-
-
-<h3>Before you trade:</h3>
-<p>Knowing the best time won’t help if your size is wrong. Use the <a href="https://grizzlyparrottrading.com/tools/position-size-risk-checker.html">Position Size Risk Checker</a> to see how much you're actually risking on every trade. For deeper context on how liquidity and leadership move across connected markets, explore the <a href="https://grizzlyparrottrading.com/books/">Market Structure Series</a>.</p>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="gb-section" id="clock" aria-labelledby="clock-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Variable one</p>
+    <h2 id="clock-title">The Primary Window Follows Europe/London Time</h2>
+    <p>This article defines the London-morning research window as <strong>07:00 through 10:59:59 in the <code>Europe/London</code> timezone</strong>. It captures the common 07:00 ONS release time and the first hours of London business activity. It is an analyst-defined window, not a CME session boundary and not a claim that all London trading occurs within it.</p>
   </div>
-</footer>
-</body>
-</html>
+  <div class="gb-table-scroll" role="region" aria-label="Timezone rules for the London-window study" tabindex="0">
+    <table class="gb-table">
+      <thead><tr><th scope="col">Clock state</th><th scope="col">London label</th><th scope="col">Primary window in UTC</th><th scope="col">Required treatment</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">United Kingdom on GMT</th><td>07:00&ndash;11:00 Europe/London</td><td>07:00&ndash;11:00 UTC</td><td>Timezone library should generate the offset</td></tr>
+        <tr><th scope="row">United Kingdom on BST</th><td>07:00&ndash;11:00 Europe/London</td><td>06:00&ndash;10:00 UTC</td><td>Keep the local window fixed; UTC moves</td></tr>
+        <tr><th scope="row">U.K./U.S. transition mismatch</th><td>Same London labels</td><td>Relative New York time shifts for several weeks</td><td>Store both local offsets; do not assume a constant overlap</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Use an IANA timezone implementation with the historical rule set and record its version. The U.K. government publishes current clock-change dates; NIST publishes the U.S. rule. Do not convert with a hand-built &ldquo;UTC plus one in summer&rdquo; flag, because historical rules and transition dates can differ.</p>
+  <div class="gb-caution"><strong>Non-overlap boundary</strong><p>The companion <a href="why-6b-trends-during-us-session.html">early U.S. study</a> defines 08:00&ndash;11:30 <code>America/New_York</code>. It is a separate local-clock window and does not reuse this London-morning sample. Any London&ndash;New York overlap hypothesis belongs in the U.S. study or a separately labeled overlap analysis.</p></div>
+</section>
+
+<section class="gb-section" id="sample" aria-labelledby="sample-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Minute construction</p>
+    <h2 id="sample-title">Minute Rows Preserve Clock, Contract, Event and Feed State</h2>
+    <p>One daily bar cannot reveal when volatility occurred, and a continuous contract can insert roll artifacts. Build the study from dated 6B trades and quotes, then aggregate into stable intervals.</p>
+  </div>
+  <div class="gb-method">
+    <div>
+      <h3>Recommended observation table</h3>
+      <p>One row per fixed minute with contract security ID, UTC start and end, London local label and offset, open/high/low/close or midpoint returns, executed volume, spread summary, displayed-depth summary, message-quality flag, official-event labels, holiday flag, and days to roll.</p>
+    </div>
+    <dl>
+      <div><dt>Price series</dt><dd>Midpoint primary, trades secondary</dd></div>
+      <div><dt>Bar interval</dt><dd>One or five minutes</dd></div>
+      <div><dt>Roll</dt><dd>Ex-ante dated-contract rule</dd></div>
+      <div><dt>Bad minute</dt><dd>Flag, never silently fill</dd></div>
+    </dl>
+  </div>
+  <div class="gb-process" aria-label="Minute sample construction">
+    <article><span>Ingest</span><h3>Preserve raw time</h3><p>Keep exchange timestamps and sequence/recovery metadata before any timezone conversion.</p></article>
+    <article><span>Normalize</span><h3>Create local labels</h3><p>Convert UTC to Europe/London and record GMT/BST offset on every row.</p></article>
+    <article><span>Audit</span><h3>Check continuity</h3><p>Flag gaps, duplicates, crossed quotes, impossible prices, maintenance, and holidays.</p></article>
+    <article><span>Aggregate</span><h3>Form daily windows</h3><p>Create one row per date only after the minute-level audit and event join pass.</p></article>
+  </div>
+  <p>Select the front contract with a published rule that does not use future volume. A fixed business-day roll is easiest to reproduce; a volume crossover is acceptable only if the decision uses activity known before the window. Report both as a robustness check and remove any synthetic stitch return.</p>
+</section>
+
+<section class="gb-section" id="metrics" aria-labelledby="metrics-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Predeclared outputs</p>
+    <h2 id="metrics-title">Choose Metrics Before Viewing Results</h2>
+    <p>&ldquo;Volatile&rdquo; can mean wide range, large close-to-close change, frequent reversals, heavy tails, or difficult execution. Store these separately.</p>
+  </div>
+  <div class="gb-table-scroll" role="region" aria-label="Metrics for a London-window 6B study" tabindex="0">
+    <table class="gb-table">
+      <thead><tr><th scope="col">Metric</th><th scope="col">Definition</th><th scope="col">Interpretation</th><th scope="col">Limitation</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Realized variance</th><td>Sum of squared fixed-interval log returns within 07:00&ndash;11:00</td><td>Path-based realized movement</td><td>Sensitive to sampling and microstructure noise</td></tr>
+        <tr><th scope="row">High-low range</th><td>Window maximum minus minimum, in ticks and return units</td><td>Total price span</td><td>Does not reveal sequence or fillability</td></tr>
+        <tr><th scope="row">Absolute net return</th><td>Absolute close-to-open log return</td><td>How far the window finished from its start</td><td>Can be small after large two-way movement</td></tr>
+        <tr><th scope="row">Tail movement</th><td>Predeclared 90th, 95th, or 99th percentile of range or variance</td><td>Large-window risk</td><td>Needs enough independent dates</td></tr>
+        <tr><th scope="row">Spread and depth</th><td>Time-weighted spread plus declared depth statistic</td><td>Execution conditions</td><td>Displayed depth is not guaranteed liquidity</td></tr>
+        <tr><th scope="row">Volume</th><td>Executed 6B contracts in the window</td><td>Centralized futures participation</td><td>Not total global GBP trading</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Primary comparison: the London-window distribution versus the same dates&rsquo; pre-London 03:00&ndash;07:00 Europe/London window, matched in length. Secondary comparison: clock-matched non-event dates versus event dates. Do not claim a special London effect merely because absolute range is higher than during a quieter part of the global day; quantify the effect size and uncertainty.</p>
+</section>
+
+<section class="gb-section" id="calendar" aria-labelledby="calendar-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Information controls</p>
+    <h2 id="calendar-title">Separate Calendar Effects From Clock Effects</h2>
+    <p>ONS releases commonly appear at 07:00 U.K. time and therefore sit exactly on this study boundary. Bank of England MPC decisions are normally published at 12:00, outside the primary window. Mixing both into one generic &ldquo;London session&rdquo; claim destroys the timing distinction.</p>
+  </div>
+  <div class="gb-atlas">
+    <article class="gb-panel"><p class="gb-card-label">Inside the primary window</p><h3>ONS 07:00 releases</h3><p>Join each contemporaneous release from the official ONS calendar. Store release family, scheduled timestamp, revision status where available, and minutes from window start. Estimate the ordinary-clock distribution both with and without these dates.</p></article>
+    <article class="gb-panel"><p class="gb-card-label">Outside the primary window</p><h3>Bank of England 12:00 decisions</h3><p>Do not attribute a noon decision move to the 07:00&ndash;11:00 outcome. A pre-decision quiet period can be analyzed as its own hypothesis, while the reaction belongs in the <a href="how-6b-reacts-to-boe-rate-decisions.html">BoE decision guide</a>.</p></article>
+    <article class="gb-panel"><p class="gb-card-label">Earlier or unscheduled</p><h3>News and global shocks</h3><p>Store verified timestamps for unscheduled official announcements where possible. Do not reverse-engineer a cause from the largest price bar or silently exclude shocks.</p></article>
+    <article class="gb-panel"><p class="gb-card-label">Calendar integrity</p><h3>Use the version known then</h3><p>Release calendars can be revised. Preserve the contemporaneous scheduled time rather than joining every historical event to today&rsquo;s calendar after the fact.</p></article>
+  </div>
+  <p>The event flag should be part of the design, not an excuse applied after an extreme observation. Report counts and exclusions for each event family; if the estimated clock effect vanishes without ONS dates, call it an ONS-release result rather than a universal London pattern.</p>
+</section>
+
+<section class="gb-section" id="regimes" aria-labelledby="regimes-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Stability tests</p>
+    <h2 id="regimes-title">Test Whether the Pattern Survives Regime Splits</h2>
+    <p>An average across many years can blend incompatible markets. Freeze a modest set of economically motivated splits and keep the full sample result visible.</p>
+  </div>
+  <div class="gb-check-grid">
+    <article><strong>GMT versus BST</strong><p>Confirms the timezone conversion and reveals relative shifts against U.S. activity.</p></article>
+    <article><strong>Event versus nonevent</strong><p>Separates scheduled information arrival from ordinary clock behavior.</p></article>
+    <article><strong>High versus low daily volatility</strong><p>Tests whether the window effect is simply a broader volatility-regime effect.</p></article>
+    <article><strong>Normal versus holiday-adjacent</strong><p>Removes thin-market calendar distortions without erasing them from the audit.</p></article>
+    <article><strong>Near roll versus ordinary</strong><p>Checks whether contract migration changes range, volume, spread, or depth.</p></article>
+    <article><strong>Chronological eras</strong><p>Shows structural decay; the final era remains untouched until definitions are frozen.</p></article>
+  </div>
+  <p>Estimate medians, tail quantiles, paired date differences, and uncertainty intervals. Use day-level blocks because minute observations within one date are dependent. If the analysis tries many windows, metrics, splits, and thresholds, control the family-wise search or clearly label the exercise exploratory.</p>
+</section>
+
+<section class="gb-section" id="execution" aria-labelledby="execution-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Practical interpretation</p>
+    <h2 id="execution-title">Translate Distributions Into Execution Limits</h2>
+    <p>A validated clock distribution can inform preparation; it cannot promise direction or a fill. The operational question is whether the live market still resembles the studied condition.</p>
+  </div>
+  <div class="gb-proof-grid">
+    <article class="gb-proof"><h3>Potentially defensible use</h3><ul><li>Set a clock-specific range and slippage stress test.</li><li>Reduce size or stand aside when live spread exceeds the studied tail.</li><li>Distinguish ordinary mornings from official-release mornings.</li><li>Choose a monitoring interval appropriate to observed quote activity.</li></ul></article>
+    <article class="gb-proof is-limit"><h3>Not established by session averages</h3><ul><li>That 6B will rise or fall today.</li><li>That 07:00 or 08:00 is an automatic entry.</li><li>That the first move must continue or reverse.</li><li>That exchange volume measures all London GBP activity.</li></ul></article>
+  </div>
+  <p>Convert a tick-based risk estimate with the current contract specification: one standard 6B tick is $6.25 before costs. Then stress for spread, slippage, gaps, and the possibility that a stop fills beyond its trigger. The <a href="6b-contract-specs-tick-size-and-margin.html">6B contract guide</a> owns the full mechanics.</p>
+</section>
+
+<section class="gb-section" id="protocol" aria-labelledby="protocol-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Reproducible protocol</p>
+    <h2 id="protocol-title">London-Window Study Specification</h2>
+    <p>Publish this record with any claimed result so another researcher can reconstruct the same dates and outcomes.</p>
+  </div>
+  <div class="gb-table-scroll" role="region" aria-label="Reproducible London-window study protocol" tabindex="0">
+    <table class="gb-table">
+      <thead><tr><th scope="col">Component</th><th scope="col">Required disclosure</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Window</th><td>07:00 inclusive to 11:00 exclusive, Europe/London; timezone-database and version</td></tr>
+        <tr><th scope="row">Sample</th><td>Start/end dates, dated 6B securities, roll rule, holidays, exclusions, and usable-date count</td></tr>
+        <tr><th scope="row">Prices</th><td>Trades or midpoint, sampling interval, timestamp field, bar construction, and bad-data policy</td></tr>
+        <tr><th scope="row">Outcomes</th><td>Primary and secondary metrics, tail quantiles, comparison windows, and direction-free versus directional measures</td></tr>
+        <tr><th scope="row">Controls</th><td>ONS, BoE, other official events, GMT/BST, U.S. DST mismatch, volatility, roll, holiday, spread, and depth</td></tr>
+        <tr><th scope="row">Inference</th><td>Paired or matched estimator, block structure, uncertainty intervals, multiple-testing treatment, and holdout</td></tr>
+        <tr><th scope="row">Execution</th><td>Order model, commission and fees, spread, slippage, missed/partial fills, and stand-aside rules</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="gb-caution"><strong>Research status</strong><p>No original minute dataset, event sample, volatility estimate, session comparison, directional result or backtest is reported here. The 07:00&ndash;11:00 <code>Europe/London</code> window is a declared research choice, not an official exchange session or a profitable-time claim. This protocol defines what must be measured before stating that 6B has a London-session tendency.</p></div>
+</section>
+
+<details class="gb-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+  <li><a href="https://www.cmegroup.com/education/lessons/british-pound-product-overview" target="_blank" rel="noopener">CME Group British Pound product overview</a> for standard-contract mechanics and near-23-hour Globex trading context.</li>
+  <li><a href="https://www.gov.uk/when-do-the-clocks-change" target="_blank" rel="noopener">U.K. government clock-change guidance</a> for GMT/BST rules and current dates.</li>
+  <li><a href="https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst" target="_blank" rel="noopener">NIST daylight-saving-time rules</a> for the U.S. transition schedule.</li>
+  <li><a href="https://www.ons.gov.uk/releasecalendar" target="_blank" rel="noopener">Office for National Statistics release calendar</a> for contemporaneous U.K. data-release timestamps.</li>
+  <li><a href="https://www.bankofengland.co.uk/monetary-policy" target="_blank" rel="noopener">Bank of England monetary-policy schedule</a> for the standard 12:00 decision publication time and MPC calendar.</li>
+  <li><a href="https://www.nber.org/papers/w8160" target="_blank" rel="noopener">Andersen, Bollerslev, Diebold, and Labys, Modeling and Forecasting Realized Volatility</a> for aggregating consistent intraday returns into realized measures.</li>
+</ul><p>Sources and time-sensitive facts were reviewed August 13, 2026. This is original, unsponsored editorial analysis.</p></details>
+<aside class="gb-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This article is educational and is not individualized trading, investment, legal, tax, hedging, or brokerage advice. Currency futures are leveraged, can gap or trade through stop prices, and can produce losses greater than the initial margin deposit. Session estimates can change across samples and regimes. Verify the active contract, current clock and release calendar, live liquidity, margin, and your loss limits before acting.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

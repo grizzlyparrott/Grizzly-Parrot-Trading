@@ -2,240 +2,194 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6B Pullbacks: What Clean Retracements Look Like</title>
-  <meta name="description" content="A blunt breakdown of how clean pullbacks form in 6B British Pound futures and how to separate real retracements from traps.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6b-pullbacks-what-clean-retracements-look-like.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6B Pullbacks: What Clean Retracements Look Like">
-  <meta property="og:description" content="A blunt breakdown of how clean pullbacks form in 6B British Pound futures and how to separate real retracements from traps.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6b-pullbacks-what-clean-retracements-look-like.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6B Pullbacks: What Clean Retracements Look Like">
-  <meta name="twitter:description" content="A blunt breakdown of how clean pullbacks form in 6B British Pound futures and how to separate real retracements from traps.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6B Pullbacks: What Clean Retracements Look Like",
-  "description": "A blunt breakdown of how clean pullbacks form in 6B British Pound futures and how to separate real retracements from traps.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6b-pullbacks-what-clean-retracements-look-like.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6b-pullbacks-what-clean-retracements-look-like.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6B Pullbacks: What Clean Retracements Look Like",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6b-pullbacks-what-clean-retracements-look-like.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6B Pullbacks: Define and Test a Clean Retracement</title>
+  <meta name="description" content="Turn a clean 6B pullback into measurable variables, a reproducible event study, realistic execution tests, and explicit failure conditions.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6b-pullbacks-what-clean-retracements-look-like.html">
+  <meta property="og:title" content="6B Pullbacks: Define and Test a Clean Retracement"><meta property="og:description" content="A research-first framework for labeling, testing, and using British Pound futures pullbacks without assuming a visual pattern is an edge."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6b-pullbacks-what-clean-retracements-look-like.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-13">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6B Pullbacks: Define and Test Them"><meta name="twitter:description" content="Replace the clean-pullback story with frozen labels, baselines, execution costs, and falsification."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="6b-research-library.css?v=20260813a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6B Pullbacks: Define and Test a Clean Retracement","description":"Turn a clean 6B pullback into measurable variables, a reproducible event study, realistic execution tests, and explicit failure conditions.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6b-pullbacks-what-clean-retracements-look-like.html"},"datePublished":"2025-11-24","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/6b-pullbacks-what-clean-retracements-look-like.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6B Pullbacks","item":"https://grizzlyparrottrading.com/futures-basics/6b-pullbacks-what-clean-retracements-look-like.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container sterling-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="gb-hero">
+  <div class="gb-hero-copy">
+    <p class="gb-kicker">Operational definition &middot; event labels &middot; validation</p>
+    <h1>6B Pullbacks: Define and Test a Clean Retracement</h1>
+    <p class="gb-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="gb-hero-lede">A testable pullback is a timed sequence: a causally identified impulse, a bounded retracement measured from that impulse, a completion rule known at the decision, and a separately defined forward outcome. Chart scale, bar interval, overlap tolerance and execution costs all belong in the frozen record.</p>
+    <div class="gb-hero-actions"><a class="button-primary" href="#definition">Define the event</a><a class="gb-text-link" href="#checklist">Use the research checklist</a></div>
+  </div>
+  <div class="gb-hero-visual">
+    <div class="gb-market-board" aria-label="Pullback research distinction">
+      <div class="gb-board-head"><span>Visual label</span><strong>Not a finding</strong></div>
+      <div class="gb-proof-grid">
+        <div class="gb-proof"><strong>Observable</strong><span>Depth, duration, path, volume, spread, and forward outcome</span></div>
+        <div class="gb-proof"><strong>Must be tested</strong><span>Whether any frozen combination improves net outcomes</span></div>
+      </div>
+      <p class="gb-board-foot"><span>Measurement design</span><span>Rules before charts</span></p>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
   </div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="gb-jump-nav" aria-label="On this page"><a href="#definition">Definition</a><a href="#variables">Variables</a><a href="#sample">Sample</a><a href="#baselines">Baselines</a><a href="#execution">Execution</a><a href="#failures">Failures</a><a href="#checklist">Checklist</a></nav>
 
-<h1>6B Pullbacks: What Clean Retracements Look Like</h1>
-
-<p>Most traders butcher pullbacks because they don’t know what a clean retracement actually looks like. In 6B, clean pullbacks show up constantly—if you know what structure and momentum should look like, you won’t mistake chop for opportunity.</p>
-
-<h2>The Traits of a Clean Pullback in 6B</h2>
-<p>A real pullback has three clear qualities:</p>
-
-<ul>
-  <li><strong>Shallow retracement</strong> — it doesn’t retrace half the trend</li>
-  <li><strong>Orderly price action</strong> — no violent wicks everywhere</li>
-  <li><strong>Respects previous structure</strong> — taps a level and bounces</li>
-</ul>
-
-<p>These match the structural ideas you covered in <a href="https://grizzlyparrottrading.com/market-basics/market-structure-basics.html">Market Structure Basics: The Framework Behind Every Price Move</a>.</p>
-
-<h2>The Most Common Pullback Structure in 6B</h2>
-<p>When 6B trends, it usually forms:</p>
-
-<ul>
-  <li><strong>Impulse move</strong></li>
-  <li><strong>Three–five candle retracement</strong></li>
-  <li><strong>Continuation through the prior high/low</strong></li>
-</ul>
-
-<p>This pattern lines up with the momentum cycles described in <a href="https://grizzlyparrottrading.com/market-basics/market-volatility-cycles.html">Market Volatility Cycles: How Volatility Expands and Contracts</a>.</p>
-
-<h2>How to Spot Dirty, Low-Quality Pullbacks</h2>
-<p>A bad pullback looks like this:</p>
-
-<ul>
-  <li>Deep retracement into prior structure</li>
-  <li>Long wicks in both directions</li>
-  <li>Slow, choppy behavior</li>
-  <li>No momentum returning after the pullback</li>
-</ul>
-
-<table>
-  <tr>
-    <th>Clean Pullback</th>
-    <th>Dirty Pullback</th>
-  </tr>
-  <tr>
-    <td>Shallow, controlled retrace</td>
-    <td>Chaotic, unpredictable movement</td>
-  </tr>
-  <tr>
-    <td>Respects key level</td>
-    <td>Breaks several levels</td>
-  </tr>
-  <tr>
-    <td>Continuation candle appears fast</td>
-    <td>No follow-through</td>
-  </tr>
-</table>
-
-<h2>Key Levels 6B Consistently Pulls Back Into</h2>
-<p>Almost all clean pullbacks target:</p>
-
-<ul>
-  <li>London session high/low</li>
-  <li>Breakout levels from early U.S. session</li>
-  <li>Previous structure high/low</li>
-  <li>Pre-news consolidation levels</li>
-</ul>
-
-<p>These levels act as magnets across multiple instruments, as you’ve shown in <a href="https://grizzlyparrottrading.com/market-basics/market-structure-breaks-spotting-shifts-in-control.html">Market Structure Breaks: Spotting Shifts in Control</a>.</p>
-
-<div class="highlight-box green">
-  <h3>Pullbacks Reflect Market Discipline</h3>
-  <p>In 6B, pullbacks vary in depth and structure. The clean ones are shallow, orderly, and follow the broader market flow, offering insight into where price is pausing and where momentum continues.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="gb-section" id="definition" aria-labelledby="definition-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">The contradiction</p>
+    <h2 id="definition-title">A Clean Pullback Begins With Frozen Impulse and Retracement Rules</h2>
+    <p><strong>Fact:</strong> 6B is a standardized CME British Pound futures contract quoted in U.S. dollars per pound. <strong>Observation:</strong> traders often call a retracement &ldquo;clean&rdquo; when price gives back part of a prior move without obvious overlap or violent reversal. <strong>Hypothesis:</strong> some predeclared versions of that shape may condition later price paths. The hypothesis still needs a dataset and an out-of-sample test.</p>
   </div>
-</footer>
-</body>
-</html>
+  <div class="gb-method">
+    <div>
+      <h3>A usable event definition</h3>
+      <p>Start an impulse only when a past-data rule is met&mdash;for example, a signed move of at least <em>k</em> times the trailing median true range within no more than <em>m</em> bars. End it at the first qualifying swing extreme produced by a frozen swing algorithm. A pullback then begins after that extreme and ends only when a separately declared termination rule fires.</p>
+    </div>
+    <dl>
+      <div><dt>Instrument</dt><dd>Dated 6B contract</dd></div>
+      <div><dt>Clock</dt><dd>Exchange timestamps in UTC</dd></div>
+      <div><dt>Decision point</dt><dd>Known in real time</dd></div>
+      <div><dt>Claim status</dt><dd>Unvalidated hypothesis</dd></div>
+    </dl>
+  </div>
+  <p>A swing label that needs bars to the right can be used for retrospective description, but not as a live entry time unless the confirmation delay is included. Likewise, a ZigZag that redraws after new extremes introduces look-ahead if its earlier turning point is treated as contemporaneously known.</p>
+  <div class="gb-caution"><strong>Contract arithmetic is not pattern evidence</strong><p>The standard contract represents 62,500 British pounds and the outright minimum increment is 0.0001, worth $6.25 per contract. A five-tick move is $31.25 before fees and slippage. See the <a href="6b-contract-specs-tick-size-and-margin.html">canonical 6B contract guide</a> for mechanics; those mechanics do not validate any pullback rule.</p></div>
+</section>
+
+<section class="gb-section" id="variables" aria-labelledby="variables-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Make the drawing measurable</p>
+    <h2 id="variables-title">Turn &ldquo;Clean&rdquo; Into Observable Variables</h2>
+    <p>Do not hide several judgments inside one yes-or-no label. Store the components first. A later model can test whether depth, path, time, and market quality matter independently.</p>
+  </div>
+  <div class="gb-table-scroll" role="region" aria-label="Variables for a 6B pullback study" tabindex="0">
+    <table class="gb-table">
+      <thead><tr><th scope="col">Variable</th><th scope="col">Reproducible definition</th><th scope="col">What it describes</th><th scope="col">Main bias risk</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Impulse size</th><td>Signed ticks from frozen start to frozen extreme</td><td>Scale of the move being retraced</td><td>Choosing the start after seeing the endpoint</td></tr>
+        <tr><th scope="row">Retracement depth</th><td>Absolute pullback ticks divided by absolute impulse ticks</td><td>Fraction of the impulse surrendered</td><td>Changing the acceptable band by example</td></tr>
+        <tr><th scope="row">Path efficiency</th><td>Net pullback distance divided by the sum of absolute bar-to-bar changes</td><td>How direct or overlapping the route was</td><td>Bar-size sensitivity and bid-ask bounce</td></tr>
+        <tr><th scope="row">Duration</th><td>Elapsed seconds and number of fixed bars</td><td>Time spent retracing</td><td>Mixing active and quiet sessions</td></tr>
+        <tr><th scope="row">Adverse extension</th><td>Maximum distance beyond the declared invalidation before the horizon ends</td><td>Tail risk after a candidate appears</td><td>Using a future extreme to move the stop</td></tr>
+        <tr><th scope="row">Participation</th><td>Executed 6B volume relative to the same clock window</td><td>Exchange-traded activity, not total OTC GBP flow</td><td>Calling volume an actor or motive</td></tr>
+        <tr><th scope="row">Market quality</th><td>Quoted spread, displayed depth, trade-throughs, and missing-message flags</td><td>Whether the observed path was executable</td><td>Using completed bars without quote data</td></tr>
+        <tr><th scope="row">Context labels</th><td>Session, official release, holiday, contract, and days to roll</td><td>Known differences in information and liquidity</td><td>Adding labels only after a surprising result</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="gb-source-note"><strong>Illustrative calculation, not a finding:</strong> if a declared 30-tick impulse is followed by a 12-tick net retracement, depth is 40%. If the one-minute path travels 18 ticks in total to produce that 12-tick net move, path efficiency is 0.67. Different bar lengths can change the second number, so report a robustness grid.</p>
+</section>
+
+<section class="gb-section" id="sample" aria-labelledby="sample-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Event construction</p>
+    <h2 id="sample-title">Build the Sample Without Looking Past the Decision</h2>
+    <p>The observation unit should be one eligible impulse-pullback event, not one handpicked chart. Preserve every qualifying event, including overlapping signals, failed retracements, trading halts, thin periods, and occasions when the rule could not obtain a fill.</p>
+  </div>
+  <div class="gb-process" aria-label="Pullback sample construction">
+    <article><span>Step 1</span><h3>Freeze data</h3><p>Use dated contracts, a documented roll rule, UTC timestamps, and an auditable bad-tick policy.</p></article>
+    <article><span>Step 2</span><h3>Detect impulse</h3><p>Apply one past-only size and time rule to every eligible bar.</p></article>
+    <article><span>Step 3</span><h3>Label pullback</h3><p>Record continuous variables before assigning any clean/not-clean class.</p></article>
+    <article><span>Step 4</span><h3>Lock outcome</h3><p>Measure the forward path from the first moment the label was actually knowable.</p></article>
+  </div>
+  <div class="gb-two-column">
+    <article class="gb-panel"><p class="gb-card-label">Dependency control</p><h3>Overlapping events are not independent</h3><p>If several candidate pullbacks share the same impulse or forward horizon, naive standard errors overstate effective sample size. Keep a non-overlapping primary sample or use dependence-aware resampling by trading day or event block.</p></article>
+    <article class="gb-panel"><p class="gb-card-label">Contract control</p><h3>A continuous chart can manufacture a move</h3><p>Store the actual security and roll decision. Exclude or separately report stitch bars. A volume-based front-contract rule must use only volume available before the decision, not the final daily leader.</p></article>
+  </div>
+  <p>Split chronology before choosing thresholds: development, validation, and final holdout. If many depth bands, bar sizes, sessions, or termination rules are tried, preserve the entire search universe and adjust the inference for multiple testing. The attractive survivor is not the only experiment that happened.</p>
+</section>
+
+<section class="gb-section" id="baselines" aria-labelledby="baselines-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Counterfactuals</p>
+    <h2 id="baselines-title">Compare Against the Right Baselines</h2>
+    <p>&ldquo;Price resumed after the pullback&rdquo; is incomplete. The same continuation may occur after any sufficiently large move, and a high win rate can coexist with poor tail risk.</p>
+  </div>
+  <div class="gb-check-grid">
+    <article><strong>All impulses</strong><p>Compare labeled pullbacks with every qualifying impulse, including those with messy or no retracement.</p></article>
+    <article><strong>Matched impulses</strong><p>Match direction, size, time of day, volatility state, event status, and days to roll.</p></article>
+    <article><strong>Threshold neighbors</strong><p>Test candidates just inside and outside each cutoff. A sharp result at one arbitrary boundary is fragile.</p></article>
+    <article><strong>Time-shift placebo</strong><p>Apply the same measurement to nearby nonevent times where no candidate existed.</p></article>
+    <article><strong>Simple alternative</strong><p>Compare with a rule based only on impulse size or momentum so &ldquo;cleanliness&rdquo; must add information.</p></article>
+    <article><strong>Net execution</strong><p>Subtract commission, exchange and data fees where relevant, spread, slippage, and missed fills.</p></article>
+  </div>
+  <p>Report the full forward distribution: continuation frequency, median and tail maximum favorable excursion, maximum adverse excursion, time to outcome, and net results under more than one cost assumption. The <a href="reading-short-term-momentum-in-6b.html">6B momentum workflow</a> owns momentum-state decisions; this page asks only whether pullback variables add value beyond that state.</p>
+</section>
+
+<section class="gb-section" id="execution" aria-labelledby="execution-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Trading application</p>
+    <h2 id="execution-title">Convert a Validated Label Into an Execution Question</h2>
+    <p>Even a stable descriptive relationship does not specify an order. Entry timing, invalidation, size, and fill assumptions require their own predeclared rules.</p>
+  </div>
+  <div class="gb-method">
+    <div>
+      <h3>A legitimate decision statement</h3>
+      <p>&ldquo;When the frozen pullback definition appears in a validated context, I will consider a limit or stop order only if the live spread and depth are inside the tested range, the invalidation is observable, and the cost-adjusted reward distribution still fits the risk budget.&rdquo;</p>
+    </div>
+    <dl>
+      <div><dt>Entry</dt><dd>Exact trigger and order type</dd></div>
+      <div><dt>Invalidation</dt><dd>Price or time condition</dd></div>
+      <div><dt>Friction</dt><dd>Spread, queue, slippage</dd></div>
+      <div><dt>Stand aside</dt><dd>Event or liquidity gate</dd></div>
+    </dl>
+  </div>
+  <p>A limit order can miss the trade or fill mainly when the path continues against it. A stop order can fill beyond its trigger during a fast move. A completed-bar backtest that assumes the chosen price was always available ignores both problems. Evaluate marketable and passive variants separately, and never use the bar low as proof that a buy limit received a fill.</p>
+  <div class="gb-related">A pullback can form after <a href="6b-volatility-compression-and-expansion-patterns.html">volatility expansion</a> or near a proposed <a href="6b-breakout-levels-how-to-identify-high-probability-zones.html">6B breakout level</a>. Those are different hypotheses. Link the event IDs if combining them, then test the combined rule rather than borrowing certainty from either label.</div>
+</section>
+
+<section class="gb-section" id="failures" aria-labelledby="failures-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Failure conditions</p>
+    <h2 id="failures-title">Where the Pattern Fails or Disappears</h2>
+    <p>A useful result must survive more than one attractive chart scale and more than one market regime.</p>
+  </div>
+  <div class="gb-limit-grid">
+    <article><strong>Definition instability</strong><p>Small, reasonable changes to swing, depth, or duration rules reverse the result.</p></article>
+    <article><strong>Session concentration</strong><p>Nearly all apparent benefit comes from one clock window or release category.</p></article>
+    <article><strong>Cost collapse</strong><p>The gross relationship disappears under observed spreads, slippage, and missed fills.</p></article>
+    <article><strong>Tail asymmetry</strong><p>Frequent small continuations are outweighed by rare, large adverse paths.</p></article>
+    <article><strong>Holdout failure</strong><p>The rule works only in the development sample or after parameters are retuned.</p></article>
+    <article><strong>Feed dependence</strong><p>The label changes materially between last trade, bid/ask midpoint, or data vendors.</p></article>
+  </div>
+  <div class="gb-caution"><strong>Research stop</strong><p>If the result cannot survive the predefined holdout, neighboring parameters, event controls, and executable costs, retire the rule. Renaming a failed threshold is not validation.</p></div>
+</section>
+
+<section class="gb-section" id="checklist" aria-labelledby="checklist-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Annotated research checklist</p>
+    <h2 id="checklist-title">What Must Be Written Down Before the Next Chart</h2>
+    <p>This is the page&rsquo;s endpoint: a reproducible record that keeps a descriptive label separate from validated expectancy.</p>
+  </div>
+  <div class="gb-table-scroll" role="region" aria-label="Pre-study checklist for 6B pullbacks" tabindex="0">
+    <table class="gb-table">
+      <thead><tr><th scope="col">Freeze before testing</th><th scope="col">Minimum record</th><th scope="col">Reason</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Data lineage</th><td>Vendor, feed type, timestamp field, timezone, security IDs, and missing-data policy</td><td>Makes the path auditable</td></tr>
+        <tr><th scope="row">Impulse and pullback rules</th><td>Bar interval, thresholds, swing confirmation delay, termination, and overlap policy</td><td>Prevents hindsight drawing</td></tr>
+        <tr><th scope="row">Controls</th><td>Session, official releases, holidays, volatility state, contract roll, spread, and depth</td><td>Tests rival explanations</td></tr>
+        <tr><th scope="row">Outcome</th><td>Horizon, MFE, MAE, continuation, reversal, time, order model, and all costs</td><td>Shows the whole distribution</td></tr>
+        <tr><th scope="row">Validation</th><td>Chronological splits, search universe, robustness grid, and retirement criterion</td><td>Protects the holdout</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="gb-caution"><strong>Research status</strong><p>No original 6B pullback dataset, backtest, correlation, win rate or expectancy estimate is reported in this article. It supplies a measurement design. Any future result should publish sample dates, event count, exclusions, code or exact rules, controls, cost model, uncertainty intervals and holdout performance.</p></div>
+</section>
+
+<details class="gb-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+  <li><a href="https://www.cmegroup.com/education/lessons/british-pound-product-overview" target="_blank" rel="noopener">CME Group British Pound product overview</a> for contract size, quotation, tick, and trading-hour context.</li>
+  <li><a href="https://cmegroupclientsite.atlassian.net/wiki/spaces/EPICSANDBOX/pages/457222936/" target="_blank" rel="noopener">CME Group MDP 3.0 dissemination documentation</a> for the distinction among bid, ask, trade, statistical, and recovery data.</li>
+  <li><a href="https://www.nber.org/papers/w8160" target="_blank" rel="noopener">Andersen, Bollerslev, Diebold, and Labys, Modeling and Forecasting Realized Volatility</a> for constructing realized measures from consistent intraday returns.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/FuturesMarketBasics/index.htm" target="_blank" rel="noopener">CFTC basics of futures trading</a> for leverage, contractual obligations, and loss-risk context.</li>
+</ul><p>Formulas and numbers are methodological or illustrative, not performance claims. Sources and time-sensitive contract facts were reviewed August 13, 2026. This is original, unsponsored editorial analysis.</p></details>
+<aside class="gb-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This article is educational and is not individualized trading, investment, legal, tax, hedging, or brokerage advice. Currency futures are leveraged, can gap or trade through stop prices, and can produce losses greater than the initial margin deposit. Historical labels and backtests can fail in live markets. Verify the active contract, live liquidity, official event calendar, current margin, order behavior, and your own loss limits before acting.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

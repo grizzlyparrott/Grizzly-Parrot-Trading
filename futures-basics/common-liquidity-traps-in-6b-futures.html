@@ -2,237 +2,167 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Common Liquidity Traps in 6B Futures</title>
-  <meta name="description" content="A blunt breakdown of the most common liquidity traps in 6B British Pound futures and how to avoid getting caught in them.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/common-liquidity-traps-in-6b-futures.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Common Liquidity Traps in 6B Futures">
-  <meta property="og:description" content="A blunt breakdown of the most common liquidity traps in 6B British Pound futures and how to avoid getting caught in them.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/common-liquidity-traps-in-6b-futures.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Common Liquidity Traps in 6B Futures">
-  <meta name="twitter:description" content="A blunt breakdown of the most common liquidity traps in 6B British Pound futures and how to avoid getting caught in them.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Common Liquidity Traps in 6B Futures",
-  "description": "A blunt breakdown of the most common liquidity traps in 6B British Pound futures and how to avoid getting caught in them.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/common-liquidity-traps-in-6b-futures.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/common-liquidity-traps-in-6b-futures.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Common Liquidity Traps in 6B Futures",
-      "item": "https://grizzlyparrottrading.com/futures-basics/common-liquidity-traps-in-6b-futures.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6B Liquidity Traps: Test the Auction, Not the Story</title>
+  <meta name="description" content="Replace 6B stop-hunt stories with observable order-book hypotheses, rival explanations, a replay protocol, live risk gates, and failure review.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/common-liquidity-traps-in-6b-futures.html">
+  <meta property="og:title" content="6B Liquidity Traps: Test the Auction, Not the Story"><meta property="og:description" content="A measurable framework for sweeps, failed breaks, depth changes, quote cancellations, and execution risk in British Pound futures."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/common-liquidity-traps-in-6b-futures.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-13">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Test 6B Liquidity-Trap Claims"><meta name="twitter:description" content="Observe the auction, preserve rival explanations, and keep intent claims out of incomplete data."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="6b-research-library.css?v=20260813a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6B Liquidity Traps: Test the Auction, Not the Story","description":"Replace 6B stop-hunt stories with observable order-book hypotheses, rival explanations, a replay protocol, live risk gates, and failure review.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/common-liquidity-traps-in-6b-futures.html"},"datePublished":"2025-11-24","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/common-liquidity-traps-in-6b-futures.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6B Liquidity Traps","item":"https://grizzlyparrottrading.com/futures-basics/common-liquidity-traps-in-6b-futures.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container sterling-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="gb-hero">
+  <div class="gb-hero-copy">
+    <p class="gb-kicker">Auction evidence &middot; alternative explanations &middot; replay</p>
+    <h1>6B Liquidity Traps: Test the Auction, Not the Story</h1>
+    <p class="gb-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="gb-hero-lede">A liquidity-event record starts with a predeclared level, the trade-through distance, elapsed time to re-entry, book and spread state, and the full forward path. Those fields support neutral event classes and rival mechanism tests; participant motive or misconduct requires evidence beyond the chart shape.</p>
+    <div class="gb-hero-actions"><a class="button-primary" href="#misconception">Separate fact from story</a><a class="gb-text-link" href="#review">Open the failure catalog</a></div>
+  </div>
+  <div class="gb-hero-visual">
+    <div class="gb-market-board" aria-label="What a futures feed can and cannot establish">
+      <div class="gb-board-head"><span>Feed evidence</span><strong>Identity stays anonymous</strong></div>
+      <div class="gb-proof-grid">
+        <div class="gb-proof"><strong>Can observe</strong><span>Price, quantity, side classification, book updates, timing</span></div>
+        <div class="gb-proof is-limit"><strong>Cannot conclude alone</strong><span>Motive, beneficial owner, collusion, or illegal intent</span></div>
+      </div>
+      <p class="gb-board-foot"><span>Pattern is not proof</span><span>Keep the null alive</span></p>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
   </div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-<h1>Common Liquidity Traps in 6B Futures</h1>
-
-<p>6B British Pound futures are notorious for engineered stop hunts and liquidity grabs. If you don’t know where the traps form, you’ll get wicked out right before the real move starts. The good news: 6B repeats the same traps every single week.</p>
-
-<h2>Why Liquidity Traps Form in 6B</h2>
-<p>Liquidity traps appear because institutional traders need volume. They push price into obvious stop areas to trigger both:</p>
-
-<ul>
-  <li><strong>Stop-loss orders</strong></li>
-  <li><strong>Breakout orders</strong></li>
-</ul>
-
-<p>This aligns with the trap concepts you covered in <a href="https://grizzlyparrottrading.com/market-basics/market-traps-bull-traps-bear-traps-how-to-spot-them-early.html">Market Traps: Bull Traps, Bear Traps, and How to Spot Them Early</a>.</p>
-
-<h2>The Most Common 6B Liquidity Traps</h2>
-
-<h3>1. Break High → Snap Back</h3>
-<p>Price breaks a recent high, pulls in breakout buyers, taps stops above the level, then slams back into the range.</p>
-
-<h3>2. Dip Below Support → Instant Reverse</h3>
-<p>This is a classic stop sweep. Price dips one or two ticks below support, clears retail stops, then rips up.</p>
-
-<h3>3. London Session Fakeout</h3>
-<p>London pushes aggressively in one direction, only for New York to completely reverse the move.</p>
-
-<h3>4. Pre-US Session Whipsaw</h3>
-<p>6B often sweeps both sides of the early range before the real U.S. trend takes off.</p>
-
-<p>This whipsaw behavior ties to <a href="https://grizzlyparrottrading.com/market-basics/market-volatility-cycles.html">Market Volatility Cycles: How Volatility Expands and Contracts</a>.</p>
-
-<h3>5. News Spike Liquidity Grab</h3>
-<p>6B spikes hard on UK or U.S. data, grabs both sides of liquidity, then trends in the opposite direction.</p>
-
-<h2>How to Avoid Getting Trapped</h2>
-
-<ul>
-  <li>Don’t chase the first breakout</li>
-  <li>Wait for clear acceptance beyond the level</li>
-  <li>Use GBP/USD as confirmation</li>
-  <li>Avoid low-volume pre-US chop</li>
-  <li>Watch DXY for decoupling signals</li>
-</ul>
-
-<h2>Table: Trap Behavior vs. Real Moves</h2>
-
-<table>
-  <tr>
-    <th>Liquidity Trap</th>
-    <th>Real Move</th>
-  </tr>
-  <tr>
-    <td>Wicks everywhere</td>
-    <td>Clean candles with follow-through</td>
-  </tr>
-  <tr>
-    <td>Breaks level then instantly reverses</td>
-    <td>Holds above/below level</td>
-  </tr>
-  <tr>
-    <td>Violent fakeout during low liquidity</td>
-    <td>Expansion after compression</td>
-  </tr>
-</table>
-
-<div class="highlight-box yellow">
-  <h3>Most 6B Traps Aren’t Random — They’re Recycled</h3>
-  <p>6B loves to fake people out at obvious levels — prior highs, lows, session edges, and U.S. open ranges. The first move is often bait. Stop reacting to it. Start tracking where traps usually form, and let the market show its hand before you commit. That shift alone filters out a lot of avoidable damage.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="gb-section" id="misconception" aria-labelledby="misconception-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Neutral event record</p>
+    <h2 id="misconception-title">Level, Sweep, Re-entry and Time Define the Observable Event</h2>
+    <p><strong>Fact:</strong> CME market data can disseminate trades, bid and ask updates, prices, quantities, order identifiers in supported market-by-order views, and event timestamps. <strong>Observation:</strong> price can trade through a visible level and reverse. <strong>Hypothesis:</strong> clustered conditional orders or thin displayed liquidity may contribute to that path. <strong>Unsupported inference:</strong> the pattern itself proves a coordinated actor intentionally targeted a trader&rsquo;s stop.</p>
   </div>
-</footer>
-</body>
-</html>
+  <div class="gb-method">
+    <div>
+      <h3>Use neutral event language first</h3>
+      <p>Record &ldquo;upward sweep of four price levels followed by a return below the reference within 90 seconds&rdquo; before applying labels such as trap, liquidity grab, manipulation, or stop hunt. The neutral record can be reproduced. The stronger terms require stronger evidence.</p>
+    </div>
+    <dl>
+      <div><dt>Reference</dt><dd>Frozen before event</dd></div>
+      <div><dt>Sweep</dt><dd>Trade sequence in ticks</dd></div>
+      <div><dt>Re-entry</dt><dd>Price and time rule</dd></div>
+      <div><dt>Intent</dt><dd>Not inferred from shape</dd></div>
+    </dl>
+  </div>
+  <p>CME Rule 575 prohibits disruptive practices including spoofing, which turns on intent at order entry. Legitimate orders can also be cancelled, repriced, partially filled, or withdrawn as risk changes. A cancellation rate or a large displayed order is therefore a screening variable, not a legal conclusion.</p>
+</section>
+
+<section class="gb-section" id="claims" aria-labelledby="claims-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Measurable translations</p>
+    <h2 id="claims-title">Five Common Narratives Map to Observable Event Rules</h2>
+    <p>Each story needs a reference level, an event rule, a forward horizon, and a rival explanation. Otherwise almost any reversal can be labeled after the fact.</p>
+  </div>
+  <div class="gb-table-scroll" role="region" aria-label="Liquidity-trap claims and observable proxies" tabindex="0">
+    <table class="gb-table">
+      <thead><tr><th scope="col">Common story</th><th scope="col">Observable version</th><th scope="col">Required data</th><th scope="col">What remains unknown</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Stops were hunted above the high</th><td>Trades cross a predeclared prior high by <em>x</em> ticks, then price returns below it within <em>t</em></td><td>Trade sequence, exact timestamps, reference-level algorithm</td><td>Whether triggered stops caused the move or who intended what</td></tr>
+        <tr><th scope="row">A wall disappeared</th><td>Displayed quantity at a price drops without an equal executed quantity at that price</td><td>Order-book updates, trades, sequence recovery, implied-liquidity handling</td><td>Whether cancellation was manipulative, defensive, or routine</td></tr>
+        <tr><th scope="row">Breakout buyers were trapped</th><td>A frozen breakout trigger fires; forward price crosses its invalidation before its objective</td><td>Executable trigger, spread, depth, order and fill model</td><td>Who bought, why, and whether every buyer lost</td></tr>
+        <tr><th scope="row">Absorption stopped the move</th><td>Repeated marketable volume executes near a level while price advances less than a matched baseline</td><td>Trade summaries, aggressor classification, book state</td><td>Participant identity, hidden interest, or future direction</td></tr>
+        <tr><th scope="row">Thin liquidity caused the spike</th><td>Spread widens or displayed depth falls before a large trade-through relative to matched periods</td><td>Quote and trade data at sufficient resolution</td><td>Whether thin depth was cause, response, or both</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>For every row, preserve candidates that do not reverse. Selecting only spectacular failures guarantees a trap-heavy sample. Define the reference level using information available beforehand&mdash;for example, a prior session extreme or a mechanical swing&mdash;and keep every qualifying test.</p>
+</section>
+
+<section class="gb-section" id="alternatives" aria-labelledby="alternatives-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Competing explanations</p>
+    <h2 id="alternatives-title">Give Every Pattern a Rival Explanation</h2>
+    <p>The same price path can arise from different mechanisms. A fair test measures variables that help distinguish them and accepts that the result may stay ambiguous.</p>
+  </div>
+  <div class="gb-atlas">
+    <article class="gb-panel"><p class="gb-card-label">Event &middot; check the official timestamp</p><h3>New information</h3><p>A release or unscheduled headline changes valuation, producing overshoot and revision without a stop-targeting motive. Compare the quote-and-trade burst with the verified publication time.</p></article>
+    <article class="gb-panel"><p class="gb-card-label">Auction &middot; check depth before the sweep</p><h3>Ordinary order matching</h3><p>Marketable demand exhausts available offers; subsequent interest is insufficient and price returns. Measure the trade-through rather than assigning a participant story.</p></article>
+    <article class="gb-panel"><p class="gb-card-label">Data &middot; check sequence continuity</p><h3>Feed or chart artifact</h3><p>A dropped packet, conflation, bad print, bar aggregation, or delayed retail feed creates a false spike or false order-book change. Compare vendors only after their fields and clocks are aligned.</p></article>
+    <article class="gb-panel"><p class="gb-card-label">Roll &middot; check the security ID</p><h3>Contract migration</h3><p>A continuous chart or thin expiring contract looks abnormal while activity has moved to the next expiry. Measure the volume split under an ex-ante roll rule.</p></article>
+  </div>
+  <div class="gb-caution"><strong>OTC context is not a complete explanation</strong><p>6B trades on a centralized futures book, while spot GBP/USD is an OTC market observed through venue- or dealer-specific feeds. A move appearing first on one screen may reflect timestamp, source, or basis differences. Reconcile the instruments with the <a href="using-gbpusd-divergence-to-trade-6b-futures.html">GBP/USD divergence workflow</a> before telling a lead-lag story.</p></div>
+</section>
+
+<section class="gb-section" id="replay" aria-labelledby="replay-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Falsifiable replay</p>
+    <h2 id="replay-title">Run a Replay That Can Reject the Claim</h2>
+    <p>A screenshot is not a replay. The minimum defensible record reconstructs the relevant book and trade sequence, checks message continuity, and applies one algorithm to winners and failures.</p>
+  </div>
+  <div class="gb-process" aria-label="Liquidity event replay protocol">
+    <article><span>Capture</span><h3>Freeze the event</h3><p>Store security ID, UTC interval, raw message sequence, event calendar, and reference level.</p></article>
+    <article><span>Rebuild</span><h3>Validate the book</h3><p>Apply snapshots, incrementals, resets, and recovery; flag every unresolved sequence gap.</p></article>
+    <article><span>Classify</span><h3>Apply neutral rules</h3><p>Label sweep, re-entry, spread, depth, cancellation, volume, and outcome without motive.</p></article>
+    <article><span>Compare</span><h3>Use matched controls</h3><p>Match clock, event, volatility, contract, and market quality; include nonreversals.</p></article>
+  </div>
+  <div class="gb-two-column">
+    <article class="gb-panel"><p class="gb-card-label">Primary outcome</p><h3>Price-path distribution</h3><p>Report maximum extension, time to re-entry, follow-through, reversal depth, and tail outcomes. Avoid defining success as whichever path occurred.</p></article>
+    <article class="gb-panel"><p class="gb-card-label">Execution outcome</p><h3>Fill and slippage distribution</h3><p>Replay the declared order type against observable quotes and queue assumptions. Report no-fill and partial-fill states rather than imputing favorable fills.</p></article>
+  </div>
+  <p>Use a chronological holdout and day-level or event-block uncertainty. If many level types, time limits, sweep distances, and reversal rules were tried, disclose the search universe. A rare-event label also needs enough independent episodes to estimate tails; a high count of overlapping book updates is not a high count of independent traps.</p>
+</section>
+
+<section class="gb-section" id="risk" aria-labelledby="risk-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Live application</p>
+    <h2 id="risk-title">Trade the Risk You Can See</h2>
+    <p>Public evidence can support a stand-aside decision more readily than an intent claim. During a suspected trap, market quality may be changing faster than a chart-based stop assumes.</p>
+  </div>
+  <div class="gb-check-grid">
+    <article><strong>Spread gate</strong><p>Reject the setup when the live quoted spread exceeds the tested range or the cost budget.</p></article>
+    <article><strong>Depth gate</strong><p>Size against displayed and recent executable liquidity, never the maximum size a static snapshot once showed.</p></article>
+    <article><strong>Event gate</strong><p>Use official release times. Separate scheduled-event research from ordinary auction research.</p></article>
+    <article><strong>Data gate</strong><p>Stand aside after feed gaps, stale quotes, crossed books, timestamp anomalies, or an unresolved recovery event.</p></article>
+    <article><strong>Invalidation gate</strong><p>Declare the price and time condition before entry. Do not widen it because the move is still being called a trap.</p></article>
+    <article><strong>Loss gate</strong><p>Translate ticks into dollars with current contract mechanics and cap risk before leverage amplifies the error.</p></article>
+  </div>
+  <p>The <a href="how-to-read-6b-order-flow-for-clean-entries.html">6B order-flow guide</a> owns the level-first execution workflow and data prerequisites. This article is narrower: it shows how to prevent an auction narrative from outrunning the observable evidence.</p>
+</section>
+
+<section class="gb-section" id="review" aria-labelledby="review-title">
+  <div class="gb-section-heading">
+    <p class="gb-kicker">Failure-case catalog</p>
+    <h2 id="review-title">Log Why the Claim Failed, Not Just Whether the Trade Lost</h2>
+    <p>Use one primary failure code and any secondary flags. The catalog should improve the research design rather than retrofit a new story to every loss.</p>
+  </div>
+  <div class="gb-table-scroll" role="region" aria-label="Liquidity-event failure review fields" tabindex="0">
+    <table class="gb-table">
+      <thead><tr><th scope="col">Failure code</th><th scope="col">Evidence</th><th scope="col">Research response</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">LEVEL_NOT_KNOWN</th><td>Reference required future bars or discretionary redrawing</td><td>Rewrite the level algorithm and restart validation</td></tr>
+        <tr><th scope="row">DATA_INCOMPLETE</th><td>Sequence gap, stale feed, missing quote side, or unresolved reset</td><td>Exclude by frozen policy; never infer the missing auction</td></tr>
+        <tr><th scope="row">NO_REENTRY</th><td>Sweep continued beyond the forward horizon</td><td>Keep as a nontrap event; do not extend the horizon after seeing it</td></tr>
+        <tr><th scope="row">REENTRY_NO_EDGE</th><td>Price returned, but the costed rule underperformed its baseline</td><td>Separate descriptive reversal from trading expectancy</td></tr>
+        <tr><th scope="row">EVENT_CONFOUNDED</th><td>Official release or headline window explains the selected sample</td><td>Report event-specific results or withdraw the generic claim</td></tr>
+        <tr><th scope="row">INTENT_UNRESOLVED</th><td>Pattern exists but public data do not establish motive</td><td>Use neutral auction language; make no misconduct claim</td></tr>
+        <tr><th scope="row">HOLDOUT_FAILED</th><td>Effect disappears or reverses on untouched dates</td><td>Retire the rule rather than retune the holdout</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="gb-caution"><strong>Research status</strong><p>No original 6B order-book dataset, trap frequency, reversal rate, misconduct finding, backtest or execution result is reported here. The event rules are research templates, not claims that a mechanism is common or profitable. A future study should release sample dates, feed schema and depth, message-recovery checks, event count, exclusions, controls, uncertainty, the complete parameter search and its cost model.</p></div>
+</section>
+
+<details class="gb-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+  <li><a href="https://cmegroupclientsite.atlassian.net/wiki/spaces/EPICSANDBOX/pages/457222936/" target="_blank" rel="noopener">CME Group MDP 3.0 dissemination documentation</a> for the market-data message families and recovery context.</li>
+  <li><a href="https://cmegroupclientsite.atlassian.net/wiki/spaces/EPICSANDBOX/pages/457605721" target="_blank" rel="noopener">CME Group Market by Order book-management documentation</a> for individual-order, quantity, priority, update, and anonymity fields.</li>
+  <li><a href="https://www.cmegroup.com/rulebook/files/cme-group-Rule-575.pdf" target="_blank" rel="noopener">CME Group Rule 575 Market Regulation Advisory Notice</a> for the exchange&rsquo;s disruptive-practices and intent standards.</li>
+  <li><a href="https://www.cftc.gov/LawRegulation/FederalRegister/FinalRules/2013-12365.html" target="_blank" rel="noopener">CFTC Antidisruptive Practices Authority interpretive guidance</a> for the distinction between prohibited intent and legitimate good-faith cancellation or modification.</li>
+  <li><a href="https://www.bis.org/statistics/rpfx25_fx.pdf" target="_blank" rel="noopener">BIS 2025 Triennial Central Bank Survey of OTC foreign-exchange turnover</a> for the structure and scale of the separate OTC FX market.</li>
+</ul><p>Sources and time-sensitive facts were reviewed August 13, 2026. This is original, unsponsored editorial analysis.</p></details>
+<aside class="gb-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This article is educational and is not individualized trading, investment, legal, tax, hedging, brokerage, or market-conduct advice. Currency futures are leveraged, can gap or trade through stop prices, and can produce losses greater than the initial margin deposit. Public market data may be incomplete and cannot by itself establish legal intent. Verify current contract details, live data quality, liquidity, event risk, margin, and your loss limits before acting.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

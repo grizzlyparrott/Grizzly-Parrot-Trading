@@ -2,231 +2,176 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How 6B Futures React to Bank of England Rate Decisions</title>
-  <meta name="description" content="Learn how 6B British Pound futures react to Bank of England rate decisions, including volatility patterns, common traps, and key levels to watch.">
+  <title>How Bank of England Decisions Reprice 6B Futures</title>
+  <meta name="description" content="Read BoE decisions through the prior, vote, guidance, forecast and UK-US rate response—not the Bank Rate headline alone.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/how-6b-reacts-to-boe-rate-decisions.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="How 6B Futures React to Bank of England Rate Decisions">
-  <meta property="og:description" content="Learn how 6B British Pound futures react to Bank of England rate decisions, including volatility patterns, common traps, and key levels to watch.">
+  <meta property="og:title" content="How Bank of England Decisions Reprice 6B Futures">
+  <meta property="og:description" content="An event workflow for separating the Bank Rate headline from the vote, minutes, forecast, guidance, relative rates and execution risk.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/how-6b-reacts-to-boe-rate-decisions.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-24">
+  <meta property="article:modified_time" content="2026-08-13">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BoE Decisions and 6B Futures">
+  <meta name="twitter:description" content="Why an unchanged decision can still move sterling: prior pricing, votes, guidance, forecasts and relative rates.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="How 6B Futures React to Bank of England Rate Decisions">
-  <meta name="twitter:description" content="Learn how 6B British Pound futures react to Bank of England rate decisions, including volatility patterns, common traps, and key levels to watch.">
-
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="6b-research-library.css?v=20260813a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"How BoE Decisions Reprice 6B Futures","description":"Read BoE decisions through the prior, vote, guidance, forecast and UK-US rate response—not the Bank Rate headline alone.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/how-6b-reacts-to-boe-rate-decisions.html"},"datePublished":"2025-11-24","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/how-6b-reacts-to-boe-rate-decisions.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How 6B Futures React to Bank of England Rate Decisions",
-  "description": "Learn how 6B British Pound futures react to Bank of England rate decisions, including volatility patterns, common traps, and key levels to watch.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/how-6b-reacts-to-boe-rate-decisions.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/how-6b-reacts-to-boe-rate-decisions.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"BoE Decisions and 6B","item":"https://grizzlyparrottrading.com/futures-basics/how-6b-reacts-to-boe-rate-decisions.html"}]}
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How 6B Futures React to Bank of England Rate Decisions",
-      "item": "https://grizzlyparrottrading.com/futures-basics/how-6b-reacts-to-boe-rate-decisions.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does a Bank of England rate increase always make 6B rise?","acceptedAnswer":{"@type":"Answer","text":"No. 6B responds to the decision relative to prior pricing, the expected future path, the reason for the action and the simultaneous U.S.-dollar backdrop. A fully priced increase can be followed by lower UK rate expectations or a growth concern."}},{"@type":"Question","name":"Why can 6B move when the Bank of England leaves Bank Rate unchanged?","acceptedAnswer":{"@type":"Answer","text":"An unchanged headline can arrive with a different vote split, guidance, forecast or risk assessment. Those details can change the market-implied future Bank Rate path even though the current rate did not move."}},{"@type":"Question","name":"What should I read first in a BoE decision?","acceptedAnswer":{"@type":"Answer","text":"Start with what was priced before the release, then read the decision, vote split, policy summary and minutes together. On Monetary Policy Report dates, add the forecast assumptions, scenarios and press-conference explanation."}},{"@type":"Question","name":"Can the first 6B reaction to a BoE decision reverse?","acceptedAnswer":{"@type":"Answer","text":"Yes. Headline algorithms may react before the vote, guidance and forecasts are fully interpreted. Relative UK–U.S. rates, gilt risk premia, positioning and thin liquidity can also change or reverse the initial move."}}]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container sterling-library">
+<article>
+<!-- ARTICLE BODY START -->
+<header class="gb-hero">
+  <div class="gb-hero-copy">
+    <p class="gb-kicker">Policy package &middot; Event interpretation</p>
+    <h1>How BoE Decisions Reprice 6B Futures</h1>
+    <p class="gb-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="gb-hero-lede">Imagine the Bank of England leaves Bank Rate unchanged, yet three members vote to raise it and the minutes emphasize upside inflation risks. “No change” is the headline. A potentially higher expected path is the new information. 6B trades the package relative to the prior—not the headline in isolation.</p>
+    <div class="gb-hero-actions"><a class="button-primary" href="#package">Unpack the decision</a><a class="gb-text-link" href="#matrix">Use the scenario matrix</a></div>
+    <dl class="gb-hero-metrics" aria-label="Bank of England decision orientation"><div><dt>Meetings</dt><dd>8 per year</dd></div><div><dt>MPC</dt><dd>9 members</dd></div><div><dt>Anchor</dt><dd>2% CPI</dd></div><div><dt>Driver</dt><dd>Surprise</dd></div></dl>
+  </div>
+  <div class="gb-hero-visual">
+    <div class="gb-market-board">
+      <div class="gb-board-head"><span>Unchanged can reprice</span><strong>Illustrative package</strong></div>
+      <div class="gb-formula"><code>0 bp today</code><i aria-hidden="true">+</i><code>hawkish vote</code><i aria-hidden="true">&rarr;</i><code>path changes</code></div>
+      <p>The opposite package is possible too: a rate increase paired with guidance that lowers the expected future path.</p>
+      <p class="gb-board-foot"><span>Read every layer</span><span>No guaranteed sign</span></p>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
   </div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="gb-jump-nav" aria-label="On this page"><a href="#prior">The prior</a><a href="#package">Decision package</a><a href="#channels">Transmission</a><a href="#timeline">Event timeline</a><a href="#current-example">Current example</a><a href="#matrix">Scenario matrix</a><a href="#faq">FAQ</a></nav>
 
-<h1>How 6B Futures React to Bank of England Rate Decisions</h1>
-
-<p>The main thing that moves 6B futures is interest rate expectations from the Bank of England. When the BOE surprises the market, the British Pound reacts instantly, and 6B follows the move tick-for-tick. If you trade 6B, you need to understand how these announcements change volatility and direction.</p>
-
-<h2>Why BOE Rate Decisions Matter for 6B</h2>
-<p>6B tracks GBP/USD, and interest rate changes adjust the yield advantage between the Pound and the Dollar. When the BOE hikes more aggressively than expected, 6B usually rips upward. When the BOE holds or cuts unexpectedly, 6B often dumps fast.</p>
-
-<ul>
-  <li><strong>Rate hike surprise → 6B bullish impulse</strong></li>
-  <li><strong>Rate cut surprise → 6B bearish impulse</strong></li>
-  <li><strong>“No change” but hawkish tone → moderate upside pop</strong></li>
-  <li><strong>Dovish press conference → downside follow-through</strong></li>
-</ul>
-
-
-<h2>Common Volatility Patterns Right After the Announcement</h2>
-<p>The first 60 seconds after a BOE decision are chaos. Liquidity thins out and the Pound can spike 40–100 ticks in seconds. Most beginners get blown out by this.</p>
-
-<table>
-  <tr>
-    <th>Pattern</th>
-    <th>What It Means</th>
-  </tr>
-  <tr>
-    <td>Instant spike up</td>
-    <td>Rate hike surprise / hawkish tone</td>
-  </tr>
-  <tr>
-    <td>Instant dump</td>
-    <td>Rate cut surprise / dovish tone</td>
-  </tr>
-  <tr>
-    <td>Whipsaw both ways</td>
-    <td>Market unsure / mixed press conference</td>
-  </tr>
-</table>
-
-<h2>How to Trade 6B After the Initial Spike</h2>
-<p>Never chase the first move. The clean setups usually show up 5–15 minutes later once liquidity returns. You’re looking for:</p>
-
-<ul>
-  <li>A pullback to pre-announcement levels</li>
-  <li>Retest of the breakout zone</li>
-  <li>Continuation after volatility dies down</li>
-</ul>
-
-<p>For a similar structure example, read the 6E piece on <a href="https://grizzlyparrottrading.com/futures-basics/6e-market-structure-patterns-traders-miss.html">6E Market Structure Patterns Traders Miss</a>.</p>
-
-<h2>The Key Levels That Matter on Rate Decision Days</h2>
-<p>6B respects a few levels more than anything on BOE days:</p>
-
-<ul>
-  <li><strong>Pre-announcement high/low</strong></li>
-  <li><strong>London session high</strong></li>
-  <li><strong>Previous day’s close</strong></li>
-  <li><strong>First pullback zone</strong></li>
-</ul>
-
-<div class="highlight-box yellow">
-  <h3>BOE Days Are a Setup — and a Trap</h3>
-  <p>6B doesn’t just “react” to BOE rate decisions — it explodes, stalls, and then often reverses. The initial spike is rarely the clean move. What matters is knowing what the market expected going in, and waiting for the post-announcement unwind. The real trade usually comes after the noise, not during it.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="gb-section" id="prior" aria-labelledby="prior-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Before the announcement</p><h2 id="prior-title">You Cannot Measure a Surprise Without the Prior</h2><p>A 25-basis-point change is not automatically a 25-basis-point surprise. Market prices, economist forecasts and survey distributions can imply very different baselines.</p></div>
+  <div class="gb-method">
+    <div><h3>Freeze the pre-decision record</h3><p>Before the release, timestamp the active 6B contract, the relevant part of the sterling rate curve, comparable U.S. rates, the prior MPC vote, the latest official guidance and the distribution—not only the median—of forecasts. Preserve the source and retrieval time so the prior cannot be rewritten after price moves.</p></div>
+    <dl><div><dt>Established fact</dt><dd>Official decision</dd></div><div><dt>Observation</dt><dd>Market repricing</dd></div><div><dt>Inference</dt><dd>Dominant channel</dd></div></dl>
   </div>
-</footer>
+  <div class="gb-check-grid" style="margin-top:1.25rem">
+    <article><strong>Target decision prior</strong><p>Was the market centered on a hold, increase or decrease? How wide was the plausible range?</p></article>
+    <article><strong>Path prior</strong><p>What did policy-sensitive rates imply beyond this meeting? Market curves also contain risk premia.</p></article>
+    <article><strong>Communication prior</strong><p>What wording, vote and forecast did the previous meeting establish as the comparison?</p></article>
+    <article><strong>Position prior</strong><p>Was sterling already extended, options demand elevated or 6B liquidity impaired?</p></article>
+    <article><strong>U.S. prior</strong><p>Was Federal Reserve pricing stable, or was the dollar already moving for a separate reason?</p></article>
+    <article><strong>Risk prior</strong><p>Could energy, fiscal or geopolitical news dominate the scheduled policy event?</p></article>
+  </div>
+</section>
+
+<section class="gb-section" id="package" aria-labelledby="package-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Five information layers</p><h2 id="package-title">A BoE Decision Is a Package, Not a Number</h2><p>The Monetary Policy Committee's job is forward-looking. Its remit defines price stability as 2% CPI inflation and requires the Committee to support government economic policy subject to price stability. That makes the inflation path, risks and trade-offs central to interpretation.</p></div>
+  <div class="gb-table-scroll" role="region" aria-label="Bank of England decision package and 6B interpretation" tabindex="0">
+    <table class="gb-table"><thead><tr><th scope="col">Layer</th><th scope="col">What is established</th><th scope="col">Question for 6B</th><th scope="col">Common error</th></tr></thead><tbody>
+      <tr><th scope="row">Bank Rate decision</th><td>The current policy-rate setting</td><td>How does it differ from the priced outcome?</td><td>Treating the action as unanticipated when it was fully priced</td></tr>
+      <tr><th scope="row">Vote split</th><td>How nine individual members voted</td><td>Did the distribution shift toward a different next move?</td><td>Calling one dissent a binding promise</td></tr>
+      <tr><th scope="row">Summary and minutes</th><td>The Committee's assessment, reasoning and balance of risks</td><td>Which inflation, labour, growth or external risks changed?</td><td>Keyword counting without reading context</td></tr>
+      <tr><th scope="row">Monetary Policy Report</th><td>Forecasts, assumptions, scenarios and key judgements on report dates</td><td>Did the projected inflation-growth trade-off or uncertainty change?</td><td>Reading a conditional projection as a guarantee</td></tr>
+      <tr><th scope="row">Press conference and follow-up</th><td>Policymakers' explanation and answers when scheduled</td><td>Does the explanation reinforce or qualify the written package?</td><td>Assuming the first headline remains the final interpretation</td></tr>
+    </tbody></table>
+  </div>
+  <p class="gb-source-note"><strong>Established fact:</strong> the Bank publishes the decision and minutes together at noon UK time on scheduled announcement days. Confirm each date on the official calendar rather than converting a standing time across daylight-saving changes from memory.</p>
+</section>
+
+<section class="gb-section" id="channels" aria-labelledby="channels-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Competing mechanisms</p><h2 id="channels-title">Why “More Hawkish” Can Still Fail to Lift Sterling</h2><p>A policy package can transmit through interest differentials, growth expectations, credibility, asset prices and global risk at the same time. These channels need not point in one direction.</p></div>
+  <div class="gb-process">
+    <article><span>Information</span><h3>Package versus prior</h3><p>Decision, vote, guidance and forecast reveal a net surprise.</p></article>
+    <article><span>First stage</span><h3>UK curve and assets</h3><p>Expected rates, risk premia, gilts and equities reprice quickly.</p></article>
+    <article><span>Relative stage</span><h3>UK versus U.S.</h3><p>The sterling move depends on how much the U.S. side changes too.</p></article>
+    <article><span>Market stage</span><h3>6B execution</h3><p>Liquidity, positioning, basis and order handling shape the realized path.</p></article>
+  </div>
+  <div class="gb-proof-grid" style="margin-top:1.25rem">
+    <article class="gb-proof"><h3>Channel that can support GBP</h3><ul><li>Expected UK policy rates rise relative to comparable U.S. rates.</li><li>The shift reflects inflation control or resilient demand rather than disorderly risk premia.</li><li>GBP strengthens beyond GBP/USD, which reduces the chance of a purely dollar story.</li><li>The move survives the full written package and normalizing liquidity.</li></ul></article>
+    <article class="gb-proof is-limit"><h3>Forces that can offset it</h3><ul><li>A tighter path signals a worse inflation-growth trade-off.</li><li>Gilt yields rise because fiscal or inflation risk compensation rises.</li><li>Federal Reserve expectations rise by more than BoE expectations.</li><li>Global deleveraging creates broad dollar demand.</li><li>A crowded sterling position turns “hawkish” news into an exit.</li></ul></article>
+  </div>
+  <div class="gb-caution"><strong>Mechanism is not empirical frequency</strong><p>It is economically plausible for relative-rate repricing to affect sterling. This page does not claim that a particular vote split, phrase or yield change has produced a profitable 6B pattern. That would require a reproducible event study with synchronized data and costs.</p></div>
+</section>
+
+<section class="gb-section" id="timeline" aria-labelledby="timeline-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Announcement-day clock</p><h2 id="timeline-title">Interpretation Arrives in Waves</h2><p>The sequence below is an operational reading order, not a recommendation to trade each stage.</p></div>
+  <div class="gb-table-scroll" role="region" aria-label="Bank of England announcement-day interpretation timeline" tabindex="0">
+    <table class="gb-table"><thead><tr><th scope="col">Window</th><th scope="col">Task</th><th scope="col">Evidence to preserve</th><th scope="col">Execution hazard</th></tr></thead><tbody>
+      <tr><th scope="row">Before noon UK</th><td>Freeze the prior and event permissions</td><td>Expected outcome, curve, active 6B month, spread, depth and maximum loss</td><td>Pre-release de-risking and thinning quotes</td></tr>
+      <tr><th scope="row">Release instant</th><td>Capture the official package before interpreting</td><td>Decision, vote, timestamp and document URLs</td><td>Headline gaps, duplicate headlines and fills away from displayed price</td></tr>
+      <tr><th scope="row">First reading</th><td>Compare wording, risks and forecast with the prior release</td><td>Document diff, UK rates and GBP crosses at fixed timestamps</td><td>Anchoring on the rate headline</td></tr>
+      <tr><th scope="row">Explanation stage</th><td>Process report and press-conference context when applicable</td><td>Which assumptions, scenarios or answers alter the first reading?</td><td>Second impulse or reversal</td></tr>
+      <tr><th scope="row">Post-event</th><td>Classify rather than rationalize</td><td>Persistent relative-rate move, closing range, spreads and invalidation</td><td>Calling noise confirmation because price moved in the hoped-for direction</td></tr>
+    </tbody></table>
+  </div>
+  <div class="gb-related">For contract-level loss math and current tick specifications, use <a href="6b-contract-specs-tick-size-and-margin.html">the 6B contract reference</a>. For broad causes outside policy meetings, use <a href="british-pound-volatility-drivers-in-6b.html">the 6B volatility-driver map</a>.</div>
+</section>
+
+<section class="gb-section" id="current-example" aria-labelledby="current-example-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Official example, not a template</p><h2 id="current-example-title">July 2026 Shows Why the Headline Is Incomplete</h2><p>The Bank's July 30, 2026 release is a clean institutional example of layered information. It is included to demonstrate reading method, not to claim a measured 6B response.</p></div>
+  <div class="gb-two-column">
+    <article class="gb-panel"><p class="gb-card-label">What the release established</p><h3>Hold, with a changed vote distribution</h3><p>The MPC maintained Bank Rate at 3.75% by 6–3. Three members preferred a 25-basis-point increase. The summary said inflation risks were tilted to the upside relative to the central projection while also noting loose labour-market conditions and underlying disinflation.</p></article>
+    <article class="gb-panel"><p class="gb-card-label">What remains an inference</p><h3>How the market valued the mix</h3><p>Whether that package was hawkish or dovish for 6B depends on the pre-release probability distribution, the curve response, U.S. repricing and price behavior. The official text establishes the policy package; it does not establish a trade or the cause of every tick.</p></article>
+  </div>
+  <p class="gb-source-note">The rate and vote are a dated snapshot reviewed August 13, 2026. Always use the <a href="https://www.bankofengland.co.uk/monetary-policy" target="_blank" rel="noopener">current Bank of England monetary-policy page</a> for the latest setting.</p>
+</section>
+
+<section class="gb-section" id="matrix" aria-labelledby="matrix-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Ending: scenario matrix</p><h2 id="matrix-title">Classify the Surprise Before Assigning Direction</h2><p>These are conditional interpretations. Each row can fail when the U.S. side, risk premia, positioning or execution conditions dominate.</p></div>
+  <div class="gb-table-scroll" role="region" aria-label="Conditional Bank of England surprise matrix for 6B futures" tabindex="0">
+    <table class="gb-table"><thead><tr><th scope="col">Delivered package versus prior</th><th scope="col">Likely first hypothesis</th><th scope="col">Confirmation needed</th><th scope="col">Break condition</th></tr></thead><tbody>
+      <tr><th scope="row">Higher current and expected path</th><td>Potential GBP support through relative rates</td><td>UK-minus-U.S. policy-sensitive rates rise; GBP strength is broad</td><td>Growth or credibility shock drives risk-off and dollar demand</td></tr>
+      <tr><th scope="row">Expected action, higher future path</th><td>Guidance or votes can matter more than the headline</td><td>Curve reprices beyond the meeting and holds</td><td>The change is only risk premium or was already embedded</td></tr>
+      <tr><th scope="row">Expected action, lower future path</th><td>Potential GBP pressure despite a hold or hike</td><td>Relative UK rates fall and GBP crosses agree</td><td>U.S. repricing is even more dovish</td></tr>
+      <tr><th scope="row">Mixed inflation and growth message</th><td>Higher volatility, low directional confidence</td><td>Wait for a coherent curve, cross and price response</td><td>No coherence emerges; classification remains unresolved</td></tr>
+      <tr><th scope="row">No material surprise</th><td>Positioning, liquidity or outside news may dominate</td><td>Little persistent change in relative rates</td><td>An overlooked forecast or wording change appears on full reading</td></tr>
+    </tbody></table>
+  </div>
+  <div class="gb-caution"><strong>Decision rule</strong><p>If you cannot state the pre-event prior and identify what changed in the official package, you cannot honestly label the reaction a BoE surprise. Stand aside from causal certainty even if the chart looks obvious.</p></div>
+</section>
+
+<section class="gb-section gb-faq" id="faq" aria-labelledby="faq-title">
+  <div class="gb-section-heading"><p class="gb-kicker">Frequently asked questions</p><h2 id="faq-title">BoE Decisions and 6B: Quick Answers</h2></div>
+  <details><summary>Does a Bank of England rate increase always make 6B rise?</summary><p>No. 6B responds to the decision relative to prior pricing, the expected future path, the reason for the action and the simultaneous U.S.-dollar backdrop. A fully priced increase can be followed by lower UK rate expectations or a growth concern.</p></details>
+  <details><summary>Why can 6B move when the Bank of England leaves Bank Rate unchanged?</summary><p>An unchanged headline can arrive with a different vote split, guidance, forecast or risk assessment. Those details can change the market-implied future Bank Rate path even though the current rate did not move.</p></details>
+  <details><summary>What should I read first in a BoE decision?</summary><p>Start with what was priced before the release, then read the decision, vote split, policy summary and minutes together. On Monetary Policy Report dates, add the forecast assumptions, scenarios and press-conference explanation.</p></details>
+  <details><summary>Can the first 6B reaction to a BoE decision reverse?</summary><p>Yes. Headline algorithms may react before the vote, guidance and forecasts are fully interpreted. Relative UK–U.S. rates, gilt risk premia, positioning and thin liquidity can also change or reverse the initial move.</p></details>
+</section>
+
+<details class="gb-sources"><summary>Primary sources and editorial method</summary><ul>
+  <li><a href="https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates" target="_blank" rel="noopener">Bank of England MPC dates for 2026 and 2027</a> for the eight-meeting schedule and links to official releases.</li>
+  <li><a href="https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/july-2026" target="_blank" rel="noopener">Bank of England July 2026 Monetary Policy Summary and minutes</a> for the dated decision-package example.</li>
+  <li><a href="https://www.bankofengland.co.uk/monetary-policy" target="_blank" rel="noopener">Bank of England monetary-policy portal</a> for current Bank Rate, reports, minutes and policy material.</li>
+  <li><a href="https://www.gov.uk/government/collections/monetary-policy-remit" target="_blank" rel="noopener">HM Treasury collection of monetary-policy remits</a> for the statutory objectives and current 2% CPI target framework.</li>
+  <li><a href="https://www.bankofengland.co.uk/quarterly-bulletin/2024/2024/about-a-rate-of-general-interest-how-monetary-policy-transmits" target="_blank" rel="noopener">Bank of England analysis of monetary-policy transmission</a> for the yield-curve, asset-price and exchange-rate channels and their uncertainty.</li>
+  <li><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">Federal Reserve FOMC calendars and materials</a> for the U.S. policy side of relative-rate analysis.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/g10/british-pound.html" target="_blank" rel="noopener">CME Group British Pound futures page</a> and the <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME FX Product Guide</a> for the exchange-listed instrument anchor.</li>
+</ul><p>This page reports no original event-window return, direction, range, reversal probability or trading expectancy. The July 2026 release is a document-reading example only. A measured claim would require a frozen meeting sample, pre-event priors, synchronized futures and rates data, roll controls, realistic fills and out-of-sample validation. Sources were reviewed August 13, 2026.</p></details>
+
+<aside class="gb-disclaimer" aria-label="Educational and event-risk disclaimer"><strong>Educational and event-risk disclaimer</strong><p>This material is educational and is not individualized trading, investment, legal, tax or brokerage advice. Futures are leveraged and losses can exceed the initial margin deposit. BoE announcements can produce gaps, spread expansion, rejected orders, rapid reversals and fills materially worse than displayed prices. Confirm the official release, current contract and broker event-risk rules before participating.</p></aside>
+<!-- ARTICLE BODY END -->
+</article>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>
