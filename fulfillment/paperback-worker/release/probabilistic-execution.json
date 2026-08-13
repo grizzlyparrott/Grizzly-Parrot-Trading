@@ -204,7 +204,9 @@
     "pagesCommitSha": "5da0da5f769b0a75482a6549a46154a498c536da",
     "directSitePrintSalesConfigurationId": "63de6589-0444-4ced-bfa9-aaa4e44dfcd6",
     "directSitePrintSalesWorkerVerifiedAt": "2026-08-13",
-    "directSitePrintSalesLiveVerified": false,
+    "directSitePrintSalesPagesCommitSha": "c4f1cd78074ca20e8cff6aea8dad31e874ccf18f",
+    "directSitePrintSalesLiveVerified": true,
+    "directSitePrintSalesBrowserVerifiedAt": "2026-08-13",
     "noChargeQuoteAndStripeSessionTestPerformed": false
   }
 }
