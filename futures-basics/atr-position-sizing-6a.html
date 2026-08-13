@@ -2,362 +2,189 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Using ATR to Size Trades in 6A AUD/USD Futures</title>
-  <meta name="description" content="A blunt breakdown of how to use ATR to size positions in 6A AUD/USD futures so you stop oversizing and blowing trades on normal volatility.">
+  <title>ATR Position Sizing for 6A Australian Dollar Futures</title>
+  <meta name="description" content="Size 6A and M6A positions from ATR, thesis invalidation and a fixed risk budget with current $5 tick math, slippage allowances and zero-contract rules.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/atr-position-sizing-6a.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Using ATR to Size Trades in 6A AUD/USD Futures">
-  <meta property="og:description" content="A blunt breakdown of how to use ATR to size positions in 6A AUD/USD futures so you stop oversizing and blowing trades on normal volatility.">
+  <meta property="og:title" content="ATR Position Sizing for 6A Australian Dollar Futures">
+  <meta property="og:description" content="A risk-first sizing workflow for 6A and M6A using current tick math, ATR context, invalidation, adverse-fill allowances and integer contracts.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/atr-position-sizing-6a.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-24">
+  <meta property="article:modified_time" content="2026-08-13">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ATR Position Sizing for 6A Australian Dollar Futures">
+  <meta name="twitter:description" content="Turn a 6A invalidation distance into honest dollar risk, then accept a smaller size or a zero-contract result.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Using ATR to Size Trades in 6A AUD/USD Futures">
-  <meta name="twitter:description" content="A blunt breakdown of how to use ATR to size positions in 6A AUD/USD futures so you stop oversizing and blowing trades on normal volatility.">
-
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="6a-evidence-guides.css?v=20260813a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"ATR Position Sizing for 6A Australian Dollar Futures",
+    "description":"A risk-first method for sizing standard 6A and Micro M6A positions from volatility, invalidation and a fixed loss budget.",
+    "author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},
+    "publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/atr-position-sizing-6a.html"},
+    "datePublished":"2025-11-24",
+    "dateModified":"2026-08-13",
+    "url":"https://grizzlyparrottrading.com/futures-basics/atr-position-sizing-6a.html",
+    "image":"https://grizzlyparrottrading.com/OG-default.png",
+    "inLanguage":"en-US"
+  }
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Using ATR to Size Trades in 6A AUD/USD Futures",
-  "description": "A blunt breakdown of how to use ATR to size positions in 6A AUD/USD futures so you stop oversizing and blowing trades on normal volatility.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/atr-position-sizing-6a.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/atr-position-sizing-6a.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},
+    {"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},
+    {"@type":"ListItem","position":3,"name":"ATR Position Sizing for 6A Australian Dollar Futures","item":"https://grizzlyparrottrading.com/futures-basics/atr-position-sizing-6a.html"}
+  ]}
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Market Basics",
-      "item": "https://grizzlyparrottrading.com/market-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Using ATR to Size Trades in 6A AUD/USD Futures",
-      "item": "https://grizzlyparrottrading.com/futures-basics/atr-position-sizing-6a.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How do you size a 6A position with ATR?","acceptedAnswer":{"@type":"Answer","text":"Use ATR to describe recent range, place the stop where the trade thesis is invalid, convert the entry-to-stop distance into dollars, add costs and adverse-fill allowance, divide the fixed risk budget by that per-contract risk, and round down."}},
+    {"@type":"Question","name":"What does a 0.0009 ATR equal on standard 6A?","acceptedAnswer":{"@type":"Answer","text":"A 0.0009 move equals 18 current standard 6A outright ticks because each tick is 0.00005. At $5 per tick, that price distance equals $90 per contract before costs and slippage."}},
+    {"@type":"Question","name":"Should a 6A stop always be one ATR away?","acceptedAnswer":{"@type":"Answer","text":"No. ATR measures recent range; it does not identify where a trade thesis becomes wrong. Choose a structural or event-based invalidation first, then use ATR to judge whether that distance is ordinary, unusually tight or unusually wide."}},
+    {"@type":"Question","name":"What if the 6A sizing formula returns zero contracts?","acceptedAnswer":{"@type":"Answer","text":"Do not round up. A zero result means one standard contract exceeds the defined risk budget at that stop. Evaluate M6A with its own tick math or skip the trade; changing the stop only to force size corrupts the setup."}},
+    {"@type":"Question","name":"Does ATR protect a 6A trade from news gaps?","acceptedAnswer":{"@type":"Answer","text":"No. ATR is backward-looking and a stop is not a guaranteed fill. RBA, Federal Reserve, Australian, U.S. or China surprises can create ranges and slippage beyond the recent ATR, so event risk needs a separate allowance or no-trade rule."}}
+  ]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container aussie-evidence">
+<article>
+<!-- ARTICLE BODY START -->
+<header class="au-hero">
+  <div class="au-hero-copy">
+    <p class="au-kicker">Risk sizing &middot; standard 6A and Micro M6A</p>
+    <h1>ATR Position Sizing for 6A Australian Dollar Futures</h1>
+    <p class="au-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="au-hero-lede">ATR does not tell you where to enter or where your idea is wrong. It tells you how much price has been moving. Use that context to test an invalidation level, translate the distance into dollars and accept the contract count the risk budget can actually support.</p>
+    <div class="au-hero-actions"><a class="button-primary" href="#formula">Use the sizing formula</a><a class="au-text-link" href="#examples">See worked examples</a></div>
+    <dl class="au-hero-metrics" aria-label="6A ATR sizing anchors"><div><dt>6A tick</dt><dd>0.00005</dd></div><div><dt>6A tick value</dt><dd>$5</dd></div><div><dt>0.0009 move</dt><dd>$90</dd></div><div><dt>Rounding</dt><dd>Down</dd></div></dl>
   </div>
+  <div class="au-hero-visual"><div class="au-market-board"><div class="au-board-head"><span>Position-size rule</span><strong>Risk before quantity</strong></div><div class="au-formula"><code>risk budget</code><i aria-hidden="true">&divide;</i><code>risk per contract</code><i aria-hidden="true">=</i><code>contracts</code></div><p>Round down to a whole contract. Add fees and realistic slippage before dividing. If the result is below one, the answer is zero standard contracts.</p><p class="au-board-foot"><span>Never round up</span><span>Never force a trade</span></p></div></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-
-
-<h1>Using ATR to Size Trades in 6A AUD/USD Futures</h1>
-
-
-
-<p>
-
-Most beginners get smoked trading 6A because they size positions without respecting volatility. ATR fixes that. Average True Range tells you exactly how much 6A typically moves, which translates directly into how wide your stop should be and how many contracts you can safely run.
-
-</p>
-
-
-
-<h2>What ATR actually tells you</h2>
-
-
-
-<p>
-
-ATR measures the average movement of 6A over a set number of candles. Higher ATR = bigger swings = you need wider stops. Lower ATR = tighter structure = smaller stops. It’s the simplest volatility tool that actually works.
-
-</p>
-
-
-
-<p>
-
-If you want more context on volatility behavior, see the <a href="https://grizzlyparrottrading.com/futures-basics/6a-volatility-clusters.html">6A volatility clusters guide</a>.
-
-</p>
-
-
-
-
-
-<h2>How ATR converts into a real stop-distance</h2>
-
-
-
-<p>
-
-The formula is simple:
-
-</p>
-
-
-
-<p><strong>Stop Distance = ATR × Your Stop Multiple</strong></p>
-
-
-
-<p>
-
-Most traders use 1× to 2× ATR depending on trend strength. For example:
-
-</p>
-
-
-
-<ul>
-
-  <li>ATR = 0.0008</li>
-
-  <li>1.5× ATR stop = 0.0012</li>
-
-</ul>
-
-
-
-<p>
-
-That’s 12 ticks. Since 6A is $10 per tick, your risk per contract is:
-
-</p>
-
-
-
-<p><strong>12 ticks × $10 = $120 per contract.</strong></p>
-
-
-
-<h2>How to choose contract size using ATR</h2>
-
-
-
-<p>
-
-Use this rule:
-
-</p>
-
-
-
-<p><strong>Contracts = (Account Risk Per Trade) ÷ (ATR-based stop cost)</strong></p>
-
-
-
-<p>
-
-If your risk per trade is $240, and your stop is $120 per contract, you can run:
-
-</p>
-
-
-
-<p><strong>2 contracts max.</strong></p>
-
-
-
-<h2>Why ATR sizing works perfectly for 6A</h2>
-
-
-
-<p>
-
-6A trades with consistent rhythm across sessions, and ATR captures that. It keeps you from doing the dumb two mistakes:
-
-</p>
-
-
-
-<ul>
-
-  <li>Putting your stop inside normal noise</li>
-
-  <li>Oversizing during high-volatility cycles</li>
-
-</ul>
-
-
-
-<p>
-
-This lines up with how institutional traders handle risk—volatility-adjusted sizing.
-
-</p>
-
-
-
-<h2>Where ATR fails</h2>
-
-
-
-<p>
-
-ATR is not perfect. It breaks down:
-
-</p>
-
-
-
-<ul>
-
-  <li>During major news (FOMC, RBA, China GDP)</li>
-
-  <li>During commodity shocks</li>
-
-  <li>When volatility suddenly expands after a long quiet period</li>
-
-</ul>
-
-
-
-<p>
-
-That’s why ATR should guide you—not control you.
-
-</p>
-
-
-
-<h2>Example ATR-based trade</h2>
-
-
-
-<p>
-
-Say 6A is in a clean uptrend. ATR is 0.0009. You want a 1× ATR stop. That’s 9 ticks = $90 risk per contract. If you’re risking $180 total, the correct size is two contracts. Simple. No overthinking.
-
-</p>
-
-
-
-<div class="highlight-box green">
-
-  <h3>ATR Is the Anchor for 6A Sizing</h3>
-
-  <p>Volatility on 6A can shift fast, and ATR keeps your size and stops grounded in reality. It filters out noise, adapts to changing conditions, and helps avoid the kind of position sizing that ends with regret. Use it or get tossed around.</p>
-
-</div>
-
-
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<nav class="au-jump-nav" aria-label="On this page"><a href="#answer">Direct answer</a><a href="#atr">ATR</a><a href="#stop">Stop</a><a href="#formula">Formula</a><a href="#examples">Examples</a><a href="#failure">Failures</a><a href="#faq">FAQ</a></nav>
+
+<section class="au-section" id="answer" aria-labelledby="answer-title">
+  <div class="au-section-heading"><p class="au-kicker">Direct answer</p><h2 id="answer-title">ATR Is a Volatility Input, Not a Complete Risk Plan</h2><p>The defensible sequence is: define the thesis, identify the price that invalidates it, compare that distance with recent ATR, convert the distance into dollars, add costs and adverse-fill allowance, then divide a fixed loss budget by the per-contract amount. Reversing that order encourages you to move the stop just to manufacture a larger position.</p></div>
+  <div class="au-two-column">
+    <article class="au-panel"><p class="au-card-label">ATR answers</p><h3>How wide has price been moving?</h3><p>Average True Range summarizes recent ranges for the selected bars and lookback. It gives a consistent unit for comparing a quiet hour with an active hour or a calm week with a volatile one. The <a href="6a-volatility-clusters.html">6A volatility-cluster guide</a> explains why regimes can persist and then change.</p></article>
+    <article class="au-panel"><p class="au-card-label">ATR does not answer</p><h3>Where is the trade thesis wrong?</h3><p>A chart level, event outcome or time-based condition should define invalidation. One ATR can be inside obvious structure or far beyond it. A multiple is a measurement choice, not evidence that the stop is economically meaningful.</p></article>
   </div>
-</footer>
+  <div class="au-caution"><strong>The stop price is not the maximum loss</strong><p>A stop becomes an order when triggered. In a fast or gapping market, the fill can be worse. Planned risk should include an adverse-fill allowance, and tail loss can still exceed that plan.</p></div>
+</section>
+
+<section class="au-section" id="atr" aria-labelledby="atr-title">
+  <div class="au-section-heading"><p class="au-kicker">Measurement</p><h2 id="atr-title">Compute ATR on the Instrument and Horizon You Trade</h2><p>True range for a bar is the largest of: high minus low, absolute high minus previous close, or absolute low minus previous close. ATR smooths those true-range observations over a chosen lookback. Platforms may use different initialization or smoothing, so two values can differ slightly without either feed being fraudulent.</p></div>
+  <div class="au-table-scroll" role="region" aria-label="ATR choices and consequences for 6A sizing" tabindex="0"><table class="au-table"><thead><tr><th scope="col">Choice</th><th scope="col">What it changes</th><th scope="col">Reasonable control</th><th scope="col">Failure to avoid</th></tr></thead><tbody>
+    <tr><th scope="row">Contract month</th><td>Underlying bars, gaps and liquidity</td><td>Use the executable 6A month</td><td>Sizing from a back-adjusted continuous chart without checking the live contract</td></tr>
+    <tr><th scope="row">Bar interval</th><td>Range horizon</td><td>Match the entry and holding plan</td><td>Using daily ATR for a five-minute stop without translation</td></tr>
+    <tr><th scope="row">Lookback</th><td>Responsiveness versus stability</td><td>Set it before evaluating the trade</td><td>Changing it until the desired size appears</td></tr>
+    <tr><th scope="row">Session template</th><td>Which bars and gaps count</td><td>Use the same template in research and execution</td><td>Comparing a full-session ATR with a restricted-session ATR as if identical</td></tr>
+    <tr><th scope="row">Roll treatment</th><td>Artificial range around contract changes</td><td>Inspect raw contracts near the roll</td><td>Treating a back-adjustment artifact as tradable volatility</td></tr>
+  </tbody></table></div>
+  <p class="au-source-note">ATR is backward-looking. It describes the selected sample and calculation. It does not estimate the full loss distribution, event probability, spread, market depth or next bar.</p>
+</section>
+
+<section class="au-section" id="stop" aria-labelledby="stop-title">
+  <div class="au-section-heading"><p class="au-kicker">Invalidation first</p><h2 id="stop-title">Choose a Stop That Belongs to the Thesis</h2><p>A breakout trade might be invalid below accepted value. A macro swing might be invalid after a specific data outcome or rate repricing. An intraday setup might expire at a time cutoff. ATR helps diagnose whether the implied price stop sits inside ordinary noise; it does not replace the reasoning.</p></div>
+  <div class="au-process">
+    <article><span>1</span><h3>Write the thesis</h3><p>State what should happen, over what horizon and which observable evidence would contradict it.</p></article>
+    <article><span>2</span><h3>Mark invalidation</h3><p>Choose the price, event or time condition before looking at the desired contract count.</p></article>
+    <article><span>3</span><h3>Measure the distance</h3><p>Subtract entry from price invalidation and compare the absolute distance with the relevant ATR.</p></article>
+    <article><span>4</span><h3>Reject bad geometry</h3><p>If the stop is inside normal noise or so wide that size becomes zero, change the setup or skip it. Do not move the stop for ego.</p></article>
+  </div>
+  <div class="au-check-grid">
+    <article><strong>Structure stop</strong><p>Price crossing a level demonstrates that the proposed auction behavior failed. The level still needs enough room for ordinary volatility.</p></article>
+    <article><strong>Event stop</strong><p>A release or policy outcome invalidates the macro path. Price risk remains until the position is actually exited.</p></article>
+    <article><strong>Time stop</strong><p>The expected move fails to develop by a planned deadline. This can prevent an intraday thesis from becoming an accidental swing.</p></article>
+    <article><strong>Volatility stop</strong><p>An ATR multiple is acceptable only when the method defines and validates why that multiple belongs to the setup.</p></article>
+  </div>
+</section>
+
+<section class="au-section" id="formula" aria-labelledby="formula-title">
+  <div class="au-section-heading"><p class="au-kicker">Sizing formula</p><h2 id="formula-title">Convert the Stop Distance Into Honest Per-Contract Risk</h2><p>Current standard 6A represents 100,000 AUD. The cleanest calculation uses the price distance directly. Tick math is a cross-check.</p></div>
+  <div class="au-two-column">
+    <article class="au-panel"><p class="au-card-label">Standard 6A</p><h3>Price-distance method</h3><div class="au-formula"><code>distance &times; 100,000</code></div><p>A 0.0009 distance is $90. It is also 18 current outright ticks of 0.00005, and 18 &times; $5 = $90. A 0.0012 distance is 24 ticks and $120.</p></article>
+    <article class="au-panel"><p class="au-card-label">Full budget method</p><h3>Include friction before dividing</h3><div class="au-formula"><code>floor(budget &divide; (stop risk + fees + slippage allowance))</code></div><p>If the budget is $250, price risk is $120 and planned friction is $10 per contract, floor(250 &divide; 130) equals one contract. Two contracts would plan $260, already beyond budget.</p></article>
+  </div>
+  <ol class="au-method">
+    <li><strong>Set a dollar risk budget.</strong><span>Base it on the account plan, not the broker's available margin.</span></li>
+    <li><strong>Calculate entry-to-stop price risk.</strong><span>Use the planned executable entry, not the current mid-price if they differ.</span></li>
+    <li><strong>Add commissions and fees.</strong><span>Use round-trip costs for the actual account and product.</span></li>
+    <li><strong>Add an adverse-fill allowance.</strong><span>Estimate from comparable conditions; do not call it a guarantee.</span></li>
+    <li><strong>Divide and round down.</strong><span>Whole futures contracts only. Never round a risk result upward.</span></li>
+    <li><strong>Run a tail scenario.</strong><span>Ask what happens if the fill is materially worse or margin rises.</span></li>
+  </ol>
+  <div class="au-related">The <a href="6a-contract-specs-tick-size-value.html">6A contract-specification guide</a> verifies the current tick convention. The <a href="../tools/position-size-risk-checker.html">position-size risk checker</a> can cross-check arithmetic, but it cannot choose a valid stop or predict slippage.</div>
+</section>
+
+<section class="au-section" id="examples" aria-labelledby="examples-title">
+  <div class="au-section-heading"><p class="au-kicker">Worked examples</p><h2 id="examples-title">The Correct Result Is Often Smaller Than the Desired Trade</h2><p>These examples are arithmetic, not recommendations. Commissions and slippage allowances are illustrative and must be replaced with account-specific evidence.</p></div>
+  <div class="au-table-scroll" role="region" aria-label="Worked 6A ATR position-size examples" tabindex="0"><table class="au-table"><thead><tr><th scope="col">Input</th><th scope="col">Example A</th><th scope="col">Example B</th><th scope="col">Example C</th></tr></thead><tbody>
+    <tr><th scope="row">Recent ATR</th><td>0.0009</td><td>0.0009</td><td>0.0014</td></tr>
+    <tr><th scope="row">Thesis stop distance</th><td>0.0009</td><td>0.0012</td><td>0.0018</td></tr>
+    <tr><th scope="row">Standard 6A price risk</th><td>$90</td><td>$120</td><td>$180</td></tr>
+    <tr><th scope="row">Illustrative friction allowance</th><td>$10</td><td>$10</td><td>$15</td></tr>
+    <tr><th scope="row">Risk budget</th><td>$250</td><td>$250</td><td>$175</td></tr>
+    <tr><th scope="row">Calculation</th><td>floor(250 / 100)</td><td>floor(250 / 130)</td><td>floor(175 / 195)</td></tr>
+    <tr><th scope="row">Standard contracts</th><td>2</td><td>1</td><td>0</td></tr>
+  </tbody></table></div>
+  <div class="au-caution"><strong>Example C is not a problem to solve</strong><p>Zero contracts is a valid risk decision. Replacing the structural 0.0018 stop with a random 0.0008 stop merely to buy one standard contract changes the trade. Evaluate M6A with its own 10,000 AUD unit and 0.0001 tick, or pass.</p></div>
+</section>
+
+<section class="au-section" id="failure" aria-labelledby="failure-title">
+  <div class="au-section-heading"><p class="au-kicker">Failure cases</p><h2 id="failure-title">ATR Sizing Fails When the Inputs Are Dishonest</h2><p>The formula is easy. The judgment is in the inputs and the operational controls around them.</p></div>
+  <div class="au-limit-grid">
+    <article><strong>News-regime break</strong><p>RBA, FOMC, ABS, U.S. or China surprises can overwhelm a quiet lookback. Scheduled events require a separate rule.</p></article>
+    <article><strong>Wrong contract</strong><p>ATR from a continuous chart can include a roll artifact or differ from the executable month's liquidity and price.</p></article>
+    <article><strong>Understated friction</strong><p>Ignoring spread, commission and slippage makes the contract count look safer than it is.</p></article>
+    <article><strong>False precision</strong><p>A 14-bar ATR and a $137 budget do not make future loss predictable to the dollar.</p></article>
+    <article><strong>Margin confusion</strong><p>Available buying power is not permission to increase size beyond the loss budget.</p></article>
+    <article><strong>Correlation stacking</strong><p>Multiple AUD, commodity or equity positions can share the same shock. Per-trade sizing can miss portfolio concentration.</p></article>
+  </div>
+  <div class="au-related">Before a macro hold, pair this risk process with the <a href="swing-trading-6a-macro-themes.html">6A swing-thesis workflow</a>. Before a scheduled week, use the <a href="weekly-reports-important-for-6a.html">6A economic-calendar preparation guide</a>.</div>
+</section>
+
+<section class="au-section au-faq" id="faq" aria-labelledby="faq-title">
+  <div class="au-section-heading"><p class="au-kicker">Frequently asked questions</p><h2 id="faq-title">6A ATR Sizing: Quick Answers</h2></div>
+  <details><summary>How do you size a 6A position with ATR?</summary><p>Use ATR to describe recent range, place the stop where the trade thesis is invalid, convert the entry-to-stop distance into dollars, add costs and adverse-fill allowance, divide the fixed risk budget by that per-contract risk, and round down.</p></details>
+  <details><summary>What does a 0.0009 ATR equal on standard 6A?</summary><p>A 0.0009 move equals 18 current standard 6A outright ticks because each tick is 0.00005. At $5 per tick, that price distance equals $90 per contract before costs and slippage.</p></details>
+  <details><summary>Should a 6A stop always be one ATR away?</summary><p>No. ATR measures recent range; it does not identify where a trade thesis becomes wrong. Choose a structural or event-based invalidation first, then use ATR to judge whether that distance is ordinary, unusually tight or unusually wide.</p></details>
+  <details><summary>What if the 6A sizing formula returns zero contracts?</summary><p>Do not round up. A zero result means one standard contract exceeds the defined risk budget at that stop. Evaluate M6A with its own tick math or skip the trade; changing the stop only to force size corrupts the setup.</p></details>
+  <details><summary>Does ATR protect a 6A trade from news gaps?</summary><p>No. ATR is backward-looking and a stop is not a guaranteed fill. RBA, Federal Reserve, Australian, U.S. or China surprises can create ranges and slippage beyond the recent ATR, so event risk needs a separate allowance or no-trade rule.</p></details>
+</section>
+
+<details class="au-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> for current 6A and M6A contract units, outright increments and settlement.</li>
+  <li><a href="https://www.cmegroup.com/clearing/risk-management/performance-bonds-margins.html" target="_blank" rel="noopener">CME performance bonds and margins</a> for the exchange collateral framework.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/FuturesMarketBasics/index.htm" target="_blank" rel="noopener">CFTC futures market basics</a> for leverage, risk capital and intermediary due diligence.</li>
+  <li><a href="https://www.nfa.futures.org/investors/investor-resources/index.html" target="_blank" rel="noopener">NFA investor resources</a> for futures-account and risk education.</li>
+  <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/255/255.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 255</a> for the governing 6A contract.</li>
+</ul><p>Sources were reviewed August 13, 2026. ATR definitions and worked examples are transparent arithmetic, not a backtest, volatility forecast or recommended risk percentage. Illustrative cost allowances are not broker quotes. Replace them with evidence from the actual account and comparable orders. This is original editorial work and is not sponsored by CME, CFTC, NFA or any broker.</p></details>
+
+<aside class="au-disclaimer" aria-label="Educational and position-sizing risk disclaimer"><strong>Educational and position-sizing risk disclaimer</strong><p>This article is educational, not individualized trading, investment, legal, tax, accounting, hedging or brokerage advice. Futures are leveraged and losses can exceed the initial margin deposit. ATR is backward-looking, stops can slip, margin can change and correlated positions can amplify loss. Verify current contract specifications and broker requirements, use risk capital only, and treat zero contracts as a valid result.</p></aside>
+<!-- ARTICLE BODY END -->
+</article>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

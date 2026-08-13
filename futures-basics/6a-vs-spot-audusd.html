@@ -2,403 +2,184 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6A Futures vs Spot AUD/USD: What Traders Must Understand</title>
-  <meta name="description" content="A blunt comparison of 6A AUD/USD futures and spot forex AUD/USD so you know the real differences in pricing, leverage, execution, and market structure.">
+  <title>6A Futures vs Spot AUD/USD: Venue and Basis</title>
+  <meta name="description" content="Compare 6A futures with spot AUD/USD across venue, pricing basis, expiry, roll, leverage, execution data, counterparty structure and practical fit.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6a-vs-spot-audusd.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6A Futures vs Spot AUD/USD: What Traders Must Understand">
-  <meta property="og:description" content="A blunt comparison of 6A AUD/USD futures and spot forex AUD/USD so you know the real differences in pricing, leverage, execution, and market structure.">
+  <meta property="og:title" content="6A Futures vs Spot AUD/USD: Venue and Basis">
+  <meta property="og:description" content="A neutral comparison of exchange-traded 6A and OTC spot AUD/USD, including basis, roll, execution, leverage and counterparty trade-offs.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6a-vs-spot-audusd.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-24">
+  <meta property="article:modified_time" content="2026-08-13">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="6A Futures vs Spot AUD/USD: Venue and Basis">
+  <meta name="twitter:description" content="Choose between 6A and spot AUD/USD by comparing the instrument you can actually trade, not by repeating venue slogans.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6A Futures vs Spot AUD/USD: What Traders Must Understand">
-  <meta name="twitter:description" content="A blunt comparison of 6A AUD/USD futures and spot forex AUD/USD so you know the real differences in pricing, leverage, execution, and market structure.">
-
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="6a-evidence-guides.css?v=20260813a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"6A Futures vs Spot AUD/USD: Venue and Basis",
+    "description":"A neutral comparison of exchange-traded 6A Australian Dollar futures and OTC spot AUD/USD.",
+    "author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},
+    "publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6a-vs-spot-audusd.html"},
+    "datePublished":"2025-11-24",
+    "dateModified":"2026-08-13",
+    "url":"https://grizzlyparrottrading.com/futures-basics/6a-vs-spot-audusd.html",
+    "image":"https://grizzlyparrottrading.com/OG-default.png",
+    "inLanguage":"en-US"
+  }
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6A Futures vs Spot AUD/USD: What Traders Must Understand",
-  "description": "A blunt comparison of 6A AUD/USD futures and spot forex AUD/USD so you know the real differences in pricing, leverage, execution, and market structure.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6a-vs-spot-audusd.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6a-vs-spot-audusd.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},
+    {"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},
+    {"@type":"ListItem","position":3,"name":"6A Futures vs Spot AUD/USD: Venue and Basis","item":"https://grizzlyparrottrading.com/futures-basics/6a-vs-spot-audusd.html"}
+  ]}
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Market Basics",
-      "item": "https://grizzlyparrottrading.com/market-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6A Futures vs Spot AUD/USD: What Traders Must Understand",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6a-vs-spot-audusd.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Do 6A futures and spot AUD/USD move in the same direction?","acceptedAnswer":{"@type":"Answer","text":"Usually, yes, because both are quoted in U.S. dollars per Australian dollar. Their prices need not match because 6A is a dated futures contract with carry, basis, expiry and exchange-specific liquidity, while spot is an OTC cash-market quote."}},
+    {"@type":"Question","name":"Why is 6A priced differently from spot AUD/USD?","acceptedAnswer":{"@type":"Answer","text":"The difference is futures basis. Time to delivery, relative interest rates, funding, market liquidity and timestamps can all affect it. A price gap alone does not prove that either market is stale or leading."}},
+    {"@type":"Question","name":"Is 6A execution always better than retail spot forex?","acceptedAnswer":{"@type":"Answer","text":"No. 6A provides a central order book and clearing, but actual execution depends on spread, depth, order size, timing, fees and technology. Spot quality varies by dealer, account agreement, liquidity access and market conditions."}},
+    {"@type":"Question","name":"Does spot AUD/USD expire like 6A?","acceptedAnswer":{"@type":"Answer","text":"A rolling retail spot position has no listed futures expiration, although financing and dealer rollover conventions apply. Every 6A position belongs to a dated contract that must be closed, rolled or taken through physical settlement procedures."}},
+    {"@type":"Question","name":"Which is better for a small AUD/USD position, 6A or spot?","acceptedAnswer":{"@type":"Answer","text":"There is no universal winner. Compare the smaller M6A futures contract with the actual spot account's minimum size, total costs, financing, protections, data, liquidity and operational rules, then choose the product that fits the defined risk."}}
+  ]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container aussie-evidence">
+<article>
+<!-- ARTICLE BODY START -->
+<header class="au-hero">
+  <div class="au-hero-copy">
+    <p class="au-kicker">Product comparison &middot; futures versus OTC spot</p>
+    <h1>6A Futures vs Spot AUD/USD: Venue and Basis</h1>
+    <p class="au-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="au-hero-lede">6A and spot AUD/USD express the same currency direction through different instruments. Futures bring a dated exchange contract and central clearing. Retail spot brings a dealer agreement and rolling cash exposure. Compare the actual products, not marketing slogans.</p>
+    <div class="au-hero-actions"><a class="button-primary" href="#comparison">Compare the structures</a><a class="au-text-link" href="#decision">Use the decision workflow</a></div>
+    <dl class="au-hero-metrics" aria-label="6A and spot orientation"><div><dt>6A venue</dt><dd>CME</dd></div><div><dt>Spot structure</dt><dd>OTC</dd></div><div><dt>6A expiry</dt><dd>Dated</dd></div><div><dt>Direction</dt><dd>USD per AUD</dd></div></dl>
   </div>
+  <div class="au-hero-visual"><div class="au-market-board"><div class="au-board-head"><span>Relationship</span><strong>Direction is not identity</strong></div><div class="au-formula"><code>6A price</code><i aria-hidden="true">-</i><code>spot reference</code><i aria-hidden="true">=</i><code>basis</code></div><p>Use comparable timestamps and the correct futures month. A changing basis can reflect carry, maturity and market conditions without creating a free arbitrage for a retail account.</p><p class="au-board-foot"><span>Related prices</span><span>Different obligations</span></p></div></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-
-
-<h1>6A Futures vs Spot AUD/USD: What Traders Must Understand</h1>
-
-
-
-<p>
-
-6A AUD/USD futures and spot AUD/USD look like they track the same thing, but they’re completely different markets. Different leverage, different liquidity, different execution, different risk. If you don’t understand the structural differences, you’re going to pick the wrong product for your style and get blindsided.
-
-</p>
-
-
-
-<h2>The biggest difference: one is an exchange, one is a dealer market</h2>
-
-
-
-<p>
-
-6A trades on the CME—centralized, transparent, regulated. Spot AUD/USD trades in the OTC forex market—dealer-driven, opaque, and fragmented. That alone changes everything about fills, slippage, and reliability.
-
-</p>
-
-
-
-<table>
-
-  <thead>
-
-    <tr>
-
-      <th>6A Futures</th>
-
-      <th>Spot AUD/USD</th>
-
-    </tr>
-
-  </thead>
-
-  <tbody>
-
-    <tr>
-
-      <td>Centralized CME exchange</td>
-
-      <td>Decentralized OTC market</td>
-
-    </tr>
-
-    <tr>
-
-      <td>Known liquidity + visible depth</td>
-
-      <td>Liquidity comes from dealers, not an exchange</td>
-
-    </tr>
-
-    <tr>
-
-      <td>Regulated pricing</td>
-
-      <td>Broker pricing models vary widely</td>
-
-    </tr>
-
-    <tr>
-
-      <td>Standard tick size and $10 tick value</td>
-
-      <td>No standardized tick—pip value varies by size</td>
-
-    </tr>
-
-    <tr>
-
-      <td>Cleared through CME</td>
-
-      <td>Credit risk sits with your broker</td>
-
-    </tr>
-
-  </tbody>
-
-</table>
-
-
-
-<h2>Leverage: futures are strict, forex is “whatever the broker wants”</h2>
-
-
-
-<p>
-
-6A uses exchange-defined margin. You get real leverage, but it’s consistent and regulated. Spot forex brokers can offer crazy leverage (50:1, 100:1, 500:1) depending on jurisdiction, which is why so many beginners blow up.
-
-</p>
-
-
-
-
-
-
-
-
-<h2>Execution quality: futures win by a landslide</h2>
-
-
-
-<p>
-
-6A gives:
-
-</p>
-
-
-
-<ul>
-
-  <li>Direct market fills</li>
-
-  <li>Visible order book</li>
-
-  <li>No dealer interference</li>
-
-  <li>No requotes</li>
-
-</ul>
-
-
-
-<p>
-
-Spot forex varies by broker. Some run ECN-style books, others run B-book operations, and others mix them. Execution is inconsistent across the industry.
-
-</p>
-
-
-
-<h2>Price behavior: they track closely but not perfectly</h2>
-
-
-
-<p>
-
-6A and spot AUD/USD track the same underlying currency relationship, but the products differ because:
-
-</p>
-
-
-
-<ul>
-
-  <li>Futures have expiration cycles</li>
-
-  <li>Spot trades 24/5 with no expiry</li>
-
-  <li>Interest rate differentials affect forward pricing</li>
-
-</ul>
-
-
-
-<p>
-
-That means futures and spot won’t always match tick for tick. They correlate tightly, but not identically.
-
-</p>
-
-
-
-<h2>When 6A is better</h2>
-
-
-
-<p>
-
-6A wins when you want:
-
-</p>
-
-
-
-<ul>
-
-  <li>Regulated, transparent execution</li>
-
-  <li>Clear margin rules</li>
-
-  <li>Better liquidity in major moves</li>
-
-  <li>A clean instrument for prop trading</li>
-
-</ul>
-
-
-
-<h2>When spot AUD/USD is better</h2>
-
-
-
-<p>
-
-Spot forex wins when you want:
-
-</p>
-
-
-
-<ul>
-
-  <li>Tiny position sizing (micros smaller than CME’s micro)</li>
-
-  <li>Flexible hours with no exchange breaks</li>
-
-  <li>Access to swap/rollover strategies</li>
-
-</ul>
-
-
-
-<div class="highlight-box yellow">
-
-  <h3>Futures and Spot Aren’t Interchangeable</h3>
-
-  <p>
-
-    6A AUD/USD futures and spot AUD/USD may track the same currency pair, but structurally they are nothing alike. If you want transparency and consistency, trade 6A. If you want tiny sizing and flexible leverage, spot works. Know the differences or you’re trading blind.
-
-  </p>
-
-</div>
-
-
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<nav class="au-jump-nav" aria-label="On this page"><a href="#answer">Direct answer</a><a href="#comparison">Comparison</a><a href="#basis">Basis</a><a href="#execution">Execution</a><a href="#costs">Costs</a><a href="#decision">Decision</a><a href="#faq">FAQ</a></nav>
+
+<section class="au-section" id="answer" aria-labelledby="answer-title">
+  <div class="au-section-heading"><p class="au-kicker">Direct answer</p><h2 id="answer-title">Neither Venue Wins Every Job</h2><p>Choose 6A when a standardized, centrally cleared, exchange-traded contract and its data fit the exposure. Choose a spot product when that dealer's sizing, rolling structure and account terms fit better. The label "futures" or "forex" does not settle the question. The measurable terms of the actual account do.</p></div>
+  <div class="au-two-column">
+    <article class="au-panel"><p class="au-card-label">6A futures</p><h3>A dated exchange obligation</h3><p>Standard 6A represents 100,000 AUD and CME lists physical final settlement. Orders interact on the exchange's central market under its rules, with clearing between counterparties. The smaller M6A contract represents 10,000 AUD. The <a href="6a-contract-specs-tick-size-value.html">6A specs guide</a> owns the exact tick and delivery math.</p></article>
+    <article class="au-panel"><p class="au-card-label">Retail spot</p><h3>A rolling OTC dealer relationship</h3><p>A retail spot account is governed by its dealer, jurisdiction and customer agreement. Position sizes, quotes, financing, margin, execution method and protections vary. "Spot AUD/USD" is a market label, not one universal product specification.</p></article>
   </div>
-</footer>
+  <div class="au-caution"><strong>Same chart direction does not mean interchangeable risk</strong><p>A 6A contract has a fixed AUD unit, an expiration month and delivery rules. A spot position may be sized in different units and rolled through dealer financing. Equal-looking chart moves can produce different dollar P&amp;L, costs and operational obligations.</p></div>
+</section>
+
+<section class="au-section" id="comparison" aria-labelledby="comparison-title">
+  <div class="au-section-heading"><p class="au-kicker">Structure first</p><h2 id="comparison-title">Compare the Contract You Can Actually Trade</h2><p>This table describes common structural differences. Your broker or dealer can add restrictions, costs and liquidation rules, so verify the account agreement rather than assuming the category tells the whole story.</p></div>
+  <div class="au-table-scroll" role="region" aria-label="6A futures and spot AUD/USD structural comparison" tabindex="0"><table class="au-table"><thead><tr><th scope="col">Question</th><th scope="col">6A futures</th><th scope="col">Retail spot AUD/USD</th><th scope="col">What to verify</th></tr></thead><tbody>
+    <tr><th scope="row">Where does it trade?</th><td>CME exchange market</td><td>OTC through a dealer or venue connection</td><td>Legal counterparty and execution method</td></tr>
+    <tr><th scope="row">What is the size?</th><td>Standard 100,000 AUD; M6A 10,000 AUD</td><td>Dealer-defined units and minimums</td><td>Dollar loss at the planned stop</td></tr>
+    <tr><th scope="row">Does it expire?</th><td>Yes; each contract is dated</td><td>No listed futures expiry; rollover/financing applies</td><td>Roll schedule and overnight costs</td></tr>
+    <tr><th scope="row">How is it cleared?</th><td>Centrally through CME Clearing</td><td>Under the OTC customer/dealer arrangement</td><td>Segregation, protections and insolvency treatment</td></tr>
+    <tr><th scope="row">What market data exists?</th><td>Exchange trades, quotes, volume and open interest</td><td>Dealer or venue-specific quotes and volume proxies</td><td>Coverage, latency and data entitlement</td></tr>
+    <tr><th scope="row">How is carry expressed?</th><td>In the dated futures basis and roll</td><td>Often through rollover or financing adjustments</td><td>Exact calculation and charge timing</td></tr>
+    <tr><th scope="row">How does settlement work?</th><td>Physical under exchange rules</td><td>Usually rolling cash exposure under dealer terms</td><td>Exit, rollover and delivery obligations</td></tr>
+  </tbody></table></div>
+</section>
+
+<section class="au-section" id="basis" aria-labelledby="basis-title">
+  <div class="au-section-heading"><p class="au-kicker">Pricing relationship</p><h2 id="basis-title">Futures Basis Is a Feature, Not Automatic Mispricing</h2><p>Basis is the difference between a futures price and a comparable spot reference. A dated futures price incorporates time and financing relationships. It also trades on its own order book. Compare the correct contract month at the same moment before interpreting the gap.</p></div>
+  <div class="au-process">
+    <article><span>1</span><h3>Align the quote convention</h3><p>Both should be USD per AUD. Do not compare 6A with an inverse USD/AUD quote without converting it.</p></article>
+    <article><span>2</span><h3>Align timestamps</h3><p>A stale cash snapshot against a live futures quote manufactures a false basis. Record source and timestamp to the second when precision matters.</p></article>
+    <article><span>3</span><h3>Use the correct maturity</h3><p>The front month, next quarterly contract and a continuous chart can show different levels. Name the executable month.</p></article>
+    <article><span>4</span><h3>Track convergence and roll</h3><p>Basis normally evolves as delivery approaches. Rolling transfers exposure to a different maturity and realizes a calendar spread plus costs.</p></article>
+  </div>
+  <div class="au-check-grid">
+    <article><strong>Relative rates matter</strong><p>Australian and U.S. funding relationships affect forward value, but retail traders should not reduce real-world basis to one overnight rate subtraction.</p></article>
+    <article><strong>Liquidity matters</strong><p>A wide spread or thin depth can make the displayed gap non-executable at meaningful size.</p></article>
+    <article><strong>References differ</strong><p>There is no single retail spot print. Dealer quotes can differ, especially around news, rollover or dislocated conditions.</p></article>
+    <article><strong>Costs matter</strong><p>Commissions, bid-ask spread, financing, market data and roll costs can consume an apparent small discrepancy.</p></article>
+  </div>
+  <p class="au-source-note">CME's FX Link market exists specifically to connect OTC spot and futures through a quoted basis spread. That institutional mechanism is evidence that spot and futures are linked, not proof that a retail trader can capture every displayed difference.</p>
+</section>
+
+<section class="au-section" id="execution" aria-labelledby="execution-title">
+  <div class="au-section-heading"><p class="au-kicker">Execution evidence</p><h2 id="execution-title">A Central Order Book Improves Transparency, Not Every Fill</h2><p>6A provides exchange-distributed quotes, trades, volume and open interest. That is useful. It does not guarantee a tight spread at all times, unlimited depth, zero latency or a fill at the trigger price. Spot execution is even more account-specific: dealer model, liquidity sources, last-look terms, order handling and jurisdiction all matter.</p></div>
+  <div class="au-table-scroll" role="region" aria-label="Execution due diligence for 6A and spot AUD/USD" tabindex="0"><table class="au-table"><thead><tr><th scope="col">Evidence</th><th scope="col">6A question</th><th scope="col">Spot question</th><th scope="col">Bad shortcut</th></tr></thead><tbody>
+    <tr><th scope="row">Spread</th><td>What was the executable bid-ask spread for this month?</td><td>What spread did this account receive?</td><td>Using an advertised minimum</td></tr>
+    <tr><th scope="row">Depth</th><td>How much size was available at each level?</td><td>Is depth shown, firm and accessible?</td><td>Assuming top-of-book handles all size</td></tr>
+    <tr><th scope="row">Slippage</th><td>What did comparable orders actually fill at?</td><td>How are market and stop orders handled?</td><td>Calling one fill representative</td></tr>
+    <tr><th scope="row">Data</th><td>Are quotes live and exchange-sourced?</td><td>Whose prices and volume are displayed?</td><td>Comparing mismatched feeds</td></tr>
+    <tr><th scope="row">Outage process</th><td>What are exchange and broker procedures?</td><td>How are dealer outages and disputes handled?</td><td>Assuming the platform cannot fail</td></tr>
+  </tbody></table></div>
+  <div class="au-related">If your strategy depends on volume or order flow, 6A's exchange volume is venue-specific but defined. A retail spot platform's "volume" may represent ticks or that dealer's flow. Label the dataset before treating the numbers as comparable.</div>
+</section>
+
+<section class="au-section" id="costs" aria-labelledby="costs-title">
+  <div class="au-section-heading"><p class="au-kicker">All-in cost</p><h2 id="costs-title">Leverage and Cheap Tickets Can Hide Expensive Exposure</h2><p>Compare costs over the intended holding period and size. Futures can include commission, exchange, clearing, regulatory, platform and data fees plus spread and roll. Spot can include spread, commission, financing or swap, conversion and dealer-specific charges. Taxes and legal protections depend on jurisdiction and personal circumstances.</p></div>
+  <div class="au-limit-grid">
+    <article><strong>Margin is not cost</strong><p>The collateral posted is neither the notional value nor the maximum loss. A lower requirement can simply permit more leverage.</p></article>
+    <article><strong>Spread is not all-in cost</strong><p>Add commissions, fees, financing and adverse execution. Compare the same size and holding period.</p></article>
+    <article><strong>Small size can change the answer</strong><p>M6A may improve futures granularity, while a spot dealer may allow smaller units. Fixed fees can matter more at tiny size.</p></article>
+    <article><strong>Long holds can change the answer</strong><p>Repeated futures rolls and spot financing operate differently. Estimate both rather than extrapolating one day.</p></article>
+  </div>
+  <div class="au-caution"><strong>Regulation is account-specific</strong><p>A CME futures account and a retail forex account can fall under different statutes, regulators, customer-asset rules and dispute processes. Confirm the legal entity and jurisdiction. Do not rely on a brand name alone.</p></div>
+</section>
+
+<section class="au-section" id="decision" aria-labelledby="decision-title">
+  <div class="au-section-heading"><p class="au-kicker">Decision workflow</p><h2 id="decision-title">Choose With a One-Page Product Test</h2><p>Do this before strategy testing. If the instrument cannot support the intended size, horizon and execution, the backtest is answering the wrong question.</p></div>
+  <ol class="au-method">
+    <li><strong>Define the exposure.</strong><span>State AUD notional, maximum planned dollar loss and holding period.</span></li>
+    <li><strong>Collect binding terms.</strong><span>Use CME and broker documents for futures; use the actual dealer agreement for spot.</span></li>
+    <li><strong>Estimate all-in costs.</strong><span>Include spread, fees, financing, roll, data and plausible slippage over the full horizon.</span></li>
+    <li><strong>Test executable liquidity.</strong><span>Observe the hours and order sizes you expect to trade, including scheduled-news conditions.</span></li>
+    <li><strong>Map operational obligations.</strong><span>Record expiry, delivery, rollover, margin-change and outage procedures.</span></li>
+    <li><strong>Reject oversized choices.</strong><span>If standard 6A exceeds the risk budget, evaluate M6A or no trade instead of forcing leverage.</span></li>
+  </ol>
+  <div class="au-related">Start with <a href="what-is-6a-aud-futures.html">the 6A beginner orientation</a>, verify the exact <a href="6a-contract-specs-tick-size-value.html">contract math</a>, then use the <a href="atr-position-sizing-6a.html">ATR sizing workflow</a>. Product selection comes before entry selection.</div>
+</section>
+
+<section class="au-section au-faq" id="faq" aria-labelledby="faq-title">
+  <div class="au-section-heading"><p class="au-kicker">Frequently asked questions</p><h2 id="faq-title">6A Futures Versus Spot: Quick Answers</h2></div>
+  <details><summary>Do 6A futures and spot AUD/USD move in the same direction?</summary><p>Usually, yes, because both are quoted in U.S. dollars per Australian dollar. Their prices need not match because 6A is a dated futures contract with carry, basis, expiry and exchange-specific liquidity, while spot is an OTC cash-market quote.</p></details>
+  <details><summary>Why is 6A priced differently from spot AUD/USD?</summary><p>The difference is futures basis. Time to delivery, relative interest rates, funding, market liquidity and timestamps can all affect it. A price gap alone does not prove that either market is stale or leading.</p></details>
+  <details><summary>Is 6A execution always better than retail spot forex?</summary><p>No. 6A provides a central order book and clearing, but actual execution depends on spread, depth, order size, timing, fees and technology. Spot quality varies by dealer, account agreement, liquidity access and market conditions.</p></details>
+  <details><summary>Does spot AUD/USD expire like 6A?</summary><p>A rolling retail spot position has no listed futures expiration, although financing and dealer rollover conventions apply. Every 6A position belongs to a dated contract that must be closed, rolled or taken through physical settlement procedures.</p></details>
+  <details><summary>Which is better for a small AUD/USD position, 6A or spot?</summary><p>There is no universal winner. Compare the smaller M6A futures contract with the actual spot account's minimum size, total costs, financing, protections, data, liquidity and operational rules, then choose the product that fits the defined risk.</p></details>
+</section>
+
+<details class="au-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> for standard and Micro AUD/USD futures terms.</li>
+  <li><a href="https://www.cmegroup.com/trading/fx/fx-link.html" target="_blank" rel="noopener">CME FX Link</a> for the exchange's spot-futures basis market and product explanation.</li>
+  <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/255/255.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 255</a> for 6A contract obligations.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/fraudadv_forex.html" target="_blank" rel="noopener">CFTC foreign-currency trading advisory</a> for retail OTC forex due diligence and risk warnings.</li>
+  <li><a href="https://www.nfa.futures.org/investors/investor-resources/index.html" target="_blank" rel="noopener">NFA investor resources</a> for intermediary checks, retail forex education and risk considerations.</li>
+  <li><a href="https://www.bis.org/statistics/rpfx25.htm" target="_blank" rel="noopener">BIS 2025 Triennial Central Bank Survey</a> for definitions and scale of global OTC FX activity.</li>
+</ul><p>Sources were reviewed August 13, 2026. This is a structural comparison, not a broker ranking, execution study or claim that either venue produces better returns. Costs, protections and fills depend on the actual intermediary, jurisdiction, account, order and timestamp. This is original editorial work and is not sponsored by an exchange, dealer or broker.</p></details>
+
+<aside class="au-disclaimer" aria-label="Educational and venue risk disclaimer"><strong>Educational and venue risk disclaimer</strong><p>This article is educational, not individualized trading, investment, legal, tax, accounting, hedging or brokerage advice. Both futures and leveraged retail forex can produce rapid losses; futures losses can exceed the initial margin deposit. Counterparty, execution, liquidity, financing, expiration, delivery and regulatory risks differ. Read the binding account documents and current exchange rules, then size from a loss budget rather than available leverage.</p></aside>
+<!-- ARTICLE BODY END -->
+</article>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

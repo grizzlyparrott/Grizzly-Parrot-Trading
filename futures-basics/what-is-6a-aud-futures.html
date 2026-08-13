@@ -2,414 +2,177 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What Is 6A? How AUD/USD Futures Actually Work</title>
-  <meta name="description" content="Learn what 6A AUD/USD futures are, how the contract works, and why traders use it to express a view on the Australian dollar with leveraged exposure.">
+  <title>What Is 6A? Australian Dollar Futures Explained</title>
+  <meta name="description" content="Learn how CME 6A Australian Dollar futures work, what the quote means, why contracts expire, and how leverage, delivery and the M6A micro differ.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/what-is-6a-aud-futures.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="What Is 6A? How AUD/USD Futures Actually Work">
-  <meta property="og:description" content="Learn what 6A AUD/USD futures are, how the contract works, and why traders use it to express a view on the Australian dollar with leveraged exposure.">
+  <meta property="og:title" content="What Is 6A? Australian Dollar Futures Explained">
+  <meta property="og:description" content="A practical orientation to the 6A contract, from quote direction and lifecycle to leverage, physical delivery and the smaller M6A alternative.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/what-is-6a-aud-futures.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-24">
+  <meta property="article:modified_time" content="2026-08-13">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What Is 6A? Australian Dollar Futures Explained">
+  <meta name="twitter:description" content="Understand the 6A quote, contract lifecycle, physical delivery, leverage and M6A alternative before you trade Australian Dollar futures.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="What Is 6A? How AUD/USD Futures Actually Work">
-  <meta name="twitter:description" content="Learn what 6A AUD/USD futures are, how the contract works, and why traders use it to express a view on the Australian dollar with leveraged exposure.">
-
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="6a-evidence-guides.css?v=20260813a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"What Is 6A? Australian Dollar Futures Explained",
+    "description":"A practical orientation to CME Australian Dollar futures, including quote direction, contract lifecycle, leverage, physical delivery and M6A.",
+    "author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},
+    "publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/what-is-6a-aud-futures.html"},
+    "datePublished":"2025-11-24",
+    "dateModified":"2026-08-13",
+    "url":"https://grizzlyparrottrading.com/futures-basics/what-is-6a-aud-futures.html",
+    "image":"https://grizzlyparrottrading.com/OG-default.png",
+    "inLanguage":"en-US"
+  }
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "What Is 6A? How AUD/USD Futures Actually Work",
-  "description": "Learn what 6A AUD/USD futures are, how the contract works, and why traders use it to express a view on the Australian dollar with leveraged exposure.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/what-is-6a-aud-futures.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/what-is-6a-aud-futures.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},
+    {"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},
+    {"@type":"ListItem","position":3,"name":"What Is 6A? Australian Dollar Futures Explained","item":"https://grizzlyparrottrading.com/futures-basics/what-is-6a-aud-futures.html"}
+  ]}
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "What Is 6A? How AUD/USD Futures Actually Work",
-      "item": "https://grizzlyparrottrading.com/futures-basics/what-is-6a-aud-futures.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is the 6A futures contract?","acceptedAnswer":{"@type":"Answer","text":"6A is CME's standard Australian Dollar futures contract. It is quoted in U.S. dollars per Australian dollar, represents 100,000 Australian dollars, and gives traders a centrally cleared way to manage or speculate on AUD/USD exposure."}},
+    {"@type":"Question","name":"Does 6A rise when the Australian dollar strengthens?","acceptedAnswer":{"@type":"Answer","text":"Usually, yes. Because 6A is quoted in U.S. dollars per Australian dollar, a higher quote means one Australian dollar buys more U.S. dollars. A dated futures price can differ from spot AUD/USD because of carry, basis, expiry and venue."}},
+    {"@type":"Question","name":"Is 6A cash settled?","acceptedAnswer":{"@type":"Answer","text":"No. CME lists standard 6A as physically settled. Traders who do not intend to make or take delivery normally close or roll the position before the applicable delivery deadlines, using the current CME rulebook and broker procedures."}},
+    {"@type":"Question","name":"What is the difference between 6A and M6A?","acceptedAnswer":{"@type":"Answer","text":"Standard 6A represents 100,000 Australian dollars, while Micro AUD/USD futures, code M6A, represent 10,000 Australian dollars. The smaller contract changes the dollar exposure and sizing granularity, not the basic AUD/USD market view."}},
+    {"@type":"Question","name":"Can a trader lose more than the initial 6A margin deposit?","acceptedAnswer":{"@type":"Answer","text":"Yes. Margin is a performance bond, not the maximum possible loss. A leveraged futures position can lose more than the amount initially posted, especially through gaps, fast markets, slippage or delayed liquidation."}}
+  ]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container aussie-evidence">
+<article>
+<!-- ARTICLE BODY START -->
+<header class="au-hero">
+  <div class="au-hero-copy">
+    <p class="au-kicker">Beginner orientation &middot; 6A / AUD-USD</p>
+    <h1>What Is 6A? Australian Dollar Futures Explained</h1>
+    <p class="au-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="au-hero-lede">6A is the exchange-traded Australian dollar against the U.S. dollar. The clean part is the quote. The dangerous part is the leverage, expiry and delivery obligation sitting behind that quote. Learn the lifecycle before you touch the order ticket.</p>
+    <div class="au-hero-actions"><a class="button-primary" href="#answer">Get the direct answer</a><a class="au-text-link" href="#lifecycle">Follow the contract lifecycle</a></div>
+    <dl class="au-hero-metrics" aria-label="6A contract orientation"><div><dt>Code</dt><dd>6A</dd></div><div><dt>Unit</dt><dd>100,000 AUD</dd></div><div><dt>Quote</dt><dd>USD per AUD</dd></div><div><dt>Settlement</dt><dd>Physical</dd></div></dl>
   </div>
+  <div class="au-hero-visual"><div class="au-market-board"><div class="au-board-head"><span>Read the quote</span><strong>Direction first</strong></div><div class="au-formula"><code>0.6500</code><i aria-hidden="true">=</i><code>US$0.65 per A$1</code></div><p>If the quote rises, the Australian dollar is gaining against the U.S. dollar. If it falls, the Australian dollar is weakening. Futures basis can keep the dated contract from matching spot exactly.</p><p class="au-board-foot"><span>Same pair direction</span><span>Different instrument</span></p></div></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-
-
-        <h1>What Is 6A? How AUD/USD Futures Actually Work</h1>
-
-
-
-        <p>
-
-          6A is the CME futures contract for the Australian dollar against the U.S. dollar. When you trade 6A AUD/USD futures, you’re taking a leveraged position on whether the Aussie strengthens or weakens versus the U.S. dollar, using a standardized exchange-traded contract instead of spot forex.
-
-        </p>
-
-
-
-        <h2>6A in plain English: the AUD/USD futures contract</h2>
-
-
-
-        <p>
-
-          The 6A contract tracks the AUD/USD exchange rate. If you’re long 6A, you benefit when the Australian dollar gains value versus the U.S. dollar. If you’re short, you benefit when the Aussie drops. You’re not buying physical currency; you’re trading price changes around that FX pair using futures.
-
-        </p>
-
-
-
-        <p>
-
-          The price you see on the 6A ladder looks like an FX quote (for example, 0.6500). That number is the market’s current view of how many U.S. dollars one Australian dollar is worth. A small move in that quote can mean a meaningful P&amp;L swing because the contract controls a large notional amount of AUD.
-
-        </p>
-
-
-
-        <h2>What you’re really trading with 6A</h2>
-
-
-
-        <p>
-
-          6A AUD/USD futures are basically a concentrated bet on three things:
-
-        </p>
-
-
-
-        <ul>
-
-          <li>The strength of the Australian economy versus the U.S.</li>
-
-          <li>Interest rate expectations between the Reserve Bank of Australia (RBA) and the Federal Reserve.</li>
-
-          <li>Global risk appetite, especially demand for commodities and exposure to Asia.</li>
-
-        </ul>
-
-
-
-        <p>
-
-          Australia is heavily tied to commodities and Chinese demand, so 6A tends to move with risk-on and risk-off swings. When traders are comfortable taking risk and commodities trade well, the Aussie often benefits. In risk-off conditions, when money hides in safer assets, 6A can get hit.
-
-        </p>
-
-
-
-        <p>
-
-          If you’re already studying how big-picture data hits markets, articles like <a href="https://grizzlyparrottrading.com/market-basics/how-economic-reports-move-markets.html">how economic reports move markets</a> will help you frame why 6A suddenly spikes off a headline.
-
-        </p>
-
-
-
-        <h2>How 6A pricing and P&amp;L behave</h2>
-
-
-
-        <p>
-
-          6A trades almost around the clock during the week. Price moves in small increments, and every one of those price increments (ticks) changes your P&amp;L. You don’t need to memorize the exact tick value to grasp the point: a tiny move in the quote multiplied by a large notional contract equals real money.
-
-        </p>
-
-
-
-        <p>
-
-          Example: if 6A moves from 0.6500 to 0.6510, that’s a 10 “pip” move. On a full-size futures contract, that’s a noticeable change in profit or loss for a single contract. Stack multiple contracts, and the same move gets loud fast.
-
-        </p>
-
-
-
-        <p>
-
-          Margin requirements tell you how much capital you need to post to control that notional size. The exchange sets a baseline, and your broker can demand more. The leverage is the whole point of using 6A, but it’s also why undisciplined traders blow up.
-
-        </p>
-
-
-
-        <h2>Who actually uses 6A AUD/USD futures?</h2>
-
-
-
-        <p>
-
-          6A isn’t just for speculators staring at charts all day. Common users include:
-
-        </p>
-
-
-
-        <ul>
-
-          <li><strong>Hedgers</strong> – Australian exporters, commodity producers, and funds with AUD exposure hedge currency risk with 6A.</li>
-
-          <li><strong>Macro traders</strong> – People trading themes like “China slowdown,” “commodity boom,” or “rate differentials” use 6A to express those views.</li>
-
-          <li><strong>FX-focused day traders</strong> – Traders who prefer central exchange execution, clearer margin rules, and futures microstructure instead of OTC spot.</li>
-
-        </ul>
-
-
-
-        <p>
-
-          Because 6A is tied into broader market structure, it plays well with concepts like <a href="https://grizzlyparrottrading.com/market-basics/market-correlation-explained.html">market correlations</a> and <a href="https://grizzlyparrottrading.com/market-basics/market-liquidity-basics.html">market liquidity</a>. If you understand how flows move between risk assets, currencies, and rates, 6A becomes another clean way to ride those flows.
-
-        </p>
-
-
-
-        <h2>Key 6A facts at a glance</h2>
-
-
-
-        <p>
-
-          Exact specifications can change over time, so always confirm current details with the exchange or your broker. But the high-level structure of 6A AUD/USD futures stays consistent and looks roughly like this:
-
-        </p>
-
-
-
-        <table>
-
-          <thead>
-
-            <tr>
-
-              <th>Item</th>
-
-              <th>What it means for you</th>
-
-            </tr>
-
-          </thead>
-
-          <tbody>
-
-            <tr>
-
-              <td>Underlying</td>
-
-              <td>AUD/USD exchange rate (Australian dollar vs U.S. dollar).</td>
-
-            </tr>
-
-            <tr>
-
-              <td>Exchange</td>
-
-              <td>Traded on CME, centrally cleared, not an OTC forex contract.</td>
-
-            </tr>
-
-            <tr>
-
-              <td>Contract nature</td>
-
-              <td>Standardized futures, sized large enough that small price moves matter.</td>
-
-            </tr>
-
-            <tr>
-
-              <td>Trading hours</td>
-
-              <td>Nearly 24-hour access on weekdays, with a short daily maintenance break.</td>
-
-            </tr>
-
-            <tr>
-
-              <td>Leverage</td>
-
-              <td>You post a fraction of the notional as margin; leverage cuts both ways.</td>
-
-            </tr>
-
-            <tr>
-
-              <td>Settlement</td>
-
-              <td>Financial; most retail traders roll or flatten before expiration.</td>
-
-            </tr>
-
-          </tbody>
-
-        </table>
-
-
-
-        <h2>Where 6A fits in your futures playbook</h2>
-
-
-
-        <p>
-
-          As a beginner, you don’t need 6A to be your first product. But if you care about currencies, commodities, or macro themes, 6A is a clean way to put those opinions to work in a centralized, transparent market. It reacts well to data, central bank decisions, and shifts in global risk appetite.
-
-        </p>
-
-
-
-        <p>
-
-          If you already trade index futures or other FX futures, treating 6A AUD/USD futures as “the Aussie risk barometer” makes sense. Pair it with your understanding of market correlations, liquidity, and economic releases, and it becomes another sharp tool instead of just a random ticker on your platform.
-
-        </p>
-
-
-
-        <div class="highlight-box green">
-
-          <h3>6A Trades Clean — If You Respect the Drivers</h3>
-
-          <p>It’s a straightforward way to trade AUD/USD with leverage and transparency. But clean doesn’t mean easy. Understand what moves the Aussie, manage the risk, and 6A fits smoothly into a disciplined futures approach.</p>
-
-        </div>
-
-
-
-        <!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<nav class="au-jump-nav" aria-label="On this page"><a href="#answer">Direct answer</a><a href="#quote">Quote</a><a href="#lifecycle">Lifecycle</a><a href="#participants">Users</a><a href="#risk">Risk</a><a href="#checklist">Checklist</a><a href="#faq">FAQ</a></nav>
+
+<section class="au-section" id="answer" aria-labelledby="answer-title">
+  <div class="au-section-heading"><p class="au-kicker">Direct answer</p><h2 id="answer-title">6A Turns an AUD/USD View Into a Standardized Futures Position</h2><p>CME lists 6A as a physically settled futures contract representing 100,000 Australian dollars. Its price is U.S. dollars per Australian dollar. Buy it when your thesis requires AUD to strengthen relative to USD; sell it when your thesis requires AUD to weaken. That sentence explains direction, not whether the trade is sensible.</p></div>
+  <div class="au-two-column">
+    <article class="au-panel"><p class="au-card-label">What is standardized</p><h3>The exchange defines the instrument</h3><p>The contract unit, quote convention, minimum price movement, listed months, delivery process and clearing rules are exchange terms. You are not negotiating a custom amount or settlement date with a retail forex dealer. See the <a href="6a-contract-specs-tick-size-value.html">6A contract-specification guide</a> for the exact math.</p></article>
+    <article class="au-panel"><p class="au-card-label">What is not standardized</p><h3>Your risk still belongs to you</h3><p>Your entry, stop, holding period, broker margin, commission, slippage and decision to roll are not solved by the exchange. A standardized contract can still be the wrong size. Use the <a href="atr-position-sizing-6a.html">6A ATR sizing guide</a> to turn a stop distance into a contract count.</p></article>
   </div>
-</footer>
+  <div class="au-caution"><strong>Do not confuse notional value with cash posted</strong><p>At a 0.6500 quote, one standard contract represents roughly US$65,000 of AUD notional exposure: 100,000 &times; 0.6500. Your broker may require only a fraction of that as margin. The smaller deposit does not shrink the position's price sensitivity or cap the loss.</p></div>
+</section>
+
+<section class="au-section" id="quote" aria-labelledby="quote-title">
+  <div class="au-section-heading"><p class="au-kicker">Quote orientation</p><h2 id="quote-title">A Higher 6A Quote Means a Stronger Australian Dollar</h2><p>The numerator and denominator matter. 6A uses the same directional convention as spot AUD/USD: U.S. dollars for one Australian dollar. If the contract moves from 0.6500 to 0.6510, the Australian dollar gained 0.0010 U.S. dollar per Australian dollar.</p></div>
+  <div class="au-table-scroll" role="region" aria-label="Examples of 6A quote direction" tabindex="0"><table class="au-table"><thead><tr><th scope="col">Quote change</th><th scope="col">Currency interpretation</th><th scope="col">Long 6A</th><th scope="col">Short 6A</th></tr></thead><tbody>
+    <tr><th scope="row">0.6500 to 0.6510</th><td>AUD strengthened versus USD</td><td>Gains before costs</td><td>Loses before costs</td></tr>
+    <tr><th scope="row">0.6500 to 0.6485</th><td>AUD weakened versus USD</td><td>Loses before costs</td><td>Gains before costs</td></tr>
+    <tr><th scope="row">Futures above spot</th><td>Possible positive basis for that maturity</td><td colspan="2">Not proof that futures "lead" spot</td></tr>
+  </tbody></table></div>
+  <p class="au-source-note">Spot and futures normally express the same currency direction, but they are not identical prices. Interest-rate carry, time to expiry, liquidity and timestamps affect the basis. The <a href="6a-vs-spot-audusd.html">6A versus spot AUD/USD guide</a> explains those differences without pretending one venue always wins.</p>
+</section>
+
+<section class="au-section" id="lifecycle" aria-labelledby="lifecycle-title">
+  <div class="au-section-heading"><p class="au-kicker">Contract lifecycle</p><h2 id="lifecycle-title">Every 6A Position Belongs to a Dated Contract</h2><p>There is no immortal front-month contract. A specific 6A month trades, approaches expiration and eventually reaches delivery procedures. Charting platforms often hide that lifecycle behind a continuous symbol. Your brokerage position does not.</p></div>
+  <div class="au-process">
+    <article><span>1</span><h3>Select the month</h3><p>Confirm the exact symbol, expiration month, volume, open interest and spread. Do not assume a platform's continuous chart is the executable contract.</p></article>
+    <article><span>2</span><h3>Manage the position</h3><p>Mark P&amp;L, margin and risk against that contract. Contract value changes immediately; margin calls do not wait for your thesis to recover.</p></article>
+    <article><span>3</span><h3>Close or roll</h3><p>If the thesis extends beyond the current month, close it or execute a calendar spread into another month. A roll can realize a basis difference and incur costs.</p></article>
+    <article><span>4</span><h3>Respect delivery</h3><p>Standard 6A is physically settled. Traders without delivery capability should follow the exchange calendar and the broker's earlier cutoff, not a generic internet date.</p></article>
+  </div>
+  <div class="au-related"><strong>Practical rule:</strong> before every entry, write down the full contract month and your planned exit or roll date. If you cannot identify both, you are not ready to hold the position.</div>
+</section>
+
+<section class="au-section" id="participants" aria-labelledby="participants-title">
+  <div class="au-section-heading"><p class="au-kicker">Why the market exists</p><h2 id="participants-title">The Same Contract Can Hedge Exposure or Express a View</h2><p>A futures price does not tell you the motive behind each trade. Exporters, importers, asset managers, banks, commodity businesses and speculators can all use the same market for different reasons. Do not look at a candle and invent a participant story.</p></div>
+  <div class="au-check-grid">
+    <article><strong>Commercial hedging</strong><p>A business with future AUD receipts or payments may use futures to reduce exchange-rate uncertainty. The hedge size and accounting treatment depend on the actual exposure.</p></article>
+    <article><strong>Portfolio hedging</strong><p>An investor holding Australian assets can alter currency exposure separately from the underlying portfolio, subject to basis and timing risk.</p></article>
+    <article><strong>Macro speculation</strong><p>A trader can express a relative RBA-Fed, commodity, China-growth or risk-sentiment thesis. The <a href="what-moves-6a-aud-futures.html">6A driver map</a> separates those channels.</p></article>
+    <article><strong>Short-horizon trading</strong><p>Day traders may focus on scheduled releases and liquidity. A short holding period removes neither leverage nor fast-market slippage.</p></article>
+  </div>
+  <div class="au-caution"><strong>CFTC categories have limits</strong><p>Commitments of Traders reports summarize reportable positions under defined categories and publication timing. They do not reveal every participant, a complete portfolio, live intraday positioning or the reason a position exists.</p></div>
+</section>
+
+<section class="au-section" id="risk" aria-labelledby="risk-title">
+  <div class="au-section-heading"><p class="au-kicker">Risk reality</p><h2 id="risk-title">Leverage Makes Small Quote Changes Financially Loud</h2><p>The current CME 2026 FX Product Guide lists the standard 6A outright minimum increment as 0.00005 U.S. dollar per AUD. Multiply that by 100,000 AUD and one tick is $5. A conventional 0.0001 currency "pip" is two outright ticks, or $10, on one standard contract.</p></div>
+  <div class="au-table-scroll" role="region" aria-label="Standard and Micro Australian Dollar futures orientation" tabindex="0"><table class="au-table"><thead><tr><th scope="col">Feature</th><th scope="col">Standard 6A</th><th scope="col">Micro M6A</th><th scope="col">What to verify</th></tr></thead><tbody>
+    <tr><th scope="row">Contract unit</th><td>100,000 AUD</td><td>10,000 AUD</td><td>Current CME product guide</td></tr>
+    <tr><th scope="row">Outright increment</th><td>0.00005</td><td>0.0001</td><td>Order type and contract</td></tr>
+    <tr><th scope="row">Dollar value</th><td>$5 per outright tick</td><td>$1 per outright tick</td><td>Unit &times; price increment</td></tr>
+    <tr><th scope="row">Final settlement</th><td>Physical</td><td>Physical</td><td>Exchange and broker deadlines</td></tr>
+  </tbody></table></div>
+  <div class="au-limit-grid">
+    <article><strong>Margin is not risk</strong><p>Exchange performance bonds and broker day margins can change. Neither tells you the loss at your stop or the worst possible loss.</p></article>
+    <article><strong>A stop is not a guarantee</strong><p>During gaps or thin markets, a stop order can fill beyond its trigger or fail under venue-specific conditions.</p></article>
+    <article><strong>Micros are not harmless</strong><p>M6A offers finer sizing, but repeated contracts can rebuild the same exposure. Count total notional and total stop risk.</p></article>
+    <article><strong>Delivery is operational risk</strong><p>Waiting until expiration without understanding broker rules can create forced liquidation, fees or an obligation you did not intend.</p></article>
+  </div>
+</section>
+
+<section class="au-section" id="checklist" aria-labelledby="checklist-title">
+  <div class="au-section-heading"><p class="au-kicker">Before the first order</p><h2 id="checklist-title">A Six-Question 6A Readiness Check</h2><p>If any answer is vague, stop. The market will still be there after you verify the instrument.</p></div>
+  <ol class="au-method">
+    <li><strong>Which exact contract month am I trading?</strong><span>Record the complete symbol, not just "6A."</span></li>
+    <li><strong>What does one tick cost?</strong><span>Use the current outright increment for that product and order, not a stale article.</span></li>
+    <li><strong>Where is the thesis invalid?</strong><span>Convert that price distance into dollars before choosing quantity.</span></li>
+    <li><strong>What are the scheduled catalysts?</strong><span>Check official RBA, ABS, Federal Reserve and China release calendars.</span></li>
+    <li><strong>When will I close or roll?</strong><span>Use CME dates and the broker's operating deadline.</span></li>
+    <li><strong>Can this account absorb an adverse fill?</strong><span>If the plan only works at the ideal stop price, the size is too aggressive.</span></li>
+  </ol>
+</section>
+
+<section class="au-section au-faq" id="faq" aria-labelledby="faq-title">
+  <div class="au-section-heading"><p class="au-kicker">Frequently asked questions</p><h2 id="faq-title">6A Australian Dollar Futures: Quick Answers</h2></div>
+  <details><summary>What is the 6A futures contract?</summary><p>6A is CME's standard Australian Dollar futures contract. It is quoted in U.S. dollars per Australian dollar, represents 100,000 Australian dollars, and gives traders a centrally cleared way to manage or speculate on AUD/USD exposure.</p></details>
+  <details><summary>Does 6A rise when the Australian dollar strengthens?</summary><p>Usually, yes. Because 6A is quoted in U.S. dollars per Australian dollar, a higher quote means one Australian dollar buys more U.S. dollars. A dated futures price can differ from spot AUD/USD because of carry, basis, expiry and venue.</p></details>
+  <details><summary>Is 6A cash settled?</summary><p>No. CME lists standard 6A as physically settled. Traders who do not intend to make or take delivery normally close or roll the position before the applicable delivery deadlines, using the current CME rulebook and broker procedures.</p></details>
+  <details><summary>What is the difference between 6A and M6A?</summary><p>Standard 6A represents 100,000 Australian dollars, while Micro AUD/USD futures, code M6A, represent 10,000 Australian dollars. The smaller contract changes the dollar exposure and sizing granularity, not the basic AUD/USD market view.</p></details>
+  <details><summary>Can a trader lose more than the initial 6A margin deposit?</summary><p>Yes. Margin is a performance bond, not the maximum possible loss. A leveraged futures position can lose more than the amount initially posted, especially through gaps, fast markets, slippage or delayed liquidation.</p></details>
+</section>
+
+<details class="au-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> for the 6A and M6A units, quote increments and physical settlement.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/g10/australian-dollar.html" target="_blank" rel="noopener">CME Australian Dollar futures product page</a> for product orientation, available market data and exchange resources.</li>
+  <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/255/255.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 255</a> for governing Australian Dollar futures terms and delivery procedures.</li>
+  <li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener">CME trading hours and holiday schedules</a> for current session and holiday verification.</li>
+  <li><a href="https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm" target="_blank" rel="noopener">CFTC Commitments of Traders</a> for report definitions and publication access.</li>
+</ul><p>Sources were reviewed August 13, 2026. This page explains the contract lifecycle; it reports no proprietary return study, trading edge or participant motive. Dollar examples are arithmetic based on the linked CME contract terms. Current rules, listed months, margins and broker deadlines can change, so verify them before trading. This is original editorial work and is not sponsored by the cited institutions.</p></details>
+
+<aside class="au-disclaimer" aria-label="Educational and futures risk disclaimer"><strong>Educational and futures risk disclaimer</strong><p>This article is educational, not individualized trading, investment, legal, tax, accounting, hedging or brokerage advice. Futures are leveraged; losses can exceed the initial margin deposit. Physical delivery, contract expiration, gaps, slippage, liquidity changes and broker liquidation rules create risks beyond a chart setup. Verify the active contract, current exchange rules, broker specifications and your own risk limits before placing an order.</p></aside>
+<!-- ARTICLE BODY END -->
+</article>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>
