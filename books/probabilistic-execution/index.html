@@ -35,8 +35,6 @@
     gtag('config', 'AW-17793230727');
   </script>
 
-  <!-- Physical Product and Offer entities stay withheld until the print proofs
-       are accepted and the exact retail checkouts are live. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -89,7 +87,9 @@
         "url": "https://grizzlyparrottrading.com/books/probabilistic-execution/",
         "description": "A practical futures trading book about contract mechanics, leverage, risk control, execution, order flow, market narratives, and the evidence required to decide whether a strategy deserves capital.",
         "workExample": [
-          {"@id": "https://grizzlyparrottrading.com/books/probabilistic-execution/#digital"}
+          {"@id": "https://grizzlyparrottrading.com/books/probabilistic-execution/#digital"},
+          {"@id": "https://grizzlyparrottrading.com/books/probabilistic-execution/#paperback"},
+          {"@id": "https://grizzlyparrottrading.com/books/probabilistic-execution/#hardcover"}
         ]
       },
       {
@@ -113,12 +113,60 @@
           "itemCondition": "https://schema.org/NewCondition",
           "seller": {"@id": "https://grizzlyparrottrading.com/#organization"}
         }
+      },
+      {
+        "@type": "Book",
+        "@id": "https://grizzlyparrottrading.com/books/probabilistic-execution/#paperback",
+        "name": "Probabilistic Execution: Tactics to Avoid the Guillotine - Paperback Edition",
+        "isbn": "9780557956548",
+        "bookEdition": "Paperback edition",
+        "bookFormat": "https://schema.org/Paperback",
+        "inLanguage": "en-US",
+        "image": "https://grizzlyparrottrading.com/books/probabilistic-execution/probabilistic-execution-cover.jpg",
+        "url": "https://grizzlyparrottrading.com/books/probabilistic-execution/?edition=paperback#purchase",
+        "author": {"@id": "https://grizzlyparrottrading.com/about.html#kyle-parrott"},
+        "publisher": {"@id": "https://grizzlyparrottrading.com/#organization"},
+        "exampleOfWork": {"@id": "https://grizzlyparrottrading.com/books/probabilistic-execution/#work"},
+        "offers": {
+          "@type": "Offer",
+          "url": "https://grizzlyparrottrading.com/books/probabilistic-execution/?edition=paperback#purchase",
+          "price": "39.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "eligibleRegion": "US",
+          "seller": {"@id": "https://grizzlyparrottrading.com/#organization"}
+        }
+      },
+      {
+        "@type": "Book",
+        "@id": "https://grizzlyparrottrading.com/books/probabilistic-execution/#hardcover",
+        "name": "Probabilistic Execution: Tactics to Avoid the Guillotine - Hardcover Edition",
+        "isbn": "9780557956531",
+        "bookEdition": "Case-wrap hardcover edition",
+        "bookFormat": "https://schema.org/Hardcover",
+        "inLanguage": "en-US",
+        "image": "https://grizzlyparrottrading.com/books/probabilistic-execution/probabilistic-execution-cover.jpg",
+        "url": "https://grizzlyparrottrading.com/books/probabilistic-execution/?edition=hardcover#purchase",
+        "author": {"@id": "https://grizzlyparrottrading.com/about.html#kyle-parrott"},
+        "publisher": {"@id": "https://grizzlyparrottrading.com/#organization"},
+        "exampleOfWork": {"@id": "https://grizzlyparrottrading.com/books/probabilistic-execution/#work"},
+        "offers": {
+          "@type": "Offer",
+          "url": "https://grizzlyparrottrading.com/books/probabilistic-execution/?edition=hardcover#purchase",
+          "price": "49.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "eligibleRegion": "US",
+          "seller": {"@id": "https://grizzlyparrottrading.com/#organization"}
+        }
       }
     ]
   }
   </script>
 
-  <link rel="stylesheet" href="probabilistic-execution.css?v=20260812-digital-live">
+  <link rel="stylesheet" href="probabilistic-execution.css?v=20260813-all-editions-live">
   <script src="/uet.js" defer></script>
 </head>
 <body>
@@ -132,7 +180,7 @@
       </div>
       <nav class="header-nav" aria-label="Book navigation">
         <a href="https://grizzlyparrottrading.com/books/">All books</a>
-        <a class="button button-small" href="#purchase">Get the digital edition</a>
+        <a class="button button-small" href="#purchase">Get the book</a>
       </nav>
     </div>
   </header>
@@ -160,10 +208,10 @@
           </div>
 
           <div class="hero-actions">
-            <a class="button" href="#purchase">Get the PDF + EPUB</a>
+            <a class="button" href="#purchase">Choose an edition</a>
             <a class="text-link" href="#inside">See what is inside</a>
           </div>
-          <p class="checkout-note">The PDF and EPUB are delivered privately by email after secure checkout. Print editions are coming soon.</p>
+          <p class="checkout-note">Choose PDF + EPUB, paperback, or case-wrap hardcover. Print editions are produced and shipped on demand by Lulu.</p>
         </div>
 
         <aside class="cover-panel" aria-label="Probabilistic Execution cover">
@@ -254,13 +302,13 @@
       <div class="shell purchase-card">
         <div class="purchase-copy">
           <p class="section-kicker">Get the book</p>
-          <h2>Digital now. Print coming soon.</h2>
-          <p>The $29 digital edition includes both the reflowable EPUB and the professionally typeset PDF. Paperback and case-wrap hardcover editions are in production and will be released separately.</p>
+          <h2>Choose your edition.</h2>
+          <p>Get the complete PDF + EPUB for $29, the 6 &times; 9 paperback for $39, or the 6 &times; 9 case-wrap hardcover for $49.</p>
           <ul>
-            <li>One-time secure Stripe checkout</li>
-            <li>Both complete digital files are included</li>
-            <li>Private delivery by email after payment</li>
-            <li>No public PDF or EPUB download links</li>
+            <li>Secure Stripe checkout for every edition</li>
+            <li>Digital includes both complete files, delivered privately by email</li>
+            <li>Print editions are produced and shipped on demand by Lulu</li>
+            <li>Print shipping is calculated before payment; U.S. delivery only</li>
           </ul>
           <p class="risk-note">Educational material only. No strategy, pattern, or process can guarantee profit or freedom from loss.</p>
         </div>
@@ -276,16 +324,18 @@
 
           <article class="price-box is-paperback" data-edition="paperback">
             <span>Paperback edition</span>
-            <strong class="coming-soon">Coming soon</strong>
-            <small>6 &times; 9 in paperback</small>
-            <p class="edition-status">Proof copies are in production. Sales have not opened.</p>
+            <strong data-price-paperback>$39</strong>
+            <small>USD &middot; shipping extra</small>
+            <a class="button button-wide button-disabled js-paperback-buy" href="#purchase" aria-disabled="true">Checking secure checkout&hellip;</a>
+            <p class="edition-status" data-status-paperback aria-live="polite">Confirming the live purchase link.</p>
           </article>
 
           <article class="price-box is-hardcover" data-edition="hardcover">
             <span>Hardcover edition</span>
-            <strong class="coming-soon">Coming soon</strong>
-            <small>6 &times; 9 in case-wrap hardcover</small>
-            <p class="edition-status">Proof copies are in production. Sales have not opened.</p>
+            <strong data-price-hardcover>$49</strong>
+            <small>USD &middot; shipping extra</small>
+            <a class="button button-wide button-disabled js-hardcover-buy" href="#purchase" aria-disabled="true">Checking secure checkout&hellip;</a>
+            <p class="edition-status" data-status-hardcover aria-live="polite">Confirming the live purchase link.</p>
           </article>
         </div>
       </div>
@@ -312,7 +362,7 @@
           </details>
           <details>
             <summary>Who fulfills the print editions?</summary>
-            <p>The paperback and hardcover editions are coming soon. Lulu will print and ship them when those editions are released.</p>
+            <p>Lulu prints and ships each paperback or hardcover on demand. Enter your U.S. shipping address to see the available shipping cost before secure Stripe checkout.</p>
           </details>
         </div>
       </div>
@@ -340,7 +390,12 @@
   <script>
     (function () {
       var workerBase = 'https://grizzly-parrot-paperback.grizzlyparrott04.workers.dev';
+      var workerHost = 'grizzly-parrot-paperback.grizzlyparrott04.workers.dev';
       var requestedEdition = new URLSearchParams(window.location.search).get('edition');
+      var printEditions = [
+        {edition: 'paperback', buttonSelector: '.js-paperback-buy', priceSelector: '[data-price-paperback]', statusSelector: '[data-status-paperback]', label: 'Buy paperback'},
+        {edition: 'hardcover', buttonSelector: '.js-hardcover-buy', priceSelector: '[data-price-hardcover]', statusSelector: '[data-status-hardcover]', label: 'Buy hardcover'}
+      ];
 
       if (['digital', 'paperback', 'hardcover'].indexOf(requestedEdition) !== -1) {
         document.querySelectorAll('.price-box[data-edition]').forEach(function (box) {
@@ -358,6 +413,17 @@
         button.addEventListener('click', function (event) {
           if (button.getAttribute('aria-disabled') === 'true') event.preventDefault();
         });
+      }
+
+      function validPrintCheckoutUrl(value) {
+        try {
+          var parsed = new URL(value);
+          return parsed.protocol === 'https:'
+            && parsed.hostname === workerHost
+            && parsed.pathname === '/print/checkout';
+        } catch (error) {
+          return false;
+        }
       }
 
       function enableDigitalCheckout(config) {
@@ -393,9 +459,41 @@
         if (status) status.textContent = 'Please try again shortly.';
       }
 
+      function enablePrintCheckout(item, config) {
+        var button = document.querySelector(item.buttonSelector);
+        var status = document.querySelector(item.statusSelector);
+        var price = document.querySelector(item.priceSelector);
+        if (!button || !config || config.enabled !== true || !validPrintCheckoutUrl(config.checkoutUrl)) return;
+        if (Number.isInteger(config.priceCents) && config.priceCents > 0 && price) {
+          price.textContent = dollars(config.priceCents);
+        }
+        button.href = config.checkoutUrl;
+        button.target = '_blank';
+        button.rel = 'noopener';
+        button.textContent = item.label;
+        button.removeAttribute('aria-disabled');
+        button.classList.remove('button-disabled');
+        if (status) status.textContent = 'Shipping is calculated before secure Stripe checkout.';
+        button.addEventListener('click', function () {
+          if (typeof gtag === 'function') {
+            gtag('event', 'click', {
+              event_category: 'Book',
+              event_label: 'Buy Probabilistic Execution (' + item.edition + ')'
+            });
+          }
+        });
+      }
+
+      function markPrintUnavailable(item) {
+        var button = document.querySelector(item.buttonSelector);
+        var status = document.querySelector(item.statusSelector);
+        if (button) button.textContent = item.edition.charAt(0).toUpperCase() + item.edition.slice(1) + ' checkout temporarily unavailable';
+        if (status) status.textContent = 'Please try again shortly.';
+      }
+
       document.querySelectorAll('.js-digital-buy').forEach(disableButton);
 
-      fetch(workerBase + '/digital-config?bookSlug=probabilistic-execution', {credentials: 'omit'})
+      fetch(workerBase + '/digital-config?bookSlug=probabilistic-execution', {credentials: 'omit', cache: 'no-store'})
         .then(function (response) { return response.ok ? response.json() : null; })
         .then(function (config) {
           if (config && config.enabled === true) enableDigitalCheckout(config);
@@ -405,6 +503,20 @@
           markDigitalUnavailable();
           /* Safe default: digital checkout remains disabled. */
         });
+
+      printEditions.forEach(function (item) {
+        document.querySelectorAll(item.buttonSelector).forEach(disableButton);
+        fetch(workerBase + '/public-config?bookSlug=probabilistic-execution&edition=' + item.edition, {credentials: 'omit', cache: 'no-store'})
+          .then(function (response) { return response.ok ? response.json() : null; })
+          .then(function (config) {
+            if (config && config.enabled === true) enablePrintCheckout(item, config);
+            else markPrintUnavailable(item);
+          })
+          .catch(function () {
+            markPrintUnavailable(item);
+            /* Safe default: this print button remains disabled. */
+          });
+      });
 
       document.getElementById('year').textContent = new Date().getFullYear();
     })();

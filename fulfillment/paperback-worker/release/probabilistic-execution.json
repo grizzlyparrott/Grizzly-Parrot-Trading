@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "manifestPurpose": "Fail-closed release evidence for one title; the digital edition can release independently while unresolved print gates remain false.",
+  "manifestPurpose": "Fail-closed release evidence for one title; digital, Grizzly direct-site print sales, physical-proof acceptance, and retailer distribution remain independently truthful gates.",
   "book": {
     "slug": "probabilistic-execution",
     "title": "Probabilistic Execution",
@@ -115,13 +115,24 @@
         "totalCents": 1718,
         "shippingMethod": "Mail"
       },
-      "proofOrderId": "USD-C4285059",
-      "proofOrderInteriorMd5": "243BC3729F9C95B76780A6E0AF3EB064",
-      "proofOrderSupersededByListRestartCorrection": true,
+      "proofOrderId": "USD-C4288608",
+      "proofOrderPlacedAt": "2026-08-13",
+      "proofOrderStatus": "Processing Order",
+      "proofOrderInteriorMd5": "2660805CD72253BC9315A3C082AC1A62",
+      "proofOrderSupersededByListRestartCorrection": false,
+      "supersededProofOrderId": "USD-C4285059",
       "proofReceived": false,
       "userProofAccepted": false,
       "privateLiveOrderVerified": false,
-      "salesActivationApproved": false,
+      "salesActivationApproved": true,
+      "salesActivationScope": "grizzly-direct-site",
+      "salesActivationApprovedAt": "2026-08-13",
+      "directSiteAssetsUploaded": true,
+      "directSiteAssetsReadbackVerified": true,
+      "directSiteSalesEnabled": true,
+      "directSiteCheckoutFormVerified": true,
+      "directSiteCheckoutFormVerifiedAt": "2026-08-13",
+      "directCheckoutUrl": "https://grizzly-parrot-paperback.grizzlyparrott04.workers.dev/print/checkout?bookSlug=probabilistic-execution&edition=paperback",
       "merchantItemId": null,
       "merchantStatus": "not-submitted"
     },
@@ -162,13 +173,24 @@
         "totalCents": 2654,
         "shippingMethod": "Mail"
       },
-      "proofOrderId": "USD-C4285060",
-      "proofOrderInteriorMd5": "AB4CE571C3FED8931EEB6788A9E0ED99",
-      "proofOrderSupersededByListRestartCorrection": true,
+      "proofOrderId": "USD-C4288608",
+      "proofOrderPlacedAt": "2026-08-13",
+      "proofOrderStatus": "Processing Order",
+      "proofOrderInteriorMd5": "410B05415AD1433753AB9158F2E8ACB5",
+      "proofOrderSupersededByListRestartCorrection": false,
+      "supersededProofOrderId": "USD-C4285060",
       "proofReceived": false,
       "userProofAccepted": false,
       "privateLiveOrderVerified": false,
-      "salesActivationApproved": false,
+      "salesActivationApproved": true,
+      "salesActivationScope": "grizzly-direct-site",
+      "salesActivationApprovedAt": "2026-08-13",
+      "directSiteAssetsUploaded": true,
+      "directSiteAssetsReadbackVerified": true,
+      "directSiteSalesEnabled": true,
+      "directSiteCheckoutFormVerified": true,
+      "directSiteCheckoutFormVerifiedAt": "2026-08-13",
+      "directCheckoutUrl": "https://grizzly-parrot-paperback.grizzlyparrott04.workers.dev/print/checkout?bookSlug=probabilistic-execution&edition=hardcover",
       "merchantItemId": null,
       "merchantStatus": "not-submitted"
     }
@@ -179,6 +201,10 @@
     "existingBooksRegressionVerified": true,
     "independentPostDeploymentVerified": true,
     "verifiedAt": "2026-08-13",
-    "pagesCommitSha": "5da0da5f769b0a75482a6549a46154a498c536da"
+    "pagesCommitSha": "5da0da5f769b0a75482a6549a46154a498c536da",
+    "directSitePrintSalesConfigurationId": "63de6589-0444-4ced-bfa9-aaa4e44dfcd6",
+    "directSitePrintSalesWorkerVerifiedAt": "2026-08-13",
+    "directSitePrintSalesLiveVerified": false,
+    "noChargeQuoteAndStripeSessionTestPerformed": false
   }
 }

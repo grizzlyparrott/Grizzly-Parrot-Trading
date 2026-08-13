@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const STAGES = Object.freeze(["local", "provider", "proof", "private", "release"]);
-const SELECTABLE_STAGES = Object.freeze([...STAGES, "digital"]);
+const SELECTABLE_STAGES = Object.freeze([...STAGES, "digital", "direct"]);
 const EXPECTED = Object.freeze({
   book: Object.freeze({
     slug: "probabilistic-execution",
@@ -110,6 +110,19 @@ function validCheckoutUrl(value) {
       && parsed.hostname === "buy.stripe.com"
       && parsed.pathname.length > 6
       && !/(?:test|example|placeholder)/i.test(parsed.pathname);
+  } catch {
+    return false;
+  }
+}
+
+function validPrintCheckoutUrl(value, edition) {
+  try {
+    const parsed = new URL(value);
+    return parsed.protocol === "https:"
+      && parsed.hostname === "grizzly-parrot-paperback.grizzlyparrott04.workers.dev"
+      && parsed.pathname === "/print/checkout"
+      && parsed.searchParams.get("bookSlug") === "probabilistic-execution"
+      && parsed.searchParams.get("edition") === edition;
   } catch {
     return false;
   }
@@ -364,6 +377,40 @@ function digitalReleaseChecks(manifest) {
   return errors;
 }
 
+function directSiteReleaseChecks(manifest) {
+  const errors = [];
+  for (const binding of ["paperback", "hardcover"]) {
+    const record = manifest?.print?.[binding];
+    add(errors, record?.filesValidated === true, `${binding} final print files are not validated`);
+    add(errors, record?.directSiteAssetsUploaded === true, `${binding} direct-site print assets are not fully uploaded`);
+    add(errors, record?.directSiteAssetsReadbackVerified === true, `${binding} direct-site print assets have not passed remote readback verification`);
+    add(errors, realIdentifier(record?.stripePriceId, "price_"), `${binding} Stripe Price ID is missing or placeholder`);
+    add(
+      errors,
+      Number.isInteger(record?.retailPriceCents) && record.retailPriceCents > record.manufacturingCostCents,
+      `${binding} retail price is missing or does not exceed the verified manufacturing cost`
+    );
+    add(errors, record?.salesActivationApproved === true, `${binding} direct-site sales activation is not approved`);
+    add(errors, record?.salesActivationScope === "grizzly-direct-site", `${binding} sales approval scope must be grizzly-direct-site`);
+    add(errors, /^\d{4}-\d{2}-\d{2}$/.test(record?.salesActivationApprovedAt || ""), `${binding} direct-site sales approval date is missing`);
+    add(errors, record?.directSiteSalesEnabled === true, `${binding} direct-site sales are not enabled`);
+    add(errors, validPrintCheckoutUrl(record?.directCheckoutUrl, binding), `${binding} direct checkout URL is missing or invalid`);
+    add(errors, typeof record?.proofReceived === "boolean", `${binding}.proofReceived must remain an explicit provider state`);
+    add(errors, typeof record?.userProofAccepted === "boolean", `${binding}.userProofAccepted must remain an explicit user state`);
+  }
+  for (const field of [
+    "canonicalLiveVerified",
+    "workerLiveVerified",
+    "existingBooksRegressionVerified",
+    "independentPostDeploymentVerified",
+    "directSitePrintSalesLiveVerified"
+  ]) {
+    add(errors, manifest?.publication?.[field] === true, `publication.${field} is not verified for the direct-site print release`);
+  }
+  add(errors, realIdentifier(manifest?.publication?.directSitePrintSalesConfigurationId, ""), "direct-site print Worker configuration ID is missing or placeholder");
+  return errors;
+}
+
 function releaseChecks(manifest) {
   const errors = [];
   add(
@@ -417,7 +464,8 @@ export function validateReleaseManifest(manifest) {
     proof: proofChecks(manifest),
     private: privateChecks(manifest),
     release: releaseChecks(manifest),
-    digital: digitalReleaseChecks(manifest)
+    digital: digitalReleaseChecks(manifest),
+    direct: directSiteReleaseChecks(manifest)
   };
   const cumulativeErrors = {};
   let accumulated = [];
@@ -426,8 +474,10 @@ export function validateReleaseManifest(manifest) {
     cumulativeErrors[stage] = accumulated;
   }
   cumulativeErrors.digital = [...directErrors.local, ...directErrors.digital];
+  cumulativeErrors.direct = [...directErrors.local, ...directErrors.direct];
   const readiness = Object.fromEntries(STAGES.map(stage => [stage, cumulativeErrors[stage].length === 0]));
   readiness.digital = cumulativeErrors.digital.length === 0;
+  readiness.direct = cumulativeErrors.direct.length === 0;
   return {
     readiness,
     directErrors,
@@ -441,7 +491,7 @@ async function main() {
   const requestedStage = stageIndex >= 0 ? args[stageIndex + 1] : "release";
   const manifestPath = args.find((value, index) => value !== "--stage" && index !== stageIndex + 1);
   if (!manifestPath || !SELECTABLE_STAGES.includes(requestedStage)) {
-    console.error("Usage: node scripts/validate-probabilistic-release.mjs <manifest.json> [--stage local|provider|proof|private|release|digital]");
+    console.error("Usage: node scripts/validate-probabilistic-release.mjs <manifest.json> [--stage local|provider|proof|private|release|digital|direct]");
     process.exitCode = 2;
     return;
   }

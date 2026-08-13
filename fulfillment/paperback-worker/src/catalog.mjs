@@ -125,15 +125,17 @@ export const HARDCOVER_BOOKS = Object.freeze({
 });
 
 // These records pin the ISBN-final production files and verified Lulu identity
-// and list-price data. A staged edition remains visible to /public-config only as
-// unavailable and can never quote, check out, or reach Lulu until validation,
-// proof, Stripe, and release gates are supplied explicitly.
-export const STAGED_PRINT_EDITIONS = Object.freeze({
+// and list-price data. They are release-controlled catalog entries: direct-site
+// checkout remains fail-closed until file validation, direct-sales approval,
+// Stripe, policy, and title-specific sales gates are supplied explicitly.
+// Physical-proof and retail-distribution state is tracked separately and is not
+// misrepresented by the direct-site approval gate.
+export const PROBABILISTIC_EXECUTION_PRINT_EDITIONS = Object.freeze({
   "probabilistic-execution": Object.freeze({
     slug: "probabilistic-execution",
     seriesSlug: "probabilistic-execution",
     releaseKey: "PROBABILISTIC_EXECUTION",
-    catalogStatus: "staged",
+    catalogStatus: "release-controlled",
     edition: "paperback",
     editionLabel: "Paperback",
     title: "Probabilistic Execution: Tactics to Avoid the Guillotine",
@@ -154,7 +156,7 @@ export const STAGED_PRINT_EDITIONS = Object.freeze({
     slug: "probabilistic-execution-hardcover",
     seriesSlug: "probabilistic-execution",
     releaseKey: "PROBABILISTIC_EXECUTION",
-    catalogStatus: "staged",
+    catalogStatus: "release-controlled",
     edition: "hardcover",
     editionLabel: "Hardcover",
     title: "Probabilistic Execution: Tactics to Avoid the Guillotine",
@@ -173,8 +175,12 @@ export const STAGED_PRINT_EDITIONS = Object.freeze({
   })
 });
 
-export const PRINT_EDITIONS = Object.freeze({ ...PAPERBACK_BOOKS, ...HARDCOVER_BOOKS });
-export const ALL_PRINT_EDITIONS = Object.freeze({ ...PRINT_EDITIONS, ...STAGED_PRINT_EDITIONS });
+export const PRINT_EDITIONS = Object.freeze({
+  ...PAPERBACK_BOOKS,
+  ...HARDCOVER_BOOKS,
+  ...PROBABILISTIC_EXECUTION_PRINT_EDITIONS
+});
+export const ALL_PRINT_EDITIONS = PRINT_EDITIONS;
 
 export const SHIPPING_OPTIONS = Object.freeze({
   MAIL: "Mail",
