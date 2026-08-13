@@ -51,6 +51,8 @@ Cloudflare Worker version `3f85dfcf-7a8b-48c6-86e8-d57ecd08a248` contains the pr
 
 After the user's digital-only release approval, Stripe Payment Link `plink_1U3l6oIA3p8RBkZIwwzIcM95` was activated and Worker version `c9b2e311-15ce-4b1c-b6c6-92482a7a61e8` was deployed on 2026-08-12. Fresh no-cache checks reported the $29 digital configuration enabled and private delivery ready. The Probabilistic Execution paperback and hardcover configurations both remained disabled with null checkout URLs and `staged` catalog status.
 
+GitHub Pages commit `5da0da5f769b0a75482a6549a46154a498c536da` published the canonical landing page on 2026-08-12. Independent production checks verified HTTP 200, the exact active Stripe URL, two `Coming soon` print cards with no print activation code, the live hub and sitemap entry, a private-attachment confirmation page with no paid-file URLs, and 404 for digital keys through the public signed-asset route. All six pre-existing print configurations remained enabled at $39 paperback and $49 hardcover.
+
 The tracked `release/probabilistic-execution.json` manifest is the fail-closed handoff for provider data and release evidence. Null and false values are unresolved gates; do not infer or bulk-replace them. Check the current local stage with:
 
 ```text
