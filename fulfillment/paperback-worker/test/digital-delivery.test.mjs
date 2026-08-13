@@ -61,7 +61,7 @@ test("digital delivery stays disabled until its private assets, sender, API key,
 
 test("digital object keys are never served through the signed print-asset route", async () => {
   let storageRead = false;
-  const key = "digital/probabilistic-execution/Probabilistic-Execution-Digital.pdf";
+  const key = "digital/probabilistic-execution/list-restart-2026-08-13/Probabilistic-Execution-Digital.pdf";
   const response = await worker.fetch(new Request(
     `https://paperback-api.example.com/lulu-assets/${encodeURIComponent(key)}?expires=9999999999&sig=not-relevant`
   ), {

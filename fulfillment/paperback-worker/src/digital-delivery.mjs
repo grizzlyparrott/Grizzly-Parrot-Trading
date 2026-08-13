@@ -5,10 +5,10 @@ export const PROBABILISTIC_DIGITAL_DELIVERY = Object.freeze({
   title: "Probabilistic Execution",
   assets: Object.freeze([
     Object.freeze({
-      key: "digital/probabilistic-execution/Probabilistic-Execution-Digital.pdf",
+      key: "digital/probabilistic-execution/list-restart-2026-08-13/Probabilistic-Execution-Digital.pdf",
       filename: "Probabilistic-Execution-Digital.pdf",
       contentType: "application/pdf",
-      sha256: "6859F32798DD82D119ED9685B15D290CB0548440B40FC4CC835871C1EC59D9F3"
+      sha256: "1D834086444030212CE763A02471A5BEFB78BCC4FFFCD1F21FE66AC2883B78B3"
     }),
     Object.freeze({
       key: "digital/probabilistic-execution/Probabilistic-Execution-Digital.epub",

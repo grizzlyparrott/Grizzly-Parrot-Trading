@@ -16,14 +16,14 @@ const EXPECTED = Object.freeze({
     reviewedMasterSha256: "859CE56ABC8FD412C00B7FC84309FCFC2F19C1DDB12A860E3195605DCF9D7D0B",
     reportSha256: "01F5D34A5C4E31C44F72CB429366B0D0777E4A4E2BAE8C4D9044121D784BC555",
     correctionsLedgerSha256: "F31BC9FB865FFB01CB8672E1CA272AC4AB1FDB2F1669F7B273AF60D552CE552E",
-    postAdjudicationMasterSha256: "DEB166A98EB512B82FD0DEF23FAA4D3A08CB6A656B7B1A305FB5923A3CB71019"
+    postAdjudicationMasterSha256: "6D17E31911779F8FFFCE9CD66D37057FB6D3F292E68162880619D497C3CA236B"
   }),
   digital: Object.freeze({
     priceCents: 2900,
     currency: "USD",
     pdf: Object.freeze({
       filename: "Probabilistic-Execution-Digital.pdf",
-      sha256: "6859F32798DD82D119ED9685B15D290CB0548440B40FC4CC835871C1EC59D9F3"
+      sha256: "1D834086444030212CE763A02471A5BEFB78BCC4FFFCD1F21FE66AC2883B78B3"
     }),
     epub: Object.freeze({
       filename: "Probabilistic-Execution-Digital.epub",
@@ -38,7 +38,7 @@ const EXPECTED = Object.freeze({
       coverFilename: "Probabilistic-Execution-Lulu-Paperback-Cover.pdf",
       preIsbnInteriorMd5: "66FAD12D58D3297F868B8C92B5299677",
       preIsbnCoverMd5: "0CE8353FE6433F49995763DE1B92A4CF",
-      finalInteriorMd5: "243BC3729F9C95B76780A6E0AF3EB064",
+      finalInteriorMd5: "2660805CD72253BC9315A3C082AC1A62",
       finalCoverMd5: "5E98FA34140EA9CF97ACF575AEF6501B",
       proofQuote: Object.freeze({
         quantity: 1,
@@ -57,7 +57,7 @@ const EXPECTED = Object.freeze({
       coverFilename: "Probabilistic-Execution-Lulu-Hardcover-Cover.pdf",
       preIsbnInteriorMd5: "216F1DA3D01E94A97DB10370BDA1F2CB",
       preIsbnCoverMd5: "54F235F2C4800C907430E952975FC64C",
-      finalInteriorMd5: "AB4CE571C3FED8931EEB6788A9E0ED99",
+      finalInteriorMd5: "410B05415AD1433753AB9158F2E8ACB5",
       finalCoverMd5: "70162A861C8524468D579E068C2E2137",
       proofQuote: Object.freeze({
         quantity: 1,

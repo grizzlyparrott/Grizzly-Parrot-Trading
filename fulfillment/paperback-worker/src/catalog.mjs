@@ -144,8 +144,8 @@ export const STAGED_PRINT_EDITIONS = Object.freeze({
     priceCents: 3900,
     priceEnv: "STRIPE_PRICE_PROBABILISTIC_PAPERBACK",
     assets: Object.freeze({
-      interiorKey: "Probabilistic-Execution-Lulu-Paperback-Interior.pdf",
-      interiorMd5: "243BC3729F9C95B76780A6E0AF3EB064",
+      interiorKey: "probabilistic-execution/list-restart-2026-08-13/Probabilistic-Execution-Lulu-Paperback-Interior.pdf",
+      interiorMd5: "2660805CD72253BC9315A3C082AC1A62",
       coverKey: "Probabilistic-Execution-Lulu-Paperback-Cover.pdf",
       coverMd5: "5E98FA34140EA9CF97ACF575AEF6501B"
     })
@@ -165,8 +165,8 @@ export const STAGED_PRINT_EDITIONS = Object.freeze({
     priceCents: 4900,
     priceEnv: "STRIPE_PRICE_PROBABILISTIC_HARDCOVER",
     assets: Object.freeze({
-      interiorKey: "Probabilistic-Execution-Lulu-Hardcover-Interior.pdf",
-      interiorMd5: "AB4CE571C3FED8931EEB6788A9E0ED99",
+      interiorKey: "probabilistic-execution/list-restart-2026-08-13/Probabilistic-Execution-Lulu-Hardcover-Interior.pdf",
+      interiorMd5: "410B05415AD1433753AB9158F2E8ACB5",
       coverKey: "Probabilistic-Execution-Lulu-Hardcover-Cover.pdf",
       coverMd5: "70162A861C8524468D579E068C2E2137"
     })
