@@ -95,6 +95,82 @@ export class OrderStore {
       .bind(sessionId).first();
   }
 
+  async ensureDigitalDelivery(sessionId, buyerEmail, now, initialStatus = 'queued') {
+    await this.db.prepare(`INSERT OR IGNORE INTO digital_deliveries
+      (stripe_session_id, buyer_email, status, attempts, created_at, updated_at)
+      VALUES (?, ?, ?, 0, ?, ?)`)
+      .bind(sessionId, buyerEmail, initialStatus, now, now).run();
+    if (buyerEmail) {
+      await this.db.prepare(`UPDATE digital_deliveries
+        SET buyer_email = COALESCE(buyer_email, ?),
+            status = CASE WHEN buyer_email IS NULL AND status = 'manual_review' THEN 'queued' ELSE status END,
+            updated_at = ?
+        WHERE stripe_session_id = ?`)
+        .bind(buyerEmail, now, sessionId).run();
+    }
+    return this.digitalDelivery(sessionId);
+  }
+
+  async digitalDelivery(sessionId) {
+    return this.db.prepare("SELECT * FROM digital_deliveries WHERE stripe_session_id = ?")
+      .bind(sessionId).first();
+  }
+
+  async claimDigitalDelivery(sessionId, now, leaseExpiresAt) {
+    const result = await this.db.prepare(`UPDATE digital_deliveries
+      SET status = 'sending', attempts = attempts + 1, next_attempt_at = NULL,
+          lease_expires_at = ?, updated_at = ?
+      WHERE stripe_session_id = ? AND sent_at IS NULL AND attempts < 3
+        AND status IN ('queued', 'retryable_failure')
+        AND (next_attempt_at IS NULL OR next_attempt_at <= ?)`)
+      .bind(leaseExpiresAt, now, sessionId, now).run();
+    return result.meta?.changes === 1 ? this.digitalDelivery(sessionId) : null;
+  }
+
+  async markDigitalDeliverySent(sessionId, resendEmailId, now) {
+    await this.db.prepare(`UPDATE digital_deliveries
+      SET status = 'sent', resend_email_id = ?, sent_at = ?, updated_at = ?,
+          next_attempt_at = NULL, lease_expires_at = NULL,
+          last_error_code = NULL, last_error_message = NULL
+      WHERE stripe_session_id = ?`)
+      .bind(resendEmailId, now, now, sessionId).run();
+  }
+
+  async markDigitalDeliveryFailure(sessionId, status, code, message, nextAttemptAt, now) {
+    await this.db.prepare(`UPDATE digital_deliveries
+      SET status = ?, last_error_code = ?, last_error_message = ?,
+          next_attempt_at = ?, lease_expires_at = NULL, updated_at = ?
+      WHERE stripe_session_id = ?`)
+      .bind(status, code, String(message || '').slice(0, 1000), nextAttemptAt, now, sessionId).run();
+  }
+
+  async digitalDeliveriesDue(now) {
+    return (await this.db.prepare(`SELECT * FROM digital_deliveries
+      WHERE sent_at IS NULL AND attempts < 3 AND buyer_email IS NOT NULL
+        AND status IN ('queued', 'retryable_failure')
+        AND (next_attempt_at IS NULL OR next_attempt_at <= ?)
+      ORDER BY created_at LIMIT 25`).bind(now).all()).results || [];
+  }
+
+  async digitalDeliveriesExpiredSending(now) {
+    return (await this.db.prepare(`SELECT * FROM digital_deliveries
+      WHERE status = 'sending' AND sent_at IS NULL
+        AND lease_expires_at IS NOT NULL AND lease_expires_at <= ?
+      ORDER BY updated_at LIMIT 25`).bind(now).all()).results || [];
+  }
+
+  async markExpiredDigitalDeliveryForReview(sessionId, now) {
+    const result = await this.db.prepare(`UPDATE digital_deliveries
+      SET status = 'manual_review', next_attempt_at = NULL, lease_expires_at = NULL,
+          last_error_code = 'digital_delivery_lease_expired',
+          last_error_message = 'Delivery worker stopped while the provider outcome was unknown; manual review prevents a duplicate email.',
+          updated_at = ?
+      WHERE stripe_session_id = ? AND status = 'sending' AND sent_at IS NULL
+        AND lease_expires_at IS NOT NULL AND lease_expires_at <= ?`)
+      .bind(now, sessionId, now).run();
+    return result.meta?.changes === 1;
+  }
+
   async claimDigitalConversion(sessionId, now) {
     const purchase = await this.digitalPurchase(sessionId);
     if (!purchase) return { status: "not_found", purchase: null };

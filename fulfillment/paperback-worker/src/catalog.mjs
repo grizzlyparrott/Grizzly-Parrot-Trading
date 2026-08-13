@@ -2,8 +2,8 @@ export const POD_PACKAGE_ID = "0600X0900.BW.STD.PB.060UW444.MXX";
 export const HARDCOVER_POD_PACKAGE_ID = "0600X0900.BW.STD.CW.060UW444.MXX";
 
 // `luluPublishingProjectId` is retained for audit and proof-approval records.
-// Lulu Direct does not accept Publishing project IDs when it creates print jobs;
-// it requires a POD package plus hosted source files, represented below.
+// Lulu's Print API does not accept Publishing project IDs when it creates print
+// jobs; it requires a POD package plus hosted source files, represented below.
 export const PAPERBACK_BOOKS = Object.freeze({
   "currency-market-structure": Object.freeze({
     slug: "currency-market-structure",
@@ -124,7 +124,57 @@ export const HARDCOVER_BOOKS = Object.freeze({
   })
 });
 
+// These records pin the ISBN-final production files and verified Lulu identity
+// and list-price data. A staged edition remains visible to /public-config only as
+// unavailable and can never quote, check out, or reach Lulu until validation,
+// proof, Stripe, and release gates are supplied explicitly.
+export const STAGED_PRINT_EDITIONS = Object.freeze({
+  "probabilistic-execution": Object.freeze({
+    slug: "probabilistic-execution",
+    seriesSlug: "probabilistic-execution",
+    releaseKey: "PROBABILISTIC_EXECUTION",
+    catalogStatus: "staged",
+    edition: "paperback",
+    editionLabel: "Paperback",
+    title: "Probabilistic Execution: Tactics to Avoid the Guillotine",
+    luluPublishingProjectId: "yvep5mw",
+    isbn: "978-0-557-95654-8",
+    podPackageId: POD_PACKAGE_ID,
+    interiorPages: 148,
+    priceCents: 3900,
+    priceEnv: "STRIPE_PRICE_PROBABILISTIC_PAPERBACK",
+    assets: Object.freeze({
+      interiorKey: "Probabilistic-Execution-Lulu-Paperback-Interior.pdf",
+      interiorMd5: "243BC3729F9C95B76780A6E0AF3EB064",
+      coverKey: "Probabilistic-Execution-Lulu-Paperback-Cover.pdf",
+      coverMd5: "5E98FA34140EA9CF97ACF575AEF6501B"
+    })
+  }),
+  "probabilistic-execution-hardcover": Object.freeze({
+    slug: "probabilistic-execution-hardcover",
+    seriesSlug: "probabilistic-execution",
+    releaseKey: "PROBABILISTIC_EXECUTION",
+    catalogStatus: "staged",
+    edition: "hardcover",
+    editionLabel: "Hardcover",
+    title: "Probabilistic Execution: Tactics to Avoid the Guillotine",
+    luluPublishingProjectId: "7kz7vk8",
+    isbn: "978-0-557-95653-1",
+    podPackageId: HARDCOVER_POD_PACKAGE_ID,
+    interiorPages: 148,
+    priceCents: 4900,
+    priceEnv: "STRIPE_PRICE_PROBABILISTIC_HARDCOVER",
+    assets: Object.freeze({
+      interiorKey: "Probabilistic-Execution-Lulu-Hardcover-Interior.pdf",
+      interiorMd5: "AB4CE571C3FED8931EEB6788A9E0ED99",
+      coverKey: "Probabilistic-Execution-Lulu-Hardcover-Cover.pdf",
+      coverMd5: "70162A861C8524468D579E068C2E2137"
+    })
+  })
+});
+
 export const PRINT_EDITIONS = Object.freeze({ ...PAPERBACK_BOOKS, ...HARDCOVER_BOOKS });
+export const ALL_PRINT_EDITIONS = Object.freeze({ ...PRINT_EDITIONS, ...STAGED_PRINT_EDITIONS });
 
 export const SHIPPING_OPTIONS = Object.freeze({
   MAIL: "Mail",
@@ -136,14 +186,32 @@ export const SHIPPING_OPTIONS = Object.freeze({
 export function getBook(slug, edition = "paperback") {
   const normalizedEdition = edition === "hardcover" ? "hardcover" : "paperback";
   if (normalizedEdition === "hardcover" && !String(slug || "").endsWith("-hardcover")) {
-    return PRINT_EDITIONS[`${slug}-hardcover`] || null;
+    return ALL_PRINT_EDITIONS[`${slug}-hardcover`] || null;
   }
-  if (PRINT_EDITIONS[slug]) return PRINT_EDITIONS[slug];
+  if (ALL_PRINT_EDITIONS[slug]) return ALL_PRINT_EDITIONS[slug];
   const key = normalizedEdition === "hardcover" ? `${slug}-hardcover` : slug;
-  return PRINT_EDITIONS[key] || null;
+  return ALL_PRINT_EDITIONS[key] || null;
+}
+
+export function catalogReady(book) {
+  return Boolean(
+    book
+    && book.catalogStatus !== "staged"
+    && typeof book.luluPublishingProjectId === "string"
+    && book.luluPublishingProjectId.length > 0
+    && typeof book.isbn === "string"
+    && book.isbn.length > 0
+    && Number.isInteger(book.priceCents)
+    && book.priceCents > 0
+    && typeof book.priceEnv === "string"
+    && book.priceEnv.length > 0
+  );
 }
 
 export function getStripePriceId(book, env) {
+  if (!catalogReady(book)) {
+    throw new Error(`Print catalog is incomplete for ${book?.slug || "unknown edition"}`);
+  }
   const value = env[book.priceEnv];
   if (!value || !value.startsWith("price_")) {
     throw new Error(`Missing Stripe price configuration for ${book.slug}`);

@@ -1,13 +1,13 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { getBook, getStripePriceId, POD_PACKAGE_ID, HARDCOVER_POD_PACKAGE_ID, PRINT_EDITIONS, SHIPPING_OPTIONS } from "../src/catalog.mjs";
+import { getBook, getStripePriceId, catalogReady, POD_PACKAGE_ID, HARDCOVER_POD_PACKAGE_ID, PRINT_EDITIONS, STAGED_PRINT_EDITIONS, ALL_PRINT_EDITIONS, SHIPPING_OPTIONS } from "../src/catalog.mjs";
 import { validateCheckoutRequest, addressesMatch } from "../src/validation.mjs";
 import { hmacHex, verifyStripeSignature, signedAssetUrl, verifyAssetRequest } from "../src/crypto.mjs";
 import { LuluClient, shippingCents } from "../src/lulu.mjs";
 import { StripeClient } from "../src/stripe.mjs";
 import { OrderStore } from "../src/order-store.mjs";
-import worker, { allowedCountries, digitalPurchaseFromSession, luluStatusFromJob, productionReadiness, stripeWebhook, suggestedAddressDiffers } from "../src/index.mjs";
+import worker, { allowedCountries, digitalCheckoutConfig, digitalPurchaseFromSession, luluStatusFromJob, productionReadiness, productionSalesEnabled, stripeWebhook, suggestedAddressDiffers } from "../src/index.mjs";
 
 const validAddress = {
   name: "Test Reader",
@@ -40,6 +40,113 @@ test("all six print editions map to their approved Lulu projects, packages, pric
   assert.equal(Object.keys(PRINT_EDITIONS).length, 6);
   assert.equal(getBook("currency-market-structure", "hardcover").slug, "currency-market-structure-hardcover");
   assert.deepEqual(Object.keys(SHIPPING_OPTIONS), ["MAIL", "PRIORITY_MAIL", "EXPEDITED", "EXPRESS"]);
+});
+
+test("Probabilistic Execution print files are staged but cannot masquerade as sale-ready catalog records", async () => {
+  assert.equal(Object.keys(STAGED_PRINT_EDITIONS).length, 2);
+  assert.equal(Object.keys(ALL_PRINT_EDITIONS).length, 8);
+  const stagedProjectIds = {
+    paperback: "yvep5mw",
+    hardcover: "7kz7vk8"
+  };
+  const stagedIsbns = {
+    paperback: "978-0-557-95654-8",
+    hardcover: "978-0-557-95653-1"
+  };
+  const stagedPrices = {
+    paperback: 3900,
+    hardcover: 4900
+  };
+  for (const edition of ["paperback", "hardcover"]) {
+    const book = getBook("probabilistic-execution", edition);
+    assert.equal(book.catalogStatus, "staged");
+    assert.equal(book.interiorPages, 148);
+    assert.equal(book.luluPublishingProjectId, stagedProjectIds[edition]);
+    assert.equal(book.isbn, stagedIsbns[edition]);
+    assert.equal(book.priceCents, stagedPrices[edition]);
+    assert.equal(catalogReady(book), false);
+    assert.equal(productionSalesEnabled({
+      PAPERBACK_ENVIRONMENT: "production",
+      PAPERBACK_SALES_ENABLED: "true",
+      HARDCOVER_SALES_ENABLED: "true",
+      PAPERBACK_PROOFS_APPROVED: "true",
+      HARDCOVER_PROOFS_APPROVED: "true",
+      PAPERBACK_POLICIES_APPROVED: "true",
+      PAPERBACK_ALLOWED_COUNTRIES: "US",
+      PAPERBACK_STRIPE_TAX_ENABLED: "true",
+      PROBABILISTIC_EXECUTION_PAPERBACK_FILES_VALIDATED: "true",
+      PROBABILISTIC_EXECUTION_HARDCOVER_FILES_VALIDATED: "true",
+      PROBABILISTIC_EXECUTION_PAPERBACK_PROOF_APPROVED: "true",
+      PROBABILISTIC_EXECUTION_HARDCOVER_PROOF_APPROVED: "true",
+      PROBABILISTIC_EXECUTION_PAPERBACK_SALES_ENABLED: "true",
+      PROBABILISTIC_EXECUTION_HARDCOVER_SALES_ENABLED: "true"
+    }, book), false);
+    assert.throws(() => getStripePriceId(book, {}), /catalog is incomplete/i);
+  }
+
+  const config = await worker.fetch(new Request("https://paperback-api.example.com/public-config?bookSlug=probabilistic-execution&edition=paperback"), {
+    PAPERBACK_ENVIRONMENT: "production",
+    PAPERBACK_SALES_ENABLED: "true",
+    PAPERBACK_PROOFS_APPROVED: "true",
+    PAPERBACK_POLICIES_APPROVED: "true",
+    PAPERBACK_ALLOWED_COUNTRIES: "US",
+    PAPERBACK_STRIPE_TAX_ENABLED: "true",
+    PAPERBACK_BASE_URL: "https://paperback-api.example.com"
+  });
+  assert.deepEqual(await config.json(), {
+    enabled: false,
+    checkoutUrl: null,
+    edition: "paperback",
+    priceCents: 3900,
+    catalogStatus: "staged"
+  });
+});
+
+test("Probabilistic Execution digital checkout requires a matching Stripe ID, URL, and title-specific release flag", async () => {
+  const configured = {
+    PROBABILISTIC_EXECUTION_DIGITAL_SALES_ENABLED: "true",
+    PROBABILISTIC_EXECUTION_DIGITAL_DELIVERY_ENABLED: "true",
+    STRIPE_PAYMENT_LINK_PROBABILISTIC_DIGITAL: "plink_probabilistic123",
+    STRIPE_CHECKOUT_URL_PROBABILISTIC_DIGITAL: "https://buy.stripe.com/abcprobabilistic123",
+    RESEND_API_KEY: "re_test_delivery_key",
+    DIGITAL_EMAIL_FROM: "Grizzly Parrot Trading <sales@example.com>",
+    PRINT_ASSETS: { async get() { return null; } }
+  };
+  assert.deepEqual(digitalCheckoutConfig("probabilistic-execution", configured), {
+    enabled: true,
+    checkoutUrl: "https://buy.stripe.com/abcprobabilistic123",
+    priceCents: 2900
+  });
+  assert.equal(digitalCheckoutConfig("probabilistic-execution", {...configured, PROBABILISTIC_EXECUTION_DIGITAL_SALES_ENABLED: "false"}).enabled, false);
+  assert.equal(digitalCheckoutConfig("probabilistic-execution", {...configured, STRIPE_CHECKOUT_URL_PROBABILISTIC_DIGITAL: "https://example.com/not-stripe"}).enabled, false);
+  assert.equal(digitalCheckoutConfig("probabilistic-execution", {...configured, STRIPE_CHECKOUT_URL_PROBABILISTIC_DIGITAL: "https://buy.stripe.com/"}).enabled, false);
+  assert.equal(digitalCheckoutConfig("probabilistic-execution", {...configured, STRIPE_CHECKOUT_URL_PROBABILISTIC_DIGITAL: "https://buy.stripe.com/test_placeholder"}).enabled, false);
+  assert.equal(digitalCheckoutConfig("probabilistic-execution", {...configured, STRIPE_PAYMENT_LINK_PROBABILISTIC_DIGITAL: "plink_test"}).enabled, false);
+  assert.equal(digitalCheckoutConfig("another-book", configured), null);
+});
+
+test("a release-keyed print edition cannot inherit another title's proof or sales approval", () => {
+  const book = Object.freeze({
+    ...getBook("currency-market-structure"),
+    slug: "release-isolation-test",
+    seriesSlug: "release-isolation-test",
+    releaseKey: "RELEASE_ISOLATION_TEST"
+  });
+  const globalApproval = {
+    PAPERBACK_ENVIRONMENT: "production",
+    PAPERBACK_SALES_ENABLED: "true",
+    PAPERBACK_PROOFS_APPROVED: "true",
+    PAPERBACK_POLICIES_APPROVED: "true",
+    PAPERBACK_ALLOWED_COUNTRIES: "US",
+    PAPERBACK_STRIPE_TAX_ENABLED: "true"
+  };
+  assert.equal(productionSalesEnabled(globalApproval, book), false);
+  assert.equal(productionSalesEnabled({
+    ...globalApproval,
+    RELEASE_ISOLATION_TEST_PAPERBACK_FILES_VALIDATED: "true",
+    RELEASE_ISOLATION_TEST_PAPERBACK_PROOF_APPROVED: "true",
+    RELEASE_ISOLATION_TEST_PAPERBACK_SALES_ENABLED: "true"
+  }, book), true);
 });
 
 test("checkout address validation rejects missing carrier-required phone numbers and accepts a valid address", () => {
@@ -104,22 +211,24 @@ test("Stripe webhook HMAC verification accepts a current signed payload and reje
   assert.equal(await verifyStripeSignature(`${payload}x`, `t=${timestamp},v1=${signature}`, secret), false);
 });
 
-test("digital purchases map only paid $29 Checkout Sessions from the three configured Payment Links", () => {
+test("digital purchases map only paid $29 Checkout Sessions from the four configured Payment Links", () => {
   const env = {
     STRIPE_PAYMENT_LINK_CURRENCY_DIGITAL: "plink_currency",
     STRIPE_PAYMENT_LINK_METALS_DIGITAL: "plink_metals",
-    STRIPE_PAYMENT_LINK_EQUITY_DIGITAL: "plink_equity"
+    STRIPE_PAYMENT_LINK_EQUITY_DIGITAL: "plink_equity",
+    STRIPE_PAYMENT_LINK_PROBABILISTIC_DIGITAL: "plink_probabilistic"
   };
   const base = { id: "cs_live_paid", mode: "payment", payment_status: "paid", amount_total: 2900, currency: "usd" };
   assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_currency" }, env).eventLabel, "currency_market_structure");
   assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_metals" }, env).eventLabel, "metals_market_structure");
   assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_equity" }, env).eventLabel, "equity_market_structure");
+  assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_probabilistic" }, env).eventLabel, "probabilistic_execution");
   assert.equal(digitalPurchaseFromSession({ ...base, payment_status: "unpaid", payment_link: "plink_currency" }, env), null);
   assert.equal(digitalPurchaseFromSession({ ...base, amount_total: 2800, payment_link: "plink_currency" }, env), null);
   assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_other" }, env), null);
 });
 
-test("one signed, paid Stripe event is accepted for each digital title without entering paperback fulfillment", async () => {
+test("one signed, paid Stripe event is accepted for each existing digital title without entering paperback fulfillment", async () => {
   const purchases = new Map();
   const db = {
     prepare(sql) {
@@ -152,6 +261,7 @@ test("one signed, paid Stripe event is accepted for each digital title without e
     STRIPE_PAYMENT_LINK_CURRENCY_DIGITAL: "plink_currency",
     STRIPE_PAYMENT_LINK_METALS_DIGITAL: "plink_metals",
     STRIPE_PAYMENT_LINK_EQUITY_DIGITAL: "plink_equity",
+    STRIPE_PAYMENT_LINK_PROBABILISTIC_DIGITAL: "plink_probabilistic",
     PAPERBACK_ORDERS: db
   };
   const cases = [
@@ -371,6 +481,7 @@ test("default deployment is unable to sell either print edition and reports both
     hardcoverSalesEnabled: false,
     privateOrderEnabled: false,
     environment: "sandbox",
+    probabilisticDigitalDeliveryReady: false,
     readiness: {
       paperbackProofsApproved: false,
       hardcoverProofsApproved: false,
@@ -476,7 +587,7 @@ test("all book pages keep print controls fail-closed and use the canonical site 
     assert.match(html, /edition=' \+ item\.edition/);
     assert.match(html, /grizzly-parrot-paperback\.grizzlyparrott04\.workers\.dev/);
     assert.match(html, /Safe default: this print button remains disabled/);
-    assert.match(html, /market-structure-series\.css\?v=20260804-site-brand/);
+    assert.match(html, /market-structure-series\.css\?v=20260811-google-books/);
     assert.match(html, /<div class="logo">\s*<span class="logo-mark" aria-hidden="true">GP<\/span>\s*<span class="logo-text"><a href="https:\/\/grizzlyparrottrading\.com\/">Grizzly Parrot Trading<\/a><\/span>\s*<\/div>/s);
     assert.doesNotMatch(html, /class="brand-mark"/);
     assert.match(html, />Buy digital</);
@@ -496,6 +607,18 @@ test("all book pages keep print controls fail-closed and use the canonical site 
   assert.match(catalog, /<span class="logo-mark" aria-hidden="true">GP<\/span>/);
   assert.match(catalog, /<span class="logo-text"><a href="https:\/\/grizzlyparrottrading\.com\/">Grizzly Parrot Trading<\/a><\/span>/);
   assert.doesNotMatch(catalog, /<nav class="main-nav">\s*<ul>/s);
+
+  const probabilistic = await readFile(new URL("../../../books/probabilistic-execution/index.html", import.meta.url), "utf8");
+  assert.match(probabilistic, /button-disabled js-digital-buy/);
+  assert.equal((probabilistic.match(/<strong class="coming-soon">Coming soon<\/strong>/g) || []).length, 2);
+  assert.doesNotMatch(probabilistic, /js-paperback-buy|js-hardcover-buy/);
+  assert.match(probabilistic, /digital-config\?bookSlug=probabilistic-execution/);
+  assert.doesNotMatch(probabilistic, /public-config\?bookSlug=probabilistic-execution&edition=/);
+  assert.doesNotMatch(probabilistic, /data-price-paperback|data-price-hardcover/);
+  assert.match(probabilistic, /Safe default: digital checkout remains disabled/);
+  assert.match(probabilistic, /Digital now\. Print coming soon\./);
+  assert.doesNotMatch(probabilistic, /buy\.stripe\.com\/[A-Za-z0-9]/);
+  assert.doesNotMatch(probabilistic, /"isbn"|"gtin13"/);
 });
 
 test("hardcover activation is independent and returns the exact hardcover checkout", async () => {

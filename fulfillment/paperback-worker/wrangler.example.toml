@@ -20,8 +20,13 @@ PAPERBACK_SUCCESS_URL = "https://grizzlyparrottrading.com/books/paperback-order-
 PAPERBACK_CANCEL_URL = "https://grizzlyparrottrading.com/books/"
 PAPERBACK_ALLOWED_ORIGIN = "https://grizzlyparrottrading.com"
 EMAIL_FROM = "Grizzly Parrot Trading <orders@example.com>"
+DIGITAL_EMAIL_FROM = "Grizzly Parrot Trading <sales@example.com>"
+DIGITAL_REPLY_TO = "sales@example.com"
 SHOP_CONTACT_EMAIL = "orders@example.com"
 ADMIN_EMAIL = ""
+
+STRIPE_PAYMENT_LINK_PROBABILISTIC_DIGITAL = "plink_REPLACE_PROBABILISTIC_DIGITAL"
+STRIPE_CHECKOUT_URL_PROBABILISTIC_DIGITAL = "https://buy.stripe.com/REPLACE_PROBABILISTIC_DIGITAL"
 
 # Stripe sandbox prices created on 2026-07-20. Price IDs are not secrets.
 # Replace all three with newly created live Stripe Price IDs before a production launch.
@@ -31,6 +36,21 @@ STRIPE_PRICE_EQUITY_PAPERBACK = "price_1TvNQrIA3p8RBkZI4SmXnkjj"
 STRIPE_PRICE_CURRENCY_HARDCOVER = "price_REPLACE_CURRENCY_HARDCOVER"
 STRIPE_PRICE_METALS_HARDCOVER = "price_REPLACE_METALS_HARDCOVER"
 STRIPE_PRICE_EQUITY_HARDCOVER = "price_REPLACE_EQUITY_HARDCOVER"
+STRIPE_PRICE_PROBABILISTIC_PAPERBACK = "price_REPLACE_PROBABILISTIC_PAPERBACK"
+STRIPE_PRICE_PROBABILISTIC_HARDCOVER = "price_REPLACE_PROBABILISTIC_HARDCOVER"
+
+# Title-specific release gates. Never replace a false value until the named
+# checkpoint is actually complete for Probabilistic Execution.
+PROBABILISTIC_EXECUTION_DIGITAL_SALES_ENABLED = "false"
+PROBABILISTIC_EXECUTION_DIGITAL_DELIVERY_ENABLED = "false"
+PROBABILISTIC_EXECUTION_PAPERBACK_FILES_VALIDATED = "false"
+PROBABILISTIC_EXECUTION_PAPERBACK_PROOF_APPROVED = "false"
+PROBABILISTIC_EXECUTION_PAPERBACK_PRIVATE_ORDER_ENABLED = "false"
+PROBABILISTIC_EXECUTION_PAPERBACK_SALES_ENABLED = "false"
+PROBABILISTIC_EXECUTION_HARDCOVER_FILES_VALIDATED = "false"
+PROBABILISTIC_EXECUTION_HARDCOVER_PROOF_APPROVED = "false"
+PROBABILISTIC_EXECUTION_HARDCOVER_PRIVATE_ORDER_ENABLED = "false"
+PROBABILISTIC_EXECUTION_HARDCOVER_SALES_ENABLED = "false"
 
 # Create these resources in Cloudflare, then replace the placeholders only in
 # the real wrangler.toml / dashboard configuration. Do not commit that file.
