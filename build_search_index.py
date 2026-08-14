@@ -104,11 +104,11 @@ def extract_title_and_description(html: str):
     title = title_match.group(1).strip() if title_match else ""
 
     desc_match = re.search(
-        r'<meta\s+name=["\']description["\']\s+content=["\']([^"\']+)["\']',
+        r'<meta\s+name=(["\'])description\1\s+content=(["\'])(.*?)\2',
         html,
         flags=re.IGNORECASE | re.DOTALL,
     )
-    description = desc_match.group(1).strip() if desc_match else ""
+    description = desc_match.group(3).strip() if desc_match else ""
 
     return title, description
 

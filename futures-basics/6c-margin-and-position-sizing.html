@@ -2,237 +2,170 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6C Margin Requirements and Position Sizing for Small Accounts</title>
-  <meta name="description" content="A blunt guide to 6C margin requirements and how to size CAD/USD futures trades correctly without blowing up a small account.">
+  <title>6C Margin and Position Sizing: Risk-Budget Math</title>
+  <meta name="description" content="Size standard 6C or Micro MCD positions from an invalidation and loss budget, then stress slippage, gaps, fees and changing margin requirements.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6c-margin-and-position-sizing.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6C Margin Requirements and Position Sizing for Small Accounts">
-  <meta property="og:description" content="A blunt guide to 6C margin requirements and how to size CAD/USD futures trades correctly without blowing up a small account.">
+  <meta property="og:title" content="6C Margin and Position Sizing: Risk-Budget Math">
+  <meta property="og:description" content="Size standard 6C or Micro MCD positions from an invalidation and loss budget, then stress slippage, gaps, fees and changing margin requirements.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6c-margin-and-position-sizing.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-27">
+  <meta property="article:modified_time" content="2026-08-13">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="6C Margin and Position Sizing: Risk-Budget Math">
+  <meta name="twitter:description" content="Size standard 6C or Micro MCD positions from an invalidation and loss budget, then stress slippage, gaps, fees and changing margin requirements.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6C Margin Requirements and Position Sizing for Small Accounts">
-  <meta name="twitter:description" content="A blunt guide to 6C margin requirements and how to size CAD/USD futures trades correctly without blowing up a small account.">
-
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="/futures-basics/6c-research-library.css?v=20260813a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"Article",
+    "headline":"6C Margin and Position Sizing: Risk-Budget Math",
+    "description":"Size standard 6C or Micro MCD positions from an invalidation and loss budget, then stress slippage, gaps, fees and changing margin requirements.",
+    "author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},
+    "publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6c-margin-and-position-sizing.html"},
+    "datePublished":"2025-11-27","dateModified":"2026-08-13",
+    "url":"https://grizzlyparrottrading.com/futures-basics/6c-margin-and-position-sizing.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"
+  }
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6C Margin Requirements and Position Sizing for Small Accounts",
-  "description": "A blunt guide to 6C margin requirements and how to size CAD/USD futures trades correctly without blowing up a small account.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6c-margin-and-position-sizing.html",
-  "datePublished": "2025-11-27",
-  "dateModified": "2025-11-27",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6c-margin-and-position-sizing.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6C Margin Requirements and Position Sizing for Small Accounts",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6c-margin-and-position-sizing.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},
+    {"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},
+    {"@type":"ListItem","position":3,"name":"6C Margin and Position Sizing: Risk-Budget Math","item":"https://grizzlyparrottrading.com/futures-basics/6c-margin-and-position-sizing.html"}
+  ]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container cad-library">
+<article>
+<!-- ARTICLE BODY START -->
+<header class="ca-hero">
+  <p class="ca-kicker">Risk budget &middot; integer contracts</p>
+  <h1>6C Margin and Position Sizing: Risk-Budget Math</h1>
+  <p class="ca-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+  <p class="ca-hero-lede"><strong>Contracts = floor[loss budget &divide; (stop loss per contract + fill stress per contract + round-turn costs per contract)].</strong> The stop term begins with entry-to-invalidation distance, not the margin advertised beside the buy button. Apply portfolio and funding caps after this calculation; if the result is zero, zero is the valid size.</p>
+  <div class="ca-formula" aria-label="Position size formula"><code>floor[budget / (stop loss + fill stress + round-turn costs)]</code></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="ca-jump-nav" aria-label="On this page"><a href="#inputs">Inputs</a><a href="#workflow">Workflow</a><a href="#example">Example</a><a href="#stress">Stress test</a><a href="#margin">Margin</a><a href="#checklist">Checklist</a></nav>
 
-<h1>6C Margin Requirements and Position Sizing for Small Accounts</h1>
-
-<p>6C Canadian Dollar futures look harmless until you realize every tick is $10. That means a basic 30–40 tick stop is $300–$400 risk per contract. If you’re running a small account or a prop evaluation, that can nuke your entire day instantly. This guide gives you the real numbers so you stop oversizing trades.</p>
-
-<h2>The Real Margin Requirements for 6C</h2>
-<p>Margin requirements vary slightly by broker, but the CME exchange sets the baseline. For the standard 6C contract, most traders see:</p>
-
-<table>
-<tr><th>Margin Type</th><th>Typical Amount</th></tr>
-<tr><td>Initial Margin</td><td>$2,000–$2,500</td></tr>
-<tr><td>Maintenance Margin</td><td>$1,800–$2,200</td></tr>
-</table>
-
-<p>Day trading margin can be far lower depending on your broker, but that doesn’t mean the risk is lower. The contract still moves $10 per tick no matter what margin deal you get.</p>
-
-<h2>Why Margin ≠ Risk</h2>
-<p>Margin is not the amount of money you can lose. It’s just the amount required to open the position. The real risk comes from:</p>
-
-<ul>
-<li>Your stop size</li>
-<li>Your position size</li>
-<li>Volatility of CAD/USD</li>
-<li>Oil and USD shocks</li>
-</ul>
-
-<p>A single strong oil move can rip 6C 50+ ticks in minutes. That’s $500 per contract—half a small account gone instantly.</p>
-
-<h2>How to Size 6C Positions Correctly</h2>
-<p>Use simple math:  
-<strong>Tick value × stop size = real risk.</strong></p>
-
-<p>6C tick value is always $10. So a 25-tick stop = $250 risk. If your account can’t take that hit comfortably, your size is too big.</p>
-
-<h3>Examples:</h3>
-
-<table>
-<tr><th>Stop Size</th><th>Risk per Contract</th></tr>
-<tr><td>10 ticks</td><td>$100</td></tr>
-<tr><td>20 ticks</td><td>$200</td></tr>
-<tr><td>30 ticks</td><td>$300</td></tr>
-<tr><td>40 ticks</td><td>$400</td></tr>
-</table>
-
-<p>This should already make you rethink the size you place.</p>
-
-<h2>Position Sizing for Small Accounts</h2>
-<p>Beginners love to oversize because 6C “doesn’t move much.” Wrong. CAD moves slower than the Yen, but the tick value is much larger than 6J. One decent swing can wipe a small account.</p>
-
-<h3>Safe rules for small accounts:</h3>
-
-<ul>
-<li>Risk 1–2% of account max per trade</li>
-<li>Use stops no larger than 20–30 ticks</li>
-<li>Trade only during high-liquidity windows</li>
-<li>Avoid holding through scheduled news</li>
-</ul>
-
-<p>If you want tiny sizing, use the micro contract (<strong>MCD</strong>) when available. Its tick value is 1/10th of the main contract, making it beginner-friendly.</p>
-
-<h2>Why Volatility Dictates Stop Size</h2>
-<p>If oil is trending hard or USD is moving aggressively, a 15-tick stop is suicide. You need stops that match volatility. You don’t pick numbers out of thin air—you size based on the environment.</p>
-
-<p>This ties directly into <a href="https://grizzlyparrottrading.com/futures-basics/6c-volatility-patterns.html">6C volatility patterns guide</a>.</p>
-
-<div class="highlight-box green">
-  <h3>6C Moves Are Driven by Fundamental Forces</h3>
-  <p>CAD/USD behavior reflects oil trends, central bank expectations, and USD cycles. Observing these influences highlights the structure behind price action and provides context for how the market reacts during different periods.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="ca-section" id="inputs" aria-labelledby="inputs-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Before division</p><h2 id="inputs-title">A Position-Size Answer Is Only as Good as Six Inputs</h2><p>A calculator can divide numbers perfectly while producing a dangerous answer. Define each input from the exact dated contract and the actual plan. The current standard 6C outright tick is 0.00005 and $5; Micro MCD uses 0.0001 and $1. Those mechanics and their source trail live on the <a href="6c-tick-size-tick-value.html">canonical 6C specification page</a>.</p></div>
+  <div class="ca-two-column">
+    <article class="ca-panel"><h3>Loss budget</h3><p>A predeclared dollar cap for this idea within a wider daily, weekly and correlated-position budget. It is not automatically a fixed percentage. The budget must reflect the account's capacity for losing sequences and open exposure elsewhere.</p></article>
+    <article class="ca-panel"><h3>Structural invalidation</h3><p>The price at which the trade's stated reason no longer holds. A convenient stop chosen only to make more contracts fit reverses the correct process.</p></article>
+    <article class="ca-panel"><h3>Contract multiplier</h3><p>Use 100,000 CAD for standard 6C or 10,000 CAD for MCD. Confirm the symbol, month and ladder before calculating.</p></article>
+    <article class="ca-panel"><h3>Execution allowance</h3><p>Commissions, exchange and brokerage fees, bid-ask spread and adverse fill assumptions. Use observed distributions where available, not a permanent one-tick guess.</p></article>
+    <article class="ca-panel"><h3>Tail scenario</h3><p>A separate gap or liquidity-shock loss beyond the intended stop. It does not predict the worst possible outcome; it asks whether the position remains survivable when the stop price is unavailable.</p></article>
+    <article class="ca-panel"><h3>Funding constraint</h3><p>Current exchange and broker requirements, including overnight and event policies. Funding is checked after risk size, and the stricter constraint wins.</p></article>
   </div>
-</footer>
+</section>
+
+<section class="ca-section" id="workflow" aria-labelledby="workflow-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Calculation sequence</p><h2 id="workflow-title">Size From the Invalidation Outward</h2><p>Keep full price precision until the final contract count. Rounding a stop distance too early can matter when several contracts are involved.</p></div>
+  <ol class="ca-method">
+    <li><strong>Write the thesis and invalidation.</strong><span>State what observable price or evidence would make the idea wrong. Do this before looking at the contract count.</span></li>
+    <li><strong>Measure absolute quote distance.</strong><span>For entry 0.72540 and invalidation 0.72465, the distance is 0.00075 regardless of long or short direction.</span></li>
+    <li><strong>Convert distance to gross dollars.</strong><span>Multiply 0.00075 by the applicable contract unit: $75 for one standard 6C or $7.50 for one MCD.</span></li>
+    <li><strong>Add expected costs and slippage stress.</strong><span>Estimate the round-turn cost for the planned order type, quantity, session and event state. Add it to loss; do not hide it in a target.</span></li>
+    <li><strong>Divide and round down.</strong><span>Only whole futures contracts can be traded. Never round up because the quotient is close to the next integer.</span></li>
+    <li><strong>Apply portfolio and funding caps.</strong><span>Reduce again if correlated CAD, USD, rates or crude exposure, broker limits or current margin rules demand it.</span></li>
+  </ol>
+  <div class="ca-caution"><strong>Do not move the invalidation to rescue the size.</strong><p>If a $300 budget supports two contracts but not three, the answer is two. Tightening the stop without a market-based reason merely makes the spreadsheet pass while increasing the chance that normal noise activates the exit.</p></div>
+</section>
+
+<section class="ca-section" id="example" aria-labelledby="example-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Worked reconciliation</p><h2 id="example-title">A $300 Budget Does Not Mean $300 Divided by Margin</h2><p>Consider a hypothetical long standard 6C plan. Entry is 0.72540, structural invalidation is 0.72465 and the loss budget is $300. Assume $8 per contract for round-turn commissions and fees plus a two-tick adverse-fill allowance. These are teaching assumptions, not current broker quotes or a claim about normal slippage.</p></div>
+  <div class="ca-table-scroll" role="region" aria-label="Worked standard 6C position sizing example" tabindex="0"><table class="ca-table"><thead><tr><th scope="col">Line</th><th scope="col">Calculation</th><th scope="col">Result</th></tr></thead><tbody>
+    <tr><th scope="row">Stop distance</th><td>0.72540 &minus; 0.72465</td><td>0.00075</td></tr>
+    <tr><th scope="row">Stop ticks</th><td>0.00075 &divide; 0.00005</td><td>15 ticks</td></tr>
+    <tr><th scope="row">Planned stop loss</th><td>15 &times; $5</td><td>$75 per contract</td></tr>
+    <tr><th scope="row">Fill stress</th><td>2 &times; $5</td><td>$10 per contract</td></tr>
+    <tr><th scope="row">Fees assumption</th><td>Declared round turn</td><td>$8 per contract</td></tr>
+    <tr><th scope="row">Stressed loss</th><td>$75 + $10 + $8</td><td>$93 per contract</td></tr>
+    <tr><th scope="row">Raw quantity</th><td>$300 &divide; $93</td><td>3.225 contracts</td></tr>
+    <tr><th scope="row">Order quantity</th><td>Round down</td><td><strong>3 contracts</strong></td></tr>
+    <tr><th scope="row">Reconciled planned loss</th><td>3 &times; $93</td><td><strong>$279</strong></td></tr>
+  </tbody></table></div>
+  <p>Four contracts would create $372 of stressed planned loss and fail the $300 gate. Three leave $21 of budget unused. That unused amount is not an invitation to widen the stop after entry; it is simply the consequence of integer sizing.</p>
+  <div class="ca-related"><strong>Micro alternative:</strong> the same 0.00075 distance is $7.50 of raw stop risk per MCD. Because the MCD grid is 0.0001, the intended prices must also be valid on its ladder, and its live spread, depth and per-contract costs must be remeasured. Ten micros are not automatically cheaper than one standard.</div>
+</section>
+
+<section class="ca-section" id="stress" aria-labelledby="stress-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Beyond the stop line</p><h2 id="stress-title">A Stop Is an Instruction, Not a Guaranteed Loss Limit</h2><p>A stop order activates only when its trigger conditions are met and then follows the applicable order mechanics. A stop with protection may leave quantity resting at its protection limit; a stop-limit may remain unfilled. During a gap, thin book or event repricing, the realized exit can be worse than the trigger.</p></div>
+  <div class="ca-table-scroll" role="region" aria-label="6C adverse fill and gap stress scenarios" tabindex="0"><table class="ca-table"><thead><tr><th scope="col">Scenario</th><th scope="col">One standard 6C</th><th scope="col">Three contracts</th><th scope="col">Decision use</th></tr></thead><tbody>
+    <tr><th scope="row">Planned 15-tick stop</th><td>$75</td><td>$225</td><td>Base structure risk before fees</td></tr>
+    <tr><th scope="row">17-tick fill</th><td>$85</td><td>$255</td><td>Two-tick slippage case</td></tr>
+    <tr><th scope="row">25-tick gap</th><td>$125</td><td>$375</td><td>Exceeds the $300 trade budget before fees</td></tr>
+    <tr><th scope="row">45-tick shock</th><td>$225</td><td>$675</td><td>Account-level survival and daily-loss test</td></tr>
+  </tbody></table></div>
+  <p>This table is a scenario ladder, not a bound. Add a policy: reduce quantity, use the smaller contract, avoid holding through the named event, or reject the trade when the stressed outcome breaches the account's hard loss tolerance. Overnight and weekend positions deserve wider scenario distances because there may be no executable quote at the planned exit.</p>
+</section>
+
+<section class="ca-section" id="margin" aria-labelledby="margin-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Second independent gate</p><h2 id="margin-title">Pass Both Risk Capacity and Current Funding</h2><p>Futures margin is a performance bond, not a down payment and not a forecast of loss. CME can change its requirement as risk changes. A futures commission merchant can require more, offer a lower intraday amount under limited conditions, or liquidate under its agreement. The contract multiplier and market exposure do not shrink when a broker lowers day margin.</p></div>
+  <div class="ca-process">
+    <article><span>A</span><h3>Risk-size result</h3><p>Compute quantity from invalidation, cost and adverse-fill stress. In the example, the result is three contracts.</p></article>
+    <article><span>B</span><h3>Funding capacity</h3><p>Divide available eligible collateral by the broker's current requirement, preserving the account buffer required by policy.</p></article>
+    <article><span>C</span><h3>Portfolio cap</h3><p>Count existing CAD and USD exposure and any correlated risk. Several different symbols can still express one macro bet.</p></article>
+    <article><span>D</span><h3>Use the minimum</h3><p>Tradable quantity is the smallest whole number produced by A, B and C. Any failed gate means reduce or skip.</p></article>
+  </div>
+  <p>Do not embed a margin dollar figure from an old screenshot in a permanent sizing rule. Check the <a href="https://www.cmegroup.com/markets/fx/g10/canadian-dollar.margins.html" target="_blank" rel="noopener">current CME Canadian Dollar performance-bond page</a> and the broker's live schedule immediately before the order.</p>
+</section>
+
+<section class="ca-section" id="review" aria-labelledby="review-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Feedback loop</p><h2 id="review-title">Calibrate Assumptions From Fills, Not Memory</h2><p>Log the intended and realized values after every closed trade. The review is not a search for excuses; it tests whether the sizing assumptions remain conservative enough for the traded window and order type.</p></div>
+  <div class="ca-two-column">
+    <article class="ca-panel"><h3>Per-trade record</h3><ul><li>Exact contract and session clock</li><li>Planned and actual entry</li><li>Planned trigger and actual exit</li><li>Spread on entry and exit</li><li>Commission and fee total</li><li>Reason for any manual override</li></ul></article>
+    <article class="ca-panel"><h3>Periodic recalibration</h3><ul><li>Median and adverse-tail slippage by setup</li><li>Event versus non-event outcomes</li><li>Standard versus MCD total cost</li><li>Frequency of gaps beyond the trigger</li><li>Largest correlated open loss</li><li>Any broker margin-policy change</li></ul></article>
+  </div>
+  <p>Increase an execution allowance when evidence shows it has been too small. Do not reduce it because a larger allowance makes size less attractive. A strategy that only fits after costs are understated does not fit.</p>
+</section>
+
+<section class="ca-section" id="checklist" aria-labelledby="checklist-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Pre-order gate</p><h2 id="checklist-title">Reconcile the Quantity Before Submitting</h2></div>
+  <ul class="ca-checklist">
+    <li>The exact 6C or MCD month, unit and price increment are verified.</li>
+    <li>The thesis and structural invalidation are written before size is calculated.</li>
+    <li>Gross stop loss, expected fees and an evidence-based fill allowance are included.</li>
+    <li>The quotient is rounded down and multiplied back to confirm total planned loss.</li>
+    <li>A separate gap or liquidity-shock scenario fits the account's survival rules.</li>
+    <li>Current overnight, event and intraday broker requirements are known.</li>
+    <li>Existing correlated CAD, USD, rate and crude exposure passes the portfolio cap.</li>
+    <li>Any zero result is accepted as a no-trade decision.</li>
+  </ul>
+</section>
+
+<details class="ca-sources" open><summary>Sources and methods</summary><ul>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> and <a href="https://www.cmegroup.com/rulebook/CME/III/250/252/252.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 252</a> for the standard 6C unit and outright increment used in the worked arithmetic.</li>
+  <li><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/293/293.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 293: Micro CAD/USD futures</a> for the MCD unit and price increment.</li>
+  <li><a href="https://www.cmegroup.com/education/courses/things-to-know-before-trading-cme-futures/futures-order-types" target="_blank" rel="noopener">CME Group futures order-types lesson</a> for stop, stop-limit and protection mechanics.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/economicpurpose.html" target="_blank" rel="noopener">CFTC: Economic Purpose of Futures Markets and How They Work</a> for performance-bond, daily mark-to-market and FCM margin context.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/understandcontractobligations.html" target="_blank" rel="noopener">CFTC: Understand Your Contractual Obligations</a> for the warning that leveraged losses can exceed the initial margin deposit.</li>
+</ul><p>Sources and methods were reviewed August 13, 2026. All prices, budgets, fee allowances, gap distances and fills in the examples are hypothetical. They demonstrate arithmetic and decision gates; they are not a recommendation, broker quote, backtest result or claim about typical 6C behavior.</p></details>
+
+<aside class="ca-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>The loss-budget workflow is educational and cannot determine personal suitability or replace trading, investment, legal, tax, accounting, hedging, or brokerage advice. Leverage can create rapid losses, gaps beyond stop triggers, forced liquidation, and losses larger than the initial margin deposit. Specifications, margin, fees, and broker policies change. Verify current terms and choose risk only within your own financial capacity.</p></aside>
+<!-- ARTICLE BODY END -->
+</article>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

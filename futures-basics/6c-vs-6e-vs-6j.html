@@ -2,215 +2,167 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6C vs 6E vs 6J: Why the Canadian Dollar Trades Differently</title>
-  <meta name="description" content="A blunt breakdown comparing 6C CAD/USD futures to 6E Euro futures and 6J Yen futures, and why CAD behaves differently in macro cycles.">
+  <title>6C vs 6E vs 6J: A Currency Futures Comparison</title>
+  <meta name="description" content="Compare 6C, 6E and 6J quotation, standard-contract mechanics, policy channels, macro exposure and analytical fit without ranking an easiest contract.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6c-vs-6e-vs-6j.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6C vs 6E vs 6J: Why the Canadian Dollar Trades Differently">
-  <meta property="og:description" content="A blunt breakdown comparing 6C CAD/USD futures to 6E Euro futures and 6J Yen futures, and why CAD behaves differently in macro cycles.">
+  <meta property="og:title" content="6C vs 6E vs 6J: A Currency Futures Comparison">
+  <meta property="og:description" content="Compare 6C, 6E and 6J quotation, standard-contract mechanics, policy channels, macro exposure and analytical fit without ranking an easiest contract.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6c-vs-6e-vs-6j.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-27">
+  <meta property="article:modified_time" content="2026-08-13">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="6C vs 6E vs 6J: A Currency Futures Comparison">
+  <meta name="twitter:description" content="Compare 6C, 6E and 6J quotation, standard-contract mechanics, policy channels, macro exposure and analytical fit without ranking an easiest contract.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6C vs 6E vs 6J: Why the Canadian Dollar Trades Differently">
-  <meta name="twitter:description" content="A blunt breakdown comparing 6C CAD/USD futures to 6E Euro futures and 6J Yen futures, and why CAD behaves differently in macro cycles.">
-
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="/futures-basics/6c-research-library.css?v=20260813a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"6C vs 6E vs 6J: A Currency Futures Comparison","description":"Compare 6C, 6E and 6J quotation, standard-contract mechanics, policy channels, macro exposure and analytical fit without ranking an easiest contract.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6c-vs-6e-vs-6j.html"},"datePublished":"2025-11-27","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/6c-vs-6e-vs-6j.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6C vs 6E vs 6J: Why the Canadian Dollar Trades Differently",
-  "description": "A blunt breakdown comparing 6C CAD/USD futures to 6E Euro futures and 6J Yen futures, and why CAD behaves differently in macro cycles.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6c-vs-6e-vs-6j.html",
-  "datePublished": "2025-11-27",
-  "dateModified": "2025-11-27",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6c-vs-6e-vs-6j.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6C vs 6E vs 6J: Why the Canadian Dollar Trades Differently",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6c-vs-6e-vs-6j.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6C vs 6E vs 6J: A Currency Futures Comparison","item":"https://grizzlyparrottrading.com/futures-basics/6c-vs-6e-vs-6j.html"}]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container cad-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="ca-hero">
+  <div class="ca-hero-copy">
+    <p class="ca-kicker">Contract comparison &middot; macro fit &middot; 6C / 6E / 6J</p>
+    <h1>6C vs 6E vs 6J: A Currency Futures Comparison</h1>
+    <p class="ca-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="ca-hero-lede">The same U.S. inflation surprise can send Canadian dollar, euro, and Japanese yen futures along different paths. 6C can weigh the Fed move against Canadian rates, trade, and energy. 6E adds euro-area policy and growth. 6J can be especially sensitive to the U.S.-Japan yield comparison and to changing risk behavior. Similar-looking USD-quoted futures are not interchangeable exposures.</p>
+    <div class="ca-hero-actions"><a class="button-primary" href="#quotes">Check the quotes</a><a class="ca-text-link" href="#fit">Use the fit matrix</a></div>
+    <dl class="ca-hero-metrics" aria-label="Three-contract comparison"><div><dt>6C</dt><dd>USD per CAD</dd></div><div><dt>6E</dt><dd>Euro-area channel</dd></div><div><dt>6J</dt><dd>Japan yield channel</dd></div><div><dt>Selection</dt><dd>Fit, not rank</dd></div></dl>
   </div>
+  <div class="ca-hero-visual"><div class="ca-market-board"><div class="ca-board-head"><span>Shared U.S. shock</span><strong>Three relative prices</strong></div><div class="ca-formula"><code>home-country evidence</code><i aria-hidden="true">vs</i><code>U.S. evidence</code></div><p>Each contract puts a different economy, central bank, calendar, and market structure on the non-dollar side.</p><p class="ca-board-foot"><span>No easiest contract</span><span>Verify live liquidity</span></p></div></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="ca-jump-nav" aria-label="On this page"><a href="#answer">Direct answer</a><a href="#quotes">Quotes</a><a href="#mechanics">Mechanics</a><a href="#policy">Policy</a><a href="#macro">Macro exposure</a><a href="#failures">Failures</a><a href="#fit">Fit matrix</a></nav>
 
-<h1>6C vs 6E vs 6J: Why the Canadian Dollar Trades Differently</h1>
-
-<p>6C CAD/USD futures do not behave like 6E or 6J, and if you treat them the same, you’re going to get smoked. CAD is driven by commodities. Euro is driven by ECB policy and broad USD cycles. Yen is driven by risk-off flows and Bank of Japan yield control. Three contracts. Three personalities. Three completely different trading environments.</p>
-
-<p>
-These differences aren’t random. Each currency contract reflects a different part of the global system — commodities, monetary policy, or risk flows — and how they interact is what drives behavior across the entire FX complex. This page isolates CAD, but the full framework is covered in 
-<a href="https://grizzlyparrottrading.com/books/currency-market-structure/"><strong>Currency Market Structure (Volume I)</strong></a>.
-</p>
-<h2>Why 6C Trades Differently</h2>
-<p>The Canadian Dollar is a commodity currency. Its behavior is tied heavily to crude oil, risk appetite, and the Bank of Canada's relative rate stance. This makes CAD more aligned with global growth cycles than with safe-haven or strictly monetary dynamics.</p>
-
-<h2>6C vs 6E: CAD vs Euro</h2>
-
-<table>
-<tr><th>Factor</th><th>6C (CAD/USD)</th><th>6E (EUR/USD)</th></tr>
-<tr><td>Main Driver</td><td>Oil + BoC policy</td><td>ECB policy + broad USD cycles</td></tr>
-<tr><td>Typical Volatility</td><td>Moderate, trend-heavy on oil days</td><td>Higher volatility, driven by Eurozone news</td></tr>
-<tr><td>Behavior</td><td>Respectful trend structure</td><td>Choppier around European session</td></tr>
-<tr><td>Correlation</td><td>Strong with crude</td><td>Strong with global macro sentiment</td></tr>
-</table>
-
-<p>6E is more reactive to inflation events, ECB meetings, PMI data, and geopolitical shocks. 6C is much simpler—watch oil and the BoC.</p>
-
-<h2>6C vs 6J: CAD vs Yen</h2>
-
-<table>
-<tr><th>Factor</th><th>6C (CAD/USD)</th><th>6J (JPY/USD)</th></tr>
-<tr><td>Main Driver</td><td>Oil + risk-on cycles</td><td>Risk-off flows + BoJ policy</td></tr>
-<tr><td>Typical Volatility</td><td>Moderate</td><td>High, whippy</td></tr>
-<tr><td>Behavior</td><td>Smoother swings</td><td>Sharp spikes and reversals</td></tr>
-<tr><td>Correlation</td><td>Risk-on and commodities</td><td>Safe-haven demand</td></tr>
-</table>
-
-<p>The Yen is the opposite of CAD.  
-Risk-off → Yen strengthens → 6J up  
-Risk-off → CAD weakens → 6C down</p>
-
-<p>If you already learned Yen’s personality in <a href="https://grizzlyparrottrading.com/futures-basics/why-6c-moves.html">6J movement guide</a>, CAD is the mirror image in many environments.</p>
-
-<h2>Which Contract Is Easiest to Trade?</h2>
-<p>If you want smoother movement and fewer fakeouts, 6C is easier than both 6E and 6J. Euro can chop you to death. Yen can spike you out instantly. CAD trends cleaner and respects levels better—especially when crude oil provides clear direction.</p>
-
-<div class="highlight-box green">
-  <h3>Each FX Contract Has Its Own Personality</h3>
-  <p>CAD reflects commodity exposure, EUR reacts to monetary policy, and JPY responds to safe-haven flows. Understanding these distinctions provides context for market behavior and guides structured trading approaches.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="ca-section" id="answer" aria-labelledby="answer-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Direct answer</p><h2 id="answer-title">Choose the Contract That Matches the Question You Can Define</h2><p>6C is the natural comparison when the question concerns Canadian policy, Canada-U.S. relative rates, cross-border demand, or Canada's commodity-export channels. 6E is better aligned with euro-area policy, regional growth, and a major direct EUR/USD exposure. 6J is better aligned with Japan-U.S. yield dynamics, Bank of Japan policy, and hypotheses about funding and risk regimes. These are analytical alignments, not claims that one contract is more profitable.</p></div>
+  <div class="ca-two-column">
+    <article class="ca-panel"><p class="ca-card-label">Good selection rule</p><h3>Match mechanism, clock, and data</h3><p>State the catalyst, horizon, official sources, required cross-markets, timezone, and execution window. Then inspect current volume, spread, depth, contract month, and risk per invalidation. A contract fits only if both the research question and the live market can support the plan.</p></article>
+    <article class="ca-panel"><p class="ca-card-label">Bad selection rule</p><h3>Pick the contract with the nicest recent chart</h3><p>Recent smoothness can be regime-specific and visible only after the fact. A similar dollar tick value or familiar ticker does not equal similar volatility, liquidity, catalyst exposure, or stop distance.</p></article>
   </div>
-</footer>
+</section>
+
+<section class="ca-section" id="quotes" aria-labelledby="quotes-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Orientation before opinion</p><h2 id="quotes-title">All Three Futures Rise With the Named Foreign Currency</h2><p>CME's standard 6C, 6E, and 6J futures are each quoted in U.S. dollars per unit of the foreign currency. A higher 6C means a stronger Canadian dollar; a higher 6E means a stronger euro; a higher 6J means a stronger yen, each against USD. The practical trap is that common spot screens do not always use the same orientation.</p></div>
+  <div class="ca-table-scroll" role="region" aria-label="Quote direction comparison for 6C 6E and 6J" tabindex="0">
+    <table class="ca-table">
+      <thead><tr><th scope="col">Contract</th><th scope="col">CME futures quotation</th><th scope="col">Higher futures price means</th><th scope="col">Common cash-screen trap</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">6C Canadian Dollar</th><td>USD per CAD</td><td>CAD strengthens versus USD</td><td>USD/CAD is commonly displayed in the inverse direction</td></tr>
+        <tr><th scope="row">6E Euro FX</th><td>USD per EUR</td><td>EUR strengthens versus USD</td><td>EUR/USD normally matches the futures direction, but basis remains</td></tr>
+        <tr><th scope="row">6J Japanese Yen</th><td>USD per JPY</td><td>JPY strengthens versus USD</td><td>USD/JPY is commonly displayed inversely, with different decimal scale</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ca-caution"><strong>Never compare raw price changes across inverse displays</strong><p>Convert both series into the same quote direction and a consistent return measure. A falling USD/CAD or USD/JPY cash quote corresponds, all else equal, to a strengthening CAD or JPY and a rising same-currency futures quote. Futures basis, roll, timestamps, and venue differences prevent exact identity.</p></div>
+</section>
+
+<section class="ca-section" id="mechanics" aria-labelledby="mechanics-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Verified standard contracts</p><h2 id="mechanics-title">Similar Dollar Ticks Sit on Different Contract Units</h2><p>The table below uses CME's 2026 FX Product Guide for standard outright contracts. It is a comparison snapshot, not the operational authority for 6C. Before an order, verify the exchange page and use the <a href="6c-tick-size-tick-value.html">canonical 6C mechanics guide</a> for 6C arithmetic, Micro 6C, expiry, delivery, trading hours, roll, and margin limitations.</p></div>
+  <div class="ca-table-scroll" role="region" aria-label="Standard 6C 6E and 6J contract mechanics" tabindex="0">
+    <table class="ca-table">
+      <thead><tr><th scope="col">Contract</th><th scope="col">Standard contract unit</th><th scope="col">Globex outright minimum increment</th><th scope="col">Dollar value per minimum increment</th><th scope="col">Final settlement</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">6C</th><td>100,000 CAD</td><td>0.00005 USD per CAD</td><td>$5.00</td><td>Physical</td></tr>
+        <tr><th scope="row">6E</th><td>125,000 EUR</td><td>0.00005 USD per EUR</td><td>$6.25</td><td>Physical</td></tr>
+        <tr><th scope="row">6J</th><td>12,500,000 JPY</td><td>0.0000005 USD per JPY</td><td>$6.25</td><td>Physical</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Established fact:</strong> the contract units and price increments differ. <strong>Inference that does not follow:</strong> 6C is automatically lower-risk because its minimum increment is worth $5 rather than $6.25. Risk depends on the planned invalidation distance in ticks, gap and slippage exposure, position size, current volatility, and market quality. Margin is a performance bond that can change; it is not a maximum-loss estimate.</p>
+</section>
+
+<section class="ca-section" id="policy" aria-labelledby="policy-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Central-bank comparison</p><h2 id="policy-title">Each Contract Is a Relative-Policy Problem With a Different Home Side</h2><p>The U.S. side is common, but the non-dollar side is not. Use policy-sensitive measures at comparable horizons and read the complete official communication package. A current target-rate difference alone does not describe the expected future path.</p></div>
+  <div class="ca-table-scroll" role="region" aria-label="Central bank policy channels for 6C 6E and 6J" tabindex="0">
+    <table class="ca-table">
+      <thead><tr><th scope="col">Contract</th><th scope="col">Home policy authority</th><th scope="col">Core relative question</th><th scope="col">Communication detail</th><th scope="col">Failure case</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">6C</th><td>Bank of Canada</td><td>Did the expected Canadian path change versus the Fed path?</td><td>Decision statement; quarterly MPR; press conference; later deliberations</td><td>Oil, trade, or global USD flow dominates rates</td></tr>
+        <tr><th scope="row">6E</th><td>European Central Bank</td><td>Did expected euro-area policy change versus the Fed path?</td><td>Decision, statement, projections when scheduled, press conference</td><td>Fragmentation, energy, or regional growth changes the interpretation</td></tr>
+        <tr><th scope="row">6J</th><td>Bank of Japan</td><td>Did expected Japanese policy or yields change versus the United States?</td><td>MPM statement; Outlook Report when scheduled; opinions and minutes later</td><td>Risk liquidation, funding flows, or policy-operation details dominate</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Mechanism:</strong> a relative rise in expected home-currency returns can support that currency, all else equal. <strong>Limit:</strong> "all else equal" is often the part that fails. Inflation shocks can raise nominal yields while damaging growth; crisis demand can favor a currency despite low yields; and the market may have fully priced the expected decision.</p>
+</section>
+
+<section class="ca-section" id="macro" aria-labelledby="macro-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Beyond policy rates</p><h2 id="macro-title">Canada, the Euro Area, and Japan Carry Different Macro Questions</h2><p>Permanent labels such as "oil currency," "risk-on euro," or "safe-haven yen" compress conditional relationships into slogans. Use the labels only as hypotheses with a named channel and a test.</p></div>
+  <div class="ca-check-grid">
+    <article><strong>6C: cross-border demand</strong><p>Canada's deep trade relationship with the United States makes U.S. growth composition relevant as well as Fed policy. Strong U.S. data can support export demand while strengthening USD.</p></article>
+    <article><strong>6C: commodities and terms of trade</strong><p>Energy exports create plausible income and trade channels, but crude and CAD can diverge when the shock source, broad dollar, rates, or risk conditions differ.</p></article>
+    <article><strong>6E: multi-country growth</strong><p>Euro-area aggregates combine economies with different fiscal, industrial, energy, and credit conditions. One national release may not represent the whole currency area.</p></article>
+    <article><strong>6E: trade and import prices</strong><p>The exchange rate affects imported prices and growth, while global trade and energy shocks can alter the ECB outlook and the euro's terms of trade.</p></article>
+    <article><strong>6J: yield differential</strong><p>The U.S.-Japan yield comparison is a common mechanism to investigate, but maturity choice, policy operations, and hedging costs matter.</p></article>
+    <article><strong>6J: risk and funding regimes</strong><p>Yen strength during some stress episodes may reflect position unwinds and balance-sheet demand. It is not a promise that every equity decline lifts 6J.</p></article>
+  </div>
+  <div class="ca-related">For 6C's beginner causal overview, see <a href="why-6c-moves.html">why 6C moves</a>. The <a href="6c-oil-correlation.html">6C-oil guide</a> owns the dedicated oil mechanism and test design, while <a href="6c-correlation-risk-on-risk-off.html">6C risk-on/risk-off</a> owns conditional cross-asset measurement.</div>
+</section>
+
+<section class="ca-section" id="failures" aria-labelledby="failures-title">
+  <div class="ca-section-heading"><p class="ca-kicker">When the comparison breaks</p><h2 id="failures-title">Do Not Turn Contract Differences Into Personality Types</h2><p>These failures make a three-column comparison look cleaner than the actual markets.</p></div>
+  <div class="ca-two-column">
+    <article class="ca-panel"><p class="ca-card-label">Liquidity by reputation</p><h3>Assuming yesterday's ranking is today's book</h3><p>Volume, spread, depth, and contract leadership vary by clock, catalyst, expiration, roll, and market regime. Inspect the active book and recent execution data. A broad statement that one contract is always cleaner is not evidence.</p></article>
+    <article class="ca-panel"><p class="ca-card-label">Volatility by nickname</p><h3>Calling one currency calm or wild</h3><p>Measure range and realized volatility over the horizon and session you will trade. A low average can coexist with severe event gaps; a wider average can still offer better depth.</p></article>
+    <article class="ca-panel"><p class="ca-card-label">Macro by single factor</p><h3>Oil for CAD, rates for EUR, risk for JPY</h3><p>Every bilateral currency includes policy, growth, trade, inflation, and dollar channels. The factor with the best story is not necessarily the one controlling this episode.</p></article>
+    <article class="ca-panel"><p class="ca-card-label">Futures versus spot</p><h3>Ignoring basis, roll, and inverse quotes</h3><p>A dated future is not an OTC spot quote. Align timestamps, contract months, quote direction, and carry before declaring a lead or discrepancy.</p></article>
+  </div>
+  <div class="ca-caution"><strong>No "easiest contract" result</strong><p>This page does not rank ease, profitability, trend quality, or execution quality. Those outcomes depend on the user's task, current liquidity, event clock, strategy horizon, costs, and tested skill. A defensible comparison can end with no suitable contract.</p></div>
+</section>
+
+<section class="ca-section" id="fit" aria-labelledby="fit-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Decision close</p><h2 id="fit-title">Use a Fit Matrix Instead of a Winner</h2><p>Choose the row that describes the question. Then apply all validation columns. The result is a research fit, not permission to trade.</p></div>
+  <div class="ca-table-scroll" role="region" aria-label="Analytical fit matrix for 6C 6E and 6J" tabindex="0">
+    <table class="ca-table">
+      <thead><tr><th scope="col">Research need</th><th scope="col">Natural first contract</th><th scope="col">Required comparison</th><th scope="col">Data and clock gate</th><th scope="col">Reject when</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Canada-U.S. policy, trade, or energy question</th><td>6C</td><td>Canadian versus U.S. rates; relevant trade/energy evidence</td><td>Official Canadian and U.S. calendar; active 6C book</td><td>Question is really a generic dollar move or liquidity is inadequate</td></tr>
+        <tr><th scope="row">Euro-area policy or regional macro question</th><td>6E</td><td>Euro-area versus U.S. rates; regional composition</td><td>ECB and euro-area releases; active 6E book</td><td>One-country proxy cannot support the area-wide claim</td></tr>
+        <tr><th scope="row">Japan-U.S. yields or risk-unwind question</th><td>6J</td><td>Japan versus U.S. rates; quote-adjusted USD/JPY; risk controls</td><td>BOJ/Japan clock and U.S. clock; active 6J book</td><td>Inverse quote, timestamp, or funding mechanism is unresolved</td></tr>
+        <tr><th scope="row">Generic USD event comparison</th><td>Potentially all three</td><td>Same timestamp, return horizon, roll treatment, and cost model</td><td>Complete synchronized sample across contracts</td><td>Post-selected contract or unequal data quality drives the result</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Research status:</strong> verified exchange specifications and central-bank publication structures are established facts. Macro channels are mechanisms; "natural first contract" is an analytical inference. No original liquidity ranking, volatility comparison, reaction study, or profitability test is reported.</p>
+</section>
+
+<details class="ca-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide</a> for standard 6C, 6E, and 6J contract units, quotation, outright minimum increments, and physical settlement.</li>
+  <li><a href="https://www.bankofcanada.ca/core-functions/monetary-policy/decision-making-process/" target="_blank" rel="noopener">Bank of Canada: monetary policy decision-making process</a> for Canadian policy communication and forecast materials.</li>
+  <li><a href="https://www.ecb.europa.eu/ecb-and-you/ask_us/html/index.en.html" target="_blank" rel="noopener">European Central Bank: monetary policy and price-stability objective</a> for euro-area policy context.</li>
+  <li><a href="https://www.ecb.europa.eu/ecb-and-you/explainers/tell-me-more/html/role_of_exchange_rates.en.html" target="_blank" rel="noopener">European Central Bank: role of exchange rates</a> for import-price, trade, growth, and policy context.</li>
+  <li><a href="https://www.boj.or.jp/en/mopo/mpmsche_minu/" target="_blank" rel="noopener">Bank of Japan: Monetary Policy Meetings</a> and <a href="https://www.boj.or.jp/en/mopo/outlook/index.htm" target="_blank" rel="noopener">Outlook for Economic Activity and Prices</a> for Japan's statement, opinions, minutes, and outlook publication structure.</li>
+  <li><a href="https://www.federalreserve.gov/monetarypolicy/monetary-policy-what-are-its-goals-how-does-it-work.htm" target="_blank" rel="noopener">Federal Reserve: monetary policy goals and transmission</a> for the common U.S. side of each relative-rate comparison.</li>
+  <li><a href="https://www150.statcan.gc.ca/n1/daily-quotidien/260219/dq260219a-eng.htm" target="_blank" rel="noopener">Statistics Canada: Canadian international merchandise trade, December and annual 2025</a> and <a href="https://www.cer-rec.gc.ca/en/data-analysis/energy-markets/market-snapshots/2026/market-snapshot-overview-of-2025-canada-us-energy-trade.html" target="_blank" rel="noopener">Canada Energy Regulator: 2025 Canada-U.S. energy trade</a> for official Canadian trade and energy context.</li>
+</ul><p>Sources and methods were reviewed August 13, 2026. Exchange specifications and schedules can change; the live responsible institution controls. Dollar values are derived directly from the cited unit and minimum increment. No proprietary execution, liquidity, or performance dataset is represented. The comparison was produced independently and without sponsorship.</p></details>
+
+<aside class="ca-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>The cross-contract comparison is general education and does not recommend an instrument or provide individualized trading, investment, legal, tax, accounting, hedging, or brokerage advice. Each currency future is leveraged and physically settled unless offset or rolled; gaps can carry losses beyond initial margin. Specifications, funding requirements, liquidity, spreads, contract leadership, and correlations can change. Verify the active contract, current exchange and broker rules, official calendars, quote direction, market quality, and your own loss limits before acting.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

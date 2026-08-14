@@ -2,245 +2,129 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scalping 6C Futures: What Actually Works on CAD/USD</title>
-  <meta name="description" content="A blunt guide to scalping 6C Canadian Dollar futures, including liquidity windows, setups that work, and common mistakes to avoid.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6c-scalping-guide.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Scalping 6C Futures: What Actually Works on CAD/USD">
-  <meta property="og:description" content="A blunt guide to scalping 6C Canadian Dollar futures, including liquidity windows, setups that work, and common mistakes to avoid.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6c-scalping-guide.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Scalping 6C Futures: What Actually Works on CAD/USD">
-  <meta name="twitter:description" content="A blunt guide to scalping 6C Canadian Dollar futures, including liquidity windows, setups that work, and common mistakes to avoid.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Scalping 6C Futures: What Actually Works on CAD/USD",
-  "description": "A blunt guide to scalping 6C Canadian Dollar futures, including liquidity windows, setups that work, and common mistakes to avoid.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6c-scalping-guide.html",
-  "datePublished": "2025-11-27",
-  "dateModified": "2025-11-27",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6c-scalping-guide.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Scalping 6C Futures: What Actually Works on CAD/USD",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6c-scalping-guide.html"
-    }
-  ]
-}
-</script>
-
+  <title>Scalping 6C Futures: Market-Quality and Cost Gates</title>
+  <meta name="description" content="Decide whether a short-horizon 6C plan survives spread, depth, slippage, fees, event and invalidation gates before submitting an order.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6c-scalping-guide.html">
+  <meta property="og:title" content="Scalping 6C Futures: Market-Quality and Cost Gates"><meta property="og:description" content="Decide whether a short-horizon 6C plan survives spread, depth, slippage, fees, event and invalidation gates before submitting an order."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6c-scalping-guide.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-27"><meta property="article:modified_time" content="2026-08-13">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Scalping 6C Futures: Market-Quality and Cost Gates"><meta name="twitter:description" content="Decide whether a short-horizon 6C plan survives spread, depth, slippage, fees, event and invalidation gates before submitting an order."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/6c-research-library.css?v=20260813a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Scalping 6C Futures: Market-Quality and Cost Gates","description":"Decide whether a short-horizon 6C plan survives spread, depth, slippage, fees, event and invalidation gates before submitting an order.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6c-scalping-guide.html"},"datePublished":"2025-11-27","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/6c-scalping-guide.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"Scalping 6C Futures: Market-Quality and Cost Gates","item":"https://grizzlyparrottrading.com/futures-basics/6c-scalping-guide.html"}]}</script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container cad-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="ca-hero">
+  <p class="ca-kicker">Short horizon &middot; execution first</p>
+  <h1>Scalping 6C Futures: Market-Quality and Cost Gates</h1>
+  <p class="ca-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+  <p class="ca-hero-lede">Suppose a plan seeks six standard 6C ticks. A one-tick spread, one tick of adverse entry, one tick of adverse exit and round-turn fees can consume most of that gross objective. The first scalping question is not “Which pattern?” It is “Is enough executable movement left after friction?”</p>
+  <div class="ca-cost-tape" aria-label="Hypothetical scalp cost equation"><span>Gross objective <strong>6 ticks / $30</strong></span><span>Slippage + spread <strong>3 ticks / $15</strong></span><span>Fees <strong>assume $8</strong></span><span>Scenario remainder <strong>$7</strong></span></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="ca-jump-nav" aria-label="On this page"><a href="#data">Data</a><a href="#quality">Quality gate</a><a href="#setup">Setup</a><a href="#orders">Orders</a><a href="#events">Exclusions</a><a href="#replay">Replay</a><a href="#card">Go / no-go</a></nav>
 
-<h1>Scalping 6C Futures: What Actually Works on CAD/USD</h1>
-
-<p>Scalping 6C futures is nothing like scalping 6J or 6E. CAD/USD moves slower, respects levels better, and reacts heavily to oil and USD flows. If you try to scalp it like a hypervolatile currency, you’ll sit through dead movement or get tagged in thin conditions. This guide gives you what actually works.</p>
-
-<h2>Scalp Only During High-Liquidity Windows</h2>
-<p>6C is untradeable during most of the day. Scalping only works when volume and volatility show up. The best windows:</p>
-
-<ul>
-<li><strong>8:00–11:30 AM ET</strong> — U.S. session open; 6C’s prime time</li>
-<li><strong>7:00–8:30 AM ET</strong> — Canadian data releases</li>
-<li><strong>10:30 AM ET Wednesdays</strong> — Crude oil inventories</li>
-</ul>
-
-<p>These are the same windows discussed in <a href="https://grizzlyparrottrading.com/futures-basics/best-time-to-trade-6c.html">the best time to trade 6C guide</a>.</p>
-
-<h2>Why Scalping 6C Is Different From Other FX Futures</h2>
-<p>6C has:</p>
-<ul>
-<li>Moderate volatility</li>
-<li>Cleaner structure</li>
-<li>Fewer stop-hunts compared to 6J</li>
-<li>Heavy influence from oil and USD indices</li>
-</ul>
-
-<p>This means you scalp structure—not chaos.</p>
-
-<h2>The Three Scalp Setups That Actually Work on 6C</h2>
-
-<h3>1. Pullbacks Into Key Levels (The Highest Win-Rate Setup)</h3>
-<p>CAD respects levels extremely well. The best scalps come from pullbacks into:</p>
-<ul>
-<li>Prior session highs/lows</li>
-<li>London or NY opening ranges</li>
-<li>Oil-driven structure breaks</li>
-</ul>
-
-<p>Look for rejection wicks or micro-trend continuation.</p>
-
-<h3>2. Oil-Led Breakout Scalps</h3>
-<p>When crude oil surges or dumps, CAD often follows within seconds. Smart scalpers watch oil first, 6C second.</p>
-
-<ul>
-<li>Oil breaks → enter 6C in same direction</li>
-<li>Oil reverses → scalp the CAD swing</li>
-</ul>
-
-<p>It’s a cheat code if you know how to read correlation.</p>
-
-<h3>3. USD Momentum Scalps</h3>
-<p>When USD rips (CPI, NFP, ISM), 6C gives fast, clean scalps if you enter after the initial spike. Don’t pick tops or bottoms—ride the follow-through.</p>
-
-<h2>Stops and Targets for 6C Scalps</h2>
-<p>6C tick value is $10 per tick. That means your stops must be tight and deliberate.</p>
-
-<table>
-<tr><th>Style</th><th>Typical Stop</th><th>Typical Target</th></tr>
-<tr><td>Momentum scalp</td><td>10–15 ticks</td><td>10–25 ticks</td></tr>
-<tr><td>Level-based scalp</td><td>8–12 ticks</td><td>12–20 ticks</td></tr>
-<tr><td>Oil-driven scalp</td><td>12–18 ticks</td><td>20–40 ticks</td></tr>
-</table>
-
-<p>If you need a 25+ tick stop to survive the noise, you’re not scalping—you’re swing trading.</p>
-
-<h2>Common Scalping Mistakes on 6C</h2>
-
-<ul>
-<li><strong>Trading during dead hours</strong> — 6C barely moves outside the U.S. morning.</li>
-<li><strong>Ignoring oil</strong> — CAD follows crude; don’t scalp blind.</li>
-<li><strong>Oversizing</strong> — a 20-tick loss is $200 per contract.</li>
-<li><strong>Entering before economic news</strong> — USD shocks will wipe you out.</li>
-</ul>
-
-<div class="highlight-box yellow">
-  <h3>6C Scalping Follows Its Own Rhythm</h3>
-  <p>Activity depends on session timing, oil and USD influence, and structural clarity. Recognizing these patterns helps identify when trades align with the market’s natural flow and when conditions are less favorable for fast entries.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="ca-section" id="data" aria-labelledby="data-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Required evidence</p><h2 id="data-title">A Candle Chart Cannot Measure the Whole Trade</h2><p>Short-horizon results depend on queue position, spread changes, available size and the exact sequence of trades and quotes. Bar data can generate a candidate but cannot prove that a limit order filled, a stop filled at its trigger or several contracts received one price.</p></div>
+  <div class="ca-two-column">
+    <article class="ca-panel"><h3>Minimum live inputs</h3><ul><li>Exact dated 6C or MCD contract</li><li>Best bid, best ask and displayed quantities</li><li>Recent trades with exchange timestamps</li><li>Working-order status and partial fills</li><li>Scheduled-event clock and daily-break status</li><li>Current broker fees and order-type support</li></ul></article>
+    <article class="ca-panel"><h3>Minimum research inputs</h3><ul><li>Point-in-time trades and quote updates</li><li>Contract roll and holiday mapping</li><li>Order-side assumptions and latency</li><li>Queue model or conservative no-fill rule</li><li>Commission, exchange and brokerage fees</li><li>Rejected, cancelled and unfilled candidates</li></ul></article>
   </div>
-</footer>
+  <p>The CME central limit order book is observable for the traded futures contract, but 6C is not the entire global CAD market. OTC spot, forwards and other venues can move without appearing as 6C resting depth. Treat the book as execution evidence for 6C—not a complete map of every Canadian-dollar order.</p>
+</section>
+
+<section class="ca-section" id="quality" aria-labelledby="quality-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Before the pattern</p><h2 id="quality-title">Set Market-Quality Thresholds in Dollars</h2><p>The current standard 6C outright tick is 0.00005 and worth $5; MCD uses 0.0001 and $1. Verify the exact products on the <a href="6c-tick-size-tick-value.html">canonical contract page</a>. Then declare thresholds relative to the plan rather than using vague labels such as “liquid.”</p></div>
+  <div class="ca-table-scroll" role="region" aria-label="6C scalping market quality gate" tabindex="0"><table class="ca-table"><thead><tr><th scope="col">Gate</th><th scope="col">Measure before entry</th><th scope="col">No-go condition</th></tr></thead><tbody>
+    <tr><th scope="row">Spread</th><td>Current and recent percentile in ticks</td><td>Above the predeclared cap or unstable across updates</td></tr>
+    <tr><th scope="row">Usable depth</th><td>Displayed size at prices the order can actually reach</td><td>Planned quantity would sweep beyond the slippage budget</td></tr>
+    <tr><th scope="row">Trade continuity</th><td>Time between trades and two-sided activity</td><td>Stale prints or one-sided jumps make the trigger unreliable</td></tr>
+    <tr><th scope="row">Expected friction</th><td>Spread + slippage + fees for entry and exit</td><td>Net target fails the required payoff threshold</td></tr>
+    <tr><th scope="row">Event state</th><td>Time to scheduled release and declared blackout</td><td>Inside the blackout or first normalization interval</td></tr>
+    <tr><th scope="row">Contract state</th><td>Volume and depth versus adjacent month</td><td>Liquidity has migrated or expiry cutoff is too near</td></tr>
+  </tbody></table></div>
+  <p>Thresholds should come from the trader's own sampled fills and order book, split by contract, window, event state and quantity. A fixed “one tick slippage” assumption is convenient, not permanent evidence.</p>
+</section>
+
+<section class="ca-section" id="setup" aria-labelledby="setup-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Operational definition</p><h2 id="setup-title">Name the Decision, Not a Pattern That “Works”</h2><p>This page does not claim that a pullback, range fade or micro-breakout is profitable. A testable scalp needs one decision task with observable entry, invalidation and expiry conditions.</p></div>
+  <article class="ca-trade-card">
+    <p class="ca-card-label">Illustrative research candidate</p>
+    <h3>Failed excursion at a predeclared session boundary</h3>
+    <dl><div><dt>Context</dt><dd>A level generated before contact under the <a href="6c-support-resistance-levels.html">level-provenance method</a></dd></div><div><dt>Trigger</dt><dd>Trade beyond the band, then return inside within a fixed number of quote updates or completed bars</dd></div><div><dt>Entry</dt><dd>Declared order type only after the market-quality gate still passes</dd></div><div><dt>Invalidation</dt><dd>Renewed acceptance beyond the excursion extreme plus tolerance</dd></div><div><dt>Expiry</dt><dd>Cancel if unfilled after the fixed short horizon or if the event state changes</dd></div><div><dt>Review</dt><dd>Measure net outcome, adverse/favorable excursion, partial fills and missed orders</dd></div></dl>
+  </article>
+  <p>The example is deliberately a specification, not a recommendation. Change any field only by creating a new version and evaluating it on later data. Do not transform a losing failed-excursion plan into a breakout trade after the invalidation prints.</p>
+</section>
+
+<section class="ca-section" id="orders" aria-labelledby="orders-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Execution branch</p><h2 id="orders-title">Every Order Type Trades One Risk for Another</h2><p>There is no universally best order. Select the failure mode the plan is designed to tolerate, then log whether the platform and broker implement it as expected.</p></div>
+  <div class="ca-table-scroll" role="region" aria-label="Order type tradeoffs for a 6C scalp" tabindex="0"><table class="ca-table"><thead><tr><th scope="col">Instruction</th><th scope="col">Primary benefit</th><th scope="col">Primary failure</th><th scope="col">Review field</th></tr></thead><tbody>
+    <tr><th scope="row">Passive limit</th><td>Sets worst price if filled</td><td>No fill, partial fill or adverse selection</td><td>Queue estimate and post-touch move</td></tr>
+    <tr><th scope="row">Market / protected market</th><td>Prioritizes immediate execution within venue controls</td><td>Slippage or residual unfilled quantity at protection boundary</td><td>Arrival price and volume-weighted fill</td></tr>
+    <tr><th scope="row">Stop-limit</th><td>Controls limit after trigger</td><td>Can trigger and remain unfilled</td><td>Trigger time, limit and missed exit</td></tr>
+    <tr><th scope="row">Stop with protection</th><td>Activates across a defined protection range</td><td>Residual can rest at the protection limit</td><td>Worst fill and remaining quantity</td></tr>
+  </tbody></table></div>
+  <div class="ca-caution"><strong>An attached stop does not make loss fixed.</strong><p>Fast repricing can produce a worse fill, a protected stop can leave quantity, and a stop-limit can fail to exit. Calculate size with an adverse-fill allowance and a separate gap scenario using <a href="6c-margin-and-position-sizing.html">the 6C sizing workflow</a>.</p></div>
+</section>
+
+<section class="ca-section" id="economics" aria-labelledby="economics-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Worked cost test</p><h2 id="economics-title">Small Gross Edges Are Fragile</h2><p>For one hypothetical standard 6C scalp, assume a six-tick target and four-tick structural stop. Assume one tick of spread cost, one tick adverse entry, one tick adverse exit and $8 round-turn fees. The assumptions are teaching inputs, not findings about current normal fills.</p></div>
+  <div class="ca-two-column">
+    <article class="ca-panel"><h3>If target fills</h3><p>Six ticks equal $30 gross. Subtract three ticks ($15) plus $8 fees: <strong>$7 net in the scenario</strong>. More than three-quarters of the gross objective is consumed.</p></article>
+    <article class="ca-panel"><h3>If stop fills</h3><p>Four ticks equal $20 gross loss. Add three ticks ($15) plus $8 fees: <strong>$43 loss in the scenario</strong>. One target winner would not offset one stopped trade.</p></article>
+  </div>
+  <p>A strategy with these economics would need an unusually high valid win rate merely to break even, and the exact threshold must include all outcome states and fill probabilities. The correct response is not to assume better fills. Increase gross opportunity, reduce verified friction, change the order logic or reject the plan.</p>
+</section>
+
+<section class="ca-section" id="events" aria-labelledby="events-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Hard exclusions</p><h2 id="events-title">Some Windows Belong on the No-Trade List</h2><p>A release can be tradable under a dedicated event strategy, but it should not enter an ordinary scalp sample by accident. Maintain a current calendar from the responsible institutions.</p></div>
+  <ul class="ca-checklist">
+    <li>Bank of Canada policy decisions, Monetary Policy Reports and scheduled press conferences inside the strategy's blackout.</li>
+    <li>Statistics Canada labor, CPI, GDP and trade releases named by the protocol.</li>
+    <li>Material U.S. inflation, employment and Federal Reserve events that can reprice the USD side.</li>
+    <li>CME daily maintenance break, published holiday exceptions and the reopening interval defined by the plan.</li>
+    <li>Contract-roll migration or impending expiry when the chosen month's market quality no longer passes.</li>
+    <li>Data-feed gaps, clock drift, rejected orders, platform degradation or inability to verify open quantity.</li>
+  </ul>
+  <p>Do not use fixed local-clock memories for releases or exchange hours. Daylight-saving differences can temporarily shift the local conversion even when the source institution's clock is unchanged.</p>
+</section>
+
+<section class="ca-section" id="replay" aria-labelledby="replay-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Simulation discipline</p><h2 id="replay-title">Replay the Orders, Not Just the Candles</h2><p>No original 6C scalp study is reported here. Before live use, replay the exact rule with chronological data and conservative fill logic.</p></div>
+  <ol class="ca-method">
+    <li><strong>Hide the future.</strong><span>Advance event by event; do not inspect later bars before marking the decision.</span></li>
+    <li><strong>Submit a simulated instruction.</strong><span>Record arrival time, side, price, quantity and order type. A touched limit is not automatically a fill.</span></li>
+    <li><strong>Model partials and cancels.</strong><span>Keep residual quantity and cancellation latency. Charge the actual number of contracts filled.</span></li>
+    <li><strong>Apply exit mechanics.</strong><span>Simulate target, stop, time exit and protective range under the same sequencing rules.</span></li>
+    <li><strong>Charge all friction.</strong><span>Use fees and spread/slippage distributions by window, not one optimistic constant.</span></li>
+    <li><strong>Validate later.</strong><span>After rules are frozen, test untouched contracts and regimes. Permit rejection if net results do not survive stress.</span></li>
+  </ol>
+</section>
+
+<section class="ca-section" id="card" aria-labelledby="card-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Pre-submit card</p><h2 id="card-title">Go Only When Every Box Passes</h2></div>
+  <div class="ca-go-card">
+    <div><strong>Contract</strong><span>Exact month, tick and expiry verified</span></div><div><strong>Clock</strong><span>Outside break, holiday and event blackout</span></div><div><strong>Book</strong><span>Spread and usable depth pass thresholds</span></div><div><strong>Setup</strong><span>Trigger, invalidation and expiry are objective</span></div><div><strong>Economics</strong><span>Net payoff survives stressed friction</span></div><div><strong>Size</strong><span>Integer quantity survives gap and daily-loss gates</span></div>
+  </div>
+  <p><strong>No-go</strong> is the default if any current input is missing. After the trade, record planned versus actual spread, slippage, fees, fill ratio, latency, exit reason and rule deviations. That cost record—not confidence—determines the next calibration.</p>
+</section>
+
+<details class="ca-sources" open><summary>Sources and methods</summary><ul>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> for 6C and MCD units and outright increments.</li>
+  <li><a href="https://www.cmegroup.com/education/courses/things-to-know-before-trading-cme-futures/futures-order-types" target="_blank" rel="noopener">CME Group Futures Order Types</a> for limit, market, stop-limit and stop-with-protection behavior.</li>
+  <li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener">CME Group holiday and trading hours</a> for current break and holiday checks.</li>
+  <li><a href="https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/" target="_blank" rel="noopener">Bank of Canada policy interest-rate schedule and decisions</a>, <a href="https://www150.statcan.gc.ca/n1/dai-quo/cal1-eng.htm" target="_blank" rel="noopener">Statistics Canada major economic releases calendar</a> and <a href="https://www.bls.gov/schedule/" target="_blank" rel="noopener">U.S. Bureau of Labor Statistics release calendar</a> for event-source examples.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/EducationCenter/FuturesMarketBasics/index2.htm" target="_blank" rel="noopener">CFTC Futures Market Basics</a> for leverage and risk context.</li>
+</ul><p>Sources and methods were reviewed August 13, 2026. This page reports no original scalping result and does not claim that the illustrative setup or cost assumptions work. Replace hypothetical fees and slippage with current broker terms and an auditable sample of actual or conservatively simulated fills.</p></details>
+
+<aside class="ca-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>The scalping cost-gate is general education, not an individualized recommendation or investment, legal, tax, accounting, hedging, or brokerage advice. Short holding periods do not remove futures leverage or fill risk. Orders may remain unfilled or execute worse than expected, and losses can exceed initial margin. Verify current specifications, hours, fees, and broker rules.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>
