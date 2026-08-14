@@ -2,274 +2,135 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Breakout Behavior in 6C Futures: When CAD/USD Breakouts Actually Hold</title>
-  <meta name="description" content="A blunt guide to breakout behavior in 6C CAD/USD futures and how to tell real breakouts from fakeouts using oil, USD, and liquidity.">
+  <title>6C Breakout Behavior: A Testable Trade Workflow</title>
+  <meta name="description" content="Define, filter, execute and review 6C breakout candidates with objective levels, acceptance and failure branches, cost gates and explicit invalidation.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6c-breakout-behavior.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Breakout Behavior in 6C Futures: When CAD/USD Breakouts Actually Hold">
-  <meta property="og:description" content="A blunt guide to breakout behavior in 6C CAD/USD futures and how to tell real breakouts from fakeouts using oil, USD, and liquidity.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6c-breakout-behavior.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Breakout Behavior in 6C Futures: When CAD/USD Breakouts Actually Hold">
-  <meta name="twitter:description" content="A blunt guide to breakout behavior in 6C CAD/USD futures and how to tell real breakouts from fakeouts using oil, USD, and liquidity.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <meta property="og:title" content="6C Breakout Behavior: A Testable Trade Workflow"><meta property="og:description" content="Define, filter, execute and review 6C breakout candidates with objective levels, acceptance and failure branches, cost gates and explicit invalidation."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6c-breakout-behavior.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-27"><meta property="article:modified_time" content="2026-08-13">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6C Breakout Behavior: A Testable Trade Workflow"><meta name="twitter:description" content="Define, filter, execute and review 6C breakout candidates with objective levels, acceptance and failure branches, cost gates and explicit invalidation."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/6c-research-library.css?v=20260813a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"6C Breakout Behavior: A Testable Trade Workflow","description":"Define, filter, execute and review 6C breakout candidates with objective levels, acceptance and failure branches, cost gates and explicit invalidation.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6c-breakout-behavior.html"},"datePublished":"2025-11-27","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/6c-breakout-behavior.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Breakout Behavior in 6C Futures: When CAD/USD Breakouts Actually Hold",
-  "description": "A blunt guide to breakout behavior in 6C CAD/USD futures and how to tell real breakouts from fakeouts using oil, USD, and liquidity.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6c-breakout-behavior.html",
-  "datePublished": "2025-11-27",
-  "dateModified": "2025-11-27",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6c-breakout-behavior.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Breakout Behavior in 6C Futures: When CAD/USD Breakouts Actually Hold",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6c-breakout-behavior.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6C Breakout Behavior: A Testable Trade Workflow","item":"https://grizzlyparrottrading.com/futures-basics/6c-breakout-behavior.html"}]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container cad-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="ca-hero">
+  <p class="ca-kicker">Breach &middot; acceptance &middot; failure</p>
+  <h1>6C Breakout Behavior: A Testable Trade Workflow</h1>
+  <p class="ca-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+  <p class="ca-hero-lede">Price trades one tick beyond a carefully marked range, but the bid-ask spread has tripled and usable depth has vanished. That is a breach, not an automatic trade. The market-quality gate fails before any argument about momentum begins.</p>
+  <div class="ca-decision-strip" aria-label="Breakout decision states"><span><strong>Pass</strong> Level, trigger, acceptance and cost gates align</span><span><strong>Wait</strong> Evidence is incomplete but not invalid</span><span><strong>Reject</strong> Structure or execution gate fails</span></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="ca-jump-nav" aria-label="On this page"><a href="#candidate">Candidate</a><a href="#trigger">Trigger</a><a href="#branches">Branches</a><a href="#execution">Execution</a><a href="#test">Test</a><a href="#decision">Decision tree</a></nav>
 
-<h1>Breakout Behavior in 6C Futures: When CAD/USD Breakouts Actually Hold</h1>
-
-<p>Most breakout attempts in 6C fail. CAD/USD fakes out more than EUR/USD and JPY because its drivers—oil, USD, and the Bank of Canada—don’t move in a straight line. If you don’t understand how CAD breakouts actually work, you’re going to keep buying tops and shorting bottoms. Here’s the blunt guide.</p>
-
-<h2>Why 6C Breakouts Fail So Often</h2>
-<p>CAD is correlation-driven. If oil or USD disagrees with the breakout, the move dies instantly. 6C does not breakout on its own. It breaks out when its macro drivers align.</p>
-
-<ul>
-<li>Oil flat → breakout weak</li>
-<li>USD flat → no follow-through</li>
-<li>BoC data pending → fakeouts everywhere</li>
-</ul>
-
-<p>Breakouts only work when macro pressure forces them to.</p>
-
-<h2>The Three Breakout Types in 6C</h2>
-
-<h3>1. Correlation-Driven Breakout (The Real One)</h3>
-<p>Oil trending + USD trending opposite direction → CAD has no choice but to break. These are the breakouts that hold and trend for hours.</p>
-
-<ul>
-<li>Clean displacement</li>
-<li>Shallow pullbacks</li>
-<li>Aggressive tape</li>
-</ul>
-
-<p>This is the only breakout worth trading aggressively.</p>
-
-<h3>2. Liquidity-Grab Fakeout</h3>
-<p>CAD loves stop runs. If you see a breakout that immediately snaps back into the range, that was a liquidity raid, not real momentum.</p>
-
-<ul>
-<li>Weak tape</li>
-<li>No oil/ USD confirmation</li>
-<li>Instant absorption</li>
-</ul>
-
-<p>This trap destroys beginners on 6C daily.</p>
-
-<h3>3. News-Driven Breakout</h3>
-<p>6C moves hard on:</p>
-
-<ul>
-<li>8:30 AM U.S. economic data</li>
-<li>7–8:30 AM Canadian releases</li>
-<li>10:30 AM oil report (Wednesdays)</li>
-</ul>
-
-<p>These breakouts can either follow through or fully reverse depending on the macro reaction. Don’t assume direction—wait for confirmation.</p>
-
-<h2>The Key Levels Breakouts Form Around</h2>
-
-<table>
-<tr><th>Level Type</th><th>Breakout Behavior</th></tr>
-<tr><td>Prior Day High/Low</td><td>Most common fakeouts and real continuations</td></tr>
-<tr><td>Weekly High/Low</td><td>High probability continuation if oil confirms</td></tr>
-<tr><td>Opening Range High/Low</td><td>Strongest intraday breakouts</td></tr>
-<tr><td>Oil correlation levels</td><td>Breakouts only hold if oil agrees</td></tr>
-</table>
-
-<h2>How to Spot a Real Breakout in 6C</h2>
-
-<h3>1. Oil and USD Must Confirm</h3>
-<ul>
-<li>Oil up + USD weak → long breakout valid</li>
-<li>Oil down + USD strong → short breakout valid</li>
-</ul>
-
-<p>If either disagrees, skip it.</p>
-
-<h3>2. Watch Order Flow for Aggression</h3>
-<p>Real breakouts show:</p>
-
-<ul>
-<li>70%+ aggressive hits on bid/ask</li>
-<li>No absorption at the breakout line</li>
-<li>Immediate follow-through</li>
-</ul>
-
-<p>Fakeouts show backfill and hesitation.</p>
-
-<h3>3. Look for Clean Displacement</h3>
-<p>Real breakouts create a decisive one-directional candle with no wicks and no chop. If your breakout candle looks like trash—wicky, slow, or indecisive—it's a fake.</p>
-
-<h2>Best Breakout Strategy for 6C</h2>
-
-<h3>1. Let the Breakout Happen First</h3>
-<p>Never pre-breakout position on CAD. You’ll get raided.</p>
-
-<h3>2. Enter on the First Pullback</h3>
-<p>After displacement, 6C always gives a clean retest. That’s the safest entry.</p>
-
-<h3>3. Set Your Stop Beyond Structure</h3>
-<p>CAD respects structure. Put stops behind:</p>
-
-<ul>
-<li>Breakout line</li>
-<li>Local swing</li>
-<li>Opening range midpoint</li>
-</ul>
-
-<div class="highlight-box green">
-  <h3>6C Breakouts Depend on Confirmation</h3>
-  <p>Breakouts show more clarity when oil and USD activity align, order flow is decisive, and candles move cleanly from key levels. Observing these factors highlights where price is actively being tested versus where it’s stalling.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="ca-section" id="candidate" aria-labelledby="candidate-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Decision problem</p><h2 id="candidate-title">A Breakout Must Be Defined Before the Breach</h2><p>“Price went through a level” is not reproducible. Define the level source, tolerance, observation interval, required displacement and time horizon before seeing the outcome. Otherwise a trader can relabel any winning move as a clean breakout and any loss as a fakeout.</p></div>
+  <div class="ca-table-scroll" role="region" aria-label="6C breakout candidate definition" tabindex="0"><table class="ca-table"><thead><tr><th scope="col">Field</th><th scope="col">Predeclared question</th><th scope="col">Example definition</th></tr></thead><tbody>
+    <tr><th scope="row">Level provenance</th><td>Why did this price exist before the trade?</td><td>Prior regular-session high, recorded without later adjustment</td></tr>
+    <tr><th scope="row">Tolerance band</th><td>Is the level a line or a zone?</td><td>Two standard 6C ticks on either side</td></tr>
+    <tr><th scope="row">Trigger</th><td>What observable event creates a candidate?</td><td>A one-minute close above the top of the band</td></tr>
+    <tr><th scope="row">Acceptance</th><td>What must happen after the trigger?</td><td>No close back inside for three completed bars and spread below the cap</td></tr>
+    <tr><th scope="row">Failure</th><td>What rejects the premise?</td><td>Close back through the band plus loss of the trigger bar's opposite extreme</td></tr>
+    <tr><th scope="row">Evaluation horizon</th><td>When does the label expire?</td><td>Thirty minutes or session close, whichever comes first</td></tr>
+  </tbody></table></div>
+  <p>These example parameters are not proven optimal. They illustrate an operational definition that could be tested. Level construction itself belongs in <a href="6c-support-resistance-levels.html">the 6C support and resistance guide</a>; this page begins after a level has passed that provenance process.</p>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="ca-section" id="trigger" aria-labelledby="trigger-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Four gates</p><h2 id="trigger-title">Displacement Alone Does Not Establish Acceptance</h2><p>A robust workflow separates the candidate from the evidence required to act. Each gate has a fail-closed result.</p></div>
+  <div class="ca-process">
+    <article><span>1</span><h3>Structure gate</h3><p>The level was timestamped before contact, has enough prior separation to be meaningful under the method and is measured on the exact dated contract rather than an unexplained continuous chart.</p></article>
+    <article><span>2</span><h3>Trigger gate</h3><p>The declared trade or close occurs outside the tolerance band. A wick that merely touches the far edge does not pass when the protocol requires a close.</p></article>
+    <article><span>3</span><h3>Acceptance gate</h3><p>Price remains outside or successfully retests under the stated rule. This is evidence of post-breach behavior, not proof that continuation must follow.</p></article>
+    <article><span>4</span><h3>Execution gate</h3><p>Spread, displayed depth, slippage estimate, event state and remaining distance to the first opposing structure permit positive room after all costs.</p></article>
   </div>
-</footer>
+  <div class="ca-caution"><strong>Cross-market context is not a substitute for 6C evidence.</strong><p>Crude oil, broad USD measures, rates or spot USD/CAD may help describe the environment, but none confirms a 6C fill or guarantees direction. Treat any alignment rule as a hypothesis and test its incremental value against the same breakout rule without it.</p></div>
+</section>
+
+<section class="ca-section" id="branches" aria-labelledby="branches-title">
+  <div class="ca-section-heading"><p class="ca-kicker">After the trigger</p><h2 id="branches-title">Plan Acceptance and Failure as Separate Branches</h2><p>The branch is selected by observable behavior, not by attachment to a directional opinion. No branch authorizes increasing risk after entry.</p></div>
+  <div class="ca-two-column">
+    <article class="ca-panel"><p class="ca-card-label">Acceptance branch</p><h3>Outside the band and holding</h3><ul><li>Entry may be immediate, on a declared retest or after a second confirmation; choose one in advance.</li><li>Invalidation belongs beyond the structure that would negate acceptance, not at an arbitrary dollar amount.</li><li>The first management decision must be defined before entry: fixed exit, structural trail or time stop.</li><li>Cancel if the available distance to opposing structure cannot cover risk and expected costs under the plan.</li></ul></article>
+    <article class="ca-panel"><p class="ca-card-label">Failure branch</p><h3>Back through the band</h3><ul><li>An unfilled continuation order is cancelled when its acceptance window expires.</li><li>An open continuation position exits according to its invalidation and order instructions.</li><li>A reversal is a different setup, requiring its own trigger, invalidation and historical test.</li><li>Do not call a stopped breakout a reversal signal after seeing what happened next.</li></ul></article>
+  </div>
+  <p class="ca-related"><strong>Third state: wait.</strong> A trigger can remain unresolved. If price sits on the edge, spreads are temporarily above the cap or a scheduled release is seconds away, no position is a valid outcome. “Wait” expires at the predeclared time; it is not permission to chase later.</p>
+</section>
+
+<section class="ca-section" id="execution" aria-labelledby="execution-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Order and risk</p><h2 id="execution-title">The Gross Payoff Must Survive the Cost Gate</h2><p>Standard 6C currently uses a 0.00005 outright increment worth $5. Verify full mechanics on the <a href="6c-tick-size-tick-value.html">6C tick-size and contract-spec page</a>. A hypothetical 12-tick target and 8-tick invalidation measured from the chart decision price appear to offer $60 against $40 per contract, but those gross numbers omit spread, commissions, fees and slippage.</p></div>
+  <div class="ca-table-scroll" role="region" aria-label="Hypothetical 6C breakout cost gate" tabindex="0"><table class="ca-table"><thead><tr><th scope="col">Line</th><th scope="col">Ticks</th><th scope="col">One standard 6C</th></tr></thead><tbody>
+    <tr><th scope="row">Gross target distance</th><td>12</td><td>$60</td></tr>
+    <tr><th scope="row">Entry spread and slippage allowance</th><td>2</td><td>$10</td></tr>
+    <tr><th scope="row">Exit slippage allowance</th><td>2</td><td>$10</td></tr>
+    <tr><th scope="row">Round-turn fees assumption</th><td>Not a tick input</td><td>$8</td></tr>
+    <tr><th scope="row">Net-if-target scenario</th><td>&mdash;</td><td>$32</td></tr>
+    <tr><th scope="row">Gross stop distance</th><td>8</td><td>$40</td></tr>
+    <tr><th scope="row">Stressed loss with entry friction, 2-tick exit slip and fees</th><td>&mdash;</td><td>$68</td></tr>
+  </tbody></table></div>
+  <p>The example is intentionally uncomfortable: from the same decision-price convention, the $32 target scenario subtracts $10 of adverse entry friction, $10 of exit friction and $8 of fees, while the $68 stop scenario adds those same amounts to the $40 gross stop. If instead a study measures both distances from the actual fill, it must remove entry friction from both sides. This symmetry does not prove all 12-by-8 breakouts are invalid; it proves the setup must be evaluated net of realistic execution. The assumptions are hypothetical and must be replaced with actual broker charges and observed fills.</p>
+  <p>Size only after invalidation. Use <a href="6c-margin-and-position-sizing.html">the 6C position-sizing workflow</a>, and remember that a stop trigger does not guarantee its price. Scheduled Bank of Canada, Canadian employment, inflation and major U.S. releases can change the book faster than a bar-close rule can react.</p>
+</section>
+
+<section class="ca-section" id="test" aria-labelledby="test-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Evidence standard</p><h2 id="test-title">No Original Study Is Reported Here</h2><p>This article supplies a protocol, not a finding that 6C breakouts hold at a particular rate. To make an empirical claim, build a sample that could reject the rule.</p></div>
+  <ol class="ca-method">
+    <li><strong>Freeze definitions.</strong><span>Level source, band width, trigger, acceptance, failure, horizon and blackout rules are fixed before scoring outcomes.</span></li>
+    <li><strong>Use point-in-time contracts.</strong><span>Account for month selection, roll transitions, trading hours and holiday sessions. Avoid future-informed continuous-series adjustments.</span></li>
+    <li><strong>Record market quality.</strong><span>Bid-ask spread, depth, trades, queue assumptions and latency belong in the sample; bar OHLC alone cannot establish executable fills.</span></li>
+    <li><strong>Include every candidate.</strong><span>Keep passed, waited, rejected, unfilled and stopped cases. Screenshots of memorable winners are not a denominator.</span></li>
+    <li><strong>Charge costs.</strong><span>Use time-varying fees and plausible order-level slippage, then stress assumptions above the median.</span></li>
+    <li><strong>Hold out later data.</strong><span>Choose rules on training data, test once on untouched periods and report uncertainty, drawdown and regime dependence.</span></li>
+  </ol>
+  <div class="ca-two-column">
+    <article class="ca-panel"><h3>Minimum outcome fields</h3><p>Maximum favorable and adverse excursion, time to each, exit reason, net P&amp;L, unfilled quantity, spread at trigger and whether an event or roll window was active.</p></article>
+    <article class="ca-panel"><h3>Required comparisons</h3><p>Against no-trade, against a simple unconditional breach, against random time-matched entries and with versus without every added confirmation filter.</p></article>
+  </div>
+</section>
+
+<section class="ca-section" id="review" aria-labelledby="review-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Post-event record</p><h2 id="review-title">Review the Decision, Then the Outcome</h2><p>A profitable rule violation is still a process failure; a correctly executed loss can still be valid evidence. Preserve the state visible at decision time.</p></div>
+  <div class="ca-table-scroll" role="region" aria-label="6C breakout review record" tabindex="0"><table class="ca-table"><thead><tr><th scope="col">Record</th><th scope="col">Question</th></tr></thead><tbody>
+    <tr><th scope="row">Candidate snapshot</th><td>Was the level timestamped and untouched by hindsight?</td></tr>
+    <tr><th scope="row">Gate result</th><td>Which precise gate passed, waited or rejected the trade?</td></tr>
+    <tr><th scope="row">Order audit</th><td>Were trigger, quantity, order type and fill consistent with the plan?</td></tr>
+    <tr><th scope="row">Cost error</th><td>How did assumed spread, slippage and fees compare with realized values?</td></tr>
+    <tr><th scope="row">Branch integrity</th><td>Did acceptance or failure select the declared response without improvisation?</td></tr>
+    <tr><th scope="row">Learning status</th><td>Is this one observation, a hypothesis change or enough evidence for a preplanned model update?</td></tr>
+  </tbody></table></div>
+</section>
+
+<section class="ca-section" id="decision" aria-labelledby="decision-title">
+  <div class="ca-section-heading"><p class="ca-kicker">End-state tree</p><h2 id="decision-title">Pass, Wait or Reject</h2></div>
+  <div class="ca-decision-tree">
+    <article><h3>Reject</h3><p>The level was not predeclared, contract month is ambiguous, event rule is violated, spread or depth fails, or net room after costs is insufficient.</p></article>
+    <article><h3>Wait</h3><p>The trigger exists but the acceptance window is incomplete, or a temporary market-quality condition may resolve before the setup expires.</p></article>
+    <article><h3>Pass</h3><p>Structure, trigger, acceptance, execution, sizing and calendar gates all pass. Submit only the planned order; passing does not guarantee profit.</p></article>
+  </div>
+</section>
+
+<details class="ca-sources" open><summary>Sources and methods</summary><ul>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> for the standard 6C trading unit, USD-per-CAD quotation and outright tick used in the arithmetic.</li>
+  <li><a href="https://www.cmegroup.com/education/courses/things-to-know-before-trading-cme-futures/futures-order-types" target="_blank" rel="noopener">CME Group: Futures Order Types</a> for market, limit, stop-limit and stop-with-protection mechanics.</li>
+  <li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener">CME Group holiday and trading hours</a> for the requirement to check current session exceptions.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/EducationCenter/FuturesMarketBasics/index2.htm" target="_blank" rel="noopener">CFTC Futures Market Basics</a> for futures-risk and leverage context.</li>
+</ul><p>Sources and methods were reviewed August 13, 2026. This page reports no original breakout backtest and makes no claim that the illustrative definitions are profitable. All levels, distances, fees and fills are hypothetical teaching inputs. Any future empirical claim should publish its complete sample, definitions, costs and validation design.</p></details>
+
+<aside class="ca-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This decision tree is educational and does not provide a breakout result, personalized trade recommendation, or investment, legal, tax, accounting, hedging, or brokerage advice. Leveraged futures can gap, leave orders unfilled, and produce rapid losses beyond initial margin. A defined process limits discretion; it does not ensure a fill or profit. Verify current contract and broker rules before trading.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

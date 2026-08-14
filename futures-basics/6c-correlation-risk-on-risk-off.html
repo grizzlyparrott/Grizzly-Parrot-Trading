@@ -2,226 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6C Correlations: How CAD Behaves in Risk-On vs Risk-Off Markets</title>
-  <meta name="description" content="A blunt explanation of how 6C Canadian Dollar futures react to global risk sentiment, equity cycles, and market panic vs optimism.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6c-correlation-risk-on-risk-off.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6C Correlations: How CAD Behaves in Risk-On vs Risk-Off Markets">
-  <meta property="og:description" content="A blunt explanation of how 6C Canadian Dollar futures react to global risk sentiment, equity cycles, and market panic vs optimism.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6c-correlation-risk-on-risk-off.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6C Correlations: How CAD Behaves in Risk-On vs Risk-Off Markets">
-  <meta name="twitter:description" content="A blunt explanation of how 6C Canadian Dollar futures react to global risk sentiment, equity cycles, and market panic vs optimism.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6C Correlations: How CAD Behaves in Risk-On vs Risk-Off Markets",
-  "description": "A blunt explanation of how 6C Canadian Dollar futures react to global risk sentiment, equity cycles, and market panic vs optimism.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6c-correlation-risk-on-risk-off.html",
-  "datePublished": "2025-11-27",
-  "dateModified": "2025-11-27",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6c-correlation-risk-on-risk-off.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6C Correlations: How CAD Behaves in Risk-On vs Risk-Off Markets",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6c-correlation-risk-on-risk-off.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6C Risk-On and Risk-Off Correlation: Test the Regime</title>
+  <meta name="description" content="Test conditional 6C co-movement with equities, volatility, credit, oil, the U.S. dollar and rates without assigning CAD a permanent risk label.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6c-correlation-risk-on-risk-off.html">
+  <meta property="og:title" content="6C Risk-On and Risk-Off Correlation: Test the Regime"><meta property="og:description" content="Test conditional 6C co-movement with equities, volatility, credit, oil, the U.S. dollar and rates without assigning CAD a permanent risk label."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6c-correlation-risk-on-risk-off.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-27"><meta property="article:modified_time" content="2026-08-13">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6C Risk-On and Risk-Off Correlation: Test the Regime"><meta name="twitter:description" content="Test conditional 6C co-movement with equities, volatility, credit, oil, the U.S. dollar and rates without assigning CAD a permanent risk label."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/6c-research-library.css?v=20260813a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6C Risk-On and Risk-Off Correlation: Test the Regime","description":"Test conditional 6C co-movement with equities, volatility, credit, oil, the U.S. dollar and rates without assigning CAD a permanent risk label.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6c-correlation-risk-on-risk-off.html"},"datePublished":"2025-11-27","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/6c-correlation-risk-on-risk-off.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6C Risk-On and Risk-Off Correlation: Test the Regime","item":"https://grizzlyparrottrading.com/futures-basics/6c-correlation-risk-on-risk-off.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container cad-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="ca-hero">
+  <div class="ca-hero-copy">
+    <p class="ca-kicker">Conditional co-movement &middot; competing channels &middot; falsification</p>
+    <h1>6C Risk-On and Risk-Off Correlation: Test the Regime</h1>
+    <p class="ca-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="ca-hero-lede">Imagine two equity selloffs of similar size. One begins with a global-demand shock that also pushes crude oil lower. The other begins with Canadian inflation news that raises expected domestic rates while equities weaken. Calling both &ldquo;risk-off&rdquo; hides the channel that could make 6C respond differently.</p>
+    <div class="ca-hero-actions"><a class="button-primary" href="#definition">Define risk</a><a class="ca-text-link" href="#falsification">Set rejection rules</a></div>
+    <dl class="ca-hero-metrics" aria-label="Risk correlation study orientation"><div><dt>Label</dt><dd>Measured, not assumed</dd></div><div><dt>Return clock</dt><dd>Aligned</dd></div><div><dt>Controls</dt><dd>USD, oil, rates</dd></div><div><dt>Original result</dt><dd>None</dd></div></dl>
   </div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="ca-jump-nav" aria-label="On this page"><a href="#definition">Definition</a><a href="#alignment">Alignment</a><a href="#controls">Controls</a><a href="#regimes">Regimes</a><a href="#alternatives">Alternatives</a><a href="#falsification">Falsification</a></nav>
 
-<h1>6C Correlations: How CAD Behaves in Risk-On vs Risk-Off Markets</h1>
-
-<p>Most beginners don’t realize 6C isn’t just an oil proxy. It’s also a straight-up barometer of global risk sentiment. When markets feel optimistic, CAD usually strengthens. When fear hits the tape, CAD gets dumped and 6C sells off. Ignore this dynamic and you’ll constantly be long during panic and short during optimism—exactly backwards.</p>
-
-<h2>CAD Is a Risk-On Currency</h2>
-<p>CAD behaves like a pro-cyclical asset. When markets are strong, equities run, and commodities rally, CAD tends to rise. That’s why 6C frequently rallies during bull markets and bullish macro environments.</p>
-
-<ul>
-<li>Equities up → risk-on → CAD strengthens → 6C up</li>
-<li>Commodities up → global growth improving → CAD up</li>
-<li>Yield spreads widening → capital flows toward CAD</li>
-</ul>
-
-<p>This correlation is especially obvious when oil and equities climb at the same time.</p>
-
-<h2>Risk-Off Slams CAD Instantly</h2>
-<p>When markets panic, CAD behaves like a punching bag. Money flees risk assets and piles into USD, JPY, and CHF. CAD is not a safe-haven currency, so it gets sold aggressively during fear cycles.</p>
-
-<table>
-<tr><th>Risk-Off Event</th><th>Typical 6C Reaction</th></tr>
-<tr><td>Equity crash</td><td>CAD dumped → 6C falls hard</td></tr>
-<tr><td>Geopolitical shock</td><td>Safe-haven flows → CAD weakens</td></tr>
-<tr><td>Recession fears</td><td>Commodity currencies sold</td></tr>
-<tr><td>Volatility spike (VIX surge)</td><td>CAD drops as USD gains</td></tr>
-</table>
-
-<p>This aligns tightly with macro behavior discussed in <a href="https://grizzlyparrottrading.com/futures-basics/why-6c-moves.html">why 6C moves</a>.</p>
-
-<h2>How to Trade 6C Using Risk Sentiment</h2>
-<p>This isn’t theory—you can directly trade CAD/USD futures using risk-on/risk-off signals from other markets.</p>
-
-<h3>1. Watch Equity Index Futures</h3>
-<p>If ES and NQ are ripping higher pre-market, CAD is usually bullish. If ES is melting down, expect CAD weakness.</p>
-
-<h3>2. Track the VIX</h3>
-<p>A rising VIX means fear → CAD usually drops.  
-A falling VIX means confidence → CAD usually strengthens.</p>
-
-<h3>3. Follow Crude Oil and Commodities</h3>
-<p>Commodities rise in risk-on markets. CAD loves that. A commodity dump usually signals risk-off and CAD weakness.</p>
-
-<h2>Why This Correlation Sometimes Breaks</h2>
-<p>Risk sentiment is powerful, but it’s not the only game in town. The correlation weakens when:</p>
-
-<ul>
-<li>Bank of Canada makes a surprise move</li>
-<li>U.S. Dollar dominates the session</li>
-<li>Oil diverges from equities</li>
-<li>Major Canada-specific news hits</li>
-</ul>
-
-<p>You still monitor risk sentiment constantly; you just understand its limitations.</p>
-
-<div class="highlight-box green">
-  <h3>6C Reflects Global Risk Sentiment</h3>
-  <p>CAD movements often correspond with broader risk-on and risk-off conditions. Strength tends to appear during global confidence, while weakness emerges in risk-averse periods, providing context for how the market reacts to sentiment shifts.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="ca-section" id="definition" aria-labelledby="definition-title">
+  <div class="ca-section-heading"><p class="ca-kicker">No permanent label</p><h2 id="definition-title">Define the Risk State Before Looking at 6C</h2><p><strong>Fact:</strong> 6C is a Canadian-dollar-versus-U.S.-dollar futures price, so both currency sides matter. <strong>Mechanism:</strong> global growth expectations, commodity demand, relative interest rates, and broad U.S.-dollar demand can transmit a shock into that price. <strong>Hypothesis:</strong> 6C may co-move with a declared risk factor in some states. &ldquo;CAD is risk-on&rdquo; is too broad to serve as either a definition or a finding.</p></div>
+  <div class="ca-table-scroll" role="region" aria-label="Candidate risk-state definitions and their limitations" tabindex="0">
+    <table class="ca-table"><thead><tr><th scope="col">Candidate factor</th><th scope="col">Operational definition</th><th scope="col">What it represents</th><th scope="col">What it does not prove</th></tr></thead><tbody>
+      <tr><th scope="row">Equity return</th><td>Return on a named broad index over a frozen interval</td><td>Change in equity-market value</td><td>Cause of the move or investor risk appetite by itself</td></tr>
+      <tr><th scope="row">Equity volatility</th><td>Change or level in a named options-implied volatility measure</td><td>Market pricing of a defined volatility horizon</td><td>A universal fear gauge for every asset and clock</td></tr>
+      <tr><th scope="row">Credit stress</th><td>Change in a documented spread or official stress index</td><td>Financing and default-risk conditions</td><td>An intraday signal unless timestamp and frequency match</td></tr>
+      <tr><th scope="row">Cross-asset composite</th><td>Frozen weights across equity, volatility, credit, rates, and funding measures</td><td>A broader state label</td><td>Objectivity if weights were tuned to 6C outcomes</td></tr>
+      <tr><th scope="row">Named shock</th><td>Dates and timestamps from contemporaneous official records</td><td>A specific event family</td><td>That every event in the family has the same mechanism</td></tr>
+    </tbody></table>
   </div>
-</footer>
-</body>
-</html>
+  <p>Choose the primary factor without using future 6C returns. If a composite is necessary, fit its transformation and weights on a training sample, freeze them, and carry the exact construction into validation. Report the components as well as the label; otherwise a single dominant input can masquerade as a diversified measure.</p>
+  <div class="ca-caution"><strong>Quote orientation matters</strong><p>A higher 6C price means a stronger Canadian dollar against the U.S. dollar. Verify the current contract and quotation mechanics in the <a href="6c-tick-size-tick-value.html">canonical 6C specification guide</a>. Do not accidentally compare 6C returns with USD/CAD spot returns without reversing the spot orientation.</p></div>
+</section>
+
+<section class="ca-section" id="alignment" aria-labelledby="alignment-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Comparable observations</p><h2 id="alignment-title">Align Returns, Information Sets, and Trading Calendars</h2><p>Correlating price levels can create a persuasive but spurious chart. Use returns or changes appropriate to the question, define the timestamp at which every input was knowable, and make the market clocks comparable. Daily closes from different timezones can contain different news.</p></div>
+  <div class="ca-process" aria-label="Return-alignment workflow">
+    <article><span>1</span><h3>Declare the horizon</h3><p>Choose intraday, daily, or multi-day returns before analysis. A relationship at one horizon does not transfer automatically to another.</p></article>
+    <article><span>2</span><h3>Select dated contracts</h3><p>Use actual 6C expiries with an ex-ante roll rule. Keep roll windows visible and never derive a return across an unexplained stitch.</p></article>
+    <article><span>3</span><h3>Synchronize timestamps</h3><p>Sample all tradable inputs at common UTC boundaries and set stale-price limits. Do not forward-fill through a closed market as though it were a live quote.</p></article>
+    <article><span>4</span><h3>Calculate contemporaneously</h3><p>For event work, use pre-event and post-event prices observable at the same offsets. For daily work, use one common cut.</p></article>
+    <article><span>5</span><h3>Preserve missingness</h3><p>Distinguish no trade, market closure, data outage, and a true zero return. Document every exclusion.</p></article>
+  </div>
+  <p>Start with Pearson and rank correlation only if their assumptions fit the question, then inspect scatterplots, nonlinear dependence, and tails. Report the coefficient, sample count, uncertainty interval, window, and return construction together. A coefficient without those fields is not reproducible evidence.</p>
+</section>
+
+<section class="ca-section" id="controls" aria-labelledby="controls-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Common drivers</p><h2 id="controls-title">Control the Dollar, Oil, and Relative Rates</h2><p>Equities and 6C can move together because both react to a third variable. The goal is not to &ldquo;control away&rdquo; the world until a preferred sign appears. It is to ask whether the risk factor adds information after plausible shared channels are measured.</p></div>
+  <div class="ca-causal-map" role="group" aria-label="Competing transmission channels from a named market shock to 6C">
+    <div class="ca-causal-origin"><strong>Name the shock before reading 6C</strong><span>Equity repricing is an observation. The causal candidate must be timestamped and defined independently of the later Canadian-dollar move.</span></div>
+    <article class="ca-panel"><p class="ca-card-label">U.S. dollar</p><h3>The denominator can dominate</h3><p>The BIS reports that the U.S. dollar remained on one side of most OTC FX transactions in its 2025 survey. Broad dollar demand can therefore coincide with moves across equities, commodities, and 6C. Use a declared broad-dollar measure and disclose any mechanical currency overlap.</p></article>
+    <article class="ca-panel"><p class="ca-card-label">Oil</p><h3>Canada has a real trade channel</h3><p>Canada is a major energy exporter, but an oil move can reflect demand, supply, geopolitics, inventories, or the dollar. Test crude returns and shock categories separately. The <a href="6c-oil-correlation.html">6C oil study</a> owns the detailed mechanism and lag protocol.</p></article>
+    <article class="ca-panel"><p class="ca-card-label">Relative rates</p><h3>Compare Canada with the United States</h3><p>Use matched-maturity rate changes or properly constructed expected-policy measures. A Canadian yield alone does not describe the relative return incentive embedded in a CAD/USD price.</p></article>
+    <article class="ca-panel"><p class="ca-card-label">Official events</p><h3>Separate scheduled repricing</h3><p>Tag Bank of Canada, Federal Reserve, Statistics Canada, BLS, and BEA releases from contemporaneous calendars. A handful of announcement windows can drive a full-sample relationship.</p></article>
+  </div>
+  <div class="ca-method"><div><h3>Primary and controlled estimates</h3><p>Publish the raw conditional co-movement first. Then estimate a predeclared model in which 6C returns are related to the risk factor and controls using only information available at the same timestamp. Treat residual correlation as conditional association, not causal proof.</p></div><dl><div><dt>Primary</dt><dd>Raw return relation</dd></div><div><dt>Secondary</dt><dd>Controlled relation</dd></div><div><dt>Direction</dt><dd>Not assumed</dd></div><div><dt>Causality</dt><dd>Not established</dd></div></dl></div>
+</section>
+
+<section class="ca-section" id="regimes" aria-labelledby="regimes-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Stability, not one coefficient</p><h2 id="regimes-title">Roll the Window and Predeclare Regime Tests</h2><p>A full-history coefficient compresses changing policy, commodity, volatility, and liquidity conditions into one number. Use rolling estimates to describe stability, but avoid choosing the window length after seeing the prettiest series. Then test a small set of declared regimes on untouched dates.</p></div>
+  <div class="ca-check-grid">
+    <article><strong>Risk direction</strong><p>Compare up and down factor moves, not just one pooled slope. Require enough observations in both tails.</p></article>
+    <article><strong>Shock size</strong><p>Test central observations and frozen tail thresholds. A tail-only relationship should be labeled tail-specific.</p></article>
+    <article><strong>Oil direction</strong><p>Separate periods when crude confirms or contradicts the risk label.</p></article>
+    <article><strong>Rate channel</strong><p>Split by widening or narrowing Canadian-U.S. rate differences using past-only classifications.</p></article>
+    <article><strong>Event versus ordinary</strong><p>Estimate scheduled-event windows independently from ordinary trading intervals.</p></article>
+    <article><strong>Volatility state</strong><p>Use a frozen state definition and test whether signs and uncertainty remain stable.</p></article>
+  </div>
+  <p>Correct for the complete family of factors, horizons, windows, and splits. Keep a chronological development period, a validation period, and a final sealed holdout. Re-estimation after the holdout is opened converts that holdout into development data and requires a new untouched period.</p>
+</section>
+
+<section class="ca-section" id="alternatives" aria-labelledby="alternatives-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Rival explanations</p><h2 id="alternatives-title">A Risk Label Can Be an After-the-Fact Story</h2><p>For every apparent relationship, record at least one alternative explanation that would generate the same picture. This protects against assigning motive to a correlation chart.</p></div>
+  <div class="ca-table-scroll" role="region" aria-label="Alternative explanations for apparent 6C risk correlation" tabindex="0">
+    <table class="ca-table"><thead><tr><th scope="col">Apparent observation</th><th scope="col">Competing explanation</th><th scope="col">Discriminating evidence</th></tr></thead><tbody>
+      <tr><th scope="row">6C rises with equities</th><td>Broad U.S.-dollar weakness moves both, rather than risk appetite causing CAD demand</td><td>Condition on a declared broad-dollar return and inspect event timing.</td></tr>
+      <tr><th scope="row">6C falls in an equity selloff</th><td>Oil and Canadian terms-of-trade expectations weaken at the same time</td><td>Separate oil-demand shocks from other selloffs and compare controlled estimates.</td></tr>
+      <tr><th scope="row">6C resists a selloff</th><td>Canadian rate expectations rise relative to U.S. expectations</td><td>Measure matched-maturity relative-rate changes around the same timestamp.</td></tr>
+      <tr><th scope="row">Relationship strengthens near the close</th><td>Non-synchronous sampling or closing-auction timing creates alignment artifacts</td><td>Recalculate at common tradable timestamps and adjacent cutoffs.</td></tr>
+      <tr><th scope="row">Lead-lag appears intraday</th><td>One feed is slower, stale, or timestamped differently</td><td>Audit source clocks, message latency, and stale-quote rejection before causality tests.</td></tr>
+    </tbody></table>
+  </div>
+  <p>The CFTC&rsquo;s Traders in Financial Futures report can provide a weekly, aggregated positioning context. Its categories do not reveal why a participant held a position, and weekly snapshots cannot identify the initiator of an intraday 6C move. Use that data as a slow conditioning variable, not a transaction-level explanation.</p>
+</section>
+
+<section class="ca-section" id="falsification" aria-labelledby="falsification-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Conditional monitor</p><h2 id="falsification-title">Falsify the Relationship Before Using It</h2><p>No original result is reported for 6C correlation. No coefficient, lead-lag, regime effect, hedge ratio, forecast, backtest, or performance result is claimed. The decision tree below states what a future estimate would have to survive.</p></div>
+  <div class="ca-falsification-tree" role="group" aria-label="Reject, narrow, or conditionally continue a 6C correlation claim">
+    <article><p class="ca-card-label">Reject</p><h3>The relation does not survive</h3><ul><li>The sign flips under adjacent return horizons or timestamp repair removes the lead-lag.</li><li>Common U.S.-dollar, oil, or relative-rate controls absorb the apparent relation.</li><li>A later sealed holdout fails or realistic costs erase the proposed application.</li></ul></article>
+    <article><p class="ca-card-label">Narrow</p><h3>The evidence supports less</h3><ul><li>The estimate depends on one crisis, one tail, one horizon, or one volatility state.</li><li>Uncertainty spans economically different outcomes or a regime has too few independent observations.</li><li>State exactly where the relation appeared; do not promote a conditional result into a universal risk label.</li></ul></article>
+    <article><p class="ca-card-label">Continue conditionally</p><h3>Keep every gate visible</h3><ul><li>Verify data completeness, dated contracts, roll rule, calendar, and timezone alignment before each update.</li><li>Display raw and controlled estimates, uncertainty, sample size, exclusions, and the complete test family.</li><li>Require a separate costed decision rule with observable invalidation, while permitting the terminal conclusion &ldquo;no stable conditional relationship.&rdquo;</li></ul></article>
+  </div>
+  <div class="ca-related">For the broader causal map, see <a href="why-6c-moves.html">Why 6C Moves</a>. For the recurring macro workflow, use the <a href="6c-fundamental-analysis-guide.html">6C fundamental analysis guide</a>.</div>
+</section>
+
+<details class="ca-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+  <li><a href="https://www.cmegroup.com/markets/fx/g10/canadian-dollar.contractSpecs.html" target="_blank" rel="noopener">CME Group Canadian Dollar futures page</a> for instrument and quotation context; detailed mechanics remain on this site&rsquo;s canonical specification page.</li>
+  <li><a href="https://www.bis.org/statistics/rpfx25.htm" target="_blank" rel="noopener">BIS 2025 Triennial Central Bank Survey</a> for the official scope and structure of global OTC foreign-exchange turnover.</li>
+  <li><a href="https://www.bankofcanada.ca/rates/exchange/" target="_blank" rel="noopener">Bank of Canada exchange-rate data</a> for official indicative CAD exchange rates and the Canadian Effective Exchange Rate index.</li>
+  <li><a href="https://www.financialresearch.gov/financial-stress-index/" target="_blank" rel="noopener">U.S. Office of Financial Research Financial Stress Index</a> as one documented official candidate for a broad stress variable.</li>
+  <li><a href="https://www.eia.gov/international/analysis/country/CAN" target="_blank" rel="noopener">U.S. Energy Information Administration Canada analysis</a> for Canada&rsquo;s energy-export context.</li>
+  <li><a href="https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm" target="_blank" rel="noopener">CFTC Commitments of Traders reports</a> and <a href="https://www.cftc.gov/idc/groups/public/%40commitmentsoftraders/documents/file/tfmexplanatorynotes.pdf" target="_blank" rel="noopener">Traders in Financial Futures explanatory notes</a> for category, timing, and interpretation limits.</li>
+  <li><a href="https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/" target="_blank" rel="noopener">Bank of Canada decision schedule</a>, <a href="https://www.statcan.gc.ca/o1/en/calendar" target="_blank" rel="noopener">Statistics Canada release calendar</a>, and <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">Federal Reserve FOMC calendar</a> for event controls.</li>
+</ul><p>Sources and methods were reviewed August 13, 2026. This article supplies an original testing and falsification framework but reports no original empirical result. It is unsponsored editorial analysis.</p></details>
+<aside class="ca-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This correlation protocol offers research education, not a forecast, individualized trade, or statistical, legal, tax, hedging, or brokerage advice. A leveraged futures loss can exceed the initial margin deposit. Correlations may change sign, break during stress, or disappear after costs. Verify data, timestamps, current contracts, liquidity, margin, and your own risk controls before acting.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

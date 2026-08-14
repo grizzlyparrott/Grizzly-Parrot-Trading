@@ -26,7 +26,7 @@
   {
     "title": "6A Commodity Cycles: Terms of Trade and AUD",
     "url": "/futures-basics/6a-commodity-cycle-impact.html",
-    "description": "Learn how export prices, Australia",
+    "description": "Learn how export prices, Australia's terms of trade and commodity regimes can influence 6A, plus the lags, shared drivers and failure cases traders miss.",
     "category": "Futures Basics"
   },
   {
@@ -114,33 +114,87 @@
     "category": "Futures Basics"
   },
   {
-    "title": "6C Correlations: How CAD Behaves in Risk-On vs Risk-Off Markets",
-    "url": "/futures-basics/6c-correlation-risk-on-risk-off.html",
-    "description": "A blunt explanation of how 6C Canadian Dollar futures react to global risk sentiment, equity cycles, and market panic vs optimism.",
+    "title": "6C and Oil Correlation: Mechanism Before Signal",
+    "url": "/futures-basics/6c-oil-correlation.html",
+    "description": "Separate Canada's oil-linked economic channels from a claimed 6C trading signal with aligned contracts, shock types, controls and holdout tests.",
     "category": "Futures Basics"
   },
   {
-    "title": "6C Margin Requirements and Position Sizing for Small Accounts",
+    "title": "6C Breakout Behavior: A Testable Trade Workflow",
+    "url": "/futures-basics/6c-breakout-behavior.html",
+    "description": "Define, filter, execute and review 6C breakout candidates with objective levels, acceptance and failure branches, cost gates and explicit invalidation.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6C Fundamental Analysis: A Weekly Evidence Workflow",
+    "url": "/futures-basics/6c-fundamental-analysis-guide.html",
+    "description": "Build a recurring 6C fundamental workflow across policy, growth, inflation, labor, trade, oil and the U.S. dollar with branches and invalidation.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6C Margin and Position Sizing: Risk-Budget Math",
     "url": "/futures-basics/6c-margin-and-position-sizing.html",
-    "description": "A blunt guide to 6C margin requirements and how to size CAD/USD futures trades correctly without blowing up a small account.",
+    "description": "Size standard 6C or Micro MCD positions from an invalidation and loss budget, then stress slippage, gaps, fees and changing margin requirements.",
     "category": "Futures Basics"
   },
   {
-    "title": "6C Tick Size and Tick Value Explained for New Futures Traders",
+    "title": "6C Order Flow: What Futures Data Can Actually Show",
+    "url": "/futures-basics/6c-orderflow-behavior.html",
+    "description": "Use CME trade and order-book data to test 6C auction hypotheses while respecting feed integrity, queue, execution and global OTC FX limits.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6C Risk-On and Risk-Off Correlation: Test the Regime",
+    "url": "/futures-basics/6c-correlation-risk-on-risk-off.html",
+    "description": "Test conditional 6C co-movement with equities, volatility, credit, oil, the U.S. dollar and rates without assigning CAD a permanent risk label.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6C Support and Resistance: Define and Test Levels",
+    "url": "/futures-basics/6c-support-resistance-levels.html",
+    "description": "Build objective 6C support and resistance zones, preserve their provenance, label reactions without hindsight and validate them against a baseline.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6C Swing Trading Strategy: Build a Falsifiable Plan",
+    "url": "/futures-basics/6c-swing-trading-strategy.html",
+    "description": "Connect a Canadian-dollar macro thesis to dated 6C structure, catalyst timing, explicit invalidation, position size, roll and overnight risk.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6C Technical Indicators: Benchmark, Validate, or Reject",
+    "url": "/futures-basics/6c-technical-indicators-that-work.html",
+    "description": "Evaluate 6C technical indicators by decision task, baseline, walk-forward validation, trading costs, robustness and explicit rejection rules.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6C Tick Size, Tick Value and Contract Specs",
     "url": "/futures-basics/6c-tick-size-tick-value.html",
-    "description": "A blunt, clear explanation of 6C Canadian Dollar futures tick size, tick value, contract math, and how each move affects your P&L.",
+    "description": "Verify current standard 6C and Micro MCD contract size, tick value, P&amp;L math, listed months, expiry, physical delivery, trading hours, roll and margin limits.",
     "category": "Futures Basics"
   },
   {
-    "title": "6C Volatility Patterns: When CAD/USD Expands or Compresses",
+    "title": "6C Trading Sessions: A Reproducible Liquidity Study",
+    "url": "/futures-basics/6c-best-trading-sessions.html",
+    "description": "Measure 6C spreads, depth, volume, range and slippage across timezone-aware trading windows with event, holiday, roll and regime controls.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6C Volatility Cycles: Classify States, Test Transitions",
+    "url": "/futures-basics/6c-volatility-cycles.html",
+    "description": "Define 6C volatility states and test their duration and transitions without pretending a descriptive regime has a known turning point.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6C Volatility Patterns: Test Compression and Expansion",
     "url": "/futures-basics/6c-volatility-patterns.html",
-    "description": "A blunt breakdown of how 6C Canadian Dollar futures volatility behaves, when it expands, when it dies, and how to trade around it.",
+    "description": "Define and test 6C compression and expansion events with matched baselines, forward horizons, roll and event controls, costs and holdouts.",
     "category": "Futures Basics"
   },
   {
-    "title": "6C vs 6E vs 6J: Why the Canadian Dollar Trades Differently",
+    "title": "6C vs 6E vs 6J: A Currency Futures Comparison",
     "url": "/futures-basics/6c-vs-6e-vs-6j.html",
-    "description": "A blunt breakdown comparing 6C CAD/USD futures to 6E Euro futures and 6J Yen futures, and why CAD behaves differently in macro cycles.",
+    "description": "Compare 6C, 6E and 6J quotation, standard-contract mechanics, policy channels, macro exposure and analytical fit without ranking an easiest contract.",
     "category": "Futures Basics"
   },
   {
@@ -630,9 +684,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Best Time to Trade 6C Futures: When CAD/USD Actually Moves",
+    "title": "Best Time to Trade 6C? Choose a Window by Task",
     "url": "/futures-basics/best-time-to-trade-6c.html",
-    "description": "Learn the best times to trade 6C Canadian Dollar futures, including peak liquidity windows, volatility cycles, and when to avoid the chart.",
+    "description": "Choose a personal 6C trading window from strategy horizon, current spread and depth, scheduled events, daylight saving, roll and availability constraints.",
     "category": "Futures Basics"
   },
   {
@@ -705,12 +759,6 @@
     "title": "Best Times to Trade Silver Futures (SI)",
     "url": "/futures-basics/best-times-to-trade-si-futures.html",
     "description": "The exact volatility windows, volume shifts, and session behaviors that make certain hours the best times to trade Silver futures (SI).",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "Best Trading Sessions for 6C Futures",
-    "url": "/futures-basics/6c-best-trading-sessions.html",
-    "description": "A blunt breakdown of which global trading sessions actually move 6C CAD/USD futures and which ones are dead money.",
     "category": "Futures Basics"
   },
   {
@@ -834,12 +882,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Breakout Behavior in 6C Futures: When CAD/USD Breakouts Actually Hold",
-    "url": "/futures-basics/6c-breakout-behavior.html",
-    "description": "A blunt guide to breakout behavior in 6C CAD/USD futures and how to tell real breakouts from fakeouts using oil, USD, and liquidity.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Broad Market Health Indicators: Reading the Overall Strength Behind Price",
     "url": "/market-basics/broad-market-health-indicators-reading-the-overall-strength-behind-price.html",
     "description": "Learn which market health indicators matter, how they shape context, and why overall strength often decides if a move holds or fails.",
@@ -878,7 +920,7 @@
   {
     "title": "Cash-Futures Basis Behavior in Live Cattle",
     "url": "/futures-basics/cash-futures-basis-behavior-live-cattle.html",
-    "description": "The basis in live cattle futures is not noise — it",
+    "description": "The basis in live cattle futures is not noise — it's a signal. Here's how the cash-futures relationship works, why it moves, and what it tells traders about market conditions.",
     "category": "Futures Basics"
   },
   {
@@ -944,7 +986,7 @@
   {
     "title": "CL Volatility Profile and ATR Behavior: Crude Oil Risk in Real Terms",
     "url": "/energies/cl-volatility-profile-atr.html",
-    "description": "A trader-focused breakdown of crude oil futures (CL) volatility behavior, ATR characteristics, and what CL",
+    "description": "A trader-focused breakdown of crude oil futures (CL) volatility behavior, ATR characteristics, and what CL's range profile means for stop placement and position sizing.",
     "category": "Energies"
   },
   {
@@ -974,7 +1016,7 @@
   {
     "title": "Common Crude Oil Futures (CL) Trading Mistakes and How to Fix Them",
     "url": "/energies/cl-common-trader-mistakes.html",
-    "description": "The mistakes that consistently hurt CL traders: stops too tight for the contract",
+    "description": "The mistakes that consistently hurt CL traders: stops too tight for the contract's range, trading through EIA blind, chasing OPEC headlines, and sizing like it's a smaller market.",
     "category": "Energies"
   },
   {
@@ -1148,7 +1190,7 @@
   {
     "title": "Corn and Soymeal Pass-Through Into Livestock Futures",
     "url": "/futures-basics/corn-soymeal-pass-through-livestock-futures.html",
-    "description": "Feed costs don",
+    "description": "Feed costs don't hit livestock futures equally or immediately. Here's how corn and soymeal pass through into feeder cattle, live cattle, and lean hogs at different speeds.",
     "category": "Futures Basics"
   },
   {
@@ -1220,7 +1262,7 @@
   {
     "title": "DOM Trading For Beginners – Grizzly Parrot Trading",
     "url": "/platforms-tutorials/dom-trading-basics.html",
-    "description": "A simple, honest explanation of the Depth of Market (DOM), what it shows, what it doesn",
+    "description": "A simple, honest explanation of the Depth of Market (DOM), what it shows, what it doesn't show, and how beginners should actually use it.",
     "category": "Platforms & Tutorials"
   },
   {
@@ -1286,7 +1328,7 @@
   {
     "title": "ES News Events and Volatility Traps to Avoid",
     "url": "/futures-basics/es-news-events-and-volatility-traps.html",
-    "description": "A blunt guide to the news events and volatility traps that routinely punish ES beginners who don",
+    "description": "A blunt guide to the news events and volatility traps that routinely punish ES beginners who don't know when to stand down.",
     "category": "Futures Basics"
   },
   {
@@ -1388,7 +1430,7 @@
   {
     "title": "Export Demand Sensitivity in Beef Futures",
     "url": "/futures-basics/export-demand-sensitivity-beef-futures.html",
-    "description": "Export demand is one of the few live cattle price drivers that can move fast. Here",
+    "description": "Export demand is one of the few live cattle price drivers that can move fast. Here's how beef export flows affect futures prices and why traders need to track them.",
     "category": "Futures Basics"
   },
   {
@@ -1436,31 +1478,25 @@
   {
     "title": "Feeder Cattle Futures as an Input Market",
     "url": "/futures-basics/feeder-cattle-futures-as-an-input-market.html",
-    "description": "Feeder cattle futures price the raw material of beef production. Here",
+    "description": "Feeder cattle futures price the raw material of beef production. Here's what the contract actually represents, who trades it, and why it behaves differently from live cattle.",
     "category": "Futures Basics"
   },
   {
     "title": "Feeder Cattle vs Live Cattle Pricing Mechanics",
     "url": "/futures-basics/feeder-cattle-vs-live-cattle-pricing-mechanics.html",
-    "description": "Feeder and live cattle prices are connected by feedlot margin math. Here",
+    "description": "Feeder and live cattle prices are connected by feedlot margin math. Here's how the pricing relationship works, why it breaks down, and what the spread tells traders.",
     "category": "Futures Basics"
   },
   {
     "title": "Feedlot Dynamics and Futures Pricing",
     "url": "/futures-basics/feedlot-dynamics-and-futures-pricing.html",
-    "description": "Feedlot economics drive live cattle futures pricing in ways that most traders never see. Here",
+    "description": "Feedlot economics drive live cattle futures pricing in ways that most traders never see. Here's how placement decisions, margins, and packer behavior connect to price.",
     "category": "Futures Basics"
   },
   {
     "title": "Finding Intraday Support and Resistance on ES",
     "url": "/futures-basics/es-intraday-support-and-resistance-levels.html",
     "description": "A blunt guide to finding intraday support and resistance on ES so beginners stop guessing and start using real structure.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "Fundamental Analysis for 6C Futures: What Actually Moves CAD/USD",
-    "url": "/futures-basics/6c-fundamental-analysis-guide.html",
-    "description": "A blunt guide to the fundamentals that control 6C CAD/USD futures, including oil, BoC policy, USD cycles, and global risk sentiment.",
     "category": "Futures Basics"
   },
   {
@@ -1736,7 +1772,7 @@
   {
     "title": "Hog–Cattle Relative Value and Intermarket Spreads",
     "url": "/futures-basics/hog-cattle-relative-value-intermarket-spreads.html",
-    "description": "Lean hogs and live cattle share a sector but not a supply structure. Here",
+    "description": "Lean hogs and live cattle share a sector but not a supply structure. Here's how relative value between the two markets works and what intermarket spreads actually express.",
     "category": "Futures Basics"
   },
   {
@@ -1794,9 +1830,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How Bank of Canada Decisions Impact 6C Futures",
+    "title": "How Bank of Canada Decisions Reprice 6C Futures",
     "url": "/futures-basics/6c-bank-of-canada-impact.html",
-    "description": "A blunt breakdown of how Bank of Canada rate decisions move 6C Canadian Dollar futures and how traders should position around them.",
+    "description": "Read Bank of Canada decisions through the prior, full policy package, Canadian rate curve and BoC-Fed differential without assuming a fixed 6C reaction.",
     "category": "Futures Basics"
   },
   {
@@ -1862,7 +1898,7 @@
   {
     "title": "How Drought and Weather Impact Live Cattle",
     "url": "/futures-basics/how-drought-and-weather-impact-live-cattle.html",
-    "description": "Drought is the most powerful non-market force in live cattle. Here",
+    "description": "Drought is the most powerful non-market force in live cattle. Here's how weather events move through the production pipeline and reshape the futures price over months and years.",
     "category": "Futures Basics"
   },
   {
@@ -2074,12 +2110,6 @@
     "url": "/prop-firm-trading/policy-change-frequency.html",
     "description": "A blunt breakdown of how often prop firms change their rules, why policies shift, and what traders should watch for to avoid getting blindsided.",
     "category": "Prop Firm Trading"
-  },
-  {
-    "title": "How Oil Prices Impact 6C Futures: The CAD–Crude Correlation Explained",
-    "url": "/futures-basics/6c-oil-correlation.html",
-    "description": "Learn exactly how crude oil affects 6C Canadian Dollar futures, why CAD tracks energy markets, and how to use this correlation in trading.",
-    "category": "Futures Basics"
   },
   {
     "title": "How OPEC Decisions Move Crude Oil Futures (CL): Production Cuts, Freezes, and Surprises",
@@ -2306,13 +2336,13 @@
   {
     "title": "How to Set Price Alerts in NinjaTrader | Grizzly Parrot Trading",
     "url": "/platforms-tutorials/ninjatrader-price-alerts.html",
-    "description": "Step-by-step guide for setting price alerts in NinjaTrader so you don",
+    "description": "Step-by-step guide for setting price alerts in NinjaTrader so you don't have to stare at charts all day waiting for your levels.",
     "category": "Platforms & Tutorials"
   },
   {
     "title": "How to Set Price Alerts in Tradovate | Grizzly Parrot Trading",
     "url": "/platforms-tutorials/tradovate-price-alerts.html",
-    "description": "Simple guide for setting price alerts in Tradovate so you don",
+    "description": "Simple guide for setting price alerts in Tradovate so you don't miss levels or sit watching charts all day.",
     "category": "Platforms & Tutorials"
   },
   {
@@ -2394,15 +2424,15 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How U.S. Economic Data Impacts 6C Futures",
-    "url": "/futures-basics/6c-us-economic-data-impact.html",
-    "description": "A blunt breakdown of which U.S. economic reports actually move 6C Canadian Dollar futures and why CAD reacts so strongly to USD data.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "How U.S. Economic Data Moves 6S Swiss Franc Futures",
     "url": "/futures-basics/6s-how-us-economic-data-moves-swiss-franc-futures.html",
     "description": "Learn exactly how major U.S. economic reports like NFP, CPI, and ISM impact 6S Swiss Franc futures and why CHF responds so strongly to USD-driven events.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "How U.S. Economic Data Reprices 6C Futures",
+    "url": "/futures-basics/6c-us-economic-data-impact.html",
+    "description": "Trace U.S. releases into 6C through Fed expectations, the USD denominator, North American demand and Canada-U.S. trade, with confirmation and failure cases.",
     "category": "Futures Basics"
   },
   {
@@ -2544,12 +2574,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Key Support and Resistance Levels in 6C Futures",
-    "url": "/futures-basics/6c-support-resistance-levels.html",
-    "description": "A blunt guide to the most reliable support and resistance levels in 6C CAD/USD futures and how to trade them without guessing.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Lead-Lag Relationships: Which Markets Really Move First",
     "url": "/market-basics/lead-lag-relationships-markets-move-first.html",
     "description": "Learn how lead-lag relationships work, which markets tend to move first, and how to use that information without overthinking every tick.",
@@ -2564,19 +2588,19 @@
   {
     "title": "Lean Hogs vs Feed Grains Correlation Breakdown",
     "url": "/futures-basics/lean-hogs-feed-grains-correlation.html",
-    "description": "Lean hogs and feed grains correlation is unstable and often inverse. Rising corn prices don",
+    "description": "Lean hogs and feed grains correlation is unstable and often inverse. Rising corn prices don't always lift hog futures — sometimes they crush them through margin compression.",
     "category": "Futures Basics"
   },
   {
     "title": "Limit Moves and Liquidity Gaps in Lean Hogs",
     "url": "/futures-basics/limit-moves-liquidity-gaps-lean-hogs.html",
-    "description": "Lean hog futures hit daily price limits and experience liquidity gaps that trap traders. Here",
+    "description": "Lean hog futures hit daily price limits and experience liquidity gaps that trap traders. Here's how limit moves work and why they happen more in HE than other markets.",
     "category": "Futures Basics"
   },
   {
     "title": "Limit Risk and Liquidity in Live Cattle",
     "url": "/futures-basics/limit-risk-and-liquidity-live-cattle.html",
-    "description": "Live cattle futures can hit daily price limits and go illiquid fast. Here",
+    "description": "Live cattle futures can hit daily price limits and go illiquid fast. Here's what limit risk actually looks like in this market and how liquidity affects execution.",
     "category": "Futures Basics"
   },
   {
@@ -2678,13 +2702,13 @@
   {
     "title": "Live Cattle Curve Structure and Carry",
     "url": "/futures-basics/live-cattle-curve-structure-and-carry.html",
-    "description": "The live cattle futures curve is not just a roll schedule. Its shape carries real information about supply expectations and seasonal demand. Here",
+    "description": "The live cattle futures curve is not just a roll schedule. Its shape carries real information about supply expectations and seasonal demand. Here's how to read it.",
     "category": "Futures Basics"
   },
   {
     "title": "Live Cattle vs Equity and Macro Correlations",
     "url": "/futures-basics/live-cattle-vs-equity-and-macro-correlations.html",
-    "description": "Live cattle futures do not move with equities the way most commodities do. Here",
+    "description": "Live cattle futures do not move with equities the way most commodities do. Here's how the macro relationship actually works and when it matters for traders.",
     "category": "Futures Basics"
   },
   {
@@ -2726,7 +2750,7 @@
   {
     "title": "Margin Risk and Position Sizing in Hog Futures",
     "url": "/futures-basics/margin-risk-position-sizing-hog-futures.html",
-    "description": "Lean hog futures can blow up accounts fast. Here",
+    "description": "Lean hog futures can blow up accounts fast. Here's how margin requirements, contract size, and volatility create unique position sizing challenges.",
     "category": "Futures Basics"
   },
   {
@@ -3188,7 +3212,7 @@
   {
     "title": "NinjaTrader 7 Overview (Legacy Platform)",
     "url": "/platforms-tutorials/ninjatrader-7-overview-legacy.html",
-    "description": "A straightforward overview of NinjaTrader 7, explaining what it can do, why it",
+    "description": "A straightforward overview of NinjaTrader 7, explaining what it can do, why it's outdated, and why traders should use NinjaTrader 8 going forward.",
     "category": "Platforms & Tutorials"
   },
   {
@@ -3254,7 +3278,7 @@
   {
     "title": "NinjaTrader Chart Linking | Grizzly Parrot Trading",
     "url": "/platforms-tutorials/ninjatrader-chart-linking.html",
-    "description": "How to use NinjaTrader",
+    "description": "How to use NinjaTrader's chart linking to sync instruments, timeframes, and drawings across multiple charts and windows.",
     "category": "Platforms & Tutorials"
   },
   {
@@ -3396,12 +3420,6 @@
     "category": "Market Basics"
   },
   {
-    "title": "Order Flow Behavior in 6C Futures: How CAD/USD Reacts to Liquidity",
-    "url": "/futures-basics/6c-orderflow-behavior.html",
-    "description": "A blunt breakdown of how order flow behaves in 6C CAD/USD futures and how liquidity pockets, absorption, and aggression shape price.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Order Flow Continuation Patterns: What Sustained Pressure Really Looks Like",
     "url": "/market-basics/order-flow-continuation-patterns-sustained-pressure.html",
     "description": "Learn the real signs of order flow continuation, how sustained buying or selling pressure behaves, and how to read it without guessing.",
@@ -3458,7 +3476,7 @@
   {
     "title": "Palladium ATR Behavior and Volatility Structure",
     "url": "/futures-basics/pa-atr-volatility-profile.html",
-    "description": "A blunt breakdown of Palladium futures ATR behavior, volatility structure, average swing size, and why PA",
+    "description": "A blunt breakdown of Palladium futures ATR behavior, volatility structure, average swing size, and why PA's thin liquidity turns normal ranges into outsized moves.",
     "category": "Futures Basics"
   },
   {
@@ -3482,7 +3500,7 @@
   {
     "title": "Palladium Futures vs Spot: Price Divergences and Arbitrage Logic",
     "url": "/futures-basics/pa-vs-spot-arbitrage.html",
-    "description": "A blunt breakdown of Palladium futures vs spot pricing, explaining why PA diverges, how arbitrage actually works, and what traders can and can",
+    "description": "A blunt breakdown of Palladium futures vs spot pricing, explaining why PA diverges, how arbitrage actually works, and what traders can and can't rely on in thin markets.",
     "category": "Futures Basics"
   },
   {
@@ -3584,7 +3602,7 @@
   {
     "title": "Positioning and Commercial Hedging in Cattle",
     "url": "/futures-basics/positioning-and-commercial-hedging-in-cattle.html",
-    "description": "Commercial hedgers in live cattle are not your counterparty — they are your signal. Here",
+    "description": "Commercial hedgers in live cattle are not your counterparty — they are your signal. Here's how to read the COT report in cattle and what commercial positioning actually means.",
     "category": "Futures Basics"
   },
   {
@@ -3806,13 +3824,13 @@
   {
     "title": "Roll Mechanics in Live Cattle Futures",
     "url": "/futures-basics/roll-mechanics-live-cattle-futures.html",
-    "description": "Rolling a live cattle position is not just an administrative task. The roll price, timing, and spread behavior all carry real P&L consequences. Here",
+    "description": "Rolling a live cattle position is not just an administrative task. The roll price, timing, and spread behavior all carry real P&L consequences. Here's how to do it right.",
     "category": "Futures Basics"
   },
   {
     "title": "Roll Yield and Front-Month Risk in Hogs",
     "url": "/futures-basics/roll-yield-front-month-risk-hogs.html",
-    "description": "Rolling lean hog futures positions creates hidden costs through roll yield that can erode profits. Here",
+    "description": "Rolling lean hog futures positions creates hidden costs through roll yield that can erode profits. Here's how curve structure affects your P&L when holding positions across contract months.",
     "category": "Futures Basics"
   },
   {
@@ -3852,9 +3870,9 @@
     "category": "Prop Firm Trading"
   },
   {
-    "title": "Scalping 6C Futures: What Actually Works on CAD/USD",
+    "title": "Scalping 6C Futures: Market-Quality and Cost Gates",
     "url": "/futures-basics/6c-scalping-guide.html",
-    "description": "A blunt guide to scalping 6C Canadian Dollar futures, including liquidity windows, setups that work, and common mistakes to avoid.",
+    "description": "Decide whether a short-horizon 6C plan survives spread, depth, slippage, fees, event and invalidation gates before submitting an order.",
     "category": "Futures Basics"
   },
   {
@@ -3884,7 +3902,7 @@
   {
     "title": "Seasonality in Live Cattle Markets",
     "url": "/futures-basics/seasonality-in-live-cattle-markets.html",
-    "description": "Live cattle futures follow seasonal patterns driven by demand cycles and production timelines. Here",
+    "description": "Live cattle futures follow seasonal patterns driven by demand cycles and production timelines. Here's how seasonality actually works in cattle and how to use it.",
     "category": "Futures Basics"
   },
   {
@@ -3962,7 +3980,7 @@
   {
     "title": "Slaughter Rates and Price Lag Effects in Live Cattle",
     "url": "/futures-basics/slaughter-rates-and-price-lag-effects-live-cattle.html",
-    "description": "Weekly slaughter data is one of the most watched numbers in live cattle — and one of the most misread. Here",
+    "description": "Weekly slaughter data is one of the most watched numbers in live cattle — and one of the most misread. Here's what it actually tells you and where the lag effects show up.",
     "category": "Futures Basics"
   },
   {
@@ -3998,7 +4016,7 @@
   {
     "title": "Spread Trading Live Cattle Contracts",
     "url": "/futures-basics/spread-trading-live-cattle-contracts.html",
-    "description": "Calendar spreads in live cattle isolate relative supply comparisons between delivery windows. Here",
+    "description": "Calendar spreads in live cattle isolate relative supply comparisons between delivery windows. Here's how they work, what they express, and where the edges actually are.",
     "category": "Futures Basics"
   },
   {
@@ -4046,7 +4064,7 @@
   {
     "title": "Structural Differences Between Live Cattle and Hogs",
     "url": "/futures-basics/structural-differences-live-cattle-and-hogs.html",
-    "description": "Live cattle and lean hogs are both livestock futures, but they behave like completely different markets. Here",
+    "description": "Live cattle and lean hogs are both livestock futures, but they behave like completely different markets. Here's why the structural differences matter for traders.",
     "category": "Futures Basics"
   },
   {
@@ -4074,12 +4092,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Swing Trading 6C Futures: A Clean Strategy for CAD/USD",
-    "url": "/futures-basics/6c-swing-trading-strategy.html",
-    "description": "A blunt guide to swing trading 6C Canadian Dollar futures with clear structure, trend logic, and risk control for multi-hour and multi-day moves.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Symbol Changeovers & Rollovers in Prop Firm Trading",
     "url": "/prop-firm-trading/symbol-changeovers-and-rollovers.html",
     "description": "A blunt breakdown of symbol changeovers and rollover rules in prop firms so you don’t violate trading policies during contract expiration cycles.",
@@ -4090,12 +4102,6 @@
     "url": "/market-basics/tape-reading-basics.html",
     "description": "Learn tape reading basics—how to read Time & Sales and DOM pressure together to understand real-time order flow and aggressive buying or selling.",
     "category": "Market Basics"
-  },
-  {
-    "title": "Technical Indicators That Actually Work on 6C Futures",
-    "url": "/futures-basics/6c-technical-indicators-that-work.html",
-    "description": "A blunt guide to the technical indicators that work on 6C CAD/USD futures and which ones to avoid because they lag or clutter the chart.",
-    "category": "Futures Basics"
   },
   {
     "title": "The Best Times of Day to Trade 6S Swiss Franc Futures",
@@ -4136,7 +4142,7 @@
   {
     "title": "The Role of Feeder Placement in Live Cattle",
     "url": "/futures-basics/role-of-feeder-placement-in-live-cattle.html",
-    "description": "Feeder cattle placement is the earliest forward signal in live cattle futures. Here",
+    "description": "Feeder cattle placement is the earliest forward signal in live cattle futures. Here's how placement data shapes supply expectations and why traders track it closely.",
     "category": "Futures Basics"
   },
   {
@@ -4440,12 +4446,6 @@
     "category": "Market Basics"
   },
   {
-    "title": "Understanding Volatility Cycles in 6C Futures",
-    "url": "/futures-basics/6c-volatility-cycles.html",
-    "description": "A blunt guide to how volatility expands and contracts in 6C CAD/USD futures and how to trade each cycle without getting chopped.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Use USD Strength to Test 6B Setups Without Circularity",
     "url": "/futures-basics/how-us-dollar-strength-confirms-or-invalidates-6b-setups.html",
     "description": "Test 6B setups with ex-GBP dollar breadth and relative-rate evidence, identify circular GBP/USD comparisons, align timestamps and resolve conflicts.",
@@ -4656,15 +4656,15 @@
     "category": "Futures Basics"
   },
   {
-    "title": "What Is 6C Futures? Full Beginner Breakdown of the Canadian Dollar Contract",
+    "title": "What Is 6C Futures? Canadian Dollar Contract Guide",
     "url": "/futures-basics/what-is-6c-futures.html",
-    "description": "Learn exactly what 6C Canadian Dollar futures are, how the contract works, tick value, margin, and why traders use CAD/USD futures. Just facts.",
+    "description": "Understand what 6C Canadian Dollar futures represent, how the quote works, why contracts expire, who uses them, and the leverage, basis and delivery risks.",
     "category": "Futures Basics"
   },
   {
     "title": "What Is a Futures Contract? – Grizzly Parrot Trading",
     "url": "/futures-basics/what-is-a-futures-contract.html",
-    "description": "Plain-English explanation of what a futures contract actually is and what you",
+    "description": "Plain-English explanation of what a futures contract actually is and what you're trading when you buy ES, NQ, MES, or other contracts.",
     "category": "Futures Basics"
   },
   {
@@ -4700,7 +4700,7 @@
   {
     "title": "What Is Trailing Drawdown in Prop Firms?",
     "url": "/prop-firm-trading/trailing-drawdown-explained.html",
-    "description": "Trailing drawdown is the rule that ends most prop firm evaluations. Here",
+    "description": "Trailing drawdown is the rule that ends most prop firm evaluations. Here's exactly how it works, why it's stricter than it looks, and what traders consistently get wrong.",
     "category": "Prop Firm Trading"
   },
   {
@@ -4712,7 +4712,7 @@
   {
     "title": "What Live Cattle Futures Actually Represent",
     "url": "/futures-basics/what-live-cattle-futures-actually-represent.html",
-    "description": "Live cattle futures are not just a beef price bet. They represent a biological production pipeline with fixed timelines. Here",
+    "description": "Live cattle futures are not just a beef price bet. They represent a biological production pipeline with fixed timelines. Here's what the contract actually means.",
     "category": "Futures Basics"
   },
   {
@@ -4782,9 +4782,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Why 6C Moves: Key Economic Drivers Behind Canadian Dollar Futures",
+    "title": "Why 6C Moves: Canadian Dollar Futures Drivers",
     "url": "/futures-basics/why-6c-moves.html",
-    "description": "A blunt breakdown of what actually moves 6C Canadian Dollar futures—oil, interest rates, USD strength, and macro flows.",
+    "description": "Understand why 6C Canadian Dollar futures move through relative rates, the U.S. dollar, Canadian data and trade, oil, risk, liquidity and expectations.",
     "category": "Futures Basics"
   },
   {
@@ -4910,7 +4910,7 @@
   {
     "title": "Why Lean Hogs Decouple From Other Commodities",
     "url": "/futures-basics/lean-hogs-decouple-commodities.html",
-    "description": "Lean hogs don",
+    "description": "Lean hogs don't follow crude oil, grains, or general commodity trends. Here's why HE futures operate on a completely different supply-demand cycle.",
     "category": "Futures Basics"
   },
   {
@@ -4928,31 +4928,31 @@
   {
     "title": "Why Live Cattle Are Slower but Heavier Markets",
     "url": "/futures-basics/why-live-cattle-are-slower-but-heavier-markets.html",
-    "description": "Live cattle futures move slowly compared to other commodities, but the dollar weight of those moves is real. Here",
+    "description": "Live cattle futures move slowly compared to other commodities, but the dollar weight of those moves is real. Here's what slow and heavy actually means for traders.",
     "category": "Futures Basics"
   },
   {
     "title": "Why Live Cattle Futures Are a Separate Risk Class",
     "url": "/futures-basics/why-livestock-futures-are-a-separate-risk-class.html",
-    "description": "Live cattle futures don",
+    "description": "Live cattle futures don't behave like financial futures or other commodity markets. The biological production timeline, perishability, and commercial structure make them a distinct risk class.",
     "category": "Futures Basics"
   },
   {
     "title": "Why Live Cattle Punish Impatient Traders",
     "url": "/futures-basics/why-live-cattle-punish-impatient-traders.html",
-    "description": "Live cattle does not reward urgency. The market moves on its own timeline, and traders who force it pay a specific and predictable price. Here",
+    "description": "Live cattle does not reward urgency. The market moves on its own timeline, and traders who force it pay a specific and predictable price. Here's what impatience actually costs.",
     "category": "Futures Basics"
   },
   {
     "title": "Why Live Cattle React Differently to Feed Prices",
     "url": "/futures-basics/why-live-cattle-react-differently-to-feed-prices.html",
-    "description": "High corn prices don",
+    "description": "High corn prices don't simply push live cattle prices lower. The relationship is indirect, delayed, and depends heavily on where the market is in the production cycle.",
     "category": "Futures Basics"
   },
   {
     "title": "Why Live Cattle Trends Persist Longer",
     "url": "/futures-basics/why-live-cattle-trends-persist-longer.html",
-    "description": "Live cattle futures trends last longer than most commodity markets. The reason is structural, not technical. Here",
+    "description": "Live cattle futures trends last longer than most commodity markets. The reason is structural, not technical. Here's what drives trend persistence in cattle.",
     "category": "Futures Basics"
   },
   {

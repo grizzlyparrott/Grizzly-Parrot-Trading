@@ -2,248 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Technical Indicators That Actually Work on 6C Futures</title>
-  <meta name="description" content="A blunt guide to the technical indicators that work on 6C CAD/USD futures and which ones to avoid because they lag or clutter the chart.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6c-technical-indicators-that-work.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Technical Indicators That Actually Work on 6C Futures">
-  <meta property="og:description" content="A blunt guide to the technical indicators that work on 6C CAD/USD futures and which ones to avoid because they lag or clutter the chart.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6c-technical-indicators-that-work.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Technical Indicators That Actually Work on 6C Futures">
-  <meta name="twitter:description" content="A blunt guide to the technical indicators that work on 6C CAD/USD futures and which ones to avoid because they lag or clutter the chart.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Technical Indicators That Actually Work on 6C Futures",
-  "description": "A blunt guide to the technical indicators that work on 6C CAD/USD futures and which ones to avoid because they lag or clutter the chart.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6c-technical-indicators-that-work.html",
-  "datePublished": "2025-11-27",
-  "dateModified": "2025-11-27",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6c-technical-indicators-that-work.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Technical Indicators That Actually Work on 6C Futures",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6c-technical-indicators-that-work.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6C Technical Indicators: Benchmark, Validate, or Reject</title>
+  <meta name="description" content="Evaluate 6C technical indicators by decision task, baseline, walk-forward validation, trading costs, robustness and explicit rejection rules.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6c-technical-indicators-that-work.html">
+  <meta property="og:title" content="6C Technical Indicators: Benchmark, Validate, or Reject"><meta property="og:description" content="Evaluate 6C technical indicators by decision task, baseline, walk-forward validation, trading costs, robustness and explicit rejection rules."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6c-technical-indicators-that-work.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-27"><meta property="article:modified_time" content="2026-08-13">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6C Technical Indicators: Benchmark, Validate, or Reject"><meta name="twitter:description" content="Evaluate 6C technical indicators by decision task, baseline, walk-forward validation, trading costs, robustness and explicit rejection rules."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/6c-research-library.css?v=20260813a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6C Technical Indicators: Benchmark, Validate, or Reject","description":"Evaluate 6C technical indicators by decision task, baseline, walk-forward validation, trading costs, robustness and explicit rejection rules.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6c-technical-indicators-that-work.html"},"datePublished":"2025-11-27","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/6c-technical-indicators-that-work.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6C Technical Indicators: Benchmark, Validate, or Reject","item":"https://grizzlyparrottrading.com/futures-basics/6c-technical-indicators-that-work.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container cad-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="ca-hero">
+  <div class="ca-hero-copy">
+    <p class="ca-kicker">Selection bias &middot; walk-forward testing &middot; rejection rules</p>
+    <h1>6C Technical Indicators: Benchmark, Validate, or Reject</h1>
+    <p class="ca-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="ca-hero-lede">Open enough 6C charts, try enough lookbacks, and rank enough outcomes, and something will look impressive in the past. That is a selection result. It becomes evidence only after the decision task, candidate family, costs, comparison baseline, and untouched validation period are fixed.</p>
+    <div class="ca-hero-actions"><a class="button-primary" href="#task">Define the task</a><a class="ca-text-link" href="#card">Use the acceptance card</a></div>
+    <dl class="ca-hero-metrics" aria-label="Indicator evaluation orientation"><div><dt>First question</dt><dd>Decision task</dd></div><div><dt>Comparator</dt><dd>Simple baseline</dd></div><div><dt>Validation</dt><dd>Chronological</dd></div><div><dt>Allowed answer</dt><dd>None</dd></div></dl>
   </div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="ca-jump-nav" aria-label="On this page"><a href="#task">Task</a><a href="#definitions">Definitions</a><a href="#baseline">Baseline</a><a href="#walkforward">Walk-forward</a><a href="#costs">Costs</a><a href="#robustness">Robustness</a><a href="#card">Acceptance</a></nav>
 
-<h1>Technical Indicators That Actually Work on 6C Futures</h1>
-
-<p>6C CAD/USD futures don’t need a messy chart. CAD respects structure, oil correlation, and trend logic. Most indicators just lag and confuse beginners. There are only a handful of tools that consistently add value to 6C trading. Everything else is noise.</p>
-
-<h2>The Indicators That Actually Help on 6C</h2>
-
-<h3>1. 20–50 Period Moving Averages (Trend Filters)</h3>
-<p>CAD trends cleanly when oil or USD set direction. The 20 and 50 period EMAs are perfect for identifying trend strength and high-probability pullback entries.</p>
-
-<ul>
-<li>Price above 20/50 → bullish trend</li>
-<li>Price below 20/50 → bearish trend</li>
-<li>Pullbacks into the 20/50 → high-win-rate entries</li>
-</ul>
-
-<p>Don’t use moving averages for cross signals—they’re laggy and useless.</p>
-
-<h3>2. ATR (Average True Range)</h3>
-<p>ATR tells you the volatility environment so you don’t put tiny stops in a big-moving day or oversized stops in a slow day.</p>
-
-<ul>
-<li>High ATR → wider stops, bigger swings</li>
-<li>Low ATR → tighten risk, expect chop</li>
-</ul>
-
-<p>ATR also helps position sizing—critical for a $10-per-tick contract.</p>
-
-<h3>3. Volume Profile</h3>
-<p>6C respects volume shelves, HVNs, and LVNs extremely well because CAD is traded by institutions tied to oil and interest rate flows. Use volume profile to spot:</p>
-
-<ul>
-<li>Value area highs and lows</li>
-<li>Low-volume rejection zones</li>
-<li>Major POC flips</li>
-</ul>
-
-<p>This is one of the only “advanced” tools worth having on the chart.</p>
-
-<h3>4. Correlation Tools (Oil + DXY)</h3>
-<p>Not a classic indicator, but essential. Use a multi-chart view or correlation indicator to track crude oil and the USD index.</p>
-
-<ul>
-<li>Oil moves → 6C reacts</li>
-<li>USD moves → 6C reacts in the opposite direction</li>
-</ul>
-
-<p>If you ignore correlations, you're trading blind.</p>
-
-<h2>Indicators That Don’t Work on 6C</h2>
-<p>Here’s the blunt truth: most retail indicators add zero value to CAD/USD futures. Avoid these:</p>
-
-<ul>
-<li><strong>MACD</strong> — too laggy for both trend and reversal signals.</li>
-<li><strong>RSI</strong> — “overbought” means nothing in a trending CAD market.</li>
-<li><strong>Stochastics</strong> — gives nonstop false signals.</li>
-<li><strong>Bollinger Bands</strong> — unreliable due to correlation-driven volatility shifts.</li>
-<li><strong>Pivot Points</strong> — only work when they line up with real structure.</li>
-</ul>
-
-<p>Indicators aren’t magic. CAD moves because of fundamentals, not because RSI hit 70.</p>
-
-<h2>How to Build a Clean, Effective 6C Chart</h2>
-
-<p>Your chart should be simple:</p>
-
-<ul>
-<li>20 EMA</li>
-<li>50 EMA</li>
-<li>ATR for stop sizing</li>
-<li>Volume profile for context</li>
-<li>Oil + DXY on side chart or panel</li>
-</ul>
-
-<p>This setup covers trend, volatility, structure, and correlations—the only things that matter in 6C.</p>
-
-<div class="highlight-box green">
-  <h3>Indicators Should Support Structure, Not Clutter It</h3>
-  <p>CAD/USD reacts to trend, volatility, and macro drivers rather than retail-style signals. Tools that clarify these elements help interpret the market, while unnecessary indicators can obscure price behavior.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="ca-section" id="task" aria-labelledby="task-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Purpose before formula</p><h2 id="task-title">An Indicator Cannot Work Until &ldquo;Work&rdquo; Is Defined</h2><p><strong>Fact:</strong> a technical indicator is a deterministic transformation of declared inputs such as price, volume, or range. <strong>Application:</strong> it can summarize a state, filter decisions, size risk, or trigger an action. <strong>Hypothesis:</strong> a particular transformation may improve a predeclared outcome relative to a baseline. The indicator&rsquo;s familiar name does not establish that improvement.</p></div>
+  <div class="ca-table-scroll" role="region" aria-label="Distinct decision tasks for evaluating 6C indicators" tabindex="0">
+    <table class="ca-table"><thead><tr><th scope="col">Decision task</th><th scope="col">Possible target</th><th scope="col">Appropriate baseline</th><th scope="col">Common category error</th></tr></thead><tbody>
+      <tr><th scope="row">State description</th><td>Classify trend, volatility, or location using current and past data</td><td>Simpler past-only statistic</td><td>Calling a descriptive label a forecast</td></tr>
+      <tr><th scope="row">Directional forecast</th><td>Signed forward return over a frozen horizon</td><td>No-change, unconditional sign, or own-history model</td><td>Scoring any later touch as a win</td></tr>
+      <tr><th scope="row">Movement forecast</th><td>Forward range, variance, or threshold-crossing probability</td><td>Clock- and regime-matched historical distribution</td><td>Equating movement with tradable direction</td></tr>
+      <tr><th scope="row">Execution filter</th><td>Spread, fill, slippage, or adverse-selection outcome</td><td>Same order rule without the filter</td><td>Using bar closes as fill evidence</td></tr>
+      <tr><th scope="row">Risk scaling</th><td>Loss distribution or exposure consistency under a sizing rule</td><td>Fixed exposure with identical entries and exits</td><td>Crediting the indicator for leverage changes</td></tr>
+    </tbody></table>
   </div>
-</footer>
-</body>
-</html>
+  <p>Write one primary question in a single sentence. Example: &ldquo;Does a past-only trend filter improve the net distribution of a fully specified 6C breakout rule on untouched dates relative to the same rule without the filter?&rdquo; That question is falsifiable. &ldquo;Which indicators work best?&rdquo; is an invitation to search.</p>
+  <div class="ca-caution"><strong>Keep contract math canonical</strong><p>Import the verified tick value, quotation, contract calendar, and active-expiry logic from the <a href="6c-tick-size-tick-value.html">6C contract-mechanics guide</a>. An indicator study should not maintain a competing specification table.</p></div>
+</section>
+
+<section class="ca-section" id="definitions" aria-labelledby="definitions-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Candidate registry</p><h2 id="definitions-title">Turn Every Candidate Into Code-Ready Rules</h2><p>&ldquo;RSI oversold,&rdquo; &ldquo;MACD confirmation,&rdquo; and &ldquo;moving-average trend&rdquo; are not reproducible definitions. Freeze the input price, bar construction, lookback, initialization, threshold, comparison operator, signal timestamp, missing-data policy, and expiration rule.</p></div>
+  <div class="ca-two-column">
+    <article class="ca-panel"><p class="ca-card-label">Trend family</p><h3>Past-price smoothing or break</h3><p>Examples include a moving-average slope, price relative to a past-only average, or a trailing high-low rule. The candidate must specify whether it filters direction, triggers entry, or exits. Similar lookbacks are part of one multiple-testing family.</p></article>
+    <article class="ca-panel"><p class="ca-card-label">Momentum family</p><h3>Signed change over a fixed horizon</h3><p>Rate-of-change and oscillator transformations often encode related information. Count transformed variants and threshold directions explicitly instead of pretending each chart name is an independent idea.</p></article>
+    <article class="ca-panel"><p class="ca-card-label">Volatility family</p><h3>Range or return dispersion</h3><p>True range, realized variance, and percentile states may help define risk or eligibility. They do not choose direction unless a separate directional hypothesis is tested.</p></article>
+    <article class="ca-panel"><p class="ca-card-label">Volume and flow family</p><h3>Participation and auction inputs</h3><p>Completed volume, trade rate, and book variables require dated-contract and feed-aware construction. The <a href="6c-orderflow-behavior.html">6C order-flow guide</a> sets the evidence boundary for depth and queue claims.</p></article>
+  </div>
+  <p>Calculate all inputs using data available at the decision timestamp. A centered average, future-confirmed pivot, revised macro value, or complete daily bar used before its close leaks information. Unit-test the earliest timestamp at which every signal can be true.</p>
+</section>
+
+<section class="ca-section" id="baseline" aria-labelledby="baseline-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Earn complexity</p><h2 id="baseline-title">Make the Indicator Beat a Naive Alternative</h2><p>A positive backtest is not enough. A rising market, favorable sample, or variable exposure can make many rules profitable. The candidate needs to improve an appropriate baseline after identical cost and risk assumptions.</p></div>
+  <div class="ca-check-grid">
+    <article><strong>No-action baseline</strong><p>For a trade filter, compare the complete parent rule with and without the indicator. Show trades removed as well as retained.</p></article>
+    <article><strong>Simple statistic</strong><p>Compare a complex oscillator with a straightforward past return, range, or moving average that represents the same information family.</p></article>
+    <article><strong>Unconditional distribution</strong><p>For a forecast, compare with the clock-, session-, and regime-matched outcome distribution available at that time.</p></article>
+    <article><strong>Persistence baseline</strong><p>For state classification, compare with carrying the prior state forward or using a frozen historical transition rate.</p></article>
+    <article><strong>Same-risk baseline</strong><p>Normalize exposure so the candidate does not appear better merely because it trades smaller or less often.</p></article>
+    <article><strong>Randomized control</strong><p>When appropriate, compare with timing-preserving randomized signals to estimate what selection can produce by chance.</p></article>
+  </div>
+  <p>Predeclare the primary metric and guardrails. Average return can hide tail loss; hit rate can improve while payoff deteriorates; Sharpe-like ratios can hide serial dependence; drawdown depends on order and sample length. Report the distribution of net trade outcomes, exposure, turnover, worst paths, and uncertainty rather than one headline score.</p>
+</section>
+
+<section class="ca-section" id="walkforward" aria-labelledby="walkforward-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Chronology is part of the model</p><h2 id="walkforward-title">Use Walk-Forward Validation, Not Random Shuffling</h2><p>Market observations are ordered, regimes persist, and nearby samples overlap. Random train/test splits can place later conditions into training and closely related bars on both sides of the boundary. A chronological design better reproduces the information available at each decision.</p></div>
+  <div class="ca-process" aria-label="Walk-forward indicator validation">
+    <article><span>1</span><h3>Develop</h3><p>Use an early period to define the task, candidate registry, data cleaning, baselines, parameter grid, and execution model.</p></article>
+    <article><span>2</span><h3>Validate</h3><p>Apply the frozen family to later dates. Use this period for one controlled selection and document every change it motivates.</p></article>
+    <article><span>3</span><h3>Lock</h3><p>Freeze code hash, parameters, exclusions, roll policy, costs, and metrics before opening the final holdout.</p></article>
+    <article><span>4</span><h3>Test once</h3><p>Score untouched later data without manual overrides. If the model changes, retire that holdout and obtain a new one.</p></article>
+    <article><span>5</span><h3>Replay forward</h3><p>Simulate scheduled re-estimation using training windows available at each date, not today&rsquo;s full history.</p></article>
+  </div>
+  <p>Purge or embargo observations where input and outcome windows overlap a split boundary. Keep dated 6C contracts and an ex-ante roll rule. Report results by year, volatility state, event status, clock window, and contract migration, but treat the full grid as one declared analysis family.</p>
+</section>
+
+<section class="ca-section" id="costs" aria-labelledby="costs-title">
+  <div class="ca-section-heading"><p class="ca-kicker">The selection bill</p><h2 id="costs-title">Charge Trading Friction and Multiple Testing</h2><p>Technical rules tend to trade most when price moves or crosses thresholds, exactly when spreads, depth, and slippage can change. A fill at the bar close is not a cost model.</p></div>
+  <div class="ca-table-scroll" role="region" aria-label="Costs and selection controls for 6C indicator studies" tabindex="0">
+    <table class="ca-table"><thead><tr><th scope="col">Risk to validity</th><th scope="col">Required treatment</th><th scope="col">Reject when</th></tr></thead><tbody>
+      <tr><th scope="row">Bid-offer spread</th><td>Use decision-time quotes or conservative historical estimates by market state</td><td>Net effect disappears under ordinary spread assumptions.</td></tr>
+      <tr><th scope="row">Slippage and depth</th><td>Model order size, latency, partial fills, missed passive fills, and event stress</td><td>Candidate requires unavailable fills or zero latency.</td></tr>
+      <tr><th scope="row">Commissions and fees</th><td>Deduct the full round-turn schedule and disclose assumptions</td><td>Small gross advantage cannot cover fixed charges.</td></tr>
+      <tr><th scope="row">Parameter search</th><td>List every lookback, threshold, outcome, session, and filter tested</td><td>Only a narrow winner survives and neighbors fail.</td></tr>
+      <tr><th scope="row">Research iteration</th><td>Count manual choices and post-validation revisions as selection</td><td>Holdout was repeatedly consulted.</td></tr>
+      <tr><th scope="row">Hypothetical performance</th><td>Label simulation, assumptions, and limitations explicitly</td><td>Backtest is presented as actual performance.</td></tr>
+    </tbody></table>
+  </div>
+  <p>Use a family-wise or false-discovery procedure appropriate to the declared question, and report effect sizes with uncertainty. Statistical significance does not establish economic value. Economic value in a historical replay does not establish future performance.</p>
+</section>
+
+<section class="ca-section" id="robustness" aria-labelledby="robustness-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Try to break the winner</p><h2 id="robustness-title">Demand Stability Across Reasonable Variants</h2><p>Robustness means evaluating a frozen neighborhood, not retuning until the result returns. A defensible candidate should preserve its economic interpretation and material benefit across plausible implementation choices.</p></div>
+  <div class="ca-two-column">
+    <article class="ca-panel"><p class="ca-card-label">Inputs</p><h3>Bars, timestamps, and rolls</h3><p>Vary adjacent bar intervals, a second ex-ante roll rule, bad-tick filters, and boundary timestamps. Reject a result created by a continuous-series splice or one vendor artifact.</p></article>
+    <article class="ca-panel"><p class="ca-card-label">Parameters</p><h3>Neighboring lookbacks and thresholds</h3><p>Inspect a predeclared coarse grid. A single sharp optimum surrounded by failures is more consistent with fit noise than a stable relationship.</p></article>
+    <article class="ca-panel"><p class="ca-card-label">Market states</p><h3>Events, sessions, and volatility</h3><p>Show where the candidate works and fails. If value exists only during one named condition, narrow the claim and implement that condition in real time.</p></article>
+    <article class="ca-panel"><p class="ca-card-label">Execution stress</p><h3>Wider costs and delayed arrival</h3><p>Increase spread, slippage, latency, and missed-fill assumptions. A candidate with no cost headroom is not production-ready.</p></article>
+  </div>
+  <div class="ca-caution"><strong>Research status</strong><p>No original finding is reported for any 6C indicator. This page produced no indicator dataset, comparison, coefficient, trade sample, backtest, holdout score, or live-performance record. It does not claim that a moving average, oscillator, volatility measure, volume input, or order-flow statistic works on 6C.</p></div>
+</section>
+
+<section class="ca-section" id="card" aria-labelledby="card-title">
+  <div class="ca-section-heading"><p class="ca-kicker">Ending decision</p><h2 id="card-title">Indicator Acceptance Card</h2><p>A candidate enters a production research library only if every field below is complete. Any missing required field is a failure, not a reason to soften the criterion.</p></div>
+  <div class="ca-table-scroll" role="region" aria-label="6C indicator acceptance card" tabindex="0">
+    <table class="ca-table"><thead><tr><th scope="col">Field</th><th scope="col">Acceptance evidence</th><th scope="col">Current article status</th></tr></thead><tbody>
+      <tr><th scope="row">Decision task</th><td>One primary target, horizon, action, and invalidation</td><td>Protocol only</td></tr>
+      <tr><th scope="row">Candidate registry</th><td>All formulas, inputs, parameters, timestamps, and transformations frozen</td><td>Not executed</td></tr>
+      <tr><th scope="row">Baseline</th><td>Simple comparator under identical exposure and cost assumptions</td><td>Not executed</td></tr>
+      <tr><th scope="row">Validation</th><td>Chronological walk-forward plus one untouched final holdout</td><td>Not executed</td></tr>
+      <tr><th scope="row">Costs</th><td>Executable prices, size, spread, slippage, fees, latency, and missed fills</td><td>Not executed</td></tr>
+      <tr><th scope="row">Robustness</th><td>Stable neighboring parameters, years, regimes, feeds, and roll policies</td><td>Not executed</td></tr>
+      <tr><th scope="row">Decision</th><td>Accept, narrow, or reject according to predeclared thresholds</td><td><strong>None accepted</strong></td></tr>
+    </tbody></table>
+  </div>
+  <div class="ca-related">An accepted input would still need a complete execution plan. Use the <a href="6c-breakout-behavior.html">6C breakout workflow</a>, <a href="6c-scalping-guide.html">6C scalping guide</a>, or <a href="6c-swing-trading-strategy.html">6C swing-plan framework</a> according to the decision horizon.</div>
+</section>
+
+<details class="ca-sources"><summary>Sources, methods and editorial disclosure</summary><ul>
+  <li><a href="https://www.cmegroup.com/markets/fx/g10/canadian-dollar.contractSpecs.html" target="_blank" rel="noopener">CME Group Canadian Dollar futures page</a> for current exchange-product context; this site&rsquo;s canonical 6C specification page owns detailed mechanics.</li>
+  <li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener">CME DataMine historical data catalog</a> for available official historical futures datasets. No dataset was purchased or retrieved for this page.</li>
+  <li><a href="https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm" target="_blank" rel="noopener">NIST/SEMATECH Engineering Statistics Handbook introduction to time-series analysis</a> for time dependence and model-validation context.</li>
+  <li><a href="https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd44.htm" target="_blank" rel="noopener">NIST/SEMATECH guidance on model fit and residual validation</a> for the limitation of relying on one fit statistic.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/fraudadv_tradingsystem.html" target="_blank" rel="noopener">CFTC advisory on commodity trading systems and hypothetical performance</a> for simulation and hindsight limitations.</li>
+  <li><a href="https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/" target="_blank" rel="noopener">Bank of Canada policy decision schedule</a>, <a href="https://www.statcan.gc.ca/o1/en/calendar" target="_blank" rel="noopener">Statistics Canada release calendar</a>, and <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">Federal Reserve FOMC calendar</a> for event controls.</li>
+</ul><p>Sources and methods were reviewed August 13, 2026. This article presents an original validation framework but reports no original indicator or performance result. It is unsponsored editorial analysis.</p></details>
+<aside class="ca-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>The validation design is educational; it is not evidence that an indicator works or personalized trading, statistical, legal, tax, hedging, or brokerage advice. Leveraged futures losses may outrun the initial margin deposit. Technical relationships can be selected by chance, decay, or fail after costs. Verify current contracts, data, liquidity, execution assumptions, margin, and risk limits before acting.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>
