@@ -2,44 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tradovate Chart Drawing Tools Explained for Beginners</title>
-  <meta name="description" content="A no-bullshit guide to Tradovate’s chart drawing tools. Learn how to use trendlines, zones, fibs, and measurement tools without getting lost in the menu.">
+  <meta name="description" content="Learn how to place, edit, duplicate and sync Tradovate drawing tools, including trend lines, rectangles, text, line extensions and volume profiles.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/platforms-tutorials/tradovate-chart-drawing-tools-explained.html">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Tradovate Chart Drawing Tools Explained for Beginners">
-  <meta property="og:description" content="A no-bullshit guide to Tradovate’s chart drawing tools. Learn how to use trendlines, zones, fibs, and measurement tools without getting lost in the menu.">
+  <meta property="og:description" content="Learn how to place, edit, duplicate and sync Tradovate drawing tools, including trend lines, rectangles, text, line extensions and volume profiles.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/platforms-tutorials/tradovate-chart-drawing-tools-explained.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta name="twitter:title" content="Tradovate Chart Drawing Tools Explained for Beginners">
-  <meta name="twitter:description" content="A no-bullshit guide to Tradovate’s chart drawing tools. Learn how to use trendlines, zones, fibs, and measurement tools without getting lost in the menu.">
+  <meta name="twitter:description" content="Learn how to place, edit, duplicate and sync Tradovate drawing tools, including trend lines, rectangles, text, line extensions and volume profiles.">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
 
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="tradovate-drawing-tools-guide.css">
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -48,151 +43,618 @@
     gtag('config', 'G-JMJVR3G5YN');
   </script>
 
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Tradovate Chart Drawing Tools Explained for Beginners",
-  "description": "A no-bullshit guide to Tradovate’s chart drawing tools. Learn how to use trendlines, zones, fibs, and measurement tools without getting lost in the menu.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/platforms-tutorials/tradovate-chart-drawing-tools-explained.html",
-  "datePublished": "2025-11-21",
-  "dateModified": "2025-11-21",
-  "url": "https://grizzlyparrottrading.com/platforms-tutorials/tradovate-chart-drawing-tools-explained.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Tradovate Chart Drawing Tools Explained for Beginners",
+    "description": "Learn how to place, edit, duplicate and sync Tradovate drawing tools, including trend lines, rectangles, text, line extensions and volume profiles.",
+    "author": {
+      "@type": "Person",
+      "name": "Kyle Parrott",
+      "url": "https://grizzlyparrottrading.com/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grizzly Parrot Trading",
+      "url": "https://grizzlyparrottrading.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://grizzlyparrottrading.com/OG-default.png"
+      }
+    },
+    "mainEntityOfPage": "https://grizzlyparrottrading.com/platforms-tutorials/tradovate-chart-drawing-tools-explained.html",
+    "url": "https://grizzlyparrottrading.com/platforms-tutorials/tradovate-chart-drawing-tools-explained.html",
+    "image": "https://grizzlyparrottrading.com/OG-default.png",
+    "datePublished": "2025-11-21",
+    "dateModified": "2026-08-16",
+    "inLanguage": "en-US",
+    "articleSection": "Platforms & Tutorials",
+    "about": [
+      {"@type": "SoftwareApplication", "name": "Tradovate"},
+      {"@type": "Thing", "name": "Chart drawing tools"},
+      {"@type": "Thing", "name": "Futures chart markup"}
+    ],
+    "citation": [
+      "https://tradovate.zendesk.com/hc/en-us/articles/115012316127-How-do-I-use-the-Trend-drawing-tool",
+      "https://tradovate.zendesk.com/hc/en-us/articles/115012316207-How-do-I-use-the-Rectangle-drawing-tool",
+      "https://tradovate.zendesk.com/hc/en-us/articles/115012316287-How-do-I-use-the-Text-tool-on-the-chart",
+      "https://tradovate.zendesk.com/hc/en-us/articles/19434482731155-Synchronizing-Drawing-Tools-on-Tradovate-Charts"
+    ]
+  }
+  </script>
 
-  <!-- JSON-LD: Breadcrumbs -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Platforms & Tutorials",
-      "item": "https://grizzlyparrottrading.com/platforms-tutorials/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Tradovate Chart Drawing Tools Explained for Beginners",
-      "item": "https://grizzlyparrottrading.com/platforms-tutorials/tradovate-chart-drawing-tools-explained.html"
-    }
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Platforms & Tutorials",
+        "item": "https://grizzlyparrottrading.com/platforms-tutorials/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Tradovate Chart Drawing Tools Explained for Beginners",
+        "item": "https://grizzlyparrottrading.com/platforms-tutorials/tradovate-chart-drawing-tools-explained.html"
+      }
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
 </head>
 <body>
+  <a class="td-skip-link" href="#main-content">Skip to the guide</a>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="https://grizzlyparrottrading.com/">Grizzly Parrot Trading</a>
+      </div>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
+          <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
+          <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
+          <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
+          <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
+          <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/" aria-current="page">Platforms</a></li>
+          <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
+          <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+  <main id="main-content" class="td-guide">
+    <article>
+      <header class="td-hero">
+        <div class="container td-hero-grid">
+          <div class="td-hero-copy">
+            <p class="td-eyebrow">Tradovate native charts · Beginner workflow</p>
+            <h1>Tradovate Chart Drawing Tools Explained for Beginners</h1>
+            <p class="td-deck">Choose the drawing that matches the question, place its anchors deliberately, and make the mark explainable later. This guide covers the native Tradovate Chart module—not order lines, indicators, or a trading signal disguised as chart markup.</p>
+            <div class="td-byline" aria-label="Article details">
+              <span>By <a href="/about.html">Kyle Parrott</a></span>
+              <span>Updated August 16, 2026</span>
+              <span>Official-help review completed</span>
+            </div>
+          </div>
 
-<h1>Tradovate Chart Drawing Tools Explained for Beginners</h1>
+          <aside class="td-quick-card" aria-labelledby="td-quick-title">
+            <p class="td-card-kicker">The short answer</p>
+            <h2 id="td-quick-title">Open, place, edit</h2>
+            <ol>
+              <li>Move into a Tradovate Chart module.</li>
+              <li>Open the <strong>Drawing Tools</strong> menu.</li>
+              <li>Select a tool and place its required anchor point or points.</li>
+              <li>Double-click the object—or its border—to edit supported settings.</li>
+            </ol>
+            <p>Tradovate’s official help documents this basic pattern for Trend, Rectangle and Text. Exact icon placement can differ by platform version and device.</p>
+          </aside>
+        </div>
+      </header>
 
-<p>If you can’t mark levels, trends, or zones cleanly in Tradovate, you’re trading blind. This guide breaks down the drawing tools that actually matter—no guessing, just the chart tools you’ll use daily.</p>
+      <nav class="td-jump" aria-label="On this page">
+        <div class="container td-jump-inner">
+          <span>Jump to</span>
+          <a href="#choose">Choose a tool</a>
+          <a href="#lines">Lines</a>
+          <a href="#areas">Areas and notes</a>
+          <a href="#edit">Edit and duplicate</a>
+          <a href="#sync">Sync charts</a>
+          <a href="#troubleshoot">Fast fixes</a>
+        </div>
+      </nav>
 
-<h2>Where the Drawing Tools Are</h2>
-<p>On Tradovate charts, the drawing toolbar sits on the left side. If it’s hidden, hit the pencil icon. Every tool works the same way: click the tool, click the chart, adjust the anchor points. Simple.</p>
+      <div class="container td-article-shell">
+        <!-- ARTICLE BODY START -->
+        <section class="td-section td-intro" aria-labelledby="placement-title">
+          <div class="td-section-heading">
+            <p class="td-section-number">01</p>
+            <div>
+              <p class="td-kicker">Placement model</p>
+              <h2 id="placement-title">Most drawings are anchors plus settings</h2>
+            </div>
+          </div>
 
-<h2>Trendline Tool: The Foundation</h2>
-<p>The trendline is the most-used drawing tool. Pick two anchor points and drag. Use it to spot structure, channel breaks, and momentum shifts. It’s basic, but if you can’t draw straight lines, you can’t trade price action.</p>
+          <p>Tradovate’s native drawing workflow is easier to remember when you stop treating every menu item as a separate skill. A line or area usually starts with one click, ends with another, and becomes editable after placement. Text is the main one-click exception: place the text field, then edit its content and appearance.</p>
 
-<table>
-<tr><th>Use Case</th><th>Benefit</th></tr>
-<tr><td>Trend direction</td><td>Shows bias at a glance</td></tr>
-<tr><td>Breakout levels</td><td>Easy to visualize shifts</td></tr>
-<tr><td>Channels</td><td>Helps track volatility expansion</td></tr>
-</table>
+          <div class="td-anchor-flow" aria-label="Drawing placement sequence">
+            <div>
+              <span>1</span>
+              <strong>Define the question</strong>
+              <p>Exact price, slope, area, note or sampled range?</p>
+            </div>
+            <div>
+              <span>2</span>
+              <strong>Place anchors</strong>
+              <p>Use prices and times you could identify before seeing the outcome.</p>
+            </div>
+            <div>
+              <span>3</span>
+              <strong>Edit the object</strong>
+              <p>Set extension, opacity, text or other supported properties.</p>
+            </div>
+            <div>
+              <span>4</span>
+              <strong>Record its meaning</strong>
+              <p>A drawing is useful only if you can explain why it is there.</p>
+            </div>
+          </div>
 
-<h2>Rectangle / Zone Tool: Marking Key Areas</h2>
-<p>Rectangles let you mark supply, demand, consolidation, and imbalance zones. For futures traders, this is how you frame risk. If you’ve read <a href="https://grizzlyparrottrading.com/market-basics/market-structure-basics.html">market structure basics</a>, you know zones anchor your trade plan.</p>
+          <aside class="td-callout td-callout-neutral">
+            <strong>Platform scope</strong>
+            <p>Tradovate offers web, desktop and mobile access. The official help examples used here primarily show the native Chart module and WebTrader workflow. If your current menu is arranged differently, use the tool names and interaction pattern—not the screenshot position—as the durable reference.</p>
+          </aside>
+        </section>
 
-<h2>Fibonacci Retracement: If You Actually Use It</h2>
-<p>Some traders swear by fibs. Some ignore them. Either way, Tradovate’s fib tool is simple: click swing low to swing high (or vice versa). The most commonly watched levels are 38.2%, 50%, and 61.8%. Use them as confluence, not gospel.</p>
+        <section id="choose" class="td-section" aria-labelledby="choose-title">
+          <div class="td-section-heading">
+            <p class="td-section-number">02</p>
+            <div>
+              <p class="td-kicker">Tool selection</p>
+              <h2 id="choose-title">Choose the drawing from the question</h2>
+            </div>
+          </div>
 
-<h2>Measurement Tool: Know Your Risk Fast</h2>
-<p>The ruler icon shows ticks, price distance, and time between two points. This is critical if you’re trading a prop evaluation where tick size equals survival. Pair it with the ideas from <a href="https://grizzlyparrottrading.com/prop-firm-trading/one-contract-evaluation-strategy.html">one-contract evaluation strategy</a> to size properly.</p>
+          <p>A chart becomes cluttered when one object is forced to do every job. Pick the simplest drawing that preserves the information you need. The table is a decision guide, not a claim that a marked level predicts what price will do next.</p>
 
-<h2>Cleaning Up Your Chart</h2>
-<p>Right-click any drawing to edit or delete it. Keep your charts clean. If you can't see what matters, you hesitate. And hesitation kills trades. Drawing tools should help you see the play forming, not distract you.</p>
+          <div class="td-table-wrap" role="region" tabindex="0" aria-label="Tradovate drawing tool selection table">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Question</th>
+                  <th scope="col">Useful tool</th>
+                  <th scope="col">What the anchors mean</th>
+                  <th scope="col">Common misuse</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Where is one exact price?</th>
+                  <td>Horizontal line, ray or extended line</td>
+                  <td>A defined price; extension controls how far the reference remains visible</td>
+                  <td>Drawing a thick zone when the source is one recorded price</td>
+                </tr>
+                <tr>
+                  <th scope="row">What slope connects two defined pivots?</th>
+                  <td>Trend</td>
+                  <td>First pivot and second pivot, selected by the same rule</td>
+                  <td>Moving anchors until the line fits the desired story</td>
+                </tr>
+                <tr>
+                  <th scope="row">What price-time area am I tracking?</th>
+                  <td>Rectangle</td>
+                  <td>Opposite corners of a bounded area</td>
+                  <td>Treating every price inside the box as equivalent</td>
+                </tr>
+                <tr>
+                  <th scope="row">Why did I mark this?</th>
+                  <td>Text</td>
+                  <td>One location for a short, specific annotation</td>
+                  <td>Writing a paragraph over the candles</td>
+                </tr>
+                <tr>
+                  <th scope="row">How was volume distributed across a chosen bar range?</th>
+                  <td>Volume Profile</td>
+                  <td>The beginning and end of the sample</td>
+                  <td>Comparing profiles built from different ranges as if they were identical</td>
+                </tr>
+                <tr>
+                  <th scope="row">Where do proportional reference levels fall between two anchors?</th>
+                  <td>Fibonacci Retracement, if present in your current menu</td>
+                  <td>The defined start and end of the measured move</td>
+                  <td>Calling a percentage level support without independent evidence</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
 
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
+        <section id="lines" class="td-section" aria-labelledby="lines-title">
+          <div class="td-section-heading">
+            <p class="td-section-number">03</p>
+            <div>
+              <p class="td-kicker">Line logic</p>
+              <h2 id="lines-title">Segments, rays and lines answer different time questions</h2>
+            </div>
+          </div>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+          <p>The important difference is not color or thickness. It is whether the reference ends at its anchors or continues beyond them. Tradovate’s edit modal supports a <strong>ray</strong> that extends in the direction drawn and a <strong>line</strong> that extends in both directions. Save the extension as a default only when that behavior fits most future uses of that tool.</p>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
+          <div class="td-line-grid">
+            <article>
+              <div class="td-line-visual td-line-segment" aria-hidden="true"></div>
+              <h3>Bounded segment</h3>
+              <p>Useful when the start and end times matter—for example, connecting two observed pivots without projecting the relationship indefinitely.</p>
+            </article>
+            <article>
+              <div class="td-line-visual td-line-ray" aria-hidden="true"></div>
+              <h3>Directional ray</h3>
+              <p>Useful when a reference begins at a known event or pivot and should remain visible only in the direction of later bars.</p>
+            </article>
+            <article>
+              <div class="td-line-visual td-line-full" aria-hidden="true"></div>
+              <h3>Full line</h3>
+              <p>Useful when the price or relationship should remain visible on both sides of the original anchor area.</p>
+            </article>
+          </div>
+
+          <h3 class="td-subhead">Trend is a two-anchor tool with an optional channel</h3>
+          <p>Tradovate documents Trend as a two-click drawing: the first click starts the line and the second completes it. After placement, the line can be grabbed and widened to show a channel above and below the central trend line. That channel is a geometric overlay. It does not establish that the market is trending or that either boundary will hold.</p>
+
+          <div class="td-do-dont">
+            <div class="td-do">
+              <p class="td-card-kicker">More defensible</p>
+              <h3>Define pivots first</h3>
+              <p>Example: connect the first two confirmed swing lows produced by one written pivot rule, then leave the anchors unchanged during review.</p>
+            </div>
+            <div class="td-dont">
+              <p class="td-card-kicker">Easy to fool yourself</p>
+              <h3>Fit the line afterward</h3>
+              <p>Dragging the anchors until several later candles touch the line makes the drawing look precise without testing whether the rule worked prospectively.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="areas" class="td-section" aria-labelledby="areas-title">
+          <div class="td-section-heading">
+            <p class="td-section-number">04</p>
+            <div>
+              <p class="td-kicker">Areas and annotations</p>
+              <h2 id="areas-title">Use rectangles for ranges and text for meaning</h2>
+            </div>
+          </div>
+
+          <div class="td-split">
+            <div>
+              <h3>Rectangle: preserve an area</h3>
+              <p>Tradovate’s Rectangle tool uses two clicks to set opposite corners. Double-click the border to edit supported display settings and save preferred defaults. A rectangle is appropriate when both price and time boundaries matter: a consolidation range, an event window, or a review area.</p>
+              <p>A box should not silently expand into a claim. Write down whether its top and bottom come from candle bodies, full wicks, a defined session, or another reproducible rule. If the bounds change whenever price escapes, the rectangle is documenting hindsight rather than a testable idea.</p>
+            </div>
+            <div class="td-zone-demo" aria-label="Illustrative bounded rectangle with distinct upper, middle and lower areas">
+              <span class="td-zone-label td-zone-label-top">Upper boundary</span>
+              <span class="td-zone-mid">Observed range</span>
+              <span class="td-zone-label td-zone-label-bottom">Lower boundary</span>
+            </div>
+          </div>
+
+          <div class="td-split td-split-reverse">
+            <div>
+              <h3>Text: attach the reason</h3>
+              <p>The Text tool uses one click to place a field. Double-click the text to edit its wording, font, color and opacity. Keep annotations short enough to scan and specific enough to audit later.</p>
+              <ul class="td-check-list">
+                <li><strong>Identify the source:</strong> “Prior session high,” not “important level.”</li>
+                <li><strong>Add the date or session:</strong> prevent an old mark from masquerading as current context.</li>
+                <li><strong>State the test:</strong> “Acceptance above?” is clearer than “breakout.”</li>
+                <li><strong>Remove expired notes:</strong> a chart is not a permanent archive.</li>
+              </ul>
+            </div>
+            <div class="td-note-demo" aria-label="Example of a concise chart annotation">
+              <span>Prior session high</span>
+              <strong>5,284.25</strong>
+              <small>Question: hold above after retest?</small>
+            </div>
+          </div>
+        </section>
+
+        <section class="td-section" aria-labelledby="profile-title">
+          <div class="td-section-heading">
+            <p class="td-section-number">05</p>
+            <div>
+              <p class="td-kicker">Range study</p>
+              <h2 id="profile-title">Volume Profile is a sampled range, not ordinary markup</h2>
+            </div>
+          </div>
+
+          <p>Tradovate’s advanced-charting help places Volume Profile under the chart’s line tools. You place it over a selected bar range and can adjust its beginning or end afterward. That makes the sample definition the core decision: session-only, overnight-only and multi-session profiles answer different questions.</p>
+
+          <aside class="td-callout td-callout-caution">
+            <strong>Keep the denominator honest</strong>
+            <p>Two profiles are comparable only when their instruments, contract months, session templates and selected ranges are compatible. The profile displays traded volume over the chosen sample; it does not prove why price traded there or guarantee a future response.</p>
+          </aside>
+
+          <p>Fibonacci overlays belong in the same “measurement, not signal” category. Tradovate support has documented editable Fib Retracement levels, but the available menu and defaults can change. If you use the tool, record both anchors and the level set. A percentage becomes reproducible only when another reader can rebuild the same overlay.</p>
+        </section>
+
+        <section id="edit" class="td-section" aria-labelledby="edit-title">
+          <div class="td-section-heading">
+            <p class="td-section-number">06</p>
+            <div>
+              <p class="td-kicker">Object management</p>
+              <h2 id="edit-title">Edit, duplicate, default and remove without rebuilding</h2>
+            </div>
+          </div>
+
+          <div class="td-action-grid">
+            <article>
+              <span class="td-action-key">Double-click</span>
+              <h3>Edit the selected object</h3>
+              <p>Official help documents double-click editing for Trend, Rectangle and Text. For a rectangle, target its border. Available fields depend on the object.</p>
+            </article>
+            <article>
+              <span class="td-action-key">Ctrl / Command</span>
+              <h3>Duplicate on desktop</h3>
+              <p>Hold <kbd>Ctrl</kbd> on Windows or <kbd>Command</kbd> on Mac and double-click a drawing to create a copy that can be dragged elsewhere.</p>
+            </article>
+            <article>
+              <span class="td-action-key">Save as Default</span>
+              <h3>Reuse intentional settings</h3>
+              <p>Tradovate documents saved defaults for line extensions and Rectangle settings. Use this for repeatable appearance—not to make every drawing visually identical.</p>
+            </article>
+            <article>
+              <span class="td-action-key">Remove</span>
+              <h3>Delete expired context</h3>
+              <p>The Trend edit flow includes removal. If an object no longer represents the rule or sample named in its note, remove it instead of quietly moving it.</p>
+            </article>
+          </div>
+
+          <p class="td-inline-link">For colors, opacity and object defaults in more detail, use the separate <a href="/platforms-tutorials/tradovate-drawing-tool-settings-and-customization.html">Tradovate drawing settings and customization guide</a>.</p>
+        </section>
+
+        <section id="sync" class="td-section" aria-labelledby="sync-title">
+          <div class="td-section-heading">
+            <p class="td-section-number">07</p>
+            <div>
+              <p class="td-kicker">Multi-chart workflow</p>
+              <h2 id="sync-title">Sync drawings only across charts you intend to link</h2>
+            </div>
+          </div>
+
+          <p>Tradovate’s documented WebTrader procedure has two separate gates. First, assign the same colored chart-link dot to the chart windows that belong together. Second, open the Drawing Tools menu and enable <strong>Sync Charts</strong>. Turning off the same option un-syncs the drawings.</p>
+
+          <ol class="td-sync-steps">
+            <li>
+              <span>1</span>
+              <div>
+                <strong>Open the chart windows</strong>
+                <p>Set up the charts you want to compare before enabling synchronization.</p>
+              </div>
+            </li>
+            <li>
+              <span>2</span>
+              <div>
+                <strong>Assign one matching chart-link color</strong>
+                <p>Tradovate warns that the chosen color should be unique to this chart sync rather than reused for a Quote Board sync.</p>
+              </div>
+            </li>
+            <li>
+              <span>3</span>
+              <div>
+                <strong>Enable Sync Charts</strong>
+                <p>Use the Drawing Tools menu after the chart windows share the intended link color.</p>
+              </div>
+            </li>
+            <li>
+              <span>4</span>
+              <div>
+                <strong>Test with one harmless mark</strong>
+                <p>Confirm where it appears before adding the rest of the analysis, especially when symbols or timeframes differ.</p>
+              </div>
+            </li>
+          </ol>
+
+          <aside class="td-callout td-callout-neutral">
+            <strong>Synchronization copies a drawing; it does not validate it</strong>
+            <p>A price level can be meaningful on one contract month and visually misleading on another. Check the symbol, contract month, session template and scale on every linked chart.</p>
+          </aside>
+        </section>
+
+        <section class="td-section" aria-labelledby="workflow-title">
+          <div class="td-section-heading">
+            <p class="td-section-number">08</p>
+            <div>
+              <p class="td-kicker">Clean-chart routine</p>
+              <h2 id="workflow-title">A six-step markup workflow you can review later</h2>
+            </div>
+          </div>
+
+          <ol class="td-workflow">
+            <li>
+              <strong>Start with one question.</strong>
+              <p>Example: “Did price remain above the prior session high after returning to it?”</p>
+            </li>
+            <li>
+              <strong>Use the smallest sufficient object.</strong>
+              <p>A horizontal line records the exact prior high. A rectangle is justified only if the source itself is an area.</p>
+            </li>
+            <li>
+              <strong>Place anchors from a written rule.</strong>
+              <p>Do not move a line or box because later price action made the original placement inconvenient.</p>
+            </li>
+            <li>
+              <strong>Add a compact text label.</strong>
+              <p>Name the level, session and question so the chart remains intelligible after the moment passes.</p>
+            </li>
+            <li>
+              <strong>Separate observation from action.</strong>
+              <p>The drawing records context. Entry, invalidation, size and order type belong to a separate decision process.</p>
+            </li>
+            <li>
+              <strong>Archive evidence, then clean the workspace.</strong>
+              <p>Save screenshots or journal records elsewhere and delete chart objects that no longer describe current analysis.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section id="troubleshoot" class="td-section" aria-labelledby="troubleshoot-title">
+          <div class="td-section-heading">
+            <p class="td-section-number">09</p>
+            <div>
+              <p class="td-kicker">Fast fixes</p>
+              <h2 id="troubleshoot-title">When a drawing does not behave as expected</h2>
+            </div>
+          </div>
+
+          <div class="td-table-wrap" role="region" tabindex="0" aria-label="Tradovate drawing tool troubleshooting table">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Problem</th>
+                  <th scope="col">Check</th>
+                  <th scope="col">Why it matters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">You cannot find the menu</th>
+                  <td>Move the pointer into the Chart module and look for Drawing Tools or Line Tools in the chart controls.</td>
+                  <td>Tradovate’s help uses both labels across chart features and versions.</td>
+                </tr>
+                <tr>
+                  <th scope="row">A line ends too early</th>
+                  <td>Double-click it and inspect the ray or line extension settings.</td>
+                  <td>A segment, directional ray and full line have different endpoints.</td>
+                </tr>
+                <tr>
+                  <th scope="row">A rectangle hides the candles</th>
+                  <td>Double-click its border and reduce the supported fill opacity.</td>
+                  <td>The object should preserve context without covering the evidence.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Text will not change</th>
+                  <td>Double-click the Text object to open its editor.</td>
+                  <td>Placement and content editing are separate actions.</td>
+                </tr>
+                <tr>
+                  <th scope="row">A linked chart receives no drawings</th>
+                  <td>Confirm matching chart-link colors and that Sync Charts is enabled.</td>
+                  <td>Tradovate’s documented workflow requires both conditions.</td>
+                </tr>
+                <tr>
+                  <th scope="row">You need another copy</th>
+                  <td>On Windows, hold Ctrl and double-click; on Mac, hold Command and double-click.</td>
+                  <td>The official shortcut duplicates the object so you can reposition it.</td>
+                </tr>
+                <tr>
+                  <th scope="row">The view is distorted, not the drawing</th>
+                  <td>Use chart zoom or double-click the price axis to autofit.</td>
+                  <td>Zoom controls the view; it is not a drawing object.</td>
+                </tr>
+                <tr>
+                  <th scope="row">You are moving an order line</th>
+                  <td>Stop and verify whether chart trading is enabled.</td>
+                  <td>Orders and bracket lines can change live risk. They are covered in the <a href="/platforms-tutorials/tradovate-chart-trading-basics.html">chart-trading guide</a>, not here.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="td-section td-boundary" aria-labelledby="boundary-title">
+          <div class="td-section-heading">
+            <p class="td-section-number">10</p>
+            <div>
+              <p class="td-kicker">Guide boundaries</p>
+              <h2 id="boundary-title">Where this page stops</h2>
+            </div>
+          </div>
+
+          <p>This guide owns tool choice, placement, editing, duplication and drawing synchronization. The neighboring pages below answer different questions so you do not have to hunt through one giant tutorial.</p>
+
+          <div class="td-related-grid">
+            <a href="/platforms-tutorials/tradovate-drawing-tool-settings-and-customization.html">
+              <span>Appearance</span>
+              <strong>Drawing settings and customization</strong>
+              <p>Colors, opacity, line weight and reusable object defaults.</p>
+            </a>
+            <a href="/platforms-tutorials/tradovate-chart-settings-complete-guide.html">
+              <span>Chart display</span>
+              <strong>Complete chart settings</strong>
+              <p>Candles, scales, sessions, grid and indicator visibility.</p>
+            </a>
+            <a href="/platforms-tutorials/tradovate-chart-trading-basics.html">
+              <span>Order handling</span>
+              <strong>Chart trading basics</strong>
+              <p>Entry, stop, target and working-order lines that can affect a live account.</p>
+            </a>
+            <a href="/platforms-tutorials/tradovate-workspace-setup-basics.html">
+              <span>Layout</span>
+              <strong>Workspace setup</strong>
+              <p>Organizing charts and execution modules into a usable workspace.</p>
+            </a>
+          </div>
+        </section>
+
+        <section class="td-section td-sources" aria-labelledby="sources-title">
+          <div class="td-section-heading">
+            <p class="td-section-number">11</p>
+            <div>
+              <p class="td-kicker">Primary documentation</p>
+              <h2 id="sources-title">Official sources and product scope</h2>
+            </div>
+          </div>
+
+          <p>Product behavior was reviewed against Tradovate’s own platform and support documentation on August 16, 2026. Tradovate can change labels, defaults and layouts. Check the current platform before relying on a location-specific instruction.</p>
+
+          <ul>
+            <li><a href="https://tradovate.zendesk.com/hc/en-us/articles/115012316127-How-do-I-use-the-Trend-drawing-tool" rel="noopener noreferrer">Tradovate Help: Trend drawing tool</a></li>
+            <li><a href="https://tradovate.zendesk.com/hc/en-us/articles/115012316207-How-do-I-use-the-Rectangle-drawing-tool" rel="noopener noreferrer">Tradovate Help: Rectangle drawing tool</a></li>
+            <li><a href="https://tradovate.zendesk.com/hc/en-us/articles/115012316287-How-do-I-use-the-Text-tool-on-the-chart" rel="noopener noreferrer">Tradovate Help: Text tool</a></li>
+            <li><a href="https://tradovate.zendesk.com/hc/en-us/articles/360022601293-How-do-I-extend-drawing-lines-past-the-current-bar" rel="noopener noreferrer">Tradovate Help: ray and line extensions</a></li>
+            <li><a href="https://tradovate.zendesk.com/hc/en-us/articles/360049977014-How-can-I-copy-paste-drawings-on-a-chart" rel="noopener noreferrer">Tradovate Help: duplicate chart drawings</a></li>
+            <li><a href="https://tradovate.zendesk.com/hc/en-us/articles/19434482731155-Synchronizing-Drawing-Tools-on-Tradovate-Charts" rel="noopener noreferrer">Tradovate Help: synchronize drawing tools</a></li>
+            <li><a href="https://tradovate.zendesk.com/hc/en-us/articles/115000729627-How-do-I-access-Advanced-Charting-in-Tradovate" rel="noopener noreferrer">Tradovate Help: advanced charting and Volume Profile</a></li>
+            <li><a href="https://tradovate.zendesk.com/hc/en-us/articles/16652112539667-How-Can-I-Zoom-In-and-Out-on-a-Chart" rel="noopener noreferrer">Tradovate Help: chart zoom and autofit</a></li>
+            <li><a href="https://www.tradovate.com/platform/" rel="noopener noreferrer">Tradovate platform overview</a></li>
+          </ul>
+
+          <p class="td-disclosure">Tradovate is a third-party platform and trademark of its owner. Grizzly Parrot Trading is not affiliated with, endorsed by, or sponsored by Tradovate or NinjaTrader. This educational guide does not provide investment advice, and chart drawings are not trade recommendations.</p>
+        </section>
+        <!-- ARTICLE BODY END -->
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-book">
+        <h3>Books</h3>
+        <p>Market structure, risk, and execution frameworks.</p>
+        <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
+      </div>
+      <div class="footer-links">
+        <a href="https://grizzlyparrottrading.com/about.html">About</a>
+        <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
+        <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
+        <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
+      <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+      </script>
     </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
+  </footer>
 </body>
 </html>
