@@ -2,44 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contango vs Backwardation: What Futures Traders Must Understand</title>
-  <meta name="description" content="Understand contango vs backwardation, how futures curve structure works, and why it impacts rollover cost, pricing, and long-term profitability.">
+  <title>Contango vs Backwardation: How to Read a Futures Curve</title>
+  <meta name="description" content="Learn contango vs backwardation, what shapes a futures curve, how convergence and rolling affect exposure, and what curve structure can and cannot signal.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/contango-vs-backwardation.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Contango vs Backwardation: What Futures Traders Must Understand">
-  <meta property="og:description" content="Understand contango vs backwardation, how futures curve structure works, and why it impacts rollover cost, pricing, and long-term profitability.">
+  <meta property="og:title" content="Contango vs Backwardation: How to Read a Futures Curve">
+  <meta property="og:description" content="Learn contango vs backwardation, what shapes a futures curve, how convergence and rolling affect exposure, and what curve structure can and cannot signal.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/contango-vs-backwardation.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Contango and backwardation futures curve education from Grizzly Parrot Trading.">
+  <meta property="article:published_time" content="2025-11-20">
+  <meta property="article:modified_time" content="2026-08-17">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contango vs Backwardation: How to Read a Futures Curve">
+  <meta name="twitter:description" content="Learn contango vs backwardation, what shapes a futures curve, how convergence and rolling affect exposure, and what curve structure can and cannot signal.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Contango vs Backwardation: What Futures Traders Must Understand">
-  <meta name="twitter:description" content="Understand contango vs backwardation, how futures curve structure works, and why it impacts rollover cost, pricing, and long-term profitability.">
+  <meta name="twitter:image:alt" content="Contango and backwardation futures curve education from Grizzly Parrot Trading.">
 
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="contango-backwardation-guide.css">
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -48,232 +45,613 @@
     gtag('config', 'G-JMJVR3G5YN');
   </script>
 
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Contango vs Backwardation: What Futures Traders Must Understand",
-  "description": "Understand contango vs backwardation, how futures curve structure works, and why it impacts rollover cost, pricing, and long-term profitability.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/contango-vs-backwardation.html",
-  "datePublished": "2025-11-20",
-  "dateModified": "2025-11-20",
-  "url": "https://grizzlyparrottrading.com/futures-basics/contango-vs-backwardation.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Contango vs Backwardation: How to Read a Futures Curve",
+    "description": "Learn contango vs backwardation, what shapes a futures curve, how convergence and rolling affect exposure, and what curve structure can and cannot signal.",
+    "author": {
+      "@type": "Person",
+      "name": "Kyle Parrott",
+      "url": "https://grizzlyparrottrading.com/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grizzly Parrot Trading",
+      "url": "https://grizzlyparrottrading.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://grizzlyparrottrading.com/OG-default.png"
+      }
+    },
+    "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/contango-vs-backwardation.html",
+    "url": "https://grizzlyparrottrading.com/futures-basics/contango-vs-backwardation.html",
+    "image": "https://grizzlyparrottrading.com/OG-default.png",
+    "datePublished": "2025-11-20",
+    "dateModified": "2026-08-17",
+    "inLanguage": "en-US",
+    "articleSection": "Futures Basics",
+    "about": [
+      {"@type": "Thing", "name": "Futures term structure"},
+      {"@type": "Thing", "name": "Contango"},
+      {"@type": "Thing", "name": "Backwardation"},
+      {"@type": "Thing", "name": "Futures contract rolling"}
+    ],
+    "citation": [
+      "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CFTCGlossary/index.htm",
+      "https://www.cmegroup.com/education/courses/introduction-to-base-metals/what-is-contango-and-backwardation",
+      "https://www.cmegroup.com/articles/whitepapers/trading-energy-calendar-spread-options.html",
+      "https://www.cmegroup.com/education/whitepapers/reconciling-fx-spot-futures-prices",
+      "https://www.cmegroup.com/content/dam/cmegroup/education/files/understanding-stock-index-futures.pdf",
+      "https://www.eia.gov/todayinenergy/detail.php?id=62605",
+      "https://www.federalreserve.gov/pubs/ifdp/2011/1025/ifdp1025.htm"
+    ]
+  }
+  </script>
 
-  <!-- JSON-LD: Breadcrumbs -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Contango vs Backwardation: What Futures Traders Must Understand",
-      "item": "https://grizzlyparrottrading.com/futures-basics/contango-vs-backwardation.html"
-    }
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Futures Basics",
+        "item": "https://grizzlyparrottrading.com/futures-basics/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Contango vs Backwardation: How to Read a Futures Curve",
+        "item": "https://grizzlyparrottrading.com/futures-basics/contango-vs-backwardation.html"
+      }
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
 </head>
 <body>
+  <a class="curve-skip" href="#curve-main">Skip to the curve guide</a>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="https://grizzlyparrottrading.com/">Grizzly Parrot Trading</a>
+      </div>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="https://grizzlyparrottrading.com/futures-basics/" aria-current="page">Futures Basics</a></li>
+          <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
+          <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
+          <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
+          <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
+          <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
+          <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
+          <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-            <h1>Contango vs Backwardation: What Futures Traders Must Understand</h1>
-
-            <p>
-                If you don’t understand contango vs backwardation, you don’t understand how futures prices are structured, and you definitely don’t understand what you’re paying or earning when you roll a contract.
-            </p>
-
-            <h2>What the Futures Curve Is</h2>
-            <p>
-                The futures curve is just a chart of prices for different contract months.  
-                Its shape tells you how the market expects the underlying to behave over time.
-            </p>
-
-            <p>
-                This directly affects roll cost, long-term profitability, and how a futures price diverges from the spot market.
-            </p>
-
-            <h2>Contango: When Future Prices Rise Over Time</h2>
-            <p>
-                Contango means distant futures contracts are more expensive than near-term contracts.  
-                This is normal in markets where storage, insurance, or financing costs exist—like crude oil or metals.
-            </p>
-
-            <h3>Contango characteristics</h3>
-            <ul>
-                <li>Deferred contracts trade at higher prices.</li>
-                <li>Rolling long positions usually costs money (negative roll yield).</li>
-                <li>Markets with high storage costs naturally sit in contango.</li>
-            </ul>
-
-            <p>
-                Example:  
-                If the front-month crude oil contract is $75 and the next month is $76.20, the market is in contango.
-            </p>
-
-            <h2>Backwardation: When Future Prices Drop Over Time</h2>
-            <p>
-                Backwardation means far-dated contracts cost less than near-term ones.  
-                This happens when there’s immediate demand or tight supply.
-            </p>
-
-            <h3>Backwardation characteristics</h3>
-            <ul>
-                <li>Deferred contracts trade below the front month.</li>
-                <li>Rolling long positions can actually earn money (positive roll yield).</li>
-                <li>Common in commodities facing short-term shortages.</li>
-            </ul>
-
-            <p>
-                Example:  
-                If front-month natural gas is $3.10 and next month is $2.75, that’s backwardation.
-            </p>
-
-            <h2>Contango vs Backwardation Side-by-Side</h2>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Contango</th>
-                        <th>Backwardation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Curve Shape</td>
-                        <td>Upward sloping</td>
-                        <td>Downward sloping</td>
-                    </tr>
-                    <tr>
-                        <td>Deferred Prices</td>
-                        <td>Higher</td>
-                        <td>Lower</td>
-                    </tr>
-                    <tr>
-                        <td>Impact on Long Rolls</td>
-                        <td>Cost money</td>
-                        <td>Earn money</td>
-                    </tr>
-                    <tr>
-                        <td>Common In</td>
-                        <td>Oil, metals, grains</td>
-                        <td>Shortage-driven markets</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>How This Impacts Your Roll</h2>
-            <p>
-                When you roll a futures contract, you’re closing the expiring month and opening the next one.  
-                The difference between the two prices is your roll yield—positive or negative.
-            </p>
-
-            <h3>Roll yield rules</h3>
-            <ul>
-                <li>Contango → you pay to roll.</li>
-                <li>Backwardation → you get paid to roll.</li>
-                <li>Roll cost is real P&amp;L, not theoretical.</li>
-            </ul>
-
-            <h2>Why This Matters Even for Short-Term Traders</h2>
-            <p>
-                Even if you don’t trade long-term, contango vs backwardation affects volatility, liquidity, and how far months track spot.  
-                It also affects prop firm rules, margin changes, and big event-driven moves.
-            </p>
-
-            <div class="highlight-box green">
-              <h3>The Curve Isn’t Background — It’s the Trade</h3>
-              <p>Contango and backwardation aren't just market trivia — they define roll costs, pricing behavior, and long-term PnL. If you don’t know the curve structure you’re trading into, you’re leaving the most predictable part of futures trading on the table.</p>
+  <main id="curve-main" class="curve-guide">
+    <article>
+      <header class="curve-hero">
+        <div class="container curve-hero-grid">
+          <div class="curve-hero-copy">
+            <p class="curve-eyebrow">Futures term structure · Curve interpretation</p>
+            <h1>Contango vs Backwardation: How to Read a Futures Curve</h1>
+            <p class="curve-deck">Contango and backwardation describe the price relationship between delivery months. They do not, by themselves, predict the next price move. Read the curve as a set of relative prices shaped by carry, inventories, seasonality, hedging and contract design.</p>
+            <div class="curve-byline" aria-label="Article details">
+              <span>By <a href="/about.html">Kyle Parrott</a></span>
+              <span>Updated August 17, 2026</span>
+              <span>Primary-source review completed</span>
             </div>
+          </div>
 
-            <!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
+          <aside class="curve-answer" aria-labelledby="curve-answer-title">
+            <p class="curve-card-label">The 20-second answer</p>
+            <h2 id="curve-answer-title">Compare like with like</h2>
+            <dl>
+              <div>
+                <dt>Deferred above nearby</dt>
+                <dd><span class="curve-dot curve-dot--up" aria-hidden="true"></span>Contango</dd>
+              </div>
+              <div>
+                <dt>Deferred below nearby</dt>
+                <dd><span class="curve-dot curve-dot--down" aria-hidden="true"></span>Backwardation</dd>
+              </div>
+              <div>
+                <dt>Little difference</dt>
+                <dd><span class="curve-dot curve-dot--flat" aria-hidden="true"></span>Flat segment</dd>
+              </div>
+            </dl>
+            <p>Use the same underlying, contract specification, venue and timestamp. A curve can contain more than one shape at once.</p>
+          </aside>
+        </div>
+      </header>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+      <nav class="curve-rail" aria-label="On this page">
+        <div class="container curve-rail-inner">
+          <span>Read the curve</span>
+          <a href="#definitions">Definitions</a>
+          <a href="#shape">Curve shape</a>
+          <a href="#drivers">Drivers</a>
+          <a href="#forecast">Forecast myth</a>
+          <a href="#rolling">Rolling</a>
+          <a href="#workflow">Workflow</a>
+          <a href="#mistakes">Mistakes</a>
+        </div>
+      </nav>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
+      <div class="container curve-shell">
+        <!-- ARTICLE BODY START -->
+        <section id="definitions" class="curve-section curve-opening" aria-labelledby="definitions-title">
+          <div class="curve-heading">
+            <p class="curve-kicker">Start with the relationship</p>
+            <h2 id="definitions-title">Contango and backwardation describe shape, not market direction</h2>
+          </div>
+
+          <p>A futures curve is a snapshot of prices for multiple delivery months in the same market. The CFTC defines <strong>contango</strong> as successively higher prices in deferred months and <strong>backwardation</strong> as progressively lower prices in deferred months. Exchange education also uses spot-to-futures comparisons. Both conventions express the same basic question: <em>is later delivery priced above or below earlier delivery?</em></p>
+
+          <p>This guide uses the contract-to-contract convention because traders can read it directly from listed futures quotes. “Nearby” means the earlier contract month in the comparison. “Deferred” means the later month. The label says nothing about whether every contract will rise or fall tomorrow.</p>
+
+          <div class="curve-table-wrap" role="region" tabindex="0" aria-label="Contango and backwardation comparison table">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Question</th>
+                  <th scope="col">Contango</th>
+                  <th scope="col">Backwardation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Price relationship</th>
+                  <td>Deferred contract is above the nearby contract.</td>
+                  <td>Deferred contract is below the nearby contract.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Typical visual</th>
+                  <td>Curve slopes upward as maturity extends.</td>
+                  <td>Curve slopes downward as maturity extends.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Physical-commodity context</th>
+                  <td>Carry costs and ample inventory can support the premium.</td>
+                  <td>Scarce nearby supply or high convenience yield can support the premium in early months.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Long rolling exposure, all else equal</th>
+                  <td>Usually faces a negative roll component.</td>
+                  <td>Usually receives a positive roll component.</td>
+                </tr>
+                <tr>
+                  <th scope="row">What it proves</th>
+                  <td colspan="2">Only the relative price structure at that snapshot—not the next directional move or a guaranteed return.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="shape" class="curve-section" aria-labelledby="shape-title">
+          <div class="curve-heading">
+            <p class="curve-kicker">Two clean examples</p>
+            <h2 id="shape-title">Read the ladder before naming the curve</h2>
+          </div>
+
+          <p>The hypothetical prices below isolate curve shape. They are not forecasts, current quotes or trade recommendations.</p>
+
+          <div class="curve-snapshots" aria-label="Hypothetical contango and backwardation price ladders">
+            <figure class="curve-snapshot curve-snapshot--contango">
+              <figcaption>
+                <span>Contango example</span>
+                <strong>Later delivery costs more</strong>
+              </figcaption>
+              <ol class="curve-ladder">
+                <li><span>August</span><b>72.40</b><i style="--curve-level: 52%"></i></li>
+                <li><span>September</span><b>73.10</b><i style="--curve-level: 68%"></i></li>
+                <li><span>December</span><b>74.00</b><i style="--curve-level: 88%"></i></li>
+              </ol>
+              <p>Nearby minus deferred: 72.40 − 73.10 = <strong>−0.70</strong>.</p>
+            </figure>
+
+            <figure class="curve-snapshot curve-snapshot--backwardation">
+              <figcaption>
+                <span>Backwardation example</span>
+                <strong>Earlier delivery costs more</strong>
+              </figcaption>
+              <ol class="curve-ladder">
+                <li><span>August</span><b>74.00</b><i style="--curve-level: 88%"></i></li>
+                <li><span>September</span><b>73.10</b><i style="--curve-level: 68%"></i></li>
+                <li><span>December</span><b>72.40</b><i style="--curve-level: 52%"></i></li>
+              </ol>
+              <p>Nearby minus deferred: 74.00 − 73.10 = <strong>+0.90</strong>.</p>
+            </figure>
+          </div>
+
+          <div class="curve-callout curve-callout--neutral">
+            <div>
+              <p class="curve-callout-label">Sign convention used here</p>
+              <p><code>calendar spread = nearby price − deferred price</code></p>
+            </div>
+            <p>A negative spread marks contango for that pair. A positive spread marks backwardation. Trading platforms may display calendar spreads with another leg order, so verify the symbol definition before interpreting the sign.</p>
+          </div>
+
+          <h3>A market does not have to fit one label from front to back</h3>
+          <p>Real curves can be flat, steep, humped, inverted in only one segment or strongly seasonal. Natural gas, grains and refined products may price different delivery seasons differently. “The market is in contango” is often shorthand for the front of the curve, not proof that every listed month rises from left to right.</p>
+
+          <div class="curve-shape-strip" aria-label="Common futures curve shapes">
+            <div><span class="curve-mini curve-mini--up" aria-hidden="true"></span><strong>Upward</strong><small>Contango across the observed months</small></div>
+            <div><span class="curve-mini curve-mini--down" aria-hidden="true"></span><strong>Downward</strong><small>Backwardation across the observed months</small></div>
+            <div><span class="curve-mini curve-mini--flat" aria-hidden="true"></span><strong>Flat</strong><small>Small differences relative to normal noise and costs</small></div>
+            <div><span class="curve-mini curve-mini--mixed" aria-hidden="true"></span><strong>Mixed</strong><small>Different sections carry different labels</small></div>
+          </div>
+        </section>
+
+        <section id="drivers" class="curve-section" aria-labelledby="drivers-title">
+          <div class="curve-heading">
+            <p class="curve-kicker">The same shape can have different causes</p>
+            <h2 id="drivers-title">Carry is market-specific</h2>
+          </div>
+
+          <p>For a storable physical commodity, a simplified carry relationship is financing plus storage and insurance, offset by the benefit of having inventory available now. That inventory benefit is called <strong>convenience yield</strong>. High storage costs or abundant inventory can support contango. Tight inventory and a high operational value of immediate supply can support backwardation.</p>
+
+          <p>That explanation does not transfer unchanged to every futures market. A cash-settled equity index cannot be stored in a tank, and an FX future reflects two currencies. The curve must be interpreted through the economics of its underlying instrument.</p>
+
+          <div class="curve-table-wrap" role="region" tabindex="0" aria-label="Futures curve drivers by market type">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Market type</th>
+                  <th scope="col">Important curve inputs</th>
+                  <th scope="col">What to avoid assuming</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Storable commodities</th>
+                  <td>Financing, storage, insurance, inventory level, storage capacity and convenience yield.</td>
+                  <td>Backwardation always means a literal shortage, or contango always means weak demand.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Seasonal commodities</th>
+                  <td>Harvest or production cycles, weather, transport constraints and predictable demand seasons.</td>
+                  <td>Every hump or dip is a new directional signal; it may be ordinary seasonality.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Equity index futures</th>
+                  <td>Financing rates and expected dividends until expiration, plus market frictions around fair value.</td>
+                  <td>An upward curve represents storage cost or necessarily predicts a rising index.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Currency futures</th>
+                  <td>Short-term interest-rate differential, time to maturity and quote convention.</td>
+                  <td>A higher deferred FX price is a clean forecast of the future spot exchange rate.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="curve-equation" aria-label="Simplified commodity cost of carry relationship">
+            <span>Storable commodity curve</span>
+            <strong>financing + storage + insurance − convenience yield</strong>
+            <p>This is an organizing relationship, not a plug-in trading signal. Contract grade, delivery location, taxes, transport and limits on arbitrage can matter too.</p>
+          </div>
+        </section>
+
+        <section id="forecast" class="curve-section curve-forecast" aria-labelledby="forecast-title">
+          <div class="curve-heading">
+            <p class="curve-kicker">The most expensive misconception</p>
+            <h2 id="forecast-title">A futures curve is not a clean forecast path</h2>
+          </div>
+
+          <p>An upward curve does not simply say “the market expects price to rise,” and a downward curve does not simply say “the market expects price to fall.” Futures prices incorporate the economics of carrying exposure between dates. They also reflect hedging demand, risk transfer, inventory conditions and expectations—but those pieces cannot be separated by looking at slope alone.</p>
+
+          <p>Federal Reserve research on commodity futures found mixed forecasting performance across markets and periods. The practical conclusion is modest: the curve contains information, but each point is a traded price for a particular delivery date, not a promise about the spot price that will eventually occur.</p>
+
+          <div class="curve-signal-grid">
+            <div class="curve-signal-card curve-signal-card--yes">
+              <p class="curve-card-label">The curve can help you study</p>
+              <ul>
+                <li>relative scarcity across delivery windows;</li>
+                <li>the cost or benefit associated with carrying exposure;</li>
+                <li>seasonal premiums and discounts;</li>
+                <li>how stress is concentrated near or far on the curve;</li>
+                <li>whether spreads are steepening, flattening or inverting.</li>
+              </ul>
+            </div>
+            <div class="curve-signal-card curve-signal-card--no">
+              <p class="curve-card-label">The curve cannot prove</p>
+              <ul>
+                <li>the next outright price direction;</li>
+                <li>that a shortage or surplus has one single cause;</li>
+                <li>that the current shape will survive until expiration;</li>
+                <li>that a long or short position will be profitable;</li>
+                <li>that a deferred quote will equal future spot.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="rolling" class="curve-section" aria-labelledby="rolling-title">
+          <div class="curve-heading">
+            <p class="curve-kicker">Roll mechanics without the shortcut</p>
+            <h2 id="rolling-title">The price gap is not an instant trading loss or gain</h2>
+          </div>
+
+          <p>Suppose a trader closes an August long at 72.40 and opens a September long at 73.10. The 0.70 difference does not appear as an immediate 0.70 loss on the new position. The August contract’s realized P&amp;L depends on its own entry and exit. The September contract starts at its own execution price and is marked from there.</p>
+
+          <p>The curve still matters. As expiration approaches, futures and spot tend to converge. If the surrounding price level and curve shape were somehow unchanged, a long contract priced above spot would tend to move down toward spot, while one priced below spot would tend to move up. In live markets, spot moves, every contract moves and the curve reshapes, so that “all else equal” effect is only one component of the result.</p>
+
+          <div class="curve-roll-ledger">
+            <div>
+              <span>Close the old month</span>
+              <strong>Realize that contract’s P&amp;L</strong>
+              <p>Entry-to-exit movement, multiplied by the contract’s point value and quantity, determines the realized result before costs.</p>
+            </div>
+            <div aria-hidden="true" class="curve-roll-arrow">→</div>
+            <div>
+              <span>Open the new month</span>
+              <strong>Reset exposure at a new price</strong>
+              <p>The new contract has a different maturity and begins accumulating P&amp;L from its own fill.</p>
+            </div>
+          </div>
+
+          <h3>Where “positive” and “negative” roll yield fit</h3>
+          <p>For a continuously rolled long exposure, contango is generally associated with a negative roll component and backwardation with a positive roll component, holding other factors constant. The sign reverses for comparable short exposure. That relationship is useful for analyzing an index, fund or strategy that repeatedly maintains futures exposure; it is not a guarantee about a single discretionary roll.</p>
+
+          <div class="curve-return-stack">
+            <p class="curve-card-label">A practical return decomposition</p>
+            <div>
+              <span>Spot-price component</span>
+              <b>+</b>
+              <span>Roll component</span>
+              <b>+</b>
+              <span>Collateral return</span>
+              <b>−</b>
+              <span>Fees and trading costs</span>
+            </div>
+            <p>A direct futures account is marked to market on the contracts actually held. Index and fund methodologies may define and report these return components differently.</p>
+          </div>
+
+          <p class="curve-related-sentence">For execution timing and contract selection, use the <a href="/futures-basics/futures-rollover-explained.html">futures rollover guide</a>. For return accounting over repeated rolls, use <a href="/futures-basics/roll-yield-explained.html">Roll Yield Explained</a>.</p>
+        </section>
+
+        <section class="curve-section" aria-labelledby="changes-title">
+          <div class="curve-heading">
+            <p class="curve-kicker">Watch change, not just label</p>
+            <h2 id="changes-title">Four curve moves answer different questions</h2>
+          </div>
+
+          <div class="curve-move-grid">
+            <div>
+              <span class="curve-move-icon curve-move-icon--shift" aria-hidden="true"></span>
+              <h3>Parallel shift</h3>
+              <p>Most observed months rise or fall by similar amounts. Outright level changed more than relative structure.</p>
+            </div>
+            <div>
+              <span class="curve-move-icon curve-move-icon--steepen" aria-hidden="true"></span>
+              <h3>Steepening</h3>
+              <p>The price difference between selected months widens. Carry or relative scarcity is becoming more pronounced.</p>
+            </div>
+            <div>
+              <span class="curve-move-icon curve-move-icon--flatten" aria-hidden="true"></span>
+              <h3>Flattening</h3>
+              <p>The selected months move closer together. The relative premium or discount is shrinking.</p>
+            </div>
+            <div>
+              <span class="curve-move-icon curve-move-icon--invert" aria-hidden="true"></span>
+              <h3>Inversion</h3>
+              <p>A segment crosses from contango to backwardation or the reverse. The changed segment matters more than the headline label.</p>
+            </div>
+          </div>
+
+          <div class="curve-callout curve-callout--day">
+            <div>
+              <p class="curve-callout-label">Why an intraday trader should still look</p>
+              <h3>The curve is context, not an entry trigger</h3>
+            </div>
+            <ul>
+              <li>Confirm which contract holds the usable volume and open interest.</li>
+              <li>Check whether the continuous chart back-adjusts, ratio-adjusts or leaves a rollover gap.</li>
+              <li>Separate an outright move from a calendar-spread move.</li>
+              <li>Check whether an event repriced nearby months, deferred months or both.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="workflow" class="curve-section curve-workflow" aria-labelledby="workflow-title">
+          <div class="curve-heading">
+            <p class="curve-kicker">A repeatable read</p>
+            <h2 id="workflow-title">Use this six-step curve workflow</h2>
+          </div>
+
+          <ol class="curve-steps">
+            <li>
+              <span>01</span>
+              <div><strong>Freeze one timestamp.</strong><p>Do not compare a delayed quote in one month with a live quote in another. Use the same venue, product and contract unit.</p></div>
+            </li>
+            <li>
+              <span>02</span>
+              <div><strong>Write the actual contract months.</strong><p>“Front” and “next” can change during rollover. Record the symbols or delivery months so the comparison remains reproducible.</p></div>
+            </li>
+            <li>
+              <span>03</span>
+              <div><strong>Calculate adjacent spreads.</strong><p>Using nearby minus deferred, negative means contango and positive means backwardation for that pair.</p></div>
+            </li>
+            <li>
+              <span>04</span>
+              <div><strong>Look beyond one pair.</strong><p>Plot at least several liquid months. Mark flat, steep, seasonal and mixed segments instead of forcing one label onto the whole curve.</p></div>
+            </li>
+            <li>
+              <span>05</span>
+              <div><strong>Match the market’s economics.</strong><p>Check inventory and storage for commodities, expected dividends and rates for equity indexes, or rate differentials for FX.</p></div>
+            </li>
+            <li>
+              <span>06</span>
+              <div><strong>State what would change your read.</strong><p>Record whether you are monitoring the outright level, the spread, the slope or an inversion—and what observation would invalidate the idea.</p></div>
+            </li>
+          </ol>
+
+          <div class="curve-worked-example">
+            <div>
+              <p class="curve-card-label">Worked snapshot</p>
+              <h3>One curve, two different segments</h3>
+            </div>
+            <dl>
+              <div><dt>August</dt><dd>72.40</dd></div>
+              <div><dt>September</dt><dd>73.10</dd></div>
+              <div><dt>December</dt><dd>72.80</dd></div>
+            </dl>
+            <ul>
+              <li>August − September = <strong>−0.70</strong>: the front pair is in contango.</li>
+              <li>September − December = <strong>+0.30</strong>: that later segment is backwardated.</li>
+              <li>Conclusion: call it a <strong>mixed or humped curve</strong>, not simply “contango.”</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="mistakes" class="curve-section" aria-labelledby="mistakes-title">
+          <div class="curve-heading">
+            <p class="curve-kicker">Fail the shortcuts</p>
+            <h2 id="mistakes-title">Six claims that do not survive a curve check</h2>
+          </div>
+
+          <div class="curve-table-wrap" role="region" tabindex="0" aria-label="Common contango and backwardation mistakes">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Claim</th>
+                  <th scope="col">Why it fails</th>
+                  <th scope="col">Better statement</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">“Contango means price will rise.”</th>
+                  <td>Slope contains carry and market-specific pricing inputs, not just an expected future spot price.</td>
+                  <td>Deferred delivery is currently priced above nearby delivery.</td>
+                </tr>
+                <tr>
+                  <th scope="row">“Backwardation is automatically bullish.”</th>
+                  <td>The entire price level can fall while the curve remains backwardated.</td>
+                  <td>Nearby delivery currently holds a premium to deferred delivery.</td>
+                </tr>
+                <tr>
+                  <th scope="row">“Buying the higher new contract loses the gap immediately.”</th>
+                  <td>The old contract is closed and a different contract opens at its own price.</td>
+                  <td>Analyze realized P&amp;L, new exposure and later convergence separately.</td>
+                </tr>
+                <tr>
+                  <th scope="row">“One spread labels the entire curve.”</th>
+                  <td>Curves can be seasonal, humped or inverted only in selected segments.</td>
+                  <td>Name the months and segment being compared.</td>
+                </tr>
+                <tr>
+                  <th scope="row">“All contango comes from storage.”</th>
+                  <td>Financial futures have different carry inputs, and even physical markets include more than storage.</td>
+                  <td>Use the pricing economics of the specific underlying.</td>
+                </tr>
+                <tr>
+                  <th scope="row">“Curve shape guarantees roll profit.”</th>
+                  <td>Outright moves, spread changes, slippage, fees and roll methodology can overwhelm the initial shape.</td>
+                  <td>Treat roll yield as one conditional return component.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="curve-section curve-boundaries" aria-labelledby="boundaries-title">
+          <div class="curve-heading">
+            <p class="curve-kicker">Continue at the right depth</p>
+            <h2 id="boundaries-title">Where this comparison guide stops</h2>
+          </div>
+
+          <p>This page owns the side-by-side definition, curve-reading workflow, asset-class distinctions and roll misconception. These neighboring guides take the next question without duplicating the same purpose.</p>
+
+          <div class="curve-related-grid">
+            <a href="/futures-basics/contango-deep-dive-futures-pricing.html">
+              <span>Upward curves</span>
+              <strong>Contango deep dive</strong>
+              <p>Storage, financing, insurance, convenience yield and calendar-spread mechanics.</p>
+            </a>
+            <a href="/futures-basics/backwardation-deep-dive-futures-pricing.html">
+              <span>Inverted curves</span>
+              <strong>Backwardation deep dive</strong>
+              <p>Nearby scarcity, inventory value and the mechanics behind a downward slope.</p>
+            </a>
+            <a href="/futures-basics/roll-yield-explained.html">
+              <span>Return accounting</span>
+              <strong>Roll yield explained</strong>
+              <p>How repeated contract replacement affects continuously maintained exposure.</p>
+            </a>
+            <a href="/futures-basics/futures-rollover-explained.html">
+              <span>Execution</span>
+              <strong>Futures rollover explained</strong>
+              <p>When liquidity migrates and how to close one month and open another.</p>
+            </a>
+            <a href="/energies/cl-calendar-spreads-contango-backwardation.html">
+              <span>Crude oil application</span>
+              <strong>CL calendar spreads</strong>
+              <p>How contango and backwardation appear in the WTI curve and energy spreads.</p>
+            </a>
+          </div>
+        </section>
+
+        <section class="curve-section curve-sources" aria-labelledby="sources-title">
+          <div class="curve-heading">
+            <p class="curve-kicker">Primary references</p>
+            <h2 id="sources-title">Official sources and review scope</h2>
+          </div>
+
+          <p>Definitions, convergence, carry relationships and market-specific distinctions were reviewed against regulator, exchange and U.S. government sources on August 17, 2026.</p>
+
+          <ul>
+            <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CFTCGlossary/index.htm" rel="noopener noreferrer">CFTC Futures Glossary: backwardation, contango, carrying charges and convergence</a></li>
+            <li><a href="https://www.cmegroup.com/education/courses/introduction-to-base-metals/what-is-contango-and-backwardation" rel="noopener noreferrer">CME Group: What Is Contango and Backwardation?</a></li>
+            <li><a href="https://www.cmegroup.com/articles/whitepapers/trading-energy-calendar-spread-options.html" rel="noopener noreferrer">CME Group: energy calendar spreads and convenience yield</a></li>
+            <li><a href="https://www.cmegroup.com/education/whitepapers/reconciling-fx-spot-futures-prices" rel="noopener noreferrer">CME Group: reconciling FX spot and futures prices</a></li>
+            <li><a href="https://www.cmegroup.com/content/dam/cmegroup/education/files/understanding-stock-index-futures.pdf" rel="noopener noreferrer">CME Group: Understanding Stock Index Futures</a></li>
+            <li><a href="https://www.eia.gov/todayinenergy/detail.php?id=62605" rel="noopener noreferrer">U.S. EIA: natural gas futures curves, storage and seasonality</a></li>
+            <li><a href="https://www.federalreserve.gov/pubs/ifdp/2011/1025/ifdp1025.htm" rel="noopener noreferrer">Federal Reserve: forecasting performance of commodity futures prices</a></li>
+          </ul>
+
+          <p class="curve-disclosure">This is market-structure education, not investment advice or a recommendation to trade an outright future, calendar spread, commodity product or fund. Contract rules, settlement methods, margin, liquidity and tax treatment vary. Verify the current exchange rulebook and your broker’s procedures before trading or rolling a position.</p>
+        </section>
+        <!-- ARTICLE BODY END -->
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-book">
+        <h3>Books</h3>
+        <p>Market structure, risk, and execution frameworks.</p>
+        <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
+      </div>
+      <div class="footer-links">
+        <a href="https://grizzlyparrottrading.com/about.html">About</a>
+        <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
+        <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
+        <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
+      <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+      </script>
     </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
+  </footer>
 </body>
 </html>
