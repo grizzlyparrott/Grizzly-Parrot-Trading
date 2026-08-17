@@ -15,6 +15,25 @@
   color: var(--tp-text);
 }
 
+.tp-skip {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1000;
+  padding: 0.8rem 1rem;
+  border-radius: 0.55rem;
+  background: #fff;
+  color: #071426 !important;
+  font-weight: 850;
+  text-decoration: none;
+  transform: translateY(-180%);
+  transition: transform 160ms ease;
+}
+
+.tp-skip:focus {
+  transform: translateY(0);
+}
+
 .ticks-points-guide *,
 .ticks-points-guide *::before,
 .ticks-points-guide *::after {
@@ -676,6 +695,77 @@
   margin: 0.35rem 0 0;
 }
 
+.tp-four-numbers {
+  border-top: 1px solid var(--tp-border);
+  border-bottom: 1px solid var(--tp-border);
+}
+
+.tp-number-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.tp-number-grid article {
+  position: relative;
+  overflow: hidden;
+  padding: 1.35rem;
+  border: 1px solid var(--tp-border);
+  border-radius: 1rem;
+  background: linear-gradient(145deg, rgba(10, 26, 46, 0.96), rgba(4, 14, 28, 0.96));
+}
+
+.tp-number-grid article::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--tp-cyan);
+  content: "";
+}
+
+.tp-number-grid article:nth-child(2)::before {
+  background: var(--tp-blue);
+}
+
+.tp-number-grid article:nth-child(3)::before {
+  background: var(--tp-amber);
+}
+
+.tp-number-grid article:nth-child(4)::before {
+  background: var(--tp-green);
+}
+
+.tp-number-grid span {
+  color: var(--tp-cyan);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tp-number-grid h3 {
+  margin: 0.55rem 0 0.8rem;
+  font-size: 1.13rem;
+  line-height: 1.35;
+}
+
+.tp-number-grid p {
+  margin: 0;
+  padding: 0.72rem 0.8rem;
+  border-radius: 0.7rem;
+  background: rgba(77, 216, 255, 0.07);
+  font-size: 0.86rem;
+}
+
+.tp-number-grid em {
+  display: block;
+  margin-top: 0.85rem;
+  color: #aebdce;
+  font-size: 0.82rem;
+  font-style: normal;
+  line-height: 1.58;
+}
+
 .tp-comparison-grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -1030,6 +1120,11 @@
   outline-offset: 3px;
 }
 
+.tp-skip:focus-visible {
+  outline: 3px solid #4dd8ff;
+  outline-offset: 3px;
+}
+
 @media (max-width: 980px) {
   .tp-hero {
     grid-template-columns: 1fr;
@@ -1041,6 +1136,10 @@
   }
 
   .tp-definition-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tp-related > div {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1070,6 +1169,7 @@
 
   .tp-hero-facts,
   .tp-formula-flow,
+  .tp-number-grid,
   .tp-worked-example,
   .tp-principle,
   .tp-checklist,
@@ -1129,6 +1229,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .tp-skip,
   .tp-button,
   .tp-related-tools > a {
     transition: none;
@@ -1137,6 +1238,7 @@
 
 @media print {
   .tp-on-page,
+  .tp-skip,
   .tp-hero-actions,
   .tp-calculator-form {
     display: none;

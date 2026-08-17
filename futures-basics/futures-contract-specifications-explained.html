@@ -2,288 +2,322 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Futures Contract Specifications Explained: What Every Trader Must Know</title>
-  <meta name="description" content="Learn the key futures contract specifications—tick size, tick value, multiplier, expiration, trading hours—and how each one affects your risk and strategy.">
+  <title>Futures Contract Specifications: How to Read Every Field</title>
+  <meta name="description" content="Learn how to read futures contract size, multiplier, tick, settlement, listed months, expiration and trading hours, with verified CME examples.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/futures-contract-specifications-explained.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Futures Contract Specifications Explained: What Every Trader Must Know">
-  <meta property="og:description" content="Learn the key futures contract specifications—tick size, tick value, multiplier, expiration, trading hours—and how each one affects your risk and strategy.">
+  <meta property="og:title" content="Futures Contract Specifications: How to Read Every Field">
+  <meta property="og:description" content="Learn how to read futures contract size, multiplier, tick, settlement, listed months, expiration and trading hours, with verified CME examples.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/futures-contract-specifications-explained.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Grizzly Parrot Trading reference guide to futures contract specifications.">
+  <meta property="article:published_time" content="2025-11-20">
+  <meta property="article:modified_time" content="2026-08-17">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Futures Contract Specifications: How to Read Every Field">
+  <meta name="twitter:description" content="Learn how to read futures contract size, multiplier, tick, settlement, listed months, expiration and trading hours, with verified CME examples.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Futures Contract Specifications Explained: What Every Trader Must Know">
-  <meta name="twitter:description" content="Learn the key futures contract specifications—tick size, tick value, multiplier, expiration, trading hours—and how each one affects your risk and strategy.">
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading reference guide to futures contract specifications.">
 
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="contract-specifications-guide.css?v=20260817-1">
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){window.dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-JMJVR3G5YN');
   </script>
 
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Futures Contract Specifications Explained: What Every Trader Must Know",
-  "description": "Learn the key futures contract specifications—tick size, tick value, multiplier, expiration, trading hours—and how each one affects your risk and strategy.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/futures-contract-specifications-explained.html",
-  "datePublished": "2025-11-20",
-  "dateModified": "2025-11-20",
-  "url": "https://grizzlyparrottrading.com/futures-basics/futures-contract-specifications-explained.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Futures Contract Specifications: How to Read Every Field",
+    "description": "Learn how to read futures contract size, multiplier, tick, settlement, listed months, expiration and trading hours, with verified CME examples.",
+    "author": {"@type": "Person", "name": "Kyle Parrott", "url": "https://grizzlyparrottrading.com/about.html"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grizzly Parrot Trading",
+      "url": "https://grizzlyparrottrading.com/",
+      "logo": {"@type": "ImageObject", "url": "https://grizzlyparrottrading.com/OG-default.png"}
+    },
+    "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/futures-contract-specifications-explained.html",
+    "url": "https://grizzlyparrottrading.com/futures-basics/futures-contract-specifications-explained.html",
+    "image": "https://grizzlyparrottrading.com/OG-default.png",
+    "datePublished": "2025-11-20",
+    "dateModified": "2026-08-17",
+    "inLanguage": "en-US",
+    "articleSection": "Futures Basics",
+    "about": [
+      {"@type": "Thing", "name": "Futures contract specifications"},
+      {"@type": "Thing", "name": "Futures tick size"},
+      {"@type": "Thing", "name": "Futures settlement"},
+      {"@type": "Thing", "name": "Futures expiration"}
+    ],
+    "citation": [
+      "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/FuturesMarketBasics/index.htm",
+      "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html",
+      "https://www.cmegroup.com/markets/equities/sp/micro-e-mini-sandp-500.contractSpecs.html",
+      "https://www.cmegroup.com/markets/energy/crude-oil/light-sweet-crude.contractSpecs.html",
+      "https://www.cmegroup.com/education/articles-and-reports/micro-wti-crude-oil-futures-faq",
+      "https://www.cmegroup.com/markets/metals/precious/gold.contractSpecs.html",
+      "https://www.cmegroup.com/markets/microsuite/metals.html",
+      "https://www.cmegroup.com/markets/fx/fx-product-guide.html",
+      "https://www.cmegroup.com/month-codes.html",
+      "https://www.cmegroup.com/tools-information/calendars/expiration-calendar.html"
+    ]
+  }
+  </script>
 
-  <!-- JSON-LD: Breadcrumbs -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Futures Contract Specifications Explained: What Every Trader Must Know",
-      "item": "https://grizzlyparrottrading.com/futures-basics/futures-contract-specifications-explained.html"
-    }
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrottrading.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Futures Basics", "item": "https://grizzlyparrottrading.com/futures-basics/"},
+      {"@type": "ListItem", "position": 3, "name": "Futures Contract Specifications: How to Read Every Field", "item": "https://grizzlyparrottrading.com/futures-basics/futures-contract-specifications-explained.html"}
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
 </head>
 <body>
+  <a class="cs-skip" href="#cs-main">Skip to the specification guide</a>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo"><a href="https://grizzlyparrottrading.com/">Grizzly Parrot Trading</a></div>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="https://grizzlyparrottrading.com/futures-basics/" aria-current="page">Futures Basics</a></li>
+          <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
+          <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
+          <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
+          <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
+          <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
+          <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
+          <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+  <main id="cs-main" class="cs-main">
+    <article>
+      <!-- ARTICLE BODY START -->
+      <header class="cs-hero">
+        <div class="container cs-hero-grid">
+          <div>
+            <p class="cs-eyebrow">Contract reference · Pre-trade verification</p>
+            <h1>Futures Contract Specifications: How to Read Every Field</h1>
+            <p class="cs-deck">A futures symbol is shorthand for a complete rule set: what one contract represents, how price is quoted, the smallest legal increment, how the position settles and when trading ends. Read those terms before treating the chart as tradable.</p>
+            <p class="cs-byline">By <a href="/about.html">Kyle Parrott</a> <span aria-hidden="true">·</span> Updated August 17, 2026</p>
+          </div>
 
-            <h1>Futures Contract Specifications Explained: What Every Trader Must Know</h1>
+          <aside class="cs-pocket-card" aria-labelledby="cs-pocket-title">
+            <p>Before the first order</p>
+            <h2 id="cs-pocket-title">Verify these eight fields</h2>
+            <ol>
+              <li><span>01</span>Product code and exchange</li>
+              <li><span>02</span>Contract unit or multiplier</li>
+              <li><span>03</span>Quote convention</li>
+              <li><span>04</span>Outright tick size and value</li>
+              <li><span>05</span>Listed contract months</li>
+              <li><span>06</span>Last trading day</li>
+              <li><span>07</span>Settlement or delivery method</li>
+              <li><span>08</span>Current trading hours and broker cutoff</li>
+            </ol>
+          </aside>
+        </div>
+      </header>
 
-            <p>
-                If you don’t understand the futures contract specifications for the market you’re trading, you don’t understand the risk. Contract specs define tick size, tick value, multiplier, expiration, and how the contract actually behaves—these matter more than your setup. This connects directly to <a href="https://grizzlyparrottrading.com/futures-basics/ticks-points-dollar-value.html">ticks and dollar value</a> and <a href="https://grizzlyparrottrading.com/futures-basics/futures-margin-requirements-explained.html">margin requirements</a>.
-            </p>
+      <div class="container cs-shell">
+        <section class="cs-section cs-first" aria-labelledby="cs-definition-title">
+          <div class="cs-heading"><p class="cs-kicker">What a specification actually does</p><h2 id="cs-definition-title">The contract defines the exposure; the chart only displays its price</h2></div>
+          <p class="cs-lead">Two futures can track the same underlying market and still have different multipliers, tick values, expiration rules or settlement methods. A trader who copies a stop distance from one product into another without translating the specification has changed the dollar risk—even when both charts look identical.</p>
 
-            <h2>What Contract Specs Are</h2>
-            <p>
-                Contract specs are the rulebook for each futures market. They tell you exactly how price moves, how much each move is worth, and when the contract expires. Every market has different specs—ES isn’t CL, and CL sure isn’t NG.
-            </p>
+          <div class="cs-rule-strip" aria-label="Specification relationship">
+            <div><span>Contract</span><strong>What one unit represents</strong></div>
+            <b aria-hidden="true">×</b>
+            <div><span>Price move</span><strong>How far the quote changed</strong></div>
+            <b aria-hidden="true">=</b>
+            <div><span>Gross P&amp;L</span><strong>Before fees and slippage</strong></div>
+          </div>
 
-            <h2>Core Contract Specification Components</h2>
+          <aside class="cs-warning"><strong>Margin is not part of that loss equation.</strong><p>Margin is collateral set by an exchange, clearing member or broker. It can change and is not a maximum-loss figure. Price distance, contract economics, quantity and execution costs determine trade-level exposure.</p></aside>
+        </section>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Spec</th>
-                        <th>What It Means</th>
-                        <th>Why It Matters</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Tick Size</td>
-                        <td>Smallest price movement</td>
-                        <td>Defines how fast P&amp;L changes</td>
-                    </tr>
-                    <tr>
-                        <td>Tick Value</td>
-                        <td>Dollars per tick</td>
-                        <td>Your real leverage per trade</td>
-                    </tr>
-                    <tr>
-                        <td>Multiplier</td>
-                        <td>Value applied to index/price</td>
-                        <td>Defines contract’s total size</td>
-                    </tr>
-                    <tr>
-                        <td>Expiration</td>
-                        <td>Last day contract trades</td>
-                        <td>Affects rollover timing</td>
-                    </tr>
-                    <tr>
-                        <td>Trading Hours</td>
-                        <td>When the market is open</td>
-                        <td>Controls volatility windows</td>
-                    </tr>
-                    <tr>
-                        <td>Settlement Type</td>
-                        <td>Cash vs physical</td>
-                        <td>Dictates delivery risk</td>
-                    </tr>
-                </tbody>
-            </table>
+        <section class="cs-section" aria-labelledby="cs-fields-title">
+          <div class="cs-heading"><p class="cs-kicker">The annotated specification</p><h2 id="cs-fields-title">Ten fields answer ten different operational questions</h2></div>
+          <div class="cs-field-list">
+            <article><span>01</span><div><h3>Product code</h3><p>Identifies the product family on the exchange and often differs from a data vendor’s continuous-chart symbol.</p></div><strong>Am I routing the intended instrument?</strong></article>
+            <article><span>02</span><div><h3>Contract unit or multiplier</h3><p>States the amount of commodity, currency or index exposure represented by one contract.</p></div><strong>How much exposure does one contract carry?</strong></article>
+            <article><span>03</span><div><h3>Price quotation</h3><p>Defines the unit in which the market is displayed: index points, dollars per barrel, USD per EUR, thirty-seconds of par and more.</p></div><strong>What does the number on the screen mean?</strong></article>
+            <article><span>04</span><div><h3>Minimum price fluctuation</h3><p>Gives the smallest permitted increment for the named instrument. Outrights, spreads and options may use different increments.</p></div><strong>Which prices are valid orders?</strong></article>
+            <article><span>05</span><div><h3>Tick value</h3><p>Translates one minimum increment into money for one contract. It follows from tick size and contract unit.</p></div><strong>How quickly does P&amp;L change?</strong></article>
+            <article><span>06</span><div><h3>Listed months</h3><p>Defines which expirations the exchange makes available and how far forward the listing schedule extends.</p></div><strong>Which maturity can I actually trade?</strong></article>
+            <article><span>07</span><div><h3>Trading hours</h3><p>States the exchange session, maintenance breaks and any product-specific windows. Holidays can override the normal schedule.</p></div><strong>When can the order enter the exchange?</strong></article>
+            <article><span>08</span><div><h3>Termination of trading</h3><p>Explains the last trading day and time, often through a product-specific business-day calculation.</p></div><strong>When does this contract stop trading?</strong></article>
+            <article><span>09</span><div><h3>Settlement method</h3><p>Specifies financial settlement or the delivery process, including the final price or delivery instrument.</p></div><strong>What obligation remains at expiration?</strong></article>
+            <article><span>10</span><div><h3>Rulebook chapter</h3><p>Contains the controlling legal terms, including grades, locations, price limits, position rules and settlement details.</p></div><strong>Where is the authoritative answer?</strong></article>
+          </div>
+        </section>
 
-            <h2>Example Contract Specs (ES vs CL)</h2>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>ES (S&P 500)</th>
-                        <th>CL (Crude Oil)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Tick size</td>
-                        <td>0.25</td>
-                        <td>0.01</td>
-                    </tr>
-                    <tr>
-                        <td>Tick value</td>
-                        <td>$12.50</td>
-                        <td>$10.00</td>
-                    </tr>
-                    <tr>
-                        <td>Multiplier</td>
-                        <td>50 × index</td>
-                        <td>1,000 barrels</td>
-                    </tr>
-                    <tr>
-                        <td>Expiration</td>
-                        <td>Quarterly</td>
-                        <td>Monthly</td>
-                    </tr>
-                    <tr>
-                        <td>Settlement</td>
-                        <td>Cash</td>
-                        <td>Physical delivery</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>Why Contract Specs Matter for Risk</h2>
-            <p>
-                If you don’t know the tick value and multiplier, you don’t know your position size.  
-                CL can move $1,000 in seconds. ES can rip $250 in one bar.  
-                Specs tell you whether a contract is a scalper’s playground or a widowmaker.
-            </p>
-
-            <h2>Specs Also Define Margin Requirements</h2>
-            <p>
-                Larger multipliers mean larger margin.  
-                Volatile tick structures mean higher margin during events.  
-                This ties directly into how <a href="https://grizzlyparrottrading.com/futures-basics/mark-to-market-explained.html">mark-to-market</a> hits your balance each day.
-            </p>
-
-            <h2>Where to Find Contract Specifications</h2>
-            <p>
-                Every contract's specs are published by the exchange (CME, NYMEX, COMEX, CBOT).  
-                Your broker platform usually lists them too—but the exchange is the real source.
-            </p>
-
-            <div class="highlight-box green">
-                <h3>Contract Specs Are the Market’s DNA</h3>
-                <p>Tick size, value, margin, expiration — none of it’s optional. These specs shape risk, movement, and execution. If you know them, you’re trading with clarity. If you don’t, you’re just guessing with leverage.</p>
+        <section class="cs-section cs-example" aria-labelledby="cs-example-title">
+          <div class="cs-heading"><p class="cs-kicker">Read one contract from left to right</p><h2 id="cs-example-title">An ES specification becomes a dollar relationship</h2></div>
+          <div class="cs-example-grid">
+            <dl>
+              <div><dt>Product</dt><dd>E-mini S&amp;P 500 futures</dd></div>
+              <div><dt>Globex code</dt><dd>ES</dd></div>
+              <div><dt>Contract multiplier</dt><dd>$50 × S&amp;P 500 Index</dd></div>
+              <div><dt>Outright tick</dt><dd>0.25 index points</dd></div>
+              <div><dt>Tick value</dt><dd>$12.50 per contract</dd></div>
+              <div><dt>Settlement</dt><dd>Financial</dd></div>
+            </dl>
+            <div class="cs-example-math">
+              <p>Proof of the tick value</p>
+              <strong>0.25 points × $50</strong>
+              <output>= $12.50 per tick</output>
+              <p>A 10-point move is 40 ticks. For one ES contract, 40 × $12.50 = $500 before costs.</p>
             </div>
+          </div>
+          <p class="cs-boundary">This does not establish the current lead month, hours, margin or final trading date. Those must be read from the current product page, calendar, notices and account rules.</p>
+        </section>
 
+        <section class="cs-section" aria-labelledby="cs-comparison-title">
+          <div class="cs-heading">
+            <p class="cs-kicker">Verified examples, not a universal lookup table</p>
+            <h2 id="cs-comparison-title">Similar names can hide important contract differences</h2>
+            <p>Values below cover named outright CME Group futures and were checked August 17, 2026. Options, calendar spreads and special price ranges can use different increments.</p>
+          </div>
+          <div class="cs-table-wrap" role="region" aria-label="Comparison of common futures contract specifications" tabindex="0">
+            <table>
+              <thead><tr><th scope="col">Contract</th><th scope="col">Code</th><th scope="col">Contract unit</th><th scope="col">Outright tick</th><th scope="col">Tick value</th><th scope="col">Final settlement</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">E-mini S&amp;P 500</th><td>ES</td><td>$50 × index</td><td>0.25 index points</td><td>$12.50</td><td>Financial</td></tr>
+                <tr><th scope="row">Micro E-mini S&amp;P 500</th><td>MES</td><td>$5 × index</td><td>0.25 index points</td><td>$1.25</td><td>Financial</td></tr>
+                <tr><th scope="row">WTI Crude Oil</th><td>CL</td><td>1,000 barrels</td><td>$0.01 per barrel</td><td>$10.00</td><td>Physical</td></tr>
+                <tr><th scope="row">Micro WTI Crude Oil</th><td>MCL</td><td>100 barrels</td><td>$0.01 per barrel</td><td>$1.00</td><td>Financial</td></tr>
+                <tr><th scope="row">Gold</th><td>GC</td><td>100 troy ounces</td><td>$0.10 per ounce</td><td>$10.00</td><td>Physical</td></tr>
+                <tr><th scope="row">Micro Gold</th><td>MGC</td><td>10 troy ounces</td><td>$0.10 per ounce</td><td>$1.00</td><td>Physical</td></tr>
+                <tr><th scope="row">Euro FX</th><td>6E</td><td>125,000 euros</td><td>0.00005 USD per EUR</td><td>$6.25</td><td>Physical</td></tr>
+                <tr><th scope="row">Micro EUR/USD</th><td>M6E</td><td>12,500 euros</td><td>0.0001 USD per EUR</td><td>$1.25</td><td>Physical</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="cs-comparison-notes">
+            <article><strong>Micro does not always mean identical mechanics divided by ten.</strong><p>MES is one tenth the ES multiplier and keeps the same outright tick size. M6E is one tenth the 6E contract unit but uses a different outright tick increment. MCL is financially settled while benchmark CL is physically settled.</p></article>
+            <article><strong>“Tick” requires an instrument qualifier.</strong><p>The outright future, calendar spread, option premium and block-trade convention can each have their own minimum increment. Copy the row for the exact thing being ordered.</p></article>
+          </div>
+        </section>
 
-            <!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
+        <section class="cs-section" aria-labelledby="cs-life-title">
+          <div class="cs-heading"><p class="cs-kicker">The life-cycle fields</p><h2 id="cs-life-title">Listing, last trade and settlement answer separate questions</h2></div>
+          <div class="cs-life-grid">
+            <article><span>Available</span><h3>Listed contract month</h3><p>The exchange has opened that maturity for trading. A listing does not mean it currently has useful liquidity.</p></article>
+            <article><span>Tradable</span><h3>Last trading day</h3><p>The exchange rule sets the final trading time. The broker may require an earlier exit.</p></article>
+            <article><span>Resolvable</span><h3>Final settlement</h3><p>The remaining obligation is closed through a financial calculation or a delivery process.</p></article>
+          </div>
+          <p>Use the standard month-code alphabet—F, G, H, J, K, M, N, Q, U, V, X and Z—to decode the month, then confirm how the platform appends the year. A continuous symbol is a research or display construct; an order must route to a listed contract.</p>
+          <a class="cs-inline-link" href="/futures-basics/contract-expiration-and-roll.html">Use the full expiration and roll guide for month codes, liquidity migration, delivery, broker cutoffs and continuous charts →</a>
+        </section>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+        <section class="cs-section cs-risk-section" aria-labelledby="cs-risk-title">
+          <div class="cs-heading"><p class="cs-kicker">Four numbers that should never be merged</p><h2 id="cs-risk-title">Notional value, margin, tick value and stop risk are different</h2></div>
+          <div class="cs-risk-grid">
+            <article><span>Contract exposure</span><h3>Notional value</h3><p>Current futures price × contract unit or multiplier. It changes with price and describes the economic exposure represented.</p></article>
+            <article><span>Collateral</span><h3>Margin</h3><p>The amount required to support the position. Exchange and broker requirements can change, and intraday terms can differ from overnight terms.</p></article>
+            <article><span>Minimum P&amp;L step</span><h3>Tick value</h3><p>Minimum price increment × contract unit. It is fixed by the named specification until that specification changes.</p></article>
+            <article><span>Planned loss estimate</span><h3>Stop risk</h3><p>Stop distance in ticks × tick value × contracts, plus estimated commissions and slippage. A stop is not guaranteed to fill at its trigger price.</p></article>
+          </div>
+          <div class="cs-risk-equation"><span>Trade-level estimate</span><strong>Stop ticks × tick value × contracts + costs</strong><a href="/futures-basics/ticks-points-dollar-value.html">Open the ticks-and-points calculator</a></div>
+        </section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
+        <section class="cs-section" aria-labelledby="cs-source-title">
+          <div class="cs-heading"><p class="cs-kicker">Source hierarchy</p><h2 id="cs-source-title">When two pages disagree, move closer to the controlling rule</h2></div>
+          <ol class="cs-source-ladder">
+            <li><span>1</span><div><h3>Exchange rulebook and product chapter</h3><p>Controlling contract terms, definitions, delivery standards and formal procedures.</p></div></li>
+            <li><span>2</span><div><h3>Current product specification and expiration calendar</h3><p>Operational summary, current listings and product-specific dates.</p></div></li>
+            <li><span>3</span><div><h3>Exchange notices and holiday advisories</h3><p>Changes, launches, delistings, temporary schedules and implementation dates.</p></div></li>
+            <li><span>4</span><div><h3>Broker or account-provider rules</h3><p>Earlier liquidations, delivery restrictions, margin, permissions and symbol mapping for that account.</p></div></li>
+            <li><span>5</span><div><h3>Platform and third-party reference tables</h3><p>Useful for workflow, but verify any conflict against the sources above.</p></div></li>
+          </ol>
+        </section>
+
+        <section class="cs-section cs-checklist" aria-labelledby="cs-checklist-title">
+          <div><p class="cs-kicker">A printable order-ticket check</p><h2 id="cs-checklist-title">Complete this card for the exact contract month</h2></div>
+          <div class="cs-check-grid">
+            <p><span aria-hidden="true">□</span> Product name, root and exchange</p>
+            <p><span aria-hidden="true">□</span> Month code and year</p>
+            <p><span aria-hidden="true">□</span> Contract unit or multiplier</p>
+            <p><span aria-hidden="true">□</span> Quote unit and valid tick</p>
+            <p><span aria-hidden="true">□</span> Dollar value per outright tick</p>
+            <p><span aria-hidden="true">□</span> Trading hours and maintenance break</p>
+            <p><span aria-hidden="true">□</span> Last trade, notice and settlement dates</p>
+            <p><span aria-hidden="true">□</span> Financial or physical settlement</p>
+            <p><span aria-hidden="true">□</span> Broker cutoff and account permission</p>
+            <p><span aria-hidden="true">□</span> Stop ticks, total dollars and cost allowance</p>
+          </div>
+        </section>
+
+        <section class="cs-section cs-related" aria-labelledby="cs-related-title">
+          <div class="cs-heading"><p class="cs-kicker">Use the canonical page for the next task</p><h2 id="cs-related-title">Specifications connect the rest of the contract workflow</h2></div>
+          <div class="cs-related-grid">
+            <a href="/futures-basics/ticks-points-dollar-value.html"><span>Contract math</span><strong>Ticks, Points and Dollar Value</strong><p>Convert a quoted move into whole ticks and gross dollars.</p></a>
+            <a href="/futures-basics/contract-expiration-and-roll.html"><span>Life cycle</span><strong>Expiration and Contract Roll</strong><p>Decode months, compare liquidity and verify the three clocks.</p></a>
+            <a href="/futures-basics/futures-margin-requirements-explained.html"><span>Collateral</span><strong>Futures Margin Requirements</strong><p>Separate exchange performance bonds from broker intraday terms.</p></a>
+            <a href="/futures-basics/fair-value-in-futures-explained.html"><span>Pricing</span><strong>Futures Fair Value</strong><p>See how spot, carry and contract maturity produce a model benchmark.</p></a>
+          </div>
+        </section>
+
+        <section class="cs-section cs-sources" aria-labelledby="cs-sources-title">
+          <div class="cs-heading"><p class="cs-kicker">Official references</p><h2 id="cs-sources-title">Sources, verification date and scope</h2></div>
+          <p>The general definitions and eight comparison rows were checked August 17, 2026. The table deliberately omits current margin estimates and exact expiration dates because those are dynamic and contract-month specific.</p>
+          <ul>
+            <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/FuturesMarketBasics/index.htm" rel="noopener noreferrer">CFTC: Basics of Futures Trading</a><span>Contract obligations, delivery, cash settlement and offsetting positions.</span></li>
+            <li><a href="https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html" rel="noopener noreferrer">CME Group: E-mini S&amp;P 500 Contract Specifications</a><span>ES contract multiplier, tick and settlement resources.</span></li>
+            <li><a href="https://www.cmegroup.com/markets/equities/sp/micro-e-mini-sandp-500.contractSpecs.html" rel="noopener noreferrer">CME Group: Micro E-mini S&amp;P 500 Specifications</a><span>MES multiplier and minimum tick.</span></li>
+            <li><a href="https://www.cmegroup.com/markets/energy/crude-oil/light-sweet-crude.contractSpecs.html" rel="noopener noreferrer">CME Group: WTI Crude Oil Contract Specifications</a><span>CL unit and physical-settlement resources.</span></li>
+            <li><a href="https://www.cmegroup.com/education/articles-and-reports/micro-wti-crude-oil-futures-faq" rel="noopener noreferrer">CME Group: Micro WTI Crude Oil FAQ</a><span>MCL versus CL unit, tick and settlement comparison.</span></li>
+            <li><a href="https://www.cmegroup.com/markets/metals/precious/gold.contractSpecs.html" rel="noopener noreferrer">CME Group: Gold Contract Specifications</a><span>GC product and delivery resources.</span></li>
+            <li><a href="https://www.cmegroup.com/markets/microsuite/metals.html" rel="noopener noreferrer">CME Group: Micro Metals Specifications</a><span>MGC unit, tick and settlement.</span></li>
+            <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" rel="noopener noreferrer">CME Group: FX Product Guide</a><span>6E and M6E units, outright increments, codes and settlement.</span></li>
+            <li><a href="https://www.cmegroup.com/month-codes.html" rel="noopener noreferrer">CME Group: Contract Month Codes</a><span>Official F-through-Z month mapping.</span></li>
+            <li><a href="https://www.cmegroup.com/tools-information/calendars/expiration-calendar.html" rel="noopener noreferrer">CME Group: Expiration Calendar</a><span>Current product-specific last-trade and settlement dates.</span></li>
+          </ul>
+          <p class="cs-disclosure">This is general education, not individualized trading, investment, legal, tax, delivery or brokerage advice. Futures are leveraged and can produce losses beyond the amount deposited. Exchange rules and broker requirements can change; verify the exact current contract and account terms before placing or holding a position.</p>
+        </section>
+      </div>
+      <!-- ARTICLE BODY END -->
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a></div>
+      <div class="footer-links"><a href="https://grizzlyparrottrading.com/about.html">About</a><a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a><a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a><a href="https://grizzlyparrottrading.com/contact.html">Contact</a></div>
+      <p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
     </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -11,13 +11,13 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Futures Contract Expiration and Roll | Complete Guide</title>
-  <meta name="description" content="Learn futures expiration, last trade, settlement, delivery, volume migration, rolling, contract codes, and continuous charts—with examples and a roll planner.">
+  <title>Futures Expiration and Contract Roll: Three Clocks, One Decision</title>
+  <meta name="description" content="Learn futures expiration, contract month codes, liquidity migration, broker cutoffs, settlement, delivery and rolling with an interactive roll planner.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/contract-expiration-and-roll.html">
 
-  <meta property="og:title" content="Futures Contract Expiration and Roll: Complete Guide">
-  <meta property="og:description" content="Separate the exchange clock, liquidity clock, and broker clock before a futures contract reaches expiration.">
+  <meta property="og:title" content="Futures Expiration and Contract Roll: Three Clocks, One Decision">
+  <meta property="og:description" content="Learn futures expiration, contract month codes, liquidity migration, broker cutoffs, settlement, delivery and rolling with an interactive roll planner.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/contract-expiration-and-roll.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
@@ -25,15 +25,17 @@
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
   <meta property="og:image:alt" content="Grizzly Parrot Trading guide to futures contract expiration and rollover.">
+  <meta property="article:published_time" content="2025-11-17">
+  <meta property="article:modified_time" content="2026-08-17">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta name="twitter:image:alt" content="Grizzly Parrot Trading guide to futures contract expiration and rollover.">
-  <meta name="twitter:title" content="Futures Contract Expiration and Roll">
-  <meta name="twitter:description" content="A complete guide to contract codes, volume migration, broker cutoffs, rolling, settlement, delivery, and continuous charts.">
+  <meta name="twitter:title" content="Futures Expiration and Contract Roll: Three Clocks, One Decision">
+  <meta name="twitter:description" content="Learn futures expiration, contract month codes, liquidity migration, broker cutoffs, settlement, delivery and rolling with an interactive roll planner.">
 
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="expiration-roll-guide.css?v=20260806-1">
+  <link rel="stylesheet" href="expiration-roll-guide.css?v=20260817-1">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
@@ -47,8 +49,8 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Futures Contract Expiration and Roll: Know When the Market Moves On",
-    "description": "A complete guide to futures contract month codes, last trading day, volume migration, position rolls, settlement, delivery, continuous charts, and broker cutoffs.",
+    "headline": "Futures Expiration and Contract Roll: Three Clocks, One Decision",
+    "description": "Learn futures expiration, contract month codes, liquidity migration, broker cutoffs, settlement, delivery and rolling with an interactive roll planner.",
     "author": {
       "@type": "Person",
       "name": "Kyle Parrott",
@@ -64,7 +66,7 @@
       }
     },
     "datePublished": "2025-11-17",
-    "dateModified": "2026-08-06",
+    "dateModified": "2026-08-17",
     "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/contract-expiration-and-roll.html",
     "url": "https://grizzlyparrottrading.com/futures-basics/contract-expiration-and-roll.html",
     "image": "https://grizzlyparrottrading.com/OG-default.png"
@@ -98,74 +100,11 @@
   }
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What happens when a futures contract expires?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "An open futures position reaches the settlement process defined by that contract. Depending on the product, settlement may be cash-based or may create delivery obligations. A trader who does not intend to settle normally offsets or rolls before the applicable exchange and broker deadlines."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is the futures roll date the same as the expiration date?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Expiration and last trading day are contract rules. A roll date is the point at which a trader, broker, platform, or market convention shifts attention to another month. Liquidity can migrate before expiration, and a broker can impose an earlier cutoff."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "When should a trader switch to the next futures contract?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "There is no universal switch rule. Verify the official product calendar and broker cutoff, then compare live volume, open interest, spread, and depth in the current and next contracts. The appropriate timing also depends on whether the trader is flat, intraday, or carrying exposure."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How is a long futures position rolled forward?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A long position is rolled by selling the current contract to close it and buying a later contract to re-establish exposure. The two legs can be executed separately or as a calendar-spread transaction where available. Each leg still has execution costs and the later contract may trade at a different price."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why do two futures contract months trade at different prices?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Different delivery months can reflect financing, storage, income, convenience yield, expected supply and demand, interest rates, and contract-specific settlement terms. The difference between months is a calendar spread or basis relationship, not automatically a chart error."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can a broker close a futures position before exchange expiration?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Brokers and prop-account providers can set position-liquidation, delivery, or trading cutoffs that are earlier than the exchange's final deadline. The account agreement and current broker notices control what the customer may hold."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are the futures contract month codes?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The standard month codes are F January, G February, H March, J April, K May, M June, N July, Q August, U September, V October, X November, and Z December. A full symbol combines a product root, month code, and year in a format that can vary by platform."
-        }
-      }
-    ]
-  }
-  </script>
-
   <script src="/uet.js" defer></script>
 </head>
 <body class="er-page">
+
+<a class="er-skip" href="#er-main">Skip to the expiration guide</a>
 
 <header class="site-header">
   <div class="container header-inner">
@@ -185,14 +124,14 @@
   </div>
 </header>
 
-<main class="er-main">
+<main class="er-main" id="er-main">
 <div class="er-shell">
 
 <header class="er-hero">
   <div class="er-hero-copy">
     <p class="er-kicker">Futures contract life cycle</p>
-    <h1>Futures Contract Expiration and Roll: Know When the Market Moves On</h1>
-    <p class="er-byline">By <a href="/about.html">Kyle Parrott</a> <span aria-hidden="true">&middot;</span> Updated August 6, 2026</p>
+    <h1>Futures Expiration and Contract Roll: Three Clocks, One Decision</h1>
+    <p class="er-byline">By <a href="/about.html">Kyle Parrott</a> <span aria-hidden="true">&middot;</span> Updated August 17, 2026</p>
     <p class="er-hero-lede">A futures contract does not become irrelevant on one universal “roll day.” <strong>Exchange rules, liquidity migration, and account cutoffs run on separate clocks.</strong> A sound roll decision verifies all three.</p>
     <div class="er-hero-actions">
       <a class="er-button" href="#roll-planner">Open the roll planner</a>
@@ -213,6 +152,7 @@
 <nav class="er-on-page" aria-label="On this page">
   <a href="#definitions">Definitions</a>
   <a href="#three-clocks">Three clocks</a>
+  <a href="#decision-matrix">Decision matrix</a>
   <a href="#month-codes">Month codes</a>
   <a href="#how-to-roll">How rolling works</a>
   <a href="#roll-planner">Roll planner</a>
@@ -252,6 +192,44 @@
     <article><span>Exchange</span><strong>What is legally and operationally defined?</strong><p>Last trade, final settlement, delivery period, holiday adjustments, and product rules.</p></article>
     <article><span>Liquidity</span><strong>Where can the order be executed responsibly?</strong><p>Volume, open interest, bid-ask spread, depth, queue, and the active contract month.</p></article>
     <article><span>Account</span><strong>What is your account allowed to hold?</strong><p>Broker liquidation notices, delivery restrictions, prop-firm rules, and platform symbol handling.</p></article>
+  </div>
+</section>
+
+<section class="er-section er-decision" id="decision-matrix" aria-labelledby="decision-matrix-title">
+  <div class="er-section-heading">
+    <p class="er-kicker">Turn three clocks into one action</p>
+    <h2 id="decision-matrix-title">A Roll Decision Matrix for Flat, Intraday and Carrying Traders</h2>
+    <p>A volume crossover is evidence about liquidity, not automatic permission to hold or a command to roll. Start with the earliest verified constraint, then apply the branch that matches the account's actual position state.</p>
+  </div>
+  <div class="er-decision-grid">
+    <article data-state="monitor">
+      <div><span>State 01</span><strong>All deadlines clear; current month still liquid</strong></div>
+      <p><b>Flat:</b> either month may be usable after comparing spread and depth.</p>
+      <p><b>Intraday:</b> trade only the book that meets the execution plan, then finish flat.</p>
+      <p><b>Carrying:</b> document the exit or roll trigger before the account cutoff.</p>
+      <em>Action: monitor both books; do not infer a universal roll date.</em>
+    </article>
+    <article data-state="migrate">
+      <div><span>State 02</span><strong>Next month now has the stronger executable book</strong></div>
+      <p><b>Flat:</b> route new setups to the verified active month.</p>
+      <p><b>Intraday:</b> change the chart, DOM, strategy and order ticket together.</p>
+      <p><b>Carrying:</b> compare a spread order with two separate legs and price both.</p>
+      <em>Action: plan the migration; liquidity alone does not waive account rules.</em>
+    </article>
+    <article data-state="cutoff">
+      <div><span>State 03</span><strong>Broker or prop-account cutoff is binding</strong></div>
+      <p><b>Flat:</b> do not open the restricted month.</p>
+      <p><b>Intraday:</b> a same-day exit assumption is not permission if the notice prohibits entry.</p>
+      <p><b>Carrying:</b> close or roll within the documented window; confirm completion.</p>
+      <em>Action: the account rule controls even when the contract still trades.</em>
+    </article>
+    <article data-state="stop">
+      <div><span>State 04</span><strong>A date, symbol, settlement term or permission is unknown</strong></div>
+      <p><b>Flat:</b> keep the order unsent.</p>
+      <p><b>Intraday:</b> do not rely on an auto-selected front month or continuous symbol.</p>
+      <p><b>Carrying:</b> contact the broker before the uncertainty reaches a deadline.</p>
+      <em>Action: stop and verify the exact exchange and account documents.</em>
+    </article>
   </div>
 </section>
 
@@ -299,7 +277,7 @@
       <p>The first leg closes the existing short. The second establishes a new short in the selected later contract.</p>
     </article>
   </div>
-  <div class="er-table-wrap">
+  <div class="er-table-wrap" role="region" aria-label="Futures roll execution methods" tabindex="0">
     <table>
       <caption>Two common execution paths for a position roll</caption>
       <thead><tr><th scope="col">Method</th><th scope="col">How it works</th><th scope="col">Primary execution issue</th><th scope="col">What to verify</th></tr></thead>
@@ -399,7 +377,7 @@
     <h2 id="settlement-title">Cash Settlement and Physical Delivery Are Different End States</h2>
     <p>“Futures expire” does not tell you what happens next. Read the current product specification and rulebook chapter. The product family, contract month, broker, and account permissions determine the operational risk.</p>
   </div>
-  <div class="er-table-wrap">
+  <div class="er-table-wrap" role="region" aria-label="Hypothetical futures roll scenarios" tabindex="0">
     <table>
       <caption>Illustrative CME Group product families—verify the current specification before trading</caption>
       <thead><tr><th scope="col">Example</th><th scope="col">Typical listing pattern</th><th scope="col">Settlement method</th><th scope="col">Primary expiration concern</th></tr></thead>
@@ -452,7 +430,7 @@
     <h2 id="continuous-title">Continuous Futures Charts Can Change the Story</h2>
     <p>A continuous chart stitches multiple expiring contracts together. Its roll trigger and adjustment method are data-vendor choices. Two platforms can therefore show different historical prices, returns, indicators, and apparent gaps for the “same” continuous symbol.</p>
   </div>
-  <div class="er-table-wrap">
+  <div class="er-table-wrap" role="region" aria-label="Continuous futures chart adjustment methods" tabindex="0">
     <table>
       <caption>Common continuous-chart construction methods</caption>
       <thead><tr><th scope="col">Method</th><th scope="col">What the series does</th><th scope="col">Useful for</th><th scope="col">Main limitation</th></tr></thead>
@@ -506,23 +484,10 @@
   </ol>
 </section>
 
-<section class="er-section er-faq" aria-labelledby="faq-title">
-  <div class="er-section-heading"><p class="er-kicker">Frequently asked questions</p><h2 id="faq-title">Futures Expiration and Roll FAQ</h2></div>
-  <div class="er-faq-list">
-    <details><summary>What happens when a futures contract expires?</summary><p>An open futures position reaches the settlement process defined by that contract. Depending on the product, settlement may be cash-based or may create delivery obligations. A trader who does not intend to settle normally offsets or rolls before the applicable exchange and broker deadlines.</p></details>
-    <details><summary>Is the futures roll date the same as the expiration date?</summary><p>No. Expiration and last trading day are contract rules. A roll date is the point at which a trader, broker, platform, or market convention shifts attention to another month. Liquidity can migrate before expiration, and a broker can impose an earlier cutoff.</p></details>
-    <details><summary>When should a trader switch to the next futures contract?</summary><p>There is no universal switch rule. Verify the official product calendar and broker cutoff, then compare live volume, open interest, spread, and depth in the current and next contracts. The appropriate timing also depends on whether the trader is flat, intraday, or carrying exposure.</p></details>
-    <details><summary>How is a long futures position rolled forward?</summary><p>A long position is rolled by selling the current contract to close it and buying a later contract to re-establish exposure. The two legs can be executed separately or as a calendar-spread transaction where available. Each leg still has execution costs and the later contract may trade at a different price.</p></details>
-    <details><summary>Why do two futures contract months trade at different prices?</summary><p>Different delivery months can reflect financing, storage, income, convenience yield, expected supply and demand, interest rates, and contract-specific settlement terms. The difference between months is a calendar spread or basis relationship, not automatically a chart error.</p></details>
-    <details><summary>Can a broker close a futures position before exchange expiration?</summary><p>Yes. Brokers and prop-account providers can set position-liquidation, delivery, or trading cutoffs that are earlier than the exchange's final deadline. The account agreement and current broker notices control what the customer may hold.</p></details>
-    <details><summary>What are the futures contract month codes?</summary><p>The standard month codes are F January, G February, H March, J April, K May, M June, N July, Q August, U September, V October, X November, and Z December. A full symbol combines a product root, month code, and year in a format that can vary by platform.</p></details>
-  </div>
-</section>
-
 <section class="er-sources" id="sources" aria-labelledby="sources-title">
   <p class="er-kicker">Sources and methodology</p>
   <h2 id="sources-title">Official Exchange and Regulatory Sources</h2>
-  <p>The guide was checked against the sources below on August 6, 2026. Examples are explicitly hypothetical. Exact last-trade dates, settlement procedures, delivery rules, holiday adjustments, listed months, and broker cutoffs can change and must be verified for the specific contract.</p>
+  <p>The guide was checked against the sources below on August 17, 2026. Examples are explicitly hypothetical. Exact last-trade dates, settlement procedures, delivery rules, holiday adjustments, listed months, and broker cutoffs can change and must be verified for the specific contract.</p>
   <ul>
     <li><a href="https://www.cmegroup.com/education/courses/introduction-to-futures/understanding-futures-expiration-contract-roll" target="_blank" rel="noopener">CME Group — Understanding Futures Expiration and Contract Roll</a><span>Offset, roll, and settlement choices; observing volume as activity moves between months.</span></li>
     <li><a href="https://www.cmegroup.com/education/courses/understanding-the-benefits-of-futures/managing-contract-expiration" target="_blank" rel="noopener">CME Group — Managing Contract Expiration</a><span>Liquidation, legging, and calendar-spread execution of a position roll.</span></li>
@@ -533,7 +498,7 @@
     <li><a href="https://www.cmegroup.com/markets/energy/crude-oil/light-sweet-crude.contractSpecs.html" target="_blank" rel="noopener">CME Group — WTI Crude Oil Contract Specifications</a><span>Current CL product and physical-settlement resources.</span></li>
     <li><a href="https://www.cmegroup.com/markets/metals/precious/gold.contractSpecs.html" target="_blank" rel="noopener">CME Group — Gold Contract Specifications</a><span>Current GC product, delivery, and expiration resources.</span></li>
     <li><a href="https://www.cmegroup.com/markets/fx/g10/euro-fx.contractSpecs.html" target="_blank" rel="noopener">CME Group — Euro FX Contract Specifications</a><span>Current 6E listing and physical currency-delivery resources.</span></li>
-    <li><a href="https://www.cftc.gov/LearnAndProtect/EducationCenter/FuturesMarketBasics/index2.htm" target="_blank" rel="noopener">US Commodity Futures Trading Commission — Futures Market Basics</a><span>Customer obligations, delivery versus cash settlement, leverage, and futures risk.</span></li>
+    <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/FuturesMarketBasics/index.htm" target="_blank" rel="noopener">US Commodity Futures Trading Commission — Futures Market Basics</a><span>Customer obligations, delivery versus cash settlement, leverage, and futures risk.</span></li>
   </ul>
 </section>
 
@@ -541,9 +506,9 @@
   <div><p class="er-kicker">Continue the contract workflow</p><h2 id="related-title">Related Grizzly Parrot Guides</h2></div>
   <div class="er-related-grid">
     <a href="/futures-basics/"><span>Learning hub</span><strong>Futures Trading Basics</strong><p>Build contract mechanics, risk, execution, and life cycle in order.</p></a>
-    <a href="/futures-basics/ticks-points-dollar-value.html"><span>Contract math</span><strong>Ticks vs Points</strong><p>Translate the exact contract increment into dollar movement.</p></a>
-    <a href="/futures-basics/futures-slippage-explained.html"><span>Execution</span><strong>Futures Slippage Explained</strong><p>Understand why actual fills can differ from expected prices.</p></a>
-    <a href="/market-basics/risk-per-trade-small-accounts.html"><span>Risk</span><strong>Size From the Real Drawdown Buffer</strong><p>Calculate whole contracts from the stop, tick value, costs, and usable risk room.</p></a>
+    <a href="/futures-basics/futures-contract-specifications-explained.html"><span>Contract blueprint</span><strong>Read Every Specification Field</strong><p>Verify the multiplier, tick, listing cycle, last trade and settlement terms.</p></a>
+    <a href="/futures-basics/ticks-points-dollar-value.html"><span>Contract math</span><strong>Ticks, Points and Dollar Value</strong><p>Translate the exact contract increment into dollar movement.</p></a>
+    <a href="/futures-basics/fair-value-in-futures-explained.html"><span>Pricing</span><strong>Fair Value, Carry and Basis</strong><p>Understand why adjacent months can trade at different prices before convergence.</p></a>
   </div>
 </section>
 
