@@ -2,292 +2,398 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fair Value in Futures Explained: How Futures Prices Are Actually Calculated</title>
-  <meta name="description" content="Learn what fair value in futures really means, how futures prices are calculated from spot, and why the difference matters for traders.">
+  <title>Futures Fair Value Explained: Cost of Carry and Basis</title>
+  <meta name="description" content="Learn futures fair value, cost of carry, basis and convergence across equity index, FX and commodity markets, with an interactive index calculator.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/fair-value-in-futures-explained.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Fair Value in Futures Explained: How Futures Prices Are Actually Calculated">
-  <meta property="og:description" content="Learn what fair value in futures really means, how futures prices are calculated from spot, and why the difference matters for traders.">
+  <meta property="og:title" content="Futures Fair Value Explained: Cost of Carry and Basis">
+  <meta property="og:description" content="Learn futures fair value, cost of carry, basis and convergence across equity index, FX and commodity markets, with an interactive index calculator.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/fair-value-in-futures-explained.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Grizzly Parrot Trading guide to futures fair value, cost of carry and basis.">
+  <meta property="article:published_time" content="2025-11-20">
+  <meta property="article:modified_time" content="2026-08-17">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Futures Fair Value Explained: Cost of Carry and Basis">
+  <meta name="twitter:description" content="Learn futures fair value, cost of carry, basis and convergence across equity index, FX and commodity markets, with an interactive index calculator.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Fair Value in Futures Explained: How Futures Prices Are Actually Calculated">
-  <meta name="twitter:description" content="Learn what fair value in futures really means, how futures prices are calculated from spot, and why the difference matters for traders.">
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading guide to futures fair value, cost of carry and basis.">
 
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="fair-value-guide.css?v=20260817-1">
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){window.dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-JMJVR3G5YN');
   </script>
 
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Fair Value in Futures Explained: How Futures Prices Are Actually Calculated",
-  "description": "Learn what fair value in futures really means, how futures prices are calculated from spot, and why the difference matters for traders.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/fair-value-in-futures-explained.html",
-  "datePublished": "2025-11-20",
-  "dateModified": "2025-11-20",
-  "url": "https://grizzlyparrottrading.com/futures-basics/fair-value-in-futures-explained.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Futures Fair Value Explained: Cost of Carry and Basis",
+    "description": "Learn futures fair value, cost of carry, basis and convergence across equity index, FX and commodity markets, with an interactive index calculator.",
+    "author": {
+      "@type": "Person",
+      "name": "Kyle Parrott",
+      "url": "https://grizzlyparrottrading.com/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grizzly Parrot Trading",
+      "url": "https://grizzlyparrottrading.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://grizzlyparrottrading.com/OG-default.png"
+      }
+    },
+    "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/fair-value-in-futures-explained.html",
+    "url": "https://grizzlyparrottrading.com/futures-basics/fair-value-in-futures-explained.html",
+    "image": "https://grizzlyparrottrading.com/OG-default.png",
+    "datePublished": "2025-11-20",
+    "dateModified": "2026-08-17",
+    "inLanguage": "en-US",
+    "articleSection": "Futures Basics",
+    "about": [
+      {"@type": "Thing", "name": "Futures fair value"},
+      {"@type": "Thing", "name": "Cost of carry"},
+      {"@type": "Thing", "name": "Futures basis"},
+      {"@type": "Thing", "name": "Futures convergence"}
+    ],
+    "citation": [
+      "https://www.cmegroup.com/trading/equity-index/fairvalue.html",
+      "https://www.cmegroup.com/education/courses/introduction-to-equity-index-products/what-is-equity-index-basis",
+      "https://www.cmegroup.com/education/whitepapers/reconciling-fx-spot-futures-prices",
+      "https://www.cmegroup.com/content/dam/cmegroup/education/files/understanding-stock-index-futures.pdf",
+      "https://www.cmegroup.com/articles/whitepapers/trading-energy-calendar-spread-options.html",
+      "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CFTCGlossary/index.htm"
+    ]
+  }
+  </script>
 
-  <!-- JSON-LD: Breadcrumbs -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Fair Value in Futures Explained: How Futures Prices Are Actually Calculated",
-      "item": "https://grizzlyparrottrading.com/futures-basics/fair-value-in-futures-explained.html"
-    }
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrottrading.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Futures Basics", "item": "https://grizzlyparrottrading.com/futures-basics/"},
+      {"@type": "ListItem", "position": 3, "name": "Futures Fair Value Explained: Cost of Carry and Basis", "item": "https://grizzlyparrottrading.com/futures-basics/fair-value-in-futures-explained.html"}
+    ]
+  }
+  </script>
 
   <script src="/uet.js" defer></script>
 </head>
 <body>
+  <a class="fv-skip" href="#fv-main">Skip to the fair-value guide</a>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo"><a href="https://grizzlyparrottrading.com/">Grizzly Parrot Trading</a></div>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="https://grizzlyparrottrading.com/futures-basics/" aria-current="page">Futures Basics</a></li>
+          <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
+          <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
+          <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
+          <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
+          <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
+          <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
+          <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+  <main id="fv-main" class="fv-main">
+    <article>
+      <!-- ARTICLE BODY START -->
+      <header class="fv-hero">
+        <div class="container fv-hero-grid">
+          <div class="fv-hero-copy">
+            <p class="fv-eyebrow">Futures pricing · Cost of carry</p>
+            <h1>Futures Fair Value Explained: Cost of Carry and Basis</h1>
+            <p class="fv-deck">Fair value is a model-implied price built from spot, time and the benefits and costs of carrying the underlying exposure. It is a benchmark for comparison—not a promise that the quoted futures price must match the model tick for tick.</p>
+            <p class="fv-byline">By <a href="/about.html">Kyle Parrott</a> <span aria-hidden="true">·</span> Updated August 17, 2026</p>
+          </div>
 
-            <h1>Fair Value in Futures Explained: How Futures Prices Are Actually Calculated</h1>
-
-            <p>
-                If you don’t know how fair value in futures works, you’re guessing. Futures prices are not random—they’re built from spot prices using interest, dividends, storage, and time. This is the cost-of-carry model, and every futures trader should understand it.
-            </p>
-
-            <h2>What “Fair Value” Means in Futures</h2>
-            <p>
-                Fair value is the theoretical price a futures contract *should* trade at given the cost to hold the underlying asset until expiration.  
-                The market doesn’t always match fair value perfectly, but it always trades around it.
-            </p>
-
-            <p>
-                This directly ties into <a href="https://grizzlyparrottrading.com/futures-basics/contango-vs-backwardation.html">contango vs backwardation</a>, because fair value shapes the curve.
-            </p>
-
-            <h2>The Cost-of-Carry Formula</h2>
-            <p>
-                Here’s the actual formula:
-            </p>
-
-            <pre>Fair Value = Spot Price + Carry Costs − Carry Benefits</pre>
-
-            <h3>Carry costs include:</h3>
-            <ul>
-                <li>Interest (financing cost)</li>
-                <li>Storage (for commodities)</li>
-                <li>Insurance</li>
-            </ul>
-
-            <h3>Carry benefits include:</h3>
-            <ul>
-                <li>Dividends (for equity index futures)</li>
-                <li>Convenience yield (commodity supply tightness)</li>
-            </ul>
-
-            <h2>Fair Value for Equity Index Futures</h2>
-            <p>
-                For ES, NQ, YM, and other stock index futures, storage doesn’t matter—but interest rates and dividends do.
-            </p>
-
-            <p>
-                Equity index fair value formula:
-            </p>
-
-            <pre>F = S × e^{(r − d) × t}</pre>
-
-            <p>
-                You don’t need the calculus. All you need to know is:
-            </p>
-
-            <ul>
-                <li>Higher rates → futures trade above fair value (more contango).</li>
-                <li>Higher dividends → futures trade below fair value.</li>
-                <li>Time to expiration magnifies the effect.</li>
-            </ul>
-
-            <h2>Commodity Fair Value</h2>
-            <p>
-                Commodity fair value leans heavily on storage and transportation.  
-                Oil, natural gas, grains, metals—physical stuff has real costs to hold.
-            </p>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Commodity</th>
-                        <th>Main Carry Cost</th>
-                        <th>Main Carry Benefit</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Crude Oil</td>
-                        <td>Storage + financing</td>
-                        <td>Low convenience yield</td>
-                    </tr>
-                    <tr>
-                        <td>Natural Gas</td>
-                        <td>High storage</td>
-                        <td>Seasonal convenience yield</td>
-                    </tr>
-                    <tr>
-                        <td>Grains</td>
-                        <td>Storage + insurance</td>
-                        <td>Supply availability</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>Why Futures Deviate from Fair Value</h2>
-            <p>
-                Futures won’t always match theoretical fair value tick-for-tick. Short-term moves distort everything.  
-                But arbitrage traders keep the difference in check.
-            </p>
-
-            <h3>The main reasons for deviation:</h3>
-            <ul>
-                <li>Volatility spikes</li>
-                <li>Liquidity gaps</li>
-                <li>News shocks</li>
-                <li>Hedge pressure from institutions</li>
-            </ul>
-
-            <h2>Why Fair Value Matters to You</h2>
-            <p>
-                Fair value helps you understand *why* a futures contract is priced where it is—not just what price it shows on the screen.  
-                This matters for rolls, spreads, and avoiding dumb assumptions about spot vs futures.
-            </p>
-
-            <h3>Practical uses for traders</h3>
-            <ul>
-                <li>Knowing when a contract is “rich” or “cheap.”</li>
-                <li>Understanding roll yield before rolling.</li>
-                <li>Spotting when spreads get out of line.</li>
-                <li>Avoiding confusion when futures diverge from spot price.</li>
-            </ul>
-
-            <div class="highlight-box green">
-                <h3>Fair Value Isn’t Optional — It’s the Math Behind the Market</h3>
-                <p>Futures don’t trade at random — they follow the cost-of-carry model. Understand that, and you’ll know when a premium or discount makes sense, and when it’s just noise. Spot and futures diverge for a reason. Know the math or trade in the dark.</p>
+          <aside class="fv-formula-card" aria-labelledby="fv-formula-title">
+            <p>Equity-index teaching model</p>
+            <h2 id="fv-formula-title">Start with the carry equation</h2>
+            <div class="fv-formula" aria-label="Fair value equals spot times one plus interest rate times days divided by 360, minus dividends to expiration">
+              <strong>F = S × [1 + r × (d ÷ 360)] − D</strong>
             </div>
+            <dl>
+              <div><dt>S</dt><dd>cash index level</dd></div>
+              <div><dt>r</dt><dd>annual financing rate</dd></div>
+              <div><dt>d</dt><dd>days to expiration</dd></div>
+              <div><dt>D</dt><dd>dividend points to expiration</dd></div>
+            </dl>
+            <p class="fv-formula-note">Other asset classes require different carry inputs. The calculator below intentionally models an equity index.</p>
+          </aside>
+        </div>
+      </header>
 
+      <div class="container fv-shell">
+        <section class="fv-section fv-opening" aria-labelledby="fv-answer-title">
+          <div class="fv-heading">
+            <p class="fv-kicker">The direct answer</p>
+            <h2 id="fv-answer-title">Fair value is a model price. The futures quote is a market price.</h2>
+          </div>
 
-            <!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
+          <p class="fv-lead">A fair-value calculation asks what a futures contract would be worth if a trader could compare it with an economically equivalent spot position after financing, income, storage and other carry effects. The live futures quote reflects that relationship <em>plus</em> current order flow, constraints, estimates and transaction costs.</p>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+          <div class="fv-term-grid">
+            <article><span>Model output</span><h3>Fair value</h3><p>A theoretical price generated from stated inputs and a specified formula.</p></article>
+            <article><span>Observed price</span><h3>Futures quote</h3><p>The price at which buyers and sellers currently transact for one contract month.</p></article>
+            <article><span>Spot comparison</span><h3>Basis</h3><p>Commonly futures minus spot, although market convention must be confirmed.</p></article>
+            <article><span>Model comparison</span><h3>Valuation gap</h3><p>Observed futures price minus the fair-value estimate made with the same timestamp.</p></article>
+          </div>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
+          <aside class="fv-precision-note">
+            <strong>Two differences are easy to confuse.</strong>
+            <p>A futures contract can trade above spot and still be below calculated fair value. “Premium to spot” and “rich to fair value” are not interchangeable statements.</p>
+          </aside>
+        </section>
+
+        <section class="fv-section fv-calculator-section" id="fair-value-calculator" aria-labelledby="fv-calculator-title">
+          <div class="fv-heading">
+            <p class="fv-kicker">Interactive equity-index example</p>
+            <h2 id="fv-calculator-title">Build the fair-value estimate one input at a time</h2>
+            <p>This calculator follows CME Group’s simple-interest teaching formula for stock-index futures. Values are hypothetical and do not pull live market data.</p>
+          </div>
+
+          <div class="fv-calculator-grid">
+            <form id="fv-calculator-form" class="fv-calculator" novalidate>
+              <div class="fv-field-grid">
+                <label for="fv-spot"><span>Cash index level</span><input id="fv-spot" name="spot" type="number" min="0.01" step="0.01" value="6000.00" inputmode="decimal"></label>
+                <label for="fv-rate"><span>Annual financing rate (%)</span><input id="fv-rate" name="rate" type="number" min="-50" max="100" step="0.01" value="4.50" inputmode="decimal"></label>
+                <label for="fv-days"><span>Days to expiration</span><input id="fv-days" name="days" type="number" min="0" max="3660" step="1" value="90" inputmode="numeric"></label>
+                <label for="fv-dividends"><span>Dividend points to expiration</span><input id="fv-dividends" name="dividends" type="number" min="0" step="0.01" value="15.00" inputmode="decimal"></label>
+                <label class="fv-observed-field" for="fv-observed"><span>Observed futures price <small>optional</small></span><input id="fv-observed" name="observed" type="number" min="0.01" step="0.01" value="6052.00" inputmode="decimal"></label>
+              </div>
+              <div class="fv-form-actions">
+                <button type="submit">Calculate fair value</button>
+                <button type="reset">Reset example</button>
+              </div>
+              <p id="fv-form-status" class="fv-form-status" role="status">Using a 360-day convention and dividend points entered directly.</p>
+            </form>
+
+            <section class="fv-results" aria-labelledby="fv-results-title" aria-live="polite">
+              <div class="fv-results-header"><p>Model output</p><h3 id="fv-results-title">What the inputs imply</h3></div>
+              <dl>
+                <div><dt>Financing carry</dt><dd><output id="fv-financing">+67.50 points</output></dd></div>
+                <div class="fv-result-primary"><dt>Calculated fair value</dt><dd><output id="fv-fair-value">6052.50</output></dd></div>
+                <div><dt>Observed basis</dt><dd><output id="fv-basis">+52.00 points</output></dd></div>
+                <div><dt>Observed vs fair value</dt><dd><output id="fv-gap">−0.50 points</output></dd></div>
+              </dl>
+              <div class="fv-equation-strip" aria-label="Calculation breakdown">
+                <span id="fv-equation-spot">6000.00</span><b>+</b><span id="fv-equation-financing">67.50</span><b>−</b><span id="fv-equation-dividends">15.00</span><b>=</b><strong id="fv-equation-result">6052.50</strong>
+              </div>
+            </section>
+          </div>
+
+          <p class="fv-boundary">The output is only as good as its timestamps, financing-rate choice, dividend estimate and day-count convention. It is not a trade recommendation, live quote or arbitrage guarantee.</p>
+        </section>
+
+        <section class="fv-section" aria-labelledby="fv-mechanism-title">
+          <div class="fv-heading"><p class="fv-kicker">Why the terms matter</p><h2 id="fv-mechanism-title">Carry changes the price of waiting</h2></div>
+          <div class="fv-carry-map" aria-label="Cost-of-carry mechanism">
+            <div><span>1</span><strong>Begin with spot</strong><p>Define the underlying cash price, index level, currency quote or physical location.</p></div>
+            <div><span>2</span><strong>Add carrying costs</strong><p>Financing, storage, insurance and other costs can raise the deferred value.</p></div>
+            <div><span>3</span><strong>Subtract carrying benefits</strong><p>Dividends, foreign interest or convenience yield can offset those costs.</p></div>
+            <div><span>4</span><strong>Match the maturity</strong><p>Carry accumulates only over the remaining time and under the contract’s actual terms.</p></div>
+          </div>
+          <p>That mechanism does not imply every deferred contract must be above spot. If the benefits of holding the underlying exceed financing and other costs, model value can sit below spot. A negative financing rate can also reverse an intuition built around positive rates.</p>
+        </section>
+
+        <section class="fv-section" aria-labelledby="fv-market-title">
+          <div class="fv-heading">
+            <p class="fv-kicker">The formula follows the underlying</p>
+            <h2 id="fv-market-title">Equity index, FX and commodity fair value are related—not identical</h2>
+            <p>“Spot plus carry” is the shared idea. The economic inputs and practical constraints change by market.</p>
+          </div>
+
+          <div class="fv-table-wrap" role="region" aria-label="Fair value by futures market" tabindex="0">
+            <table>
+              <thead><tr><th scope="col">Market family</th><th scope="col">Starting point</th><th scope="col">Main carry inputs</th><th scope="col">What requires extra care</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Equity index</th><td>Cash index level</td><td>Financing rate, dividends and time</td><td>The index is not a directly owned asset; dividend estimates and the final-settlement procedure matter.</td></tr>
+                <tr><th scope="row">FX</th><td>Spot currency pair</td><td>Interest rates in both currencies and time</td><td>Quote convention can invert the visual relationship. Match domestic and foreign rates to the quoted pair.</td></tr>
+                <tr><th scope="row">Physical commodity</th><td>Deliverable cash commodity</td><td>Financing, storage, insurance and convenience yield</td><td>Grade, location, seasonality, inventory access and delivery rules can make a generic “spot price” incomplete.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="fv-market-notes">
+            <article><h3>Equity-index shortcut</h3><p>Financing tends to lift fair value above the cash index; dividends not received by a futures holder tend to pull it back down. CME’s educational formula expresses dividends as index points expected before expiration.</p></article>
+            <article><h3>FX interest-rate parity</h3><p>For a currency quoted in U.S. dollars, the relationship reflects the opportunity cost of funding dollars and the interest earned on the foreign currency. Compare the exact quote convention before naming a premium or discount.</p></article>
+            <article><h3>Commodity convenience yield</h3><p>Immediate access to scarce inventory can have economic value. That benefit is not a posted invoice like warehouse rent, so a simple storage-cost estimate may fail during tight physical conditions.</p></article>
+          </div>
+        </section>
+
+        <section class="fv-section fv-basis-section" aria-labelledby="fv-basis-title">
+          <div class="fv-heading"><p class="fv-kicker">Keep the comparisons separate</p><h2 id="fv-basis-title">Basis measures a relationship; convergence describes how it changes</h2></div>
+          <div class="fv-basis-grid">
+            <div class="fv-basis-equation"><span>Observed relationship</span><strong>Basis = Futures − Spot</strong><p>If futures are 6052 and spot is 6000, this convention produces a +52 basis.</p></div>
+            <div class="fv-basis-equation"><span>Model relationship</span><strong>Valuation gap = Futures − Fair value</strong><p>If model fair value is 6052.50, the same 6052 quote is 0.50 below that estimate.</p></div>
+          </div>
+          <p>As expiration approaches, the time available to earn or pay carry shrinks. Futures and the applicable spot or final-settlement reference should converge under the contract design. “Converge” does not mean every intraday quote becomes identical well before expiration. Time mismatch, different trading hours, settlement methodology and temporary order imbalance can still create measured differences.</p>
+        </section>
+
+        <section class="fv-section" aria-labelledby="fv-deviation-title">
+          <div class="fv-heading"><p class="fv-kicker">Why the live quote can disagree</p><h2 id="fv-deviation-title">A gap is a question to investigate, not free money</h2></div>
+          <div class="fv-deviation-list">
+            <article><span>Timestamp</span><p>The cash value, futures quote, rates and dividend estimate may not describe the same instant.</p></article>
+            <article><span>Execution costs</span><p>Bid-ask spreads, fees, market impact and financing access create an arbitrage band rather than one frictionless price.</p></article>
+            <article><span>Input uncertainty</span><p>Expected dividends, storage costs, inventory benefits and funding rates can be estimated differently.</p></article>
+            <article><span>Market constraints</span><p>Short-sale restrictions, balance-sheet limits, borrow availability, position limits or delivery access can block the textbook trade.</p></article>
+            <article><span>Contract design</span><p>The futures settlement reference may differ from the spot series displayed on a chart.</p></article>
+            <article><span>Order flow</span><p>Urgent hedging and liquidity conditions can move a quote away from a simplified model temporarily.</p></article>
+          </div>
+        </section>
+
+        <section class="fv-section fv-audit" aria-labelledby="fv-audit-title">
+          <div><p class="fv-kicker">Before using any fair-value number</p><h2 id="fv-audit-title">Run a seven-question model audit</h2></div>
+          <ol>
+            <li><span>01</span><p><strong>Which exact contract month?</strong> Time and settlement terms belong to a specific expiry.</p></li>
+            <li><span>02</span><p><strong>Which spot reference?</strong> Use the cash index, currency quote, grade and location the model actually requires.</p></li>
+            <li><span>03</span><p><strong>Are timestamps aligned?</strong> A stale cash close against a live futures quote is not a clean comparison.</p></li>
+            <li><span>04</span><p><strong>Which rate and day count?</strong> State the financing source, compounding assumption and calendar convention.</p></li>
+            <li><span>05</span><p><strong>Which benefits are subtracted?</strong> Dividends, foreign interest and convenience yield are not interchangeable.</p></li>
+            <li><span>06</span><p><strong>What can actually be traded?</strong> Include spreads, fees, borrow, storage, delivery and balance-sheet constraints.</p></li>
+            <li><span>07</span><p><strong>What would falsify the conclusion?</strong> Recalculate with plausible alternative inputs before calling a quote rich or cheap.</p></li>
+          </ol>
+        </section>
+
+        <section class="fv-section fv-boundaries" aria-labelledby="fv-boundaries-title">
+          <div class="fv-heading"><p class="fv-kicker">Continue with the next question</p><h2 id="fv-boundaries-title">Fair value explains a benchmark—not the whole futures curve</h2></div>
+          <p>This guide owns the model-price distinction, carry inputs, equity-index calculation and basis vocabulary. These pages take the neighboring questions further.</p>
+          <div class="fv-related-grid">
+            <a href="/futures-basics/contango-vs-backwardation.html"><span>Curve shape</span><strong>Contango vs Backwardation</strong><p>Read relationships across multiple delivery months without treating the curve as a clean forecast.</p></a>
+            <a href="/futures-basics/why-futures-dont-track-spot-price.html"><span>Spot comparison</span><strong>Why Futures Do Not Track Spot Exactly</strong><p>Separate timing, contract design and market-specific basis effects.</p></a>
+            <a href="/futures-basics/contract-expiration-and-roll.html"><span>Life cycle</span><strong>Expiration and Contract Roll</strong><p>Understand convergence, liquidity migration and the operational clocks around expiry.</p></a>
+            <a href="/futures-basics/futures-contract-specifications-explained.html"><span>Contract rules</span><strong>Read the Specification</strong><p>Verify the unit, quote, tick, settlement and last-trade terms behind the model.</p></a>
+          </div>
+        </section>
+
+        <section class="fv-section fv-sources" aria-labelledby="fv-sources-title">
+          <div class="fv-heading"><p class="fv-kicker">Primary references</p><h2 id="fv-sources-title">Official sources and calculation scope</h2></div>
+          <p>The definitions, formula, basis treatment and market-specific distinctions were reviewed against regulator and exchange sources on August 17, 2026. The calculator is a transparent teaching model, not a live pricing service.</p>
+          <ul>
+            <li><a href="https://www.cmegroup.com/trading/equity-index/fairvalue.html" rel="noopener noreferrer">CME Group: Calculating Fair Value</a><span>Simple-interest stock-index formula and worked fair-value example.</span></li>
+            <li><a href="https://www.cmegroup.com/education/courses/introduction-to-equity-index-products/what-is-equity-index-basis" rel="noopener noreferrer">CME Group: What Is Equity Index Basis?</a><span>Futures-minus-spot basis and the role of financing and dividends.</span></li>
+            <li><a href="https://www.cmegroup.com/content/dam/cmegroup/education/files/understanding-stock-index-futures.pdf" rel="noopener noreferrer">CME Group: Understanding Stock Index Futures</a><span>Carry, fair value and cash settlement for stock-index contracts.</span></li>
+            <li><a href="https://www.cmegroup.com/education/whitepapers/reconciling-fx-spot-futures-prices" rel="noopener noreferrer">CME Group: Reconciling FX Spot and Futures Prices</a><span>Quote conventions and the two-currency interest-rate relationship.</span></li>
+            <li><a href="https://www.cmegroup.com/articles/whitepapers/trading-energy-calendar-spread-options.html" rel="noopener noreferrer">CME Group: Energy Calendar Spreads</a><span>Storage economics, inventories and convenience yield in physical markets.</span></li>
+            <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CFTCGlossary/index.htm" rel="noopener noreferrer">CFTC Futures Glossary</a><span>Basis, carrying charges, convergence, delivery and settlement terminology.</span></li>
+          </ul>
+          <p class="fv-disclosure">This page provides general market-structure education, not individualized investment, trading, legal, tax or arbitrage advice. Futures are leveraged and can produce losses beyond the amount deposited. Verify current exchange rules, market data, financing terms and broker requirements before making any decision.</p>
+        </section>
+      </div>
+      <!-- ARTICLE BODY END -->
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a></div>
+      <div class="footer-links"><a href="https://grizzlyparrottrading.com/about.html">About</a><a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a><a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a><a href="https://grizzlyparrottrading.com/contact.html">Contact</a></div>
+      <p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
     </div>
+  </footer>
 
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
+  <script>
+    (function () {
+      'use strict';
+      var form = document.getElementById('fv-calculator-form');
+      var fields = {
+        spot: document.getElementById('fv-spot'), rate: document.getElementById('fv-rate'),
+        days: document.getElementById('fv-days'), dividends: document.getElementById('fv-dividends'),
+        observed: document.getElementById('fv-observed')
+      };
+      var outputs = {
+        financing: document.getElementById('fv-financing'), fairValue: document.getElementById('fv-fair-value'),
+        basis: document.getElementById('fv-basis'), gap: document.getElementById('fv-gap'),
+        equationSpot: document.getElementById('fv-equation-spot'), equationFinancing: document.getElementById('fv-equation-financing'),
+        equationDividends: document.getElementById('fv-equation-dividends'), equationResult: document.getElementById('fv-equation-result'),
+        status: document.getElementById('fv-form-status')
+      };
 
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
+      function numberFrom(field) { return Number.parseFloat(field.value); }
+      function fixed(value) { return value.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}); }
+      function signed(value) { return Math.abs(value) < 0.005 ? '0.00' : (value > 0 ? '+' : '−') + fixed(Math.abs(value)); }
+      function clearObserved() { outputs.basis.textContent = 'Not entered'; outputs.gap.textContent = 'Not entered'; }
+      function invalidate(message) {
+        outputs.financing.textContent = '—'; outputs.fairValue.textContent = '—'; clearObserved();
+        outputs.equationSpot.textContent = '—'; outputs.equationFinancing.textContent = '—';
+        outputs.equationDividends.textContent = '—'; outputs.equationResult.textContent = '—';
+        outputs.status.textContent = message; outputs.status.className = 'fv-form-status is-invalid';
+      }
+      function calculate() {
+        var spot = numberFrom(fields.spot), rate = numberFrom(fields.rate), days = numberFrom(fields.days);
+        var dividends = numberFrom(fields.dividends), observedText = fields.observed.value.trim();
+        var observed = observedText === '' ? null : numberFrom(fields.observed);
+        var invalid = {
+          spot: !Number.isFinite(spot) || spot <= 0,
+          rate: !Number.isFinite(rate) || rate < -50 || rate > 100,
+          days: !Number.isInteger(days) || days < 0 || days > 3660,
+          dividends: !Number.isFinite(dividends) || dividends < 0,
+          observed: observed !== null && (!Number.isFinite(observed) || observed <= 0)
+        };
+        Object.keys(fields).forEach(function (key) {
+          if (invalid[key]) fields[key].setAttribute('aria-invalid', 'true');
+          else fields[key].removeAttribute('aria-invalid');
+        });
+        var valid = !Object.keys(invalid).some(function (key) { return invalid[key]; });
+        if (!valid) {
+          invalidate('Enter a positive spot value, a rate from −50% to 100%, 0 to 3,660 whole days, nonnegative dividend points, and an optional positive futures price.');
+          return;
+        }
+        var financing = spot * (rate / 100) * (days / 360);
+        var fairValue = spot + financing - dividends;
+        if (!Number.isFinite(fairValue) || fairValue <= 0) {
+          invalidate('These inputs produce a nonpositive model value. Recheck the spot, rate, time and dividend assumptions.');
+          return;
+        }
+        outputs.financing.textContent = signed(financing) + ' points'; outputs.fairValue.textContent = fixed(fairValue);
+        outputs.equationSpot.textContent = fixed(spot); outputs.equationFinancing.textContent = fixed(financing);
+        outputs.equationDividends.textContent = fixed(dividends); outputs.equationResult.textContent = fixed(fairValue);
+        if (observed === null) {
+          clearObserved();
+          outputs.status.textContent = 'Model value calculated. Add an observed futures price to compare basis and the valuation gap.';
+        } else {
+          outputs.basis.textContent = signed(observed - spot) + ' points';
+          outputs.gap.textContent = signed(observed - fairValue) + ' points';
+          outputs.status.textContent = 'Calculated with a 360-day simple-interest convention. Recheck all inputs against the same timestamp.';
+        }
+        outputs.status.className = 'fv-form-status is-valid';
+      }
+      form.addEventListener('submit', function (event) { event.preventDefault(); calculate(); });
+      form.addEventListener('input', calculate);
+      form.addEventListener('reset', function () { window.setTimeout(calculate, 0); });
       document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
+      calculate();
+    }());
+  </script>
 </body>
 </html>

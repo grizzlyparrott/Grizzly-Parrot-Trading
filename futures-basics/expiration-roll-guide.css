@@ -39,6 +39,25 @@ body.er-page {
   color: inherit;
 }
 
+.er-skip {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1000;
+  padding: 0.8rem 1rem;
+  border-radius: 0.55rem;
+  background: #fff;
+  color: #071426 !important;
+  font-weight: 850;
+  text-decoration: none;
+  transform: translateY(-180%);
+  transition: transform 160ms ease;
+}
+
+.er-skip:focus {
+  transform: translateY(0);
+}
+
 .er-page .site-header {
   position: relative;
   z-index: 20;
@@ -478,6 +497,93 @@ body.er-page {
   margin: 4px 0 0;
   color: #8f9fb4;
   font-size: 0.86rem;
+}
+
+.er-decision {
+  border-top: 1px solid var(--er-line-soft);
+  border-bottom: 1px solid var(--er-line-soft);
+}
+
+.er-decision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.er-decision-grid article {
+  position: relative;
+  overflow: hidden;
+  padding: 28px;
+  border: 1px solid var(--er-line-soft);
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(18, 34, 56, 0.96), rgba(10, 20, 36, 0.96));
+}
+
+.er-decision-grid article::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--er-green);
+  content: "";
+}
+
+.er-decision-grid article[data-state="migrate"]::before {
+  background: var(--er-blue);
+}
+
+.er-decision-grid article[data-state="cutoff"]::before,
+.er-decision-grid article[data-state="stop"]::before {
+  background: var(--er-red);
+}
+
+.er-decision-grid article > div {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.er-decision-grid span {
+  color: var(--er-green);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.er-decision-grid article[data-state="migrate"] span {
+  color: var(--er-blue);
+}
+
+.er-decision-grid article[data-state="cutoff"] span,
+.er-decision-grid article[data-state="stop"] span {
+  color: var(--er-red);
+}
+
+.er-decision-grid strong {
+  color: #fff;
+  font-size: clamp(1.12rem, 2vw, 1.38rem);
+  line-height: 1.25;
+}
+
+.er-decision-grid p {
+  margin: 9px 0;
+  color: #aab6c8;
+  font-size: 0.91rem;
+}
+
+.er-decision-grid p b {
+  color: #fff;
+}
+
+.er-decision-grid em {
+  display: block;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--er-line-soft);
+  color: #d8e1ec;
+  font-size: 0.88rem;
+  font-style: normal;
+  font-weight: 750;
 }
 
 .er-month-grid {
@@ -1313,6 +1419,7 @@ body.er-page {
 
   .er-hero-facts,
   .er-definition-grid,
+  .er-decision-grid,
   .er-signal-grid,
   .er-question-grid,
   .er-tool-notes {

@@ -11,13 +11,13 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ticks vs Points in Futures | Tick Value &amp; Dollar Risk</title>
-  <meta name="description" content="Understand futures ticks, points, tick size, and tick value. Compare ES, MES, NQ, MNQ, RTY, CL, GC, and 6E, then calculate dollar P&amp;L.">
+  <title>Futures Ticks, Points and Dollar Value: Conversion Guide</title>
+  <meta name="description" content="Convert futures ticks and points into dollar P&amp;L, compare ES, MES, NQ, MNQ, RTY, CL, GC, 6E and micro contract values, and size risk.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/ticks-points-dollar-value.html">
 
-  <meta property="og:title" content="Ticks vs Points in Futures: Convert Price Movement to Dollars">
-  <meta property="og:description" content="A complete guide to tick size, tick value, points, contract multipliers, and dollar P&amp;L—with an interactive calculator and current contract examples.">
+  <meta property="og:title" content="Futures Ticks, Points and Dollar Value: Conversion Guide">
+  <meta property="og:description" content="Convert futures ticks and points into dollar P&amp;L, compare ES, MES, NQ, MNQ, RTY, CL, GC, 6E and micro contract values, and size risk.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/ticks-points-dollar-value.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
@@ -25,14 +25,17 @@
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
   <meta property="og:image:alt" content="Grizzly Parrot Trading guide to futures ticks, points, and dollar value.">
+  <meta property="article:published_time" content="2025-10-28">
+  <meta property="article:modified_time" content="2026-08-17">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Ticks vs Points in Futures">
-  <meta name="twitter:description" content="Convert any futures price move into ticks, points, and dollar P&amp;L without guessing at contract risk.">
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading guide to futures ticks, points, and dollar value.">
+  <meta name="twitter:title" content="Futures Ticks, Points and Dollar Value: Conversion Guide">
+  <meta name="twitter:description" content="Convert futures ticks and points into dollar P&amp;L, compare ES, MES, NQ, MNQ, RTY, CL, GC, 6E and micro contract values, and size risk.">
 
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="ticks-points-guide.css">
+  <link rel="stylesheet" href="ticks-points-guide.css?v=20260817-1">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
@@ -46,8 +49,8 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Ticks vs Points in Futures: Tick Size, Tick Value and Dollar Risk",
-    "description": "A complete guide to futures ticks, points, tick size, tick value, contract multipliers, and dollar profit or loss, with current contract examples and an interactive calculator.",
+    "headline": "Futures Ticks, Points and Dollar Value: Conversion Guide",
+    "description": "Convert futures ticks and points into dollar P&L, compare ES, MES, NQ, MNQ, RTY, CL, GC, 6E and micro contract values, and size risk.",
     "author": {
       "@type": "Person",
       "name": "Kyle Parrott",
@@ -55,7 +58,7 @@
     },
     "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/ticks-points-dollar-value.html",
     "datePublished": "2025-10-28",
-    "dateModified": "2026-08-06",
+    "dateModified": "2026-08-17",
     "url": "https://grizzlyparrottrading.com/futures-basics/ticks-points-dollar-value.html",
     "publisher": {
       "@type": "Organization",
@@ -90,65 +93,8 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Ticks vs Points in Futures",
+        "name": "Futures Ticks, Points and Dollar Value",
         "item": "https://grizzlyparrottrading.com/futures-basics/ticks-points-dollar-value.html"
-      }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is the difference between a tick and a point in futures?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A tick is the exchange-defined minimum price increment for a contract. A point is one full unit of the quoted price and can contain several ticks. For ES and NQ, one point contains four 0.25-point ticks; for RTY, one point contains ten 0.10-point ticks."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do you calculate the dollar value of a futures move?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Divide the absolute entry-to-exit price difference by the contract's tick size, then multiply the resulting number of ticks by the dollar value per tick and the number of contracts."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How many ticks are in one point?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "There is no universal answer. One point is four ticks when the tick size is 0.25, ten ticks when the tick size is 0.10, and one hundred ticks when the tick size is 0.01. Always use the specification for the exact contract."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why do ES and MES have the same tick size but different tick values?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ES and MES both trade in 0.25-index-point increments, but MES has a contract multiplier one tenth the size of ES. One ES tick is $12.50 while one MES tick is $1.25."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is one pip in 6E the same as one futures tick?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. The standard 6E outright futures tick is 0.00005 USD per EUR and is worth $6.25. A 0.00010 move, often described as one pip-sized move in spot FX language, equals two 6E ticks and $12.50 per contract."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do futures options and calendar spreads use the same tick as outright futures?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Not always. Options, calendar spreads, and certain price ranges can use different minimum increments from the outright futures contract. Verify the exact instrument and order type in the current exchange specification."
-        }
       }
     ]
   }
@@ -157,6 +103,8 @@
   <script src="/uet.js" defer></script>
 </head>
 <body>
+
+<a class="tp-skip" href="#tp-main">Skip to the conversion guide</a>
 
 <header class="site-header">
   <div class="container header-inner">
@@ -176,7 +124,7 @@
   </div>
 </header>
 
-<main>
+<main id="tp-main">
 <section class="section">
 <article class="container article-content ticks-points-guide">
 <!-- ARTICLE BODY START -->
@@ -184,8 +132,8 @@
 <header class="tp-hero">
   <div class="tp-hero-copy">
     <p class="tp-kicker">Futures contract math</p>
-    <h1>Ticks vs Points: Convert Any Futures Move to Dollars</h1>
-    <p class="tp-byline">By <a href="/about.html">Kyle Parrott</a> <span aria-hidden="true">&middot;</span> Updated August 6, 2026</p>
+    <h1>Futures Ticks, Points and Dollar Value: Conversion Guide</h1>
+    <p class="tp-byline">By <a href="/about.html">Kyle Parrott</a> <span aria-hidden="true">&middot;</span> Updated August 17, 2026</p>
     <p class="tp-hero-lede">A point tells you how far price moved. A tick tells you the contract&rsquo;s minimum tradable step. <strong>Tick value and contract count determine what that move is worth in dollars.</strong></p>
     <div class="tp-hero-actions">
       <a class="tp-button" href="#tick-calculator">Calculate a move</a>
@@ -210,6 +158,7 @@
   <a href="#formula">Formula</a>
   <a href="#tick-calculator">Calculator</a>
   <a href="#contract-table">Contract table</a>
+  <a href="#four-numbers">Four values</a>
   <a href="#execution-cost">Execution cost</a>
   <a href="#workflow">Risk workflow</a>
 </nav>
@@ -326,6 +275,7 @@
           <option value="MGC">MGC &mdash; Micro Gold</option>
           <option value="GC">GC &mdash; Gold</option>
           <option value="6E">6E &mdash; Euro FX</option>
+          <option value="M6E">M6E &mdash; Micro EUR/USD</option>
           <option value="CUSTOM">Custom contract</option>
         </select>
       </div>
@@ -405,7 +355,7 @@
 
   <div class="tp-table-block">
     <h3>Equity index futures</h3>
-    <div class="tp-table-wrap">
+    <div class="tp-table-wrap" role="region" aria-label="Equity index futures tick values" tabindex="0">
       <table>
         <thead>
           <tr>
@@ -430,7 +380,7 @@
 
   <div class="tp-table-block">
     <h3>Energy, metals and FX futures</h3>
-    <div class="tp-table-wrap">
+    <div class="tp-table-wrap" role="region" aria-label="Energy metals and currency futures tick values" tabindex="0">
       <table>
         <thead>
           <tr>
@@ -447,6 +397,7 @@
           <tr><td>Micro Gold</td><td><strong>MGC</strong></td><td>$0.10 per ounce</td><td>$1.00</td><td>$1.00 move = 10 ticks = $10</td></tr>
           <tr><td>Gold</td><td><strong>GC</strong></td><td>$0.10 per ounce</td><td>$10.00</td><td>$1.00 move = 10 ticks = $100</td></tr>
           <tr><td>Euro FX</td><td><strong>6E</strong></td><td>0.00005 USD per EUR</td><td>$6.25</td><td>0.00010 move = 2 ticks = $12.50</td></tr>
+          <tr><td>Micro EUR/USD</td><td><strong>M6E</strong></td><td>0.00010 USD per EUR</td><td>$1.25</td><td>0.00010 move = 1 tick = $1.25</td></tr>
         </tbody>
       </table>
     </div>
@@ -456,6 +407,40 @@
     <strong>Do not copy a tick table into your platform and forget it.</strong>
     <p>Use it to learn the relationships, then verify the current exchange specification for the exact outright, spread or option you are trading. Different order types and price ranges can use different minimum increments.</p>
   </aside>
+</section>
+
+<section class="tp-section tp-four-numbers" id="four-numbers" aria-labelledby="four-numbers-title">
+  <div class="tp-section-heading">
+    <p class="tp-kicker">Do not substitute one number for another</p>
+    <h2 id="four-numbers-title">Tick Value, Notional, Margin and Planned Risk Answer Different Questions</h2>
+    <p>All four can be expressed in dollars, but they measure different parts of a futures position. A small margin requirement does not cap the loss, and a large notional value does not tell you what a properly placed stop will cost.</p>
+  </div>
+  <div class="tp-number-grid">
+    <article>
+      <span>Tick value</span>
+      <h3>What is one minimum move worth?</h3>
+      <p><strong>tick size &times; contract multiplier</strong></p>
+      <em>ES: 0.25 &times; $50 = $12.50 per tick.</em>
+    </article>
+    <article>
+      <span>Notional value</span>
+      <h3>How much underlying exposure does one contract represent?</h3>
+      <p><strong>futures price &times; contract multiplier</strong></p>
+      <em>Hypothetical ES at 6000: 6000 &times; $50 = $300,000.</em>
+    </article>
+    <article>
+      <span>Margin</span>
+      <h3>How much performance bond is required?</h3>
+      <p><strong>Current exchange and broker requirement</strong></p>
+      <em>It can change and is not maximum loss; retrieve it live from the broker.</em>
+    </article>
+    <article>
+      <span>Planned risk</span>
+      <h3>What does the chosen stop risk?</h3>
+      <p><strong>stop ticks &times; tick value &times; contracts + estimated costs</strong></p>
+      <em>One ES with an eight-point stop: 32 ticks &times; $12.50 = $400 before costs.</em>
+    </article>
+  </div>
 </section>
 
 <section class="tp-section" aria-labelledby="same-move-title">
@@ -564,49 +549,17 @@
   </ul>
 </section>
 
-<section class="tp-section tp-faq" aria-labelledby="faq-title">
-  <div class="tp-section-heading">
-    <p class="tp-kicker">Frequently asked questions</p>
-    <h2 id="faq-title">Ticks, Points and Dollar Value FAQ</h2>
-  </div>
-
-  <details>
-    <summary>What is the difference between a tick and a point?</summary>
-    <p>A tick is the exchange-defined minimum price increment. A point is one full unit of the quoted price and may contain several ticks. ES has four 0.25 ticks per point; RTY has ten 0.10 ticks per point.</p>
-  </details>
-  <details>
-    <summary>How do I calculate the dollar value of a futures move?</summary>
-    <p>Divide the absolute entry-to-exit difference by tick size. Multiply the resulting ticks by tick value and contract count. Apply direction for long or short P&amp;L, then account for commissions, fees and slippage.</p>
-  </details>
-  <details>
-    <summary>How many ticks are in one point?</summary>
-    <p>It depends on tick size. A 0.25 tick produces four ticks per point. A 0.10 tick produces ten. A 0.01 tick produces one hundred. Do not assume an index-futures convention applies to another market.</p>
-  </details>
-  <details>
-    <summary>Why do ES and MES move together but pay differently?</summary>
-    <p>They track the same underlying index and use the same 0.25-point tick size, but MES has a multiplier one tenth the size of ES. That makes MES $1.25 per tick and ES $12.50 per tick.</p>
-  </details>
-  <details>
-    <summary>Is one pip in 6E the same as one futures tick?</summary>
-    <p>No. The standard 6E outright tick is 0.00005 USD per EUR and $6.25. A 0.00010 move is two ticks and $12.50 per contract.</p>
-  </details>
-  <details>
-    <summary>Do options and calendar spreads use the outright tick?</summary>
-    <p>Not always. Some option premiums, calendar spreads and special price ranges use different minimum increments. Verify the exact instrument in the current exchange specification.</p>
-  </details>
-</section>
-
 <section class="tp-sources" aria-labelledby="sources-title">
   <p class="tp-kicker">Sources and methodology</p>
   <h2 id="sources-title">Official Contract Sources and Scope</h2>
-  <p>Contract values below were checked August 6, 2026. They cover the named outright futures. They do not establish option, reduced-tick or calendar-spread increments.</p>
+  <p>Contract values below were checked August 17, 2026. They cover the named outright futures. They do not establish option, reduced-tick or calendar-spread increments.</p>
   <ul>
     <li><a href="https://www.cmegroup.com/education/courses/introduction-to-futures/tick-movements-understanding-how-they-work.%20hideHeader.hideSubnav.educationIframe.html.html.html?hideAddThisExt=y&amp;hideFooter=y&amp;hideHeader=y&amp;hideRightRail=y" target="_blank" rel="noopener">CME Group: Tick Movements</a> for the exchange definition and ES/WTI examples.</li>
     <li><a href="https://www.cmegroup.com/articles/faqs/frequently-asked-questions-micro-e-mini-equity-index-futures.html" target="_blank" rel="noopener">CME Group: Micro E-mini Equity Index Futures FAQ</a> for MES, MNQ and M2K increments and values.</li>
     <li><a href="https://www.cmegroup.com/education/courses/learn-about-e-mini-russell-2000-futures/introduction-to-e-mini-russell-2000" target="_blank" rel="noopener">CME Group: E-mini Russell 2000 Introduction</a> for the RTY multiplier and tick.</li>
     <li><a href="https://www.cmegroup.com/education/articles-and-reports/micro-wti-crude-oil-futures-faq" target="_blank" rel="noopener">CME Group: Micro WTI Crude Oil Futures FAQ</a> for the MCL and CL comparison.</li>
     <li><a href="https://www.cmegroup.com/education/courses/understanding-micro-futures-contracts-at-cme-group/micro-gold-and-silver-futures/micro-gold-and-micro-silver-futures-product-overview" target="_blank" rel="noopener">CME Group: Micro Gold Product Overview</a> for the MGC and GC relationship.</li>
-    <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group: FX Product Guide</a> for the 6E contract size and outright tick.</li>
+    <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group: FX Product Guide</a> for the 6E and M6E contract sizes and outright ticks.</li>
     <li><a href="https://tradecovex.com/guides/trade-copier-latency" target="_blank" rel="noopener">Tradecovex: Trade Copier Latency Explained</a> for the third-party applied example converting tick slippage into multi-account dollar cost.</li>
   </ul>
 </section>
@@ -616,8 +569,9 @@
   <h2 id="related-title">Related Grizzly Parrot Guides</h2>
   <div>
     <a href="futures-contract-specifications-explained.html"><strong>Futures Contract Specifications</strong><span>Read multipliers, delivery units, tick rules and expiration terms.</span></a>
+    <a href="contract-expiration-and-roll.html"><strong>Expiration and Contract Roll</strong><span>Coordinate exchange dates, liquidity migration and account cutoffs.</span></a>
+    <a href="fair-value-in-futures-explained.html"><strong>Fair Value, Carry and Basis</strong><span>Separate modeled value, observed price and basis before comparing contracts.</span></a>
     <a href="../market-basics/risk-per-trade-small-accounts.html"><strong>Risk Per Trade for Small Accounts</strong><span>Turn tick risk and drawdown capacity into a whole-contract position size.</span></a>
-    <a href="futures-slippage-explained.html"><strong>Futures Slippage Explained</strong><span>Understand why realized P&amp;L can differ from clean tick math.</span></a>
   </div>
 </section>
 
@@ -663,7 +617,8 @@
       CL: { tickSize: 0.01, tickValue: 10.00, unit: 'dollars per barrel', decimals: 2, entry: 70.00, exit: 70.35 },
       MGC: { tickSize: 0.10, tickValue: 1.00, unit: 'dollars per ounce', decimals: 1, entry: 3400.0, exit: 3403.2 },
       GC: { tickSize: 0.10, tickValue: 10.00, unit: 'dollars per ounce', decimals: 1, entry: 3400.0, exit: 3403.2 },
-      '6E': { tickSize: 0.00005, tickValue: 6.25, unit: 'USD per EUR', decimals: 5, entry: 1.17000, exit: 1.17100 }
+      '6E': { tickSize: 0.00005, tickValue: 6.25, unit: 'USD per EUR', decimals: 5, entry: 1.17000, exit: 1.17100 },
+      M6E: { tickSize: 0.0001, tickValue: 1.25, unit: 'USD per EUR', decimals: 4, entry: 1.1700, exit: 1.1710 }
     };
 
     var form = document.getElementById('tp-calculator-form');

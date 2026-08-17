@@ -1458,9 +1458,9 @@
     "category": "Market Basics"
   },
   {
-    "title": "Fair Value in Futures Explained: How Futures Prices Are Actually Calculated",
+    "title": "Futures Fair Value Explained: Cost of Carry and Basis",
     "url": "/futures-basics/fair-value-in-futures-explained.html",
-    "description": "Learn what fair value in futures really means, how futures prices are calculated from spot, and why the difference matters for traders.",
+    "description": "Learn futures fair value, cost of carry, basis and convergence across equity index, FX and commodity markets, with an interactive index calculator.",
     "category": "Futures Basics"
   },
   {
@@ -1530,9 +1530,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Futures Contract Expiration and Roll | Complete Guide",
+    "title": "Futures Expiration and Contract Roll: Three Clocks, One Decision",
     "url": "/futures-basics/contract-expiration-and-roll.html",
-    "description": "Learn futures expiration, last trade, settlement, delivery, volume migration, rolling, contract codes, and continuous charts—with examples and a roll planner.",
+    "description": "Learn futures expiration, contract month codes, liquidity migration, broker cutoffs, settlement, delivery and rolling with an interactive roll planner.",
     "category": "Futures Basics"
   },
   {
@@ -1542,9 +1542,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Futures Contract Specifications Explained: What Every Trader Must Know",
+    "title": "Futures Contract Specifications: How to Read Every Field",
     "url": "/futures-basics/futures-contract-specifications-explained.html",
-    "description": "Learn the key futures contract specifications—tick size, tick value, multiplier, expiration, trading hours—and how each one affects your risk and strategy.",
+    "description": "Learn how to read futures contract size, multiplier, tick, settlement, listed months, expiration and trading hours, with verified CME examples.",
     "category": "Futures Basics"
   },
   {
@@ -4164,9 +4164,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Ticks vs Points in Futures | Tick Value &amp; Dollar Risk",
+    "title": "Futures Ticks, Points and Dollar Value: Conversion Guide",
     "url": "/futures-basics/ticks-points-dollar-value.html",
-    "description": "Understand futures ticks, points, tick size, and tick value. Compare ES, MES, NQ, MNQ, RTY, CL, GC, and 6E, then calculate dollar P&amp;L.",
+    "description": "Convert futures ticks and points into dollar P&L, compare ES, MES, NQ, MNQ, RTY, CL, GC, 6E and micro contract values, and size risk.",
     "category": "Futures Basics"
   },
   {

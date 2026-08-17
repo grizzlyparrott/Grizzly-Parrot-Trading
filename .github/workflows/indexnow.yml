@@ -8,6 +8,8 @@ on:
       - .github/workflows/indexnow.yml
       - build_sitemap.py
       - scripts/submit_indexnow.py
+      - "**/*.html"
+      - tests/test_article_metadata_hygiene.py
       - tests/test_build_sitemap.py
       - tests/test_submit_indexnow.py
       - 88679a166d56460fbce57ed37803582a.txt
@@ -17,6 +19,8 @@ on:
       - .github/workflows/indexnow.yml
       - build_sitemap.py
       - scripts/submit_indexnow.py
+      - "**/*.html"
+      - tests/test_article_metadata_hygiene.py
       - tests/test_build_sitemap.py
       - tests/test_submit_indexnow.py
       - 88679a166d56460fbce57ed37803582a.txt
