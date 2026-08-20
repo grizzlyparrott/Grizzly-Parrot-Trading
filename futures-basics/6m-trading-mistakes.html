@@ -2,299 +2,170 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Common 6M Trading Mistakes</title>
-  <meta name="description" content="The most common and costly mistakes traders make in USD/MXN 6M futures, with blunt explanations and corrective actions for each failure point.">
+  <title>6M Trading Mistakes: A Failure Pre-Mortem</title>
+  <meta name="description" content="Run a 6M pre-mortem across data, contract mechanics, thesis, execution, sizing and lifecycle; detect warning signs, install prevention gates and review failures honestly.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6m-trading-mistakes.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Common 6M Trading Mistakes">
-  <meta property="og:description" content="The most common and costly mistakes traders make in USD/MXN 6M futures, with blunt explanations and corrective actions for each failure point.">
+  <meta property="og:title" content="6M Trading Mistakes: A Failure Pre-Mortem">
+  <meta property="og:description" content="Run a 6M pre-mortem across data, contract mechanics, thesis, execution, sizing and lifecycle; detect warning signs, install prevention gates and review failures honestly.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6m-trading-mistakes.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-28">
+  <meta property="article:modified_time" content="2026-08-13">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="6M Trading Mistakes: A Failure Pre-Mortem">
+  <meta name="twitter:description" content="Run a 6M pre-mortem across data, contract mechanics, thesis, execution, sizing and lifecycle; detect warning signs, install prevention gates and review failures honestly.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Common 6M Trading Mistakes">
-  <meta name="twitter:description" content="The most common and costly mistakes traders make in USD/MXN 6M futures, with blunt explanations and corrective actions for each failure point.">
-
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="/futures-basics/6m-research-library.css?v=20260813a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"6M Trading Mistakes: A Failure Pre-Mortem",
+    "description":"Run a 6M pre-mortem across data, contract mechanics, thesis, execution, sizing and lifecycle; detect warning signs, install prevention gates and review failures honestly.",
+    "author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},
+    "publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6m-trading-mistakes.html"},
+    "datePublished":"2025-11-28",
+    "dateModified":"2026-08-13",
+    "url":"https://grizzlyparrottrading.com/futures-basics/6m-trading-mistakes.html",
+    "image":"https://grizzlyparrottrading.com/OG-default.png",
+    "inLanguage":"en-US"
+  }
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Common 6M Trading Mistakes",
-  "description": "The most common and costly mistakes traders make in USD/MXN 6M futures, with blunt explanations and corrective actions for each failure point.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6m-trading-mistakes.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6m-trading-mistakes.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Common 6M Trading Mistakes",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6m-trading-mistakes.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},
+    {"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},
+    {"@type":"ListItem","position":3,"name":"6M Trading Mistakes: A Failure Pre-Mortem","item":"https://grizzlyparrottrading.com/futures-basics/6m-trading-mistakes.html"}
+  ]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
+<a class="mx-skip-link" href="#main-content">Skip to article content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container mxn-library" id="main-content">
+<article>
+<!-- ARTICLE BODY START -->
+<header class="mx-hero">
+  <p class="mx-kicker">Failure catalog &middot; prevention before prediction</p>
+  <h1>6M Trading Mistakes: A Failure Pre-Mortem</h1>
+  <p class="mx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+  <p class="mx-hero-lede">After the loss, the timeline is clearer than the chart: the continuous symbol did not match the order month, the entry arrived one minute before a scheduled release, the stop filled beyond its trigger, and quantity came from a day-margin display. The final mistake would be calling all four failures “the signal was wrong.”</p>
+  <div class="mx-decision-strip" aria-label="Post-loss reconstruction summary"><span><strong>Before</strong>Unverified data, contract and calendar</span><span><strong>During</strong>Execution and loss budget detached</span><span><strong>After</strong>Review either preserves or destroys evidence</span></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-<h1>Common 6M Trading Mistakes</h1>
-
-<p>Most traders blow up in 6M (USD/MXN futures) because they treat it like a major currency contract. It isn’t. 6M behaves like a semi-exotic with violent volatility, thin liquidity, and constant repricing driven by interest-rate spreads and global risk sentiment. Below are the most consistent, account-killing errors traders make and how to eliminate them.</p>
-
-<h2>1. Using Stop Sizes Meant for Majors</h2>
-
-<p>Nothing destroys new traders faster than placing 20–40 tick stops in a contract that routinely moves 600–1200 ticks per day. A 30-tick stop in 6M is noise. This mistake usually comes from trying to force tight risk instead of accepting what the market demands.</p>
-
-<table>
-<tr><th>Stop Type</th><th>Size Needed on 6M</th><th>Why</th></tr>
-<tr><td>Scalp</td><td>60–80 ticks</td><td>Normal noise exceeds 40 ticks</td></tr>
-<tr><td>Trend</td><td>120–200 ticks</td><td>Pullbacks are large</td></tr>
-<tr><td>Swing</td><td>180–300 ticks</td><td>Daily ATR is massive</td></tr>
-</table>
-
-<p>If your stop isn’t built on volatility data, it’s built on fantasy. See <a href="https://grizzlyparrottrading.com/futures-basics/6m-volatility-profile.html">6M Volatility Profile</a> for exact ATR ranges.</p>
-
-<h2>2. Oversizing Because Margin Looks “Cheap”</h2>
-
-<p>6M’s day-trade margin often looks low, but that number has nothing to do with real risk. The Peso can move $500–$1500 per contract in normal conditions. New traders size like they are trading 6E and then panic when 6M does a routine 150-tick swing.</p>
-
-<p>Your size must be based on your stop size and account strength, not on the margin requirement.</p>
-
-<h2>3. Trading 6M During Low-Liquidity Windows</h2>
-
-<p>6M has air pockets where price jumps multiple ticks instantly because there are no resting orders to slow the move. These windows include:</p>
-
-<ul>
-  <li>pre-data minutes (7:45–8:30 AM ET)</li>
-  <li>midday drift (12:00–3:00 PM ET)</li>
-  <li>late-day repricing (3:00–4:00 PM ET)</li>
-</ul>
-
-<p>New traders keep taking entries inside these pockets, then wonder why they get filled five ticks worse than their limit.</p>
-
-<h2>4. Market Ordering in a Thin Book</h2>
-
-<p>This mistake costs real money. 6M’s book is thinner than 6E or 6J, so market orders often jump levels. If your entry timing is wrong by a second, your fill can be garbage.</p>
-
-<p>Correct behavior:</p>
-
-<ul>
-  <li>use limit orders during normal conditions</li>
-  <li>avoid market orders during low-liquidity stretches</li>
-  <li>never enter a breakout unless the book is stacked</li>
-</ul>
-
-<p>This is the same reason <a href="https://grizzlyparrottrading.com/futures-basics/6m-slippage.html">6M Slippage</a> hits traders so hard.</p>
-
-<h2>5. Ignoring DXY</h2>
-
-<p>6M is tightly correlated with the U.S. Dollar Index. Beginners keep taking trades based only on Peso price action, ignoring whether USD is even moving in the same direction.</p>
-
-<p>Rules are simple:</p>
-
-<ul>
-  <li><strong>DXY up + 6M up = legit USD strength</strong></li>
-  <li><strong>DXY down + 6M down = legit USD weakness</strong></li>
-  <li><strong>DXY flat + 6M ripping = Peso-specific risk event</strong></li>
-</ul>
-
-<p>If you size up when USD isn’t backing the move, you’re gambling.</p>
-
-<h2>6. Trading Before Major U.S. Data</h2>
-
-<p>Beginners love to “front-run” CPI, NFP, ISM, and FOMC. It’s suicide on 6M. This contract gets whipped around harder than most FX futures during U.S. macro releases.</p>
-
-<p>Common outcomes:</p>
-
-<ul>
-  <li>stop-outs before the news</li>
-  <li>slippage on the exit</li>
-  <li>fake breakouts that reverse instantly</li>
-</ul>
-
-<p>No serious trader enters 6M within 10–20 minutes of major data.</p>
-
-<h2>7. Using Indicators Not Built for High-Volatility FX</h2>
-
-<p>New traders keep trying to apply 6E/ES indicators to 6M. They fail because they assume smooth behavior.</p>
-
-<p>Useless on 6M:</p>
-
-<ul>
-  <li>MACD (lags too hard)</li>
-  <li>Ichimoku (too slow, too wide)</li>
-  <li>Bollinger Bands (false extremes)</li>
-  <li>Stochastic/RSI (overbought/oversold meaningless)</li>
-</ul>
-
-<p>6M requires tools tuned for semi-exotic behavior. See <a href="https://grizzlyparrottrading.com/futures-basics/6m-best-indicators.html">Best Indicators for 6M</a>.</p>
-
-<h2>8. Misreading Peso Fundamentals</h2>
-
-<p>Most traders have no idea what actually drives MXN. They confuse USD/MXN movement for technical action when the move is caused by:</p>
-
-<ul>
-  <li>interest-rate differentials</li>
-  <li>Banxico commentary</li>
-  <li>oil volatility</li>
-  <li>risk-on/risk-off cycles</li>
-  <li>U.S. yield curve swings</li>
-</ul>
-
-<p>If you trade 6M and don’t monitor rate spreads, you’re not trading the Peso — you’re flipping coins.</p>
-
-<h2>9. Holding Through Late-Day Repricing</h2>
-
-<p>The 3:00–4:00 PM ET window can unwind all intraday flow. U.S. yields shift, equities reverse, and macro funds close positions. New traders hold losing trades into this window and get steamrolled by a 100–200 tick repricing burst.</p>
-
-<p>Rule: if you don’t understand why 6M is moving late in the day, you shouldn’t be holding a position.</p>
-
-<h2>10. Trading Midday Chop</h2>
-
-<p>This is one of the worst mistakes. From 12–3 PM ET, volatility collapses, spreads widen, and price drifts sideways with fake breakouts. New traders force trades here because they feel bored.</p>
-
-<p>Midday 6M is where traders lose patience, discipline, and money.</p>
-
-<h2>Definitions for Screen Readers</h2>
-
-<p><strong>Liquidity:</strong> The amount of resting buy and sell volume in the order book.</p>
-<p><strong>Slippage:</strong> The difference between the expected fill price and the actual fill price.</p>
-<p><strong>Rate Differential:</strong> The interest-rate gap between two countries.</p>
-<p><strong>Repricing:</strong> A fast adjustment when market conditions change suddenly.</p>
-<p><strong>Volatility Collapse:</strong> A period where price movement shrinks unnaturally low.</p>
-
-<div class="highlight-box red">
-  <h3>6M Doesn't Forgive — It Exploits</h3>
-  <p>This contract hunts the same rookie mistakes every time: stops too tight, size too big, blind to DXY, trading when liquidity’s dead, and assuming the Peso moves like a polite European currency. Fix those, and 6M opens up. Don’t — and it’ll bleed your account with mechanical precision.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="mx-section" id="reconstruction" aria-labelledby="reconstruction-title">
+  <div class="mx-section-heading"><p class="mx-kicker">A hypothetical reconstruction</p><h2 id="reconstruction-title">One Loss Can Contain Several Independent Process Failures</h2><p>The sequence below is not a market result. It is a pre-mortem device: imagine the failure has already occurred, then ask what evidence would have exposed it before the order.</p></div>
+  <div class="mx-lifecycle" aria-label="Hypothetical 6M loss reconstruction timeline">
+    <article><span>1</span><h3>07:45 CT: chart chosen</h3><p>A back-adjusted continuous series is treated as though it were the executable contract. No month, roll rule or current book is recorded.</p></article>
+    <article><span>2</span><h3>07:59 CT: order sent</h3><p>A marketable buy is routed as the spread widens. The official release calendar was never checked and no event plan exists.</p></article>
+    <article><span>3</span><h3>08:00 CT: stop triggered</h3><p>The book reprices through the trigger. The fill is 18 ticks worse than the assumed stop price; that path was absent from sizing.</p></article>
+    <article><span>4</span><h3>08:20 CT: review rewritten</h3><p>The trader records only “bad setup,” omits the decision quote and fills, then changes the rule without preserving the original evidence.</p></article>
   </div>
-</footer>
+  <div class="mx-caution"><strong>The purpose of a pre-mortem is not to predict every loss.</strong><p>It is to make common failure paths observable and assign a fail-closed control. A clean process can still lose money; a profitable trade can still contain serious process violations.</p></div>
+</section>
+
+<section class="mx-section" id="data-contract" aria-labelledby="data-contract-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Failure family 1</p><h2 id="data-contract-title">Data and Contract Mistakes Corrupt Every Later Decision</h2><p>A strategy cannot recover from an ambiguous instrument. Treat data provenance, timestamp and dated-contract identity as admission controls.</p></div>
+  <div class="mx-risk-grid">
+    <article><strong>Executing a continuous symbol</strong><p><em>Warning:</em> the chart name has no month or year. <em>Gate:</em> map the research series to the exact live 6M contract and compare its current quote. <em>Recovery:</em> quarantine any record whose traded month cannot be reconstructed.</p></article>
+    <article><strong>Ignoring quote direction</strong><p><em>Warning:</em> a bullish-peso thesis is paired with a direction copied from USD/MXN spot. <em>Gate:</em> state that 6M is USD per MXN and write the expected sign. <em>Recovery:</em> separate thesis error from order-direction error.</p></article>
+    <article><strong>Using stale or receipt timestamps</strong><p><em>Warning:</em> feed age, clock source or exchange timestamp is unknown. <em>Gate:</em> require synchronized authoritative fields. <em>Recovery:</em> label reconstructed timing as experimental, never exchange event time.</p></article>
+    <article><strong>Hiding the roll</strong><p><em>Warning:</em> a price jump occurs where the data vendor changes contracts. <em>Gate:</em> preserve raw contracts, roll dates and adjustment method. <em>Recovery:</em> rerun analysis after the series lineage passes.</p></article>
+  </div>
+  <p class="mx-related">Full source acceptance and continuous-series controls belong in <a href="6m-data-traps.html">6M data traps</a>. The current exchange terms belong in the <a href="6m-tick-size.html">canonical 6M contract guide</a>.</p>
+</section>
+
+<section class="mx-section" id="mechanics" aria-labelledby="mechanics-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Failure family 2</p><h2 id="mechanics-title">A Correct View in the Wrong Unit Is Still a Wrong Order</h2><p>6M represents 500,000 Mexican pesos and its current Globex outright tick is $5. Those facts must appear in risk and P&amp;L math, but this failure catalog links to the specification authority rather than duplicating its full table.</p></div>
+  <div class="mx-table-scroll" role="region" aria-label="6M mechanics failure warnings and controls" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Failure</th><th scope="col">Observable warning</th><th scope="col">Prevention gate</th><th scope="col">Review action</th></tr></thead><tbody>
+    <tr><th scope="row">Decimal error</th><td>Tick method and multiplier method disagree</td><td>Reconcile both before quantity is enabled</td><td>Preserve ticket, raw fills and calculation version</td></tr>
+    <tr><th scope="row">Invented micro</th><td>A platform or note implies “M6M” without a current CME product record</td><td>Require rule chapter, unit, tick and active chain; current CME guide lists no Micro MXN counterpart</td><td>Classify the unverified symbol as unusable</td></tr>
+    <tr><th scope="row">Expiry neglect</th><td>Termination or broker cutoff is absent from the plan</td><td>Record dated month, official expiration and personal roll/exit deadline</td><td>Escalate any unintended deliverable position immediately through the broker</td></tr>
+    <tr><th scope="row">Spot/futures substitution</th><td>The strategy uses spot levels as exact futures order prices</td><td>Measure basis and use the live dated-contract book</td><td>Separate signal translation from execution error</td></tr>
+  </tbody></table></div>
+</section>
+
+<section class="mx-section" id="thesis" aria-labelledby="thesis-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Failure family 3</p><h2 id="thesis-title">A Story Without a Prior, Channel and Falsifier Is Not a Decision Rule</h2><p>“Banxico is hawkish,” “the dollar is strong,” or “risk is off” can describe information, but none is a complete 6M trade. Price responds to what was expected, how the information changes relative paths and which competing forces dominate.</p></div>
+  <div class="mx-falsification-tree">
+    <article><p class="mx-card-label">Mistake</p><h3>Single-cause certainty</h3><ul><li>One release is treated as sufficient.</li><li>No market prior is recorded.</li><li>Competing U.S. or global channels are omitted.</li></ul></article>
+    <article><p class="mx-card-label">Prevention</p><h3>Conditional branch</h3><ul><li>State the prior and surprise.</li><li>Trace at least two plausible channels.</li><li>Define confirmation, contradiction and time limit.</li></ul></article>
+    <article><p class="mx-card-label">Recovery</p><h3>Evidence audit</h3><ul><li>Preserve information timestamps.</li><li>Separate mechanism from observed response.</li><li>Do not promote one loss into a universal rule.</li></ul></article>
+  </div>
+  <p class="mx-related">Use <a href="6m-fundamental-drivers.html">the canonical 6M driver ledger</a> for broad evidence, <a href="banxico-rate-policy-6m.html">the Banxico decision workflow</a> for rate events and <a href="usd-strength-6m.html">the dollar-factor guide</a> to avoid circular confirmation.</p>
+</section>
+
+<section class="mx-section" id="execution" aria-labelledby="execution-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Failure family 4</p><h2 id="execution-title">The Order Type Cannot Rescue a Failed Market-Quality Gate</h2><p>Marketable, limit and stop-triggered orders exchange price certainty, fill certainty and non-fill risk. Choosing a label is not a substitute for measuring the current spread, depth, quote freshness and event state.</p></div>
+  <div class="mx-risk-grid">
+    <article><strong>Entering because the market is open</strong><p><em>Warning:</em> no spread or depth threshold exists. <em>Gate:</em> require current book evidence for the exact month. <em>Recovery:</em> measure decision-to-fill shortfall.</p></article>
+    <article><strong>Chasing an unfilled limit</strong><p><em>Warning:</em> the acceptable price changes after every market move. <em>Gate:</em> predefine cancel, replace and missed-trade logic. <em>Recovery:</em> keep the original decision benchmark.</p></article>
+    <article><strong>Assuming a stop price is a fill</strong><p><em>Warning:</em> sizing uses trigger-to-entry only. <em>Gate:</em> add an adverse-fill stress and understand the stop branch. <em>Recovery:</em> compare trigger, first executable quote and fills.</p></article>
+    <article><strong>Trading into a known release by accident</strong><p><em>Warning:</em> official event calendar is absent. <em>Gate:</em> event state must be allowed explicitly. <em>Recovery:</em> classify the trade separately from normal conditions.</p></article>
+  </div>
+  <p class="mx-related">The complete spread, depth, order branch and post-trade ledger is in <a href="6m-slippage.html">6M slippage and execution quality</a>.</p>
+</section>
+
+<section class="mx-section" id="risk-lifecycle" aria-labelledby="risk-lifecycle-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Failure family 5</p><h2 id="risk-lifecycle-title">Margin, Sizing and Lifecycle Failures Turn Small Errors Into Account Events</h2></div>
+  <div class="mx-table-scroll" role="region" aria-label="6M risk and lifecycle pre-mortem" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Failure mode</th><th scope="col">Why it happens</th><th scope="col">Hard gate</th><th scope="col">Specialist owner</th></tr></thead><tbody>
+    <tr><th scope="row">Size from day margin</th><td>Affordable collateral is confused with acceptable loss</td><td>Integer quantity comes from risk budget, invalidation, $5 tick, costs and stress</td><td><a href="6m-margin-requirements.html">Margin and sizing</a></td></tr>
+    <tr><th scope="row">Move invalidation to avoid a loss</th><td>The account result replaces the original thesis</td><td>Any change requires new evidence and a full risk recalculation</td><td><a href="6m-trading-plan.html">Integrated plan</a></td></tr>
+    <tr><th scope="row">Ignore correlated positions</th><td>Each ticket looks small in isolation</td><td>Aggregate USD, MXN, rates and risk-sentiment exposures</td><td><a href="6m-fundamental-drivers.html">Driver ledger</a></td></tr>
+    <tr><th scope="row">Hold through expiry unintentionally</th><td>Continuous chart hides dated obligation</td><td>Personal exit/roll deadline precedes broker cutoff and exchange termination</td><td><a href="6m-tick-size.html">Contract specification</a></td></tr>
+    <tr><th scope="row">Average down without a branch</th><td>Lower price is mistaken for lower risk</td><td>No quantity addition unless the plan defined evidence, combined invalidation and total cap before entry</td><td><a href="6m-trading-plan.html">Integrated plan</a></td></tr>
+  </tbody></table></div>
+  <div class="mx-caution"><strong>A profitable violation remains a violation.</strong><p>Score process independently from P&amp;L. Otherwise, lucky fills reinforce unsafe sizing and clean losses cause sound controls to be discarded.</p></div>
+</section>
+
+<section class="mx-section" id="recovery" aria-labelledby="recovery-title">
+  <div class="mx-section-heading"><p class="mx-kicker">After a breach</p><h2 id="recovery-title">Stop, Preserve, Classify, Repair, Requalify</h2><p>A loss review should restore control, not create a revenge-trading checklist.</p></div>
+  <div class="mx-process">
+    <article><span>Stop</span><h3>Flatten operational risk</h3><p>Confirm positions and working orders. Address an unintended delivery or margin state with the broker.</p></article>
+    <article><span>Preserve</span><h3>Freeze the evidence</h3><p>Save decision notes, exact contract, quotes, order events, fills, clocks and official release timestamps.</p></article>
+    <article><span>Classify</span><h3>Name each failure</h3><p>Separate data, mechanics, thesis, execution, sizing, infrastructure and random adverse movement.</p></article>
+    <article><span>Requalify</span><h3>Test the repair</h3><p>Change one control at a time, validate it on independent cases and require the gate before live reuse.</p></article>
+  </div>
+  <p class="mx-source-note">Do not infer that the most visible error caused the full loss. A faithful reconstruction can identify multiple necessary or contributing failures without claiming causal certainty the evidence cannot support.</p>
+</section>
+
+<section class="mx-section" id="checklist" aria-labelledby="checklist-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Failure-resistant close</p><h2 id="checklist-title">Pre-Trade and Post-Trade Failure Checks</h2></div>
+  <div class="mx-two-column">
+    <article class="mx-panel"><h3>Before</h3><ul class="mx-checklist"><li>Exact dated contract and quote direction verified.</li><li>Data and clocks pass acceptance requirements.</li><li>Prior, mechanism, competing force and invalidation are written.</li><li>Official events and expiry deadlines are known.</li><li>Spread, depth, order branch, risk quantity and funding all pass.</li></ul></article>
+    <article class="mx-panel"><h3>After</h3><ul class="mx-checklist"><li>Positions, partial fills and working orders reconcile.</li><li>Decision price and all order events remain unchanged.</li><li>Price shortfall and explicit fees reconcile to the statement.</li><li>Process quality is scored separately from P&amp;L.</li><li>Any repair has an owner, test and requalification gate.</li></ul></article>
+  </div>
+</section>
+
+<details class="mx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/256/256.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 256: Mexican Peso/U.S. Dollar futures</a> for the authoritative trading unit, minimum increment, termination and physical-delivery rules underlying the mechanics controls.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME FX Product Guide 2026</a> for current product, quote, tick and Micro-inventory checks.</li>
+  <li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener">CME holiday and trading hours</a> for time-sensitive session exceptions.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/FuturesMarketBasics/index.htm" target="_blank" rel="noopener">CFTC basics of futures trading</a> for leverage, delivery, registration and loss-risk context.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CFTCGlossary/index.htm" target="_blank" rel="noopener">CFTC futures glossary</a> for margin, mark-to-market, market order, limit order, minimum tick and open-interest definitions.</li>
+</ul><p>Sources were reviewed August 13, 2026. The loss reconstruction is hypothetical and not an actual trade or an estimate of typical 6M slippage. Failure paths are controls to test, not claims that a named condition always causes a loss. No original profitability, indicator, session, seasonality or event study is reported.</p></details>
+
+<aside class="mx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>Treat this pre-mortem as general education rather than personal trading, investment, legal, tax, accounting, hedging or brokerage direction. Leverage and physical delivery remain material futures risks; gaps, slippage, data errors and liquidation can produce losses beyond the initial deposit. A checklist reduces some preventable errors but cannot remove market risk.</p></aside>
+<!-- ARTICLE BODY END -->
+</article>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

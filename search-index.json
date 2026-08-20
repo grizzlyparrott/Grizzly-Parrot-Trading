@@ -354,51 +354,87 @@
     "category": "Futures Basics"
   },
   {
-    "title": "6M Data Traps",
+    "title": "6M Backtesting: Build a Reproducible Futures Test",
+    "url": "/futures-basics/6m-backtesting.html",
+    "description": "Design a reproducible 6M futures backtest with dated contracts, explicit rolls and timestamps, executable costs, event controls, holdouts and rejection rules.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6M Carry Trade: Economics, Flows, and Unwind Risk",
+    "url": "/futures-basics/6m-carry-trade.html",
+    "description": "Explain Mexican peso carry economics, funding and hedge costs, flow channels, crowding, volatility, confirmation, and unwind risk without a fixed 6M direction rule.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6M Data Traps: A Dataset Acceptance Audit",
     "url": "/futures-basics/6m-data-traps.html",
-    "description": "The most common data traps traders fall into when analyzing USD/MXN 6M futures, including inaccurate candles, distorted volatility, and false liquidity signals.",
+    "description": "Audit 6M data provenance, contract identity, quote direction, timestamps, missing fields, settlements, rolls and liquidity limits before research begins.",
     "category": "Futures Basics"
   },
   {
-    "title": "6M Margin Requirements",
+    "title": "6M Fundamental Drivers: A Conditional Evidence Ledger",
+    "url": "/futures-basics/6m-fundamental-drivers.html",
+    "description": "Build a 6M evidence ledger across Banxico-Fed expectations, inflation, growth, trade, fiscal risk, global risk, and positioning with confirmation and invalidation.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6M Indicators: Benchmark Them or Choose None",
+    "url": "/futures-basics/6m-best-indicators.html",
+    "description": "Compare 6M indicator candidates by one declared task, a naive baseline, walk-forward evidence, executable costs, multiple-testing controls and explicit rejection rules.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6M Margin Requirements and Risk-Based Sizing",
     "url": "/futures-basics/6m-margin-requirements.html",
-    "description": "A full breakdown of 6M margin requirements, including day margin, overnight margin, SPAN risk, and why Peso futures tempt traders into oversizing.",
+    "description": "Separate current 6M performance-bond funding from maximum loss, then size whole contracts from a dollar risk budget, invalidation, costs and gap stress.",
     "category": "Futures Basics"
   },
   {
-    "title": "6M Seasonal Patterns",
+    "title": "6M Seasonality: Test Calendar Effects Without Forecasting",
     "url": "/futures-basics/6m-seasonality.html",
-    "description": "A full explanation of USD/MXN seasonal patterns, why the Peso strengthens or weakens at certain times of year, and how traders use these cycles in 6M futures.",
+    "description": "Test 6M calendar effects with registered hypotheses, clean returns, event and roll controls, multiple-testing correction, holdouts and falsification rules.",
     "category": "Futures Basics"
   },
   {
-    "title": "6M Slippage Explained",
+    "title": "6M Slippage: Measure Cost and Gate Execution",
     "url": "/futures-basics/6m-slippage.html",
-    "description": "Why slippage is worse on 6M USD/MXN futures than major FX contracts, and exactly how to avoid losing money to thin liquidity and orderflow gaps.",
+    "description": "Measure 6M implementation shortfall from decision price to fills, then use spread, depth, order type, data quality and event risk to go, reduce, wait or reject.",
     "category": "Futures Basics"
   },
   {
-    "title": "6M Tick Size Explained",
+    "title": "6M Tick Size, Tick Value and Contract Specs",
     "url": "/futures-basics/6m-tick-size.html",
-    "description": "A complete breakdown of 6M tick size, tick value, and contract math so traders understand exactly how the Peso future moves and how much each move is worth.",
+    "description": "Verify current 6M contract size, quote convention, $5 tick math, listed months, expiry, physical delivery, trading hours, roll and margin limits.",
     "category": "Futures Basics"
   },
   {
-    "title": "6M Trading Plan Guide",
-    "url": "/futures-basics/6m-trading-plan.html",
-    "description": "A complete step-by-step trading plan for USD/MXN 6M futures built from volatility data, ATR structure, interest-rate fundamentals, and daily risk cycles.",
+    "title": "6M Trade and Remittances: From Flows to FX Evidence",
+    "url": "/futures-basics/6m-trade-and-remittances.html",
+    "description": "Trace Mexico-U.S. trade and remittances through invoicing, settlement, conversion, hedging, timing, and offsets without inventing a same-day 6M signal.",
     "category": "Futures Basics"
   },
   {
-    "title": "6M Volatility Profile",
+    "title": "6M Trading Mistakes: A Failure Pre-Mortem",
+    "url": "/futures-basics/6m-trading-mistakes.html",
+    "description": "Run a 6M pre-mortem across data, contract mechanics, thesis, execution, sizing and lifecycle; detect warning signs, install prevention gates and review failures honestly.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6M Trading Times: A DST-Safe Session Study",
+    "url": "/futures-basics/6m-best-times.html",
+    "description": "Measure 6M volume, spread, depth, slippage, range and event concentration across timezone-aware windows without declaring universally profitable hours.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6M Volatility Profile: Measure the Distribution",
     "url": "/futures-basics/6m-volatility-profile.html",
-    "description": "A deep, data-driven breakdown of 6M volatility, including ATR behavior, typical swing ranges, and the exact risk parameters traders should use for USD/MXN futures.",
+    "description": "Measure 6M volatility distributions, event and session states, roll controls and regime transitions without inventing typical ranges or directional forecasts.",
     "category": "Futures Basics"
   },
   {
-    "title": "6M vs 6E vs 6J Futures",
+    "title": "6M vs 6E vs 6J Futures: Choose by Exposure",
     "url": "/futures-basics/6m-vs-6e-vs-6j.html",
-    "description": "A blunt comparison of 6M, 6E, and 6J futures: contract specs, volatility, liquidity, and why the Peso behaves nothing like the Euro or Yen.",
+    "description": "Compare verified 6M, 6E and 6J contract units, quote conventions, tick values, Micro availability, macro transmission, liquidity questions and analytical fit.",
     "category": "Futures Basics"
   },
   {
@@ -594,27 +630,15 @@
     "category": "Prop Firm Trading"
   },
   {
-    "title": "Backtesting 6M Correctly",
-    "url": "/futures-basics/6m-backtesting.html",
-    "description": "How to backtest USD/MXN 6M futures the right way without getting misled by volatility spikes, irregular structure, and distortion from extreme ATR.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Backwardation in Futures: Why Tight Supply Pulls Prices Forward",
     "url": "/futures-basics/backwardation-deep-dive-futures-pricing.html",
     "description": "A deep, blunt breakdown of backwardation in futures—why near-term contracts trade higher, what it signals, and how it creates positive roll yield.",
     "category": "Futures Basics"
   },
   {
-    "title": "Banxico Influence on 6M",
-    "url": "/futures-basics/banxico-influence-6m.html",
-    "description": "How Banxico influences 6M futures beyond interest rate changes, including intervention, policy guidance, FX operations, and liquidity signals.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "Banxico Policy and 6M",
+    "title": "Banxico Rate Decisions and 6M: An Event Workflow",
     "url": "/futures-basics/banxico-rate-policy-6m.html",
-    "description": "How Mexico’s central bank decisions affect 6M futures, why Banxico rate policy creates violent USD/MXN swings, and what traders must watch.",
+    "description": "Read Banxico decisions through the prior, full announcement package, Mexico rate curve, Banxico-Fed comparison, reaction timeline, confirmation, and failure cases.",
     "category": "Futures Basics"
   },
   {
@@ -628,12 +652,6 @@
     "url": "/prop-firm-trading/best-days-and-times-to-trade-evaluations.html",
     "description": "Typical best days and times to trade futures prop firm evaluations, based on liquidity, volatility, and rule constraints.",
     "category": "Prop Firm Trading"
-  },
-  {
-    "title": "Best Indicators for 6M",
-    "url": "/futures-basics/6m-best-indicators.html",
-    "description": "The most reliable indicators for trading USD/MXN 6M futures, how to tune them for Peso volatility, and which tools you should avoid completely.",
-    "category": "Futures Basics"
   },
   {
     "title": "Best Indicators for 6Z Futures",
@@ -717,12 +735,6 @@
     "title": "Best Times to Trade 6L Futures: Volume, Volatility, and Real Opportunity",
     "url": "/futures-basics/best-times-to-trade-6l-futures.html",
     "description": "A detailed guide on the best times to trade 6L Brazilian Real futures, including volume patterns, volatility cycles, and session behavior.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "Best Times to Trade 6M",
-    "url": "/futures-basics/6m-best-times.html",
-    "description": "A blunt breakdown of the best times to trade 6M futures, including volume cycles, volatility windows, and the sessions that consistently move the Peso.",
     "category": "Futures Basics"
   },
   {
@@ -888,6 +900,12 @@
     "category": "Market Basics"
   },
   {
+    "title": "Build a 6M Trading Plan With No-Trade Gates",
+    "url": "/futures-basics/6m-trading-plan.html",
+    "description": "Build a conditional 6M plan that joins evidence, catalyst calendar, contract choice, setup, integer sizing, execution, invalidation, overnight controls and review.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Building a Simple ES Trading Plan You Can Actually Follow",
     "url": "/futures-basics/es-building-a-simple-trading-plan.html",
     "description": "A blunt guide to building a simple ES trading plan beginners can follow without overthinking, overtrading, or blowing their account.",
@@ -903,12 +921,6 @@
     "title": "Calendar Spreads in Futures: The Beginner-Friendly Breakdown",
     "url": "/futures-basics/calendar-spreads-simplified.html",
     "description": "A simple, blunt explanation of calendar spreads in futures trading and why traders use them without diving into complex math.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "Carry Trade Impact on 6M",
-    "url": "/futures-basics/6m-carry-trade.html",
-    "description": "How global carry trade flows influence USD/MXN 6M futures, including rate spreads, volatility regimes, and forced unwinds during risk-off events.",
     "category": "Futures Basics"
   },
   {
@@ -994,12 +1006,6 @@
     "url": "/market-basics/climax-volume-explained.html",
     "description": "Climax volume explained—why huge volume spikes often signal the end of a trend and what they reveal about trapped traders and market exhaustion.",
     "category": "Market Basics"
-  },
-  {
-    "title": "Common 6M Trading Mistakes",
-    "url": "/futures-basics/6m-trading-mistakes.html",
-    "description": "The most common and costly mistakes traders make in USD/MXN 6M futures, with blunt explanations and corrective actions for each failure point.",
-    "category": "Futures Basics"
   },
   {
     "title": "Common 6N Trading Strategies: Trend Following vs. Mean Reversion",
@@ -1500,12 +1506,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Fundamental Drivers of 6M",
-    "url": "/futures-basics/6m-fundamental-drivers.html",
-    "description": "A deep, data-driven breakdown of the fundamental forces that move USD/MXN and 6M futures: interest rates, capital flows, risk sentiment, exports, and policy.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Fundamental Drivers of 6Z Futures",
     "url": "/futures-basics/fundamental-drivers-of-6z.html",
     "description": "A full breakdown of the real fundamental drivers behind 6Z South African Rand futures: capital flows, commodities, credit risk, yields, and global macro forces.",
@@ -1839,6 +1839,12 @@
     "title": "How Bank of England Decisions Reprice 6B Futures",
     "url": "/futures-basics/how-6b-reacts-to-boe-rate-decisions.html",
     "description": "Read BoE decisions through the prior, vote, guidance, forecast and UK-US rate response—not the Bank Rate headline alone.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "How Banxico Influences 6M Beyond the Policy Rate",
+    "url": "/futures-basics/banxico-influence-6m.html",
+    "description": "Map Banxico's mandate, communication, operations, reserves, FX facilities, Exchange Commission role, and transmission to 6M beyond a target-rate decision.",
     "category": "Futures Basics"
   },
   {
@@ -2451,12 +2457,6 @@
     "title": "How UK Political Events Can Affect 6B Futures",
     "url": "/futures-basics/how-uk-political-events-affect-6b-futures.html",
     "description": "Translate UK political news into fiscal, institutional, trade and policy-continuity channels, then verify the gilt, rates, GBP and 6B response.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "How USD Strength Impacts 6M",
-    "url": "/futures-basics/usd-strength-6m.html",
-    "description": "A deep breakdown of how U.S. dollar strength drives 6M futures, why USD trends amplify Peso moves, and the mechanics behind USD/MXN correlation.",
     "category": "Futures Basics"
   },
   {
@@ -4188,12 +4188,6 @@
     "category": "Market Basics"
   },
   {
-    "title": "Trade & Remittances Impact on 6M",
-    "url": "/futures-basics/6m-trade-and-remittances.html",
-    "description": "How U.S.–Mexico trade flows and remittance cycles directly influence USD/MXN 6M futures through capital flow, currency demand, and seasonal liquidity shifts.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Trade Copier Rules in Prop Firms: What’s Allowed and What Gets You Violated",
     "url": "/prop-firm-trading/trade-copier-rules.html",
     "description": "A direct guide to trade copier rules in prop firms, including what’s allowed, what’s banned, and how firms detect copier violations.",
@@ -4446,6 +4440,12 @@
     "category": "Market Basics"
   },
   {
+    "title": "USD Strength and 6M: Identity, Common Factor, and Test",
+    "url": "/futures-basics/usd-strength-6m.html",
+    "description": "Separate 6M's inverse quote identity from a genuine common-dollar factor, compare dollar baskets, use non-circular confirmation, and design a falsifiable test.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Use USD Strength to Test 6B Setups Without Circularity",
     "url": "/futures-basics/how-us-dollar-strength-confirms-or-invalidates-6b-setups.html",
     "description": "Test 6B setups with ex-GBP dollar breadth and relative-rate evidence, identify circular GBP/USD comparisons, align timestamps and resolve conflicts.",
@@ -4554,9 +4554,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "What Are 6M Futures?",
+    "title": "What Are 6M Mexican Peso Futures?",
     "url": "/futures-basics/what-are-6m-futures.html",
-    "description": "A clear explanation of 6M futures, how the USD/MXN contract works, and what beginners need to understand before trading the Peso.",
+    "description": "Understand what CME 6M Mexican Peso futures represent, why the quote runs opposite common USD/MXN screens, who uses them, their dated lifecycle and core risks.",
     "category": "Futures Basics"
   },
   {
@@ -4800,9 +4800,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Why 6M Trades Differently",
+    "title": "Why 6M Trades Differently: Structure to Execution",
     "url": "/futures-basics/why-6m-trades-differently.html",
-    "description": "A deep breakdown of why 6M trades differently from major FX futures, including liquidity, volatility structure, orderflow behavior, and institutional positioning.",
+    "description": "Explain how 6M participation, liquidity states, event transmission, contract rolls and data limits can change executable risk without claiming fixed behavior.",
     "category": "Futures Basics"
   },
   {

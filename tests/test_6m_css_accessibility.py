@@ -1,0 +1,92 @@
+﻿import re
+import unittest
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+CSS_PATH = ROOT / "futures-basics" / "6m-research-library.css"
+
+
+def _rgb(hex_color: str) -> tuple[int, int, int]:
+    value = hex_color.lstrip("#")
+    return tuple(int(value[index : index + 2], 16) for index in (0, 2, 4))
+
+
+def _relative_luminance(hex_color: str) -> float:
+    channels = []
+    for channel in _rgb(hex_color):
+        normalized = channel / 255
+        channels.append(
+            normalized / 12.92
+            if normalized <= 0.04045
+            else ((normalized + 0.055) / 1.055) ** 2.4
+        )
+    red, green, blue = channels
+    return 0.2126 * red + 0.7152 * green + 0.0722 * blue
+
+
+def _contrast(left: str, right: str) -> float:
+    light, dark = sorted(
+        (_relative_luminance(left), _relative_luminance(right)), reverse=True
+    )
+    return (light + 0.05) / (dark + 0.05)
+
+
+def _variable(css: str, name: str) -> str:
+    match = re.search(rf"{re.escape(name)}:\s*(#[0-9a-f]{{6}})", css, flags=re.I)
+    assert match, f"missing {name}"
+    return match.group(1)
+
+
+class SixMCssAccessibilityTests(unittest.TestCase):
+    def test_skip_link_is_hidden_until_keyboard_focus(self):
+        css = CSS_PATH.read_text(encoding="utf-8")
+
+        self.assertRegex(css, r"\.mx-skip-link\s*\{[^}]*position:\s*fixed")
+        self.assertRegex(
+            css,
+            r"\.mx-skip-link:focus\s*\{[^}]*transform:\s*translateY\(0\)",
+        )
+
+    def test_focus_indicator_has_light_and_dark_three_to_one_layers(self):
+        css = CSS_PATH.read_text(encoding="utf-8")
+        focus_dark = _variable(css, "--mx-focus-dark")
+        focus_light = _variable(css, "--mx-focus-light")
+        paper = _variable(css, "--mx-paper")
+        ink = _variable(css, "--mx-ink")
+
+        self.assertGreaterEqual(_contrast(focus_dark, paper), 3)
+        self.assertGreaterEqual(_contrast(focus_light, ink), 3)
+        self.assertIn("outline: 3px solid var(--mx-focus-light)", css)
+        self.assertIn("box-shadow: 0 0 0 6px var(--mx-focus-dark)", css)
+        self.assertIn(".mxn-library summary:focus-visible", css)
+
+    def test_calculator_focus_rule_does_not_override_focus_visible_outline(self):
+        css = CSS_PATH.read_text(encoding="utf-8")
+        later_focus = re.search(
+            r"\.mx-fields input:focus\s*\{(?P<body>.*?)\n\}",
+            css,
+            flags=re.S,
+        )
+
+        self.assertIsNotNone(later_focus)
+        self.assertNotIn("outline", later_focus.group("body"))
+        self.assertNotIn("box-shadow", later_focus.group("body"))
+
+    def test_process_arrow_uses_a_dark_foreground_on_gold(self):
+        css = CSS_PATH.read_text(encoding="utf-8")
+        arrow = re.search(
+            r"\.mx-process article:not\(:last-child\)::after\s*\{(?P<body>.*?)\n\}",
+            css,
+            flags=re.S,
+        )
+        self.assertIsNotNone(arrow)
+        self.assertIn("color: var(--mx-ink)", arrow.group("body"))
+        self.assertGreaterEqual(
+            _contrast(_variable(css, "--mx-ink"), _variable(css, "--mx-gold")),
+            3,
+        )
+
+
+if __name__ == "__main__":
+    unittest.main()

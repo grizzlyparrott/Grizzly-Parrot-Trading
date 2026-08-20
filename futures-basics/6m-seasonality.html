@@ -2,290 +2,150 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6M Seasonal Patterns</title>
-  <meta name="description" content="A full explanation of USD/MXN seasonal patterns, why the Peso strengthens or weakens at certain times of year, and how traders use these cycles in 6M futures.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6m-seasonality.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6M Seasonal Patterns">
-  <meta property="og:description" content="A full explanation of USD/MXN seasonal patterns, why the Peso strengthens or weakens at certain times of year, and how traders use these cycles in 6M futures.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6m-seasonality.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6M Seasonal Patterns">
-  <meta name="twitter:description" content="A full explanation of USD/MXN seasonal patterns, why the Peso strengthens or weakens at certain times of year, and how traders use these cycles in 6M futures.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6M Seasonal Patterns",
-  "description": "A full explanation of USD/MXN seasonal patterns, why the Peso strengthens or weakens at certain times of year, and how traders use these cycles in 6M futures.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6m-seasonality.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6m-seasonality.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6M Seasonal Patterns",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6m-seasonality.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6M Seasonality: Test Calendar Effects Without Forecasting</title>
+  <meta name="description" content="Test 6M calendar effects with registered hypotheses, clean returns, event and roll controls, multiple-testing correction, holdouts and falsification rules.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6m-seasonality.html">
+  <meta property="og:title" content="6M Seasonality: Test Calendar Effects Without Forecasting"><meta property="og:description" content="Test 6M calendar effects with registered hypotheses, clean returns, event and roll controls, multiple-testing correction, holdouts and falsification rules."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6m-seasonality.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-28"><meta property="article:modified_time" content="2026-08-13">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6M Seasonality: Test Calendar Effects Without Forecasting"><meta name="twitter:description" content="Test 6M calendar effects with registered hypotheses, clean returns, event and roll controls, multiple-testing correction, holdouts and falsification rules."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/6m-research-library.css?v=20260813a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6M Seasonality: Test Calendar Effects Without Forecasting","description":"Test 6M calendar effects with registered hypotheses, clean returns, event and roll controls, multiple-testing correction, holdouts and falsification rules.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6m-seasonality.html"},"datePublished":"2025-11-28","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/6m-seasonality.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6M Seasonality: Test Calendar Effects Without Forecasting","item":"https://grizzlyparrottrading.com/futures-basics/6m-seasonality.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="mx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container mxn-library" tabindex="-1"><article>
+<!-- ARTICLE BODY START -->
+<header class="mx-hero">
+  <div class="mx-hero-copy">
+    <p class="mx-kicker">Calendar hypotheses &middot; multiplicity &middot; stability</p>
+    <h1>6M Seasonality: Test Calendar Effects Without Forecasting</h1>
+    <p class="mx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="mx-hero-lede">Twelve months already create twelve possible stories. Add weekdays, turn-of-month windows, holidays, several return horizons, long and short directions, and a few exclusions, and a researcher can inspect hundreds of calendar cells. One unusually strong historical average is then expected somewhere even when no stable seasonal effect exists.</p>
+    <div class="mx-hero-actions"><a class="button-primary" href="#grid">See the comparison problem</a><a class="mx-text-link" href="#falsification">Use the falsification matrix</a></div>
+    <dl class="mx-hero-metrics" aria-label="6M seasonality research boundaries"><div><dt>Hypotheses</dt><dd>Registered</dd></div><div><dt>Returns</dt><dd>Roll-clean</dd></div><div><dt>Validation</dt><dd>Chronological</dd></div><div><dt>Original finding</dt><dd>None</dd></div></dl>
   </div>
+  <aside class="mx-market-board" aria-label="Illustrative calendar comparison count">
+    <div class="mx-board-head"><span>Illustrative search</span><strong>Before filters</strong></div>
+    <div class="mx-window-equation"><strong>12 months</strong><span>&times; 5 weekdays</span><span>&times; 4 horizons</span><span>= 240 cells</span></div>
+    <p class="mx-board-foot">Each added direction, threshold, event rule, or exclusion expands the family</p>
+  </aside>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="mx-jump-nav" aria-label="On this page"><a href="#grid">Search grid</a><a href="#registry">Registry</a><a href="#sample">Sample</a><a href="#returns">Returns</a><a href="#controls">Controls</a><a href="#uncertainty">Uncertainty</a><a href="#holdout">Holdout</a><a href="#falsification">Falsification</a></nav>
 
-<h1>6M Seasonal Patterns</h1>
-
-<p>The Mexican Peso isn’t random. USD/MXN shows repeating seasonal tendencies every year, and these patterns directly carry into 6M futures. Seasonality in the Peso is strong because Mexico has predictable flows of tourism, remittances, tax deadlines, export cycles, and business funding rhythms. If you understand these flows, you gain an automatic edge in timing long-term and medium-term 6M trades.</p>
-
-<h2>Why Currencies Have Seasonal Behavior</h2>
-
-<p>A currency strengthens when demand for it increases and weakens when demand decreases. That demand isn’t constant. Large economies move money in predictable cycles—companies pay taxes at the same time each year, tourism happens during the same months, and export revenue flows at recurring intervals.</p>
-
-<p>The Peso follows this rule heavily because Mexico depends on:</p>
-
-<ul>
-  <li>tourism inflows</li>
-  <li>manufacturing exports to the U.S.</li>
-  <li>oil-related revenue</li>
-  <li>remittances sent home by Mexican workers abroad</li>
-</ul>
-
-<p>These cycles create a predictable push-and-pull in USD/MXN that 6M traders can leverage.</p>
-
-<h2>1. January and February: Peso Strengthens</h2>
-
-<p>At the beginning of the year, Mexican corporations repatriate funds for tax obligations and budget resets. This increases demand for MXN and causes USD/MXN to fall. That means 6M futures typically trend downward.</p>
-
-<p>Reasons:</p>
-
-<ul>
-  <li>corporate tax payments requiring pesos</li>
-  <li>importers buying MXN to pay local vendors</li>
-  <li>investment inflows for the new year</li>
-</ul>
-
-<p>These months often set the tone for early-year Peso strength.</p>
-
-<h2>2. March and April: Mixed but Often Bullish for MXN</h2>
-
-<p>As tax season continues, demand for MXN stays elevated. However, volatility increases because this is when the U.S. begins releasing major Q1 economic data.</p>
-
-<p>Typical results:</p>
-
-<ul>
-  <li>MXN strength if U.S. data is neutral or weak</li>
-  <li>MXN weakness if U.S. rate expectations rise</li>
-</ul>
-
-<p>Because of this, 6M often forms its first large directional trend of the year in April.</p>
-
-<h2>3. May through August: Peso Weakens</h2>
-
-<p>This is the most reliable seasonal pattern for USD/MXN: the Peso commonly loses strength during the summer months.</p>
-
-<p>This happens for three main reasons:</p>
-
-<ul>
-  <li>lower tourism inflows prior to the peak season</li>
-  <li>corporate capital flowing outward, not inward</li>
-  <li>global risk-off behavior during summer trading</li>
-</ul>
-
-<p>Summer is historically one of the weakest periods for MXN. 6M futures tend to trend upward modestly or at least find a consistent bid.</p>
-
-<h2>4. September and October: Peso Volatility Increases</h2>
-
-<p>These months often bring highly volatile USD/MXN movement. Several factors hit at the same time:</p>
-
-<ul>
-  <li>U.S. Federal Reserve policy announcements</li>
-  <li>Mexico’s budget planning and financial reporting</li>
-  <li>energy market volatility during hurricane season</li>
-  <li>renewed bond-market speculation</li>
-</ul>
-
-<p>The Peso can strengthen or weaken rapidly depending on global risk sentiment. These months reward trend traders and punish scalpers.</p>
-
-<h2>5. November and December: Peso Strengthens Again</h2>
-
-<p>The end of the year typically brings Peso strength for predictable reasons:</p>
-
-<ul>
-  <li>massive remittance inflows for holidays</li>
-  <li>tourism season beginning in December</li>
-  <li>corporations closing books and repatriating funds</li>
-</ul>
-
-<p>Families abroad send money home, tourists bring in dollars and exchange them, and companies prepare for year-end accounting. All of this increases demand for MXN and pushes USD/MXN lower—meaning 6M futures drop.</p>
-
-<h2>Why 6M Seasonality Works Better Than Other FX Futures</h2>
-
-<p>Seasonality works on MXN better than on EUR, JPY, or GBP because Mexico’s economic flows are tighter and more cyclical. Europe is too large and diversified for strong seasonal patterns. Japan’s currency cycles mostly around global bond yields. But Mexico’s Peso relies on consistent, repeated events that do not change year-to-year.</p>
-
-<p>This means seasonal tendencies in USD/MXN are more reliable than in most major currency futures.</p>
-
-<h2>How to Use Seasonality in 6M Trading</h2>
-
-<p>You don’t treat seasonality as a signal by itself. You use it as a framework. It tells you which direction is more likely to sustain large multi-week moves.</p>
-
-<p>For example:</p>
-
-<ul>
-  <li>If January historically strengthens MXN, you favor shorts on 6M unless price action says otherwise.</li>
-  <li>If July historically weakens MXN, you look for reasons to go long on 6M.</li>
-  <li>During volatile months like September, you expect larger breakouts and avoid tight stop losses.</li>
-</ul>
-
-<p>Seasonality gives context. It tilts the odds before you even look at the chart.</p>
-
-<h2>Definitions for Screen Readers</h2>
-
-<p><strong>Seasonality:</strong> A repeatable pattern that occurs during certain months due to economic behavior that happens on a regular schedule.</p>
-
-<p><strong>Remittances:</strong> Money sent home by people working in another country. For Mexico, this usually means money sent from the U.S. to family in Mexico.</p>
-
-<p><strong>Repatriation:</strong> When companies bring foreign currency earnings back into their home currency.</p>
-
-<p><strong>Tourism inflow:</strong> Money brought into an economy by visitors from other countries.</p>
-
-<div class="callout-yellow">
-  <h3>Seasonal Edge in 6M Isn’t Guesswork</h3>
-  <p>
-    The Peso shows some of the clearest seasonal flows in FX, and 6M futures make those patterns tradable. If you understand when MXN typically strengthens or weakens, you can plan trades with better timing, anticipate volatility shifts, and avoid forcing setups during slow months. It’s not prediction — it’s preparation.
-  </p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="mx-section" id="grid" aria-labelledby="grid-title">
+  <div class="mx-section-heading"><p class="mx-kicker">More cells, more false stories</p><h2 id="grid-title">A Calendar Grid Can Manufacture an Apparent Pattern</h2><p>Seasonality is a recurring calendar-conditioned distribution, not a chart anecdote and not a mechanism by itself. The family includes every cell, horizon, direction, transformation, subgroup, and manual exclusion inspected. Count it before testing.</p></div>
+  <div class="mx-three-column">
+    <article class="mx-panel"><p class="mx-card-label">Established fact</p><h3>Calendar labels are observable</h3><p>Month, weekday, business-day position, holiday status and scheduled event timing can be defined from dated records.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Open hypothesis</p><h3>A label may condition a distribution</h3><p>A predeclared calendar state may differ from a matched baseline in return, range, spread, or another named outcome.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Unsupported leap</p><h3>History does not make a forecast</h3><p>An in-sample mean, even when positive, does not establish persistence, direction next year, or executable profitability.</p></article>
   </div>
-</footer>
-</body>
-</html>
+  <div class="mx-caution"><strong>Multiple-comparison boundary</strong><p><a href="https://www.itl.nist.gov/div898/handbook/prc/section4/prc47.htm" target="_blank" rel="noopener">NIST&rsquo;s multiple-comparison guidance</a> explains that repeatedly applying pairwise comparisons does not generally control a larger family. A seasonal report must disclose all tried calendar definitions, not only the cell that survived inspection.</p></div>
+</section>
+
+<section class="mx-section" id="registry" aria-labelledby="registry-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Before opening outcomes</p><h2 id="registry-title">Register the Calendar Hypothesis and Its Economic Clock</h2><p>A protocol should make the candidate computable without judgment. “The peso is strong in spring” is not a hypothesis. Define the calendar, timezone, eligible dates, anchor, entry and exit timestamps, direction, primary outcome, baseline, mechanism, controls, and failure threshold.</p></div>
+  <div class="mx-table-scroll" role="region" aria-label="6M seasonality hypothesis registry" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Registry field</th><th scope="col">Required specification</th><th scope="col">Why it matters</th></tr></thead><tbody>
+    <tr><th scope="row">Calendar state</th><td>Month, weekday, business-day index, holiday relation, or named interval</td><td>Prevents redrawing the window around the outcome</td></tr>
+    <tr><th scope="row">Clock</th><td>UTC anchor plus named local timezone and date-aware offset</td><td>Prevents DST and overnight date drift</td></tr>
+    <tr><th scope="row">Universe</th><td>Dated 6M contracts, sample dates, exclusions and roll policy</td><td>Defines what had a chance to enter the sample</td></tr>
+    <tr><th scope="row">Outcome</th><td>Signed return, absolute return, range, spread, slippage, or another single primary metric</td><td>Stops direction and volatility from being interchanged</td></tr>
+    <tr><th scope="row">Baseline</th><td>Clock-, horizon-, risk-, and condition-matched non-event dates</td><td>Separates a calendar effect from ordinary market structure</td></tr>
+    <tr><th scope="row">Mechanism</th><td>Predeclared explanation and observable intermediate evidence</td><td>Permits a causal story to fail independently of the price result</td></tr>
+    <tr><th scope="row">Falsification</th><td>Minimum effect, uncertainty, sign, stability and cost requirements</td><td>Makes “no seasonal evidence” a valid outcome</td></tr>
+  </tbody></table></div>
+  <p>A hypothesis registry is not a findings table. The page offers examples of fields, not a claim that any month, weekday, or holiday window changes 6M behavior.</p>
+</section>
+
+<section class="mx-section" id="sample" aria-labelledby="sample-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Years, not rows, carry replication</p><h2 id="sample-title">Construct an Eligible Sample With Honest Independence</h2><p>A monthly seasonal effect has only one corresponding month per year. Daily bars inside the same month share shocks, policy regimes, and overlapping paths; they do not turn a short history into hundreds of independent annual replications. Report years, episodes, dates, and attrition separately.</p></div>
+  <div class="mx-method"><div><h3>Primary sampling unit</h3><p>Choose the independent unit that matches the claim. For a month-of-year hypothesis, summarize each eligible year-month first. For a turn-of-month event, create one nonoverlapping episode per anchor. Estimate uncertainty with blocks that retain cross-day and within-episode dependence.</p></div><dl><div><dt>Eligible years</dt><dd>Reported</dd></div><div><dt>Episodes</dt><dd>Nonoverlapping</dd></div><div><dt>Attrition</dt><dd>By reason</dd></div><div><dt>Unit</dt><dd>Claim-matched</dd></div></dl></div>
+  <ul class="mx-checklist">
+    <li><strong>Freeze the history start.</strong> Do not choose a start date because an earlier regime weakens the average.</li>
+    <li><strong>Keep missing dates visible.</strong> Exchange closure, provider outage, absent contract identity and failed data checks receive distinct reason codes.</li>
+    <li><strong>Prevent overlap.</strong> One date cannot be treated as an independent observation in several overlapping horizons without dependence-aware inference.</li>
+    <li><strong>Reserve later years.</strong> Do not use every historical cycle for both discovery and confirmation.</li>
+  </ul>
+</section>
+
+<section class="mx-section" id="returns" aria-labelledby="returns-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Dated-contract path</p><h2 id="returns-title">Build Returns Without Turning the Roll Into Seasonality</h2><p>6M is a dated futures contract. Expiry migration recurs on the calendar, so a continuous-series splice can masquerade as a seasonal move. Calculate tradeable paths from dated prices and model any contract change as an actual close-and-reopen transaction.</p></div>
+  <div class="mx-process">
+    <article><span>01</span><h3>Select ex ante</h3><p>Choose the active expiry with information available before the interval begins.</p></article>
+    <article><span>02</span><h3>Anchor prices</h3><p>Use declared trade, quote, or settlement fields and exact timestamps; do not mix price types.</p></article>
+    <article><span>03</span><h3>Execute rolls</h3><p>Charge two sides, spread, slippage, fees, missed fills and any exposure gap.</p></article>
+    <article><span>04</span><h3>Reconcile views</h3><p>Compare actual dated returns with documented adjusted analytical series.</p></article>
+  </div>
+  <div class="mx-two-column">
+    <article class="mx-panel"><p class="mx-card-label">Directional outcome</p><h3>Signed return</h3><p>Freeze quote direction and price anchors. Because 6M is quoted in U.S. dollars per Mexican peso, signs cannot be borrowed casually from a pesos-per-dollar cash chart.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Movement outcome</p><h3>Absolute return or range</h3><p>Measure magnitude separately from sign. A calendar window with historically larger movement, if established, would still not select long or short.</p></article>
+  </div>
+  <p class="mx-source-note">The <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME FX Product Guide</a> and <a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/256/256.pdf" target="_blank" rel="noopener">Rulebook Chapter 256</a> anchor the current instrument and dated-contract context. Use the <a href="6m-tick-size.html">canonical 6M specification guide</a> for detailed mechanics.</p>
+</section>
+
+<section class="mx-section" id="controls" aria-labelledby="controls-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Calendar label versus recurring cause</p><h2 id="controls-title">Control Events, Holidays, Regimes, and Composition</h2><p>A month or weekday can proxy for scheduled releases, policy meetings, recurring roll activity, holidays, changing liquidity, or one concentrated crisis. Stratify or match these conditions before assigning the effect to the calendar label itself.</p></div>
+  <div class="mx-four-grid">
+    <article class="mx-panel"><p class="mx-card-label">Official events</p><h3>Mexico and U.S. releases</h3><p>Timestamp Banxico, INEGI, Federal Reserve, BLS, and BEA publications from official records. Calendar timing does not imply response direction.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Trading calendar</p><h3>Holidays and shortened sessions</h3><p>Version CME schedules and local holidays. A shorter or thin session changes exposure time and execution opportunity.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Market state</p><h3>Volatility and liquidity</h3><p>Use past-only state definitions, sufficient observations, and separate tails. Do not invent a regime boundary after seeing the seasonal outcome.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Contract state</p><h3>Roll and expiry proximity</h3><p>Report outgoing and incoming participation, days to termination, and the rule that selected the analyzed contract.</p></article>
+  </div>
+  <p>Mechanism evidence should be observable and distinct from the return. For example, an event-timing hypothesis should show that the named releases actually cluster in the candidate window and that the price effect remains after event-matched comparison. A plausible story without those steps stays a hypothesis.</p>
+</section>
+
+<section class="mx-section" id="uncertainty" aria-labelledby="uncertainty-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Publish distributions, not slogans</p><h2 id="uncertainty-title">Estimate Effect Size, Tails, and the Selection Penalty</h2><p>Report the full conditional and matched-baseline distributions: sample counts, medians, means if justified, quantiles, dispersion, drawdowns for trading applications, and dependence-aware intervals. A p-value alone does not show whether the effect is economically meaningful or stable.</p></div>
+  <div class="mx-table-scroll" role="region" aria-label="Seasonality inference requirements" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Requirement</th><th scope="col">Publish</th><th scope="col">Fail when</th></tr></thead><tbody>
+    <tr><th scope="row">Family disclosure</th><td>Every month, weekday, horizon, direction, filter and exclusion tried</td><td>Only the selected cell is shown</td></tr>
+    <tr><th scope="row">Effect size</th><td>Candidate-minus-baseline difference in natural and risk units</td><td>Significance has no practical magnitude</td></tr>
+    <tr><th scope="row">Uncertainty</th><td>Year- or episode-blocked interval and sample support</td><td>Rows are treated as independent despite shared paths</td></tr>
+    <tr><th scope="row">Tails</th><td>Worst episodes, quantiles, drawdown and concentration by year</td><td>A few years create the mean</td></tr>
+    <tr><th scope="row">Costs</th><td>Spread, slippage, fees, rolls, misses and stress</td><td>Executable result disappears under reasonable friction</td></tr>
+  </tbody></table></div>
+  <p><a href="https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc442.htm" target="_blank" rel="noopener">NIST&rsquo;s stationarity discussion</a> notes that stable mean, variance, and autocorrelation structure are assumptions in many time-series methods and that seasonality is typically modeled explicitly. In markets, changing regimes make stability an empirical question rather than a default.</p>
+</section>
+
+<section class="mx-section" id="holdout" aria-labelledby="holdout-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Later cycles decide</p><h2 id="holdout-title">Validate Out of Sample and Across Reasonable Definitions</h2><p>Develop the hypothesis on early years, make one controlled selection on later validation years, then freeze code and open a final untouched period once. A seasonal claim should also survive adjacent windows and a second defensible roll rule without being retuned.</p></div>
+  <div class="mx-transition-guards">
+    <article><strong>Adjacent calendar window</strong><p>Shift the start and end by a small declared amount. A one-day optimum surrounded by reversals is fragile.</p></article>
+    <article><strong>Early versus later history</strong><p>Require direction and useful magnitude to persist rather than averaging a structural break.</p></article>
+    <article><strong>Alternate roll policy</strong><p>Repeat with a second ex-ante contract-selection rule and dated execution.</p></article>
+    <article><strong>Event removal and matching</strong><p>Show whether the calendar label adds information beyond scheduled events.</p></article>
+    <article><strong>Cost and timing stress</strong><p>Delay entry, widen costs, and preserve unfilled orders for any trading application.</p></article>
+    <article><strong>Prospective monitoring</strong><p>Predefine expiry, drawdown, drift, and revalidation limits; do not wait for a story after decay.</p></article>
+  </div>
+  <div class="mx-caution"><strong>Hypothetical-performance boundary</strong><p>The <a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/fraudadv_tradingsystem.html" target="_blank" rel="noopener">CFTC advisory on commodity trading systems</a> explains that simulated results can benefit from hindsight and do not reproduce actual financial risk. Even a completed seasonal backtest remains hypothetical evidence.</p></div>
+</section>
+
+<section class="mx-section" id="falsification" aria-labelledby="falsification-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Ending matrix</p><h2 id="falsification-title">Falsification Matrix for 6M Calendar Claims</h2><p>Fill the matrix before examining the final holdout. A blank required cell means the claim is not accepted.</p></div>
+  <div class="mx-table-scroll" role="region" aria-label="6M seasonality falsification matrix" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Candidate family</th><th scope="col">Must beat</th><th scope="col">Must survive</th><th scope="col">Reject when</th></tr></thead><tbody>
+    <tr><th scope="row">Month of year</th><td>All other months or a predeclared matched baseline</td><td>Later years, adjacent month boundaries, event and roll controls</td><td>Sign reverses, interval is uninformative, or few years dominate</td></tr>
+    <tr><th scope="row">Weekday</th><td>Clock-matched other weekdays</td><td>Holiday removal, event matching, DST-safe clocks</td><td>Effect is an event or shortened-session proxy</td></tr>
+    <tr><th scope="row">Turn of month</th><td>Same-length ordinary business-day windows</td><td>Nonoverlap, alternate business-day definitions, later cycles</td><td>Window is redrawn or relies on one horizon</td></tr>
+    <tr><th scope="row">Holiday relation</th><td>Comparable nonholiday sessions with equal exposure time</td><td>Named holiday definitions, schedule versions, liquidity stress</td><td>Missing or early-close data create the result</td></tr>
+    <tr><th scope="row">Trading application</th><td>No-trade and a simple risk-matched rule</td><td>Dated fills, costs, latency, rolls and prospective limits</td><td>Gross pattern lacks net, executable value</td></tr>
+  </tbody></table></div>
+  <div class="mx-caution"><strong>Research status as of August 13, 2026</strong><p>No original study is reported. No original 6M seasonal sample, month ranking, weekday effect, holiday effect, return estimate, significance test, or trading result is reported here. The table is a protocol. Until a registered study passes it on sealed later data, the evidence state is <strong>untested</strong>.</p></div>
+</section>
+
+<details class="mx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/markets/fx/emerging-market/mexican-peso.contractSpecs.html" target="_blank" rel="noopener">CME Group Mexican Peso futures contract page</a>, <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">2026 FX Product Guide</a>, and <a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/256/256.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 256</a> for current product, quotation and dated-contract context.</li>
+  <li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener">CME DataMine historical-data catalog</a> for available official historical data categories. No market dataset was purchased or downloaded for this article.</li>
+  <li><a href="https://www.itl.nist.gov/div898/handbook/prc/section4/prc47.htm" target="_blank" rel="noopener">NIST/SEMATECH guidance on multiple comparisons</a> for comparison-family control.</li>
+  <li><a href="https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc442.htm" target="_blank" rel="noopener">NIST/SEMATECH guidance on stationarity</a> and <a href="https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm" target="_blank" rel="noopener">time-series analysis</a> for temporal dependence and structural-stability context.</li>
+  <li><a href="https://www.banxico.org.mx/politica-monetaria/d/%7B3B4BDA5B-E7E8-E414-2066-DA0CB3F7C36F%7D.pdf" target="_blank" rel="noopener">Banco de M&eacute;xico 2026 publication calendar</a>, <a href="https://inegi.org.mx/contenidos/saladeprensa/doc/cal_2026.pdf" target="_blank" rel="noopener">INEGI 2026 statistical release calendar</a>, <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">Federal Reserve FOMC calendars</a>, <a href="https://www.bls.gov/schedule/" target="_blank" rel="noopener">BLS release calendar</a>, and <a href="https://www.bea.gov/news/schedule" target="_blank" rel="noopener">BEA release schedule</a> for event-control design.</li>
+  <li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener">CME Group trading-hours and holiday notices</a> for contemporaneous session and holiday controls.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/fraudadv_tradingsystem.html" target="_blank" rel="noopener">CFTC advisory on commodity trading systems and hypothetical performance</a> for simulation and hindsight limits.</li>
+</ul><p>Sources and methods were reviewed August 13, 2026. This page is unsponsored editorial analysis and presents a seasonality-testing protocol, not original 6M findings or forecasts.</p></details>
+<aside class="mx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>A calendar pattern&mdash;even if later measured&mdash;would remain historical and conditional, not a forecast or recommendation. The material does not replace individualized investment, legal, tax, brokerage, or hedging counsel. Leveraged 6M positions may gap through exit levels and lose more than initial margin. Recheck official calendars, contract month, live execution costs, and current market quality, then apply a loss limit chosen without reference to an appealing seasonal average.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

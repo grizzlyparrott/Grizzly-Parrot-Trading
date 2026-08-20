@@ -2,306 +2,175 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carry Trade Impact on 6M</title>
-  <meta name="description" content="How global carry trade flows influence USD/MXN 6M futures, including rate spreads, volatility regimes, and forced unwinds during risk-off events.">
+  <title>6M Carry Trade: Economics, Flows, and Unwind Risk</title>
+  <meta name="description" content="Explain Mexican peso carry economics, funding and hedge costs, flow channels, crowding, volatility, confirmation, and unwind risk without a fixed 6M direction rule.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6m-carry-trade.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Carry Trade Impact on 6M">
-  <meta property="og:description" content="How global carry trade flows influence USD/MXN 6M futures, including rate spreads, volatility regimes, and forced unwinds during risk-off events.">
+  <meta property="og:title" content="6M Carry Trade: Economics, Flows, and Unwind Risk">
+  <meta property="og:description" content="Explain Mexican peso carry economics, funding and hedge costs, flow channels, crowding, volatility, confirmation, and unwind risk without a fixed 6M direction rule.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6m-carry-trade.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-28">
+  <meta property="article:modified_time" content="2026-08-13">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="6M Carry Trade: Economics, Flows, and Unwind Risk">
+  <meta name="twitter:description" content="Explain Mexican peso carry economics, funding and hedge costs, flow channels, crowding, volatility, confirmation, and unwind risk without a fixed 6M direction rule.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Carry Trade Impact on 6M">
-  <meta name="twitter:description" content="How global carry trade flows influence USD/MXN 6M futures, including rate spreads, volatility regimes, and forced unwinds during risk-off events.">
-
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="/futures-basics/6m-research-library.css?v=20260813a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"6M Carry Trade: Economics, Flows, and Unwind Risk","description":"Explain Mexican peso carry economics, funding and hedge costs, flow channels, crowding, volatility, confirmation, and unwind risk without a fixed 6M direction rule.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6m-carry-trade.html"},"datePublished":"2025-11-28","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/6m-carry-trade.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Carry Trade Impact on 6M",
-  "description": "How global carry trade flows influence USD/MXN 6M futures, including rate spreads, volatility regimes, and forced unwinds during risk-off events.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6m-carry-trade.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6m-carry-trade.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How Carry Trade Dynamics Affect 6M Futures",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6m-carry-trade.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6M Carry Trade: Economics, Flows, and Unwind Risk","item":"https://grizzlyparrottrading.com/futures-basics/6m-carry-trade.html"}]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="mx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container mxn-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="mx-hero">
+  <div class="mx-hero-copy">
+    <p class="mx-kicker">Rate differential &middot; position economics &middot; unwind risk</p>
+    <h1>6M Carry Trade: Economics, Flows, and Unwind Risk</h1>
+    <p class="mx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="mx-hero-lede">Suppose Mexican short-rate expectations still exceed comparable U.S. expectations, yet the peso sells off and 6M falls. That is not a contradiction. Carry is one component of total return; exchange-rate loss, funding stress, hedging cost, crowding, or a change in the expected policy path can overwhelm it.</p>
+    <div class="mx-hero-actions"><a class="button-primary" href="#economics">Build the return map</a><a class="mx-text-link" href="#matrix">Use the state matrix</a></div>
+    <dl class="mx-hero-metrics" aria-label="Carry analysis boundaries"><div><dt>Input</dt><dd>Comparable expected rates</dd></div><div><dt>Payoff</dt><dd>Total return, not yield alone</dd></div><div><dt>Stress lens</dt><dd>Volatility + funding</dd></div><div><dt>Output</dt><dd>Conditional state</dd></div></dl>
   </div>
+  <div class="mx-hero-visual"><div class="mx-market-board"><div class="mx-board-head"><span>Positive carry</span><strong>MXN still weakens</strong></div><div class="mx-formula"><code>carry</code><i aria-hidden="true">+</i><code>FX move</code><i aria-hidden="true">&minus;</i><code>all costs</code></div><p>A favorable rate gap can coexist with a negative position return. The horizon, instrument, leverage, hedge, and path of the currency decide whether the economics survive.</p><p class="mx-board-foot"><span>Yield is not a floor</span><span>Direction is not guaranteed</span></p></div></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="mx-jump-nav" aria-label="On this page"><a href="#orientation">Orientation</a><a href="#economics">Economics</a><a href="#prerequisites">Prerequisites</a><a href="#channels">Channels</a><a href="#confirmation">Confirmation</a><a href="#unwind">Unwind</a><a href="#matrix">State matrix</a></nav>
 
-<h1>How Carry Trade Dynamics Affect 6M Futures</h1>
-
-<p>The Mexican Peso is one of the most popular global carry trade currencies. That means investors borrow in a low-rate currency (USD, JPY, EUR) and buy MXN because Mexico pays higher interest rates. This rate spread creates powerful capital flows that directly influence USD/MXN and therefore 6M futures. If you do not understand carry trade behavior, you cannot understand why 6M trends hard during calm markets and explodes upward during volatility events.</p>
-
-<h2>1. The Carry Trade Explained Simply</h2>
-
-<p>The carry trade is a yield-hunting strategy. Investors borrow cash in a low interest-rate currency, exchange it for a high-rate currency, and collect the difference.</p>
-
-<h3>The core math:</h3>
-
-<ul>
-  <li>Borrow USD (or JPY, EUR) at low interest</li>
-  <li>Convert to MXN</li>
-  <li>Invest in Mexican assets paying high interest</li>
-  <li>Collect the interest rate spread (“carry”)</li>
-</ul>
-
-<p>As long as MXN does not weaken fast enough to erase the gained interest, the trade is profitable.</p>
-
-<h2>2. Why MXN Is a High-Yield Carry Currency</h2>
-
-<p>Banxico (Mexico’s central bank) historically keeps interest rates higher than the U.S. Federal Reserve. That rate spread is the fuel behind MXN carry trades.</p>
-
-<h3>Typical rate spreads:</h3>
-
-<table>
-<tr><th>Policy Rate</th><th>Typical Range</th></tr>
-<tr><td>Banxico</td><td>8%–12%</td></tr>
-<tr><td>Federal Reserve</td><td>0%–5%</td></tr>
-</table>
-
-<p>A 4%–6% interest rate advantage creates a major incentive to hold MXN. In calm markets, that strengthens the Peso and pushes 6M futures downward.</p>
-
-<h2>3. How Carry Flows Move 6M Direction</h2>
-
-<p>Carry traders buy MXN → MXN strengthens → USD/MXN drops → 6M futures fall.</p>
-
-<p>This is why 6M can grind downward for weeks or months during stable markets even if USD is not particularly weak. The yield difference pulls money into MXN anyway.</p>
-
-<h3>Conditions where carry trade pushes 6M down:</h3>
-
-<ul>
-  <li>Low VIX (risk-on conditions)</li>
-  <li>Rising EM equities</li>
-  <li>Banxico hawkish stance</li>
-  <li>USD stable or slightly bearish</li>
-</ul>
-
-<p>These are the environments where 6M trends cleanly and predictably.</p>
-
-<h2>4. Carry Trade Unwinds — Why 6M Explodes Upward</h2>
-
-<p>Carry trades are fragile. When global markets enter risk-off mode, investors dump high-yield currencies first. The Peso gets hit hard.</p>
-
-<h3>During a carry unwind:</h3>
-
-<ul>
-  <li>MXN is sold instantly</li>
-  <li>USD/MXN spikes up violently</li>
-  <li>6M futures rip upward</li>
-</ul>
-
-<p>This is why 6M can jump 500–1500 ticks in a single session during major fear events—the entire carry trade crowd is rushing for the exit at the same time.</p>
-
-<h2>5. What Causes Carry Unwinds?</h2>
-
-<p>There are four major triggers:</p>
-
-<ul>
-  <li><strong>Equity crashes</strong> — global risk-off wipes out MXN demand.</li>
-  <li><strong>U.S. yield spikes</strong> — makes USD more attractive vs MXN.</li>
-  <li><strong>Banxico rate cuts</strong> — reduces MXN interest advantage.</li>
-  <li><strong>Geopolitical shocks</strong> — investors flee emerging markets.</li>
-</ul>
-
-<p>As soon as volatility hits, carry investors must exit to avoid giving up months of interest gains in a single move.</p>
-
-<h2>6. Carry Trade Seasonality in 6M</h2>
-
-<p>Carry appetite is seasonal because institutional risk-taking is seasonal.</p>
-
-<h3>Strong MXN (carry friendly):</h3>
-
-<ul>
-  <li>January–March</li>
-  <li>April–June</li>
-</ul>
-
-<p>These are periods of high liquidity and strong equity performance.</p>
-
-<h3>Weak MXN (carry unwinds likely):</h3>
-
-<ul>
-  <li>August–October (global volatility season)</li>
-  <li>Late Q4 (position closing)</li>
-</ul>
-
-<p>These windows produce some of the biggest 6M spikes of the year.</p>
-
-<h2>7. Signals That Carry Trade Is Active</h2>
-
-<p>Use these indicators to confirm carry flow:</p>
-
-<ul>
-  <li><strong>Low VIX</strong> (under 16)</li>
-  <li><strong>Banxico hawkish tone</strong></li>
-  <li><strong>Stable or falling U.S. yields</strong></li>
-  <li><strong>Strong EM index performance</strong></li>
-</ul>
-
-<p>When these conditions align, short setups on 6M are far easier to catch and hold.</p>
-
-<h2>8. Signals That Carry Is Unwinding</h2>
-
-<ul>
-  <li><strong>VIX spikes above 18–20</strong></li>
-  <li><strong>Sharp drop in EM currencies</strong></li>
-  <li><strong>U.S. 2-year yield rises fast</strong></li>
-  <li><strong>Banxico hints at cuts</strong></li>
-</ul>
-
-<p>During these windows, do not fight 6M spikes. They are not technical—they are macro forced-liquidations.</p>
-
-<h2>Definitions for Screen Readers</h2>
-
-<p><strong>Carry trade:</strong> Borrowing in low-rate currencies to invest in higher-rate currencies for profit.</p>
-<p><strong>Rate spread:</strong> Difference between interest rates of two countries.</p>
-<p><strong>Risk-on:</strong> Environment where investors take more risk.</p>
-<p><strong>Risk-off:</strong> Environment where investors avoid risk assets.</p>
-<p><strong>Carry unwind:</strong> Rapid exit from carry positions during market stress.</p>
-
-<div class="highlight-box yellow">
-  <h3>Carry Trades Move 6M—Until They Don’t</h3>
-  <p>
-    6M futures track global carry appetite. In calm regimes, MXN strengthens and 6M trends lower. When volatility spikes, the carry unwinds and 6M rips. If you don’t track rate spreads and macro stress, you’re trading blind into regime shifts that will wreck you.
-  </p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="mx-section" id="orientation" aria-labelledby="orientation-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Read the instrument first</p><h2 id="orientation-title">A Peso Carry Thesis Must Be Translated Into the 6M Quote</h2><p><strong>Established fact:</strong> CME's <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">FX Product Guide lists 6M as MXN/USD, quoted in U.S. dollars per Mexican peso</a>. Therefore, a higher 6M price means one peso buys more dollars&mdash;a stronger MXN against USD. The commonly displayed spot convention, USD/MXN, is reciprocal, so it ordinarily moves the other way after aligning timestamps.</p></div>
+  <div class="mx-two-column">
+    <article class="mx-panel"><p class="mx-card-label">Spot convention</p><h3>USD/MXN</h3><p>Mexican pesos per U.S. dollar. A rise means the dollar strengthened against the peso.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">6M convention</p><h3>MXN/USD</h3><p>U.S. dollars per Mexican peso. A rise means the peso strengthened against the dollar.</p></article>
   </div>
-</footer>
+  <div class="mx-caution"><strong>Do not treat futures as spot with a different label</strong><p>A dated 6M contract also contains time, interest-rate expectations, and basis. Use <a href="6m-tick-size.html">the canonical 6M contract guide</a> for current specifications, settlement, delivery, and roll mechanics. This page owns the carry mechanism, not contract arithmetic.</p></div>
+</section>
+
+<section class="mx-section" id="economics" aria-labelledby="economics-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Position economics</p><h2 id="economics-title">Carry Is the Residual After Funding, Currency, Hedge, and Trading Costs</h2><p>A textbook trade borrows or sells a lower-yielding funding currency and holds a higher-yielding target-currency asset. Real positions can instead use forwards, swaps, futures, options, bonds, or combinations. The labels “funding currency” and “target currency” describe the economic exposure, not a single required implementation.</p></div>
+  <div class="mx-method">
+    <div><h3>A short-horizon approximation</h3><p><code>position return &asymp; target-asset return &minus; funding cost + FX return &minus; hedge, financing, and transaction costs</code></p><p>The approximation is intentionally incomplete: mark-to-market timing, convexity, collateral, credit, taxes, and basis can matter. A 6M futures position does not simply receive a posted overnight-policy-rate difference as cash carry.</p></div>
+    <dl><div><dt>Compare</dt><dd>Same horizon</dd></div><div><dt>Model</dt><dd>Expected path</dd></div><div><dt>Subtract</dt><dd>All implementation costs</dd></div><div><dt>Stress</dt><dd>FX path + leverage</dd></div></dl>
+  </div>
+  <div class="mx-table-scroll" role="region" aria-label="Carry return components" tabindex="0">
+    <table class="mx-table">
+      <thead><tr><th scope="col">Component</th><th scope="col">What to measure</th><th scope="col">Why the shortcut fails</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Rate differential</th><td>Market-implied or investable yields at matched horizons, with credit and liquidity differences identified</td><td>Two policy targets are not the realized return on two tradable assets</td></tr>
+        <tr><th scope="row">Currency return</th><td>Quote-correct MXN/USD change over the holding period</td><td>A modest adverse FX move can outweigh accrued yield</td></tr>
+        <tr><th scope="row">Forward/futures basis</th><td>Dated price relative to aligned spot and financing assumptions</td><td>Expected rate differences can already be embedded in the contract</td></tr>
+        <tr><th scope="row">Hedge</th><td>Premium, forward points, option skew, rollover, and residual basis risk</td><td>Hedging can remove much of the currency return that motivated the trade</td></tr>
+        <tr><th scope="row">Implementation</th><td>Spread, slippage, fees, margin, collateral return, and financing terms</td><td>Headline carry is gross, not net</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="mx-section" id="prerequisites" aria-labelledby="prerequisites-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Before calling a regime carry-friendly</p><h2 id="prerequisites-title">Five Conditions Must Be Examined Together</h2><p><strong>Mechanism:</strong> a positive expected Mexican-versus-U.S. return gap can attract demand for MXN exposure, all else equal. It becomes a usable hypothesis only after the return gap, volatility, funding, crowding, and macro path are examined.</p></div>
+  <div class="mx-check-grid">
+    <article><strong>Investable differential</strong><p>Use comparable instruments and horizons. Distinguish the current target rate from the path priced over the intended holding period.</p></article>
+    <article><strong>Contained currency variance</strong><p>Carry accrues gradually while exchange rates reprice continuously. Rising realized or implied volatility changes the loss distribution.</p></article>
+    <article><strong>Stable funding</strong><p>Repo, swap, collateral, and margin terms can tighten even if official policy rates do not move.</p></article>
+    <article><strong>Room in positioning</strong><p>Crowding can make new demand less important than the risk of a common exit. Public positioning data are partial and delayed.</p></article>
+    <article><strong>Credible policy path</strong><p>The relevant differential is forward-looking. Inflation, growth, or central-bank communication can change expected paths before a target-rate action.</p></article>
+    <article><strong>Executable market</strong><p>Spread, depth, gaps, and event exposure can turn a plausible macro state into a rejected trade.</p></article>
+  </div>
+  <p><strong>Established source boundary:</strong> Banco de M&eacute;xico publishes its <a href="https://www.banxico.org.mx/publications-and-press/announcements-and-minutes-tas.html" target="_blank" rel="noopener">policy statements and minutes</a>; the Federal Reserve publishes <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">FOMC statements, minutes, and projections by meeting</a>. Those documents establish official communication. Any inferred path or carry attractiveness remains an analyst inference.</p>
+</section>
+
+<section class="mx-section" id="channels" aria-labelledby="channels-title">
+  <div class="mx-section-heading"><p class="mx-kicker">From relative return to price</p><h2 id="channels-title">Trace the Flow Channel Without Assuming It Dominates</h2><p>The same rate-gap change can reach 6M through several paths. Some reinforce one another; others offset. Label the hypothesized channel before looking at the price outcome.</p></div>
+  <div class="mx-process" aria-label="Carry transmission channels">
+    <article><span>1</span><h3>Expected return changes</h3><p>New policy or macro evidence alters the expected Mexico&ndash;U.S. return difference at a relevant horizon.</p></article>
+    <article><span>2</span><h3>Portfolio choice changes</h3><p>Investors may add, hedge, reduce, or leave MXN exposure unchanged depending on risk limits and existing positions.</p></article>
+    <article><span>3</span><h3>FX demand changes</h3><p>Conversion, derivative hedges, or dealer inventory can create peso buying or selling, but the size and timing are not directly observable from a policy rate.</p></article>
+    <article><span>4</span><h3>6M reprices</h3><p>Futures respond to the currency pair, dated basis, liquidity, and expectations. Confirmation must be observed, not presumed.</p></article>
+  </div>
+  <div class="mx-two-column">
+    <article class="mx-panel"><p class="mx-card-label">Potential reinforcement</p><h3>Rate gap widens with calm funding</h3><p>If Mexican expected returns rise relative to U.S. returns, volatility stays contained, and MXN strengthens across aligned spot and futures observations, the evidence is consistent with a supportive carry channel. It still does not prove carry caused the move.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Potential offset</p><h3>Higher yield reflects higher risk</h3><p>A Mexican yield rise can reflect inflation, fiscal risk, liquidity stress, or a higher required risk premium. In that state, the larger nominal gap can coexist with a weaker peso and lower 6M.</p></article>
+  </div>
+</section>
+
+<section class="mx-section" id="confirmation" aria-labelledby="confirmation-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Observable, but incomplete</p><h2 id="confirmation-title">Build Confirmation From Independent Evidence</h2><p>No public series identifies “the MXN carry trade” in real time. Confirmation is a triangulation exercise. The strongest record aligns independent rate, currency, volatility, positioning, and market-quality observations without turning any proxy into ground truth.</p></div>
+  <div class="mx-table-scroll" role="region" aria-label="Carry confirmation evidence" tabindex="0">
+    <table class="mx-table">
+      <thead><tr><th scope="col">Evidence</th><th scope="col">Consistent with carry support</th><th scope="col">What would weaken that reading</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Relative curve</th><td>Matched-horizon Mexican pricing firms versus U.S. pricing</td><td>Move is isolated, credit-driven, or reverses quickly</td></tr>
+        <tr><th scope="row">Currency complex</th><td>6M rises while reciprocal USD/MXN falls after timestamp alignment</td><td>Only one stale or rolled series moves</td></tr>
+        <tr><th scope="row">Volatility and funding</th><td>Implied/realized volatility and funding conditions remain compatible with the risk budget</td><td>Volatility, margin, or basis stress rises faster than expected carry</td></tr>
+        <tr><th scope="row">Positioning context</th><td>Public reports do not show an extreme by the analyst's predeclared measure</td><td>Proxy indicates crowding or categories shift without economic clarity</td></tr>
+        <tr><th scope="row">Price acceptance</th><td>6M holds the predeclared confirmation area in executable conditions</td><td>Price rejects the area or market quality fails</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Established limitation:</strong> the <a href="https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm" target="_blank" rel="noopener">CFTC Commitments of Traders report</a> breaks down reportable open interest as of Tuesday and is generally published Friday. Its categories are regulatory classifications, not a live inventory of all carry trades. Use it as delayed context, never as same-session order flow.</p>
+</section>
+
+<section class="mx-section" id="unwind" aria-labelledby="unwind-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Where gradual economics can become nonlinear</p><h2 id="unwind-title">An Unwind Is a Feedback Loop, Not a VIX Number</h2><p><strong>Established institutional evidence:</strong> a <a href="https://www.bis.org/publ/bisbull90.pdf" target="_blank" rel="noopener">BIS review of the August 2024 turbulence</a> described leveraged trade unwinds, procyclical deleveraging, and margin increases as amplification channels while also noting that overall carry size is difficult to measure. That episode demonstrates a mechanism; it does not set a universal threshold for MXN or 6M.</p></div>
+  <div class="mx-process" aria-label="Illustrative carry unwind feedback loop">
+    <article><span>A</span><h3>Catalyst changes the prior</h3><p>A policy, growth, geopolitical, or market shock changes expected returns or risk tolerance.</p></article>
+    <article><span>B</span><h3>Volatility and losses rise</h3><p>Adverse FX movement consumes accumulated carry and increases portfolio variance.</p></article>
+    <article><span>C</span><h3>Constraints bind</h3><p>Stop rules, margin calls, financing terms, or risk limits force some positions smaller.</p></article>
+    <article><span>D</span><h3>Common exits amplify</h3><p>Further MXN selling can pressure 6M, creating more losses. The loop can also stop or reverse if liquidity and buyers absorb it.</p></article>
+  </div>
+  <div class="mx-caution"><strong>Failure cases for the unwind story</strong><p>A falling 6M price is not automatically a carry unwind. It may reflect a broad-dollar shock, Mexico-specific fiscal or trade news, contract roll, poor data alignment, or ordinary repricing by unleveraged investors. Conversely, a volatility spike need not weaken MXN if the shock is concentrated elsewhere or peso demand has a different source.</p></div>
+</section>
+
+<section class="mx-section" id="matrix" aria-labelledby="matrix-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Carry-state close</p><h2 id="matrix-title">Use a Carry-State Matrix That Permits “Unclear”</h2><p>This matrix organizes evidence; it does not forecast 6M. Record the state at a fixed timestamp, specify the horizon, and require confirmation before turning a macro hypothesis into a possible application.</p></div>
+  <div class="mx-state-machine" role="list" aria-label="Conditional 6M carry-state matrix">
+    <article role="listitem"><h3>Supportive, uncrowded</h3><p><strong>Required:</strong> favorable investable differential, stable funding and volatility, independent MXN confirmation, and no declared crowding breach.</p><p><strong>Hypothesis:</strong> carry demand may support higher 6M.</p><p><strong>Fail:</strong> relative curve, price confirmation, or execution quality reverses.</p></article>
+    <article role="listitem"><h3>Supportive, crowded</h3><p><strong>Required:</strong> favorable differential but a positioning or volatility proxy reaches a predeclared extreme.</p><p><strong>Hypothesis:</strong> support may persist while unwind asymmetry grows.</p><p><strong>Fail:</strong> risk cannot be bounded; crowding alone does not time an exit.</p></article>
+    <article role="listitem"><h3>Differential compressing</h3><p><strong>Required:</strong> expected Mexican return advantage narrows relative to the U.S.</p><p><strong>Hypothesis:</strong> one source of MXN demand may weaken.</p><p><strong>Fail:</strong> other flows dominate or 6M refuses to confirm.</p></article>
+    <article role="listitem"><h3>Funding stress</h3><p><strong>Required:</strong> adverse FX, rising volatility, tighter financing, and cross-market deleveraging align.</p><p><strong>Hypothesis:</strong> forced reduction may amplify lower 6M.</p><p><strong>Fail:</strong> liquidity, curve, and price recover through the invalidation area.</p></article>
+    <article role="listitem"><h3>Unclear</h3><p><strong>Required:</strong> rates, price, volatility, positioning, or data quality conflict.</p><p><strong>Conclusion:</strong> no directional inference.</p><p><strong>Action:</strong> remain flat until the evidence set becomes testable.</p></article>
+  </div>
+  <div class="mx-related">Route the policy-event prior to <a href="banxico-rate-policy-6m.html">the Banxico decision workflow</a>, broad context to <a href="6m-fundamental-drivers.html">the 6M driver ledger</a>, and execution acceptance to <a href="6m-slippage.html">the 6M slippage and market-quality guide</a>.</div>
+  <p><strong>Research status:</strong> this page explains mechanisms and a monitoring framework. It reports no original estimate of carry returns, crowding, predictive power, or profitability. Testing a carry rule requires point-in-time rate curves, quote-correct dated futures, rolls, funding and transaction costs, declared decision times, and untouched validation data.</p>
+</section>
+
+<details class="mx-sources">
+  <summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary>
+  <ul>
+    <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide</a> for the official 6M product code, contract currency, and USD-per-MXN quotation.</li>
+    <li><a href="https://www.banxico.org.mx/publications-and-press/announcements-and-minutes-tas.html" target="_blank" rel="noopener">Banco de M&eacute;xico: monetary policy statements and minutes</a> for the official Mexican policy communication record.</li>
+    <li><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">Federal Reserve: FOMC meeting calendars, statements, minutes, and projections</a> for the official U.S. policy record.</li>
+    <li><a href="https://www.federalreserve.gov/releases/h15/" target="_blank" rel="noopener">Federal Reserve H.15 Selected Interest Rates</a> for official U.S. rate-series definitions and vintages.</li>
+    <li><a href="https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm" target="_blank" rel="noopener">CFTC Commitments of Traders</a> for reporting coverage, categories, observation date, and release lag.</li>
+    <li><a href="https://www.bis.org/publ/bisbull90.pdf" target="_blank" rel="noopener">BIS Bulletin: market turbulence and the August 2024 carry unwind</a> for leverage, margin, deleveraging, and measurement limitations.</li>
+  </ul>
+  <p>Sources and methods were reviewed August 13, 2026. Dynamic official series must be timestamped when used. Facts, mechanisms, hypotheses, inferences, and possible applications are separated in the text; no proprietary result is reported.</p>
+</details>
+
+<aside class="mx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This carry framework is educational material, not personalized investment, legal, tax, accounting, hedging, or brokerage advice. A positive rate differential does not cap currency losses. Leverage, gaps, changing margin, financing, basis, liquidity, and delivery or roll exposure can produce losses beyond the initial margin deposit. Verify current official data, contract terms, market quality, and your own loss limit before any decision.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

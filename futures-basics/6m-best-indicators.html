@@ -2,292 +2,133 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Best Indicators for 6M</title>
-  <meta name="description" content="The most reliable indicators for trading USD/MXN 6M futures, how to tune them for Peso volatility, and which tools you should avoid completely.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6m-best-indicators.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Best Indicators for 6M">
-  <meta property="og:description" content="The most reliable indicators for trading USD/MXN 6M futures, how to tune them for Peso volatility, and which tools you should avoid completely.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6m-best-indicators.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Best Indicators for 6M">
-  <meta name="twitter:description" content="The most reliable indicators for trading USD/MXN 6M futures, how to tune them for Peso volatility, and which tools you should avoid completely.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Best Indicators for 6M",
-  "description": "The most reliable indicators for trading USD/MXN 6M futures, how to tune them for Peso volatility, and which tools you should avoid completely.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6m-best-indicators.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6m-best-indicators.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Best Indicators for 6M",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6m-best-indicators.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6M Indicators: Benchmark Them or Choose None</title>
+  <meta name="description" content="Compare 6M indicator candidates by one declared task, a naive baseline, walk-forward evidence, executable costs, multiple-testing controls and explicit rejection rules.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6m-best-indicators.html">
+  <meta property="og:title" content="6M Indicators: Benchmark Them or Choose None"><meta property="og:description" content="Compare 6M indicator candidates by one declared task, a naive baseline, walk-forward evidence, executable costs, multiple-testing controls and explicit rejection rules."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6m-best-indicators.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-28"><meta property="article:modified_time" content="2026-08-13">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6M Indicators: Benchmark Them or Choose None"><meta name="twitter:description" content="Compare 6M indicator candidates by one declared task, a naive baseline, walk-forward evidence, executable costs, multiple-testing controls and explicit rejection rules."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/6m-research-library.css?v=20260813a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6M Indicators: Benchmark Them or Choose None","description":"Compare 6M indicator candidates by one declared task, a naive baseline, walk-forward evidence, executable costs, multiple-testing controls and explicit rejection rules.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6m-best-indicators.html"},"datePublished":"2025-11-28","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/6m-best-indicators.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6M Indicators: Benchmark Them or Choose None","item":"https://grizzlyparrottrading.com/futures-basics/6m-best-indicators.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="mx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container mxn-library" tabindex="-1"><article>
+<!-- ARTICLE BODY START -->
+<header class="mx-hero">
+  <div class="mx-hero-copy">
+    <p class="mx-kicker">Selection bias &middot; baseline &middot; rejection</p>
+    <h1>6M Indicators: Benchmark Them or Choose None</h1>
+    <p class="mx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="mx-hero-lede">Five indicator families, ten lookbacks, four thresholds, two bar sizes, and two exit rules create 800 combinations before the first chart is judged. The best-looking line in that tournament can be pure selection noise. “Best” is therefore not an indicator name; it is a comparison claim that has to survive a declared baseline, later data, costs, and an honest possibility that nothing wins.</p>
+    <div class="mx-hero-actions"><a class="button-primary" href="#tournament">Count the tournament</a><a class="mx-text-link" href="#decision-card">Use the decision card</a></div>
+    <div class="mx-decision-strip" aria-label="Indicator research outcomes"><span><strong>Accept</strong>Stable task-specific improvement after costs</span><span><strong>Research only</strong>Interesting but not holdout-qualified</span><span><strong>Choose none</strong>No candidate beats the baseline</span></div>
   </div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="mx-jump-nav" aria-label="On this page"><a href="#tournament">Selection</a><a href="#task">Task</a><a href="#registry">Registry</a><a href="#baseline">Baseline</a><a href="#walk-forward">Walk-forward</a><a href="#selection-bill">Costs</a><a href="#stability">Stability</a><a href="#decision-card">Decision</a></nav>
 
-<h1>Best Indicators for 6M</h1>
-
-<p>Most indicators fail on 6M because the Peso’s volatility and liquidity structure are not like major FX futures. You cannot use the same settings you’d use on 6E or ES and expect results. This article cuts out every useless tool and focuses only on what consistently performs on USD/MXN when tuned correctly.</p>
-
-<h2>1. ATR (Absolute Requirement on 6M)</h2>
-
-<p>ATR is non-negotiable when trading the Peso. It’s your volatility meter, stop-placement guide, and risk-filter. Because 6M moves 600–1200 ticks on a normal day, ATR tells you whether the market is in:</p>
-
-<ul>
-  <li>a compression phase (ATR under 0.0500)</li>
-  <li>a normal phase (ATR 0.0600–0.1000)</li>
-  <li>a breakout or panic phase (ATR over 0.1100)</li>
-</ul>
-
-<p>Use ATR(14) on daily and hourly charts to determine average swing size. Exact behavior is covered in <a href="https://grizzlyparrottrading.com/futures-basics/6m-volatility-profile.html">6M Volatility Profile</a>.</p>
-
-<h3>How to use ATR on 6M</h3>
-<ul>
-  <li><strong>Stop size:</strong> at least 1× hourly ATR</li>
-  <li><strong>Target size:</strong> 1.5× to 2× ATR</li>
-  <li><strong>Trend quality:</strong> rising ATR confirms directional strength</li>
-  <li><strong>Chop warning:</strong> falling ATR signals compression</li>
-</ul>
-
-<h2>2. VWAP (Volume-Weighted Average Price)</h2>
-
-<p>VWAP works extremely well on 6M because institutional orderflow in emerging-market FX clusters around fair-value bands. Banks, exporters, and macro funds lean on VWAP more in USD/MXN than in most FX futures.</p>
-
-<h3>How to tune VWAP for 6M</h3>
-
-<ul>
-  <li>Use standard session VWAP (no modifications)</li>
-  <li>Use the first and second VWAP bands as reaction zones</li>
-  <li>Fade extremes only when ATR is falling</li>
-  <li>Trade breakouts only when ATR is rising</li>
-</ul>
-
-<p>VWAP is one of the few counter-trend tools that holds up on this contract—but only when volatility conditions support it.</p>
-
-<h2>3. 20/50 EMA Stack</h2>
-
-<p>The Peso trends aggressively when it trends. A 20/50 EMA combination catches directional momentum without the lag you get from 100 or 200 EMAs.</p>
-
-<h3>How to use it</h3>
-<ul>
-  <li><strong>20 above 50:</strong> trend intact, dips are buys</li>
-  <li><strong>20 below 50:</strong> downtrend intact, pops are shorts</li>
-  <li><strong>Distance between them:</strong> volatility expansion</li>
-  <li><strong>Flattening:</strong> chop and trap conditions incoming</li>
-</ul>
-
-<p>When ATR rises AND the 20/50 stack widens, expect multi-hundred-tick legs.</p>
-
-<h2>4. Volume Profile</h2>
-
-<p>Most FX futures don’t respond cleanly to profile levels. 6M does. Low-volume nodes often act as acceleration zones, and high-volume nodes act as magnets or stall points.</p>
-
-<p>This happens because 6M has a thinner book and fewer large participants. Price is drawn toward areas where actual trading occurred—because that’s where liquidity providers sit.</p>
-
-<h3>Key profile behaviors in 6M</h3>
-<ul>
-  <li><strong>POCs:</strong> magnets during consolidation</li>
-  <li><strong>Low-volume gaps:</strong> breakout zones</li>
-  <li><strong>Value area highs/lows:</strong> institutional reaction levels</li>
-</ul>
-
-<p>Profile is especially useful during mid-session slowdowns when price hunts volume pockets.</p>
-
-<h2>5. Rate-Differential Tracking (External Indicator)</h2>
-
-<p>This is not on your chart but is one of the strongest “indicators” for 6M. The Peso is directly tied to the interest-rate spread between Mexico and the U.S. Track:</p>
-
-<ul>
-  <li>U.S. 2-year yield</li>
-  <li>Mexican short-term rates</li>
-  <li>Banxico vs Fed expectations</li>
-</ul>
-
-<p>When the U.S. short-term yield rises faster than Mexico’s, 6M usually rallies. When Mexican rates hold firm and U.S. yields fall, 6M collapses.</p>
-
-<p>See the full macro explanation in <a href="https://grizzlyparrottrading.com/futures-basics/6m-fundamental-drivers.html">Fundamental Drivers of 6M</a>.</p>
-
-<h2>6. DXY Correlation (Mandatory Filter)</h2>
-
-<p>USD/MXN is heavily correlated with the U.S. Dollar Index. DXY gives you immediate confirmation of whether a move is driven by true USD strength or something Peso-specific.</p>
-
-<h3>Rules:</h3>
-<ul>
-  <li><strong>DXY up + 6M up = strong confirmation</strong></li>
-  <li><strong>DXY down + 6M down = strong confirmation</strong></li>
-  <li><strong>DXY flat + 6M moving fast = Peso-specific event</strong></li>
-</ul>
-
-<p>You should not size up on a 6M move unless DXY agrees with it.</p>
-
-<h2>Indicators That DO NOT Work on 6M</h2>
-
-<p>Do not waste your time with:</p>
-
-<ul>
-  <li>MACD (too slow for volatility)</li>
-  <li>Bollinger Bands (false signals during thin liquidity)</li>
-  <li>Stochastic (overbought/oversold means nothing on 6M)</li>
-  <li>Ichimoku (lags too hard for Peso speed)</li>
-  <li>Parabolic SAR (breaks during whipsaws)</li>
-</ul>
-
-<p>These indicators require smoothness. 6M moves in bursts, shocks, and liquidity jumps. These tools were built for majors, not semi-exotics.</p>
-
-<h2>Definitions for Screen Readers</h2>
-
-<p><strong>VWAP:</strong> Volume-Weighted Average Price, the average price adjusted for volume.</p>
-<p><strong>EMA:</strong> Exponential Moving Average, a moving average that reacts faster to recent price.</p>
-<p><strong>ATR:</strong> Average True Range, a measurement of typical price movement range.</p>
-<p><strong>Volume Profile:</strong> A chart tool showing how much trading occurred at each price level.</p>
-<p><strong>DXY:</strong> The U.S. Dollar Index, a measure of USD strength.</p>
-
-<div class="highlight-box yellow">
-  <h3>Use Tools That Match the Market</h3>
-  <p>
-    6M Peso futures move with volatility, thin liquidity, and macro-rate sensitivity. Indicators like ATR, VWAP, 20/50 EMAs, and Volume Profile work because they’re built for stress. Importing tools from smoother markets like 6E? That’s where traders get wrecked.
-  </p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="mx-section" id="tournament" aria-labelledby="tournament-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Hidden degrees of freedom</p><h2 id="tournament-title">The Word “Best” Creates a Statistical Tournament</h2><p>If a researcher tries enough correlated transformations, some will look unusually good in the sample by chance. The family includes every indicator, lookback, threshold, direction, bar construction, filter, exit, and discarded variation actually inspected&mdash;not just the final line shown.</p></div>
+  <div class="mx-formula" aria-label="Indicator candidate family count"><code>candidate family = inputs &times; parameters &times; rules</code><i aria-hidden="true">&times;</i><code>tasks &times; horizons &times; filters</code></div>
+  <div class="mx-caution"><strong>Why the count matters</strong><p><a href="https://www.itl.nist.gov/div898/handbook/prc/section4/prc47.htm" target="_blank" rel="noopener">NIST&rsquo;s multiple-comparison guidance</a> explains why repeating pairwise comparisons does not generally control the comparison family. In indicator research, undisclosed trial count makes an apparently exceptional outcome hard to distinguish from selection luck.</p></div>
+  <p><strong>Evidence boundary:</strong> this page has not run that tournament on 6M. It reports no winning indicator, lookback, threshold, accuracy, return, drawdown, Sharpe ratio, or fill result.</p>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="mx-section" id="task" aria-labelledby="task-title">
+  <div class="mx-section-heading"><p class="mx-kicker">One transformation, one job</p><h2 id="task-title">Give Every Indicator a Declared Decision Task</h2><p>An indicator cannot be “good for 6M” in the abstract. A transformation may be evaluated as a state descriptor, eligibility filter, sizing input, trigger, or exit. Mixing these jobs lets a weak entry rule inherit credit from a useful risk normalizer or vice versa.</p></div>
+  <div class="mx-task-paths">
+    <article><h3>Describe state</h3><p>Classify past-only trend, volatility, participation, or distance from a reference without making a directional trade claim.</p></article>
+    <article><h3>Filter eligibility</h3><p>Permit or block a separately defined setup. Compare the setup with and without the filter under identical risk.</p></article>
+    <article><h3>Scale exposure</h3><p>Map a risk estimate to a bounded size rule. Judge forecast calibration and tail loss, not raw direction accuracy.</p></article>
+    <article><h3>Trigger or exit</h3><p>Define the precise state transition, observable timestamp, order instruction, invalidation, and expiration.</p></article>
   </div>
-</footer>
-</body>
-</html>
+  <div class="mx-method"><div><h3>A code-ready task statement</h3><p>“At the close of each eligible 30-minute bar, test whether a past-only volatility-percentile filter improves the net risk-adjusted outcome of a separately frozen breakout rule versus that same rule without the filter.” The indicator is not allowed to change the entry, exit, or size unless that is its declared task.</p></div><dl><div><dt>Instrument</dt><dd>Dated 6M</dd></div><div><dt>Decision</dt><dd>One function</dd></div><div><dt>Comparator</dt><dd>Same rule, no filter</dd></div><div><dt>Finding</dt><dd>Not reported</dd></div></dl></div>
+</section>
+
+<section class="mx-section" id="registry" aria-labelledby="registry-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Specification before inspection</p><h2 id="registry-title">Register Candidates as Equations and Timestamps</h2><p>Names such as RSI, moving average, ATR, or volume profile are incomplete. Freeze the source field, contract, bar clock, formula, initialization, lookback, threshold, comparison operator, signal availability, missing-data behavior, and expiration.</p></div>
+  <div class="mx-table-scroll" role="region" aria-label="6M indicator candidate registry" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Family</th><th scope="col">Possible measurable task</th><th scope="col">Required controls</th><th scope="col">Common invalid claim</th></tr></thead><tbody>
+    <tr><th scope="row">Trend</th><td>Past-price slope or relative position used as a filter</td><td>Past-only window, warm-up, contract roll, level adjustment</td><td>“Moving averages work on 6M”</td></tr>
+    <tr><th scope="row">Momentum</th><td>Signed change or oscillator state used for a declared trigger</td><td>Threshold family, overlap, clock match, reversal definition</td><td>“Oversold means price must rise”</td></tr>
+    <tr><th scope="row">Volatility</th><td>Range or return dispersion used for eligibility or size</td><td>Estimator, sampling interval, event state, tail treatment</td><td>“Low volatility predicts direction”</td></tr>
+    <tr><th scope="row">Participation</th><td>Completed volume, trade rate, spread, or depth used as a quality gate</td><td>Feed fields, dated expiry, missing books, session and size</td><td>“High volume confirms the buyer”</td></tr>
+    <tr><th scope="row">Composite</th><td>Frozen combination tested only after components are benchmarked</td><td>Interaction registry, added complexity, incremental ablation</td><td>“More confirmations make a signal stronger”</td></tr>
+  </tbody></table></div>
+  <p class="mx-source-note"><a href="https://www.cmegroup.com/articles/faqs/market-by-order-mbo.html" target="_blank" rel="noopener">CME&rsquo;s Market by Order FAQ</a> distinguishes order-level, price-level, and consolidated depth information. A volume or order-book indicator can use only what the selected feed actually records.</p>
+</section>
+
+<section class="mx-section" id="baseline" aria-labelledby="baseline-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Complexity must earn admission</p><h2 id="baseline-title">Make the Candidate Beat a Naive Alternative</h2><p>A positive net result is not enough. Persistent market direction, variable exposure, or favorable event concentration can make many transformations appear useful. The baseline should perform the same decision job with less information and share every execution, cost, sizing, and eligibility assumption.</p></div>
+  <div class="mx-two-column">
+    <article class="mx-panel"><p class="mx-card-label">Directional task</p><h3>Compare with no directional information</h3><p>Use no-trade, constant direction, or a simple past-return rule as appropriate. Match gross exposure, holding time, session, and risk so the indicator cannot win by taking more risk.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Filter task</p><h3>Ablate the filter</h3><p>Run the identical underlying setup with and without the candidate. Report lost winners, avoided losses, trade count, turnover, tail outcomes, and uncertainty.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Sizing task</p><h3>Compare constant or naive risk sizing</h3><p>Judge calibration, target-risk error, drawdown tails and concentration. A smaller return caused by lower exposure is not automatically worse.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Forecast task</p><h3>Use a persistence or unconditional forecast</h3><p>Score the prediction itself and any downstream trading application separately. A statistically better forecast may still lack executable value.</p></article>
+  </div>
+</section>
+
+<section class="mx-section" id="walk-forward" aria-labelledby="walk-forward-title">
+  <div class="mx-section-heading"><p class="mx-kicker">No random shuffling</p><h2 id="walk-forward-title">Move Forward Through Time With a Frozen Family</h2><p>6M observations are ordered, adjacent labels can overlap, and market states persist. Randomly mixing rows can leak later regimes and nearly identical paths into both training and test data. Walk-forward evaluation should reproduce what would have been known at each decision.</p></div>
+  <div class="mx-contract-path">
+    <article><h3>Develop</h3><p>Choose the task, data audit, candidate family, parameter grid, baseline, costs, metrics and exclusions on early history.</p></article>
+    <article><h3>Validate once</h3><p>Apply the family to later dates. Document one controlled selection and every discarded candidate.</p></article>
+    <article><h3>Lock the winner</h3><p>Seal code, input hashes, parameters, roll policy, time rules, event set, costs and acceptance thresholds.</p></article>
+    <article><h3>Open the holdout</h3><p>Evaluate untouched later data once. A change after viewing it invalidates that holdout for the revised candidate.</p></article>
+  </div>
+  <p>Use purge and embargo intervals that cover the longest feature and outcome overlap. Re-estimation, if allowed, occurs on a fixed schedule using only the window available then. The full <a href="6m-backtesting.html">6M backtesting protocol</a> owns data lineage and simulation details.</p>
+</section>
+
+<section class="mx-section" id="selection-bill" aria-labelledby="selection-bill-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Two bills arrive together</p><h2 id="selection-bill-title">Pay for Trading Friction and Researcher Choice</h2><p>Threshold-crossing rules tend to act when price or liquidity changes. A close-price fill ignores spread, market impact, latency and unfilled passive orders. At the same time, trying many correlated versions raises the evidence burden even when only one trades.</p></div>
+  <div class="mx-cost-tape" aria-label="Indicator evidence costs"><span><strong>Spread</strong>Use bid and ask appropriate to the order side</span><span><strong>Slippage</strong>Measure arrival-to-fill and stress tails</span><span><strong>Fees &amp; rolls</strong>Charge every entry, exit, rebalance and expiry migration</span><span><strong>Multiplicity</strong>Disclose every tested variant and control the family</span></div>
+  <div class="mx-table-scroll" role="region" aria-label="Indicator research cost and selection checks" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Question</th><th scope="col">Required answer</th><th scope="col">Reject when</th></tr></thead><tbody>
+    <tr><th scope="row">Could the order fill?</th><td>Order type, arrival quote, size, latency, depth or defensible queue model</td><td>A bar merely touched the price</td></tr>
+    <tr><th scope="row">What was tried?</th><td>Complete registry of formulas, parameters, filters, tasks and manual exclusions</td><td>Only the winner remains in the record</td></tr>
+    <tr><th scope="row">How was selection controlled?</th><td>Predeclared family-aware inference plus untouched chronological evidence</td><td>Nominal single-test threshold is applied to hundreds of trials</td></tr>
+    <tr><th scope="row">Is there cost headroom?</th><td>Performance under observed assumptions and materially worse stress</td><td>Point estimate disappears under a one-step cost change</td></tr>
+  </tbody></table></div>
+  <div class="mx-related">Use <a href="6m-slippage.html">6M Slippage</a> to specify implementation shortfall rather than granting every signal a perfect fill.</div>
+</section>
+
+<section class="mx-section" id="stability" aria-labelledby="stability-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Averages conceal dependence</p><h2 id="stability-title">Require Stability Across Regimes and Nearby Definitions</h2><p>Do not demand identical performance everywhere; demand that the surviving claim matches the evidence. If value appears only in a named condition, that condition must be observable in real time, sufficiently sampled, stable later, and part of the rule.</p></div>
+  <div class="mx-falsification-tree">
+    <article><p class="mx-card-label">Inputs</p><h3>Change the construction</h3><ul><li>Adjacent bar boundaries</li><li>Second ex-ante roll rule</li><li>Nearby lookbacks</li><li>Alternate missing-data policy</li></ul></article>
+    <article><p class="mx-card-label">States</p><h3>Split without rescuing</h3><ul><li>Event/non-event</li><li>Calm/stressed volatility</li><li>Liquid/thin book</li><li>Early/later years</li></ul></article>
+    <article><p class="mx-card-label">Outcomes</p><h3>Inspect the full path</h3><ul><li>Effect size and interval</li><li>Drawdown and tail loss</li><li>Turnover and capacity</li><li>Missed-fill sensitivity</li></ul></article>
+  </div>
+  <p>Scheduled controls should be built from official records such as the <a href="https://www.banxico.org.mx/politica-monetaria/d/%7B3B4BDA5B-E7E8-E414-2066-DA0CB3F7C36F%7D.pdf" target="_blank" rel="noopener">Banco de M&eacute;xico publication calendar</a>, <a href="https://inegi.org.mx/contenidos/saladeprensa/doc/cal_2026.pdf" target="_blank" rel="noopener">INEGI release calendar</a>, and <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">Federal Reserve FOMC calendars</a>. Their timing supports event labels; it does not establish a directional 6M response.</p>
+</section>
+
+<section class="mx-section" id="decision-card" aria-labelledby="decision-card-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Ending decision</p><h2 id="decision-card-title">Indicator Decision Card</h2><p>The card permits “none beat the baseline.” That is a completed research outcome, not a failure to choose a favorite.</p></div>
+  <div class="mx-trade-card"><h3>Candidate: ____________________ &nbsp; Task: ____________________</h3><dl>
+    <div><dt>Definition</dt><dd>Formula, inputs, lookback, threshold, bar clock, signal time, expiration and warm-up are frozen.</dd></div>
+    <div><dt>Comparison</dt><dd>Task-matched naive baseline, identical risk, costs and eligibility, full family disclosed.</dd></div>
+    <div><dt>Validation</dt><dd>Chronological splits, overlap controls, untouched final holdout and access log are complete.</dd></div>
+    <div><dt>Execution</dt><dd>Dated-contract orders, spread, slippage, fees, rolls, latency, misses and partials are modeled.</dd></div>
+    <div><dt>Robustness</dt><dd>Effect survives reasonable adjacent definitions, later dates, regimes and cost stress.</dd></div>
+    <div><dt>Claim</dt><dd>Scope is no broader than observed task, data, size, horizon and conditions.</dd></div>
+  </dl></div>
+  <div class="mx-go-card" aria-label="Indicator decision outcomes"><div><strong>Accept for monitored use</strong><span>Every required field passes and prospective monitoring has explicit retirement limits.</span></div><div><strong>Keep experimental</strong><span>Evidence is incomplete or fragile but the candidate remains worth a new, sealed test.</span></div><div><strong>Choose none</strong><span>No candidate delivers stable incremental value after selection and implementation costs.</span></div></div>
+  <div class="mx-caution"><strong>Research status as of August 13, 2026</strong><p>No original study is reported. No original 6M indicator comparison was run for this article. The page names candidate families only to define a test. It does not recommend RSI, moving averages, ATR, volume, order-flow variables, or any combination as profitable or superior. Verify all current contract inputs in the <a href="6m-tick-size.html">canonical 6M contract-specification guide</a>.</p></div>
+</section>
+
+<details class="mx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/markets/fx/emerging-market/mexican-peso.contractSpecs.html" target="_blank" rel="noopener">CME Group Mexican Peso futures contract page</a>, <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">2026 FX Product Guide</a>, and <a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/256/256.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 256</a> for current exchange-product and dated-contract context.</li>
+  <li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener">CME DataMine historical-data catalog</a> and <a href="https://www.cmegroup.com/articles/faqs/market-by-order-mbo.html" target="_blank" rel="noopener">CME Market by Order FAQ</a> for trade, quote, depth and order-level data distinctions. No dataset was purchased or downloaded for this page.</li>
+  <li><a href="https://www.itl.nist.gov/div898/handbook/prc/section4/prc47.htm" target="_blank" rel="noopener">NIST/SEMATECH guidance on multiple comparisons</a> for the need to account for a family of comparisons.</li>
+  <li><a href="https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm" target="_blank" rel="noopener">NIST/SEMATECH introduction to time-series analysis</a> and <a href="https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd44.htm" target="_blank" rel="noopener">model-validation guidance</a> for temporal dependence and diagnostics beyond one fit statistic.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/fraudadv_tradingsystem.html" target="_blank" rel="noopener">CFTC advisory on commodity trading systems and hypothetical performance</a> for hindsight and simulation limitations.</li>
+  <li><a href="https://www.banxico.org.mx/politica-monetaria/d/%7B3B4BDA5B-E7E8-E414-2066-DA0CB3F7C36F%7D.pdf" target="_blank" rel="noopener">Banco de M&eacute;xico 2026 publication calendar</a>, <a href="https://inegi.org.mx/contenidos/saladeprensa/doc/cal_2026.pdf" target="_blank" rel="noopener">INEGI 2026 release calendar</a>, and <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">Federal Reserve FOMC calendars</a> for event-control sources.</li>
+</ul><p>Sources and methods were reviewed August 13, 2026. This page is unsponsored editorial analysis and presents a benchmark-and-rejection protocol, not original indicator findings.</p></details>
+<aside class="mx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>Indicator formulas are analytical tools, not recommendations or verified edges. Nothing here supplies individualized financial, legal, tax, brokerage, or hedging guidance. Futures leverage magnifies adverse price moves, and a gap can defeat a planned exit or exceed posted margin. Reconfirm the active 6M contract, actual bid-ask market, commissions, slippage, order handling, and personal risk capacity; reject any rule whose evidence or live conditions do not pass.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

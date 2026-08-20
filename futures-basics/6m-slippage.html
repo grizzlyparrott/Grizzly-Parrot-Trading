@@ -2,278 +2,180 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6M Slippage Explained</title>
-  <meta name="description" content="Why slippage is worse on 6M USD/MXN futures than major FX contracts, and exactly how to avoid losing money to thin liquidity and orderflow gaps.">
+  <title>6M Slippage: Measure Cost and Gate Execution</title>
+  <meta name="description" content="Measure 6M implementation shortfall from decision price to fills, then use spread, depth, order type, data quality and event risk to go, reduce, wait or reject.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6m-slippage.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6M Slippage Explained">
-  <meta property="og:description" content="Why slippage is worse on 6M USD/MXN futures than major FX contracts, and exactly how to avoid losing money to thin liquidity and orderflow gaps.">
+  <meta property="og:title" content="6M Slippage: Measure Cost and Gate Execution">
+  <meta property="og:description" content="Measure 6M implementation shortfall from decision price to fills, then use spread, depth, order type, data quality and event risk to go, reduce, wait or reject.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6m-slippage.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-28">
+  <meta property="article:modified_time" content="2026-08-13">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="6M Slippage: Measure Cost and Gate Execution">
+  <meta name="twitter:description" content="Measure 6M implementation shortfall from decision price to fills, then use spread, depth, order type, data quality and event risk to go, reduce, wait or reject.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6M Slippage Explained">
-  <meta name="twitter:description" content="Why slippage is worse on 6M USD/MXN futures than major FX contracts, and exactly how to avoid losing money to thin liquidity and orderflow gaps.">
-
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="/futures-basics/6m-research-library.css?v=20260813a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"6M Slippage: Measure Cost and Gate Execution",
+    "description":"Measure 6M implementation shortfall from decision price to fills, then use spread, depth, order type, data quality and event risk to go, reduce, wait or reject.",
+    "author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},
+    "publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6m-slippage.html"},
+    "datePublished":"2025-11-28",
+    "dateModified":"2026-08-13",
+    "url":"https://grizzlyparrottrading.com/futures-basics/6m-slippage.html",
+    "image":"https://grizzlyparrottrading.com/OG-default.png",
+    "inLanguage":"en-US"
+  }
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6M Slippage Explained",
-  "description": "Why slippage is worse on 6M USD/MXN futures than major FX contracts, and exactly how to avoid losing money to thin liquidity and orderflow gaps.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6m-slippage.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6m-slippage.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6M Slippage Explained",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6m-slippage.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},
+    {"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},
+    {"@type":"ListItem","position":3,"name":"6M Slippage: Measure Cost and Gate Execution","item":"https://grizzlyparrottrading.com/futures-basics/6m-slippage.html"}
+  ]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
+<a class="mx-skip-link" href="#main-content">Skip to article content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main class="container article-container mxn-library" id="main-content">
+<article>
+<!-- ARTICLE BODY START -->
+<header class="mx-hero">
+  <p class="mx-kicker">Implementation shortfall &middot; execution decision</p>
+  <h1>6M Slippage: Measure Cost and Gate Execution</h1>
+  <p class="mx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+  <p class="mx-hero-lede">A hypothetical 30-tick opportunity is worth $150 per 6M contract at decision prices. Four adverse entry ticks, six adverse exit ticks and $12 in explicit costs reduce the result to $88. The market view was directionally right; <strong>41% of the planned gross path disappeared between decision and account statement</strong>.</p>
+  <div class="mx-hero-actions"><a class="button-primary" href="#reconciliation">Reconcile one fill</a><a class="mx-text-link" href="#decision">Open the execution gate</a></div>
+  <div class="mx-cost-tape" aria-label="Hypothetical 6M implementation shortfall reconciliation"><span><strong>Decision-price path</strong>30 ticks = $150</span><span><strong>Entry shortfall</strong>4 ticks = $20</span><span><strong>Exit shortfall</strong>6 ticks = $30</span><span><strong>After $12 fees</strong>$88 net result</span></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-<h1>6M Slippage Explained</h1>
-
-<p>Slippage on 6M (USD/MXN futures) is worse than almost any other FX future. Traders see their stop losses fill several ticks away from the intended price and don’t understand why the contract behaves this way. This article explains exactly why slippage is so common in 6M and how to avoid unnecessary losses when trading the Peso.</p>
-
-<h2>What Slippage Actually Is</h2>
-
-<p>Slippage is the difference between the price you expect to get and the price you actually receive. It happens when the market moves faster than the order book can fill your request or when there is not enough liquidity at the price you targeted.</p>
-
-<p>In a thin or fast-moving market, slippage is not a “mistake” or a glitch—it's the direct result of how price jumps through empty levels in the order book.</p>
-
-<h2>Why 6M Has More Slippage Than Majors</h2>
-
-<p>There are four simple reasons:</p>
-
-<ul>
-  <li><strong>Thinner order book depth</strong> – fewer limit orders sitting at each price level.</li>
-  <li><strong>Larger contract size</strong> – USD/MXN is more volatile than EUR/USD or USD/JPY.</li>
-  <li><strong>Exotic-currency behavior</strong> – the Peso reacts violently to news and liquidity shifts.</li>
-  <li><strong>Frequent vacuum zones</strong> – areas where no resting orders exist to slow movement.</li>
-</ul>
-
-<p>This combination causes the price to skip one or several ticks at once when pressure arrives. In majors like 6E or 6J, the book is thick enough to absorb most incoming orders. In 6M, it’s not.</p>
-
-<h2>1. Order Book Depth Is Extremely Thin</h2>
-
-<p>At any moment, 6M usually shows far fewer contracts waiting in the book compared to 6E. A thinner book means it takes less buying or selling pressure to wipe out the best bid or best ask and jump to the next level.</p>
-
-<p>If the next level has fewer orders, price can jump again. This creates chains of micro-gaps that your entry or stop orders fall into.</p>
-
-<p>Result: you get filled at a worse price than intended.</p>
-
-<h2>2. 6M Moves Quickly Even Without News</h2>
-
-<p>Because MXN is an emerging-market currency, it reacts faster than majors to:</p>
-
-<ul>
-  <li>U.S. bond yield fluctuations</li>
-  <li>risk-on and risk-off shifts</li>
-  <li>oil price changes</li>
-  <li>Banxico commentary</li>
-</ul>
-
-<p>These reactions are often “jump-like” instead of smooth. When the price jumps, every pending stop order fills at the next available level, not the listed price.</p>
-
-<h2>3. Liquidity Vacuums Create Instant Gaps</h2>
-
-<p>A liquidity vacuum happens when price moves out of a heavy-liquidity zone and into a zone where few orders exist. In 6M, this happens constantly. USD/MXN can be stable for thirty seconds and then instantly stretch through ten ticks because the book above or below is empty.</p>
-
-<p>If your stop loss is inside one of these vacant zones, you will be filled at the next available order—sometimes several ticks away.</p>
-
-<h2>4. News Events Multiply Slippage</h2>
-
-<p>6M reacts sharply to:</p>
-
-<ul>
-  <li>U.S. CPI and NFP</li>
-  <li>FOMC statements</li>
-  <li>Banxico rate decisions</li>
-  <li>unexpected political or risk developments</li>
-</ul>
-
-<p>During these events, slippage can be extreme. A stop placed 20 ticks away might fill 100 ticks away if the Peso detonates from a surprise rate decision. This isn’t broker manipulation—it’s simply the market moving faster than the order book can process the flow.</p>
-
-<h2>How to Reduce Slippage in 6M</h2>
-
-<p>Slippage can’t be eliminated, but it can be reduced dramatically by following five rules.</p>
-
-<h3>1. Trade Only During Liquid Hours</h3>
-
-<p>The best hours for 6M are the first three hours of the U.S. session. Liquidity is highest, the book is thickest, and algos are active. Off-hours trading increases slippage dramatically.</p>
-
-<h3>2. Avoid Market Orders in Weak Liquidity</h3>
-
-<p>Market orders guarantee a fill but never guarantee the price. If you use them during thin conditions, you will pay more or receive less than expected. Use limit orders wherever possible.</p>
-
-<h3>3. Avoid Tight Stops</h3>
-
-<p>Stops placed extremely close to price will often be hit in noise, and when they trigger, you may get terrible slippage because the stop converts into a market order.</p>
-
-<p>Use stops that reflect realistic Peso volatility, not stops based on what feels comfortable.</p>
-
-<h3>4. Never Hold Through High-Impact Events</h3>
-
-<p>Slippage is strongest during major news. If you hold through Banxico or CPI, you are volunteering to experience one of the worst fills of your trading career.</p>
-
-<h3>5. Trade Smaller During Thin Periods</h3>
-
-<p>If you must trade outside prime hours, reduce size. A smaller position reduces the impact of bad fills and ensures you are not pushing size into a thin book.</p>
-
-<h2>Definitions for Screen Readers</h2>
-
-<p><strong>Slippage:</strong> The difference between the price you expect and the price you receive when a trade executes.</p>
-
-<p><strong>Liquidity:</strong> The availability of buy and sell orders in the market. High liquidity means many orders; low liquidity means few orders.</p>
-
-<p><strong>Order Book:</strong> The list of buy and sell orders waiting to be filled at specific price levels.</p>
-
-<p><strong>Market Order:</strong> An order to buy or sell immediately at the best available price.</p>
-
-<p><strong>Limit Order:</strong> An order to buy or sell at a specific price or better.</p>
-
-<p><strong>Liquidity Vacuum:</strong> A zone in the market where very few resting orders exist, causing fast price movement when pressure arrives.</p>
-
-<div class="callout-red">
-  <h3>Slippage in 6M Isn’t Bad Luck — It’s Built In</h3>
-  <p>
-    Slippage isn’t a bug in 6M — it’s the cost of doing business in a thin, volatile market. You won’t eliminate it, but you can manage it. Respect the Peso’s speed, tighten your execution, and slippage shifts from constant bleed to rare nuisance.
-  </p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="mx-section" id="definition" aria-labelledby="definition-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Name the benchmark</p><h2 id="definition-title">Slippage Is Meaningless Without a Recorded Decision Price</h2><p>For this guide, implementation shortfall is the adverse difference between a recorded benchmark at the time the order decision became actionable and the actual weighted-average fill, converted to dollars. For a buy, a higher fill is adverse. For a sell, a lower fill is adverse. The current unit and tick are maintained in the <a href="6m-tick-size.html">canonical 6M contract guide</a>.</p></div>
+  <div class="mx-formula" aria-label="Adverse 6M buy shortfall formula"><code>(buy fill - buy decision price) &divide; 0.00001 &times; $5 &times; contracts</code><i aria-hidden="true">=</i><strong>Buy-side shortfall</strong></div>
+  <div class="mx-formula" aria-label="Adverse 6M sell shortfall formula"><code>(sell decision price - sell fill) &divide; 0.00001 &times; $5 &times; contracts</code><i aria-hidden="true">=</i><strong>Sell-side shortfall</strong></div>
+  <div class="mx-two-column">
+    <article class="mx-panel"><p class="mx-card-label">Price shortfall</p><h3>Spread, delay and impact can overlap</h3><p>A decision-midpoint-to-fill measure can already include paying the spread, quote movement during routing and market impact. Decompose those mechanisms only when synchronized quote and order data support it; do not add the same cost twice.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Explicit cost</p><h3>Fees are added separately</h3><p>Commissions, exchange fees, routing charges and other account debits do not appear in the futures price. Add them to price shortfall for an all-in implementation measure.</p></article>
   </div>
-</footer>
+  <div class="mx-caution"><strong>A missed limit order is not zero-cost execution.</strong><p>If the market moves without a fill, the unexecuted opportunity may matter to strategy evaluation, but it is not realized P&amp;L. Track non-fill and opportunity cost separately from the shortfall of completed trades.</p></div>
+</section>
+
+<section class="mx-section" id="reconciliation" aria-labelledby="reconciliation-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Worked audit</p><h2 id="reconciliation-title">The $88 Example Reconciles From Both Ends</h2><p>Assume a long decision at 0.05540 and an intended decision-price exit at 0.05570. The buy fills at 0.05544 and the sell fills at 0.05564. One current Globex outright tick is 0.00001, worth $5 per standard 6M contract.</p></div>
+  <div class="mx-table-scroll" role="region" aria-label="Hypothetical 6M implementation shortfall calculation" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Line</th><th scope="col">Price or formula</th><th scope="col">Ticks</th><th scope="col">Dollars</th></tr></thead><tbody>
+    <tr><th scope="row">Decision-price entry</th><td>0.05540</td><td>&mdash;</td><td>&mdash;</td></tr>
+    <tr><th scope="row">Actual buy fill</th><td>0.05544</td><td>4 adverse</td><td>$20 cost</td></tr>
+    <tr><th scope="row">Decision-price exit</th><td>0.05570</td><td>30 favorable from decision entry</td><td>$150 gross path</td></tr>
+    <tr><th scope="row">Actual sell fill</th><td>0.05564</td><td>6 adverse to exit benchmark</td><td>$30 cost</td></tr>
+    <tr><th scope="row">Realized price path</th><td>0.05564 - 0.05544</td><td>20 favorable</td><td>$100 gross fill-to-fill</td></tr>
+    <tr><th scope="row">Explicit costs</th><td>Hypothetical round trip</td><td>&mdash;</td><td>$12 cost</td></tr>
+    <tr><th scope="row">Net result</th><td>$150 - $20 - $30 - $12</td><td>&mdash;</td><td>$88</td></tr>
+  </tbody></table></div>
+  <p class="mx-source-note">This example is arithmetic, not a measured 6M average. It establishes the ledger fields and two reconciliation paths: decision-path gross minus shortfall and fees, or actual fill-to-fill gross minus fees.</p>
+</section>
+
+<section class="mx-section" id="data" aria-labelledby="data-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Evidence required</p><h2 id="data-title">A Candle Cannot Explain an Execution</h2><p>Bar data may show that a price traded somewhere during an interval, but it cannot reconstruct the order's place in the queue, the spread at decision time or which levels were consumed. A useful execution record needs synchronized data from the strategy, order-management system and market feed.</p></div>
+  <div class="mx-check-grid">
+    <article><strong>Decision record</strong><p>UTC timestamp, exact dated 6M contract, side, intended quantity, benchmark type and benchmark price.</p></article>
+    <article><strong>Order record</strong><p>Order type, limit or stop price, time in force, routing timestamps, modifications, cancels and rejects.</p></article>
+    <article><strong>Fill record</strong><p>Every partial fill, price, quantity, timestamp, weighted average and explicit fee.</p></article>
+    <article><strong>Quote record</strong><p>Bid, ask, displayed sizes and preferably multiple depth levels at decision, submission and fill.</p></article>
+    <article><strong>State record</strong><p>Scheduled event, market phase, holiday state, current/next contract and connection or feed health.</p></article>
+    <article><strong>Clock record</strong><p>Clock source, time zone, synchronization quality and any known latency between strategy, broker and market data.</p></article>
+  </div>
+  <p class="mx-related">Before using a dataset to estimate slippage, apply the source and timestamp acceptance controls in <a href="6m-data-traps.html">6M data traps</a>. Missing authoritative fields should remain missing; reconstructed receipt time is not exchange event time.</p>
+</section>
+
+<section class="mx-section" id="gates" aria-labelledby="gates-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Before the order</p><h2 id="gates-title">Market Quality Must Pass Declared Gates, Not a Vague “Looks Liquid” Test</h2><p>Thresholds depend on the strategy, quantity and loss budget. The process below does not prescribe universal numbers; it requires the plan to set them before the opportunity appears.</p></div>
+  <div class="mx-level-ledger" aria-label="Core 6M market-quality gates"><span><strong>Spread gate</strong>Current bid-ask width in 0.00001 ticks</span><span><strong>Depth gate</strong>Usable size through the worst acceptable price</span><span><strong>Cost gate</strong>Estimated all-in dollars versus planned risk</span></div>
+  <div class="mx-transition-guards">
+    <article><strong>Freshness guard</strong><p>Reject when quotes, timestamps, connection health or contract mapping are stale or ambiguous.</p></article>
+    <article><strong>Event guard</strong><p>Reject or switch to an event-specific plan when a scheduled release or policy decision falls inside the execution window.</p></article>
+    <article><strong>Quantity guard</strong><p>Reduce when planned size is large relative to displayed and historically replenishing depth within the price tolerance.</p></article>
+    <article><strong>Volatility guard</strong><p>Recalculate stop distance and cost stress when price changes faster than the plan's measurement interval.</p></article>
+    <article><strong>Expiry guard</strong><p>Check whether liquidity has migrated to another month and whether termination or a broker cutoff is approaching.</p></article>
+    <article><strong>Loss-budget guard</strong><p>Reject when expected execution cost consumes more of the trade budget than the written plan permits.</p></article>
+  </div>
+</section>
+
+<section class="mx-section" id="orders" aria-labelledby="orders-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Order branch</p><h2 id="orders-title">Choose Which Risk to Accept: Price, Fill or Non-Fill</h2><p>No order type removes execution risk. The choice changes which failure mode is more likely and must match the reason for entering or exiting.</p></div>
+  <div class="mx-decision-tree">
+    <article><h3>Marketable order</h3><p><strong>Accepts:</strong> uncertain price within available liquidity. <strong>Use only when:</strong> immediate execution matters more than price control and worst-case depth passes. <strong>Reject when:</strong> spread or depth breaches tolerance.</p></article>
+    <article><h3>Limit order</h3><p><strong>Accepts:</strong> partial fill or no fill. <strong>Use only when:</strong> price control matters and the strategy can tolerate missing the trade. <strong>Reject when:</strong> chasing would destroy the original decision benchmark.</p></article>
+    <article><h3>Stop-triggered order</h3><p><strong>Accepts:</strong> gap and trigger risk. A stop-market prioritizes execution after trigger; a stop-limit adds price control but may not fill. <strong>Reject when:</strong> neither branch fits the loss or non-fill tolerance.</p></article>
+  </div>
+  <div class="mx-caution"><strong>Exit urgency can change the branch.</strong><p>A planned entry, a routine profit-taking exit and an emergency risk exit solve different problems. Document the order hierarchy and who may override it. “Never use market orders” and “always use market orders” are both incomplete rules.</p></div>
+</section>
+
+<section class="mx-section" id="stress-cases" aria-labelledby="stress-cases-title">
+  <div class="mx-section-heading"><p class="mx-kicker">When the book changes character</p><h2 id="stress-cases-title">Four Conditions That Require a New Execution Decision</h2></div>
+  <div class="mx-four-grid">
+    <article class="mx-panel"><h3>Scheduled information</h3><p>Banxico, Federal Reserve and major economic releases can move the decision price before an order reaches the book. Use official calendars and a defined event buffer.</p></article>
+    <article class="mx-panel"><h3>Unscheduled shock</h3><p>Political, fiscal, trade or global-risk news can create fast cancellation and repricing. Historical average spread is not a usable live quote.</p></article>
+    <article class="mx-panel"><h3>Roll migration</h3><p>Displayed depth may move from the expiring month to a later contract. Compare both and record basis rather than forcing execution in a stale lead symbol.</p></article>
+    <article class="mx-panel"><h3>Session edge</h3><p>The daily break, reopen and holiday modifications can alter participation. Nearly 23-hour access does not establish constant executable quality.</p></article>
+  </div>
+  <p class="mx-source-note">These are plausible market-structure mechanisms, not reported findings about average 6M slippage. A strategy-specific study must define sample, contract construction, clocks, quote data, order assumptions and out-of-sample acceptance limits.</p>
+</section>
+
+<section class="mx-section" id="review" aria-labelledby="review-title">
+  <div class="mx-section-heading"><p class="mx-kicker">After the fill</p><h2 id="review-title">Diagnose the Cost Without Rewriting the Decision Price</h2><p>The benchmark is committed at decision time. Moving it after seeing the fill hides delay and selection effects. Review each leg, then aggregate by comparable states.</p></div>
+  <ol class="mx-method">
+    <li><h3>Reconcile quantity</h3><p>Match intended, submitted, filled, cancelled and remaining quantities. Account for partial fills and unintended duplicate orders.</p></li>
+    <li><h3>Reconcile price</h3><p>Compute direction-correct shortfall against the original benchmark, weighted-average fill and exact $5 outright tick.</p></li>
+    <li><h3>Attribute cautiously</h3><p>Use synchronized depth and timestamps to separate spread, delay and impact only to the extent the data support.</p></li>
+    <li><h3>Compare states</h3><p>Tag event proximity, session, contract month, spread, depth, order type, size and data health. Do not average incompatible states into one comforting number.</p></li>
+  </ol>
+  <p class="mx-related">Feed the measured cost distribution back into <a href="6m-margin-requirements.html">risk-based sizing</a>, <a href="6m-backtesting.html">the backtest cost model</a> and <a href="6m-trading-plan.html">the integrated 6M plan</a>. Preserve failed and non-filled orders; excluding them creates selection bias.</p>
+</section>
+
+<section class="mx-section" id="decision" aria-labelledby="decision-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Final execution card</p><h2 id="decision-title">Go, Reduce, Wait or Reject</h2><p>The output is an operational state, not a prediction that the trade will make money.</p></div>
+  <div class="mx-four-grid" aria-label="6M execution decision outcomes">
+    <article class="mx-panel"><p class="mx-card-label">Go</p><h3>All gates pass</h3><p>Data are fresh, exact contract is correct, spread and depth pass, event state is allowed, and stressed all-in cost fits the risk budget.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Reduce</p><h3>Smaller size passes</h3><p>Market quality supports fewer contracts than the original plan. Recalculate risk and fees; do not assume linear fills.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Wait</p><h3>Temporary state fails</h3><p>A spread spike, shallow depth, pending release or roll transition may resolve. Set a new observation condition instead of chasing.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Reject</p><h3>Evidence or cost fails</h3><p>Contract mapping, data integrity, loss tolerance or order behavior is unacceptable. Record the no-trade decision.</p></article>
+  </div>
+</section>
+
+<details class="mx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/256/256.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 256: Mexican Peso/U.S. Dollar futures</a> for the 500,000 MXN unit and 0.00001 Globex minimum increment used in the examples.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME FX Product Guide 2026</a> for current 6M outright, spread and ClearPort increment distinctions.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/emerging-market/mexican-peso.quotes.html" target="_blank" rel="noopener">CME Mexican Peso futures quotes and product chain</a> for the live dated-contract context; delayed or indicative web data are not a substitute for an execution feed.</li>
+  <li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener">CME holiday and trading hours</a> for schedule exceptions that can affect an execution window.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CFTCGlossary/index.htm" target="_blank" rel="noopener">CFTC futures glossary</a> for market-order, limit-order, minimum-tick, open-interest and market-microstructure definitions.</li>
+</ul><p>Sources and contract inputs were reviewed August 13, 2026. The 30-tick path, 4-tick entry shortfall, 6-tick exit shortfall and $12 fee are hypothetical and exist only to demonstrate reconciliation. The page reports no original 6M slippage distribution, liquidity ranking, event estimate or profitability result. Market-quality thresholds must be defined and validated for the user's data, quantity and strategy.</p></details>
+
+<aside class="mx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This execution framework is educational and is not personal trading, investment, legal, tax, accounting, hedging or brokerage advice. Market, stop and limit orders carry different price and fill risks. Futures leverage, gaps, slippage, data failure and forced liquidation can create losses beyond the initial margin deposit.</p></aside>
+<!-- ARTICLE BODY END -->
+</article>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>
