@@ -2,317 +2,149 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6M Data Traps</title>
-  <meta name="description" content="The most common data traps traders fall into when analyzing USD/MXN 6M futures, including inaccurate candles, distorted volatility, and false liquidity signals.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6m-data-traps.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6M Data Traps">
-  <meta property="og:description" content="The most common data traps traders fall into when analyzing USD/MXN 6M futures, including inaccurate candles, distorted volatility, and false liquidity signals.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6m-data-traps.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6M Data Traps">
-  <meta name="twitter:description" content="The most common data traps traders fall into when analyzing USD/MXN 6M futures, including inaccurate candles, distorted volatility, and false liquidity signals.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6M Data Traps",
-  "description": "The most common data traps traders fall into when analyzing USD/MXN 6M futures, including inaccurate candles, distorted volatility, and false liquidity signals.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6m-data-traps.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6m-data-traps.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How to Avoid Data Traps When Analyzing 6M Futures",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6m-data-traps.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6M Data Traps: A Dataset Acceptance Audit</title>
+  <meta name="description" content="Audit 6M data provenance, contract identity, quote direction, timestamps, missing fields, settlements, rolls and liquidity limits before research begins.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6m-data-traps.html">
+  <meta property="og:title" content="6M Data Traps: A Dataset Acceptance Audit"><meta property="og:description" content="Audit 6M data provenance, contract identity, quote direction, timestamps, missing fields, settlements, rolls and liquidity limits before research begins."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6m-data-traps.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-28"><meta property="article:modified_time" content="2026-08-13">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6M Data Traps: A Dataset Acceptance Audit"><meta name="twitter:description" content="Audit 6M data provenance, contract identity, quote direction, timestamps, missing fields, settlements, rolls and liquidity limits before research begins."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/6m-research-library.css?v=20260813a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6M Data Traps: A Dataset Acceptance Audit","description":"Audit 6M data provenance, contract identity, quote direction, timestamps, missing fields, settlements, rolls and liquidity limits before research begins.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6m-data-traps.html"},"datePublished":"2025-11-28","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/6m-data-traps.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6M Data Traps: A Dataset Acceptance Audit","item":"https://grizzlyparrottrading.com/futures-basics/6m-data-traps.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="mx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container mxn-library" tabindex="-1"><article>
+<!-- ARTICLE BODY START -->
+<header class="mx-hero">
+  <div class="mx-hero-copy">
+    <p class="mx-kicker">Provenance &middot; field semantics &middot; quarantine</p>
+    <h1>6M Data Traps: A Dataset Acceptance Audit</h1>
+    <p class="mx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="mx-hero-lede">Two vendors can publish different daily 6M candles without either row being a simple typo. One may switch expiries before the other, one may back-adjust the history, one may use settlement while the other uses a last trade, and their day boundaries may differ. Until those choices are documented and reconciled, neither candle is evidence for a market claim.</p>
+    <div class="mx-hero-actions"><a class="button-primary" href="#disagreement">Diagnose the disagreement</a><a class="mx-text-link" href="#acceptance">Use the acceptance gate</a></div>
+    <dl class="mx-hero-metrics" aria-label="6M dataset audit principles"><div><dt>Null field</dt><dd>Failure</dd></div><div><dt>Derived time</dt><dd>Labeled</dd></div><div><dt>Unknown roll</dt><dd>Quarantine</dd></div><div><dt>Original audit</dt><dd>None</dd></div></dl>
   </div>
+  <aside class="mx-market-board" aria-label="Illustrative reasons two vendor candles can disagree">
+    <div class="mx-board-head"><span>Illustrative daily bar</span><strong>Same label, different construction</strong></div>
+    <div class="mx-proof-grid"><div class="mx-proof"><strong>Vendor A</strong><span>Nearby contract, settlement close, exchange trade date, back-adjusted history</span></div><div class="mx-proof is-limit"><strong>Vendor B</strong><span>Volume-selected contract, last trade, civil date, unadjusted splice</span></div></div>
+    <p class="mx-board-foot">Reconcile definitions before comparing values</p>
+  </aside>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="mx-jump-nav" aria-label="On this page"><a href="#disagreement">Disagreement</a><a href="#evidence">Evidence</a><a href="#field-audit">Fields</a><a href="#price-series">Prices &amp; rolls</a><a href="#liquidity">Liquidity</a><a href="#quarantine">Quarantine</a><a href="#acceptance">Acceptance</a></nav>
 
-<h1>How to Avoid Data Traps When Analyzing 6M Futures</h1>
-
-<p>USD/MXN (6M futures) is one of the most misleading contracts when it comes to data. Traders assume their charts are accurate, their indicators reflect reality, and their volume profile is complete. Most of the time, none of that is true. The Peso’s thin liquidity, irregular trade frequency, and jumpy microstructure create distorted data that can trick you into false signals, broken backtests, and wrong conclusions.</p>
-
-<h2>1. Candles Hide Micro-Gaps and Jumped Levels</h2>
-
-<p>6M gaps constantly on the micro level. Not ES-style macro gaps — micro-level liquidity gaps where price skips several ticks and never prints them.</p>
-
-<p>The problem: most charting platforms smooth these gaps into candles. The candle shows a “wick,” but the wick is fake — the market never traded those ticks.</p>
-
-<h3>Why this matters:</h3>
-
-<ul>
-  <li>You think support was tested — it wasn’t.</li>
-  <li>You think your stop would survive — it wouldn’t.</li>
-  <li>You think a breakout had follow-through — it didn’t.</li>
-</ul>
-
-<p>Using candles alone on 6M is dangerous in volatile periods.</p>
-
-<h2>2. Missing Tick Data Creates Fake Clean Structure</h2>
-
-<p>Many brokers do not record every tick for 6M. They compress the feed or aggregate trades. This makes the chart look smoother than it actually is.</p>
-
-<h3>Problems caused:</h3>
-
-<ul>
-  <li>Breakouts look cleaner than they were.</li>
-  <li>Reversals look perfectly timed.</li>
-  <li>Pullbacks look natural instead of jagged.</li>
-</ul>
-
-<p>In live trading, 6M rarely looks clean. If your feed does, it’s lying to you.</p>
-
-<h2>3. Volume Profile Lies If You Don’t Use Tick Data</h2>
-
-<p>Volume profile depends on accurate tick-by-tick prints. When your platform compresses data:</p>
-
-<ul>
-  <li>False high-volume nodes appear.</li>
-  <li>True low-volume nodes disappear.</li>
-  <li>POC shifts incorrectly.</li>
-</ul>
-
-<p>This is the most destructive data trap for traders using orderflow tools.</p>
-
-<h3>Real consequences:</h3>
-
-<ul>
-  <li>Your “support” is fake.</li>
-  <li>Your “thin volume rejection” never existed.</li>
-  <li>Your “order block” was an illusion created by missing prints.</li>
-</ul>
-
-<h2>4. Time-Based Candles Distort 6M’s Real Volatility</h2>
-
-<p>6M volatility is not evenly distributed across the day. Time-based candles (1m, 5m, 15m) spread volatility evenly even though volatility is clustered in specific bursts.</p>
-
-<h3>The trap:</h3>
-
-<ul>
-  <li>Indicators output the wrong picture.</li>
-  <li>Trend filters trigger incorrectly.</li>
-  <li>Backtests show stability where none exists.</li>
-</ul>
-
-<p>Volume-based or tick-based charts reveal the actual volatility bursts better.</p>
-
-<h2>5. Spread Data Is Often Missing Entirely</h2>
-
-<p>Many platforms do not record the bid and ask separately for 6M. They only record trades. That means:</p>
-
-<ul>
-  <li>You have no real record of spread spikes.</li>
-  <li>You cannot simulate slippage accurately.</li>
-  <li>Your limit order modeling is wrong.</li>
-</ul>
-
-<p>6M has spread spikes of 2–5 ticks regularly and up to 10–15 ticks during news. If this isn’t in your data, your analysis is wrong.</p>
-
-<h2>6. Indicator Signals Are Distorted by Missing Prints</h2>
-
-<p>Indicators like RSI, Stochastics, MACD, EMAs, and VWAP all depend on accurate candles. Missing ticks or bad compression pushes indicators out of alignment with the real market.</p>
-
-<h3>Examples:</h3>
-
-<ul>
-  <li>RSI shows “overbought” even though price jumped on thin liquidity.</li>
-  <li>VWAP looks clean but the feed ignored half the transactions.</li>
-  <li>MACD crossovers appear smoother than they were.</li>
-</ul>
-
-<p>This makes indicator-based backtests especially unreliable on 6M.</p>
-
-<h2>7. Wrong Session Times Create False Backtests</h2>
-
-<p>If your platform uses wrong timezone data or rolls early/late, your candles get distorted.</p>
-
-<h3>Common issues:</h3>
-
-<ul>
-  <li>overnight chop mixed with regular session</li>
-  <li>holiday sessions not removed</li>
-  <li>incorrect roll dates blurring structure</li>
-</ul>
-
-<p>6M structure only makes sense when aligned to real CME session boundaries.</p>
-
-<h2>8. Roll Gaps Trick Traders Into Fake Breakouts</h2>
-
-<p>USD/MXN futures roll with noticeable price gaps between contract months. If you do not adjust your chart to continuous back-adjusted mode, you will see fake:</p>
-
-<ul>
-  <li>breakouts</li>
-  <li>downtends</li>
-  <li>range breaks</li>
-  <li>failed support</li>
-</ul>
-
-<p>All of those are illusions caused by contract rolls.</p>
-
-<h2>9. Backtesting Without Regime Filters Creates Fake Edges</h2>
-
-<p>6M behaves completely differently during:</p>
-
-<ul>
-  <li>risk-on carry periods</li>
-  <li>risk-off spikes</li>
-  <li>normal compression</li>
-  <li>ATR expansion periods</li>
-</ul>
-
-<p>Testing these regimes together makes your edge look stronger than it is. You already saw how to separate regimes in <a href="https://grizzlyparrottrading.com/futures-basics/6m-backtesting.html">Backtesting 6M Correctly</a>.</p>
-
-<h2>Definitions for Screen Readers</h2>
-
-<p><strong>Tick data:</strong> Every individual price update in the market.</p>
-<p><strong>Liquidity gap:</strong> A price area where no trades occur because orders weren’t resting there.</p>
-<p><strong>Volume profile:</strong> A chart tool showing where trading volume concentrated at each price.</p>
-<p><strong>Back-adjusted:</strong> Contract data adjusted to remove roll gaps.</p>
-<p><strong>Compressed feed:</strong> Data feed that combines or skips ticks.</p>
-
-<div class="highlight-box yellow">
-  <h3>6M Data Lies If You Don’t Filter It</h3>
-  <p>
-    6M futures data is full of distortions—missing ticks, fake volume, roll gaps, and spread spikes. If you don’t clean your inputs, you’ll trade artifacts instead of reality. Structure your tools around how 6M really behaves, not how a clean chart pretends it does.
-  </p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="mx-section" id="disagreement" aria-labelledby="disagreement-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Begin with definitions</p><h2 id="disagreement-title">A Candle Disagreement Is a Lineage Question</h2><p>Do not average the vendors or choose the prettier chart. Reconstruct the row from raw records and metadata. The first goal is to determine whether each series measures the same instrument, interval, price type, and timestamp at all.</p></div>
+  <div class="mx-process">
+    <article><span>01</span><h3>Identify</h3><p>Resolve exchange product, dated expiry, venue, feed, schema and file version.</p></article>
+    <article><span>02</span><h3>Define</h3><p>Record quote direction, price type, bar clock, inclusion rules and correction handling.</p></article>
+    <article><span>03</span><h3>Rebuild</h3><p>Regenerate the candle from eligible raw rows without manual edits.</p></article>
+    <article><span>04</span><h3>Reconcile</h3><p>Classify the difference as expected construction, source defect, unknown, or noncomparable.</p></article>
   </div>
-</footer>
-</body>
-</html>
+  <div class="mx-caution"><strong>Acceptance principle</strong><p>A provider passes only when its actual payload supplies every field and timing requirement for the intended use. Inferred timestamps, polling windows, receipt times, reconstructed events, or confidence labels may be retained as experimental evidence, but they do not replace an authoritative required field.</p></div>
+</section>
+
+<section class="mx-section" id="evidence" aria-labelledby="evidence-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Evidence ladder</p><h2 id="evidence-title">Documentation Describes a Feed; Payloads Prove What Arrived</h2><p>Authoritative documentation and actual data answer different questions. Certification needs both. A product page can establish contract mechanics, but only inspected records can establish whether a purchased or vendor-delivered file contains usable timestamps, quotes, quantities, corrections, and contract identifiers.</p></div>
+  <div class="mx-claim-ladder">
+    <article class="mx-panel"><h3>Exchange rule and specification</h3><p><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/256/256.pdf" target="_blank" rel="noopener">CME Chapter 256</a> and the <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">current FX Product Guide</a> define the instrument. They do not certify a vendor&rsquo;s transformation.</p></article>
+    <article class="mx-panel"><h3>Provider schema and field guide</h3><p>Versioned documentation defines advertised fields, timestamps and message behavior. Save the exact version relevant to the files.</p></article>
+    <article class="mx-panel"><h3>Actual payload inspection</h3><p>Sample every relevant regime, contract and boundary. Record nulls, gaps, duplicates, corrections and unexpected values; do not infer advertised fields that are absent.</p></article>
+    <article class="mx-panel"><h3>Independent reconciliation</h3><p>Rebuild aggregates, compare authoritative reference points where comparable, and document expected basis, timing, and construction differences.</p></article>
+  </div>
+  <p class="mx-source-note"><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener">CME DataMine</a> advertises multiple historical dataset types. A catalog description is evidence of availability, not evidence that this page acquired or validated any file. It did not.</p>
+</section>
+
+<section class="mx-section" id="field-audit" aria-labelledby="field-audit-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Semantics before statistics</p><h2 id="field-audit-title">Audit Identity, Quote Direction, and Time as Required Fields</h2><p>Three mistakes can invert or reorder an entire study: using an unidentified contract, confusing MXN/USD futures with a pesos-per-dollar cash series, and assigning timestamps with an assumed offset.</p></div>
+  <div class="mx-table-scroll" role="region" aria-label="6M data field audit" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Field</th><th scope="col">Required meaning</th><th scope="col">Audit test</th><th scope="col">Failure classification</th></tr></thead><tbody>
+    <tr><th scope="row">Product</th><td>6M Mexican peso/U.S. dollar futures</td><td>Map code and venue to authoritative CME documentation</td><td>Primary use failed if ambiguous</td></tr>
+    <tr><th scope="row">Contract month</th><td>Dated delivery month on every record</td><td>Reconcile symbol parser across year and month transitions</td><td>Continuous-only data is secondary or experimental</td></tr>
+    <tr><th scope="row">Quote convention</th><td>U.S. dollars per Mexican peso for 6M</td><td>Unit-check prices and P&amp;L formulas; do not rely on pair-name order</td><td>Reject inverted or undocumented values</td></tr>
+    <tr><th scope="row">Price type</th><td>Trade, bid, ask, settlement, open, high, low, close, or derived midpoint</td><td>Reconcile each field to provider definitions and raw messages</td><td>Unknown “price” cannot support execution claims</td></tr>
+    <tr><th scope="row">Timestamp</th><td>Provider event time with precision, timezone and clock semantics</td><td>Test ordering, duplicates, transitions and source latency fields</td><td>Receipt time cannot substitute for event time</td></tr>
+    <tr><th scope="row">Trade date</th><td>Exchange session label stored apart from civil date</td><td>Inspect overnight and holiday boundaries</td><td>Reject joins made on an undocumented date</td></tr>
+    <tr><th scope="row">Correction state</th><td>Insert, cancel, correction, sequence-reset or equivalent</td><td>Replay message rules and reconcile totals</td><td>Unprocessed corrections contaminate aggregates</td></tr>
+  </tbody></table></div>
+  <div class="mx-two-column">
+    <article class="mx-panel"><p class="mx-card-label">6M futures</p><h3>USD per MXN</h3><p>The <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME FX Product Guide</a> lists MXN/USD futures in U.S. dollars per Mexican peso. A higher 6M quote represents more U.S. dollars per peso under that convention.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Banxico cash reference</p><h3>MXN per USD</h3><p>Banco de M&eacute;xico&rsquo;s <a href="https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?accion=consultarCuadroAnalitico&amp;idCuadro=CF85&amp;locale=en&amp;sector=6" target="_blank" rel="noopener">SIE exchange-rate table</a> publishes pesos per U.S. dollar for named reference series. A reciprocal can align units, but it remains a different instrument, timestamp, and methodology from a futures trade.</p></article>
+  </div>
+</section>
+
+<section class="mx-section" id="price-series" aria-labelledby="price-series-title">
+  <div class="mx-section-heading"><p class="mx-kicker">The word “close” is overloaded</p><h2 id="price-series-title">Keep Trades, Settlements, and Continuous Futures Separate</h2><p>A settlement can be an exchange-defined daily reference rather than the last trade. A vendor close can be the final record before its own boundary. A continuous price can be a transformation across expiries. Store these as separate fields and never use one name for all three.</p></div>
+  <div class="mx-three-column">
+    <article class="mx-panel"><p class="mx-card-label">Observed market</p><h3>Trade or quote</h3><p>Retain timestamp, dated contract, side-relevant quote, quantity and feed state. This is the input required for an executable simulation.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Official daily reference</p><h3>Settlement</h3><p>Record the named exchange settlement and applicable methodology or notice. Do not imply it was the final executable trade.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Analytical transform</p><h3>Continuous series</h3><p>Record roll trigger, splice date, adjustment direction, cumulative adjustment, source contracts and rebuild code.</p></article>
+  </div>
+  <div class="mx-table-scroll" role="region" aria-label="Continuous 6M series audit" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Trap</th><th scope="col">How it enters</th><th scope="col">Diagnostic</th><th scope="col">Required treatment</th></tr></thead><tbody>
+    <tr><th scope="row">Artificial jump</th><td>Unadjusted expiry switch</td><td>Return aligns exactly with roll and contract-price gap</td><td>Exclude from signal returns or model the roll explicitly</td></tr>
+    <tr><th scope="row">Rewritten level</th><td>Backward adjustment</td><td>Historical price changes when a new roll is appended</td><td>Version data and avoid level rules on transformed prices</td></tr>
+    <tr><th scope="row">Hindsight roll</th><td>Switch uses same-day final volume or later information</td><td>Decision timestamp occurs before required input was known</td><td>Replace with an ex-ante rule or reject for backtesting</td></tr>
+    <tr><th scope="row">Split liquidity</th><td>Nearby-only feed during migration</td><td>Outgoing activity falls as next expiry rises</td><td>Preserve both contracts and analyze migration</td></tr>
+  </tbody></table></div>
+  <div class="mx-related">The <a href="6m-backtesting.html">6M backtesting protocol</a> explains how to keep analytical adjustments separate from simulated roll fills.</div>
+</section>
+
+<section class="mx-section" id="liquidity" aria-labelledby="liquidity-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Field-specific evidence</p><h2 id="liquidity-title">Liquidity Claims Require Quotes, Depth, and Missingness</h2><p>Volume alone cannot establish a tight spread, deep book, passive fill, or low slippage. A top-of-book feed cannot reconstruct full depth or exact queue position. Market by Price and Market by Order provide different granularity. Match each claim to the minimum field set it requires.</p></div>
+  <div class="mx-table-scroll" role="region" aria-label="Minimum evidence for 6M liquidity claims" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Claim</th><th scope="col">Minimum evidence</th><th scope="col">Still not established</th></tr></thead><tbody>
+    <tr><th scope="row">Completed volume</th><td>Dated-contract trades with quantity, corrections and complete interval coverage</td><td>Displayed or hidden liquidity; participant motive</td></tr>
+    <tr><th scope="row">Bid-ask spread</th><td>Synchronized best bid and offer with stale/crossed-book policy</td><td>Fill at either quote after latency</td></tr>
+    <tr><th scope="row">Displayed depth</th><td>Depth updates with price levels, quantity, sequence and replay rules</td><td>Committed liquidity or undisplayed quantity</td></tr>
+    <tr><th scope="row">Queue position</th><td>Order-level data and a validated book reconstruction appropriate to the venue</td><td>Trader-specific latency and private order state</td></tr>
+    <tr><th scope="row">Slippage</th><td>Arrival benchmark, actual or replayed order, size, fills, latency and fees</td><td>Future slippage under a different state or size</td></tr>
+  </tbody></table></div>
+  <p class="mx-source-note"><a href="https://www.cmegroup.com/articles/faqs/market-by-order-mbo.html" target="_blank" rel="noopener">CME&rsquo;s Market by Order FAQ</a> says Market by Price consolidates quantity at price levels, while Market by Order supplies anonymous order-level details and priority information. A source missing the required granularity fails the corresponding use; a model estimate cannot be relabeled as observed queue data.</p>
+</section>
+
+<section class="mx-section" id="quarantine" aria-labelledby="quarantine-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Do not repair silently</p><h2 id="quarantine-title">Quarantine Ambiguous Records and Preserve the Reason</h2><p>A cleaning rule should be deterministic, versioned, and reversible. Keep the raw record immutable. Every exclusion or transformation needs a reason code, original values, transformed values, code version, and count by contract and date.</p></div>
+  <div class="mx-falsification-tree">
+    <article><p class="mx-card-label">Failed for primary use</p><h3>Required evidence is absent</h3><ul><li>Contract month missing</li><li>Event time inferred from receipt time</li><li>Quote side unavailable for fill claim</li><li>Unreconciled gaps or correction semantics</li></ul></article>
+    <article><p class="mx-card-label">Secondary context only</p><h3>Narrow facts remain usable</h3><ul><li>Daily settlement without intraday book</li><li>Cash reference with different instrument</li><li>Volume without spread or depth</li><li>Continuous chart with documented construction</li></ul></article>
+    <article><p class="mx-card-label">Experimental only</p><h3>Derived fields stay labeled</h3><ul><li>Estimated event time</li><li>Reconstructed quote state</li><li>Probabilistic roll mapping</li><li>Vendor claim awaiting payload proof</li></ul></article>
+  </div>
+  <ul class="mx-checklist">
+    <li><strong>Do not convert missing quotes to zero spread.</strong> Preserve the interval as unavailable and report missingness.</li>
+    <li><strong>Do not forward-fill through closures or outages.</strong> A stale price is not a live market.</li>
+    <li><strong>Do not delete extreme moves by magnitude alone.</strong> Reconcile sequence, corrections, neighboring records, official events, and contract state first.</li>
+    <li><strong>Do not overwrite source files.</strong> Store cleaned data as a new lineage with reproducible code and checksums.</li>
+  </ul>
+</section>
+
+<section class="mx-section" id="acceptance" aria-labelledby="acceptance-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Ending gate</p><h2 id="acceptance-title">6M Dataset Acceptance Checklist</h2><p>Run this gate separately for every intended use. A source may pass daily settlement research and fail intraday execution research. Acceptance does not transfer across questions.</p></div>
+  <div class="mx-check-grid">
+    <article><strong>Authority</strong><p>Current CME rule/specification and provider documentation are saved with review dates.</p></article>
+    <article><strong>Payload</strong><p>Actual records prove every required field, precision, timestamp and correction state.</p></article>
+    <article><strong>Identity</strong><p>Product, venue and dated contract resolve without inferred symbol mapping.</p></article>
+    <article><strong>Units</strong><p>Quote direction, currency units, price type and P&amp;L use consistent definitions.</p></article>
+    <article><strong>Time</strong><p>Event time, UTC conversion, local offset, trade date, bar boundaries and DST are reproducible.</p></article>
+    <article><strong>Coverage</strong><p>Gaps, duplicates, stale records, outages, corrections and attrition are quantified.</p></article>
+    <article><strong>Roll</strong><p>Every continuous observation maps to dated contracts under a declared ex-ante rule.</p></article>
+    <article><strong>Liquidity</strong><p>The feed&rsquo;s quote, depth and order granularity matches the exact execution claim.</p></article>
+    <article><strong>Decision</strong><p>Outcome is failed for primary use, secondary context only, experimental only, or accepted for the named use.</p></article>
+  </div>
+  <div class="mx-caution"><strong>Research status as of August 13, 2026</strong><p>No original study is reported. No vendor dataset or CME market-data file was acquired, inspected, reconciled, or certified for this article. The vendor-candle example is illustrative. This page defines a fail-closed audit; it does not certify any named provider or data history. Reconcile verified mechanics against the <a href="6m-tick-size.html">canonical 6M contract-specification guide</a>.</p></div>
+</section>
+
+<details class="mx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/256/256.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 256: Mexican Peso/U.S. Dollar futures</a> for authoritative product scope, trading unit, price-increment context, termination, and physical-delivery rules.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/emerging-market/mexican-peso.contractSpecs.html" target="_blank" rel="noopener">CME Group Mexican Peso futures contract page</a> and <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">2026 FX Product Guide</a> for current product, code, unit and quote-direction context. Detailed mechanics remain on this site&rsquo;s canonical 6M specification page.</li>
+  <li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener">CME DataMine historical-data catalog</a> for distinctions among end-of-day, time-and-sales, top-of-book, depth and Market by Order products. No dataset was purchased or downloaded.</li>
+  <li><a href="https://www.cmegroup.com/articles/faqs/market-by-order-mbo.html" target="_blank" rel="noopener">CME Market by Order FAQ</a> for Market by Price versus Market by Order granularity, full-depth and queue-information boundaries.</li>
+  <li><a href="https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?accion=consultarCuadroAnalitico&amp;idCuadro=CF85&amp;locale=en&amp;sector=6" target="_blank" rel="noopener">Banco de M&eacute;xico SIE exchange-rate table CF85</a> for official pesos-per-U.S.-dollar cash reference series and their stated units.</li>
+  <li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener">CME Group trading-hours and holiday notices</a>, <a href="https://www.dof.gob.mx/nota_detalle.php?codigo=5670045&amp;fecha=28/10/2022" target="_blank" rel="noopener">Mexico&rsquo;s 2022 Law of Time Zones</a>, and <a href="https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst" target="_blank" rel="noopener">NIST daylight-saving rules</a> for clock and calendar audit context.</li>
+</ul><p>Sources and methods were reviewed August 13, 2026. This page is unsponsored editorial analysis and presents a dataset-audit protocol, not a provider certification or original market finding.</p></details>
+<aside class="mx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>Dataset acceptance is a technical control, not assurance that a strategy or provider is suitable. This article offers no individualized investment, trading, brokerage, legal, tax, or hedge recommendation. Errors in identity, units, clocks, gaps, and book reconstruction can compound the loss risk of leveraged futures. Preserve raw evidence, verify the current CME contract and broker requirements, and do not risk capital on a field that the actual payload cannot support.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

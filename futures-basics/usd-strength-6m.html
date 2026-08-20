@@ -2,214 +2,186 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How USD Strength Impacts 6M</title>
-  <meta name="description" content="A deep breakdown of how U.S. dollar strength drives 6M futures, why USD trends amplify Peso moves, and the mechanics behind USD/MXN correlation.">
+  <title>USD Strength and 6M: Identity, Common Factor, and Test</title>
+  <meta name="description" content="Separate 6M's inverse quote identity from a genuine common-dollar factor, compare dollar baskets, use non-circular confirmation, and design a falsifiable test.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/usd-strength-6m.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="How USD Strength Impacts 6M">
-  <meta property="og:description" content="A deep breakdown of how U.S. dollar strength drives 6M futures, why USD trends amplify Peso moves, and the mechanics behind USD/MXN correlation.">
+  <meta property="og:title" content="USD Strength and 6M: Identity, Common Factor, and Test">
+  <meta property="og:description" content="Separate 6M's inverse quote identity from a genuine common-dollar factor, compare dollar baskets, use non-circular confirmation, and design a falsifiable test.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/usd-strength-6m.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-28">
+  <meta property="article:modified_time" content="2026-08-13">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="USD Strength and 6M: Identity, Common Factor, and Test">
+  <meta name="twitter:description" content="Separate 6M's inverse quote identity from a genuine common-dollar factor, compare dollar baskets, use non-circular confirmation, and design a falsifiable test.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="How USD Strength Impacts 6M">
-  <meta name="twitter:description" content="A deep breakdown of how U.S. dollar strength drives 6M futures, why USD trends amplify Peso moves, and the mechanics behind USD/MXN correlation.">
-
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="/futures-basics/6m-research-library.css?v=20260813a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"USD Strength and 6M: Identity, Common Factor, and Test","description":"Separate 6M's inverse quote identity from a genuine common-dollar factor, compare dollar baskets, use non-circular confirmation, and design a falsifiable test.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/usd-strength-6m.html"},"datePublished":"2025-11-28","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/usd-strength-6m.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How USD Strength Impacts 6M",
-  "description": "A deep breakdown of how U.S. dollar strength drives 6M futures, why USD trends amplify Peso moves, and the mechanics behind USD/MXN correlation.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/usd-strength-6m.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/usd-strength-6m.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How USD Strength Impacts 6M",
-      "item": "https://grizzlyparrottrading.com/futures-basics/usd-strength-6m.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"USD Strength and 6M: Identity, Common Factor, and Test","item":"https://grizzlyparrottrading.com/futures-basics/usd-strength-6m.html"}]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="mx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container mxn-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="mx-hero">
+  <div class="mx-hero-copy">
+    <p class="mx-kicker">Quote algebra &middot; dollar baskets &middot; non-circular testing</p>
+    <h1>USD Strength and 6M: Identity, Common Factor, and Test</h1>
+    <p class="mx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="mx-hero-lede">One screen shows 6M falling while a broad U.S.-dollar index barely changes. Another day the index rises and 6M falls with it. Both are possible because “the dollar” can mean a reciprocal bilateral quote, a weighted currency basket, or a shared U.S. shock. Those are different objects and require different evidence.</p>
+    <div class="mx-hero-actions"><a class="button-primary" href="#algebra">Normalize the quotes</a><a class="mx-text-link" href="#checklist">Reject circular signals</a></div>
+    <dl class="mx-hero-metrics" aria-label="USD and 6M analysis"><div><dt>Identity</dt><dd>MXN/USD = 1 &divide; USD/MXN</dd></div><div><dt>Basket</dt><dd>Weighted currencies</dd></div><div><dt>Factor</dt><dd>Shared dollar shock</dd></div><div><dt>Test</dt><dd>MXN excluded from control</dd></div></dl>
   </div>
+  <div class="mx-hero-visual"><div class="mx-market-board"><div class="mx-board-head"><span>Two screens disagree</span><strong>Define the object</strong></div><div class="mx-formula"><code>quote identity</code><i aria-hidden="true">&ne;</i><code>basket</code><i aria-hidden="true">&ne;</i><code>causal factor</code></div><p>Reciprocal math is exact for aligned spot quotes. A basket is a constructed measure. A common-dollar factor is an empirical hypothesis that needs controls.</p><p class="mx-board-foot"><span>Normalize first</span><span>Test second</span></p><div class="mx-quote-board" aria-label="Three different dollar objects"><span><strong>Identity</strong>Same pair, reciprocal quote</span><span><strong>Basket</strong>Weighted bilateral rates</span><span><strong>Factor</strong>Empirical shared shock</span></div></div></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="mx-jump-nav" aria-label="On this page"><a href="#algebra">Algebra</a><a href="#basket">Baskets</a><a href="#shocks">Shocks</a><a href="#controls">Controls</a><a href="#design">Test design</a><a href="#breakdowns">Breakdowns</a><a href="#checklist">Checklist</a></nav>
 
-<h1>How USD Strength Impacts 6M</h1>
-
-<p>6M is one of the most dollar-dependent contracts on the CME. When the U.S. dollar strengthens, 6M doesn't just tick higher—it usually rips. When the dollar weakens, 6M tends to collapse with the same kind of intensity. Understanding why this happens matters if you're going to trade this contract without getting your face ripped off.</p>
-
-<h2>The Basic Relationship</h2>
-
-<p>USD/MXN shows how many pesos it takes to buy one dollar. Stronger dollar means more pesos needed, so 6M goes up. Weaker dollar means fewer pesos needed, so 6M goes down. That part's straightforward. The weird thing is how much the Peso amplifies these moves instead of just tracking them proportionally.</p>
-
-<p>Three things make the relationship more extreme than it should be. First, Mexico is an emerging market, and emerging market currencies react harder to global risk cycles than major currencies do. Second, Mexico's economy is deeply tied to the United States through trade, so dollar strength doesn't just affect the exchange rate—it impacts the actual economy. Third, foreign capital flows into and out of Mexico are huge relative to the size of the market, so when the dollar moves, money floods in or out fast.</p>
-
-<h2>How Dollar Strength Cascades Through</h2>
-
-<p>When the dollar strengthens, it usually happens because U.S. yields are rising or because global risk sentiment is shifting toward safer assets. Both of those things hit emerging markets hard. Higher U.S. yields make dollar assets more attractive, so investors pull money out of places like Mexico. Risk-off sentiment does the same thing—money leaves emerging markets and heads back to the dollar.</p>
-
-<p>The Peso weakens faster than major currencies during this process because carry traders who borrowed dollars to buy higher-yielding pesos start unwinding their positions. Those unwinds happen fast and they're not gentle. On top of that, fund managers use the Mexican Peso as a proxy to hedge their entire Latin American exposure because it's the most liquid currency in the region. So when they want to reduce emerging market risk, they sell 6M, and the Peso absorbs selling pressure that's really about a bunch of different countries.</p>
-
-<p>When the dollar weakens, everything reverses. Lower U.S. yields make emerging markets look better. Risk-on sentiment sends capital flooding back into higher-yielding currencies. The Peso strengthens faster than EUR or JPY because investors are chasing yield again. That's why 6M can drop so aggressively during periods when the dollar is getting weaker.</p>
-
-<h2>The Correlation Numbers</h2>
-
-<p>EUR/USD has about a -0.89 correlation with the dollar index. USD/JPY sits around +0.55. Those are normal relationships for major currency pairs. USD/MXN comes in at roughly +0.94 with DXY. That's an absurdly tight correlation. The Peso basically moves in lockstep with the dollar, just with bigger swings.</p>
-
-<h2>Why the Moves Get Amplified</h2>
-
-<p>The Peso doesn't just track dollar moves—it exaggerates them. Part of that is because Mexico is used as an emerging market proxy. Big institutions can't easily hedge exposure to currencies like the Brazilian Real or Colombian Peso because the futures markets aren't liquid enough. Mexican Peso futures are liquid, so that's what they trade. MXN ends up absorbing way more selling pressure than it would if it were only reflecting Mexico-specific risk.</p>
-
-<p>Capital flows are another part of it. Emerging markets are more sensitive to these flows than developed markets. A small shift in dollar strength can trigger massive inflows or outflows relative to the size of Mexico's market. That shows up as exaggerated moves in the exchange rate.</p>
-
-<p>Then there's the carry trade angle. Mexico usually runs higher interest rates than the U.S., so carry traders borrow cheap dollars and buy pesos to capture the spread. When the dollar strengthens because U.S. rates rise, that spread narrows or disappears. The carry positions unwind quickly, and you can see hundreds of ticks move in 6M in just minutes.</p>
-
-<h2>What This Means for Trading</h2>
-
-<p>6M is easiest to trade when the dollar has clear direction. Strong DXY uptrend usually means 6M is going higher. Strong DXY downtrend usually means 6M is heading lower. The moves are cleaner and more directional when USD is trending.</p>
-
-<p>When the dollar goes sideways, 6M gets choppy. Spreads widen, volume dries up, and setups stop working as cleanly. Ranging dollar environments are harder to trade in 6M because the contract loses its directional bias.</p>
-
-<p>The other thing worth noting is that 6M reacts more violently to dollar shocks than to gradual trends. When the Fed surprises the market or unexpected economic data hits, 6M moves can be three or four times as large as the move in DXY. A 0.70% spike in the dollar index might translate to a 2.30% rip in 6M. A 0.55% drop in DXY might send 6M down 1.80% or more. The multiplier effect is consistent.</p>
-
-<h2>What You Need to Watch</h2>
-
-<p>Trading 6M without watching the dollar is a bad idea. DXY direction matters more than almost anything else for this contract. U.S. yields matter too because they drive capital flows and carry trade dynamics. Global risk sentiment matters because it determines whether money is flowing into or out of emerging markets.</p>
-
-<p>Mexico-specific news can move the contract, but most of the time it's not the dominant force. Unless there's a major political event or a central bank shock out of Banxico, the dollar is going to be what drives 6M.</p>
-
-<p>The bottom line is that 6M amplifies dollar moves instead of just tracking them. If the dollar is trending, 6M will probably trend harder. If the dollar is chopping, 6M will probably chop worse. Understanding that relationship is the difference between trading this contract intelligently and getting chopped up by moves you didn't see coming.</p>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="mx-section" id="algebra" aria-labelledby="algebra-title">
+  <div class="mx-section-heading"><p class="mx-kicker">The non-negotiable first step</p><h2 id="algebra-title">Separate the Reciprocal Spot Identity From the Dated Futures Price</h2><p><strong>Established fact:</strong> the Federal Reserve's <a href="https://www.federalreserve.gov/releases/h10/Hist/dat00_mx.htm" target="_blank" rel="noopener">H.10 Mexican peso series is stated in Mexican pesos per U.S. dollar</a>. CME's <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">6M contract is quoted in U.S. dollars per Mexican peso</a>. They face opposite directions.</p></div>
+  <div class="mx-method">
+    <div><h3>Aligned spot algebra</h3><p><code>MXN/USD = 1 &divide; (USD/MXN)</code></p><p>If USD/MXN rises, the reciprocal MXN/USD falls. That is an identity for simultaneous quotes of the same underlying spot rate, before bid/ask and data-source differences. It is not evidence that a separate dollar variable caused the move.</p></div>
+    <dl><div><dt>USD/MXN up</dt><dd>USD stronger</dd></div><div><dt>MXN/USD down</dt><dd>MXN weaker</dd></div><div><dt>6M up</dt><dd>MXN stronger</dd></div><div><dt>Requirement</dt><dd>Aligned timestamp</dd></div></dl>
   </div>
-</footer>
+  <div class="mx-two-column">
+    <article class="mx-panel"><p class="mx-card-label">Mathematical identity</p><h3>Same spot pair, inverted</h3><p>Using USD/MXN to “confirm” an aligned reciprocal MXN/USD series adds no independent information. It is the same bilateral price expressed in reverse.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Dated futures relationship</p><h3>6M is not exactly reciprocal spot</h3><p>6M has a delivery month and can differ from spot through expected financing, basis, liquidity, and contract lifecycle. The directional quote convention still matters, but equality to reciprocal spot should not be imposed.</p></article>
+  </div>
+  <div class="mx-caution"><strong>Data acceptance rule</strong><p>If the quote convention, timezone, timestamp, contract month, or roll treatment is unknown, stop. Do not repair an apparently reversed correlation by multiplying returns by minus one after seeing results. Use <a href="6m-data-traps.html">the 6M data-quality guide</a> and <a href="6m-tick-size.html">the canonical 6M contract guide</a>.</p></div>
+</section>
+
+<section class="mx-section" id="basket" aria-labelledby="basket-title">
+  <div class="mx-section-heading"><p class="mx-kicker">“USD index” is not one universal asset</p><h2 id="basket-title">A Dollar Basket Can Move Differently From USD/MXN</h2><p><strong>Established methodology:</strong> the Federal Reserve explains that its <a href="https://www.federalreserve.gov/econres/notes/feds-notes/revisions-to-the-federal-reserve-dollar-indexes-20190115.html" target="_blank" rel="noopener">broad dollar index is a geometrically weighted combination of bilateral dollar rates for important U.S. trading partners</a>, with trade-based weights. The official <a href="https://www.federalreserve.gov/releases/H10/summary/default.htm" target="_blank" rel="noopener">H.10 index page</a> distinguishes broad, advanced-foreign-economy, and emerging-market-economy measures and notes that weights can be revised.</p></div>
+  <div class="mx-table-scroll" role="region" aria-label="Bilateral exchange rate and dollar basket comparison" tabindex="0">
+    <table class="mx-table">
+      <thead><tr><th scope="col">Object</th><th scope="col">What it measures</th><th scope="col">Use</th><th scope="col">Circularity risk</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">USD/MXN spot</th><td>One bilateral price, pesos per dollar</td><td>Quote-aligned comparison with MXN/USD and 6M basis</td><td>Exact reciprocal spot is not independent confirmation</td></tr>
+        <tr><th scope="row">6M</th><td>Dated MXN/USD futures price</td><td>Tradable futures observation with roll and basis controls</td><td>Cannot be treated as undated spot</td></tr>
+        <tr><th scope="row">Fed broad dollar index</th><td>Trade-weighted basket of multiple bilateral rates</td><td>Broad U.S.-dollar context</td><td>Includes MXN, so some co-movement is mechanical</td></tr>
+        <tr><th scope="row">Fed AFE dollar index</th><td>Dollar basket against advanced foreign economies</td><td>One official control that excludes the peso</td><td>Still a basket with its own composition and shocks</td></tr>
+        <tr><th scope="row">Research factor excluding MXN</th><td>Predeclared combination of other dollar pairs</td><td>Test a common-dollar component without direct peso input</td><td>Analyst-constructed; weights and universe can overfit</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Mechanism:</strong> the broad index can strengthen because the dollar rises against several other currencies even if the peso is stable or stronger. It can also appear closely related to 6M partly because MXN contributes to the index. Therefore, basket disagreement is not an error, and basket agreement is not automatically independent proof.</p>
+</section>
+
+<section class="mx-section" id="shocks" aria-labelledby="shocks-title">
+  <div class="mx-section-heading"><p class="mx-kicker">From co-movement to causal hypothesis</p><h2 id="shocks-title">Name the Shared Shock That Could Strengthen USD</h2><p>“USD strength” is a description until it identifies an information event and transmission channel. Several shocks can make the dollar rise broadly, but they need not have the same effect on Mexico, relative rates, risk appetite, or 6M basis.</p></div>
+  <div class="mx-check-grid">
+    <article><strong>Federal Reserve path shock</strong><p>U.S. data or FOMC communication can raise expected U.S. rates relative to Mexican rates. <strong>Hypothesis:</strong> that relative repricing may weigh on MXN and 6M, all else equal.</p></article>
+    <article><strong>U.S. growth shock</strong><p>Stronger U.S. demand can support USD through rates while also supporting Mexican exports. The financial and trade channels can offset.</p></article>
+    <article><strong>Global funding/liquidity shock</strong><p>Demand for dollar liquidity and deleveraging can lift the dollar across markets while increasing volatility and reducing carry exposure.</p></article>
+    <article><strong>Risk-aversion shock</strong><p>Portfolio reduction can favor USD, but the outcome depends on shock location, existing positions, funding, and policy response.</p></article>
+    <article><strong>Mexico-specific shock</strong><p>Fiscal, political, inflation, policy, or trade news can weaken MXN while a broad dollar basket stays quiet. Calling this “USD strength” hides the source.</p></article>
+    <article><strong>Other-country shock</strong><p>A large move in another basket constituent can move a dollar index without new information about Mexico. 6M need not follow.</p></article>
+  </div>
+  <p><strong>Established U.S. event record:</strong> the Federal Reserve publishes <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">FOMC statements, minutes, and projections</a> and <a href="https://www.federalreserve.gov/releases/h15/" target="_blank" rel="noopener">defined U.S. interest-rate series in H.15</a>. Those documents establish the policy and data observations. Attribution of a 6M move to a particular dollar channel remains a testable inference.</p>
+</section>
+
+<section class="mx-section" id="controls" aria-labelledby="controls-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Independent confirmation</p><h2 id="controls-title">Build a Control Set That Does Not Repackage MXN</h2><p>The control must add information beyond the dependent variable. A reciprocal spot pair, a basket containing MXN, and a futures series derived from the same price feed can create impressive but circular confirmation.</p></div>
+  <div class="mx-process" aria-label="Non-circular dollar confirmation workflow">
+    <article><span>1</span><h3>Define the dollar shock</h3><p>Policy, growth, funding, or risk&mdash;with an official event or predeclared market measure and timestamp.</p></article>
+    <article><span>2</span><h3>Exclude MXN from the control</h3><p>Use an official basket that excludes MXN or a frozen research factor built only from other currencies.</p></article>
+    <article><span>3</span><h3>Add relative rates</h3><p>Compare Mexican and U.S. policy-sensitive rates at matched horizons to distinguish rate transmission from a generic label.</p></article>
+    <article><span>4</span><h3>Check Mexico-specific rivals</h3><p>Control for Banxico, inflation, fiscal, trade, political, and local-liquidity events in the same window.</p></article>
+    <article><span>5</span><h3>Confirm in executable 6M</h3><p>Use the correct contract, roll state, spread, depth, and transaction-cost assumptions.</p></article>
+  </div>
+  <div class="mx-two-column">
+    <article class="mx-panel"><p class="mx-card-label">Permissible inference</p><h3>Evidence is consistent with a common-dollar shock</h3><p>An MXN-excluded dollar factor, matched U.S.-relative-rate move, other dollar pairs, and 6M align after a declared U.S. event while Mexico-specific rivals remain quiet.</p></article>
+    <article class="mx-panel"><p class="mx-card-label">Prohibited shortcut</p><h3>The dollar index confirms 6M</h3><p>The named index contains MXN, its composition is not checked, timestamps differ, and no relative-rate or event evidence is supplied.</p></article>
+  </div>
+</section>
+
+<section class="mx-section" id="design" aria-labelledby="design-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Empirical boundary</p><h2 id="design-title">Design the Test Before Looking for Leads and Lags</h2><p><strong>Hypothesis example:</strong> after a predeclared U.S. policy surprise, an MXN-excluded common-dollar factor and the U.S.&ndash;Mexico relative-rate change explain part of the quote-normalized 6M return over a specified event window. This page does not report that test or a result.</p></div>
+  <div class="mx-table-scroll" role="region" aria-label="USD and 6M empirical test design" tabindex="0">
+    <table class="mx-table">
+      <thead><tr><th scope="col">Design choice</th><th scope="col">Required declaration</th><th scope="col">Rejection rule</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">6M outcome</th><td>Dated contract or documented continuous series, quote direction, return horizon, roll treatment</td><td>Reject if contract mapping or timestamp lineage fails</td></tr>
+        <tr><th scope="row">Dollar input</th><td>Official index or frozen factor, constituent universe, weights, rebalance dates, MXN exclusion</td><td>Reject as circular if MXN contributes directly and is not removed</td></tr>
+        <tr><th scope="row">Event/sampling clock</th><td>Timezone, release time, bar construction, holidays, missing data, no look-ahead</td><td>Reject windows contaminated by unhandled asynchronous closes</td></tr>
+        <tr><th scope="row">Controls</th><td>Matched relative rates, Banxico events, Mexico data/fiscal/trade news, global risk</td><td>Reject attribution if a declared rival explains the window</td></tr>
+        <tr><th scope="row">Lead/lag grid</th><td>Finite horizons chosen before results and corrected for multiple testing</td><td>Reject a “best lag” discovered across an unbounded search</td></tr>
+        <tr><th scope="row">Validation</th><td>Point-in-time vintages, stable transformations, robustness, holdout, costs</td><td>Reject if sign, magnitude, or utility fails out of sample</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mx-caution"><strong>Correlation is not a transmission estimate</strong><p>Contemporaneous returns can co-move because both react to the same news. Levels can trend or contain unit roots. A basket can embed the peso. A valid test needs returns or another justified transformation, synchronized clocks, a causal event or identification strategy, robust errors, and falsification. Route the full research pipeline to <a href="6m-backtesting.html">the 6M backtesting guide</a>.</p></div>
+</section>
+
+<section class="mx-section" id="breakdowns" aria-labelledby="breakdowns-title">
+  <div class="mx-section-heading"><p class="mx-kicker">When the relationship breaks</p><h2 id="breakdowns-title">Treat Divergence as Information, Not a Broken Rule</h2><p>The dollar is one side of 6M, but a broad index and a bilateral futures contract need not move in lockstep. A divergence should trigger a source and mechanism audit.</p></div>
+  <div class="mx-table-scroll" role="region" aria-label="USD and 6M divergence cases" tabindex="0">
+    <table class="mx-table">
+      <thead><tr><th scope="col">Observed divergence</th><th scope="col">Plausible explanation</th><th scope="col">What to check</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Broad USD up, 6M also up</th><td>MXN-specific strength outweighs other basket moves</td><td>Banxico-relative rates, trade/fiscal news, basket constituents, timestamps</td></tr>
+        <tr><th scope="row">Broad USD flat, 6M down</th><td>Mexico-specific weakness or offsetting moves elsewhere in the basket</td><td>Local event record, other MXN crosses, rates, liquidity</td></tr>
+        <tr><th scope="row">USD/MXN and 6M appear to rise together</th><td>Clock mismatch, stale quote, wrong contract, basis jump, or label error</td><td>Reciprocal conversion, bid/ask, timestamps, expiry and roll</td></tr>
+        <tr><th scope="row">AFE dollar index moves, 6M does not</th><td>Advanced-economy shock lacks a material Mexico channel</td><td>EM currencies, relative rates, U.S. event type, Mexico rivals</td></tr>
+        <tr><th scope="row">Relationship changes by regime</th><td>Different policy, risk, funding, trade, or volatility channel dominates</td><td>Predeclared regime definition and out-of-sample stability</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mx-related">Use <a href="6m-fundamental-drivers.html">the broad 6M driver ledger</a> to rank Mexico-specific rivals and <a href="6m-carry-trade.html">the carry framework</a> when relative rates and funding are the proposed common channel.</div>
+</section>
+
+<section class="mx-section" id="checklist" aria-labelledby="checklist-title">
+  <div class="mx-section-heading"><p class="mx-kicker">Non-circular close</p><h2 id="checklist-title">Reject Circular Signals Before Asking Whether USD Confirms 6M</h2><p>Every “yes” is required for a common-dollar confirmation claim. A “no” does not imply the opposite direction; it means the proposed evidence is insufficient.</p></div>
+  <div class="mx-check-grid">
+    <article><strong>Quote normalized?</strong><p>USD/MXN, MXN/USD, and 6M direction are explicit; timestamp and bid/ask conventions are aligned.</p></article>
+    <article><strong>Contract controlled?</strong><p>The active dated 6M contract, roll state, basis, and missing/stale observations are verified.</p></article>
+    <article><strong>Dollar object defined?</strong><p>The index or factor name, methodology, constituents, weights, and vintage are recorded.</p></article>
+    <article><strong>MXN excluded?</strong><p>The independent confirmation measure does not directly contain peso returns, or the peso component is removed by a frozen method.</p></article>
+    <article><strong>Shock identified?</strong><p>An official event or predeclared policy, growth, funding, or risk variable supplies the mechanism.</p></article>
+    <article><strong>Relative rates checked?</strong><p>Mexican and U.S. observations use comparable horizons and timestamps, with risk-premium alternatives considered.</p></article>
+    <article><strong>Rivals tested?</strong><p>Banxico, fiscal, trade, political, global-risk, liquidity, and roll explanations are audited.</p></article>
+    <article><strong>Application validated?</strong><p>Lead/lag choice, multiple testing, holdout, transaction costs, and failure cases are predeclared and survive.</p></article>
+  </div>
+  <p><strong>Research status:</strong> this page establishes quote algebra, measurement differences, and a testing framework. It reports no correlation, factor loading, lead/lag, directional hit rate, or trading performance. Until a non-circular, point-in-time study passes the checklist, “USD strength predicts 6M” remains unvalidated.</p>
+</section>
+
+<details class="mx-sources">
+  <summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary>
+  <ul>
+    <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide</a> and <a href="https://www.cmegroup.com/trading/fx/cme-fx-link.html" target="_blank" rel="noopener">CME FX Link product conventions</a> for the 6M USD-per-MXN quotation and the distinction from OTC USD/MXN convention.</li>
+    <li><a href="https://www.federalreserve.gov/releases/h10/Hist/dat00_mx.htm" target="_blank" rel="noopener">Federal Reserve H.10 historical Mexican peso rates</a> for the official pesos-per-dollar series definition.</li>
+    <li><a href="https://www.federalreserve.gov/releases/H10/summary/default.htm" target="_blank" rel="noopener">Federal Reserve H.10 dollar indexes</a> for official broad, advanced-economy, and emerging-market measures and weight-revision notice.</li>
+    <li><a href="https://www.federalreserve.gov/econres/notes/feds-notes/revisions-to-the-federal-reserve-dollar-indexes-20190115.html" target="_blank" rel="noopener">Federal Reserve: methodology for the revised dollar indexes</a> for geometric aggregation, trade-based weighting, and basket construction.</li>
+    <li><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">Federal Reserve FOMC meeting materials</a> and <a href="https://www.federalreserve.gov/releases/h15/" target="_blank" rel="noopener">H.15 Selected Interest Rates</a> for official U.S. event and rate evidence.</li>
+    <li><a href="https://www.federalreserve.gov/econres/feds/files/2025046pap.pdf" target="_blank" rel="noopener">Federal Reserve research: The Dollar Channel of Monetary Policy Transmission</a> for an institutionally published research treatment of dollar transmission; its findings are not presented here as a 6M result.</li>
+  </ul>
+  <p>Sources and methods were reviewed August 13, 2026. Dollar-index weights and series can be revised, so preserve the vintage used in any study. This article separates established quote and index facts from mechanisms, hypotheses, inferences, and possible applications.</p>
+</details>
+
+<aside class="mx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This dollar-factor framework is educational material, not personalized investment, legal, tax, accounting, hedging, or brokerage advice. Correlations, index composition, basis, liquidity, margin, and policy relationships can change. Initial performance bond does not cap a leveraged futures loss. Verify the current series, weights, contract, quote direction, costs, and your own maximum loss.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>
