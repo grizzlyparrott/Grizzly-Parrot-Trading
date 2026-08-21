@@ -22,53 +22,53 @@ from validate_6m_cluster import (
 
 
 CLASS_FAMILIES = (
-    "mx-section",
-    "mx-panel",
-    "mx-table",
-    "mx-process",
-    "mx-method",
-    "mx-two-column",
-    "mx-atlas",
-    "mx-bars",
-    "mx-calculator",
-    "mx-correlation-scale",
-    "mx-formula",
-    "mx-market-board",
-    "mx-check-grid",
-    "mx-limit-grid",
-    "mx-proof-grid",
-    "mx-stat-grid",
-    "mx-event-card",
-    "mx-caution",
-    "mx-decision-strip",
-    "mx-decision-tree",
-    "mx-checklist",
-    "mx-cost-tape",
-    "mx-go-card",
-    "mx-trade-card",
-    "mx-level-ledger",
-    "mx-reaction-grid",
-    "mx-contract-path",
-    "mx-thesis-callout",
-    "mx-three-column",
-    "mx-four-grid",
-    "mx-task-paths",
-    "mx-window-equation",
-    "mx-lifecycle",
-    "mx-quote-board",
-    "mx-risk-grid",
-    "mx-use-cases",
-    "mx-causal-map",
-    "mx-falsification-tree",
-    "mx-state-machine",
-    "mx-estimator-spectrum",
-    "mx-transition-guards",
-    "mx-claim-ladder",
-    "mx-related",
-    "mx-faq",
+    "fx-section",
+    "fx-panel",
+    "fx-table",
+    "fx-process",
+    "fx-method",
+    "fx-two-column",
+    "fx-atlas",
+    "fx-bars",
+    "fx-calculator",
+    "fx-correlation-scale",
+    "fx-formula",
+    "fx-market-board",
+    "fx-check-grid",
+    "fx-limit-grid",
+    "fx-proof-grid",
+    "fx-stat-grid",
+    "fx-event-card",
+    "fx-caution",
+    "fx-decision-strip",
+    "fx-decision-tree",
+    "fx-checklist",
+    "fx-cost-tape",
+    "fx-go-card",
+    "fx-trade-card",
+    "fx-level-ledger",
+    "fx-reaction-grid",
+    "fx-contract-path",
+    "fx-thesis-callout",
+    "fx-three-column",
+    "fx-four-grid",
+    "fx-task-paths",
+    "fx-window-equation",
+    "fx-lifecycle",
+    "fx-quote-board",
+    "fx-risk-grid",
+    "fx-use-cases",
+    "fx-causal-map",
+    "fx-falsification-tree",
+    "fx-state-machine",
+    "fx-estimator-spectrum",
+    "fx-transition-guards",
+    "fx-claim-ladder",
+    "fx-related",
+    "fx-faq",
 )
 
-SEQUENCE_FAMILIES = set(CLASS_FAMILIES) - {"mx-section"}
+SEQUENCE_FAMILIES = set(CLASS_FAMILIES) - {"fx-section"}
 REQUIRED_REVIEW_SENTENCE = "sources and methods were reviewed august 13 2026"
 
 
@@ -91,7 +91,7 @@ def capture_many(raw: str, pattern: str) -> list[str]:
 def disclosure_paragraphs(raw: str) -> list[str]:
     paragraphs: list[str] = []
     pattern = re.compile(
-        r'<(?P<tag>details|aside|section)\b[^>]*class=["\'][^"\']*\bmx-(?:sources|disclaimer)\b[^>]*>'
+        r'<(?P<tag>details|aside|section)\b[^>]*class=["\'][^"\']*\bfx-(?:sources|disclaimer)\b[^>]*>'
         r'(?P<body>.*?)</(?P=tag)>',
         flags=re.I | re.S,
     )
@@ -139,7 +139,7 @@ def table_shapes(raw: str) -> list[list[int]]:
 
 def component_profile(raw: str) -> dict[str, object]:
     process_blocks = re.findall(
-        r'<(?:div|section)\b[^>]*class=["\'][^"\']*\bmx-process\b[^"\']*["\'][^>]*>(.*?)</(?:div|section)>',
+        r'<(?:div|section)\b[^>]*class=["\'][^"\']*\bfx-process\b[^"\']*["\'][^>]*>(.*?)</(?:div|section)>',
         raw,
         flags=re.I | re.S,
     )
@@ -158,11 +158,11 @@ def component_profile(raw: str) -> dict[str, object]:
         "table_count": len(re.findall(r"<table\b", raw, flags=re.I)),
         "table_shapes": table_shapes(raw),
         "panel_count": len(
-            re.findall(r'\bclass=["\'][^"\']*\bmx-panel\b', raw, flags=re.I)
+            re.findall(r'\bclass=["\'][^"\']*\bfx-panel\b', raw, flags=re.I)
         ),
         "card_like_count": len(
             re.findall(
-                r'\bclass=["\'][^"\']*\bmx-(?:event-card|stat|proof|panel)\b',
+                r'\bclass=["\'][^"\']*\bfx-(?:event-card|stat|proof|panel)\b',
                 raw,
                 flags=re.I,
             )
@@ -171,7 +171,7 @@ def component_profile(raw: str) -> dict[str, object]:
         "process_step_counts": [
             len(re.findall(r"<article\b", block, flags=re.I)) for block in process_blocks
         ],
-        "faq_present": bool(re.search(r'\bmx-faq\b', raw, flags=re.I)),
+        "faq_present": bool(re.search(r'\bfx-faq\b', raw, flags=re.I)),
         "distinctive_sequence": structural_classes,
         "opening_structure": structural_classes[:4],
         "ending_structure": structural_classes[-4:],
@@ -204,7 +204,7 @@ def main() -> int:
         # Keep legal/source boilerplate out of whole-body lexical scoring, then
         # audit disclosure prose separately so repetition cannot hide here.
         body_for_similarity = re.sub(
-            r'<(?:details|aside)\b[^>]*class=["\'][^"\']*\bmx-(?:sources|disclaimer)\b[^>]*>.*?</(?:details|aside)>',
+            r'<(?:details|aside)\b[^>]*class=["\'][^"\']*\bfx-(?:sources|disclaimer)\b[^>]*>.*?</(?:details|aside)>',
             " ",
             body,
             flags=re.I | re.S,
@@ -217,8 +217,8 @@ def main() -> int:
             and not value.startswith("By Kyle Parrott")
             and not value.startswith("Educational and risk disclaimer")
         ]
-        kickers = capture_many(body, r'<p\b[^>]*class=["\'][^"\']*\bmx-kicker\b[^"\']*["\'][^>]*>(.*?)</p>')
-        hero = capture_one(body, r'<p\b[^>]*class=["\'][^"\']*\bmx-hero-lede\b[^"\']*["\'][^>]*>(.*?)</p>')
+        kickers = capture_many(body, r'<p\b[^>]*class=["\'][^"\']*\bfx-kicker\b[^"\']*["\'][^>]*>(.*?)</p>')
+        hero = capture_one(body, r'<p\b[^>]*class=["\'][^"\']*\bfx-hero-lede\b[^"\']*["\'][^>]*>(.*?)</p>')
         normalized_body = " ".join(strip_tags(body_for_similarity).split())
         normalized_h2s = [normalize_heading(value) for value in h2s]
         description = capture_one(

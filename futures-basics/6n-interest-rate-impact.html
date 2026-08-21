@@ -2,232 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How Interest Rate Cycles Impact 6N Futures</title>
-  <meta name="description" content="A blunt breakdown of how RBNZ and Federal Reserve interest rate cycles directly move 6N New Zealand Dollar futures.">
+  <title>6N Interest-Rate Impact: RBNZ-Fed Repricing Framework</title>
+  <meta name="description" content="Read RBNZ-Fed rate surprises through priors, curve repricing, carry, growth, and risk channels before drawing a conditional 6N view.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6n-interest-rate-impact.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="How Interest Rate Cycles Impact 6N Futures">
-  <meta property="og:description" content="A blunt breakdown of how RBNZ and Federal Reserve interest rate cycles directly move 6N New Zealand Dollar futures.">
+  <meta property="og:title" content="6N Interest-Rate Impact: RBNZ-Fed Repricing Framework">
+  <meta property="og:description" content="Read RBNZ-Fed rate surprises through priors, curve repricing, carry, growth, and risk channels before drawing a conditional 6N view.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6n-interest-rate-impact.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-28">
+  <meta property="article:modified_time" content="2026-08-16">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="6N Interest-Rate Impact: RBNZ-Fed Repricing Framework">
+  <meta name="twitter:description" content="Read RBNZ-Fed rate surprises through priors, curve repricing, carry, growth, and risk channels before drawing a conditional 6N view.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="How Interest Rate Cycles Impact 6N Futures">
-  <meta name="twitter:description" content="A blunt breakdown of how RBNZ and Federal Reserve interest rate cycles directly move 6N New Zealand Dollar futures.">
-
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"6N Interest-Rate Impact: RBNZ-Fed Repricing Framework","description":"Read RBNZ-Fed rate surprises through priors, curve repricing, carry, growth, and risk channels before drawing a conditional 6N view.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6n-interest-rate-impact.html"},"datePublished":"2025-11-28","dateModified":"2026-08-16","url":"https://grizzlyparrottrading.com/futures-basics/6n-interest-rate-impact.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How Interest Rate Cycles Impact 6N Futures",
-  "description": "A blunt breakdown of how RBNZ and Federal Reserve interest rate cycles directly move 6N New Zealand Dollar futures.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6n-interest-rate-impact.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6n-interest-rate-impact.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How Interest Rate Cycles Impact 6N Futures",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6n-interest-rate-impact.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6N Interest-Rate Impact: RBNZ-Fed Repricing Framework","item":"https://grizzlyparrottrading.com/futures-basics/6n-interest-rate-impact.html"}]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Relative policy paths &middot; curve evidence &middot; conditional confirmation</p>
+    <h1>6N Interest-Rate Impact: RBNZ-Fed Repricing Framework</h1>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 16, 2026</p>
+    <p class="fx-hero-lede">The RBNZ can leave its policy rate unchanged and 6N can still move sharply. The decision may differ from the market's prior, the projected path may change, the vote or language may alter the balance of risks, and the U.S. curve may reprice at the same time. The useful question is not “did the rate rise?” It is “what changed relative to expectations, at which horizon, and through which channel?”</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#prior">Freeze the prior</a><a class="fx-text-link" href="#matrix">Use the state matrix</a></div>
+    <dl class="fx-hero-metrics" aria-label="Rate analysis sequence"><div><dt>Start</dt><dd>Pre-decision prior</dd></div><div><dt>Read</dt><dd>Complete package</dd></div><div><dt>Compare</dt><dd>Matched horizons</dd></div><div><dt>Finish</dt><dd>Conditional state</dd></div></dl>
   </div>
+  <div class="fx-hero-visual"><div class="fx-decision-strip" aria-label="Three ways an unchanged policy rate can matter"><span><strong>Expected hold</strong>Little policy surprise, but forecasts or guidance can still reprice the curve.</span><span><strong>Hawkish hold</strong>The rate is unchanged while the expected future path shifts higher relative to the prior.</span><span><strong>Dovish hold</strong>The rate is unchanged while the expected future path or risk balance shifts lower.</span></div></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#prior">Prior</a><a href="#package">Decision package</a><a href="#curve">Curve</a><a href="#channels">Channels</a><a href="#competing">Offsets</a><a href="#confirmation">Confirmation</a><a href="#matrix">Matrix</a></nav>
 
-<h1>How Interest Rate Cycles Impact 6N Futures</h1>
-
-<p>If you don’t understand how interest rate cycles move 6N futures, you’re trading blind. NZD/USD is a rate-sensitive currency, and every major swing in 6N is tied to either the Reserve Bank of New Zealand (RBNZ) or the Federal Reserve. Rates decide capital flows, carry trades, and long-term NZD strength or weakness.</p>
-
-<h2>Why Interest Rates Hit 6N Hard</h2>
-<p>Higher interest rates attract capital. Lower interest rates push capital away. NZD is a small, high-beta currency, so rate changes hit it harder than bigger currencies.</p>
-
-<p>The formula is simple:</p>
-
-<ul>
-<li><strong>RBNZ hikes → NZD strengthens → 6N rises</strong></li>
-<li><strong>RBNZ cuts → NZD weakens → 6N falls</strong></li>
-<li><strong>Fed hikes → USD strengthens → 6N falls</strong></li>
-<li><strong>Fed cuts → USD weakens → 6N rises</strong></li>
-</ul>
-
-<p>You don’t need to overthink it. Rate differentials drive long-term direction.</p>
-
-<h2>The RBNZ: The Primary Driver</h2>
-<p>New Zealand’s central bank is aggressive when fighting inflation or cooling the economy. When they raise rates, foreign investors chase the yield, which strengthens the NZD.</p>
-
-<p>Major events to watch:</p>
-
-<ul>
-<li>Official Cash Rate (OCR) announcements</li>
-<li>Monetary Policy Statements</li>
-<li>RBNZ press conferences</li>
-<li>Inflation and wage reports</li>
-</ul>
-
-<p>When these hit, 6N can move 50+ ticks in minutes.</p>
-
-<h2>The Federal Reserve’s Role</h2>
-<p>The U.S. Dollar is the denominator in NZD/USD, so Fed decisions always matter. Sometimes more than RBNZ.</p>
-
-<p>The big ones:</p>
-
-<ul>
-<li>FOMC rate decisions</li>
-<li>Powell speeches</li>
-<li>Nonfarm Payrolls</li>
-<li>US CPI</li>
-</ul>
-
-<p>Even if NZ conditions are stable, a strong USD can drown the NZD and push 6N down hard.</p>
-
-<h2>Rate Differential: The Key Metric</h2>
-<p>It’s not the individual rate levels — it’s the <strong>difference</strong> between NZ and U.S. interest rates.</p>
-
-<table>
-<tr><th>Scenario</th><th>Effect on NZD</th><th>Effect on 6N</th></tr>
-<tr><td>NZ rates rising faster than US</td><td>Strong NZD</td><td>6N up</td></tr>
-<tr><td>US rates rising faster than NZ</td><td>Weak NZD</td><td>6N down</td></tr>
-<tr><td>Rates equalizing</td><td>Neutral</td><td>Range behavior</td></tr>
-</table>
-
-<p>Long-term 6N trends usually line up cleanly with rate differentials.</p>
-
-<h2>Carry Trade Influence</h2>
-<p>NZD is a historical carry-trade currency. That means investors borrow in low-yield currencies and park the money in NZD to earn the rate spread. When NZ’s yield is high, carry demand pushes 6N up. When NZ’s yield collapses, the carry unwinds violently.</p>
-
-<h2>Final Take</h2>
-<p>Interest rate cycles aren’t optional knowledge for trading 6N. They are the backbone of every multi-week and multi-month trend. If you’ve already read <a href="https://grizzlyparrottrading.com/futures-basics/6n-vs-6a-differences.html">the 6N vs 6A comparison</a> or <a href="https://grizzlyparrottrading.com/futures-basics/how-exports-drive-6n-trends.html">export-driven trends</a>, you now know the last major puzzle piece before we move into trading strategies and setups.</p>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="fx-section" id="prior" aria-labelledby="prior-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Question one comes before the announcement</p><h2 id="prior-title">A Policy Surprise Exists Only Relative to a Timestamped Prior</h2><p>A rate decision is not surprising because it looks large in isolation. It is surprising when the outcome or decision package differs from what market participants had priced or expected before publication. Freeze that benchmark before the release rather than reconstructing it afterward.</p></div>
+  <div class="fx-method"><div><h3>Minimum prior record</h3><p>Record the timestamp and timezone; the expected policy decision and its source; the relevant part of the New Zealand and U.S. curves; the active 6N contract and roll condition; the previous official statements and forecasts; known event overlap; and the market-quality gate. If an expectation source cannot be archived, label the surprise unknown.</p></div><dl><div><dt>Decision</dt><dd>Expected vs actual</dd></div><div><dt>Path</dt><dd>Expected future settings</dd></div><div><dt>Horizon</dt><dd>Like with like</dd></div><div><dt>Clock</dt><dd>Exact and aligned</dd></div></dl></div>
+  <div class="fx-caution"><strong>Mandates are facts; market reactions are not</strong><p>The RBNZ's current operational objective is future annual inflation between 1% and 3% over the medium term, with a focus near 2%, as described in its <a href="https://www.rbnz.govt.nz/monetary-policy/about-monetary-policy/monetary-policy-handbook" target="_blank" rel="noopener noreferrer">Monetary Policy Handbook published 20 April 2026</a>. The Federal Reserve operates under its U.S. statutory goals. Neither mandate determines a one-release 6N direction.</p></div>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<section class="fx-section" id="package" aria-labelledby="package-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Do not stop at the headline rate</p><h2 id="package-title">Read the Decision as a Package of New Information</h2><p>The policy rate is one field. A complete reading separates what the central bank decided, how it described the outlook, what path it projected, how members voted, and what risks or reaction function it emphasized.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Policy decision package fields" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Field</th><th scope="col">RBNZ evidence</th><th scope="col">Fed evidence</th><th scope="col">Question versus prior</th></tr></thead><tbody><tr><th scope="row">Current setting</th><td>OCR decision and implementation timing</td><td>Target range and implementation note</td><td>Was the action already priced?</td></tr><tr><th scope="row">Expected path</th><td>MPS projections when published; conditional guidance in reviews</td><td>Statement, projections when scheduled, and press conference</td><td>Which horizon moved, and by how much?</td></tr><tr><th scope="row">Economic assessment</th><td>Inflation persistence, activity, labor, exchange rate, and external risks</td><td>Inflation, labor, activity, financial conditions, and risks</td><td>Which reaction-function input changed?</td></tr><tr><th scope="row">Decision structure</th><td>Committee record and any stated alternatives</td><td>Vote, dissents, and meeting materials</td><td>Did the distribution of views change?</td></tr><tr><th scope="row">Uncertainty</th><td>Scenarios and risk balance</td><td>Risk language and projection dispersion</td><td>Did tail risk change even if the baseline did not?</td></tr></tbody></table></div>
+  <p>Use the RBNZ's <a href="https://www.rbnz.govt.nz/monetary-policy/monetary-policy-decisions" target="_blank" rel="noopener noreferrer">official policy-decision archive, updated 8 July 2026</a> and the Fed's <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">2026 FOMC calendar with statements, minutes, and projections</a>. A news summary is not a substitute for the primary package.</p>
+</section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
+<section class="fx-section" id="curve" aria-labelledby="curve-title">
+  <div class="fx-section-heading"><p class="fx-kicker">The market prices a path</p><h2 id="curve-title">Observe the Relative Curve, Not Two Policy Rates in Isolation</h2><p>Currency pricing can respond before a central bank acts because money-market and bond curves embed expectations about future policy, inflation, growth, term premium, credit, and liquidity. Compare New Zealand and U.S. observations at aligned timestamps and economically comparable horizons.</p></div>
+  <div class="fx-process" aria-label="Four-step curve comparison"><article><span>1</span><h3>Choose the horizon</h3><p>Match the period to the thesis. Do not compare a New Zealand overnight rate with a distant U.S. yield and call the difference “carry.”</p></article><article><span>2</span><h3>Freeze both curves</h3><p>Capture pre-event and post-event observations using the same timezone, instruments, and conventions. Mark stale quotes and holidays.</p></article><article><span>3</span><h3>Decompose the move</h3><p>Ask whether repricing reflects expected policy, inflation compensation, real growth, term premium, credit, or liquidity.</p></article><article><span>4</span><h3>Compare the change</h3><p>The relevant evidence is often the change in a matched New Zealand-minus-U.S. measure, not its absolute level.</p></article></div>
+  <div class="fx-related">RBNZ publishes official definitions and vintages for <a href="https://www.rbnz.govt.nz/en/statistics/series/exchange-and-interest-rates" target="_blank" rel="noopener noreferrer">New Zealand exchange-rate and wholesale-interest-rate series</a>; the Federal Reserve publishes <a href="https://www.federalreserve.gov/releases/h15/" target="_blank" rel="noopener noreferrer">H.15 Selected Interest Rates</a>. These are evidence inputs, not ready-made trade signals.</div>
+</section>
 
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
+<section class="fx-section" id="channels" aria-labelledby="channels-title">
+  <div class="fx-section-heading"><p class="fx-kicker">From relative repricing to the futures quote</p><h2 id="channels-title">Trace Four Channels Without Assuming Any One Must Win</h2><p>CME lists 6N in U.S. dollars per New Zealand dollar, so higher 6N is consistent with a stronger NZD against USD. A dated futures price also reflects time and basis; use the <a href="6n-contract-specs-explained.html">canonical 6N specification guide</a> for mechanics.</p></div>
+  <div class="fx-check-grid"><article><strong>Expected-return channel</strong><p>If expected New Zealand returns rise relative to comparable U.S. returns without a compensating rise in risk, demand for NZD exposure may increase. Futures basis may already incorporate much of that expectation.</p></article><article><strong>Growth channel</strong><p>A policy repricing caused by stronger expected New Zealand demand can carry a different currency implication from the same yield rise caused by a supply shock or credibility concern.</p></article><article><strong>Inflation channel</strong><p>Higher nominal yields may be less supportive if inflation expectations rise as much or more. The real-return interpretation and central-bank response both matter.</p></article><article><strong>Portfolio and hedge channel</strong><p>Investors and firms can add, reduce, or hedge currency exposure. The observable curve does not reveal the size, timing, or direction of every conversion flow.</p></article></div>
+  <p><strong>Mechanism, not finding:</strong> the channels above are plausible transmission paths. This page does not report an original estimate that any rate spread predicts 6N returns.</p>
+</section>
 
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+<section class="fx-section" id="competing" aria-labelledby="competing-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Why the simple sign rule fails</p><h2 id="competing-title">The Same Rate Move Can Carry Opposing Information</h2><p>A New Zealand yield increase can be interpreted as better growth, firmer inflation, higher term premium, deteriorating fiscal risk, or thinner liquidity. A U.S. yield move can be policy-led, growth-led, or risk-led. The label “rates up” hides those distinctions.</p></div>
+  <div class="fx-two-column"><article class="fx-panel"><p class="fx-card-label">Potentially NZD-supportive configuration</p><h3>Relative expected returns improve without stress</h3><p>New Zealand policy-sensitive pricing rises relative to the U.S.; inflation credibility and market quality remain intact; growth evidence is not deteriorating; and quote-correct 6N confirms. This is consistent with, but does not prove, a supportive rate channel.</p></article><article class="fx-panel"><p class="fx-card-label">Potentially NZD-negative configuration</p><h3>Yield rises as required compensation</h3><p>New Zealand yields rise because inflation, fiscal, liquidity, or term-premium risk worsens; expected real returns do not improve; or the U.S. curve reprices more. Higher nominal yields can then coexist with lower 6N.</p></article></div>
+  <div class="fx-caution"><strong>Carry is total return, not a posted-rate subtraction</strong><p>A futures position does not mechanically receive the OCR minus the federal funds rate. The dated price, basis, collateral, financing, roll, spread, slippage, and adverse FX movement belong in the calculation. A modest currency loss can overwhelm gradual yield accrual.</p></div>
+</section>
 
-  </div>
-</footer>
+<section class="fx-section" id="confirmation" aria-labelledby="confirmation-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Evidence after the package</p><h2 id="confirmation-title">Require Independent, Timestamp-Aligned Confirmation</h2><p>Do not use 6N's own move to define both the rate thesis and its confirmation. A stronger record combines the policy package, matched curves, independent currency observations, and executable futures conditions.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Rate thesis confirmation table" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Evidence layer</th><th scope="col">What to record</th><th scope="col">What invalidates the reading</th></tr></thead><tbody><tr><th scope="row">Official package</th><td>Actual outcome, new wording, forecasts, vote, risks, and publication time</td><td>The claimed surprise is absent from the primary documents</td></tr><tr><th scope="row">Relative curve</th><td>Pre/post changes at matched horizons and timestamps</td><td>The U.S. move dominates or the New Zealand move reflects a different risk</td></tr><tr><th scope="row">FX complex</th><td>Aligned NZD/USD spot, RBNZ TWI, and relevant crosses</td><td>Only a stale, circular, or single-market series agrees</td></tr><tr><th scope="row">6N execution</th><td>Active contract, spread, depth, slippage, roll state, and acceptance level</td><td>Price rejects the level or market quality fails</td></tr><tr><th scope="row">Rival drivers</th><td>Concurrent U.S. releases, risk shock, export news, or fiscal event</td><td>A rival channel better explains the timing and cross-market response</td></tr></tbody></table></div>
+  <p>Use <a href="how-to-trade-6n-economic-releases.html">the 6N event workflow</a> for execution sequencing and <a href="6n-liquidity-guide.html">the liquidity guide</a> for market-quality measurement. A macro interpretation cannot waive either gate.</p>
+</section>
+
+<section class="fx-section" id="matrix" aria-labelledby="matrix-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Conditional close</p><h2 id="matrix-title">Classify the Rate State; Do Not Predict From the Decision Label</h2><p>Complete the matrix at a declared post-event time. Each state describes an evidence configuration, not a guaranteed direction.</p></div>
+  <div class="fx-state-machine" role="list" aria-label="Conditional 6N interest-rate state matrix"><article role="listitem"><h3>NZ path reprices higher relative to U.S.</h3><p><strong>Possible implication:</strong> supportive for 6N only if real-return and growth interpretations remain credible and FX confirms.</p><p><strong>Reject when:</strong> risk premium rises, the U.S. move catches up, or price confirmation fails.</p></article><article role="listitem"><h3>NZ path reprices lower relative to U.S.</h3><p><strong>Possible implication:</strong> one source of NZD support may weaken.</p><p><strong>Reject when:</strong> broad USD weakness, export income, or another independent flow dominates.</p></article><article role="listitem"><h3>Both paths move together</h3><p><strong>Possible implication:</strong> the bilateral rate signal may be small even when both domestic curves move sharply.</p><p><strong>Next test:</strong> decompose common global versus country-specific shocks.</p></article><article role="listitem"><h3>Curve and currency disagree</h3><p><strong>Possible implication:</strong> the rate mechanism is incomplete, mistimed, or overwhelmed.</p><p><strong>Action:</strong> preserve the disagreement; do not force a rate-only trade.</p></article><article role="listitem"><h3>Evidence unavailable or non-comparable</h3><p><strong>Conclusion:</strong> no rate inference.</p><p><strong>Action:</strong> wait for aligned, auditable data.</p></article></div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 20, 2026</summary><ul><li><a href="https://www.rbnz.govt.nz/monetary-policy/about-monetary-policy/monetary-policy-handbook" target="_blank" rel="noopener noreferrer">Reserve Bank of New Zealand, Monetary Policy Handbook (published 20 April 2026)</a> for the current mandate, framework, forward-looking horizon, and policy-transmission context.</li><li><a href="https://www.rbnz.govt.nz/monetary-policy/monetary-policy-decisions" target="_blank" rel="noopener noreferrer">Reserve Bank of New Zealand, past monetary-policy decisions (updated 8 July 2026)</a> for official decisions and decision-document links.</li><li><a href="https://www.rbnz.govt.nz/monetary-policy/monetary-policy-statement/monetary-policy-statement-filtered-listing-page/2026/may-270/monetary-policy-statement-may-2026/web-version" target="_blank" rel="noopener noreferrer">Reserve Bank of New Zealand, Monetary Policy Statement May 2026 (published 3 June 2026)</a> for the structure of the assessment, projections, scenarios, and risk discussion.</li><li><a href="https://www.rbnz.govt.nz/en/statistics/series/exchange-and-interest-rates" target="_blank" rel="noopener noreferrer">Reserve Bank of New Zealand, exchange and interest-rate statistical series (reviewed August 2026)</a> for official series definitions, timing, and limitations.</li><li><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">Federal Reserve, 2026 FOMC meeting calendar and primary materials (updated 19 August 2026)</a> for statements, minutes, and projection releases.</li><li><a href="https://www.federalreserve.gov/releases/h15/" target="_blank" rel="noopener noreferrer">Federal Reserve, H.15 Selected Interest Rates (current release)</a> for U.S. rate-series definitions and published observations.</li><li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener noreferrer">CME Group, FX Product Guide 2026</a> for 6N quotation and current contract context; full mechanics remain owned by the site's canonical specification guide.</li></ul><p>Established facts, mechanisms, hypotheses, and possible applications are labeled separately. No proprietary rate model, event study, predictive result, or profitability claim is reported.</p></details>
+
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This framework is educational material, not personalized investment, legal, tax, accounting, hedging, or brokerage advice. Interest-rate expectations can reverse quickly, and leverage, gaps, basis, roll, liquidity, margin changes, and delivery exposure can create losses beyond the initial margin deposit. Verify current official documents, contract terms, and your own loss limit before any decision.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

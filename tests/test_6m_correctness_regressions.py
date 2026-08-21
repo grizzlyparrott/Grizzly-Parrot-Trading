@@ -95,10 +95,10 @@ class SixMCorrectnessRegressionTests(unittest.TestCase):
         for filename in CLUSTER:
             with self.subTest(filename=filename):
                 html = (FUTURES / filename).read_text(encoding="utf-8")
-                self.assertEqual(html.count('<details class="mx-sources">'), 1)
+                self.assertEqual(html.count('<details class="fx-sources">'), 1)
                 self.assertEqual(html.count(summary), 1)
-                self.assertNotIn('<details class="mx-sources" open>', html)
-                self.assertNotIn('<section class="mx-sources"', html)
+                self.assertNotIn('<details class="fx-sources" open>', html)
+                self.assertNotIn('<section class="fx-sources"', html)
 
 
 if __name__ == "__main__":

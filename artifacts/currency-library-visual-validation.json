@@ -1,0 +1,1154 @@
+{
+  "generatedAt": "2026-08-20T23:24:18.326Z",
+  "base": "http://127.0.0.1:8878",
+  "representativePageCount": 8,
+  "viewportCount": 2,
+  "caseCount": 16,
+  "failureCount": 0,
+  "records": [
+    {
+      "cluster": "6A",
+      "file": "6a-contract-specs-tick-size-value.html",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 900,
+      "url": "http://127.0.0.1:8878/futures-basics/6a-contract-specs-tick-size-value.html",
+      "httpStatus": 200,
+      "canonicalLinkCount": 1,
+      "canonicalSheetLoaded": true,
+      "sharedArchitecture": true,
+      "specialArchitecture": false,
+      "rootBackground": "rgb(3, 8, 23)",
+      "rootColor": "rgb(248, 250, 252)",
+      "heroBackground": "radial-gradient(circle at 94% 4%, rgba(81, 227, 145, 0.16), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 12% 106%, rgba(49, 219, 128, 0.12), rgba(0, 0, 0, 0) 38%), linear-gradient(138deg, rgb(3, 8, 23) 0%, rgb(9, 20, 35) 55%, rgb(6, 19, 33) 100%)",
+      "heroColor": "rgb(245, 255, 249)",
+      "cardBackground": "rgb(3, 8, 23)",
+      "cardBackgroundImage": "none",
+      "contentLinkColor": "rgb(81, 227, 145)",
+      "horizontalOverflow": false,
+      "documentWidth": 1440,
+      "viewportWidth": 1440,
+      "h1Count": 1,
+      "overflowingElements": [],
+      "localFailures": [],
+      "consoleErrors": [],
+      "screenshotPath": "tests/.tmp/currency-theme-visual/6a-desktop.png",
+      "errors": []
+    },
+    {
+      "cluster": "6B",
+      "file": "6b-contract-specs-tick-size-and-margin.html",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 900,
+      "url": "http://127.0.0.1:8878/futures-basics/6b-contract-specs-tick-size-and-margin.html",
+      "httpStatus": 200,
+      "canonicalLinkCount": 1,
+      "canonicalSheetLoaded": true,
+      "sharedArchitecture": true,
+      "specialArchitecture": false,
+      "rootBackground": "rgb(3, 8, 23)",
+      "rootColor": "rgb(248, 250, 252)",
+      "heroBackground": "radial-gradient(circle at 94% 4%, rgba(81, 227, 145, 0.16), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 12% 106%, rgba(49, 219, 128, 0.12), rgba(0, 0, 0, 0) 38%), linear-gradient(138deg, rgb(3, 8, 23) 0%, rgb(9, 20, 35) 55%, rgb(6, 19, 33) 100%)",
+      "heroColor": "rgb(245, 255, 249)",
+      "cardBackground": "rgb(3, 8, 23)",
+      "cardBackgroundImage": "none",
+      "contentLinkColor": "rgb(81, 227, 145)",
+      "horizontalOverflow": false,
+      "documentWidth": 1440,
+      "viewportWidth": 1440,
+      "h1Count": 1,
+      "overflowingElements": [],
+      "localFailures": [],
+      "consoleErrors": [],
+      "screenshotPath": "tests/.tmp/currency-theme-visual/6b-desktop.png",
+      "errors": []
+    },
+    {
+      "cluster": "6C",
+      "file": "6c-tick-size-tick-value.html",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 900,
+      "url": "http://127.0.0.1:8878/futures-basics/6c-tick-size-tick-value.html",
+      "httpStatus": 200,
+      "canonicalLinkCount": 1,
+      "canonicalSheetLoaded": true,
+      "sharedArchitecture": true,
+      "specialArchitecture": false,
+      "rootBackground": "rgb(3, 8, 23)",
+      "rootColor": "rgb(248, 250, 252)",
+      "heroBackground": "radial-gradient(circle at 94% 4%, rgba(81, 227, 145, 0.16), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 12% 106%, rgba(49, 219, 128, 0.12), rgba(0, 0, 0, 0) 38%), linear-gradient(138deg, rgb(3, 8, 23) 0%, rgb(9, 20, 35) 55%, rgb(6, 19, 33) 100%)",
+      "heroColor": "rgb(245, 255, 249)",
+      "cardBackground": "rgb(3, 8, 23)",
+      "cardBackgroundImage": "none",
+      "contentLinkColor": "rgb(81, 227, 145)",
+      "horizontalOverflow": false,
+      "documentWidth": 1440,
+      "viewportWidth": 1440,
+      "h1Count": 1,
+      "overflowingElements": [],
+      "localFailures": [],
+      "consoleErrors": [],
+      "screenshotPath": "tests/.tmp/currency-theme-visual/6c-desktop.png",
+      "errors": []
+    },
+    {
+      "cluster": "6E",
+      "file": "6e-important-correlations.html",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 900,
+      "url": "http://127.0.0.1:8878/futures-basics/6e-important-correlations.html",
+      "httpStatus": 200,
+      "canonicalLinkCount": 1,
+      "canonicalSheetLoaded": true,
+      "sharedArchitecture": true,
+      "specialArchitecture": false,
+      "rootBackground": "rgb(3, 8, 23)",
+      "rootColor": "rgb(248, 250, 252)",
+      "heroBackground": "radial-gradient(circle at 94% 4%, rgba(81, 227, 145, 0.16), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 12% 106%, rgba(49, 219, 128, 0.12), rgba(0, 0, 0, 0) 38%), linear-gradient(138deg, rgb(3, 8, 23) 0%, rgb(9, 20, 35) 55%, rgb(6, 19, 33) 100%)",
+      "heroColor": "rgb(245, 255, 249)",
+      "cardBackground": "rgb(3, 8, 23)",
+      "cardBackgroundImage": "none",
+      "contentLinkColor": "rgb(81, 227, 145)",
+      "horizontalOverflow": false,
+      "documentWidth": 1440,
+      "viewportWidth": 1440,
+      "h1Count": 1,
+      "overflowingElements": [],
+      "localFailures": [],
+      "consoleErrors": [],
+      "screenshotPath": "tests/.tmp/currency-theme-visual/6e-desktop.png",
+      "errors": []
+    },
+    {
+      "cluster": "6E-special",
+      "file": "6e-tick-size-tick-value-margin-requirements.html",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 900,
+      "url": "http://127.0.0.1:8878/futures-basics/6e-tick-size-tick-value-margin-requirements.html",
+      "httpStatus": 200,
+      "canonicalLinkCount": 1,
+      "canonicalSheetLoaded": true,
+      "sharedArchitecture": false,
+      "specialArchitecture": true,
+      "rootBackground": "rgba(0, 0, 0, 0)",
+      "rootColor": "rgb(248, 250, 252)",
+      "heroBackground": "radial-gradient(circle at 7% 8%, rgba(35, 204, 116, 0.29), rgba(0, 0, 0, 0) 34%), radial-gradient(circle at 95% 78%, rgba(81, 227, 145, 0.13), rgba(0, 0, 0, 0) 32%), linear-gradient(145deg, rgb(3, 8, 23) 0%, rgb(9, 20, 35) 52%, rgb(6, 19, 33) 100%)",
+      "heroColor": "rgb(248, 250, 252)",
+      "cardBackground": "rgba(0, 0, 0, 0)",
+      "cardBackgroundImage": "radial-gradient(circle at 100% 0%, rgba(245, 200, 101, 0.11), rgba(0, 0, 0, 0) 42%), linear-gradient(145deg, rgba(39, 30, 12, 0.56), rgba(7, 18, 31, 0.96))",
+      "contentLinkColor": "rgb(115, 240, 170)",
+      "horizontalOverflow": false,
+      "documentWidth": 1440,
+      "viewportWidth": 1440,
+      "h1Count": 1,
+      "overflowingElements": [],
+      "localFailures": [],
+      "consoleErrors": [],
+      "screenshotPath": "tests/.tmp/currency-theme-visual/6e-special-desktop.png",
+      "errors": []
+    },
+    {
+      "cluster": "6J",
+      "file": "6j-contract-specs.html",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 900,
+      "url": "http://127.0.0.1:8878/futures-basics/6j-contract-specs.html",
+      "httpStatus": 200,
+      "canonicalLinkCount": 1,
+      "canonicalSheetLoaded": true,
+      "sharedArchitecture": true,
+      "specialArchitecture": false,
+      "rootBackground": "rgb(3, 8, 23)",
+      "rootColor": "rgb(248, 250, 252)",
+      "heroBackground": "radial-gradient(circle at 94% 4%, rgba(81, 227, 145, 0.16), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 12% 106%, rgba(49, 219, 128, 0.12), rgba(0, 0, 0, 0) 38%), linear-gradient(138deg, rgb(3, 8, 23) 0%, rgb(9, 20, 35) 55%, rgb(6, 19, 33) 100%)",
+      "heroColor": "rgb(245, 255, 249)",
+      "cardBackground": "rgb(3, 8, 23)",
+      "cardBackgroundImage": "none",
+      "contentLinkColor": "rgb(81, 227, 145)",
+      "horizontalOverflow": false,
+      "documentWidth": 1440,
+      "viewportWidth": 1440,
+      "h1Count": 1,
+      "overflowingElements": [],
+      "localFailures": [],
+      "consoleErrors": [],
+      "screenshotPath": "tests/.tmp/currency-theme-visual/6j-desktop.png",
+      "errors": []
+    },
+    {
+      "cluster": "6M",
+      "file": "6m-tick-size.html",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 900,
+      "url": "http://127.0.0.1:8878/futures-basics/6m-tick-size.html",
+      "httpStatus": 200,
+      "canonicalLinkCount": 1,
+      "canonicalSheetLoaded": true,
+      "sharedArchitecture": true,
+      "specialArchitecture": false,
+      "rootBackground": "rgb(3, 8, 23)",
+      "rootColor": "rgb(248, 250, 252)",
+      "heroBackground": "radial-gradient(circle at 94% 4%, rgba(81, 227, 145, 0.16), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 12% 106%, rgba(49, 219, 128, 0.12), rgba(0, 0, 0, 0) 38%), linear-gradient(138deg, rgb(3, 8, 23) 0%, rgb(9, 20, 35) 55%, rgb(6, 19, 33) 100%)",
+      "heroColor": "rgb(245, 255, 249)",
+      "cardBackground": "rgb(3, 8, 23)",
+      "cardBackgroundImage": "none",
+      "contentLinkColor": "rgb(81, 227, 145)",
+      "horizontalOverflow": false,
+      "documentWidth": 1440,
+      "viewportWidth": 1440,
+      "h1Count": 1,
+      "overflowingElements": [],
+      "localFailures": [],
+      "consoleErrors": [],
+      "screenshotPath": "tests/.tmp/currency-theme-visual/6m-desktop.png",
+      "errors": []
+    },
+    {
+      "cluster": "6N",
+      "file": "6n-contract-specs-explained.html",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 900,
+      "url": "http://127.0.0.1:8878/futures-basics/6n-contract-specs-explained.html",
+      "httpStatus": 200,
+      "canonicalLinkCount": 1,
+      "canonicalSheetLoaded": true,
+      "sharedArchitecture": true,
+      "specialArchitecture": false,
+      "rootBackground": "rgb(3, 8, 23)",
+      "rootColor": "rgb(248, 250, 252)",
+      "heroBackground": "radial-gradient(circle at 94% 4%, rgba(81, 227, 145, 0.16), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 12% 106%, rgba(49, 219, 128, 0.12), rgba(0, 0, 0, 0) 38%), linear-gradient(138deg, rgb(3, 8, 23) 0%, rgb(9, 20, 35) 55%, rgb(6, 19, 33) 100%)",
+      "heroColor": "rgb(245, 255, 249)",
+      "cardBackground": "rgb(3, 8, 23)",
+      "cardBackgroundImage": "none",
+      "contentLinkColor": "rgb(81, 227, 145)",
+      "horizontalOverflow": false,
+      "documentWidth": 1440,
+      "viewportWidth": 1440,
+      "h1Count": 1,
+      "overflowingElements": [],
+      "localFailures": [],
+      "consoleErrors": [],
+      "screenshotPath": "tests/.tmp/currency-theme-visual/6n-desktop.png",
+      "errors": []
+    },
+    {
+      "cluster": "6A",
+      "file": "6a-contract-specs-tick-size-value.html",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:8878/futures-basics/6a-contract-specs-tick-size-value.html",
+      "httpStatus": 200,
+      "canonicalLinkCount": 1,
+      "canonicalSheetLoaded": true,
+      "sharedArchitecture": true,
+      "specialArchitecture": false,
+      "rootBackground": "rgb(3, 8, 23)",
+      "rootColor": "rgb(248, 250, 252)",
+      "heroBackground": "radial-gradient(circle at 94% 4%, rgba(81, 227, 145, 0.16), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 12% 106%, rgba(49, 219, 128, 0.12), rgba(0, 0, 0, 0) 38%), linear-gradient(138deg, rgb(3, 8, 23) 0%, rgb(9, 20, 35) 55%, rgb(6, 19, 33) 100%)",
+      "heroColor": "rgb(245, 255, 249)",
+      "cardBackground": "rgb(3, 8, 23)",
+      "cardBackgroundImage": "none",
+      "contentLinkColor": "rgb(81, 227, 145)",
+      "horizontalOverflow": false,
+      "documentWidth": 390,
+      "viewportWidth": 390,
+      "h1Count": 1,
+      "overflowingElements": [
+        {
+          "tag": "a",
+          "className": "",
+          "left": 377,
+          "right": 454,
+          "width": 76
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 461,
+          "right": 511,
+          "width": 50
+        },
+        {
+          "tag": "table",
+          "className": "fx-table",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "thead",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "th",
+          "className": "",
+          "left": 325,
+          "right": 638,
+          "width": 313
+        },
+        {
+          "tag": "tbody",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "td",
+          "className": "",
+          "left": 325,
+          "right": 638,
+          "width": 313
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "td",
+          "className": "",
+          "left": 325,
+          "right": 638,
+          "width": 313
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        }
+      ],
+      "localFailures": [],
+      "consoleErrors": [],
+      "screenshotPath": "tests/.tmp/currency-theme-visual/6a-mobile.png",
+      "errors": []
+    },
+    {
+      "cluster": "6B",
+      "file": "6b-contract-specs-tick-size-and-margin.html",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:8878/futures-basics/6b-contract-specs-tick-size-and-margin.html",
+      "httpStatus": 200,
+      "canonicalLinkCount": 1,
+      "canonicalSheetLoaded": true,
+      "sharedArchitecture": true,
+      "specialArchitecture": false,
+      "rootBackground": "rgb(3, 8, 23)",
+      "rootColor": "rgb(248, 250, 252)",
+      "heroBackground": "radial-gradient(circle at 94% 4%, rgba(81, 227, 145, 0.16), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 12% 106%, rgba(49, 219, 128, 0.12), rgba(0, 0, 0, 0) 38%), linear-gradient(138deg, rgb(3, 8, 23) 0%, rgb(9, 20, 35) 55%, rgb(6, 19, 33) 100%)",
+      "heroColor": "rgb(245, 255, 249)",
+      "cardBackground": "rgb(3, 8, 23)",
+      "cardBackgroundImage": "none",
+      "contentLinkColor": "rgb(81, 227, 145)",
+      "horizontalOverflow": false,
+      "documentWidth": 390,
+      "viewportWidth": 390,
+      "h1Count": 1,
+      "overflowingElements": [
+        {
+          "tag": "a",
+          "className": "",
+          "left": 380,
+          "right": 450,
+          "width": 70
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 457,
+          "right": 521,
+          "width": 64
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 528,
+          "right": 578,
+          "width": 50
+        },
+        {
+          "tag": "table",
+          "className": "fx-table",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "thead",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "th",
+          "className": "",
+          "left": 318,
+          "right": 459,
+          "width": 140
+        },
+        {
+          "tag": "th",
+          "className": "",
+          "left": 459,
+          "right": 638,
+          "width": 180
+        },
+        {
+          "tag": "tbody",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "td",
+          "className": "",
+          "left": 318,
+          "right": 459,
+          "width": 140
+        },
+        {
+          "tag": "td",
+          "className": "",
+          "left": 459,
+          "right": 638,
+          "width": 180
+        }
+      ],
+      "localFailures": [],
+      "consoleErrors": [],
+      "screenshotPath": "tests/.tmp/currency-theme-visual/6b-mobile.png",
+      "errors": []
+    },
+    {
+      "cluster": "6C",
+      "file": "6c-tick-size-tick-value.html",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:8878/futures-basics/6c-tick-size-tick-value.html",
+      "httpStatus": 200,
+      "canonicalLinkCount": 1,
+      "canonicalSheetLoaded": true,
+      "sharedArchitecture": true,
+      "specialArchitecture": false,
+      "rootBackground": "rgb(3, 8, 23)",
+      "rootColor": "rgb(248, 250, 252)",
+      "heroBackground": "radial-gradient(circle at 94% 4%, rgba(81, 227, 145, 0.16), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 12% 106%, rgba(49, 219, 128, 0.12), rgba(0, 0, 0, 0) 38%), linear-gradient(138deg, rgb(3, 8, 23) 0%, rgb(9, 20, 35) 55%, rgb(6, 19, 33) 100%)",
+      "heroColor": "rgb(245, 255, 249)",
+      "cardBackground": "rgb(3, 8, 23)",
+      "cardBackgroundImage": "none",
+      "contentLinkColor": "rgb(81, 227, 145)",
+      "horizontalOverflow": false,
+      "documentWidth": 390,
+      "viewportWidth": 390,
+      "h1Count": 1,
+      "overflowingElements": [
+        {
+          "tag": "a",
+          "className": "",
+          "left": 323,
+          "right": 436,
+          "width": 113
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 443,
+          "right": 512,
+          "width": 70
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 519,
+          "right": 570,
+          "width": 50
+        },
+        {
+          "tag": "table",
+          "className": "fx-table",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "thead",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "th",
+          "className": "",
+          "left": 369,
+          "right": 638,
+          "width": 269
+        },
+        {
+          "tag": "tbody",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "td",
+          "className": "",
+          "left": 369,
+          "right": 638,
+          "width": 269
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "td",
+          "className": "",
+          "left": 369,
+          "right": 638,
+          "width": 269
+        }
+      ],
+      "localFailures": [],
+      "consoleErrors": [],
+      "screenshotPath": "tests/.tmp/currency-theme-visual/6c-mobile.png",
+      "errors": []
+    },
+    {
+      "cluster": "6E",
+      "file": "6e-important-correlations.html",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:8878/futures-basics/6e-important-correlations.html",
+      "httpStatus": 200,
+      "canonicalLinkCount": 1,
+      "canonicalSheetLoaded": true,
+      "sharedArchitecture": true,
+      "specialArchitecture": false,
+      "rootBackground": "rgb(3, 8, 23)",
+      "rootColor": "rgb(248, 250, 252)",
+      "heroBackground": "radial-gradient(circle at 94% 4%, rgba(81, 227, 145, 0.16), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 12% 106%, rgba(49, 219, 128, 0.12), rgba(0, 0, 0, 0) 38%), linear-gradient(138deg, rgb(3, 8, 23) 0%, rgb(9, 20, 35) 55%, rgb(6, 19, 33) 100%)",
+      "heroColor": "rgb(245, 255, 249)",
+      "cardBackground": "rgb(3, 8, 23)",
+      "cardBackgroundImage": "none",
+      "contentLinkColor": "rgb(81, 227, 145)",
+      "horizontalOverflow": false,
+      "documentWidth": 390,
+      "viewportWidth": 390,
+      "h1Count": 1,
+      "overflowingElements": [
+        {
+          "tag": "a",
+          "className": "",
+          "left": 391,
+          "right": 452,
+          "width": 61
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 459,
+          "right": 536,
+          "width": 77
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 544,
+          "right": 594,
+          "width": 50
+        },
+        {
+          "tag": "table",
+          "className": "fx-table",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "thead",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "th",
+          "className": "",
+          "left": 324,
+          "right": 470,
+          "width": 146
+        },
+        {
+          "tag": "th",
+          "className": "",
+          "left": 470,
+          "right": 638,
+          "width": 168
+        },
+        {
+          "tag": "tbody",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "td",
+          "className": "",
+          "left": 324,
+          "right": 470,
+          "width": 146
+        },
+        {
+          "tag": "td",
+          "className": "",
+          "left": 470,
+          "right": 638,
+          "width": 168
+        }
+      ],
+      "localFailures": [],
+      "consoleErrors": [],
+      "screenshotPath": "tests/.tmp/currency-theme-visual/6e-mobile.png",
+      "errors": []
+    },
+    {
+      "cluster": "6E-special",
+      "file": "6e-tick-size-tick-value-margin-requirements.html",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:8878/futures-basics/6e-tick-size-tick-value-margin-requirements.html",
+      "httpStatus": 200,
+      "canonicalLinkCount": 1,
+      "canonicalSheetLoaded": true,
+      "sharedArchitecture": false,
+      "specialArchitecture": true,
+      "rootBackground": "rgba(0, 0, 0, 0)",
+      "rootColor": "rgb(248, 250, 252)",
+      "heroBackground": "radial-gradient(circle at 7% 8%, rgba(35, 204, 116, 0.29), rgba(0, 0, 0, 0) 34%), radial-gradient(circle at 95% 78%, rgba(81, 227, 145, 0.13), rgba(0, 0, 0, 0) 32%), linear-gradient(145deg, rgb(3, 8, 23) 0%, rgb(9, 20, 35) 52%, rgb(6, 19, 33) 100%)",
+      "heroColor": "rgb(248, 250, 252)",
+      "cardBackground": "rgba(0, 0, 0, 0)",
+      "cardBackgroundImage": "radial-gradient(circle at 100% 0%, rgba(245, 200, 101, 0.11), rgba(0, 0, 0, 0) 42%), linear-gradient(145deg, rgba(39, 30, 12, 0.56), rgba(7, 18, 31, 0.96))",
+      "contentLinkColor": "rgb(115, 240, 170)",
+      "horizontalOverflow": false,
+      "documentWidth": 390,
+      "viewportWidth": 390,
+      "h1Count": 1,
+      "overflowingElements": [
+        {
+          "tag": "a",
+          "className": "",
+          "left": 322,
+          "right": 399,
+          "width": 77
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 406,
+          "right": 474,
+          "width": 69
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 481,
+          "right": 556,
+          "width": 75
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 563,
+          "right": 652,
+          "width": 90
+        },
+        {
+          "tag": "table",
+          "className": "e6-compare-table",
+          "left": 16,
+          "right": 696,
+          "width": 680
+        },
+        {
+          "tag": "thead",
+          "className": "",
+          "left": 16,
+          "right": 696,
+          "width": 680
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 16,
+          "right": 696,
+          "width": 680
+        },
+        {
+          "tag": "th",
+          "className": "",
+          "left": 235,
+          "right": 486,
+          "width": 251
+        },
+        {
+          "tag": "th",
+          "className": "",
+          "left": 486,
+          "right": 696,
+          "width": 210
+        },
+        {
+          "tag": "tbody",
+          "className": "",
+          "left": 16,
+          "right": 696,
+          "width": 680
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 16,
+          "right": 696,
+          "width": 680
+        },
+        {
+          "tag": "td",
+          "className": "",
+          "left": 235,
+          "right": 486,
+          "width": 251
+        }
+      ],
+      "localFailures": [],
+      "consoleErrors": [],
+      "screenshotPath": "tests/.tmp/currency-theme-visual/6e-special-mobile.png",
+      "errors": []
+    },
+    {
+      "cluster": "6J",
+      "file": "6j-contract-specs.html",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:8878/futures-basics/6j-contract-specs.html",
+      "httpStatus": 200,
+      "canonicalLinkCount": 1,
+      "canonicalSheetLoaded": true,
+      "sharedArchitecture": true,
+      "specialArchitecture": false,
+      "rootBackground": "rgb(3, 8, 23)",
+      "rootColor": "rgb(248, 250, 252)",
+      "heroBackground": "radial-gradient(circle at 94% 4%, rgba(81, 227, 145, 0.16), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 12% 106%, rgba(49, 219, 128, 0.12), rgba(0, 0, 0, 0) 38%), linear-gradient(138deg, rgb(3, 8, 23) 0%, rgb(9, 20, 35) 55%, rgb(6, 19, 33) 100%)",
+      "heroColor": "rgb(245, 255, 249)",
+      "cardBackground": "rgb(3, 8, 23)",
+      "cardBackgroundImage": "none",
+      "contentLinkColor": "rgb(81, 227, 145)",
+      "horizontalOverflow": false,
+      "documentWidth": 390,
+      "viewportWidth": 390,
+      "h1Count": 1,
+      "overflowingElements": [
+        {
+          "tag": "a",
+          "className": "",
+          "left": 371,
+          "right": 434,
+          "width": 64
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 442,
+          "right": 533,
+          "width": 91
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 540,
+          "right": 590,
+          "width": 50
+        },
+        {
+          "tag": "table",
+          "className": "fx-table",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "thead",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "th",
+          "className": "",
+          "left": 153,
+          "right": 398,
+          "width": 245
+        },
+        {
+          "tag": "th",
+          "className": "",
+          "left": 398,
+          "right": 638,
+          "width": 240
+        },
+        {
+          "tag": "tbody",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "td",
+          "className": "",
+          "left": 153,
+          "right": 398,
+          "width": 245
+        },
+        {
+          "tag": "td",
+          "className": "",
+          "left": 398,
+          "right": 638,
+          "width": 240
+        }
+      ],
+      "localFailures": [],
+      "consoleErrors": [],
+      "screenshotPath": "tests/.tmp/currency-theme-visual/6j-mobile.png",
+      "errors": []
+    },
+    {
+      "cluster": "6M",
+      "file": "6m-tick-size.html",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:8878/futures-basics/6m-tick-size.html",
+      "httpStatus": 200,
+      "canonicalLinkCount": 1,
+      "canonicalSheetLoaded": true,
+      "sharedArchitecture": true,
+      "specialArchitecture": false,
+      "rootBackground": "rgb(3, 8, 23)",
+      "rootColor": "rgb(248, 250, 252)",
+      "heroBackground": "radial-gradient(circle at 94% 4%, rgba(81, 227, 145, 0.16), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 12% 106%, rgba(49, 219, 128, 0.12), rgba(0, 0, 0, 0) 38%), linear-gradient(138deg, rgb(3, 8, 23) 0%, rgb(9, 20, 35) 55%, rgb(6, 19, 33) 100%)",
+      "heroColor": "rgb(245, 255, 249)",
+      "cardBackground": "rgb(3, 8, 23)",
+      "cardBackgroundImage": "none",
+      "contentLinkColor": "rgb(81, 227, 145)",
+      "horizontalOverflow": false,
+      "documentWidth": 390,
+      "viewportWidth": 390,
+      "h1Count": 1,
+      "overflowingElements": [
+        {
+          "tag": "a",
+          "className": "",
+          "left": 378,
+          "right": 520,
+          "width": 142
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 527,
+          "right": 640,
+          "width": 113
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 647,
+          "right": 717,
+          "width": 70
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 724,
+          "right": 847,
+          "width": 123
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 854,
+          "right": 904,
+          "width": 50
+        },
+        {
+          "tag": "table",
+          "className": "fx-table",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "thead",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "th",
+          "className": "",
+          "left": 368,
+          "right": 638,
+          "width": 270
+        },
+        {
+          "tag": "tbody",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "td",
+          "className": "",
+          "left": 368,
+          "right": 638,
+          "width": 270
+        }
+      ],
+      "localFailures": [],
+      "consoleErrors": [],
+      "screenshotPath": "tests/.tmp/currency-theme-visual/6m-mobile.png",
+      "errors": []
+    },
+    {
+      "cluster": "6N",
+      "file": "6n-contract-specs-explained.html",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:8878/futures-basics/6n-contract-specs-explained.html",
+      "httpStatus": 200,
+      "canonicalLinkCount": 1,
+      "canonicalSheetLoaded": true,
+      "sharedArchitecture": true,
+      "specialArchitecture": false,
+      "rootBackground": "rgb(3, 8, 23)",
+      "rootColor": "rgb(248, 250, 252)",
+      "heroBackground": "radial-gradient(circle at 94% 4%, rgba(81, 227, 145, 0.16), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 12% 106%, rgba(49, 219, 128, 0.12), rgba(0, 0, 0, 0) 38%), linear-gradient(138deg, rgb(3, 8, 23) 0%, rgb(9, 20, 35) 55%, rgb(6, 19, 33) 100%)",
+      "heroColor": "rgb(245, 255, 249)",
+      "cardBackground": "rgb(3, 8, 23)",
+      "cardBackgroundImage": "none",
+      "contentLinkColor": "rgb(81, 227, 145)",
+      "horizontalOverflow": false,
+      "documentWidth": 390,
+      "viewportWidth": 390,
+      "h1Count": 1,
+      "overflowingElements": [
+        {
+          "tag": "a",
+          "className": "",
+          "left": 378,
+          "right": 523,
+          "width": 145
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 530,
+          "right": 674,
+          "width": 144
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 681,
+          "right": 804,
+          "width": 123
+        },
+        {
+          "tag": "a",
+          "className": "",
+          "left": 811,
+          "right": 934,
+          "width": 123
+        },
+        {
+          "tag": "table",
+          "className": "fx-table",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "thead",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "th",
+          "className": "",
+          "left": 377,
+          "right": 638,
+          "width": 261
+        },
+        {
+          "tag": "tbody",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        },
+        {
+          "tag": "td",
+          "className": "",
+          "left": 377,
+          "right": 638,
+          "width": 261
+        },
+        {
+          "tag": "tr",
+          "className": "",
+          "left": 18,
+          "right": 638,
+          "width": 620
+        }
+      ],
+      "localFailures": [],
+      "consoleErrors": [],
+      "screenshotPath": "tests/.tmp/currency-theme-visual/6n-mobile.png",
+      "errors": []
+    }
+  ]
+}

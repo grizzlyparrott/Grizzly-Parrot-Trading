@@ -9,36 +9,36 @@
   <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6m-volatility-profile.html">
   <meta property="og:title" content="6M Volatility Profile: Measure the Distribution"><meta property="og:description" content="Measure 6M volatility distributions, event and session states, roll controls and regime transitions without inventing typical ranges or directional forecasts."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6m-volatility-profile.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-28"><meta property="article:modified_time" content="2026-08-13">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6M Volatility Profile: Measure the Distribution"><meta name="twitter:description" content="Measure 6M volatility distributions, event and session states, roll controls and regime transitions without inventing typical ranges or directional forecasts."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
-  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/6m-research-library.css?v=20260813a">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6M Volatility Profile: Measure the Distribution","description":"Measure 6M volatility distributions, event and session states, roll controls and regime transitions without inventing typical ranges or directional forecasts.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6m-volatility-profile.html"},"datePublished":"2025-11-28","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/6m-volatility-profile.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6M Volatility Profile: Measure the Distribution","item":"https://grizzlyparrottrading.com/futures-basics/6m-volatility-profile.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-<a class="mx-skip-link" href="#main-content">Skip to main content</a>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
-<main id="main-content" class="container article-container mxn-library" tabindex="-1"><article>
+<main id="main-content" class="container article-container currency-library" tabindex="-1"><article>
 <!-- ARTICLE BODY START -->
-<header class="mx-hero">
-  <div class="mx-hero-copy">
-    <p class="mx-kicker">Estimators &middot; regimes &middot; monitoring</p>
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Estimators &middot; regimes &middot; monitoring</p>
     <h1>6M Volatility Profile: Measure the Distribution</h1>
-    <p class="mx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
-    <p class="mx-hero-lede">One average can describe neither the quiet majority nor the rare tail that dominates risk. Two 6M samples may share the same mean range while one is tightly clustered and the other alternates between stillness and jumps. A volatility profile must therefore report a distribution, its clock and event composition, and the data choices that created it.</p>
-    <dl class="mx-hero-metrics" aria-label="6M volatility profile boundaries"><div><dt>Center</dt><dd>Not enough</dd></div><div><dt>Tails</dt><dd>Required</dd></div><div><dt>Direction</dt><dd>Separate</dd></div><div><dt>Measured results</dt><dd>None</dd></div></dl>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="fx-hero-lede">One average can describe neither the quiet majority nor the rare tail that dominates risk. Two 6M samples may share the same mean range while one is tightly clustered and the other alternates between stillness and jumps. A volatility profile must therefore report a distribution, its clock and event composition, and the data choices that created it.</p>
+    <dl class="fx-hero-metrics" aria-label="6M volatility profile boundaries"><div><dt>Center</dt><dd>Not enough</dd></div><div><dt>Tails</dt><dd>Required</dd></div><div><dt>Direction</dt><dd>Separate</dd></div><div><dt>Measured results</dt><dd>None</dd></div></dl>
   </div>
-  <aside class="mx-market-board" aria-label="Average versus distribution interpretation">
-    <div class="mx-board-head"><span>Same average</span><strong>Different risk shape</strong></div>
-    <div class="mx-proof-grid"><div class="mx-proof"><strong>Concentrated sample</strong><span>Most observations sit near the center; tails are comparatively limited.</span></div><div class="mx-proof is-limit"><strong>Heavy-tailed sample</strong><span>Many quiet observations coexist with a small number of extreme paths.</span></div></div>
-    <p class="mx-board-foot">Illustration only&mdash;not a measured 6M result</p>
+  <aside class="fx-market-board" aria-label="Average versus distribution interpretation">
+    <div class="fx-board-head"><span>Same average</span><strong>Different risk shape</strong></div>
+    <div class="fx-proof-grid"><div class="fx-proof"><strong>Concentrated sample</strong><span>Most observations sit near the center; tails are comparatively limited.</span></div><div class="fx-proof is-limit"><strong>Heavy-tailed sample</strong><span>Many quiet observations coexist with a small number of extreme paths.</span></div></div>
+    <p class="fx-board-foot">Illustration only&mdash;not a measured 6M result</p>
   </aside>
 </header>
 
-<nav class="mx-jump-nav" aria-label="On this page"><a href="#distribution">Distribution</a><a href="#estimators">Estimators</a><a href="#decomposition">Decomposition</a><a href="#roll-controls">Roll controls</a><a href="#states">States</a><a href="#transitions">Transitions</a><a href="#monitoring">Monitoring</a></nav>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#distribution">Distribution</a><a href="#estimators">Estimators</a><a href="#decomposition">Decomposition</a><a href="#roll-controls">Roll controls</a><a href="#states">States</a><a href="#transitions">Transitions</a><a href="#monitoring">Monitoring</a></nav>
 
-<section class="mx-section" id="distribution" aria-labelledby="distribution-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Description before prediction</p><h2 id="distribution-title">One Average Erases the Shape of Risk</h2><p>A defensible profile reports the median and other quantiles, dispersion, extreme observations, missingness, sample count, and the exact interval measured. It preserves signed returns separately so a movement statistic is never presented as directional evidence.</p></div>
-  <div class="mx-table-scroll" role="region" aria-label="Required outputs for a 6M volatility distribution" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Output</th><th scope="col">Question answered</th><th scope="col">What it cannot establish</th></tr></thead><tbody>
+<section class="fx-section" id="distribution" aria-labelledby="distribution-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Description before prediction</p><h2 id="distribution-title">One Average Erases the Shape of Risk</h2><p>A defensible profile reports the median and other quantiles, dispersion, extreme observations, missingness, sample count, and the exact interval measured. It preserves signed returns separately so a movement statistic is never presented as directional evidence.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Required outputs for a 6M volatility distribution" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Output</th><th scope="col">Question answered</th><th scope="col">What it cannot establish</th></tr></thead><tbody>
     <tr><th scope="row">Median</th><td>Where the middle eligible observation lies</td><td>Tail risk or a fixed “normal” range</td></tr>
     <tr><th scope="row">Quantiles</th><td>How the empirical distribution spreads into lower and upper tails</td><td>Probability outside the observed sample without a model</td></tr>
     <tr><th scope="row">Mean</th><td>Arithmetic center, sensitive to extremes</td><td>Typical experience when the distribution is skewed or heavy-tailed</td></tr>
@@ -46,76 +46,76 @@
     <tr><th scope="row">Signed return</th><td>Direction over the same interval</td><td>Path, spread, depth, or fill quality</td></tr>
     <tr><th scope="row">Missingness</th><td>Where the estimator could not be computed</td><td>Zero movement or zero volatility</td></tr>
   </tbody></table></div>
-  <div class="mx-caution"><strong>No fixed typical range is reported</strong><p>This article acquired and analyzed no 6M market sample. Any numerical daily-range, tick-range, ATR, percentile, regime, or transition value would therefore be manufactured. The page defines how to produce and falsify such measurements.</p></div>
+  <div class="fx-caution"><strong>No fixed typical range is reported</strong><p>This article acquired and analyzed no 6M market sample. Any numerical daily-range, tick-range, ATR, percentile, regime, or transition value would therefore be manufactured. The page defines how to produce and falsify such measurements.</p></div>
 </section>
 
-<section class="mx-section" id="estimators" aria-labelledby="estimators-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Choose for the question</p><h2 id="estimators-title">Different Estimators Measure Different Features of the Path</h2><p>Freeze one primary estimator and a limited set of robustness alternatives before inspecting results. Use consistent units and windows. The estimator must be computed from dated 6M contracts with enough data quality for its inputs.</p></div>
-  <div class="mx-estimator-spectrum">
-    <article class="mx-panel"><p class="mx-card-label">Close-to-close</p><h3>Absolute or squared return</h3><p>Simple and reproducible from declared endpoints, but it ignores movement that reverses inside the interval.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">Range based</p><h3>High minus low</h3><p>Captures intraperiod extent but depends on bar boundaries, outlier cleaning, and valid extremes.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">Intraday path</p><h3>Realized variance</h3><p>Sum squared intraday log returns over a fixed window. Sampling frequency and market microstructure noise require sensitivity checks.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">Execution state</p><h3>Spread and slippage tails</h3><p>Not price volatility estimators, but essential companion distributions when the profile will inform order risk.</p></article>
+<section class="fx-section" id="estimators" aria-labelledby="estimators-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Choose for the question</p><h2 id="estimators-title">Different Estimators Measure Different Features of the Path</h2><p>Freeze one primary estimator and a limited set of robustness alternatives before inspecting results. Use consistent units and windows. The estimator must be computed from dated 6M contracts with enough data quality for its inputs.</p></div>
+  <div class="fx-estimator-spectrum">
+    <article class="fx-panel"><p class="fx-card-label">Close-to-close</p><h3>Absolute or squared return</h3><p>Simple and reproducible from declared endpoints, but it ignores movement that reverses inside the interval.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Range based</p><h3>High minus low</h3><p>Captures intraperiod extent but depends on bar boundaries, outlier cleaning, and valid extremes.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Intraday path</p><h3>Realized variance</h3><p>Sum squared intraday log returns over a fixed window. Sampling frequency and market microstructure noise require sensitivity checks.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Execution state</p><h3>Spread and slippage tails</h3><p>Not price volatility estimators, but essential companion distributions when the profile will inform order risk.</p></article>
   </div>
-  <div class="mx-formula" aria-label="Realized variance construction"><code>intraday returns = log price change at fixed intervals</code><i aria-hidden="true">&rarr;</i><code>realized variance = sum of squared returns</code></div>
-  <p class="mx-source-note"><a href="https://www.nber.org/papers/w8160" target="_blank" rel="noopener">Andersen, Bollerslev, Diebold, and Labys</a> develop realized-volatility measurement using high-frequency intraday returns. Citing the method does not establish a particular estimator, sampling frequency, or result for 6M; those remain study choices.</p>
-  <div class="mx-related">If an indicator uses the resulting state, benchmark that application under the separate <a href="6m-best-indicators.html">6M indicator comparison protocol</a>.</div>
+  <div class="fx-formula" aria-label="Realized variance construction"><code>intraday returns = log price change at fixed intervals</code><i aria-hidden="true">&rarr;</i><code>realized variance = sum of squared returns</code></div>
+  <p class="fx-source-note"><a href="https://www.nber.org/papers/w8160" target="_blank" rel="noopener">Andersen, Bollerslev, Diebold, and Labys</a> develop realized-volatility measurement using high-frequency intraday returns. Citing the method does not establish a particular estimator, sampling frequency, or result for 6M; those remain study choices.</p>
+  <div class="fx-related">If an indicator uses the resulting state, benchmark that application under the separate <a href="6m-best-indicators.html">6M indicator comparison protocol</a>.</div>
 </section>
 
-<section class="mx-section" id="decomposition" aria-labelledby="decomposition-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Condition before pooling</p><h2 id="decomposition-title">Decompose the Distribution by Clock, Event, and Market Quality</h2><p>A full-day profile blends very different information and liquidity conditions. Predeclare DST-safe windows, scheduled-event labels, holidays, maintenance, and market-quality states. Show both unconditional and conditional distributions so readers can see composition rather than a single pooled statistic.</p></div>
-  <div class="mx-reaction-grid">
+<section class="fx-section" id="decomposition" aria-labelledby="decomposition-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Condition before pooling</p><h2 id="decomposition-title">Decompose the Distribution by Clock, Event, and Market Quality</h2><p>A full-day profile blends very different information and liquidity conditions. Predeclare DST-safe windows, scheduled-event labels, holidays, maintenance, and market-quality states. Show both unconditional and conditional distributions so readers can see composition rather than a single pooled statistic.</p></div>
+  <div class="fx-reaction-grid">
     <article><h3>UTC clock window</h3><p>Define half-open intervals in UTC and attach date-aware Mexico City and Chicago labels. Do not use ambiguous “CST.”</p></article>
     <article><h3>Mexico events</h3><p>Use official Banxico and INEGI calendars and actual release records. Event timing does not imply response sign.</p></article>
     <article><h3>U.S. events</h3><p>Use Federal Reserve, BLS, and BEA records; separate scheduled release windows from ordinary dates.</p></article>
     <article><h3>Holiday state</h3><p>Version CME trading hours and shortened sessions. Equal clock length does not guarantee equal opportunity or liquidity.</p></article>
     <article><h3>Execution state</h3><p>Report spread, depth, staleness, missing-book intervals and sample attrition alongside price movement.</p></article>
   </div>
-  <div class="mx-method"><div><h3>One observation per date-window-contract</h3><p>Intraday returns and quote updates form dependent paths. First summarize each declared window for one dated contract, then estimate uncertainty with date- or episode-level blocks. Do not treat every high-frequency update as an independent volatility observation.</p></div><dl><div><dt>Clock</dt><dd>DST-safe</dd></div><div><dt>Events</dt><dd>Official records</dd></div><div><dt>Path</dt><dd>Preserved</dd></div><div><dt>Uncertainty</dt><dd>Blocked</dd></div></dl></div>
+  <div class="fx-method"><div><h3>One observation per date-window-contract</h3><p>Intraday returns and quote updates form dependent paths. First summarize each declared window for one dated contract, then estimate uncertainty with date- or episode-level blocks. Do not treat every high-frequency update as an independent volatility observation.</p></div><dl><div><dt>Clock</dt><dd>DST-safe</dd></div><div><dt>Events</dt><dd>Official records</dd></div><div><dt>Path</dt><dd>Preserved</dd></div><div><dt>Uncertainty</dt><dd>Blocked</dd></div></dl></div>
 </section>
 
-<section class="mx-section" id="roll-controls" aria-labelledby="roll-controls-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Recurring calendar contamination</p><h2 id="roll-controls-title">Prevent Expiry Migration From Creating a False Volatility Spike</h2><p>An unadjusted continuous series can insert the price difference between outgoing and incoming contracts as if it were a market return. A back-adjusted history can remove the visual gap while rewriting past levels. Neither is a substitute for measuring the dated contract actually trading.</p></div>
-  <div class="mx-three-column">
-    <article class="mx-panel"><p class="mx-card-label">Primary measurement</p><h3>Dated-contract returns</h3><p>Compute movement within one expiry. If the interval changes contracts, separate the two legs and the roll transaction.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">Migration context</p><h3>Outgoing and incoming liquidity</h3><p>Preserve both expiries around the switch. Report volume, spread, depth and missingness by contract.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">Robustness</p><h3>Two ex-ante roll rules</h3><p>Compare a frozen primary rule with another reasonable rule based only on information available then.</p></article>
+<section class="fx-section" id="roll-controls" aria-labelledby="roll-controls-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Recurring calendar contamination</p><h2 id="roll-controls-title">Prevent Expiry Migration From Creating a False Volatility Spike</h2><p>An unadjusted continuous series can insert the price difference between outgoing and incoming contracts as if it were a market return. A back-adjusted history can remove the visual gap while rewriting past levels. Neither is a substitute for measuring the dated contract actually trading.</p></div>
+  <div class="fx-three-column">
+    <article class="fx-panel"><p class="fx-card-label">Primary measurement</p><h3>Dated-contract returns</h3><p>Compute movement within one expiry. If the interval changes contracts, separate the two legs and the roll transaction.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Migration context</p><h3>Outgoing and incoming liquidity</h3><p>Preserve both expiries around the switch. Report volume, spread, depth and missingness by contract.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Robustness</p><h3>Two ex-ante roll rules</h3><p>Compare a frozen primary rule with another reasonable rule based only on information available then.</p></article>
   </div>
-  <div class="mx-table-scroll" role="region" aria-label="6M volatility roll-control checks" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Check</th><th scope="col">Required record</th><th scope="col">Reject when</th></tr></thead><tbody>
+  <div class="fx-table-scroll" role="region" aria-label="6M volatility roll-control checks" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Check</th><th scope="col">Required record</th><th scope="col">Reject when</th></tr></thead><tbody>
     <tr><th scope="row">Contract identity</th><td>Delivery month on every trade, quote and bar</td><td>Generic front-month symbol cannot be reconstructed</td></tr>
     <tr><th scope="row">Switch decision</th><td>Rule, input availability time and selected date</td><td>Same-day final information chooses an earlier switch</td></tr>
     <tr><th scope="row">Adjustment</th><td>Method, factor, direction, version and dated mapping</td><td>Historical levels change without a recorded transform</td></tr>
     <tr><th scope="row">Roll interval</th><td>Outgoing return, incoming return, basis change and execution cost separately</td><td>Contract gap is counted as underlying movement</td></tr>
   </tbody></table></div>
-  <p class="mx-source-note"><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/256/256.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 256</a> defines a dated, physically delivered futures contract and its termination framework. Detailed current mechanics belong to the <a href="6m-tick-size.html">canonical 6M specification article</a>.</p>
+  <p class="fx-source-note"><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/256/256.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 256</a> defines a dated, physically delivered futures contract and its termination framework. Detailed current mechanics belong to the <a href="6m-tick-size.html">canonical 6M specification article</a>.</p>
 </section>
 
-<section class="mx-section" id="states" aria-labelledby="states-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Past-only classification</p><h2 id="states-title">Define Volatility States Without Hindsight</h2><p>“Calm,” “normal,” and “high” need training-sample thresholds and an availability time. Estimate thresholds on past eligible data, freeze the update schedule, preserve the continuous percentile, and assign a state only after the measurement window is complete.</p></div>
-  <div class="mx-state-machine" aria-label="Volatility state classification process">
+<section class="fx-section" id="states" aria-labelledby="states-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Past-only classification</p><h2 id="states-title">Define Volatility States Without Hindsight</h2><p>“Calm,” “normal,” and “high” need training-sample thresholds and an availability time. Estimate thresholds on past eligible data, freeze the update schedule, preserve the continuous percentile, and assign a state only after the measurement window is complete.</p></div>
+  <div class="fx-state-machine" aria-label="Volatility state classification process">
     <article><span>1</span><h3>Unavailable</h3><p>Required contract, timestamp, price, quote, or coverage evidence is missing.</p></article>
     <article><span>2</span><h3>Eligible</h3><p>Data and calendar checks pass for the declared estimator window.</p></article>
     <article><span>3</span><h3>Measured</h3><p>The completed-window estimator is calculated with frozen rules.</p></article>
     <article><span>4</span><h3>Classified</h3><p>A past-fitted threshold maps the measure to a named state.</p></article>
     <article><span>5</span><h3>Monitored</h3><p>Later outcomes and transition error are recorded without relabeling history.</p></article>
   </div>
-  <div class="mx-two-column">
-    <article class="mx-panel"><p class="mx-card-label">Relative state</p><h3>Past-only percentile</h3><p>Map the current completed measure into a training distribution matched by clock and contract condition. Freeze lookback, minimum sample, ties and update cadence.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">Absolute state</p><h3>Risk-relevant threshold</h3><p>A threshold tied to execution or loss constraints may be useful, but it must use verified contract mechanics, size, costs and a declared decision purpose.</p></article>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Relative state</p><h3>Past-only percentile</h3><p>Map the current completed measure into a training distribution matched by clock and contract condition. Freeze lookback, minimum sample, ties and update cadence.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Absolute state</p><h3>Risk-relevant threshold</h3><p>A threshold tied to execution or loss constraints may be useful, but it must use verified contract mechanics, size, costs and a declared decision purpose.</p></article>
   </div>
   <p><a href="https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc442.htm" target="_blank" rel="noopener">NIST&rsquo;s stationarity guidance</a> describes stable location, variance, and autocorrelation as assumptions in many time-series methods. A rolling percentile does not prove stationarity; monitor whether its calibration and state frequencies drift.</p>
 </section>
 
-<section class="mx-section" id="transitions" aria-labelledby="transitions-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Description is not a forecast</p><h2 id="transitions-title">Estimate Transition Uncertainty Before Predicting the Next State</h2><p>A current high-volatility label describes the completed window. It does not imply continuation, mean reversion, or direction. Those are separate hypotheses requiring frozen horizons, matched baselines, chronological validation, and enough independent transitions.</p></div>
-  <div class="mx-table-scroll" role="region" aria-label="Volatility state transition study design" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Transition record</th><th scope="col">Required output</th><th scope="col">Interpretation limit</th></tr></thead><tbody>
+<section class="fx-section" id="transitions" aria-labelledby="transitions-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Description is not a forecast</p><h2 id="transitions-title">Estimate Transition Uncertainty Before Predicting the Next State</h2><p>A current high-volatility label describes the completed window. It does not imply continuation, mean reversion, or direction. Those are separate hypotheses requiring frozen horizons, matched baselines, chronological validation, and enough independent transitions.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Volatility state transition study design" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Transition record</th><th scope="col">Required output</th><th scope="col">Interpretation limit</th></tr></thead><tbody>
     <tr><th scope="row">Origin state</th><td>Past-only measure, threshold version, classification time</td><td>State is not knowable before its window closes</td></tr>
     <tr><th scope="row">Destination</th><td>Separate forward horizon and estimator with no overlap leakage</td><td>Later direction remains a different outcome</td></tr>
     <tr><th scope="row">Counts</th><td>Independent episodes and attrition for every state pair</td><td>Adjacent bars in one episode are not independent transitions</td></tr>
     <tr><th scope="row">Uncertainty</th><td>Transition estimate with block-aware interval and later-period calibration</td><td>Point estimate is not a stable probability</td></tr>
     <tr><th scope="row">Baseline</th><td>Unconditional and clock/event-matched destination distribution</td><td>Persistence cannot be inferred from regime frequency alone</td></tr>
   </tbody></table></div>
-  <div class="mx-transition-guards">
+  <div class="fx-transition-guards">
     <article><strong>Threshold stress</strong><p>Use adjacent percentiles fixed before testing. Reject a result isolated to one cut point.</p></article>
     <article><strong>Horizon stress</strong><p>Publish all declared forward windows and their overlap controls.</p></article>
     <article><strong>Clock stress</strong><p>Repeat across DST-safe session definitions and event-matched samples.</p></article>
@@ -125,9 +125,9 @@
   </div>
 </section>
 
-<section class="mx-section" id="monitoring" aria-labelledby="monitoring-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Ending specification</p><h2 id="monitoring-title">6M Volatility Monitoring Specification</h2><p>This record separates a current description from a prediction and forces every state to carry its data and threshold provenance.</p></div>
-  <div class="mx-table-scroll" role="region" aria-label="6M volatility monitoring specification" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Field</th><th scope="col">Required content</th><th scope="col">Fail-closed response</th></tr></thead><tbody>
+<section class="fx-section" id="monitoring" aria-labelledby="monitoring-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Ending specification</p><h2 id="monitoring-title">6M Volatility Monitoring Specification</h2><p>This record separates a current description from a prediction and forces every state to carry its data and threshold provenance.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="6M volatility monitoring specification" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Field</th><th scope="col">Required content</th><th scope="col">Fail-closed response</th></tr></thead><tbody>
     <tr><th scope="row">Observation</th><td>UTC window, local labels, CME trade date, dated contract, source and coverage</td><td>Unavailable when any required field is absent</td></tr>
     <tr><th scope="row">Estimator</th><td>Formula, sampling interval, units, outlier policy, missingness and code version</td><td>No substitution by a different range or vendor indicator</td></tr>
     <tr><th scope="row">Context</th><td>Session, official event, holiday, roll proximity, spread and depth state</td><td>Unknown context remains unknown</td></tr>
@@ -135,10 +135,10 @@
     <tr><th scope="row">Prediction claim</th><td>Separate registered model, horizon, baseline, holdout evidence and interval</td><td>Absent by default; description cannot imply it</td></tr>
     <tr><th scope="row">Monitoring</th><td>Calibration error, drift, state frequency, missingness, tail breaches and retirement rules</td><td>Retire or revalidate when a limit fails</td></tr>
   </tbody></table></div>
-  <div class="mx-caution"><strong>Research status as of August 13, 2026</strong><p>No original study is reported. No original 6M volatility distribution, percentile, state, session difference, event effect, transition probability, forecast, range, or trading result is reported here. The monitoring table is a specification for future measurement, not evidence that a particular level is typical or predictive.</p></div>
+  <div class="fx-caution"><strong>Research status as of August 13, 2026</strong><p>No original study is reported. No original 6M volatility distribution, percentile, state, session difference, event effect, transition probability, forecast, range, or trading result is reported here. The monitoring table is a specification for future measurement, not evidence that a particular level is typical or predictive.</p></div>
 </section>
 
-<details class="mx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary><ul>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary><ul>
   <li><a href="https://www.cmegroup.com/markets/fx/emerging-market/mexican-peso.contractSpecs.html" target="_blank" rel="noopener">CME Group Mexican Peso futures contract page</a>, <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">2026 FX Product Guide</a>, and <a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/256/256.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 256</a> for current product, quotation and dated-contract context.</li>
   <li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener">CME DataMine historical-data catalog</a> and <a href="https://www.cmegroup.com/articles/faqs/market-by-order-mbo.html" target="_blank" rel="noopener">CME Market by Order FAQ</a> for available trade, top-of-book, depth and order-level evidence. No market dataset was purchased or downloaded.</li>
   <li><a href="https://www.nber.org/papers/w8160" target="_blank" rel="noopener">Andersen, Bollerslev, Diebold, and Labys, “Modeling and Forecasting Realized Volatility”</a> for realized-volatility construction from high-frequency intraday returns.</li>
@@ -146,7 +146,7 @@
   <li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener">CME Group trading-hours and holiday notices</a> for session, holiday and schedule-version controls.</li>
   <li><a href="https://www.banxico.org.mx/politica-monetaria/d/%7B3B4BDA5B-E7E8-E414-2066-DA0CB3F7C36F%7D.pdf" target="_blank" rel="noopener">Banco de M&eacute;xico 2026 publication calendar</a>, <a href="https://inegi.org.mx/contenidos/saladeprensa/doc/cal_2026.pdf" target="_blank" rel="noopener">INEGI 2026 statistical release calendar</a>, <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">Federal Reserve FOMC calendars</a>, <a href="https://www.bls.gov/schedule/" target="_blank" rel="noopener">BLS release calendar</a>, and <a href="https://www.bea.gov/news/schedule" target="_blank" rel="noopener">BEA release schedule</a> for event-control design.</li>
 </ul><p>Sources and methods were reviewed August 13, 2026. This page is unsponsored editorial analysis and presents a volatility-measurement and monitoring protocol, not original 6M findings.</p></details>
-<aside class="mx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>Volatility estimates summarize a chosen sample; they do not bound the next move or guarantee an order can exit. Nothing on this page is individualized investment, trading, legal, tax, brokerage, or hedge advice. Leverage, jumps, stale thresholds, and disappearing liquidity can produce losses beyond posted margin. Confirm the dated contract, estimator freshness, event state, book conditions, broker terms, and independent risk ceiling before using a state label.</p></aside>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>Volatility estimates summarize a chosen sample; they do not bound the next move or guarantee an order can exit. Nothing on this page is individualized investment, trading, legal, tax, brokerage, or hedge advice. Leverage, jumps, stale thresholds, and disappearing liquidity can produce losses beyond posted margin. Confirm the dated contract, estimator freshness, event state, book conditions, broker terms, and independent risk ceiling before using a state label.</p></aside>
 <!-- ARTICLE BODY END -->
 </article></main>
 <footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>

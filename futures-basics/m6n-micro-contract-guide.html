@@ -2,234 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Using the M6N Micro Contract for Smaller Position Sizing</title>
-  <meta name="description" content="A blunt guide to the M6N micro NZD/USD futures contract, how it works, and when traders should use it instead of the full-size 6N contract.">
+  <title>Is There a CME M6N Micro New Zealand Dollar Future?</title>
+  <meta name="description" content="CME’s current product guide lists standard 6N but no M6N contract. Verify symbols, test integer sizing and reject trades that do not fit.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/m6n-micro-contract-guide.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Using the M6N Micro Contract for Smaller Position Sizing">
-  <meta property="og:description" content="A blunt guide to the M6N micro NZD/USD futures contract, how it works, and when traders should use it instead of the full-size 6N contract.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/m6n-micro-contract-guide.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Using the M6N Micro Contract for Smaller Position Sizing">
-  <meta name="twitter:description" content="A blunt guide to the M6N micro NZD/USD futures contract, how it works, and when traders should use it instead of the full-size 6N contract.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Using the M6N Micro Contract for Smaller Position Sizing",
-  "description": "A blunt guide to the M6N micro NZD/USD futures contract, how it works, and when traders should use it instead of the full-size 6N contract.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/m6n-micro-contract-guide.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/m6n-micro-contract-guide.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Using the M6N Micro Contract for Smaller Position Sizing",
-      "item": "https://grizzlyparrottrading.com/futures-basics/m6n-micro-contract-guide.html"
-    }
-  ]
-}
-</script>
-
+  <meta property="og:title" content="Is There a CME M6N Micro New Zealand Dollar Future?"><meta property="og:description" content="CME’s current product guide lists standard 6N but no M6N contract. Verify symbols, test integer sizing and reject trades that do not fit."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/m6n-micro-contract-guide.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-28"><meta property="article:modified_time" content="2026-08-19">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Is There a CME M6N Micro New Zealand Dollar Future?"><meta name="twitter:description" content="CME’s current product guide lists standard 6N but no M6N contract. Verify symbols, test integer sizing and reject trades that do not fit."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Is There a CME M6N Micro New Zealand Dollar Future?","description":"CME’s current product guide lists standard 6N but no M6N contract. Verify symbols, test integer sizing and reject trades that do not fit.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/m6n-micro-contract-guide.html"},"datePublished":"2025-11-28","dateModified":"2026-08-19","url":"https://grizzlyparrottrading.com/futures-basics/m6n-micro-contract-guide.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"Is There a CME M6N Micro New Zealand Dollar Future?","item":"https://grizzlyparrottrading.com/futures-basics/m6n-micro-contract-guide.html"}]}</script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
+<a class="fx-skip-link" href="#main-content">Skip to article content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy"><p class="fx-kicker">Symbol correction &middot; sizing decision</p><h1>Is There a CME M6N Micro New Zealand Dollar Future?</h1><p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 19, 2026</p><p class="fx-hero-lede"><strong>No current CME source reviewed for this guide lists an M6N Micro New Zealand Dollar futures contract.</strong> CME lists standard 6N at 100,000 NZD, but its 2026 Micro FX table and current rulebook index contain no M6N. If one standard contract is too large, the valid CME 6N quantity is zero.</p><div class="fx-hero-actions"><a class="button-primary" href="#evidence">See the exchange evidence</a><a class="fx-text-link" href="#decision">Use the decision matrix</a></div></div>
+  <div class="fx-hero-visual fx-market-board" aria-label="Current CME product-name check"><div class="fx-board-head"><span>Current CME listing check</span><strong>Fail closed</strong></div><div class="fx-proof"><strong>Standard</strong><span>6N &middot; 100,000 NZD &middot; Chapter 258</span></div><div class="fx-proof"><strong>Claimed Micro</strong><span>M6N &middot; no current CME row or chapter found</span></div><div class="fx-proof"><strong>Action</strong><span>Do not infer unit, tick or availability</span></div></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#evidence">Evidence</a><a href="#size">Integer sizing</a><a href="#cost">Cost stress</a><a href="#platform">Platform check</a><a href="#alternatives">Smaller-risk paths</a><a href="#decision">Decision matrix</a></nav>
 
-<h1>Using the M6N Micro Contract for Smaller Position Sizing</h1>
-
-<p>6N hits harder than people expect. One full contract controls 100,000 NZD and moves $10 per tick, which is enough to wreck a small account during volatility spikes. That’s why CME built M6N — the micro NZD/USD futures contract. It gives you the same structure and behavior as 6N, but with one-tenth the size.</p>
-
-<h2>What the M6N Contract Actually Is</h2>
-<p>M6N is simply the micro version of 6N. Nothing fancy. The only difference is size.</p>
-
-<table>
-<tr><th>Contract</th><th>Notional Value</th><th>Tick Value</th></tr>
-<tr><td>6N</td><td>100,000 NZD</td><td>$10 per tick</td></tr>
-<tr><td>M6N</td><td>10,000 NZD</td><td>$1 per tick</td></tr>
-</table>
-
-<p>That’s it — all the same structure, one-tenth the exposure.</p>
-
-<h2>Why Micros Matter for 6N</h2>
-<p>NZD is a high-volatility currency. You can get 30–60 tick moves in minutes on news. With 6N that’s $300–$600 swings. With M6N it’s $30–$60 — still meaningful, but not a death sentence.</p>
-
-<p>Micros let you:</p>
-
-<ul>
-<li>Stay in the trade without oversized risk</li>
-<li>Scale in and out intelligently</li>
-<li>Trade news without blowing out</li>
-<li>Test strategy ideas in live market conditions</li>
-</ul>
-
-<h2>When to Use M6N Instead of 6N</h2>
-
-<h3>1. When volatility is insane</h3>
-<p>If NZD or USD is dropping hot data and you don't want to risk $10/tick swings, use M6N.</p>
-
-<h3>2. When you're sizing in or scaling out</h3>
-<p>Micros give precision. Full-size 6N forces you into large jumps.</p>
-
-<h3>3. When your account size doesn’t justify 6N risk</h3>
-<p>6N is too big for many beginners. M6N fixes that instantly.</p>
-
-<h3>4. When you need a partial hedge</h3>
-<p>If your exposure is smaller than 100,000 NZD, use a micro hedge.</p>
-
-<h2>M6N Liquidity vs 6N Liquidity</h2>
-<p>M6N won't match 6N's depth, but it’s liquid enough during:</p>
-
-<ul>
-<li>Asia session</li>
-<li>U.S. session</li>
-<li>Major news releases</li>
-</ul>
-
-<p>It thins out during the dead zone like everything else.</p>
-
-<h2>Combining 6N and M6N for Better Control</h2>
-<p>One of the smartest ways to use M6N is blending it with 6N:</p>
-
-<ul>
-<li>Open core position with 6N</li>
-<li>Scale in/out with M6N</li>
-<li>Adjust risk mid-trade with micros</li>
-</ul>
-
-<p>This is how professionals smooth out their exposure.</p>
-
-<h2>Final Take</h2>
-<p>M6N gives you the same NZD/USD exposure as 6N, just at one-tenth the size. If you want to trade 6N without oversized risk, or you want precision in entries and exits, micros are the cleanest solution. For context on volatility before sizing decisions, read <a href="https://grizzlyparrottrading.com/futures-basics/6n-volatility-patterns.html">the 6N volatility guide</a> or <a href="https://grizzlyparrottrading.com/futures-basics/6n-liquidity-guide.html">the liquidity breakdown</a>.</p>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="fx-section" id="evidence" aria-labelledby="evidence-title">
+  <div class="fx-section-heading"><p class="fx-kicker">What the exchange actually lists</p><h2 id="evidence-title">A Familiar-Looking Symbol Is Not a Contract Specification</h2><p>The current CME FX Product Guide has separate tables for standard futures and Micros. Standard NZD/USD appears as 6N. The Micro table lists Micro GBP/USD, AUD/USD, EUR/USD, JPY/USD, CAD/USD, CHF/USD and INR/USD contracts, but no NZD/USD Micro. The rulebook index likewise jumps from the standard NZD Chapter 258 to other products without an M6N chapter.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Current CME 6N and claimed M6N comparison" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Verification field</th><th scope="col">Standard 6N</th><th scope="col">Claimed M6N</th></tr></thead><tbody>
+    <tr><th scope="row">Current CME product-guide row</th><td>Yes</td><td>No row found</td></tr>
+    <tr><th scope="row">Current CME rule chapter</th><td>Chapter 258</td><td>No chapter found</td></tr>
+    <tr><th scope="row">Contract unit</th><td>100,000 NZD</td><td>Not established</td></tr>
+    <tr><th scope="row">Globex outright increment</th><td>0.00005 USD per NZD</td><td>Not established</td></tr>
+    <tr><th scope="row">Tick value</th><td>$5</td><td>Not established</td></tr>
+    <tr><th scope="row">Order eligibility</th><td>Only after live month and broker checks</td><td>Reject until an authoritative listing proves otherwise</td></tr>
+  </tbody></table></div>
+  <p class="fx-source-note"><strong>Evidence boundary:</strong> this page does not claim that an M6N contract never existed anywhere or can never be launched. It says the current CME materials reviewed on August 20, 2026 do not establish it. Recheck the live CME product guide and rulebook if the exchange announces a new product.</p>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="fx-section" id="size" aria-labelledby="size-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Integer constraint</p><h2 id="size-title">Risk Budget Divided by Risk per Standard Contract Must Round Down</h2><p>For a standard 6N position, planned price risk starts with stop distance in current $5 outright ticks. Add estimated round-turn commissions, exchange fees and slippage, then add a separate gap or failure stress. Position count must be a nonnegative integer.</p></div>
+  <div class="fx-formula" aria-label="6N integer position sizing formula"><code>floor(risk budget / (stop ticks &times; $5 + per-contract costs + stress))</code><i aria-hidden="true">=</i><strong>Maximum planned 6N contracts</strong></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Fits one standard</p><h3>$900 budget, 100-tick stop</h3><p>Assume $500 price risk, $20 costs and $130 stress = $650 per contract. floor(900 / 650) = <strong>one 6N</strong>. The unused budget is not permission to add another contract.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Fits no standard</p><h3>$325 budget, 55-tick stop</h3><p>Assume $275 price risk, $18 costs and $75 stress = $368. floor(325 / 368) = <strong>zero 6N</strong>. A nonexistent Micro cannot rescue the setup.</p></article>
   </div>
-</footer>
+  <div class="fx-caution"><strong>Margin is not the sizing denominator.</strong><p>Exchange performance bond and broker day margin are funding requirements, not maximum loss. A low intraday figure cannot turn an oversized stop into a valid risk plan. Stops can also fill worse than requested.</p></div>
+</section>
+
+<section class="fx-section" id="cost" aria-labelledby="cost-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Granularity has a price</p><h2 id="cost-title">Even a Real Smaller Contract Would Need a Full Cost and Liquidity Test</h2><p>Smaller notional does not automatically mean better execution. Fixed commissions and fees can consume more ticks as a percentage of planned risk, while a thin book can add spread and slippage. A product must pass both sizing and execution gates.</p></div>
+  <div class="fx-decision-strip" aria-label="Cost stress inputs"><span><strong>All-in fixed cost</strong>Broker commission, exchange, clearing and data charges where applicable</span><span><strong>Variable cost</strong>Bid-ask spread, market impact, slippage and roll execution</span><span><strong>Failure stress</strong>Gap, rejected stop, outage, liquidation and delayed exit</span></div>
+  <p>A smaller contract at ten times the per-unit transaction cost can be inferior to no trade. Compare cost per represented NZD, cost per planned risk dollar and executable depth at the intended time. Do not compare margin numbers alone.</p>
+</section>
+
+<section class="fx-section" id="platform" aria-labelledby="platform-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Broker-display audit</p><h2 id="platform-title">If a Platform Shows “M6N,” Stop at the Ticket Boundary</h2><p>Symbols are vendor-specific. A platform label could refer to a synthetic instrument, another venue, a broker contract for difference, a data alias or an error. None is automatically fungible with CME 6N.</p></div>
+  <div class="fx-process" aria-label="Instrument verification process">
+    <article><span>Identify</span><h3>Name the venue and legal product</h3><p>Obtain the exchange, clearing venue, rulebook or terms, exact unit and settlement method.</p></article>
+    <article><span>Reconcile</span><h3>Prove the price ladder</h3><p>Confirm quote units, minimum increment and dollar value by multiplication, not symbol analogy.</p></article>
+    <article><span>Inspect</span><h3>Check the active chain</h3><p>Require live expiries, volume, open interest, spread, depth and broker order support.</p></article>
+    <article><span>Reject</span><h3>Fail closed on any blank</h3><p>Do not send an order when identity, economics, custody or exit mechanics are unresolved.</p></article>
+  </div>
+</section>
+
+<section class="fx-section" id="alternatives" aria-labelledby="alternatives-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Reduce risk without inventing a product</p><h2 id="alternatives-title">A Smaller Position Is a New Decision, Not a Symbol Substitution</h2><p>The first alternative is no trade. That is the correct result whenever one standard 6N contract exceeds the risk budget or the live book fails. Other approaches change the instrument or the exposure and therefore require a fresh review.</p></div>
+  <div class="fx-check-grid">
+    <article><strong>Redesign the setup</strong><p>A closer evidence-based invalidation can reduce price risk only if it follows the thesis. Moving a stop merely to force one contract into the budget changes the strategy and may increase stop-out frequency.</p></article>
+    <article><strong>Reduce the exposure elsewhere</strong><p>A business hedge may leave a documented residual, adjust the hedge percentage or use a bank product. Each choice has different basis, counterparty, cost and accounting consequences.</p></article>
+    <article><strong>Evaluate another venue</strong><p>A smaller NZD product elsewhere is not CME 6N. Verify regulator, legal counterparty, unit, quote, tick, financing, expiry or rollover, settlement, liquidity and withdrawal terms from primary documents.</p></article>
+    <article><strong>Use simulation</strong><p>Paper trading can test order handling and review discipline, but simulated fills do not prove live spread, depth, slippage or emotional execution.</p></article>
+  </div>
+  <p>The current <a href="https://www.cmegroup.com/markets/microsuite/fx.html" target="_blank" rel="noopener noreferrer">CME Micro FX product page</a> does not list M6N or any Micro NZD/USD future. Products can change, so the test is not whether a symbol sounds plausible; it is whether a current exchange page, rule chapter and active security definition agree.</p>
+</section>
+
+<section class="fx-section" id="decision" aria-labelledby="decision-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Standard-or-no-trade matrix</p><h2 id="decision-title">The Current CME Decision Has Two Valid Outcomes</h2><p>A third outcome becomes available only if CME later publishes an authoritative Micro NZD listing or the trader independently approves a genuinely different instrument on its own merits.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Current 6N sizing decision matrix" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Condition</th><th scope="col">Decision</th><th scope="col">Reason</th></tr></thead><tbody>
+    <tr><th scope="row">One or more standard contracts fit risk, costs, stress and margin buffer</th><td>Standard 6N may proceed to the liquidity gate</td><td>Sizing is valid but execution is not yet approved</td></tr>
+    <tr><th scope="row">One standard exceeds the risk budget</th><td>Zero 6N; reject or redesign</td><td>No current CME M6N exists to provide smaller granularity</td></tr>
+    <tr><th scope="row">A broker shows M6N without exchange documentation</th><td>Reject</td><td>Identity and contract mechanics are unverified</td></tr>
+    <tr><th scope="row">A different venue offers smaller NZD exposure</th><td>New instrument review</td><td>Counterparty, unit, pricing, costs, liquidity and regulation differ</td></tr>
+  </tbody></table></div>
+  <p class="fx-related">Use the <a href="6n-contract-specs-explained.html">canonical 6N specification guide</a> for the verified standard contract. This correction page deliberately does not reproduce its full expiry and delivery record.</p>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 20, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener noreferrer">CME FX Product Guide 2026</a> for the standard 6N row and the complete current Micros and Minis table, which has no M6N entry.</li>
+  <li><a href="https://www.cmegroup.com/markets/microsuite/fx.html" target="_blank" rel="noopener noreferrer">CME Micro FX futures product page</a> for the current listed Micro currency suite, which does not include M6N or Micro NZD/USD.</li>
+  <li><a href="https://www.cmegroup.com/rulebook/CME/" target="_blank" rel="noopener noreferrer">Current CME Rulebook index</a> for the standard Chapter 258 listing and the enumerated Micro FX chapters, with no Micro NZD chapter.</li>
+  <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/258/258.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 258</a> for standard 6N’s 100,000 NZD unit, 0.00005 Globex outright increment and $5 tick value.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/FuturesMarketBasics/index.htm" target="_blank" rel="noopener noreferrer">CFTC basics of futures trading</a> for leverage, obligation and loss-beyond-initial-investment warnings.</li>
+</ul><p>This page corrects an unsupported premise in its historical URL. It reports no empirical performance result and does not recommend a substitute product. Sizing examples are hypothetical, costs are assumptions, and actual broker charges and fills vary. Product listings can change; verify current primary CME sources before relying on this conclusion.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This guide is educational, not personal trading or brokerage advice. Do not trade an instrument whose venue, contract unit, price increment, settlement, liquidity or counterparty is unclear. An adverse move can consume the posted bond and leave further payment obligations.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

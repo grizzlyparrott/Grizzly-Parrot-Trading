@@ -2,264 +2,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Trade 6N With a Multi-Timeframe Framework</title>
-  <meta name="description" content="A blunt, practical guide to building a multi-timeframe framework for 6N futures so you stop forcing trades and start reading structure correctly.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6n-multi-timeframe-framework.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="How to Trade 6N With a Multi-Timeframe Framework">
-  <meta property="og:description" content="A blunt, practical guide to building a multi-timeframe framework for 6N futures so you stop forcing trades and start reading structure correctly.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6n-multi-timeframe-framework.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="How to Trade 6N With a Multi-Timeframe Framework">
-  <meta name="twitter:description" content="A blunt, practical guide to building a multi-timeframe framework for 6N futures so you stop forcing trades and start reading structure correctly.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How to Trade 6N With a Multi-Timeframe Framework",
-  "description": "A blunt, practical guide to building a multi-timeframe framework for 6N futures so you stop forcing trades and start reading structure correctly.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6n-multi-timeframe-framework.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6n-multi-timeframe-framework.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How to Trade 6N With a Multi-Timeframe Framework",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6n-multi-timeframe-framework.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6N Multi-Timeframe Framework: Rules You Can Replay</title>
+  <meta name="description" content="Turn higher-, setup- and execution-timeframe analysis for 6N into timestamped states, objective triggers, invalidation and replayable no-trade rules.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6n-multi-timeframe-framework.html">
+  <meta property="og:title" content="6N Multi-Timeframe Framework: Rules You Can Replay"><meta property="og:description" content="Turn higher-, setup- and execution-timeframe analysis for 6N into timestamped states, objective triggers, invalidation and replayable no-trade rules."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6n-multi-timeframe-framework.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-28"><meta property="article:modified_time" content="2026-08-17">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6N Multi-Timeframe Framework: Rules You Can Replay"><meta name="twitter:description" content="Turn higher-, setup- and execution-timeframe analysis for 6N into timestamped states, objective triggers, invalidation and replayable no-trade rules."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6N Multi-Timeframe Framework: Rules You Can Replay","description":"Turn higher-, setup- and execution-timeframe analysis for 6N into timestamped states, objective triggers, invalidation and replayable no-trade rules.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6n-multi-timeframe-framework.html"},"datePublished":"2025-11-28","dateModified":"2026-08-17","url":"https://grizzlyparrottrading.com/futures-basics/6n-multi-timeframe-framework.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6N Multi-Timeframe Framework: Rules You Can Replay","item":"https://grizzlyparrottrading.com/futures-basics/6n-multi-timeframe-framework.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Information hierarchy &middot; frozen states &middot; explicit no-trade</p>
+    <h1>6N Multi-Timeframe Framework: Rules You Can Replay</h1>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 17, 2026</p>
+    <p class="fx-hero-lede">A weekly 6N chart can be labeled up, a four-hour chart down and a five-minute chart sideways at the same instant. Calling that “mixed” merely renames the contradiction. A usable framework assigns each chart one job and specifies which state controls the decision.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#hierarchy">Assign the three jobs</a><a class="fx-text-link" href="#handoff">Build the handoff</a></div>
+    <dl class="fx-hero-metrics" aria-label="Multi-timeframe framework status"><div><dt>Higher frame</dt><dd>Permission</dd></div><div><dt>Setup frame</dt><dd>Location</dd></div><div><dt>Execution frame</dt><dd>Trigger</dd></div><div><dt>Default</dt><dd>No trade</dd></div></dl>
   </div>
+  <aside class="fx-market-board" aria-label="Three contradictory chart labels">
+    <div class="fx-board-head"><span>Same decision time</span><strong>Three labels</strong></div>
+    <div class="fx-level-ledger"><span><strong>Weekly</strong>“Up”</span><span><strong>Four-hour</strong>“Down”</span><span><strong>Five-minute</strong>“Range”</span></div>
+    <p class="fx-board-foot">Labels do not resolve authority; rules do</p>
+  </aside>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#hierarchy">Hierarchy</a><a href="#bars">Bars</a><a href="#swings">Swing rules</a><a href="#states">States</a><a href="#trigger">Trigger</a><a href="#replay">Replay</a><a href="#failures">Failures</a><a href="#handoff">Handoff</a></nav>
 
-<h1>How to Trade 6N With a Multi-Timeframe Framework</h1>
-
-<p>Most 6N traders lose because they zoom into a 1-minute chart and trade noise. NZD/USD is a macro-driven product with clean structure — <em>if</em> you approach it with a proper multi-timeframe framework. One chart gives you bias, the next gives you levels, and the last gives you execution. If you mix them up, you trade backwards and get chopped to death.</p>
-
-<h2>The Three-Chart Breakdown</h2>
-<p>A functional multi-timeframe system for 6N uses:</p>
-
-<ul>
-<li><strong>Higher timeframe (HTF):</strong> trend + macro bias</li>
-<li><strong>Middle timeframe (MTF):</strong> levels + structure</li>
-<li><strong>Lower timeframe (LTF):</strong> entries + risk control</li>
-</ul>
-
-<p>Each chart has one job. Treating them the same is how beginners blow accounts.</p>
-
-<h2>1. Higher Timeframe (Daily / 4H) — Define Bias</h2>
-<p>This is where you decide if you’re hunting longs, shorts, or nothing. HTF tells you what side of the market is safe.</p>
-
-<p>Look for:</p>
-
-<ul>
-<li>Trend direction (HH/HL or LH/LL)</li>
-<li>Major swing levels</li>
-<li>Macro context (USD strength, NZD rate cycle)</li>
-<li>Seasonality (Q1 bullish, Q4 bearish)</li>
-</ul>
-
-<p>This chart decides the direction. If HTF is bearish and you're buying, you’re just gambling.</p>
-
-<h2>2. Middle Timeframe (1H / 15M) — Map Out tradable structure</h2>
-<p>Once bias is set, MTF shows where price is likely to react. This is where you pull your:</p>
-
-<ul>
-<li>Support/resistance zones</li>
-<li>Liquidity pools</li>
-<li>Fair value gaps</li>
-<li>Range highs/lows</li>
-</ul>
-
-<p>6N loves clean sweeps and retests because NZD liquidity is concentrated around obvious levels.</p>
-
-<h3>How HTF and MTF interact</h3>
-<p>If HTF is bearish, you’re watching MTF to find short levels, not long traps. If HTF is bullish, you’re watching MTF for pullback zones, not breakdowns.</p>
-
-<h2>3. Lower Timeframe (5M / 1M) — Execute Without Hesitation</h2>
-<p>This is where you enter — not where you “analyze.”</p>
-
-<p>All you should be doing here:</p>
-
-<ul>
-<li>Confirming momentum direction</li>
-<li>Finding a clean trigger candle or micro-break</li>
-<li>Keeping your stop tight and logical</li>
-</ul>
-
-<p>If you’re making decisions on the 1M, you’re already screwed. The LTF is the microscope — not the brain.</p>
-
-<h2>The Multi-Timeframe Flow in Action</h2>
-
-<table>
-<tr><th>Timeframe</th><th>Purpose</th><th>What You Look For</th></tr>
-<tr><td>Daily / 4H</td><td>Bias</td><td>Trend + macro direction</td></tr>
-<tr><td>1H / 15M</td><td>Setup</td><td>Levels, ranges, liquidity</td></tr>
-<tr><td>5M / 1M</td><td>Trigger</td><td>Entry + stop placement</td></tr>
-</table>
-
-<p>This keeps you aligned instead of random.</p>
-
-<h2>A Clean Example With 6N</h2>
-
-<h3>HTF shows bearish structure</h3>
-<p>Lower highs for three weeks + strong USD → only short setups are valid.</p>
-
-<h3>MTF shows range high liquidity</h3>
-<p>Price wicks into previous distribution zone → watch for failure.</p>
-
-<h3>LTF gives entry confirmation</h3>
-<p>1M breaks micro-structure → short with stop above the sweep.</p>
-
-<p>That’s the full sequence. No guessing. No emotional trades. Mechanical.</p>
-
-<h2>Why This Matters Specifically for 6N</h2>
-<p>NZD/USD has predictable reactions to macro drivers, but intraday noise can be violent. Multi-timeframe filtering stops you from trading into:</p>
-
-<ul>
-<li>Counter-trend traps</li>
-<li>Liquidity grabs</li>
-<li>Random spikes during low liquidity periods</li>
-<li>USD-driven whipsaws you weren’t prepared for</li>
-</ul>
-
-<p>HTF bias + MTF structure + LTF execution is the only clean way to approach 6N consistently.</p>
-
-<h2>Final Take</h2>
-<p>A multi-timeframe framework turns 6N into a readable market instead of a guessing game. HTF gives direction. MTF gives structure. LTF gives your entry. If you want to tighten this even more, revisit <a href="https://grizzlyparrottrading.com/futures-basics/6n-volatility-patterns.html">the volatility guide</a> or <a href="https://grizzlyparrottrading.com/futures-basics/6n-risk-sentiment-impact.html">the risk sentiment article</a> to sync your execution with macro pressure.</p>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="fx-section" id="hierarchy" aria-labelledby="hierarchy-title">
+  <div class="fx-section-heading"><p class="fx-kicker">No duplicate votes</p><h2 id="hierarchy-title">Give Each Timeframe One Non-Overlapping Responsibility</h2><p>Three charts should not be three versions of the same moving-average opinion. The higher timeframe determines permission, the setup timeframe identifies a testable location, and the execution timeframe determines whether and when an order may be submitted.</p></div>
+  <div class="fx-task-paths">
+    <article><h3>Higher timeframe: permission</h3><p>Classify a frozen structural state and prohibit sides that the registered strategy does not allow in that state.</p></article>
+    <article><h3>Setup timeframe: location</h3><p>Define a price zone, pullback, compression or other setup with boundaries known before the trigger.</p></article>
+    <article><h3>Execution timeframe: trigger</h3><p>Translate the allowed setup into an objective event and an earliest order timestamp.</p></article>
+    <article><h3>Risk layer: veto</h3><p>Event, liquidity, expiry, loss-budget and data-integrity gates can cancel any apparent alignment.</p></article>
   </div>
-</footer>
-</body>
-</html>
+  <div class="fx-method"><div><h3>Hypothesis&mdash;not a finding</h3><p>A non-duplicative hierarchy may reduce discretionary relabeling compared with an otherwise similar rule that gives every chart an equal vote. That proposition requires a chronological replay and costed baseline.</p></div><dl><div><dt>Fact</dt><dd>Bars are transformations</dd></div><div><dt>Mechanism</dt><dd>Higher frames aggregate more time</dd></div><div><dt>Result here</dt><dd>None</dd></div></dl></div>
+</section>
+
+<section class="fx-section" id="bars" aria-labelledby="bars-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Define the information set</p><h2 id="bars-title">Freeze Bar Clocks Before Reading Structure</h2><p>A “daily” bar can end at a venue settlement, a broker-defined cutoff, midnight UTC or another boundary. Each version can move highs, lows and indicator values. Preserve dated 6N contracts and declare the exact bar construction.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Required bar construction fields" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Field</th><th scope="col">Required declaration</th><th scope="col">Fail-closed condition</th></tr></thead><tbody>
+    <tr><th scope="row">Instrument</th><td>CME product, delivery month and roll mapping</td><td>Generic symbol cannot be traced to an expiry</td></tr>
+    <tr><th scope="row">Boundary</th><td>Timezone, start/end, included endpoints and CME trade-date treatment</td><td>Vendor defaults are unknown</td></tr>
+    <tr><th scope="row">Prices</th><td>Trade-based or quote-based OHLC, correction policy and missing-interval rule</td><td>Stale quote becomes a valid close</td></tr>
+    <tr><th scope="row">Availability</th><td>Bar completion time plus computation and order delay</td><td>Trigger uses an unfinished bar</td></tr>
+    <tr><th scope="row">Calendar</th><td>Holiday, pause, early close and daylight-saving versions</td><td>Normal schedule is imposed on exceptions</td></tr>
+  </tbody></table></div>
+  <p class="fx-source-note"><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/258/258.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 258</a> identifies 6N as a dated New Zealand dollar/U.S. dollar futures contract, while <a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener noreferrer">CME trading-hours and holiday notices</a> provide schedule controls. The canonical <a href="6n-contract-specs-explained.html">6N specification guide</a> owns current contract mechanics.</p>
+</section>
+
+<section class="fx-section" id="swings" aria-labelledby="swings-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Structure must be computable</p><h2 id="swings-title">Replace “Looks Like a Trend” With Frozen Swing Rules</h2><p>The rule should map the same completed bars to the same state without knowing what followed. Pivots that require future bars are permitted only after their confirmation delay, never backdated to the visual turning point.</p></div>
+  <div class="fx-three-column">
+    <article class="fx-panel"><p class="fx-card-label">Pivot definition</p><h3>Known only when confirmed</h3><p>Declare left/right lookback, tie handling and the timestamp at which a swing becomes available.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Break definition</p><h3>Close, trade or buffer</h3><p>Specify the price field, comparison operator, tolerance and whether the level must persist through bar close.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Neutral definition</p><h3>Conflict is a state</h3><p>When required highs/lows disagree or warm-up is incomplete, classify neutral or ineligible instead of improvising.</p></article>
+  </div>
+  <div class="fx-formula" aria-label="Illustrative state rule logic"><code>structure state at t</code><i aria-hidden="true">=</i><code>f(completed bars available by t)</code></div>
+  <div class="fx-caution"><strong>This is a protocol pattern, not a recommended indicator.</strong><p>Swing counts, moving averages, channels and volatility filters are candidate definitions. Their lookbacks and thresholds require independent testing; this article does not select a profitable version.</p></div>
+</section>
+
+<section class="fx-section" id="states" aria-labelledby="states-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Alignment is a truth table</p><h2 id="states-title">Enumerate Every Combination, Including No-Trade States</h2><p>A strategy cannot say “wait for alignment” unless alignment and conflict are fully specified. Build the state table before replay so that every completed bar maps to one permissible action.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Illustrative multi-timeframe state table" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Higher-frame permission</th><th scope="col">Setup state</th><th scope="col">Execution state</th><th scope="col">Permitted action</th></tr></thead><tbody>
+    <tr><th scope="row">Long only</th><td>Inside declared long zone</td><td>Trigger absent</td><td>Observe; no order</td></tr>
+    <tr><th scope="row">Long only</th><td>Inside declared long zone</td><td>Long trigger confirmed</td><td>Evaluate risk and market-quality gates</td></tr>
+    <tr><th scope="row">Long only</th><td>Outside zone</td><td>Any</td><td>No trade; lower-frame signal has no authority</td></tr>
+    <tr><th scope="row">Short only</th><td>Inside declared short zone</td><td>Short trigger confirmed</td><td>Evaluate risk and market-quality gates</td></tr>
+    <tr><th scope="row">Neutral/conflict</th><td>Any</td><td>Any</td><td>No trade</td></tr>
+    <tr><th scope="row">Ineligible data/event</th><td>Any</td><td>Any</td><td>No trade and log reason</td></tr>
+  </tbody></table></div>
+  <p class="fx-source-note"><strong>Trading application:</strong> the table is only an example of rule completeness. It is not evidence that long-only, short-only or any named chart state predicts 6N returns.</p>
+</section>
+
+<section class="fx-section" id="trigger" aria-labelledby="trigger-title">
+  <div class="fx-section-heading"><p class="fx-kicker">From observation to order</p><h2 id="trigger-title">Separate Trigger, Entry, Invalidation and Exit</h2><p>A bar can confirm a trigger without offering an executable entry at its close. Define the earliest submission time, order type, maximum chase or limit lifetime, initial invalidation and position-management logic as separate fields.</p></div>
+  <div class="fx-state-machine" aria-label="Multi-timeframe order state sequence">
+    <article><span>1</span><h3>Eligible</h3><p>Contract, data, event and liquidity gates pass.</p></article>
+    <article><span>2</span><h3>Aligned</h3><p>Higher permission and setup location agree.</p></article>
+    <article><span>3</span><h3>Triggered</h3><p>Execution rule confirms on available data.</p></article>
+    <article><span>4</span><h3>Submitted</h3><p>Order arrives after declared processing and network delay.</p></article>
+    <article><span>5</span><h3>Resolved</h3><p>Fill, partial, cancel, exit and residual risk are logged.</p></article>
+  </div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Price invalidation</p><h3>The structural premise is false</h3><p>Use a level derivable at the decision time. If it is too distant for the independent loss budget, the correct action is no trade.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Time invalidation</p><h3>The setup has expired</h3><p>Cancel after a declared number of bars, session boundary, event cutoff or state transition. Do not keep a stale trigger alive.</p></article>
+  </div>
+  <div class="fx-related">Measure the book and fill assumptions through <a href="6n-liquidity-guide.html">the 6N liquidity protocol</a>, rather than treating a chart close as executable.</div>
+</section>
+
+<section class="fx-section" id="replay" aria-labelledby="replay-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Replay the information available then</p><h2 id="replay-title">Run a Bar-by-Bar State Ledger</h2><p>At each decision timestamp, store the three frame states, the source bars that created them, eligibility flags, allowed actions and later order outcomes. Recompute forward; never annotate historical charts with final pivots or revised states.</p></div>
+  <div class="fx-contract-path">
+    <article><h3>Warm up</h3><p>No state until every required lookback exists. Shortening the lookback silently is prohibited.</p></article>
+    <article><h3>Snapshot</h3><p>Hash the completed bars and record the exact higher, setup and execution states.</p></article>
+    <article><h3>Transition</h3><p>Apply only transitions permitted by the frozen truth table and risk vetoes.</p></article>
+    <article><h3>Compare</h3><p>Evaluate later outcomes against simpler baselines after realistic non-overlapping costs.</p></article>
+  </div>
+  <ul class="fx-checklist"><li><strong>Store state duration.</strong> Consecutive bars in one setup are not independent new setups unless defined that way.</li><li><strong>Deduplicate signals.</strong> Specify re-entry and cooldown rules before a repeated trigger appears.</li><li><strong>Model collisions.</strong> Define what happens when trigger, stop and target can all occur inside one unresolved bar.</li><li><strong>Open holdout once.</strong> A change after review retires that holdout for the modified system.</li></ul>
+</section>
+
+<section class="fx-section" id="failures" aria-labelledby="failures-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Common framework breakpoints</p><h2 id="failures-title">Treat Ambiguity as a Test Failure, Not Discretion</h2><p>Most apparent precision disappears when timestamps, unfinished bars, overlapping indicators and order assumptions are made explicit. These failures must be counted, not edited out.</p></div>
+  <div class="fx-falsification-tree">
+    <article><p class="fx-card-label">Information</p><h3>Future leakage</h3><ul><li>Backdated pivots</li><li>Incomplete higher-frame bars</li><li>Revised inputs</li><li>Same-bar impossible fills</li></ul></article>
+    <article><p class="fx-card-label">Architecture</p><h3>Duplicate evidence</h3><ul><li>Same indicator on all frames</li><li>Majority vote without authority</li><li>Threshold changed by chart</li><li>No neutral state</li></ul></article>
+    <article><p class="fx-card-label">Execution</p><h3>Unpriced implementation</h3><ul><li>Close assumed fillable</li><li>No latency or spread</li><li>Missing partial fills</li><li>No event or roll veto</li></ul></article>
+  </div>
+  <p class="fx-source-note"><a href="https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm" target="_blank" rel="noopener noreferrer">NIST/SEMATECH time-series guidance</a> emphasizes time dependence, while the <a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/fraudadv_tradingsystem.html" target="_blank" rel="noopener noreferrer">CFTC advisory on trading systems</a> explains why hypothetical fills and hindsight differ from live results.</p>
+</section>
+
+<section class="fx-section" id="handoff" aria-labelledby="handoff-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Operator handoff</p><h2 id="handoff-title">One-Page State Handoff</h2><p>A different operator should reach the same permitted action from this record. If any required entry is unknown, the handoff resolves to no trade.</p></div>
+  <div class="fx-trade-card"><h3>6N decision state at a declared timestamp</h3><dl><div><dt>Instrument</dt><dd>Dated contract, roll state, data version and bar-clock definitions.</dd></div><div><dt>Higher frame</dt><dd>State, confirmation time, source bars and allowed direction.</dd></div><div><dt>Setup frame</dt><dd>Zone boundaries, creation time, expiry and state.</dd></div><div><dt>Execution frame</dt><dd>Trigger definition, confirmation time, earliest order and order type.</dd></div><div><dt>Invalidation</dt><dd>Price, time, event and structural conditions plus independent risk limit.</dd></div><div><dt>Action</dt><dd>Submit, observe, cancel or no trade&mdash;with one machine-readable reason.</dd></div></dl></div>
+  <div class="fx-caution"><strong>Research status as of August 17, 2026</strong><p>No original 6N multi-timeframe replay, setup frequency, win rate, expectancy, parameter selection or trading result is reported. The framework is a protocol for making rules testable. Its default conclusion remains <strong>no trade</strong> until a separately sealed study passes.</p></div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 20, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/258/258.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 258: New Zealand Dollar/U.S. Dollar futures</a> for dated-contract identity and rule context.</li>
+  <li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener noreferrer">CME Group trading-hours and holiday schedules</a> for schedule-version controls.</li>
+  <li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine historical-data catalog</a> for trade, settlement and order-book data distinctions. No dataset was purchased or analyzed for this page.</li>
+  <li><a href="https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm" target="_blank" rel="noopener noreferrer">NIST/SEMATECH time-series analysis guidance</a> for chronological dependence.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/fraudadv_tradingsystem.html" target="_blank" rel="noopener noreferrer">CFTC advisory on commodity trading systems and hypothetical results</a> for hindsight and simulated-execution limitations.</li>
+</ul><p>Sources and methods were reviewed August 20, 2026. This unsponsored article separates instrument facts, information-aggregation mechanisms, testable rule hypotheses, inferences that would require a replay and any later trading application. It reports no original result.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>Treat this state workflow as educational research rather than individual investment, legal, tax, brokerage, hedging, or execution guidance. Delayed data, gaps and adverse fills can defeat a chart rule, and 6N leverage may create an account deficit beyond funds deposited for margin. Validate the precise expiry, current rulebook, book conditions and broker behavior, with a stand-alone risk cap that can veto every setup.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

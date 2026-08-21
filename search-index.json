@@ -438,39 +438,75 @@
     "category": "Futures Basics"
   },
   {
-    "title": "6N Contract Specs Explained: Tick Size, Tick Value, Hours, and Margins",
+    "title": "6N and Risk Sentiment: A Conditional Regime Test",
+    "url": "/futures-basics/6n-risk-sentiment-impact.html",
+    "description": "Separate 6N risk channels from correlation folklore, then test funding, portfolio, China, commodity, and dollar evidence with breakdown rules.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6N Contract Specs: Tick Value, Hours and Expiry",
     "url": "/futures-basics/6n-contract-specs-explained.html",
-    "description": "A direct breakdown of the 6N New Zealand Dollar futures contract specs: tick size, tick value, trading hours, and margin requirements.",
+    "description": "Verify CME 6N contract size, USD-per-NZD quote, $5 tick, quarterly months, trading hours, expiry, physical delivery and margin limits.",
     "category": "Futures Basics"
   },
   {
-    "title": "6N Correlations: Equities, Bonds, Commodities, and Carry Trades",
+    "title": "6N Correlations: A Conditional Co-Movement Test",
     "url": "/futures-basics/6n-correlations.html",
-    "description": "A blunt breakdown of the major correlations that move 6N futures, including equities, bonds, commodities, and carry-trade flows.",
+    "description": "Test 6N futures correlations with synchronized returns, rolling windows, causal controls, robustness checks and an explicit unusable outcome.",
     "category": "Futures Basics"
   },
   {
-    "title": "6N Liquidity: When the Market Is Tradable and When It Isn’t",
+    "title": "6N Interest-Rate Impact: RBNZ-Fed Repricing Framework",
+    "url": "/futures-basics/6n-interest-rate-impact.html",
+    "description": "Read RBNZ-Fed rate surprises through priors, curve repricing, carry, growth, and risk channels before drawing a conditional 6N view.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6N Liquidity Guide: Measure the Market You Can Trade",
     "url": "/futures-basics/6n-liquidity-guide.html",
-    "description": "A blunt guide to 6N liquidity—when NZD futures offer real depth and when the market dries up and becomes dangerous.",
+    "description": "Measure 6N spreads, depth, volume, slippage and fill quality with event-aware clocks, explicit order sizes and fail-closed execution gates.",
     "category": "Futures Basics"
   },
   {
-    "title": "6N Seasonal Tendencies and Long-Term Patterns",
+    "title": "6N Multi-Timeframe Framework: Rules You Can Replay",
+    "url": "/futures-basics/6n-multi-timeframe-framework.html",
+    "description": "Turn higher-, setup- and execution-timeframe analysis for 6N into timestamped states, objective triggers, invalidation and replayable no-trade rules.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6N Seasonal Patterns: Test Calendar Effects Without Forecasting",
     "url": "/futures-basics/6n-seasonal-patterns.html",
-    "description": "A blunt breakdown of 6N seasonal tendencies, long-term patterns, and why NZD futures react to yearly cycles more than most traders realize.",
+    "description": "Test 6N calendar effects with a hypothesis registry, dated-contract returns, multiple-testing controls, uncertainty estimates and a sealed holdout.",
     "category": "Futures Basics"
   },
   {
-    "title": "6N Volatility Patterns: When the New Zealand Dollar Actually Moves",
+    "title": "6N Spread Trading: Normalize the Legs Before Entry",
+    "url": "/futures-basics/6n-spread-trading.html",
+    "description": "Build testable 6N-versus-6A or declared USD-basket spreads with explicit hedge ratios, leg-risk controls, total costs and rejection rules.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6N Trading Mistakes: A Practical Failure Checklist",
+    "url": "/futures-basics/6n-common-mistakes.html",
+    "description": "Reconstruct common 6N mechanics, sizing, execution, event and expiry failures, then use observable prevention and recovery checks.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6N Trading Strategies: Compare Trend and Mean Reversion",
+    "url": "/futures-basics/6n-trading-strategies.html",
+    "description": "Compare fully specified 6N trend and mean-reversion rules against neutral baselines, chronological holdouts, executable costs and rejection tests.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "6N Volatility Patterns: Measure Regimes Without Predicting Them",
     "url": "/futures-basics/6n-volatility-patterns.html",
-    "description": "A blunt guide to 6N volatility patterns, showing you when NZD futures move, when they don’t, and what drives the big swings.",
+    "description": "Measure 6N volatility distributions, clustering, event effects and state transitions with dated contracts, robust estimators and explicit uncertainty.",
     "category": "Futures Basics"
   },
   {
-    "title": "6N vs 6A: Key Differences Between NZD and AUD Futures",
+    "title": "6N vs 6A Futures: Choosing NZD or AUD Exposure",
     "url": "/futures-basics/6n-vs-6a-differences.html",
-    "description": "A blunt comparison of 6N and 6A futures, showing how NZD and AUD differ in volatility, liquidity, fundamentals, and trading behavior.",
+    "description": "Compare 6N and 6A mechanics, policy mandates, China links, export channels, hedging fit, and live execution without ranking an easier contract.",
     "category": "Futures Basics"
   },
   {
@@ -1008,12 +1044,6 @@
     "category": "Market Basics"
   },
   {
-    "title": "Common 6N Trading Strategies: Trend Following vs. Mean Reversion",
-    "url": "/futures-basics/6n-trading-strategies.html",
-    "description": "A blunt guide to the two strategies that actually work on 6N futures: trend following and mean reversion, and when each one makes sense.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Common 6Z Trading Mistakes",
     "url": "/futures-basics/common-6z-trading-mistakes.html",
     "description": "A blunt breakdown of the most common mistakes traders make with 6Z South African Rand futures and how to avoid getting blown out by volatility and thin liquidity.",
@@ -1065,12 +1095,6 @@
     "title": "Common Mistakes Traders Make With 6L Brazilian Real Futures",
     "url": "/futures-basics/common-mistakes-traders-make-with-6l-brazilian-real-futures.html",
     "description": "A blunt breakdown of the most common mistakes traders make when trading 6L Brazilian Real futures and how to avoid blowing up on this exotic FX contract.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "Common Mistakes Traders Make With 6N and How to Avoid Them",
-    "url": "/futures-basics/6n-common-mistakes.html",
-    "description": "A blunt breakdown of the biggest mistakes traders make when trading 6N futures and exactly how to avoid getting trapped by NZD/USD volatility.",
     "category": "Futures Basics"
   },
   {
@@ -1464,12 +1488,6 @@
     "category": "Market Basics"
   },
   {
-    "title": "Futures Fair Value Explained: Cost of Carry and Basis",
-    "url": "/futures-basics/fair-value-in-futures-explained.html",
-    "description": "Learn futures fair value, cost of carry, basis and convergence across equity index, FX and commodity markets, with an interactive index calculator.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "False Liquidity Zones: Levels That Look Strong but Aren’t",
     "url": "/market-basics/false-liquidity-zones-levels-that-look-strong-but-arent.html",
     "description": "Learn how to identify false liquidity zones—levels that appear strong but collapse instantly when hit by real order flow.",
@@ -1530,12 +1548,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Futures Expiration and Contract Roll: Three Clocks, One Decision",
-    "url": "/futures-basics/contract-expiration-and-roll.html",
-    "description": "Learn futures expiration, contract month codes, liquidity migration, broker cutoffs, settlement, delivery and rolling with an interactive roll planner.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Futures Contract Specifications Explained",
     "url": "/futures-basics/contract-specs-explained.html",
     "description": "A blunt guide to futures contract specs: tick size, tick value, multiplier, and minimum price fluctuation for popular contracts.",
@@ -1545,6 +1557,18 @@
     "title": "Futures Contract Specifications: How to Read Every Field",
     "url": "/futures-basics/futures-contract-specifications-explained.html",
     "description": "Learn how to read futures contract size, multiplier, tick, settlement, listed months, expiration and trading hours, with verified CME examples.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Futures Expiration and Contract Roll: Three Clocks, One Decision",
+    "url": "/futures-basics/contract-expiration-and-roll.html",
+    "description": "Learn futures expiration, contract month codes, liquidity migration, broker cutoffs, settlement, delivery and rolling with an interactive roll planner.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Futures Fair Value Explained: Cost of Carry and Basis",
+    "url": "/futures-basics/fair-value-in-futures-explained.html",
+    "description": "Learn futures fair value, cost of carry, basis and convergence across equity index, FX and commodity markets, with an interactive index calculator.",
     "category": "Futures Basics"
   },
   {
@@ -1605,6 +1629,12 @@
     "title": "Futures Slippage Explained | Calculate Fill Cost in Ticks",
     "url": "/futures-basics/futures-slippage-explained.html",
     "description": "Learn how futures slippage works, separate it from spread and fees, compare order types, and calculate fill cost in ticks and dollars.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Futures Ticks, Points and Dollar Value: Conversion Guide",
+    "url": "/futures-basics/ticks-points-dollar-value.html",
+    "description": "Convert futures ticks and points into dollar P&amp;L, compare ES, MES, NQ, MNQ, RTY, CL, GC, 6E and micro contract values, and size risk.",
     "category": "Futures Basics"
   },
   {
@@ -1884,12 +1914,6 @@
     "category": "Energies"
   },
   {
-    "title": "How Dairy and Commodity Exports Drive 6N Futures Trends",
-    "url": "/futures-basics/how-exports-drive-6n-trends.html",
-    "description": "A blunt breakdown of how New Zealand’s dairy and commodity exports directly influence 6N New Zealand Dollar futures trends.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "How Data Feed Quality Impacts Your Prop Firm Evaluation",
     "url": "/prop-firm-trading/data-feed-quality-evaluation.html",
     "description": "A blunt explanation of how data feed quality affects fills, slippage, rule violations, and overall chances of passing a prop firm evaluation.",
@@ -1942,6 +1966,12 @@
     "url": "/prop-firm-trading/how-prop-firm-evaluations-work.html",
     "description": "Clear explanation of how futures prop firm evaluations work, including profit targets, minimum trading days, trailing drawdown, daily loss limits, and basic rules.",
     "category": "Prop Firm Trading"
+  },
+  {
+    "title": "How Exports Influence 6N: From Trade Data to Futures",
+    "url": "/futures-basics/how-exports-drive-6n-trends.html",
+    "description": "Trace dairy, goods, services, terms of trade, invoicing, and hedging into a conditional 6N evidence ladder without treating exports as a signal.",
+    "category": "Futures Basics"
   },
   {
     "title": "How Feed Costs Transmit Into Hog Prices",
@@ -2004,12 +2034,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How Global Risk Sentiment Impacts 6N Futures",
-    "url": "/futures-basics/6n-risk-sentiment-impact.html",
-    "description": "A blunt breakdown of how global risk sentiment drives 6N futures volatility, trend direction, and liquidity more than any technical setup.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "How Gold Influences 6A Futures: The Real Channels",
     "url": "/futures-basics/6a-gold-correlation-explained.html",
     "description": "Learn how gold can influence 6A through Australian export income, the U.S. dollar, real yields and risk sentiment—and why those channels often conflict.",
@@ -2025,12 +2049,6 @@
     "title": "How Implied Demand Drives Futures Price Action",
     "url": "/futures-basics/how-implied-demand-drives-futures-price-action.html",
     "description": "A blunt breakdown of how implied demand shows up in futures price action and why markets often move before traditional demand data confirms it.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "How Interest Rate Cycles Impact 6N Futures",
-    "url": "/futures-basics/6n-interest-rate-impact.html",
-    "description": "A blunt breakdown of how RBNZ and Federal Reserve interest rate cycles directly move 6N New Zealand Dollar futures.",
     "category": "Futures Basics"
   },
   {
@@ -2304,6 +2322,12 @@
     "category": "Platforms & Tutorials"
   },
   {
+    "title": "How to Hedge NZD/USD Exposure With 6N Futures",
+    "url": "/futures-basics/using-6n-to-hedge-nzdusd-exposure.html",
+    "description": "Convert NZD receivables or payables into side-aware 6N hedge counts, quantify residual exposure, and monitor basis, roll and execution risk.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "How to Place Orders in NinjaTrader | Grizzly Parrot Trading",
     "url": "/platforms-tutorials/ninjatrader-order-entry.html",
     "description": "Beginner-friendly guide showing how to place market, limit, and stop orders in NinjaTrader from the chart and the DOM.",
@@ -2328,9 +2352,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How to Read 6N Price Quotes Without Getting Confused",
+    "title": "How to Read 6N Futures Price Quotes and P&amp;L",
     "url": "/futures-basics/how-to-read-6n-price-quotes.html",
-    "description": "A blunt guide showing beginners exactly how 6N New Zealand Dollar futures quotes work, including decimals, ticks, and real-dollar impact.",
+    "description": "Translate USD-per-NZD 6N quotes into ticks, notional value and side-aware long or short P&amp;L with reconciled worked examples.",
     "category": "Futures Basics"
   },
   {
@@ -2362,18 +2386,6 @@
     "url": "/platforms-tutorials/tradovate-hotkeys.html",
     "description": "Step-by-step guide for setting up hotkeys and keyboard shortcuts in Tradovate for faster entries, exits, and order management.",
     "category": "Platforms & Tutorials"
-  },
-  {
-    "title": "How to Trade 6N Around Economic Releases",
-    "url": "/futures-basics/how-to-trade-6n-economic-releases.html",
-    "description": "A blunt guide to trading 6N futures during RBNZ announcements, CPI, GDP, and jobs data without getting blindsided.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "How to Trade 6N With a Multi-Timeframe Framework",
-    "url": "/futures-basics/6n-multi-timeframe-framework.html",
-    "description": "A blunt, practical guide to building a multi-timeframe framework for 6N futures so you stop forcing trades and start reading structure correctly.",
-    "category": "Futures Basics"
   },
   {
     "title": "How to Trade Around Whipsaws | Futures Execution Guide",
@@ -2415,12 +2427,6 @@
     "title": "How U.S. Dollar Strength Impacts 6L Futures",
     "url": "/futures-basics/how-us-dollar-strength-impacts-6l-futures.html",
     "description": "A deep, blunt explanation of how U.S. dollar strength directly affects 6L Brazilian Real futures, including correlations, macro drivers, and real trade impact.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "How U.S. Dollar Strength Impacts 6N Price Structure",
-    "url": "/futures-basics/us-dollar-impact-on-6n.html",
-    "description": "A blunt breakdown of how U.S. Dollar strength or weakness directly shapes 6N futures price structure, volatility, and trend direction.",
     "category": "Futures Basics"
   },
   {
@@ -2571,6 +2577,12 @@
     "title": "Is 6J a Safe Haven? When the Yen Rallies&mdash;and Fails",
     "url": "/futures-basics/6j-safe-haven-behavior.html",
     "description": "Why 6J Japanese yen futures can rise in risk-off markets, why the safe-haven relationship fails, and how to confirm carry, funding and rate channels.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Is There a CME M6N Micro New Zealand Dollar Future?",
+    "url": "/futures-basics/m6n-micro-contract-guide.html",
+    "description": "CME’s current product guide lists standard 6N but no M6N contract. Verify symbols, test integer sizing and reject trades that do not fit.",
     "category": "Futures Basics"
   },
   {
@@ -4020,12 +4032,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Spread Trading With 6N: AUD/NZD and USD Basket Approaches",
-    "url": "/futures-basics/6n-spread-trading.html",
-    "description": "A blunt guide to spread trading with 6N futures, including AUD/NZD pairs and USD basket strategies that actually make sense.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Static vs. Trailing Drawdown in Futures Prop Accounts",
     "url": "/prop-firm-trading/static-vs-trailing-drawdown.html",
     "description": "Complete guide to static, real-time trailing, and end-of-day drawdown: formulas, enforcement timing, worked examples, and an interactive comparison tool.",
@@ -4164,12 +4170,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Futures Ticks, Points and Dollar Value: Conversion Guide",
-    "url": "/futures-basics/ticks-points-dollar-value.html",
-    "description": "Convert futures ticks and points into dollar P&L, compare ES, MES, NQ, MNQ, RTY, CL, GC, 6E and micro contract values, and size risk.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Time-of-Day Volatility Patterns: Why Markets Move Differently Throughout the Session",
     "url": "/market-basics/time-of-day-volatility-patterns.html",
     "description": "A blunt breakdown of time-of-day volatility patterns, why certain hours explode while others die out, and how traders can adjust expectations to avoid bad entries.",
@@ -4204,6 +4204,12 @@
     "url": "/platforms-tutorials/tradersync-futures-trading-journal-explained.html",
     "description": "A researched TraderSync review for futures traders covering workflow, broker imports, analytics, replay, pricing, limitations, and a seven-day trial plan.",
     "category": "Platforms & Tutorials"
+  },
+  {
+    "title": "Trading 6N Economic Releases: A Before-During-After Plan",
+    "url": "/futures-basics/how-to-trade-6n-economic-releases.html",
+    "description": "Prepare for RBNZ, Stats NZ, U.S., and China releases with frozen priors, package-level surprises, execution gates, and mandatory no-trade branches.",
+    "category": "Futures Basics"
   },
   {
     "title": "Trading Halt Rules and How Prop Firms Handle Halts",
@@ -4410,6 +4416,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "U.S. Dollar Impact on 6N: Identity, Factor, and Test",
+    "url": "/futures-basics/us-dollar-impact-on-6n.html",
+    "description": "Separate 6N quote algebra from a genuine broad-dollar factor using index composition, orthogonal controls, aligned clocks, and rejection rules.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "U.S. Economic Data That Moves Silver Futures (SI)",
     "url": "/futures-basics/us-economic-data-that-moves-si.html",
     "description": "The exact U.S. economic reports that move Silver futures (SI), how hard they hit, and what SI does during each release. Only mechanics.",
@@ -4452,12 +4464,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Using 6N Futures to Hedge NZD/USD Exposure",
-    "url": "/futures-basics/using-6n-to-hedge-nzdusd-exposure.html",
-    "description": "A blunt guide to using 6N futures as a hedge against NZD/USD currency exposure for traders, investors, and businesses.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Using ES Session Highs, Lows, and VWAP to Frame Trades",
     "url": "/futures-basics/es-session-highs-lows-and-vwap-usage.html",
     "description": "A blunt guide to using ES session highs, lows, and VWAP so beginners can frame trades with real structure instead of guessing.",
@@ -4467,12 +4473,6 @@
     "title": "Using SPY and SPX to Confirm ES Trades",
     "url": "/futures-basics/es-using-spy-and-spx-as-confirmation.html",
     "description": "A blunt guide to using SPY and SPX as confirmation tools for ES trades so beginners stop taking low-quality setups.",
-    "category": "Futures Basics"
-  },
-  {
-    "title": "Using the M6N Micro Contract for Smaller Position Sizing",
-    "url": "/futures-basics/m6n-micro-contract-guide.html",
-    "description": "A blunt guide to the M6N micro NZD/USD futures contract, how it works, and when traders should use it instead of the full-size 6N contract.",
     "category": "Futures Basics"
   },
   {
@@ -4560,9 +4560,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "What Are 6N Futures? Understanding New Zealand Dollar Futures",
+    "title": "What Are 6N New Zealand Dollar Futures?",
     "url": "/futures-basics/what-are-6n-futures.html",
-    "description": "A blunt, trader-focused explanation of what 6N New Zealand Dollar futures are, how they work, and why traders use them.",
+    "description": "Learn what CME 6N represents, how USD-per-NZD pricing works, who uses the contract, its dated lifecycle and the risks to understand first.",
     "category": "Futures Basics"
   },
   {
@@ -5058,16 +5058,16 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Why Traders Use 6N Futures Instead of Spot NZD/USD",
-    "url": "/futures-basics/why-traders-use-6n-futures.html",
-    "description": "A blunt breakdown of why traders choose 6N New Zealand Dollar futures instead of spot NZD/USD, and what advantages futures offer.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "Why Trends Stall at Compression Zones: The Pressure Before Expansion",
     "url": "/market-basics/why-trends-stall-at-compression-zones.html",
     "description": "Learn why trends stall at compression zones, what that tight price action signals, and how to trade the pressure buildup before expansion.",
     "category": "Market Basics"
+  },
+  {
+    "title": "Why Use 6N Futures Instead of Spot NZD/USD?",
+    "url": "/futures-basics/why-traders-use-6n-futures.html",
+    "description": "Compare 6N futures with spot NZD/USD across venue, clearing, transparency, leverage, expiry, roll, data, costs and practical fit.",
+    "category": "Futures Basics"
   },
   {
     "title": "Why Volume Drops Before Major Reversals: The Tell Nobody Watches",

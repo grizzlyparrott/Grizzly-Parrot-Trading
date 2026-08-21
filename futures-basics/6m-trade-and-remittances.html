@@ -28,7 +28,7 @@
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="/futures-basics/6m-research-library.css?v=20260813a">
+  <link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
   <script type="application/ld+json">
@@ -40,21 +40,21 @@
   <script src="/uet.js" defer></script>
 </head>
 <body>
-<a class="mx-skip-link" href="#main-content">Skip to main content</a>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
-<main id="main-content" class="container article-container mxn-library"><article>
+<main id="main-content" class="container article-container currency-library"><article>
 <!-- ARTICLE BODY START -->
-<header class="mx-hero">
-  <div class="mx-hero-copy">
-    <p class="mx-kicker">External accounts &middot; conversion timing &middot; evidence ladder</p>
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">External accounts &middot; conversion timing &middot; evidence ladder</p>
     <h1>6M Trade and Remittances: From Flows to FX Evidence</h1>
-    <p class="mx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
-    <p class="mx-hero-lede">A large annual export or remittance flow does not mechanically buy pesos at the moment an official release appears. The transaction may have been invoiced in dollars, settled earlier or later, retained in a foreign-currency account, hedged, netted against imports or debt service, or intermediated before conversion. Official flow data are the start of the FX question, not a same-day 6M signal.</p>
-    <div class="mx-hero-actions"><a class="button-primary" href="#path">Trace the conversion path</a><a class="mx-text-link" href="#ladder">Grade the evidence</a></div>
-    <dl class="mx-hero-metrics" aria-label="External-flow analysis boundaries"><div><dt>Measured</dt><dd>Economic transaction</dd></div><div><dt>Unobserved</dt><dd>Exact FX conversion</dd></div><div><dt>Timing</dt><dd>Release &ne; settlement</dd></div><div><dt>Output</dt><dd>Testable hypothesis</dd></div></dl>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="fx-hero-lede">A large annual export or remittance flow does not mechanically buy pesos at the moment an official release appears. The transaction may have been invoiced in dollars, settled earlier or later, retained in a foreign-currency account, hedged, netted against imports or debt service, or intermediated before conversion. Official flow data are the start of the FX question, not a same-day 6M signal.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#path">Trace the conversion path</a><a class="fx-text-link" href="#ladder">Grade the evidence</a></div>
+    <dl class="fx-hero-metrics" aria-label="External-flow analysis boundaries"><div><dt>Measured</dt><dd>Economic transaction</dd></div><div><dt>Unobserved</dt><dd>Exact FX conversion</dd></div><div><dt>Timing</dt><dd>Release &ne; settlement</dd></div><div><dt>Output</dt><dd>Testable hypothesis</dd></div></dl>
   </div>
-  <div class="mx-hero-visual">
-    <div class="mx-quote-board" aria-label="External-flow evidence boundary">
+  <div class="fx-hero-visual">
+    <div class="fx-quote-board" aria-label="External-flow evidence boundary">
       <span><strong>Published</strong>Official trade or remittance aggregate</span>
       <span><strong>Still missing</strong>Invoice, hedge, settlement, retention and net conversion</span>
       <span><strong>Market threshold</strong>Direct timing evidence plus independent 6M confirmation</span>
@@ -62,20 +62,20 @@
   </div>
 </header>
 
-<nav class="mx-jump-nav" aria-label="On this page"><a href="#measure">Measurement</a><a href="#accounts">Accounts</a><a href="#path">Conversion</a><a href="#offsets">Lags</a><a href="#observe">Observations</a><a href="#test">Test</a><a href="#ladder">Evidence ladder</a></nav>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#measure">Measurement</a><a href="#accounts">Accounts</a><a href="#path">Conversion</a><a href="#offsets">Lags</a><a href="#observe">Observations</a><a href="#test">Test</a><a href="#ladder">Evidence ladder</a></nav>
 
-<section class="mx-section" id="measure" aria-labelledby="measure-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Begin with the official variable</p><h2 id="measure-title">Trade Statistics and Remittance Statistics Measure Different Events</h2><p><strong>Established fact:</strong> INEGI states that the <a href="https://www.inegi.org.mx/app/biblioteca/ficha.html?upc=889463929079" target="_blank" rel="noopener">Merchandise Trade Balance of Mexico measures goods exchanged between Mexico and the rest of the world</a> and supports national accounts and balance-of-payments work. Banco de M&eacute;xico separately publishes <a href="https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?accion=consultarCuadro&amp;idCuadro=CE81&amp;locale=es" target="_blank" rel="noopener">monthly remittance receipts, transaction counts, average amounts, and transfer channels</a>, with recent figures marked preliminary and subject to revision.</p></div>
-  <div class="mx-two-column">
-    <article class="mx-panel"><p class="mx-card-label">Merchandise trade</p><h3>Goods crossing the statistical boundary</h3><p>Exports, imports, and their difference describe recorded merchandise values under the program's methodology. A trade balance is not a timestamped record of each firm's currency conversion, hedge, financing, or profit.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">Family remittances</p><h3>Transfers between residents of different economies</h3><p>Banco de M&eacute;xico's remittance statistics describe qualifying incoming transfers and delivery channels. They do not identify the dealer's net MXN inventory change at the time recipients receive funds.</p></article>
+<section class="fx-section" id="measure" aria-labelledby="measure-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Begin with the official variable</p><h2 id="measure-title">Trade Statistics and Remittance Statistics Measure Different Events</h2><p><strong>Established fact:</strong> INEGI states that the <a href="https://www.inegi.org.mx/app/biblioteca/ficha.html?upc=889463929079" target="_blank" rel="noopener">Merchandise Trade Balance of Mexico measures goods exchanged between Mexico and the rest of the world</a> and supports national accounts and balance-of-payments work. Banco de M&eacute;xico separately publishes <a href="https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?accion=consultarCuadro&amp;idCuadro=CE81&amp;locale=es" target="_blank" rel="noopener">monthly remittance receipts, transaction counts, average amounts, and transfer channels</a>, with recent figures marked preliminary and subject to revision.</p></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Merchandise trade</p><h3>Goods crossing the statistical boundary</h3><p>Exports, imports, and their difference describe recorded merchandise values under the program's methodology. A trade balance is not a timestamped record of each firm's currency conversion, hedge, financing, or profit.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Family remittances</p><h3>Transfers between residents of different economies</h3><p>Banco de M&eacute;xico's remittance statistics describe qualifying incoming transfers and delivery channels. They do not identify the dealer's net MXN inventory change at the time recipients receive funds.</p></article>
   </div>
-  <div class="mx-caution"><strong>Do not combine incompatible units</strong><p>Monthly dollars, year-over-year growth rates, transaction counts, seasonally adjusted goods, customs-basis goods, and balance-of-payments flows answer different questions. Keep frequency, currency unit, price basis, adjustment, preliminary status, and revision vintage in every record. Use <a href="6m-tick-size.html">the canonical 6M contract guide</a> for quotation, delivery, expiration, and roll mechanics.</p></div>
+  <div class="fx-caution"><strong>Do not combine incompatible units</strong><p>Monthly dollars, year-over-year growth rates, transaction counts, seasonally adjusted goods, customs-basis goods, and balance-of-payments flows answer different questions. Keep frequency, currency unit, price basis, adjustment, preliminary status, and revision vintage in every record. Use <a href="6m-tick-size.html">the canonical 6M contract guide</a> for quotation, delivery, expiration, and roll mechanics.</p></div>
 </section>
 
-<section class="mx-section" id="accounts" aria-labelledby="accounts-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Balance-of-payments placement</p><h2 id="accounts-title">Use the External Accounts to Prevent Double Counting</h2><p><strong>Established fact:</strong> Banco de M&eacute;xico's <a href="https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?accion=consultarCuadroAnalitico&amp;idCuadro=CA126&amp;locale=en&amp;sector=-1" target="_blank" rel="noopener">official balance-of-payments summary</a> separates current-account components, capital-account items, financial-account flows, reserve assets, and errors and omissions. That accounting structure matters because a goods receipt, income payment, transfer, and financial flow are not interchangeable.</p></div>
-  <div class="mx-check-grid">
+<section class="fx-section" id="accounts" aria-labelledby="accounts-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Balance-of-payments placement</p><h2 id="accounts-title">Use the External Accounts to Prevent Double Counting</h2><p><strong>Established fact:</strong> Banco de M&eacute;xico's <a href="https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?accion=consultarCuadroAnalitico&amp;idCuadro=CA126&amp;locale=en&amp;sector=-1" target="_blank" rel="noopener">official balance-of-payments summary</a> separates current-account components, capital-account items, financial-account flows, reserve assets, and errors and omissions. That accounting structure matters because a goods receipt, income payment, transfer, and financial flow are not interchangeable.</p></div>
+  <div class="fx-check-grid">
     <article><strong>Goods and services</strong><p>Trade can affect external income and corporate currency needs, but imports, services, and the invoice currency alter the net channel.</p></article>
     <article><strong>Primary income</strong><p>Interest and investment income can create cross-border payments that offset or reinforce trade-related receipts.</p></article>
     <article><strong>Secondary income</strong><p>Remittance-related transfers enter the external accounts separately from exports; adding them to an already comprehensive current-account measure can double count.</p></article>
@@ -86,25 +86,25 @@
   <p><strong>Mechanism:</strong> a more favorable external-flow configuration can support demand for MXN, all else equal. <strong>Competing force:</strong> financial outflows, foreign-currency debt service, import payments, profit repatriation, hedging, or a global-dollar shock can offset that support.</p>
 </section>
 
-<section class="mx-section" id="path" aria-labelledby="path-title">
-  <div class="mx-section-heading"><p class="mx-kicker">The missing middle</p><h2 id="path-title">Trace Five Steps Between the Economic Flow and 6M</h2><p>The conversion path is a mechanism map. Unless transaction-level evidence exists, each step is a question, not a factual claim about the aggregate flow.</p></div>
-  <div class="mx-process" aria-label="External-flow currency conversion path">
+<section class="fx-section" id="path" aria-labelledby="path-title">
+  <div class="fx-section-heading"><p class="fx-kicker">The missing middle</p><h2 id="path-title">Trace Five Steps Between the Economic Flow and 6M</h2><p>The conversion path is a mechanism map. Unless transaction-level evidence exists, each step is a question, not a factual claim about the aggregate flow.</p></div>
+  <div class="fx-process" aria-label="External-flow currency conversion path">
     <article><span>1</span><h3>Underlying transaction</h3><p>A good is exported or imported, or a sender initiates a remittance. Record the economic event and statistical coverage.</p></article>
     <article><span>2</span><h3>Invoice and funding currency</h3><p>The contract can be denominated in USD, MXN, or another currency. The reporting unit does not prove the invoice currency.</p></article>
     <article><span>3</span><h3>Payment and settlement</h3><p>Shipment, invoicing, recognition, payment, and bank settlement can occur on different dates.</p></article>
     <article><span>4</span><h3>Hedge, retention, or netting</h3><p>A firm or intermediary may hedge in advance, retain dollars, net receipts against obligations, or convert incrementally.</p></article>
     <article><span>5</span><h3>Residual market demand</h3><p>Only the remaining FX need reaches dealers or trading venues. Its market impact depends on liquidity, expectations, and competing orders.</p></article>
   </div>
-  <div class="mx-method">
+  <div class="fx-method">
     <div><h3>Translate the final observation correctly</h3><p>If residual conversion creates net peso demand and dominates competing flows, spot USD/MXN may fall and MXN/USD may rise. CME 6M is <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">quoted in U.S. dollars per Mexican peso</a>, so a stronger peso is ordinarily associated with a higher 6M price after aligning timestamps and accounting for dated-futures basis. This is a conditional channel, not a guaranteed response.</p></div>
     <dl><div><dt>Spot screen</dt><dd>USD/MXN reciprocal</dd></div><div><dt>6M screen</dt><dd>MXN/USD</dd></div><div><dt>Align</dt><dd>Time + contract</dd></div><div><dt>Retain</dt><dd>Basis uncertainty</dd></div></dl>
   </div>
 </section>
 
-<section class="mx-section" id="offsets" aria-labelledby="offsets-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Timing and offsets</p><h2 id="offsets-title">A Plausible Structural Channel Can Be Useless at the Trading Horizon</h2><p>Official releases describe a completed reference period after aggregation and validation. Futures trade expectations continuously. The market may have reacted to partial information, corporate hedging, or policy news before the statistical release.</p></div>
-  <div class="mx-table-scroll" role="region" aria-label="External-flow timing and offset risks" tabindex="0">
-    <table class="mx-table">
+<section class="fx-section" id="offsets" aria-labelledby="offsets-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Timing and offsets</p><h2 id="offsets-title">A Plausible Structural Channel Can Be Useless at the Trading Horizon</h2><p>Official releases describe a completed reference period after aggregation and validation. Futures trade expectations continuously. The market may have reacted to partial information, corporate hedging, or policy news before the statistical release.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="External-flow timing and offset risks" tabindex="0">
+    <table class="fx-table">
       <thead><tr><th scope="col">Gap between data and FX</th><th scope="col">Why it matters</th><th scope="col">Required control</th></tr></thead>
       <tbody>
         <tr><th scope="row">Recognition versus cash</th><td>Export recorded in one period may settle in another</td><td>Do not assign release-day conversion without transaction evidence</td></tr>
@@ -119,25 +119,25 @@
   </div>
 </section>
 
-<section class="mx-section" id="observe" aria-labelledby="observe-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Observable evidence stack</p><h2 id="observe-title">Build the Record From Releases With Known Coverage and Vintages</h2><p>Use descriptive official sources, then add market observations only after their clocks and quote directions are normalized. No source below directly reveals the aggregate net conversion hitting 6M.</p></div>
-  <div class="mx-two-column">
-    <article class="mx-panel"><p class="mx-card-label">Mexico-side releases</p><h3>INEGI + Banxico</h3><p>Use INEGI's merchandise-trade methodology, monthly tables, and release calendar for goods. Use Banco de M&eacute;xico's remittance and balance-of-payments structures for transfers and the wider external account. Preserve preliminary flags and revisions.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">U.S.-side cross-check</p><h3>Census partner and commodity data</h3><p>The <a href="https://www.census.gov/foreign-trade/data/dataproducts.html" target="_blank" rel="noopener">U.S. Census Bureau publishes official merchandise-trade data products</a> with partner, commodity, transport, value, and other fields. Differences from Mexican statistics can reflect methodology and coverage; they are an audit question, not a reason to average incompatible series.</p></article>
+<section class="fx-section" id="observe" aria-labelledby="observe-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Observable evidence stack</p><h2 id="observe-title">Build the Record From Releases With Known Coverage and Vintages</h2><p>Use descriptive official sources, then add market observations only after their clocks and quote directions are normalized. No source below directly reveals the aggregate net conversion hitting 6M.</p></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Mexico-side releases</p><h3>INEGI + Banxico</h3><p>Use INEGI's merchandise-trade methodology, monthly tables, and release calendar for goods. Use Banco de M&eacute;xico's remittance and balance-of-payments structures for transfers and the wider external account. Preserve preliminary flags and revisions.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">U.S.-side cross-check</p><h3>Census partner and commodity data</h3><p>The <a href="https://www.census.gov/foreign-trade/data/dataproducts.html" target="_blank" rel="noopener">U.S. Census Bureau publishes official merchandise-trade data products</a> with partner, commodity, transport, value, and other fields. Differences from Mexican statistics can reflect methodology and coverage; they are an audit question, not a reason to average incompatible series.</p></article>
   </div>
-  <div class="mx-check-grid">
+  <div class="fx-check-grid">
     <article><strong>Release metadata</strong><p>Reference period, publication time, frequency, unit, adjustment, preliminary status, and revision schedule.</p></article>
     <article><strong>Flow composition</strong><p>Exports/imports by partner or product; remittances by channel, count, average, and geography where officially available.</p></article>
     <article><strong>Relative macro context</strong><p>Growth, rates, fiscal news, and broad-dollar evidence that can alter both the flow and its currency effect.</p></article>
     <article><strong>Market observations</strong><p>Quote-correct spot, active 6M contract, volume, spread, depth, roll state, and declared event windows.</p></article>
   </div>
-  <div class="mx-related">The broad interaction with policy, fiscal, and global-risk evidence belongs in <a href="6m-fundamental-drivers.html">the canonical 6M driver ledger</a>. This page owns the trade/remittance conversion chain.</div>
+  <div class="fx-related">The broad interaction with policy, fiscal, and global-risk evidence belongs in <a href="6m-fundamental-drivers.html">the canonical 6M driver ledger</a>. This page owns the trade/remittance conversion chain.</div>
 </section>
 
-<section class="mx-section" id="test" aria-labelledby="test-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Empirical boundary</p><h2 id="test-title">Pre-Register the Horizon Before Testing a Trading Application</h2><p><strong>Hypothesis example:</strong> a positive, expectation-adjusted surprise in a specified official external-flow measure is followed by higher 6M over a declared window, conditional on the broad dollar and Mexico&ndash;U.S. rate repricing. This is a hypothesis only. The page reports no test result.</p></div>
-  <div class="mx-table-scroll" role="region" aria-label="External-flow study design" tabindex="0">
-    <table class="mx-table">
+<section class="fx-section" id="test" aria-labelledby="test-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Empirical boundary</p><h2 id="test-title">Pre-Register the Horizon Before Testing a Trading Application</h2><p><strong>Hypothesis example:</strong> a positive, expectation-adjusted surprise in a specified official external-flow measure is followed by higher 6M over a declared window, conditional on the broad dollar and Mexico&ndash;U.S. rate repricing. This is a hypothesis only. The page reports no test result.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="External-flow study design" tabindex="0">
+    <table class="fx-table">
       <thead><tr><th scope="col">Design field</th><th scope="col">Predeclared requirement</th><th scope="col">Failure to avoid</th></tr></thead>
       <tbody>
         <tr><th scope="row">Decision event</th><td>Release, reference period, expected value source, and exact timestamp</td><td>Choosing events after seeing price moves</td></tr>
@@ -152,18 +152,18 @@
   <p>Route the full design, roll construction, cost model, and holdout rules to <a href="6m-backtesting.html">the 6M backtesting guide</a>. If source, unit, timestamp, or revision provenance is missing, apply <a href="6m-data-traps.html">the 6M data acceptance checklist</a> and fail closed.</p>
 </section>
 
-<section class="mx-section" id="ladder" aria-labelledby="ladder-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Evidence-ladder close</p><h2 id="ladder-title">Climb the Evidence Ladder; Do Not Skip From Annual Totals to Trades</h2><p>Each rung requires the one below it. A large official flow can be economically important while the trading application remains unvalidated.</p></div>
-  <div class="mx-process" aria-label="External-flow evidence ladder">
+<section class="fx-section" id="ladder" aria-labelledby="ladder-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Evidence-ladder close</p><h2 id="ladder-title">Climb the Evidence Ladder; Do Not Skip From Annual Totals to Trades</h2><p>Each rung requires the one below it. A large official flow can be economically important while the trading application remains unvalidated.</p></div>
+  <div class="fx-process" aria-label="External-flow evidence ladder">
     <article><span>I</span><h3>Official measurement</h3><p>Coverage, unit, frequency, reference period, preliminary status, and revision history are verified.</p></article>
     <article><span>II</span><h3>Conversion mechanism</h3><p>Invoice, settlement, retention, hedging, and offsets are identified as observed, bounded, or unknown.</p></article>
     <article><span>III</span><h3>Independent confirmation</h3><p>Quote-correct FX, relative rates, and competing external flows support the proposed channel.</p></article>
     <article><span>IV</span><h3>Validated application</h3><p>A pre-registered, cost-aware, point-in-time study survives holdout and failure tests. Until then, the application is experimental.</p></article>
   </div>
-  <div class="mx-caution"><strong>Fail-closed conclusion</strong><p>This article establishes that trade and remittance data can inform external-flow hypotheses. It does not establish the sign, lag, magnitude, stability, or profitability of a 6M response. Without direct conversion evidence or a valid empirical study, same-day directional claims remain unverified.</p></div>
+  <div class="fx-caution"><strong>Fail-closed conclusion</strong><p>This article establishes that trade and remittance data can inform external-flow hypotheses. It does not establish the sign, lag, magnitude, stability, or profitability of a 6M response. Without direct conversion evidence or a valid empirical study, same-day directional claims remain unverified.</p></div>
 </section>
 
-<details class="mx-sources">
+<details class="fx-sources">
   <summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary>
   <ul>
     <li><a href="https://www.inegi.org.mx/app/biblioteca/ficha.html?upc=889463929079" target="_blank" rel="noopener">INEGI: 2026 methodology summary for the Merchandise Trade Balance of Mexico</a> and <a href="https://www.inegi.org.mx/app/tabulados/default.aspx?nc=452" target="_blank" rel="noopener">official monthly merchandise-trade tables</a> for coverage, values, and revisions.</li>
@@ -176,7 +176,7 @@
   <p>Sources and methods were reviewed August 13, 2026. The article uses official flow definitions and labels the conversion path as a mechanism unless directly observed. It reports no proprietary flow estimate, event study, forecast, or backtest result.</p>
 </details>
 
-<aside class="mx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This external-flow framework is educational material, not personalized investment, legal, tax, accounting, remittance, hedging, or brokerage advice. Official statistics can be preliminary, revised, and released after the underlying transactions. Leveraged currency futures can create losses beyond the initial performance bond. Verify current data, contract terms, quote direction, liquidity, costs, and your own loss limit.</p></aside>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This external-flow framework is educational material, not personalized investment, legal, tax, accounting, remittance, hedging, or brokerage advice. Official statistics can be preliminary, revised, and released after the underlying transactions. Leveraged currency futures can create losses beyond the initial performance bond. Verify current data, contract terms, quote direction, liquidity, costs, and your own loss limit.</p></aside>
 <!-- ARTICLE BODY END -->
 </article></main>
 <footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>

@@ -2,252 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How Global Risk Sentiment Impacts 6N Futures</title>
-  <meta name="description" content="A blunt breakdown of how global risk sentiment drives 6N futures volatility, trend direction, and liquidity more than any technical setup.">
+  <title>6N and Risk Sentiment: A Conditional Regime Test</title>
+  <meta name="description" content="Separate 6N risk channels from correlation folklore, then test funding, portfolio, China, commodity, and dollar evidence with breakdown rules.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6n-risk-sentiment-impact.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="How Global Risk Sentiment Impacts 6N Futures">
-  <meta property="og:description" content="A blunt breakdown of how global risk sentiment drives 6N futures volatility, trend direction, and liquidity more than any technical setup.">
+  <meta property="og:title" content="6N and Risk Sentiment: A Conditional Regime Test">
+  <meta property="og:description" content="Separate 6N risk channels from correlation folklore, then test funding, portfolio, China, commodity, and dollar evidence with breakdown rules.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6n-risk-sentiment-impact.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-28">
+  <meta property="article:modified_time" content="2026-08-17">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="6N and Risk Sentiment: A Conditional Regime Test">
+  <meta name="twitter:description" content="Separate 6N risk channels from correlation folklore, then test funding, portfolio, China, commodity, and dollar evidence with breakdown rules.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="How Global Risk Sentiment Impacts 6N Futures">
-  <meta name="twitter:description" content="A blunt breakdown of how global risk sentiment drives 6N futures volatility, trend direction, and liquidity more than any technical setup.">
-
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"6N and Risk Sentiment: A Conditional Regime Test","description":"Separate 6N risk channels from correlation folklore, then test funding, portfolio, China, commodity, and dollar evidence with breakdown rules.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6n-risk-sentiment-impact.html"},"datePublished":"2025-11-28","dateModified":"2026-08-17","url":"https://grizzlyparrottrading.com/futures-basics/6n-risk-sentiment-impact.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How Global Risk Sentiment Impacts 6N Futures",
-  "description": "A blunt breakdown of how global risk sentiment drives 6N futures volatility, trend direction, and liquidity more than any technical setup.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6n-risk-sentiment-impact.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6n-risk-sentiment-impact.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How Global Risk Sentiment Impacts 6N Futures",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6n-risk-sentiment-impact.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6N and Risk Sentiment: A Conditional Regime Test","item":"https://grizzlyparrottrading.com/futures-basics/6n-risk-sentiment-impact.html"}]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Funding &middot; portfolios &middot; external demand &middot; regime failure</p>
+    <h1>6N and Risk Sentiment: A Conditional Regime Test</h1>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 17, 2026</p>
+    <p class="fx-hero-lede">Imagine a global shock in which equities fall, volatility rises, and 6N does not follow. New Zealand-specific rate expectations may have shifted, the U.S. dollar move may be uneven, export news may offset the portfolio channel, or the futures observation may be distorted by timing and liquidity. Calling NZD permanently “risk-on” turns a conditional mechanism into an identity it does not have.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#divergence">Explain the divergence</a><a class="fx-text-link" href="#regime-check">Test the regime</a></div>
+    <dl class="fx-hero-metrics" aria-label="Risk regime evidence"><div><dt>Label</dt><dd>Hypothesis only</dd></div><div><dt>Unit</dt><dd>Synchronized returns</dd></div><div><dt>Controls</dt><dd>USD + domestic news</dd></div><div><dt>Output</dt><dd>Active, mixed, absent</dd></div></dl>
   </div>
+  <div class="fx-hero-visual"><div class="fx-market-board"><div class="fx-board-head"><span>Same shock window</span><strong>Different market responses</strong></div><div class="fx-formula"><code>equities &darr;</code><i aria-hidden="true">&ne;</i><code>6N must fall</code></div><p>The observable co-movement can change sign or vanish. The mechanism has to be identified and the relationship measured in the current regime.</p><p class="fx-board-foot"><span>Mechanism first</span><span>Measurement second</span></p></div></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#divergence">Divergence</a><a href="#channels">Channels</a><a href="#overlap">External overlap</a><a href="#dollar">Dollar</a><a href="#test">Test</a><a href="#breakdowns">Breakdowns</a><a href="#regime-check">Checklist</a></nav>
 
-<h1>How Global Risk Sentiment Impacts 6N Futures</h1>
-
-<p>NZD is one of the highest beta currencies in the world. That means 6N doesn’t just move because of New Zealand data — it moves because global markets feel risk-on or risk-off. If risk appetite rises, 6N rallies. If fear hits the market, 6N gets smoked. Understanding this simple relationship will explain half of the 6N chart without a single indicator.</p>
-
-<h2>Risk-On: When Investors Want Yield</h2>
-<p>When global markets are optimistic, traders pour money into higher-yielding assets. NZD benefits immediately because New Zealand typically offers higher interest rates than the U.S., Europe, or Japan.</p>
-
-<p>Risk-on conditions include:</p>
-
-<ul>
-<li>Stock markets trending up</li>
-<li>Commodity demand rising</li>
-<li>Positive global economic data</li>
-<li>Lower market volatility (VIX dropping)</li>
-</ul>
-
-<p>During these periods, 6N tends to trend smoothly upward.</p>
-
-<h2>Risk-Off: When Investors Flee to Safety</h2>
-<p>When the world panics, nobody wants high-yield currencies. They dump NZD first because it’s small, volatile, and sensitive to global flows.</p>
-
-<p>Risk-off triggers include:</p>
-
-<ul>
-<li>Equity sell-offs</li>
-<li>Geopolitical shocks</li>
-<li>Recession fears</li>
-<li>High VIX spikes</li>
-</ul>
-
-<p>USD gets strong in risk-off environments, and 6N drops aggressively.</p>
-
-<h2>How Risk Sentiment Shows Up in the 6N Chart</h2>
-<p>Risk cycles reshape the structure of 6N:</p>
-
-<table>
-<tr><th>Environment</th><th>Behavior</th></tr>
-<tr><td>Risk-On</td><td>Smoother uptrends, fewer fakeouts</td></tr>
-<tr><td>Risk-Off</td><td>Sharp selloffs, violent spikes</td></tr>
-<tr><td>Mixed</td><td>Chop, false breakouts, unreliable trends</td></tr>
-</table>
-
-<p>You can literally diagnose the macro mood by looking at 6N candles.</p>
-
-<h2>Why NZD Is More Sensitive Than AUD</h2>
-<p>NZD is smaller and more yield-driven than AUD. Australia has deeper markets and stronger export diversification. New Zealand doesn’t. That makes NZD more fragile in risk-off environments and more explosive in risk-on environments.</p>
-
-<p>In simple terms:</p>
-
-<ul>
-<li>When markets are calm → NZD outperforms AUD.</li>
-<li>When markets panic → NZD underperforms AUD.</li>
-</ul>
-
-<h2>Risk Sentiment + Rate Cycles = The 6N Blueprint</h2>
-<p>Risk appetite interacts with interest rate cycles. Here’s how the blend usually plays out:</p>
-
-<ul>
-<li><strong>Risk-On + NZD rate hikes = massive 6N rallies.</strong></li>
-<li><strong>Risk-Off + NZD rate cuts = brutal 6N selloffs.</strong></li>
-<li><strong>Risk-On + weak USD = 6N melts upward cleanly.</strong></li>
-<li><strong>Risk-Off + strong USD = 6N collapses fast.</strong></li>
-</ul>
-
-<p>This is the macro engine behind NZD/USD.</p>
-
-<h2>How to Trade 6N Using Risk Sentiment</h2>
-
-<h3>1. Track global equities</h3>
-<p>If S&P futures rip higher, odds are NZD strengthens.</p>
-
-<h3>2. Watch the VIX</h3>
-<p>VIX rising → risk-off → short 6N setups.</p>
-
-<h3>3. Follow China sentiment</h3>
-<p>NZD is hypersensitive to Chinese data.</p>
-
-<h3>4. Use risk conditions to filter strategy choice</h3>
-<p>Risk-on → trend-following  
-Risk-off → fade rallies or sit out</p>
-
-<h2>Final Take</h2>
-<p>Global risk sentiment is one of the primary drivers of 6N futures. When markets want risk, NZD strengthens. When fear hits, NZD gets crushed. If this feels too macro, revisit <a href="https://grizzlyparrottrading.com/futures-basics/us-dollar-impact-on-6n.html">the USD influence guide</a> or <a href="https://grizzlyparrottrading.com/futures-basics/6n-spread-trading.html">the spread trading article</a> to connect the dots.</p>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="fx-section" id="divergence" aria-labelledby="divergence-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Start with the contradiction</p><h2 id="divergence-title">Equity Stress and 6N Divergence Is Evidence, Not an Error</h2><p>A risk-sentiment story is useful only if it explains why capital, funding, hedging, or expected income might change. When 6N diverges from the chosen risk proxy, preserve the divergence and test rival explanations.</p></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">What “risk-sensitive” can mean</p><h3>A conditional exposure to common shocks</h3><p>During some periods, tighter global financial conditions, deleveraging, weaker external-growth expectations, or broad-dollar demand may coincide with lower NZD/USD and 6N. That is a testable state, not a permanent currency property.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">What it cannot mean</p><h3>A fixed equity beta or automatic direction</h3><p>An equity index does not contain the complete 6N information set. Country-specific rates, trade prices, fiscal news, positioning, basis, and local trading hours can create a different response.</p></article>
   </div>
-</footer>
+  <div class="fx-caution"><strong>Official scenario evidence is not a universal law</strong><p>The RBNZ's <a href="https://www.rbnz.govt.nz/monetary-policy/monetary-policy-statement/monetary-policy-statement-filtered-listing-page/2026/may-270/monetary-policy-statement-may-2026/web-version" target="_blank" rel="noopener noreferrer">May 2026 Monetary Policy Statement</a> discusses global uncertainty and a potential NZD depreciation channel. That establishes an official scenario mechanism; it does not establish that every uncertainty shock weakens 6N.</p></div>
+  <div class="fx-related">CME lists 6N in U.S. dollars per New Zealand dollar, so higher 6N is quote-consistent with a stronger NZD against USD. A dated future also carries basis and lifecycle; verify those mechanics in <a href="6n-contract-specs-explained.html">the canonical 6N contract guide</a>.</div>
+</section>
+
+<section class="fx-section" id="channels" aria-labelledby="channels-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Trace the causal chain</p><h2 id="channels-title">Four Routes Can Turn a Global Shock Into NZD Repricing</h2><p>The routes can reinforce, offset, or arrive on different clocks. State which one the hypothesis requires before checking the price outcome.</p></div>
+  <div class="fx-process" aria-label="Risk sentiment transmission channels">
+    <article><span>A</span><h3>Risk budgets contract</h3><p>Portfolio volatility, drawdown, or concentration limits may force investors to reduce exposures. Whether that produces net NZD selling depends on starting positions and hedges.</p></article>
+    <article><span>B</span><h3>Funding conditions tighten</h3><p>Higher funding costs, collateral demands, or thinner dealer capacity can make leveraged positions less attractive and amplify exits. The size of that channel is not observable from an equity chart alone.</p></article>
+    <article><span>C</span><h3>Expected external income changes</h3><p>A global-demand shock can alter expected prices and volumes for New Zealand exports and services, affecting prospective national income and policy expectations.</p></article>
+    <article><span>D</span><h3>The dollar factor changes</h3><p>Demand for dollar liquidity or U.S. assets may lift broad USD measures. The NZD response can still differ if New Zealand-specific information moves more strongly.</p></article>
+  </div>
+  <p>The order can also run the other way: a currency move can tighten domestic financial conditions and change inflation through import prices. Do not infer a single direction of causality from contemporaneous correlation.</p>
+</section>
+
+<section class="fx-section" id="overlap" aria-labelledby="overlap-title">
+  <div class="fx-section-heading"><p class="fx-kicker">China and commodities are overlapping channels</p><h2 id="overlap-title">External-Demand Proxies Must Match New Zealand's Actual Exposure</h2><p>China activity, global commodity prices, and Asia-Pacific equity markets can overlap with the risk story because they may change expected demand for New Zealand exports. They are not interchangeable measures.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="External overlap evidence table" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Proxy</th><th scope="col">Plausible link</th><th scope="col">Required control</th><th scope="col">Common error</th></tr></thead><tbody><tr><th scope="row">China activity release</th><td>Demand expectations for food, forestry, tourism, and regional trade</td><td>Official NBS vintage, expectation, components, and New Zealand trade data</td><td>Calling one PMI print a direct NZD order-flow measure</td></tr><tr><th scope="row">Dairy or food-price measure</th><td>Potential export-income and terms-of-trade effects</td><td>Volume, currency, contract timing, input costs, and official trade evidence</td><td>Converting an auction headline into a same-minute 6N rule</td></tr><tr><th scope="row">Australian or Asian equities</th><td>Regional growth and portfolio-risk information</td><td>Local news, index composition, trading clock, and USD move</td><td>Assuming geographic proximity creates a stable beta</td></tr><tr><th scope="row">Broad commodity basket</th><td>Global demand, inflation, and producer-income information</td><td>Basket weights versus New Zealand export composition</td><td>Using energy or metals dominance as proof about New Zealand's export mix</td></tr></tbody></table></div>
+  <p><a href="https://www.stats.govt.nz/information-releases/overseas-merchandise-trade-june-2026/" target="_blank" rel="noopener noreferrer">Stats NZ's Overseas Merchandise Trade release for June 2026</a> identifies goods categories and destinations. Use it to define exposure; use <a href="how-exports-drive-6n-trends.html">the 6N export-mechanism guide</a> for the full evidence ladder.</p>
+</section>
+
+<section class="fx-section" id="dollar" aria-labelledby="dollar-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Do not double-count the same shock</p><h2 id="dollar-title">Separate Risk Aversion From Broad-Dollar Demand</h2><p>Equities, credit spreads, volatility, Treasury yields, and the dollar can move together during stress, but they need not share one cause. A valid record identifies which series adds independent information.</p></div>
+  <div class="fx-check-grid"><article><strong>Dollar-liquidity candidate</strong><p>Broad USD measures rise, multiple bilateral dollar pairs weaken, and funding indicators deteriorate. The pattern is consistent with a common-dollar channel, subject to index-composition checks.</p></article><article><strong>New Zealand-specific candidate</strong><p>6N and official NZD measures diverge from broad peers after domestic policy, fiscal, or export information. The global-risk label may be too coarse.</p></article><article><strong>Commodity-demand candidate</strong><p>Trade-relevant prices and external-growth evidence change while generic risk measures are mixed. The income channel may be more informative than equity direction.</p></article><article><strong>Measurement failure</strong><p>Clocks, contracts, rolls, holidays, or stale observations do not align. No causal conclusion is available until the data are repaired.</p></article></div>
+  <div class="fx-related">Use <a href="us-dollar-impact-on-6n.html">the 6N dollar-factor guide</a> to distinguish quote identity from a genuinely broader dollar signal.</div>
+</section>
+
+<section class="fx-section" id="test" aria-labelledby="test-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Empirical boundary</p><h2 id="test-title">Measure Whether the Regime Is Active Before Using the Label</h2><p>This page explains the mechanism. The full statistical protocol belongs to <a href="6n-correlations.html">the 6N correlations guide</a>. A compact regime check should still predeclare inputs, clocks, windows, and failure rules.</p></div>
+  <div class="fx-method"><div><h3>Minimal test specification</h3><p>Use synchronized percentage returns, not raw price levels. Declare the active 6N contract and roll method; at least two rolling windows; the equity, volatility, credit, commodity, and dollar proxies; event and holiday controls; and confidence intervals or resampling. Repeat the test after controlling for the broad dollar and New Zealand-specific releases.</p></div><dl><div><dt>Null</dt><dd>No stable relationship</dd></div><div><dt>Windows</dt><dd>Short + medium</dd></div><div><dt>Controls</dt><dd>USD + events</dd></div><div><dt>Fail</dt><dd>Sign or scale unstable</dd></div></dl></div>
+  <div class="fx-caution"><strong>No original result is reported here</strong><p>No beta, correlation, threshold, hit rate, or profitable risk-on/risk-off strategy has been calculated for this article. A relationship that appears in one selected episode is an observation to test, not a finding to generalize.</p></div>
+</section>
+
+<section class="fx-section" id="breakdowns" aria-labelledby="breakdowns-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Where the shorthand breaks</p><h2 id="breakdowns-title">Six Cases Should Force the Risk Label Into Review</h2></div>
+  <div class="fx-state-machine" role="list" aria-label="Risk regime breakdown cases"><article role="listitem"><h3>Domestic policy dominates</h3><p>RBNZ-Fed path repricing explains the timing better than global proxies.</p></article><article role="listitem"><h3>Export news offsets stress</h3><p>Trade-price, volume, or services evidence changes expected income in the opposite direction.</p></article><article role="listitem"><h3>The shock is U.S.-specific</h3><p>U.S. assets and the dollar reprice for domestic reasons that do not map cleanly to a global risk factor.</p></article><article role="listitem"><h3>Starting positions matter</h3><p>A crowded short, hedge adjustment, or forced covering produces a response opposite the simple narrative.</p></article><article role="listitem"><h3>Market quality collapses</h3><p>Wide spreads, shallow depth, gaps, or roll effects make the observed move non-comparable.</p></article><article role="listitem"><h3>The beta changes sign</h3><p>Rolling estimates are unstable across reasonable windows or controls; the regime is absent or unidentified.</p></article></div>
+</section>
+
+<section class="fx-section" id="regime-check" aria-labelledby="regime-check-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Regime decision record</p><h2 id="regime-check-title">Separate the Proposed Mechanism From the Measured Relationship</h2><p>Complete every field. “Unknown” is a valid conclusion and is safer than filling missing evidence with a story.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="6N risk regime checklist" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Gate</th><th scope="col">Pass condition</th><th scope="col">Fail or stand-aside condition</th></tr></thead><tbody><tr><th scope="row">Mechanism</th><td>A specific funding, portfolio, income, or dollar channel is declared before outcome review</td><td>“Markets were risk-off” is the entire explanation</td></tr><tr><th scope="row">Measurement</th><td>Synchronized returns and declared windows show a relationship with uncertainty reported</td><td>Levels, selected anecdotes, or unstable signs</td></tr><tr><th scope="row">Independence</th><td>USD, domestic releases, and overlapping proxies are controlled</td><td>Several labels restate one common input</td></tr><tr><th scope="row">Execution</th><td>Active contract and market-quality gates pass</td><td>Roll, spread, depth, or timestamp failure</td></tr><tr><th scope="row">Conclusion</th><td>Active, mixed, absent, or unknown is recorded with an expiry condition</td><td>A permanent “risk currency” label</td></tr></tbody></table></div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 20, 2026</summary><ul><li><a href="https://www.rbnz.govt.nz/monetary-policy/monetary-policy-statement/monetary-policy-statement-filtered-listing-page/2026/may-270/monetary-policy-statement-may-2026/web-version" target="_blank" rel="noopener noreferrer">Reserve Bank of New Zealand, Monetary Policy Statement May 2026 (published 3 June 2026)</a> for official discussion of global uncertainty, external conditions, and conditional exchange-rate channels.</li><li><a href="https://www.rbnz.govt.nz/en/statistics/series/exchange-and-interest-rates/exchange-rates-and-the-trade-weighted-index" target="_blank" rel="noopener noreferrer">Reserve Bank of New Zealand, Exchange Rates and Trade Weighted Index B1 (special note dated 17 February 2026)</a> for official NZD/TWI coverage, timing, and methodology.</li><li><a href="https://www.stats.govt.nz/information-releases/overseas-merchandise-trade-june-2026/" target="_blank" rel="noopener noreferrer">Stats NZ, Overseas Merchandise Trade: June 2026 (published 20 July 2026)</a> for current goods categories, destinations, and the goods-only scope.</li><li><a href="https://www.treasury.govt.nz/publications/efu/budget-economic-and-fiscal-update-2026" target="_blank" rel="noopener noreferrer">New Zealand Treasury, Budget Economic and Fiscal Update 2026 (issued 28 May 2026)</a> for official conditional analysis of external shocks, trade, uncertainty, and domestic transmission.</li><li><a href="https://www.federalreserve.gov/releases/h10/default.htm" target="_blank" rel="noopener noreferrer">Federal Reserve, H.10 Foreign Exchange Rates (2026 current releases)</a> for bilateral rates and broad dollar indexes.</li><li><a href="https://www.stats.gov.cn/english/PressRelease/ReleaseCalendar/202512/t20251226_1962154.html" target="_blank" rel="noopener noreferrer">National Bureau of Statistics of China, Regular Press Release Calendar for 2026 (published 26 December 2025)</a> for official China release times when a predeclared China channel is tested.</li><li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener noreferrer">CME Group, FX Product Guide 2026</a> for 6N quotation and contract context.</li></ul><p>This article reports plausible mechanisms and a regime-checking framework, not a measured permanent equity beta or a trading result. Correlations and causal claims require a separate point-in-time study.</p></details>
+
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This material is educational, not personalized investment, legal, tax, hedging, accounting, or brokerage advice. Risk relationships can reverse during gaps, policy surprises, funding stress, and thin liquidity. Futures leverage and changing margin can create losses beyond the initial deposit. Verify current data, contract terms, and execution conditions before any decision.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

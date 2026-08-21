@@ -9,59 +9,59 @@
   <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6b-volatility-compression-and-expansion-patterns.html">
   <meta property="og:title" content="6B Compression and Expansion: A Reproducible Test"><meta property="og:description" content="Measure whether a declared low-range state changes later 6B range, direction, or execution cost without using hindsight."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6b-volatility-compression-and-expansion-patterns.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-13">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Test 6B Compression and Expansion"><meta name="twitter:description" content="A frozen measurement design for low-range states, forward range, direction, and costs."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
-  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="6b-research-library.css?v=20260813a">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6B Compression and Expansion: A Reproducible Test","description":"Define and test 6B volatility compression and later expansion with frozen thresholds, session and event controls, execution costs, and holdouts.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6b-volatility-compression-and-expansion-patterns.html"},"datePublished":"2025-11-24","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/6b-volatility-compression-and-expansion-patterns.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6B Compression and Expansion","item":"https://grizzlyparrottrading.com/futures-basics/6b-volatility-compression-and-expansion-patterns.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
 <header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
-<main class="container article-container sterling-library"><article>
+<main class="container article-container currency-library"><article>
 <!-- ARTICLE BODY START -->
-<header class="gb-hero">
-  <div class="gb-hero-copy">
-    <p class="gb-kicker">Range state &middot; forward distribution &middot; robustness</p>
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Range state &middot; forward distribution &middot; robustness</p>
     <h1>6B Compression and Expansion: A Reproducible Test</h1>
-    <p class="gb-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
-    <p class="gb-hero-lede">Suppose the last twelve five-minute bars span 18 ticks while the same clock window&rsquo;s trailing median span is 42 ticks. The observed ratio is 0.43. That calculation can describe compression. It does not say expansion is next, choose a direction, or prove a tradable edge.</p>
-    <div class="gb-hero-actions"><a class="button-primary" href="#range">Start with the range</a><a class="gb-text-link" href="#hierarchy">See the evidence hierarchy</a></div>
-    <dl class="gb-hero-metrics" aria-label="Compression study orientation"><div><dt>Input</dt><dd>Past-only range</dd></div><div><dt>Output</dt><dd>Forward distribution</dd></div><div><dt>Direction</dt><dd>Separate test</dd></div><div><dt>Original result</dt><dd>None</dd></div></dl>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="fx-hero-lede">Suppose the last twelve five-minute bars span 18 ticks while the same clock window&rsquo;s trailing median span is 42 ticks. The observed ratio is 0.43. That calculation can describe compression. It does not say expansion is next, choose a direction, or prove a tradable edge.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#range">Start with the range</a><a class="fx-text-link" href="#hierarchy">See the evidence hierarchy</a></div>
+    <dl class="fx-hero-metrics" aria-label="Compression study orientation"><div><dt>Input</dt><dd>Past-only range</dd></div><div><dt>Output</dt><dd>Forward distribution</dd></div><div><dt>Direction</dt><dd>Separate test</dd></div><div><dt>Original result</dt><dd>None</dd></div></dl>
   </div>
-  <div class="gb-hero-visual">
-    <div class="gb-market-board">
-      <div class="gb-board-head"><span>Illustrative state</span><strong>18 / 42 = 0.43</strong></div>
-      <div class="gb-bars" aria-label="Illustrative range comparison">
-        <div class="gb-bar-row"><span>Current window</span><div class="gb-bar-track"><i class="is-positive" style="width:21.5%"></i></div><strong>18 ticks</strong></div>
-        <div class="gb-bar-row"><span>Matched median</span><div class="gb-bar-track"><i class="is-positive" style="width:50%"></i></div><strong>42 ticks</strong></div>
+  <div class="fx-hero-visual">
+    <div class="fx-market-board">
+      <div class="fx-board-head"><span>Illustrative state</span><strong>18 / 42 = 0.43</strong></div>
+      <div class="fx-bars" aria-label="Illustrative range comparison">
+        <div class="fx-bar-row"><span>Current window</span><div class="fx-bar-track"><i class="is-positive" style="width:21.5%"></i></div><strong>18 ticks</strong></div>
+        <div class="fx-bar-row"><span>Matched median</span><div class="fx-bar-track"><i class="is-positive" style="width:50%"></i></div><strong>42 ticks</strong></div>
       </div>
-      <p class="gb-board-foot"><span>Example only</span><span>No forecast</span></p>
+      <p class="fx-board-foot"><span>Example only</span><span>No forecast</span></p>
     </div>
   </div>
 </header>
 
-<nav class="gb-jump-nav" aria-label="On this page"><a href="#range">Range</a><a href="#compression">Compression</a><a href="#expansion">Expansion</a><a href="#sample">Sample</a><a href="#controls">Controls</a><a href="#robustness">Robustness</a><a href="#hierarchy">Evidence</a></nav>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#range">Range</a><a href="#compression">Compression</a><a href="#expansion">Expansion</a><a href="#sample">Sample</a><a href="#controls">Controls</a><a href="#robustness">Robustness</a><a href="#hierarchy">Evidence</a></nav>
 
-<section class="gb-section" id="range" aria-labelledby="range-title">
-  <div class="gb-section-heading">
-    <p class="gb-kicker">Direct calculation</p>
+<section class="fx-section" id="range" aria-labelledby="range-title">
+  <div class="fx-section-heading">
+    <p class="fx-kicker">Direct calculation</p>
     <h2 id="range-title">Start With the Range, Not the Story</h2>
     <p><strong>Fact:</strong> realized movement can be summarized from consistent price observations. <strong>Observation:</strong> a declared recent window can be small relative to a relevant historical distribution. <strong>Hypothesis:</strong> that state may change the later distribution of movement or execution quality. &ldquo;Energy building&rdquo; is a metaphor, not a measurable mechanism.</p>
   </div>
-  <div class="gb-formula" aria-label="Illustrative compression ratio formula">
+  <div class="fx-formula" aria-label="Illustrative compression ratio formula">
     <code>state ratio = current realized range</code><i aria-hidden="true">&divide;</i><code>matched trailing median range</code>
   </div>
   <p>The denominator matters. Comparing a quiet overnight hour with the all-day distribution can classify the clock rather than the state. Match the weekday, exact timezone-aware window, bar length, event status, and contract-roll condition. Use only observations available before the candidate time when calculating a rolling percentile or median.</p>
-  <div class="gb-caution"><strong>Use ticks for execution, returns for comparability</strong><p>6B&rsquo;s standard outright tick is 0.0001, worth $6.25 per contract. A range in ticks maps directly to order distance and dollar exposure; a log return is easier to compare across long histories with different price levels. Preserve both and state which one drives the label.</p></div>
+  <div class="fx-caution"><strong>Use ticks for execution, returns for comparability</strong><p>6B&rsquo;s standard outright tick is 0.0001, worth $6.25 per contract. A range in ticks maps directly to order distance and dollar exposure; a log return is easier to compare across long histories with different price levels. Preserve both and state which one drives the label.</p></div>
 </section>
 
-<section class="gb-section" id="compression" aria-labelledby="compression-title">
-  <div class="gb-section-heading">
-    <p class="gb-kicker">Past-only state</p>
+<section class="fx-section" id="compression" aria-labelledby="compression-title">
+  <div class="fx-section-heading">
+    <p class="fx-kicker">Past-only state</p>
     <h2 id="compression-title">Define Compression Without Peeking at the Break</h2>
     <p>Compression must be completely knowable at the decision timestamp. A symmetric centered window, a future-confirmed swing, or a box drawn around the bars that preceded a known breakout all leak future information.</p>
   </div>
-  <div class="gb-table-scroll" role="region" aria-label="Alternative compression definitions" tabindex="0">
-    <table class="gb-table">
+  <div class="fx-table-scroll" role="region" aria-label="Alternative compression definitions" tabindex="0">
+    <table class="fx-table">
       <thead><tr><th scope="col">Definition family</th><th scope="col">Frozen rule</th><th scope="col">Useful property</th><th scope="col">Limitation</th></tr></thead>
       <tbody>
         <tr><th scope="row">High-low span</th><td>Maximum high minus minimum low over the last <em>n</em> fixed bars</td><td>Simple and transparent</td><td>One extreme can dominate</td></tr>
@@ -75,28 +75,28 @@
   <p>Store the continuous value even when the live rule uses a binary threshold. If the result appears only below the 14.7th percentile and vanishes at the 10th and 20th, the threshold may be fitting noise.</p>
 </section>
 
-<section class="gb-section" id="expansion" aria-labelledby="expansion-title">
-  <div class="gb-section-heading">
-    <p class="gb-kicker">Three separate outcomes</p>
+<section class="fx-section" id="expansion" aria-labelledby="expansion-title">
+  <div class="fx-section-heading">
+    <p class="fx-kicker">Three separate outcomes</p>
     <h2 id="expansion-title">Define Expansion on Size, Direction, and Cost Separately</h2>
     <p>A large forward range is not the same as a profitable directional break. It can be one clean move, a breakout and reversal, or two-sided churn with poor fills.</p>
   </div>
-  <div class="gb-findings-grid">
-    <article class="gb-panel"><p class="gb-card-label">Movement</p><h3>Did the distribution of range change?</h3><p>Measure forward realized range, realized variance, tail quantiles, and time until a frozen range threshold is reached. Compare the full distribution, not only the average.</p></article>
-    <article class="gb-panel"><p class="gb-card-label">Direction</p><h3>Was movement one-sided?</h3><p>Measure signed return, close location, path efficiency, breakout-side follow-through, and reversal frequency. Direction must be declared independently of compression.</p></article>
-    <article class="gb-panel"><p class="gb-card-label">Execution</p><h3>Could an order capture it?</h3><p>Measure spread, displayed depth, trade-through distance, slippage, missed passive fills, and latency. A wider range can arrive with worse execution.</p></article>
-    <article class="gb-panel"><p class="gb-card-label">Economics</p><h3>Did the net rule beat a baseline?</h3><p>Specify entry, invalidation, exit, sizing, commission, fees, spread, slippage, and queue assumptions. Gross range is not net expectancy.</p></article>
+  <div class="fx-findings-grid">
+    <article class="fx-panel"><p class="fx-card-label">Movement</p><h3>Did the distribution of range change?</h3><p>Measure forward realized range, realized variance, tail quantiles, and time until a frozen range threshold is reached. Compare the full distribution, not only the average.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Direction</p><h3>Was movement one-sided?</h3><p>Measure signed return, close location, path efficiency, breakout-side follow-through, and reversal frequency. Direction must be declared independently of compression.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Execution</p><h3>Could an order capture it?</h3><p>Measure spread, displayed depth, trade-through distance, slippage, missed passive fills, and latency. A wider range can arrive with worse execution.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Economics</p><h3>Did the net rule beat a baseline?</h3><p>Specify entry, invalidation, exit, sizing, commission, fees, spread, slippage, and queue assumptions. Gross range is not net expectancy.</p></article>
   </div>
-  <p class="gb-source-note">Predeclare several forward horizons because a state can affect the next 15 minutes but not the next four hours. Treat every horizon as part of the multiple-testing family.</p>
+  <p class="fx-source-note">Predeclare several forward horizons because a state can affect the next 15 minutes but not the next four hours. Treat every horizon as part of the multiple-testing family.</p>
 </section>
 
-<section class="gb-section" id="sample" aria-labelledby="sample-title">
-  <div class="gb-section-heading">
-    <p class="gb-kicker">Event sample</p>
+<section class="fx-section" id="sample" aria-labelledby="sample-title">
+  <div class="fx-section-heading">
+    <p class="fx-kicker">Event sample</p>
     <h2 id="sample-title">Construct One Observation per Eligible State</h2>
     <p>Repeated low-range bars inside one quiet episode are dependent. Counting each bar as a fresh signal can inflate the sample and reward long-lasting compression.</p>
   </div>
-  <div class="gb-method">
+  <div class="fx-method">
     <div>
       <h3>Episode-based primary sample</h3>
       <p>Enter an episode when the frozen compression rule first becomes true. Keep it active until an exit threshold is met. Record one anchor timestamp per episode, impose a declared cooldown, and retain duration as a variable. A secondary bar-level analysis can be reported with dependence-aware uncertainty.</p>
@@ -108,7 +108,7 @@
       <div><dt>Uncertainty</dt><dd>Block by day or episode</dd></div>
     </dl>
   </div>
-  <div class="gb-process" aria-label="Compression study workflow">
+  <div class="fx-process" aria-label="Compression study workflow">
     <article><span>1</span><h3>Clean data</h3><p>Audit gaps, duplicates, crossed quotes, outliers, and contract identity.</p></article>
     <article><span>2</span><h3>Fit baseline</h3><p>Use training dates only to estimate clock-matched distributions.</p></article>
     <article><span>3</span><h3>Label episodes</h3><p>Apply the frozen entry, exit, overlap, and cooldown rules.</p></article>
@@ -116,13 +116,13 @@
   </div>
 </section>
 
-<section class="gb-section" id="controls" aria-labelledby="controls-title">
-  <div class="gb-section-heading">
-    <p class="gb-kicker">Rival explanations</p>
+<section class="fx-section" id="controls" aria-labelledby="controls-title">
+  <div class="fx-section-heading">
+    <p class="fx-kicker">Rival explanations</p>
     <h2 id="controls-title">Control the Clock, News, and Contract</h2>
     <p>A low-range state often reflects a known information schedule or a thin market. The later expansion may be caused by a release, reopening, or roll transition rather than the compression itself.</p>
   </div>
-  <div class="gb-check-grid">
+  <div class="fx-check-grid">
     <article><strong>Clock window</strong><p>Match in an IANA timezone and preserve the daylight-saving regime. Do not pool unlike local hours.</p></article>
     <article><strong>Official events</strong><p>Tag ONS, Bank of England, BLS, BEA, and Federal Reserve times from the contemporaneous official calendar.</p></article>
     <article><strong>Event distance</strong><p>Store minutes before and after each release. A pre-news lull is a distinct state, not a generic compression result.</p></article>
@@ -130,17 +130,17 @@
     <article><strong>Market quality</strong><p>Condition on spread, depth, quote-update rate, and outages. Zero trades can mean missing data.</p></article>
     <article><strong>Volatility regime</strong><p>Compare within longer-run states so a low intraday percentile in a crisis is not equated with ordinary calm.</p></article>
   </div>
-  <div class="gb-related">The <a href="london-session-volatility-patterns-in-6b.html">London-window study</a> defines a clock-specific protocol; the <a href="why-6b-trends-during-us-session.html">early U.S. study</a> tests directional efficiency. Neither should be inferred from a compression label.</div>
+  <div class="fx-related">The <a href="london-session-volatility-patterns-in-6b.html">London-window study</a> defines a clock-specific protocol; the <a href="why-6b-trends-during-us-session.html">early U.S. study</a> tests directional efficiency. Neither should be inferred from a compression label.</div>
 </section>
 
-<section class="gb-section" id="robustness" aria-labelledby="robustness-title">
-  <div class="gb-section-heading">
-    <p class="gb-kicker">Stress the result</p>
+<section class="fx-section" id="robustness" aria-labelledby="robustness-title">
+  <div class="fx-section-heading">
+    <p class="fx-kicker">Stress the result</p>
     <h2 id="robustness-title">A Finding Should Survive Reasonable Definitions</h2>
     <p>Robustness is not rerunning parameters until one works. Declare the grid before opening the holdout and publish all cells.</p>
   </div>
-  <div class="gb-table-scroll" role="region" aria-label="Robustness tests for a compression-expansion study" tabindex="0">
-    <table class="gb-table">
+  <div class="fx-table-scroll" role="region" aria-label="Robustness tests for a compression-expansion study" tabindex="0">
+    <table class="fx-table">
       <thead><tr><th scope="col">Stress test</th><th scope="col">What changes</th><th scope="col">Failure signal</th></tr></thead>
       <tbody>
         <tr><th scope="row">Sampling</th><td>One-, five-, and fifteen-minute inputs with noise-aware construction</td><td>Effect exists only at the noisiest frequency</td></tr>
@@ -156,29 +156,29 @@
   <p>Report effect sizes and uncertainty intervals, not just a p-value. If testing many definitions, horizons, sessions, and trade rules, use a multiple-testing procedure or present the study as exploratory. Keep the final holdout sealed until the analysis code and exclusions are frozen.</p>
 </section>
 
-<section class="gb-section" id="hierarchy" aria-labelledby="hierarchy-title">
-  <div class="gb-section-heading">
-    <p class="gb-kicker">Evidence hierarchy</p>
+<section class="fx-section" id="hierarchy" aria-labelledby="hierarchy-title">
+  <div class="fx-section-heading">
+    <p class="fx-kicker">Evidence hierarchy</p>
     <h2 id="hierarchy-title">What the Evidence Can and Cannot Support</h2>
     <p>The strongest permissible conclusion depends on which layer has actually been measured.</p>
   </div>
-  <div class="gb-stat-grid">
-    <article class="gb-stat"><span>1</span><strong>Descriptive fact</strong><p>A named window&rsquo;s realized range was low relative to a frozen matched distribution.</p></article>
-    <article class="gb-stat"><span>2</span><strong>Conditional observation</strong><p>In a disclosed sample, a declared forward outcome differed from its matched baseline with uncertainty reported.</p></article>
-    <article class="gb-stat"><span>3</span><strong>Validated rule</strong><p>A fully specified, costed rule remained stable on untouched data and across reasonable variants.</p></article>
-    <article class="gb-stat"><span>4</span><strong>Live use</strong><p>Current data quality, liquidity, margin, and risk limits match the conditions under which the rule was validated.</p></article>
+  <div class="fx-stat-grid">
+    <article class="fx-stat"><span>1</span><strong>Descriptive fact</strong><p>A named window&rsquo;s realized range was low relative to a frozen matched distribution.</p></article>
+    <article class="fx-stat"><span>2</span><strong>Conditional observation</strong><p>In a disclosed sample, a declared forward outcome differed from its matched baseline with uncertainty reported.</p></article>
+    <article class="fx-stat"><span>3</span><strong>Validated rule</strong><p>A fully specified, costed rule remained stable on untouched data and across reasonable variants.</p></article>
+    <article class="fx-stat"><span>4</span><strong>Live use</strong><p>Current data quality, liquidity, margin, and risk limits match the conditions under which the rule was validated.</p></article>
   </div>
-  <div class="gb-caution"><strong>Research status</strong><p>Layer 1 is a measurement definition. Layers 2 through 4 are not claimed. No original 6B dataset, event count, expansion frequency, directional edge, backtest or live performance result was produced. The 18-tick, 42-tick and 0.43 values are a hypothetical calculation, not a market observation.</p></div>
+  <div class="fx-caution"><strong>Research status</strong><p>Layer 1 is a measurement definition. Layers 2 through 4 are not claimed. No original 6B dataset, event count, expansion frequency, directional edge, backtest or live performance result was produced. The 18-tick, 42-tick and 0.43 values are a hypothetical calculation, not a market observation.</p></div>
 </section>
 
-<details class="gb-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+<details class="fx-sources"><summary>Sources, method and editorial disclosure</summary><ul>
   <li><a href="https://www.cmegroup.com/education/lessons/british-pound-product-overview" target="_blank" rel="noopener">CME Group British Pound product overview</a> for current standard-contract size, tick, quotation, and trading-hour context.</li>
   <li><a href="https://www.nber.org/papers/w8160" target="_blank" rel="noopener">Andersen, Bollerslev, Diebold, and Labys, Modeling and Forecasting Realized Volatility</a> for realized-volatility construction from intraday returns.</li>
   <li><a href="https://www.nber.org/papers/w13825" target="_blank" rel="noopener">Ait-Sahalia and Yu, High Frequency Market Microstructure Noise Estimates and Liquidity Measures</a> for the need to distinguish high-frequency price noise from the latent signal.</li>
   <li><a href="https://www.ons.gov.uk/releasecalendar" target="_blank" rel="noopener">Office for National Statistics release calendar</a> and <a href="https://www.bankofengland.co.uk/monetary-policy" target="_blank" rel="noopener">Bank of England monetary-policy schedule</a> for contemporaneous U.K. event labels.</li>
   <li><a href="https://www.bls.gov/schedule/" target="_blank" rel="noopener">U.S. Bureau of Labor Statistics release calendar</a>, <a href="https://www.bea.gov/news/schedule" target="_blank" rel="noopener">U.S. Bureau of Economic Analysis release schedule</a>, and <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">Federal Reserve FOMC calendar</a> for U.S. event controls.</li>
 </ul><p>Sources and time-sensitive facts were reviewed August 13, 2026. This is original, unsponsored editorial analysis.</p></details>
-<aside class="gb-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This article is educational and is not individualized trading, investment, legal, tax, hedging, or brokerage advice. Currency futures are leveraged, can gap or trade through stop prices, and can produce losses greater than the initial margin deposit. A low-range state can persist, reverse, or expand with poor liquidity. Verify the active contract, current margin, event calendar, live spread and depth, and your loss limits before acting.</p></aside>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This article is educational and is not individualized trading, investment, legal, tax, hedging, or brokerage advice. Currency futures are leveraged, can gap or trade through stop prices, and can produce losses greater than the initial margin deposit. A low-range state can persist, reverse, or expand with poor liquidity. Verify the active contract, current margin, event calendar, live spread and depth, and your loss limits before acting.</p></aside>
 <!-- ARTICLE BODY END -->
 </article></main>
 <footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>

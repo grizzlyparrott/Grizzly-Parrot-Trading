@@ -16,19 +16,19 @@ from validate_6b_cluster import ARTICLE_DIR, CLUSTER, clean_text, normalize_head
 
 
 CLASS_FAMILIES = (
-    "gb-section",
-    "gb-panel",
-    "gb-table",
-    "gb-process",
-    "gb-method",
-    "gb-check-grid",
-    "gb-limit-grid",
-    "gb-proof-grid",
-    "gb-stat-grid",
-    "gb-event-card",
-    "gb-caution",
-    "gb-related",
-    "gb-faq",
+    "fx-section",
+    "fx-panel",
+    "fx-table",
+    "fx-process",
+    "fx-method",
+    "fx-check-grid",
+    "fx-limit-grid",
+    "fx-proof-grid",
+    "fx-stat-grid",
+    "fx-event-card",
+    "fx-caution",
+    "fx-related",
+    "fx-faq",
 )
 
 
@@ -91,7 +91,7 @@ def main() -> int:
         body = body_match.group(1) if body_match else raw
         # Remove disclosures from lexical similarity; those should be consistent.
         body_for_similarity = re.sub(
-            r'<(?:details|aside)\b[^>]*class=["\'][^"\']*\bgb-(?:sources|disclaimer)\b[^>]*>.*?</(?:details|aside)>',
+            r'<(?:details|aside)\b[^>]*class=["\'][^"\']*\bfx-(?:sources|disclaimer)\b[^>]*>.*?</(?:details|aside)>',
             " ",
             body,
             flags=re.I | re.S,
@@ -104,8 +104,8 @@ def main() -> int:
             and not value.startswith("By Kyle Parrott")
             and not value.startswith("Educational and risk disclaimer")
         ]
-        kickers = capture_many(body, r'<p\b[^>]*class=["\'][^"\']*\bgb-kicker\b[^"\']*["\'][^>]*>(.*?)</p>')
-        hero = capture_one(body, r'<p\b[^>]*class=["\'][^"\']*\bgb-hero-lede\b[^"\']*["\'][^>]*>(.*?)</p>')
+        kickers = capture_many(body, r'<p\b[^>]*class=["\'][^"\']*\bfx-kicker\b[^"\']*["\'][^>]*>(.*?)</p>')
+        hero = capture_one(body, r'<p\b[^>]*class=["\'][^"\']*\bfx-hero-lede\b[^"\']*["\'][^>]*>(.*?)</p>')
         normalized_body = " ".join(strip_tags(body_for_similarity).split())
         normalized_h2s = [normalize_heading(value) for value in h2s]
 

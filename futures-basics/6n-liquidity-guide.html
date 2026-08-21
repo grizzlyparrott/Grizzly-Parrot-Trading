@@ -2,239 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6N Liquidity: When the Market Is Tradable and When It Isn’t</title>
-  <meta name="description" content="A blunt guide to 6N liquidity—when NZD futures offer real depth and when the market dries up and becomes dangerous.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6n-liquidity-guide.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6N Liquidity: When the Market Is Tradable and When It Isn’t">
-  <meta property="og:description" content="A blunt guide to 6N liquidity—when NZD futures offer real depth and when the market dries up and becomes dangerous.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6n-liquidity-guide.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6N Liquidity: When the Market Is Tradable and When It Isn’t">
-  <meta name="twitter:description" content="A blunt guide to 6N liquidity—when NZD futures offer real depth and when the market dries up and becomes dangerous.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6N Liquidity: When the Market Is Tradable and When It Isn’t",
-  "description": "A blunt guide to 6N liquidity—when NZD futures offer real depth and when the market dries up and becomes dangerous.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6n-liquidity-guide.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6n-liquidity-guide.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6N Liquidity: When the Market Is Tradable and When It Isn’t",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6n-liquidity-guide.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6N Liquidity Guide: Measure the Market You Can Trade</title>
+  <meta name="description" content="Measure 6N spreads, depth, volume, slippage and fill quality with event-aware clocks, explicit order sizes and fail-closed execution gates.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6n-liquidity-guide.html">
+  <meta property="og:title" content="6N Liquidity Guide: Measure the Market You Can Trade"><meta property="og:description" content="Measure 6N spreads, depth, volume, slippage and fill quality with event-aware clocks, explicit order sizes and fail-closed execution gates."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6n-liquidity-guide.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-28"><meta property="article:modified_time" content="2026-08-17">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6N Liquidity Guide: Measure the Market You Can Trade"><meta name="twitter:description" content="Measure 6N spreads, depth, volume, slippage and fill quality with event-aware clocks, explicit order sizes and fail-closed execution gates."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6N Liquidity Guide: Measure the Market You Can Trade","description":"Measure 6N spreads, depth, volume, slippage and fill quality with event-aware clocks, explicit order sizes and fail-closed execution gates.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6n-liquidity-guide.html"},"datePublished":"2025-11-28","dateModified":"2026-08-17","url":"https://grizzlyparrottrading.com/futures-basics/6n-liquidity-guide.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6N Liquidity Guide: Measure the Market You Can Trade","item":"https://grizzlyparrottrading.com/futures-basics/6n-liquidity-guide.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Market quality &middot; order size &middot; executable evidence</p>
+    <h1>6N Liquidity Guide: Measure the Market You Can Trade</h1>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 17, 2026</p>
+    <p class="fx-hero-lede">Two traders can view the same 6N chart range and face different costs. One asks for one contract with time to rest a limit; the other must cross several levels immediately. Price range is identical. Executable liquidity is not.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#fields">Build the measurement record</a><a class="fx-text-link" href="#decision">Use the decision card</a></div>
+    <dl class="fx-hero-metrics" aria-label="6N liquidity evidence dimensions"><div><dt>Displayed</dt><dd>Spread + depth</dd></div><div><dt>Traded</dt><dd>Volume + prints</dd></div><div><dt>Experienced</dt><dd>Fills + slippage</dd></div><div><dt>Fixed best hours</dt><dd>Not claimed</dd></div></dl>
   </div>
+  <aside class="fx-market-board" aria-label="Illustrative executable cost comparison">
+    <div class="fx-board-head"><span>Illustrative orders</span><strong>Same chart, different task</strong></div>
+    <div class="fx-cost-tape"><span><strong>Order A</strong>Small and patient</span><span><strong>Order B</strong>Larger and urgent</span><span><strong>Book</strong>Changes before arrival</span><span><strong>Outcome</strong>Must be measured</span></div>
+    <p class="fx-board-foot">A traded candle cannot reconstruct a queue</p>
+  </aside>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#fields">Fields</a><a href="#clock">Clock map</a><a href="#bins">Bins</a><a href="#events">Controls</a><a href="#metrics">Metrics</a><a href="#orders">Orders</a><a href="#validation">Validation</a><a href="#decision">Decision</a></nav>
 
-<h1>6N Liquidity: When the Market Is Tradable and When It Isn’t</h1>
-
-<p>6N liquidity swings hard depending on the session, the news cycle, and global risk appetite. If you don’t know when the market is actually liquid, you’ll get slipped, fail to enter during moves, or get trapped in chop. This contract is tradable—but only during the right windows.</p>
-
-<h2>The Most Liquid Session: Asia</h2>
-<p>6N is an Asian-session product. New Zealand and Australia open during this window, so institutional flows hit the NZD here first.</p>
-
-<ul>
-<li><strong>Best depth</strong></li>
-<li><strong>Best spreads</strong></li>
-<li><strong>Most consistent movement</strong></li>
-</ul>
-
-<p>If you want “clean” trading on 6N, trade the Asia session. Everyone else who trades it only in New York is basically flipping a coin.</p>
-
-<h2>The U.S. Session: Secondary Liquidity</h2>
-<p>Liquidity improves again when U.S. markets open because the Dollar wakes up. NZD/USD reacts strongly to USD data, so depth increases around:</p>
-
-<ul>
-<li>CPI</li>
-<li>NFP</li>
-<li>FOMC</li>
-<li>US GDP</li>
-</ul>
-
-<p>But outside news spikes, the U.S. session is less liquid than Asia for 6N.</p>
-
-<h2>The Danger Zone: Late U.S. Afternoon to Pre-Asia</h2>
-<p>This is the deadest time you could possibly trade 6N. There’s no liquidity, no trend, no volume, and no purpose. Price floats and wicks everywhere.</p>
-
-<p>If you trade these hours, you’re feeding your account to the market makers.</p>
-
-<h2>How Liquidity Shows Up on the DOM</h2>
-<p>On a decent DOM, you’ll notice:</p>
-
-<ul>
-<li><strong>Asia session:</strong> 20–60 contracts resting at each level</li>
-<li><strong>U.S. session:</strong> 10–40 contracts per level</li>
-<li><strong>Dead zone:</strong> sometimes less than 5 contracts per level</li>
-</ul>
-
-<p>This matters because 6N slips hard when depth disappears. You can lose 5 ticks instantly just by taking a market order in the wrong window.</p>
-
-<h2>When Spreads Widen</h2>
-<p>Spot NZD/USD brokers widen spreads whenever they want. Futures don’t—except during:</p>
-
-<ul>
-<li>Major news releases</li>
-<li>Dead periods with no volume</li>
-<li>Unexpected geopolitical events</li>
-</ul>
-
-<p>Most widening happens for 10–60 seconds, then depth returns as algos rebalance books.</p>
-
-<h2>How to Avoid Low-Liquidity Traps</h2>
-
-<h3>1. Don’t trade low-volume hours</h3>
-<p>You’re not going to magically pick the one clean move during the dead zone. It’s chop by design.</p>
-
-<h3>2. Reduce size before major announcements</h3>
-<p>Spread + slippage during news = account killer.</p>
-
-<h3>3. Only chase momentum in liquid conditions</h3>
-<p>Breakouts in low liquidity usually fake out instantly.</p>
-
-<h3>4. Watch the DOM, not just the chart</h3>
-<p>Charts hide the real risk. DOM shows where you’ll actually get filled.</p>
-
-<h2>Final Take</h2>
-<p>6N is fully tradable—but only in the windows with real depth. Trade Asia for consistency, trade U.S. session for USD-driven moves, and avoid the late-afternoon dead zone entirely. If you want to understand what drives 6N during those liquid windows, go check <a href="https://grizzlyparrottrading.com/futures-basics/how-to-trade-6n-economic-releases.html">the economic releases guide</a> or <a href="https://grizzlyparrottrading.com/futures-basics/6n-volatility-patterns.html">volatility patterns</a>.</p>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="fx-section" id="fields" aria-labelledby="fields-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Evidence starts at the feed</p><h2 id="fields-title">Match the Data Fields to the Liquidity Claim</h2><p>Daily volume can describe participation but cannot reveal an intraday spread. Top-of-book quotes can measure the inside market but cannot prove queue position. The claim must fail when the feed lacks the fields it requires.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Liquidity data fields and supported claims" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Evidence layer</th><th scope="col">Required fields</th><th scope="col">Supports</th><th scope="col">Does not prove</th></tr></thead><tbody>
+    <tr><th scope="row">Trades</th><td>Exchange timestamp, price, quantity, sequence/correction fields</td><td>Turnover, trade count, size distribution</td><td>Bid, ask, resting depth or missed orders</td></tr>
+    <tr><th scope="row">Top of book</th><td>Bid, ask, displayed quantities, update time</td><td>Quoted spread and displayed inside depth</td><td>Depth beyond best price or actual fill priority</td></tr>
+    <tr><th scope="row">Depth</th><td>Multiple price levels with update ordering</td><td>Hypothetical marketable sweep at observation time</td><td>Future cancellations or latency path</td></tr>
+    <tr><th scope="row">Order level</th><td>Order identifiers, priority events, modifications and executions</td><td>Queue-aware research where schema permits</td><td>Your unobserved broker and network latency</td></tr>
+    <tr><th scope="row">Own orders</th><td>Decision, submission, acknowledgment, fill and cancel timestamps</td><td>Implementation shortfall and realized fill quality</td><td>Counterfactual fills for orders never submitted</td></tr>
+  </tbody></table></div>
+  <p class="fx-source-note"><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine</a> offers distinct settlements, Market by Order and PCAP datasets. That catalog is evidence that dataset types differ; it is not evidence that any particular 6N sample is complete. No market-data order was placed for this page.</p>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="fx-section" id="clock" aria-labelledby="clock-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Three clocks, one observation</p><h2 id="clock-title">Build an Event- and Daylight-Saving-Aware Clock Map</h2><p>6N trades on an exchange clock while New Zealand and U.S. information arrives on local civil clocks. The offsets change on different dates. Hard-coded “New York time equals New Zealand time plus X” rules will eventually misclassify windows.</p></div>
+  <div class="fx-state-machine" aria-label="Clock normalization workflow">
+    <article><span>1</span><h3>Source</h3><p>Preserve timestamp, timezone name, precision and sequence.</p></article>
+    <article><span>2</span><h3>Resolve</h3><p>Apply historical timezone rules, including ambiguous or skipped local times.</p></article>
+    <article><span>3</span><h3>Normalize</h3><p>Store UTC plus original local time and CME trade date.</p></article>
+    <article><span>4</span><h3>Tag</h3><p>Attach official event, holiday, open, pause, roll and expiry states.</p></article>
+    <article><span>5</span><h3>Bin</h3><p>Assign only after the entire clock policy is frozen.</p></article>
   </div>
-</footer>
-</body>
-</html>
+  <div class="fx-caution"><strong>Scheduled hours are not a liquidity guarantee.</strong><p><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener noreferrer">CME&rsquo;s trading-hours page</a> states that hours can change and publishes holiday schedules. An open venue can still have insufficient market quality for a given order.</p></div>
+</section>
+
+<section class="fx-section" id="bins" aria-labelledby="bins-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Compare like with like</p><h2 id="bins-title">Design Measurement Bins Around Information States</h2><p>A permanent “best time” label hides the conditions that produced the estimate. Use bins that separate ordinary windows from scheduled announcements, holidays, roll migration and unusual market states.</p></div>
+  <div class="fx-atlas">
+    <article class="fx-event-card"><div class="fx-event-head"><h3>New Zealand information window</h3><strong>Local clock</strong></div><div class="fx-event-metrics"><div><span>Anchor</span><strong>Official release time</strong></div><div><span>Compare</span><strong>Matched non-event days</strong></div></div></article>
+    <article class="fx-event-card"><div class="fx-event-head"><h3>U.S. information window</h3><strong>Eastern time</strong></div><div class="fx-event-metrics"><div><span>Anchor</span><strong>Official release time</strong></div><div><span>Control</span><strong>Overlap and daylight saving</strong></div></div></article>
+    <article class="fx-event-card"><div class="fx-event-head"><h3>Ordinary intraday window</h3><strong>UTC</strong></div><div class="fx-event-metrics"><div><span>Anchor</span><strong>Fixed clock bin</strong></div><div><span>Exclude</span><strong>Registered event buffers</strong></div></div></article>
+    <article class="fx-event-card"><div class="fx-event-head"><h3>Contract migration window</h3><strong>Dated 6N</strong></div><div class="fx-event-metrics"><div><span>Anchor</span><strong>Expiry-specific activity</strong></div><div><span>Record</span><strong>Front/next participation</strong></div></div></article>
+  </div>
+  <p class="fx-source-note">Use the <a href="https://www.rbnz.govt.nz/news-and-events/how-we-release-information" target="_blank" rel="noopener noreferrer">RBNZ publication guidance</a>, the <a href="https://www.stats.govt.nz/release-calendar/" target="_blank" rel="noopener noreferrer">Stats NZ release calendar</a>, and relevant U.S. agency calendars as versioned inputs. A present-day calendar must not be projected backward over historical releases.</p>
+</section>
+
+<section class="fx-section" id="events" aria-labelledby="events-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Confounds that change the denominator</p><h2 id="events-title">Control Events, Holidays, Rolls and Stale Books</h2><p>The measurement table needs an eligibility flag before it needs an average. A bin that silently drops the hardest observations can look liquid precisely because its failures vanished.</p></div>
+  <div class="fx-three-column">
+    <article class="fx-panel"><p class="fx-card-label">Event control</p><h3>Separate anticipation from reaction</h3><p>Define pre-event, immediate, recovery and ordinary windows. Do not mix them into one time-of-day statistic.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Contract control</p><h3>Measure the intended expiry</h3><p>Track volume, open interest and quotes by dated contract. A generic continuous symbol can hide where trading migrated.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Data control</p><h3>Reject unusable states</h3><p>Flag crossed or locked quotes, sequence gaps, one-sided books, feed resets and intervals without heartbeat evidence.</p></article>
+  </div>
+  <ul class="fx-checklist"><li><strong>Retain zero-trade bins.</strong> Zero observed trades and missing data are different states.</li><li><strong>Version holiday schedules.</strong> Early closes and pauses cannot be inferred from a normal-week template.</li><li><strong>Keep every expiry.</strong> The front contract is an outcome of a roll rule, not a timeless symbol.</li><li><strong>Report sample attrition.</strong> Show how many windows each control removed and why.</li></ul>
+</section>
+
+<section class="fx-section" id="metrics" aria-labelledby="metrics-title">
+  <div class="fx-section-heading"><p class="fx-kicker">A panel, not one number</p><h2 id="metrics-title">Measure Spread, Depth, Turnover and Price Impact Together</h2><p>Each metric captures a different failure mode. Publish distributions and tails by order size and information state; an overall median can conceal precisely the conditions in which an order becomes dangerous.</p></div>
+  <div class="fx-four-grid">
+    <article class="fx-panel"><p class="fx-card-label">Quoted</p><h3>Inside spread</h3><p>Ask minus bid at valid two-sided updates. Report time-weighted and observation-weighted versions with update rules.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Displayed</p><h3>Depth curve</h3><p>Quantity available through each price level for declared contract counts. Displayed size can cancel before arrival.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Traded</p><h3>Volume and cadence</h3><p>Contracts, trade count, intertrade duration and size distribution. Prints do not reveal unfilled demand.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Experienced</p><h3>Implementation shortfall</h3><p>Side-adjusted fill price versus the predeclared decision or arrival benchmark, plus fees and unfilled quantity.</p></article>
+  </div>
+  <div class="fx-formula" aria-label="Direction-aware implementation shortfall in U.S. dollars"><code>side &times; (fill &minus; benchmark) &times; 100,000 NZD &times; filled contracts</code><i aria-hidden="true">+</i><code>USD fees + declared USD opportunity cost for unfilled quantity</code><i aria-hidden="true">=</i><strong>Implementation shortfall in USD</strong></div>
+  <p class="fx-source-note"><strong>Sign and unit convention:</strong> use +1 for a buy and &minus;1 for a sell so a worse execution is positive cost. Fill and benchmark are USD per NZD; multiplication by the 100,000 NZD contract unit and filled-contract quantity converts their difference to U.S. dollars before dollar fees and opportunity cost are added. Choose the benchmark and unfilled-quantity policy before observing the fill.</p>
+</section>
+
+<section class="fx-section" id="orders" aria-labelledby="orders-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Liquidity is task-dependent</p><h2 id="orders-title">Replay the Order You Actually Intend to Send</h2><p>A one-contract market order, a patient limit and a multi-contract stop do not consume the same evidence. Define size, urgency, order type, latency, time-in-force, cancellation logic and partial-fill handling before applying any threshold.</p></div>
+  <div class="fx-task-paths">
+    <article><h3>Marketable entry</h3><p>Walk declared size through contemporaneous depth, then stress adverse book changes during latency.</p></article>
+    <article><h3>Passive entry</h3><p>Require queue evidence appropriate to the feed. A touched price is not automatically a fill.</p></article>
+    <article><h3>Protective stop</h3><p>Model trigger-to-order conversion and gaps. Trigger price is not a guaranteed execution price.</p></article>
+    <article><h3>Exit or roll</h3><p>Charge each leg and any overlap. Include the risk of holding the old contract while seeking the new fill.</p></article>
+  </div>
+  <div class="fx-related">Current quote increments, contract units and expiry rules belong in <a href="6n-contract-specs-explained.html">6N Contract Specifications</a>; this page owns market-quality measurement.</div>
+</section>
+
+<section class="fx-section" id="validation" aria-labelledby="validation-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Thresholds before outcomes</p><h2 id="validation-title">Calibrate Early and Validate on Later Market States</h2><p>Use a development block to set data cleaning, binning and market-quality thresholds. Lock the full policy, then assess later chronological data that includes ordinary sessions, announcements, holidays and roll windows.</p></div>
+  <div class="fx-contract-path">
+    <article><h3>Manifest</h3><p>Data source, schema, checksum, gaps, corrections, clocks and expiries.</p></article>
+    <article><h3>Calibrate</h3><p>Limited bins, order tasks, distributions and thresholds in early data.</p></article>
+    <article><h3>Lock</h3><p>Freeze eligibility, costs, gates and permitted order actions.</p></article>
+    <article><h3>Validate</h3><p>Report all later states, failures, tails and threshold breaches.</p></article>
+  </div>
+  <div class="fx-caution"><strong>Research boundary</strong><p>No original 6N liquidity study, order-book sample, spread distribution, fill ledger or preferred trading window is reported on this page. It is a protocol, not a finding. Numerical thresholds must come from a separately documented study and the trader&rsquo;s own size and risk limits.</p></div>
+</section>
+
+<section class="fx-section" id="decision" aria-labelledby="decision-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Order gate</p><h2 id="decision-title">Go, Reduce, Wait or Reject</h2><p>Evaluate all required fields at the intended decision time. A missing feed field is a rejection, not permission to infer good liquidity from a recent candle.</p></div>
+  <div class="fx-go-card" aria-label="6N liquidity decision card">
+    <div><strong>Go</strong><span>Spread, depth, data integrity, event state and stressed execution cost all pass for the declared order.</span></div>
+    <div><strong>Reduce</strong><span>A smaller integer size passes every gate; the original size does not. Recompute risk and economics.</span></div>
+    <div><strong>Wait</strong><span>Temporary event, roll or book condition fails now, and the strategy permits delay without changing its premise.</span></div>
+  </div>
+  <div class="fx-trade-card"><h3>Reject the order when any hard gate fails</h3><dl><div><dt>Data</dt><dd>Missing, stale, crossed, incomplete or unmapped contract evidence.</dd></div><div><dt>Market</dt><dd>Spread, depth or stressed shortfall breaches the frozen limit.</dd></div><div><dt>State</dt><dd>Unapproved event, holiday, expiry or roll condition is active.</dd></div><div><dt>Execution</dt><dd>Required size cannot be modeled with the available book evidence.</dd></div><div><dt>Risk</dt><dd>Stop, gap stress or total loss exceeds the independent budget.</dd></div><div><dt>Economics</dt><dd>Expected edge is not positive after conservative non-overlapping costs.</dd></div></dl></div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 20, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/258/258.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 258: New Zealand Dollar/U.S. Dollar futures</a> for dated-contract identity and rule context.</li>
+  <li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine historical-data catalog</a> and <a href="https://www.cmegroup.com/articles/faqs/market-by-order-mbo.html" target="_blank" rel="noopener noreferrer">CME Market by Order FAQ</a> for distinctions among settlements, trades, books and order-level data. No dataset was purchased or analyzed for this article.</li>
+  <li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener noreferrer">CME Group trading-hours and holiday schedules</a> for versioned venue-state controls.</li>
+  <li><a href="https://www.rbnz.govt.nz/news-and-events/how-we-release-information" target="_blank" rel="noopener noreferrer">Reserve Bank of New Zealand release guidance</a> and <a href="https://www.rbnz.govt.nz/news-and-events/how-we-release-information/ocr-decision-dates-and-financial-stability-report-dates-to-feb-2028" target="_blank" rel="noopener noreferrer">RBNZ decision-date schedule</a> for official event timing.</li>
+  <li><a href="https://www.stats.govt.nz/release-calendar/" target="_blank" rel="noopener noreferrer">Stats NZ official release calendar</a> for New Zealand statistical-event controls.</li>
+</ul><p>Sources and methods were reviewed August 20, 2026. This unsponsored article distinguishes exchange facts, market-quality measures, hypotheses about conditions, inferences from a future study and order-level applications. It reports no original liquidity finding.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This market-quality guide is instructional; it is not tailored trading, legal, tax, hedging, investment, or brokerage counsel. Because displayed size may vanish before arrival, limits can remain unfilled and protective orders can execute at worse prices; leveraged futures losses may outrun the collateral initially posted. Recheck the active expiry, exchange notices, live depth and account terms, and impose a separate maximum-loss allowance before sending an order.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

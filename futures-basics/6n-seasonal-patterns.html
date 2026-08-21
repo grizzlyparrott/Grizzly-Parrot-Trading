@@ -2,258 +2,144 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6N Seasonal Tendencies and Long-Term Patterns</title>
-  <meta name="description" content="A blunt breakdown of 6N seasonal tendencies, long-term patterns, and why NZD futures react to yearly cycles more than most traders realize.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6n-seasonal-patterns.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6N Seasonal Tendencies and Long-Term Patterns">
-  <meta property="og:description" content="A blunt breakdown of 6N seasonal tendencies, long-term patterns, and why NZD futures react to yearly cycles more than most traders realize.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6n-seasonal-patterns.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6N Seasonal Tendencies and Long-Term Patterns">
-  <meta name="twitter:description" content="A blunt breakdown of 6N seasonal tendencies, long-term patterns, and why NZD futures react to yearly cycles more than most traders realize.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6N Seasonal Tendencies and Long-Term Patterns",
-  "description": "A blunt breakdown of 6N seasonal tendencies, long-term patterns, and why NZD futures react to yearly cycles more than most traders realize.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6n-seasonal-patterns.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6n-seasonal-patterns.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6N Seasonal Tendencies and Long-Term Patterns",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6n-seasonal-patterns.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6N Seasonal Patterns: Test Calendar Effects Without Forecasting</title>
+  <meta name="description" content="Test 6N calendar effects with a hypothesis registry, dated-contract returns, multiple-testing controls, uncertainty estimates and a sealed holdout.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6n-seasonal-patterns.html">
+  <meta property="og:title" content="6N Seasonal Patterns: Test Calendar Effects Without Forecasting"><meta property="og:description" content="Test 6N calendar effects with a hypothesis registry, dated-contract returns, multiple-testing controls, uncertainty estimates and a sealed holdout."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6n-seasonal-patterns.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-28"><meta property="article:modified_time" content="2026-08-17">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6N Seasonal Patterns: Test Calendar Effects Without Forecasting"><meta name="twitter:description" content="Test 6N calendar effects with a hypothesis registry, dated-contract returns, multiple-testing controls, uncertainty estimates and a sealed holdout."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6N Seasonal Patterns: Test Calendar Effects Without Forecasting","description":"Test 6N calendar effects with a hypothesis registry, dated-contract returns, multiple-testing controls, uncertainty estimates and a sealed holdout.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6n-seasonal-patterns.html"},"datePublished":"2025-11-28","dateModified":"2026-08-17","url":"https://grizzlyparrottrading.com/futures-basics/6n-seasonal-patterns.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6N Seasonal Patterns: Test Calendar Effects Without Forecasting","item":"https://grizzlyparrottrading.com/futures-basics/6n-seasonal-patterns.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Calendar hypotheses &middot; multiple testing &middot; sealed holdout</p>
+    <h1>6N Seasonal Patterns: Test Calendar Effects Without Forecasting</h1>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 17, 2026</p>
+    <p class="fx-hero-lede">Twelve months, four quarters, five weekdays, several month-end definitions and many holding windows create hundreds of possible 6N comparisons. Even random returns will make some cells look special. The first seasonal control is therefore not a chart; it is a record of how many questions were asked.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#registry">Register the hypothesis</a><a class="fx-text-link" href="#matrix">See the falsification matrix</a></div>
+    <dl class="fx-hero-metrics" aria-label="6N seasonality research status"><div><dt>Primary hypotheses</dt><dd>Predeclared</dd></div><div><dt>Roll policy</dt><dd>Frozen</dd></div><div><dt>Validation</dt><dd>Chronological</dd></div><div><dt>Original findings</dt><dd>None</dd></div></dl>
   </div>
+  <aside class="fx-market-board" aria-label="Illustrative multiple testing expansion">
+    <div class="fx-board-head"><span>Researcher choices</span><strong>Search space multiplies</strong></div>
+    <div class="fx-window-equation"><strong>12 months</strong><span>&times; horizons</span><span>&times; entry dates</span><span>&times; filters</span><span>= many claims</span></div>
+    <p class="fx-board-foot">The best-looking cell is not a preregistered result</p>
+  </aside>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#registry">Registry</a><a href="#sample">Sample</a><a href="#returns">Returns</a><a href="#controls">Controls</a><a href="#uncertainty">Uncertainty</a><a href="#holdout">Holdout</a><a href="#application">Application</a><a href="#matrix">Matrix</a></nav>
 
-<h1>6N Seasonal Tendencies and Long-Term Patterns</h1>
-
-<p>6N futures follow seasonal cycles because New Zealand’s economy is heavily tied to agriculture, tourism, and global risk sentiment. If you don’t understand the annual rhythm, you’ll constantly be surprised when 6N rallies during “dead” times or sells off during what should be bullish conditions. Seasonal patterns won’t predict every move — but they explain a lot more than people admit.</p>
-
-<h2>Why 6N Has Strong Seasonality</h2>
-<p>NZD isn’t a giant currency like EUR or JPY. It’s influenced by:</p>
-
-<ul>
-<li>Agricultural production cycles</li>
-<li>Dairy export cycles</li>
-<li>Tourism flows</li>
-<li>Risk-on / risk-off patterns that repeat every year</li>
-</ul>
-
-<p>Because the economy is small, these predictable flows produce noticeable seasonal behaviors in NZD/USD — and therefore in 6N futures.</p>
-
-<h2>The Three Most Consistent Seasonal Patterns</h2>
-
-<h3>1. Early-Year NZD Strength (Jan–March)</h3>
-<p>NZD often rallies early in the year. Global funds rebalance risk portfolios, and NZD — as a high-beta currency — gets inflows when risk appetite resets.</p>
-
-<ul>
-<li>Stronger demand for commodities</li>
-<li>Global markets usually stabilize after holiday volatility</li>
-<li>Risk-on conditions favor NZD</li>
-</ul>
-
-<p>6N trends up more often than not during Q1.</p>
-
-<h3>2. Mid-Year Neutral or Weak Behavior (April–July)</h3>
-<p>This is when dairy production data, export pressures, and softer tourism flows hit. The NZD can drift sideways or weaken depending on global conditions.</p>
-
-<ul>
-<li>Exports stabilize</li>
-<li>RBNZ is usually not hiking during this window</li>
-<li>Market volatility slows down</li>
-</ul>
-
-<p>6N often becomes choppier and more prone to mean reversion.</p>
-
-<h3>3. Late-Year NZD Weakness (August–November)</h3>
-<p>This is the most consistent seasonal behavior. When risk sentiment cools off in the fall, NZD struggles.</p>
-
-<ul>
-<li>Funds reduce risk exposure</li>
-<li>US Dollar typically strengthens in Q4</li>
-<li>NZ economic data is mixed and less impactful</li>
-</ul>
-
-<p>This period reliably favors short setups on 6N.</p>
-
-<h2>How Seasonal Cycles Shape Long-Term 6N Trends</h2>
-<p>Seasonal tendencies don’t override fundamentals — they interact with them. Here’s how they usually blend:</p>
-
-<table>
-<tr><th>Seasonal Window</th><th>Typical NZD Behavior</th><th>6N Impact</th></tr>
-<tr><td>Q1</td><td>Stronger risk appetite</td><td>6N often trends up</td></tr>
-<tr><td>Mid-year</td><td>Neutral-to-weak flows</td><td>Range behavior</td></tr>
-<tr><td>Late year</td><td>Risk-off and USD strength</td><td>6N trends down</td></tr>
-<tr><td>Holiday period</td><td>Low liquidity</td><td>Choppy, unreliable</td></tr>
-</table>
-
-<p>This breakdown doesn’t predict every move, but it keeps you aligned with the broader environment.</p>
-
-<h2>Seasonality During Major USD Cycles</h2>
-<p>USD strength can override NZD seasonality. But even then, the seasonal patterns still shape the <em>magnitude</em> of moves.</p>
-
-<p>For example:</p>
-
-<ul>
-<li>If USD is strong during Q4 → 6N dumps even harder</li>
-<li>If USD is weak during Q1 → 6N rallies even more aggressively</li>
-</ul>
-
-<p>Seasonal tendencies amplify whatever the USD cycle is already doing.</p>
-
-<h2>How to Use Seasonality Without Overfitting</h2>
-
-<ul>
-<li>Use seasonality for directional bias, not entries</li>
-<li>Combine seasonality with volatility context</li>
-<li>Match seasonality with rate cycle direction</li>
-<li>Use it to filter out low-quality setups</li>
-</ul>
-
-<p>Seasonality is a macro filter — not a signal.</p>
-
-<h2>Final Take</h2>
-<p>6N futures show clear seasonal tendencies because NZD is tied to agriculture, tourism, and global risk cycles. Q1 tends to be bullish, mid-year is choppy, and Q4 typically leans bearish. Use seasonality as a macro compass, not a trading system. If you want to understand why these trends happen, revisit <a href="https://grizzlyparrottrading.com/futures-basics/us-dollar-impact-on-6n.html">the USD impact guide</a> or <a href="https://grizzlyparrottrading.com/futures-basics/how-exports-drive-6n-trends.html">the export-driven trend article</a>.</p>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="fx-section" id="registry" aria-labelledby="registry-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Freeze the question</p><h2 id="registry-title">Build a Hypothesis Registry Before Viewing the Calendar Table</h2><p>A seasonal claim must identify its economic unit, comparison, direction, return window, entry and exit timestamps, eligible contracts, controls, outcome metric and rejection rule. Narrative intuition may motivate the test but cannot define it after results appear.</p></div>
+  <div class="fx-method"><div><h3>Example protocol&mdash;not a result</h3><p>Test whether a single preregistered calendar window has a different distribution of costed 6N returns from matched non-window observations, using dated contracts, a frozen roll rule, block-aware uncertainty and a later untouched holdout.</p></div><dl><div><dt>Fact</dt><dd>Calendar labels are known in advance</dd></div><div><dt>Hypothesis</dt><dd>One label may condition returns</dd></div><div><dt>Valid conclusion</dt><dd>No effect</dd></div></dl></div>
+  <div class="fx-table-scroll" role="region" aria-label="Seasonal hypothesis registry fields" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Registry field</th><th scope="col">Example form</th><th scope="col">Prohibited ambiguity</th></tr></thead><tbody>
+    <tr><th scope="row">Calendar unit</th><td>Named month, weekday, business-day index or event-relative window</td><td>“Around year-end”</td></tr>
+    <tr><th scope="row">Return</th><td>Exact completed-bar endpoints and direction</td><td>Choose close or intraday after inspection</td></tr>
+    <tr><th scope="row">Comparison</th><td>Matched ordinary observations or unconditional distribution</td><td>No baseline</td></tr>
+    <tr><th scope="row">Family</th><td>All months/windows/filters tested in the project</td><td>Publish only the winner</td></tr>
+    <tr><th scope="row">Decision</th><td>Effect-size and uncertainty threshold plus cost stress</td><td>“Statistically interesting”</td></tr>
+  </tbody></table></div>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="fx-section" id="sample" aria-labelledby="sample-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Count cycles, not rows</p><h2 id="sample-title">Define the Sample and Its Independent Seasonal Repetitions</h2><p>Five-minute observations inside one January do not create thousands of independent Januaries. Report the number of years and eligible cycles, regime coverage, missing intervals and structural breaks alongside the number of raw bars.</p></div>
+  <div class="fx-stat-grid">
+    <article class="fx-stat"><span>Years</span><strong>Primary repetition count</strong><p>A monthly hypothesis repeats once per eligible year, not once per intraday bar.</p></article>
+    <article class="fx-stat"><span>Cycles</span><strong>After exclusions</strong><p>Disclose holidays, data gaps, delivery constraints and incomplete windows.</p></article>
+    <article class="fx-stat"><span>States</span><strong>Regime coverage</strong><p>Rates, volatility and market structure can differ across eras.</p></article>
+    <article class="fx-stat"><span>Versions</span><strong>Data lineage</strong><p>Retain source files, revisions, calendars, transformations and checksums.</p></article>
   </div>
-</footer>
-</body>
-</html>
+  <p><a href="https://www.rbnz.govt.nz/statistics/series/exchange-and-interest-rates/exchange-rates-and-the-trade-weighted-index" target="_blank" rel="noopener noreferrer">RBNZ&rsquo;s B1 series</a> provides official daily NZD exchange-rate and Trade Weighted Index data. It can support contextual comparison, but it is not a substitute for executable 6N futures returns or a continuous-contract policy.</p>
+</section>
+
+<section class="fx-section" id="returns" aria-labelledby="returns-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Dated contracts first</p><h2 id="returns-title">Construct Returns Without Turning Rolls Into Seasons</h2><p>6N is a deliverable, dated futures contract under CME rules. A recurring quarterly roll can line up with calendar labels and manufacture an apparent seasonal pattern if the series splice or transaction cost is mishandled.</p></div>
+  <div class="fx-process">
+    <article><span>01</span><h3>Retain expiries</h3><p>Ingest each dated contract and keep its prices, quotes, volume and delivery month separate.</p></article>
+    <article><span>02</span><h3>Choose ex ante</h3><p>Select the active contract using only information available before the migration decision.</p></article>
+    <article><span>03</span><h3>Charge the roll</h3><p>Model closing and reopening at executable prices with spread, slippage and fees.</p></article>
+    <article><span>04</span><h3>Label afterward</h3><p>Attach calendar bins only after return and roll construction is locked.</p></article>
+  </div>
+  <div class="fx-formula" aria-label="Seasonal return comparison"><code>costed return in registered window</code><i aria-hidden="true">vs.</i><code>costed return in predeclared comparison</code></div>
+  <div class="fx-caution"><strong>Adjusted charts are analytical views, not fills.</strong><p>Back-adjustment can remove a visual gap by changing historical levels. Preserve the mapping from every analytical return to the dated contracts and prices an order could have used.</p></div>
+  <p class="fx-source-note"><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/258/258.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 258</a> defines the contract and delivery framework. Full mechanics remain in <a href="6n-contract-specs-explained.html">6N Contract Specifications</a>.</p>
+</section>
+
+<section class="fx-section" id="controls" aria-labelledby="controls-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Calendar is not cause</p><h2 id="controls-title">Control Rival Explanations Without Inventing a Story</h2><p>A repeated month can coincide with monetary-policy schedules, statistical releases, holidays, thin books, export reporting or broad-dollar regimes. These are candidate mechanisms to test, not proof that the month itself causes returns.</p></div>
+  <div class="fx-causal-map">
+    <div class="fx-causal-origin"><strong>Observed calendar difference</strong><span>Descriptive fact only after measurement; cause remains unresolved.</span></div>
+    <article class="fx-panel"><h3>Scheduled information</h3><p>Tag exact RBNZ, Stats NZ and U.S. release times. Test event versus non-event observations instead of assigning all movement to a month.</p></article>
+    <article class="fx-panel"><h3>Market calendar</h3><p>Version holidays, early closes, pauses and daylight-saving transitions. A short session changes opportunity and liquidity.</p></article>
+    <article class="fx-panel"><h3>Contract lifecycle</h3><p>Separate roll-proximate and ordinary periods by dated contract. Check whether the effect survives an alternate ex-ante roll rule.</p></article>
+    <article class="fx-panel"><h3>Macro regime</h3><p>Use only predeclared, observable conditioning states. Do not choose a regime split because it restores the desired result.</p></article>
+  </div>
+  <p class="fx-source-note"><a href="https://www.stats.govt.nz/topics/imports-and-exports/" target="_blank" rel="noopener noreferrer">Stats NZ imports-and-exports documentation</a> distinguishes monthly merchandise trade and quarterly overseas trade indexes. Its <a href="https://datainfoplus.stats.govt.nz/Item/nz.govt.stats/6ed114da-3571-40d4-a89f-932068a4c753" target="_blank" rel="noopener noreferrer">overseas merchandise trade metadata</a> also documents provisional revisions. Release-time versions, not final revised values, belong in a causal historical test.</p>
+</section>
+
+<section class="fx-section" id="uncertainty" aria-labelledby="uncertainty-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Small samples need honest intervals</p><h2 id="uncertainty-title">Report Distributions, Tails and Family-Wide Uncertainty</h2><p>An average month return can be dominated by one crisis year. Publish the median, dispersion, worst observations, sign count, full distribution and an uncertainty method that respects time dependence. Show the complete candidate family.</p></div>
+  <div class="fx-four-grid">
+    <article class="fx-panel"><p class="fx-card-label">Magnitude</p><h3>Effect size</h3><p>Difference in preregistered location or distribution metric, before and after conservative costs.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Precision</p><h3>Interval</h3><p>Block-aware interval or resampling distribution with block choice and assumptions disclosed.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Tail</p><h3>Adverse path</h3><p>Worst cases, drawdown path, gaps and concentration by year or event state.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Search</p><h3>Multiplicity</h3><p>Total hypotheses, transformations and filters tried, with a family-aware correction or false-discovery control.</p></article>
+  </div>
+  <ul class="fx-checklist"><li><strong>Do not equate sign count with certainty.</strong> Years can have unequal magnitudes and common shocks.</li><li><strong>Do not choose the resampling rule after seeing significance.</strong> Freeze it with the hypothesis.</li><li><strong>Do not round away instability.</strong> Publish estimates at all registered robustness settings.</li><li><strong>Do not hide economic weakness.</strong> A narrow positive estimate that loses to costs is not a trading application.</li></ul>
+</section>
+
+<section class="fx-section" id="holdout" aria-labelledby="holdout-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Discovery is not confirmation</p><h2 id="holdout-title">Freeze the Candidate and Open a Later Holdout Once</h2><p>Calendar patterns are especially vulnerable to selection because the labels are easy to scan. Use early data for one documented discovery and later chronological data for confirmation. Any post-holdout change creates a new hypothesis.</p></div>
+  <div class="fx-contract-path">
+    <article><h3>Register</h3><p>Claim, direction, timing, family, controls, costs, metrics and rejection rule.</p></article>
+    <article><h3>Develop</h3><p>Fit cleaning and limited choices in early data; retain all variants and failures.</p></article>
+    <article><h3>Lock</h3><p>Seal code, inputs, transformations, thresholds and access log.</p></article>
+    <article><h3>Confirm</h3><p>Open later data once and publish pass, limited or reject without rescue.</p></article>
+  </div>
+  <div class="fx-caution"><strong>Hypothetical-results boundary</strong><p>The <a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/fraudadv_tradingsystem.html" target="_blank" rel="noopener noreferrer">CFTC advisory on commodity trading systems</a> explains that hypothetical results have inherent limitations and may not reflect actual fills or a trader&rsquo;s capacity to bear losses. Even a confirmed seasonal backtest remains simulated evidence.</p></div>
+</section>
+
+<section class="fx-section" id="application" aria-labelledby="application-title">
+  <div class="fx-section-heading"><p class="fx-kicker">From description to decision</p><h2 id="application-title">A Calendar Effect Is Not Yet a Trading Rule</h2><p>To become a trading application, a surviving effect needs a decision time, order type, size, liquidity gate, invalidation, exit, roll handling and risk budget. Compare it with a risk-matched naive rule and with no trade.</p></div>
+  <div class="fx-claim-ladder">
+    <article class="fx-panel"><h3>Fact</h3><p>The calendar label and official event schedule were known by the declared decision timestamp.</p></article>
+    <article class="fx-panel"><h3>Empirical observation</h3><p>A separately run study estimates a distribution difference, with uncertainty and all searched variants disclosed.</p></article>
+    <article class="fx-panel"><h3>Mechanism hypothesis</h3><p>A declared event, flow or liquidity channel could generate the effect and survives targeted rival controls.</p></article>
+    <article class="fx-panel"><h3>Trading application</h3><p>A frozen, later-tested order rule adds decision value after spread, slippage, fees, misses and risk constraints.</p></article>
+  </div>
+</section>
+
+<section class="fx-section" id="matrix" aria-labelledby="matrix-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Falsification decision</p><h2 id="matrix-title">Seasonality Falsification Matrix</h2><p>Record every row. A claim that survives only one definition or one exceptional year is rejected, not rebranded as a tendency.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="6N seasonal falsification matrix" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Test</th><th scope="col">Pass condition fixed in advance</th><th scope="col">Reject or limit when</th></tr></thead><tbody>
+    <tr><th scope="row">Primary definition</th><td>Registered effect and interval meet the economic threshold</td><td>Wrong sign, too small or too uncertain</td></tr>
+    <tr><th scope="row">Alternate roll</th><td>Direction and useful magnitude survive another ex-ante policy</td><td>Effect is concentrated in splice or roll dates</td></tr>
+    <tr><th scope="row">Leave-one-year-out</th><td>No single year creates the conclusion</td><td>Removing one cycle reverses or erases it</td></tr>
+    <tr><th scope="row">Rival controls</th><td>Effect remains after registered event and regime controls</td><td>Calendar label proxies for another observable state</td></tr>
+    <tr><th scope="row">Multiplicity</th><td>Survives the declared family-wide procedure</td><td>Only unadjusted winner looks persuasive</td></tr>
+    <tr><th scope="row">Holdout and costs</th><td>Later data and stressed implementation retain decision value</td><td>Fails out of sample or after costs</td></tr>
+  </tbody></table></div>
+  <div class="fx-caution"><strong>Research status as of August 17, 2026</strong><p>No original study or result is reported here: no 6N calendar sample, monthly tendency, weekday effect, seasonal coefficient, forecast, backtest or trading result. The page supplies a test protocol only. The current conclusion is <strong>not tested</strong>.</p></div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 20, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/258/258.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 258: New Zealand Dollar/U.S. Dollar futures</a> for dated-contract and delivery context.</li>
+  <li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine historical-data catalog</a> for available exchange-data categories. No market dataset was purchased or analyzed for this article.</li>
+  <li><a href="https://www.rbnz.govt.nz/statistics/series/exchange-and-interest-rates/exchange-rates-and-the-trade-weighted-index" target="_blank" rel="noopener noreferrer">Reserve Bank of New Zealand B1 exchange rates and Trade Weighted Index</a> for official NZD reference-series definitions.</li>
+  <li><a href="https://www.stats.govt.nz/topics/imports-and-exports/" target="_blank" rel="noopener noreferrer">Stats NZ imports-and-exports topic documentation</a> and <a href="https://datainfoplus.stats.govt.nz/Item/nz.govt.stats/6ed114da-3571-40d4-a89f-932068a4c753" target="_blank" rel="noopener noreferrer">overseas merchandise trade metadata</a> for release frequency, concepts and revision controls.</li>
+  <li><a href="https://www.census.gov/data/software/x13as.html" target="_blank" rel="noopener noreferrer">U.S. Census Bureau X-13ARIMA-SEATS seasonal-adjustment documentation</a> for official seasonal-model context; this article does not apply X-13 to 6N.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/fraudadv_tradingsystem.html" target="_blank" rel="noopener noreferrer">CFTC advisory on hypothetical commodity-trading results</a> for simulation limitations.</li>
+</ul><p>Sources and methods were reviewed August 20, 2026. This unsponsored article separates calendar facts, candidate mechanisms, registered hypotheses, inferences that require an actual study and trading applications that require later execution evidence.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This calendar-testing protocol teaches research methods; it is not personal financial, investment, tax, legal, hedging, brokerage, or trading advice. A historical effect can vanish as fills worsen, and leverage can make the realized loss exceed both the simulated outcome and the margin originally supplied. Confirm current exchange specifications, the tradable expiry, contemporaneous liquidity and account charges, then apply a separately chosen loss limit.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

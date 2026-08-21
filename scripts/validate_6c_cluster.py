@@ -156,7 +156,7 @@ class PageParser(HTMLParser):
         elif tag == "main":
             self.page.main_classes.append(set(attr.get("class", "").split()))
 
-        if "ca-faq" in set(attr.get("class", "").split()):
+        if "fx-faq" in set(attr.get("class", "").split()):
             self.faq_depth += 1
 
         if tag in {"script", "style", "template"}:
@@ -275,7 +275,7 @@ def article_text(raw: str) -> str:
 def visible_faq_entries(raw: str) -> list[tuple[str, str]]:
     entries: list[tuple[str, str]] = []
     sections = re.findall(
-        r'<section\b[^>]*class=["\'][^"\']*\bca-faq\b[^"\']*["\'][^>]*>(.*?)</section>',
+        r'<section\b[^>]*class=["\'][^"\']*\bfx-faq\b[^"\']*["\'][^>]*>(.*?)</section>',
         raw,
         flags=re.I | re.S,
     )
@@ -291,7 +291,7 @@ def visible_faq_entries(raw: str) -> list[tuple[str, str]]:
 
 def source_disclosure(raw: str) -> tuple[str, list[str]]:
     match = re.search(
-        r'<(?P<tag>details|section|aside)\b[^>]*class=["\'][^"\']*\bca-sources\b[^"\']*["\'][^>]*>'
+        r'<(?P<tag>details|section|aside)\b[^>]*class=["\'][^"\']*\bfx-sources\b[^"\']*["\'][^>]*>'
         r'(?P<body>.*?)</(?P=tag)>',
         raw,
         flags=re.I | re.S,
@@ -495,18 +495,18 @@ def validate_page(path: Path, id_cache: dict[Path, set[str]]):
     stylesheets = stylesheet_values(page)
     if "../style.css" not in stylesheets:
         errors.append("missing ../style.css")
-    if "/futures-basics/6c-research-library.css?v=20260813a" not in stylesheets:
+    if "/futures-basics/currency-research-library.css?v=20260820a" not in stylesheets:
         errors.append("missing versioned 6C research stylesheet")
-    if not any("cad-library" in classes for classes in page.main_classes):
-        errors.append("main wrapper is missing cad-library class")
-    css_path = ARTICLE_DIR / "6c-research-library.css"
+    if not any("currency-library" in classes for classes in page.main_classes):
+        errors.append("main wrapper is missing currency-library class")
+    css_path = ARTICLE_DIR / "currency-research-library.css"
     if css_path.exists():
         css_text = css_path.read_text(encoding="utf-8", errors="strict")
-        defined_ca_classes = set(re.findall(r"\.(ca-[a-z0-9_-]+)", css_text, flags=re.I))
+        defined_ca_classes = set(re.findall(r"\.(fx-[a-z0-9_-]+)", css_text, flags=re.I))
         used_ca_classes: set[str] = set()
         for class_value in re.findall(r'\bclass=["\']([^"\']+)["\']', raw, flags=re.I):
             used_ca_classes.update(
-                value for value in class_value.split() if value.lower().startswith("ca-")
+                value for value in class_value.split() if value.lower().startswith("fx-")
             )
         undefined_classes = sorted(used_ca_classes - defined_ca_classes)
         if undefined_classes:
@@ -642,7 +642,7 @@ def validate_page(path: Path, id_cache: dict[Path, set[str]]):
         errors.append("visible article body lacks the review date")
     source_text, source_hrefs = source_disclosure(raw)
     if not source_text:
-        errors.append("missing visible ca-sources disclosure")
+        errors.append("missing visible fx-sources disclosure")
     else:
         if "reviewed august 13, 2026" not in source_text.lower():
             errors.append("source disclosure lacks an August 13, 2026 review statement")
@@ -662,8 +662,8 @@ def validate_page(path: Path, id_cache: dict[Path, set[str]]):
             for href in external_source_hrefs
         ):
             errors.append("source disclosure lacks a recognized responsible primary institution")
-    if not re.search(r'class=["\'][^"\']*ca-disclaimer\b', raw, flags=re.I):
-        errors.append("missing visible ca-disclaimer")
+    if not re.search(r'class=["\'][^"\']*fx-disclaimer\b', raw, flags=re.I):
+        errors.append("missing visible fx-disclaimer")
     for marker in MOJIBAKE_MARKERS:
         if marker in raw:
             errors.append(f"mojibake marker present: {marker!r}")
@@ -812,23 +812,23 @@ def main() -> int:
     all_errors["<synchronization>"].extend(sync_errors)
     all_warnings["<synchronization>"].extend(sync_warnings)
 
-    css = ARTICLE_DIR / "6c-research-library.css"
+    css = ARTICLE_DIR / "currency-research-library.css"
     if not css.exists() or css.stat().st_size < 5000:
-        all_errors["<shared>"].append("6c-research-library.css is missing or unexpectedly small")
+        all_errors["<shared>"].append("currency-research-library.css?v=20260820a is missing or unexpectedly small")
     else:
         css_text = css.read_text(encoding="utf-8", errors="strict")
         event_value_rule = re.search(
-            r"\.ca-event-metrics\s+strong\s*\{(?P<body>.*?)\}",
+            r"\.fx-event-metrics\s+strong\s*\{(?P<body>.*?)\}",
             css_text,
             flags=re.I | re.S,
         )
         if not event_value_rule or not re.search(
-            r"\bcolor\s*:\s*var\(--ca-ink\)\s*;",
+            r"\bcolor\s*:\s*var\(--fx-ink\)\s*;",
             event_value_rule.group("body") if event_value_rule else "",
             flags=re.I,
         ):
             all_errors["<shared>"].append(
-                "ca-event-metrics strong must set var(--ca-ink) to prevent low-contrast hero inheritance"
+                "fx-event-metrics strong must set var(--fx-ink) to prevent low-contrast hero inheritance"
             )
 
     error_count = sum(len(items) for items in all_errors.values())

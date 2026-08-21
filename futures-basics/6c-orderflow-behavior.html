@@ -9,42 +9,42 @@
   <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6c-orderflow-behavior.html">
   <meta property="og:title" content="6C Order Flow: What Futures Data Can Actually Show"><meta property="og:description" content="Use CME trade and order-book data to test 6C auction hypotheses while respecting feed integrity, queue, execution and global OTC FX limits."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6c-orderflow-behavior.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-27"><meta property="article:modified_time" content="2026-08-13">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6C Order Flow: What Futures Data Can Actually Show"><meta name="twitter:description" content="Use CME trade and order-book data to test 6C auction hypotheses while respecting feed integrity, queue, execution and global OTC FX limits."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
-  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/6c-research-library.css?v=20260813a">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6C Order Flow: What Futures Data Can Actually Show","description":"Use CME trade and order-book data to test 6C auction hypotheses while respecting feed integrity, queue, execution and global OTC FX limits.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6c-orderflow-behavior.html"},"datePublished":"2025-11-27","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/6c-orderflow-behavior.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6C Order Flow: What Futures Data Can Actually Show","item":"https://grizzlyparrottrading.com/futures-basics/6c-orderflow-behavior.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
 <header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
-<main class="container article-container cad-library"><article>
+<main class="container article-container currency-library"><article>
 <!-- ARTICLE BODY START -->
-<header class="ca-hero">
-  <div class="ca-hero-copy">
-    <p class="ca-kicker">Central limit order book &middot; replay &middot; execution limits</p>
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Central limit order book &middot; replay &middot; execution limits</p>
     <h1>6C Order Flow: What Futures Data Can Actually Show</h1>
-    <p class="ca-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
-    <p class="ca-hero-lede">A 6C footprint is a record of transactions on a particular futures venue and contract. It is not a window into every bank quote, spot trade, forward, swap, option hedge, or internalized customer flow in the global Canadian-dollar market.</p>
-    <div class="ca-hero-actions"><a class="button-primary" href="#boundary">Set the boundary</a><a class="ca-text-link" href="#gate">Use the data gate</a></div>
-    <dl class="ca-hero-metrics" aria-label="6C order-flow orientation"><div><dt>Venue</dt><dd>CME futures</dd></div><div><dt>Book</dt><dd>Displayed orders</dd></div><div><dt>Global FX</dt><dd>Partially observed</dd></div><div><dt>Original result</dt><dd>None</dd></div></dl>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="fx-hero-lede">A 6C footprint is a record of transactions on a particular futures venue and contract. It is not a window into every bank quote, spot trade, forward, swap, option hedge, or internalized customer flow in the global Canadian-dollar market.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#boundary">Set the boundary</a><a class="fx-text-link" href="#gate">Use the data gate</a></div>
+    <dl class="fx-hero-metrics" aria-label="6C order-flow orientation"><div><dt>Venue</dt><dd>CME futures</dd></div><div><dt>Book</dt><dd>Displayed orders</dd></div><div><dt>Global FX</dt><dd>Partially observed</dd></div><div><dt>Original result</dt><dd>None</dd></div></dl>
   </div>
 </header>
 
-<nav class="ca-jump-nav" aria-label="On this page"><a href="#boundary">Boundary</a><a href="#prerequisites">Data</a><a href="#observables">Variables</a><a href="#hypotheses">Hypotheses</a><a href="#replay">Replay</a><a href="#confounds">Confounds</a><a href="#gate">Review gate</a></nav>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#boundary">Boundary</a><a href="#prerequisites">Data</a><a href="#observables">Variables</a><a href="#hypotheses">Hypotheses</a><a href="#replay">Replay</a><a href="#confounds">Confounds</a><a href="#gate">Review gate</a></nav>
 
-<section class="ca-section" id="boundary" aria-labelledby="boundary-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Venue evidence</p><h2 id="boundary-title">The 6C Book Is Precise and Incomplete</h2><p><strong>Fact:</strong> CME Globex operates a central limit order book for listed futures, and CME describes its Market by Order feed as order-level data with individual queue information, full depth, and individual displayed order sizes. <strong>Fact:</strong> the BIS Triennial Survey covers a much larger global OTC FX market. <strong>Inference:</strong> 6C order-book evidence can be exact for the recorded venue while remaining incomplete as a measure of total CAD trading.</p></div>
-  <div class="ca-two-column">
-    <article class="ca-panel"><p class="ca-card-label">Visible on the futures venue</p><h3>Trades and displayed book changes</h3><p>With an entitled and correctly decoded feed, a researcher can observe exchange timestamps, prices, quantities, order additions, changes, deletions, depth, and trade events for the selected dated contract. The precise fields depend on the feed and message specification.</p></article>
-    <article class="ca-panel"><p class="ca-card-label">Not visible from 6C alone</p><h3>The rest of the Canadian-dollar market</h3><p>The book does not reveal bilateral OTC quotes, internalized dealer flow, every spot venue, forwards, swaps, options positions, or why a participant traded. Nor does an order ID provide a trader&rsquo;s identity or economic motive.</p></article>
+<section class="fx-section" id="boundary" aria-labelledby="boundary-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Venue evidence</p><h2 id="boundary-title">The 6C Book Is Precise and Incomplete</h2><p><strong>Fact:</strong> CME Globex operates a central limit order book for listed futures, and CME describes its Market by Order feed as order-level data with individual queue information, full depth, and individual displayed order sizes. <strong>Fact:</strong> the BIS Triennial Survey covers a much larger global OTC FX market. <strong>Inference:</strong> 6C order-book evidence can be exact for the recorded venue while remaining incomplete as a measure of total CAD trading.</p></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Visible on the futures venue</p><h3>Trades and displayed book changes</h3><p>With an entitled and correctly decoded feed, a researcher can observe exchange timestamps, prices, quantities, order additions, changes, deletions, depth, and trade events for the selected dated contract. The precise fields depend on the feed and message specification.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Not visible from 6C alone</p><h3>The rest of the Canadian-dollar market</h3><p>The book does not reveal bilateral OTC quotes, internalized dealer flow, every spot venue, forwards, swaps, options positions, or why a participant traded. Nor does an order ID provide a trader&rsquo;s identity or economic motive.</p></article>
   </div>
   <p>CME&rsquo;s Market by Price format consolidates quantity at price levels, while Market by Order preserves more order-level detail. A footprint made from completed trades is narrower still. State which dataset is present before discussing imbalance, absorption, queue, or cancellation behavior.</p>
-  <div class="ca-caution"><strong>Contract identity first</strong><p>Order flow belongs to a dated 6C contract. Around roll, activity can migrate to the next expiry. Verify instrument definitions and current mechanics through the <a href="6c-tick-size-tick-value.html">canonical 6C contract guide</a>; do not combine expiries into one synthetic book.</p></div>
+  <div class="fx-caution"><strong>Contract identity first</strong><p>Order flow belongs to a dated 6C contract. Around roll, activity can migrate to the next expiry. Verify instrument definitions and current mechanics through the <a href="6c-tick-size-tick-value.html">canonical 6C contract guide</a>; do not combine expiries into one synthetic book.</p></div>
 </section>
 
-<section class="ca-section" id="prerequisites" aria-labelledby="prerequisites-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Fail before analysis</p><h2 id="prerequisites-title">Reconstruct the Book or Do Not Claim Book Behavior</h2><p>An OHLCV bar cannot recover the order sequence inside the bar. A trade-and-quote file cannot support queue-position claims if it omits order identifiers. A message stream with unrepaired sequence gaps can create false cancellations, false depletion, or impossible depth. Match the claim to the data actually retained.</p></div>
-  <div class="ca-table-scroll" role="region" aria-label="Data prerequisites for 6C order-flow claims" tabindex="0">
-    <table class="ca-table"><thead><tr><th scope="col">Claim family</th><th scope="col">Minimum evidence</th><th scope="col">Fail-closed condition</th></tr></thead><tbody>
+<section class="fx-section" id="prerequisites" aria-labelledby="prerequisites-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Fail before analysis</p><h2 id="prerequisites-title">Reconstruct the Book or Do Not Claim Book Behavior</h2><p>An OHLCV bar cannot recover the order sequence inside the bar. A trade-and-quote file cannot support queue-position claims if it omits order identifiers. A message stream with unrepaired sequence gaps can create false cancellations, false depletion, or impossible depth. Match the claim to the data actually retained.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Data prerequisites for 6C order-flow claims" tabindex="0">
+    <table class="fx-table"><thead><tr><th scope="col">Claim family</th><th scope="col">Minimum evidence</th><th scope="col">Fail-closed condition</th></tr></thead><tbody>
       <tr><th scope="row">Trade imbalance</th><td>Sequenced trades, price, quantity, reliable aggressor classification rule, synchronized quotes</td><td>Trades cannot be aligned to the prevailing book or classification is ambiguous.</td></tr>
       <tr><th scope="row">Depth imbalance</th><td>Book snapshots plus all applicable incremental updates for declared levels</td><td>Sequence gap, stale snapshot, unsupported depth, or unresolved reset.</td></tr>
       <tr><th scope="row">Cancellation rate</th><td>Order-level add/change/delete messages and lifecycle-consistent IDs</td><td>Feed aggregates orders by price or an order lifecycle is incomplete.</td></tr>
@@ -52,12 +52,12 @@
       <tr><th scope="row">Historical fill</th><td>Decision-time book, order rule, size, latency, queue model, partial-fill logic, fees</td><td>Replay uses future depth, assumes touch equals fill, or ignores queue loss.</td></tr>
     </tbody></table>
   </div>
-  <div class="ca-method"><div><h3>Feed-integrity record</h3><p>Store channel, instrument ID, schema version, packet and message sequence, exchange and receipt timestamps, snapshot status, recovery events, clock offset, and entitlement provenance. Preserve raw immutable input so the reconstruction can be replayed after a parser fix.</p></div><dl><div><dt>Sequence</dt><dd>Continuous</dd></div><div><dt>Snapshot</dt><dd>Matched</dd></div><div><dt>Clock</dt><dd>Audited</dd></div><div><dt>Raw input</dt><dd>Immutable</dd></div></dl></div>
+  <div class="fx-method"><div><h3>Feed-integrity record</h3><p>Store channel, instrument ID, schema version, packet and message sequence, exchange and receipt timestamps, snapshot status, recovery events, clock offset, and entitlement provenance. Preserve raw immutable input so the reconstruction can be replayed after a parser fix.</p></div><dl><div><dt>Sequence</dt><dd>Continuous</dd></div><div><dt>Snapshot</dt><dd>Matched</dd></div><div><dt>Clock</dt><dd>Audited</dd></div><div><dt>Raw input</dt><dd>Immutable</dd></div></dl></div>
 </section>
 
-<section class="ca-section" id="observables" aria-labelledby="observables-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Observable variables</p><h2 id="observables-title">Translate the Message Stream Into Auditable Measures</h2><p>Every derived variable needs a formula, sampling rule, and known limitation. A colorful visualization is not a definition.</p></div>
-  <div class="ca-check-grid">
+<section class="fx-section" id="observables" aria-labelledby="observables-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Observable variables</p><h2 id="observables-title">Translate the Message Stream Into Auditable Measures</h2><p>Every derived variable needs a formula, sampling rule, and known limitation. A colorful visualization is not a definition.</p></div>
+  <div class="fx-check-grid">
     <article><strong>Quoted spread</strong><p>Best ask minus best bid at a declared timestamp. Store time-weighted distributions and missing-book intervals.</p></article>
     <article><strong>Displayed depth</strong><p>Visible quantity at the touch or within a fixed number of price levels. It can cancel before an order arrives.</p></article>
     <article><strong>Book imbalance</strong><p>A frozen transformation of bid and ask depth over specified levels. Results depend on depth horizon and sampling.</p></article>
@@ -68,24 +68,24 @@
   <p>Normalize measures by state where appropriate. Ten contracts at the best bid can mean something different in an ordinary one-tick market than during a release with a wider spread and rapid cancellations. Preserve raw units alongside any z-score or percentile so the economic scale remains visible.</p>
 </section>
 
-<section class="ca-section" id="hypotheses" aria-labelledby="hypotheses-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Level first, narrative second</p><h2 id="hypotheses-title">Anchor the Hypothesis to an Objective Price Region</h2><p>Order-flow labels become circular when a researcher sees a reversal, draws a level, and then calls the preceding trades absorption. Define the level without using the future response. Possible sources include a prior session extreme, an official settlement, a pre-event range boundary, or a volume reference computed entirely from past data.</p></div>
-  <div class="ca-process" aria-label="Level-first order-flow hypothesis workflow">
+<section class="fx-section" id="hypotheses" aria-labelledby="hypotheses-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Level first, narrative second</p><h2 id="hypotheses-title">Anchor the Hypothesis to an Objective Price Region</h2><p>Order-flow labels become circular when a researcher sees a reversal, draws a level, and then calls the preceding trades absorption. Define the level without using the future response. Possible sources include a prior session extreme, an official settlement, a pre-event range boundary, or a volume reference computed entirely from past data.</p></div>
+  <div class="fx-process" aria-label="Level-first order-flow hypothesis workflow">
     <article><span>1</span><h3>Declare the level</h3><p>Name its source, timestamp, tolerance band, and expiration rule before the first eligible touch.</p></article>
     <article><span>2</span><h3>Declare the flow event</h3><p>Define the exact imbalance, trade rate, replenishment, or cancellation threshold using past and current messages only.</p></article>
     <article><span>3</span><h3>Declare outcomes</h3><p>Measure forward movement, adverse excursion, time to exit, spread, and fill behavior over frozen horizons.</p></article>
     <article><span>4</span><h3>Declare the baseline</h3><p>Compare with eligible level touches that lack the flow event and with clock-, event-, and volatility-matched observations.</p></article>
   </div>
-  <div class="ca-two-column">
-    <article class="ca-panel"><p class="ca-card-label">Candidate hypothesis</p><h3>Replenishment changes the response distribution</h3><p>At a predeclared level, repeated displayed replenishment after marketable trades may be associated with a different forward-price distribution than matched touches without replenishment.</p></article>
-    <article class="ca-panel"><p class="ca-card-label">Prohibited inference</p><h3>&ldquo;A bank is defending this price&rdquo;</h3><p>The futures feed does not identify a bank, hedge, customer, or motive. Even an order-level pattern cannot establish a participant&rsquo;s total position across venues.</p></article>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Candidate hypothesis</p><h3>Replenishment changes the response distribution</h3><p>At a predeclared level, repeated displayed replenishment after marketable trades may be associated with a different forward-price distribution than matched touches without replenishment.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Prohibited inference</p><h3>&ldquo;A bank is defending this price&rdquo;</h3><p>The futures feed does not identify a bank, hedge, customer, or motive. Even an order-level pattern cannot establish a participant&rsquo;s total position across venues.</p></article>
   </div>
 </section>
 
-<section class="ca-section" id="replay" aria-labelledby="replay-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Event-time validation</p><h2 id="replay-title">Replay the Decision at the Speed It Could Have Existed</h2><p>Research timestamps must reproduce what a live process could know. Compute the signal only after all required messages arrive, add declared processing and order-entry latency, and evaluate the fill against later book events. Using the exchange timestamp for the signal but zero latency for the order gives the hypothetical trader information and speed it did not possess.</p></div>
-  <div class="ca-table-scroll" role="region" aria-label="Execution replay requirements" tabindex="0">
-    <table class="ca-table"><thead><tr><th scope="col">Replay component</th><th scope="col">Frozen rule</th><th scope="col">Optimistic shortcut to reject</th></tr></thead><tbody>
+<section class="fx-section" id="replay" aria-labelledby="replay-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Event-time validation</p><h2 id="replay-title">Replay the Decision at the Speed It Could Have Existed</h2><p>Research timestamps must reproduce what a live process could know. Compute the signal only after all required messages arrive, add declared processing and order-entry latency, and evaluate the fill against later book events. Using the exchange timestamp for the signal but zero latency for the order gives the hypothetical trader information and speed it did not possess.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Execution replay requirements" tabindex="0">
+    <table class="fx-table"><thead><tr><th scope="col">Replay component</th><th scope="col">Frozen rule</th><th scope="col">Optimistic shortcut to reject</th></tr></thead><tbody>
       <tr><th scope="row">Signal time</th><td>Last required input plus computation latency</td><td>Trigger at the first message that only later completes the pattern.</td></tr>
       <tr><th scope="row">Arrival time</th><td>Signal time plus measured or stressed network/order latency</td><td>Assume immediate exchange arrival.</td></tr>
       <tr><th scope="row">Marketable order</th><td>Consume visible quantity by price until size is filled</td><td>Fill the entire order at the best quote.</td></tr>
@@ -96,9 +96,9 @@
   <p>Partition chronologically and keep the final period untouched until definitions, parser version, exclusions, thresholds, and code are frozen. Group uncertainty by event or trading day because message-level observations within one episode are dependent.</p>
 </section>
 
-<section class="ca-section" id="confounds" aria-labelledby="confounds-title">
-  <div class="ca-section-heading"><p class="ca-kicker">What can imitate a pattern</p><h2 id="confounds-title">Audit the Roll, News Clock, and Data Path</h2><p>An apparent imbalance effect can be the signature of a scheduled announcement, a switch between expiries, a stale book, or a parser restart. Treat each as a rival explanation.</p></div>
-  <div class="ca-check-grid">
+<section class="fx-section" id="confounds" aria-labelledby="confounds-title">
+  <div class="fx-section-heading"><p class="fx-kicker">What can imitate a pattern</p><h2 id="confounds-title">Audit the Roll, News Clock, and Data Path</h2><p>An apparent imbalance effect can be the signature of a scheduled announcement, a switch between expiries, a stale book, or a parser restart. Treat each as a rival explanation.</p></div>
+  <div class="fx-check-grid">
     <article><strong>Scheduled news</strong><p>Tag Bank of Canada, Statistics Canada, Federal Reserve, BLS, and BEA timestamps. Estimate ordinary and event samples separately.</p></article>
     <article><strong>Contract migration</strong><p>Measure nearby and next contracts independently; never aggregate their depth as one venue.</p></article>
     <article><strong>Hidden liquidity</strong><p>Displayed size is not total trading interest. Native iceberg behavior and replenishment complicate naive cancellation ratios.</p></article>
@@ -109,10 +109,10 @@
   <p>Robustness should vary adjacent level bands, flow thresholds, sampling intervals, latency, order size, and event exclusions according to a frozen grid. If the sign exists only at one narrow parameter or in one contract month, classify the result as unstable.</p>
 </section>
 
-<section class="ca-section" id="gate" aria-labelledby="gate-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Ending record</p><h2 id="gate-title">Pass the Data-Quality Gate Before Reviewing the Trade</h2><p>This article does not report an original order-flow result. It produced no 6C order-book reconstruction, footprint study, imbalance estimate, replay, fill result, backtest, or live-performance record. The following data-quality record is a gate for future work, not evidence that any named pattern works.</p></div>
-  <div class="ca-table-scroll" role="region" aria-label="6C order-flow data-quality and post-event review record" tabindex="0">
-    <table class="ca-table"><thead><tr><th scope="col">Gate</th><th scope="col">Required evidence</th><th scope="col">Disposition if missing</th></tr></thead><tbody>
+<section class="fx-section" id="gate" aria-labelledby="gate-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Ending record</p><h2 id="gate-title">Pass the Data-Quality Gate Before Reviewing the Trade</h2><p>This article does not report an original order-flow result. It produced no 6C order-book reconstruction, footprint study, imbalance estimate, replay, fill result, backtest, or live-performance record. The following data-quality record is a gate for future work, not evidence that any named pattern works.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="6C order-flow data-quality and post-event review record" tabindex="0">
+    <table class="fx-table"><thead><tr><th scope="col">Gate</th><th scope="col">Required evidence</th><th scope="col">Disposition if missing</th></tr></thead><tbody>
       <tr><th scope="row">Instrument and roll</th><td>Dated contract, reference definition, migration status</td><td>Reject observation</td></tr>
       <tr><th scope="row">Feed integrity</th><td>No unresolved sequence gap; snapshot and incrementals agree</td><td>Reject interval</td></tr>
       <tr><th scope="row">Clock integrity</th><td>Exchange/receipt clock audit and known latency</td><td>No lead-lag or replay claim</td></tr>
@@ -121,10 +121,10 @@
       <tr><th scope="row">Post-event review</th><td>Expected and actual signal time, book state, fills, path, confounds, invalidation</td><td>Do not add to validated sample</td></tr>
     </tbody></table>
   </div>
-  <div class="ca-related">Use the <a href="6c-scalping-guide.html">6C scalping market-quality workflow</a> for a complete short-horizon go/no-go decision. Order-flow evidence is one input; it does not replace a cost budget, invalidation, or risk limit.</div>
+  <div class="fx-related">Use the <a href="6c-scalping-guide.html">6C scalping market-quality workflow</a> for a complete short-horizon go/no-go decision. Order-flow evidence is one input; it does not replace a cost budget, invalidation, or risk limit.</div>
 </section>
 
-<details class="ca-sources"><summary>Sources, methods and editorial disclosure</summary><ul>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure</summary><ul>
   <li><a href="https://www.cmegroup.com/articles/faqs/market-by-order-mbo.html" target="_blank" rel="noopener">CME Group Market by Order FAQ</a> for order-level, queue, depth, order-ID, and Market by Price distinctions.</li>
   <li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener">CME DataMine historical data catalog</a> for the availability of Market by Order, PCAP, time-and-sales, and book datasets. This review acquired no paid or downloaded dataset.</li>
   <li><a href="https://www.cmegroup.com/market-data/browse-data/catalog/futures-and-options-data.html" target="_blank" rel="noopener">CME Group futures and options data overview</a> for official trade, top-of-book, and depth data context.</li>
@@ -132,7 +132,7 @@
   <li><a href="https://www.cftc.gov/idc/groups/public/%40commitmentsoftraders/documents/file/tfmexplanatorynotes.pdf" target="_blank" rel="noopener">CFTC Traders in Financial Futures explanatory notes</a> for report timing, trader categories, aggregation, and interpretation limits.</li>
   <li><a href="https://www.cmegroup.com/markets/fx/g10/canadian-dollar.contractSpecs.html" target="_blank" rel="noopener">CME Group Canadian Dollar futures page</a> for the current product context.</li>
 </ul><p>Sources and methods were reviewed August 13, 2026. This article defines an original data and replay protocol but reports no original order-flow finding. It is unsponsored editorial analysis.</p></details>
-<aside class="ca-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This market-data framework is education rather than an order-flow finding or individualized trading, data-engineering, legal, tax, hedging, or brokerage advice. Futures leverage can create losses larger than the initial margin deposit. Displayed liquidity may disappear, passive orders may not fill, and marketable orders can slip. Verify data entitlements, feed integrity, active contracts, current costs, and your own controls before acting.</p></aside>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This market-data framework is education rather than an order-flow finding or individualized trading, data-engineering, legal, tax, hedging, or brokerage advice. Futures leverage can create losses larger than the initial margin deposit. Displayed liquidity may disappear, passive orders may not fill, and marketable orders can slip. Verify data entitlements, feed integrity, active contracts, current costs, and your own controls before acting.</p></aside>
 <!-- ARTICLE BODY END -->
 </article></main>
 <footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>

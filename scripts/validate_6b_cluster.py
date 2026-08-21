@@ -129,7 +129,7 @@ class PageParser(HTMLParser):
         elif tag == "main":
             self.page.main_classes.append(set(attr.get("class", "").split()))
 
-        if "gb-faq" in set(attr.get("class", "").split()):
+        if "fx-faq" in set(attr.get("class", "").split()):
             self.faq_depth += 1
 
         if tag in {"script", "style", "template"}:
@@ -248,7 +248,7 @@ def article_text(raw: str) -> str:
 def visible_faq_entries(raw: str) -> list[tuple[str, str]]:
     entries: list[tuple[str, str]] = []
     sections = re.findall(
-        r'<section\b[^>]*class=["\'][^"\']*\bgb-faq\b[^"\']*["\'][^>]*>(.*?)</section>',
+        r'<section\b[^>]*class=["\'][^"\']*\bfx-faq\b[^"\']*["\'][^>]*>(.*?)</section>',
         raw,
         flags=re.I | re.S,
     )
@@ -442,10 +442,10 @@ def validate_page(path: Path, id_cache: dict[Path, set[str]]):
     stylesheets = stylesheet_values(page)
     if "../style.css" not in stylesheets:
         errors.append("missing ../style.css")
-    if "6b-research-library.css?v=20260813a" not in stylesheets:
+    if "/futures-basics/currency-research-library.css?v=20260820a" not in stylesheets:
         errors.append("missing versioned 6B research stylesheet")
-    if not any("sterling-library" in classes for classes in page.main_classes):
-        errors.append("main wrapper is missing sterling-library class")
+    if not any("currency-library" in classes for classes in page.main_classes):
+        errors.append("main wrapper is missing currency-library class")
 
     if len(h1s) != 1:
         errors.append(f"must contain exactly one h1, found {len(h1s)}")
@@ -550,10 +550,10 @@ def validate_page(path: Path, id_cache: dict[Path, set[str]]):
         errors.append("visible article body lacks Kyle Parrott attribution")
     if "Updated August 13, 2026" not in article_text(raw):
         errors.append("visible article body lacks the review date")
-    if not re.search(r'class=["\'][^"\']*gb-sources\b', raw, flags=re.I):
-        errors.append("missing visible gb-sources disclosure")
-    if not re.search(r'class=["\'][^"\']*gb-disclaimer\b', raw, flags=re.I):
-        errors.append("missing visible gb-disclaimer")
+    if not re.search(r'class=["\'][^"\']*fx-sources\b', raw, flags=re.I):
+        errors.append("missing visible fx-sources disclosure")
+    if not re.search(r'class=["\'][^"\']*fx-disclaimer\b', raw, flags=re.I):
+        errors.append("missing visible fx-disclaimer")
     for marker in MOJIBAKE_MARKERS:
         if marker in raw:
             errors.append(f"mojibake marker present: {marker!r}")
@@ -624,23 +624,23 @@ def main() -> int:
     all_errors["<synchronization>"].extend(sync_errors)
     all_warnings["<synchronization>"].extend(sync_warnings)
 
-    css = ARTICLE_DIR / "6b-research-library.css"
+    css = ARTICLE_DIR / "currency-research-library.css"
     if not css.exists() or css.stat().st_size < 5000:
-        all_errors["<shared>"].append("6b-research-library.css is missing or unexpectedly small")
+        all_errors["<shared>"].append("currency-research-library.css?v=20260820a is missing or unexpectedly small")
     else:
         css_text = css.read_text(encoding="utf-8", errors="strict")
         event_value_rule = re.search(
-            r"\.gb-event-metrics\s+strong\s*\{(?P<body>.*?)\}",
+            r"\.fx-event-metrics\s+strong\s*\{(?P<body>.*?)\}",
             css_text,
             flags=re.I | re.S,
         )
         if not event_value_rule or not re.search(
-            r"\bcolor\s*:\s*var\(--gb-ink\)\s*;",
+            r"\bcolor\s*:\s*var\(--fx-ink\)\s*;",
             event_value_rule.group("body") if event_value_rule else "",
             flags=re.I,
         ):
             all_errors["<shared>"].append(
-                "gb-event-metrics strong must set var(--gb-ink) to prevent low-contrast hero inheritance"
+                "fx-event-metrics strong must set var(--fx-ink) to prevent low-contrast hero inheritance"
             )
 
     error_count = sum(len(items) for items in all_errors.values())
