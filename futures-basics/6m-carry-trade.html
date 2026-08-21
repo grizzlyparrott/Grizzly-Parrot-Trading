@@ -28,7 +28,7 @@
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="/futures-basics/6m-research-library.css?v=20260813a">
+  <link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
   <script type="application/ld+json">
@@ -40,41 +40,41 @@
   <script src="/uet.js" defer></script>
 </head>
 <body>
-<a class="mx-skip-link" href="#main-content">Skip to main content</a>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
-<main id="main-content" class="container article-container mxn-library"><article>
+<main id="main-content" class="container article-container currency-library"><article>
 <!-- ARTICLE BODY START -->
-<header class="mx-hero">
-  <div class="mx-hero-copy">
-    <p class="mx-kicker">Rate differential &middot; position economics &middot; unwind risk</p>
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Rate differential &middot; position economics &middot; unwind risk</p>
     <h1>6M Carry Trade: Economics, Flows, and Unwind Risk</h1>
-    <p class="mx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
-    <p class="mx-hero-lede">Suppose Mexican short-rate expectations still exceed comparable U.S. expectations, yet the peso sells off and 6M falls. That is not a contradiction. Carry is one component of total return; exchange-rate loss, funding stress, hedging cost, crowding, or a change in the expected policy path can overwhelm it.</p>
-    <div class="mx-hero-actions"><a class="button-primary" href="#economics">Build the return map</a><a class="mx-text-link" href="#matrix">Use the state matrix</a></div>
-    <dl class="mx-hero-metrics" aria-label="Carry analysis boundaries"><div><dt>Input</dt><dd>Comparable expected rates</dd></div><div><dt>Payoff</dt><dd>Total return, not yield alone</dd></div><div><dt>Stress lens</dt><dd>Volatility + funding</dd></div><div><dt>Output</dt><dd>Conditional state</dd></div></dl>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="fx-hero-lede">Suppose Mexican short-rate expectations still exceed comparable U.S. expectations, yet the peso sells off and 6M falls. That is not a contradiction. Carry is one component of total return; exchange-rate loss, funding stress, hedging cost, crowding, or a change in the expected policy path can overwhelm it.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#economics">Build the return map</a><a class="fx-text-link" href="#matrix">Use the state matrix</a></div>
+    <dl class="fx-hero-metrics" aria-label="Carry analysis boundaries"><div><dt>Input</dt><dd>Comparable expected rates</dd></div><div><dt>Payoff</dt><dd>Total return, not yield alone</dd></div><div><dt>Stress lens</dt><dd>Volatility + funding</dd></div><div><dt>Output</dt><dd>Conditional state</dd></div></dl>
   </div>
-  <div class="mx-hero-visual"><div class="mx-market-board"><div class="mx-board-head"><span>Positive carry</span><strong>MXN still weakens</strong></div><div class="mx-formula"><code>carry</code><i aria-hidden="true">+</i><code>FX move</code><i aria-hidden="true">&minus;</i><code>all costs</code></div><p>A favorable rate gap can coexist with a negative position return. The horizon, instrument, leverage, hedge, and path of the currency decide whether the economics survive.</p><p class="mx-board-foot"><span>Yield is not a floor</span><span>Direction is not guaranteed</span></p></div></div>
+  <div class="fx-hero-visual"><div class="fx-market-board"><div class="fx-board-head"><span>Positive carry</span><strong>MXN still weakens</strong></div><div class="fx-formula"><code>carry</code><i aria-hidden="true">+</i><code>FX move</code><i aria-hidden="true">&minus;</i><code>all costs</code></div><p>A favorable rate gap can coexist with a negative position return. The horizon, instrument, leverage, hedge, and path of the currency decide whether the economics survive.</p><p class="fx-board-foot"><span>Yield is not a floor</span><span>Direction is not guaranteed</span></p></div></div>
 </header>
 
-<nav class="mx-jump-nav" aria-label="On this page"><a href="#orientation">Orientation</a><a href="#economics">Economics</a><a href="#prerequisites">Prerequisites</a><a href="#channels">Channels</a><a href="#confirmation">Confirmation</a><a href="#unwind">Unwind</a><a href="#matrix">State matrix</a></nav>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#orientation">Orientation</a><a href="#economics">Economics</a><a href="#prerequisites">Prerequisites</a><a href="#channels">Channels</a><a href="#confirmation">Confirmation</a><a href="#unwind">Unwind</a><a href="#matrix">State matrix</a></nav>
 
-<section class="mx-section" id="orientation" aria-labelledby="orientation-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Read the instrument first</p><h2 id="orientation-title">A Peso Carry Thesis Must Be Translated Into the 6M Quote</h2><p><strong>Established fact:</strong> CME's <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">FX Product Guide lists 6M as MXN/USD, quoted in U.S. dollars per Mexican peso</a>. Therefore, a higher 6M price means one peso buys more dollars&mdash;a stronger MXN against USD. The commonly displayed spot convention, USD/MXN, is reciprocal, so it ordinarily moves the other way after aligning timestamps.</p></div>
-  <div class="mx-two-column">
-    <article class="mx-panel"><p class="mx-card-label">Spot convention</p><h3>USD/MXN</h3><p>Mexican pesos per U.S. dollar. A rise means the dollar strengthened against the peso.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">6M convention</p><h3>MXN/USD</h3><p>U.S. dollars per Mexican peso. A rise means the peso strengthened against the dollar.</p></article>
+<section class="fx-section" id="orientation" aria-labelledby="orientation-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Read the instrument first</p><h2 id="orientation-title">A Peso Carry Thesis Must Be Translated Into the 6M Quote</h2><p><strong>Established fact:</strong> CME's <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">FX Product Guide lists 6M as MXN/USD, quoted in U.S. dollars per Mexican peso</a>. Therefore, a higher 6M price means one peso buys more dollars&mdash;a stronger MXN against USD. The commonly displayed spot convention, USD/MXN, is reciprocal, so it ordinarily moves the other way after aligning timestamps.</p></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Spot convention</p><h3>USD/MXN</h3><p>Mexican pesos per U.S. dollar. A rise means the dollar strengthened against the peso.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">6M convention</p><h3>MXN/USD</h3><p>U.S. dollars per Mexican peso. A rise means the peso strengthened against the dollar.</p></article>
   </div>
-  <div class="mx-caution"><strong>Do not treat futures as spot with a different label</strong><p>A dated 6M contract also contains time, interest-rate expectations, and basis. Use <a href="6m-tick-size.html">the canonical 6M contract guide</a> for current specifications, settlement, delivery, and roll mechanics. This page owns the carry mechanism, not contract arithmetic.</p></div>
+  <div class="fx-caution"><strong>Do not treat futures as spot with a different label</strong><p>A dated 6M contract also contains time, interest-rate expectations, and basis. Use <a href="6m-tick-size.html">the canonical 6M contract guide</a> for current specifications, settlement, delivery, and roll mechanics. This page owns the carry mechanism, not contract arithmetic.</p></div>
 </section>
 
-<section class="mx-section" id="economics" aria-labelledby="economics-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Position economics</p><h2 id="economics-title">Carry Is the Residual After Funding, Currency, Hedge, and Trading Costs</h2><p>A textbook trade borrows or sells a lower-yielding funding currency and holds a higher-yielding target-currency asset. Real positions can instead use forwards, swaps, futures, options, bonds, or combinations. The labels “funding currency” and “target currency” describe the economic exposure, not a single required implementation.</p></div>
-  <div class="mx-method">
+<section class="fx-section" id="economics" aria-labelledby="economics-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Position economics</p><h2 id="economics-title">Carry Is the Residual After Funding, Currency, Hedge, and Trading Costs</h2><p>A textbook trade borrows or sells a lower-yielding funding currency and holds a higher-yielding target-currency asset. Real positions can instead use forwards, swaps, futures, options, bonds, or combinations. The labels “funding currency” and “target currency” describe the economic exposure, not a single required implementation.</p></div>
+  <div class="fx-method">
     <div><h3>A short-horizon approximation</h3><p><code>position return &asymp; target-asset return &minus; funding cost + FX return &minus; hedge, financing, and transaction costs</code></p><p>The approximation is intentionally incomplete: mark-to-market timing, convexity, collateral, credit, taxes, and basis can matter. A 6M futures position does not simply receive a posted overnight-policy-rate difference as cash carry.</p></div>
     <dl><div><dt>Compare</dt><dd>Same horizon</dd></div><div><dt>Model</dt><dd>Expected path</dd></div><div><dt>Subtract</dt><dd>All implementation costs</dd></div><div><dt>Stress</dt><dd>FX path + leverage</dd></div></dl>
   </div>
-  <div class="mx-table-scroll" role="region" aria-label="Carry return components" tabindex="0">
-    <table class="mx-table">
+  <div class="fx-table-scroll" role="region" aria-label="Carry return components" tabindex="0">
+    <table class="fx-table">
       <thead><tr><th scope="col">Component</th><th scope="col">What to measure</th><th scope="col">Why the shortcut fails</th></tr></thead>
       <tbody>
         <tr><th scope="row">Rate differential</th><td>Market-implied or investable yields at matched horizons, with credit and liquidity differences identified</td><td>Two policy targets are not the realized return on two tradable assets</td></tr>
@@ -87,9 +87,9 @@
   </div>
 </section>
 
-<section class="mx-section" id="prerequisites" aria-labelledby="prerequisites-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Before calling a regime carry-friendly</p><h2 id="prerequisites-title">Five Conditions Must Be Examined Together</h2><p><strong>Mechanism:</strong> a positive expected Mexican-versus-U.S. return gap can attract demand for MXN exposure, all else equal. It becomes a usable hypothesis only after the return gap, volatility, funding, crowding, and macro path are examined.</p></div>
-  <div class="mx-check-grid">
+<section class="fx-section" id="prerequisites" aria-labelledby="prerequisites-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Before calling a regime carry-friendly</p><h2 id="prerequisites-title">Five Conditions Must Be Examined Together</h2><p><strong>Mechanism:</strong> a positive expected Mexican-versus-U.S. return gap can attract demand for MXN exposure, all else equal. It becomes a usable hypothesis only after the return gap, volatility, funding, crowding, and macro path are examined.</p></div>
+  <div class="fx-check-grid">
     <article><strong>Investable differential</strong><p>Use comparable instruments and horizons. Distinguish the current target rate from the path priced over the intended holding period.</p></article>
     <article><strong>Contained currency variance</strong><p>Carry accrues gradually while exchange rates reprice continuously. Rising realized or implied volatility changes the loss distribution.</p></article>
     <article><strong>Stable funding</strong><p>Repo, swap, collateral, and margin terms can tighten even if official policy rates do not move.</p></article>
@@ -100,24 +100,24 @@
   <p><strong>Established source boundary:</strong> Banco de M&eacute;xico publishes its <a href="https://www.banxico.org.mx/publications-and-press/announcements-and-minutes-tas.html" target="_blank" rel="noopener">policy statements and minutes</a>; the Federal Reserve publishes <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">FOMC statements, minutes, and projections by meeting</a>. Those documents establish official communication. Any inferred path or carry attractiveness remains an analyst inference.</p>
 </section>
 
-<section class="mx-section" id="channels" aria-labelledby="channels-title">
-  <div class="mx-section-heading"><p class="mx-kicker">From relative return to price</p><h2 id="channels-title">Trace the Flow Channel Without Assuming It Dominates</h2><p>The same rate-gap change can reach 6M through several paths. Some reinforce one another; others offset. Label the hypothesized channel before looking at the price outcome.</p></div>
-  <div class="mx-process" aria-label="Carry transmission channels">
+<section class="fx-section" id="channels" aria-labelledby="channels-title">
+  <div class="fx-section-heading"><p class="fx-kicker">From relative return to price</p><h2 id="channels-title">Trace the Flow Channel Without Assuming It Dominates</h2><p>The same rate-gap change can reach 6M through several paths. Some reinforce one another; others offset. Label the hypothesized channel before looking at the price outcome.</p></div>
+  <div class="fx-process" aria-label="Carry transmission channels">
     <article><span>1</span><h3>Expected return changes</h3><p>New policy or macro evidence alters the expected Mexico&ndash;U.S. return difference at a relevant horizon.</p></article>
     <article><span>2</span><h3>Portfolio choice changes</h3><p>Investors may add, hedge, reduce, or leave MXN exposure unchanged depending on risk limits and existing positions.</p></article>
     <article><span>3</span><h3>FX demand changes</h3><p>Conversion, derivative hedges, or dealer inventory can create peso buying or selling, but the size and timing are not directly observable from a policy rate.</p></article>
     <article><span>4</span><h3>6M reprices</h3><p>Futures respond to the currency pair, dated basis, liquidity, and expectations. Confirmation must be observed, not presumed.</p></article>
   </div>
-  <div class="mx-two-column">
-    <article class="mx-panel"><p class="mx-card-label">Potential reinforcement</p><h3>Rate gap widens with calm funding</h3><p>If Mexican expected returns rise relative to U.S. returns, volatility stays contained, and MXN strengthens across aligned spot and futures observations, the evidence is consistent with a supportive carry channel. It still does not prove carry caused the move.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">Potential offset</p><h3>Higher yield reflects higher risk</h3><p>A Mexican yield rise can reflect inflation, fiscal risk, liquidity stress, or a higher required risk premium. In that state, the larger nominal gap can coexist with a weaker peso and lower 6M.</p></article>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Potential reinforcement</p><h3>Rate gap widens with calm funding</h3><p>If Mexican expected returns rise relative to U.S. returns, volatility stays contained, and MXN strengthens across aligned spot and futures observations, the evidence is consistent with a supportive carry channel. It still does not prove carry caused the move.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Potential offset</p><h3>Higher yield reflects higher risk</h3><p>A Mexican yield rise can reflect inflation, fiscal risk, liquidity stress, or a higher required risk premium. In that state, the larger nominal gap can coexist with a weaker peso and lower 6M.</p></article>
   </div>
 </section>
 
-<section class="mx-section" id="confirmation" aria-labelledby="confirmation-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Observable, but incomplete</p><h2 id="confirmation-title">Build Confirmation From Independent Evidence</h2><p>No public series identifies “the MXN carry trade” in real time. Confirmation is a triangulation exercise. The strongest record aligns independent rate, currency, volatility, positioning, and market-quality observations without turning any proxy into ground truth.</p></div>
-  <div class="mx-table-scroll" role="region" aria-label="Carry confirmation evidence" tabindex="0">
-    <table class="mx-table">
+<section class="fx-section" id="confirmation" aria-labelledby="confirmation-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Observable, but incomplete</p><h2 id="confirmation-title">Build Confirmation From Independent Evidence</h2><p>No public series identifies “the MXN carry trade” in real time. Confirmation is a triangulation exercise. The strongest record aligns independent rate, currency, volatility, positioning, and market-quality observations without turning any proxy into ground truth.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Carry confirmation evidence" tabindex="0">
+    <table class="fx-table">
       <thead><tr><th scope="col">Evidence</th><th scope="col">Consistent with carry support</th><th scope="col">What would weaken that reading</th></tr></thead>
       <tbody>
         <tr><th scope="row">Relative curve</th><td>Matched-horizon Mexican pricing firms versus U.S. pricing</td><td>Move is isolated, credit-driven, or reverses quickly</td></tr>
@@ -131,31 +131,31 @@
   <p><strong>Established limitation:</strong> the <a href="https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm" target="_blank" rel="noopener">CFTC Commitments of Traders report</a> breaks down reportable open interest as of Tuesday and is generally published Friday. Its categories are regulatory classifications, not a live inventory of all carry trades. Use it as delayed context, never as same-session order flow.</p>
 </section>
 
-<section class="mx-section" id="unwind" aria-labelledby="unwind-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Where gradual economics can become nonlinear</p><h2 id="unwind-title">An Unwind Is a Feedback Loop, Not a VIX Number</h2><p><strong>Established institutional evidence:</strong> a <a href="https://www.bis.org/publ/bisbull90.pdf" target="_blank" rel="noopener">BIS review of the August 2024 turbulence</a> described leveraged trade unwinds, procyclical deleveraging, and margin increases as amplification channels while also noting that overall carry size is difficult to measure. That episode demonstrates a mechanism; it does not set a universal threshold for MXN or 6M.</p></div>
-  <div class="mx-process" aria-label="Illustrative carry unwind feedback loop">
+<section class="fx-section" id="unwind" aria-labelledby="unwind-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Where gradual economics can become nonlinear</p><h2 id="unwind-title">An Unwind Is a Feedback Loop, Not a VIX Number</h2><p><strong>Established institutional evidence:</strong> a <a href="https://www.bis.org/publ/bisbull90.pdf" target="_blank" rel="noopener">BIS review of the August 2024 turbulence</a> described leveraged trade unwinds, procyclical deleveraging, and margin increases as amplification channels while also noting that overall carry size is difficult to measure. That episode demonstrates a mechanism; it does not set a universal threshold for MXN or 6M.</p></div>
+  <div class="fx-process" aria-label="Illustrative carry unwind feedback loop">
     <article><span>A</span><h3>Catalyst changes the prior</h3><p>A policy, growth, geopolitical, or market shock changes expected returns or risk tolerance.</p></article>
     <article><span>B</span><h3>Volatility and losses rise</h3><p>Adverse FX movement consumes accumulated carry and increases portfolio variance.</p></article>
     <article><span>C</span><h3>Constraints bind</h3><p>Stop rules, margin calls, financing terms, or risk limits force some positions smaller.</p></article>
     <article><span>D</span><h3>Common exits amplify</h3><p>Further MXN selling can pressure 6M, creating more losses. The loop can also stop or reverse if liquidity and buyers absorb it.</p></article>
   </div>
-  <div class="mx-caution"><strong>Failure cases for the unwind story</strong><p>A falling 6M price is not automatically a carry unwind. It may reflect a broad-dollar shock, Mexico-specific fiscal or trade news, contract roll, poor data alignment, or ordinary repricing by unleveraged investors. Conversely, a volatility spike need not weaken MXN if the shock is concentrated elsewhere or peso demand has a different source.</p></div>
+  <div class="fx-caution"><strong>Failure cases for the unwind story</strong><p>A falling 6M price is not automatically a carry unwind. It may reflect a broad-dollar shock, Mexico-specific fiscal or trade news, contract roll, poor data alignment, or ordinary repricing by unleveraged investors. Conversely, a volatility spike need not weaken MXN if the shock is concentrated elsewhere or peso demand has a different source.</p></div>
 </section>
 
-<section class="mx-section" id="matrix" aria-labelledby="matrix-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Carry-state close</p><h2 id="matrix-title">Use a Carry-State Matrix That Permits “Unclear”</h2><p>This matrix organizes evidence; it does not forecast 6M. Record the state at a fixed timestamp, specify the horizon, and require confirmation before turning a macro hypothesis into a possible application.</p></div>
-  <div class="mx-state-machine" role="list" aria-label="Conditional 6M carry-state matrix">
+<section class="fx-section" id="matrix" aria-labelledby="matrix-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Carry-state close</p><h2 id="matrix-title">Use a Carry-State Matrix That Permits “Unclear”</h2><p>This matrix organizes evidence; it does not forecast 6M. Record the state at a fixed timestamp, specify the horizon, and require confirmation before turning a macro hypothesis into a possible application.</p></div>
+  <div class="fx-state-machine" role="list" aria-label="Conditional 6M carry-state matrix">
     <article role="listitem"><h3>Supportive, uncrowded</h3><p><strong>Required:</strong> favorable investable differential, stable funding and volatility, independent MXN confirmation, and no declared crowding breach.</p><p><strong>Hypothesis:</strong> carry demand may support higher 6M.</p><p><strong>Fail:</strong> relative curve, price confirmation, or execution quality reverses.</p></article>
     <article role="listitem"><h3>Supportive, crowded</h3><p><strong>Required:</strong> favorable differential but a positioning or volatility proxy reaches a predeclared extreme.</p><p><strong>Hypothesis:</strong> support may persist while unwind asymmetry grows.</p><p><strong>Fail:</strong> risk cannot be bounded; crowding alone does not time an exit.</p></article>
     <article role="listitem"><h3>Differential compressing</h3><p><strong>Required:</strong> expected Mexican return advantage narrows relative to the U.S.</p><p><strong>Hypothesis:</strong> one source of MXN demand may weaken.</p><p><strong>Fail:</strong> other flows dominate or 6M refuses to confirm.</p></article>
     <article role="listitem"><h3>Funding stress</h3><p><strong>Required:</strong> adverse FX, rising volatility, tighter financing, and cross-market deleveraging align.</p><p><strong>Hypothesis:</strong> forced reduction may amplify lower 6M.</p><p><strong>Fail:</strong> liquidity, curve, and price recover through the invalidation area.</p></article>
     <article role="listitem"><h3>Unclear</h3><p><strong>Required:</strong> rates, price, volatility, positioning, or data quality conflict.</p><p><strong>Conclusion:</strong> no directional inference.</p><p><strong>Action:</strong> remain flat until the evidence set becomes testable.</p></article>
   </div>
-  <div class="mx-related">Route the policy-event prior to <a href="banxico-rate-policy-6m.html">the Banxico decision workflow</a>, broad context to <a href="6m-fundamental-drivers.html">the 6M driver ledger</a>, and execution acceptance to <a href="6m-slippage.html">the 6M slippage and market-quality guide</a>.</div>
+  <div class="fx-related">Route the policy-event prior to <a href="banxico-rate-policy-6m.html">the Banxico decision workflow</a>, broad context to <a href="6m-fundamental-drivers.html">the 6M driver ledger</a>, and execution acceptance to <a href="6m-slippage.html">the 6M slippage and market-quality guide</a>.</div>
   <p><strong>Research status:</strong> this page explains mechanisms and a monitoring framework. It reports no original estimate of carry returns, crowding, predictive power, or profitability. Testing a carry rule requires point-in-time rate curves, quote-correct dated futures, rolls, funding and transaction costs, declared decision times, and untouched validation data.</p>
 </section>
 
-<details class="mx-sources">
+<details class="fx-sources">
   <summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary>
   <ul>
     <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide</a> for the official 6M product code, contract currency, and USD-per-MXN quotation.</li>
@@ -168,7 +168,7 @@
   <p>Sources and methods were reviewed August 13, 2026. Dynamic official series must be timestamped when used. Facts, mechanisms, hypotheses, inferences, and possible applications are separated in the text; no proprietary result is reported.</p>
 </details>
 
-<aside class="mx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This carry framework is educational material, not personalized investment, legal, tax, accounting, hedging, or brokerage advice. A positive rate differential does not cap currency losses. Leverage, gaps, changing margin, financing, basis, liquidity, and delivery or roll exposure can produce losses beyond the initial margin deposit. Verify current official data, contract terms, market quality, and your own loss limit before any decision.</p></aside>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This carry framework is educational material, not personalized investment, legal, tax, accounting, hedging, or brokerage advice. A positive rate differential does not cap currency losses. Leverage, gaps, changing margin, financing, basis, liquidity, and delivery or roll exposure can produce losses beyond the initial margin deposit. Verify current official data, contract terms, market quality, and your own loss limit before any decision.</p></aside>
 <!-- ARTICLE BODY END -->
 </article></main>
 <footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>

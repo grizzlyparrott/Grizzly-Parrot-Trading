@@ -9,32 +9,32 @@
   <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6c-volatility-cycles.html">
   <meta property="og:title" content="6C Volatility Cycles: Classify States, Test Transitions"><meta property="og:description" content="Define 6C volatility states and test their duration and transitions without pretending a descriptive regime has a known turning point."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6c-volatility-cycles.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-27"><meta property="article:modified_time" content="2026-08-13">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6C Volatility Cycles: Classify States, Test Transitions"><meta name="twitter:description" content="Define 6C volatility states and test their duration and transitions without pretending a descriptive regime has a known turning point."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
-  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/6c-research-library.css?v=20260813a">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6C Volatility Cycles: Classify States, Test Transitions","description":"Define 6C volatility states and test their duration and transitions without pretending a descriptive regime has a known turning point.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6c-volatility-cycles.html"},"datePublished":"2025-11-27","dateModified":"2026-08-13","url":"https://grizzlyparrottrading.com/futures-basics/6c-volatility-cycles.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6C Volatility Cycles: Classify States, Test Transitions","item":"https://grizzlyparrottrading.com/futures-basics/6c-volatility-cycles.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
 <header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
-<main class="container article-container cad-library"><article>
+<main class="container article-container currency-library"><article>
 <!-- ARTICLE BODY START -->
-<header class="ca-hero">
-  <div class="ca-hero-copy">
-    <p class="ca-kicker">State estimation &middot; duration &middot; transition validation</p>
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">State estimation &middot; duration &middot; transition validation</p>
     <h1>6C Volatility Cycles: Classify States, Test Transitions</h1>
-    <p class="ca-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
-    <p class="ca-hero-lede">If a high-volatility &ldquo;cycle&rdquo; can be named only after its peak and a calm cycle only after the next surge, the labels describe hindsight. A live state estimate must be knowable now; a turning point remains unknown until a separate transition rule earns evidence.</p>
-    <div class="ca-hero-actions"><a class="button-primary" href="#distinction">Separate state from cycle</a><a class="ca-text-link" href="#protocol">Freeze the protocol</a></div>
-    <dl class="ca-hero-metrics" aria-label="6C volatility-state orientation"><div><dt>State</dt><dd>Past-only estimate</dd></div><div><dt>Duration</dt><dd>Distribution</dd></div><div><dt>Transition</dt><dd>Separate hypothesis</dd></div><div><dt>Original result</dt><dd>None</dd></div></dl>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="fx-hero-lede">If a high-volatility &ldquo;cycle&rdquo; can be named only after its peak and a calm cycle only after the next surge, the labels describe hindsight. A live state estimate must be knowable now; a turning point remains unknown until a separate transition rule earns evidence.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#distinction">Separate state from cycle</a><a class="fx-text-link" href="#protocol">Freeze the protocol</a></div>
+    <dl class="fx-hero-metrics" aria-label="6C volatility-state orientation"><div><dt>State</dt><dd>Past-only estimate</dd></div><div><dt>Duration</dt><dd>Distribution</dd></div><div><dt>Transition</dt><dd>Separate hypothesis</dd></div><div><dt>Original result</dt><dd>None</dd></div></dl>
   </div>
 </header>
 
-<nav class="ca-jump-nav" aria-label="On this page"><a href="#distinction">Distinction</a><a href="#estimators">Estimators</a><a href="#sample">Transitions</a><a href="#controls">Controls</a><a href="#validation">Validation</a><a href="#limits">Use limits</a><a href="#protocol">Protocol</a></nav>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#distinction">Distinction</a><a href="#estimators">Estimators</a><a href="#sample">Transitions</a><a href="#controls">Controls</a><a href="#validation">Validation</a><a href="#limits">Use limits</a><a href="#protocol">Protocol</a></nav>
 
-<section class="ca-section" id="distinction" aria-labelledby="distinction-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Three different claims</p><h2 id="distinction-title">A Volatility State Is Not Yet a Cycle</h2><p><strong>Fact:</strong> realized movement can be estimated from historical 6C prices over a declared interval. <strong>Observation:</strong> a current estimate may fall in a low, middle, or high region of a past-only distribution. <strong>Hypothesis:</strong> states may persist or transition with non-random durations. <strong>Application:</strong> a validated state could alter size, order type, or eligibility. Each rung requires evidence the prior rung does not supply.</p></div>
-  <div class="ca-table-scroll" role="region" aria-label="Distinctions among volatility state, persistence, cycle and forecast" tabindex="0">
-    <table class="ca-table"><thead><tr><th scope="col">Term</th><th scope="col">Operational meaning</th><th scope="col">Evidence required</th><th scope="col">Inference not allowed</th></tr></thead><tbody>
+<section class="fx-section" id="distinction" aria-labelledby="distinction-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Three different claims</p><h2 id="distinction-title">A Volatility State Is Not Yet a Cycle</h2><p><strong>Fact:</strong> realized movement can be estimated from historical 6C prices over a declared interval. <strong>Observation:</strong> a current estimate may fall in a low, middle, or high region of a past-only distribution. <strong>Hypothesis:</strong> states may persist or transition with non-random durations. <strong>Application:</strong> a validated state could alter size, order type, or eligibility. Each rung requires evidence the prior rung does not supply.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Distinctions among volatility state, persistence, cycle and forecast" tabindex="0">
+    <table class="fx-table"><thead><tr><th scope="col">Term</th><th scope="col">Operational meaning</th><th scope="col">Evidence required</th><th scope="col">Inference not allowed</th></tr></thead><tbody>
       <tr><th scope="row">Volatility estimate</th><td>Declared calculation from past returns, ranges, or options data</td><td>Clean inputs and reproducible formula</td><td>That the estimate predicts direction</td></tr>
       <tr><th scope="row">State</th><td>Estimate mapped to frozen thresholds or a fitted model</td><td>Past-only classifier with stable meaning</td><td>That a state must end soon</td></tr>
       <tr><th scope="row">Persistence</th><td>Conditional probability of remaining in a state</td><td>Independent transition episodes and uncertainty</td><td>That the next observation follows the average</td></tr>
@@ -43,23 +43,23 @@
     </tbody></table>
   </div>
   <p>Use &ldquo;state&rdquo; unless the transition sequence itself has been tested. Volatility clustering can make calm and turbulent observations persist without producing a periodic cycle. The word choice matters because &ldquo;cycle&rdquo; tempts a countdown to a turning point the data may not support.</p>
-  <div class="ca-caution"><strong>Price direction stays separate</strong><p>High volatility means a distribution of larger movement under the chosen estimator, not that 6C rises or falls. Quote orientation and current contract mechanics remain on the <a href="6c-tick-size-tick-value.html">canonical 6C specification page</a>.</p></div>
+  <div class="fx-caution"><strong>Price direction stays separate</strong><p>High volatility means a distribution of larger movement under the chosen estimator, not that 6C rises or falls. Quote orientation and current contract mechanics remain on the <a href="6c-tick-size-tick-value.html">canonical 6C specification page</a>.</p></div>
 </section>
 
-<section class="ca-section" id="estimators" aria-labelledby="estimators-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Measurement choices</p><h2 id="estimators-title">Choose an Estimator That Matches the Horizon</h2><p>No single volatility measure is neutral. Range estimators use extremes; realized variance uses the path of sampled returns; close-to-close absolute return ignores intraperiod reversals; implied measures reflect option prices and a defined horizon. State the trade-off and preserve more than one predeclared diagnostic.</p></div>
-  <div class="ca-estimator-spectrum">
-    <article class="ca-panel"><p class="ca-card-label">Intraday realized movement</p><h3>Fixed-interval returns or ranges</h3><p>Use consistent bars or event-time sampling from dated 6C contracts. Audit bad ticks, missing intervals, maintenance, and microstructure noise. Aggregate only observations available by the state timestamp.</p></article>
-    <article class="ca-panel"><p class="ca-card-label">Daily state</p><h3>Settlement-to-settlement or session-defined measures</h3><p>Name the endpoints and treatment of overnight movement. An official settlement and a vendor close are not automatically the same timestamp or economic observation.</p></article>
-    <article class="ca-panel"><p class="ca-card-label">Longer horizon</p><h3>Rolling realized distributions</h3><p>Choose lookback and weighting on development data. Store the continuous estimate even when the live classifier uses discrete thresholds.</p></article>
-    <article class="ca-panel"><p class="ca-card-label">Forward-looking candidate</p><h3>Options-implied volatility</h3><p>Use a named CME measure or reconstruct from documented option inputs, maturity, and methodology. Implied volatility is a market price of risk and uncertainty, not a guaranteed realized outcome.</p></article>
+<section class="fx-section" id="estimators" aria-labelledby="estimators-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Measurement choices</p><h2 id="estimators-title">Choose an Estimator That Matches the Horizon</h2><p>No single volatility measure is neutral. Range estimators use extremes; realized variance uses the path of sampled returns; close-to-close absolute return ignores intraperiod reversals; implied measures reflect option prices and a defined horizon. State the trade-off and preserve more than one predeclared diagnostic.</p></div>
+  <div class="fx-estimator-spectrum">
+    <article class="fx-panel"><p class="fx-card-label">Intraday realized movement</p><h3>Fixed-interval returns or ranges</h3><p>Use consistent bars or event-time sampling from dated 6C contracts. Audit bad ticks, missing intervals, maintenance, and microstructure noise. Aggregate only observations available by the state timestamp.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Daily state</p><h3>Settlement-to-settlement or session-defined measures</h3><p>Name the endpoints and treatment of overnight movement. An official settlement and a vendor close are not automatically the same timestamp or economic observation.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Longer horizon</p><h3>Rolling realized distributions</h3><p>Choose lookback and weighting on development data. Store the continuous estimate even when the live classifier uses discrete thresholds.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Forward-looking candidate</p><h3>Options-implied volatility</h3><p>Use a named CME measure or reconstruct from documented option inputs, maturity, and methodology. Implied volatility is a market price of risk and uncertainty, not a guaranteed realized outcome.</p></article>
   </div>
-  <div class="ca-method"><div><h3>Threshold classifier example</h3><p>Fit low and high cutoffs from a rolling or expanding training distribution using only prior dates. Freeze minimum history, ties, missing values, and update frequency. A state begins when the threshold is crossed and ends only under a declared exit rule; using separate entry and exit thresholds can reduce one-observation flicker.</p></div><dl><div><dt>Input</dt><dd>Continuous</dd></div><div><dt>Cutoffs</dt><dd>Past-only</dd></div><div><dt>Entry/exit</dt><dd>Explicit</dd></div><div><dt>Update</dt><dd>Scheduled</dd></div></dl></div>
+  <div class="fx-method"><div><h3>Threshold classifier example</h3><p>Fit low and high cutoffs from a rolling or expanding training distribution using only prior dates. Freeze minimum history, ties, missing values, and update frequency. A state begins when the threshold is crossed and ends only under a declared exit rule; using separate entry and exit thresholds can reduce one-observation flicker.</p></div><dl><div><dt>Input</dt><dd>Continuous</dd></div><div><dt>Cutoffs</dt><dd>Past-only</dd></div><div><dt>Entry/exit</dt><dd>Explicit</dd></div><div><dt>Update</dt><dd>Scheduled</dd></div></dl></div>
 </section>
 
-<section class="ca-section" id="sample" aria-labelledby="sample-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Episodes, not repeated bars</p><h2 id="sample-title">Construct a Transition and Duration Sample</h2><p>Counting every five-minute bar inside a three-day high-volatility episode as a separate transition opportunity exaggerates sample size. The primary unit should match the claim: state episode for duration, state boundary for transition, or date for a daily forecast.</p></div>
-  <div class="ca-state-machine" aria-label="Volatility state episode construction">
+<section class="fx-section" id="sample" aria-labelledby="sample-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Episodes, not repeated bars</p><h2 id="sample-title">Construct a Transition and Duration Sample</h2><p>Counting every five-minute bar inside a three-day high-volatility episode as a separate transition opportunity exaggerates sample size. The primary unit should match the claim: state episode for duration, state boundary for transition, or date for a daily forecast.</p></div>
+  <div class="fx-state-machine" aria-label="Volatility state episode construction">
     <article><span>1</span><h3>Classify in real time</h3><p>Apply the frozen estimator and thresholds at each eligible timestamp with no centered window or future confirmation.</p></article>
     <article><span>2</span><h3>Open an episode</h3><p>Start when the entry rule first becomes true. Record prior state, timestamp, estimator value, clock window, and known events.</p></article>
     <article><span>3</span><h3>Track duration</h3><p>Measure elapsed trading time and eligible observations until the declared exit. Preserve right-censored episodes at sample end.</p></article>
@@ -69,9 +69,9 @@
   <p>Report the full duration distribution and state occupancy, not just averages. A few long episodes can dominate the mean. For transition matrices, disclose counts in every origin-destination cell and uncertainty around each probability. A cell with few independent transitions is insufficient for a confident rule.</p>
 </section>
 
-<section class="ca-section" id="controls" aria-labelledby="controls-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Censoring and structural breaks</p><h2 id="controls-title">Keep Rolls, Closures, and Events From Inventing Transitions</h2><p>Volatility can appear to jump because a data series changed contract, a market reopened, a release arrived, or a feed resumed after an outage. These are observable conditions to retain and analyze, not noise to hide.</p></div>
-  <div class="ca-transition-guards">
+<section class="fx-section" id="controls" aria-labelledby="controls-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Censoring and structural breaks</p><h2 id="controls-title">Keep Rolls, Closures, and Events From Inventing Transitions</h2><p>Volatility can appear to jump because a data series changed contract, a market reopened, a release arrived, or a feed resumed after an outage. These are observable conditions to retain and analyze, not noise to hide.</p></div>
+  <div class="fx-transition-guards">
     <article><strong>Dated contracts</strong><p>Use contract-specific prices and an ex-ante roll rule. Never calculate a transition across a back-adjustment or unexplained splice.</p></article>
     <article><strong>Migration window</strong><p>Retain nearby and next expiries and flag volume transfer. Estimate whether state labels agree before choosing a combined series.</p></article>
     <article><strong>Trading closures</strong><p>Distinguish scheduled maintenance, weekends, holidays, early closes, and data absence from genuinely unchanged prices.</p></article>
@@ -82,10 +82,10 @@
   <p>Structural context can change too. Policy frameworks, relative rates, energy exposure, market participation, and electronic trading evolve. Use chronological stability tests and report eras rather than assuming a transition matrix estimated decades ago remains current.</p>
 </section>
 
-<section class="ca-section" id="validation" aria-labelledby="validation-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Prediction must beat persistence</p><h2 id="validation-title">Validate Transitions Against Naive State Baselines</h2><p>A transition model should outperform the simple facts that volatility states often persist and that some states are more common than others. Compare probability forecasts, not only hard labels, and score them on later data.</p></div>
-  <div class="ca-table-scroll" role="region" aria-label="Validation framework for 6C volatility state transitions" tabindex="0">
-    <table class="ca-table"><thead><tr><th scope="col">Test</th><th scope="col">Benchmark</th><th scope="col">Required report</th><th scope="col">Failure signal</th></tr></thead><tbody>
+<section class="fx-section" id="validation" aria-labelledby="validation-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Prediction must beat persistence</p><h2 id="validation-title">Validate Transitions Against Naive State Baselines</h2><p>A transition model should outperform the simple facts that volatility states often persist and that some states are more common than others. Compare probability forecasts, not only hard labels, and score them on later data.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Validation framework for 6C volatility state transitions" tabindex="0">
+    <table class="fx-table"><thead><tr><th scope="col">Test</th><th scope="col">Benchmark</th><th scope="col">Required report</th><th scope="col">Failure signal</th></tr></thead><tbody>
       <tr><th scope="row">Current state</th><td>Carry the prior state forward</td><td>Confusion matrix, calibration, state counts</td><td>Complex classifier does not improve later classification.</td></tr>
       <tr><th scope="row">Next-state probability</th><td>Training-sample transition frequency by current state</td><td>Proper probability score and calibration plot</td><td>Forecast is overconfident or no better than frequency.</td></tr>
       <tr><th scope="row">Remaining duration</th><td>Empirical duration distribution conditional on elapsed time</td><td>Error distribution and censored-observation treatment</td><td>Countdown fails outside development data.</td></tr>
@@ -95,19 +95,19 @@
   <p>Use chronological development, validation, and final holdout periods. Predeclare estimator families, thresholds, state counts, transition features, forecast horizons, and metrics. Correct for that full search. Test adjacent cutoffs, alternate realized measures, a second roll policy, event exclusions, and later calendar eras. A transition that survives only one narrow labeling choice is not robust.</p>
 </section>
 
-<section class="ca-section" id="limits" aria-labelledby="limits-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Operational use</p><h2 id="limits-title">Use a State as Context, Not a Countdown</h2><p>A valid current-state estimate can still be useful without predicting the turning point. It may inform whether a fixed stop is unusually tight, whether order size should be stress-tested against thinner depth, or whether an execution rule belongs in the current environment. Those applications each require separate validation.</p></div>
-  <div class="ca-claim-ladder">
-    <article class="ca-panel"><p class="ca-card-label">Permissible observation</p><h3>&ldquo;The current estimate is high relative to its past-only reference.&rdquo;</h3><p>This is a descriptive statement if the inputs and reference distribution are valid at the timestamp.</p></article>
-    <article class="ca-panel"><p class="ca-card-label">Open hypothesis</p><h3>&ldquo;The state changes the next-period distribution.&rdquo;</h3><p>This requires a frozen outcome, conditional baseline, independent episodes, uncertainty, and a later holdout.</p></article>
-    <article class="ca-panel"><p class="ca-card-label">Unsupported forecast</p><h3>&ldquo;High volatility is due to reverse now.&rdquo;</h3><p>Elapsed duration alone does not establish a turning point. Duration dependence must be measured and validated.</p></article>
-    <article class="ca-panel"><p class="ca-card-label">Separate trading claim</p><h3>&ldquo;The state creates net expectancy.&rdquo;</h3><p>This requires complete entries, exits, sizing, execution, costs, and risk controls beyond state classification.</p></article>
+<section class="fx-section" id="limits" aria-labelledby="limits-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Operational use</p><h2 id="limits-title">Use a State as Context, Not a Countdown</h2><p>A valid current-state estimate can still be useful without predicting the turning point. It may inform whether a fixed stop is unusually tight, whether order size should be stress-tested against thinner depth, or whether an execution rule belongs in the current environment. Those applications each require separate validation.</p></div>
+  <div class="fx-claim-ladder">
+    <article class="fx-panel"><p class="fx-card-label">Permissible observation</p><h3>&ldquo;The current estimate is high relative to its past-only reference.&rdquo;</h3><p>This is a descriptive statement if the inputs and reference distribution are valid at the timestamp.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Open hypothesis</p><h3>&ldquo;The state changes the next-period distribution.&rdquo;</h3><p>This requires a frozen outcome, conditional baseline, independent episodes, uncertainty, and a later holdout.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Unsupported forecast</p><h3>&ldquo;High volatility is due to reverse now.&rdquo;</h3><p>Elapsed duration alone does not establish a turning point. Duration dependence must be measured and validated.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Separate trading claim</p><h3>&ldquo;The state creates net expectancy.&rdquo;</h3><p>This requires complete entries, exits, sizing, execution, costs, and risk controls beyond state classification.</p></article>
   </div>
-  <div class="ca-caution"><strong>Research status</strong><p>The proposed state-transition study has not been run. This page produced no 6C volatility series, state labels, state frequencies, duration estimates, transition matrix, forecast comparison, backtest, or live-performance record. It does not claim that 6C follows a periodic cycle or that any transition is predictable.</p></div>
+  <div class="fx-caution"><strong>Research status</strong><p>The proposed state-transition study has not been run. This page produced no 6C volatility series, state labels, state frequencies, duration estimates, transition matrix, forecast comparison, backtest, or live-performance record. It does not claim that 6C follows a periodic cycle or that any transition is predictable.</p></div>
 </section>
 
-<section class="ca-section" id="protocol" aria-labelledby="protocol-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Ending specification</p><h2 id="protocol-title">State-Classification Protocol and Transition Falsification</h2><p>Freeze this specification before fitting the classifier, then preserve it with every result.</p></div>
+<section class="fx-section" id="protocol" aria-labelledby="protocol-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Ending specification</p><h2 id="protocol-title">State-Classification Protocol and Transition Falsification</h2><p>Freeze this specification before fitting the classifier, then preserve it with every result.</p></div>
   <ol>
     <li><strong>Estimator:</strong> source, dated contract, input interval, formula, annualization if any, and earliest knowable timestamp.</li>
     <li><strong>State rule:</strong> training window, update schedule, thresholds or model, entry/exit logic, and missing-data behavior.</li>
@@ -117,10 +117,10 @@
     <li><strong>Validation:</strong> chronological splits, sealed holdout, parameter family, uncertainty blocks, and robustness grid.</li>
     <li><strong>Falsification:</strong> reject predictability if the model fails baseline, calibration, later eras, adjacent definitions, or costed application.</li>
   </ol>
-  <div class="ca-related">For declared compression and expansion events rather than state durations, use the <a href="6c-volatility-patterns.html">6C volatility-pattern study</a>. The two questions should not share conclusions by implication.</div>
+  <div class="fx-related">For declared compression and expansion events rather than state durations, use the <a href="6c-volatility-patterns.html">6C volatility-pattern study</a>. The two questions should not share conclusions by implication.</div>
 </section>
 
-<details class="ca-sources"><summary>Sources, methods and editorial disclosure</summary><ul>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure</summary><ul>
   <li><a href="https://www.cmegroup.com/markets/fx/g10/canadian-dollar.contractSpecs.html" target="_blank" rel="noopener">CME Group Canadian Dollar futures page</a> for current product context and the need to preserve dated contracts.</li>
   <li><a href="https://www.cmegroup.com/market-data/browse-data/catalog/futures-and-options-data.html" target="_blank" rel="noopener">CME Group futures and options data overview</a> for official historical trade and market-depth data availability. The page uses no purchased or downloaded market sample.</li>
   <li><a href="https://www.bankofcanada.ca/rates/exchange/" target="_blank" rel="noopener">Bank of Canada exchange-rate data</a> for official indicative Canadian-dollar rate series and the CEER index.</li>
@@ -128,7 +128,7 @@
   <li><a href="https://www.statcan.gc.ca/o1/en/calendar" target="_blank" rel="noopener">Statistics Canada release calendar</a> and <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">Federal Reserve FOMC calendar</a> for scheduled-information controls.</li>
   <li><a href="https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm" target="_blank" rel="noopener">NIST/SEMATECH Engineering Statistics Handbook on time-series structure</a> for model and validation context.</li>
 </ul><p>Sources and methods were reviewed August 13, 2026. This article provides an original state and transition protocol but reports no original empirical finding. It is unsponsored editorial analysis.</p></details>
-<aside class="ca-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>State-classification methods here are educational, not a measured 6C cycle or personal trading, statistical, legal, tax, hedging, or brokerage advice. Futures leverage can make a loss exceed the initial margin deposit. Volatility states may change abruptly, estimates may be wrong, and historical transitions can fail. Verify current data, contracts, market quality, margin, and your own risk controls before acting.</p></aside>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>State-classification methods here are educational, not a measured 6C cycle or personal trading, statistical, legal, tax, hedging, or brokerage advice. Futures leverage can make a loss exceed the initial margin deposit. Volatility states may change abruptly, estimates may be wrong, and historical transitions can fail. Verify current data, contracts, market quality, margin, and your own risk controls before acting.</p></aside>
 <!-- ARTICLE BODY END -->
 </article></main>
 <footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>

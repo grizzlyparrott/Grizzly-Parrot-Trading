@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CSS_PATH = ROOT / "futures-basics" / "6m-research-library.css"
+CSS_PATH = ROOT / "futures-basics" / "currency-research-library.css"
 
 
 def _rgb(hex_color: str) -> tuple[int, int, int]:
@@ -42,29 +42,27 @@ class SixMCssAccessibilityTests(unittest.TestCase):
     def test_skip_link_is_hidden_until_keyboard_focus(self):
         css = CSS_PATH.read_text(encoding="utf-8")
 
-        self.assertRegex(css, r"\.mx-skip-link\s*\{[^}]*position:\s*fixed")
+        self.assertRegex(css, r"\.fx-skip-link\s*\{[^}]*position:\s*fixed")
         self.assertRegex(
             css,
-            r"\.mx-skip-link:focus\s*\{[^}]*transform:\s*translateY\(0\)",
+            r"\.fx-skip-link:focus\s*\{[^}]*transform:\s*translateY\(0\)",
         )
 
     def test_focus_indicator_has_light_and_dark_three_to_one_layers(self):
         css = CSS_PATH.read_text(encoding="utf-8")
-        focus_dark = _variable(css, "--mx-focus-dark")
-        focus_light = _variable(css, "--mx-focus-light")
-        paper = _variable(css, "--mx-paper")
-        ink = _variable(css, "--mx-ink")
-
+        focus_dark = _variable(css, "--fx-focus-dark")
+        focus_light = _variable(css, "--fx-focus-light")
+        paper = _variable(css, "--fx-paper")
         self.assertGreaterEqual(_contrast(focus_dark, paper), 3)
-        self.assertGreaterEqual(_contrast(focus_light, ink), 3)
-        self.assertIn("outline: 3px solid var(--mx-focus-light)", css)
-        self.assertIn("box-shadow: 0 0 0 6px var(--mx-focus-dark)", css)
-        self.assertIn(".mxn-library summary:focus-visible", css)
+        self.assertGreaterEqual(_contrast(focus_light, paper), 3)
+        self.assertIn("outline: 3px solid var(--fx-focus-light)", css)
+        self.assertIn("box-shadow: 0 0 0 6px var(--fx-focus-dark)", css)
+        self.assertIn(".currency-library summary:focus-visible", css)
 
     def test_calculator_focus_rule_does_not_override_focus_visible_outline(self):
         css = CSS_PATH.read_text(encoding="utf-8")
         later_focus = re.search(
-            r"\.mx-fields input:focus\s*\{(?P<body>.*?)\n\}",
+            r"\.fx-fields input:focus\s*\{(?P<body>.*?)\n\}",
             css,
             flags=re.S,
         )
@@ -76,14 +74,16 @@ class SixMCssAccessibilityTests(unittest.TestCase):
     def test_process_arrow_uses_a_dark_foreground_on_gold(self):
         css = CSS_PATH.read_text(encoding="utf-8")
         arrow = re.search(
-            r"\.mx-process article:not\(:last-child\)::after\s*\{(?P<body>.*?)\n\}",
+            r"\.fx-process article:not\(:last-child\)::after\s*\{(?P<body>.*?)\n\}",
             css,
             flags=re.S,
         )
         self.assertIsNotNone(arrow)
-        self.assertIn("color: var(--mx-ink)", arrow.group("body"))
+        self.assertIn("color: var(--fx-button-ink)", arrow.group("body"))
         self.assertGreaterEqual(
-            _contrast(_variable(css, "--mx-ink"), _variable(css, "--mx-gold")),
+            _contrast(
+                _variable(css, "--fx-button-ink"), _variable(css, "--fx-gold")
+            ),
             3,
         )
 

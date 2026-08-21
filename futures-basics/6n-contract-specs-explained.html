@@ -2,228 +2,186 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6N Contract Specs Explained: Tick Size, Tick Value, Hours, and Margins</title>
-  <meta name="description" content="A direct breakdown of the 6N New Zealand Dollar futures contract specs: tick size, tick value, trading hours, and margin requirements.">
+  <title>6N Contract Specs: Tick Value, Hours and Expiry</title>
+  <meta name="description" content="Verify CME 6N contract size, USD-per-NZD quote, $5 tick, quarterly months, trading hours, expiry, physical delivery and margin limits.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6n-contract-specs-explained.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6N Contract Specs Explained: Tick Size, Tick Value, Hours, and Margins">
-  <meta property="og:description" content="A direct breakdown of the 6N New Zealand Dollar futures contract specs: tick size, tick value, trading hours, and margin requirements.">
+  <meta property="og:title" content="6N Contract Specs: Tick Value, Hours and Expiry">
+  <meta property="og:description" content="Verify CME 6N contract size, USD-per-NZD quote, $5 tick, quarterly months, trading hours, expiry, physical delivery and margin limits.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6n-contract-specs-explained.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-28">
+  <meta property="article:modified_time" content="2026-08-16">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="6N Contract Specs: Tick Value, Hours and Expiry">
+  <meta name="twitter:description" content="Verify CME 6N contract size, USD-per-NZD quote, $5 tick, quarterly months, trading hours, expiry, physical delivery and margin limits.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6N Contract Specs Explained: Tick Size, Tick Value, Hours, and Margins">
-  <meta name="twitter:description" content="A direct breakdown of the 6N New Zealand Dollar futures contract specs: tick size, tick value, trading hours, and margin requirements.">
-
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"6N Contract Specs: Tick Value, Hours and Expiry",
+    "description":"Verify CME 6N contract size, USD-per-NZD quote, $5 tick, quarterly months, trading hours, expiry, physical delivery and margin limits.",
+    "author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},
+    "publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6n-contract-specs-explained.html"},
+    "datePublished":"2025-11-28",
+    "dateModified":"2026-08-16",
+    "url":"https://grizzlyparrottrading.com/futures-basics/6n-contract-specs-explained.html",
+    "image":"https://grizzlyparrottrading.com/OG-default.png",
+    "inLanguage":"en-US"
+  }
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6N Contract Specs Explained: Tick Size, Tick Value, Hours, and Margins",
-  "description": "A direct breakdown of the 6N New Zealand Dollar futures contract specs: tick size, tick value, trading hours, and margin requirements.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6n-contract-specs-explained.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6n-contract-specs-explained.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6N Contract Specs Explained: Tick Size, Tick Value, Hours, and Margins",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6n-contract-specs-explained.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},
+    {"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},
+    {"@type":"ListItem","position":3,"name":"6N Contract Specs: Tick Value, Hours and Expiry","item":"https://grizzlyparrottrading.com/futures-basics/6n-contract-specs-explained.html"}
+  ]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="fx-skip-link" href="#main-content">Skip to article content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library">
+<article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Canonical contract reference &middot; CME 6N</p>
+    <h1>6N Contract Specs: Tick Value, Hours and Expiry</h1>
+    <p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 16, 2026</p>
+    <p class="fx-hero-lede"><strong>100,000 NZD &times; 0.00005 USD per NZD = $5.</strong> That multiplication is the current CME Globex outright tick value for one standard 6N contract. Every quote, P&amp;L and position-size calculation should reconcile to it before an order is enabled.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#verified-specs">Check the specifications</a><a class="fx-text-link" href="#preorder">Run the pre-order check</a></div>
+    <dl class="fx-hero-metrics" aria-label="Core standard 6N specifications"><div><dt>Trading unit</dt><dd>100,000 NZD</dd></div><div><dt>Outright tick</dt><dd>0.00005</dd></div><div><dt>Tick value</dt><dd>$5</dd></div><div><dt>Settlement</dt><dd>Physical</dd></div></dl>
+  </div>
+  <div class="fx-hero-visual fx-market-board" aria-label="Reconciled 6N tick calculation">
+    <div class="fx-board-head"><span>CME Globex outright</span><strong>6N</strong></div>
+    <div class="fx-proof"><strong>Contract unit</strong><span>100,000 New Zealand dollars</span></div>
+    <div class="fx-proof"><strong>Minimum increment</strong><span>$0.00005 per NZD</span></div>
+    <div class="fx-proof"><strong>Product</strong><span>100,000 &times; 0.00005 = $5.00</span></div>
+    <p class="fx-board-foot">The ClearPort increment is different; do not transfer it to an outright Globex ticket.</p>
   </div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#verified-specs">Verified specs</a><a href="#quote-pnl">Quote and P&amp;L</a><a href="#micro">Micro check</a><a href="#calendar">Calendar and hours</a><a href="#delivery">Expiry and delivery</a><a href="#margin">Roll and margin</a><a href="#preorder">Pre-order check</a></nav>
 
-<h1>6N Contract Specs Explained: Tick Size, Tick Value, Hours, and Margins</h1>
-
-<p>If you’re trading 6N futures, you need the contract specs locked in. The 6N is CME’s New Zealand Dollar futures contract, and knowing the tick size, tick value, hours, and margin structure keeps you from blowing the account because you guessed wrong.</p>
-
-<h2>The Core Specs of the 6N Futures Contract</h2>
-<p>Here are the pieces that actually matter when money is on the line:</p>
-
-<table>
-<tr><th>Spec</th><th>Value</th></tr>
-<tr><td>Symbol</td><td>6N</td></tr>
-<tr><td>Underlying</td><td>NZD/USD</td></tr>
-<tr><td>Contract Size</td><td>100,000 NZD</td></tr>
-<tr><td>Minimum Tick</td><td>0.0001</td></tr>
-<tr><td>Tick Value</td><td>$10.00</td></tr>
-<tr><td>Exchange</td><td>CME</td></tr>
-<tr><td>Settlement</td><td>Physical (but you’ll be flat before delivery)</td></tr>
-</table>
-
-<p>The contract size is always the part beginners underestimate. A “small” move like 0.0020 is actually a 20-tick move. At $10 per tick, that's $200 per contract—fast.</p>
-
-<h2>6N Tick Size and Tick Value</h2>
-<p>This contract moves in increments of 0.0001. Each one is worth $10. If 6N goes from 0.6031 to 0.6040, that’s 9 ticks → $90 per contract. No complicated decimals. No fancy conversions.</p>
-
-<p>Compare this to the <a href="https://grizzlyparrottrading.com/futures-basics/what-are-6n-futures.html">intro article</a> if you need more context on the currency pair itself.</p>
-
-<h2>Trading Hours for 6N</h2>
-<p>6N trades on the CME Globex platform almost 24 hours a day:</p>
-
-<ul>
-<li>Sunday–Friday</li>
-<li>5:00 p.m. to 4:00 p.m. Central Time</li>
-<li>One-hour break: 4:00 p.m.–5:00 p.m. CT</li>
-</ul>
-
-<p>The real movement tends to show up during two windows:</p>
-
-<ul>
-<li>Asian session (New Zealand + Australia open)</li>
-<li>U.S. session when the Dollar gets hit with new data</li>
-</ul>
-
-<p>The dead zone is between late U.S. afternoon and early Asian hours.</p>
-
-<h2>Margin Requirements</h2>
-<p>CME sets the base margin, but your broker determines what you actually pay. Typical values:</p>
-
-<table>
-<tr><th>Margin Type</th><th>Approx Value</th></tr>
-<tr><td>Initial Margin</td><td>$2,500–$3,200</td></tr>
-<tr><td>Maintenance Margin</td><td>$2,300–$3,000</td></tr>
-<tr><td>Day-Trade Margin</td><td>$400–$800 (broker dependent)</td></tr>
-</table>
-
-<p>If you’re trading through a prop firm, forget these numbers—the firm sets your effective leverage based on trailing drawdown, not CME rules.</p>
-
-<h2>Why These Specs Matter</h2>
-<p>The tick value tells you how fast you can bleed out. The margins tell you how much heat you can take before you’re forcibly closed. And the trading hours tell you when the market actually moves instead of chopping your account to death.</p>
-
-<p>Once you memorize these specs, everything else—volatility patterns, session behavior, rate cycles—starts making sense. From here, you can dig into <a href="https://grizzlyparrottrading.com/futures-basics/6n-volatility-patterns.html">6N volatility patterns</a> or the upcoming article on NZD fundamentals.</p>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="fx-section" id="verified-specs" aria-labelledby="verified-specs-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Exchange record</p><h2 id="verified-specs-title">The Current Standard 6N Contract in One Table</h2><p>CME Rulebook Chapter 258 and the CME FX Product Guide identify 6N as New Zealand Dollar/U.S. Dollar futures. The table separates the central-limit-order-book outright from other execution routes because their minimum increments are not interchangeable.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Current standard 6N contract specifications" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Field</th><th scope="col">Verified term</th><th scope="col">Operational meaning</th></tr></thead><tbody>
+    <tr><th scope="row">Contract</th><td>NZD/USD futures; Rulebook Chapter 258</td><td>Globex root 6N; ClearPort and clearing code NE</td></tr>
+    <tr><th scope="row">Trading unit</th><td>100,000 New Zealand dollars</td><td>Multiply a price change by 100,000 and by contract count for gross USD P&amp;L</td></tr>
+    <tr><th scope="row">Quotation</th><td>U.S. dollars per New Zealand dollar</td><td>A quote of 0.61240 means $0.61240 per NZD</td></tr>
+    <tr><th scope="row">Globex outright increment</th><td>0.00005 USD per NZD</td><td>0.00005 &times; 100,000 = $5 per contract</td></tr>
+    <tr><th scope="row">Globex spread increment</th><td>0.00005 USD per NZD</td><td>The current product guide lists the same increment for other Globex spreads; verify the exact spread ticket</td></tr>
+    <tr><th scope="row">ClearPort increment</th><td>0.00001 USD per NZD</td><td>$1 per standard contract; this does not change the outright Globex ladder</td></tr>
+    <tr><th scope="row">Listed months</th><td>March-cycle quarterlies: March, June, September and December</td><td>Use the live chain for the exact active set; CME product materials describe six quarterly contracts</td></tr>
+    <tr><th scope="row">Termination</th><td>Second business day immediately before the third Wednesday; usual close 9:16 a.m. CT</td><td>Chicago or New York bank holidays can move the date earlier under Rule 258</td></tr>
+    <tr><th scope="row">Delivery</th><td>Physical delivery on the third Wednesday, subject to holiday adjustment</td><td>Open positions can create currency-delivery obligations</td></tr>
+  </tbody></table></div>
+  <p class="fx-source-note"><strong>Version boundary:</strong> older CME brochures and third-party pages may still show a 0.0001 outright increment and $10 tick. Chapter 258 and the current 2026 product guide show 0.00005 and $5 for the Globex outright. The current rulebook and live security definition control.</p>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="fx-section" id="quote-pnl" aria-labelledby="quote-pnl-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Side-aware arithmetic</p><h2 id="quote-pnl-title">Quote Direction, Notional and P&amp;L Are Three Different Numbers</h2><p>A higher 6N quote means one NZD buys more U.S. dollars. That benefits a long futures position and hurts a short position. Notional is the represented currency value; it is neither the margin deposit nor a maximum-loss amount.</p></div>
+  <div class="fx-formula" aria-label="Long 6N gross profit and loss formula"><code>(Exit price - entry price) &times; 100,000 &times; contracts</code><i aria-hidden="true">=</i><strong>Long gross P&amp;L in USD</strong></div>
+  <div class="fx-formula" aria-label="Short 6N gross profit and loss formula"><code>(Entry price - exit price) &times; 100,000 &times; contracts</code><i aria-hidden="true">=</i><strong>Short gross P&amp;L in USD</strong></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Long example</p><h3>0.61240 to 0.61415</h3><p>The gain is 0.00175, or 35 outright ticks. Multiplier method: 0.00175 &times; 100,000 = <strong>$175 gross</strong>. Tick method: 35 &times; $5 = the same $175.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Short example</p><h3>0.61510 to 0.61260</h3><p>The favorable decline is 0.00250, or 50 ticks. One short contract gains <strong>$250 gross</strong>; two gain $500 before commissions, exchange fees and slippage.</p></article>
   </div>
-</footer>
+  <div class="fx-table-scroll" role="region" aria-label="Reconciled 6N price moves and dollar values" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Quote move</th><th scope="col">Outright ticks</th><th scope="col">One 6N</th><th scope="col">Three 6N</th></tr></thead><tbody>
+    <tr><th scope="row">0.00005</th><td>1</td><td>$5</td><td>$15</td></tr>
+    <tr><th scope="row">0.00010</th><td>2</td><td>$10</td><td>$30</td></tr>
+    <tr><th scope="row">0.00050</th><td>10</td><td>$50</td><td>$150</td></tr>
+    <tr><th scope="row">0.00175</th><td>35</td><td>$175</td><td>$525</td></tr>
+    <tr><th scope="row">0.00250</th><td>50</td><td>$250</td><td>$750</td></tr>
+  </tbody></table></div>
+  <p>At the hypothetical 0.61240 quote, one contract represents 100,000 &times; 0.61240 = <strong>$61,240</strong> of quoted value. Actual loss can exceed an initial performance bond because the full contract responds to price changes and an exit can gap or slip.</p>
+</section>
+
+<section class="fx-section" id="micro" aria-labelledby="micro-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Product-name control</p><h2 id="micro-title">CME Does Not Currently List an M6N Micro Counterpart</h2><p>The 2026 CME FX Product Guide lists the standard 6N row and separately lists current Micro FX futures. That Micro table contains M6B, M6A, M6E, MJY, MCD, MSF and MIR&mdash;not M6N. The current CME Rulebook index likewise has Chapter 258 for 6N but no Micro NZD chapter.</p></div>
+  <div class="fx-three-column">
+    <article class="fx-panel"><p class="fx-card-label">Established</p><h3>Standard 6N exists</h3><p>100,000 NZD, a 0.00005 Globex outright tick and physical delivery are verified current terms.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Not established</p><h3>No current CME M6N</h3><p>A broker label, search result or analogy to M6A is not an exchange listing, rule chapter or active chain.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Sizing consequence</p><h3>Zero can be the only valid size</h3><p>If one standard contract breaches the written risk budget, do not invent a one-tenth contract. Reject the trade or verify a genuinely different venue and product.</p></article>
+  </div>
+  <p class="fx-related">See the dedicated <a href="m6n-micro-contract-guide.html">M6N symbol and sizing correction</a> before relying on any platform that displays an “M6N” label.</p>
+</section>
+
+<section class="fx-section" id="calendar" aria-labelledby="calendar-title">
+  <div class="fx-section-heading"><p class="fx-kicker">A dated contract</p><h2 id="calendar-title">Quarterly Months Trade Nearly Around the Clock, Not With Uniform Liquidity</h2><p>CME lists 6N on the March quarterly cycle. Regular FX Globex access is Sunday through Friday from 5:00 p.m. to 4:00 p.m. Chicago time, with a 60-minute daily break beginning at 4:00 p.m. CT. Holiday schedules override the regular clock.</p></div>
+  <div class="fx-contract-path" aria-label="6N contract selection and roll path">
+    <article><h3>1. Name the month</h3><p>Root, month code and year must match between chart, order and risk system.</p></article>
+    <article><h3>2. Check the actual book</h3><p>Record spread, top-of-book size, depth, volume and open interest in that maturity.</p></article>
+    <article><h3>3. Compare the next quarter</h3><p>Activity can migrate. A calendar date alone does not prove which month is executable.</p></article>
+    <article><h3>4. Set an operational deadline</h3><p>Broker cutoffs can precede exchange termination, especially for a deliverable currency contract.</p></article>
+  </div>
+  <div class="fx-caution"><strong>“Open” does not mean “liquid enough.”</strong><p>The regular schedule proves access, not fill quality. New Zealand, Asian, European and U.S. activity overlap differently as daylight-saving regimes change. Measure the live order book rather than converting a time-zone story into a standing liquidity claim.</p></div>
+</section>
+
+<section class="fx-section" id="delivery" aria-labelledby="delivery-title">
+  <div class="fx-section-heading"><p class="fx-kicker">The legal end state</p><h2 id="delivery-title">Termination and Physical Delivery Require Separate Controls</h2><p>Rule 258 ends trading on the second business day immediately preceding the third Wednesday of the delivery month. If that date is a bank holiday in Chicago or New York, termination moves to the preceding business day common to those banks and the exchange. Delivery is normally the third Wednesday and can shift forward under the rule’s holiday test.</p></div>
+  <div class="fx-lifecycle" aria-label="6N expiry controls">
+    <article><span>Map</span><h3>Read the official calendar</h3><p>Record the exchange termination date and time, delivery date and current holiday advisory.</p></article>
+    <article><span>Fence</span><h3>Apply the broker cutoff</h3><p>Use the earlier operational deadline when the broker requires positions closed or funded sooner.</p></article>
+    <article><span>Act</span><h3>Offset or roll deliberately</h3><p>A roll is a close in one month plus an open in another, with two prices and possible leg risk.</p></article>
+    <article><span>Prove</span><h3>Reconcile the account</h3><p>Confirm the old month is flat, the new month and side are correct, and stale orders are cancelled.</p></article>
+  </div>
+  <p class="fx-source-note"><strong>Delivery boundary:</strong> most traders offset or roll, but that custom does not remove the contract’s physical-delivery obligation. Delivery involves clearing-member instructions, funding and currency settlement. Never improvise it from a retail order ticket.</p>
+</section>
+
+<section class="fx-section" id="margin" aria-labelledby="margin-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Funding is not risk</p><h2 id="margin-title">Margin, Maximum Loss and Roll Cost Must Stay Separate</h2><p>Futures margin is a performance bond. CME can revise exchange requirements, and a broker can require more, impose an earlier cutoff or advertise a lower intraday figure. None of those numbers caps loss.</p></div>
+  <div class="fx-decision-strip" aria-label="Three separate 6N control numbers"><span><strong>Funding requirement</strong>Current exchange and broker margin plus an account buffer</span><span><strong>Planned trade risk</strong>Invalidation distance in current 0.00005 ticks &times; $5 &times; contracts, plus costs and stress</span><span><strong>Represented notional</strong>Quote &times; 100,000 NZD &times; contracts</span></div>
+  <div class="fx-caution"><strong>Stops are instructions, not guarantees.</strong><p>A gap, thin book, rejected order, outage or forced liquidation can produce a worse exit. Include commissions, exchange and data fees, bid-ask spread, slippage and a gap stress. Losses can exceed both planned risk and the initial margin deposit.</p></div>
+  <p>Rolling adds its own cash and execution effects: close-out P&amp;L in the old month, the price difference to the new month, two-sided transaction costs and possible leg risk. A continuous chart may adjust away the visible month gap; the account does not.</p>
+</section>
+
+<section class="fx-section" id="preorder" aria-labelledby="preorder-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Final control</p><h2 id="preorder-title">The Reconciled Pre-Order Verification Checklist</h2><p>An order remains disabled until each item can be answered from the exchange record, live ticket and written risk plan.</p></div>
+  <div class="fx-check-grid">
+    <article><strong>Identity</strong><p>6N, exact quarterly month and year; chart and ticket match.</p></article>
+    <article><strong>Unit</strong><p>100,000 NZD per contract; no assumed M6N substitute.</p></article>
+    <article><strong>Tick proof</strong><p>0.00005 &times; 100,000 = $5; multiplier and tick methods agree.</p></article>
+    <article><strong>Side</strong><p>Long benefits from a higher quote; short benefits from a lower quote.</p></article>
+    <article><strong>Quantity</strong><p>Integer contracts fit the stop, costs, gap stress and account limit.</p></article>
+    <article><strong>Market quality</strong><p>Spread, depth and expected slippage pass the live execution gate.</p></article>
+    <article><strong>Lifecycle</strong><p>Termination, delivery, broker cutoff and planned roll or offset are recorded.</p></article>
+    <article><strong>Funding</strong><p>Current margin and buffer are sufficient, without treating either as maximum loss.</p></article>
+  </div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 20, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/258/258.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 258: New Zealand Dollar/U.S. Dollar futures</a> for the 100,000 NZD unit, current 0.00005 Globex outright increment, $5 equivalent, termination rule and physical-delivery procedure.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener noreferrer">CME FX Product Guide 2026</a> for product codes, unit, USD-per-NZD quotation, outright/spread/ClearPort increments, settlement and the current Micro FX product list.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/g10/new-zealand-dollar.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME 6N contract-specification page</a> for the regular trading schedule, quarterly listing convention and usual 9:16 a.m. CT termination time.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-delivery.html" target="_blank" rel="noopener noreferrer">CME FX futures delivery guide</a> for the quarterly delivery classification and physical-settlement workflow.</li>
+  <li><a href="https://www.cmegroup.com/trading/why-futures/welcome-to-cme-fx-futures.html" target="_blank" rel="noopener noreferrer">CME FX futures market guide</a> for regular Sunday&ndash;Friday Globex hours and the daily maintenance break.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/economicpurpose.html" target="_blank" rel="noopener noreferrer">CFTC economic purpose of futures markets</a> for clearing, daily mark-to-market and performance-bond context.</li>
+</ul><p>Sources were reviewed August 20, 2026. Current rulebook and product-guide terms take priority over older educational brochures. Prices are hypothetical arithmetic examples, not market observations. No liquidity, profitability or hedge-effectiveness study is reported. Verify the live CME chain, holiday calendar, security definition and broker terms before every trade.</p></details>
+
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This reference is educational and is not personal trading, investment, legal, tax, accounting, hedging or brokerage advice. 6N is leveraged and physically deliverable. Initial performance bond does not cap the account’s downside, especially through gaps or liquidation. Verify current exchange rules and broker controls before taking risk.</p></aside>
+<!-- ARTICLE BODY END -->
+</article>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

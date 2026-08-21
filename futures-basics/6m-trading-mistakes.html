@@ -28,7 +28,7 @@
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="/futures-basics/6m-research-library.css?v=20260813a">
+  <link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
   <script type="application/ld+json">
@@ -57,44 +57,44 @@
   <script src="/uet.js" defer></script>
 </head>
 <body>
-<a class="mx-skip-link" href="#main-content">Skip to article content</a>
+<a class="fx-skip-link" href="#main-content">Skip to article content</a>
 <header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
-<main class="container article-container mxn-library" id="main-content">
+<main class="container article-container currency-library" id="main-content">
 <article>
 <!-- ARTICLE BODY START -->
-<header class="mx-hero">
-  <p class="mx-kicker">Failure catalog &middot; prevention before prediction</p>
+<header class="fx-hero">
+  <p class="fx-kicker">Failure catalog &middot; prevention before prediction</p>
   <h1>6M Trading Mistakes: A Failure Pre-Mortem</h1>
-  <p class="mx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
-  <p class="mx-hero-lede">After the loss, the timeline is clearer than the chart: the continuous symbol did not match the order month, the entry arrived one minute before a scheduled release, the stop filled beyond its trigger, and quantity came from a day-margin display. The final mistake would be calling all four failures “the signal was wrong.”</p>
-  <div class="mx-decision-strip" aria-label="Post-loss reconstruction summary"><span><strong>Before</strong>Unverified data, contract and calendar</span><span><strong>During</strong>Execution and loss budget detached</span><span><strong>After</strong>Review either preserves or destroys evidence</span></div>
+  <p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+  <p class="fx-hero-lede">After the loss, the timeline is clearer than the chart: the continuous symbol did not match the order month, the entry arrived one minute before a scheduled release, the stop filled beyond its trigger, and quantity came from a day-margin display. The final mistake would be calling all four failures “the signal was wrong.”</p>
+  <div class="fx-decision-strip" aria-label="Post-loss reconstruction summary"><span><strong>Before</strong>Unverified data, contract and calendar</span><span><strong>During</strong>Execution and loss budget detached</span><span><strong>After</strong>Review either preserves or destroys evidence</span></div>
 </header>
 
-<section class="mx-section" id="reconstruction" aria-labelledby="reconstruction-title">
-  <div class="mx-section-heading"><p class="mx-kicker">A hypothetical reconstruction</p><h2 id="reconstruction-title">One Loss Can Contain Several Independent Process Failures</h2><p>The sequence below is not a market result. It is a pre-mortem device: imagine the failure has already occurred, then ask what evidence would have exposed it before the order.</p></div>
-  <div class="mx-lifecycle" aria-label="Hypothetical 6M loss reconstruction timeline">
+<section class="fx-section" id="reconstruction" aria-labelledby="reconstruction-title">
+  <div class="fx-section-heading"><p class="fx-kicker">A hypothetical reconstruction</p><h2 id="reconstruction-title">One Loss Can Contain Several Independent Process Failures</h2><p>The sequence below is not a market result. It is a pre-mortem device: imagine the failure has already occurred, then ask what evidence would have exposed it before the order.</p></div>
+  <div class="fx-lifecycle" aria-label="Hypothetical 6M loss reconstruction timeline">
     <article><span>1</span><h3>07:45 CT: chart chosen</h3><p>A back-adjusted continuous series is treated as though it were the executable contract. No month, roll rule or current book is recorded.</p></article>
     <article><span>2</span><h3>07:59 CT: order sent</h3><p>A marketable buy is routed as the spread widens. The official release calendar was never checked and no event plan exists.</p></article>
     <article><span>3</span><h3>08:00 CT: stop triggered</h3><p>The book reprices through the trigger. The fill is 18 ticks worse than the assumed stop price; that path was absent from sizing.</p></article>
     <article><span>4</span><h3>08:20 CT: review rewritten</h3><p>The trader records only “bad setup,” omits the decision quote and fills, then changes the rule without preserving the original evidence.</p></article>
   </div>
-  <div class="mx-caution"><strong>The purpose of a pre-mortem is not to predict every loss.</strong><p>It is to make common failure paths observable and assign a fail-closed control. A clean process can still lose money; a profitable trade can still contain serious process violations.</p></div>
+  <div class="fx-caution"><strong>The purpose of a pre-mortem is not to predict every loss.</strong><p>It is to make common failure paths observable and assign a fail-closed control. A clean process can still lose money; a profitable trade can still contain serious process violations.</p></div>
 </section>
 
-<section class="mx-section" id="data-contract" aria-labelledby="data-contract-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Failure family 1</p><h2 id="data-contract-title">Data and Contract Mistakes Corrupt Every Later Decision</h2><p>A strategy cannot recover from an ambiguous instrument. Treat data provenance, timestamp and dated-contract identity as admission controls.</p></div>
-  <div class="mx-risk-grid">
+<section class="fx-section" id="data-contract" aria-labelledby="data-contract-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Failure family 1</p><h2 id="data-contract-title">Data and Contract Mistakes Corrupt Every Later Decision</h2><p>A strategy cannot recover from an ambiguous instrument. Treat data provenance, timestamp and dated-contract identity as admission controls.</p></div>
+  <div class="fx-risk-grid">
     <article><strong>Executing a continuous symbol</strong><p><em>Warning:</em> the chart name has no month or year. <em>Gate:</em> map the research series to the exact live 6M contract and compare its current quote. <em>Recovery:</em> quarantine any record whose traded month cannot be reconstructed.</p></article>
     <article><strong>Ignoring quote direction</strong><p><em>Warning:</em> a bullish-peso thesis is paired with a direction copied from USD/MXN spot. <em>Gate:</em> state that 6M is USD per MXN and write the expected sign. <em>Recovery:</em> separate thesis error from order-direction error.</p></article>
     <article><strong>Using stale or receipt timestamps</strong><p><em>Warning:</em> feed age, clock source or exchange timestamp is unknown. <em>Gate:</em> require synchronized authoritative fields. <em>Recovery:</em> label reconstructed timing as experimental, never exchange event time.</p></article>
     <article><strong>Hiding the roll</strong><p><em>Warning:</em> a price jump occurs where the data vendor changes contracts. <em>Gate:</em> preserve raw contracts, roll dates and adjustment method. <em>Recovery:</em> rerun analysis after the series lineage passes.</p></article>
   </div>
-  <p class="mx-related">Full source acceptance and continuous-series controls belong in <a href="6m-data-traps.html">6M data traps</a>. The current exchange terms belong in the <a href="6m-tick-size.html">canonical 6M contract guide</a>.</p>
+  <p class="fx-related">Full source acceptance and continuous-series controls belong in <a href="6m-data-traps.html">6M data traps</a>. The current exchange terms belong in the <a href="6m-tick-size.html">canonical 6M contract guide</a>.</p>
 </section>
 
-<section class="mx-section" id="mechanics" aria-labelledby="mechanics-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Failure family 2</p><h2 id="mechanics-title">A Correct View in the Wrong Unit Is Still a Wrong Order</h2><p>6M represents 500,000 Mexican pesos and its current Globex outright tick is $5. Those facts must appear in risk and P&amp;L math, but this failure catalog links to the specification authority rather than duplicating its full table.</p></div>
-  <div class="mx-table-scroll" role="region" aria-label="6M mechanics failure warnings and controls" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Failure</th><th scope="col">Observable warning</th><th scope="col">Prevention gate</th><th scope="col">Review action</th></tr></thead><tbody>
+<section class="fx-section" id="mechanics" aria-labelledby="mechanics-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Failure family 2</p><h2 id="mechanics-title">A Correct View in the Wrong Unit Is Still a Wrong Order</h2><p>6M represents 500,000 Mexican pesos and its current Globex outright tick is $5. Those facts must appear in risk and P&amp;L math, but this failure catalog links to the specification authority rather than duplicating its full table.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="6M mechanics failure warnings and controls" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Failure</th><th scope="col">Observable warning</th><th scope="col">Prevention gate</th><th scope="col">Review action</th></tr></thead><tbody>
     <tr><th scope="row">Decimal error</th><td>Tick method and multiplier method disagree</td><td>Reconcile both before quantity is enabled</td><td>Preserve ticket, raw fills and calculation version</td></tr>
     <tr><th scope="row">Invented micro</th><td>A platform or note implies “M6M” without a current CME product record</td><td>Require rule chapter, unit, tick and active chain; current CME guide lists no Micro MXN counterpart</td><td>Classify the unverified symbol as unusable</td></tr>
     <tr><th scope="row">Expiry neglect</th><td>Termination or broker cutoff is absent from the plan</td><td>Record dated month, official expiration and personal roll/exit deadline</td><td>Escalate any unintended deliverable position immediately through the broker</td></tr>
@@ -102,59 +102,59 @@
   </tbody></table></div>
 </section>
 
-<section class="mx-section" id="thesis" aria-labelledby="thesis-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Failure family 3</p><h2 id="thesis-title">A Story Without a Prior, Channel and Falsifier Is Not a Decision Rule</h2><p>“Banxico is hawkish,” “the dollar is strong,” or “risk is off” can describe information, but none is a complete 6M trade. Price responds to what was expected, how the information changes relative paths and which competing forces dominate.</p></div>
-  <div class="mx-falsification-tree">
-    <article><p class="mx-card-label">Mistake</p><h3>Single-cause certainty</h3><ul><li>One release is treated as sufficient.</li><li>No market prior is recorded.</li><li>Competing U.S. or global channels are omitted.</li></ul></article>
-    <article><p class="mx-card-label">Prevention</p><h3>Conditional branch</h3><ul><li>State the prior and surprise.</li><li>Trace at least two plausible channels.</li><li>Define confirmation, contradiction and time limit.</li></ul></article>
-    <article><p class="mx-card-label">Recovery</p><h3>Evidence audit</h3><ul><li>Preserve information timestamps.</li><li>Separate mechanism from observed response.</li><li>Do not promote one loss into a universal rule.</li></ul></article>
+<section class="fx-section" id="thesis" aria-labelledby="thesis-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Failure family 3</p><h2 id="thesis-title">A Story Without a Prior, Channel and Falsifier Is Not a Decision Rule</h2><p>“Banxico is hawkish,” “the dollar is strong,” or “risk is off” can describe information, but none is a complete 6M trade. Price responds to what was expected, how the information changes relative paths and which competing forces dominate.</p></div>
+  <div class="fx-falsification-tree">
+    <article><p class="fx-card-label">Mistake</p><h3>Single-cause certainty</h3><ul><li>One release is treated as sufficient.</li><li>No market prior is recorded.</li><li>Competing U.S. or global channels are omitted.</li></ul></article>
+    <article><p class="fx-card-label">Prevention</p><h3>Conditional branch</h3><ul><li>State the prior and surprise.</li><li>Trace at least two plausible channels.</li><li>Define confirmation, contradiction and time limit.</li></ul></article>
+    <article><p class="fx-card-label">Recovery</p><h3>Evidence audit</h3><ul><li>Preserve information timestamps.</li><li>Separate mechanism from observed response.</li><li>Do not promote one loss into a universal rule.</li></ul></article>
   </div>
-  <p class="mx-related">Use <a href="6m-fundamental-drivers.html">the canonical 6M driver ledger</a> for broad evidence, <a href="banxico-rate-policy-6m.html">the Banxico decision workflow</a> for rate events and <a href="usd-strength-6m.html">the dollar-factor guide</a> to avoid circular confirmation.</p>
+  <p class="fx-related">Use <a href="6m-fundamental-drivers.html">the canonical 6M driver ledger</a> for broad evidence, <a href="banxico-rate-policy-6m.html">the Banxico decision workflow</a> for rate events and <a href="usd-strength-6m.html">the dollar-factor guide</a> to avoid circular confirmation.</p>
 </section>
 
-<section class="mx-section" id="execution" aria-labelledby="execution-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Failure family 4</p><h2 id="execution-title">The Order Type Cannot Rescue a Failed Market-Quality Gate</h2><p>Marketable, limit and stop-triggered orders exchange price certainty, fill certainty and non-fill risk. Choosing a label is not a substitute for measuring the current spread, depth, quote freshness and event state.</p></div>
-  <div class="mx-risk-grid">
+<section class="fx-section" id="execution" aria-labelledby="execution-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Failure family 4</p><h2 id="execution-title">The Order Type Cannot Rescue a Failed Market-Quality Gate</h2><p>Marketable, limit and stop-triggered orders exchange price certainty, fill certainty and non-fill risk. Choosing a label is not a substitute for measuring the current spread, depth, quote freshness and event state.</p></div>
+  <div class="fx-risk-grid">
     <article><strong>Entering because the market is open</strong><p><em>Warning:</em> no spread or depth threshold exists. <em>Gate:</em> require current book evidence for the exact month. <em>Recovery:</em> measure decision-to-fill shortfall.</p></article>
     <article><strong>Chasing an unfilled limit</strong><p><em>Warning:</em> the acceptable price changes after every market move. <em>Gate:</em> predefine cancel, replace and missed-trade logic. <em>Recovery:</em> keep the original decision benchmark.</p></article>
     <article><strong>Assuming a stop price is a fill</strong><p><em>Warning:</em> sizing uses trigger-to-entry only. <em>Gate:</em> add an adverse-fill stress and understand the stop branch. <em>Recovery:</em> compare trigger, first executable quote and fills.</p></article>
     <article><strong>Trading into a known release by accident</strong><p><em>Warning:</em> official event calendar is absent. <em>Gate:</em> event state must be allowed explicitly. <em>Recovery:</em> classify the trade separately from normal conditions.</p></article>
   </div>
-  <p class="mx-related">The complete spread, depth, order branch and post-trade ledger is in <a href="6m-slippage.html">6M slippage and execution quality</a>.</p>
+  <p class="fx-related">The complete spread, depth, order branch and post-trade ledger is in <a href="6m-slippage.html">6M slippage and execution quality</a>.</p>
 </section>
 
-<section class="mx-section" id="risk-lifecycle" aria-labelledby="risk-lifecycle-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Failure family 5</p><h2 id="risk-lifecycle-title">Margin, Sizing and Lifecycle Failures Turn Small Errors Into Account Events</h2></div>
-  <div class="mx-table-scroll" role="region" aria-label="6M risk and lifecycle pre-mortem" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Failure mode</th><th scope="col">Why it happens</th><th scope="col">Hard gate</th><th scope="col">Specialist owner</th></tr></thead><tbody>
+<section class="fx-section" id="risk-lifecycle" aria-labelledby="risk-lifecycle-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Failure family 5</p><h2 id="risk-lifecycle-title">Margin, Sizing and Lifecycle Failures Turn Small Errors Into Account Events</h2></div>
+  <div class="fx-table-scroll" role="region" aria-label="6M risk and lifecycle pre-mortem" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Failure mode</th><th scope="col">Why it happens</th><th scope="col">Hard gate</th><th scope="col">Specialist owner</th></tr></thead><tbody>
     <tr><th scope="row">Size from day margin</th><td>Affordable collateral is confused with acceptable loss</td><td>Integer quantity comes from risk budget, invalidation, $5 tick, costs and stress</td><td><a href="6m-margin-requirements.html">Margin and sizing</a></td></tr>
     <tr><th scope="row">Move invalidation to avoid a loss</th><td>The account result replaces the original thesis</td><td>Any change requires new evidence and a full risk recalculation</td><td><a href="6m-trading-plan.html">Integrated plan</a></td></tr>
     <tr><th scope="row">Ignore correlated positions</th><td>Each ticket looks small in isolation</td><td>Aggregate USD, MXN, rates and risk-sentiment exposures</td><td><a href="6m-fundamental-drivers.html">Driver ledger</a></td></tr>
     <tr><th scope="row">Hold through expiry unintentionally</th><td>Continuous chart hides dated obligation</td><td>Personal exit/roll deadline precedes broker cutoff and exchange termination</td><td><a href="6m-tick-size.html">Contract specification</a></td></tr>
     <tr><th scope="row">Average down without a branch</th><td>Lower price is mistaken for lower risk</td><td>No quantity addition unless the plan defined evidence, combined invalidation and total cap before entry</td><td><a href="6m-trading-plan.html">Integrated plan</a></td></tr>
   </tbody></table></div>
-  <div class="mx-caution"><strong>A profitable violation remains a violation.</strong><p>Score process independently from P&amp;L. Otherwise, lucky fills reinforce unsafe sizing and clean losses cause sound controls to be discarded.</p></div>
+  <div class="fx-caution"><strong>A profitable violation remains a violation.</strong><p>Score process independently from P&amp;L. Otherwise, lucky fills reinforce unsafe sizing and clean losses cause sound controls to be discarded.</p></div>
 </section>
 
-<section class="mx-section" id="recovery" aria-labelledby="recovery-title">
-  <div class="mx-section-heading"><p class="mx-kicker">After a breach</p><h2 id="recovery-title">Stop, Preserve, Classify, Repair, Requalify</h2><p>A loss review should restore control, not create a revenge-trading checklist.</p></div>
-  <div class="mx-process">
+<section class="fx-section" id="recovery" aria-labelledby="recovery-title">
+  <div class="fx-section-heading"><p class="fx-kicker">After a breach</p><h2 id="recovery-title">Stop, Preserve, Classify, Repair, Requalify</h2><p>A loss review should restore control, not create a revenge-trading checklist.</p></div>
+  <div class="fx-process">
     <article><span>Stop</span><h3>Flatten operational risk</h3><p>Confirm positions and working orders. Address an unintended delivery or margin state with the broker.</p></article>
     <article><span>Preserve</span><h3>Freeze the evidence</h3><p>Save decision notes, exact contract, quotes, order events, fills, clocks and official release timestamps.</p></article>
     <article><span>Classify</span><h3>Name each failure</h3><p>Separate data, mechanics, thesis, execution, sizing, infrastructure and random adverse movement.</p></article>
     <article><span>Requalify</span><h3>Test the repair</h3><p>Change one control at a time, validate it on independent cases and require the gate before live reuse.</p></article>
   </div>
-  <p class="mx-source-note">Do not infer that the most visible error caused the full loss. A faithful reconstruction can identify multiple necessary or contributing failures without claiming causal certainty the evidence cannot support.</p>
+  <p class="fx-source-note">Do not infer that the most visible error caused the full loss. A faithful reconstruction can identify multiple necessary or contributing failures without claiming causal certainty the evidence cannot support.</p>
 </section>
 
-<section class="mx-section" id="checklist" aria-labelledby="checklist-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Failure-resistant close</p><h2 id="checklist-title">Pre-Trade and Post-Trade Failure Checks</h2></div>
-  <div class="mx-two-column">
-    <article class="mx-panel"><h3>Before</h3><ul class="mx-checklist"><li>Exact dated contract and quote direction verified.</li><li>Data and clocks pass acceptance requirements.</li><li>Prior, mechanism, competing force and invalidation are written.</li><li>Official events and expiry deadlines are known.</li><li>Spread, depth, order branch, risk quantity and funding all pass.</li></ul></article>
-    <article class="mx-panel"><h3>After</h3><ul class="mx-checklist"><li>Positions, partial fills and working orders reconcile.</li><li>Decision price and all order events remain unchanged.</li><li>Price shortfall and explicit fees reconcile to the statement.</li><li>Process quality is scored separately from P&amp;L.</li><li>Any repair has an owner, test and requalification gate.</li></ul></article>
+<section class="fx-section" id="checklist" aria-labelledby="checklist-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Failure-resistant close</p><h2 id="checklist-title">Pre-Trade and Post-Trade Failure Checks</h2></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><h3>Before</h3><ul class="fx-checklist"><li>Exact dated contract and quote direction verified.</li><li>Data and clocks pass acceptance requirements.</li><li>Prior, mechanism, competing force and invalidation are written.</li><li>Official events and expiry deadlines are known.</li><li>Spread, depth, order branch, risk quantity and funding all pass.</li></ul></article>
+    <article class="fx-panel"><h3>After</h3><ul class="fx-checklist"><li>Positions, partial fills and working orders reconcile.</li><li>Decision price and all order events remain unchanged.</li><li>Price shortfall and explicit fees reconcile to the statement.</li><li>Process quality is scored separately from P&amp;L.</li><li>Any repair has an owner, test and requalification gate.</li></ul></article>
   </div>
 </section>
 
-<details class="mx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary><ul>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary><ul>
   <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/256/256.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 256: Mexican Peso/U.S. Dollar futures</a> for the authoritative trading unit, minimum increment, termination and physical-delivery rules underlying the mechanics controls.</li>
   <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME FX Product Guide 2026</a> for current product, quote, tick and Micro-inventory checks.</li>
   <li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener">CME holiday and trading hours</a> for time-sensitive session exceptions.</li>
@@ -162,7 +162,7 @@
   <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CFTCGlossary/index.htm" target="_blank" rel="noopener">CFTC futures glossary</a> for margin, mark-to-market, market order, limit order, minimum tick and open-interest definitions.</li>
 </ul><p>Sources were reviewed August 13, 2026. The loss reconstruction is hypothetical and not an actual trade or an estimate of typical 6M slippage. Failure paths are controls to test, not claims that a named condition always causes a loss. No original profitability, indicator, session, seasonality or event study is reported.</p></details>
 
-<aside class="mx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>Treat this pre-mortem as general education rather than personal trading, investment, legal, tax, accounting, hedging or brokerage direction. Leverage and physical delivery remain material futures risks; gaps, slippage, data errors and liquidation can produce losses beyond the initial deposit. A checklist reduces some preventable errors but cannot remove market risk.</p></aside>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>Treat this pre-mortem as general education rather than personal trading, investment, legal, tax, accounting, hedging or brokerage direction. Leverage and physical delivery remain material futures risks; gaps, slippage, data errors and liquidation can produce losses beyond the initial deposit. A checklist reduces some preventable errors but cannot remove market risk.</p></aside>
 <!-- ARTICLE BODY END -->
 </article>
 </main>

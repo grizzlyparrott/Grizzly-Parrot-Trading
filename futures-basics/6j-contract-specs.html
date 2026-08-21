@@ -32,7 +32,7 @@
   <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
 
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="6j-evidence-guides.css?v=20260807b">
+  <link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>
@@ -95,37 +95,37 @@
   </div>
 </header>
 
-<main><section class="section"><article class="container article-content yen-evidence">
+<main><section class="section"><article class="container article-content currency-library">
 <!-- ARTICLE BODY START -->
-<header class="yj-hero">
-  <div class="yj-hero-copy">
-    <p class="yj-kicker">Contract mechanics &middot; CME 6J / JPY-USD</p>
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Contract mechanics &middot; CME 6J / JPY-USD</p>
     <h1>6J Contract Specs: Exact Tick, P&amp;L, Margin and Delivery Math</h1>
-    <p class="yj-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 12, 2026</p>
-    <p class="yj-hero-lede">Standard 6J represents &yen;12.5 million. One outright tick is 0.0000005 U.S. dollars per yen and $6.25 per contract. Those are the easy numbers. The expensive mistakes come from misreading the quote, confusing a broker&rsquo;s day margin with risk, or drifting into a physically delivered contract.</p>
-    <div class="yj-hero-actions"><a class="button-primary" href="#spec-table">See the current specification table</a><a class="yj-text-link" href="#worksheet">Build the trade worksheet</a></div>
-    <dl class="yj-hero-metrics" aria-label="6J contract summary">
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 12, 2026</p>
+    <p class="fx-hero-lede">Standard 6J represents &yen;12.5 million. One outright tick is 0.0000005 U.S. dollars per yen and $6.25 per contract. Those are the easy numbers. The expensive mistakes come from misreading the quote, confusing a broker&rsquo;s day margin with risk, or drifting into a physically delivered contract.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#spec-table">See the current specification table</a><a class="fx-text-link" href="#worksheet">Build the trade worksheet</a></div>
+    <dl class="fx-hero-metrics" aria-label="6J contract summary">
       <div><dt>Contract unit</dt><dd>&yen;12.5M</dd></div><div><dt>Outright tick</dt><dd>0.0000005</dd></div><div><dt>Tick value</dt><dd>$6.25</dd></div><div><dt>Settlement</dt><dd>Physical</dd></div>
     </dl>
   </div>
-  <div class="yj-hero-visual"><div class="yj-market-board">
-    <div class="yj-board-head"><span>Exact multiplier</span><strong>Price move &times; &yen;12,500,000</strong></div>
-    <div class="yj-formula" style="margin-top:1rem"><code>0.0000005</code><i aria-hidden="true">&times;</i><code>&yen;12,500,000 = $6.25</code></div>
-    <div class="yj-board-legend"><span>Exchange specification</span><span class="is-yen">Dollar P&amp;L per contract</span></div>
-    <p class="yj-board-foot"><span>Standard 6J outright</span><span>Checked August 12, 2026</span></p>
+  <div class="fx-hero-visual"><div class="fx-market-board">
+    <div class="fx-board-head"><span>Exact multiplier</span><strong>Price move &times; &yen;12,500,000</strong></div>
+    <div class="fx-formula" style="margin-top:1rem"><code>0.0000005</code><i aria-hidden="true">&times;</i><code>&yen;12,500,000 = $6.25</code></div>
+    <div class="fx-board-legend"><span>Exchange specification</span><span class="is-yen">Dollar P&amp;L per contract</span></div>
+    <p class="fx-board-foot"><span>Standard 6J outright</span><span>Checked August 12, 2026</span></p>
   </div></div>
 </header>
 
-<nav class="yj-jump-nav" aria-label="On this page"><a href="#bottom-line">Bottom line</a><a href="#spec-table">Specs</a><a href="#tick-math">P&amp;L math</a><a href="#margin">Margin</a><a href="#expiry">Expiry</a><a href="#worksheet">Worksheet</a><a href="#faq">FAQ</a></nav>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#bottom-line">Bottom line</a><a href="#spec-table">Specs</a><a href="#tick-math">P&amp;L math</a><a href="#margin">Margin</a><a href="#expiry">Expiry</a><a href="#worksheet">Worksheet</a><a href="#faq">FAQ</a></nav>
 
-<section class="yj-section" id="bottom-line" aria-labelledby="bottom-line-title">
-  <div class="yj-section-heading"><p class="yj-kicker">Direct answer</p><h2 id="bottom-line-title">What a 6J Trader Actually Needs to Know</h2><p>Use the contract multiplier, not the number of decimals on the screen, to calculate risk. Standard 6J is quoted in U.S. dollars per Japanese yen. A price such as 0.006700 means one yen is worth $0.006700; at that hypothetical price the contract&rsquo;s dollar notional is $83,750. It does not mean the margin or maximum loss is $83,750.</p></div>
-  <div class="yj-caution"><strong>The old point-value shortcut was wrong</strong><p>A 0.01 price move is <strong>$125,000</strong>, not $12,500. The correct ladder is 0.01 = $125,000; 0.001 = $12,500; 0.0001 = $1,250; 0.00001 = $125; and one 0.0000005 tick = $6.25. Most daily moves are only a fraction of 0.01, but the multiplier never changes.</p></div>
+<section class="fx-section" id="bottom-line" aria-labelledby="bottom-line-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Direct answer</p><h2 id="bottom-line-title">What a 6J Trader Actually Needs to Know</h2><p>Use the contract multiplier, not the number of decimals on the screen, to calculate risk. Standard 6J is quoted in U.S. dollars per Japanese yen. A price such as 0.006700 means one yen is worth $0.006700; at that hypothetical price the contract&rsquo;s dollar notional is $83,750. It does not mean the margin or maximum loss is $83,750.</p></div>
+  <div class="fx-caution"><strong>The old point-value shortcut was wrong</strong><p>A 0.01 price move is <strong>$125,000</strong>, not $12,500. The correct ladder is 0.01 = $125,000; 0.001 = $12,500; 0.0001 = $1,250; 0.00001 = $125; and one 0.0000005 tick = $6.25. Most daily moves are only a fraction of 0.01, but the multiplier never changes.</p></div>
 </section>
 
-<section class="yj-section" id="spec-table" aria-labelledby="spec-title">
-  <div class="yj-section-heading"><p class="yj-kicker">Exchange record</p><h2 id="spec-title">Current Standard 6J Specifications</h2><p>The table is based on CME&rsquo;s product guide and Japanese Yen contract calendar, checked August 12, 2026. Holiday schedules, performance bonds and broker cutoffs can change, so the dated source matters.</p></div>
-  <div class="yj-table-scroll" role="region" aria-label="Current standard 6J contract specifications" tabindex="0"><table class="yj-table">
+<section class="fx-section" id="spec-table" aria-labelledby="spec-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Exchange record</p><h2 id="spec-title">Current Standard 6J Specifications</h2><p>The table is based on CME&rsquo;s product guide and Japanese Yen contract calendar, checked August 12, 2026. Holiday schedules, performance bonds and broker cutoffs can change, so the dated source matters.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Current standard 6J contract specifications" tabindex="0"><table class="fx-table">
     <thead><tr><th scope="col">Field</th><th scope="col">Standard 6J specification</th><th scope="col">What it means</th></tr></thead>
     <tbody>
       <tr><th scope="row">Product / rule</th><td>Japanese Yen futures; Globex 6J; CME Rule 253</td><td>Confirm the symbol and expiry, not just the root.</td></tr>
@@ -139,37 +139,37 @@
       <tr><th scope="row">Performance bond</th><td>Variable; consult CME&rsquo;s live margin page</td><td>It is a risk deposit, not the most the position can lose.</td></tr>
     </tbody>
   </table></div>
-  <p class="yj-source-note">CME&rsquo;s specifications distinguish outright ticks from calendar-spread increments. Do not copy a spread tick into an outright P&amp;L calculator. The regular-hours line is not a promise of equal liquidity throughout the session.</p>
+  <p class="fx-source-note">CME&rsquo;s specifications distinguish outright ticks from calendar-spread increments. Do not copy a spread tick into an outright P&amp;L calculator. The regular-hours line is not a promise of equal liquidity throughout the session.</p>
 </section>
 
-<section class="yj-section" id="tick-math" aria-labelledby="math-title">
-  <div class="yj-section-heading"><p class="yj-kicker">No shortcut math</p><h2 id="math-title">Turn Any 6J Move Into Dollars</h2><p>The formula is simple: <strong>(exit price &minus; entry price) &times; 12,500,000 &times; contracts</strong> for a long position. Reverse the sign for a short. Then subtract commissions, exchange and regulatory fees, and slippage.</p></div>
-  <div class="yj-table-scroll" role="region" aria-label="6J price moves, ticks and dollar values" tabindex="0"><table class="yj-table">
+<section class="fx-section" id="tick-math" aria-labelledby="math-title">
+  <div class="fx-section-heading"><p class="fx-kicker">No shortcut math</p><h2 id="math-title">Turn Any 6J Move Into Dollars</h2><p>The formula is simple: <strong>(exit price &minus; entry price) &times; 12,500,000 &times; contracts</strong> for a long position. Reverse the sign for a short. Then subtract commissions, exchange and regulatory fees, and slippage.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="6J price moves, ticks and dollar values" tabindex="0"><table class="fx-table">
     <thead><tr><th scope="col">6J price move</th><th scope="col">Ticks</th><th scope="col">P&amp;L per contract</th></tr></thead>
     <tbody>
       <tr><td>0.0000005</td><td>1</td><td>$6.25</td></tr><tr><td>0.0000050</td><td>10</td><td>$62.50</td></tr><tr><td>0.0000100</td><td>20</td><td>$125.00</td></tr><tr><td>0.0001000</td><td>200</td><td>$1,250.00</td></tr><tr><td>0.0010000</td><td>2,000</td><td>$12,500.00</td></tr><tr><td>0.0100000</td><td>20,000</td><td>$125,000.00</td></tr>
     </tbody>
   </table></div>
 
-  <div class="yj-two-column" style="margin-top:1.25rem">
-    <article class="yj-panel"><h3>Worked long example</h3><p>A hypothetical long entry at 0.0067000 exits at 0.0067125. The move is 0.0000125, or 25 ticks. Gross P&amp;L is 25 &times; $6.25 = <strong>$156.25</strong> per contract. Two contracts produce $312.50 gross. Trading costs still come out of that number.</p></article>
-    <article class="yj-panel"><h3>Worked short example</h3><p>A hypothetical short entry at 0.0067450 is stopped at 0.0067530. The adverse move is 0.0000080, or 16 ticks. Gross loss is 16 &times; $6.25 = <strong>$100</strong> per contract. Three contracts lose $300 gross, before costs and possible stop slippage.</p></article>
+  <div class="fx-two-column" style="margin-top:1.25rem">
+    <article class="fx-panel"><h3>Worked long example</h3><p>A hypothetical long entry at 0.0067000 exits at 0.0067125. The move is 0.0000125, or 25 ticks. Gross P&amp;L is 25 &times; $6.25 = <strong>$156.25</strong> per contract. Two contracts produce $312.50 gross. Trading costs still come out of that number.</p></article>
+    <article class="fx-panel"><h3>Worked short example</h3><p>A hypothetical short entry at 0.0067450 is stopped at 0.0067530. The adverse move is 0.0000080, or 16 ticks. Gross loss is 16 &times; $6.25 = <strong>$100</strong> per contract. Three contracts lose $300 gross, before costs and possible stop slippage.</p></article>
   </div>
-  <p class="yj-source-note">These prices are arithmetic examples, not market forecasts or trade recommendations. A stop order becomes an instruction to trade after activation; it does not guarantee the stop price.</p>
+  <p class="fx-source-note">These prices are arithmetic examples, not market forecasts or trade recommendations. A stop order becomes an instruction to trade after activation; it does not guarantee the stop price.</p>
 </section>
 
-<section class="yj-section" id="margin" aria-labelledby="margin-title">
-  <div class="yj-section-heading"><p class="yj-kicker">Leverage without the sales pitch</p><h2 id="margin-title">Performance Bond Is Not a Loss Limit</h2><p>CME calls the clearing requirement a performance bond. CME can revise it as risk changes. Your futures commission merchant may require more, and some brokers advertise a lower intraday amount. That lower number changes how much capital the broker lets you post. It does not change the &yen;12.5 million contract, the $6.25 tick or the size of a gap.</p></div>
-  <div class="yj-proof-grid">
-    <article class="yj-proof"><h3>Exchange / clearing requirement</h3><ul><li>Risk-based and subject to change.</li><li>Applies to carrying the cleared position under the applicable account treatment.</li><li>Can rise during volatile conditions.</li><li>Must be checked on the live CME margin page and with the broker.</li></ul></article>
-    <article class="yj-proof is-limit"><h3>Broker intraday margin</h3><ul><li>A broker policy, not a contract specification.</li><li>May apply only during defined hours and to selected contracts.</li><li>Can be increased or removed without making the market less volatile.</li><li>Can trigger forced liquidation under the broker&rsquo;s rules.</li></ul></article>
+<section class="fx-section" id="margin" aria-labelledby="margin-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Leverage without the sales pitch</p><h2 id="margin-title">Performance Bond Is Not a Loss Limit</h2><p>CME calls the clearing requirement a performance bond. CME can revise it as risk changes. Your futures commission merchant may require more, and some brokers advertise a lower intraday amount. That lower number changes how much capital the broker lets you post. It does not change the &yen;12.5 million contract, the $6.25 tick or the size of a gap.</p></div>
+  <div class="fx-proof-grid">
+    <article class="fx-proof"><h3>Exchange / clearing requirement</h3><ul><li>Risk-based and subject to change.</li><li>Applies to carrying the cleared position under the applicable account treatment.</li><li>Can rise during volatile conditions.</li><li>Must be checked on the live CME margin page and with the broker.</li></ul></article>
+    <article class="fx-proof is-limit"><h3>Broker intraday margin</h3><ul><li>A broker policy, not a contract specification.</li><li>May apply only during defined hours and to selected contracts.</li><li>Can be increased or removed without making the market less volatile.</li><li>Can trigger forced liquidation under the broker&rsquo;s rules.</li></ul></article>
   </div>
-  <div class="yj-related"><strong>Plain English:</strong> if an 80-tick structure stop risks $500 per contract, a $500 day margin would not make that trade &ldquo;fully funded.&rdquo; It would mean the planned gross loss alone equals the posted amount, before slippage and fees.</div>
+  <div class="fx-related"><strong>Plain English:</strong> if an 80-tick structure stop risks $500 per contract, a $500 day margin would not make that trade &ldquo;fully funded.&rdquo; It would mean the planned gross loss alone equals the posted amount, before slippage and fees.</div>
 </section>
 
-<section class="yj-section" id="expiry" aria-labelledby="expiry-title">
-  <div class="yj-section-heading"><p class="yj-kicker">Month selection and delivery</p><h2 id="expiry-title">The Root Symbol Is Not the Whole Contract</h2><p>6J is a series of dated contracts. Liquidity normally migrates as the active month approaches expiration, but the exact roll point must be observed, not assumed from a fixed calendar rule. Compare volume, open interest, bid-ask spread and usable depth in both months.</p></div>
-  <div class="yj-check-grid">
+<section class="fx-section" id="expiry" aria-labelledby="expiry-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Month selection and delivery</p><h2 id="expiry-title">The Root Symbol Is Not the Whole Contract</h2><p>6J is a series of dated contracts. Liquidity normally migrates as the active month approaches expiration, but the exact roll point must be observed, not assumed from a fixed calendar rule. Compare volume, open interest, bid-ask spread and usable depth in both months.</p></div>
+  <div class="fx-check-grid">
     <article><strong>Identify the expiry</strong><p>Record the complete broker symbol, contract month and year. A chart labeled only &ldquo;6J&rdquo; may be continuous, adjusted or mapped to a different month.</p></article>
     <article><strong>Set a roll trigger</strong><p>Use objective evidence such as sustained volume migration and acceptable execution in the next contract. Document whether backtests use raw or back-adjusted prices.</p></article>
     <article><strong>Respect broker cutoffs</strong><p>The broker can require liquidation or roll before CME&rsquo;s final trading time. Physical delivery makes that operational deadline real.</p></article>
@@ -177,9 +177,9 @@
   </div>
 </section>
 
-<section class="yj-section" id="worksheet" aria-labelledby="worksheet-title">
-  <div class="yj-section-heading"><p class="yj-kicker">Before the order ticket</p><h2 id="worksheet-title">A 6J Pre-Trade Worksheet That Catches Expensive Errors</h2><p>Fill this out before entry. If one line is unknown, the position size is unknown too.</p></div>
-  <div class="yj-table-scroll" role="region" aria-label="6J pre-trade contract worksheet" tabindex="0"><table class="yj-table">
+<section class="fx-section" id="worksheet" aria-labelledby="worksheet-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Before the order ticket</p><h2 id="worksheet-title">A 6J Pre-Trade Worksheet That Catches Expensive Errors</h2><p>Fill this out before entry. If one line is unknown, the position size is unknown too.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="6J pre-trade contract worksheet" tabindex="0"><table class="fx-table">
     <thead><tr><th scope="col">Input</th><th scope="col">What to record</th><th scope="col">Calculation or check</th></tr></thead>
     <tbody>
       <tr><th scope="row">Exact contract</th><td>6J month/year and broker symbol</td><td>Matches intended expiry and live liquidity</td></tr>
@@ -190,18 +190,18 @@
       <tr><th scope="row">Exit / roll deadline</th><td>Broker deadline and personal buffer</td><td>Earlier than any delivery-risk cutoff</td></tr>
     </tbody>
   </table></div>
-  <div class="yj-related"><strong>Related execution guides:</strong> Put these mechanics into a defined process in <a href="scalping-6j-futures.html">Scalping 6J Futures</a>, and use the exact reciprocal rules in <a href="6j-vs-usdjpy-differences.html">6J versus USD/JPY</a>.</div>
+  <div class="fx-related"><strong>Related execution guides:</strong> Put these mechanics into a defined process in <a href="scalping-6j-futures.html">Scalping 6J Futures</a>, and use the exact reciprocal rules in <a href="6j-vs-usdjpy-differences.html">6J versus USD/JPY</a>.</div>
 </section>
 
-<section class="yj-section yj-faq" id="faq" aria-labelledby="faq-title">
-  <div class="yj-section-heading"><p class="yj-kicker">Frequently asked questions</p><h2 id="faq-title">6J Contract Specification Questions</h2></div>
+<section class="fx-section fx-faq" id="faq" aria-labelledby="faq-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Frequently asked questions</p><h2 id="faq-title">6J Contract Specification Questions</h2></div>
   <details><summary>What is one tick worth in standard 6J futures?</summary><p>One outright 6J tick is 0.0000005 U.S. dollars per yen and is worth $6.25 per standard contract. Ten ticks are worth $62.50 before commissions, exchange fees and slippage.</p></details>
   <details><summary>How much is a 0.01 move worth in 6J?</summary><p>A 0.01 move is worth $125,000 per standard 6J contract because 0.01 multiplied by 12,500,000 yen equals $125,000. A 0.001 move is $12,500 and a 0.0001 move is $1,250.</p></details>
   <details><summary>Is CME performance bond the same as a broker's day-trading margin?</summary><p>No. CME performance-bond requirements are clearing risk requirements that can change. A broker's reduced intraday margin is the broker's own risk policy, can be changed or withdrawn and does not reduce the contract's tick value or market risk.</p></details>
   <details><summary>Does the standard 6J contract settle in cash?</summary><p>No. CME lists standard 6J as physically delivered. Traders who do not intend to make or take delivery need a documented exit or roll deadline before the broker's own cutoff, which may be earlier than the exchange's last trading time.</p></details>
 </section>
 
-<details class="yj-sources"><summary>Sources, calculations and editorial disclosure</summary><ul>
+<details class="fx-sources"><summary>Sources, calculations and editorial disclosure</summary><ul>
   <li><a href="https://www.cmegroup.com/ja/markets/fx/g10/japanese-yen.volume.html" target="_blank" rel="noopener">CME Group: Japanese Yen futures product page</a> for the exchange product and linked contract resources.</li>
   <li><a href="https://www.cmegroup.com/ja/markets/fx/g10/japanese-yen.calendar.html" target="_blank" rel="noopener">CME Group: Japanese Yen futures calendar and contract specifications</a> for contract unit, regular hours, outright tick, listed months, physical settlement and last trading time.</li>
   <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> for the 6J code, Rule 253, contract size, physical settlement, tick increment and U.S.-dollars-per-yen quote unit.</li>
@@ -210,7 +210,7 @@
   <li><a href="https://www.cmegroup.com/education/courses/introduction-to-fx/understanding-fx-quote-conventions" target="_blank" rel="noopener">CME Group: Understanding FX Quote Conventions</a> for base/terms currency interpretation.</li>
 </ul><p>Exchange sources were checked August 12, 2026. Grizzly Parrot Trading calculated every displayed dollar value as price move multiplied by &yen;12,500,000; tick counts equal price move divided by 0.0000005. Worked prices are hypothetical and exclude trading costs unless stated. This is independent editorial education, is not sponsored by CME Group or any broker and does not quote a broker-specific margin as an exchange fact.</p></details>
 
-<aside class="yj-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This article is educational, not individualized trading, investment, legal, tax, accounting, hedging or brokerage advice. Futures are leveraged, can gap or trade through stop prices and can produce losses greater than the initial margin deposit. Specifications, performance bonds, holidays and broker liquidation or delivery cutoffs can change. Verify the current exchange rulebook, exact contract, broker rules and your own risk before trading.</p></aside>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This article is educational, not individualized trading, investment, legal, tax, accounting, hedging or brokerage advice. Futures are leveraged, can gap or trade through stop prices and can produce losses greater than the initial margin deposit. Specifications, performance bonds, holidays and broker liquidation or delivery cutoffs can change. Verify the current exchange rulebook, exact contract, broker rules and your own risk before trading.</p></aside>
 <!-- ARTICLE BODY END -->
 </article></section></main>
 

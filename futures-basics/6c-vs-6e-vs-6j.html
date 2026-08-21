@@ -28,7 +28,7 @@
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="/futures-basics/6c-research-library.css?v=20260813a">
+  <link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
   <script type="application/ld+json">
@@ -41,34 +41,34 @@
 </head>
 <body>
 <header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
-<main class="container article-container cad-library"><article>
+<main class="container article-container currency-library"><article>
 <!-- ARTICLE BODY START -->
-<header class="ca-hero">
-  <div class="ca-hero-copy">
-    <p class="ca-kicker">Contract comparison &middot; macro fit &middot; 6C / 6E / 6J</p>
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Contract comparison &middot; macro fit &middot; 6C / 6E / 6J</p>
     <h1>6C vs 6E vs 6J: A Currency Futures Comparison</h1>
-    <p class="ca-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
-    <p class="ca-hero-lede">The same U.S. inflation surprise can send Canadian dollar, euro, and Japanese yen futures along different paths. 6C can weigh the Fed move against Canadian rates, trade, and energy. 6E adds euro-area policy and growth. 6J can be especially sensitive to the U.S.-Japan yield comparison and to changing risk behavior. Similar-looking USD-quoted futures are not interchangeable exposures.</p>
-    <div class="ca-hero-actions"><a class="button-primary" href="#quotes">Check the quotes</a><a class="ca-text-link" href="#fit">Use the fit matrix</a></div>
-    <dl class="ca-hero-metrics" aria-label="Three-contract comparison"><div><dt>6C</dt><dd>USD per CAD</dd></div><div><dt>6E</dt><dd>Euro-area channel</dd></div><div><dt>6J</dt><dd>Japan yield channel</dd></div><div><dt>Selection</dt><dd>Fit, not rank</dd></div></dl>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="fx-hero-lede">The same U.S. inflation surprise can send Canadian dollar, euro, and Japanese yen futures along different paths. 6C can weigh the Fed move against Canadian rates, trade, and energy. 6E adds euro-area policy and growth. 6J can be especially sensitive to the U.S.-Japan yield comparison and to changing risk behavior. Similar-looking USD-quoted futures are not interchangeable exposures.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#quotes">Check the quotes</a><a class="fx-text-link" href="#fit">Use the fit matrix</a></div>
+    <dl class="fx-hero-metrics" aria-label="Three-contract comparison"><div><dt>6C</dt><dd>USD per CAD</dd></div><div><dt>6E</dt><dd>Euro-area channel</dd></div><div><dt>6J</dt><dd>Japan yield channel</dd></div><div><dt>Selection</dt><dd>Fit, not rank</dd></div></dl>
   </div>
-  <div class="ca-hero-visual"><div class="ca-market-board"><div class="ca-board-head"><span>Shared U.S. shock</span><strong>Three relative prices</strong></div><div class="ca-formula"><code>home-country evidence</code><i aria-hidden="true">vs</i><code>U.S. evidence</code></div><p>Each contract puts a different economy, central bank, calendar, and market structure on the non-dollar side.</p><p class="ca-board-foot"><span>No easiest contract</span><span>Verify live liquidity</span></p></div></div>
+  <div class="fx-hero-visual"><div class="fx-market-board"><div class="fx-board-head"><span>Shared U.S. shock</span><strong>Three relative prices</strong></div><div class="fx-formula"><code>home-country evidence</code><i aria-hidden="true">vs</i><code>U.S. evidence</code></div><p>Each contract puts a different economy, central bank, calendar, and market structure on the non-dollar side.</p><p class="fx-board-foot"><span>No easiest contract</span><span>Verify live liquidity</span></p></div></div>
 </header>
 
-<nav class="ca-jump-nav" aria-label="On this page"><a href="#answer">Direct answer</a><a href="#quotes">Quotes</a><a href="#mechanics">Mechanics</a><a href="#policy">Policy</a><a href="#macro">Macro exposure</a><a href="#failures">Failures</a><a href="#fit">Fit matrix</a></nav>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#answer">Direct answer</a><a href="#quotes">Quotes</a><a href="#mechanics">Mechanics</a><a href="#policy">Policy</a><a href="#macro">Macro exposure</a><a href="#failures">Failures</a><a href="#fit">Fit matrix</a></nav>
 
-<section class="ca-section" id="answer" aria-labelledby="answer-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Direct answer</p><h2 id="answer-title">Choose the Contract That Matches the Question You Can Define</h2><p>6C is the natural comparison when the question concerns Canadian policy, Canada-U.S. relative rates, cross-border demand, or Canada's commodity-export channels. 6E is better aligned with euro-area policy, regional growth, and a major direct EUR/USD exposure. 6J is better aligned with Japan-U.S. yield dynamics, Bank of Japan policy, and hypotheses about funding and risk regimes. These are analytical alignments, not claims that one contract is more profitable.</p></div>
-  <div class="ca-two-column">
-    <article class="ca-panel"><p class="ca-card-label">Good selection rule</p><h3>Match mechanism, clock, and data</h3><p>State the catalyst, horizon, official sources, required cross-markets, timezone, and execution window. Then inspect current volume, spread, depth, contract month, and risk per invalidation. A contract fits only if both the research question and the live market can support the plan.</p></article>
-    <article class="ca-panel"><p class="ca-card-label">Bad selection rule</p><h3>Pick the contract with the nicest recent chart</h3><p>Recent smoothness can be regime-specific and visible only after the fact. A similar dollar tick value or familiar ticker does not equal similar volatility, liquidity, catalyst exposure, or stop distance.</p></article>
+<section class="fx-section" id="answer" aria-labelledby="answer-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Direct answer</p><h2 id="answer-title">Choose the Contract That Matches the Question You Can Define</h2><p>6C is the natural comparison when the question concerns Canadian policy, Canada-U.S. relative rates, cross-border demand, or Canada's commodity-export channels. 6E is better aligned with euro-area policy, regional growth, and a major direct EUR/USD exposure. 6J is better aligned with Japan-U.S. yield dynamics, Bank of Japan policy, and hypotheses about funding and risk regimes. These are analytical alignments, not claims that one contract is more profitable.</p></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Good selection rule</p><h3>Match mechanism, clock, and data</h3><p>State the catalyst, horizon, official sources, required cross-markets, timezone, and execution window. Then inspect current volume, spread, depth, contract month, and risk per invalidation. A contract fits only if both the research question and the live market can support the plan.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Bad selection rule</p><h3>Pick the contract with the nicest recent chart</h3><p>Recent smoothness can be regime-specific and visible only after the fact. A similar dollar tick value or familiar ticker does not equal similar volatility, liquidity, catalyst exposure, or stop distance.</p></article>
   </div>
 </section>
 
-<section class="ca-section" id="quotes" aria-labelledby="quotes-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Orientation before opinion</p><h2 id="quotes-title">All Three Futures Rise With the Named Foreign Currency</h2><p>CME's standard 6C, 6E, and 6J futures are each quoted in U.S. dollars per unit of the foreign currency. A higher 6C means a stronger Canadian dollar; a higher 6E means a stronger euro; a higher 6J means a stronger yen, each against USD. The practical trap is that common spot screens do not always use the same orientation.</p></div>
-  <div class="ca-table-scroll" role="region" aria-label="Quote direction comparison for 6C 6E and 6J" tabindex="0">
-    <table class="ca-table">
+<section class="fx-section" id="quotes" aria-labelledby="quotes-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Orientation before opinion</p><h2 id="quotes-title">All Three Futures Rise With the Named Foreign Currency</h2><p>CME's standard 6C, 6E, and 6J futures are each quoted in U.S. dollars per unit of the foreign currency. A higher 6C means a stronger Canadian dollar; a higher 6E means a stronger euro; a higher 6J means a stronger yen, each against USD. The practical trap is that common spot screens do not always use the same orientation.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Quote direction comparison for 6C 6E and 6J" tabindex="0">
+    <table class="fx-table">
       <thead><tr><th scope="col">Contract</th><th scope="col">CME futures quotation</th><th scope="col">Higher futures price means</th><th scope="col">Common cash-screen trap</th></tr></thead>
       <tbody>
         <tr><th scope="row">6C Canadian Dollar</th><td>USD per CAD</td><td>CAD strengthens versus USD</td><td>USD/CAD is commonly displayed in the inverse direction</td></tr>
@@ -77,13 +77,13 @@
       </tbody>
     </table>
   </div>
-  <div class="ca-caution"><strong>Never compare raw price changes across inverse displays</strong><p>Convert both series into the same quote direction and a consistent return measure. A falling USD/CAD or USD/JPY cash quote corresponds, all else equal, to a strengthening CAD or JPY and a rising same-currency futures quote. Futures basis, roll, timestamps, and venue differences prevent exact identity.</p></div>
+  <div class="fx-caution"><strong>Never compare raw price changes across inverse displays</strong><p>Convert both series into the same quote direction and a consistent return measure. A falling USD/CAD or USD/JPY cash quote corresponds, all else equal, to a strengthening CAD or JPY and a rising same-currency futures quote. Futures basis, roll, timestamps, and venue differences prevent exact identity.</p></div>
 </section>
 
-<section class="ca-section" id="mechanics" aria-labelledby="mechanics-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Verified standard contracts</p><h2 id="mechanics-title">Similar Dollar Ticks Sit on Different Contract Units</h2><p>The table below uses CME's 2026 FX Product Guide for standard outright contracts. It is a comparison snapshot, not the operational authority for 6C. Before an order, verify the exchange page and use the <a href="6c-tick-size-tick-value.html">canonical 6C mechanics guide</a> for 6C arithmetic, Micro 6C, expiry, delivery, trading hours, roll, and margin limitations.</p></div>
-  <div class="ca-table-scroll" role="region" aria-label="Standard 6C 6E and 6J contract mechanics" tabindex="0">
-    <table class="ca-table">
+<section class="fx-section" id="mechanics" aria-labelledby="mechanics-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Verified standard contracts</p><h2 id="mechanics-title">Similar Dollar Ticks Sit on Different Contract Units</h2><p>The table below uses CME's 2026 FX Product Guide for standard outright contracts. It is a comparison snapshot, not the operational authority for 6C. Before an order, verify the exchange page and use the <a href="6c-tick-size-tick-value.html">canonical 6C mechanics guide</a> for 6C arithmetic, Micro 6C, expiry, delivery, trading hours, roll, and margin limitations.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Standard 6C 6E and 6J contract mechanics" tabindex="0">
+    <table class="fx-table">
       <thead><tr><th scope="col">Contract</th><th scope="col">Standard contract unit</th><th scope="col">Globex outright minimum increment</th><th scope="col">Dollar value per minimum increment</th><th scope="col">Final settlement</th></tr></thead>
       <tbody>
         <tr><th scope="row">6C</th><td>100,000 CAD</td><td>0.00005 USD per CAD</td><td>$5.00</td><td>Physical</td></tr>
@@ -95,10 +95,10 @@
   <p><strong>Established fact:</strong> the contract units and price increments differ. <strong>Inference that does not follow:</strong> 6C is automatically lower-risk because its minimum increment is worth $5 rather than $6.25. Risk depends on the planned invalidation distance in ticks, gap and slippage exposure, position size, current volatility, and market quality. Margin is a performance bond that can change; it is not a maximum-loss estimate.</p>
 </section>
 
-<section class="ca-section" id="policy" aria-labelledby="policy-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Central-bank comparison</p><h2 id="policy-title">Each Contract Is a Relative-Policy Problem With a Different Home Side</h2><p>The U.S. side is common, but the non-dollar side is not. Use policy-sensitive measures at comparable horizons and read the complete official communication package. A current target-rate difference alone does not describe the expected future path.</p></div>
-  <div class="ca-table-scroll" role="region" aria-label="Central bank policy channels for 6C 6E and 6J" tabindex="0">
-    <table class="ca-table">
+<section class="fx-section" id="policy" aria-labelledby="policy-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Central-bank comparison</p><h2 id="policy-title">Each Contract Is a Relative-Policy Problem With a Different Home Side</h2><p>The U.S. side is common, but the non-dollar side is not. Use policy-sensitive measures at comparable horizons and read the complete official communication package. A current target-rate difference alone does not describe the expected future path.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Central bank policy channels for 6C 6E and 6J" tabindex="0">
+    <table class="fx-table">
       <thead><tr><th scope="col">Contract</th><th scope="col">Home policy authority</th><th scope="col">Core relative question</th><th scope="col">Communication detail</th><th scope="col">Failure case</th></tr></thead>
       <tbody>
         <tr><th scope="row">6C</th><td>Bank of Canada</td><td>Did the expected Canadian path change versus the Fed path?</td><td>Decision statement; quarterly MPR; press conference; later deliberations</td><td>Oil, trade, or global USD flow dominates rates</td></tr>
@@ -110,9 +110,9 @@
   <p><strong>Mechanism:</strong> a relative rise in expected home-currency returns can support that currency, all else equal. <strong>Limit:</strong> "all else equal" is often the part that fails. Inflation shocks can raise nominal yields while damaging growth; crisis demand can favor a currency despite low yields; and the market may have fully priced the expected decision.</p>
 </section>
 
-<section class="ca-section" id="macro" aria-labelledby="macro-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Beyond policy rates</p><h2 id="macro-title">Canada, the Euro Area, and Japan Carry Different Macro Questions</h2><p>Permanent labels such as "oil currency," "risk-on euro," or "safe-haven yen" compress conditional relationships into slogans. Use the labels only as hypotheses with a named channel and a test.</p></div>
-  <div class="ca-check-grid">
+<section class="fx-section" id="macro" aria-labelledby="macro-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Beyond policy rates</p><h2 id="macro-title">Canada, the Euro Area, and Japan Carry Different Macro Questions</h2><p>Permanent labels such as "oil currency," "risk-on euro," or "safe-haven yen" compress conditional relationships into slogans. Use the labels only as hypotheses with a named channel and a test.</p></div>
+  <div class="fx-check-grid">
     <article><strong>6C: cross-border demand</strong><p>Canada's deep trade relationship with the United States makes U.S. growth composition relevant as well as Fed policy. Strong U.S. data can support export demand while strengthening USD.</p></article>
     <article><strong>6C: commodities and terms of trade</strong><p>Energy exports create plausible income and trade channels, but crude and CAD can diverge when the shock source, broad dollar, rates, or risk conditions differ.</p></article>
     <article><strong>6E: multi-country growth</strong><p>Euro-area aggregates combine economies with different fiscal, industrial, energy, and credit conditions. One national release may not represent the whole currency area.</p></article>
@@ -120,24 +120,24 @@
     <article><strong>6J: yield differential</strong><p>The U.S.-Japan yield comparison is a common mechanism to investigate, but maturity choice, policy operations, and hedging costs matter.</p></article>
     <article><strong>6J: risk and funding regimes</strong><p>Yen strength during some stress episodes may reflect position unwinds and balance-sheet demand. It is not a promise that every equity decline lifts 6J.</p></article>
   </div>
-  <div class="ca-related">For 6C's beginner causal overview, see <a href="why-6c-moves.html">why 6C moves</a>. The <a href="6c-oil-correlation.html">6C-oil guide</a> owns the dedicated oil mechanism and test design, while <a href="6c-correlation-risk-on-risk-off.html">6C risk-on/risk-off</a> owns conditional cross-asset measurement.</div>
+  <div class="fx-related">For 6C's beginner causal overview, see <a href="why-6c-moves.html">why 6C moves</a>. The <a href="6c-oil-correlation.html">6C-oil guide</a> owns the dedicated oil mechanism and test design, while <a href="6c-correlation-risk-on-risk-off.html">6C risk-on/risk-off</a> owns conditional cross-asset measurement.</div>
 </section>
 
-<section class="ca-section" id="failures" aria-labelledby="failures-title">
-  <div class="ca-section-heading"><p class="ca-kicker">When the comparison breaks</p><h2 id="failures-title">Do Not Turn Contract Differences Into Personality Types</h2><p>These failures make a three-column comparison look cleaner than the actual markets.</p></div>
-  <div class="ca-two-column">
-    <article class="ca-panel"><p class="ca-card-label">Liquidity by reputation</p><h3>Assuming yesterday's ranking is today's book</h3><p>Volume, spread, depth, and contract leadership vary by clock, catalyst, expiration, roll, and market regime. Inspect the active book and recent execution data. A broad statement that one contract is always cleaner is not evidence.</p></article>
-    <article class="ca-panel"><p class="ca-card-label">Volatility by nickname</p><h3>Calling one currency calm or wild</h3><p>Measure range and realized volatility over the horizon and session you will trade. A low average can coexist with severe event gaps; a wider average can still offer better depth.</p></article>
-    <article class="ca-panel"><p class="ca-card-label">Macro by single factor</p><h3>Oil for CAD, rates for EUR, risk for JPY</h3><p>Every bilateral currency includes policy, growth, trade, inflation, and dollar channels. The factor with the best story is not necessarily the one controlling this episode.</p></article>
-    <article class="ca-panel"><p class="ca-card-label">Futures versus spot</p><h3>Ignoring basis, roll, and inverse quotes</h3><p>A dated future is not an OTC spot quote. Align timestamps, contract months, quote direction, and carry before declaring a lead or discrepancy.</p></article>
+<section class="fx-section" id="failures" aria-labelledby="failures-title">
+  <div class="fx-section-heading"><p class="fx-kicker">When the comparison breaks</p><h2 id="failures-title">Do Not Turn Contract Differences Into Personality Types</h2><p>These failures make a three-column comparison look cleaner than the actual markets.</p></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Liquidity by reputation</p><h3>Assuming yesterday's ranking is today's book</h3><p>Volume, spread, depth, and contract leadership vary by clock, catalyst, expiration, roll, and market regime. Inspect the active book and recent execution data. A broad statement that one contract is always cleaner is not evidence.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Volatility by nickname</p><h3>Calling one currency calm or wild</h3><p>Measure range and realized volatility over the horizon and session you will trade. A low average can coexist with severe event gaps; a wider average can still offer better depth.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Macro by single factor</p><h3>Oil for CAD, rates for EUR, risk for JPY</h3><p>Every bilateral currency includes policy, growth, trade, inflation, and dollar channels. The factor with the best story is not necessarily the one controlling this episode.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Futures versus spot</p><h3>Ignoring basis, roll, and inverse quotes</h3><p>A dated future is not an OTC spot quote. Align timestamps, contract months, quote direction, and carry before declaring a lead or discrepancy.</p></article>
   </div>
-  <div class="ca-caution"><strong>No "easiest contract" result</strong><p>This page does not rank ease, profitability, trend quality, or execution quality. Those outcomes depend on the user's task, current liquidity, event clock, strategy horizon, costs, and tested skill. A defensible comparison can end with no suitable contract.</p></div>
+  <div class="fx-caution"><strong>No "easiest contract" result</strong><p>This page does not rank ease, profitability, trend quality, or execution quality. Those outcomes depend on the user's task, current liquidity, event clock, strategy horizon, costs, and tested skill. A defensible comparison can end with no suitable contract.</p></div>
 </section>
 
-<section class="ca-section" id="fit" aria-labelledby="fit-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Decision close</p><h2 id="fit-title">Use a Fit Matrix Instead of a Winner</h2><p>Choose the row that describes the question. Then apply all validation columns. The result is a research fit, not permission to trade.</p></div>
-  <div class="ca-table-scroll" role="region" aria-label="Analytical fit matrix for 6C 6E and 6J" tabindex="0">
-    <table class="ca-table">
+<section class="fx-section" id="fit" aria-labelledby="fit-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Decision close</p><h2 id="fit-title">Use a Fit Matrix Instead of a Winner</h2><p>Choose the row that describes the question. Then apply all validation columns. The result is a research fit, not permission to trade.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Analytical fit matrix for 6C 6E and 6J" tabindex="0">
+    <table class="fx-table">
       <thead><tr><th scope="col">Research need</th><th scope="col">Natural first contract</th><th scope="col">Required comparison</th><th scope="col">Data and clock gate</th><th scope="col">Reject when</th></tr></thead>
       <tbody>
         <tr><th scope="row">Canada-U.S. policy, trade, or energy question</th><td>6C</td><td>Canadian versus U.S. rates; relevant trade/energy evidence</td><td>Official Canadian and U.S. calendar; active 6C book</td><td>Question is really a generic dollar move or liquidity is inadequate</td></tr>
@@ -150,7 +150,7 @@
   <p><strong>Research status:</strong> verified exchange specifications and central-bank publication structures are established facts. Macro channels are mechanisms; "natural first contract" is an analytical inference. No original liquidity ranking, volatility comparison, reaction study, or profitability test is reported.</p>
 </section>
 
-<details class="ca-sources"><summary>Sources, method and editorial disclosure</summary><ul>
+<details class="fx-sources"><summary>Sources, method and editorial disclosure</summary><ul>
   <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide</a> for standard 6C, 6E, and 6J contract units, quotation, outright minimum increments, and physical settlement.</li>
   <li><a href="https://www.bankofcanada.ca/core-functions/monetary-policy/decision-making-process/" target="_blank" rel="noopener">Bank of Canada: monetary policy decision-making process</a> for Canadian policy communication and forecast materials.</li>
   <li><a href="https://www.ecb.europa.eu/ecb-and-you/ask_us/html/index.en.html" target="_blank" rel="noopener">European Central Bank: monetary policy and price-stability objective</a> for euro-area policy context.</li>
@@ -160,7 +160,7 @@
   <li><a href="https://www150.statcan.gc.ca/n1/daily-quotidien/260219/dq260219a-eng.htm" target="_blank" rel="noopener">Statistics Canada: Canadian international merchandise trade, December and annual 2025</a> and <a href="https://www.cer-rec.gc.ca/en/data-analysis/energy-markets/market-snapshots/2026/market-snapshot-overview-of-2025-canada-us-energy-trade.html" target="_blank" rel="noopener">Canada Energy Regulator: 2025 Canada-U.S. energy trade</a> for official Canadian trade and energy context.</li>
 </ul><p>Sources and methods were reviewed August 13, 2026. Exchange specifications and schedules can change; the live responsible institution controls. Dollar values are derived directly from the cited unit and minimum increment. No proprietary execution, liquidity, or performance dataset is represented. The comparison was produced independently and without sponsorship.</p></details>
 
-<aside class="ca-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>The cross-contract comparison is general education and does not recommend an instrument or provide individualized trading, investment, legal, tax, accounting, hedging, or brokerage advice. Each currency future is leveraged and physically settled unless offset or rolled; gaps can carry losses beyond initial margin. Specifications, funding requirements, liquidity, spreads, contract leadership, and correlations can change. Verify the active contract, current exchange and broker rules, official calendars, quote direction, market quality, and your own loss limits before acting.</p></aside>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>The cross-contract comparison is general education and does not recommend an instrument or provide individualized trading, investment, legal, tax, accounting, hedging, or brokerage advice. Each currency future is leveraged and physically settled unless offset or rolled; gaps can carry losses beyond initial margin. Specifications, funding requirements, liquidity, spreads, contract leadership, and correlations can change. Verify the active contract, current exchange and broker rules, official calendars, quote direction, market quality, and your own loss limits before acting.</p></aside>
 <!-- ARTICLE BODY END -->
 </article></main>
 <footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>

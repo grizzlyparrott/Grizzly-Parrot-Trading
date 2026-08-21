@@ -28,7 +28,7 @@
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="/futures-basics/6m-research-library.css?v=20260813a">
+  <link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
   <script type="application/ld+json">
@@ -57,51 +57,51 @@
   <script src="/uet.js" defer></script>
 </head>
 <body>
-<a class="mx-skip-link" href="#main-content">Skip to article content</a>
+<a class="fx-skip-link" href="#main-content">Skip to article content</a>
 <header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
-<main class="container article-container mxn-library" id="main-content">
+<main class="container article-container currency-library" id="main-content">
 <article>
 <!-- ARTICLE BODY START -->
-<header class="mx-hero">
-  <div class="mx-hero-copy">
-    <p class="mx-kicker">Market-structure map &middot; conditional execution</p>
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Market-structure map &middot; conditional execution</p>
     <h1>Why 6M Trades Differently: Structure to Execution</h1>
-    <p class="mx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
-    <p class="mx-hero-lede">Two 6M candles each span 20 ticks. In one, quotes replenish and a small order fills near the decision price. In the other, an event triggers cancellations and the same order crosses several levels. <strong>Equal chart range does not establish equal executable risk.</strong></p>
-    <div class="mx-thesis-callout"><strong>Evidence boundary:</strong> this page explains mechanisms to measure. It does not report that 6M is always thin, always more volatile, or predictably directional at any hour.</div>
+    <p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="fx-hero-lede">Two 6M candles each span 20 ticks. In one, quotes replenish and a small order fills near the decision price. In the other, an event triggers cancellations and the same order crosses several levels. <strong>Equal chart range does not establish equal executable risk.</strong></p>
+    <div class="fx-thesis-callout"><strong>Evidence boundary:</strong> this page explains mechanisms to measure. It does not report that 6M is always thin, always more volatile, or predictably directional at any hour.</div>
   </div>
-  <div class="mx-hero-visual mx-market-board" aria-label="Chart range versus executable state">
-    <div class="mx-board-head"><span>Same observed range</span><strong>20 ticks</strong></div>
-    <div class="mx-proof"><strong>State A</strong><span>Narrow spread, replenishing depth, low shortfall</span></div>
-    <div class="mx-proof"><strong>State B</strong><span>Cancellation, gapped levels, high shortfall</span></div>
-    <p class="mx-board-foot">Bars describe traded prices; orders meet a time-varying book.</p>
+  <div class="fx-hero-visual fx-market-board" aria-label="Chart range versus executable state">
+    <div class="fx-board-head"><span>Same observed range</span><strong>20 ticks</strong></div>
+    <div class="fx-proof"><strong>State A</strong><span>Narrow spread, replenishing depth, low shortfall</span></div>
+    <div class="fx-proof"><strong>State B</strong><span>Cancellation, gapped levels, high shortfall</span></div>
+    <p class="fx-board-foot">Bars describe traded prices; orders meet a time-varying book.</p>
   </div>
 </header>
 
-<section class="mx-section" id="meaning" aria-labelledby="meaning-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Define “different”</p><h2 id="meaning-title">The Useful Question Is Which State Changes the Decision</h2><p>CME places MXN/USD in the LATAM section of its current FX product guide, while EUR/USD and JPY/USD appear among major contracts. That product taxonomy is an established exchange fact. It is not by itself evidence about today's spread, depth or price path.</p></div>
-  <div class="mx-claim-ladder">
-    <article class="mx-panel"><h3>Established contract fact</h3><p>One standard 6M represents 500,000 MXN, is quoted USD per MXN, trades in 0.00001 Globex outright increments worth $5 and is physically deliverable.</p></article>
-    <article class="mx-panel"><h3>Market-structure mechanism</h3><p>Who needs to transfer peso-dollar risk, when they participate and how liquidity providers manage inventory can change spread, depth and price impact.</p></article>
-    <article class="mx-panel"><h3>Testable hypothesis</h3><p>Market quality may deteriorate around a declared event, session or roll state. Test synchronized spread, depth, trade and order data rather than assume it.</p></article>
-    <article class="mx-panel"><h3>Trading application</h3><p>Use current state to permit, reduce, delay or reject an order. Do not convert a plausible mechanism into a guaranteed direction.</p></article>
+<section class="fx-section" id="meaning" aria-labelledby="meaning-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Define “different”</p><h2 id="meaning-title">The Useful Question Is Which State Changes the Decision</h2><p>CME places MXN/USD in the LATAM section of its current FX product guide, while EUR/USD and JPY/USD appear among major contracts. That product taxonomy is an established exchange fact. It is not by itself evidence about today's spread, depth or price path.</p></div>
+  <div class="fx-claim-ladder">
+    <article class="fx-panel"><h3>Established contract fact</h3><p>One standard 6M represents 500,000 MXN, is quoted USD per MXN, trades in 0.00001 Globex outright increments worth $5 and is physically deliverable.</p></article>
+    <article class="fx-panel"><h3>Market-structure mechanism</h3><p>Who needs to transfer peso-dollar risk, when they participate and how liquidity providers manage inventory can change spread, depth and price impact.</p></article>
+    <article class="fx-panel"><h3>Testable hypothesis</h3><p>Market quality may deteriorate around a declared event, session or roll state. Test synchronized spread, depth, trade and order data rather than assume it.</p></article>
+    <article class="fx-panel"><h3>Trading application</h3><p>Use current state to permit, reduce, delay or reject an order. Do not convert a plausible mechanism into a guaranteed direction.</p></article>
   </div>
-  <p class="mx-related">Instrument choice against euro and yen futures belongs in <a href="6m-vs-6e-vs-6j.html">the 6M-versus-6E-versus-6J guide</a>. Volatility distributions belong in <a href="6m-volatility-profile.html">the 6M volatility-profile protocol</a>.</p>
+  <p class="fx-related">Instrument choice against euro and yen futures belongs in <a href="6m-vs-6e-vs-6j.html">the 6M-versus-6E-versus-6J guide</a>. Volatility distributions belong in <a href="6m-volatility-profile.html">the 6M volatility-profile protocol</a>.</p>
 </section>
 
-<section class="mx-section" id="participants" aria-labelledby="participants-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Participation is heterogeneous</p><h2 id="participants-title">Hedging, Asset Allocation and Leveraged Views Can Meet in One Book</h2><p>CFTC's weekly Traders in Financial Futures report separates large reportable financial positions into dealer/intermediary, asset manager/institutional, leveraged funds and other reportables. It also leaves nonreportable positions outside those named categories. The report demonstrates heterogeneous participation, but it is aggregated and delayed.</p></div>
-  <div class="mx-causal-map">
-    <div class="mx-causal-origin"><strong>Need to transfer MXN/USD risk</strong><span>Commercial exposure, portfolio allocation, dealer hedging, relative-rate views and short-term risk management can all produce orders.</span></div>
-    <article class="mx-panel"><h3>Hedging and allocation flow</h3><p>A participant may prioritize reducing an external currency exposure. Urgency, benchmark timing and hedge ratio can matter more than a short-term chart signal.</p></article>
-    <article class="mx-panel"><h3>Trading and liquidity flow</h3><p>A participant may seek directional exposure, relative value or compensation for providing liquidity. Inventory and risk limits can change willingness to quote.</p></article>
+<section class="fx-section" id="participants" aria-labelledby="participants-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Participation is heterogeneous</p><h2 id="participants-title">Hedging, Asset Allocation and Leveraged Views Can Meet in One Book</h2><p>CFTC's weekly Traders in Financial Futures report separates large reportable financial positions into dealer/intermediary, asset manager/institutional, leveraged funds and other reportables. It also leaves nonreportable positions outside those named categories. The report demonstrates heterogeneous participation, but it is aggregated and delayed.</p></div>
+  <div class="fx-causal-map">
+    <div class="fx-causal-origin"><strong>Need to transfer MXN/USD risk</strong><span>Commercial exposure, portfolio allocation, dealer hedging, relative-rate views and short-term risk management can all produce orders.</span></div>
+    <article class="fx-panel"><h3>Hedging and allocation flow</h3><p>A participant may prioritize reducing an external currency exposure. Urgency, benchmark timing and hedge ratio can matter more than a short-term chart signal.</p></article>
+    <article class="fx-panel"><h3>Trading and liquidity flow</h3><p>A participant may seek directional exposure, relative value or compensation for providing liquidity. Inventory and risk limits can change willingness to quote.</p></article>
   </div>
-  <div class="mx-caution"><strong>COT is not an intraday order-flow feed.</strong><p>The report is a weekly snapshot of reportable positions by broad classification. It cannot identify the motive behind a specific trade, reveal the current queue or time a short-term entry. Use it as slow context with explicit limits.</p></div>
+  <div class="fx-caution"><strong>COT is not an intraday order-flow feed.</strong><p>The report is a weekly snapshot of reportable positions by broad classification. It cannot identify the motive behind a specific trade, reveal the current queue or time a short-term entry. Use it as slow context with explicit limits.</p></div>
 </section>
 
-<section class="mx-section" id="liquidity" aria-labelledby="liquidity-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Liquidity is a state</p><h2 id="liquidity-title">Open, Traded and Executable Are Three Different Tests</h2><p>The regular CME FX schedule offers nearly 23 hours of weekday access, but an open venue does not promise a particular spread or depth. Executability must be checked in the exact dated contract, for the actual quantity and order route.</p></div>
-  <div class="mx-state-machine" aria-label="Five market-quality states to verify">
+<section class="fx-section" id="liquidity" aria-labelledby="liquidity-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Liquidity is a state</p><h2 id="liquidity-title">Open, Traded and Executable Are Three Different Tests</h2><p>The regular CME FX schedule offers nearly 23 hours of weekday access, but an open venue does not promise a particular spread or depth. Executability must be checked in the exact dated contract, for the actual quantity and order route.</p></div>
+  <div class="fx-state-machine" aria-label="Five market-quality states to verify">
     <article><span>1</span><h3>Access</h3><p>Is Globex open under the normal or holiday schedule, and is the broker accepting this order type?</p></article>
     <article><span>2</span><h3>Freshness</h3><p>Are bid, ask, depth and timestamps live, synchronized and mapped to the intended month?</p></article>
     <article><span>3</span><h3>Spread</h3><p>How many 0.00001 ticks separate the best bid and offer at the decision time?</p></article>
@@ -109,35 +109,35 @@
     <article><span>5</span><h3>Shortfall</h3><p>What did comparable orders actually lose from decision benchmark to fill, including explicit fees?</p></article>
   </div>
   <p>The mechanisms behind a jump can include arrival of new information, cancellation of resting liquidity, aggressive orders consuming levels and latency between related markets. A bar chart compresses that sequence. Trade-and-quote data improve description; full order-book and order-event data are needed for stronger attribution.</p>
-  <p class="mx-related">Measurement formulas, order branches and the go/reduce/wait/reject card are maintained in <a href="6m-slippage.html">6M slippage</a>.</p>
+  <p class="fx-related">Measurement formulas, order branches and the go/reduce/wait/reject card are maintained in <a href="6m-slippage.html">6M slippage</a>.</p>
 </section>
 
-<section class="mx-section" id="events" aria-labelledby="events-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Two countries plus global risk</p><h2 id="events-title">6M Can Reprice Through Several Channels at Once</h2><p>A dated peso-dollar future embeds relative, not standalone, value. Information can change expectations for Mexico, the United States and the global price of risk simultaneously.</p></div>
-  <div class="mx-reaction-grid">
-    <article class="mx-panel"><p class="mx-card-label">Mexico policy</p><h3>Banxico and the local curve</h3><p>A policy decision or communication can change expected Mexican rates. The 6M response depends on the prior, the U.S. path and whether growth or risk implications offset the rate channel.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">U.S. policy and data</p><h3>Federal Reserve and dollar path</h3><p>U.S. inflation, employment or policy news can reprice Treasury yields and the broad dollar. Shared USD exposure can move several FX futures together.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">Real-economy flow</p><h3>Trade and remittances</h3><p>Official flows can matter through conversion, invoicing and hedging, but annual totals do not create automatic same-day futures orders.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">Risk transmission</p><h3>Global portfolios and funding</h3><p>Changes in volatility, funding or risk capacity can alter demand for emerging-market exposure and liquidity provision.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">Domestic uncertainty</p><h3>Fiscal, political and institutional news</h3><p>Information can affect growth, inflation, capital-flow or risk-premium expectations. Competing channels and market prior control interpretation.</p></article>
+<section class="fx-section" id="events" aria-labelledby="events-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Two countries plus global risk</p><h2 id="events-title">6M Can Reprice Through Several Channels at Once</h2><p>A dated peso-dollar future embeds relative, not standalone, value. Information can change expectations for Mexico, the United States and the global price of risk simultaneously.</p></div>
+  <div class="fx-reaction-grid">
+    <article class="fx-panel"><p class="fx-card-label">Mexico policy</p><h3>Banxico and the local curve</h3><p>A policy decision or communication can change expected Mexican rates. The 6M response depends on the prior, the U.S. path and whether growth or risk implications offset the rate channel.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">U.S. policy and data</p><h3>Federal Reserve and dollar path</h3><p>U.S. inflation, employment or policy news can reprice Treasury yields and the broad dollar. Shared USD exposure can move several FX futures together.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Real-economy flow</p><h3>Trade and remittances</h3><p>Official flows can matter through conversion, invoicing and hedging, but annual totals do not create automatic same-day futures orders.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Risk transmission</p><h3>Global portfolios and funding</h3><p>Changes in volatility, funding or risk capacity can alter demand for emerging-market exposure and liquidity provision.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Domestic uncertainty</p><h3>Fiscal, political and institutional news</h3><p>Information can affect growth, inflation, capital-flow or risk-premium expectations. Competing channels and market prior control interpretation.</p></article>
   </div>
-  <p class="mx-related">The broad evidence map belongs in <a href="6m-fundamental-drivers.html">6M fundamental drivers</a>. Specialist depth belongs in <a href="banxico-influence-6m.html">Banxico influence beyond the rate</a>, <a href="banxico-rate-policy-6m.html">the Banxico decision workflow</a>, <a href="6m-trade-and-remittances.html">trade and remittances</a> and <a href="usd-strength-6m.html">USD strength versus circular confirmation</a>.</p>
+  <p class="fx-related">The broad evidence map belongs in <a href="6m-fundamental-drivers.html">6M fundamental drivers</a>. Specialist depth belongs in <a href="banxico-influence-6m.html">Banxico influence beyond the rate</a>, <a href="banxico-rate-policy-6m.html">the Banxico decision workflow</a>, <a href="6m-trade-and-remittances.html">trade and remittances</a> and <a href="usd-strength-6m.html">USD strength versus circular confirmation</a>.</p>
 </section>
 
-<section class="mx-section" id="roll" aria-labelledby="roll-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Dated market structure</p><h2 id="roll-title">Liquidity Can Migrate While a Continuous Chart Pretends Nothing Changed</h2><p>6M is physically deliverable and listed in dated months. As termination approaches, participants can offset or roll, shifting activity between expiries. The two months can trade at different prices because of relative funding and time.</p></div>
-  <div class="mx-contract-path">
+<section class="fx-section" id="roll" aria-labelledby="roll-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Dated market structure</p><h2 id="roll-title">Liquidity Can Migrate While a Continuous Chart Pretends Nothing Changed</h2><p>6M is physically deliverable and listed in dated months. As termination approaches, participants can offset or roll, shifting activity between expiries. The two months can trade at different prices because of relative funding and time.</p></div>
+  <div class="fx-contract-path">
     <article><h3>Observe both months</h3><p>Compare volume, open interest, spread and depth. Do not use a fixed calendar date as proof that migration is complete.</p></article>
     <article><h3>Measure the basis</h3><p>Record the price difference between expiries and whether the analysis uses outright orders or a calendar spread.</p></article>
     <article><h3>Move the operational plan</h3><p>Update order symbols, stops, targets, margin checks and broker cutoff. Cancel stale working orders in the old month.</p></article>
     <article><h3>Preserve research lineage</h3><p>Document raw contracts and adjustment logic. Never imply that a back-adjusted continuous price was executable.</p></article>
   </div>
-  <p class="mx-source-note">The current 6M listing schedule and termination/delivery rules are maintained on the <a href="6m-tick-size.html">canonical contract guide</a>. This page owns the market-structure consequence, not the specification table.</p>
+  <p class="fx-source-note">The current 6M listing schedule and termination/delivery rules are maintained on the <a href="6m-tick-size.html">canonical contract guide</a>. This page owns the market-structure consequence, not the specification table.</p>
 </section>
 
-<section class="mx-section" id="order-consequences" aria-labelledby="order-consequences-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Translate mechanism into action</p><h2 id="order-consequences-title">The Plan Changes When the State Changes</h2><p>Market structure is useful only if it alters a declared choice. Thresholds are strategy-specific and must be validated; the branches below are process states, not profit claims.</p></div>
-  <div class="mx-table-scroll" role="region" aria-label="6M market-state consequences" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Observed state</th><th scope="col">What it may imply</th><th scope="col">Permitted response</th><th scope="col">Evidence needed</th></tr></thead><tbody>
+<section class="fx-section" id="order-consequences" aria-labelledby="order-consequences-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Translate mechanism into action</p><h2 id="order-consequences-title">The Plan Changes When the State Changes</h2><p>Market structure is useful only if it alters a declared choice. Thresholds are strategy-specific and must be validated; the branches below are process states, not profit claims.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="6M market-state consequences" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Observed state</th><th scope="col">What it may imply</th><th scope="col">Permitted response</th><th scope="col">Evidence needed</th></tr></thead><tbody>
     <tr><th scope="row">Spread and depth pass</th><td>Planned quantity may be executable within cost tolerance</td><td>Continue to order-type and risk checks</td><td>Fresh multi-level quotes for exact month</td></tr>
     <tr><th scope="row">Spread widens, depth remains</th><td>Immediate execution costs more but size may still fit</td><td>Wait, use price control or reject under cost cap</td><td>Decision benchmark and shortfall estimate</td></tr>
     <tr><th scope="row">Depth withdraws</th><td>A marketable order may cross several levels</td><td>Reduce or reject; do not rely on old average spread</td><td>Current depth, order size and worst acceptable price</td></tr>
@@ -147,29 +147,29 @@
   </tbody></table></div>
 </section>
 
-<section class="mx-section" id="measurement" aria-labelledby="measurement-title">
-  <div class="mx-section-heading"><p class="mx-kicker">How to test “different”</p><h2 id="measurement-title">Build a State Study Before Publishing a Behavioral Claim</h2><p>This page reports no original results. A defensible 6M market-structure study would pre-register the comparison and preserve failures.</p></div>
-  <div class="mx-estimator-spectrum">
-    <article class="mx-panel"><h3>Contract and clock</h3><p>Dated-month selection, roll rule, UTC and local-clock mapping, DST, holidays and official event timestamps.</p></article>
-    <article class="mx-panel"><h3>Market metrics</h3><p>Time-weighted spread, depth at fixed tick bands, trade size, cancellation if available, price impact and implementation shortfall.</p></article>
-    <article class="mx-panel"><h3>Controls</h3><p>Quantity, order type, volatility state, event proximity, maturity, session, data-feed health and non-filled orders.</p></article>
-    <article class="mx-panel"><h3>Acceptance</h3><p>Out-of-sample stability, uncertainty intervals, cost relevance and permission for a null or contradictory result.</p></article>
+<section class="fx-section" id="measurement" aria-labelledby="measurement-title">
+  <div class="fx-section-heading"><p class="fx-kicker">How to test “different”</p><h2 id="measurement-title">Build a State Study Before Publishing a Behavioral Claim</h2><p>This page reports no original results. A defensible 6M market-structure study would pre-register the comparison and preserve failures.</p></div>
+  <div class="fx-estimator-spectrum">
+    <article class="fx-panel"><h3>Contract and clock</h3><p>Dated-month selection, roll rule, UTC and local-clock mapping, DST, holidays and official event timestamps.</p></article>
+    <article class="fx-panel"><h3>Market metrics</h3><p>Time-weighted spread, depth at fixed tick bands, trade size, cancellation if available, price impact and implementation shortfall.</p></article>
+    <article class="fx-panel"><h3>Controls</h3><p>Quantity, order type, volatility state, event proximity, maturity, session, data-feed health and non-filled orders.</p></article>
+    <article class="fx-panel"><h3>Acceptance</h3><p>Out-of-sample stability, uncertainty intervals, cost relevance and permission for a null or contradictory result.</p></article>
   </div>
   <p>Only after that work could the evidence support a bounded empirical statement such as a measured cost difference for a declared quantity, session, event class and sample. It still would not prove a permanent property of 6M.</p>
 </section>
 
-<section class="mx-section" id="consequence-map" aria-labelledby="consequence-map-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Market-structure close</p><h2 id="consequence-map-title">Consequence Map: From Structure to the Owning Decision</h2></div>
-  <div class="mx-causal-map">
-    <div class="mx-causal-origin"><strong>Observed 6M state</strong><span>Participant need + new information + dated-contract liquidity + current order book</span></div>
-    <article class="mx-panel"><h3>Contract consequence</h3><p>Verify quote, tick, month, termination and roll in <a href="6m-tick-size.html">the specification guide</a>.</p></article>
-    <article class="mx-panel"><h3>Research consequence</h3><p>Measure source, clock, roll and market-quality evidence in <a href="6m-data-traps.html">data traps</a> and <a href="6m-backtesting.html">backtesting</a>.</p></article>
-    <article class="mx-panel"><h3>Execution consequence</h3><p>Turn spread, depth, order type and fill evidence into go/reduce/wait/reject in <a href="6m-slippage.html">the slippage guide</a>.</p></article>
-    <article class="mx-panel"><h3>Risk consequence</h3><p>Convert invalidation, costs and gap stress to whole contracts in <a href="6m-margin-requirements.html">the sizing workflow</a>.</p></article>
+<section class="fx-section" id="consequence-map" aria-labelledby="consequence-map-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Market-structure close</p><h2 id="consequence-map-title">Consequence Map: From Structure to the Owning Decision</h2></div>
+  <div class="fx-causal-map">
+    <div class="fx-causal-origin"><strong>Observed 6M state</strong><span>Participant need + new information + dated-contract liquidity + current order book</span></div>
+    <article class="fx-panel"><h3>Contract consequence</h3><p>Verify quote, tick, month, termination and roll in <a href="6m-tick-size.html">the specification guide</a>.</p></article>
+    <article class="fx-panel"><h3>Research consequence</h3><p>Measure source, clock, roll and market-quality evidence in <a href="6m-data-traps.html">data traps</a> and <a href="6m-backtesting.html">backtesting</a>.</p></article>
+    <article class="fx-panel"><h3>Execution consequence</h3><p>Turn spread, depth, order type and fill evidence into go/reduce/wait/reject in <a href="6m-slippage.html">the slippage guide</a>.</p></article>
+    <article class="fx-panel"><h3>Risk consequence</h3><p>Convert invalidation, costs and gap stress to whole contracts in <a href="6m-margin-requirements.html">the sizing workflow</a>.</p></article>
   </div>
 </section>
 
-<details class="mx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary><ul>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary><ul>
   <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME FX Product Guide 2026</a> for 6M's LATAM classification, code, unit, quote, tick and physical-settlement facts.</li>
   <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/256/256.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 256: Mexican Peso/U.S. Dollar futures</a> for current contract, termination and delivery rules.</li>
   <li><a href="https://www.cmegroup.com/markets/fx/emerging-market/mexican-peso.quotes.html" target="_blank" rel="noopener">CME Mexican Peso futures quotes and dated product chain</a> and the <a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener">CME holiday and trading-hours record</a> for live operational context.</li>
@@ -177,7 +177,7 @@
   <li><a href="https://www.banxico.org.mx/publications-and-press/announcements-of-monetary-policy-decisions/monetary-policy-announcements.html" target="_blank" rel="noopener">Banco de M&eacute;xico monetary-policy announcements</a> and the <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">Federal Reserve FOMC calendar</a> for official event evidence.</li>
 </ul><p>Sources were reviewed August 13, 2026. Contract and reporting facts are established by the linked primary sources. Participation, liquidity and event sections describe mechanisms and hypotheses to test. The page reports no original depth, spread, jump, session, correlation, volatility or profitability finding, and it makes no claim that 6M is permanently less liquid than another contract.</p></details>
 
-<aside class="mx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>The market-structure discussion offers education, not an individualized trading, investment, legal, tax, accounting, hedging or brokerage opinion. 6M carries leverage and physical-delivery exposure. Changing liquidity, gaps, slippage, data failure and forced liquidation can create losses beyond the initial deposit.</p></aside>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>The market-structure discussion offers education, not an individualized trading, investment, legal, tax, accounting, hedging or brokerage opinion. 6M carries leverage and physical-delivery exposure. Changing liquidity, gaps, slippage, data failure and forced liquidation can create losses beyond the initial deposit.</p></aside>
 <!-- ARTICLE BODY END -->
 </article>
 </main>

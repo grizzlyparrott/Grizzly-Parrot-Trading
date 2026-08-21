@@ -2,241 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Common 6N Trading Strategies: Trend Following vs. Mean Reversion</title>
-  <meta name="description" content="A blunt guide to the two strategies that actually work on 6N futures: trend following and mean reversion, and when each one makes sense.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6n-trading-strategies.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Common 6N Trading Strategies: Trend Following vs. Mean Reversion">
-  <meta property="og:description" content="A blunt guide to the two strategies that actually work on 6N futures: trend following and mean reversion, and when each one makes sense.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6n-trading-strategies.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Common 6N Trading Strategies: Trend Following vs. Mean Reversion">
-  <meta name="twitter:description" content="A blunt guide to the two strategies that actually work on 6N futures: trend following and mean reversion, and when each one makes sense.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Common 6N Trading Strategies: Trend Following vs. Mean Reversion",
-  "description": "A blunt guide to the two strategies that actually work on 6N futures: trend following and mean reversion, and when each one makes sense.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6n-trading-strategies.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6n-trading-strategies.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Common 6N Trading Strategies: Trend Following vs. Mean Reversion",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6n-trading-strategies.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6N Trading Strategies: Compare Trend and Mean Reversion</title>
+  <meta name="description" content="Compare fully specified 6N trend and mean-reversion rules against neutral baselines, chronological holdouts, executable costs and rejection tests.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6n-trading-strategies.html">
+  <meta property="og:title" content="6N Trading Strategies: Compare Trend and Mean Reversion"><meta property="og:description" content="Compare fully specified 6N trend and mean-reversion rules against neutral baselines, chronological holdouts, executable costs and rejection tests."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6n-trading-strategies.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-28"><meta property="article:modified_time" content="2026-08-18">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6N Trading Strategies: Compare Trend and Mean Reversion"><meta name="twitter:description" content="Compare fully specified 6N trend and mean-reversion rules against neutral baselines, chronological holdouts, executable costs and rejection tests."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6N Trading Strategies: Compare Trend and Mean Reversion","description":"Compare fully specified 6N trend and mean-reversion rules against neutral baselines, chronological holdouts, executable costs and rejection tests.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6n-trading-strategies.html"},"datePublished":"2025-11-28","dateModified":"2026-08-18","url":"https://grizzlyparrottrading.com/futures-basics/6n-trading-strategies.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6N Trading Strategies: Compare Trend and Mean Reversion","item":"https://grizzlyparrottrading.com/futures-basics/6n-trading-strategies.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Rule families &middot; neutral baselines &middot; neither is allowed</p>
+    <h1>6N Trading Strategies: Compare Trend and Mean Reversion</h1>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 18, 2026</p>
+    <p class="fx-hero-lede">The same 6N price path can be called a trend by a 100-bar rule and an overextension by a 10-bar rule. The chart has not changed; the lookback and task have. “Trend” and “mean reversion” become testable only after every decision and timing rule is fixed.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#task">Define the comparison</a><a class="fx-text-link" href="#selection">Open the selection record</a></div>
+    <dl class="fx-hero-metrics" aria-label="6N strategy comparison status"><div><dt>Families</dt><dd>2 declared</dd></div><div><dt>Baselines</dt><dd>Risk-matched</dd></div><div><dt>Costs</dt><dd>Order-level</dd></div><div><dt>Original test</dt><dd>None</dd></div></dl>
   </div>
+  <aside class="fx-market-board" aria-label="Illustrative lookback disagreement">
+    <div class="fx-board-head"><span>Same price path</span><strong>Different frozen lenses</strong></div>
+    <div class="fx-decision-strip"><span><strong>Long lookback</strong>Candidate continuation</span><span><strong>Short lookback</strong>Candidate extension</span><span><strong>Evidence</strong>Requires later test</span></div>
+    <p class="fx-board-foot">A label is not an edge</p>
+  </aside>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#task">Task</a><a href="#rules">Rules</a><a href="#baselines">Baselines</a><a href="#data">Data</a><a href="#walkforward">Walk-forward</a><a href="#costs">Costs</a><a href="#regimes">Regimes</a><a href="#selection">Selection</a></nav>
 
-<h1>Common 6N Trading Strategies: Trend Following vs. Mean Reversion</h1>
-
-<p>6N futures tend to react hard to macro catalysts and session flows. That means two strategies actually work consistently: trend following when the market gets directional, and mean reversion when liquidity collapses and price overextends. Everything else is noise. If you stick to these two approaches, you avoid 90% of the traps newer traders fall into.</p>
-
-<h2>Strategy 1: Trend Following</h2>
-<p>6N trends cleanest during Asia and U.S. data releases. That’s when institutions push NZD based on rate expectations or USD flows. Trend following on 6N works because the contract reacts sharply to macro events and rarely reverses without a reason.</p>
-
-<h3>How to Identify Trend Conditions</h3>
-
-<ul>
-<li>Asia session opens with directional momentum</li>
-<li>Break of prior session high/low with volume</li>
-<li>Strong USD or NZD catalyst (CPI, RBNZ, NFP)</li>
-<li>Clean higher highs / higher lows or lower highs / lower lows</li>
-</ul>
-
-<p>When these conditions line up, 6N will follow through more reliably than most FX futures besides 6J.</p>
-
-<h3>Entry Concepts</h3>
-
-<ul>
-<li>Pullback into a prior breakout zone</li>
-<li>Retest of the session VWAP</li>
-<li>Continuation after liquidity sweep</li>
-</ul>
-
-<p>Don’t chase. Wait for the pullback. 6N loves stop runs before continuation.</p>
-
-<h3>Risk Management</h3>
-<ul>
-<li>Use wider stops during news</li>
-<li>Size down during high-volatility spikes</li>
-<li>Partial profits on extensions of 20–40 ticks</li>
-</ul>
-
-<h2>Strategy 2: Mean Reversion</h2>
-<p>This works when liquidity is thinner and the market isn’t reacting to news. 6N tends to snap back to equilibrium when moves go too far without fundamental backing.</p>
-
-<h3>When Mean Reversion Works Best</h3>
-<ul>
-<li>Mid-Asia session after initial breakout</li>
-<li>Slow U.S. session with no data</li>
-<li>Dead hours before Asia opens</li>
-<li>Extended moves into low-volume areas</li>
-</ul>
-
-<p>If you see a 40–60 tick push with no catalyst, odds favor a reversion back toward VWAP or the session midpoint.</p>
-
-<h3>Entry Concepts</h3>
-<ul>
-<li>Fade exhaustion wicks</li>
-<li>Fade failed breakouts</li>
-<li>Fade into low-liquidity levels (thin DOM)</li>
-</ul>
-
-<p>Mean reversion works because NZD is a smaller currency — it can’t sustain big moves without news.</p>
-
-<h2>Trend vs. Mean Reversion: When to Use Each</h2>
-
-<table>
-<tr><th>Condition</th><th>Best Strategy</th></tr>
-<tr><td>High-impact news / strong volume</td><td>Trend Following</td></tr>
-<tr><td>Range or slow session</td><td>Mean Reversion</td></tr>
-<tr><td>Asia session open</td><td>Trend Following</td></tr>
-<tr><td>Dead hours pre-Asia</td><td>Mean Reversion</td></tr>
-<tr><td>USD catalyst dominates</td><td>Trend Following</td></tr>
-</table>
-
-<p>Trying to trend trade a dead market or fade a news-driven trend is how 6N eats beginner accounts alive.</p>
-
-<h2>Final Take</h2>
-<p>6N only rewards two approaches: trend following during real directional conditions and mean reversion during slow, liquidity-poor hours. Everything else is asking to get faked out. If you want to understand when liquidity settings shift, read the <a href="https://grizzlyparrottrading.com/futures-basics/6n-liquidity-guide.html">6N liquidity guide</a> before diving deeper into setups.</p>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="fx-section" id="task" aria-labelledby="task-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Comparison before optimization</p><h2 id="task-title">Ask Which Frozen Rule Adds Decision Value</h2><p>A fair comparison fixes the information set, instrument universe, bar clock, risk budget, position sizing, execution model, sample partitions and outcome metric across both families. Only the signal logic should differ.</p></div>
+  <div class="fx-method"><div><h3>Protocol question&mdash;not a result</h3><p>Does a preregistered 6N continuation rule or a preregistered reversion rule improve a risk-matched neutral baseline in later chronological data after conservative execution costs, parameter-search disclosure and regime stress?</p></div><dl><div><dt>Fact</dt><dd>6N is a dated future</dd></div><div><dt>Hypotheses</dt><dd>Trend and reversion candidates</dd></div><div><dt>Allowed winner</dt><dd>Neither</dd></div></dl></div>
+  <div class="fx-check-grid"><article><strong>Mechanism hypothesis</strong><p>Persistent information or positioning may produce continuation over a defined horizon.</p></article><article><strong>Mechanism hypothesis</strong><p>Temporary dislocation or liquidity pressure may reverse over a defined horizon.</p></article><article><strong>Empirical requirement</strong><p>Neither mechanism establishes that a particular rule predicts 6N or survives implementation.</p></article></div>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="fx-section" id="rules" aria-labelledby="rules-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Fully specified candidates</p><h2 id="rules-title">Translate Both Families Into Timestamped State Machines</h2><p>Each candidate needs the same level of detail: eligibility, feature, threshold, confirmation, earliest order, side, size, invalidation, exit, re-entry, event policy and roll handling. Parameter values below are categories, not recommendations.</p></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Family A</p><h3>Continuation protocol</h3><ul><li>Feature: past-only return, channel or slope over a registered horizon</li><li>Entry: objective break or state confirmation after a completed bar</li><li>Invalidation: price/time rule known before entry</li><li>Exit: fixed horizon, trailing rule or opposing state chosen in advance</li><li>Failure: late entries, false breaks and reversal gaps remain in the ledger</li></ul></article>
+    <article class="fx-panel"><p class="fx-card-label">Family B</p><h3>Reversion protocol</h3><ul><li>Feature: standardized displacement from a past-only anchor</li><li>Entry: objective extension plus a registered stabilization or reversal trigger</li><li>Invalidation: displacement, price or time rule known before entry</li><li>Exit: anchor, partial reversion or fixed horizon chosen in advance</li><li>Failure: regime shifts, gaps and anchors that keep moving remain in the ledger</li></ul></article>
   </div>
-</footer>
-</body>
-</html>
+  <div class="fx-state-machine" aria-label="Shared strategy state sequence"><article><span>1</span><h3>Eligible</h3><p>Data, contract, event and liquidity gates pass.</p></article><article><span>2</span><h3>Observed</h3><p>All frozen features are available.</p></article><article><span>3</span><h3>Signaled</h3><p>One family&rsquo;s exact condition is true.</p></article><article><span>4</span><h3>Submitted</h3><p>Order arrives after declared delay.</p></article><article><span>5</span><h3>Resolved</h3><p>Fill, miss, exit and costs are recorded.</p></article></div>
+  <div class="fx-caution"><strong>Do not let the families share a discretionary rescue.</strong><p>“Avoid ugly setups,” “wait for confirmation” and “take profit when momentum fades” are untestable unless ugly, confirmation, profit and fade have exact past-only definitions.</p></div>
+</section>
+
+<section class="fx-section" id="baselines" aria-labelledby="baselines-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Difficulty must be earned</p><h2 id="baselines-title">Require Both Families to Beat Neutral Alternatives</h2><p>A strategy can look attractive in isolation while merely reproducing market exposure, volatility targeting or trade timing. Use several simple comparisons with the same risk and executable-cost conventions.</p></div>
+  <div class="fx-four-grid">
+    <article class="fx-panel"><p class="fx-card-label">Baseline 1</p><h3>No trade</h3><p>Zero market exposure and no transaction cost. A complex rule must justify taking risk at all.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Baseline 2</p><h3>Direction-neutral timing</h3><p>Preserve eligible times and holding periods but randomize or balance side without future data.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Baseline 3</p><h3>Naive sign rule</h3><p>Use a single predeclared past-return sign or anchor rule with the same sizing and exits.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Baseline 4</p><h3>Risk-matched exposure</h3><p>Match realized or forecast risk using only information available at each decision time.</p></article>
+  </div>
+  <p class="fx-source-note"><strong>Inference rule:</strong> outperforming a baseline in development is not confirmation. Any claim requires later untouched data and the full set of strategies and parameters tried.</p>
+</section>
+
+<section class="fx-section" id="data" aria-labelledby="data-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Executable dated history</p><h2 id="data-title">Use Dated 6N Contracts and Preserve the Roll Decision</h2><p>CME&rsquo;s rules define delivery-month futures, not an eternal continuous symbol. Keep each expiry intact, select the active contract with an ex-ante rule and separate the analytical splice from the close-and-reopen execution.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Strategy data manifest" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Layer</th><th scope="col">Required evidence</th><th scope="col">Reject when</th></tr></thead><tbody>
+    <tr><th scope="row">Contract</th><td>CME product, delivery month, quote and trade timestamps</td><td>Order cannot be mapped to an expiry</td></tr>
+    <tr><th scope="row">Bars</th><td>Timezone, boundaries, source rows, missing-data policy</td><td>Vendor bars cannot be reconstructed</td></tr>
+    <tr><th scope="row">Roll</th><td>Selection rule, decision time, fills and separate adjustment view</td><td>Future volume chooses the historical active contract</td></tr>
+    <tr><th scope="row">Features</th><td>Lookbacks, warm-up, availability lag and code version</td><td>Unfinished or future values enter the decision</td></tr>
+    <tr><th scope="row">Orders</th><td>Decision, arrival, order type, size, fill, cancel and exit</td><td>Close price is assumed executable</td></tr>
+  </tbody></table></div>
+  <p class="fx-source-note"><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/258/258.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 258</a> is the primary contract authority; current mechanics and arithmetic belong in <a href="6n-contract-specs-explained.html">6N Contract Specifications</a>. <a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine</a> lists settlements, Market by Order and PCAP as different data products. No dataset was purchased or tested for this article.</p>
+</section>
+
+<section class="fx-section" id="walkforward" aria-labelledby="walkforward-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Chronology over shuffled rows</p><h2 id="walkforward-title">Develop, Select and Validate in Time Order</h2><p>Random folds can leak persistent regimes and overlapping outcomes. Use expanding or rolling walk-forward partitions with purge or embargo rules long enough to separate feature windows, labels and open trades.</p></div>
+  <div class="fx-contract-path"><article><h3>Develop</h3><p>Define both families, limited grids, baselines, metrics, data cleaning and costs.</p></article><article><h3>Walk forward</h3><p>Fit only on past observations; evaluate the next block without refitting to its outcomes.</p></article><article><h3>Select once</h3><p>Apply one predeclared family/parameter selection rule and seal the result.</p></article><article><h3>Open holdout</h3><p>Assess the locked strategy once; any change requires a new untouched sample.</p></article></div>
+  <ul class="fx-checklist"><li><strong>Publish every candidate.</strong> Include failed lookbacks, thresholds and family variants.</li><li><strong>Separate trades across folds.</strong> A position cannot start in training and finish in validation unnoticed.</li><li><strong>Version external inputs.</strong> Revised economic data must not appear before its historical publication.</li><li><strong>Keep a holdout access log.</strong> Curiosity opens count as access.</li></ul>
+</section>
+
+<section class="fx-section" id="costs" aria-labelledby="costs-title">
+  <div class="fx-section-heading"><p class="fx-kicker">From signal to fill</p><h2 id="costs-title">Charge Each Family for the Orders It Creates</h2><p>Trend and reversion rules can differ in turnover, urgency and adverse selection. A flat cost per trade can favor the family whose hardest fills are hidden. Replay each declared order against evidence the feed actually supports.</p></div>
+  <div class="fx-formula" aria-label="Net strategy outcome in U.S. dollars"><code>side &times; (exit fill &minus; entry fill) &times; 100,000 NZD &times; contract quantity</code><i aria-hidden="true">&minus;</i><code>USD fees and non-embedded USD costs</code><i aria-hidden="true">=</i><strong>Net strategy outcome in USD</strong></div>
+  <div class="fx-three-column"><article class="fx-panel"><p class="fx-card-label">Spread and depth</p><h3>Task-specific entry</h3><p>Marketable orders walk the available book; passive orders need queue-aware evidence and retain misses.</p></article><article class="fx-panel"><p class="fx-card-label">Latency and gaps</p><h3>Decision is not arrival</h3><p>Apply processing and network delay, then resolve stops and fast markets beyond their trigger price.</p></article><article class="fx-panel"><p class="fx-card-label">Turnover stress</p><h3>Raise costs together</h3><p>Widen spread, slippage, latency and missed-fill assumptions. Reject a winner dependent on the optimistic point.</p></article></div>
+  <div class="fx-related">Use <a href="6n-liquidity-guide.html">the 6N liquidity guide</a> for the market-quality fields and fail-closed order gates.</div>
+</section>
+
+<section class="fx-section" id="regimes" aria-labelledby="regimes-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Do not select a story after failure</p><h2 id="regimes-title">Predeclare Regime Tests and Rejection Rules</h2><p>Continuation and reversion may plausibly respond differently to volatility, event and liquidity conditions. Regime labels must be observable at the decision time and registered before the validation outcomes are opened.</p></div>
+  <div class="fx-falsification-tree"><article><p class="fx-card-label">Time</p><h3>Stability</h3><ul><li>Early and late blocks</li><li>Adjacent lookbacks</li><li>Alternate bar boundaries</li></ul></article><article><p class="fx-card-label">Market state</p><h3>Conditionality</h3><ul><li>Predeclared volatility states</li><li>Event and non-event windows</li><li>Roll and ordinary periods</li></ul></article><article><p class="fx-card-label">Implementation</p><h3>Survival</h3><ul><li>Wider cost schedule</li><li>Delayed arrival</li><li>Missed and partial fills</li></ul></article></div>
+  <div class="fx-caution"><strong>Hypothetical performance remains hypothetical.</strong><p>The <a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/fraudadv_tradingsystem.html" target="_blank" rel="noopener noreferrer">CFTC&rsquo;s trading-system advisory</a> warns that simulated results can benefit from hindsight and do not reproduce actual trading conditions or a trader&rsquo;s ability to bear losses.</p></div>
+</section>
+
+<section class="fx-section" id="selection" aria-labelledby="selection-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Selection verdict</p><h2 id="selection-title">Strategy-Selection Record</h2><p>The final record compares both families and every baseline under one policy. The decision is selected only if all hard gates pass; otherwise record neither.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Trend versus mean reversion selection record" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Gate</th><th scope="col">Trend family</th><th scope="col">Reversion family</th><th scope="col">Fail-closed rule</th></tr></thead><tbody>
+    <tr><th scope="row">Specification</th><td>Complete or fail</td><td>Complete or fail</td><td>Any discretionary field rejects family</td></tr>
+    <tr><th scope="row">Baseline value</th><td>Later net comparison</td><td>Later net comparison</td><td>No material improvement rejects family</td></tr>
+    <tr><th scope="row">Uncertainty</th><td>Block-aware interval</td><td>Block-aware interval</td><td>Decision threshold not resolved rejects family</td></tr>
+    <tr><th scope="row">Robustness</th><td>Full registered matrix</td><td>Full registered matrix</td><td>Reasonable alternate history reverses claim</td></tr>
+    <tr><th scope="row">Execution</th><td>Stressed net result</td><td>Stressed net result</td><td>Optimistic fills required rejects family</td></tr>
+    <tr><th scope="row">Selection</th><td colspan="2">Trend, reversion, limited/experimental, or neither</td><td>Missing evidence means neither</td></tr>
+  </tbody></table></div>
+  <div class="fx-caution"><strong>Research status as of August 18, 2026</strong><p>No original 6N trend test, mean-reversion test, parameter search, walk-forward result, performance statistic, edge or recommendation is reported. This page is a comparison protocol, not a finding. Current selection: <strong>neither tested</strong>.</p></div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 20, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/258/258.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 258: New Zealand Dollar/U.S. Dollar futures</a> for dated-contract identity and exchange rules.</li>
+  <li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine historical-data catalog</a> for distinctions among settlements and order-level datasets. No dataset was purchased or analyzed for this article.</li>
+  <li><a href="https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm" target="_blank" rel="noopener noreferrer">NIST/SEMATECH time-series analysis guidance</a> for temporal dependence and chronological analysis.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/fraudadv_tradingsystem.html" target="_blank" rel="noopener noreferrer">CFTC advisory on commodity trading systems and hypothetical performance</a> for simulation, fill and hindsight limitations.</li>
+</ul><p>Sources and methods were reviewed August 20, 2026. This unsponsored article separates exchange facts, candidate mechanisms, rule-family hypotheses, empirical inferences that require a study and trading applications that require later execution evidence.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This strategy-comparison material is educational and cannot substitute for individualized investment, legal, tax, hedging, execution, or brokerage advice. Backtests omit or simplify rejected orders, latency and slippage; in live leveraged futures, an adverse path can require payments beyond initial collateral. Verify the selected contract, present order book, exchange rules and broker configuration, and use an independently established loss budget before any trade.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

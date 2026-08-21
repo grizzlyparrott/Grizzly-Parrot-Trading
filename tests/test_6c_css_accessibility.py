@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CSS_PATH = ROOT / "futures-basics" / "6c-research-library.css"
+CSS_PATH = ROOT / "futures-basics" / "currency-research-library.css"
 
 
 def _rgb(hex_color: str) -> tuple[int, int, int]:
@@ -41,27 +41,27 @@ def _variable(css: str, name: str) -> str:
 class SixCCssAccessibilityTests(unittest.TestCase):
     def test_focus_indicator_has_light_and_dark_three_to_one_layers(self):
         css = CSS_PATH.read_text(encoding="utf-8")
-        focus_dark = _variable(css, "--ca-focus-dark")
-        focus_light = _variable(css, "--ca-focus-light")
-        paper = _variable(css, "--ca-paper")
-        ink = _variable(css, "--ca-ink")
-
+        focus_dark = _variable(css, "--fx-focus-dark")
+        focus_light = _variable(css, "--fx-focus-light")
+        paper = _variable(css, "--fx-paper")
         self.assertGreaterEqual(_contrast(focus_dark, paper), 3)
-        self.assertGreaterEqual(_contrast(focus_light, ink), 3)
-        self.assertIn("outline: 3px solid var(--ca-focus-light)", css)
-        self.assertIn("box-shadow: 0 0 0 6px var(--ca-focus-dark)", css)
+        self.assertGreaterEqual(_contrast(focus_light, paper), 3)
+        self.assertIn("outline: 3px solid var(--fx-focus-light)", css)
+        self.assertIn("box-shadow: 0 0 0 6px var(--fx-focus-dark)", css)
 
     def test_process_arrow_uses_a_dark_foreground_on_gold(self):
         css = CSS_PATH.read_text(encoding="utf-8")
         arrow = re.search(
-            r"\.ca-process article:not\(:last-child\)::after\s*\{(?P<body>.*?)\n\}",
+            r"\.fx-process article:not\(:last-child\)::after\s*\{(?P<body>.*?)\n\}",
             css,
             flags=re.S,
         )
         self.assertIsNotNone(arrow)
-        self.assertIn("color: var(--ca-ink)", arrow.group("body"))
+        self.assertIn("color: var(--fx-button-ink)", arrow.group("body"))
         self.assertGreaterEqual(
-            _contrast(_variable(css, "--ca-ink"), _variable(css, "--ca-gold")),
+            _contrast(
+                _variable(css, "--fx-button-ink"), _variable(css, "--fx-gold")
+            ),
             3,
         )
 

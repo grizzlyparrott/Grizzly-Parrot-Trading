@@ -2,228 +2,143 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Read 6N Price Quotes Without Getting Confused</title>
-  <meta name="description" content="A blunt guide showing beginners exactly how 6N New Zealand Dollar futures quotes work, including decimals, ticks, and real-dollar impact.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/how-to-read-6n-price-quotes.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="How to Read 6N Price Quotes Without Getting Confused">
-  <meta property="og:description" content="A blunt guide showing beginners exactly how 6N New Zealand Dollar futures quotes work, including decimals, ticks, and real-dollar impact.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/how-to-read-6n-price-quotes.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="How to Read 6N Price Quotes Without Getting Confused">
-  <meta name="twitter:description" content="A blunt guide showing beginners exactly how 6N New Zealand Dollar futures quotes work, including decimals, ticks, and real-dollar impact.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How to Read 6N Price Quotes Without Getting Confused",
-  "description": "A blunt guide showing beginners exactly how 6N New Zealand Dollar futures quotes work, including decimals, ticks, and real-dollar impact.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/how-to-read-6n-price-quotes.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/how-to-read-6n-price-quotes.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How to Read 6N Price Quotes Without Getting Confused",
-      "item": "https://grizzlyparrottrading.com/futures-basics/how-to-read-6n-price-quotes.html"
-    }
-  ]
-}
-</script>
-
+  <title>How to Read 6N Futures Price Quotes and P&amp;L</title>
+  <meta name="description" content="Translate USD-per-NZD 6N quotes into ticks, notional value and side-aware long or short P&amp;L with reconciled worked examples.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/how-to-read-6n-price-quotes.html">
+  <meta property="og:title" content="How to Read 6N Futures Price Quotes and P&amp;L"><meta property="og:description" content="Translate USD-per-NZD 6N quotes into ticks, notional value and side-aware long or short P&amp;L with reconciled worked examples."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/how-to-read-6n-price-quotes.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-28"><meta property="article:modified_time" content="2026-08-19">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Read 6N Futures Price Quotes and P&amp;L"><meta name="twitter:description" content="Translate USD-per-NZD 6N quotes into ticks, notional value and side-aware long or short P&amp;L with reconciled worked examples."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Read 6N Futures Price Quotes and P\u0026L","description":"Translate USD-per-NZD 6N quotes into ticks, notional value and side-aware long or short P\u0026L with reconciled worked examples.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/how-to-read-6n-price-quotes.html"},"datePublished":"2025-11-28","dateModified":"2026-08-19","url":"https://grizzlyparrottrading.com/futures-basics/how-to-read-6n-price-quotes.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"How to Read 6N Futures Price Quotes and P\u0026L","item":"https://grizzlyparrottrading.com/futures-basics/how-to-read-6n-price-quotes.html"}]}</script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
+<a class="fx-skip-link" href="#main-content">Skip to article content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy"><p class="fx-kicker">Quote reading &middot; dollar conversion</p><h1>How to Read 6N Futures Price Quotes and P&amp;L</h1><p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 19, 2026</p><p class="fx-hero-lede"><strong>A 6N quote of 0.6124 means 0.6124 U.S. dollar per New Zealand dollar.</strong> Platforms may display it as 0.61240. At that hypothetical price, one 100,000 NZD contract represents $61,240 of quoted value&mdash;not a $61,240 cash payment and not a loss limit.</p><div class="fx-quote-board" aria-label="6N quote translated in three steps"><span><strong>Screen</strong>0.61240 USD per NZD</span><span><strong>Unit</strong>100,000 NZD</span><span><strong>Represented value</strong>$61,240</span></div></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#identity">Quote identity</a><a href="#ticks">Tick ladder</a><a href="#sides">Long and short</a><a href="#calculator">Calculator</a><a href="#spot">Spot comparison</a><a href="#errors">Common errors</a><a href="#self-check">Self-check</a></nav>
 
-<h1>How to Read 6N Price Quotes Without Getting Confused</h1>
-
-<p>6N futures quotes look simple, but most beginners still screw them up. The contract trades in four decimals, every tick is 0.0001, and every tick is worth exactly $10. If you can’t read the quotes correctly, you can’t size your risk correctly — and that’s how people blow accounts.</p>
-
-<h2>The Format of a 6N Quote</h2>
-<p>6N prints like this:</p>
-
-<p><strong>0.6041</strong></p>
-
-<p>No hidden fractions. No gimmicks. That number is the NZD/USD exchange rate.</p>
-
-<h2>Understanding the Tick</h2>
-<p>For 6N:</p>
-
-<ul>
-<li><strong>Minimum tick:</strong> 0.0001</li>
-<li><strong>Tick value:</strong> $10 per contract</li>
-</ul>
-
-<p>If 6N moves from 0.6041 to 0.6047, that’s six ticks → <strong>$60 per contract</strong>. Traders who can’t read the decimal place get smoked fast.</p>
-
-<h2>Reading Bid/Ask Quotes Correctly</h2>
-<p>A typical quote looks like this:</p>
-
-<table>
-<tr><th>Side</th><th>Price</th></tr>
-<tr><td>Bid</td><td>0.6039</td></tr>
-<tr><td>Ask</td><td>0.6040</td></tr>
-</table>
-
-<p>Each side is one tick apart → $10 spread cost. That’s it. No variable spreads like spot FX brokers love to hit you with.</p>
-
-<h2>How to Calculate Dollar Movement</h2>
-<p>Use this simple formula:</p>
-
-<p><strong>Dollar move = ticks × $10</strong></p>
-
-<p>Examples:</p>
-
-<ul>
-<li>Move from 0.6000 → 0.6015 = 15 ticks = $150</li>
-<li>Move from 0.5972 → 0.5932 = 40 ticks = $400</li>
-<li>Move from 0.6100 → 0.6050 = 50 ticks = $500</li>
-</ul>
-
-<p>If you trade prop and can’t do this instantly, you’re dead in the water.</p>
-
-<h2>Common Beginner Mistakes</h2>
-<ul>
-<li>Thinking the second decimal is a pip (it’s not FX pips — different system)</li>
-<li>Forgetting every tick is always $10, no exceptions</li>
-<li>Counting price movement in pips instead of ticks</li>
-<li>Ignoring the bid/ask and assuming mid-price fills</li>
-</ul>
-
-<p>The fastest way to fix this is to practice reading quotes on live DOM or T&S instead of staring at candles.</p>
-
-<h2>Final Take</h2>
-<p>Once you understand that a 6N quote is just the NZD/USD rate with a fixed tick size and fixed tick value, reading the price becomes effortless. If you haven’t already, go back and review <a href="https://grizzlyparrottrading.com/futures-basics/6n-contract-specs-explained.html">the 6N contract specs</a> before diving into volatility and session behavior.</p>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="fx-section" id="identity" aria-labelledby="identity-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Read the denominator</p><h2 id="identity-title">USD per NZD Tells You Which Currency Is Gaining Value</h2><p>The first symbol is the base currency and the second is the terms currency. A 6N price states how many U.S. dollars buy one New Zealand dollar. If the quote rises from 0.61240 to 0.61340, each NZD is worth 0.00100 more USD.</p></div>
+  <div class="fx-decision-strip" aria-label="6N quote direction"><span><strong>Higher 6N</strong>NZD is worth more USD at that futures maturity</span><span><strong>Lower 6N</strong>NZD is worth fewer USD at that futures maturity</span><span><strong>Position side</strong>Long benefits from higher; short benefits from lower</span></div>
+  <p class="fx-related">The full exchange specification, contract calendar and delivery record live in the <a href="6n-contract-specs-explained.html">canonical 6N contract guide</a>. This page owns screen-to-dollar arithmetic.</p>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<section class="fx-section" id="ticks" aria-labelledby="ticks-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Current outright ladder</p><h2 id="ticks-title">One Globex Outright Tick Is 0.00005, Worth $5</h2><p>CME Rulebook Chapter 258 sets the current outright minimum price fluctuation at 0.00005 USD per NZD. Multiply by the 100,000 NZD trading unit to get $5. A move of 0.00010 is therefore two current outright ticks, even though FX traders may call it one pip.</p></div>
+  <div class="fx-formula" aria-label="6N tick count formula"><code>absolute price change / 0.00005</code><i aria-hidden="true">=</i><strong>Outright tick count</strong></div>
+  <div class="fx-table-scroll" role="region" aria-label="6N tick ladder" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Price change</th><th scope="col">Current ticks</th><th scope="col">One contract</th><th scope="col">Four contracts</th></tr></thead><tbody>
+    <tr><th scope="row">0.00005</th><td>1</td><td>$5</td><td>$20</td></tr>
+    <tr><th scope="row">0.00010</th><td>2</td><td>$10</td><td>$40</td></tr>
+    <tr><th scope="row">0.00025</th><td>5</td><td>$25</td><td>$100</td></tr>
+    <tr><th scope="row">0.00100</th><td>20</td><td>$100</td><td>$400</td></tr>
+    <tr><th scope="row">0.00250</th><td>50</td><td>$250</td><td>$1,000</td></tr>
+  </tbody></table></div>
+  <p class="fx-source-note"><strong>Stale-reference warning:</strong> older CME material can show 0.0001 and $10. Current Chapter 258 and the 2026 FX Product Guide show 0.00005 and $5 for the Globex outright. ClearPort has a separate 0.00001 increment; that is not the outright screen ladder.</p>
+</section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="fx-section" id="sides" aria-labelledby="sides-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Direction before dollars</p><h2 id="sides-title">Long and Short Use Opposite Subtraction</h2><p>The safest workflow computes both the multiplier route and the tick route. If they disagree, the price direction, decimal place, unit or quantity is wrong.</p></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Long 6N</p><h3>Entry 0.61240, exit 0.61415</h3><p>(0.61415 - 0.61240) &times; 100,000 = <strong>+$175 gross</strong>. The 0.00175 move is 35 ticks; 35 &times; $5 confirms $175. Reverse the exit and the long loses $175.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Short 6N</p><h3>Entry 0.61510, exit 0.61260</h3><p>(0.61510 - 0.61260) &times; 100,000 = <strong>+$250 gross</strong>. The decline is 50 ticks; 50 &times; $5 confirms $250. A rise of the same size loses $250.</p></article>
   </div>
-</footer>
+  <div class="fx-caution"><strong>Gross is not net.</strong><p>Subtract commissions, exchange and clearing fees, bid-ask spread and slippage. A stop order can fill beyond its trigger during a gap or thin book, so planned stop loss is not a guaranteed maximum.</p></div>
+</section>
+
+<section class="fx-section" id="calculator" aria-labelledby="calculator-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Reconciliation tool</p><h2 id="calculator-title">Convert Two Quotes Into Ticks, Gross P&amp;L and Entry Notional</h2><p>This educational calculator uses the current standard 6N unit and outright increment. It does not include costs, margin, basis or gap risk.</p></div>
+  <form class="fx-calculator" id="quote-calculator" novalidate>
+    <div class="fx-fields">
+      <label>Position side<select id="quote-side"><option value="1">Long</option><option value="-1">Short</option></select></label>
+      <label>Entry price<input id="quote-entry" type="number" min="0" step="any" value="0.61240" inputmode="decimal"></label>
+      <label>Exit price<input id="quote-exit" type="number" min="0" step="any" value="0.61415" inputmode="decimal"></label>
+      <label>Contracts<input id="quote-contracts" type="number" min="1" step="1" value="1" inputmode="numeric"></label>
+    </div>
+    <div class="fx-calc-actions"><button class="button-primary" type="submit">Calculate</button><button class="fx-secondary-button" type="reset">Reset</button></div>
+    <div class="fx-results" id="quote-results" role="status" aria-live="polite"><h3>Calculated output</h3><dl><div><dt>Signed ticks</dt><dd id="quote-ticks">35</dd></div><div><dt>Gross P&amp;L</dt><dd id="quote-pnl">$175.00</dd></div><div><dt>Entry notional</dt><dd id="quote-notional">$61,240.00</dd></div></dl><p id="quote-note">Before commissions, fees, spread and slippage.</p></div>
+  </form>
+</section>
+
+<section class="fx-section" id="spot" aria-labelledby="spot-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Same orientation, different instrument</p><h2 id="spot-title">A Spot NZD/USD Quote Is Not the Exact Futures Price</h2><p>Unlike inverse pairs such as USD/CAD, common NZD/USD spot and CME 6N share the same USD-per-NZD orientation. They are still not interchangeable. A 6N future has a delivery month and can differ from spot because of time, relative funding, basis, spreads and timestamp.</p></div>
+  <div class="fx-three-column"><article class="fx-panel"><h3>Direction check</h3><p>A higher number generally means stronger NZD against USD on both screens.</p></article><article class="fx-panel"><h3>Price-level check</h3><p>Do not copy a spot print into a futures order; compare synchronized bid and offer data.</p></article><article class="fx-panel"><h3>Lifecycle check</h3><p>6N expires and is physically deliverable. A spot account follows its provider’s rollover and counterparty terms.</p></article></div>
+</section>
+
+<section class="fx-section" id="errors" aria-labelledby="errors-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Decimal controls</p><h2 id="errors-title">Most Quote Errors Leave an Arithmetic Fingerprint</h2><p>A wrong result is easier to catch when the worksheet records units at every step. Do not write “35” alone; write “35 current Globex outright ticks.” Do not write “61,240” alone; write “$61,240 represented notional at entry.” Labels stop one quantity from being mistaken for another.</p></div>
+  <div class="fx-risk-grid">
+    <article><strong>One decimal place missing</strong><p>A 0.00100 move is entered as 0.01000, turning 20 ticks into 200. Compare the entry and exit strings before subtracting, then reconstruct the expected chart distance.</p></article>
+    <article><strong>Old tick convention</strong><p>A worksheet divides by 0.0001 and reports ten “ticks” for a 0.00100 move. Under the current 0.00005 outright increment, the correct count is 20, though the gross dollars can still coincide if the old sheet assigns $10 to each old unit.</p></article>
+    <article><strong>Contracts omitted</strong><p>The one-contract result is correct but the actual order contains three. Apply quantity once&mdash;after the per-contract result&mdash;and verify it against the fill report.</p></article>
+    <article><strong>Short sign omitted</strong><p>Exit minus entry is used for every side, so a profitable decline is displayed as a loss for a short. Store side explicitly rather than correcting the sign by eye.</p></article>
+    <article><strong>Notional called risk</strong><p>The $61,240 represented value at 0.61240 is neither the margin deposit nor the planned loss. Risk requires an invalidation distance, quantity, costs and adverse-fill stress.</p></article>
+    <article><strong>Midpoint called fill</strong><p>A chart close or midpoint is substituted for bid and offer executions. Reconcile P&amp;L from actual fills and fees; the displayed chart may never have been executable at that price.</p></article>
+  </div>
+  <p>One more useful proof is symmetry: ignoring costs, a one-contract long gain from 0.61240 to 0.61415 must equal the loss on a short over the same path. If magnitudes differ, the formula, side or quantity has been applied inconsistently. With actual fills, differences should be traceable to entry and exit prices, not unexplained rounding.</p>
+</section>
+
+<section class="fx-section" id="self-check" aria-labelledby="self-check-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Quote-and-P&amp;L self-check</p><h2 id="self-check-title">Five Answers Must Agree Before the Ticket Opens</h2></div>
+  <ol class="fx-checklist"><li>The exact dated symbol is 6N, not an unverified M6N label or continuous research series.</li><li>The quote is USD per NZD; a higher price helps a long and hurts a short.</li><li>The price is on the current 0.00005 outright ladder, or the execution route’s different increment is explicitly documented.</li><li>Multiplier P&amp;L and tick P&amp;L agree after applying the correct side and integer quantity.</li><li>Notional, margin, planned stop risk and maximum possible loss remain separate numbers; all costs and a gap stress are recorded.</li></ol>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 20, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/258/258.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 258</a> for the 100,000 NZD unit, current 0.00005 Globex outright increment and $5 equivalent.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener noreferrer">CME FX Product Guide 2026</a> for USD-per-NZD quotation, product codes, settlement and route-specific increments.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/FuturesMarketBasics/index.htm" target="_blank" rel="noopener noreferrer">CFTC basics of futures trading</a> for leveraged-futures risk and the possibility of losses beyond the initial investment.</li>
+</ul><p>Sources were reviewed August 20, 2026. All prices are hypothetical and chosen only to demonstrate arithmetic. The calculator runs locally in the browser, rounds tick display to two decimals when an input is off-ladder, and reports gross P&amp;L before costs. It does not validate a live quote or order.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This quote guide and calculator are educational, not personal trading advice. Futures are leveraged; losses can exceed the initial margin deposit. Verify the current rulebook, exact contract, live order book and broker terms.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+<script>
+(function(){
+  const form=document.getElementById('quote-calculator');
+  const money=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'});
+  const ticksOutput=document.getElementById('quote-ticks');
+  const pnlOutput=document.getElementById('quote-pnl');
+  const notionalOutput=document.getElementById('quote-notional');
+  const noteOutput=document.getElementById('quote-note');
+  function invalidate(message){
+    ticksOutput.textContent='\u2014';pnlOutput.textContent='\u2014';notionalOutput.textContent='\u2014';noteOutput.textContent=message;
+  }
+  function onOutrightLadder(value){
+    const units=value/0.00005;
+    return Number.isFinite(units)&&Math.abs(units-Math.round(units))<1e-7;
+  }
+  function calculate(){
+    const side=Number(document.getElementById('quote-side').value);
+    const entry=document.getElementById('quote-entry').valueAsNumber;
+    const exit=document.getElementById('quote-exit').valueAsNumber;
+    const contracts=document.getElementById('quote-contracts').valueAsNumber;
+    if((side!==1&&side!==-1)||!Number.isFinite(entry)||!Number.isFinite(exit)||!(entry>0)||!(exit>0)||!Number.isSafeInteger(contracts)||contracts<1){
+      invalidate('Enter finite positive prices and a positive whole-number contract count.');return;
+    }
+    const signedTicks=((exit-entry)/0.00005)*side;
+    const pnl=(exit-entry)*100000*contracts*side;
+    const notional=entry*100000*contracts;
+    if(!Number.isFinite(signedTicks)||!Number.isFinite(pnl)||!Number.isFinite(notional)){
+      invalidate('Those inputs exceed the calculator\'s finite arithmetic range.');return;
+    }
+    ticksOutput.textContent=signedTicks.toLocaleString('en-US',{maximumFractionDigits:2});
+    pnlOutput.textContent=money.format(pnl);
+    notionalOutput.textContent=money.format(notional);
+    noteOutput.textContent=onOutrightLadder(entry)&&onOutrightLadder(exit)
+      ?'Before commissions, fees, spread and slippage. Both prices align with the current Globex outright ladder.'
+      :'Off-ladder input detected; verify the execution route and increment. Outputs remain gross and exclude all costs.';
+  }
+  form.addEventListener('submit',function(event){event.preventDefault();calculate();});
+  form.addEventListener('reset',function(){window.setTimeout(calculate,0);});
+})();
+</script>
 </body>
 </html>

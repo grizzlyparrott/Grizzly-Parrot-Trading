@@ -28,7 +28,7 @@
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="/futures-basics/6m-research-library.css?v=20260813a">
+  <link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
   <script type="application/ld+json">
@@ -65,34 +65,34 @@
   <script src="/uet.js" defer></script>
 </head>
 <body>
-<a class="mx-skip-link" href="#main-content">Skip to article content</a>
+<a class="fx-skip-link" href="#main-content">Skip to article content</a>
 <header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
-<main class="container article-container mxn-library" id="main-content">
+<main class="container article-container currency-library" id="main-content">
 <article>
 <!-- ARTICLE BODY START -->
-<header class="mx-hero">
-  <div class="mx-hero-copy">
-    <p class="mx-kicker">Canonical contract reference &middot; 6M / MP</p>
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Canonical contract reference &middot; 6M / MP</p>
     <h1>6M Tick Size, Tick Value and Contract Specs</h1>
-    <p class="mx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
-    <p class="mx-hero-lede">Start with multiplication: <strong>500,000 MXN &times; 0.00001 USD per MXN = $5</strong>. That is the current CME Globex outright tick value for one standard 6M contract. Every P&amp;L, stop-distance and exposure calculation on this library should reconcile to that identity.</p>
-    <div class="mx-hero-actions"><a class="button-primary" href="#verified-specs">View verified specifications</a><a class="mx-text-link" href="#preorder">Use the pre-order check</a></div>
-    <dl class="mx-hero-metrics" aria-label="Core standard 6M specifications"><div><dt>Trading unit</dt><dd>500,000 MXN</dd></div><div><dt>Outright tick</dt><dd>0.00001</dd></div><div><dt>Tick value</dt><dd>$5</dd></div><div><dt>Final settlement</dt><dd>Physical</dd></div></dl>
+    <p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="fx-hero-lede">Start with multiplication: <strong>500,000 MXN &times; 0.00001 USD per MXN = $5</strong>. That is the current CME Globex outright tick value for one standard 6M contract. Every P&amp;L, stop-distance and exposure calculation on this library should reconcile to that identity.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#verified-specs">View verified specifications</a><a class="fx-text-link" href="#preorder">Use the pre-order check</a></div>
+    <dl class="fx-hero-metrics" aria-label="Core standard 6M specifications"><div><dt>Trading unit</dt><dd>500,000 MXN</dd></div><div><dt>Outright tick</dt><dd>0.00001</dd></div><div><dt>Tick value</dt><dd>$5</dd></div><div><dt>Final settlement</dt><dd>Physical</dd></div></dl>
   </div>
-  <div class="mx-hero-visual mx-market-board" aria-label="Reconciled tick calculation">
-    <div class="mx-board-head"><span>CME Globex outright</span><strong>6M</strong></div>
-    <div class="mx-proof"><strong>Contract unit</strong><span>500,000 Mexican pesos</span></div>
-    <div class="mx-proof"><strong>Minimum increment</strong><span>$0.00001 per Mexican peso</span></div>
-    <div class="mx-proof"><strong>Product</strong><span>500,000 &times; 0.00001 = $5.00</span></div>
-    <p class="mx-board-foot">ClearPort has a separate $0.000001 submission increment.</p>
+  <div class="fx-hero-visual fx-market-board" aria-label="Reconciled tick calculation">
+    <div class="fx-board-head"><span>CME Globex outright</span><strong>6M</strong></div>
+    <div class="fx-proof"><strong>Contract unit</strong><span>500,000 Mexican pesos</span></div>
+    <div class="fx-proof"><strong>Minimum increment</strong><span>$0.00001 per Mexican peso</span></div>
+    <div class="fx-proof"><strong>Product</strong><span>500,000 &times; 0.00001 = $5.00</span></div>
+    <p class="fx-board-foot">ClearPort has a separate $0.000001 submission increment.</p>
   </div>
 </header>
 
-<nav class="mx-jump-nav" aria-label="On this page"><a href="#verified-specs">Verified specs</a><a href="#quote-math">Quote and P&amp;L</a><a href="#micro-check">Micro check</a><a href="#months-expiry">Months and expiry</a><a href="#hours-roll">Hours and roll</a><a href="#margin-boundary">Margin</a><a href="#preorder">Pre-order check</a><a href="#faq">FAQ</a></nav>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#verified-specs">Verified specs</a><a href="#quote-math">Quote and P&amp;L</a><a href="#micro-check">Micro check</a><a href="#months-expiry">Months and expiry</a><a href="#hours-roll">Hours and roll</a><a href="#margin-boundary">Margin</a><a href="#preorder">Pre-order check</a><a href="#faq">FAQ</a></nav>
 
-<section class="mx-section" id="verified-specs" aria-labelledby="verified-specs-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Exchange record</p><h2 id="verified-specs-title">The Current Standard 6M Contract in One Card</h2><p>CME Rulebook Chapter 256 and the CME FX Product Guide 2026 identify 6M as Mexican Peso/U.S. Dollar futures. The unit is 500,000 Mexican pesos, the price is U.S. dollars per Mexican peso, and final settlement is physical delivery. The table separates the central-limit-order-book outright from privately negotiated transactions submitted through ClearPort.</p></div>
-  <div class="mx-table-scroll" role="region" aria-label="Current standard 6M contract specifications" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Field</th><th scope="col">Verified 6M term</th><th scope="col">Operational meaning</th></tr></thead><tbody>
+<section class="fx-section" id="verified-specs" aria-labelledby="verified-specs-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Exchange record</p><h2 id="verified-specs-title">The Current Standard 6M Contract in One Card</h2><p>CME Rulebook Chapter 256 and the CME FX Product Guide 2026 identify 6M as Mexican Peso/U.S. Dollar futures. The unit is 500,000 Mexican pesos, the price is U.S. dollars per Mexican peso, and final settlement is physical delivery. The table separates the central-limit-order-book outright from privately negotiated transactions submitted through ClearPort.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Current standard 6M contract specifications" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Field</th><th scope="col">Verified 6M term</th><th scope="col">Operational meaning</th></tr></thead><tbody>
     <tr><th scope="row">Contract</th><td>Mexican Peso/U.S. Dollar futures; Rulebook Chapter 256</td><td>Globex root 6M; clearing and ClearPort code MP</td></tr>
     <tr><th scope="row">Trading unit</th><td>500,000 Mexican pesos</td><td>Multiply a quote change by 500,000 and by contract count for gross dollar P&amp;L</td></tr>
     <tr><th scope="row">Quotation</th><td>USD per MXN</td><td>A quote of 0.05500 means one peso is priced at $0.05500</td></tr>
@@ -103,21 +103,21 @@
     <tr><th scope="row">Termination</th><td>Second business day immediately preceding the third Wednesday; usual close 9:16 a.m. CT</td><td>A Chicago or New York bank holiday can move the termination date to the preceding common business day</td></tr>
     <tr><th scope="row">Delivery</th><td>Physical on the third Wednesday, subject to the rulebook holiday adjustment</td><td>An open position can create an obligation to exchange MXN and USD through the clearing process</td></tr>
   </tbody></table></div>
-  <p class="mx-source-note"><strong>Specification boundary:</strong> the $5 figure is the CME Globex outright tick. A broker display, synthetic continuous symbol, FX Link instrument, option, spot quote or ClearPort submission can use a different price convention or increment. Verify the exact order ticket rather than transferring this shortcut by name alone.</p>
+  <p class="fx-source-note"><strong>Specification boundary:</strong> the $5 figure is the CME Globex outright tick. A broker display, synthetic continuous symbol, FX Link instrument, option, spot quote or ClearPort submission can use a different price convention or increment. Verify the exact order ticket rather than transferring this shortcut by name alone.</p>
 </section>
 
-<section class="mx-section" id="quote-math" aria-labelledby="quote-math-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Quotation first</p><h2 id="quote-math-title">6M Runs Opposite the Familiar USD/MXN Screen</h2><p>Many spot-FX screens show U.S. dollars as the base currency and Mexican pesos as the terms currency: USD/MXN. CME 6M is quoted in the other direction, MXN/USD, as dollars per peso. A higher 6M price therefore means the peso is worth more dollars. A lower 6M price means it is worth fewer dollars.</p></div>
-  <div class="mx-quote-board" aria-label="Quote direction comparison"><span><strong>Common spot display</strong>USD/MXN: pesos per U.S. dollar</span><span><strong>CME 6M display</strong>MXN/USD: U.S. dollars per peso</span><span><strong>Direction check</strong>Higher 6M generally means stronger MXN versus USD</span></div>
-  <div class="mx-caution"><strong>Reciprocal is a convention check, not an execution price.</strong><p>At the same economic instant, 1 divided by a USD/MXN quote gives a rough MXN/USD orientation. Futures and spot can differ because the dated contract embeds time, relative funding and basis. Bid-ask spreads and timestamp differences also matter. Do not manufacture a tradable futures quote by simply inverting a stale spot print.</p></div>
+<section class="fx-section" id="quote-math" aria-labelledby="quote-math-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Quotation first</p><h2 id="quote-math-title">6M Runs Opposite the Familiar USD/MXN Screen</h2><p>Many spot-FX screens show U.S. dollars as the base currency and Mexican pesos as the terms currency: USD/MXN. CME 6M is quoted in the other direction, MXN/USD, as dollars per peso. A higher 6M price therefore means the peso is worth more dollars. A lower 6M price means it is worth fewer dollars.</p></div>
+  <div class="fx-quote-board" aria-label="Quote direction comparison"><span><strong>Common spot display</strong>USD/MXN: pesos per U.S. dollar</span><span><strong>CME 6M display</strong>MXN/USD: U.S. dollars per peso</span><span><strong>Direction check</strong>Higher 6M generally means stronger MXN versus USD</span></div>
+  <div class="fx-caution"><strong>Reciprocal is a convention check, not an execution price.</strong><p>At the same economic instant, 1 divided by a USD/MXN quote gives a rough MXN/USD orientation. Futures and spot can differ because the dated contract embeds time, relative funding and basis. Bid-ask spreads and timestamp differences also matter. Do not manufacture a tradable futures quote by simply inverting a stale spot print.</p></div>
 
   <h3>Two independent P&amp;L methods should agree</h3>
-  <div class="mx-formula" aria-label="6M gross profit and loss formula"><code>(Exit price - entry price) &times; 500,000 &times; contracts</code><i aria-hidden="true">=</i><strong>Long gross P&amp;L in USD</strong></div>
-  <div class="mx-two-column">
-    <article class="mx-panel"><p class="mx-card-label">Multiplier route</p><h3>Long 0.05540 to 0.05610</h3><p>The quote change is 0.00070. Multiply 0.00070 by 500,000 MXN to get <strong>$350 gross</strong> for one contract. Two contracts produce $700 gross before commissions, exchange fees and slippage.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">Tick route</p><h3>Count 70 outright ticks</h3><p>Divide 0.00070 by 0.00001 to get 70 ticks. Multiply 70 by $5 to reach the same <strong>$350 gross</strong>. If the methods disagree, stop: the unit, decimal, direction or ticket is wrong.</p></article>
+  <div class="fx-formula" aria-label="6M gross profit and loss formula"><code>(Exit price - entry price) &times; 500,000 &times; contracts</code><i aria-hidden="true">=</i><strong>Long gross P&amp;L in USD</strong></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Multiplier route</p><h3>Long 0.05540 to 0.05610</h3><p>The quote change is 0.00070. Multiply 0.00070 by 500,000 MXN to get <strong>$350 gross</strong> for one contract. Two contracts produce $700 gross before commissions, exchange fees and slippage.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Tick route</p><h3>Count 70 outright ticks</h3><p>Divide 0.00070 by 0.00001 to get 70 ticks. Multiply 70 by $5 to reach the same <strong>$350 gross</strong>. If the methods disagree, stop: the unit, decimal, direction or ticket is wrong.</p></article>
   </div>
-  <div class="mx-table-scroll" role="region" aria-label="Reconciled 6M price moves and dollar values" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Quote move</th><th scope="col">Outright ticks</th><th scope="col">One 6M</th><th scope="col">Three 6M</th></tr></thead><tbody>
+  <div class="fx-table-scroll" role="region" aria-label="Reconciled 6M price moves and dollar values" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Quote move</th><th scope="col">Outright ticks</th><th scope="col">One 6M</th><th scope="col">Three 6M</th></tr></thead><tbody>
     <tr><th scope="row">0.00001</th><td>1</td><td>$5</td><td>$15</td></tr>
     <tr><th scope="row">0.00010</th><td>10</td><td>$50</td><td>$150</td></tr>
     <tr><th scope="row">0.00050</th><td>50</td><td>$250</td><td>$750</td></tr>
@@ -127,50 +127,50 @@
   <p>For a short, reverse the price subtraction: entry minus exit. Dollar notional is separate from P&amp;L. At a hypothetical 0.05540 quote, one contract represents <strong>$27,700</strong> of quoted currency value because 500,000 &times; 0.05540 = 27,700. That notional is not the margin deposit, the amount at risk, or a loss cap.</p>
 </section>
 
-<section class="mx-section" id="micro-check" aria-labelledby="micro-check-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Product-name control</p><h2 id="micro-check-title">There Is No Current CME Micro MXN Counterpart to Infer</h2><p>The CME FX Product Guide 2026 lists Micro futures for several currencies in a dedicated Micros and Minis table. It does <strong>not</strong> list a Micro Mexican Peso/U.S. Dollar futures contract matching 6M. That absence matters: a trader cannot safely invent a ticker such as “M6M,” divide the 500,000 MXN unit by ten and assume the market exists.</p></div>
-  <div class="mx-three-column">
-    <article class="mx-panel"><p class="mx-card-label">Established fact</p><h3>6M is the listed standard</h3><p>The verified CME futures row shows 500,000 MXN, physical settlement and a 0.00001 Globex outright increment.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">Not established</p><h3>No matching micro row</h3><p>The current CME Micros and Minis table has no Micro MXN/USD entry. Historical or third-party symbols are not proof of a current listed product.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">Application</p><h3>Fail closed on an unfamiliar symbol</h3><p>Require a live CME product record, rule chapter, contract unit, tick and active chain before treating any smaller peso instrument as equivalent.</p></article>
+<section class="fx-section" id="micro-check" aria-labelledby="micro-check-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Product-name control</p><h2 id="micro-check-title">There Is No Current CME Micro MXN Counterpart to Infer</h2><p>The CME FX Product Guide 2026 lists Micro futures for several currencies in a dedicated Micros and Minis table. It does <strong>not</strong> list a Micro Mexican Peso/U.S. Dollar futures contract matching 6M. That absence matters: a trader cannot safely invent a ticker such as “M6M,” divide the 500,000 MXN unit by ten and assume the market exists.</p></div>
+  <div class="fx-three-column">
+    <article class="fx-panel"><p class="fx-card-label">Established fact</p><h3>6M is the listed standard</h3><p>The verified CME futures row shows 500,000 MXN, physical settlement and a 0.00001 Globex outright increment.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Not established</p><h3>No matching micro row</h3><p>The current CME Micros and Minis table has no Micro MXN/USD entry. Historical or third-party symbols are not proof of a current listed product.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Application</p><h3>Fail closed on an unfamiliar symbol</h3><p>Require a live CME product record, rule chapter, contract unit, tick and active chain before treating any smaller peso instrument as equivalent.</p></article>
   </div>
-  <p class="mx-related">Smaller sizing cannot be created by renaming the standard contract. Use the integer risk workflow in <a href="6m-margin-requirements.html">6M margin requirements and position sizing</a>; if one contract exceeds the risk budget, the valid 6M size is zero.</p>
+  <p class="fx-related">Smaller sizing cannot be created by renaming the standard contract. Use the integer risk workflow in <a href="6m-margin-requirements.html">6M margin requirements and position sizing</a>; if one contract exceeds the risk budget, the valid 6M size is zero.</p>
 </section>
 
-<section class="mx-section" id="months-expiry" aria-labelledby="months-expiry-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Dated obligations</p><h2 id="months-expiry-title">A Root Symbol Is Not a Complete Contract</h2><p>6M is a family of dated futures, not a perpetual peso position. CME lists 13 consecutive calendar months plus two deferred March-cycle quarterly months. A continuous chart can help research, but it is a synthetic series; an executable order requires a specific month and year.</p></div>
-  <div class="mx-lifecycle" aria-label="6M contract lifecycle">
+<section class="fx-section" id="months-expiry" aria-labelledby="months-expiry-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Dated obligations</p><h2 id="months-expiry-title">A Root Symbol Is Not a Complete Contract</h2><p>6M is a family of dated futures, not a perpetual peso position. CME lists 13 consecutive calendar months plus two deferred March-cycle quarterly months. A continuous chart can help research, but it is a synthetic series; an executable order requires a specific month and year.</p></div>
+  <div class="fx-lifecycle" aria-label="6M contract lifecycle">
     <article><span>1</span><h3>Select the dated month</h3><p>Confirm root, month code, year and broker mapping. Check volume, open interest, spread and depth in that exact contract.</p></article>
     <article><span>2</span><h3>Monitor migration</h3><p>Compare the current and next month as activity changes. There is no universal roll date that guarantees the best execution.</p></article>
     <article><span>3</span><h3>Respect termination</h3><p>Trading ends on the second business day before the third Wednesday, normally at 9:16 a.m. CT. Holiday rules can shift the date.</p></article>
     <article><span>4</span><h3>Deliver or be out</h3><p>Physical delivery is scheduled for the third Wednesday, adjusted under Rule 256. A broker may impose an earlier cutoff.</p></article>
   </div>
-  <div class="mx-caution"><strong>“I planned to roll” is not an expiry control.</strong><p>A roll needs an owner, deadline, target month, order route and cancellation check. A forgotten working order, a partial fill or a broker cutoff earlier than the exchange deadline can leave an unintended deliverable position.</p></div>
+  <div class="fx-caution"><strong>“I planned to roll” is not an expiry control.</strong><p>A roll needs an owner, deadline, target month, order route and cancellation check. A forgotten working order, a partial fill or a broker cutoff earlier than the exchange deadline can leave an unintended deliverable position.</p></div>
 </section>
 
-<section class="mx-section" id="hours-roll" aria-labelledby="hours-roll-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Access versus execution</p><h2 id="hours-roll-title">Nearly 23 Hours of Trading Does Not Mean Uniform Liquidity</h2><p>The regular CME FX Globex schedule is Sunday through Friday, 5:00 p.m. to 4:00 p.m. Chicago time, with a 60-minute daily break beginning at 4:00 p.m. CT. Holiday schedules can override normal hours. A market being open only establishes access; it says nothing about current spread, queue depth, slippage or the ability to exit size.</p></div>
-  <div class="mx-process" aria-label="6M roll verification process">
+<section class="fx-section" id="hours-roll" aria-labelledby="hours-roll-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Access versus execution</p><h2 id="hours-roll-title">Nearly 23 Hours of Trading Does Not Mean Uniform Liquidity</h2><p>The regular CME FX Globex schedule is Sunday through Friday, 5:00 p.m. to 4:00 p.m. Chicago time, with a 60-minute daily break beginning at 4:00 p.m. CT. Holiday schedules can override normal hours. A market being open only establishes access; it says nothing about current spread, queue depth, slippage or the ability to exit size.</p></div>
+  <div class="fx-process" aria-label="6M roll verification process">
     <article><span>Observe</span><h3>Compare both books</h3><p>Record spread, top-of-book size, nearby depth, volume and open interest in the expiring and candidate month.</p></article>
     <article><span>Explain</span><h3>Separate basis from error</h3><p>Different expiries can trade at different prices because time and relative rates matter. A month-to-month gap is not automatically bad data.</p></article>
     <article><span>Execute</span><h3>Choose the route</h3><p>Compare a calendar spread with separate outright orders. Tick rules, liquidity, fees and leg risk differ by route.</p></article>
     <article><span>Verify</span><h3>Reconcile the result</h3><p>Confirm old-month quantity is zero, new month and direction are correct, and every stale order has been cancelled.</p></article>
   </div>
-  <p class="mx-related">The live cost decision belongs in <a href="6m-slippage.html">the 6M slippage and market-quality guide</a>. Research-series construction belongs in <a href="6m-backtesting.html">the 6M backtesting protocol</a>.</p>
+  <p class="fx-related">The live cost decision belongs in <a href="6m-slippage.html">the 6M slippage and market-quality guide</a>. Research-series construction belongs in <a href="6m-backtesting.html">the 6M backtesting protocol</a>.</p>
 </section>
 
-<section class="mx-section" id="margin-boundary" aria-labelledby="margin-boundary-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Collateral is not a stop</p><h2 id="margin-boundary-title">Margin Answers a Funding Question, Not “How Much Can I Lose?”</h2><p>CFTC guidance defines futures margin as a performance bond rather than partial payment for the contract. CME performance-bond requirements are risk based and can change. A futures commission merchant may require more collateral, and a broker may withdraw a lower intraday concession around volatility, events or the session close.</p></div>
-  <div class="mx-two-column">
-    <article class="mx-panel"><h3>Margin can answer</h3><ul><li>Whether the account meets the current opening and maintenance requirement.</li><li>Whether overnight, event or concentration rules require more funds.</li><li>Whether a margin call or broker liquidation right can be triggered.</li><li>Whether a recognized portfolio offset changes collateral.</li></ul></article>
-    <article class="mx-panel"><h3>Margin cannot answer</h3><ul><li>Where a trade thesis is invalid.</li><li>How far price can gap through a stop.</li><li>What the bid-ask spread, fees and slippage will cost.</li><li>Whether one 500,000 MXN contract fits the loss budget.</li></ul></article>
+<section class="fx-section" id="margin-boundary" aria-labelledby="margin-boundary-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Collateral is not a stop</p><h2 id="margin-boundary-title">Margin Answers a Funding Question, Not “How Much Can I Lose?”</h2><p>CFTC guidance defines futures margin as a performance bond rather than partial payment for the contract. CME performance-bond requirements are risk based and can change. A futures commission merchant may require more collateral, and a broker may withdraw a lower intraday concession around volatility, events or the session close.</p></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><h3>Margin can answer</h3><ul><li>Whether the account meets the current opening and maintenance requirement.</li><li>Whether overnight, event or concentration rules require more funds.</li><li>Whether a margin call or broker liquidation right can be triggered.</li><li>Whether a recognized portfolio offset changes collateral.</li></ul></article>
+    <article class="fx-panel"><h3>Margin cannot answer</h3><ul><li>Where a trade thesis is invalid.</li><li>How far price can gap through a stop.</li><li>What the bid-ask spread, fees and slippage will cost.</li><li>Whether one 500,000 MXN contract fits the loss budget.</li></ul></article>
   </div>
   <p>Check the live CME margin page and the broker agreement for funding. Calculate risk separately from price distance, $5 per tick, quantity, expected costs and a declared stress allowance. A broker “day margin” is only a temporary financing constraint; it is never a maximum possible loss.</p>
 </section>
 
-<section class="mx-section" id="preorder" aria-labelledby="preorder-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Final control</p><h2 id="preorder-title">The Nine-Field 6M Ticket Check</h2><p>Do not rely on the root symbol or this article alone at order time. The exchange record, live chain, broker ticket and personal plan must all agree.</p></div>
-  <ul class="mx-checklist">
+<section class="fx-section" id="preorder" aria-labelledby="preorder-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Final control</p><h2 id="preorder-title">The Nine-Field 6M Ticket Check</h2><p>Do not rely on the root symbol or this article alone at order time. The exchange record, live chain, broker ticket and personal plan must all agree.</p></div>
+  <ul class="fx-checklist">
     <li><strong>Product:</strong> the ticket is CME 6M Mexican Peso/U.S. Dollar futures, not spot USD/MXN, an option, FX Link or a synthetic chart.</li>
     <li><strong>Expiry:</strong> month and year are explicit; the continuous chart maps to the intended dated contract.</li>
     <li><strong>Direction:</strong> the plan accounts for 6M being quoted USD per MXN; higher means a more valuable peso versus the dollar.</li>
@@ -183,15 +183,15 @@
   </ul>
 </section>
 
-<section class="mx-section mx-faq" id="faq" aria-labelledby="faq-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Frequently asked questions</p><h2 id="faq-title">6M Contract Questions</h2></div>
+<section class="fx-section fx-faq" id="faq" aria-labelledby="faq-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Frequently asked questions</p><h2 id="faq-title">6M Contract Questions</h2></div>
   <details><summary>How much is one 6M futures tick worth?</summary><p>On CME Globex, the 6M outright minimum increment is 0.00001 U.S. dollar per Mexican peso. Multiplied by the 500,000 MXN trading unit, one tick is $5 per contract.</p></details>
   <details><summary>Is 6M quoted as USD/MXN or MXN/USD?</summary><p>CME 6M futures are quoted in U.S. dollars per Mexican peso, or MXN/USD. That is the inverse direction of the USD/MXN convention commonly shown in spot FX.</p></details>
   <details><summary>Does CME list a Micro Mexican Peso futures contract?</summary><p>The CME FX Product Guide 2026 does not list a Micro MXN/USD futures counterpart in its Micros and Minis table. Traders should not infer a micro ticker by adding the letter M to 6M.</p></details>
   <details><summary>Does 6M margin cap the possible loss?</summary><p>No. Exchange performance bond and broker margin are funding requirements, not maximum-loss amounts. Price movement, contract quantity, gaps, slippage, fees and liquidation determine realized loss.</p></details>
 </section>
 
-<details class="mx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary><ul>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary><ul>
   <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/256/256.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 256: Mexican Peso/U.S. Dollar futures</a> for the 500,000 MXN trading unit, Globex and ClearPort increments, termination date rule and physical-delivery terms.</li>
   <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME FX Product Guide 2026</a> for 6M/MP codes, USD-per-MXN quote units, outright and spread increments, physical settlement, and the current Micros and Minis inventory.</li>
   <li><a href="https://www.cmegroup.com/markets/fx/emerging-market/mexican-peso.contractSpecs.html" target="_blank" rel="noopener">CME Mexican Peso futures contract specifications</a> for the listed-month schedule, regular Globex hours and usual 9:16 a.m. CT termination time.</li>
@@ -201,7 +201,7 @@
   <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CFTCGlossary/index.htm" target="_blank" rel="noopener">CFTC futures glossary</a> and <a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/FuturesMarketBasics/index.htm" target="_blank" rel="noopener">CFTC futures-market basics</a> for margin, mark-to-market, delivery and loss-risk definitions.</li>
 </ul><p>Sources and contract terms were reviewed August 13, 2026. The exchange rulebook and current product guide control over older brochures or platform labels. All dollar arithmetic is Grizzly Parrot Trading calculation: contract unit multiplied by price change, or tick count multiplied by tick value. Worked prices are hypothetical, not forecasts or trading results. No original liquidity, slippage, volatility or profitability study is reported here. Specifications, active months, hours, margins and broker policies can change.</p></details>
 
-<aside class="mx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>Use this contract reference for general education, not as individualized trading, investment, legal, tax, accounting, hedging or brokerage guidance. Futures combine leverage with physical-delivery obligations. Gaps, slippage and forced liquidation can create losses beyond the initial margin deposit. Verify the current exchange rulebook, exact dated contract, live order ticket, broker agreement and your financial capacity before trading.</p></aside>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>Use this contract reference for general education, not as individualized trading, investment, legal, tax, accounting, hedging or brokerage guidance. Futures combine leverage with physical-delivery obligations. Gaps, slippage and forced liquidation can create losses beyond the initial margin deposit. Verify the current exchange rulebook, exact dated contract, live order ticket, broker agreement and your financial capacity before trading.</p></aside>
 <!-- ARTICLE BODY END -->
 </article>
 </main>

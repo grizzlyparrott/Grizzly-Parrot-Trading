@@ -28,7 +28,7 @@
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="/futures-basics/6c-research-library.css?v=20260813a">
+  <link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
   <script type="application/ld+json">
@@ -66,22 +66,22 @@
 </head>
 <body>
 <header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
-<main class="container article-container cad-library">
+<main class="container article-container currency-library">
 <article>
 <!-- ARTICLE BODY START -->
-<header class="ca-hero">
-  <p class="ca-kicker">Contract mechanics &middot; 6C / MCD</p>
+<header class="fx-hero">
+  <p class="fx-kicker">Contract mechanics &middot; 6C / MCD</p>
   <h1>6C Tick Size, Tick Value and Contract Specs</h1>
-  <p class="ca-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
-  <p class="ca-hero-lede">The standard outright calculation is <strong>100,000 CAD &times; 0.00005 USD per CAD = $5</strong>. Micro MCD uses a different price grid: <strong>10,000 CAD &times; 0.0001 = $1</strong>. Those two products express the same CAD/USD direction, but their tick counts, listed expiries and execution conditions are not interchangeable.</p>
-  <dl class="ca-hero-metrics" aria-label="Core standard 6C specifications"><div><dt>Trading unit</dt><dd>100,000 CAD</dd></div><div><dt>Outright tick</dt><dd>0.00005</dd></div><div><dt>Tick value</dt><dd>$5</dd></div><div><dt>Settlement</dt><dd>Physical</dd></div></dl>
+  <p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+  <p class="fx-hero-lede">The standard outright calculation is <strong>100,000 CAD &times; 0.00005 USD per CAD = $5</strong>. Micro MCD uses a different price grid: <strong>10,000 CAD &times; 0.0001 = $1</strong>. Those two products express the same CAD/USD direction, but their tick counts, listed expiries and execution conditions are not interchangeable.</p>
+  <dl class="fx-hero-metrics" aria-label="Core standard 6C specifications"><div><dt>Trading unit</dt><dd>100,000 CAD</dd></div><div><dt>Outright tick</dt><dd>0.00005</dd></div><div><dt>Tick value</dt><dd>$5</dd></div><div><dt>Settlement</dt><dd>Physical</dd></div></dl>
 </header>
 
-<nav class="ca-jump-nav" aria-label="On this page"><a href="#verified-specs">Specs</a><a href="#pnl-math">P&amp;L math</a><a href="#micro">MCD</a><a href="#expiry">Expiry</a><a href="#hours-roll">Hours and roll</a><a href="#margin">Margin</a><a href="#faq">FAQ</a></nav>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#verified-specs">Specs</a><a href="#pnl-math">P&amp;L math</a><a href="#micro">MCD</a><a href="#expiry">Expiry</a><a href="#hours-roll">Hours and roll</a><a href="#margin">Margin</a><a href="#faq">FAQ</a></nav>
 
-<section class="ca-section" id="verified-specs" aria-labelledby="verified-specs-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Exchange record</p><h2 id="verified-specs-title">Start With the Outright Contract, Not a Platform Nickname</h2><p>CME Rule 252 and the 2026 FX Product Guide identify Canadian Dollar/U.S. Dollar futures with Globex code 6C. The trading unit is 100,000 Canadian dollars, the quote is U.S. dollars per Canadian dollar and final settlement is physical. A higher 6C quote means one Canadian dollar buys more U.S. dollars; it generally represents a stronger CAD relative to USD.</p></div>
-  <div class="ca-table-scroll" role="region" aria-label="Current standard 6C contract specifications" tabindex="0"><table class="ca-table"><thead><tr><th scope="col">Specification</th><th scope="col">Current standard 6C term</th><th scope="col">Operational meaning</th></tr></thead><tbody>
+<section class="fx-section" id="verified-specs" aria-labelledby="verified-specs-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Exchange record</p><h2 id="verified-specs-title">Start With the Outright Contract, Not a Platform Nickname</h2><p>CME Rule 252 and the 2026 FX Product Guide identify Canadian Dollar/U.S. Dollar futures with Globex code 6C. The trading unit is 100,000 Canadian dollars, the quote is U.S. dollars per Canadian dollar and final settlement is physical. A higher 6C quote means one Canadian dollar buys more U.S. dollars; it generally represents a stronger CAD relative to USD.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Current standard 6C contract specifications" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Specification</th><th scope="col">Current standard 6C term</th><th scope="col">Operational meaning</th></tr></thead><tbody>
     <tr><th scope="row">Contract</th><td>Canadian Dollar/U.S. Dollar futures; CME Rule 252</td><td>The root code alone is incomplete; select a contract month and year</td></tr>
     <tr><th scope="row">Trading unit</th><td>100,000 CAD</td><td>Multiply any quote change by 100,000 for one-contract gross P&amp;L</td></tr>
     <tr><th scope="row">Quotation</th><td>USD per CAD</td><td>0.72500 means one CAD is priced at $0.72500</td></tr>
@@ -89,28 +89,28 @@
     <tr><th scope="row">Listed expiries</th><td>Serial contracts listed for 16 months plus March-cycle quarterlies listed for 20 consecutive quarters</td><td>The quarterly cycle is March, June, September and December; CME expanded 6C effective May 10, 2026, and the live chain still controls</td></tr>
     <tr><th scope="row">Final settlement</th><td>Physical delivery</td><td>Close, roll or follow delivery rules and funding requirements</td></tr>
   </tbody></table></div>
-  <p class="ca-source-note">This page addresses the Globex <em>outright</em> increment. CME lists different increments for some spread and ClearPort transactions. A calendar-spread quote therefore needs its own specification check; never force the $5 outright shortcut onto another trade type.</p>
+  <p class="fx-source-note">This page addresses the Globex <em>outright</em> increment. CME lists different increments for some spread and ClearPort transactions. A calendar-spread quote therefore needs its own specification check; never force the $5 outright shortcut onto another trade type.</p>
 </section>
 
-<section class="ca-section" id="pnl-math" aria-labelledby="pnl-math-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Price-to-dollar conversion</p><h2 id="pnl-math-title">Two Valid P&amp;L Methods Must Reconcile</h2><p>The multiplier method works for every valid price change. For a long position, gross P&amp;L is <strong>(exit minus entry) &times; 100,000 &times; contracts</strong>. For a short, reverse entry and exit. Tick counting reaches the same answer when the quote change is divided by the correct outright increment.</p></div>
-  <div class="ca-two-column">
-    <article class="ca-panel"><p class="ca-card-label">Multiplier method</p><h3>Long from 0.72500 to 0.72620</h3><p>The change is 0.00120. Multiply 0.00120 by 100,000 CAD to get <strong>$120 gross</strong> for one standard contract. Two contracts would produce $240 gross. Commissions, exchange fees and slippage still reduce the result.</p></article>
-    <article class="ca-panel"><p class="ca-card-label">Tick method</p><h3>Count 24 outright ticks</h3><p>Divide 0.00120 by 0.00005 to get 24 ticks. Multiply 24 by $5 to get the same <strong>$120 gross</strong>. If the two methods disagree, the price increment, contract size or decimal placement is wrong.</p></article>
+<section class="fx-section" id="pnl-math" aria-labelledby="pnl-math-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Price-to-dollar conversion</p><h2 id="pnl-math-title">Two Valid P&amp;L Methods Must Reconcile</h2><p>The multiplier method works for every valid price change. For a long position, gross P&amp;L is <strong>(exit minus entry) &times; 100,000 &times; contracts</strong>. For a short, reverse entry and exit. Tick counting reaches the same answer when the quote change is divided by the correct outright increment.</p></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Multiplier method</p><h3>Long from 0.72500 to 0.72620</h3><p>The change is 0.00120. Multiply 0.00120 by 100,000 CAD to get <strong>$120 gross</strong> for one standard contract. Two contracts would produce $240 gross. Commissions, exchange fees and slippage still reduce the result.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Tick method</p><h3>Count 24 outright ticks</h3><p>Divide 0.00120 by 0.00005 to get 24 ticks. Multiply 24 by $5 to get the same <strong>$120 gross</strong>. If the two methods disagree, the price increment, contract size or decimal placement is wrong.</p></article>
   </div>
-  <div class="ca-table-scroll" role="region" aria-label="Standard 6C price moves and dollar values" tabindex="0"><table class="ca-table"><thead><tr><th scope="col">Quote move</th><th scope="col">Standard ticks</th><th scope="col">One 6C</th><th scope="col">Three 6C</th></tr></thead><tbody>
+  <div class="fx-table-scroll" role="region" aria-label="Standard 6C price moves and dollar values" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Quote move</th><th scope="col">Standard ticks</th><th scope="col">One 6C</th><th scope="col">Three 6C</th></tr></thead><tbody>
     <tr><th scope="row">0.00005</th><td>1</td><td>$5</td><td>$15</td></tr>
     <tr><th scope="row">0.00010</th><td>2</td><td>$10</td><td>$30</td></tr>
     <tr><th scope="row">0.00050</th><td>10</td><td>$50</td><td>$150</td></tr>
     <tr><th scope="row">0.00120</th><td>24</td><td>$120</td><td>$360</td></tr>
     <tr><th scope="row">0.00500</th><td>100</td><td>$500</td><td>$1,500</td></tr>
   </tbody></table></div>
-  <div class="ca-caution"><strong>One conventional 0.0001 pip is not one current standard outright tick.</strong><p>On standard 6C, a 0.0001 move equals two 0.00005 ticks and $10. Some charting platforms label increments differently. The robust check is contract unit multiplied by the exchange increment, not the word shown beside a ladder setting.</p></div>
+  <div class="fx-caution"><strong>One conventional 0.0001 pip is not one current standard outright tick.</strong><p>On standard 6C, a 0.0001 move equals two 0.00005 ticks and $10. Some charting platforms label increments differently. The robust check is contract unit multiplied by the exchange increment, not the word shown beside a ladder setting.</p></div>
 </section>
 
-<section class="ca-section" id="micro" aria-labelledby="micro-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Smaller instrument</p><h2 id="micro-title">MCD Is One-Tenth the CAD Unit, With a Different Tick Grid</h2><p>CME Rule 293 and the 2026 product guide list Micro CAD/USD futures under code MCD. One contract represents 10,000 CAD and is quoted in USD per CAD. Its minimum price fluctuation is 0.0001, so one MCD tick is $1. Ten MCD contracts equal one standard contract's CAD unit, but they generate more tickets and may have different spread, depth, commissions and available expiries.</p></div>
-  <div class="ca-table-scroll" role="region" aria-label="Standard 6C and Micro MCD comparison" tabindex="0"><table class="ca-table"><thead><tr><th scope="col">Item</th><th scope="col">Standard 6C</th><th scope="col">Micro MCD</th><th scope="col">Do not miss</th></tr></thead><tbody>
+<section class="fx-section" id="micro" aria-labelledby="micro-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Smaller instrument</p><h2 id="micro-title">MCD Is One-Tenth the CAD Unit, With a Different Tick Grid</h2><p>CME Rule 293 and the 2026 product guide list Micro CAD/USD futures under code MCD. One contract represents 10,000 CAD and is quoted in USD per CAD. Its minimum price fluctuation is 0.0001, so one MCD tick is $1. Ten MCD contracts equal one standard contract's CAD unit, but they generate more tickets and may have different spread, depth, commissions and available expiries.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Standard 6C and Micro MCD comparison" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Item</th><th scope="col">Standard 6C</th><th scope="col">Micro MCD</th><th scope="col">Do not miss</th></tr></thead><tbody>
     <tr><th scope="row">Trading unit</th><td>100,000 CAD</td><td>10,000 CAD</td><td>Ten micros reproduce one standard unit before costs</td></tr>
     <tr><th scope="row">Quote</th><td>USD per CAD</td><td>USD per CAD</td><td>Higher means stronger CAD in both products</td></tr>
     <tr><th scope="row">Outright increment</th><td>0.00005</td><td>0.0001</td><td>A 0.0001 move is two standard ticks but one micro tick</td></tr>
@@ -122,40 +122,40 @@
   <p>At a hypothetical 0.72500 quote, one standard contract has $72,500 of U.S.-dollar notional and one MCD has $7,250. Notional is the value of the represented currency at that price. It is not the cash paid for the contract, the performance bond, a price target or a maximum-loss number.</p>
 </section>
 
-<section class="ca-section" id="expiry" aria-labelledby="expiry-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Lifecycle</p><h2 id="expiry-title">Both Contracts Can Reach Physical Delivery</h2><p>Current Rules 252 and 293 say trading terminates on the <strong>business day immediately preceding the third Wednesday</strong> of the contract month. CME's product materials give the usual final trading time as 9:16 a.m. Chicago time. If that termination date is a Chicago or New York bank holiday, the rule moves termination to the preceding common business day. Delivery normally occurs on the third Wednesday, subject to the rulebook's holiday adjustment.</p></div>
-  <ol class="ca-method">
+<section class="fx-section" id="expiry" aria-labelledby="expiry-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Lifecycle</p><h2 id="expiry-title">Both Contracts Can Reach Physical Delivery</h2><p>Current Rules 252 and 293 say trading terminates on the <strong>business day immediately preceding the third Wednesday</strong> of the contract month. CME's product materials give the usual final trading time as 9:16 a.m. Chicago time. If that termination date is a Chicago or New York bank holiday, the rule moves termination to the preceding common business day. Delivery normally occurs on the third Wednesday, subject to the rulebook's holiday adjustment.</p></div>
+  <ol class="fx-method">
     <li><strong>Identify the exact dated contract.</strong><span>A continuous symbol is a chart construction, not a deliverable position. Record the root, month code, year and broker symbol.</span></li>
     <li><strong>Open the current expiration calendar.</strong><span>Do not calculate a last-trade date from memory. Holidays and exchange notices can change the practical date.</span></li>
     <li><strong>Read the broker's cutoff.</strong><span>An FCM can require exit earlier than the exchange termination and may liquidate an account that is not approved or funded for delivery.</span></li>
     <li><strong>Set a personal buffer.</strong><span>A trader who does not intend to exchange CAD and USD should plan an exit or roll well before the operational deadline.</span></li>
   </ol>
-  <div class="ca-caution"><strong>“Usually rolled” does not mean cash settled.</strong><p>Most speculative positions may be offset before delivery, but that behavior does not change the legal contract. A forgotten working order or misidentified month can create an expiry problem even when the trade thesis was short term.</p></div>
+  <div class="fx-caution"><strong>“Usually rolled” does not mean cash settled.</strong><p>Most speculative positions may be offset before delivery, but that behavior does not change the legal contract. A forgotten working order or misidentified month can create an expiry problem even when the trade thesis was short term.</p></div>
 </section>
 
-<section class="ca-section" id="hours-roll" aria-labelledby="hours-roll-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Market access and migration</p><h2 id="hours-roll-title">Nearly 23 Hours of Access Is Not 23 Hours of Equal Execution</h2><p>CME's regular FX Globex context is Sunday through Friday from 5:00 p.m. to 4:00 p.m. CT, with a 60-minute daily break beginning at 4:00 p.m. CT. Holiday schedules can shorten or alter those hours. Being able to submit an order says nothing about spread, visible depth, fill probability or slippage at that moment; those must be observed in the exact contract.</p></div>
-  <div class="ca-process">
+<section class="fx-section" id="hours-roll" aria-labelledby="hours-roll-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Market access and migration</p><h2 id="hours-roll-title">Nearly 23 Hours of Access Is Not 23 Hours of Equal Execution</h2><p>CME's regular FX Globex context is Sunday through Friday from 5:00 p.m. to 4:00 p.m. CT, with a 60-minute daily break beginning at 4:00 p.m. CT. Holiday schedules can shorten or alter those hours. Being able to submit an order says nothing about spread, visible depth, fill probability or slippage at that moment; those must be observed in the exact contract.</p></div>
+  <div class="fx-process">
     <article><span>1</span><h3>Compare both months</h3><p>Watch volume, open interest, bid-ask spread and usable depth in the expiring and next candidate contract. Do not assume a fixed roll date fits every cycle.</p></article>
     <article><span>2</span><h3>Record the basis</h3><p>Different expiries can trade at different prices because time and relative interest rates matter. The price gap is not automatically a chart error.</p></article>
     <article><span>3</span><h3>Choose the route</h3><p>Compare an outright close-and-reopen with the available calendar-spread market. Each route has its own tick, liquidity and transaction-cost profile.</p></article>
     <article><span>4</span><h3>Repair the research series</h3><p>Document whether a backtest uses raw contracts, a ratio-adjusted series or a back-adjusted continuous series. Never execute a synthetic continuous price.</p></article>
   </div>
-  <p class="ca-related">Execution-window selection belongs in <a href="best-time-to-trade-6c.html">the 6C trading-window decision guide</a>. A separate <a href="6c-best-trading-sessions.html">session-study protocol</a> explains how to test time-of-day liquidity instead of declaring a universal best hour.</p>
+  <p class="fx-related">Execution-window selection belongs in <a href="best-time-to-trade-6c.html">the 6C trading-window decision guide</a>. A separate <a href="6c-best-trading-sessions.html">session-study protocol</a> explains how to test time-of-day liquidity instead of declaring a universal best hour.</p>
 </section>
 
-<section class="ca-section" id="margin" aria-labelledby="margin-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Funding is not risk</p><h2 id="margin-title">Margin Figures Expire Faster Than Contract Multipliers</h2><p>CME performance bonds are risk-based collateral requirements and can change. A broker may require more, may advertise a lower intraday amount, and may remove that concession near the close, around events or during volatile conditions. None of those numbers caps the price move or promises where a liquidation will fill.</p></div>
-  <div class="ca-two-column">
-    <article class="ca-panel"><h3>What margin can answer</h3><ul><li>Whether the account meets the current funding requirement.</li><li>Whether an overnight or event-period requirement differs.</li><li>Whether a broker may issue a call or liquidate under its agreement.</li><li>Whether offsets apply to a declared portfolio.</li></ul></article>
-    <article class="ca-panel"><h3>What margin cannot answer</h3><ul><li>Where the thesis becomes invalid.</li><li>How far price can gap beyond a stop.</li><li>What slippage, fees and spread will cost.</li><li>Whether the chosen contract count fits an account loss budget.</li></ul></article>
+<section class="fx-section" id="margin" aria-labelledby="margin-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Funding is not risk</p><h2 id="margin-title">Margin Figures Expire Faster Than Contract Multipliers</h2><p>CME performance bonds are risk-based collateral requirements and can change. A broker may require more, may advertise a lower intraday amount, and may remove that concession near the close, around events or during volatile conditions. None of those numbers caps the price move or promises where a liquidation will fill.</p></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><h3>What margin can answer</h3><ul><li>Whether the account meets the current funding requirement.</li><li>Whether an overnight or event-period requirement differs.</li><li>Whether a broker may issue a call or liquidate under its agreement.</li><li>Whether offsets apply to a declared portfolio.</li></ul></article>
+    <article class="fx-panel"><h3>What margin cannot answer</h3><ul><li>Where the thesis becomes invalid.</li><li>How far price can gap beyond a stop.</li><li>What slippage, fees and spread will cost.</li><li>Whether the chosen contract count fits an account loss budget.</li></ul></article>
   </div>
   <p>Use the live exchange and broker figures for funding, then calculate risk independently. The complete integer-sizing workflow, including cost and gap stress, is in <a href="6c-margin-and-position-sizing.html">6C margin and position sizing</a>.</p>
 </section>
 
-<section class="ca-section" id="preorder" aria-labelledby="preorder-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Final verification</p><h2 id="preorder-title">A Seven-Line Contract Check Before Every Order</h2><p>A correct thesis entered in the wrong product or expiry is still an operational error. Complete this check from current sources and the live order ticket rather than from a screenshot of this article.</p></div>
-  <div class="ca-table-scroll" role="region" aria-label="6C and MCD pre-order verification checklist" tabindex="0"><table class="ca-table"><thead><tr><th scope="col">Field</th><th scope="col">Record</th><th scope="col">Fail closed when</th></tr></thead><tbody>
+<section class="fx-section" id="preorder" aria-labelledby="preorder-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Final verification</p><h2 id="preorder-title">A Seven-Line Contract Check Before Every Order</h2><p>A correct thesis entered in the wrong product or expiry is still an operational error. Complete this check from current sources and the live order ticket rather than from a screenshot of this article.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="6C and MCD pre-order verification checklist" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Field</th><th scope="col">Record</th><th scope="col">Fail closed when</th></tr></thead><tbody>
     <tr><th scope="row">Product</th><td>6C or MCD</td><td>The symbol, unit or price ladder is ambiguous</td></tr>
     <tr><th scope="row">Expiry</th><td>Month and year</td><td>A continuous chart does not match the ticket</td></tr>
     <tr><th scope="row">Outright tick</th><td>0.00005 / $5 or 0.0001 / $1</td><td>Platform labels disagree with exchange arithmetic</td></tr>
@@ -166,15 +166,15 @@
   </tbody></table></div>
 </section>
 
-<section class="ca-section ca-faq" id="faq" aria-labelledby="faq-title">
-  <div class="ca-section-heading"><p class="ca-kicker">Frequently asked questions</p><h2 id="faq-title">6C and MCD Contract Questions</h2></div>
+<section class="fx-section fx-faq" id="faq" aria-labelledby="faq-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Frequently asked questions</p><h2 id="faq-title">6C and MCD Contract Questions</h2></div>
   <details><summary>What is one standard 6C tick worth?</summary><p>The current outright minimum increment is 0.00005 U.S. dollar per Canadian dollar. Multiplied by the 100,000 CAD trading unit, one standard 6C tick is $5.</p></details>
   <details><summary>What is the Micro Canadian Dollar futures ticker and tick value?</summary><p>CME lists Micro CAD/USD futures under Globex code MCD. The trading unit is 10,000 CAD and its 0.0001 minimum increment is worth $1.</p></details>
   <details><summary>Are 6C and MCD cash settled?</summary><p>No. CME classifies both standard 6C and Micro MCD as physically delivered contracts. Traders who do not intend delivery need an exit or roll plan before the applicable broker cutoff.</p></details>
   <details><summary>Does 6C margin define the maximum loss?</summary><p>No. Exchange performance bond and broker margin are funding requirements, not loss limits. Price movement, quantity, gaps, slippage, fees and liquidation determine the realized loss.</p></details>
 </section>
 
-<details class="ca-sources" open><summary>Sources, calculations and editorial disclosure</summary><ul>
+<details class="fx-sources" open><summary>Sources, calculations and editorial disclosure</summary><ul>
   <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">CME Group FX Product Guide 2026</a> for standard 6C and Micro MCD codes, rules, units, final settlement, quote units and outright increments.</li>
   <li><a href="https://www.cmegroup.com/notices/electronic-trading/2026/04/20260420.html" target="_blank" rel="noopener">CME Globex Notice: April 20, 2026</a> for the standard 6C listing-cycle expansion effective May 10, 2026: 16 serial months and 20 consecutive March-cycle quarters.</li>
   <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/252/252.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 252: Canadian Dollar/U.S. Dollar futures</a> for the standard unit, price increment, termination and physical-delivery rules.</li>
@@ -185,7 +185,7 @@
   <li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener">CME Group holiday and trading hours</a> and the <a href="https://www.cmegroup.com/markets/fx/g10/canadian-dollar.margins.html" target="_blank" rel="noopener">live Canadian Dollar margins page</a> for time-sensitive operational checks.</li>
 </ul><p>Sources and methods were reviewed August 13, 2026. The exchange materials above were the primary basis for this specification review. All displayed dollar values are Grizzly Parrot Trading calculations: quote move multiplied by contract unit, or tick count multiplied by exchange tick value. Worked prices are hypothetical and are not forecasts or trading results. Specifications, listings, hours, performance bonds and broker policies can change.</p></details>
 
-<aside class="ca-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>The contract-specification review is educational and not personal trading, investment, legal, tax, accounting, hedging, or brokerage advice. Futures leverage, gaps, and physical delivery can create losses beyond the initial margin deposit. Holiday schedules and broker liquidation cutoffs add operational risk. Verify the current exchange rulebook, exact dated contract, broker agreement, and your own risk capacity before trading.</p></aside>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>The contract-specification review is educational and not personal trading, investment, legal, tax, accounting, hedging, or brokerage advice. Futures leverage, gaps, and physical delivery can create losses beyond the initial margin deposit. Holiday schedules and broker liquidation cutoffs add operational risk. Verify the current exchange rulebook, exact dated contract, broker agreement, and your own risk capacity before trading.</p></aside>
 <!-- ARTICLE BODY END -->
 </article>
 </main>

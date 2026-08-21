@@ -28,7 +28,7 @@
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="/futures-basics/6m-research-library.css?v=20260813a">
+  <link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
   <script type="application/ld+json">
@@ -40,32 +40,32 @@
   <script src="/uet.js" defer></script>
 </head>
 <body>
-<a class="mx-skip-link" href="#main-content">Skip to main content</a>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
-<main id="main-content" class="container article-container mxn-library"><article>
+<main id="main-content" class="container article-container currency-library"><article>
 <!-- ARTICLE BODY START -->
-<header class="mx-hero">
-  <div class="mx-hero-copy">
-    <p class="mx-kicker">Policy event &middot; curve repricing &middot; conditional reaction</p>
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Policy event &middot; curve repricing &middot; conditional reaction</p>
     <h1>Banxico Rate Decisions and 6M: An Event Workflow</h1>
-    <p class="mx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
-    <p class="mx-hero-lede">An unchanged Banxico target can still surprise. The market may have priced a cut, the vote can differ from expectation, the inflation path or balance of risks can change, and guidance can reprice the next several meetings. The event is the complete policy package relative to the prior&mdash;not the size of the rate action alone.</p>
-    <div class="mx-hero-actions"><a class="button-primary" href="#prior">Freeze the prior</a><a class="mx-text-link" href="#matrix">Open the scenario matrix</a></div>
-    <dl class="mx-hero-metrics" aria-label="Policy decision workflow"><div><dt>Before</dt><dd>Expected package</dd></div><div><dt>At release</dt><dd>Full official text</dd></div><div><dt>Bridge</dt><dd>Relative curve</dd></div><div><dt>After</dt><dd>Multi-clock review</dd></div></dl>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="fx-hero-lede">An unchanged Banxico target can still surprise. The market may have priced a cut, the vote can differ from expectation, the inflation path or balance of risks can change, and guidance can reprice the next several meetings. The event is the complete policy package relative to the prior&mdash;not the size of the rate action alone.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#prior">Freeze the prior</a><a class="fx-text-link" href="#matrix">Open the scenario matrix</a></div>
+    <dl class="fx-hero-metrics" aria-label="Policy decision workflow"><div><dt>Before</dt><dd>Expected package</dd></div><div><dt>At release</dt><dd>Full official text</dd></div><div><dt>Bridge</dt><dd>Relative curve</dd></div><div><dt>After</dt><dd>Multi-clock review</dd></div></dl>
   </div>
-  <div class="mx-hero-visual"><div class="mx-market-board"><div class="mx-board-head"><span>Target unchanged</span><strong>Path repriced</strong></div><div class="mx-formula"><code>prior</code><i aria-hidden="true">&rarr;</i><code>package surprise</code><i aria-hidden="true">&rarr;</i><code>curve</code><i aria-hidden="true">&rarr;</i><code>6M</code></div><p>The action, rationale, forecast, risk balance, vote, and guidance can point in different directions. Observe which information the rate curve and currency actually price.</p><p class="mx-board-foot"><span>Package, not headline</span><span>Mexico versus U.S.</span></p></div></div>
+  <div class="fx-hero-visual"><div class="fx-market-board"><div class="fx-board-head"><span>Target unchanged</span><strong>Path repriced</strong></div><div class="fx-formula"><code>prior</code><i aria-hidden="true">&rarr;</i><code>package surprise</code><i aria-hidden="true">&rarr;</i><code>curve</code><i aria-hidden="true">&rarr;</i><code>6M</code></div><p>The action, rationale, forecast, risk balance, vote, and guidance can point in different directions. Observe which information the rate curve and currency actually price.</p><p class="fx-board-foot"><span>Package, not headline</span><span>Mexico versus U.S.</span></p></div></div>
 </header>
 
-<nav class="mx-jump-nav" aria-label="On this page"><a href="#prior">Prior</a><a href="#package">Package</a><a href="#curve">Curve</a><a href="#channels">Channels</a><a href="#timeline">Timeline</a><a href="#failures">Failures</a><a href="#matrix">Scenarios</a></nav>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#prior">Prior</a><a href="#package">Package</a><a href="#curve">Curve</a><a href="#channels">Channels</a><a href="#timeline">Timeline</a><a href="#failures">Failures</a><a href="#matrix">Scenarios</a></nav>
 
-<section class="mx-section" id="prior" aria-labelledby="prior-title">
-  <div class="mx-section-heading"><p class="mx-kicker">The event begins before release</p><h2 id="prior-title">Write the Expected Package and Known Calendar in Advance</h2><p><strong>Established source:</strong> Banxico publishes an official <a href="https://www.banxico.org.mx/monetary-policy/d/%7B0C35369C-BF8F-E5A8-7710-FD5A6716474F%7D.pdf" target="_blank" rel="noopener">calendar for policy statements, minutes, quarterly reports, and financial-stability reports</a>. The calendar also says the Bank can adjust policy outside prescheduled dates when extraordinary events require it. Verify the live document rather than reusing a hard-coded time.</p></div>
-  <div class="mx-method">
+<section class="fx-section" id="prior" aria-labelledby="prior-title">
+  <div class="fx-section-heading"><p class="fx-kicker">The event begins before release</p><h2 id="prior-title">Write the Expected Package and Known Calendar in Advance</h2><p><strong>Established source:</strong> Banxico publishes an official <a href="https://www.banxico.org.mx/monetary-policy/d/%7B0C35369C-BF8F-E5A8-7710-FD5A6716474F%7D.pdf" target="_blank" rel="noopener">calendar for policy statements, minutes, quarterly reports, and financial-stability reports</a>. The calendar also says the Bank can adjust policy outside prescheduled dates when extraordinary events require it. Verify the live document rather than reusing a hard-coded time.</p></div>
+  <div class="fx-method">
     <div><h3>Freeze this record before the embargo lifts</h3><p>Timestamp the active 6M contract and roll state; the expected target action and distribution of views; the expected vote if a credible source exists; the latest Banxico inflation/growth path and risk balance; the expected wording or guidance; selected Mexican and U.S. policy-sensitive rates; the next FOMC path; relevant data releases; and current spread, depth, volatility, and gap limits.</p></div>
     <dl><div><dt>Clock</dt><dd>Official timezone</dd></div><div><dt>Expectation</dt><dd>Named source</dd></div><div><dt>Market</dt><dd>Timestamped snapshot</dd></div><div><dt>Branches</dt><dd>Written before release</dd></div></dl>
   </div>
-  <div class="mx-table-scroll" role="region" aria-label="Banxico event prior fields" tabindex="0">
-    <table class="mx-table">
+  <div class="fx-table-scroll" role="region" aria-label="Banxico event prior fields" tabindex="0">
+    <table class="fx-table">
       <thead><tr><th scope="col">Prior field</th><th scope="col">Required detail</th><th scope="col">Why it matters</th></tr></thead>
       <tbody>
         <tr><th scope="row">Action distribution</th><td>Possible changes, holds, and probabilities or forecast dispersion from a declared source</td><td>“Expected” is a distribution, not always one number</td></tr>
@@ -78,9 +78,9 @@
   </div>
 </section>
 
-<section class="mx-section" id="package" aria-labelledby="package-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Read before labeling</p><h2 id="package-title">Parse the Complete Official Announcement Package</h2><p>Banxico's <a href="https://www.banxico.org.mx/publications-and-press/announcements-of-monetary-policy-decisions/monetary-policy-announcements.html" target="_blank" rel="noopener">official statement archive</a> records decisions and links the full text. If using an English convenience translation, follow Banxico's notice that the Spanish original is the official document.</p></div>
-  <div class="mx-check-grid">
+<section class="fx-section" id="package" aria-labelledby="package-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Read before labeling</p><h2 id="package-title">Parse the Complete Official Announcement Package</h2><p>Banxico's <a href="https://www.banxico.org.mx/publications-and-press/announcements-of-monetary-policy-decisions/monetary-policy-announcements.html" target="_blank" rel="noopener">official statement archive</a> records decisions and links the full text. If using an English convenience translation, follow Banxico's notice that the Spanish original is the official document.</p></div>
+  <div class="fx-check-grid">
     <article><strong>Target action</strong><p>Compare the new overnight interbank target and effective timing with the frozen expectation. Do not stop at “cut,” “hold,” or “hike.”</p></article>
     <article><strong>Vote</strong><p>Record unanimity, dissents, and alternative preferences only when the official package discloses them. A vote surprise can alter the expected path.</p></article>
     <article><strong>Inflation path</strong><p>Compare headline and core forecast vintages, convergence timing, and material revisions. Keep observed data separate from forecasts.</p></article>
@@ -88,12 +88,12 @@
     <article><strong>Activity and external context</strong><p>Track growth, labor, U.S. conditions, trade, exchange-rate, and financial-market assessments that affect the reaction function.</p></article>
     <article><strong>Guidance and optionality</strong><p>Identify explicit forward language, data dependence, pace, and uncertainty. Do not invent a promise where the text preserves flexibility.</p></article>
   </div>
-  <div class="mx-caution"><strong>Evidence labels</strong><p>The decision text, disclosed vote, and published forecasts are established facts. “More restrictive than expected” is an inference relative to the frozen prior. “6M should rise” is a hypothesis that still needs relative-rate, currency, and market-quality confirmation.</p></div>
+  <div class="fx-caution"><strong>Evidence labels</strong><p>The decision text, disclosed vote, and published forecasts are established facts. “More restrictive than expected” is an inference relative to the frozen prior. “6M should rise” is a hypothesis that still needs relative-rate, currency, and market-quality confirmation.</p></div>
 </section>
 
-<section class="mx-section" id="curve" aria-labelledby="curve-title">
-  <div class="mx-section-heading"><p class="mx-kicker">The integration bridge</p><h2 id="curve-title">Observe the Mexican Curve, Then Compare the U.S. Curve at Matched Horizons</h2><p><strong>Established data source:</strong> Banxico's <a href="https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?accion=consultarCuadroAnalitico&amp;idCuadro=CA51&amp;locale=en&amp;usarCache=false" target="_blank" rel="noopener">official interest-rate summary</a> distinguishes the overnight target, overnight funding rate, and other published rates. The Federal Reserve's <a href="https://www.federalreserve.gov/releases/h15/" target="_blank" rel="noopener">H.15 release</a> publishes defined U.S. rates. These sources establish data; choosing a market-implied policy-path proxy and interpreting the spread remains an analytical decision.</p></div>
-  <div class="mx-process" aria-label="Policy-package to relative-curve workflow">
+<section class="fx-section" id="curve" aria-labelledby="curve-title">
+  <div class="fx-section-heading"><p class="fx-kicker">The integration bridge</p><h2 id="curve-title">Observe the Mexican Curve, Then Compare the U.S. Curve at Matched Horizons</h2><p><strong>Established data source:</strong> Banxico's <a href="https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?accion=consultarCuadroAnalitico&amp;idCuadro=CA51&amp;locale=en&amp;usarCache=false" target="_blank" rel="noopener">official interest-rate summary</a> distinguishes the overnight target, overnight funding rate, and other published rates. The Federal Reserve's <a href="https://www.federalreserve.gov/releases/h15/" target="_blank" rel="noopener">H.15 release</a> publishes defined U.S. rates. These sources establish data; choosing a market-implied policy-path proxy and interpreting the spread remains an analytical decision.</p></div>
+  <div class="fx-process" aria-label="Policy-package to relative-curve workflow">
     <article><span>1</span><h3>Stamp the release</h3><p>Preserve the last clean pre-release observations and the first valid post-release observations. Reject stale prints.</p></article>
     <article><span>2</span><h3>Map Mexico repricing</h3><p>Record changes at more than one policy-sensitive horizon. A parallel shift, twist, or reversal carries different path information.</p></article>
     <article><span>3</span><h3>Map U.S. repricing</h3><p>Use comparable horizons and timestamps. Concurrent U.S. data or FOMC news can contaminate the event window.</p></article>
@@ -103,26 +103,26 @@
   <p><strong>Mechanism:</strong> a relative firming of expected Mexican returns can support MXN, all else equal. <strong>Competing interpretation:</strong> if Mexican yields rise because inflation or fiscal risk commands a larger premium, MXN can weaken even as the nominal spread widens.</p>
 </section>
 
-<section class="mx-section" id="channels" aria-labelledby="channels-title">
-  <div class="mx-section-heading"><p class="mx-kicker">From curve to futures</p><h2 id="channels-title">Keep Four FX Channels in Competition</h2><p>No single channel owns every decision. Rank them with the announcement, rates, broader markets, and 6M rather than choosing the story that best matches the first price move.</p></div>
-  <div class="mx-two-column">
-    <article class="mx-panel"><p class="mx-card-label">Relative-return channel</p><h3>Expected Mexican returns change</h3><p>A higher relative path may attract MXN exposure or reduce incentives to fund out of MXN. The gross differential must be adjusted for horizon, costs, volatility, and risk.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">Inflation-risk channel</p><h3>Nominal yield is not real reward</h3><p>If the package raises inflation uncertainty, a higher nominal yield may not improve expected real returns and can increase the required currency risk premium.</p></article>
+<section class="fx-section" id="channels" aria-labelledby="channels-title">
+  <div class="fx-section-heading"><p class="fx-kicker">From curve to futures</p><h2 id="channels-title">Keep Four FX Channels in Competition</h2><p>No single channel owns every decision. Rank them with the announcement, rates, broader markets, and 6M rather than choosing the story that best matches the first price move.</p></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Relative-return channel</p><h3>Expected Mexican returns change</h3><p>A higher relative path may attract MXN exposure or reduce incentives to fund out of MXN. The gross differential must be adjusted for horizon, costs, volatility, and risk.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Inflation-risk channel</p><h3>Nominal yield is not real reward</h3><p>If the package raises inflation uncertainty, a higher nominal yield may not improve expected real returns and can increase the required currency risk premium.</p></article>
   </div>
-  <div class="mx-two-column">
-    <article class="mx-panel"><p class="mx-card-label">Growth/credibility channel</p><h3>Reaction function changes confidence</h3><p>A decision can alter beliefs about growth, policy credibility, and the future inflation path, potentially reinforcing or offsetting the rate channel.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">Positioning/liquidity channel</p><h3>Expected news can reverse</h3><p>A crowded position may close after a seemingly supportive package, while thin depth can exaggerate a first move that does not persist.</p></article>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Growth/credibility channel</p><h3>Reaction function changes confidence</h3><p>A decision can alter beliefs about growth, policy credibility, and the future inflation path, potentially reinforcing or offsetting the rate channel.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Positioning/liquidity channel</p><h3>Expected news can reverse</h3><p>A crowded position may close after a seemingly supportive package, while thin depth can exaggerate a first move that does not persist.</p></article>
   </div>
-  <div class="mx-method">
+  <div class="fx-method">
     <div><h3>Translate the quote</h3><p>CME 6M is quoted in <a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener">U.S. dollars per Mexican peso</a>. Higher 6M means stronger MXN against USD; the common USD/MXN spot quote is reciprocal. Align timestamps and account for the dated futures basis before calling spot and futures confirmation. Verify the contract lifecycle in <a href="6m-tick-size.html">the canonical 6M contract guide</a>.</p></div>
     <dl><div><dt>6M up</dt><dd>MXN stronger</dd></div><div><dt>USD/MXN down</dt><dd>MXN stronger</dd></div><div><dt>Must align</dt><dd>Clock + contract</dd></div><div><dt>Must retain</dt><dd>Basis uncertainty</dd></div></dl>
   </div>
 </section>
 
-<section class="mx-section" id="timeline" aria-labelledby="timeline-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Do not mix clocks</p><h2 id="timeline-title">Review the Reaction in Four Separate Windows</h2><p>Each window answers a different question. The exact boundaries must be declared before the event and adapted to data resolution and liquidity; the labels below are conceptual, not universal minute counts.</p></div>
-  <div class="mx-table-scroll" role="region" aria-label="Banxico event reaction timeline" tabindex="0">
-    <table class="mx-table">
+<section class="fx-section" id="timeline" aria-labelledby="timeline-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Do not mix clocks</p><h2 id="timeline-title">Review the Reaction in Four Separate Windows</h2><p>Each window answers a different question. The exact boundaries must be declared before the event and adapted to data resolution and liquidity; the labels below are conceptual, not universal minute counts.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Banxico event reaction timeline" tabindex="0">
+    <table class="fx-table">
       <thead><tr><th scope="col">Window</th><th scope="col">Question</th><th scope="col">Evidence</th><th scope="col">Failure case</th></tr></thead>
       <tbody>
         <tr><th scope="row">Immediate parse</th><td>What did the action and first-read text change?</td><td>Official release integrity, Mexican front end, 6M/spot, spread and depth</td><td>Algorithmic first move reverses after full text is read</td></tr>
@@ -135,9 +135,9 @@
   <p>The <a href="https://www.banxico.org.mx/publicaciones-y-prensa/minutas-de-las-decisiones-de-politica-monetaria/minutas-politica-monetaria-ta.html" target="_blank" rel="noopener">official minutes archive</a> documents the later minutes event. Minutes can refine the interpretation, but they must not be backfilled into what a trader could know at the statement timestamp.</p>
 </section>
 
-<section class="mx-section" id="failures" aria-labelledby="failures-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Pre-mortem</p><h2 id="failures-title">Name the Ways a Plausible Policy Reading Can Fail</h2><p>A policy thesis is only useful when it can be rejected. These failures are analytical and execution failures; none implies the opposite trade automatically succeeds.</p></div>
-  <div class="mx-check-grid">
+<section class="fx-section" id="failures" aria-labelledby="failures-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Pre-mortem</p><h2 id="failures-title">Name the Ways a Plausible Policy Reading Can Fail</h2><p>A policy thesis is only useful when it can be rejected. These failures are analytical and execution failures; none implies the opposite trade automatically succeeds.</p></div>
+  <div class="fx-check-grid">
     <article><strong>Already priced</strong><p>The action and guidance match the distribution embedded in the curve, leaving little new information.</p></article>
     <article><strong>Split package</strong><p>Action, vote, forecasts, risks, and guidance point in different directions, so the first label hides material conflict.</p></article>
     <article><strong>Wrong curve proxy</strong><p>The chosen maturity reflects liquidity or term premium rather than expected policy.</p></article>
@@ -147,13 +147,13 @@
     <article><strong>Crowded reversal</strong><p>A seemingly supportive package triggers profit-taking or forced reduction.</p></article>
     <article><strong>Execution rejection</strong><p>Spread, depth, slippage, gap risk, or invalidation distance makes the trade unacceptable even when the macro branch survives.</p></article>
   </div>
-  <div class="mx-related">Use <a href="banxico-influence-6m.html">the wider Banxico institutional map</a> for FX facilities, reserves, operations, and non-decision communication. Use <a href="6m-carry-trade.html">the carry-state framework</a> when the rate channel is the proposed mechanism.</div>
+  <div class="fx-related">Use <a href="banxico-influence-6m.html">the wider Banxico institutional map</a> for FX facilities, reserves, operations, and non-decision communication. Use <a href="6m-carry-trade.html">the carry-state framework</a> when the rate channel is the proposed mechanism.</div>
 </section>
 
-<section class="mx-section" id="matrix" aria-labelledby="matrix-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Policy-scenario close</p><h2 id="matrix-title">Key the Scenario Matrix to Observable Confirmation</h2><p>Fill the prior column before release. Fill the package and market columns with timestamped evidence. “No clear branch” is a valid output.</p></div>
-  <div class="mx-table-scroll" role="region" aria-label="Banxico policy scenario matrix for 6M" tabindex="0">
-    <table class="mx-table">
+<section class="fx-section" id="matrix" aria-labelledby="matrix-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Policy-scenario close</p><h2 id="matrix-title">Key the Scenario Matrix to Observable Confirmation</h2><p>Fill the prior column before release. Fill the package and market columns with timestamped evidence. “No clear branch” is a valid output.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Banxico policy scenario matrix for 6M" tabindex="0">
+    <table class="fx-table">
       <thead><tr><th scope="col">Package versus prior</th><th scope="col">Relative-curve confirmation</th><th scope="col">Conditional 6M branch</th><th scope="col">Invalidation</th></tr></thead>
       <tbody>
         <tr><th scope="row">More restrictive</th><td>Mexican expected path firms versus matched U.S. path for policy-related reasons</td><td>Higher-6M / stronger-MXN hypothesis if 6M and reciprocal spot confirm in usable liquidity</td><td>Spread reverses, move is risk-premium driven, or 6M rejects confirmation</td></tr>
@@ -168,7 +168,7 @@
   <p><strong>Research status:</strong> this page is an event workflow, not an event-study result. It does not claim a typical first move, reaction size, persistence, or profitability. Those claims require point-in-time expectations, exact release timestamps, synchronized rates and quotes, contract/roll controls, transaction costs, and an untouched validation period.</p>
 </section>
 
-<details class="mx-sources">
+<details class="fx-sources">
   <summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary>
   <ul>
     <li><a href="https://www.banxico.org.mx/monetary-policy/d/%7B0C35369C-BF8F-E5A8-7710-FD5A6716474F%7D.pdf" target="_blank" rel="noopener">Banco de M&eacute;xico 2026 calendar of policy statements, minutes, quarterly reports, and financial-stability reports</a> for scheduled publication dates and the unscheduled-action caveat.</li>
@@ -182,7 +182,7 @@
   <p>Sources and methods were reviewed August 13, 2026. Because policy archives and calendars are dynamic, verify the latest official Spanish release at the event cutoff. The page separates official facts from mechanisms, hypotheses, inferences, and possible applications.</p>
 </details>
 
-<aside class="mx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This event workflow is educational material, not personalized investment, legal, tax, accounting, hedging, or brokerage advice. Policy events can gap through orders, market depth can disappear, and futures losses can exceed the initial margin deposit. Verify the live official release, active contract, quote direction, event clock, market quality, costs, and your own maximum loss before any decision.</p></aside>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This event workflow is educational material, not personalized investment, legal, tax, accounting, hedging, or brokerage advice. Policy events can gap through orders, market depth can disappear, and futures losses can exceed the initial margin deposit. Verify the live official release, active contract, quote direction, event clock, market quality, costs, and your own maximum loss before any decision.</p></aside>
 <!-- ARTICLE BODY END -->
 </article></main>
 <footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>

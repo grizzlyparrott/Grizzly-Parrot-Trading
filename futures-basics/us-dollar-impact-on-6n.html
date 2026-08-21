@@ -2,247 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How U.S. Dollar Strength Impacts 6N Price Structure</title>
-  <meta name="description" content="A blunt breakdown of how U.S. Dollar strength or weakness directly shapes 6N futures price structure, volatility, and trend direction.">
+  <title>U.S. Dollar Impact on 6N: Identity, Factor, and Test</title>
+  <meta name="description" content="Separate 6N quote algebra from a genuine broad-dollar factor using index composition, orthogonal controls, aligned clocks, and rejection rules.">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/us-dollar-impact-on-6n.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="How U.S. Dollar Strength Impacts 6N Price Structure">
-  <meta property="og:description" content="A blunt breakdown of how U.S. Dollar strength or weakness directly shapes 6N futures price structure, volatility, and trend direction.">
+  <meta property="og:title" content="U.S. Dollar Impact on 6N: Identity, Factor, and Test">
+  <meta property="og:description" content="Separate 6N quote algebra from a genuine broad-dollar factor using index composition, orthogonal controls, aligned clocks, and rejection rules.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/us-dollar-impact-on-6n.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-28">
+  <meta property="article:modified_time" content="2026-08-20">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="U.S. Dollar Impact on 6N: Identity, Factor, and Test">
+  <meta name="twitter:description" content="Separate 6N quote algebra from a genuine broad-dollar factor using index composition, orthogonal controls, aligned clocks, and rejection rules.">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="How U.S. Dollar Strength Impacts 6N Price Structure">
-  <meta name="twitter:description" content="A blunt breakdown of how U.S. Dollar strength or weakness directly shapes 6N futures price structure, volatility, and trend direction.">
-
+  <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"U.S. Dollar Impact on 6N: Identity, Factor, and Test","description":"Separate 6N quote algebra from a genuine broad-dollar factor using index composition, orthogonal controls, aligned clocks, and rejection rules.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/us-dollar-impact-on-6n.html"},"datePublished":"2025-11-28","dateModified":"2026-08-20","url":"https://grizzlyparrottrading.com/futures-basics/us-dollar-impact-on-6n.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}
   </script>
-
-  <!-- JSON-LD: Article -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How U.S. Dollar Strength Impacts 6N Price Structure",
-  "description": "A blunt breakdown of how U.S. Dollar strength or weakness directly shapes 6N futures price structure, volatility, and trend direction.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/us-dollar-impact-on-6n.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/us-dollar-impact-on-6n.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How U.S. Dollar Strength Impacts 6N Price Structure",
-      "item": "https://grizzlyparrottrading.com/futures-basics/us-dollar-impact-on-6n.html"
-    }
-  ]
-}
-</script>
-
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"U.S. Dollar Impact on 6N: Identity, Factor, and Test","item":"https://grizzlyparrottrading.com/futures-basics/us-dollar-impact-on-6n.html"}]}
+  </script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Quote algebra &middot; basket construction &middot; non-circular controls</p>
+    <h1>U.S. Dollar Impact on 6N: Identity, Factor, and Test</h1>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 20, 2026</p>
+    <p class="fx-hero-lede">6N can rise while a broad U.S.-dollar index also rises. There is no contradiction: an index is a weighted basket, 6N is one dated NZD/USD futures price, and New Zealand-specific information can outweigh the common-dollar component. Before calling the dollar a driver, separate reciprocal quote identity from evidence that adds information.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#identity">Fix the quote identity</a><a class="fx-text-link" href="#checklist">Reject circular signals</a></div>
+    <dl class="fx-hero-metrics" aria-label="Dollar analysis layers"><div><dt>Layer 1</dt><dd>Quote identity</dd></div><div><dt>Layer 2</dt><dd>Index construction</dd></div><div><dt>Layer 3</dt><dd>Shared shocks</dd></div><div><dt>Layer 4</dt><dd>Orthogonal test</dd></div></dl>
   </div>
+  <div class="fx-hero-visual"><div class="fx-market-board"><div class="fx-board-head"><span>Same interval</span><strong>Broad USD &uarr; and 6N &uarr;</strong></div><div class="fx-formula"><code>common USD factor</code><i aria-hidden="true">+</i><code>NZ-specific residual</code></div><p>The bilateral outcome reflects both sides. A sufficiently strong NZ-specific component can coexist with a rising dollar basket.</p><p class="fx-board-foot"><span>Basket is not bilateral</span><span>Correlation is not identity</span></p></div></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#identity">Identity</a><a href="#index">Index</a><a href="#shocks">Shared shocks</a><a href="#controls">Controls</a><a href="#timing">Timing</a><a href="#failures">Failures</a><a href="#checklist">Checklist</a></nav>
 
-<h1>How U.S. Dollar Strength Impacts 6N Price Structure</h1>
-
-<p>6N futures are just NZD priced against the U.S. Dollar. So when USD strengthens, 6N almost always sells off. When USD weakens, 6N rallies. The contract reacts to NZ fundamentals, but the U.S. Dollar is the dominant driver because USD sets the global risk tone.</p>
-
-<h2>Why the Dollar Controls 6N</h2>
-<p>NZD is a small, high-beta currency. USD is the global reserve currency. When global risk shifts, USD absorbs the flows. NZD gets hit first, and harder.</p>
-
-<p>Here’s the blunt version:</p>
-
-<ul>
-<li><strong>Strong USD → bearish 6N</strong></li>
-<li><strong>Weak USD → bullish 6N</strong></li>
-</ul>
-
-<p>Even if New Zealand prints solid data, a surging USD can drown 6N instantly.</p>
-
-<h2>What Causes USD Strength?</h2>
-
-<ul>
-<li><strong>Hawkish Federal Reserve</strong></li>
-<li><strong>Strong U.S. economic data</strong> (CPI, NFP, GDP)</li>
-<li><strong>Risk-off sentiment</strong> (equities sell off → USD gets bid)</li>
-<li><strong>Global recession fears</strong></li>
-</ul>
-
-<p>When traders are scared, they run to USD. NZD gets dumped.</p>
-
-<h2>How USD Strength Shapes 6N Structure</h2>
-<p>USD cycles literally reshape the chart structure of 6N. You’ll see:</p>
-
-<ul>
-<li>Lower highs forming consistently</li>
-<li>Repeated failures at mid-range levels</li>
-<li>Sharp downside moves on U.S. data releases</li>
-<li>Choppy upward retracements that never follow through</li>
-</ul>
-
-<p>In strong USD environments, every bounce on 6N is usually just a shorting opportunity.</p>
-
-<h2>How USD Weakness Changes the Game</h2>
-<p>When USD weakens, 6N flips into a cleaner trending product. Breakouts hold. Pullbacks behave. Liquidity improves during the U.S. session.</p>
-
-<p>Expect:</p>
-
-<ul>
-<li>Higher highs / higher lows</li>
-<li>Sustained rallies after news</li>
-<li>Momentum continuation instead of failure</li>
-</ul>
-
-<p>NZD doesn’t need strong local data when USD is tanking — USD weakness alone can carry a multi-week 6N uptrend.</p>
-
-<h2>USD Events That Move 6N the Most</h2>
-
-<ul>
-<li><strong>NFP (Nonfarm Payrolls)</strong></li>
-<li><strong>CPI (Inflation)</strong></li>
-<li><strong>FOMC meetings</strong></li>
-<li><strong>Powell speeches</strong></li>
-</ul>
-
-<p>If you’re trading 6N and not tracking USD news, you’re basically trading blindfolded.</p>
-
-<h2>USD Cycles vs. NZD Fundamentals</h2>
-<p>NZD data can move the contract—but USD momentum can overpower it. Here’s how the interaction usually plays out:</p>
-
-<table>
-<tr><th>Scenario</th><th>Outcome</th></tr>
-<tr><td>Strong NZ data, strong USD</td><td>6N still weak or rangebound</td></tr>
-<tr><td>Weak NZ data, weak USD</td><td>6N may still rally on USD weakness</td></tr>
-<tr><td>Strong NZ data, weak USD</td><td>Powerful 6N rally</td></tr>
-<tr><td>Weak NZ data, strong USD</td><td>6N dumps aggressively</td></tr>
-</table>
-
-<p>The Dollar’s influence is bigger than people want to admit.</p>
-
-<h2>Final Take</h2>
-<p>The U.S. Dollar is the dominant driver of 6N price structure. When USD strengthens, 6N trends down. When USD weakens, 6N trends up. Everything else—New Zealand data, exports, sentiment—sits on top of the USD cycle. If you haven’t already, study <a href="https://grizzlyparrottrading.com/futures-basics/6n-interest-rate-impact.html">interest rate impact</a> and <a href="https://grizzlyparrottrading.com/futures-basics/how-to-trade-6n-economic-releases.html">economic release behavior</a> so USD drivers make even more sense.</p>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="fx-section" id="identity" aria-labelledby="identity-title">
+  <div class="fx-section-heading"><p class="fx-kicker">The algebra comes first</p><h2 id="identity-title">A Reciprocal Quote Is the Same Information Rewritten</h2><p>For synchronized spot observations, NZD/USD and USD/NZD are reciprocals. If NZD/USD is 0.60, then USD/NZD is 1/0.60. Their log returns are exact opposites; simple percentage returns differ slightly because reciprocation is nonlinear.</p></div>
+  <div class="fx-method"><div><h3>Spot identity</h3><p><code>NZD/USD = 1 &divide; (USD/NZD)</code></p><p>Using both sides as separate confirmation double-counts the same bilateral price. A rise in synchronized USD/NZD necessarily corresponds to a fall in NZD/USD; it is not independent evidence of a dollar factor.</p></div><dl><div><dt>Same pair</dt><dd>One price identity</dd></div><div><dt>Direction</dt><dd>Reciprocal</dd></div><div><dt>Clock</dt><dd>Must match</dd></div><div><dt>Proof</dt><dd>Not independent</dd></div></dl></div>
+  <div class="fx-caution"><strong>6N is dated futures, not spot</strong><p>CME's 2026 product guide lists 6N as USD per NZD. Higher 6N means a stronger NZD against USD in quote direction, but a futures price contains maturity and basis. Do not apply an exact spot reciprocal to a dated contract without aligning tenor. Use <a href="6n-contract-specs-explained.html">the canonical 6N contract guide</a> and <a href="how-to-read-6n-price-quotes.html">the quote-reading guide</a>.</p></div>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<section class="fx-section" id="index" aria-labelledby="index-title">
+  <div class="fx-section-heading"><p class="fx-kicker">A dollar index is a model</p><h2 id="index-title">Read the Basket Method Before Interpreting Its Direction</h2><p>Indexes differ in currencies, weights, trade concepts, rebalancing, quotation conventions, and frequency. “The dollar index” is incomplete unless the exact series and vintage are named.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Dollar index due diligence" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Question</th><th scope="col">Why it matters</th><th scope="col">Required record</th></tr></thead><tbody><tr><th scope="row">Which currencies?</th><td>An index can omit NZD, include it directly, or contain highly correlated regional currencies</td><td>Published constituents and effective date</td></tr><tr><th scope="row">Which weights?</th><td>Trade weights and fixed market weights answer different economic questions</td><td>Weight table, method, and rebalance schedule</td></tr><tr><th scope="row">Which quote direction?</th><td>A higher index may mean a stronger USD while higher 6N means stronger NZD</td><td>Official series definition</td></tr><tr><th scope="row">Which frequency and timestamp?</th><td>Weekly release, daily close, and intraday futures cannot be compared without alignment</td><td>Observation time, timezone, and availability time</td></tr><tr><th scope="row">Which revision policy?</th><td>Weights and historical observations can change</td><td>Vintage saved with the analysis</td></tr></tbody></table></div>
+  <p><strong>Current composition fact:</strong> the Federal Reserve's <a href="https://www.federalreserve.gov/releases/h10/weights/default.htm" target="_blank" rel="noopener noreferrer">trade weights effective 2 February 2026</a> list the economies in its broad dollar index and do not include New Zealand. That removes direct NZD mechanical overlap from this specific current basket, but it does not make the index economically independent of global shocks that also affect NZD.</p>
+</section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
+<section class="fx-section" id="shocks" aria-labelledby="shocks-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Why the dollar can matter beyond algebra</p><h2 id="shocks-title">Common Shocks Can Move the Dollar and 6N Through Separate Channels</h2><p>The same shock can affect both legs of NZD/USD, but the net bilateral result depends on relative magnitude and timing.</p></div>
+  <div class="fx-check-grid"><article><strong>Relative-rate shock</strong><p>U.S. policy or data can reprice the expected Fed path versus the RBNZ path. The matched-horizon change matters more than either current policy rate alone.</p></article><article><strong>U.S. growth shock</strong><p>Stronger U.S. activity may lift U.S. yields and dollar demand, but it can also improve global demand. The competing channels need observable confirmation.</p></article><article><strong>Funding and liquidity shock</strong><p>Demand for dollar funding or U.S. liquidity can pressure multiple currencies. Starting positions, collateral, and market depth determine amplification.</p></article><article><strong>Global risk shock</strong><p>Equities, credit, commodities, rates, and the dollar can reprice together. “Risk-off” does not establish which market caused which.</p></article><article><strong>New Zealand shock</strong><p>RBNZ, inflation, growth, fiscal, or export evidence can create a NZ-specific residual large enough to offset the common dollar move.</p></article><article><strong>Basis or roll shock</strong><p>A dated 6N contract can diverge from spot because of carry, liquidity, and lifecycle. That is not proof of a macro factor.</p></article></div>
+  <div class="fx-related">Use <a href="6n-interest-rate-impact.html">the RBNZ-Fed curve framework</a> for relative policy and <a href="6n-risk-sentiment-impact.html">the risk-regime guide</a> for funding and portfolio channels.</div>
+</section>
 
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
+<section class="fx-section" id="controls" aria-labelledby="controls-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Evidence that adds information</p><h2 id="controls-title">Build Orthogonal Controls Instead of Renaming the Same Pair</h2><p>No market proxy is perfectly independent, but the control set can avoid direct algebraic duplication and expose rival explanations.</p></div>
+  <div class="fx-process" aria-label="Non-circular dollar confirmation process"><article><span>1</span><h3>Name the common factor</h3><p>Select one official broad dollar series, save its composition and vintage, and define whether a rise means dollar appreciation.</p></article><article><span>2</span><h3>Estimate the expected 6N response</h3><p>On training data, measure synchronized returns with rolls and event controls. Preserve uncertainty and allow the coefficient to change.</p></article><article><span>3</span><h3>Compute the residual</h3><p>Separate the portion associated with the declared dollar factor from the unexplained 6N move. Do not call the residual “New Zealand news” without further evidence.</p></article><article><span>4</span><h3>Triangulate independently</h3><p>Check matched New Zealand-U.S. curves, NZD crosses that do not contain USD, official trade or policy releases, and peer-currency behavior.</p></article><article><span>5</span><h3>Retest out of sample</h3><p>Require stable sign, scale, timing, and economic meaning in untouched periods. Reject the factor if it works only in selected episodes.</p></article></div>
+  <div class="fx-caution"><strong>TWI is breadth context, not a perfectly orthogonal control</strong><p>The RBNZ TWI includes the USD among a broader set of trading-partner currencies. It can show whether NZD movement is broad, but part of its information overlaps NZD/USD. Inspect non-USD crosses or construct a documented ex-USD control when independence matters.</p></div>
+</section>
 
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+<section class="fx-section" id="timing" aria-labelledby="timing-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Lead-lag claims require point-in-time data</p><h2 id="timing-title">Test the Dollar Factor on Aligned, Tradable Clocks</h2><p>A daily correlation cannot establish that a dollar index leads 6N intraday. Release availability, exchange hours, weekends, holidays, daylight-saving changes, and contract rolls can create apparent lead-lag relationships.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Dollar factor timing test" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Design field</th><th scope="col">Minimum requirement</th><th scope="col">Failure state</th></tr></thead><tbody><tr><th scope="row">Market data</th><td>Synchronized timestamps, declared sampling, active 6N contract, deterministic roll</td><td>Close-to-close series from different clocks</td></tr><tr><th scope="row">Factor availability</th><td>Use only values observable at the decision time</td><td>Published weekly index treated as live intraday input</td></tr><tr><th scope="row">Events</th><td>Control RBNZ, Fed, Stats NZ, U.S., China, and major risk windows</td><td>One event supplies both the factor and result</td></tr><tr><th scope="row">Windows</th><td>Multiple predeclared horizons with uncertainty</td><td>One hand-picked interval</td></tr><tr><th scope="row">Validation</th><td>Untouched dates and cost-aware execution assumptions</td><td>In-sample fit presented as trading performance</td></tr></tbody></table></div>
+  <p><strong>Research status:</strong> this article does not report a dollar beta, residual model, lead-lag estimate, hit rate, or strategy return. The complete return-testing protocol belongs to <a href="6n-correlations.html">the 6N correlations page</a>.</p>
+</section>
 
-  </div>
-</footer>
+<section class="fx-section" id="failures" aria-labelledby="failures-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Where the story fails</p><h2 id="failures-title">A Dollar Explanation Is Rejected by These Cases</h2></div>
+  <div class="fx-state-machine" role="list" aria-label="Dollar factor failure cases"><article role="listitem"><h3>Reciprocal double count</h3><p>USD/NZD is offered as independent confirmation of NZD/USD or 6N direction.</p></article><article role="listitem"><h3>Unknown basket</h3><p>The index, weights, quote direction, or effective vintage is not documented.</p></article><article role="listitem"><h3>Wrong clock</h3><p>A later-released or differently timed index is treated as information available before the 6N decision.</p></article><article role="listitem"><h3>Domestic residual ignored</h3><p>RBNZ, trade, fiscal, or New Zealand data explain the divergence more directly.</p></article><article role="listitem"><h3>Futures basis ignored</h3><p>Dated 6N and spot are compared as identical instruments across roll or expiry.</p></article><article role="listitem"><h3>Instability hidden</h3><p>The coefficient changes sign or scale across reasonable windows, controls, or holdouts.</p></article></div>
+</section>
+
+<section class="fx-section" id="checklist" aria-labelledby="checklist-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Confirmation record</p><h2 id="checklist-title">Reject Circular Signals Before Considering an Application</h2></div>
+  <div class="fx-table-scroll" role="region" aria-label="Non-circular dollar confirmation checklist" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Gate</th><th scope="col">Pass</th><th scope="col">Reject or wait</th></tr></thead><tbody><tr><th scope="row">Quote</th><td>6N and every comparison series have explicit, correct direction</td><td>Reciprocal or futures/spot confusion</td></tr><tr><th scope="row">Basket</th><td>Official composition, weights, vintage, and methodology saved</td><td>Generic “DXY” or “dollar” label without specification</td></tr><tr><th scope="row">Timing</th><td>All inputs were observable and synchronized at the decision time</td><td>Look-ahead, stale close, holiday, or roll mismatch</td></tr><tr><th scope="row">Independence</th><td>At least one non-USD NZD cross, matched-rate measure, or official NZ source adds information</td><td>Only the reciprocal pair confirms</td></tr><tr><th scope="row">Stability</th><td>Relationship survives declared windows, controls, and holdout</td><td>Selected episode or sign reversal</td></tr><tr><th scope="row">Execution</th><td>Active 6N contract passes spread, depth, slippage, and risk gates</td><td>Macro fit used to excuse poor market quality</td></tr></tbody></table></div>
+  <div class="fx-related"><strong>Available conclusions:</strong> common-dollar evidence present; NZ-specific residual present; mixed; or unidentified. None is an automatic order.</div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 20, 2026</summary><ul><li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener noreferrer">CME Group, FX Product Guide 2026</a> for 6N's USD-per-NZD quotation and current contract context.</li><li><a href="https://www.federalreserve.gov/releases/h10/default.htm" target="_blank" rel="noopener noreferrer">Federal Reserve, H.10 Foreign Exchange Rates (current 2026 release)</a> for official bilateral rates and broad, advanced-economy, and emerging-economy dollar indexes.</li><li><a href="https://www.federalreserve.gov/releases/h10/weights/default.htm" target="_blank" rel="noopener noreferrer">Federal Reserve, H.10 Currency Weights effective 2 February 2026</a> for the current broad-index constituents and weights.</li><li><a href="https://www.federalreserve.gov/econres/notes/feds-notes/revisions-to-the-federal-reserve-dollar-indexes-20190115.html" target="_blank" rel="noopener noreferrer">Federal Reserve, Revisions to the Dollar Indexes (15 January 2019)</a> for official index construction, trade weighting, and methodology.</li><li><a href="https://www.rbnz.govt.nz/en/statistics/series/exchange-and-interest-rates/exchange-rates-and-the-trade-weighted-index" target="_blank" rel="noopener noreferrer">Reserve Bank of New Zealand, Exchange Rates and Trade Weighted Index B1 (2026 methodology and special notes)</a> for official NZD bilateral and TWI construction.</li><li><a href="https://www.rbnz.govt.nz/en/statistics/series/exchange-and-interest-rates" target="_blank" rel="noopener noreferrer">Reserve Bank of New Zealand, exchange and interest-rate series (current August 2026)</a> for New Zealand curve and FX data definitions.</li><li><a href="https://www.federalreserve.gov/releases/h15/" target="_blank" rel="noopener noreferrer">Federal Reserve, H.15 Selected Interest Rates (current release)</a> for U.S. rate-series definitions and observations.</li></ul><p>This article distinguishes identities, mechanisms, and test design. It reports no original factor estimate, predictive finding, or profitable strategy.</p></details>
+
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This analysis is educational and does not provide personalized investment, legal, tax, accounting, hedging, or brokerage advice. Dollar relationships, basis, and correlations can change without warning. Futures leverage, gaps, roll, liquidity, margin, and physical-delivery exposure can produce losses beyond initial margin. Verify current sources and your own risk limits.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

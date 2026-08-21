@@ -2,279 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Common Mistakes Traders Make With 6N and How to Avoid Them</title>
-  <meta name="description" content="A blunt breakdown of the biggest mistakes traders make when trading 6N futures and exactly how to avoid getting trapped by NZD/USD volatility.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6n-common-mistakes.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Common Mistakes Traders Make With 6N and How to Avoid Them">
-  <meta property="og:description" content="A blunt breakdown of the biggest mistakes traders make when trading 6N futures and exactly how to avoid getting trapped by NZD/USD volatility.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6n-common-mistakes.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Common Mistakes Traders Make With 6N and How to Avoid Them">
-  <meta name="twitter:description" content="A blunt breakdown of the biggest mistakes traders make when trading 6N futures and exactly how to avoid getting trapped by NZD/USD volatility.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Common Mistakes Traders Make With 6N and How to Avoid Them",
-  "description": "A blunt breakdown of the biggest mistakes traders make when trading 6N futures and exactly how to avoid getting trapped by NZD/USD volatility.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6n-common-mistakes.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6n-common-mistakes.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Common Mistakes Traders Make With 6N and How to Avoid Them",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6n-common-mistakes.html"
-    }
-  ]
-}
-</script>
-
+  <title>6N Trading Mistakes: A Practical Failure Checklist</title>
+  <meta name="description" content="Reconstruct common 6N mechanics, sizing, execution, event and expiry failures, then use observable prevention and recovery checks.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6n-common-mistakes.html">
+  <meta property="og:title" content="6N Trading Mistakes: A Practical Failure Checklist"><meta property="og:description" content="Reconstruct common 6N mechanics, sizing, execution, event and expiry failures, then use observable prevention and recovery checks."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6n-common-mistakes.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-28"><meta property="article:modified_time" content="2026-08-16">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6N Trading Mistakes: A Practical Failure Checklist"><meta name="twitter:description" content="Reconstruct common 6N mechanics, sizing, execution, event and expiry failures, then use observable prevention and recovery checks."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6N Trading Mistakes: A Practical Failure Checklist","description":"Reconstruct common 6N mechanics, sizing, execution, event and expiry failures, then use observable prevention and recovery checks.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6n-common-mistakes.html"},"datePublished":"2025-11-28","dateModified":"2026-08-16","url":"https://grizzlyparrottrading.com/futures-basics/6n-common-mistakes.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6N Trading Mistakes: A Practical Failure Checklist","item":"https://grizzlyparrottrading.com/futures-basics/6n-common-mistakes.html"}]}</script>
   <script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
+<a class="fx-skip-link" href="#main-content">Skip to article content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy"><p class="fx-kicker">Execution pre-mortem &middot; 6N</p><h1>6N Trading Mistakes: A Practical Failure Checklist</h1><p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 16, 2026</p><p class="fx-hero-lede">The loss looked like a bad New Zealand-dollar call. The reconstruction showed something else: the trader sized from broker day margin, used an old $10 tick reference, entered before an event without checking depth, and left the wrong quarterly order working after the exit. <strong>The thesis was only one failure in a chain.</strong></p><div class="fx-hero-actions"><a class="button-primary" href="#timeline">Reconstruct the failure</a><a class="fx-text-link" href="#checklist">Use the checklist</a></div></div>
+  <div class="fx-hero-visual fx-market-board" aria-label="Illustrative loss reconstruction"><div class="fx-board-head"><span>Illustrative incident</span><strong>Four controls missed</strong></div><div class="fx-proof"><strong>Before</strong><span>Stale tick value &middot; margin-sized position</span></div><div class="fx-proof"><strong>During</strong><span>Event spread &middot; stop slippage</span></div><div class="fx-proof"><strong>After</strong><span>Old-month order left active</span></div><p class="fx-board-foot">A post-trade label such as “bad luck” cannot close an operational control gap.</p></div>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#timeline">Timeline</a><a href="#mechanics">Mechanics</a><a href="#thesis">Thesis and data</a><a href="#execution">Execution</a><a href="#events">Events</a><a href="#expiry">Expiry</a><a href="#recovery">Recovery</a><a href="#checklist">Checklist</a></nav>
 
-<h1>Common Mistakes Traders Make With 6N and How to Avoid Them</h1>
-
-<p>6N looks like a calm currency future until it punches you in the mouth. Most traders blow up on 6N because they ignore the macro drivers, trade too small of a timeframe, or treat NZD like it’s EUR or JPY. This contract has its own personality — and if you don’t respect it, you’ll get clipped over and over.</p>
-
-<h2>Mistake #1 — Ignoring USD Direction</h2>
-
-<p>6N is NZD/USD. If you aren't tracking USD strength, you’re trading blind. USD drives most of the move.</p>
-
-<p>Quick rule:</p>
-
-<ul>
-<li><strong>Strong USD → short 6N bias</strong></li>
-<li><strong>Weak USD → long 6N bias</strong></li>
-</ul>
-
-<p>If you don’t know what the Dollar is doing, go read the <a href="https://grizzlyparrottrading.com/futures-basics/us-dollar-impact-on-6n.html">USD impact guide</a> before you hit buy or sell.</p>
-
-<h2>Mistake #2 — Trading Into Major News Releases</h2>
-
-<p>NZD and USD news both move 6N violently. Traders who enter right before news usually get wicked out instantly.</p>
-
-<p>Critical events:</p>
-
-<ul>
-<li>NFP</li>
-<li>CPI</li>
-<li>FOMC</li>
-<li>RBNZ rate decisions</li>
-</ul>
-
-<p>If you don’t know the schedule, don’t trade that day.</p>
-
-<h2>Mistake #3 — Not Respecting NZD Volatility</h2>
-
-<p>NZD is a high-beta currency. It moves harder than AUD and way harder than EUR. Many traders size like they’re trading 6E — then get obliterated.</p>
-
-<p>6N has:</p>
-
-<ul>
-<li>Fast spikes</li>
-<li>Sudden reversals</li>
-<li>Deep pullbacks</li>
-</ul>
-
-<p>Solution? Use smaller size or the micro contract. See the <a href="https://grizzlyparrottrading.com/futures-basics/m6n-micro-contract-guide.html">M6N guide</a>.</p>
-
-<h2>Mistake #4 — Trading the 1-Minute for Signals</h2>
-
-<p>The 1M chart on 6N is noise. It’s just bots, spread adjustments, and liquidity flickers. Traders who “analyze” the 1M end up taking trades with zero context.</p>
-
-<p>Fix this by using a multi-timeframe system:</p>
-
-<ul>
-<li>HTF for bias</li>
-<li>MTF for structure</li>
-<li>LTF for entry</li>
-</ul>
-
-<p>If you don’t use this approach, read the <a href="https://grizzlyparrottrading.com/futures-basics/6n-multi-timeframe-framework.html">multi-timeframe framework guide</a>.</p>
-
-<h2>Mistake #5 — Misreading Liquidity Conditions</h2>
-
-<p>6N liquidity is solid during the U.S. session, decent in Asia, and thin during the dead zone. Thin liquidity = violent moves.</p>
-
-<p>Beginners get trapped because they:</p>
-
-<ul>
-<li>Enter during thin liquidity</li>
-<li>Trade during rollover</li>
-<li>Avoid watching volume transitions</li>
-</ul>
-
-<p>Know when the contract is actually tradeable.</p>
-
-<h2>Mistake #6 — Ignoring Risk Sentiment</h2>
-
-<p>NZD is a risk-on currency. If equities are dumping and the VIX is spiking, you should not be hunting longs.</p>
-
-<p>Basic rule:</p>
-
-<ul>
-<li><strong>Risk-on → NZD strength → 6N bullish</strong></li>
-<li><strong>Risk-off → NZD weakness → 6N bearish</strong></li>
-</ul>
-
-<p>If you don’t understand this dynamic, reread <a href="https://grizzlyparrottrading.com/futures-basics/6n-risk-sentiment-impact.html">the risk sentiment article</a>.</p>
-
-<h2>Mistake #7 — Taking Signals Without Context</h2>
-
-<p>6N isn’t a “signal” market. It’s a “context” market. A clean setup in the wrong environment still fails.</p>
-
-<p>Beginners take:</p>
-
-<ul>
-<li>Breakouts in choppy conditions</li>
-<li>Reversals against strong USD cycles</li>
-<li>Pullbacks during risk-off periods</li>
-</ul>
-
-<p>Always confirm: trend, volatility, risk sentiment, and macro backdrop.</p>
-
-<h2>Mistake #8 — Overestimating NZD Fundamentals</h2>
-
-<p>New Zealand’s data matters — but not as much as global flows. Many traders think dairy prices or GDP prints dictate the chart. They help, but USD cycles and global risk sentiment dominate.</p>
-
-<p>Don’t anchor on local news. Anchor on global flows.</p>
-
-<h2>Final Take</h2>
-
-<p>Most 6N mistakes come from ignoring the macro engine behind NZD/USD. Fix that, and the contract becomes predictable. Respect USD direction, risk sentiment, liquidity conditions, and multi-timeframe structure. If you need more context, revisit <a href="https://grizzlyparrottrading.com/futures-basics/6n-correlations.html">the correlations guide</a> or <a href="https://grizzlyparrottrading.com/futures-basics/6n-spread-trading.html">the spread trading tutorial</a> to round out your understanding.</p>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="fx-section" id="timeline" aria-labelledby="timeline-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Reconstruction before explanation</p><h2 id="timeline-title">Put Every Decision on a Clock Before Assigning Cause</h2><p>A useful review begins with records: exchange time, contract month, quote, displayed depth, order messages, fills, event timestamp, broker notices and account changes. Memory is not a fill report.</p></div>
+  <div class="fx-lifecycle" aria-label="Illustrative 6N incident timeline">
+    <article><span>T-30</span><h3>Plan written</h3><p>Direction and stop noted, but no source version, cost stress or expiry field.</p></article>
+    <article><span>T-2</span><h3>Event ignored</h3><p>A scheduled release was known, yet no no-trade window or depth gate existed.</p></article>
+    <article><span>T+0</span><h3>Order filled</h3><p>Spread widened and the marketable order crossed more levels than assumed.</p></article>
+    <article><span>T+7</span><h3>Stop slipped</h3><p>The trigger fired, but the realized exit was worse than the planned stop price.</p></article>
+    <article><span>T+20</span><h3>Position “closed”</h3><p>A stale order in the old quarter remained working and later reopened exposure.</p></article>
   </div>
-</footer>
+  <p class="fx-source-note">This timeline is a constructed teaching example, not a reported trade. Its job is to show how a single P&amp;L number can hide independent mechanics, event, execution and lifecycle failures.</p>
+</section>
+
+<section class="fx-section" id="mechanics" aria-labelledby="mechanics-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Failure family 1</p><h2 id="mechanics-title">Wrong Contract Math Makes Every Later Decision Unreliable</h2><p>The current standard 6N unit is 100,000 NZD and the current CME Globex outright increment is 0.00005 USD per NZD, worth $5. Older material may show a $10 tick. A claimed M6N Micro is not present in CME’s current product guide.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="6N mechanics failure controls" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Failure</th><th scope="col">Observable warning</th><th scope="col">Prevention gate</th><th scope="col">Recovery record</th></tr></thead><tbody>
+    <tr><th scope="row">Stale $10 tick</th><td>Risk sheet uses 0.0001 as one current outright tick</td><td>Reconcile 100,000 &times; 0.00005 = $5 from current Rule 258</td><td>Recalculate planned and realized P&amp;L; version the source</td></tr>
+    <tr><th scope="row">Side reversed</th><td>Plan says stronger NZD but ticket is short 6N</td><td>Write: higher USD-per-NZD helps long, hurts short</td><td>Separate thesis error from order-side error</td></tr>
+    <tr><th scope="row">Margin-sized quantity</th><td>Contracts equal “what the broker allows”</td><td>Floor risk budget divided by stop risk, costs and stress</td><td>Record the leverage and liquidation path</td></tr>
+    <tr><th scope="row">Invented Micro</th><td>Platform or article claims M6N without a CME chapter</td><td>Require exchange listing, unit, tick and active chain</td><td>Cancel; treat standard quantity as zero if oversized</td></tr>
+  </tbody></table></div>
+  <p class="fx-related">Route contract facts to the <a href="6n-contract-specs-explained.html">canonical 6N specification guide</a> and screen conversion to <a href="how-to-read-6n-price-quotes.html">the quote-and-P&amp;L guide</a>.</p>
+</section>
+
+<section class="fx-section" id="thesis" aria-labelledby="thesis-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Failure family 2</p><h2 id="thesis-title">A Narrative Without a Falsification Point Cannot Control Risk</h2><p>“Dairy is strong,” “the dollar is weak” or “risk-on should help NZD” are mechanism fragments, not complete trades. Each can be offset by relative-rate expectations, China-sensitive growth news, positioning, U.S. data, liquidity or a different market prior.</p></div>
+  <div class="fx-four-grid">
+    <article class="fx-panel"><h3>Data mismatch</h3><p>The chart uses a back-adjusted continuous series while the ticket trades one unadjusted quarter. <strong>Gate:</strong> map research and execution symbols explicitly.</p></article>
+    <article class="fx-panel"><h3>Prior omitted</h3><p>A release is called “good” without comparing it with consensus or market pricing. <strong>Gate:</strong> record the expected range and what would be surprising.</p></article>
+    <article class="fx-panel"><h3>One-factor certainty</h3><p>A plausible export or rates channel is treated as a guaranteed direction. <strong>Gate:</strong> name rival drivers and observable confirmation.</p></article>
+    <article class="fx-panel"><h3>No invalidation</h3><p>The position persists because the story can always be rewritten. <strong>Gate:</strong> define a price, time or evidence state that rejects the thesis.</p></article>
+  </div>
+</section>
+
+<section class="fx-section" id="execution" aria-labelledby="execution-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Failure family 3</p><h2 id="execution-title">Nearly 23-Hour Access Is Not a Fill-Quality Guarantee</h2><p>6N follows the regular CME FX schedule, but spread, depth and slippage vary. The relevant evidence is the live book in the exact quarter and order size, not a permanent “best time” slogan.</p></div>
+  <div class="fx-process" aria-label="Execution failure prevention">
+    <article><span>Observe</span><h3>Measure before entry</h3><p>Record spread, top-of-book size, nearby depth and recent trade flow.</p></article>
+    <article><span>Limit</span><h3>Define permitted orders</h3><p>Set maximum spread, slippage and market impact; define wait and reject branches.</p></article>
+    <article><span>Monitor</span><h3>Watch order state</h3><p>Distinguish accepted, working, partial, filled, cancelled and rejected messages.</p></article>
+    <article><span>Reconcile</span><h3>Match fills to position</h3><p>Verify quantity, side, average price and all working orders after every action.</p></article>
+  </div>
+  <div class="fx-caution"><strong>A stop trigger is not a guaranteed fill.</strong><p>Market gaps, thin depth, outages and rapid repricing can move the execution beyond the trigger. Include a gap stress and size the account for losses beyond the planned stop and initial margin deposit.</p></div>
+</section>
+
+<section class="fx-section" id="events" aria-labelledby="events-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Failure family 4</p><h2 id="events-title">The Calendar Check Must Cover New Zealand, the United States and Rival Drivers</h2><p>RBNZ decisions and New Zealand data are obvious, but U.S. releases, Federal Reserve communication and material China-sensitive news can also reprice NZD/USD. An event plan must verify official release time and daylight-saving conversion rather than copy a stale calendar.</p></div>
+  <div class="fx-decision-tree" aria-label="Event decision branches"><article><h3>Verified event and acceptable book</h3><p>Trade only a prewritten branch with quantity, invalidation and order type fixed.</p></article><article><h3>Verified event but failed liquidity gate</h3><p>Reduce or wait; a strong thesis does not repair a wide spread or shallow book.</p></article><article><h3>Timestamp, prior or release package unclear</h3><p>No trade. Revisions and statement detail can matter more than the headline.</p></article></div>
+</section>
+
+<section class="fx-section" id="expiry" aria-labelledby="expiry-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Failure family 5</p><h2 id="expiry-title">A Root Symbol Hides the Quarter and the Delivery Obligation</h2><p>6N is physically deliverable. Trading terminates on the second business day before the third Wednesday under Rule 258, while a broker may impose an earlier cutoff. A roll is two trades, not a chart setting.</p></div>
+  <div class="fx-check-grid"><article><strong>Wrong quarter</strong><p>Chart, ticket and risk sheet disagree on month or year.</p></article><article><strong>Silent liquidity migration</strong><p>The old quarter remains in the plan after activity moves.</p></article><article><strong>Partial roll</strong><p>Old leg closes but new leg fills only partly, changing net exposure.</p></article><article><strong>Stale orders</strong><p>Working orders survive a roll or exit and later reopen risk.</p></article><article><strong>Cutoff surprise</strong><p>Broker closes or restricts the contract before the exchange deadline.</p></article><article><strong>Delivery assumption</strong><p>“Everyone rolls” replaces an actual offset and reconciliation.</p></article></div>
+</section>
+
+<section class="fx-section" id="recovery" aria-labelledby="recovery-title">
+  <div class="fx-section-heading"><p class="fx-kicker">After a control breaks</p><h2 id="recovery-title">Stabilize the Account Before Editing the Story</h2><p>The first objective is to establish the real position and stop unintended orders. Analysis comes after operational state is known.</p></div>
+  <div class="fx-state-machine" aria-label="Post-incident recovery sequence"><article><span>1</span><h3>Freeze</h3><p>Stop new entries and automated strategies tied to the affected symbol.</p></article><article><span>2</span><h3>Reconcile</h3><p>Confirm every position, fill, working order, margin change and cash movement.</p></article><article><span>3</span><h3>Contain</h3><p>Reduce unintended exposure through an approved order path; do not improvise delivery.</p></article><article><span>4</span><h3>Classify</h3><p>Separate thesis, data, mechanics, execution, event and process causes.</p></article><article><span>5</span><h3>Repair</h3><p>Add an observable gate, owner and test; replay before live trading resumes.</p></article></div>
+</section>
+
+<section class="fx-section" id="checklist" aria-labelledby="checklist-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Failure checklist</p><h2 id="checklist-title">Pre-Trade and Post-Trade Answers Must Be Written</h2></div>
+  <div class="fx-two-column"><article class="fx-panel"><p class="fx-card-label">Before entry</p><h3>Prevent</h3><ol class="fx-checklist"><li>Exact quarter, quote direction, unit and current $5 outright tick reconcile.</li><li>Integer quantity fits stop, all costs, gap stress and funding buffer.</li><li>Thesis has rivals, confirmation, invalidation and a time limit.</li><li>Official event times and daylight-saving conversions are verified.</li><li>Live spread and depth pass; expiry, roll and broker cutoff are recorded.</li></ol></article><article class="fx-panel"><p class="fx-card-label">After exit</p><h3>Prove</h3><ol class="fx-checklist"><li>Net position is zero or equals the intended remaining hedge.</li><li>No stale orders remain in any quarter or linked strategy.</li><li>Realized P&amp;L reconciles from fills and fees, not chart marks.</li><li>Slippage, spread and failure stress are compared with the plan.</li><li>Any breach becomes a tested control change before the next live order.</li></ol></article></div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 20, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/258/258.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 258</a> for current 6N unit, price increment, termination and physical delivery.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener noreferrer">CME FX Product Guide 2026</a> for route-specific ticks, settlement and the absence of M6N from the current Micro table.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-delivery.html" target="_blank" rel="noopener noreferrer">CME FX futures delivery guide</a> for deliverable-currency operations and quarterly 6N classification.</li>
+  <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/FuturesMarketBasics/index.htm" target="_blank" rel="noopener noreferrer">CFTC basics of futures trading</a> for leverage, delivery obligations and loss warnings.</li>
+</ul><p>Sources were reviewed August 20, 2026. Incident examples are constructed and do not describe a customer or original trading study. Mechanisms and controls are educational hypotheses about failure prevention, not evidence that any strategy is profitable. Live liquidity, costs, calendars and broker rules must be checked at decision time.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This failure checklist is educational, not personal trading, legal, tax, accounting or brokerage advice. Futures are leveraged and losses can exceed the initial margin deposit. A checklist reduces avoidable ambiguity; it cannot eliminate market or operational risk.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

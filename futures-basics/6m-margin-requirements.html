@@ -28,7 +28,7 @@
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta name="twitter:image:alt" content="Grizzly Parrot Trading">
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="/futures-basics/6m-research-library.css?v=20260813a">
+  <link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
   <script type="application/ld+json">
@@ -57,73 +57,73 @@
   <script src="/uet.js" defer></script>
 </head>
 <body>
-<a class="mx-skip-link" href="#main-content">Skip to article content</a>
+<a class="fx-skip-link" href="#main-content">Skip to article content</a>
 <header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
-<main class="container article-container mxn-library" id="main-content">
+<main class="container article-container currency-library" id="main-content">
 <article>
 <!-- ARTICLE BODY START -->
-<header class="mx-hero">
-  <div class="mx-hero-copy">
-    <p class="mx-kicker">Funding constraint &middot; loss-budget calculation</p>
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Funding constraint &middot; loss-budget calculation</p>
     <h1>6M Margin Requirements and Risk-Based Sizing</h1>
-    <p class="mx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
-    <p class="mx-hero-lede">The opening equation is an integer decision: <strong>contracts = floor(risk budget &divide; stressed risk per contract)</strong>. Margin is checked afterward as a separate funding constraint. If the calculation returns 0, a lower broker day-margin offer cannot turn the trade into a valid 6M size.</p>
-    <div class="mx-hero-actions"><a class="button-primary" href="#calculator">Open the sizing calculator</a><a class="mx-text-link" href="#reconcile">Run the final reconciliation</a></div>
+    <p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 13, 2026</p>
+    <p class="fx-hero-lede">The opening equation is an integer decision: <strong>contracts = floor(risk budget &divide; stressed risk per contract)</strong>. Margin is checked afterward as a separate funding constraint. If the calculation returns 0, a lower broker day-margin offer cannot turn the trade into a valid 6M size.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#calculator">Open the sizing calculator</a><a class="fx-text-link" href="#reconcile">Run the final reconciliation</a></div>
   </div>
-  <div class="mx-hero-visual mx-market-board" aria-label="Position sizing hierarchy">
-    <div class="mx-board-head"><span>Final quantity</span><strong>Minimum of three caps</strong></div>
-    <div class="mx-proof"><strong>Risk-budget cap</strong><span>Invalidation + execution + gap stress</span></div>
-    <div class="mx-proof"><strong>Funding cap</strong><span>Live exchange and broker requirement</span></div>
-    <div class="mx-proof"><strong>Portfolio cap</strong><span>Concentration and correlated exposure</span></div>
-    <p class="mx-board-foot">All results are whole contracts. Never round up.</p>
+  <div class="fx-hero-visual fx-market-board" aria-label="Position sizing hierarchy">
+    <div class="fx-board-head"><span>Final quantity</span><strong>Minimum of three caps</strong></div>
+    <div class="fx-proof"><strong>Risk-budget cap</strong><span>Invalidation + execution + gap stress</span></div>
+    <div class="fx-proof"><strong>Funding cap</strong><span>Live exchange and broker requirement</span></div>
+    <div class="fx-proof"><strong>Portfolio cap</strong><span>Concentration and correlated exposure</span></div>
+    <p class="fx-board-foot">All results are whole contracts. Never round up.</p>
   </div>
 </header>
 
-<nav class="mx-jump-nav" aria-label="On this page"><a href="#two-questions">Margin versus risk</a><a href="#sizing-equation">Sizing equation</a><a href="#calculator">Calculator</a><a href="#worked-example">Worked example</a><a href="#stress">Stress controls</a><a href="#broker-check">Broker checks</a><a href="#reconcile">Reconcile</a></nav>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#two-questions">Margin versus risk</a><a href="#sizing-equation">Sizing equation</a><a href="#calculator">Calculator</a><a href="#worked-example">Worked example</a><a href="#stress">Stress controls</a><a href="#broker-check">Broker checks</a><a href="#reconcile">Reconcile</a></nav>
 
-<section class="mx-section" id="two-questions" aria-labelledby="two-questions-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Do not merge these questions</p><h2 id="two-questions-title">Performance Bond Funds the Position; It Does Not Define the Loss</h2><p>The CFTC defines futures margin as money or collateral deposited to support performance, not partial payment for an asset. Initial margin is the amount required to open under the broker's rules; maintenance margin is the threshold that must remain in the account. Daily and intraday mark-to-market can create variation payments or a margin call.</p></div>
-  <div class="mx-two-column">
-    <article class="mx-panel"><p class="mx-card-label">Financing question</p><h3>Can the account carry the position?</h3><p>Use the current CME performance-bond record and the broker's current initial, maintenance, overnight, event, concentration and liquidation policies. These figures can change without waiting for an article update.</p></article>
-    <article class="mx-panel"><p class="mx-card-label">Risk question</p><h3>What could the position lose?</h3><p>Use the full 6M price exposure: $5 per outright tick per contract, multiplied by the actual adverse move and quantity, then include spread, slippage, fees and any liquidation shortfall.</p></article>
+<section class="fx-section" id="two-questions" aria-labelledby="two-questions-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Do not merge these questions</p><h2 id="two-questions-title">Performance Bond Funds the Position; It Does Not Define the Loss</h2><p>The CFTC defines futures margin as money or collateral deposited to support performance, not partial payment for an asset. Initial margin is the amount required to open under the broker's rules; maintenance margin is the threshold that must remain in the account. Daily and intraday mark-to-market can create variation payments or a margin call.</p></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Financing question</p><h3>Can the account carry the position?</h3><p>Use the current CME performance-bond record and the broker's current initial, maintenance, overnight, event, concentration and liquidation policies. These figures can change without waiting for an article update.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Risk question</p><h3>What could the position lose?</h3><p>Use the full 6M price exposure: $5 per outright tick per contract, multiplied by the actual adverse move and quantity, then include spread, slippage, fees and any liquidation shortfall.</p></article>
   </div>
-  <div class="mx-caution"><strong>A broker “day margin” is never maximum loss.</strong><p>Futures margin does not cap maximum loss. It is a conditional funding requirement that may be raised or withdrawn before the close, near a release or during volatility. A forced liquidation can fill beyond the intended stop and can leave the account owing more than the initial deposit.</p></div>
+  <div class="fx-caution"><strong>A broker “day margin” is never maximum loss.</strong><p>Futures margin does not cap maximum loss. It is a conditional funding requirement that may be raised or withdrawn before the close, near a release or during volatility. A forced liquidation can fill beyond the intended stop and can leave the account owing more than the initial deposit.</p></div>
 </section>
 
-<section class="mx-section" id="sizing-equation" aria-labelledby="sizing-equation-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Risk first</p><h2 id="sizing-equation-title">Convert Invalidation, Stress and Costs Into One Per-Contract Number</h2><p>The verified CME Globex outright tick for 6M is 0.00001 USD per MXN, worth $5 on the 500,000 MXN contract. This page uses that input without repeating the full contract specification. Confirm it on the <a href="6m-tick-size.html">canonical 6M tick and contract guide</a> before using any calculator.</p></div>
-  <div class="mx-formula" aria-label="Risk per 6M contract formula"><code>((invalidation ticks + stress ticks) &times; $5) + round-trip costs</code><i aria-hidden="true">=</i><strong>Stressed dollars per contract</strong></div>
-  <div class="mx-formula" aria-label="Maximum risk-based 6M quantity formula"><code>floor(dollar risk budget &divide; stressed dollars per contract)</code><i aria-hidden="true">=</i><strong>Risk-budget contract cap</strong></div>
+<section class="fx-section" id="sizing-equation" aria-labelledby="sizing-equation-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Risk first</p><h2 id="sizing-equation-title">Convert Invalidation, Stress and Costs Into One Per-Contract Number</h2><p>The verified CME Globex outright tick for 6M is 0.00001 USD per MXN, worth $5 on the 500,000 MXN contract. This page uses that input without repeating the full contract specification. Confirm it on the <a href="6m-tick-size.html">canonical 6M tick and contract guide</a> before using any calculator.</p></div>
+  <div class="fx-formula" aria-label="Risk per 6M contract formula"><code>((invalidation ticks + stress ticks) &times; $5) + round-trip costs</code><i aria-hidden="true">=</i><strong>Stressed dollars per contract</strong></div>
+  <div class="fx-formula" aria-label="Maximum risk-based 6M quantity formula"><code>floor(dollar risk budget &divide; stressed dollars per contract)</code><i aria-hidden="true">=</i><strong>Risk-budget contract cap</strong></div>
   <p>Round down the risk budget calculation after the stop or invalidation distance, adverse-fill stress and explicit costs are included. Never round a fractional result up to create a trade.</p>
-  <ol class="mx-method">
+  <ol class="fx-method">
     <li><h3>Set a dollar budget</h3><p>Choose the maximum planned loss allocation for this idea under the portfolio's rules. It is a governance input, not a percentage recommended by this article.</p></li>
     <li><h3>Locate invalidation</h3><p>Define the price at which the reason for the trade no longer holds. Convert the entry-to-invalidation distance into 0.00001 ticks.</p></li>
     <li><h3>Add adverse execution stress</h3><p>Reserve ticks for gap-through-stop, event repricing or thin-book execution. This is a scenario allowance, not a guarantee or loss ceiling.</p></li>
     <li><h3>Add explicit costs</h3><p>Include expected round-trip commissions and exchange or broker fees per contract. Keep overlapping spread and slippage estimates from being counted twice.</p></li>
   </ol>
-  <p class="mx-source-note">A stop order controls instruction logic, not the eventual fill. When triggered, a stop commonly becomes a marketable order under the relevant order type. The fill depends on available bids or offers. Stress ticks should reflect a declared scenario and be reviewed against actual fills.</p>
+  <p class="fx-source-note">A stop order controls instruction logic, not the eventual fill. When triggered, a stop commonly becomes a marketable order under the relevant order type. The fill depends on available bids or offers. Stress ticks should reflect a declared scenario and be reviewed against actual fills.</p>
 </section>
 
-<section class="mx-section" id="calculator" aria-labelledby="calculator-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Decision aid</p><h2 id="calculator-title">6M Risk-Budget Calculator</h2><p>The default values reproduce the worked example below and are hypothetical. Replace them with a written plan. The tool uses a fixed verified $5 Globex outright tick; it does not fetch margin, market data or broker rules.</p></div>
-  <form class="mx-calculator" id="mx-margin-calculator">
-    <div class="mx-fields">
-      <label for="mx-risk-budget">Dollar risk budget<input id="mx-risk-budget" name="riskBudget" type="number" min="0" step="0.01" value="1000" inputmode="decimal"></label>
-      <label for="mx-stop-ticks">Entry-to-invalidation ticks<input id="mx-stop-ticks" name="stopTicks" type="number" min="0" step="1" value="60" inputmode="numeric"></label>
-      <label for="mx-stress-ticks">Additional adverse stress ticks<input id="mx-stress-ticks" name="stressTicks" type="number" min="0" step="1" value="20" inputmode="numeric"></label>
-      <label for="mx-roundtrip-cost">Round-trip costs per contract<input id="mx-roundtrip-cost" name="roundtripCost" type="number" min="0" step="0.01" value="40" inputmode="decimal"></label>
+<section class="fx-section" id="calculator" aria-labelledby="calculator-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Decision aid</p><h2 id="calculator-title">6M Risk-Budget Calculator</h2><p>The default values reproduce the worked example below and are hypothetical. Replace them with a written plan. The tool uses a fixed verified $5 Globex outright tick; it does not fetch margin, market data or broker rules.</p></div>
+  <form class="fx-calculator" id="fx-margin-calculator">
+    <div class="fx-fields">
+      <label for="fx-risk-budget">Dollar risk budget<input id="fx-risk-budget" name="riskBudget" type="number" min="0" step="0.01" value="1000" inputmode="decimal"></label>
+      <label for="fx-stop-ticks">Entry-to-invalidation ticks<input id="fx-stop-ticks" name="stopTicks" type="number" min="0" step="1" value="60" inputmode="numeric"></label>
+      <label for="fx-stress-ticks">Additional adverse stress ticks<input id="fx-stress-ticks" name="stressTicks" type="number" min="0" step="1" value="20" inputmode="numeric"></label>
+      <label for="fx-roundtrip-cost">Round-trip costs per contract<input id="fx-roundtrip-cost" name="roundtripCost" type="number" min="0" step="0.01" value="40" inputmode="decimal"></label>
     </div>
-    <div class="mx-results" id="mx-margin-results" aria-live="polite">
+    <div class="fx-results" id="fx-margin-results" aria-live="polite">
       <h3>Risk-budget result</h3>
-      <dl><div><dt>Risk per contract</dt><dd id="mx-risk-per-contract">$440.00</dd></div><div><dt>Whole-contract cap</dt><dd id="mx-contract-cap">2</dd></div><div><dt>Planned stressed risk</dt><dd id="mx-planned-risk">$880.00</dd></div></dl>
-      <p id="mx-calculator-note">Funding and portfolio constraints still need separate live checks. The stress scenario is not a maximum-loss guarantee.</p>
+      <dl><div><dt>Risk per contract</dt><dd id="fx-risk-per-contract">$440.00</dd></div><div><dt>Whole-contract cap</dt><dd id="fx-contract-cap">2</dd></div><div><dt>Planned stressed risk</dt><dd id="fx-planned-risk">$880.00</dd></div></dl>
+      <p id="fx-calculator-note">Funding and portfolio constraints still need separate live checks. The stress scenario is not a maximum-loss guarantee.</p>
     </div>
   </form>
 </section>
 
-<section class="mx-section" id="worked-example" aria-labelledby="worked-example-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Arithmetic audit</p><h2 id="worked-example-title">A $1,000 Budget Allows Two Contracts Under This Hypothetical Plan</h2><p>Assume a proposed entry and invalidation are 60 outright ticks apart. Add 20 ticks of adverse gap or fill stress and $40 of estimated round-trip costs per contract. No margin figure is needed to answer the first question.</p></div>
-  <div class="mx-table-scroll" role="region" aria-label="Worked 6M risk sizing reconciliation" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Line</th><th scope="col">Calculation</th><th scope="col">Result</th></tr></thead><tbody>
+<section class="fx-section" id="worked-example" aria-labelledby="worked-example-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Arithmetic audit</p><h2 id="worked-example-title">A $1,000 Budget Allows Two Contracts Under This Hypothetical Plan</h2><p>Assume a proposed entry and invalidation are 60 outright ticks apart. Add 20 ticks of adverse gap or fill stress and $40 of estimated round-trip costs per contract. No margin figure is needed to answer the first question.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Worked 6M risk sizing reconciliation" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Line</th><th scope="col">Calculation</th><th scope="col">Result</th></tr></thead><tbody>
     <tr><th scope="row">Invalidation risk</th><td>60 ticks &times; $5</td><td>$300 per contract</td></tr>
     <tr><th scope="row">Stress allowance</th><td>20 ticks &times; $5</td><td>$100 per contract</td></tr>
     <tr><th scope="row">Explicit round-trip costs</th><td>Hypothetical commission and fees</td><td>$40 per contract</td></tr>
@@ -132,39 +132,39 @@
     <tr><th scope="row">Planned stressed risk</th><td>2 &times; $440</td><td>$880</td></tr>
     <tr><th scope="row">Unallocated budget</th><td>$1,000 - $880</td><td>$120</td></tr>
   </tbody></table></div>
-  <div class="mx-caution"><strong>Do not round 2.27 up to 3.</strong><p>Three contracts would carry $1,320 of modeled risk, exceeding the $1,000 input. If the live funding constraint or portfolio cap allows only one contract, final quantity is one. If either allows zero, final quantity is zero.</p></div>
+  <div class="fx-caution"><strong>Do not round 2.27 up to 3.</strong><p>Three contracts would carry $1,320 of modeled risk, exceeding the $1,000 input. If the live funding constraint or portfolio cap allows only one contract, final quantity is one. If either allows zero, final quantity is zero.</p></div>
 </section>
 
-<section class="mx-section" id="stress" aria-labelledby="stress-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Model limits</p><h2 id="stress-title">A Stress Allowance Improves the Plan but Cannot Cap a Gap</h2><p>The 20-tick input above is a scenario. It should be derived from relevant historical or live execution evidence, not chosen because it produces a preferred contract count. More severe moves remain possible.</p></div>
-  <div class="mx-table-scroll" role="region" aria-label="Hypothetical stress sensitivity for one 6M contract" tabindex="0"><table class="mx-table"><thead><tr><th scope="col">Additional stress</th><th scope="col">Stress dollars</th><th scope="col">Total per-contract model with 60-tick invalidation and $40 costs</th><th scope="col">Meaning</th></tr></thead><tbody>
+<section class="fx-section" id="stress" aria-labelledby="stress-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Model limits</p><h2 id="stress-title">A Stress Allowance Improves the Plan but Cannot Cap a Gap</h2><p>The 20-tick input above is a scenario. It should be derived from relevant historical or live execution evidence, not chosen because it produces a preferred contract count. More severe moves remain possible.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Hypothetical stress sensitivity for one 6M contract" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Additional stress</th><th scope="col">Stress dollars</th><th scope="col">Total per-contract model with 60-tick invalidation and $40 costs</th><th scope="col">Meaning</th></tr></thead><tbody>
     <tr><th scope="row">0 ticks</th><td>$0</td><td>$340</td><td>Assumes no adverse movement beyond invalidation; fragile for execution planning</td></tr>
     <tr><th scope="row">10 ticks</th><td>$50</td><td>$390</td><td>Small adverse-fill allowance</td></tr>
     <tr><th scope="row">20 ticks</th><td>$100</td><td>$440</td><td>Worked scenario, not an empirical claim</td></tr>
     <tr><th scope="row">50 ticks</th><td>$250</td><td>$590</td><td>Larger shock assumption lowers permissible quantity</td></tr>
     <tr><th scope="row">100 ticks</th><td>$500</td><td>$840</td><td>Illustrates how gap sensitivity can dominate the original stop distance</td></tr>
   </tbody></table></div>
-  <div class="mx-limit-grid">
+  <div class="fx-limit-grid">
     <article><strong>Event state</strong><p>Increase caution or reject the trade when Banxico, Federal Reserve or high-impact data timing creates a discontinuous-price scenario the budget cannot absorb.</p></article>
     <article><strong>Market quality</strong><p>Use current spread and depth. A stop-sized quantity may still be too large for the executable book.</p></article>
     <article><strong>Overnight state</strong><p>Account for closed or impaired liquidity in related cash markets, holiday hours and the inability to manage a gap continuously.</p></article>
   </div>
 </section>
 
-<section class="mx-section" id="broker-check" aria-labelledby="broker-check-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Then check financing</p><h2 id="broker-check-title">Live Margin Is a Multi-Layer Constraint</h2><p>After risk-based quantity is known, open the current CME margin record and broker agreement. Do not copy an old article number: exchange performance bonds and house requirements are time-sensitive and can vary by account, position, portfolio and volatility state.</p></div>
-  <div class="mx-contract-path">
+<section class="fx-section" id="broker-check" aria-labelledby="broker-check-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Then check financing</p><h2 id="broker-check-title">Live Margin Is a Multi-Layer Constraint</h2><p>After risk-based quantity is known, open the current CME margin record and broker agreement. Do not copy an old article number: exchange performance bonds and house requirements are time-sensitive and can vary by account, position, portfolio and volatility state.</p></div>
+  <div class="fx-contract-path">
     <article><h3>Exchange layer</h3><p>Record current initial and maintenance requirements for the exact dated 6M contract and account classification. Note effective time and source.</p></article>
     <article><h3>FCM or broker layer</h3><p>Check house add-ons, intraday concessions, overnight conversion time, event changes, concentration policy and liquidation rights.</p></article>
     <article><h3>Account layer</h3><p>Subtract working-order reserves, existing positions, expected variation and a liquidity buffer. Do not allocate every available dollar to margin.</p></article>
     <article><h3>Portfolio layer</h3><p>Assess correlated USD, MXN, rates and risk-sentiment exposures. A recognized margin offset is not proof that economic risk disappeared.</p></article>
   </div>
-  <div class="mx-formula" aria-label="Final 6M contract quantity formula"><code>min(risk-budget cap, live funding cap, portfolio cap)</code><i aria-hidden="true">=</i><strong>Final whole-contract quantity</strong></div>
+  <div class="fx-formula" aria-label="Final 6M contract quantity formula"><code>min(risk-budget cap, live funding cap, portfolio cap)</code><i aria-hidden="true">=</i><strong>Final whole-contract quantity</strong></div>
 </section>
 
-<section class="mx-section" id="reconcile" aria-labelledby="reconcile-title">
-  <div class="mx-section-heading"><p class="mx-kicker">Pre-order reconciliation</p><h2 id="reconcile-title">Seven Lines Must Agree Before Quantity Leaves Zero</h2></div>
-  <ul class="mx-checklist">
+<section class="fx-section" id="reconcile" aria-labelledby="reconcile-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Pre-order reconciliation</p><h2 id="reconcile-title">Seven Lines Must Agree Before Quantity Leaves Zero</h2></div>
+  <ul class="fx-checklist">
     <li><strong>Tick source:</strong> the live order is a CME Globex 6M outright and $5 per tick matches 500,000 &times; 0.00001.</li>
     <li><strong>Risk budget:</strong> a written dollar amount exists for this trade and is compatible with the total portfolio.</li>
     <li><strong>Invalidation:</strong> the failure price comes from the thesis or setup, not from the amount of margin available.</li>
@@ -173,10 +173,10 @@
     <li><strong>Live funding:</strong> current exchange and broker requirements, overnight rules and liquidation rights are verified.</li>
     <li><strong>Residual uncertainty:</strong> everyone reading the plan understands that stops, stress and margin do not establish maximum loss.</li>
   </ul>
-  <div class="mx-go-card" aria-label="Sizing decision"><div><strong>Pass</strong><span>Risk, funding and portfolio caps all permit the same or greater whole-contract quantity.</span></div><div><strong>Reduce</strong><span>A stricter cap permits fewer contracts than the risk equation alone.</span></div><div><strong>No trade</strong><span>Any cap is zero, any source is stale, or the loss path cannot be accepted.</span></div></div>
+  <div class="fx-go-card" aria-label="Sizing decision"><div><strong>Pass</strong><span>Risk, funding and portfolio caps all permit the same or greater whole-contract quantity.</span></div><div><strong>Reduce</strong><span>A stricter cap permits fewer contracts than the risk equation alone.</span></div><div><strong>No trade</strong><span>Any cap is zero, any source is stale, or the loss path cannot be accepted.</span></div></div>
 </section>
 
-<details class="mx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary><ul>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 13, 2026</summary><ul>
   <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/256/256.pdf" target="_blank" rel="noopener">CME Rulebook Chapter 256: Mexican Peso/U.S. Dollar futures</a> for the 500,000 MXN unit and 0.00001 Globex minimum increment.</li>
   <li><a href="https://www.cmegroup.com/markets/fx/emerging-market/mexican-peso.margins.html" target="_blank" rel="noopener">CME Mexican Peso futures margins</a> for the live, time-sensitive exchange performance-bond check.</li>
   <li><a href="https://www.cmegroup.com/articles/faqs/latam-fx-futures-frequently-asked-questions.html" target="_blank" rel="noopener">CME LATAM FX futures FAQ</a> for the statement that daily variation margin is in USD while collateral arrangements can differ through the FCM.</li>
@@ -185,22 +185,22 @@
   <li><a href="https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/FuturesMarketBasics/index.htm" target="_blank" rel="noopener">CFTC futures-market risk guidance</a> for the warning that losses can exceed the initial amount deposited.</li>
 </ul><p>Sources and current links were reviewed August 13, 2026. The calculator and worked tables are transparent arithmetic, not margin quotes, trade recommendations, forecasts or historical results. The $5 tick is a current contract fact; the $1,000 budget, 60-tick invalidation, 20-tick stress and $40 cost are hypothetical inputs. No stress allowance guarantees a maximum loss. Live CME and broker requirements supersede this page.</p></details>
 
-<aside class="mx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This sizing framework is educational and is not personal trading, investment, legal, tax, accounting, hedging or brokerage advice. Futures leverage, gaps, slippage, physical delivery and forced liquidation can produce losses beyond the initial margin deposit. Use current exchange and broker records and only risk capital whose loss you can bear.</p></aside>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This sizing framework is educational and is not personal trading, investment, legal, tax, accounting, hedging or brokerage advice. Futures leverage, gaps, slippage, physical delivery and forced liquidation can produce losses beyond the initial margin deposit. Use current exchange and broker records and only risk capital whose loss you can bear.</p></aside>
 <!-- ARTICLE BODY END -->
 </article>
 </main>
 <script>
 (function(){
-  var form=document.getElementById('mx-margin-calculator');
+  var form=document.getElementById('fx-margin-calculator');
   if(!form){return;}
-  var budget=document.getElementById('mx-risk-budget');
-  var stop=document.getElementById('mx-stop-ticks');
-  var stress=document.getElementById('mx-stress-ticks');
-  var cost=document.getElementById('mx-roundtrip-cost');
-  var riskOut=document.getElementById('mx-risk-per-contract');
-  var capOut=document.getElementById('mx-contract-cap');
-  var plannedOut=document.getElementById('mx-planned-risk');
-  var note=document.getElementById('mx-calculator-note');
+  var budget=document.getElementById('fx-risk-budget');
+  var stop=document.getElementById('fx-stop-ticks');
+  var stress=document.getElementById('fx-stress-ticks');
+  var cost=document.getElementById('fx-roundtrip-cost');
+  var riskOut=document.getElementById('fx-risk-per-contract');
+  var capOut=document.getElementById('fx-contract-cap');
+  var plannedOut=document.getElementById('fx-planned-risk');
+  var note=document.getElementById('fx-calculator-note');
   function money(value){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(value);}
   function parseNonnegative(raw,whole){
     if(typeof raw!=='string'||raw.trim()===''){return null;}
