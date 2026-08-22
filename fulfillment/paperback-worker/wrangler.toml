@@ -26,8 +26,10 @@ PAPERBACK_ALLOWED_ORIGIN = "https://grizzlyparrottrading.com"
 MICROSOFT_UET_TAG_ID = "97257755"
 EMAIL_FROM = "Grizzly Parrot Trading <orders@grizzlyparrottrading.com>"
 DIGITAL_EMAIL_FROM = "Grizzly Parrot Trading <sales@grizzlyparrottrading.com>"
-DIGITAL_REPLY_TO = "sales@grizzlyparrottrading.com"
-SHOP_CONTACT_EMAIL = "orders@grizzlyparrottrading.com"
+# The domain addresses above are authenticated outbound sender identities.
+# Customer replies and order-provider contact must use the monitored mailbox.
+DIGITAL_REPLY_TO = "grizzlyparrott04@gmail.com"
+SHOP_CONTACT_EMAIL = "grizzlyparrott04@gmail.com"
 ADMIN_EMAIL = "grizzlyparrott04@gmail.com"
 
 STRIPE_PAYMENT_LINK_CURRENCY_DIGITAL = "plink_1T6ckkIA3p8RBkZIbTKBQpYh"

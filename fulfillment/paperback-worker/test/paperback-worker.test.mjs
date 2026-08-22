@@ -7,7 +7,7 @@ import { hmacHex, verifyStripeSignature, signedAssetUrl, verifyAssetRequest } fr
 import { LuluClient, shippingCents } from "../src/lulu.mjs";
 import { StripeClient } from "../src/stripe.mjs";
 import { OrderStore } from "../src/order-store.mjs";
-import worker, { allowedCountries, digitalCheckoutConfig, digitalPurchaseFromSession, luluStatusFromJob, productionReadiness, productionSalesEnabled, stripeWebhook, suggestedAddressDiffers } from "../src/index.mjs";
+import worker, { allowedCountries, digitalCheckoutConfig, digitalPurchaseFromSession, luluStatusFromJob, productionReadiness, productionSalesEnabled, sendEmail, stripeWebhook, suggestedAddressDiffers } from "../src/index.mjs";
 
 const validAddress = {
   name: "Test Reader",
@@ -19,6 +19,25 @@ const validAddress = {
   countryCode: "US",
   phoneNumber: "+1 919 555 0100"
 };
+
+test("transactional email replies route to the monitored shop mailbox", async () => {
+  let requestBody;
+  const fakeFetch = async (_url, init) => {
+    requestBody = JSON.parse(init.body);
+    return new Response(null, { status: 200 });
+  };
+  await sendEmail({
+    RESEND_API_KEY: "re_test",
+    EMAIL_FROM: "Grizzly Parrot Trading <orders@example.com>",
+    SHOP_CONTACT_EMAIL: "working@example.net"
+  }, {
+    to: "reader@example.org",
+    subject: "Order received",
+    html: "<p>Thanks.</p>"
+  }, fakeFetch);
+  assert.equal(requestBody.from, "Grizzly Parrot Trading <orders@example.com>");
+  assert.equal(requestBody.reply_to, "working@example.net");
+});
 
 test("all established print editions map to their approved Lulu projects, packages, prices, and source files", () => {
   const expected = {
