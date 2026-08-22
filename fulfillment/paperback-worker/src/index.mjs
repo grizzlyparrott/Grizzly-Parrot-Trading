@@ -244,12 +244,14 @@ function sessionAddress(session) {
   } : null;
 }
 
-async function sendEmail(env, message) {
+async function sendEmail(env, message, request = fetch) {
   if (!env.RESEND_API_KEY || !env.EMAIL_FROM) throw new Error("Email delivery is not configured.");
-  const response = await fetch("https://api.resend.com/emails", {
+  const payload = { from: env.EMAIL_FROM, ...message };
+  if (!payload.reply_to && env.SHOP_CONTACT_EMAIL) payload.reply_to = env.SHOP_CONTACT_EMAIL;
+  const response = await request("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: env.EMAIL_FROM, ...message })
+    body: JSON.stringify(payload)
   });
   if (!response.ok) throw new Error(`Email provider returned ${response.status}.`);
 }
@@ -782,5 +784,6 @@ export {
   quoteFromRow,
   orderFromRow,
   retryDigitalDeliveries,
+  sendEmail,
   suggestedAddressDiffers
 };
