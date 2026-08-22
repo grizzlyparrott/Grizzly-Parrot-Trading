@@ -2,243 +2,112 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How the London Fix Shapes 6S Liquidity and Daily Price Flow</title>
-  <meta name="description" content="Learn how the London Fix shifts liquidity, reverses intraday bias, and drives daily flow patterns in 6S Swiss Franc futures.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6s-london-fix-liquidity-shifts-and-daily-flows.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="How the London Fix Shapes 6S Liquidity and Daily Price Flow">
-  <meta property="og:description" content="Learn how the London Fix shifts liquidity, reverses intraday bias, and drives daily flow patterns in 6S Swiss Franc futures.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6s-london-fix-liquidity-shifts-and-daily-flows.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="How the London Fix Shapes 6S Liquidity and Daily Price Flow">
-  <meta name="twitter:description" content="Learn how the London Fix shifts liquidity, reverses intraday bias, and drives daily flow patterns in 6S Swiss Franc futures.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How the London Fix Shapes 6S Liquidity and Daily Price Flow",
-  "description": "Learn how the London Fix shifts liquidity, reverses intraday bias, and drives daily flow patterns in 6S Swiss Franc futures.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6s-london-fix-liquidity-shifts-and-daily-flows.html",
-  "datePublished": "2025-11-27",
-  "dateModified": "2025-11-27",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6s-london-fix-liquidity-shifts-and-daily-flows.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How the London Fix Shapes 6S Liquidity and Daily Price Flow",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6s-london-fix-liquidity-shifts-and-daily-flows.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6S Around the London 4 p.m. Fix: A Liquidity Study</title>
+  <meta name="description" content="Measure 6S spread, depth, slippage and fill quality around the London 4 p.m. FX benchmark without inventing client flow or routine reversals.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6s-london-fix-liquidity-shifts-and-daily-flows.html">
+  <meta property="og:title" content="6S Around the London 4 p.m. Fix: A Liquidity Study"><meta property="og:description" content="Measure 6S spread, depth, slippage and fill quality around the London 4 p.m. FX benchmark without inventing client flow or routine reversals."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6s-london-fix-liquidity-shifts-and-daily-flows.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-27"><meta property="article:modified_time" content="2026-08-19">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6S Around the London 4 p.m. Fix: A Liquidity Study"><meta name="twitter:description" content="Measure 6S spread, depth, slippage and fill quality around the London 4 p.m. FX benchmark without inventing client flow or routine reversals."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6S Around the London 4 p.m. Fix: A Liquidity Study","description":"Measure 6S spread, depth, slippage and fill quality around the London 4 p.m. FX benchmark without inventing client flow or routine reversals.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6s-london-fix-liquidity-shifts-and-daily-flows.html"},"datePublished":"2025-11-27","dateModified":"2026-08-19","url":"https://grizzlyparrottrading.com/futures-basics/6s-london-fix-liquidity-shifts-and-daily-flows.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6S Around the London 4 p.m. Fix: A Liquidity Study","item":"https://grizzlyparrottrading.com/futures-basics/6s-london-fix-liquidity-shifts-and-daily-flows.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Benchmark facts &middot; observable books &middot; execution guardrails</p>
+    <h1>6S Around the London 4 p.m. Fix: A Liquidity Study</h1>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 19, 2026</p>
+    <p class="fx-hero-lede">A 6S move near 4 p.m. London time does not reveal whether an asset manager bought francs, a dealer hedged a benchmark order, a U.S. release moved the dollar or ordinary liquidity shifted. Client instructions are generally absent from public futures data. The defensible task is narrower: anchor the official benchmark time, measure the 6S book around it and leave unobserved flow unlabelled.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#facts">Start with benchmark facts</a><a class="fx-text-link" href="#guardrails">Set execution guardrails</a></div>
+    <dl class="fx-hero-metrics" aria-label="London-fix research boundary"><div><dt>Anchor</dt><dd>4 p.m. London</dd></div><div><dt>Observed</dt><dd>6S trades + quotes</dd></div><div><dt>Unobserved</dt><dd>Client intent</dd></div><div><dt>Routine reversal</dt><dd>Not claimed</dd></div></dl>
   </div>
+  <aside class="fx-market-board" aria-label="Observed and unobserved fix-window evidence">
+    <div class="fx-board-head"><span>Evidence boundary</span><strong>Do not infer the order</strong></div>
+    <div class="fx-proof-grid"><div class="fx-proof"><strong>Observable</strong><span>Timestamped prices, quotes, depth and fills</span></div><div class="fx-proof is-limit"><strong>Usually hidden</strong><span>Client benchmark need, dealer inventory and intent</span></div></div>
+    <p class="fx-board-foot">A price path is not an order ticket</p>
+  </aside>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#facts">Benchmark facts</a><a href="#window">Window</a><a href="#study">Market quality</a><a href="#controls">Controls</a><a href="#guardrails">Guardrails</a><a href="#record">Record</a></nav>
 
-<h1>How the London Fix Shapes 6S Liquidity and Daily Price Flow</h1>
-
-<p>Every major currency future reacts to the London Fix, but CHF is one of the most sensitive. If you trade 6S Swiss Franc futures without tracking the fix window, you’re missing one of the biggest daily liquidity rotations — and you’ll constantly get blindsided by reversals, volume shifts, and stop hunts.</p>
-
-<h2>1. What the London Fix Actually Is</h2>
-
-<p>The London Fix (also called the “WM/Reuters 4pm fix”) is a daily benchmark rate used by global institutions for settling currency flows. Huge volumes are executed during this window.</p>
-
-<p>For CHF, this is a major liquidity event because a large amount of global safe-haven capital is denominated in francs and rebalanced through London each day.</p>
-
-<h2>2. How the Fix Impacts 6S Liquidity</h2>
-
-<p>During the fix window, 6S experiences:</p>
-
-<ul>
-<li>spike in volume</li>
-<li>expansion in volatility</li>
-<li>sudden directional pushes</li>
-<li>unexpected reversals</li>
-</ul>
-
-<p>Price often snaps in one direction right before the fix and reverses right after. If you don’t expect this, you’ll interpret it as random noise — it isn’t.</p>
-
-<h2>3. The Pre-Fix Trap Move</h2>
-
-<p>One of the most consistent 6S patterns:</p>
-
-<p><strong>A stop-hunt move right before the fix.</strong></p>
-
-<p>Typical sequence:</p>
-
-<ol>
-<li>6S drifts toward a liquidity pool</li>
-<li>a sharp wick clears both sides of the range</li>
-<li>volume spikes</li>
-<li>direction reverses after the fix</li>
-</ol>
-
-<p>This trap move is engineered by large flows needing liquidity. Retail traders simply get caught in the crossfire.</p>
-
-<h2>4. The Fix Often Sets the Bias for the U.S. Afternoon</h2>
-
-<p>After the fix completes, 6S often chooses its final direction for the remainder of the session. That’s because:</p>
-
-<ul>
-<li>big rebalancing flow is done</li>
-<li>institutional volume drops off</li>
-<li>market aligns with U.S. yield direction</li>
-</ul>
-
-<p>It’s common to see 6S trend cleanly after the fix — even when the morning was messy.</p>
-
-<h2>5. How to Trade 6S Around the Fix</h2>
-
-<p>You do NOT want to trade into the fix. Instead:</p>
-
-<ul>
-<li>wait for the sweep</li>
-<li>let the fix pass</li>
-<li>trade the post-fix displacement</li>
-</ul>
-
-<p>This is the cleanest 6S trade of the day because the fake liquidity games are done.</p>
-
-<h2>6. Correlation With JPY During Fix Hours</h2>
-
-<p>CHF and JPY often move together into and out of the fix. Watching JPY gives early hints about 6S direction after the fix.</p>
-
-<p>This fits perfectly with the article on <a href="https://grizzlyparrottrading.com/futures-basics/6s-safe-haven-vs-jpy-which-leads-in-risk-off.html">CHF vs JPY leadership</a>.</p>
-
-<div class="highlight-box yellow">
-  <h3>London Fix: The Daily CHF Shakeup</h3>
-  <p>Every day, the London Fix hits 6S with a wave of liquidity and a trap move. If you’re not ready, it fakes you out. If you are, you catch the clean post-fix trend while everyone else scrambles. Time it right — or get swept.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="fx-section" id="facts" aria-labelledby="facts-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Administrator evidence first</p><h2 id="facts-title">Separate the Benchmark From a Futures Pattern</h2><p><a href="https://www.lseg.com/en/ftse-russell/benchmarks/wmr-fx-benchmarks" target="_blank" rel="noopener noreferrer">FTSE Russell&rsquo;s WMR benchmark page</a> identifies its closing spot rates as fixed daily Monday through Friday at 4:00 p.m. London time and provides the current methodology. That is an authoritative timing and administration fact. It does not establish a predictable 6S direction, a client-flow imbalance or a post-fix reversal.</p></div>
+  <div class="fx-claim-ladder">
+    <article><span>1</span><h3>Established fact</h3><p>A named WMR closing spot benchmark exists at the administrator&rsquo;s stated London time under a published methodology.</p></article>
+    <article><span>2</span><h3>Observable hypothesis</h3><p>6S market-quality measures may differ near that anchor relative to matched adjacent and control windows.</p></article>
+    <article><span>3</span><h3>Unidentified story</h3><p>A particular 6S move was caused by client benchmark flow or dealer inventory.</p></article>
+    <article><span>4</span><h3>Trading application</h3><p>An execution schedule improves realized cost after delay, fees, misses and regime changes.</p></article>
   </div>
-</footer>
-</body>
-</html>
+  <div class="fx-caution"><strong>Do not call every 4 p.m. price a fix print.</strong><p>WMR is a spot FX benchmark under the administrator&rsquo;s methodology. CME 6S is a dated CHF/USD futures contract. A futures observation around the anchor is research evidence, not the benchmark value itself.</p></div>
+</section>
+
+<section class="fx-section" id="window" aria-labelledby="window-title">
+  <div class="fx-section-heading"><p class="fx-kicker">London local time moves in UTC</p><h2 id="window-title">Construct Symmetric and Asymmetric Benchmark Windows</h2><p>Resolve 4 p.m. Europe/London with the historical timezone database, then convert it to UTC and the exchange clock for each date. Register one primary window and only a few sensitivity windows before outcomes are inspected.</p></div>
+  <div class="fx-window-equation" aria-label="Illustrative benchmark-relative windows"><span>Pre</span><code>[T&minus;30m, T&minus;5m)</code><i aria-hidden="true">+</i><span>Core</span><code>[T&minus;5m, T+5m]</code><i aria-hidden="true">+</i><span>Post</span><code>(T+5m, T+30m]</code></div>
+  <div class="fx-table-scroll" role="region" aria-label="London fix study window definitions" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Window</th><th scope="col">Purpose</th><th scope="col">Contamination rule</th></tr></thead><tbody>
+    <tr><th scope="row">Pre</th><td>Measure market quality approaching the anchor</td><td>Tag every scheduled release and unusual market closure</td></tr>
+    <tr><th scope="row">Core</th><td>Measure the narrow benchmark-proximate state</td><td>Do not interpret direction as client flow</td></tr>
+    <tr><th scope="row">Post</th><td>Measure persistence, normalization or further repricing</td><td>No automatic “reversal” label</td></tr>
+    <tr><th scope="row">Adjacent placebo</th><td>Repeat the same geometry at non-benchmark times</td><td>Matched by weekday, month state and event load</td></tr>
+    <tr><th scope="row">Control day</th><td>Compare like calendar and market states</td><td>Selected using past-only variables</td></tr>
+  </tbody></table></div>
+</section>
+
+<section class="fx-section" id="study" aria-labelledby="study-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Study the book, not a candle shape</p><h2 id="study-title">Measure Spread, Depth, Slippage and Fill Quality</h2><p>A close-to-close futures bar cannot reconstruct what a marketable order would have paid or whether a resting limit would have filled. Match the claim to the data layer and order-size rule.</p></div>
+  <div class="fx-four-grid">
+    <article class="fx-panel"><p class="fx-card-label">Quoted</p><h3>Inside spread</h3><p>Time-weighted and arrival-time bid/ask spread, quote age and locked/crossed-market treatment.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Capacity</p><h3>Displayed depth</h3><p>Quantity at the inside and cumulative depth through declared price bands for fixed order sizes.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Traded</p><h3>Print distribution</h3><p>Volume, trade count, size distribution and directional classification with method uncertainty.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Experienced</p><h3>Order outcomes</h3><p>Arrival slippage, implementation shortfall, fill rate, time to fill, partials and cancellations.</p></article>
+  </div>
+  <div class="fx-formula" aria-label="Filled-order implementation shortfall in U.S. dollars"><code>side &times; (fill &minus; decision) &times; 125,000 &times; filled contracts</code><i aria-hidden="true">+</i><code>USD fees = filled-order shortfall in USD</code></div>
+  <p><strong>Use +1 for a buy and &minus;1 for a sell.</strong> Record unfilled quantity separately unless a predeclared miss model converts it to a finite USD opportunity cost. Never add a raw price difference, a contract count and dollar costs as though they shared one unit.</p>
+  <p class="fx-source-note"><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine</a> lists Market by Order and PCAP separately from settlement datasets. The source choice determines whether spread, depth, message sequence or only a reference price can be tested. No CME dataset was purchased or analyzed for this article.</p>
+</section>
+
+<section class="fx-section" id="controls" aria-labelledby="controls-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Month-end is not the only rival explanation</p><h2 id="controls-title">Control Calendar, Events, Contracts and Common FX Moves</h2><p>Report month-end and ordinary dates separately, but do not stop there. A benchmark-window estimate can be driven by U.S. information, holiday-thinned liquidity, roll migration or a broad-dollar shock.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="London fix study confounds and controls" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Confound</th><th scope="col">Required control</th><th scope="col">Failure signal</th></tr></thead><tbody>
+    <tr><th scope="row">Month and quarter end</th><td>Predeclared calendar classification and separate estimates</td><td>Effect exists only in one rebalancing subset</td></tr>
+    <tr><th scope="row">Scheduled information</th><td>Official FOMC, U.S., Swiss and European event timestamps</td><td>A few release collisions drive the average</td></tr>
+    <tr><th scope="row">London/New York DST mismatch</th><td>Historical timezone conversion and explicit mismatch state</td><td>Clock-fixed result moves with the offset</td></tr>
+    <tr><th scope="row">Contract migration</th><td>Dated-contract mapping, volume/open-interest roll rule</td><td>Spread change occurs only near the splice</td></tr>
+    <tr><th scope="row">Broad-dollar movement</th><td>Independent timestamp-compatible USD factor</td><td>6S direction vanishes after common FX control</td></tr>
+    <tr><th scope="row">Search freedom</th><td>Registered windows, metrics and sample partitions</td><td>Only the best undisclosed window survives</td></tr>
+  </tbody></table></div>
+  <div class="fx-method"><div><h3>Protocol question&mdash;not a result</h3><p>Does executable 6S market quality around the declared WMR 4 p.m. London anchor differ from matched adjacent and control windows, and can any difference survive later data under a fixed order policy?</p></div><dl><div><dt>Anchor</dt><dd>Administrator time</dd></div><div><dt>Primary outcome</dt><dd>Market quality</dd></div><div><dt>Flow attribution</dt><dd>Not identified</dd></div></dl></div>
+</section>
+
+<section class="fx-section" id="guardrails" aria-labelledby="guardrails-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Observation before participation</p><h2 id="guardrails-title">Use Execution Guardrails, Not a Directional Fix Trade</h2><p>The study can support a scheduling or sizing decision only if the same observable state exists live and the order policy passed a chronological holdout. It cannot turn an unobserved flow story into a buy-or-sell signal.</p></div>
+  <div class="fx-go-card"><div><p class="fx-card-label">Pre-order decision</p><h3>Trade only the state that was tested</h3><p>Verify the correct dated 6S contract, current spread, displayed depth, quote age, event status and maximum order size. If any required field is absent, the valid output is wait or reject.</p></div><ul><li><strong>Go:</strong> all live gates pass and the order size, urgency and venue match the validated policy.</li><li><strong>Reduce:</strong> capacity is below the full-size gate but inside a validated smaller-size band.</li><li><strong>Wait:</strong> an event collision, unstable book or transient quote condition makes the state ineligible.</li><li><strong>Reject:</strong> the data, holdout or cost advantage is incomplete, unstable or economically immaterial.</li></ul></div>
+  <ul class="fx-checklist"><li><strong>No routine reversal assumption.</strong> Post-window direction must be measured and may be continuation, reversal or noise.</li><li><strong>No client-flow label.</strong> Public 6S prints do not identify beneficial owner or benchmark instruction.</li><li><strong>No zero-cost backtest.</strong> Include spread, impact, fees, latency, partials and missed orders.</li><li><strong>No timeless window.</strong> Re-estimate after methodology, market-structure or participation changes.</li></ul>
+</section>
+
+<section class="fx-section" id="record" aria-labelledby="record-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Write down the failure</p><h2 id="record-title">Benchmark-Window Validation Ledger</h2><p>Record every result, including states where the benchmark window is indistinguishable from controls.</p></div>
+  <div class="fx-trade-card"><h3>Accept, limit, or abandon</h3><dl><div><dt>Definition</dt><dd>Benchmark version, timezone, windows, contract map, data layer, order size and metrics.</dd></div><div><dt>Controls</dt><dd>Month-end, events, holidays, DST state, roll state, common dollar factor and placebos.</dd></div><div><dt>Validation</dt><dd>Chronological holdout, uncertainty, all tried windows and conservative cost model.</dd></div><div><dt>Accept</dt><dd>Market-quality improvement is stable, live-observable and useful for the declared order.</dd></div><div><dt>Limit</dt><dd>Use only in a pre-identifiable state with adequate independent observations.</dd></div><div><dt>Abandon</dt><dd>Controls erase it, costs consume it, fill quality fails, or later data do not reproduce it.</dd></div></dl></div>
+  <div class="fx-caution"><strong>Research status as of August 21, 2026</strong><p>No original 6S London-fix dataset, spread estimate, depth result, reversal statistic, client-flow finding or trading performance is reported here. No original result is reported. The benchmark facts are sourced; the market-quality study remains a protocol.</p></div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 21, 2026</summary><ul>
+  <li><a href="https://www.lseg.com/en/ftse-russell/benchmarks/wmr-fx-benchmarks" target="_blank" rel="noopener noreferrer">FTSE Russell WMR FX Benchmarks overview and resources</a> for the administrator, daily 4 p.m. London closing-rate timing and links to current methodology.</li>
+  <li><a href="https://www.lseg.com/content/dam/ftse-russell/en_us/documents/ground-rules/wmr-fx-methodology.pdf" target="_blank" rel="noopener noreferrer">WMR FX Benchmarks Methodology</a> for the administrator&rsquo;s current spot, forward, NDF and metal-rate calculation rules.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/g10/swiss-franc.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME Swiss Franc futures product page</a> for current 6S product context.</li>
+  <li><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/254/254.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 254: Swiss Franc/U.S. Dollar futures</a> for dated-contract identity; mechanics are centralized in <a href="6s-contract-specs-tick-size-margin.html">the 6S contract guide</a>.</li>
+  <li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine historical-data catalog</a> for distinctions among settlements and order-level datasets.</li>
+  <li><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">Federal Reserve FOMC calendars</a> for official U.S. policy-event dates used in contamination controls.</li>
+</ul><p>Sources and methods were reviewed August 21, 2026. This unsponsored article distinguishes benchmark facts, observable futures evidence, unobserved flow hypotheses and execution application. It reports no original market result.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This benchmark-window research framework is educational; it is not individualized investment, legal, tax, hedging, brokerage or execution advice. Liquidity near the anchor can change quickly, and leveraged 6S losses can exceed opening margin. Confirm the current methodology, dated contract, live book and independent loss limit before acting.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

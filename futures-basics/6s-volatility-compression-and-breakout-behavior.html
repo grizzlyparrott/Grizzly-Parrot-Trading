@@ -2,250 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6S Volatility Compression and How to Trade the Breakouts</title>
-  <meta name="description" content="Learn how 6S volatility compression forms, why it traps beginners, and how to trade the breakout moves that follow in Swiss Franc futures.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6s-volatility-compression-and-breakout-behavior.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6S Volatility Compression and How to Trade the Breakouts">
-  <meta property="og:description" content="Learn how 6S volatility compression forms, why it traps beginners, and how to trade the breakout moves that follow in Swiss Franc futures.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6s-volatility-compression-and-breakout-behavior.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6S Volatility Compression and How to Trade the Breakouts">
-  <meta name="twitter:description" content="Learn how 6S volatility compression forms, why it traps beginners, and how to trade the breakout moves that follow in Swiss Franc futures.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6S Volatility Compression and How to Trade the Breakouts",
-  "description": "Learn how 6S volatility compression forms, why it traps beginners, and how to trade the breakout moves that follow in Swiss Franc futures.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6s-volatility-compression-and-breakout-behavior.html",
-  "datePublished": "2025-11-27",
-  "dateModified": "2025-11-27",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6s-volatility-compression-and-breakout-behavior.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6S Volatility Compression and How to Trade the Breakouts",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6s-volatility-compression-and-breakout-behavior.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6S Volatility Compression: Define and Test Breakouts</title>
+  <meta name="description" content="Define 6S compression, breakout triggers and outcomes before testing them with false-break controls, costs, robustness and sealed validation.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6s-volatility-compression-and-breakout-behavior.html">
+  <meta property="og:title" content="6S Volatility Compression: Define and Test Breakouts"><meta property="og:description" content="Define 6S compression, breakout triggers and outcomes before testing them with false-break controls, costs, robustness and sealed validation."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6s-volatility-compression-and-breakout-behavior.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-27"><meta property="article:modified_time" content="2026-08-21">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6S Volatility Compression: Define and Test Breakouts"><meta name="twitter:description" content="Define 6S compression, breakout triggers and outcomes before testing them with false-break controls, costs, robustness and sealed validation."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6S Volatility Compression: Define and Test Breakouts","description":"Define 6S compression, breakout triggers and outcomes before testing them with false-break controls, costs, robustness and sealed validation.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6s-volatility-compression-and-breakout-behavior.html"},"datePublished":"2025-11-27","dateModified":"2026-08-21","url":"https://grizzlyparrottrading.com/futures-basics/6s-volatility-compression-and-breakout-behavior.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6S Volatility Compression: Define and Test Breakouts","item":"https://grizzlyparrottrading.com/futures-basics/6s-volatility-compression-and-breakout-behavior.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Operational definitions &middot; false-break controls &middot; sealed validation</p>
+    <h1>6S Volatility Compression: Define and Test Breakouts</h1>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 21, 2026</p>
+    <p class="fx-hero-lede">A narrow high&ndash;low range, low realized variation and a tight Bollinger-style band can label three different 6S samples “compressed.” One can be quiet because quotes are stale, another because liquidity is deep, and another because a scheduled announcement has not arrived. Until the definition, data and clock are fixed, “compression leads to breakout” is not one testable claim.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#definition">Choose one definition</a><a class="fx-text-link" href="#ledger">Open the validation ledger</a></div>
+    <dl class="fx-hero-metrics" aria-label="Compression research status"><div><dt>Compression</dt><dd>Operational state</dd></div><div><dt>Breakout</dt><dd>Timestamped trigger</dd></div><div><dt>Outcome</dt><dd>Frozen horizon</dd></div><div><dt>Original results</dt><dd>None reported</dd></div></dl>
   </div>
+  <aside class="fx-market-board" aria-label="Three incompatible compression definitions">
+    <div class="fx-board-head"><span>Same word</span><strong>Three different samples</strong></div>
+    <div class="fx-cost-tape"><span><strong>Range</strong>Small high&ndash;low span</span><span><strong>Returns</strong>Low realized variation</span><span><strong>Band</strong>Narrow normalized envelope</span><span><strong>Decision</strong>Register one primary</span></div>
+    <p class="fx-board-foot">Definitions cannot be swapped after outcomes</p>
+  </aside>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#definition">Definition</a><a href="#trigger">Trigger</a><a href="#outcome">Outcome</a><a href="#controls">Controls</a><a href="#robustness">Robustness</a><a href="#ledger">Ledger</a></nav>
 
-<h1>6S Volatility Compression and How to Trade the Breakouts</h1>
-
-<p>6S Swiss Franc futures compress more than almost any other currency future. CHF is stable by nature, so 6S spends a lot of its life in tight, low-volatility channels before breaking out violently. Traders who don’t understand this compression cycle get chopped to death. Those who do understand it can time breakout entries with precision.</p>
-
-<h2>1. Why 6S Compresses More Than Other Currencies</h2>
-
-<p>6S volatility compression happens because CHF is a low-beta, stable safe-haven currency. The Swiss National Bank keeps conditions steady, and the market treats CHF as a low-risk parking lot.</p>
-
-<p>This creates long stretches of:</p>
-
-<ul>
-<li>small candles</li>
-<li>flat ATR readings</li>
-<li>tight consolidations</li>
-<li>micro liquidity sweeps with no follow-through</li>
-</ul>
-
-<p>Beginners mistake this for “directionless.” It’s not. It’s a buildup.</p>
-
-<h2>2. Compression Always Forms Around Liquidity Pools</h2>
-
-<p>6S doesn’t compress in the middle of nowhere. It compresses next to:</p>
-
-<ul>
-<li>prior session highs/lows</li>
-<li>European session liquidity zones</li>
-<li>big level imbalances</li>
-<li>points where USD yield spreads recently shifted</li>
-</ul>
-
-<p>This ties directly into <a href="https://grizzlyparrottrading.com/futures-basics/6s-yield-spreads-and-how-interest-rate-differentials-drive-price.html">yield spreads</a> because many compressions happen when markets wait for bond direction.</p>
-
-<h2>3. Breakouts in 6S Aren’t Random — They Follow a Cycle</h2>
-
-<p>Textbook 6S breakout cycle:</p>
-
-<ol>
-<li>Price compresses in a tight channel</li>
-<li>Liquidity builds above and below the box</li>
-<li>Small fake breakout forms to grab stops</li>
-<li>Real breakout drives toward the opposite liquidity pool</li>
-<li>Trend leg forms on increased volume</li>
-</ol>
-
-<p>Most traders get nuked on step 3 because they think the micro-break equals the real break.</p>
-
-<h2>4. What Causes the Actual Breakout?</h2>
-
-<p>There are three reliable triggers:</p>
-
-<ul>
-<li>U.S. economic releases</li>
-<li>Yield spread shifts</li>
-<li>Risk sentiment reversals (ES, NQ, VIX)</li>
-</ul>
-
-<p>If none of these shift, the breakout will likely fail or retrace immediately.</p>
-
-<h2>5. How to Trade 6S Breakouts Without Getting Faked Out</h2>
-
-<p>6S breakouts require confirmation, not anticipation. The safest entry method:</p>
-
-<ul>
-<li>Wait for a displacement candle</li>
-<li>Ensure volume increases from the compression baseline</li>
-<li>Enter on the pullback into the broken structure</li>
-</ul>
-
-<p>If you enter inside the compression, you’re gambling.</p>
-
-<h2>6. ATR as a Filter for Breakout Validity</h2>
-
-<p>During compression, ATR hits rock bottom. On real breakout days, ATR expands instantly. If ATR doesn’t rise, the breakout is fake.</p>
-
-<p>ATR spike = breakout confirmation</p>
-<p>No ATR spike = trap</p>
-
-<div class="highlight-box yellow">
-  <h3>Compression Is Warning, Breakout Is Intent</h3>
-  <p>6S coils when the market waits. It explodes when the waiting ends. Watch yield shifts and macro catalysts for the trigger — and wait. Trading inside compression is noise. Trading the release is edge.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="fx-section" id="definition" aria-labelledby="definition-title">
+  <div class="fx-section-heading"><p class="fx-kicker">The state exists only after the rule</p><h2 id="definition-title">Register an Operational Compression Definition</h2><p>Choose a primary estimator, lookback, threshold, normalization and minimum-data policy before viewing breakout outcomes. Alternate definitions belong in a limited robustness set and remain separate results.</p></div>
+  <div class="fx-three-column">
+    <article class="fx-panel"><p class="fx-card-label">Candidate A</p><h3>Range compression</h3><p>Completed high&ndash;low range over a fixed window, scaled by a past-only reference such as price or earlier range. Sensitive to bad ticks and session boundaries.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Candidate B</p><h3>Return compression</h3><p>Realized variation from completed intraday returns at a declared sampling interval. Sensitive to microstructure noise and missing updates.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Candidate C</p><h3>Band compression</h3><p>Width of a fully specified past-only envelope relative to price or a training-period scale. Sensitive to lookback and estimator choice.</p></article>
   </div>
-</footer>
-</body>
-</html>
+  <div class="fx-table-scroll" role="region" aria-label="Compression definition registry" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Field</th><th scope="col">Required declaration</th><th scope="col">Failure condition</th></tr></thead><tbody>
+    <tr><th scope="row">Data</th><td>Dated 6S contract, price field, timestamps, cleaning and roll policy</td><td>Continuous symbol lacks expiry mapping</td></tr>
+    <tr><th scope="row">Clock</th><td>Session endpoints, timezone, holiday and missing-bar treatment</td><td>Vendor defaults are undocumented</td></tr>
+    <tr><th scope="row">Estimator</th><td>Exact formula, sampling, lookback and scaling</td><td>Definition changes after outcomes</td></tr>
+    <tr><th scope="row">Threshold</th><td>Training-only quantile or fixed rule with minimum history</td><td>Full-sample percentile leaks later data</td></tr>
+    <tr><th scope="row">Duration</th><td>Minimum and maximum number of completed eligible intervals</td><td>State begins or ends by visual judgment</td></tr>
+  </tbody></table></div>
+  <div class="fx-caution"><strong>Stale is not compressed.</strong><p>A repeated last price or missing quote updates can mechanically lower return-based volatility. Require valid observation counts, quote-age limits and sequence continuity before an interval can qualify.</p></div>
+</section>
+
+<section class="fx-section" id="trigger" aria-labelledby="trigger-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Leaving the box is not yet an executable order</p><h2 id="trigger-title">Define the Candidate Breakout Trigger and Arrival Path</h2><p>The trigger must occur on information available at a timestamp and the simulated order must arrive later. Register direction, buffer, confirmation, entry type, invalidation and re-entry policy. Values are test parameters, not recommendations.</p></div>
+  <div class="fx-state-machine" aria-label="Compression breakout candidate state machine">
+    <article><span>1</span><h3>Eligible</h3><p>Data, event, liquidity and contract gates pass.</p></article>
+    <article><span>2</span><h3>Compressed</h3><p>Primary estimator remains below its frozen threshold.</p></article>
+    <article><span>3</span><h3>Released</h3><p>Completed price or variation crosses the registered boundary.</p></article>
+    <article><span>4</span><h3>Confirmed</h3><p>Optional past-only confirmation occurs within its time limit.</p></article>
+    <article><span>5</span><h3>Ordered</h3><p>Order arrives after processing and route delay.</p></article>
+    <article><span>6</span><h3>Resolved</h3><p>Fill, miss, false break, exit and costs are logged.</p></article>
+  </div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Candidate continuation</p><h3>Trade in the break direction</h3><p>Requires a frozen boundary, buffer and later entry. It must compete with a direction-neutral timing rule and no trade.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Candidate failure</p><h3>Fade a false break</h3><p>Requires an independent false-break definition and later trigger. It cannot use the future return to decide the original break was false.</p></article>
+  </div>
+  <div class="fx-related">Mean-reversion candidate rules belong in <a href="6s-mean-reversion-setups-and-why-they-work.html">6S Mean Reversion</a>. This page keeps breakout continuation and false-break outcomes inside one preregistered compression study.</div>
+</section>
+
+<section class="fx-section" id="outcome" aria-labelledby="outcome-title">
+  <div class="fx-section-heading"><p class="fx-kicker">A breakout needs an endpoint</p><h2 id="outcome-title">Freeze Outcome Horizons and Failure Labels</h2><p>A move can continue for five minutes and reverse by the session close. Report the path across a small registered horizon set rather than selecting the endpoint that makes the setup look successful.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Breakout outcome definitions" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Outcome</th><th scope="col">Operational definition</th><th scope="col">Why it is separate</th></tr></thead><tbody>
+    <tr><th scope="row">Continuation</th><td>Signed return from executable entry to a fixed later horizon</td><td>Measures direction, not maximum excursion</td></tr>
+    <tr><th scope="row">Adverse excursion</th><td>Worst signed path before the fixed exit</td><td>Exposes risk hidden by endpoint return</td></tr>
+    <tr><th scope="row">Favorable excursion</th><td>Best signed path before the fixed exit</td><td>Does not assume a fill at the extreme</td></tr>
+    <tr><th scope="row">False break</th><td>Registered boundary cross followed by a registered return inside before deadline</td><td>Must be defined without later discretionary relabeling</td></tr>
+    <tr><th scope="row">No resolution</th><td>Neither success nor invalidation before the time stop</td><td>Prevents open-ended waiting</td></tr>
+    <tr><th scope="row">Net order result</th><td>Realized fills and exits less spread, slippage, fees and roll cost</td><td>Connects path evidence to implementation</td></tr>
+  </tbody></table></div>
+  <div class="fx-formula" aria-label="Illustrative breakout outcome family"><code>outcome(h) = signed return after executable entry</code><i aria-hidden="true">|</i><code>h belongs to a preregistered horizon set</code></div>
+</section>
+
+<section class="fx-section" id="controls" aria-labelledby="controls-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Compression often sits before information</p><h2 id="controls-title">Control Events, Time of Day, Liquidity and Rolls</h2><p>A quiet interval before an FOMC or SNB decision is different from an ordinary low-variation interval. Separate these states before estimating whether the compression label adds information.</p></div>
+  <div class="fx-four-grid">
+    <article class="fx-panel"><p class="fx-card-label">Events</p><h3>Scheduled information</h3><p>Tag official FOMC, SNB and major data timestamps. Estimate event and non-event samples separately.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Clock</p><h3>Intraday seasonality</h3><p>Compare within matched UTC bins and historical DST states so quiet hours do not create the entire effect.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Book</p><h3>Market quality</h3><p>Require spread, depth, quote-age and update gates where the claim depends on executable liquidity.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Contract</p><h3>Roll lifecycle</h3><p>Preserve dated expiries and distinguish active trading from migration and expiry-proximate intervals.</p></article>
+  </div>
+  <div class="fx-causal-map">
+    <div class="fx-causal-origin"><strong>Observed post-compression move</strong><span>Compression may be a label on another cause.</span></div>
+    <article class="fx-panel"><h3>Information arrival</h3><p>A scheduled or unscheduled release can generate the move independently of the prior range.</p></article>
+    <article class="fx-panel"><h3>Liquidity transition</h3><p>Session handovers and reopening participation can alter both volatility and fill quality.</p></article>
+    <article class="fx-panel"><h3>Common dollar factor</h3><p>A broad USD move can drive CHF/USD while the compression state adds no incremental information.</p></article>
+    <article class="fx-panel"><h3>Measurement artifact</h3><p>Stale quotes, missing bars or a roll splice can manufacture both a quiet state and apparent break.</p></article>
+  </div>
+</section>
+
+<section class="fx-section" id="robustness" aria-labelledby="robustness-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Reasonable alternatives should not reverse the decision</p><h2 id="robustness-title">Stress Definitions Without Data-Mining a Rescue</h2><p>Register the robustness family before the sealed sample. The goal is to learn whether a practical conclusion survives, not to locate one surviving parameter after dozens fail.</p></div>
+  <div class="fx-falsification-tree">
+    <article><p class="fx-card-label">Definition</p><h3>Does the state survive?</h3><ul><li>Adjacent lookbacks and threshold bands</li><li>Range versus return-based sensitivity</li><li>Strict stale-data and bad-tick policies</li></ul></article>
+    <article><p class="fx-card-label">Outcome</p><h3>Does the path survive?</h3><ul><li>Adjacent non-overlapping horizons</li><li>Continuation, false break and no-resolution labels</li><li>Entry delays and adverse-selection stress</li></ul></article>
+    <article><p class="fx-card-label">Sample</p><h3>Does the evidence survive?</h3><ul><li>Chronological blocks and leave-one-event-out</li><li>Event, clock, volatility and roll states</li><li>Final holdout never used for selection</li></ul></article>
+  </div>
+  <ul class="fx-checklist"><li><strong>Count the full family.</strong> Every estimator, lookback, threshold, buffer and horizon is part of the search.</li><li><strong>Use causal fills.</strong> Marketable orders cross the historical book; limit orders need queue-aware or conservative rules.</li><li><strong>Stress costs.</strong> Wider spreads, lower depth, latency and missed orders must not be hidden.</li><li><strong>Keep the null.</strong> If compression adds no information beyond event and time controls, reject it.</li></ul>
+</section>
+
+<section class="fx-section" id="ledger" aria-labelledby="ledger-title">
+  <div class="fx-section-heading"><p class="fx-kicker">One row per registered generation</p><h2 id="ledger-title">Compression-and-Breakout Validation Ledger</h2><p>Never overwrite a failed version. The ledger links each conclusion to a definition, dataset, sample cutoff and executable policy.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Compression breakout validation ledger fields" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Record</th><th scope="col">Required contents</th><th scope="col">Decision</th></tr></thead><tbody>
+    <tr><th scope="row">Definition</th><td>Estimator, threshold, duration, trigger, entry, exits, horizons and code hash</td><td>Reject if any field is discretionary</td></tr>
+    <tr><th scope="row">Data</th><td>Source, contract map, timestamps, corrections, gaps, events and costs</td><td>Reject if causal reconstruction fails</td></tr>
+    <tr><th scope="row">Search</th><td>All candidates, parameter choices, controls and robustness variants</td><td>Adjust inference for the full family</td></tr>
+    <tr><th scope="row">Evidence</th><td>Event count, outcomes, uncertainty, blocks, fills, misses and capacity</td><td>Limit if state-specific and pre-identifiable</td></tr>
+    <tr><th scope="row">Holdout</th><td>Single sealed result versus registered baselines and cost stress</td><td>Accept only if useful and stable</td></tr>
+    <tr><th scope="row">Failure</th><td>Sign reversal, unstable state, control dependence, no net value or missing data</td><td>Abandon; do not rename</td></tr>
+  </tbody></table></div>
+  <div class="fx-caution"><strong>Research status as of August 21, 2026</strong><p>No original 6S compression sample, breakout rate, false-break rate, parameter, confidence interval or trading performance is reported here. No original result is reported. This page defines a protocol whose valid outcome may be rejection.</p></div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 21, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/254/254.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 254: Swiss Franc/U.S. Dollar futures</a> for dated-contract identity and exchange rules.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/g10/swiss-franc.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME Swiss Franc futures contract page</a> for current product context; full mechanics are centralized in <a href="6s-contract-specs-tick-size-margin.html">the 6S contract specification guide</a>.</li>
+  <li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine historical-data catalog</a> for distinctions among settlements, Market by Order and PCAP data. No data was purchased or analyzed for this article.</li>
+  <li><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">Federal Reserve FOMC calendars and official materials</a> for U.S. policy-event controls.</li>
+  <li><a href="https://www.snb.ch/en/services-events/digital-services/event-schedule" target="_blank" rel="noopener noreferrer">Swiss National Bank time schedule</a> for official Swiss policy and publication scheduling context.</li>
+  <li><a href="https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm" target="_blank" rel="noopener noreferrer">NIST/SEMATECH time-series analysis guidance</a> for time dependence, diagnostics and validation context.</li>
+</ul><p>Sources and methods were reviewed August 21, 2026. This unsponsored article distinguishes contract facts, operational definitions, empirical hypotheses and trading application. No original result is reported.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>Use this testing protocol for education and research, not as personalized investment, legal, tax, hedging, brokerage or execution advice. Breakouts can fail immediately, liquidity can vanish and leveraged 6S losses can exceed opening margin. Verify current contract rules, live market quality and independent loss limits before acting.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>
