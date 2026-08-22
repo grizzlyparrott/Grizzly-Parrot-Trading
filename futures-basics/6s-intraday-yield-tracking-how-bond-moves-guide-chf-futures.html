@@ -2,254 +2,117 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Intraday Yield Tracking for 6S: How Bond Moves Guide CHF Futures</title>
-  <meta name="description" content="A blunt guide to tracking U.S. bond yields intraday to predict 6S Swiss Franc futures direction before the chart even reacts.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6s-intraday-yield-tracking-how-bond-moves-guide-chf-futures.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Intraday Yield Tracking for 6S: How Bond Moves Guide CHF Futures">
-  <meta property="og:description" content="A blunt guide to tracking U.S. bond yields intraday to predict 6S Swiss Franc futures direction before the chart even reacts.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6s-intraday-yield-tracking-how-bond-moves-guide-chf-futures.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Intraday Yield Tracking for 6S: How Bond Moves Guide CHF Futures">
-  <meta name="twitter:description" content="A blunt guide to tracking U.S. bond yields intraday to predict 6S Swiss Franc futures direction before the chart even reacts.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Intraday Yield Tracking for 6S: How Bond Moves Guide CHF Futures",
-  "description": "A blunt guide to tracking U.S. bond yields intraday to predict 6S Swiss Franc futures direction before the chart even reacts.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6s-intraday-yield-tracking-how-bond-moves-guide-chf-futures.html",
-  "datePublished": "2025-11-27",
-  "dateModified": "2025-11-27",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6s-intraday-yield-tracking-how-bond-moves-guide-chf-futures.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Intraday Yield Tracking for 6S: How Bond Moves Guide CHF Futures",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6s-intraday-yield-tracking-how-bond-moves-guide-chf-futures.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>Intraday Yield Tracking for 6S: A Lead-Lag Test</title>
+  <meta name="description" content="Test whether synchronized U.S. and Swiss yield changes add non-circular information for 6S after USD, event, clock and liquidity controls.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6s-intraday-yield-tracking-how-bond-moves-guide-chf-futures.html">
+  <meta property="og:title" content="Intraday Yield Tracking for 6S: A Lead-Lag Test"><meta property="og:description" content="Test whether synchronized U.S. and Swiss yield changes add non-circular information for 6S after USD, event, clock and liquidity controls."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6s-intraday-yield-tracking-how-bond-moves-guide-chf-futures.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-27"><meta property="article:modified_time" content="2026-08-19">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Intraday Yield Tracking for 6S: A Lead-Lag Test"><meta name="twitter:description" content="Test whether synchronized U.S. and Swiss yield changes add non-circular information for 6S after USD, event, clock and liquidity controls."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Intraday Yield Tracking for 6S: A Lead-Lag Test","description":"Test whether synchronized U.S. and Swiss yield changes add non-circular information for 6S after USD, event, clock and liquidity controls.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6s-intraday-yield-tracking-how-bond-moves-guide-chf-futures.html"},"datePublished":"2025-11-27","dateModified":"2026-08-19","url":"https://grizzlyparrottrading.com/futures-basics/6s-intraday-yield-tracking-how-bond-moves-guide-chf-futures.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"Intraday Yield Tracking for 6S: A Lead-Lag Test","item":"https://grizzlyparrottrading.com/futures-basics/6s-intraday-yield-tracking-how-bond-moves-guide-chf-futures.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Matched maturities &middot; synchronized changes &middot; non-circular controls</p>
+    <h1>Intraday Yield Tracking for 6S: A Lead-Lag Test</h1>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 19, 2026</p>
+    <p class="fx-hero-lede">A U.S. yield and 6S can rise together for opposing stories: the yield move may reflect stronger U.S. growth, inflation risk, term premium, risk relief or a common announcement, while CHF demand can respond through a different channel. Seeing two lines move is therefore not enough. The test must declare the curve points, align their timestamps and ask whether yield changes add information beyond broad-dollar and event controls.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#variables">Define the variables</a><a class="fx-text-link" href="#false">Audit false confirmation</a></div>
+    <dl class="fx-hero-metrics" aria-label="Yield-tracking research status"><div><dt>Yield input</dt><dd>Changes, not levels</dd></div><div><dt>Horizons</dt><dd>Matched in advance</dd></div><div><dt>Direction</dt><dd>Estimated, not assumed</dd></div><div><dt>Original results</dt><dd>None reported</dd></div></dl>
   </div>
+  <aside class="fx-market-board" aria-label="Opposing explanations for a yield and 6S move">
+    <div class="fx-board-head"><span>Same observed pair</span><strong>Competing mechanisms</strong></div>
+    <div class="fx-decision-strip"><span><strong>Relative policy</strong>Curve spread reprices</span><span><strong>Risk shock</strong>USD and CHF both sought</span><span><strong>Common event</strong>Both react simultaneously</span></div>
+    <p class="fx-board-foot">Co-movement does not establish a lead</p>
+  </aside>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#variables">Variables</a><a href="#sync">Synchronization</a><a href="#controls">Controls</a><a href="#test">Lead-lag test</a><a href="#false">False confirmation</a><a href="#decision">Decision</a></nav>
 
-<h1>Intraday Yield Tracking for 6S: How Bond Moves Guide CHF Futures</h1>
-
-<p>6S Swiss Franc futures follow U.S. bond yields with brutal consistency. If you track the 2-year and 10-year yields intraday, you’ll know 6S direction before any pattern, candle, or indicator forms. Traders who ignore yields are basically guessing. Traders who follow them are trading cause-and-effect in real time.</p>
-
-<h2>1. Why 6S Reacts to Yields Faster Than Most Currencies</h2>
-
-<p>CHF is a safe-haven currency. When yields fall, it signals fear — and CHF strengthens. When yields rise, it signals confidence — and CHF weakens. That relationship is mechanical, not emotional.</p>
-
-<table>
-<tr><th>Yield Move</th><th>6S Reaction</th></tr>
-<tr><td>Yields drop fast</td><td>6S spikes up</td></tr>
-<tr><td>Yields grind higher</td><td>6S fades lower</td></tr>
-<tr><td>Yields chop sideways</td><td>6S compresses</td></tr>
-</table>
-
-<p>This is why the article on <a href="https://grizzlyparrottrading.com/futures-basics/6s-yield-spreads-and-how-interest-rate-differentials-drive-price.html">yield spreads</a> pairs perfectly with intraday tracking.</p>
-
-<h2>2. The 2-Year Yield Is the Leading Indicator</h2>
-
-<p>Bond traders treat the 2-year yield (US02Y) as the “Fed expectation gauge.” When it moves, currencies react immediately.</p>
-
-<p>Most accurate intraday signals for 6S:</p>
-
-<ul>
-<li>Sharp drop in 2Y → buy 6S</li>
-<li>Sharp rise in 2Y → short 6S</li>
-</ul>
-
-<p>Nothing else gives you earlier signals.</p>
-
-<h2>3. The 10-Year Yield Confirms Trend Strength</h2>
-
-<p>The 10-year (US10Y) sets long-term sentiment. If both 2Y and 10Y are moving in the same direction, 6S trends cleanly.</p>
-
-<p>Strongest 6S trend days happen when:</p>
-
-<ul>
-<li>02Y drop + 10Y drop → explosive CHF strength</li>
-<li>02Y rise + 10Y rise → sustained CHF weakness</li>
-</ul>
-
-<p>If they diverge, the move weakens or reverses quickly.</p>
-
-<h2>4. Yield-Driven Micro-Trends Predict 6S Structure</h2>
-
-<p>Intraday yield micro-trends often form minutes before 6S reacts. You’ll see yields drift one way, then 6S follows with:</p>
-
-<ul>
-<li>slow displacement</li>
-<li>a sweep</li>
-<li>a structural break</li>
-<li>a pullback entry</li>
-</ul>
-
-<p>This lets you enter early with confidence instead of chasing moves.</p>
-
-<h2>5. The Three Best Times to Track Yields for 6S</h2>
-
-<p>These windows move yields the most:</p>
-
-<ul>
-<li>U.S. economic releases (pre- and post-drop)</li>
-<li>U.S. bond market open</li>
-<li>Morning ES/NQ volatility cycles</li>
-</ul>
-
-<p>When yields pop or dump during these times, 6S reacts immediately.</p>
-
-<h2>6. Practical Setup: Yield Break + 6S Retest</h2>
-
-<p>The cleanest 6S entry:</p>
-
-<ol>
-<li>Yield breaks structure (higher high or lower low)</li>
-<li>6S follows with displacement</li>
-<li>Wait for the pullback into the displaced zone</li>
-<li>Enter with the yield-driven direction</li>
-</ol>
-
-<p>This is macro flow applied directly to futures execution.</p>
-
-<div class="highlight-box green">
-  <h3>6S Follows Yields — Not Your Indicators</h3>
-  <p>When yields shift, 6S responds. The 2Y and 10Y lead every meaningful move. Trade the relationship, not the lagging signal, and you’ll stay ahead of the chart instead of reacting to it.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="fx-section" id="variables" aria-labelledby="variables-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Name the curve and transformation</p><h2 id="variables-title">Define Yields, Futures Returns and the Economic Question</h2><p>“Bond yields” is not a variable. Choose the issuer, instrument or curve construction, maturity, price field, sampling interval and publication semantics. Use yield changes for co-movement tests and 6S returns over the same completed horizon.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Yield-tracking variable definitions" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Variable</th><th scope="col">Frozen definition</th><th scope="col">Primary limitation</th></tr></thead><tbody>
+    <tr><th scope="row">6S return</th><td>Dated CHF/USD futures log return from a declared trade, midpoint or bar endpoint</td><td>Rolls and stale quotes can create artificial changes</td></tr>
+    <tr><th scope="row">U.S. curve</th><td>Named Treasury cash, futures-implied or swap point at a declared maturity</td><td>Different instruments have different clocks and microstructure</td></tr>
+    <tr><th scope="row">Swiss curve</th><td>Named Confederation or money-market series at a declared maturity</td><td>Official daily observations cannot support intraday lead-lag claims</td></tr>
+    <tr><th scope="row">Relative curve</th><td>U.S. change minus Swiss change, with matched units and horizons</td><td>A constructed spread does not identify the causal component</td></tr>
+    <tr><th scope="row">Broad USD</th><td>Independent dollar return or index change available by the endpoint</td><td>Contemporaneous control is not an advance signal</td></tr>
+  </tbody></table></div>
+  <div class="fx-formula" aria-label="Illustrative synchronized return and yield-spread change"><code>r<sup>6S</sup><sub>t,h</sub> = ln(P<sub>t</sub> / P<sub>t-h</sub>)</code><i aria-hidden="true">|</i><code>&Delta;s<sub>t,h</sub> = &Delta;y<sup>US</sup><sub>t,h</sub> - &Delta;y<sup>CH</sup><sub>t,h</sub></code></div>
+  <p class="fx-source-note">The <a href="https://www.federalreserve.gov/releases/h15/" target="_blank" rel="noopener noreferrer">Federal Reserve H.15 release</a> describes daily U.S. Treasury constant-maturity yields. The <a href="https://www.snb.ch/en/services-events/digital-services/datenportal" target="_blank" rel="noopener noreferrer">SNB data portal</a> publishes downloadable Swiss interest-rate and yield series. These official daily products are appropriate only for horizons consistent with their observation and release timing.</p>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="fx-section" id="sync" aria-labelledby="sync-title">
+  <div class="fx-section-heading"><p class="fx-kicker">A lead exists only on one clock</p><h2 id="sync-title">Synchronize Before Assigning Lead and Lag</h2><p>Vendor bars stamped at the same minute may represent different closing rules, latencies or source markets. Preserve raw event order and define how each yield observation becomes knowable. A revised or end-of-day value cannot be projected backward into an intraday decision.</p></div>
+  <div class="fx-process">
+    <article><span>01</span><h3>Ingest</h3><p>Retain source, instrument, timestamp, timezone, precision, sequence and correction fields.</p></article>
+    <article><span>02</span><h3>Normalize</h3><p>Map all observations to UTC while preserving local and exchange trade dates.</p></article>
+    <article><span>03</span><h3>Release</h3><p>Record observation time separately from official publication or vendor-availability time.</p></article>
+    <article><span>04</span><h3>Sample</h3><p>Use only completed intervals whose inputs were available by each endpoint.</p></article>
   </div>
-</footer>
-</body>
-</html>
+  <div class="fx-caution"><strong>Do not forward-fill into a lead.</strong><p>If a Swiss yield series updates daily while U.S. and 6S inputs update intraday, a repeated Swiss value means “no new observation,” not “the Swiss curve was unchanged at every minute.” Either move the study to a compatible frequency or use a licensed synchronized instrument.</p></div>
+</section>
+
+<section class="fx-section" id="controls" aria-labelledby="controls-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Remove obvious common causes</p><h2 id="controls-title">Control the Dollar, Events, Curves and Market State</h2><p>A useful yield feature must add information beyond variables that can make both yields and 6S move at the same time. Controls are selected for causal relevance before results, not added until a preferred coefficient appears.</p></div>
+  <div class="fx-causal-map">
+    <div class="fx-causal-origin"><strong>Candidate yield signal</strong><span>Incremental information must survive declared controls.</span></div>
+    <article class="fx-panel"><h3>Broad-dollar factor</h3><p>Use an external, timestamp-compatible USD measure to test whether the apparent yield relationship is a common dollar move.</p></article>
+    <article class="fx-panel"><h3>Official events</h3><p>Tag FOMC, U.S. data, SNB and Swiss releases with authoritative timestamps and separate event from non-event estimates.</p></article>
+    <article class="fx-panel"><h3>Curve shape</h3><p>Include a limited registered set of level, slope or policy-horizon changes so one maturity does not proxy for another.</p></article>
+    <article class="fx-panel"><h3>Liquidity state</h3><p>Control spreads, quote age, session, holidays and roll status where the source fields permit.</p></article>
+  </div>
+  <div class="fx-related">The policy-path and carry mechanism belongs in <a href="6s-yield-spreads-and-how-interest-rate-differentials-drive-price.html">6S Yield Spreads and Interest-Rate Differentials</a>. This page asks the narrower intraday measurement question.</div>
+</section>
+
+<section class="fx-section" id="test" aria-labelledby="test-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Prediction must precede the return</p><h2 id="test-title">Run a Narrow, Preregistered Lead-Lag Grid</h2><p>Estimate contemporaneous association separately from predictive lead. A feature measured through time <em>t</em> may predict only returns beginning after the source was observable, processing finished and a plausible order could arrive.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Lead-lag testing grid" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Test</th><th scope="col">Feature endpoint</th><th scope="col">6S outcome</th><th scope="col">Interpretation boundary</th></tr></thead><tbody>
+    <tr><th scope="row">Contemporaneous</th><td>Same completed interval</td><td>Same completed interval</td><td>Association only; not a tradable lead</td></tr>
+    <tr><th scope="row">Short lead</th><td>Yield change through <em>t</em></td><td>6S return after declared processing delay</td><td>Must survive bid/ask and latency</td></tr>
+    <tr><th scope="row">Longer lead</th><td>Yield change through <em>t</em></td><td>One of a few registered later horizons</td><td>Overlapping outcomes require dependence-aware inference</td></tr>
+    <tr><th scope="row">Reverse lead</th><td>6S return through <em>t</em></td><td>Later yield change</td><td>Tests whether direction may run the other way</td></tr>
+    <tr><th scope="row">Placebo</th><td>Time-shifted or unrelated feature</td><td>Registered 6S horizon</td><td>Detects clock and search artifacts</td></tr>
+  </tbody></table></div>
+  <div class="fx-method"><div><h3>Primary protocol question</h3><p>Does a declared U.S., Swiss or relative yield change add stable out-of-sample information about a later 6S return after broad-dollar, event and market-state controls, data latency and conservative execution costs?</p></div><dl><div><dt>Baseline</dt><dd>No yield feature</dd></div><div><dt>Search</dt><dd>Narrow registered grid</dd></div><div><dt>Allowed winner</dt><dd>None</dd></div></dl></div>
+</section>
+
+<section class="fx-section" id="false" aria-labelledby="false-title">
+  <div class="fx-section-heading"><p class="fx-kicker">A catalog of seductive errors</p><h2 id="false-title">Reject False Confirmation Before It Becomes a Signal</h2><p>These patterns can produce clean-looking overlays without incremental predictive evidence.</p></div>
+  <div class="fx-four-grid">
+    <article class="fx-panel"><p class="fx-card-label">Clock error</p><h3>Close matched to intraday</h3><p>A daily official yield is aligned to an earlier 6S bar even though it was not yet available.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Common shock</p><h3>One release moves both</h3><p>The yield and 6S react together; neither led the other.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Circular control</p><h3>FX-derived feature predicts FX</h3><p>The candidate embeds CHF or a near-equivalent 6S return inside its construction.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Search artifact</p><h3>Best maturity after inspection</h3><p>Many curve points and lags are tried, but only the strongest historical pair is disclosed.</p></article>
+  </div>
+  <ul class="fx-checklist"><li><strong>Require an availability timestamp.</strong> Observation time alone is insufficient.</li><li><strong>Show control sensitivity.</strong> Report the estimate before and after each registered factor.</li><li><strong>Keep both directions.</strong> A reverse-lead test is part of identification, not an optional appendix.</li><li><strong>Retain failed lags.</strong> Every searched maturity and horizon stays in the multiple-testing family.</li></ul>
+</section>
+
+<section class="fx-section" id="decision" aria-labelledby="decision-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Incremental or unusable</p><h2 id="decision-title">Yield-Tracking Acceptance Record</h2><p>The final record separates a descriptive relationship from a feature that can enter a live decision.</p></div>
+  <div class="fx-trade-card"><h3>Decision: accept, restrict, or reject</h3><dl><div><dt>Manifest</dt><dd>All instruments, maturities, sources, timestamps, transformations, lags, controls and sample hashes.</dd></div><div><dt>Coverage</dt><dd>Missing updates, stale intervals, event states, roll states and eligible sample counts.</dd></div><div><dt>Increment</dt><dd>Out-of-sample improvement versus the no-yield baseline with uncertainty.</dd></div><div><dt>Accept</dt><dd>Later 6S information remains stable, non-circular and useful after delay and costs.</dd></div><div><dt>Restrict</dt><dd>Use is confined to a state observed in real time and supported by enough independent events.</dd></div><div><dt>Reject</dt><dd>Relationship is contemporaneous, control-dependent, unstable, too small, too costly or data-incomplete.</dd></div></dl></div>
+  <div class="fx-caution"><strong>Research status as of August 21, 2026</strong><p>No original 6S intraday yield study, coefficient, lead-lag result, predictive model or trading performance is reported here. No original result is reported. This article defines a test. Until synchronized licensed data pass the record, yields are context&mdash;not a validated 6S signal.</p></div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 21, 2026</summary><ul>
+  <li><a href="https://www.federalreserve.gov/releases/h15/" target="_blank" rel="noopener noreferrer">Federal Reserve H.15 Selected Interest Rates</a> for official daily U.S. government and Federal Reserve rate-series definitions and publication notes.</li>
+  <li><a href="https://www.snb.ch/en/services-events/digital-services/datenportal" target="_blank" rel="noopener noreferrer">Swiss National Bank data portal</a> for downloadable Swiss interest-rate, yield and foreign-exchange series.</li>
+  <li><a href="https://www.federalreserve.gov/releases/h10/summary/" target="_blank" rel="noopener noreferrer">Federal Reserve H.10 dollar-index summary</a> for official broad, advanced-economy and emerging-economy dollar-index definitions.</li>
+  <li><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">Federal Reserve FOMC calendars and official meeting materials</a> for U.S. policy-event timestamps and documents.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/g10/swiss-franc.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME Swiss Franc futures contract page</a> for current product context; full mechanics and arithmetic belong to <a href="6s-contract-specs-tick-size-margin.html">the canonical 6S contract guide</a>.</li>
+  <li><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/254/254.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 254: Swiss Franc/U.S. Dollar futures</a> for exchange contract identity.</li>
+  <li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine historical-data catalog</a> for exchange historical dataset distinctions. No data was purchased or analyzed for this article.</li>
+</ul><p>Sources and methods were reviewed August 21, 2026. This unsponsored article distinguishes official series definitions, proposed synchronization, hypotheses, inference and trading application. It reports no original market result.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>Use this testing framework for education and research, not as personalized investment, legal, tax, hedging, brokerage or execution advice. Yield relationships can reverse and source timing can invalidate a model. Leveraged 6S positions can lose more than opening margin; verify current data, venue rules and risk limits independently.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

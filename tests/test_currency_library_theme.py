@@ -19,6 +19,7 @@ LEGACY_STYLESHEETS = (
     "6j-evidence-guides.css",
     "6m-research-library.css",
     "6n-research-library.css",
+    "6s-research-library.css",
 )
 LEGACY_ROOTS = (
     "aussie-evidence",
@@ -27,6 +28,8 @@ LEGACY_ROOTS = (
     "euro-evidence",
     "yen-evidence",
     "mxn-library",
+    "swiss-library",
+    "chf-library",
 )
 
 
@@ -54,10 +57,10 @@ class CurrencyLibraryThemeTests(unittest.TestCase):
                     self.assertEqual(html.count("currency-library"), 1)
                     self.assertNotRegex(
                         html,
-                        r'class="[^"]*\b(?:au|gb|ca|eu|yj|mx)-',
+                        r'class="[^"]*\b(?:au|gb|ca|eu|yj|mx|chf|sw)-',
                     )
 
-        self.assertEqual(len(pages), 139)
+        self.assertEqual(len(pages), 160)
         self.assertTrue(CANONICAL_CSS.is_file())
 
     def test_every_shared_component_class_has_canonical_css_definition(self):

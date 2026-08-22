@@ -1,252 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why the Europe–U.S. Session Overlap Moves 6S Swiss Franc Futures</title>
-  <meta name="description" content="Learn why the Europe–U.S. session overlap creates the biggest intraday moves in 6S Swiss Franc futures and how to trade the volatility shift.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6s-session-overlaps-why-europe-us-handover-moves-chf-futures.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Why the Europe–U.S. Session Overlap Moves 6S Swiss Franc Futures">
-  <meta property="og:description" content="Learn why the Europe–U.S. session overlap creates the biggest intraday moves in 6S Swiss Franc futures and how to trade the volatility shift.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6s-session-overlaps-why-europe-us-handover-moves-chf-futures.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Why the Europe–U.S. Session Overlap Moves 6S Swiss Franc Futures">
-  <meta name="twitter:description" content="Learn why the Europe–U.S. session overlap creates the biggest intraday moves in 6S Swiss Franc futures and how to trade the volatility shift.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Why the Europe–U.S. Session Overlap Moves 6S Swiss Franc Futures",
-  "description": "Learn why the Europe–U.S. session overlap creates the biggest intraday moves in 6S Swiss Franc futures and how to trade the volatility shift.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6s-session-overlaps-why-europe-us-handover-moves-chf-futures.html",
-  "datePublished": "2025-11-27",
-  "dateModified": "2025-11-27",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6s-session-overlaps-why-europe-us-handover-moves-chf-futures.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Why the Europe–U.S. Session Overlap Moves 6S Swiss Franc Futures",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6s-session-overlaps-why-europe-us-handover-moves-chf-futures.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <meta charset="UTF-8"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6S Europe–U.S. Handover: A DST-Aware Execution Plan</title>
+  <meta name="description" content="Build a daylight-saving-aware 6S Europe–U.S. handover plan using event collisions, spreads, depth, fills and go/reduce/wait/reject gates.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6s-session-overlaps-why-europe-us-handover-moves-chf-futures.html">
+  <meta property="og:title" content="6S Europe–U.S. Handover: A DST-Aware Execution Plan"><meta property="og:description" content="Build a daylight-saving-aware 6S Europe–U.S. handover plan using event collisions, spreads, depth, fills and go/reduce/wait/reject gates."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6s-session-overlaps-why-europe-us-handover-moves-chf-futures.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-27"><meta property="article:modified_time" content="2026-08-20">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6S Europe–U.S. Handover: A DST-Aware Execution Plan"><meta name="twitter:description" content="Build a daylight-saving-aware 6S Europe–U.S. handover plan using event collisions, spreads, depth, fills and go/reduce/wait/reject gates."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6S Europe–U.S. Handover: A DST-Aware Execution Plan","description":"Build a daylight-saving-aware 6S Europe–U.S. handover plan using event collisions, spreads, depth, fills and go/reduce/wait/reject gates.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6s-session-overlaps-why-europe-us-handover-moves-chf-futures.html"},"datePublished":"2025-11-27","dateModified":"2026-08-20","url":"https://grizzlyparrottrading.com/futures-basics/6s-session-overlaps-why-europe-us-handover-moves-chf-futures.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6S Europe–U.S. Handover: A DST-Aware Execution Plan","item":"https://grizzlyparrottrading.com/futures-basics/6s-session-overlaps-why-europe-us-handover-moves-chf-futures.html"}]}</script><script src="/uet.js" defer></script>
 </head>
-<body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<body><a class="fx-skip-link" href="#main-content">Skip to article content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
 <!-- ARTICLE BODY START -->
+<header class="fx-hero"><div class="fx-hero-copy"><p class="fx-kicker">Execution workflow &middot; civil clocks &middot; observable market quality</p><h1>6S Europe–U.S. Handover: A DST-Aware Execution Plan</h1><p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 20, 2026</p><p class="fx-hero-lede">The Europe–U.S. overlap does not occupy one permanent UTC window. Switzerland and the United States change clocks on different dates, while CME uses Chicago time and economic releases use their agencies&rsquo; local clocks. The handover is a calendar-resolved state, not a memorized hour or a guaranteed burst of volatility.</p><div class="fx-hero-actions"><a class="button-primary" href="#map">Build the session map</a><a class="fx-text-link" href="#branches">Use the execution branches</a></div></div></header>
 
-<h1>Why the Europe–U.S. Session Overlap Moves 6S Swiss Franc Futures</h1>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#map">Session map</a><a href="#dst">DST cases</a><a href="#collisions">Event collisions</a><a href="#quality">Quality gates</a><a href="#branches">Branches</a><a href="#review">Review</a></nav>
 
-<p>The Europe–U.S. session overlap is the most important time of day for 6S Swiss Franc futures. This two-hour window creates the strongest liquidity, the biggest breakouts, and the cleanest trend legs. If you're not trading the overlap, you're missing the exact hours when 6S actually moves with intent.</p>
-
-<h2>1. Why the Overlap Matters for CHF</h2>
-
-<p>CHF is a European currency, but it reacts heavily to U.S. yields and risk sentiment. The overlap is the only time both sides of the macro pipeline are fully awake.</p>
-
-<p>During the overlap:</p>
-
-<ul>
-<li>European liquidity is still active</li>
-<li>U.S. traders enter with size</li>
-<li>Bond markets open and move aggressively</li>
-<li>Risk sentiment shifts as ES/NQ open</li>
-</ul>
-
-<p>This leads to the highest volume and volatility of the day for 6S.</p>
-
-<h2>2. Pre-Overlap: The “Fake Setup” Period</h2>
-
-<p>Before the overlap, 6S often prints garbage structure:</p>
-
-<ul>
-<li>slow drifting candles</li>
-<li>liquidity sweeps with no follow-through</li>
-<li>weak trends that reverse instantly</li>
-</ul>
-
-<p>It’s a trap. Most of these moves get undone once U.S. traders log on and shift flows.</p>
-
-<h2>3. The Overlap Sparks Real Breakouts</h2>
-
-<p>Once U.S. volume hits, 6S finally gets the fuel to break out of its European ranges.</p>
-
-<p>Common behavior:</p>
-
-<ul>
-<li>range break → displacement → retest → trend</li>
-<li>rejection at key levels → continuation move</li>
-<li>yield-driven reversals aligning with ES/NQ tone</li>
-</ul>
-
-<p>This is where you find the highest-quality setups of the day.</p>
-
-<h2>4. U.S. Yields Take Control During the Overlap</h2>
-
-<p>The minute the U.S. bond market opens, CHF stops following Europe and starts following yields.</p>
-
-<p>Clear rules:</p>
-
-<ul>
-<li>Yields dump → 6S rips higher</li>
-<li>Yields rise → 6S fades lower</li>
-<li>Yields chop → 6S consolidates</li>
-</ul>
-
-<p>This pairs naturally with the article on <a href="https://grizzlyparrottrading.com/futures-basics/6s-intraday-yield-tracking-how-bond-moves-guide-chf-futures.html">intraday yield tracking</a>.</p>
-
-<h2>5. The Most Reliable 6S Setup During the Overlap</h2>
-
-<p>The highest win-rate setup in this window:</p>
-
-<ol>
-<li>Identify pre-overlap range</li>
-<li>Wait for overlap displacement</li>
-<li>Enter on pullback to structure or VWAP</li>
-</ol>
-
-<p>This avoids all the fake morning structure and isolates the real move.</p>
-
-<h2>6. Overlap Also Determines Post-Lunch Behavior</h2>
-
-<p>How 6S behaves after the overlap depends entirely on whether the overlap created a genuine push.</p>
-
-<p>If the overlap formed a trend leg → expect continuation  
-If the overlap chopped → expect low-volume grind</p>
-
-<div class="highlight-box green">
-  <h3>The Overlap Is When 6S Shows Its Hand</h3>
-  <p>Asian hours drift. Early Europe chops. But when the EU–US overlap hits, 6S finally picks direction. Track yield shifts and equity tone during this window — it’s where real CHF conviction shows up.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="fx-section" id="map" aria-labelledby="map-title"><div class="fx-section-heading"><p class="fx-kicker">Resolve each clock once</p><h2 id="map-title">Construct the Handover From Named Time Zones</h2><p>Store the original timestamp and named zone, convert it to UTC, then attach the CME trade date. Fixed abbreviations such as EST, CET and CST are inadequate because they omit seasonal rules and can be ambiguous.</p></div>
+  <div class="fx-state-machine" aria-label="Session timestamp normalization sequence"><article><span>1</span><h3>Zurich</h3><p>Represent Swiss and European events with their declared local zone and official timestamp.</p></article><article><span>2</span><h3>New York</h3><p>Represent U.S. releases and market conventions in the source agency&rsquo;s local zone.</p></article><article><span>3</span><h3>Chicago</h3><p>Attach CME&rsquo;s exchange clock, daily pause, trade date and holiday state.</p></article><article><span>4</span><h3>UTC</h3><p>Normalize all observations with a versioned time-zone database.</p></article><article><span>5</span><h3>Window</h3><p>Assign the handover label only after every boundary is resolved.</p></article></div>
+  <div class="fx-window-equation"><span>Europe participation state</span><strong>+</strong><span>U.S. participation state</span><strong>+</strong><span>event and venue state</span><strong>=</strong><span>declared handover window</span></div>
+  <p class="fx-source-note"><strong>Clock policy:</strong> store IANA identifiers such as <code>Europe/Zurich</code>, <code>America/New_York</code> and <code>America/Chicago</code>, plus the time-zone database version. Do not hard-code a current offset into historical or future sessions. Confirm the dated product and lifecycle in the <a href="6s-contract-specs-tick-size-margin.html">canonical 6S contract-specification reference</a>.</p>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<section class="fx-section" id="dst" aria-labelledby="dst-title"><div class="fx-section-heading"><p class="fx-kicker">Three calendar states</p><h2 id="dst-title">Treat DST Mismatch Weeks as Separate Regimes</h2><p>Europe and the United States do not always begin and end daylight saving on the same dates. The local session narrative can remain familiar while the UTC alignment shifts.</p></div>
+  <div class="fx-atlas"><article class="fx-event-card"><div class="fx-event-head"><h3>Aligned standard-time state</h3><strong>Resolve annually</strong></div><div class="fx-event-metrics"><div><span>Input</span><strong>Named zones</strong></div><div><span>Control</span><strong>Holiday schedule</strong></div></div><p>Both regions are on their standard rules. Compute boundaries from the database rather than copying last year.</p></article><article class="fx-event-card"><div class="fx-event-head"><h3>U.S.-first spring shift</h3><strong>Mismatch</strong></div><div class="fx-event-metrics"><div><span>Risk</span><strong>One-hour UTC drift</strong></div><div><span>Action</span><strong>Rebuild bins</strong></div></div><p>U.S. clocks can move before European clocks. A fixed UTC window will mix different local-session states.</p></article><article class="fx-event-card"><div class="fx-event-head"><h3>Europe/U.S. autumn mismatch</h3><strong>Mismatch</strong></div><div class="fx-event-metrics"><div><span>Risk</span><strong>Boundary collision</strong></div><div><span>Action</span><strong>Retag events</strong></div></div><p>The return to standard time also differs. Recompute exchange, agency and local-market boundaries.</p></article><article class="fx-event-card"><div class="fx-event-head"><h3>Aligned daylight state</h3><strong>Resolve annually</strong></div><div class="fx-event-metrics"><div><span>Input</span><strong>Named zones</strong></div><div><span>Control</span><strong>CME trade date</strong></div></div><p>Even when the regions are aligned seasonally, holidays and exchange notices can create exceptions.</p></article></div>
+</section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
+<section class="fx-section" id="collisions" aria-labelledby="collisions-title"><div class="fx-section-heading"><p class="fx-kicker">The window carries information</p><h2 id="collisions-title">Tag Scheduled Events Before Measuring the Handover</h2><p>A change in spread, depth or range can reflect a scheduled release rather than a generic session transition. Event-free and event-collision windows require separate denominators.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Europe US handover event collision controls" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Collision</th><th scope="col">Required fields</th><th scope="col">Execution implication</th></tr></thead><tbody>
+    <tr><th scope="row">SNB communication</th><td>Official release time, decision package, prior expectation and revisions</td><td>Use a dedicated event policy; do not classify as ordinary overlap</td></tr>
+    <tr><th scope="row">U.S. macro release</th><td>Agency timestamp, consensus source, actual, prior and revision</td><td>Apply pre-release cutoff, wider stress and post-release recovery gate</td></tr>
+    <tr><th scope="row">Federal Reserve event</th><td>Calendar, statement/speech time and information type</td><td>Separate anticipation, announcement and interpretation windows</td></tr>
+    <tr><th scope="row">European data/policy</th><td>Official local time and affected instruments</td><td>Do not attribute a CHF move solely to the U.S. handover</td></tr>
+    <tr><th scope="row">Holiday or early close</th><td>CME notice plus relevant local market calendars</td><td>Reject normal-window assumptions and re-estimate liquidity</td></tr>
+    <tr><th scope="row">Contract migration</th><td>Dated-contract volume, open interest and book state</td><td>Measure the intended expiry; generic symbols can hide migration</td></tr>
+  </tbody></table></div>
+</section>
 
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
+<section class="fx-section" id="quality" aria-labelledby="quality-title"><div class="fx-section-heading"><p class="fx-kicker">Observable gates</p><h2 id="quality-title">The Clock Never Overrides the Book</h2><p>Handover eligibility requires current evidence for the intended order. A historical average or a busy candle does not prove that the present spread, depth or fill path is acceptable.</p></div>
+  <div class="fx-check-grid"><article><strong>Two-sided quote</strong><p>Bid and ask are current, uncrossed and mapped to the intended expiry.</p></article><article><strong>Spread</strong><p>Time- and size-specific spread is within the predeclared maximum.</p></article><article><strong>Depth</strong><p>Displayed liquidity through the order size passes a cancellation/impact stress.</p></article><article><strong>Event state</strong><p>No unapproved release, speech, holiday, pause, roll or expiry condition is active.</p></article><article><strong>Fill evidence</strong><p>Expected shortfall includes latency, partial fills, fees and unfilled quantity.</p></article><article><strong>Risk</strong><p>Gap stress and planned invalidation fit the independent loss budget.</p></article></div>
+  <div class="fx-caution"><strong>“The overlap is liquid” is not an order rule.</strong><p>Define thresholds by contract count and order type. A resting one-contract limit and an urgent multi-level marketable order face different markets at the same timestamp.</p></div>
+</section>
 
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+<section class="fx-section" id="branches" aria-labelledby="branches-title"><div class="fx-section-heading"><p class="fx-kicker">Action branches</p><h2 id="branches-title">Go, Reduce, Wait or Reject the Handover Trade</h2><p>Run the branch at the actual decision time. The strategy setup may remain valid while execution permission changes.</p></div>
+  <div class="fx-go-card" aria-label="6S handover execution branches"><div><strong>Go</strong><span>Clock, contract, data, event, spread, depth, risk and stressed-cost gates all pass.</span></div><div><strong>Reduce</strong><span>A smaller integer quantity passes every gate; recompute economics and risk before submission.</span></div><div><strong>Wait</strong><span>A temporary release buffer, spread spike or book disruption fails now and the setup permits delay.</span></div></div>
+  <div class="fx-trade-card"><h3>Reject when a hard control fails</h3><dl><div><dt>Clock</dt><dd>Time-zone version, local boundary or CME trade date cannot be resolved.</dd></div><div><dt>Event</dt><dd>Overlapping information cannot be classified before entry.</dd></div><div><dt>Market</dt><dd>Spread, depth, staleness or stressed fill cost breaches the limit.</dd></div><div><dt>Contract</dt><dd>Chart, ticket and intended expiry disagree.</dd></div><div><dt>Risk</dt><dd>No permissible integer size fits the loss and gap budget.</dd></div><div><dt>Edge</dt><dd>The setup lacks positive conservative expectancy after non-overlapping costs.</dd></div></dl></div>
+</section>
 
-  </div>
-</footer>
-</body>
-</html>
+<section class="fx-section" id="review" aria-labelledby="review-title"><div class="fx-section-heading"><p class="fx-kicker">After-action record</p><h2 id="review-title">Review the Handover as a Market-Quality Decision</h2><p>Separate whether the directional premise was right from whether the order was well designed and executed. Preserve rejected opportunities; deleting them biases the operating record.</p></div>
+  <ul class="fx-checklist"><li><strong>Clock snapshot.</strong> Store local times, UTC, time-zone version and CME trade date.</li><li><strong>State snapshot.</strong> Record event, holiday, roll, spread, depth and data-integrity gates.</li><li><strong>Order chronology.</strong> Store decision, submission, acknowledgment, fills, cancels and exit timestamps.</li><li><strong>Implementation shortfall.</strong> Compare side-adjusted fills with the frozen arrival benchmark plus explicit fees.</li><li><strong>Decision quality.</strong> Score rule compliance separately from later P&amp;L.</li></ul>
+  <div class="fx-method"><div><h3>Research status</h3><p>No original 6S handover sample, volatility profile, spread distribution, fill study or profitable time window is reported here. The workflow is a protocol whose default outcome is no trade until live gates and a separately validated setup pass.</p></div><dl><div><dt>Claimed best hour</dt><dd>None</dd></div><div><dt>DST control</dt><dd>Required</dd></div><div><dt>No-trade state</dt><dd>Explicit</dd></div></dl></div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 21, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener noreferrer">CME Group trading-hours and holiday schedules</a> for exchange-state and exception controls.</li>
+  <li><a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer">IANA Time Zone Database</a> for versioned civil-time rules.</li>
+  <li><a href="https://www.snb.ch/en/news-publications/media-releases" target="_blank" rel="noopener noreferrer">Swiss National Bank press releases</a> for official SNB communication timestamps.</li>
+  <li><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">Federal Reserve FOMC calendars and materials</a> and <a href="https://www.bls.gov/schedule/" target="_blank" rel="noopener noreferrer">U.S. Bureau of Labor Statistics release calendar</a> for U.S. event controls.</li>
+  <li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine catalog</a> for trades and order-book research inputs; no dataset was purchased or analyzed for this page.</li>
+</ul><p>Sources and methods were reviewed August 21, 2026. This unsponsored article separates official clocks, observable market quality, execution rules and untested hypotheses. It reports no guaranteed volatility window or trading result.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This execution workflow is educational, not individualized investment, legal, tax, hedging, brokerage or trading advice. Events, thin books and clock errors can cause gaps and adverse fills, and leveraged futures losses can exceed deposited margin. Verify the live contract, calendar, book and account rules, and use an independent risk cap.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main><footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

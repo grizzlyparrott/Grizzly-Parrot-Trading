@@ -2,260 +2,112 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How 6S Behaves During FOMC Weeks (Not Just FOMC Day)</title>
-  <meta name="description" content="Learn the real behavior of 6S Swiss Franc futures during FOMC weeks—liquidity drains, fake moves, volatility compression, and post-FOMC trend explosions.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6s-behavior-during-fomc-weeks-not-just-fomc-day.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="How 6S Behaves During FOMC Weeks (Not Just FOMC Day)">
-  <meta property="og:description" content="Learn the real behavior of 6S Swiss Franc futures during FOMC weeks—liquidity drains, fake moves, volatility compression, and post-FOMC trend explosions.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6s-behavior-during-fomc-weeks-not-just-fomc-day.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="How 6S Behaves During FOMC Weeks (Not Just FOMC Day)">
-  <meta name="twitter:description" content="Learn the real behavior of 6S Swiss Franc futures during FOMC weeks—liquidity drains, fake moves, volatility compression, and post-FOMC trend explosions.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How 6S Behaves During FOMC Weeks (Not Just FOMC Day)",
-  "description": "Learn the real behavior of 6S Swiss Franc futures during FOMC weeks—liquidity drains, fake moves, volatility compression, and post-FOMC trend explosions.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6s-behavior-during-fomc-weeks-not-just-fomc-day.html",
-  "datePublished": "2025-11-27",
-  "dateModified": "2025-11-27",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6s-behavior-during-fomc-weeks-not-just-fomc-day.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How 6S Behaves During FOMC Weeks (Not Just FOMC Day)",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6s-behavior-during-fomc-weeks-not-just-fomc-day.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6S During FOMC Weeks: A Contamination-Aware Event Study</title>
+  <meta name="description" content="Define a contamination-aware study of 6S before, during and after FOMC decisions using timestamped priors, matched control weeks and rejection rules.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6s-behavior-during-fomc-weeks-not-just-fomc-day.html">
+  <meta property="og:title" content="6S During FOMC Weeks: A Contamination-Aware Event Study"><meta property="og:description" content="Define a contamination-aware study of 6S before, during and after FOMC decisions using timestamped priors, matched control weeks and rejection rules."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6s-behavior-during-fomc-weeks-not-just-fomc-day.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-27"><meta property="article:modified_time" content="2026-08-17">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6S During FOMC Weeks: A Contamination-Aware Event Study"><meta name="twitter:description" content="Define a contamination-aware study of 6S before, during and after FOMC decisions using timestamped priors, matched control weeks and rejection rules."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6S During FOMC Weeks: A Contamination-Aware Event Study","description":"Define a contamination-aware study of 6S before, during and after FOMC decisions using timestamped priors, matched control weeks and rejection rules.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6s-behavior-during-fomc-weeks-not-just-fomc-day.html"},"datePublished":"2025-11-27","dateModified":"2026-08-17","url":"https://grizzlyparrottrading.com/futures-basics/6s-behavior-during-fomc-weeks-not-just-fomc-day.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6S During FOMC Weeks: A Contamination-Aware Event Study","item":"https://grizzlyparrottrading.com/futures-basics/6s-behavior-during-fomc-weeks-not-just-fomc-day.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Event timestamps &middot; matched controls &middot; rejection record</p>
+    <h1>6S During FOMC Weeks: A Contamination-Aware Event Study</h1>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 17, 2026</p>
+    <p class="fx-hero-lede">Calling every Monday-through-Friday interval containing a Federal Reserve decision an “FOMC week” creates a contamination problem. Swiss data, SNB communication, U.S. releases, holidays, contract rolls and unrelated shocks can enter the same window. A valid 6S study must timestamp those influences before it asks whether pre-decision, decision or post-decision behavior differs from ordinary weeks.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#clock">Build the timestamp map</a><a class="fx-text-link" href="#record">Open the rejection record</a></div>
+    <dl class="fx-hero-metrics" aria-label="FOMC-week study status"><div><dt>Windows</dt><dd>Pre / decision / post</dd></div><div><dt>Comparison</dt><dd>Matched controls</dd></div><div><dt>Contaminants</dt><dd>Recorded, not erased</dd></div><div><dt>Original results</dt><dd>None reported</dd></div></dl>
   </div>
+  <aside class="fx-market-board" aria-label="Illustrative FOMC week contamination map">
+    <div class="fx-board-head"><span>Illustrative week</span><strong>Many clocks, one return</strong></div>
+    <div class="fx-cost-tape"><span><strong>Swiss event</strong>Domestic information</span><span><strong>U.S. release</strong>Prior may shift</span><span><strong>FOMC</strong>Decision package</span><span><strong>Aftermath</strong>Liquidity normalizes</span></div>
+    <p class="fx-board-foot">A weekday label does not identify a cause</p>
+  </aside>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#clock">Timestamp map</a><a href="#prior">Prior</a><a href="#controls">Control weeks</a><a href="#measures">Measures</a><a href="#robustness">Robustness</a><a href="#record">Rejection record</a></nav>
 
-<h1>How 6S Behaves During FOMC Weeks (Not Just FOMC Day)</h1>
-
-<p>Every beginner obsesses over FOMC day. But 6S Swiss Franc futures behave differently for the entire week leading up to the announcement. Liquidity thins, volatility compresses, and the contract becomes extremely trap-heavy. If you don’t understand this weekly cycle, you’ll get destroyed before Wednesday even arrives.</p>
-
-<h2>1. Monday–Tuesday: Liquidity Dries Up and 6S Goes Flat</h2>
-
-<p>Early FOMC week is the dead zone. Institutions reduce exposure. Funds stop adding risk. Order books thin out.</p>
-
-<p>In 6S, this creates:</p>
-
-<ul>
-<li>tight ranges</li>
-<li>garbage intraday structure</li>
-<li>failed breakouts</li>
-<li>low ATR readings</li>
-</ul>
-
-<p>This is the worst time to attempt trend trades in 6S. The contract simply isn’t going to move until the market gets clarity from the Fed.</p>
-
-<h2>2. Stop Hunts Become Frequent Before FOMC</h2>
-
-<p>Because volume is lower, it takes almost nothing to push price through liquidity. 6S behaves like it’s deliberately hunting stops—because it is.</p>
-
-<p>Common stop-hunt zones:</p>
-
-<ul>
-<li>previous day highs/lows</li>
-<li>European opens</li>
-<li>low-volume pockets from last week</li>
-<li>round numbers</li>
-</ul>
-
-<p>You’ll see shallow sweeps and instant rejections. This pattern ties directly into the article on <a href="https://grizzlyparrottrading.com/futures-basics/6s-typical-liquidity-behavior-sweeps-fakeouts-slow-drifts.html">6S liquidity behavior</a>.</p>
-
-<h2>3. Wednesday Pre-FOMC: Volatility Fakes Appear</h2>
-
-<p>On the morning of FOMC day, 6S may show a sudden burst of movement. Don’t trust it. It almost always fades.</p>
-
-<p>This is positioning—nothing more. No one commits real size before Powell speaks.</p>
-
-<h2>4. FOMC Announcement: Violent Two-Sided Moves</h2>
-
-<p>When the announcement drops, 6S enters chaos mode:</p>
-
-<ul>
-<li>wild wicks</li>
-<li>fake direction shifts</li>
-<li>liquidity gaps</li>
-<li>spread widening</li>
-</ul>
-
-<p>If you’re not already experienced, do not touch this phase. It ruins traders hourly.</p>
-
-<h2>5. Press Conference: The Real Move Forms</h2>
-
-<p>Most traders are shocked to learn this:</p>
-
-<p><strong>The actual 6S trend almost always starts during the press conference, not the announcement.</strong></p>
-
-<p>Powell’s tone sets yields, yields set USD strength, and USD strength sets 6S direction.</p>
-
-<p>Simple macro chain:</p>
-
-<p>
-Fed tone → yields → USD → CHF → 6S  
-</p>
-
-<h2>6. Thursday–Friday: 6S Trends Hard After FOMC</h2>
-
-<p>The best 6S trades often happen the day after FOMC. Once the market digests policy direction, 6S prints clean, sustained intraday moves.</p>
-
-<p>Look for:</p>
-
-<ul>
-<li>VWAP deviations</li>
-<li>strong displacement</li>
-<li>yield-driven continuation</li>
-<li>higher volume than early-week</li>
-</ul>
-
-<p>If you only trade one or two days per FOMC week, trade Thursday or Friday.</</p>
-
-<div class="highlight-box yellow">
-  <h3>FOMC Week Has a Script — Respect It or Get Wrecked</h3>
-  <p>
-    6S Swiss Franc futures follow the same playbook every FOMC week: early-week compression,
-    mid-week traps, announcement chaos, press-conference direction, and post-FOMC trending.
-    Traders who respect this sequence avoid most predictable losses and catch the cleanest
-    6S moves of the month.
-  </p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="fx-section" id="clock" aria-labelledby="clock-title">
+  <div class="fx-section-heading"><p class="fx-kicker">The window is a data object</p><h2 id="clock-title">Map Every Release to a Causal Timestamp</h2><p>The <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">Federal Reserve meeting calendar</a> supplies decision dates plus links to statements, minutes and projection materials. It does not supply a ready-made 6S event window. Preserve the official release timestamp, the exchange timestamp, the source timezone and the historical UTC offset.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="FOMC event-window timestamp map" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Segment</th><th scope="col">Frozen boundary</th><th scope="col">Information allowed</th><th scope="col">Primary threat</th></tr></thead><tbody>
+    <tr><th scope="row">Prior snapshot</th><td>Declared instant before the decision week begins</td><td>Only information available by that instant</td><td>Backfilling a later expectation</td></tr>
+    <tr><th scope="row">Pre-decision</th><td>Start and end in UTC, not weekday prose</td><td>Scheduled and unscheduled news tagged as it arrives</td><td>Calling anticipation an FOMC effect</td></tr>
+    <tr><th scope="row">Decision</th><td>Statement timestamp through a fixed post-release horizon</td><td>Statement, implementation note and contemporaneous market records</td><td>Mixing initial repricing with the press conference</td></tr>
+    <tr><th scope="row">Post-decision</th><td>Fixed endpoint after all declared communication windows</td><td>Only later information known by each observation</td><td>Attributing a new shock to “follow-through”</td></tr>
+  </tbody></table></div>
+  <div class="fx-caution"><strong>Minutes are a separate event.</strong><p>The Federal Reserve says minutes of regularly scheduled meetings are released three weeks after the policy decision. They belong to their own timestamped event record, not retroactively inside decision-week information.</p></div>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="fx-section" id="prior" aria-labelledby="prior-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Surprise requires a frozen expectation</p><h2 id="prior-title">Separate the Prior From the Decision Package</h2><p>A target-rate change alone is not a surprise measure. The test must retain the market prior and describe which part of the announcement differed from it. If no licensed, timestamped expectations series is available, label the surprise field unavailable rather than reconstructing it from the subsequent 6S move.</p></div>
+  <div class="fx-causal-map">
+    <div class="fx-causal-origin"><strong>Observed 6S return</strong><span>CHF/USD futures can reflect several concurrent changes.</span></div>
+    <article class="fx-panel"><h3>Policy surprise</h3><p>Change in the expected U.S. policy path, measured from a declared pre-event market series.</p></article>
+    <article class="fx-panel"><h3>Communication surprise</h3><p>Statement, projections or press-conference information that changes the curve after the initial release.</p></article>
+    <article class="fx-panel"><h3>Broad-dollar shock</h3><p>Common USD repricing that may explain 6S alongside other dollar pairs.</p></article>
+    <article class="fx-panel"><h3>Swiss or global shock</h3><p>SNB, Swiss, European or risk information arriving inside the same measured window.</p></article>
   </div>
-</footer>
-</body>
-</html>
+  <div class="fx-related">For quote direction and the broader U.S.-data mechanism, use <a href="6s-how-us-economic-data-moves-swiss-franc-futures.html">How U.S. Economic Data Moves 6S</a>. This page owns only the FOMC event-study design.</div>
+</section>
+
+<section class="fx-section" id="controls" aria-labelledby="controls-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Ordinary weeks need comparable states</p><h2 id="controls-title">Match Control Weeks Without Looking at Outcomes</h2><p>A raw FOMC-versus-non-FOMC average can confound policy communication with seasonality, volatility state, holidays or roll migration. Match using variables observable before the candidate week; never choose controls because their later 6S paths look similar.</p></div>
+  <div class="fx-four-grid">
+    <article class="fx-panel"><p class="fx-card-label">Calendar</p><h3>Same weekday structure</h3><p>Match holiday, early-close and month-end status. Apply historical timezone rules.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Contract</p><h3>Same lifecycle state</h3><p>Match days to expiry, roll participation and the exact dated contract or documented splice rule.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Information</p><h3>Comparable event load</h3><p>Tag major scheduled U.S., Swiss and European releases using their official historical timestamps.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Market</p><h3>Past-only volatility</h3><p>Match a volatility or liquidity state estimated strictly before the window begins.</p></article>
+  </div>
+  <div class="fx-method"><div><h3>Protocol question&mdash;not a finding</h3><p>After matching these states, do preregistered 6S volatility, range or market-quality measures differ across pre-decision, decision and post-decision segments relative to control weeks?</p></div><dl><div><dt>Unit</dt><dd>Dated FOMC meeting</dd></div><div><dt>Comparison</dt><dd>Matched non-event weeks</dd></div><div><dt>Allowed result</dt><dd>No detectable difference</dd></div></dl></div>
+</section>
+
+<section class="fx-section" id="measures" aria-labelledby="measures-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Do not hide the path in one average</p><h2 id="measures-title">Measure Direction, Volatility and Executability Separately</h2><p>A positive average return does not describe dispersion; a wide range does not prove tradeable liquidity; high volume does not establish favorable fills. Each claim needs its own field set and uncertainty estimate.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="FOMC-week outcome measures" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Question</th><th scope="col">Primary measure</th><th scope="col">Required data</th><th scope="col">Do not infer</th></tr></thead><tbody>
+    <tr><th scope="row">Direction</th><td>Completed 6S return over a frozen segment</td><td>Dated contract, price field and exact endpoints</td><td>A permanent directional bias</td></tr>
+    <tr><th scope="row">Variation</th><td>Absolute return, realized variation or declared range measure</td><td>Sequenced intraday observations and cleaning log</td><td>Executable opportunity</td></tr>
+    <tr><th scope="row">Liquidity</th><td>Spread, displayed depth, trade size and quote-update intensity</td><td>Timestamped quote or order-book records</td><td>Your queue position</td></tr>
+    <tr><th scope="row">Implementation</th><td>Arrival-price slippage, fill rate and implementation shortfall</td><td>Own order and acknowledgement timestamps</td><td>Counterfactual fills for unsubmitted orders</td></tr>
+  </tbody></table></div>
+  <p class="fx-source-note"><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine</a> lists settlements, Market by Order and PCAP as different historical products. That catalog clarifies that a settlement file cannot stand in for intraday book evidence. No CME dataset was purchased or analyzed for this article.</p>
+</section>
+
+<section class="fx-section" id="robustness" aria-labelledby="robustness-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Make preferred stories expensive</p><h2 id="robustness-title">Stress the Event Definition Before Believing It</h2><p>Register a primary design and a limited sensitivity set before opening the final sample. Every tried window, filter and outcome remains in the audit record so one attractive specification cannot impersonate a stable pattern.</p></div>
+  <div class="fx-falsification-tree">
+    <article><p class="fx-card-label">Window stress</p><h3>Shift the boundaries</h3><ul><li>Adjacent non-overlapping pre and post segments</li><li>Statement-only versus statement-plus-press-conference</li><li>UTC and exchange-trade-date representations</li></ul></article>
+    <article><p class="fx-card-label">Sample stress</p><h3>Remove fragile dependence</h3><ul><li>One meeting at a time</li><li>Scheduled-projection versus other meetings</li><li>Holiday, roll and major-data exclusions</li></ul></article>
+    <article><p class="fx-card-label">Inference stress</p><h3>Respect repeated search</h3><ul><li>Meeting-level resampling</li><li>Family-aware uncertainty across outcomes</li><li>Chronological holdout never used for tuning</li></ul></article>
+  </div>
+  <ul class="fx-checklist"><li><strong>Keep all meetings.</strong> Crisis episodes and quiet decisions cannot be removed because they weaken the average.</li><li><strong>Preserve revisions.</strong> Historical event fields must reflect what was knowable at the time.</li><li><strong>Report dependence.</strong> Overlapping windows and repeated measures from one meeting are not independent observations.</li><li><strong>Publish nulls.</strong> An interval too wide for the decision is an unusable result, not a hidden near miss.</li></ul>
+</section>
+
+<section class="fx-section" id="record" aria-labelledby="record-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Close the claim explicitly</p><h2 id="record-title">FOMC-Week Rejection Record</h2><p>Complete one record for each registered claim. The page does not assume that a measured difference becomes a trading rule.</p></div>
+  <div class="fx-trade-card"><h3>Accept, limit, or reject the study claim</h3><dl><div><dt>Registration</dt><dd>Sample, timestamps, prior field, windows, controls, measures, exclusions and code hash.</dd></div><div><dt>Coverage</dt><dd>Eligible meetings, missing records, contaminated windows and control-match quality.</dd></div><div><dt>Estimate</dt><dd>Effect size, uncertainty, all variants and meeting-level influence.</dd></div><div><dt>Accept</dt><dd>Useful magnitude and sign survive the registered holdout and robustness set.</dd></div><div><dt>Limit</dt><dd>Difference exists only in a state identifiable before the window and remains useful after costs.</dd></div><div><dt>Reject</dt><dd>Controls erase it, sign changes, uncertainty is too wide, data are incomplete, or later evidence fails.</dd></div></dl></div>
+  <div class="fx-caution"><strong>Research status as of August 21, 2026</strong><p>No original 6S FOMC-week dataset, event estimate, coefficient, confidence interval, predictive result or trading performance is reported here. This article specifies a study protocol. Until a sealed implementation passes the record, the conclusion is <strong>not tested</strong>.</p></div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 21, 2026</summary><ul>
+  <li><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">Federal Reserve FOMC meeting calendars, statements, minutes and projection materials</a> for authoritative event dates and documents.</li>
+  <li><a href="https://www.federalreserve.gov/monetarypolicy/fomc_historical.htm" target="_blank" rel="noopener noreferrer">Federal Reserve historical FOMC materials</a> for the official-document archive and release-history context.</li>
+  <li><a href="https://www.federalreserve.gov/releases/h15/" target="_blank" rel="noopener noreferrer">Federal Reserve H.15 selected interest rates</a> for official daily U.S. rate-series definitions; a daily close is not an intraday surprise measure.</li>
+  <li><a href="https://www.snb.ch/en/services-events/digital-services/datenportal" target="_blank" rel="noopener noreferrer">Swiss National Bank data portal</a> for downloadable Swiss interest-rate, yield and foreign-exchange series.</li>
+  <li><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/254/254.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 254: Swiss Franc/U.S. Dollar futures</a> for dated-contract identity; full mechanics belong to <a href="6s-contract-specs-tick-size-margin.html">the canonical 6S contract guide</a>.</li>
+  <li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine historical-data catalog</a> for distinctions among settlements, Market by Order and PCAP datasets.</li>
+</ul><p>Sources and methods were reviewed August 21, 2026. This unsponsored article distinguishes official event facts, proposed measurements, hypotheses, statistical inference and trading application. It reports no original market result.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>Use this protocol for education and research, not as personalized investment, legal, tax, hedging, brokerage or execution advice. An event relationship can fail without warning, while a leveraged 6S position can lose more than its opening margin and orders can slip through thin books. Confirm the current contract and venue rules, inspect live market quality and set an independent loss ceiling before acting.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

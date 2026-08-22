@@ -2,242 +2,132 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why 6S Is Built for Mean Reversion and How to Trade It</title>
-  <meta name="description" content="Learn why 6S Swiss Franc futures naturally favor mean reversion and how to trade the pullbacks, fades, and snapbacks that define this contract.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6s-mean-reversion-setups-and-why-they-work.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Why 6S Is Built for Mean Reversion and How to Trade It">
-  <meta property="og:description" content="Learn why 6S Swiss Franc futures naturally favor mean reversion and how to trade the pullbacks, fades, and snapbacks that define this contract.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6s-mean-reversion-setups-and-why-they-work.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Why 6S Is Built for Mean Reversion and How to Trade It">
-  <meta name="twitter:description" content="Learn why 6S Swiss Franc futures naturally favor mean reversion and how to trade the pullbacks, fades, and snapbacks that define this contract.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Why 6S Is Built for Mean Reversion and How to Trade It",
-  "description": "Learn why 6S Swiss Franc futures naturally favor mean reversion and how to trade the pullbacks, fades, and snapbacks that define this contract.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6s-mean-reversion-setups-and-why-they-work.html",
-  "datePublished": "2025-11-27",
-  "dateModified": "2025-11-27",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6s-mean-reversion-setups-and-why-they-work.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Why 6S Is Built for Mean Reversion and How to Trade It",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6s-mean-reversion-setups-and-why-they-work.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6S Mean Reversion: A Costed, Walk-Forward Test</title>
+  <meta name="description" content="Turn 6S mean-reversion stories into frozen candidate rules tested against persistence, costs, regimes, chronological holdouts and abandon criteria.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6s-mean-reversion-setups-and-why-they-work.html">
+  <meta property="og:title" content="6S Mean Reversion: A Costed, Walk-Forward Test"><meta property="og:description" content="Turn 6S mean-reversion stories into frozen candidate rules tested against persistence, costs, regimes, chronological holdouts and abandon criteria."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6s-mean-reversion-setups-and-why-they-work.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-27"><meta property="article:modified_time" content="2026-08-19">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6S Mean Reversion: A Costed, Walk-Forward Test"><meta name="twitter:description" content="Turn 6S mean-reversion stories into frozen candidate rules tested against persistence, costs, regimes, chronological holdouts and abandon criteria."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6S Mean Reversion: A Costed, Walk-Forward Test","description":"Turn 6S mean-reversion stories into frozen candidate rules tested against persistence, costs, regimes, chronological holdouts and abandon criteria.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6s-mean-reversion-setups-and-why-they-work.html"},"datePublished":"2025-11-27","dateModified":"2026-08-19","url":"https://grizzlyparrottrading.com/futures-basics/6s-mean-reversion-setups-and-why-they-work.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6S Mean Reversion: A Costed, Walk-Forward Test","item":"https://grizzlyparrottrading.com/futures-basics/6s-mean-reversion-setups-and-why-they-work.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Frozen rule registry &middot; persistence baseline &middot; walk-forward rejection</p>
+    <h1>6S Mean Reversion: A Costed, Walk-Forward Test</h1>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 19, 2026</p>
+    <p class="fx-hero-lede">The same 6S move can be called an overextension by a ten-bar trader and a trend by a hundred-bar trader. Neither label exists in the price alone. The anchor, lookback, threshold, entry delay and exit horizon create the claim. Mean reversion becomes testable only when those choices are frozen before the later data are opened.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#registry">Register the candidate</a><a class="fx-text-link" href="#abandon">Read the abandon rules</a></div>
+    <dl class="fx-hero-metrics" aria-label="Mean-reversion test status"><div><dt>Candidate</dt><dd>Fully specified</dd></div><div><dt>Rival</dt><dd>Persistence + neutral</dd></div><div><dt>Costs</dt><dd>Order-level</dd></div><div><dt>Original test</dt><dd>None reported</dd></div></dl>
   </div>
+  <aside class="fx-market-board" aria-label="Illustrative classification disagreement">
+    <div class="fx-board-head"><span>Same completed path</span><strong>Different frozen lenses</strong></div>
+    <div class="fx-decision-strip"><span><strong>Short anchor</strong>Candidate extension</span><span><strong>Long anchor</strong>Candidate continuation</span><span><strong>Evidence</strong>Later test required</span></div>
+    <p class="fx-board-foot">A label is not a return</p>
+  </aside>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#registry">Rule registry</a><a href="#baseline">Baselines</a><a href="#costs">Costs</a><a href="#regimes">Regimes</a><a href="#walkforward">Walk-forward</a><a href="#abandon">Abandon</a></nav>
 
-<h1>Why 6S Is Built for Mean Reversion and How to Trade It</h1>
-
-<p>Of all the major currency futures, 6S Swiss Franc futures are one of the best for mean reversion. CHF is stable, low-volatility, and tied closely to global risk sentiment. That creates repeated conditions where price snaps back to value instead of running away in long trends. If you understand why 6S reverts and where it reverts, you can trade it with sniper precision.</p>
-
-<h2>1. Low Volatility Makes Trend Extensions Rare</h2>
-
-<p>6S has naturally smaller ATR than 6E, 6B, or 6A. Because of that, trends rarely extend cleanly without pullbacks. Most breakouts stall fast. Most impulses fade back to the midpoint of the move.</p>
-
-<p>Mean reversion is inevitable in a market that doesn’t like to stretch.</p>
-
-<h2>2. CHF Safe-Haven Behavior Creates Snapbacks</h2>
-
-<p>When global markets flip risk-on or risk-off, CHF reacts. But it doesn’t overreact. CHF strength and weakness come in controlled waves, not explosions. That stability creates frequent:</p>
-
-<ul>
-<li>overextensions</li>
-<li>stop runs</li>
-<li>snapbacks into value</li>
-<li>micro double-tops and double-bottoms</li>
-</ul>
-
-<p>This makes 6S one of the most forgiving contracts for countertrend setups—if timed correctly.</p>
-
-<h2>3. Reversions Usually Target the Same Three Zones</h2>
-
-<p>If you want to trade 6S mean reversion, memorize these value zones:</p>
-
-<ul>
-<li>VWAP (intraday anchor point)</li>
-<li>Prior session midpoint</li>
-<li>European session equilibrium</li>
-</ul>
-
-<p>Price returns to these zones so consistently that ignoring them is just bad trading.</p>
-
-<h2>4. Liquidity Sweeps Fuel Most Reversal Moves</h2>
-
-<p>6S almost never reverses cleanly without grabbing liquidity first.</p>
-
-<p>Typical sequence:</p>
-
-<ol>
-<li>Slow drift into a prior high/low</li>
-<li>Sweep through the level</li>
-<li>Reversal wick or displacement candle</li>
-<li>Snapback toward VWAP or prior midpoint</li>
-</ol>
-
-<p>This connects directly to the article on <a href="https://grizzlyparrottrading.com/futures-basics/6s-typical-liquidity-behavior-sweeps-fakeouts-slow-drifts.html">6S liquidity behavior</a>, because the sweeps are shallow but reliable.</p>
-
-<h2>5. Best Mean-Reversion Entry Types for 6S</h2>
-
-<p>The highest probability entries follow clear invalidation:</p>
-
-<ul>
-<li>Reversal wick after a liquidity sweep</li>
-<li>Break of micro-structure then retest</li>
-<li>ATR expansion from a low baseline</li>
-<li>Rejection at a stretched deviation from VWAP</li>
-</ul>
-
-<p>6S doesn’t reward guessing. It rewards confirmation.</p>
-
-<h2>6. Avoid Countertrend Trading During U.S. Data</h2>
-
-<p>There is one time you do NOT mean-revert 6S: when major U.S. economic data hits. NFP, CPI, PPI, and FOMC can cause genuine one-directional flows.</p>
-
-<p>If the move is news-driven → don’t fade it.</p>
-
-<div class="highlight-box green">
-  <h3>Stability Is the Edge — Trade the Reversion</h3>
-  <p>6S doesn’t run wild — it snaps back. The Swiss Franc is engineered for stability, and that makes mean reversion your primary play. Use VWAP, midpoints, and sweep detection to turn calm structure into clean trades.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="fx-section" id="registry" aria-labelledby="registry-title">
+  <div class="fx-section-heading"><p class="fx-kicker">No discretionary rescue clauses</p><h2 id="registry-title">Write the Entire Candidate Rule Before Testing</h2><p>“Buy an oversold 6S” is not reproducible. A registry must determine what data are eligible, when the state exists, when an order can first arrive and how every path ends. Parameter values are research choices, not recommendations.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Mean-reversion rule registry" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Field</th><th scope="col">Required declaration</th><th scope="col">Leakage to prevent</th></tr></thead><tbody>
+    <tr><th scope="row">Instrument</th><td>Dated 6S expiry, roll policy, price field and session</td><td>Choosing the cleaner continuous series after results</td></tr>
+    <tr><th scope="row">Anchor</th><td>Past-only mean, median, VWAP or model state with exact lookback</td><td>Moving the anchor because price kept trending</td></tr>
+    <tr><th scope="row">Extension</th><td>Distance and scale estimator computed only from available history</td><td>Using full-sample volatility</td></tr>
+    <tr><th scope="row">Entry</th><td>Eligibility, trigger, confirmation, earliest order time, side and order type</td><td>Filling on the bar that created the signal</td></tr>
+    <tr><th scope="row">Risk</th><td>Size, maximum loss, price/time invalidation and event policy</td><td>Widening the stop after entry</td></tr>
+    <tr><th scope="row">Exit</th><td>Anchor target, partial rule, time stop, final exit and re-entry policy</td><td>Calling any profitable endpoint the target</td></tr>
+  </tbody></table></div>
+  <div class="fx-state-machine" aria-label="Mean-reversion candidate state machine">
+    <article><span>1</span><h3>Eligible</h3><p>Contract, event, liquidity and data gates pass.</p></article>
+    <article><span>2</span><h3>Extended</h3><p>Frozen displacement rule is true on completed data.</p></article>
+    <article><span>3</span><h3>Triggered</h3><p>Registered confirmation, if any, occurs without hindsight.</p></article>
+    <article><span>4</span><h3>Ordered</h3><p>Submission follows the declared delay and order policy.</p></article>
+    <article><span>5</span><h3>Resolved</h3><p>Fill, miss, exit, cost and invalidation are recorded.</p></article>
   </div>
-</footer>
-</body>
-</html>
+  <div class="fx-caution"><strong>“Wait for it to stabilize” is not a rule.</strong><p>Stabilization must be a timestamped, past-only condition. If two independent implementations can disagree about whether it occurred, the candidate is not ready for a backtest.</p></div>
+</section>
+
+<section class="fx-section" id="baseline" aria-labelledby="baseline-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Reversion must beat plausible rivals</p><h2 id="baseline-title">Benchmark Against Persistence, No Trade and Neutral Timing</h2><p>A positive gross average does not prove reversion. The same eligibility filter may select favorable periods, or the rule may simply hold a standing CHF exposure. Compare risk-matched alternatives under the same timing and cost conventions.</p></div>
+  <div class="fx-four-grid">
+    <article class="fx-panel"><p class="fx-card-label">Baseline 1</p><h3>No trade</h3><p>Zero exposure and zero trading cost. Complexity must justify taking risk at all.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Baseline 2</p><h3>Persistence</h3><p>Use the same extension event but trade continuation with symmetric risk and execution.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Baseline 3</p><h3>Direction-neutral</h3><p>Preserve eligible timestamps and holding periods while balancing or randomizing side without future data.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Baseline 4</p><h3>Simple exposure</h3><p>Compare with a risk-matched static or session-only CHF/USD exposure where relevant.</p></article>
+  </div>
+  <div class="fx-method"><div><h3>Primary question&mdash;not a finding</h3><p>Does the frozen reversion candidate add net, risk-adjusted decision value over these baselines in chronological data never used to select its anchor, threshold or exit?</p></div><dl><div><dt>Signal family</dt><dd>Mean reversion</dd></div><div><dt>Rival family</dt><dd>Persistence</dd></div><div><dt>Allowed winner</dt><dd>Neither</dd></div></dl></div>
+</section>
+
+<section class="fx-section" id="costs" aria-labelledby="costs-title">
+  <div class="fx-section-heading"><p class="fx-kicker">The path to the anchor must be executable</p><h2 id="costs-title">Charge the Candidate for Every Order Outcome</h2><p>Mean-reversion rules often respond to fast dislocations, precisely when spread, depth and adverse selection may be poor. Model marketable and resting orders separately. A missed limit order is an outcome, not a free fill at the desired price.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Mean-reversion execution cost ledger" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Cost layer</th><th scope="col">Required treatment</th><th scope="col">Failure mode</th></tr></thead><tbody>
+    <tr><th scope="row">Spread</th><td>Historical bid/ask at plausible order arrival or conservative spread model</td><td>Midpoint fills during stressed extensions</td></tr>
+    <tr><th scope="row">Impact</th><td>Size-aware book sweep or conservative impact schedule</td><td>Unlimited capacity at the inside quote</td></tr>
+    <tr><th scope="row">Latency</th><td>Decision, processing, routing and exchange acknowledgement delay</td><td>Entry before the signal was knowable</td></tr>
+    <tr><th scope="row">Limits</th><td>Queue-aware fills where possible; otherwise pessimistic bounds</td><td>Every touched price counted as filled</td></tr>
+    <tr><th scope="row">Misses</th><td>Opportunity cost, later chase rule or no-trade resolution</td><td>Keeping only successful fills</td></tr>
+    <tr><th scope="row">Fees and roll</th><td>Broker, exchange, clearing, market-data and roll costs as applicable</td><td>Gross performance labeled net</td></tr>
+  </tbody></table></div>
+  <div class="fx-formula" aria-label="Illustrative net trade result with every term measured in US dollars for the filled contract quantity"><code>net USD = realized USD P&amp;L &minus; spread USD cost &minus; impact USD cost &minus; fees USD &minus; roll USD cost</code><i aria-hidden="true">|</i><code>misses and partials remain in sample</code></div>
+  <p class="fx-source-note"><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine</a> distinguishes settlement, Market by Order and PCAP datasets. That distinction matters because a bar-based test cannot claim queue-aware execution. No CME market data was purchased or analyzed for this page.</p>
+</section>
+
+<section class="fx-section" id="regimes" aria-labelledby="regimes-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Temporary pressure can become repricing</p><h2 id="regimes-title">Predeclare Regimes That Can Break the Anchor</h2><p>A reversion story is most vulnerable when the information set changes and the old center is no longer relevant. Regime labels must be observable at entry or used only for ex-post diagnosis&mdash;never as hindsight filters.</p></div>
+  <div class="fx-risk-grid">
+    <article><h3>Scheduled policy state</h3><p>FOMC or SNB decisions, projections and official communication can reprice the relative policy path.</p></article>
+    <article><h3>Unscheduled shock</h3><p>Risk, funding or intervention-related information can move CHF while the historical anchor lags.</p></article>
+    <article><h3>Liquidity state</h3><p>Holiday, handover, benchmark and event windows can change spread, depth and fill behavior.</p></article>
+    <article><h3>Contract lifecycle</h3><p>Roll migration and expiry proximity can distort a continuous series or change execution capacity.</p></article>
+    <article><h3>Volatility state</h3><p>Past-only scale estimates can jump after the signal and invalidate a threshold calibrated to quiet data.</p></article>
+    <article><h3>Dollar-factor state</h3><p>A broad USD move can create persistent cross-currency pressure unrelated to a 6S-specific anchor.</p></article>
+  </div>
+  <div class="fx-related">Formal compression and breakout hypotheses are tested in <a href="6s-volatility-compression-and-breakout-behavior.html">6S Volatility Compression and Breakout Behavior</a>. Do not use this page to relabel every failed reversion as a breakout success.</div>
+</section>
+
+<section class="fx-section" id="walkforward" aria-labelledby="walkforward-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Optimization ends before validation begins</p><h2 id="walkforward-title">Use Nested, Chronological Walk-Forward Testing</h2><p>Time order is part of the strategy. All parameter choice, regime thresholds and model fitting happen inside training history. The next block is evaluated once, then appended only after its result is sealed.</p></div>
+  <div class="fx-lifecycle">
+    <article><span>Design</span><h3>Register candidates</h3><p>Limit anchor, lookback, threshold, confirmation, exit and regime families before outcome review.</p></article>
+    <article><span>Train</span><h3>Select inside history</h3><p>Use nested resampling or an inner chronological split for every parameter decision.</p></article>
+    <article><span>Validate</span><h3>Open the next block once</h3><p>Apply frozen rules with causal data, latency, costs, partials and misses.</p></article>
+    <article><span>Repeat</span><h3>Advance the origin</h3><p>Log parameter stability and every block result; never overwrite a failed generation.</p></article>
+    <article><span>Seal</span><h3>Final holdout</h3><p>Use once for the surviving registered candidate and its baselines.</p></article>
+  </div>
+  <ul class="fx-checklist"><li><strong>Family-aware uncertainty.</strong> Count every tried anchor, threshold, horizon and regime rule.</li><li><strong>Block dependence.</strong> Use uncertainty methods consistent with overlapping trades and clustered events.</li><li><strong>Capacity stress.</strong> Re-run at larger spreads, delayed entry and lower fill probability.</li><li><strong>Subperiod disclosure.</strong> Show whether one episode carries the result.</li></ul>
+</section>
+
+<section class="fx-section" id="abandon" aria-labelledby="abandon-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Failure is a valid product outcome</p><h2 id="abandon-title">Abandon the Mean-Reversion Claim When Evidence Fails</h2><p>A candidate does not earn indefinite retuning. Set rejection conditions before the final holdout and apply them without a discretionary rescue.</p></div>
+  <div class="fx-falsification-tree">
+    <article><p class="fx-card-label">Statistical</p><h3>Unstable edge</h3><ul><li>Sign or useful magnitude changes across later blocks</li><li>Interval includes economically harmful outcomes</li><li>One event or regime dominates the estimate</li></ul></article>
+    <article><p class="fx-card-label">Economic</p><h3>No net value</h3><ul><li>Costs consume gross reversion</li><li>No-trade or persistence baseline matches it</li><li>Capacity is below practical order size</li></ul></article>
+    <article><p class="fx-card-label">Operational</p><h3>Cannot reproduce</h3><ul><li>Required quotes, events or rolls are missing</li><li>Live state cannot be identified without hindsight</li><li>Fill assumptions cannot be defended</li></ul></article>
+  </div>
+  <div class="fx-trade-card"><h3>Final strategy record</h3><dl><div><dt>Definition</dt><dd>Rule version, data manifest, code hash, sample cutoffs and cost schedule.</dd></div><div><dt>Search</dt><dd>All candidates, rejected variants and selection process.</dd></div><div><dt>Evidence</dt><dd>Block-by-block gross and net outcomes, uncertainty, drawdowns and capacity.</dd></div><div><dt>Accept</dt><dd>Stable incremental value survives the sealed holdout and conservative execution.</dd></div><div><dt>Limit</dt><dd>Use only in a real-time-identifiable state with documented size constraints.</dd></div><div><dt>Abandon</dt><dd>Any preregistered statistical, economic or operational failure is triggered.</dd></div></dl></div>
+  <div class="fx-caution"><strong>Research status as of August 21, 2026</strong><p>No original 6S mean-reversion backtest, trade count, hit rate, Sharpe ratio, drawdown, parameter or net performance is reported here. The claim that 6S “is built for mean reversion” is not established. This page defines how a candidate can be tested and rejected.</p></div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 21, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/254/254.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 254: Swiss Franc/U.S. Dollar futures</a> for dated-contract identity and exchange rules.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/g10/swiss-franc.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME Swiss Franc futures contract page</a> for current product context; specification arithmetic belongs to <a href="6s-contract-specs-tick-size-margin.html">the canonical 6S contract guide</a>.</li>
+  <li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine historical-data catalog</a> for distinctions among settlements, Market by Order and PCAP datasets.</li>
+  <li><a href="https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm" target="_blank" rel="noopener noreferrer">NIST/SEMATECH time-series analysis guidance</a> for time order, dependence and model-checking context.</li>
+  <li><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">Federal Reserve FOMC calendars and official materials</a> for U.S. policy-event controls.</li>
+  <li><a href="https://www.snb.ch/en/services-events/digital-services/datenportal" target="_blank" rel="noopener noreferrer">Swiss National Bank data portal</a> for official Swiss rate, yield and foreign-exchange context.</li>
+</ul><p>Sources and methods were reviewed August 21, 2026. This unsponsored article separates contract facts, proposed mechanisms, candidate rules, statistical evidence and trading use. It reports no original market result.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>Use this research protocol for education, not as personalized investment, legal, tax, hedging, brokerage or execution advice. Mean-reversion rules can keep losing when markets reprice, and leveraged 6S losses can exceed opening margin. Verify current contract rules, live liquidity and independent risk limits before acting.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

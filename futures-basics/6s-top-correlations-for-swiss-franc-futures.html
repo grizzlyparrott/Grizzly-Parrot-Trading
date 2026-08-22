@@ -2,230 +2,124 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top Correlations for 6S: S&P 500, Gold, and Treasury Yields</title>
-  <meta name="description" content="Learn the strongest correlations that drive 6S Swiss Franc futures, including S&P 500 risk trends, gold, and U.S. Treasury yields.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6s-top-correlations-for-swiss-franc-futures.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Top Correlations for 6S: S&P 500, Gold, and Treasury Yields">
-  <meta property="og:description" content="Learn the strongest correlations that drive 6S Swiss Franc futures, including S&P 500 risk trends, gold, and U.S. Treasury yields.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6s-top-correlations-for-swiss-franc-futures.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Top Correlations for 6S: S&P 500, Gold, and Treasury Yields">
-  <meta name="twitter:description" content="Learn the strongest correlations that drive 6S Swiss Franc futures, including S&P 500 risk trends, gold, and U.S. Treasury yields.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Top Correlations for 6S: S&P 500, Gold, and Treasury Yields",
-  "description": "Learn the strongest correlations that drive 6S Swiss Franc futures, including S&P 500 risk trends, gold, and U.S. Treasury yields.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6s-top-correlations-for-swiss-franc-futures.html",
-  "datePublished": "2025-11-27",
-  "dateModified": "2025-11-27",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6s-top-correlations-for-swiss-franc-futures.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Top Correlations for 6S: S&P 500, Gold, and Treasury Yields",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6s-top-correlations-for-swiss-franc-futures.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6S Correlations: Test Co-Movement, Don’t Rank It</title>
+  <meta name="description" content="Test time-varying 6S co-movement with equities, gold, rates, JPY and broad USD measures using synchronized returns, controls and falsification.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6s-top-correlations-for-swiss-franc-futures.html">
+  <meta property="og:title" content="6S Correlations: Test Co-Movement, Don&rsquo;t Rank It"><meta property="og:description" content="Test time-varying 6S co-movement with equities, gold, rates, JPY and broad USD measures using synchronized returns, controls and falsification."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6s-top-correlations-for-swiss-franc-futures.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-27"><meta property="article:modified_time" content="2026-08-20">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6S Correlations: Test Co-Movement, Don&rsquo;t Rank It"><meta name="twitter:description" content="Test time-varying 6S co-movement with equities, gold, rates, JPY and broad USD measures using synchronized returns, controls and falsification."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6S Correlations: Test Co-Movement, Don’t Rank It","description":"Test time-varying 6S co-movement with equities, gold, rates, JPY and broad USD measures using synchronized returns, controls and falsification.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6s-top-correlations-for-swiss-franc-futures.html"},"datePublished":"2025-11-27","dateModified":"2026-08-20","url":"https://grizzlyparrottrading.com/futures-basics/6s-top-correlations-for-swiss-franc-futures.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6S Correlations: Test Co-Movement, Don’t Rank It","item":"https://grizzlyparrottrading.com/futures-basics/6s-top-correlations-for-swiss-franc-futures.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Synchronized returns &middot; common-factor controls &middot; stability tests</p>
+    <h1>6S Correlations: Test Co-Movement, Don&rsquo;t Rank It</h1>
+    <p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 20, 2026</p>
+    <p class="fx-hero-lede">A 6S correlation can be positive in one window and negative in the next without either estimate being a calculation error. Policy regimes change, the dollar becomes a stronger or weaker common factor, event composition shifts and one outlier can dominate a short sample. A permanent “top correlations” list hides exactly the instability a trader needs to see.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#design">Build synchronized returns</a><a class="fx-text-link" href="#falsification">Try to break the relationship</a></div>
+    <dl class="fx-hero-metrics" aria-label="Correlation research status"><div><dt>Input</dt><dd>Returns, not levels</dd></div><div><dt>Estimate</dt><dd>Rolling + uncertain</dd></div><div><dt>Drivers</dt><dd>Controls required</dd></div><div><dt>Permanent ranking</dt><dd>Rejected premise</dd></div></dl>
   </div>
+  <aside class="fx-market-board" aria-label="Illustrative correlation sign reversal">
+    <div class="fx-board-head"><span>Illustrative windows</span><strong>One pair, changing sign</strong></div>
+    <div class="fx-correlation-line"><span class="fx-correlation-marker" style="left:18%">Earlier &minus;</span><span class="fx-correlation-marker" style="left:72%">Later +</span></div>
+    <div class="fx-scale-labels"><span>&minus;1</span><span>0</span><span>+1</span></div>
+    <p class="fx-board-foot">Stability is evidence; a snapshot is not</p>
+  </aside>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#design">Return design</a><a href="#candidates">Candidates</a><a href="#rolling">Rolling estimates</a><a href="#factors">Factor controls</a><a href="#testing">Multiple tests</a><a href="#falsification">Falsification</a></nav>
 
-<h1>Top Correlations for 6S: S&P 500, Gold, and Treasury Yields</h1>
-
-<p>6S Swiss Franc futures don’t move in a vacuum. They react directly to global risk trends, safe-haven flows, and shifts in U.S. dollar strength. If you don’t understand these correlations, you’ll always be late when 6S starts trending. Here are the correlations that actually matter—and the ones that consistently signal where CHF is headed next.</p>
-
-<h2>1. The S&P 500 (ES) — CHF Strengthens When Stocks Drop</h2>
-<p>The Swiss Franc is a shelter currency. When ES sells off hard, institutions rotate capital into low-risk assets. CHF is one of the first places they go. That makes 6S negatively correlated with the S&P 500 during fear events.</p>
-
-<table>
-<tr><th>ES Behavior</th><th>6S Reaction</th></tr>
-<tr><td>Sharp selloff</td><td>6S spikes upward</td></tr>
-<tr><td>Steady uptrend / risk-on</td><td>6S drifts lower</td></tr>
-<tr><td>Choppy grind</td><td>6S stays slow and compressed</td></tr>
-</table>
-
-<p>If ES collapses and you’re not watching 6S, you’re missing a leading signal of panic-driven flows.</p>
-
-<h2>2. Gold (GC) — Safe-Haven Alignment</h2>
-<p>Gold and CHF share the same role during market stress: a place to hide. When gold surges on risk-off sentiment, CHF often strengthens alongside it, sending 6S higher.</p>
-
-<p>This correlation is strongest during:</p>
-<ul>
-<li>Global uncertainty</li>
-<li>Currency crises</li>
-<li>Inflation scares</li>
-<li>Volatility spikes</li>
-</ul>
-
-<p>When GC rips violently during panic, 6S usually isn’t far behind.</p>
-
-<h2>3. U.S. Treasury Yields — The Quiet Driver Most Traders Ignore</h2>
-<p>Yields are one of the most important influences on CHF. When U.S. yields fall, it signals risk aversion and demand for safety. When yields rise sharply, capital flows toward USD assets and away from CHF.</p>
-
-<table>
-<tr><th>Yield Move</th><th>6S Reaction</th></tr>
-<tr><td>Yields collapsing</td><td>6S rallies</td></tr>
-<tr><td>Yields rising fast</td><td>6S weakens</td></tr>
-<tr><td>Yields stable</td><td>6S stays quiet</td></tr>
-</table>
-
-<p>Yields often move before FX does. That gives you a leading clue when tracking 6S direction.</p>
-
-<h2>4. JPY (6J) — The Other Safe-Haven Currency</h2>
-<p>CHF and JPY behave similarly during risk-off events, but CHF tends to react cleaner and faster. Watching 6J helps confirm whether the market is shifting into panic mode.</p>
-
-<ul>
-<li>6J and 6S rising together = real fear</li>
-<li>6J rising but 6S flat = muted CHF flow</li>
-<li>Both flat = risk-on conditions</li>
-</ul>
-
-<p>This correlation is one of the most useful for validating safe-haven sentiment.</p>
-
-<h2>5. DXY — The Dollar Index Drives the Denominator</h2>
-<p>6S is CHF/USD. Anything that strengthens the U.S. dollar weakens 6S, and anything that weakens USD pushes 6S higher. That makes the dollar index an essential read when trading CHF.</p>
-
-<p>This safe-haven angle helps explain the rare volatility expansions covered in the <a href="https://grizzlyparrottrading.com/futures-basics/6s-why-6s-has-low-volatility-and-how-to-trade-it.html">6S volatility</a> article.</p>
-
-<div class="highlight-box green">
-  <h3>Correlations Drive 6S — Predictions Don’t</h3>
-  <p>6S doesn’t move in isolation. It reacts to equities, gold, yields, and USD flow. Track those correlations in real time and you’ll trade with context — not blind conviction.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="fx-section" id="design" aria-labelledby="design-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Comparable changes on one clock</p><h2 id="design-title">Synchronize Returns Before Estimating Co-Movement</h2><p>Correlating trending price levels can generate an impressive statistic with little decision meaning. Define completed returns or yield changes over identical causal windows, preserve dated contracts and use only source values available by each endpoint.</p></div>
+  <div class="fx-formula" aria-label="Log return and rolling correlation definition"><code>r<sub>t,h</sub> = ln(P<sub>t</sub> / P<sub>t-h</sub>)</code><i aria-hidden="true">&rarr;</i><code>&rho;<sub>t,w</sub> = corr(r<sup>6S</sup>, r<sup>X</sup>) over window w</code></div>
+  <div class="fx-process">
+    <article><span>01</span><h3>Identify</h3><p>Name instrument, venue, expiry, quote direction and source for every series.</p></article>
+    <article><span>02</span><h3>Normalize</h3><p>Map source timestamps to UTC while preserving local and exchange dates.</p></article>
+    <article><span>03</span><h3>Transform</h3><p>Compute declared returns or yield changes from completed past data.</p></article>
+    <article><span>04</span><h3>Pair</h3><p>Join only intervals with valid, non-stale observations on both sides.</p></article>
   </div>
-</footer>
-</body>
-</html>
+  <div class="fx-caution"><strong>Quote direction matters.</strong><p>6S is a CHF/USD future: a higher futures price means more U.S. dollars per Swiss franc. A USD/CHF spot series runs in the inverse quote direction. Transforming both to consistent economic returns is mandatory before interpreting a sign.</p></div>
+</section>
+
+<section class="fx-section" id="candidates" aria-labelledby="candidates-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Candidate set before coefficients</p><h2 id="candidates-title">Define Equities, Gold, Rates, JPY and USD Precisely</h2><p>These are research families, not ranked drivers. Each can share a mechanism with CHF in some states and diverge in others. Register one primary series and a limited sensitivity choice per family.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="6S correlation candidate definitions" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Family</th><th scope="col">Required construction</th><th scope="col">Competing explanations</th></tr></thead><tbody>
+    <tr><th scope="row">Equities</th><td>Named cash index or dated equity future; synchronized return</td><td>Risk appetite, growth news, USD funding and session mismatch</td></tr>
+    <tr><th scope="row">Gold</th><td>Named spot source or dated gold future with its own roll rule</td><td>Real yields, dollar exposure, inflation, liquidity and haven narratives</td></tr>
+    <tr><th scope="row">Rates</th><td>Yield changes or dated rate-futures returns at fixed maturities</td><td>Policy path, term premium, growth and inflation components</td></tr>
+    <tr><th scope="row">JPY</th><td>Consistently oriented JPY/USD return from a declared venue</td><td>Shared haven/funding state versus distinct policy and regional shocks</td></tr>
+    <tr><th scope="row">Broad USD</th><td>External dollar-index change with publication timing retained</td><td>Mechanical CHF/USD quotation and common-dollar influence</td></tr>
+  </tbody></table></div>
+  <p class="fx-source-note">The <a href="https://www.federalreserve.gov/releases/h10/summary/" target="_blank" rel="noopener noreferrer">Federal Reserve H.10 summary</a> defines broad, advanced-economy and emerging-economy dollar indexes. The <a href="https://data.bis.org/topics/EER" target="_blank" rel="noopener noreferrer">BIS effective exchange-rate portal</a> documents nominal and real trade-weighted indexes. Those official series are external controls or comparison measures; neither is a real-time 6S execution feed.</p>
+  <div class="fx-related">The mechanism comparison between CHF and JPY belongs in <a href="6s-safe-haven-vs-jpy-which-leads-in-risk-off.html">6S Safe Haven vs. JPY</a>. This page owns measured co-movement only.</div>
+</section>
+
+<section class="fx-section" id="rolling" aria-labelledby="rolling-title">
+  <div class="fx-section-heading"><p class="fx-kicker">A coefficient needs a history and interval</p><h2 id="rolling-title">Publish Rolling Estimates With Uncertainty</h2><p>Choose one primary lookback matched to the decision horizon and a small registered sensitivity set. Each point should expose its window endpoints, paired observation count, missing-data treatment and uncertainty.</p></div>
+  <div class="fx-estimator-spectrum">
+    <article class="fx-panel"><p class="fx-card-label">Primary</p><h3>Pearson</h3><p>Linear co-movement on declared returns. Outlier sensitivity and distribution assumptions remain visible.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Robustness</p><h3>Spearman</h3><p>Rank association for monotonic co-movement. It tests a different quantity and is not an automatic substitute.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Tail</p><h3>Conditional estimates</h3><p>Predeclared stress or volatility states with enough independent observations and wider uncertainty.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Timing</p><h3>Lead-lag grid</h3><p>A narrow registered lag family that enforces availability and execution delay.</p></article>
+  </div>
+  <ul class="fx-checklist"><li><strong>Report magnitude and sign.</strong> Do not collapse estimates into “correlated” or “uncorrelated.”</li><li><strong>Show effective sample size.</strong> Rolling and overlapping returns create dependence.</li><li><strong>Keep unstable windows.</strong> Sign flips and wide intervals are the result, not chart clutter.</li><li><strong>Separate description from prediction.</strong> Same-window correlation cannot establish a tradable lead.</li></ul>
+</section>
+
+<section class="fx-section" id="factors" aria-labelledby="factors-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Ask what generated the statistic</p><h2 id="factors-title">Control Common Factors Without Erasing the Question</h2><p>A partial relationship is model-dependent, but it can reveal whether a pair merely shares a broad-dollar, rate or event shock. Select controls from a causal diagram before results and fit all transformations inside the training period.</p></div>
+  <div class="fx-causal-map">
+    <div class="fx-causal-origin"><strong>Observed 6S&ndash;X correlation</strong><span>Several common causes may produce the same coefficient.</span></div>
+    <article class="fx-panel"><h3>Broad-dollar factor</h3><p>Test whether common USD repricing explains both series, while avoiding an index that mechanically embeds the dependent return as causal proof.</p></article>
+    <article class="fx-panel"><h3>Relative-rate factor</h3><p>Use declared curve changes and matched horizons rather than current policy-rate levels.</p></article>
+    <article class="fx-panel"><h3>Scheduled events</h3><p>Tag FOMC, SNB and major data releases; report event and non-event windows separately.</p></article>
+    <article class="fx-panel"><h3>Liquidity state</h3><p>Account for session, holidays, quote staleness, contract rolls and stress where valid fields exist.</p></article>
+  </div>
+  <div class="fx-caution"><strong>A control is not a tradable signal.</strong><p>A contemporaneous broad-dollar or yield input may explain a historical relationship while arriving too late to support a 6S order. Prediction requires a separate causal-timing and cost test.</p></div>
+</section>
+
+<section class="fx-section" id="testing" aria-labelledby="testing-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Five families can become hundreds of trials</p><h2 id="testing-title">Count Every Pair, Window, Lag and Regime</h2><p>Correlation research expands rapidly when analysts try many instruments, transformations, lookbacks, lags and sample filters. Freeze the family before the final sample and use family-aware uncertainty or a discovery/validation split.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Multiple-testing registry" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Search dimension</th><th scope="col">Registry field</th><th scope="col">Disclosure</th></tr></thead><tbody>
+    <tr><th scope="row">Instrument</th><td>Every equity, gold, rate, JPY and dollar series tried</td><td>Report all candidates, not only the strongest</td></tr>
+    <tr><th scope="row">Transformation</th><td>Return type, horizon, winsorization and scaling</td><td>Separate primary from sensitivity results</td></tr>
+    <tr><th scope="row">Lookback</th><td>Every rolling window and minimum sample count</td><td>Show stability rather than a chosen snapshot</td></tr>
+    <tr><th scope="row">Lag</th><td>All leads, lags, processing delay and outcome horizons</td><td>Distinguish contemporaneous from predictive</td></tr>
+    <tr><th scope="row">Regime</th><td>Every event, volatility, policy and liquidity split</td><td>Require real-time identifiability</td></tr>
+  </tbody></table></div>
+  <div class="fx-method"><div><h3>Primary question&mdash;not a ranking</h3><p>Which, if any, preregistered candidate maintains a useful relationship with 6S across later chronological data after common-factor controls, multiple-testing adjustment and conservative implementation?</p></div><dl><div><dt>Candidates</dt><dd>Declared family</dd></div><div><dt>Validation</dt><dd>Chronological</dd></div><div><dt>Allowed result</dt><dd>None stable</dd></div></dl></div>
+</section>
+
+<section class="fx-section" id="falsification" aria-labelledby="falsification-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Stability earns use</p><h2 id="falsification-title">Try to Break Every Candidate Relationship</h2><p>A correlation becomes unusable when its sign, magnitude or timing depends on an undisclosed choice. Robustness means accepting failure under reasonable alternate histories, not searching until the preferred relationship returns.</p></div>
+  <div class="fx-falsification-tree">
+    <article><p class="fx-card-label">Temporal</p><h3>Does it survive time?</h3><ul><li>Early versus late chronological blocks</li><li>Adjacent non-overlapping horizons</li><li>Leave-one-event-period-out estimates</li></ul></article>
+    <article><p class="fx-card-label">Structural</p><h3>Does it survive controls?</h3><ul><li>Broad-dollar and rate factors</li><li>Event versus non-event periods</li><li>Roll, holiday and liquidity states</li></ul></article>
+    <article><p class="fx-card-label">Decision</p><h3>Does it add value?</h3><ul><li>Later sealed sample</li><li>Naive and no-signal baselines</li><li>Latency, spread, slippage and fees</li></ul></article>
+  </div>
+  <div class="fx-trade-card"><h3>Correlation acceptance record</h3><dl><div><dt>Definition</dt><dd>Pair, clocks, returns, rolls, window, estimator, lags and sample hash.</dd></div><div><dt>Evidence</dt><dd>Full rolling path, uncertainty, controls, all variants and sealed holdout.</dd></div><div><dt>Accept</dt><dd>Direction and useful magnitude remain stable under registered checks.</dd></div><div><dt>Limit</dt><dd>Relationship is state-specific and the state is observable without hindsight.</dd></div><div><dt>Reject</dt><dd>Sign flips, interval is too wide, control removes it or no net decision value remains.</dd></div></dl></div>
+  <div class="fx-caution"><strong>Research status as of August 21, 2026</strong><p>No original 6S correlation coefficient, ranking, confidence interval, regime result, predictive test or trading performance is reported here. No original result is reported. Equities, gold, rates, JPY and USD measures are candidates for a protocol&mdash;not established permanent drivers.</p></div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 21, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/254/254.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 254: Swiss Franc/U.S. Dollar futures</a> for 6S contract identity.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/g10/swiss-franc.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME Swiss Franc futures contract page</a> for current product context; exact mechanics are centralized in <a href="6s-contract-specs-tick-size-margin.html">the canonical 6S contract guide</a>.</li>
+  <li><a href="https://www.federalreserve.gov/releases/h10/summary/" target="_blank" rel="noopener noreferrer">Federal Reserve H.10 dollar-index summary</a> for official dollar-index definitions and revision notes.</li>
+  <li><a href="https://www.federalreserve.gov/releases/h15/" target="_blank" rel="noopener noreferrer">Federal Reserve H.15 selected interest rates</a> for official U.S. Treasury yield-series definitions.</li>
+  <li><a href="https://data.bis.org/topics/EER" target="_blank" rel="noopener noreferrer">BIS effective exchange rates data portal</a> for official trade-weighted index definitions, coverage and methodology links.</li>
+  <li><a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine historical-data catalog</a> for exchange dataset distinctions. No data was purchased or analyzed for this article.</li>
+  <li><a href="https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm" target="_blank" rel="noopener noreferrer">NIST/SEMATECH time-series analysis guidance</a> for dependence and time-order context.</li>
+</ul><p>Sources and methods were reviewed August 21, 2026. This unsponsored article separates source definitions, candidate mechanisms, empirical estimates and trading use. It reports no original market result and no permanent correlation ranking.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>Use this correlation protocol for education and research, not as personalized investment, legal, tax, hedging, brokerage or execution advice. Correlations can reverse abruptly, and leveraged 6S losses can exceed opening margin. Verify current data, contract rules, liquidity and independent loss limits before acting.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

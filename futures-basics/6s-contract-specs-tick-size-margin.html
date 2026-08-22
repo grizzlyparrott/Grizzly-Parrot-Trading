@@ -2,241 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6S Contract Specs: Tick Size, Tick Value, Margin, and Rollover Explained</title>
-  <meta name="description" content="A blunt breakdown of 6S Swiss Franc futures contract specs: tick size, tick value, margin requirements, and rollover behavior.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6s-contract-specs-tick-size-margin.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6S Contract Specs: Tick Size, Tick Value, Margin, and Rollover Explained">
-  <meta property="og:description" content="A blunt breakdown of 6S Swiss Franc futures contract specs: tick size, tick value, margin requirements, and rollover behavior.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6s-contract-specs-tick-size-margin.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6S Contract Specs: Tick Size, Tick Value, Margin, and Rollover Explained">
-  <meta name="twitter:description" content="A blunt breakdown of 6S Swiss Franc futures contract specs: tick size, tick value, margin requirements, and rollover behavior.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6S Contract Specs: Tick Size, Tick Value, Margin, and Rollover Explained",
-  "description": "A blunt breakdown of 6S Swiss Franc futures contract specs: tick size, tick value, margin requirements, and rollover behavior.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6s-contract-specs-tick-size-margin.html",
-  "datePublished": "2025-11-27",
-  "dateModified": "2025-11-27",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6s-contract-specs-tick-size-margin.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6S Contract Specs: Tick Size, Tick Value, Margin, and Rollover Explained",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6s-contract-specs-tick-size-margin.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <title>6S Contract Specs: Tick Value, Hours, Expiry and Margin</title>
+  <meta name="description" content="Verify CME 6S contract size, CHF/USD quote, $6.25 tick, listed months, hours, expiry, physical delivery, roll and margin boundaries.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6s-contract-specs-tick-size-margin.html">
+  <meta property="og:title" content="6S Contract Specs: Tick Value, Hours, Expiry and Margin"><meta property="og:description" content="Verify CME 6S contract size, CHF/USD quote, $6.25 tick, listed months, hours, expiry, physical delivery, roll and margin boundaries."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6s-contract-specs-tick-size-margin.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-27"><meta property="article:modified_time" content="2026-08-17">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="6S Contract Specs: Tick Value, Hours, Expiry and Margin"><meta name="twitter:description" content="Verify CME 6S contract size, CHF/USD quote, $6.25 tick, listed months, hours, expiry, physical delivery, roll and margin boundaries."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6S Contract Specs: Tick Value, Hours, Expiry and Margin","description":"Verify CME 6S contract size, CHF/USD quote, $6.25 tick, listed months, hours, expiry, physical delivery, roll and margin boundaries.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6s-contract-specs-tick-size-margin.html"},"datePublished":"2025-11-27","dateModified":"2026-08-17","url":"https://grizzlyparrottrading.com/futures-basics/6s-contract-specs-tick-size-margin.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6S Contract Specs: Tick Value, Hours, Expiry and Margin","item":"https://grizzlyparrottrading.com/futures-basics/6s-contract-specs-tick-size-margin.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
+<a class="fx-skip-link" href="#main-content">Skip to article content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+  <div class="fx-hero-copy">
+    <p class="fx-kicker">Canonical contract reference &middot; CME 6S</p>
+    <h1>6S Contract Specs: Tick Value, Hours, Expiry and Margin</h1>
+    <p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 17, 2026</p>
+    <p class="fx-hero-lede"><strong>125,000 CHF &times; 0.00005 USD per CHF = $6.25.</strong> That is the current CME Globex outright tick for one standard 6S contract. Reconcile the product, quote, month, side and arithmetic before enabling an order.</p>
+    <div class="fx-hero-actions"><a class="button-primary" href="#verified">Read the verified specification</a><a class="fx-text-link" href="#preorder">Run the pre-order control</a></div>
+    <dl class="fx-hero-metrics" aria-label="Core standard 6S specifications"><div><dt>Trading unit</dt><dd>125,000 CHF</dd></div><div><dt>Outright tick</dt><dd>0.00005</dd></div><div><dt>Tick value</dt><dd>$6.25</dd></div><div><dt>Settlement</dt><dd>Physical</dd></div></dl>
   </div>
+  <aside class="fx-market-board" aria-label="Reconciled standard 6S tick calculation">
+    <div class="fx-board-head"><span>CME Globex outright</span><strong>6S</strong></div>
+    <div class="fx-proof"><strong>Contract unit</strong><span>125,000 Swiss francs</span></div>
+    <div class="fx-proof"><strong>Minimum increment</strong><span>$0.00005 per CHF</span></div>
+    <div class="fx-proof"><strong>Product</strong><span>125,000 &times; 0.00005 = $6.25</span></div>
+    <p class="fx-board-foot">ClearPort and Micro CHF/USD use different increments</p>
+  </aside>
 </header>
 
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#verified">Verified specs</a><a href="#pnl">Quote and P&amp;L</a><a href="#micro">Micro contract</a><a href="#calendar">Months and hours</a><a href="#delivery">Expiry and delivery</a><a href="#margin">Margin and roll</a><a href="#preorder">Pre-order</a></nav>
 
-<h1>6S Contract Specs: Tick Size, Tick Value, Margin, and Rollover Explained</h1>
-
-<p>If you’re trading 6S Swiss Franc futures without knowing the contract specs, you’re gambling. This contract has a specific tick size, value, and margin structure that directly affects your risk and position sizing. Here’s the no-bullshit breakdown of everything you need to know before pressing the buy or sell button.</p>
-
-<h2>1. Tick Size and Tick Value</h2>
-
-<p>6S uses a fractional pricing format that throws beginners off. The contract trades in decimals, not in the funky pip-based structure of spot FX.</p>
-
-<table>
-<tr><th>Spec</th><th>Value</th></tr>
-<tr><td>Minimum Tick Size</td><td>0.0001</td></tr>
-<tr><td>Tick Value</td><td>$12.50 per tick</td></tr>
-<tr><td>Full Point</td><td>100 ticks</td></tr>
-<tr><td>Value of Full Point</td><td>$1,250</td></tr>
-</table>
-
-<p>Translation: every tiny move costs or pays real money. 6S isn’t a micro contract; it hits your P&L fast if you size stupidly.</p>
-
-<h2>2. Contract Size</h2>
-
-<p>The 6S contract controls 125,000 Swiss Francs. That means every tick reflects a real movement in the underlying notional value.</p>
-
-<p>Spot traders get confused here because 6S moves “slower” than CHF/USD—but that’s only visually. In dollar terms, every tick is meaningful due to the contract size.</p>
-
-<h2>3. Margin Requirements</h2>
-
-<p>Margin varies by broker, but the exchange sets the baseline initial and maintenance levels. These are not negotiable. This is futures, not spot.</p>
-
-<p>What matters:</p>
-
-<ul>
-<li>Initial margin is required to open the position</li>
-<li>Maintenance margin must be met or you get liquidated</li>
-<li>Margins expand during high volatility</li>
-</ul>
-
-<p>Don’t treat futures margin like spot leverage. You don’t get 1:500 clown leverage here. This is tightly regulated.</p>
-
-<h2>4. Trading Hours & Sessions</h2>
-
-<p>6S trades nearly 23 hours per day, but liquidity is not even. The best volume shows up during:</p>
-
-<ul>
-<li>European session</li>
-<li>U.S. session open</li>
-<li>Major economic releases</li>
-</ul>
-
-<p>The Asian session is usually a slow grind unless global risk is shifting dramatically.</p>
-
-<h2>5. Rollover & Contract Expiration</h2>
-
-<p>6S has quarterly expirations (March, June, September, December). As expiration approaches:</p>
-
-<ul>
-<li>Volume migrates to the next contract</li>
-<li>Spreads widen briefly during the switch</li>
-<li>Rollover pricing reflects interest rate differentials</li>
-</ul>
-
-<p>Do not hold the expiring contract into the last days unless you enjoy slippage and garbage liquidity.</p>
-
-<h2>6. Tick Behavior Compared to Spot CHF/USD</h2>
-
-<p>6S ticks are clean, standardized, and transparent. Spot CHF/USD pricing is broker-dependent and may show “noise” spikes. In 6S, every tick is real buying/selling by traders on the exchange. That’s why order flow tools work better in futures.</p>
-
-<p>If you’ve posted <a href="https://grizzlyparrottrading.com/futures-basics/6s-chf-usd-spot-vs-futures-differences.html">your spot vs futures article</a>, this builds directly on that concept.</p>
-
-<div class="highlight-box red">
-  <h3>Specs First — or the Market Teaches You the Hard Way</h3>
-  <p>6S looks harmless until you size wrong, miss rollover, or trade blind into a thin session. Tick value, margin, and expiration rules aren’t trivia — they’re the line between controlled risk and a wrecked account.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="fx-section" id="verified" aria-labelledby="verified-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Current exchange record</p><h2 id="verified-title">Standard 6S Specifications in One Reconciled Table</h2><p>CME Rulebook Chapter 254 and the CME FX Product Guide 2026 agree on the unit, quote, current Globex outright increment and physical settlement. Execution routes are separated because their price increments are not interchangeable.</p></div>
+  <div class="fx-table-scroll" role="region" aria-label="Current standard 6S contract specifications" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Field</th><th scope="col">Verified term</th><th scope="col">Order-control meaning</th></tr></thead><tbody>
+    <tr><th scope="row">Contract</th><td>CHF/USD futures; Rulebook Chapter 254</td><td>Globex product code 6S; ClearPort and clearing code E1</td></tr>
+    <tr><th scope="row">Trading unit</th><td>125,000 Swiss francs</td><td>Multiply a quote change by 125,000 and the contract count for gross USD P&amp;L</td></tr>
+    <tr><th scope="row">Quotation</th><td>U.S. dollars per Swiss franc</td><td>A higher quote means CHF is stronger versus USD</td></tr>
+    <tr><th scope="row">Globex outright increment</th><td>0.00005 USD per CHF</td><td>0.00005 &times; 125,000 = $6.25 per standard contract</td></tr>
+    <tr><th scope="row">Globex other-spread increment</th><td>0.00005 USD per CHF</td><td>Verify the exact strategy/security definition rather than assuming an outright order</td></tr>
+    <tr><th scope="row">ClearPort increment</th><td>0.00001 USD per CHF</td><td>$1.25 per standard contract; it does not change the Globex outright ladder</td></tr>
+    <tr><th scope="row">Listed contracts</th><td>20 quarterly months in the March cycle: March, June, September and December</td><td>Confirm the live chain and the intended year before sending an order</td></tr>
+    <tr><th scope="row">Termination</th><td>Second business day immediately before the third Wednesday; CME product materials list 9:16 a.m. CT</td><td>Chicago or New York bank holidays can move the termination day earlier under Rule 254</td></tr>
+    <tr><th scope="row">Delivery</th><td>Physical delivery, normally the third Wednesday subject to the rule&rsquo;s holiday adjustment</td><td>Open positions can create currency-delivery obligations</td></tr>
+  </tbody></table></div>
+  <p class="fx-source-note"><strong>Version boundary:</strong> older CME documents and third-party pages can show a 0.0001 outright increment and $12.50 tick. The current Chapter 254 and FX Product Guide 2026 show 0.00005 and $6.25 for the standard Globex outright. The live security definition, current rulebook and exchange notices control.</p>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<section class="fx-section" id="pnl" aria-labelledby="pnl-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Side-aware arithmetic</p><h2 id="pnl-title">Convert a 6S Price Move to Dollars Two Ways</h2><p>6S is CHF/USD: a long benefits when USD per CHF rises; a short benefits when it falls. Gross P&amp;L excludes commissions, exchange and data fees, bid-ask spread, slippage, liquidation effects and roll cost.</p></div>
+  <div class="fx-formula" aria-label="Long standard 6S gross profit and loss formula"><code>(exit &minus; entry) &times; 125,000 &times; contracts</code><i aria-hidden="true">=</i><strong>long gross P&amp;L in USD</strong></div>
+  <div class="fx-formula" aria-label="Short standard 6S gross profit and loss formula"><code>(entry &minus; exit) &times; 125,000 &times; contracts</code><i aria-hidden="true">=</i><strong>short gross P&amp;L in USD</strong></div>
+  <div class="fx-two-column">
+    <article class="fx-panel"><p class="fx-card-label">Long example</p><h3>1.25000 to 1.25175</h3><p>The increase is 0.00175, or 35 current outright ticks. Multiplier method: 0.00175 &times; 125,000 = <strong>$218.75 gross</strong>. Tick method: 35 &times; $6.25 = the same $218.75.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Short example</p><h3>1.25400 to 1.25250</h3><p>The favorable decline is 0.00150, or 30 ticks. One short standard contract gains <strong>$187.50 gross</strong>; two gain $375 before all trading costs.</p></article>
   </div>
-</footer>
-</body>
-</html>
+  <div class="fx-table-scroll" role="region" aria-label="Standard 6S move and gross dollar reconciliation" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Quote move</th><th scope="col">Outright ticks</th><th scope="col">One 6S</th><th scope="col">Three 6S</th></tr></thead><tbody>
+    <tr><th scope="row">0.00005</th><td>1</td><td>$6.25</td><td>$18.75</td></tr>
+    <tr><th scope="row">0.00010</th><td>2</td><td>$12.50</td><td>$37.50</td></tr>
+    <tr><th scope="row">0.00050</th><td>10</td><td>$62.50</td><td>$187.50</td></tr>
+    <tr><th scope="row">0.00175</th><td>35</td><td>$218.75</td><td>$656.25</td></tr>
+  </tbody></table></div>
+  <p><strong>Higher 6S/CHFUSD = stronger CHF/more USD.</strong> At the illustrative 1.25000 quote, one standard contract represents 125,000 &times; 1.25000 = <strong>$156,250</strong> of quoted value. That represented notional is not the margin deposit and not a maximum-loss amount.</p>
+</section>
+
+<section class="fx-section" id="micro" aria-labelledby="micro-title">
+  <div class="fx-section-heading"><p class="fx-kicker">A distinct product</p><h2 id="micro-title">Micro CHF/USD Futures Are MSF, Not a Decimal 6S Order</h2><p>The current CME FX Product Guide lists Micro CHF/USD under Rulebook Chapter 295 with product code MSF. It is one-tenth of the standard unit, but its minimum increment is different.</p></div>
+  <div class="fx-three-column">
+    <article class="fx-panel"><p class="fx-card-label">Unit</p><h3>12,500 CHF</h3><p>The micro contract represents one-tenth of the standard 125,000 CHF unit.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Increment</p><h3>0.0001 USD per CHF</h3><p>The micro tick is twice the standard 6S price increment; never copy a 6S ladder into an MSF ticket.</p></article>
+    <article class="fx-panel"><p class="fx-card-label">Tick value</p><h3>$1.25</h3><p>12,500 &times; 0.0001 = $1.25 per micro contract. Ten MSF match standard notional, not the same tick count.</p></article>
+  </div>
+  <div class="fx-caution"><strong>Product identity is a hard gate.</strong><p>Chart, order ticket, risk system and fill ledger must name 6S or MSF explicitly, including month and year. A broker nickname or generic continuous symbol is not enough.</p></div>
+</section>
+
+<section class="fx-section" id="calendar" aria-labelledby="calendar-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Dated contracts and an exchange clock</p><h2 id="calendar-title">Map the Quarter, Daily Pause and Holiday Exceptions</h2><p>CME lists 20 March-cycle quarterly contracts. Regular FX Globex access is Sunday through Friday from 5:00 p.m. to 4:00 p.m. Chicago time, with a 60-minute daily break beginning at 4:00 p.m. CT. CME holiday schedules and special notices override the regular pattern.</p></div>
+  <div class="fx-contract-path" aria-label="6S contract selection workflow">
+    <article><h3>1. Identify</h3><p>Record 6S or MSF, the quarter month code and full year on chart and order.</p></article>
+    <article><h3>2. Observe</h3><p>Check spread, depth, trades, volume and open interest in that exact maturity.</p></article>
+    <article><h3>3. Compare</h3><p>Inspect the next quarter; activity can migrate before a calendar rule says it should.</p></article>
+    <article><h3>4. Fence</h3><p>Set the earlier of the exchange lifecycle date and the broker&rsquo;s operational cutoff.</p></article>
+  </div>
+  <div class="fx-caution"><strong>Trading hours prove access, not liquidity.</strong><p>European and U.S. participation, scheduled releases and daylight-saving transitions can change the book. Verify live market quality for the order size instead of treating an open venue as an executable market.</p></div>
+</section>
+
+<section class="fx-section" id="delivery" aria-labelledby="delivery-title">
+  <div class="fx-section-heading"><p class="fx-kicker">The legal end state</p><h2 id="delivery-title">Termination and Physical Delivery Need Separate Deadlines</h2><p>Chapter 254 ends trading on the second business day immediately preceding the third Wednesday of the contract month. If that date is a bank holiday in Chicago or New York City, termination moves to the preceding business day common to those banks and CME. Physical delivery normally occurs on the third Wednesday, with its own holiday adjustment.</p></div>
+  <div class="fx-lifecycle" aria-label="6S expiry and delivery control sequence">
+    <article><span>Map</span><h3>Read the calendar</h3><p>Record the official termination day/time, delivery day and current exchange holiday advisory.</p></article>
+    <article><span>Fence</span><h3>Apply broker rules</h3><p>A futures commission merchant can require offset, roll, funds or instructions before the exchange deadline.</p></article>
+    <article><span>Act</span><h3>Offset or roll</h3><p>A roll is a close in one month plus an open in another, each with price and execution risk.</p></article>
+    <article><span>Prove</span><h3>Reconcile positions</h3><p>Confirm the expiring month is flat, the new side/quantity are correct and stale orders are cancelled.</p></article>
+  </div>
+  <p class="fx-source-note"><strong>Delivery boundary:</strong> many speculative accounts offset or roll, but custom does not remove the physical-delivery obligation. Delivery requires clearing-member instructions, currency settlement and funding. Never improvise it from a retail ticket.</p>
+</section>
+
+<section class="fx-section" id="margin" aria-labelledby="margin-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Four different control numbers</p><h2 id="margin-title">Margin Is a Performance Bond, Not Maximum Loss</h2><p>CME publishes and can revise clearing performance-bond requirements. A broker can require more, set liquidation buffers and advertise a lower intraday amount. None of those figures caps the contract&rsquo;s loss.</p></div>
+  <div class="fx-decision-strip" aria-label="Distinct 6S funding and risk numbers"><span><strong>Exchange performance bond</strong>Current CME clearing requirement for the applicable account/category</span><span><strong>Broker requirement</strong>Account-specific overnight, intraday and liquidation terms</span><span><strong>Planned trade risk</strong>Invalidation distance &times; current tick value &times; quantity, plus costs and stress</span><span><strong>Represented notional</strong>Quote &times; CHF unit &times; quantity</span></div>
+  <div class="fx-caution"><strong>Loss can exceed all planned and deposited amounts.</strong><p>Stops are instructions, not guarantees. A gap, thin book, outage, rejected order, delayed liquidation or delivery problem can cause a worse exit and an account deficit. Recheck current margin in CME and broker systems immediately before use; a static article should not publish a supposedly permanent dollar requirement.</p></div>
+  <p>Roll economics are separate again: realized P&amp;L on the old month, the price difference to the new month, two-sided costs, possible leg risk and any basis change. A back-adjusted continuous chart can hide the visible month gap; the cash account cannot.</p>
+</section>
+
+<section class="fx-section" id="preorder" aria-labelledby="preorder-title">
+  <div class="fx-section-heading"><p class="fx-kicker">Final control</p><h2 id="preorder-title">Reconciled 6S Pre-Order Checklist</h2><p>The order remains disabled until every required field can be answered from the exchange record, live ticket and written risk plan.</p></div>
+  <div class="fx-check-grid">
+    <article><strong>Identity</strong><p>6S or MSF, exact month and full year; chart, ticket and risk system agree.</p></article>
+    <article><strong>Quote</strong><p>USD per CHF; long benefits from higher and short from lower.</p></article>
+    <article><strong>Tick proof</strong><p>Product unit multiplied by its own increment equals the ticket&rsquo;s dollar tick.</p></article>
+    <article><strong>Quantity</strong><p>Integer contracts fit loss budget, costs, gap stress and liquidity limits.</p></article>
+    <article><strong>Market quality</strong><p>Spread, depth and stressed slippage pass for the intended order.</p></article>
+    <article><strong>Lifecycle</strong><p>Termination, delivery, holiday, broker cutoff and roll/offset plan are recorded.</p></article>
+    <article><strong>Funding</strong><p>Current exchange/broker requirements plus buffer are available; margin is not used as loss.</p></article>
+    <article><strong>Failure response</strong><p>Outage, rejection, partial fill, stale order and delayed-exit procedures are written.</p></article>
+  </div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 21, 2026</summary><ul>
+  <li><a href="https://www.cmegroup.com/rulebook/CME/III/250/254/254.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 254: Swiss Franc/U.S. Dollar futures</a> for unit, current Globex and ClearPort increments, termination rule and physical delivery.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/fx-product-guide.html" target="_blank" rel="noopener noreferrer">CME FX Product Guide 2026</a> for current standard 6S and Micro CHF/USD codes, units, increments and settlement.</li>
+  <li><a href="https://www.cmegroup.com/markets/fx/g10/swiss-franc.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME Swiss franc futures contract-specifications page</a> for regular hours, listed quarterly contracts and the stated 9:16 a.m. CT termination time.</li>
+  <li><a href="https://www.cmegroup.com/markets/microsuite/fx.html" target="_blank" rel="noopener noreferrer">CME Micro FX futures specifications</a> for the current MSF code, 12,500 CHF unit, 0.0001 increment and $1.25 tick value.</li>
+  <li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener noreferrer">CME Group trading-hours and holiday schedules</a> for live exceptions to regular hours.</li>
+  <li><a href="https://www.cmegroup.com/clearing/margins.html" target="_blank" rel="noopener noreferrer">CME Clearing margin services</a> for current performance-bond lookup; no static margin dollar amount is represented as current on this page.</li>
+</ul><p>Exchange sources were reviewed August 21, 2026. This is the 6S library&rsquo;s canonical mechanics page. Current exchange rules, security definitions, notices and the broker agreement supersede this summary.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This specification reference is educational, not individualized investment, legal, tax, hedging, brokerage or execution advice. Futures are leveraged; adverse fills, gaps and delivery obligations can produce losses beyond planned risk and funds deposited for margin. Recheck the live contract, exchange rules, holiday notice and account terms before every order.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>
