@@ -588,57 +588,57 @@
     "category": "Futures Basics"
   },
   {
-    "title": "6Z Algorithmic Behavior",
+    "title": "6Z Algorithmic Behavior: Test the Book, Not an Imagined Actor",
     "url": "/futures-basics/6z-algorithmic-behavior.html",
-    "description": "A detailed look at the algorithmic behavior inside 6Z South African Rand futures—liquidity bots, spoofing, momentum ignition, and how algos shape price movement.",
+    "description": "A falsifiable 6Z order-book research protocol for cancellation, replenishment and price response that does not infer algorithms or spoofing from price alone.",
     "category": "Futures Basics"
   },
   {
-    "title": "6Z Liquidity Map",
+    "title": "6Z Liquidity Map: Build a Timestamped Market-Quality Record",
     "url": "/futures-basics/6z-liquidity-map.html",
-    "description": "A complete 6Z liquidity map: key price zones, order flow behavior, volume shelves, imbalances, and institutional footprints in the South African Rand futures market.",
+    "description": "Build a 6Z liquidity map from timestamped spread, depth, volume, queue and execution evidence instead of permanent institutional price zones.",
     "category": "Futures Basics"
   },
   {
-    "title": "6Z Margin Requirements Explained",
+    "title": "6Z Margin Requirements: Exchange, Broker and Risk",
     "url": "/futures-basics/6z-margin-requirements.html",
-    "description": "A complete, no-fluff breakdown of 6Z South African Rand futures margin requirements: day margin, overnight margin, SPAN mechanics, and risk modeling.",
+    "description": "Separate CME 6Z performance bond from broker house or day margin, variation, liquidity add-ons and maximum loss with a fail-closed buffer workflow.",
     "category": "Futures Basics"
   },
   {
-    "title": "6Z Position Sizing Rules",
+    "title": "6Z Position Sizing: Risk Budget to Whole Contracts",
     "url": "/futures-basics/6z-position-sizing.html",
-    "description": "A full breakdown of how to size 6Z futures positions safely, using ATR math, volatility analysis, session risk, and slippage buffers to avoid account blowouts.",
+    "description": "Convert a 6Z risk budget and executable stop into whole contracts after tick value, fees, slippage, gap, correlation and margin gates.",
     "category": "Futures Basics"
   },
   {
-    "title": "6Z Tick Size and Tick Value Explained",
+    "title": "6Z Tick Size, Tick Value, Hours, Expiry and Delivery",
     "url": "/futures-basics/6z-tick-size-and-value.html",
-    "description": "Exact tick size, tick value, and contract specs for 6Z South African Rand futures with real numbers and",
+    "description": "Verify CME 6Z contract size, ZAR/USD quote, $12.50 Globex tick, listed months, hours, expiry, physical delivery, roll and margin boundaries.",
     "category": "Futures Basics"
   },
   {
-    "title": "6Z Trade Management Guide",
+    "title": "6Z Trade Management: Preflight, Events, Stops and Review",
     "url": "/futures-basics/6z-trade-management-guide.html",
-    "description": "A complete guide to managing 6Z trades: precise entries, ATR-based stops, volatility-adjusted targets, scaling, and real execution tactics for EM futures.",
+    "description": "Manage the full 6Z trade lifecycle with pre-entry gates, live branches, event overrides, executable stop logic, exit evidence and review records.",
     "category": "Futures Basics"
   },
   {
-    "title": "6Z Trading Psychology",
+    "title": "6Z Trading Psychology: A Behavioral Control System",
     "url": "/futures-basics/6z-trading-psychology.html",
-    "description": "A blunt guide to 6Z trading psychology—how to stay disciplined, avoid emotional traps, and handle volatility and slippage in this chaotic EM FX contract.",
+    "description": "Turn 6Z discipline into observable permissions, interruption triggers, recovery rules and audit records for thin, fast or uncertain markets.",
     "category": "Futures Basics"
   },
   {
-    "title": "6Z Volatility Profile Guide",
+    "title": "6Z Volatility Profile: Measure State, Jumps and Liquidity Separately",
     "url": "/futures-basics/6z-volatility-profile.html",
-    "description": "A detailed breakdown of 6Z volatility—ATR behavior, average swing size, session ranges, liquidity shifts, and risk management tactics for emerging-market FX futures.",
+    "description": "A measurable 6Z volatility-state framework separating returns, jumps, liquidity stress, official events and contract lifecycle without invented statistics.",
     "category": "Futures Basics"
   },
   {
-    "title": "6Z vs 6E vs 6J Key Differences",
+    "title": "6Z vs 6E vs 6J: Contract and Trading Differences",
     "url": "/futures-basics/6z-vs-6e-vs-6j-differences.html",
-    "description": "A deep comparison of 6Z vs 6E vs 6J futures: liquidity, volatility, yield dynamics, macro drivers, order-book behavior, and why emerging-market FX moves differently.",
+    "description": "Compare 6Z, 6E and 6J futures across quote direction, contract scale, macro channels, liquidity, event exposure and operational fit without ranking a winner.",
     "category": "Futures Basics"
   },
   {
@@ -744,9 +744,9 @@
     "category": "Prop Firm Trading"
   },
   {
-    "title": "Best Indicators for 6Z Futures",
+    "title": "Best Indicators for 6Z: A Walk-Forward Test, Not a Ranking",
     "url": "/futures-basics/best-indicators-for-6z.html",
-    "description": "A no-bullshit guide to the best technical indicators for 6Z South African Rand futures and why most indicators fail on this volatile, thin EM FX contract.",
+    "description": "Evaluate 6Z indicators against simple baselines with point-in-time data, walk-forward validation, conservative costs, leakage controls and retirement rules.",
     "category": "Futures Basics"
   },
   {
@@ -834,9 +834,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Best Times to Trade 6Z Futures",
+    "title": "Best Times to Trade 6Z: Measure Market Quality by State",
     "url": "/futures-basics/best-times-to-trade-6z-futures.html",
-    "description": "Detailed breakdown of the best times to trade 6Z South African Rand futures, including volume cycles, session behavior, and risk conditions.",
+    "description": "Replace fixed 6Z trading-hour advice with UTC-normalized spread, depth, volume, slippage and fill measurements plus event, holiday and roll exclusions.",
     "category": "Futures Basics"
   },
   {
@@ -1098,9 +1098,9 @@
     "category": "Market Basics"
   },
   {
-    "title": "Common 6Z Trading Mistakes",
+    "title": "Common 6Z Trading Mistakes: Failure Controls",
     "url": "/futures-basics/common-6z-trading-mistakes.html",
-    "description": "A blunt breakdown of the most common mistakes traders make with 6Z South African Rand futures and how to avoid getting blown out by volatility and thin liquidity.",
+    "description": "Reconstruct common 6Z failures in quote direction, contract mechanics, liquidity, events, sizing and evidence, then attach a concrete control.",
     "category": "Futures Basics"
   },
   {
@@ -1578,9 +1578,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Fundamental Drivers of 6Z Futures",
+    "title": "Fundamental Drivers of 6Z Futures: A Daily Evidence Map",
     "url": "/futures-basics/fundamental-drivers-of-6z.html",
-    "description": "A full breakdown of the real fundamental drivers behind 6Z South African Rand futures: capital flows, commodities, credit risk, yields, and global macro forces.",
+    "description": "Map 6Z South African rand futures through quote direction, SARB and Fed repricing, fiscal risk, commodities, global risk and liquidity without forcing one story.",
     "category": "Futures Basics"
   },
   {
@@ -2280,9 +2280,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How SARB Influences 6Z Futures",
+    "title": "How SARB Influences 6Z Beyond a Rate Decision",
     "url": "/futures-basics/how-sarb-influences-6z.html",
-    "description": "A deep, technical breakdown of how the South African Reserve Bank influences 6Z futures through policy tools, guidance, liquidity operations and FX actions.",
+    "description": "Explain how SARB mandate, communication, policy implementation, reserves and financial-stability work can affect 6Z without treating price as proof of cause.",
     "category": "Futures Basics"
   },
   {
@@ -2502,9 +2502,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How USD Strength Impacts 6Z",
+    "title": "How U.S. Dollar Moves Reach 6Z Futures",
     "url": "/futures-basics/how-us-dollar-moves-6z.html",
-    "description": "A deep, no-fluff breakdown of how U.S. dollar strength and DXY flows directly impact 6Z South African Rand futures and why the USD side dominates.",
+    "description": "Decompose broad-dollar, Fed-path, Treasury-yield, funding and risk channels in 6Z while preserving ZAR/USD quote direction and divergence cases.",
     "category": "Futures Basics"
   },
   {
@@ -3894,9 +3894,9 @@
     "category": "Prop Firm Trading"
   },
   {
-    "title": "SARB Rates and Their Impact on 6Z",
+    "title": "How SARB Rate Decisions Affect 6Z Futures",
     "url": "/futures-basics/sarb-rates-impact-6z.html",
-    "description": "A full, technical breakdown of how the South African Reserve Bank’s interest rate policy drives 6Z futures, impacts liquidity, and shapes directional bias.",
+    "description": "Interpret SARB decisions through the market prior, complete policy package, relative curves, carry, confirmation and failure cases instead of a fixed hike-or-cut rule.",
     "category": "Futures Basics"
   },
   {
@@ -3936,9 +3936,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Seasonal Patterns in 6Z Futures",
+    "title": "6Z Seasonal Patterns: A Holdout-First Calendar Test",
     "url": "/futures-basics/6z-seasonal-patterns.html",
-    "description": "A complete, data-driven breakdown of seasonal patterns in 6Z South African Rand futures including risk cycles, commodity trends, month-end flows, and EM FX behavior.",
+    "description": "Test 6Z calendar effects with correct return orientation, dated contracts, multiple-testing controls, execution costs and a locked out-of-sample decision.",
     "category": "Futures Basics"
   },
   {
@@ -4584,9 +4584,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "What Are 6Z Futures? Rand Contract Explained",
+    "title": "What Are 6Z Futures? ZAR/USD Contract Guide",
     "url": "/futures-basics/what-are-6z-futures.html",
-    "description": "A blunt, clear explanation of 6Z South African Rand futures, how the contract works, and what traders must know before touching it.",
+    "description": "Understand CME 6Z South African rand/U.S. dollar futures, quote direction, clearing, physical delivery, common uses, core risks and readiness checks.",
     "category": "Futures Basics"
   },
   {
@@ -4824,15 +4824,15 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Why 6Z Slippage Hits Harder",
+    "title": "Why 6Z Slippage Can Hit Harder: Measure and Control It",
     "url": "/futures-basics/why-6z-slippage-hits-harder.html",
-    "description": "A deep, technical breakdown of why 6Z South African Rand futures suffer heavy slippage, how Globex execution reacts, and how traders can avoid getting clipped.",
+    "description": "Decompose 6Z spread, depth, queue, impact, event gaps and roll costs; replay order outcomes and define size, order and stop-trading controls.",
     "category": "Futures Basics"
   },
   {
-    "title": "Why 6Z Trades Differently From Majors",
+    "title": "Why 6Z Trades Differently From Major FX Futures",
     "url": "/futures-basics/why-6z-trades-differently.html",
-    "description": "A blunt breakdown of why 6Z South African Rand futures move differently than major FX futures—liquidity, volatility, risk flow, and market depth.",
+    "description": "Explain how domestic risk, commodities, global funding, time zones and market depth can distinguish 6Z from major FX futures without assigning a permanent personality.",
     "category": "Futures Basics"
   },
   {

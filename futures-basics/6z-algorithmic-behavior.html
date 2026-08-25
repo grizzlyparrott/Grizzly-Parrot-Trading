@@ -1,323 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6Z Algorithmic Behavior</title>
-  <meta name="description" content="A detailed look at the algorithmic behavior inside 6Z South African Rand futures—liquidity bots, spoofing, momentum ignition, and how algos shape price movement.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6z-algorithmic-behavior.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6Z Algorithmic Behavior">
-  <meta property="og:description" content="A detailed look at the algorithmic behavior inside 6Z South African Rand futures—liquidity bots, spoofing, momentum ignition, and how algos shape price movement.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6z-algorithmic-behavior.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6Z Algorithmic Behavior">
-  <meta name="twitter:description" content="A detailed look at the algorithmic behavior inside 6Z South African Rand futures—liquidity bots, spoofing, momentum ignition, and how algos shape price movement.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6Z Algorithmic Behavior",
-  "description": "A detailed look at the algorithmic behavior inside 6Z South African Rand futures—liquidity bots, spoofing, momentum ignition, and how algos shape price movement.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6z-algorithmic-behavior.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6z-algorithmic-behavior.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6Z Algorithmic Behavior: Test the Book, Not an Imagined Actor</title>
+<meta name="description" content="A falsifiable 6Z order-book research protocol for cancellation, replenishment and price response that does not infer algorithms or spoofing from price alone.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6z-algorithmic-behavior.html">
+<meta property="og:title" content="6Z Algorithmic Behavior: Test the Book, Not an Imagined Actor">
+<meta property="og:description" content="A falsifiable 6Z order-book research protocol for cancellation, replenishment and price response that does not infer algorithms or spoofing from price alone.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6z-algorithmic-behavior.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta property="og:image:alt" content="Grizzly Parrot Trading">
+<meta property="article:published_time" content="2025-11-28">
+<meta property="article:modified_time" content="2026-08-21">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="6Z Algorithmic Behavior: Test the Book, Not an Imagined Actor">
+<meta name="twitter:description" content="A falsifiable 6Z order-book research protocol for cancellation, replenishment and price response that does not infer algorithms or spoofing from price alone.">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN">
 </script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6Z Algorithmic Behavior: How Liquidity Bots Move This Market",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6z-algorithmic-behavior.html"
-    }
-  ]
-}
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6Z Algorithmic Behavior: Test the Book, Not an Imagined Actor","description":"A falsifiable 6Z order-book research protocol for cancellation, replenishment and price response that does not infer algorithms or spoofing from price alone.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6z-algorithmic-behavior.html"},"datePublished":"2025-11-28","dateModified":"2026-08-21","url":"https://grizzlyparrottrading.com/futures-basics/6z-algorithmic-behavior.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6Z Algorithmic Behavior: Test the Book, Not an Imagined Actor","item":"https://grizzlyparrottrading.com/futures-basics/6z-algorithmic-behavior.html"}]}</script>
+<script src="/uet.js" defer>
 </script>
-
-  <script src="/uet.js" defer></script>
 </head>
 <body>
-
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-<h1>6Z Algorithmic Behavior: How Liquidity Bots Move This Market</h1>
-
-<p>6Z trades nothing like ES, NQ, or even 6E because the algorithmic presence is thin and inconsistent.  
-This contract is shaped by small liquidity bots, latency-sensitive arbitrage programs, and occasional momentum ignition—NOT by the endless walls of HFT you see in major FX futures.  
-Understanding this microstructure helps you stop mistaking normal algo behavior for “manipulation.”</p>
-
-<h2>1. Why 6Z Has Far Fewer Algos Than Majors</h2>
-
-<p>6E and 6J have huge institutional participation. 6Z does not.  
-Reasons:</p>
-
-<ul>
- <li>thin liquidity → not attractive for HFT</li>
- <li>wider spreads → poorer fill consistency</li>
- <li>lower volume → less opportunity</li>
- <li>higher volatility → harder to control inventory</li>
-</ul>
-
-<p>This means algos that DO operate in 6Z have outsized influence compared to majors.</p>
-
-<h2>2. The Main Algo Types Running in 6Z</h2>
-
-<p>6Z doesn’t have thousands of bots—it has a handful running predictable scripts.</p>
-
-<h3>A. Liquidity Provision Bots</h3>
-
-<p>These sit on the bid/ask with tiny size and cancel quickly when volatility spikes.  
-Their goals:</p>
-
-<ul>
- <li>collect the spread</li>
- <li>manage inventory</li>
- <li>avoid getting run over</li>
-</ul>
-
-<p>When volatility rises, they pull their quotes instantly, which is why 6Z jumps 10–20 ticks so easily.</p>
-
-<h3>B. Latency Arbitrage Bots</h3>
-
-<p>These monitor the USD/ZAR spot rate and react faster than human traders.  
-If spot moves:</p>
-
-<p><strong>6Z gets yanked in that direction immediately.</strong></p>
-
-<p>This is why you sometimes see sudden, sharp moves with no news—spot moved first.</p>
-
-<h3>C. Spoofing / Fake Depth Bots</h3>
-
-<p>Because 6Z is thin, it’s easy for bots to post 20–40 contracts on one side, scare traders, then pull them.</p>
-
-<p>Clues:</p>
-
-<ul>
- <li>size appears suddenly at one level</li>
- <li>price reacts slightly</li>
- <li>orders vanish instantly</li>
-</ul>
-
-<p>This is not some grand conspiracy—just a cheap liquidity game.</p>
-
-<h3>D. Momentum Ignition Scripts</h3>
-
-<p>These algorithms look for:</p>
-
-<ul>
- <li>thin liquidity gaps</li>
- <li>stops clustering above a level</li>
- <li>imbalances in the DOM</li>
-</ul>
-
-<p>Then they hit the market with small bursts to create a cascade.</p>
-
-<p>This behavior is why 6Z often spikes 15–30 ticks instantly and then stalls.</p>
-
-<h2>3. How Algos Exploit Thin Liquidity</h2>
-
-<p>Algos love thinning markets. The thinner the book, the easier it is to push price quickly.</p>
-
-<h3>Patterns to watch:</h3>
-
-<ul>
- <li>fake depth → sweep → stall</li>
- <li>thin-book pullback → velocity burst</li>
- <li>midday liquidity vacuum → instant jumps</li>
-</ul>
-
-<p>They aren’t “manipulating” the market—they’re taking advantage of structural inefficiency.</p>
-
-<h2>4. How Algos Trigger Stop Cascades in 6Z</h2>
-
-<p>Stop hunts in 6Z aren’t personal—they’re mechanical.  
-When bots read a cluster of stops using DOM pressure, they push through them to collect liquidity.</p>
-
-<h3>The cascade looks like this:</h3>
-<ul>
- <li>bot sees shallow resistance</li>
- <li>hits it aggressively</li>
- <li>stop orders trigger</li>
- <li>price jumps 5–15 ticks</li>
- <li>bots exit into the stop flow</li>
-</ul>
-
-<p>Humans didn’t hunt your stop—bots recycled your liquidity.</p>
-
-<h2>5. How Algos Interact with Volatility</h2>
-
-<p>Volatility dictates which bots stay active.</p>
-
-<ul>
- <li>Low volatility → liquidity bots dominate</li>
- <li>Medium volatility → arb bots dominate</li>
- <li>High volatility → momentum algos dominate</li>
-</ul>
-
-<p>During extreme volatility, most bots pull liquidity completely, which is why 6Z looks like it’s teleporting around the chart.</p>
-
-<h2>6. Trading Around Algos Successfully</h2>
-
-<h3>A. Do Not Chase Moves</h3>
-<p>Most sudden jumps are momentum ignition and will fade or stall quickly.</p>
-
-<h3>B. Always Enter on Pullbacks</h3>
-<p>Bots create thin pullbacks before trend continuation. That’s where you enter—<strong>not</strong> during the burst.</p>
-
-<h3>C. Use Limit Orders, Not Market Orders</h3>
-<p>Market orders feed the bots directly.  
-Limit orders force bots to come to you.</p>
-
-<h3>D. Avoid Trading During Liquidity Vacuums</h3>
-<p>Asia session is 80% bots and 20% suicidal humans.  
-Never compete with machines when the book is empty.</p>
-
-<h3>E. Don’t Place Stops Inside Imbalances</h3>
-<p>Momentum algos target these gaps deliberately.</p>
-
-<h2>7. How to Identify Algorithmic Footprints</h2>
-
-<p>Look for:</p>
-
-<ul>
- <li>sudden depth changes in DOM</li>
- <li>repeated 1–3 lot prints at velocity</li>
- <li>identical size appearing across multiple levels</li>
- <li>cancellation waves when volatility spikes</li>
- <li>price bursts without volume</li>
-</ul>
-
-<p>These are clear signs of bot activity.</p>
-
-<div class="highlight-box green">
-  <h3>Algos Run 6Z — You Just Need to Stop Falling for It</h3>
-  <p>This contract is shaped by a few aggressive systems built for thin EM markets. They’re not evil — they’re just obvious once you study the game. Don’t chase the noise. Track the pattern. When you trade *with* their intent instead of reacting to their bait, 6Z stops being a minefield and starts being readable.</p>
+<div class="container header-inner">
+<div class="logo">
+<a href="/">Grizzly Parrot Trading</a>
 </div>
-
-<!-- ARTICLE BODY END -->
+<nav class="main-nav" aria-label="Primary navigation">
+<ul>
+<li>
+<a href="/futures-basics/">Futures Basics</a>
+</li>
+<li>
+<a href="/metals/">Metals</a>
+</li>
+<li>
+<a href="/energies/">Energies</a>
+</li>
+<li>
+<a href="/currencies/">Currencies</a>
+</li>
+<li>
+<a href="/prop-firm-trading/">Prop Firms</a>
+</li>
+<li>
+<a href="/platforms-tutorials/">Platforms</a>
+</li>
+<li>
+<a href="/market-basics/">Market Basics</a>
+</li>
+<li>
+<a href="/tools/">Tools</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main-content" class="container article-container currency-library">
+<article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+<div class="fx-hero-copy">
+<p class="fx-kicker">Identification &middot; event data &middot; rival explanations</p>
+<h1>6Z Algorithmic Behavior: Test the Book, Not an Imagined Actor</h1>
+<p class="fx-byline">By <a href="../about.html">Kyle Parrott</a>
+<span aria-hidden="true"> &middot; </span>Updated August 21, 2026</p>
+<p class="fx-hero-lede">A fast cancellation, a refill at the same price and a sudden move can all be generated by automated trading. They can also reflect manual orders, several unrelated firms, a feed artifact, a risk limit or new public information. Price and candles do not identify the actor. A defensible 6Z study starts with observable messages and asks which explanations the data can actually reject.</p>
+<div class="fx-hero-actions">
+<a class="button-primary" href="#observables">Define the evidence</a>
+<a class="fx-text-link" href="#falsification">Build the falsification log</a>
+</div>
+<dl class="fx-hero-metrics" aria-label="Algorithmic behavior research limits">
+<div>
+<dt>Actor identity</dt>
+<dd>Usually unavailable</dd>
+</div>
+<div>
+<dt>Required feed</dt>
+<dd>Sequenced events</dd>
+</div>
+<div>
+<dt>Price alone</dt>
+<dd>Insufficient</dd>
+</div>
+<div>
+<dt>Published result</dt>
+<dd>None</dd>
+</div>
+</dl>
+</div>
+<aside class="fx-market-board" aria-label="Observation and inference boundary">
+<div class="fx-board-head">
+<span>What the tape shows</span>
+<strong>What it does not prove</strong>
+</div>
+<div class="fx-proof-grid">
+<div class="fx-proof">
+<strong>Observable</strong>
+<span>Order entered, reduced, canceled, traded or replenished</span>
+</div>
+<div class="fx-proof is-limit">
+<strong>Latent</strong>
+<span>Owner, code, intent, information set or manipulation</span>
+</div>
+</div>
+<p class="fx-board-foot">Describe the event before naming the cause</p>
+</aside>
+</header>
+<nav class="fx-jump-nav" aria-label="On this page">
+<a href="#problem">Problem</a>
+<a href="#observables">Evidence</a>
+<a href="#metrics">Metrics</a>
+<a href="#rivals">Rivals</a>
+<a href="#spoofing">Spoofing</a>
+<a href="#falsification">Log</a>
+</nav>
+<section class="fx-section" id="problem" aria-labelledby="problem-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">The identification problem</p>
+<h2 id="problem-title">A Pattern Is Not a Participant</h2>
+<p>Anonymous central-limit-order-book data can describe the sequence of public book events. It generally cannot establish whether one participant or many participants produced them, whether an order was generated manually or automatically, or why it was canceled. Even participant-level regulatory data would require context and intent analysis. Treat “algorithmic” as a hypothesis class, not a chart label.</p>
+</div>
+<div class="fx-four-grid">
+<article class="fx-panel">
+<p class="fx-card-label">Observed</p>
+<h3>Messages and trades</h3>
+<p>Timestamped additions, modifications, cancellations, executions, quantities, prices and sequence numbers.</p>
+</article>
+<article class="fx-panel">
+<p class="fx-card-label">Constructed</p>
+<h3>Book state</h3>
+<p>Spread, displayed depth, queue position where supported, imbalance and replenishment after each valid event.</p>
+</article>
+<article class="fx-panel">
+<p class="fx-card-label">Inferred</p>
+<h3>Behavioral mechanism</h3>
+<p>Liquidity provision, urgency, inventory response or execution scheduling&mdash;each conditional on rival tests.</p>
+</article>
+<article class="fx-panel">
+<p class="fx-card-label">Not inferred</p>
+<h3>Identity and intent</h3>
+<p>No claim that a named actor, “institution,” bot or manipulator caused a pattern.</p>
+</article>
 </div>
 </section>
+<section class="fx-section" id="observables" aria-labelledby="observables-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">Synchronize before measuring</p>
+<h2 id="observables-title">Build an Auditable Event Stream</h2>
+<p>Use the dated 6Z contract, not an undocumented continuous symbol. Preserve exchange timestamps, sequence numbers, trade corrections and order-event identifiers where the licensed dataset supplies them. Reconstruct the book deterministically and fail the affected interval when a sequence gap cannot be repaired.</p>
+</div>
+<div class="fx-table-scroll" role="region" aria-label="Required 6Z event data" tabindex="0">
+<table class="fx-table">
+<thead>
+<tr>
+<th scope="col">Record</th>
+<th scope="col">Use</th>
+<th scope="col">Failure condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Order events</th>
+<td>Add, modify, cancel and execution sequence</td>
+<td>Aggregated bars cannot substitute</td>
+</tr>
+<tr>
+<th scope="row">Book snapshots</th>
+<td>Validate reconstructed depth at checkpoints</td>
+<td>Snapshot cadence hides intervening queue events</td>
+</tr>
+<tr>
+<th scope="row">Trades</th>
+<td>Aggressor rule, size and price response</td>
+<td>Unresolved corrections or duplicate prints</td>
+</tr>
+<tr>
+<th scope="row">Contract state</th>
+<td>Expiry, roll, session, pause and holiday tags</td>
+<td>Unlabeled contract migration</td>
+</tr>
+<tr>
+<th scope="row">Official events</th>
+<td>SARB and U.S. release-relative windows</td>
+<td>Scheduled shocks mixed into ordinary periods</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="fx-source-note">
+<a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine</a> separately describes Market by Order and PCAP products. Dataset entitlement and fields must be verified before claiming queue-level behavior; no market-data purchase or original 6Z study was performed for this article.</p>
+</section>
+<section class="fx-section" id="metrics" aria-labelledby="metrics-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">Candidate measures, not magic thresholds</p>
+<h2 id="metrics-title">Measure Cancellation, Replenishment and Response</h2>
+<p>Register definitions before inspecting outcomes. Report distributions by time and state rather than compressing the book into one average. Thresholds must be learned only in the training sample and carried unchanged into validation.</p>
+</div>
+<div class="fx-table-scroll" role="region" aria-label="Candidate algorithmic behavior measures" tabindex="0">
+<table class="fx-table">
+<thead>
+<tr>
+<th scope="col">Candidate measure</th>
+<th scope="col">Definition</th>
+<th scope="col">What it cannot establish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Cancel-to-add ratio</th>
+<td>Canceled displayed quantity divided by added quantity within a registered window</td>
+<td>Whether cancellation was strategic, automated or deceptive</td>
+</tr>
+<tr>
+<th scope="row">Resting lifetime</th>
+<td>Time from accepted add to execution, modification or cancellation</td>
+<td>Intent; latency and queue rules affect exposure</td>
+</tr>
+<tr>
+<th scope="row">Replenishment latency</th>
+<td>Time until displayed size returns near a depleted level</td>
+<td>That the same participant refilled it</td>
+</tr>
+<tr>
+<th scope="row">Trade response</th>
+<td>Midquote change over fixed event-time and clock-time horizons</td>
+<td>Permanent impact without longer-horizon controls</td>
+</tr>
+<tr>
+<th scope="row">Order-flow imbalance</th>
+<td>Registered signed event or trade measure</td>
+<td>A guaranteed next-price direction</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fx-formula" aria-label="Event study sequence">
+<code>valid messages</code>
+<i aria-hidden="true">&rarr;</i>
+<code>book state</code>
+<i aria-hidden="true">&rarr;</i>
+<code>registered event</code>
+<i aria-hidden="true">&rarr;</i>
+<code>response + uncertainty</code>
+</div>
+</section>
+<section class="fx-section" id="rivals" aria-labelledby="rivals-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">Every pattern needs competition</p>
+<h2 id="rivals-title">Challenge the Automated-Liquidity Story</h2>
+<p>A result is useful only if it survives plausible alternatives. Match or stratify by spread, depth, volatility state, time of day, order size, event proximity and contract lifecycle. Repeat the test with different but preregistered event definitions and include null intervals selected without looking at future returns.</p>
+</div>
+<div class="fx-falsification-tree">
+<article>
+<h3>Information arrival</h3>
+<ul>
+<li>Official announcement window</li>
+<li>Broad USD or related-market shock</li>
+<li>Response begins before the candidate book event</li>
+</ul>
+</article>
+<article>
+<h3>Mechanical explanation</h3>
+<ul>
+<li>Roll migration or expiry proximity</li>
+<li>Session boundary, halt or feed recovery</li>
+<li>Tick-size and queue effects</li>
+</ul>
+</article>
+<article>
+<h3>Sampling explanation</h3>
+<ul>
+<li>One volatile week dominates</li>
+<li>Multiple thresholds were tried</li>
+<li>Effect disappears after costs or in holdout</li>
+</ul>
+</article>
+</div>
+</section>
+<section class="fx-section" id="spoofing" aria-labelledby="spoofing-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">A legal and evidentiary boundary</p>
+<h2 id="spoofing-title">Cancellation Data Alone Cannot Prove Spoofing</h2>
+<p>The CFTC&rsquo;s interpretive guidance explains spoofing in terms of bidding or offering with intent to cancel before execution and evaluates market context, patterns, fills and other facts. A public book observer does not possess that complete evidentiary record. High cancellation, fleeting size or layering can be a surveillance lead; none is a verdict.</p>
+</div>
+<div class="fx-caution">
+<strong>Use precise language.</strong>
+<p>Write “displayed quantity was canceled within the registered interval” or “the pattern met the study&rsquo;s alert definition.” Do not write “algorithms manipulated 6Z” unless an authoritative enforcement finding supports that exact claim.</p>
+</div>
+</section>
+<section class="fx-section" id="falsification" aria-labelledby="falsification-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">The research output is a log</p>
+<h2 id="falsification-title">Record What Would Make the Claim Fail</h2>
+<p>For each hypothesis, store its registration time, data version, eligible contracts, event definition, rival explanations, statistical estimator, uncertainty interval, cost model, holdout dates and disposition. Preserve negative and null findings. A result is retired when it depends on a small set of dates, fails a neighboring threshold, reverses out of sample or cannot clear conservative execution costs.</p>
+</div>
+<div class="fx-decision-tree">
+<article>
+<p class="fx-card-label">Retain</p>
+<h3>Stable descriptive pattern</h3>
+<p>Effect survives registered controls and holdout, with uncertainty reported. It still does not identify an actor.</p>
+</article>
+<article>
+<p class="fx-card-label">Narrow</p>
+<h3>State-dependent evidence</h3>
+<p>Claim applies only to a declared event, size, book state and contract lifecycle.</p>
+</article>
+<article>
+<p class="fx-card-label">Reject</p>
+<h3>Rival explanation wins</h3>
+<p>Timing, roll, volatility or data quality explains the apparent behavior.</p>
+</article>
+<article>
+<p class="fx-card-label">Unscorable</p>
+<h3>Required fields absent</h3>
+<p>Bars, partial depth or broken sequences cannot support the intended claim.</p>
+</article>
+</div>
+<div class="fx-panel">
+<p class="fx-card-label">Worked protocol example</p>
+<h3>Test apparent replenishment without naming the replenisher</h3>
+<p>Suppose displayed offer quantity is depleted by trades and similar quantity appears at the same price within a short interval. Register the depletion threshold, replenishment window, minimum displayed quantity and price-tolerance rule before looking at subsequent returns. For every candidate event, construct matched controls from the same dated contract, time bin, spread band, depth band and volatility state. Compare the distribution of replenishment latency and later midquote response, with confidence intervals and the number of independent trading days.</p>
+<p>Then attack the interpretation. Repeat after excluding official release windows, roll migration, feed-recovery periods and intervals with unresolved sequence gaps. Vary the threshold only through a preregistered sensitivity grid and count every variation in the research family. Check whether the result survives when events from the same burst are collapsed into one episode. A pattern that disappears after these controls is rejected. A pattern that remains is described as recurrent displayed replenishment under the tested conditions; it still does not establish that one algorithm, one firm or one intent produced it.</p>
+</div>
+<div class="fx-related">For descriptive spread and depth mapping, use the <a href="6z-liquidity-map.html">6Z Liquidity Map</a>. For realized execution costs, use <a href="why-6z-slippage-hits-harder.html">Why 6Z Slippage Can Hit Harder</a>. Confirm contract identity and tick arithmetic in <a href="6z-tick-size-and-value.html">6Z Tick Size and Value</a>.</div>
+<div class="fx-caution">
+<strong>Research status as of August 21, 2026</strong>
+<p>No original result is reported. This page publishes no 6Z actor classification, profitable signal or spoofing finding; it is a reproducible protocol and evidence boundary.</p>
+</div>
+</section>
+<details class="fx-sources">
+<summary>Sources, methods and editorial disclosure &mdash; reviewed August 25, 2026</summary>
+<ul>
+<li>
+<a href="https://www.cmegroup.com/rulebook/CME/" target="_blank" rel="noopener noreferrer">CME Rulebook index</a> and <a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/259/259.pdf" target="_blank" rel="noopener noreferrer">Chapter 259</a> for 6Z&rsquo;s ZAR/USD contract identity.</li>
+<li>
+<a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine</a> for official historical-data product categories.</li>
+<li>
+<a href="https://www.bis.org/publ/mktc13.htm" target="_blank" rel="noopener noreferrer">BIS Markets Committee, FX execution algorithms and market functioning</a> for market-wide execution-algorithm context.</li>
+<li>
+<a href="https://www.cftc.gov/LawRegulation/FederalRegister/FinalRules/2013-12365.html" target="_blank" rel="noopener noreferrer">CFTC anti-disruptive-practices interpretive guidance</a> for the intent and context boundary around spoofing.</li>
+</ul>
+<p>Sources were reviewed August 25, 2026. This unsponsored article distinguishes exchange facts, proposed measures, inference and regulatory findings. It reports no original empirical result.</p>
+</details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer">
+<strong>Educational and risk disclaimer</strong>
+<p>This material supports education and research; it is not individualized investment, legal, compliance, brokerage or execution guidance. Book conditions can change before an order arrives. Leverage amplifies adverse fills, and the performance bond posted to open a futures position does not bound the amount at risk.</p>
+</aside>
+<!-- ARTICLE BODY END -->
+</article>
 </main>
-
 <footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
+<div class="container footer-inner">
+<div class="footer-book">
+<h3>Books</h3>
+<p>Market structure, risk, and execution frameworks.</p>
+<a href="/books/" class="footer-book-link">View All Books</a>
+</div>
+<div class="footer-links">
+<a href="/about.html">About</a>
+<a href="/disclaimer.html">Disclaimer</a>
+<a href="/privacy.html">Privacy</a>
+<a href="/contact.html">Contact</a>
+</div>
+<p class="footer-copy">&copy; <span id="year">
+</span> Grizzly Parrot Trading. All rights reserved.</p>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</div>
 </footer>
 </body>
 </html>

@@ -1,337 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seasonal Patterns in 6Z Futures</title>
-  <meta name="description" content="A complete, data-driven breakdown of seasonal patterns in 6Z South African Rand futures including risk cycles, commodity trends, month-end flows, and EM FX behavior.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6z-seasonal-patterns.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Seasonal Patterns in 6Z Futures">
-  <meta property="og:description" content="A complete, data-driven breakdown of seasonal patterns in 6Z South African Rand futures including risk cycles, commodity trends, month-end flows, and EM FX behavior.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6z-seasonal-patterns.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Seasonal Patterns in 6Z Futures">
-  <meta name="twitter:description" content="A complete, data-driven breakdown of seasonal patterns in 6Z South African Rand futures including risk cycles, commodity trends, month-end flows, and EM FX behavior.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Seasonal Patterns in 6Z Futures",
-  "description": "A complete, data-driven breakdown of seasonal patterns in 6Z South African Rand futures including risk cycles, commodity trends, month-end flows, and EM FX behavior.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6z-seasonal-patterns.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6z-seasonal-patterns.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6Z Seasonal Patterns: A Holdout-First Calendar Test</title>
+<meta name="description" content="Test 6Z calendar effects with correct return orientation, dated contracts, multiple-testing controls, execution costs and a locked out-of-sample decision.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6z-seasonal-patterns.html">
+<meta property="og:title" content="6Z Seasonal Patterns: A Holdout-First Calendar Test">
+<meta property="og:description" content="Test 6Z calendar effects with correct return orientation, dated contracts, multiple-testing controls, execution costs and a locked out-of-sample decision.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6z-seasonal-patterns.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta property="og:image:alt" content="Grizzly Parrot Trading">
+<meta property="article:published_time" content="2025-11-28">
+<meta property="article:modified_time" content="2026-08-22">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="6Z Seasonal Patterns: A Holdout-First Calendar Test">
+<meta name="twitter:description" content="Test 6Z calendar effects with correct return orientation, dated contracts, multiple-testing controls, execution costs and a locked out-of-sample decision.">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN">
 </script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Seasonal Patterns in 6Z Futures",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6z-seasonal-patterns.html"
-    }
-  ]
-}
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6Z Seasonal Patterns: A Holdout-First Calendar Test","description":"Test 6Z calendar effects with correct return orientation, dated contracts, multiple-testing controls, execution costs and a locked out-of-sample decision.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6z-seasonal-patterns.html"},"datePublished":"2025-11-28","dateModified":"2026-08-22","url":"https://grizzlyparrottrading.com/futures-basics/6z-seasonal-patterns.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6Z Seasonal Patterns: A Holdout-First Calendar Test","item":"https://grizzlyparrottrading.com/futures-basics/6z-seasonal-patterns.html"}]}</script>
+<script src="/uet.js" defer>
 </script>
-
-  <script src="/uet.js" defer></script>
 </head>
 <body>
-
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-<h1>Seasonal Patterns in 6Z Futures</h1>
-
-<p>Seasonality exists in 6Z futures, but it isn’t clean like commodities or U.S. equities. The Rand is driven by global risk cycles, commodity cycles, South African fiscal periods, tourism flows, and dollar seasonality. You won’t get a simple “buy this month, sell that month” rule. But there are repeatable tendencies that matter when sizing trades and choosing directional bias.</p>
-
-<h2>Seasonality in Emerging-Market FX Is Macro First, Calendar Second</h2>
-
-<p>Major FX pairs like EUR/USD have modest seasonality because the economies are stable and flows are predictable. Emerging-market FX, including ZAR, is different. Structural capital flow, commodity dependence, and risk appetite dominate. So seasonal tendencies are the result of:</p>
-
-<ul>
- <li>Global risk-on/risk-off cycles</li>
- <li>Commodity demand seasonality</li>
- <li>South African fiscal rhythms</li>
- <li>Tourism-driven FX flows</li>
- <li>Corporate hedging cycles</li>
- <li>Dollar seasonality patterns</li>
-</ul>
-
-<p>You won’t see a neat wave. You’ll see broader zones where the Rand tends to strengthen or weaken.</p>
-
-<h2>Global Risk Seasonality: The Core Driver</h2>
-
-<p>Every emerging-market currency lives and dies by global risk appetite. The Rand is no exception. Historically, risk sentiment shows seasonal tendencies:</p>
-
-<ul>
- <li><strong>Q1:</strong> strong U.S. data → stronger USD → weaker EM FX</li>
- <li><strong>Late Q1–Q2:</strong> risk-on tendencies as markets settle→ better for EM FX</li>
- <li><strong>Q3:</strong> volatility increases → EM currencies get pressured</li>
- <li><strong>Q4:</strong> strong USD flows near year-end → EM weakness</li>
-</ul>
-
-<p>These aren’t “laws,” but they’re consistent enough to influence Rand behavior.</p>
-
-<h2>Dollar Seasonality Bleeds Directly Into 6Z</h2>
-
-<p>Because 6Z trades ZAR against USD, dollar seasonality transfers straight into the chart. Historically, the USD tends to strengthen during:</p>
-
-<ul>
- <li>January (capital repatriation)</li>
- <li>End of Q1</li>
- <li>September (global volatility spike month)</li>
- <li>November–December (year-end funding demand)</li>
-</ul>
-
-<p>These windows are typically bearish for 6Z (Rand weakness).  
-Conversely, softer USD periods (spring and early summer) tend to support the Rand.</p>
-
-<h2>Commodity Seasonality: Critical for the Rand</h2>
-
-<p>South Africa is heavily dependent on minerals—gold, platinum, iron ore. These commodities have their own seasonal patterns driven by:</p>
-
-<ul>
- <li>global manufacturing cycles</li>
- <li>north-hemisphere industrial demand</li>
- <li>investment cycles in metals markets</li>
-</ul>
-
-<p>Historically:</p>
-
-<ul>
- <li><strong>Q1:</strong> metals often dip → Rand weakens</li>
- <li><strong>Q2–Q3:</strong> stronger metals demand → Rand gains</li>
- <li><strong>Late Q3–Q4:</strong> volatility → metals wobble → Rand softens</li>
-</ul>
-
-<p>Again: tendencies, not guarantees—but they matter.</p>
-
-<h2>South African Fiscal Seasonality</h2>
-
-<p>South Africa’s fiscal year begins in April. Government spending cycles influence bond yields, which influence the Rand. Typical patterns:</p>
-
-<ul>
- <li><strong>Late Q1:</strong> budget uncertainty → Rand volatility</li>
- <li><strong>Early Q2:</strong> new fiscal year stabilizes → gradual ZAR support</li>
- <li><strong>Q3:</strong> tax periods / corporate adjustments → choppy FX flows</li>
- <li><strong>Q4:</strong> fiscal tightening → mixed impact</li>
-</ul>
-
-<p>These flows are subtle but show up in institutional allocations that drive emerging-market FX positioning.</p>
-
-<h2>Tourism and Remittance Flows</h2>
-
-<p>Tourism is a real seasonal driver of ZAR because South Africa receives significant foreign-rate revenue during tourism peaks.</p>
-
-<p>You tend to see Rand strength during:</p>
-
-<ul>
- <li>Southern hemisphere summer (Dec–Feb)</li>
- <li>Early southern autumn (Mar–Apr)</li>
-</ul>
-
-<p>This effect won’t flip a massive trend, but during low-volatility markets, it helps stabilize ZAR or slow down selloffs.</p>
-
-<h2>Quarter-End and Year-End EM FX Flows</h2>
-
-<p>Quarter-end rebalancing affects EM FX more violently than majors because allocation percentages to EM assets are small. A small rebalance creates large flows.</p>
-
-<h3>Patterns to watch:</h3>
-
-<ul>
- <li><strong>End of Q1:</strong> EM outflows (USD strength)</li>
- <li><strong>End of Q2:</strong> light inflows into EM assets</li>
- <li><strong>End of Q3:</strong> biggest volatility event of the year for EM FX</li>
- <li><strong>End of Q4:</strong> capital repatriation → EM weakness</li>
-</ul>
-
-<p>6Z reacts heavily to these flows, especially when combined with SA and U.S. yield differentials.</p>
-
-<h2>Carry-Trade Seasonality</h2>
-
-<p>Because SARB often runs high interest rates, the Rand attracts carry traders when volatility is low. Carry inflows have their own seasonal rhythm:</p>
-
-<ul>
- <li><strong>Jan–Feb:</strong> weak carry demand (tight global conditions)</li>
- <li><strong>Mar–Jun:</strong> strong carry accumulation → Rand support</li>
- <li><strong>Jul–Oct:</strong> unstable due to mid-year risk spikes</li>
- <li><strong>Nov–Dec:</strong> carry unwinds → ZAR weakness</li>
-</ul>
-
-<p>Carry seasonality + dollar seasonality together generate most large 6Z swings.</p>
-
-<h2>Liquidity Seasonality in 6Z</h2>
-
-<p>Because 6Z volume depends on global liquidity, it shows yearly “dead zones”:</p>
-
-<ul>
- <li><strong>Late Dec–Early Jan:</strong> holiday dead period → spreads widen → 6Z jumps erratically</li>
- <li><strong>Late Aug:</strong> summer liquidity hole → increased false breakouts</li>
- <li><strong>Early Oct:</strong> volatility surge as liquidity returns</li>
-</ul>
-
-<p>These periods don’t have direction bias—they’re structural liquidity distortions that make price action unreliable.</p>
-
-<h2>Putting It Together: The Practical 6Z Seasonal Map</h2>
-
-<table>
-<tr><th>Period</th><th>Typical Bias</th><th>Drivers</th></tr>
-<tr><td>Jan–Feb</td><td>Bearish ZAR</td><td>USD strength, weak commodities, carry pause</td></tr>
-<tr><td>Mar–Jun</td><td>Bullish ZAR</td><td>Carry demand, risk-on, metals strength</td></tr>
-<tr><td>Jul–Aug</td><td>Mixed</td><td>Thin liquidity, commodity volatility</td></tr>
-<tr><td>Sep</td><td>Bearish ZAR</td><td>Global risk-off month</td></tr>
-<tr><td>Oct</td><td>Volatile</td><td>Liquidity return, fiscal adjustments</td></tr>
-<tr><td>Nov–Dec</td><td>Bearish ZAR</td><td>Year-end USD demand, carry unwinds</td></tr>
-</table>
-
-<p>These aren’t trading signals. They are “bias suggestions” that help frame your expectations.</p>
-
-<h2>How to Use Seasonality in Real 6Z Trading</h2>
-
-<h3>1. Treat seasonal tendencies as background probability</h3>
-<p>You’re not trading a calendar—you’re trading flows.</p>
-
-<h3>2. Align seasonality with USD conditions</h3>
-<p>Seasonal tailwinds only matter when USD isn’t steamrolling the entire EM complex.</p>
-
-<h3>3. Watch commodities alongside seasonality</h3>
-<p>Metals seasonality reinforces or cancels Rand seasonality.</p>
-
-<h3>4. Use seasonal maps to choose your battles</h3>
-<p>No point fighting strong seasonal headwinds if you don’t have to.</p>
-
-<h3>5. Expect exceptions during crises</h3>
-<p>Risk shocks override every seasonal pattern instantly.</p>
-
-<div class="highlight-box yellow">
-  <h3>Seasonality in 6Z Isn’t a Calendar — It’s a Collision</h3>
-  <p>What looks like seasonal behavior in 6Z usually comes from overlapping macro forces — global risk appetite, commodity flows, fiscal cycles, and dollar trends. When they stack, bias shows up. When they don’t, the pattern breaks. Treat seasonality as context, not certainty.</p>
+<div class="container header-inner">
+<div class="logo">
+<a href="/">Grizzly Parrot Trading</a>
 </div>
-
-<!-- ARTICLE BODY END -->
+<nav class="main-nav" aria-label="Primary navigation">
+<ul>
+<li>
+<a href="/futures-basics/">Futures Basics</a>
+</li>
+<li>
+<a href="/metals/">Metals</a>
+</li>
+<li>
+<a href="/energies/">Energies</a>
+</li>
+<li>
+<a href="/currencies/">Currencies</a>
+</li>
+<li>
+<a href="/prop-firm-trading/">Prop Firms</a>
+</li>
+<li>
+<a href="/platforms-tutorials/">Platforms</a>
+</li>
+<li>
+<a href="/market-basics/">Market Basics</a>
+</li>
+<li>
+<a href="/tools/">Tools</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main-content" class="container article-container currency-library">
+<article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+<div class="fx-hero-copy">
+<p class="fx-kicker">Orientation &middot; multiple tests &middot; costs &middot; holdout</p>
+<h1>6Z Seasonal Patterns: A Holdout-First Calendar Test</h1>
+<p class="fx-byline">By <a href="../about.html">Kyle Parrott</a>
+<span aria-hidden="true"> &middot; </span>Updated August 22, 2026</p>
+<p class="fx-hero-lede">A large average return for one month is easy to discover after trying twelve months, weekdays, month-end windows and election-year labels. It is also easy for one crisis year to create it. The only defensible seasonal claim begins with a frozen hypothesis, correct 6Z quote orientation, auditable contract rolls and a holdout that was never used to choose the pattern.</p>
+<div class="fx-hero-actions">
+<a class="button-primary" href="#hypothesis">Register the hypothesis</a>
+<a class="fx-text-link" href="#decision">Set the rejection rule</a>
+</div>
+<dl class="fx-hero-metrics" aria-label="Seasonality study guardrails">
+<div>
+<dt>Direction</dt>
+<dd>USD per ZAR</dd>
+</div>
+<div>
+<dt>Tests tried</dt>
+<dd>Count all</dd>
+</div>
+<div>
+<dt>Costs</dt>
+<dd>Mandatory</dd>
+</div>
+<div>
+<dt>Claimed pattern</dt>
+<dd>None</dd>
+</div>
+</dl>
+</div>
+<aside class="fx-market-board" aria-label="Why a monthly average can mislead">
+<div class="fx-board-head">
+<span>Seductive summary</span>
+<strong>Hidden fragility</strong>
+</div>
+<div class="fx-proof-grid">
+<div class="fx-proof">
+<strong>Average</strong>
+<span>One month appears positive</span>
+</div>
+<div class="fx-proof is-limit">
+<strong>Distribution</strong>
+<span>Few years, one outlier, wide uncertainty</span>
+</div>
+</div>
+<p class="fx-board-foot">Show every year before naming a season</p>
+</aside>
+</header>
+<nav class="fx-jump-nav" aria-label="On this page">
+<a href="#hypothesis">Hypothesis</a>
+<a href="#sample">Sample</a>
+<a href="#controls">Controls</a>
+<a href="#robustness">Robustness</a>
+<a href="#holdout">Holdout</a>
+<a href="#decision">Decision</a>
+</nav>
+<section class="fx-section" id="hypothesis" aria-labelledby="hypothesis-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">One claim at a time</p>
+<h2 id="hypothesis-title">Define the Calendar Effect Before Seeing It</h2>
+<p>State the entry and exit timestamps, timezone, return direction, eligible contracts, roll treatment and comparison set. “6Z is strong in spring” is not a hypothesis: spring differs by hemisphere, “strong” lacks quote orientation and no holding interval is specified.</p>
+</div>
+<div class="fx-table-scroll" role="region" aria-label="Calendar hypothesis registration fields" tabindex="0">
+<table class="fx-table">
+<thead>
+<tr>
+<th scope="col">Field</th>
+<th scope="col">Required declaration</th>
+<th scope="col">Example of ambiguity to remove</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Calendar</th>
+<td>Month, business-day index or exact recurring window</td>
+<td>Calendar month versus final five trading days</td>
+</tr>
+<tr>
+<th scope="row">Return</th>
+<td>Log or simple return on ZAR/USD 6Z quote</td>
+<td>Positive 6Z means a higher USD value per rand</td>
+</tr>
+<tr>
+<th scope="row">Instrument</th>
+<td>Dated futures and explicit roll rule</td>
+<td>Vendor continuous series may back-adjust</td>
+</tr>
+<tr>
+<th scope="row">Decision time</th>
+<td>Observable price and information timestamp</td>
+<td>Settlement not yet published at entry</td>
+</tr>
+<tr>
+<th scope="row">Family</th>
+<td>Every related calendar test counted</td>
+<td>Reporting only the best of twelve months</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fx-related">Verify quote direction and contract mechanics in <a href="6z-tick-size-and-value.html">6Z Tick Size and Value</a> before interpreting any sign.</div>
+</section>
+<section class="fx-section" id="sample" aria-labelledby="sample-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">Reconstruct what was tradable</p>
+<h2 id="sample-title">Build a Point-in-Time Contract Sample</h2>
+<p>Use dated settlements or intraday prices and a roll policy based only on information available at the time. Preserve both raw contracts and the derived series. A back-adjusted chart can be useful for display but can alter price levels and returns around rolls; it cannot be accepted without its transformation being documented.</p>
+</div>
+<div class="fx-state-machine" aria-label="Seasonal sample construction">
+<article>
+<span>1</span>
+<h3>Acquire</h3>
+<p>Record source, fields, timezone, corrections and access date.</p>
+</article>
+<article>
+<span>2</span>
+<h3>Validate</h3>
+<p>Check duplicate dates, missing sessions and anomalous settlement changes.</p>
+</article>
+<article>
+<span>3</span>
+<h3>Roll</h3>
+<p>Apply the frozen volume, open-interest or calendar rule without future data.</p>
+</article>
+<article>
+<span>4</span>
+<h3>Label</h3>
+<p>Attach official holidays and registered calendar windows.</p>
+</article>
+<article>
+<span>5</span>
+<h3>Freeze</h3>
+<p>Hash the sample before exploratory results are viewed.</p>
+</article>
+</div>
+<div class="fx-panel">
+<p class="fx-card-label">Worked hypothesis example</p>
+<h3>Turn “month-end strength” into a testable claim</h3>
+<p>Define month-end as the final five eligible exchange trading days and the comparison as all other eligible days in the same sample. Choose the entry and exit marks, ZAR/USD return sign, dated-contract roll rule and whether positions overlap before opening the data. The unit of inference should reflect dependence: daily observations inside one month-end window are not five independent calendar events. Aggregate by window or use an uncertainty method that preserves the clustering.</p>
+<p>Report every yearly window, not just the pooled mean. Show median return, dispersion, tail outcomes, hit rate with uncertainty, turnover and conservative execution cost. Repeat the registered estimate after removing each year and after excluding separately declared SARB, FOMC, holiday and roll windows. Compare with a randomized calendar rule that preserves holding period and trade count. If the effect is carried by one crisis, changes sign under a defensible roll convention or fails the untouched period after costs, reject it. If retained, the claim remains limited to the exact window, quote orientation, sample and implementation tested.</p>
+<p>Keep an experiment ledger with the registration timestamp, code revision, input hash and disposition of every related window. That record makes an abandoned hypothesis visible and prevents it from returning later as a supposedly new discovery.</p>
+</div>
+<div class="fx-caution">
+<strong>Do not manufacture observations.</strong>
+<p>Missing sessions are missing. Do not forward-fill returns, treat absent quotes as zero movement or combine unlike serial and quarterly contracts without a documented reason.</p>
 </div>
 </section>
+<section class="fx-section" id="controls" aria-labelledby="controls-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">The calendar may proxy for something else</p>
+<h2 id="controls-title">Separate Calendar Labels from Regime and Event Exposure</h2>
+<p>A recurring window may coincide with SARB meetings, Federal Reserve decisions, holidays, tax dates, commodity cycles or contract migration. Predefine which are exclusions, which are stratification variables and which are rival explanations. Do not add controls only after they erase or strengthen the desired result.</p>
+</div>
+<div class="fx-four-grid">
+<article class="fx-panel">
+<p class="fx-card-label">Policy</p>
+<h3>Official event calendar</h3>
+<p>SARB and FOMC windows receive exact source timestamps and separate reporting.</p>
+</article>
+<article class="fx-panel">
+<p class="fx-card-label">Market</p>
+<h3>Volatility state</h3>
+<p>Classify with a training-only rule from the <a href="6z-volatility-profile.html">6Z volatility framework</a>.</p>
+</article>
+<article class="fx-panel">
+<p class="fx-card-label">Contract</p>
+<h3>Roll and expiry</h3>
+<p>Flag migration and exclude unsupported continuous-series seams.</p>
+</article>
+<article class="fx-panel">
+<p class="fx-card-label">Execution</p>
+<h3>Spread and capacity</h3>
+<p>Use time-matched cost evidence rather than a universal fixed deduction.</p>
+</article>
+</div>
+</section>
+<section class="fx-section" id="robustness" aria-labelledby="robustness-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">Make chance work harder</p>
+<h2 id="robustness-title">Correct for Search and Stress the Result</h2>
+<p>Publish the complete hypothesis family, not only its winner. Use a preregistered familywise or false-discovery procedure appropriate to the research question. Report effect size and uncertainty alongside any adjusted significance measure; a small p-value is not a trading edge.</p>
+</div>
+<div class="fx-check-grid">
+<article>
+<strong>Leave-one-year-out</strong>
+<p>Repeat the estimate after removing each year. A single-year effect is disclosed, not averaged away.</p>
+</article>
+<article>
+<strong>Neighboring windows</strong>
+<p>Shift entry and exit by registered increments. A one-timestamp spike is fragile.</p>
+</article>
+<article>
+<strong>Alternative rolls</strong>
+<p>Compare defensible roll policies without selecting whichever produces the best return.</p>
+</article>
+<article>
+<strong>Sign and rank tests</strong>
+<p>Check whether the result depends on the mean and extreme observations.</p>
+</article>
+<article>
+<strong>Cost stress</strong>
+<p>Apply spread, slippage, fees and missed-fill assumptions tied to the order policy.</p>
+</article>
+<article>
+<strong>Economic relevance</strong>
+<p>Compare net magnitude with risk, drawdown, capacity and a simple no-season baseline.</p>
+</article>
+</div>
+</section>
+<section class="fx-section" id="holdout" aria-labelledby="holdout-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">No second look</p>
+<h2 id="holdout-title">Lock the Rule Before Opening the Holdout</h2>
+<p>Choose the holdout boundary before model selection. Freeze the exact calendar rule, position direction, order convention, costs and pass threshold. Run once. If the rule fails, changing the dates or threshold creates a new research program and requires a new untouched sample.</p>
+</div>
+<div class="fx-formula" aria-label="Seasonality validation sequence">
+<code>train + choose</code>
+<i aria-hidden="true">&rarr;</i>
+<code>freeze rule</code>
+<i aria-hidden="true">&rarr;</i>
+<code>one holdout run</code>
+<i aria-hidden="true">&rarr;</i>
+<code>retain or reject</code>
+</div>
+</section>
+<section class="fx-section" id="decision" aria-labelledby="decision-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">Abandonment is a valid result</p>
+<h2 id="decision-title">Reject a Pattern That Cannot Survive Its Costs and Controls</h2>
+<p>Retain a calendar effect only when its orientation, sample and search family are auditable; uncertainty excludes an economically trivial effect under the registered criterion; sensitivity checks do not reveal one-date dependence; and the untouched holdout clears conservative costs. Anything less remains exploratory.</p>
+</div>
+<div class="fx-decision-tree">
+<article>
+<p class="fx-card-label">Retain</p>
+<h3>Replicated after costs</h3>
+<p>The locked effect clears its holdout threshold with stable sign and usable capacity.</p>
+</article>
+<article>
+<p class="fx-card-label">Monitor</p>
+<h3>Descriptive only</h3>
+<p>The calendar difference is measurable but too uncertain or small for a trading rule.</p>
+</article>
+<article>
+<p class="fx-card-label">Reject</p>
+<h3>Fragile or unprofitable</h3>
+<p>It fails holdout, multiplicity, neighboring windows or conservative costs.</p>
+</article>
+<article>
+<p class="fx-card-label">Unscorable</p>
+<h3>Sample is inadequate</h3>
+<p>Roll, missingness or available years cannot support the claim.</p>
+</article>
+</div>
+<div class="fx-caution">
+<strong>Research status as of August 22, 2026</strong>
+<p>No original result is reported. This protocol publishes no 6Z monthly, weekday, month-end or annual-cycle finding and does not assert that any calendar window predicts returns.</p>
+</div>
+</section>
+<details class="fx-sources">
+<summary>Sources, methods and editorial disclosure &mdash; reviewed August 25, 2026</summary>
+<ul>
+<li>
+<a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/259/259.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 259</a> for the ZAR/USD futures contract identity.</li>
+<li>
+<a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine</a> for official historical settlements and market-data product context.</li>
+<li>
+<a href="https://www.resbank.co.za/en/home/what-we-do/monetary-policy/MPC-announcement-webcasts" target="_blank" rel="noopener noreferrer">SARB MPC announcements</a> and <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">Federal Reserve FOMC calendars</a> for official event labels.</li>
+</ul>
+<p>Sources were reviewed August 25, 2026. This unsponsored article is a protocol, not a completed backtest, seasonality finding or recommendation.</p>
+</details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer">
+<strong>Educational and risk disclaimer</strong>
+<p>Historical calendar relationships can fail without warning. The protocol is a research aid, not a personal recommendation or order instruction. A calendar average offers no loss limit; leveraged futures exposure can lose more than the opening performance bond.</p>
+</aside>
+<!-- ARTICLE BODY END -->
+</article>
 </main>
-
 <footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
+<div class="container footer-inner">
+<div class="footer-book">
+<h3>Books</h3>
+<p>Market structure, risk, and execution frameworks.</p>
+<a href="/books/" class="footer-book-link">View All Books</a>
+</div>
+<div class="footer-links">
+<a href="/about.html">About</a>
+<a href="/disclaimer.html">Disclaimer</a>
+<a href="/privacy.html">Privacy</a>
+<a href="/contact.html">Contact</a>
+</div>
+<p class="footer-copy">&copy; <span id="year">
+</span> Grizzly Parrot Trading. All rights reserved.</p>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</div>
 </footer>
 </body>
 </html>

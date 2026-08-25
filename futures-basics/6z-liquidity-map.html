@@ -1,363 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6Z Liquidity Map</title>
-  <meta name="description" content="A complete 6Z liquidity map: key price zones, order flow behavior, volume shelves, imbalances, and institutional footprints in the South African Rand futures market.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6z-liquidity-map.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6Z Liquidity Map">
-  <meta property="og:description" content="A complete 6Z liquidity map: key price zones, order flow behavior, volume shelves, imbalances, and institutional footprints in the South African Rand futures market.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6z-liquidity-map.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6Z Liquidity Map">
-  <meta name="twitter:description" content="A complete 6Z liquidity map: key price zones, order flow behavior, volume shelves, imbalances, and institutional footprints in the South African Rand futures market.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6Z Liquidity Map",
-  "description": "A complete 6Z liquidity map: key price zones, order flow behavior, volume shelves, imbalances, and institutional footprints in the South African Rand futures market.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6z-liquidity-map.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6z-liquidity-map.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6Z Liquidity Map: Build a Timestamped Market-Quality Record</title>
+<meta name="description" content="Build a 6Z liquidity map from timestamped spread, depth, volume, queue and execution evidence instead of permanent institutional price zones.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6z-liquidity-map.html">
+<meta property="og:title" content="6Z Liquidity Map: Build a Timestamped Market-Quality Record">
+<meta property="og:description" content="Build a 6Z liquidity map from timestamped spread, depth, volume, queue and execution evidence instead of permanent institutional price zones.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6z-liquidity-map.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta property="og:image:alt" content="Grizzly Parrot Trading">
+<meta property="article:published_time" content="2025-11-28">
+<meta property="article:modified_time" content="2026-08-21">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="6Z Liquidity Map: Build a Timestamped Market-Quality Record">
+<meta name="twitter:description" content="Build a 6Z liquidity map from timestamped spread, depth, volume, queue and execution evidence instead of permanent institutional price zones.">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN">
 </script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6Z Liquidity Map: Key Price Zones, Order Flow Behavior & Institutional Footprints",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6z-liquidity-map.html"
-    }
-  ]
-}
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6Z Liquidity Map: Build a Timestamped Market-Quality Record","description":"Build a 6Z liquidity map from timestamped spread, depth, volume, queue and execution evidence instead of permanent institutional price zones.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6z-liquidity-map.html"},"datePublished":"2025-11-28","dateModified":"2026-08-21","url":"https://grizzlyparrottrading.com/futures-basics/6z-liquidity-map.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6Z Liquidity Map: Build a Timestamped Market-Quality Record","item":"https://grizzlyparrottrading.com/futures-basics/6z-liquidity-map.html"}]}</script>
+<script src="/uet.js" defer>
 </script>
-
-  <script src="/uet.js" defer></script>
 </head>
 <body>
-
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-<h1>6Z Liquidity Map: Key Price Zones, Order Flow Behavior & Institutional Footprints</h1>
-
-<p>6Z trades on a liquidity landscape built from thin orderbooks, sudden volume clusters, and algorithmic footprints.  
-This contract has nowhere near the depth of major FX futures, so liquidity zones matter more—and failing to understand them is why most traders panic when 6Z jumps 20 ticks instantly.</p>
-
-<p>This article shows exactly where liquidity forms, where it disappears, and how institutions use these zones to push price efficiently.</p>
-
-<h2>1. Why Liquidity Mapping Matters in 6Z</h2>
-
-<p>Unlike liquid markets like 6E or ES, 6Z’s book often has:</p>
-
-<ul>
- <li>gaps between levels</li>
- <li>shallow resting orders</li>
- <li>fake size that evaporates instantly</li>
- <li>clusters of real liquidity far apart from each other</li>
-</ul>
-
-<p>Price isn’t “smooth” in 6Z. It teleports between liquidity pockets.  
-Mapping these pockets gives you a real edge.</p>
-
-<h2>2. Core Structure of 6Z Liquidity</h2>
-
-<p>6Z’s liquidity forms in four predictable layers:</p>
-
-<ul>
- <li><strong>Volume Shelves</strong> – stable zones where institutions transact</li>
- <li><strong>Low-Volume Voids</strong> – thin zones where price jumps</li>
- <li><strong>Imbalances</strong> – one-sided pushes that price revisits</li>
- <li><strong>Sweep Zones</strong> – areas where stops cluster</li>
-</ul>
-
-<h3>How these zones interact:</h3>
-
-<ul>
- <li>shelves → slow price down (ideal partial profit zones)</li>
- <li>voids → accelerate price (ideal runner zones)</li>
- <li>imbalances → attract retracements</li>
- <li>sweep zones → trigger stop cascades</li>
-</ul>
-
-<h2>3. Volume Shelves: The Foundation of the Liquidity Map</h2>
-
-<p>Volume shelves are price zones where large positions accumulate or distribute.  
-You find them in:</p>
-
-<ul>
- <li>composite volume profiles</li>
- <li>session profiles</li>
- <li>multi-day nodes</li>
-</ul>
-
-<p>In 6Z, shelves are especially important because liquidity is so thin elsewhere.</p>
-
-<h3>Behavior at shelves:</h3>
-<ul>
- <li>price slows dramatically</li>
- <li>pullbacks stall</li>
- <li>large traders enter or exit</li>
- <li>the DOM thickens temporarily</li>
-</ul>
-
-<p>If you’re unsure where to scale out → use shelves.</p>
-
-<h2>4. Low-Volume Voids: The “Jump Zones” of 6Z</h2>
-
-<p>Voids are spots where the orderbook is empty.  
-6Z jumps through them like they’re not even there.</p>
-
-<p>These voids create:</p>
-
-<ul>
- <li>fast impulsive moves</li>
- <li>aggressive breakouts</li>
- <li>stop hunts</li>
- <li>momentum ignition by algos</li>
-</ul>
-
-<h3>What to do with voids:</h3>
-<ul>
- <li>do not place stops inside them</li>
- <li>let runners breathe through them</li>
- <li>expect slippage when stops lie behind them</li>
-</ul>
-
-<h2>5. Imbalances: One-Sided Aggression That Must Rebalance</h2>
-
-<p>An imbalance is when the market drives aggressively in one direction, leaving single prints or thin rotations behind.</p>
-
-<h3>In 6Z imbalances occur constantly because:</h3>
-
-<ul>
- <li>resting liquidity is shallow</li>
- <li>algos hit the book in bursts</li>
- <li>spot USD/ZAR moves first</li>
-</ul>
-
-<p>Price almost always revisits imbalances later to rebalance orderflow.</p>
-
-<h2>6. Sweep Zones: Where the Market Targets Stops</h2>
-
-<p>Sweep zones are price levels where retail traders pile stops.  
-6Z loves these zones because sweeping them gives institutions liquidity to fill real orders.</p>
-
-<h3>Common sweep zones:</h3>
-<ul>
- <li>previous day’s high/low</li>
- <li>Asia session high/low</li>
- <li>round numbers</li>
- <li>visible swing points on 5m/15m</li>
-</ul>
-
-<h3>The sweep process:</h3>
-<ul>
- <li>price accelerates toward the level</li>
- <li>algos detect stops → push through</li>
- <li>stop orders fill institutions’ resting limits</li>
- <li>market reverses or stalls</li>
-</ul>
-
-<p>Recognizing sweep zones prevents emotional stopouts.</p>
-
-<h2>7. How Institutions Navigate 6Z Liquidity</h2>
-
-<p>Institutions don’t trade 6Z the way they trade majors.  
-They exploit thin liquidity:</p>
-
-<h3>Tactics institutions use:</h3>
-<ul>
- <li>building size inside shelves</li>
- <li>compressing price inside tight ranges</li>
- <li>executing fills during news spikes</li>
- <li>using spot USD/ZAR to trigger flow</li>
- <li>pulling liquidity to create jumps</li>
-</ul>
-
-<p>They want to transact efficiently—so they seek stop flows, not fight them.</p>
-
-<h2>8. Mapping Liquidity with Tools (No Guessing)</h2>
-
-<h3>A. Volume Profile</h3>
-<ul>
- <li>composite → big picture shelves/voids</li>
- <li>session → intraday shelves</li>
-</ul>
-
-<h3>B. Footprint Charts</h3>
-<ul>
- <li>detect imbalances</li>
- <li>see absorption</li>
- <li>spot aggressive delta shifts</li>
-</ul>
-
-<h3>C. DOM (Depth of Market)</h3>
-<ul>
- <li>find fake liquidity</li>
- <li>watch cancellation waves</li>
- <li>see momentum algos hit the book</li>
-</ul>
-
-<h3>D. Tick/Volume Delta</h3>
-<ul>
- <li>confirm direction</li>
- <li>spot hidden buying/selling</li>
-</ul>
-
-<h2>9. Building Your Own Liquidity Map</h2>
-
-<p>Your map should identify:</p>
-
-<ul>
- <li>major shelves</li>
- <li>thin zones</li>
- <li>retest imbalances</li>
- <li>stop sweep targets</li>
-</ul>
-
-<h3>Workflow:</h3>
-
-<ul>
- <li>mark composite shelves (macro)</li>
- <li>mark session shelves (intraday)</li>
- <li>highlight voids and imbalances</li>
- <li>locate sweep zones</li>
- <li>confirm with footprint or DOM</li>
-</ul>
-
-<p>Do this daily before London session and your win rate will jump dramatically.</p>
-
-<div class="highlight-box red">
-  <h3>6Z Isn’t Illiquid — It’s Selectively Liquid</h3>
-  <p>Treating 6Z like a smooth market is how most traders get erased. It’s a barren landscape with isolated liquidity pools — and if you don’t know where they are, you’re the fill. This map gives you the visibility needed to trade with intent, not hope.</p>
+<div class="container header-inner">
+<div class="logo">
+<a href="/">Grizzly Parrot Trading</a>
 </div>
-
-<!-- ARTICLE BODY END -->
+<nav class="main-nav" aria-label="Primary navigation">
+<ul>
+<li>
+<a href="/futures-basics/">Futures Basics</a>
+</li>
+<li>
+<a href="/metals/">Metals</a>
+</li>
+<li>
+<a href="/energies/">Energies</a>
+</li>
+<li>
+<a href="/currencies/">Currencies</a>
+</li>
+<li>
+<a href="/prop-firm-trading/">Prop Firms</a>
+</li>
+<li>
+<a href="/platforms-tutorials/">Platforms</a>
+</li>
+<li>
+<a href="/market-basics/">Market Basics</a>
+</li>
+<li>
+<a href="/tools/">Tools</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main-content" class="container article-container currency-library">
+<article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+<div class="fx-hero-copy">
+<p class="fx-kicker">Spread &middot; depth &middot; traded volume &middot; contract state</p>
+<h1>6Z Liquidity Map: Build a Timestamped Market-Quality Record</h1>
+<p class="fx-byline">By <a href="../about.html">Kyle Parrott</a>
+<span aria-hidden="true"> &middot; </span>Updated August 21, 2026</p>
+<p class="fx-hero-lede">A price can be a busy two-sided market on one date and a thin waypoint on another. A visible volume shelf can migrate when the active contract changes, disappear after an event, or look deep until an order reaches the queue. A useful 6Z liquidity map is therefore a dated measurement object&mdash;not a permanent set of “institutional zones.”</p>
+<div class="fx-hero-actions">
+<a class="button-primary" href="#inputs">Build the map</a>
+<a class="fx-text-link" href="#stale">Reject a stale map</a>
+</div>
+<dl class="fx-hero-metrics" aria-label="Liquidity map dimensions">
+<div>
+<dt>Quoted</dt>
+<dd>Spread + depth</dd>
+</div>
+<div>
+<dt>Traded</dt>
+<dd>Volume + prints</dd>
+</div>
+<div>
+<dt>Experienced</dt>
+<dd>Fills + slippage</dd>
+</div>
+<div>
+<dt>Permanent zones</dt>
+<dd>Not claimed</dd>
+</div>
+</dl>
+</div>
+<aside class="fx-market-board" aria-label="A level changes meaning">
+<div class="fx-board-head">
+<span>Same displayed price</span>
+<strong>Different map state</strong>
+</div>
+<div class="fx-proof-grid">
+<div class="fx-proof">
+<strong>Then</strong>
+<span>Active contract, tight spread, repeated two-sided trade</span>
+</div>
+<div class="fx-proof is-limit">
+<strong>Now</strong>
+<span>New expiry, wider spread, little executable depth</span>
+</div>
+</div>
+<p class="fx-board-foot">Timestamp every conclusion</p>
+</aside>
+</header>
+<nav class="fx-jump-nav" aria-label="On this page">
+<a href="#inputs">Inputs</a>
+<a href="#normalize">Normalize</a>
+<a href="#layers">Layers</a>
+<a href="#uses">Uses</a>
+<a href="#stale">Stale test</a>
+</nav>
+<section class="fx-section" id="inputs" aria-labelledby="inputs-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">A map needs more than prints</p>
+<h2 id="inputs-title">Separate Quoted, Traded and Experienced Liquidity</h2>
+<p>Each layer answers a different question. Quoted liquidity describes displayed opportunity; traded liquidity describes completed transactions; experienced liquidity describes what a defined order policy actually received. None can safely stand in for the others.</p>
+</div>
+<div class="fx-table-scroll" role="region" aria-label="6Z liquidity map input layers" tabindex="0">
+<table class="fx-table">
+<thead>
+<tr>
+<th scope="col">Layer</th>
+<th scope="col">Minimum fields</th>
+<th scope="col">Useful outputs</th>
+<th scope="col">Boundary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Quotes</th>
+<td>Sequenced bid, ask, quantities, timestamp</td>
+<td>Time-weighted spread, depth by distance, quote age</td>
+<td>Displayed size can cancel</td>
+</tr>
+<tr>
+<th scope="row">Trades</th>
+<td>Price, quantity, time, correction status</td>
+<td>Volume distribution, trade count, size distribution</td>
+<td>A print does not reveal resting queues</td>
+</tr>
+<tr>
+<th scope="row">Orders</th>
+<td>Decision, submit, acknowledge, fill and cancel records</td>
+<td>Fill rate, delay, realized slippage, shortfall</td>
+<td>Specific to size, urgency and route</td>
+</tr>
+<tr>
+<th scope="row">Context</th>
+<td>Contract, trade date, event, holiday and roll flags</td>
+<td>Comparable state slices</td>
+<td>Missing tags contaminate the map</td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
+<section class="fx-section" id="normalize" aria-labelledby="normalize-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">Make prices and contracts comparable</p>
+<h2 id="normalize-title">Normalize Before Drawing a Level</h2>
+<p>Keep the raw 6Z quote in U.S. dollars per South African rand and retain the exact dated contract. If a continuous series is needed for visualization, document every roll rule and adjustment and keep the raw contracts available. Express distance in ticks, basis points or volatility-scaled units rather than assuming an old absolute price band has unchanged meaning.</p>
+</div>
+<div class="fx-state-machine" aria-label="Liquidity map normalization workflow">
+<article>
+<span>1</span>
+<h3>Validate</h3>
+<p>Resolve sequence gaps, duplicates, corrections and locked or crossed states.</p>
+</article>
+<article>
+<span>2</span>
+<h3>Identify</h3>
+<p>Attach dated contract, expiry, session and official trading-day fields.</p>
+</article>
+<article>
+<span>3</span>
+<h3>Normalize</h3>
+<p>Preserve raw price; derive tick distance and optional volatility scale.</p>
+</article>
+<article>
+<span>4</span>
+<h3>Stratify</h3>
+<p>Separate time, event, holiday, volatility and roll regimes.</p>
+</article>
+<article>
+<span>5</span>
+<h3>Version</h3>
+<p>Stamp data end date, sample, parameters and code revision.</p>
+</article>
+</div>
+<div class="fx-related">The canonical exchange arithmetic and contract lifecycle belong in <a href="6z-tick-size-and-value.html">6Z Tick Size and Value</a>. Do not copy stale specifications from a chart template.</div>
+</section>
+<section class="fx-section" id="layers" aria-labelledby="layers-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">Map distributions, not folklore</p>
+<h2 id="layers-title">Overlay Market Quality by Regime</h2>
+<p>Choose bins before reading the outcome. Report median and tail conditions, observation counts and missingness. A level is descriptive only inside its measured contract, sample and regime.</p>
+</div>
+<div class="fx-four-grid">
+<article class="fx-panel">
+<p class="fx-card-label">Price layer</p>
+<h3>Two-sided trade</h3>
+<p>Executed volume, trade count and repeat visits by normalized price distance. Do not call it support or resistance.</p>
+</article>
+<article class="fx-panel">
+<p class="fx-card-label">Book layer</p>
+<h3>Spread and depth</h3>
+<p>Time-weighted inside spread, quantities through fixed tick bands, quote age and replenishment.</p>
+</article>
+<article class="fx-panel">
+<p class="fx-card-label">Flow layer</p>
+<h3>Queue behavior</h3>
+<p>Add, cancel, execute and depletion measures where order-level data genuinely supports them.</p>
+</article>
+<article class="fx-panel">
+<p class="fx-card-label">State layer</p>
+<h3>Event and roll context</h3>
+<p>SARB, U.S. releases, holidays, session transitions, migration and expiry proximity.</p>
+</article>
+</div>
+<div class="fx-panel">
+<p class="fx-card-label">Worked map record</p>
+<h3>Store enough context to reproduce one cell</h3>
+<p>A map cell should be traceable to raw observations. Record the dated contract, UTC interval, local labels, sample start and end, eligible-day count, excluded-day count, feed and depth level, price normalization, event state and roll state. For spread, store a time-weighted distribution rather than only its mean. For depth, state the number of ticks included on each side and report both typical and lower-tail quantity. For traded activity, retain trade count and size distribution alongside volume so one large print cannot masquerade as continuous participation.</p>
+<p>Consider a normalized price band that shows high historical volume but weak current depth. The map must not call it a “liquidity zone.” Mark the historical traded-volume evidence as present, the current quoted-capacity gate as failed and the order as wait or reject depending on the policy. If subsequent fills consistently cost more than the modeled sweep, open a calibration incident: verify timestamps, latency, hidden partial fills, cancellations and order size, then either widen the conservative cost bound or retire the cell. Never revise only the losing observations.</p>
+<p>Archive each published map version. Later revisions should state which observations entered, which cells changed and whether the change came from new evidence, a corrected feed or a revised method.</p>
+</div>
+<div class="fx-caution">
+<strong>Volume profile is not executable capacity.</strong>
+<p>High historical traded volume says transactions occurred. It does not say the same quantity will be displayed, remain available or fill at the same cost for the next order.</p>
+</div>
+</section>
+<section class="fx-section" id="uses" aria-labelledby="uses-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">Use the map as a gate</p>
+<h2 id="uses-title">Translate the Map into Order Decisions</h2>
+<p>Declare the order size, urgency, acceptable spread, depth band and maximum modeled impact. Compare current conditions with the matching historical state, then choose among execution branches. A map informs where patience may be warranted; it does not predict direction.</p>
+</div>
+<div class="fx-decision-tree">
+<article>
+<p class="fx-card-label">Eligible</p>
+<h3>Current state is represented</h3>
+<p>Contract, time, regime and book measures fall inside the validated sample for this order policy.</p>
+</article>
+<article>
+<p class="fx-card-label">Reduce</p>
+<h3>Capacity is smaller</h3>
+<p>Spread passes but depth or tail cost supports only a preregistered smaller quantity.</p>
+</article>
+<article>
+<p class="fx-card-label">Wait</p>
+<h3>Transient state dominates</h3>
+<p>An event burst, roll transition or unstable quote sequence requires a new observation.</p>
+</article>
+<article>
+<p class="fx-card-label">Reject</p>
+<h3>Map cannot score the order</h3>
+<p>Required fields are absent, current conditions are out of distribution or the map is stale.</p>
+</article>
+</div>
+<p class="fx-source-note">For a pretrade map versus post-trade cost split, route realized fill analysis to <a href="why-6z-slippage-hits-harder.html">Why 6Z Slippage Can Hit Harder</a> and actor-identification questions to <a href="6z-algorithmic-behavior.html">6Z Algorithmic Behavior</a>.</p>
+</section>
+<section class="fx-section" id="stale" aria-labelledby="stale-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">A map has an expiration test</p>
+<h2 id="stale-title">Reject the Map When Its State No Longer Matches</h2>
+<p>Recompute on a registered schedule and after material exchange, feed or regime changes. Compare recent spread, depth, trade-size and fill distributions with the reference sample. Do not silently extend a map through a contract migration, a data-vendor change or a structural break.</p>
+</div>
+<ul class="fx-checklist">
+<li>Data end date, timezone, contract and roll policy are visible.</li>
+<li>Recent observations clear minimum sample and completeness gates.</li>
+<li>Current spread and depth remain inside registered distribution bounds.</li>
+<li>Event and holiday periods are separated rather than averaged away.</li>
+<li>Execution results remain consistent with the pretrade capacity model.</li>
+<li>Out-of-distribution conditions produce “unscorable,” not a forced zone.</li>
+</ul>
+<div class="fx-caution">
+<strong>Research status as of August 21, 2026</strong>
+<p>No original result is reported. This page publishes no 6Z spread, depth, queue, volume-profile, fill or slippage finding; it defines the map and its rejection policy, not permanent price zones.</p>
+</div>
+</section>
+<details class="fx-sources">
+<summary>Sources, methods and editorial disclosure &mdash; reviewed August 25, 2026</summary>
+<ul>
+<li>
+<a href="https://www.cmegroup.com/rulebook/CME/" target="_blank" rel="noopener noreferrer">CME Rulebook index</a> and <a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/259/259.pdf" target="_blank" rel="noopener noreferrer">Chapter 259</a> for the 6Z contract identity.</li>
+<li>
+<a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine</a> for official distinctions among historical data products.</li>
+<li>
+<a href="https://www.bis.org/publ/qtrpdf/r_qt2512v.htm" target="_blank" rel="noopener noreferrer">BIS, FX trade execution landscape</a> for market-wide distinctions among execution venues and protocols; it is context, not a 6Z finding.</li>
+<li>
+<a href="https://www.resbank.co.za/en/home/what-we-do/monetary-policy/MPC-announcement-webcasts" target="_blank" rel="noopener noreferrer">South African Reserve Bank MPC announcements</a> for official policy-event timestamps used as candidate regime labels.</li>
+</ul>
+<p>Sources were reviewed August 25, 2026. This unsponsored article separates exchange facts, measurement design and proposed execution use. No original market result is claimed.</p>
+</details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer">
+<strong>Educational and risk disclaimer</strong>
+<p>Use this framework as educational market-structure analysis rather than individualized investing, brokerage or execution direction. Displayed liquidity can vanish, and historical market quality may not persist. Thin or disappearing depth can produce losses beyond the collateral initially posted.</p>
+</aside>
+<!-- ARTICLE BODY END -->
+</article>
 </main>
-
 <footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
+<div class="container footer-inner">
+<div class="footer-book">
+<h3>Books</h3>
+<p>Market structure, risk, and execution frameworks.</p>
+<a href="/books/" class="footer-book-link">View All Books</a>
+</div>
+<div class="footer-links">
+<a href="/about.html">About</a>
+<a href="/disclaimer.html">Disclaimer</a>
+<a href="/privacy.html">Privacy</a>
+<a href="/contact.html">Contact</a>
+</div>
+<p class="footer-copy">&copy; <span id="year">
+</span> Grizzly Parrot Trading. All rights reserved.</p>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</div>
 </footer>
 </body>
 </html>
