@@ -8,17 +8,52 @@ import { countryMatchesFlatRegion, flatShippingConfig, flatShippingSelection } f
 import {
   DigitalDeliveryError,
   digitalDeliveryConfigured,
+  getDigitalDeliveryConfiguration,
   normalizeDigitalBuyerEmail,
+  PROBABILISTIC_DIGITAL_DELIVERY,
+  sendDigitalDelivery,
   sendProbabilisticDigitalDelivery
 } from "./digital-delivery.mjs";
 
 const JSON_HEADERS = { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" };
 const QUOTE_LIFETIME_MS = 30 * 60 * 1000;
-const DIGITAL_PRICE_CENTS = 2900;
 const DIGITAL_CURRENCY = "usd";
 const DIGITAL_EVENT_TYPES = new Set(["checkout.session.completed", "checkout.session.async_payment_succeeded"]);
 const DIGITAL_DELIVERY_LEASE_MS = 10 * 60 * 1000;
 const DIGITAL_DELIVERY_RETRY_MS = [15 * 60 * 1000, 60 * 60 * 1000];
+const DIGITAL_OFFERS = Object.freeze([
+  Object.freeze({
+    eventLabel: "currency_market_structure",
+    priceCents: 2900,
+    paymentLinkEnv: "STRIPE_PAYMENT_LINK_CURRENCY_DIGITAL"
+  }),
+  Object.freeze({
+    eventLabel: "metals_market_structure",
+    priceCents: 2900,
+    paymentLinkEnv: "STRIPE_PAYMENT_LINK_METALS_DIGITAL"
+  }),
+  Object.freeze({
+    eventLabel: "equity_market_structure",
+    priceCents: 2900,
+    paymentLinkEnv: "STRIPE_PAYMENT_LINK_EQUITY_DIGITAL"
+  }),
+  Object.freeze({
+    slug: "probabilistic-execution",
+    eventLabel: "probabilistic_execution",
+    priceCents: 2900,
+    paymentLinkEnv: "STRIPE_PAYMENT_LINK_PROBABILISTIC_DIGITAL",
+    checkoutUrlEnv: "STRIPE_CHECKOUT_URL_PROBABILISTIC_DIGITAL",
+    salesEnabledEnv: "PROBABILISTIC_EXECUTION_DIGITAL_SALES_ENABLED"
+  }),
+  Object.freeze({
+    slug: "market-structure-trilogy",
+    eventLabel: "market_structure_trilogy",
+    priceCents: 6900,
+    paymentLinkEnv: "STRIPE_PAYMENT_LINK_MARKET_STRUCTURE_TRILOGY_DIGITAL",
+    checkoutUrlEnv: "STRIPE_CHECKOUT_URL_MARKET_STRUCTURE_TRILOGY_DIGITAL",
+    salesEnabledEnv: "MARKET_STRUCTURE_TRILOGY_DIGITAL_SALES_ENABLED"
+  })
+]);
 
 function nowIso() { return new Date().toISOString(); }
 
@@ -145,18 +180,16 @@ function cors(request, env) {
 }
 
 function digitalPaymentLinks(env) {
-  return new Map([
-    [env.STRIPE_PAYMENT_LINK_CURRENCY_DIGITAL, "currency_market_structure"],
-    [env.STRIPE_PAYMENT_LINK_METALS_DIGITAL, "metals_market_structure"],
-    [env.STRIPE_PAYMENT_LINK_EQUITY_DIGITAL, "equity_market_structure"],
-    [env.STRIPE_PAYMENT_LINK_PROBABILISTIC_DIGITAL, "probabilistic_execution"]
-  ].filter(([paymentLinkId]) => typeof paymentLinkId === "string" && paymentLinkId.startsWith("plink_")));
+  return new Map(DIGITAL_OFFERS
+    .map((offer) => [env[offer.paymentLinkEnv], offer])
+    .filter(([paymentLinkId]) => typeof paymentLinkId === "string" && paymentLinkId.startsWith("plink_")));
 }
 
 function digitalCheckoutConfig(slug, env) {
-  if (slug !== "probabilistic-execution") return null;
-  const paymentLinkId = env.STRIPE_PAYMENT_LINK_PROBABILISTIC_DIGITAL;
-  const checkoutUrl = env.STRIPE_CHECKOUT_URL_PROBABILISTIC_DIGITAL;
+  const offer = DIGITAL_OFFERS.find((candidate) => candidate.slug === slug && candidate.checkoutUrlEnv);
+  if (!offer) return null;
+  const paymentLinkId = env[offer.paymentLinkEnv];
+  const checkoutUrl = env[offer.checkoutUrlEnv];
   const validPaymentLinkId = typeof paymentLinkId === "string"
     && /^plink_[A-Za-z0-9]{8,}$/.test(paymentLinkId)
     && !/(?:test|example|placeholder|dummy)/i.test(paymentLinkId);
@@ -164,25 +197,28 @@ function digitalCheckoutConfig(slug, env) {
   try {
     const parsed = new URL(checkoutUrl);
     validCheckoutUrl = parsed.protocol === "https:"
-      && parsed.hostname === "buy.stripe.com"
+      && ["buy.stripe.com", "book.stripe.com"].includes(parsed.hostname)
       && parsed.pathname.length > 6
       && !/(?:test|example|placeholder|dummy)/i.test(parsed.pathname);
   } catch { /* An absent or malformed URL must remain unavailable. */ }
-  const enabled = env.PROBABILISTIC_EXECUTION_DIGITAL_SALES_ENABLED === "true"
-    && digitalDeliveryConfigured(env)
+  const deliveryConfiguration = getDigitalDeliveryConfiguration(offer.eventLabel);
+  const enabled = env[offer.salesEnabledEnv] === "true"
+    && Boolean(deliveryConfiguration)
+    && digitalDeliveryConfigured(env, deliveryConfiguration)
     && validPaymentLinkId
     && validCheckoutUrl;
-  return { enabled, checkoutUrl: enabled ? checkoutUrl : null, priceCents: DIGITAL_PRICE_CENTS };
+  return { enabled, checkoutUrl: enabled ? checkoutUrl : null, priceCents: offer.priceCents };
 }
 
 function digitalPurchaseFromSession(session, env) {
   if (!session || session.payment_status !== "paid") return null;
   if (session.mode && session.mode !== "payment") return null;
-  if (session.amount_total !== DIGITAL_PRICE_CENTS || String(session.currency || "").toLowerCase() !== DIGITAL_CURRENCY) return null;
+  if (String(session.currency || "").toLowerCase() !== DIGITAL_CURRENCY) return null;
   const paymentLinkId = typeof session.payment_link === "string" ? session.payment_link : session.payment_link?.id;
-  const eventLabel = digitalPaymentLinks(env).get(paymentLinkId);
-  if (!eventLabel || typeof session.id !== "string" || !/^cs_(?:live|test)_/.test(session.id)) return null;
-  return { stripeSessionId: session.id, stripePaymentLinkId: paymentLinkId, eventLabel };
+  const offer = digitalPaymentLinks(env).get(paymentLinkId);
+  if (!offer || session.amount_total !== offer.priceCents) return null;
+  if (typeof session.id !== "string" || !/^cs_(?:live|test)_/.test(session.id)) return null;
+  return { stripeSessionId: session.id, stripePaymentLinkId: paymentLinkId, eventLabel: offer.eventLabel };
 }
 
 async function parseJson(request) {
@@ -322,9 +358,17 @@ async function notifyAdmin(env, subject, html) {
   catch (error) { log("admin_email_failed", { message: error.message }); }
 }
 
-async function attemptProbabilisticDigitalDelivery(store, env, sessionId, {
-  send = sendProbabilisticDigitalDelivery
+async function attemptDigitalDelivery(store, env, sessionId, {
+  send = sendDigitalDelivery,
+  configuration = null
 } = {}) {
+  if (!configuration) {
+    const purchase = await store.digitalPurchase(sessionId);
+    configuration = getDigitalDeliveryConfiguration(purchase?.event_label);
+  }
+  if (!configuration) {
+    throw new DigitalDeliveryError("digital_delivery_configuration_missing", "The verified purchase has no delivery configuration.");
+  }
   const startedAt = nowIso();
   const leaseExpiresAt = new Date(Date.parse(startedAt) + DIGITAL_DELIVERY_LEASE_MS).toISOString();
   const claimed = await store.claimDigitalDelivery(sessionId, startedAt, leaseExpiresAt);
@@ -333,7 +377,7 @@ async function attemptProbabilisticDigitalDelivery(store, env, sessionId, {
     return { state: existing?.status || "not_queued", attempted: false };
   }
   try {
-    const sent = await send(env, claimed);
+    const sent = await send(env, claimed, { configuration });
     const completedAt = nowIso();
     await store.markDigitalDeliverySent(sessionId, sent.messageId, completedAt);
     log("digital_delivery_sent", { sessionId, provider: sent.provider, attempts: claimed.attempts });
@@ -360,12 +404,20 @@ async function attemptProbabilisticDigitalDelivery(store, env, sessionId, {
     if (state === "manual_review") {
       await notifyAdmin(
         env,
-        "Probabilistic Execution digital delivery needs review",
+        `${configuration.title} digital delivery needs review`,
         `<p>Stripe session: ${escapeHtml(sessionId)}</p><p>Reason: ${escapeHtml(deliveryError.code)}</p>`
       );
     }
     return { state, attempted: true, code: deliveryError.code, nextAttemptAt };
   }
+}
+
+async function attemptProbabilisticDigitalDelivery(store, env, sessionId, options = {}) {
+  return attemptDigitalDelivery(store, env, sessionId, {
+    ...options,
+    send: options.send || sendProbabilisticDigitalDelivery,
+    configuration: options.configuration || PROBABILISTIC_DIGITAL_DELIVERY
+  });
 }
 
 async function retryDigitalDeliveries(store, env) {
@@ -380,14 +432,14 @@ async function retryDigitalDeliveries(store, env) {
     log("digital_delivery_lease_expired", { sessionId: delivery.stripe_session_id });
     await notifyAdmin(
       env,
-      "Probabilistic Execution digital delivery needs review",
+      "Digital delivery needs review",
       `<p>Stripe session: ${escapeHtml(delivery.stripe_session_id)}</p><p>Reason: digital_delivery_lease_expired</p>`
     );
   }
 
   const due = await store.digitalDeliveriesDue(scanAt);
   for (const delivery of due) {
-    try { await attemptProbabilisticDigitalDelivery(store, env, delivery.stripe_session_id); }
+    try { await attemptDigitalDelivery(store, env, delivery.stripe_session_id); }
     catch (error) {
       log("digital_delivery_retry_crashed", {
         sessionId: delivery.stripe_session_id,
@@ -603,7 +655,7 @@ async function submitPaidOrder(store, env, sessionId) {
 
 async function stripeWebhook(request, env, {
   storeFactory = (db) => new OrderStore(db),
-  sendDigital = sendProbabilisticDigitalDelivery
+  sendDigital = sendDigitalDelivery
 } = {}) {
   let event;
   try { event = await parseVerifiedStripeEvent(request, env.STRIPE_WEBHOOK_SECRET); }
@@ -625,7 +677,8 @@ async function stripeWebhook(request, env, {
       sessionId: session.id,
       eventLabel: digitalPurchase.eventLabel
     });
-    if (digitalPurchase.eventLabel === "probabilistic_execution") {
+    const deliveryConfiguration = getDigitalDeliveryConfiguration(digitalPurchase.eventLabel);
+    if (deliveryConfiguration) {
       const buyerEmail = normalizeDigitalBuyerEmail(session);
       await store.ensureDigitalDelivery(
         session.id,
@@ -636,12 +689,15 @@ async function stripeWebhook(request, env, {
       if (!buyerEmail) {
         await notifyAdmin(
           env,
-          "Probabilistic Execution payment is missing a delivery email",
+          `${deliveryConfiguration.title} payment is missing a delivery email`,
           `<p>Stripe session: ${escapeHtml(session.id)}</p><p>Delivery requires manual review.</p>`
         );
         return json({ ok: true, digitalPurchase: true, duplicate: !inserted, deliveryState: "manual_review" });
       }
-      const delivery = await attemptProbabilisticDigitalDelivery(store, env, session.id, { send: sendDigital });
+      const delivery = await attemptDigitalDelivery(store, env, session.id, {
+        send: sendDigital,
+        configuration: deliveryConfiguration
+      });
       return json({
         ok: true,
         digitalPurchase: true,
@@ -750,7 +806,7 @@ async function claimDigitalConversion(request, env) {
     ok: true,
     track: true,
     eventLabel: result.purchase.event_label,
-    value: DIGITAL_PRICE_CENTS / 100,
+    value: result.purchase.amount_total / 100,
     currency: DIGITAL_CURRENCY.toUpperCase()
   }, 200, cors(request, env));
 }
@@ -862,7 +918,14 @@ export default {
         privateOrderEnabled: env.PAPERBACK_PRIVATE_ORDER_ENABLED === "true",
         environment: env.PAPERBACK_ENVIRONMENT,
         readiness: productionReadiness(env),
-        probabilisticDigitalDeliveryReady: digitalDeliveryConfigured(env)
+        probabilisticDigitalDeliveryReady: digitalDeliveryConfigured(
+          env,
+          getDigitalDeliveryConfiguration("probabilistic_execution")
+        ),
+        marketStructureTrilogyDigitalDeliveryReady: digitalDeliveryConfigured(
+          env,
+          getDigitalDeliveryConfiguration("market_structure_trilogy")
+        )
       };
       const configuredFlatShipping = flatShippingConfig(env);
       if (configuredFlatShipping.enabled) {
@@ -925,6 +988,7 @@ export default {
 };
 
 export {
+  attemptDigitalDelivery,
   attemptProbabilisticDigitalDelivery,
   createQuote,
   createCheckout,

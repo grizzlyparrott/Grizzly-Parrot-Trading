@@ -332,7 +332,7 @@ def validate_book_pages(
         audit.require(parser.canonicals == [base], f"{slug}: canonical URL is wrong")
         audit.require(set(parser.data_editions) == {"digital", "paperback", "hardcover"}, f"{slug}: landing page must expose all three edition selectors")
         audit.require(len(parser.data_editions) == 3, f"{slug}: edition selector values must be unique")
-        audit.require(any("20260811-google-books" in href for href in parser.stylesheets), f"{slug}: updated shared stylesheet is not cache-busted")
+        audit.require(any("20260825-trilogy" in href for href in parser.stylesheets), f"{slug}: updated shared stylesheet is not cache-busted")
         audit.require("new URLSearchParams(window.location.search).get('edition')" in source, f"{slug}: edition query selection is missing")
         audit.require("aria-current" in source and "is-selected" in source, f"{slug}: selected edition needs visible and accessible state")
         audit.require("buy.stripe.com" not in json.dumps(documents) and "book.stripe.com" not in json.dumps(documents), f"{slug}: structured data must use the product landing page, not checkout")

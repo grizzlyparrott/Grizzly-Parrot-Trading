@@ -497,6 +497,47 @@ h2 {
   gap: 14px;
 }
 
+.series-bundle-offer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 22px;
+  align-items: center;
+  margin-top: 18px;
+  padding: 22px 24px;
+  border: 1px solid rgba(196, 165, 97, .46);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 92% 12%, rgba(60,255,145,.12), transparent 15rem),
+    linear-gradient(145deg, rgba(196,165,97,.12), rgba(0,0,0,.24));
+}
+
+.series-bundle-offer h3,
+.series-bundle-offer p { margin: 0; }
+
+.series-bundle-offer h3 {
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+  font-weight: 600;
+}
+
+.series-bundle-offer p {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: .86rem;
+}
+
+.series-bundle-action {
+  min-width: 210px;
+  text-align: center;
+}
+
+.series-bundle-action .button { width: 100%; }
+
+.series-bundle-action p {
+  margin-top: 8px;
+  font-size: .72rem;
+}
+
 .price-box {
   position: relative;
   min-width: 0;
@@ -702,6 +743,8 @@ footer {
 
 @media (max-width: 760px) {
   .edition-options { grid-template-columns: 1fr; }
+  .series-bundle-offer { grid-template-columns: 1fr; }
+  .series-bundle-action { min-width: 0; }
 }
 
 @media (max-width: 768px) {

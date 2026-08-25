@@ -157,7 +157,7 @@
   }
   </script>
 
-  <link rel="stylesheet" href="../market-structure-series.css?v=20260811-google-books">
+  <link rel="stylesheet" href="../market-structure-series.css?v=20260825-trilogy">
   <script src="/uet.js" defer></script>
 </head>
 <body>
@@ -270,7 +270,8 @@
             <li>Flat shipping is $7.49 U.S. or $19.99 international</li>
           </ul>
         </div>
-        <div class="edition-options" aria-label="Available editions">
+        <div class="purchase-options">
+          <div class="edition-options" aria-label="Available editions">
           <div class="price-box" data-edition="digital">
             <span>Digital edition</span>
             <strong>$29</strong>
@@ -298,6 +299,17 @@
             </div>
             <p data-status-hardcover aria-live="polite">Checking secure print checkout&hellip;</p>
           </div>
+          </div>
+          <aside class="series-bundle-offer" aria-label="Market Structure Digital Trilogy offer">
+            <div>
+              <h3>Get the complete Market Structure Digital Trilogy</h3>
+              <p>Currency, Metals, and Equity Market Structure in both PDF and EPUB. Buy all three for $69 instead of $87.</p>
+            </div>
+            <div class="series-bundle-action">
+              <a class="button button-wide button-disabled js-trilogy-buy" href="#purchase" aria-disabled="true">Get all three &mdash; $69</a>
+              <p class="js-trilogy-status" aria-live="polite">Checking secure digital checkout&hellip;</p>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
@@ -323,6 +335,7 @@
   </footer>
 
   <script src="../print-checkout.js?v=20260825-flat-shipping"></script>
+  <script src="../digital-checkout.js?v=20260825-trilogy"></script>
   <script>
     (function () {
       var checkoutUrl = "https://book.stripe.com/9B6dRacOh206apG6eY2Nq03";
@@ -372,6 +385,15 @@
           {edition: 'paperback', buttonSelector: '.js-paperback-buy', priceSelector: '[data-price-paperback]', statusSelector: '[data-status-paperback]'},
           {edition: 'hardcover', buttonSelector: '.js-hardcover-buy', priceSelector: '[data-price-hardcover]', statusSelector: '[data-status-hardcover]'}
         ]
+      });
+      GrizzlyDigitalCheckout.init({
+        apiBaseUrl: 'https://grizzly-parrot-paperback.grizzlyparrott04.workers.dev',
+        bookSlug: 'market-structure-trilogy',
+        buttonSelector: '.js-trilogy-buy',
+        statusSelector: '.js-trilogy-status',
+        expectedPriceCents: 6900,
+        readyMessage: 'Six files delivered by email. No shipping.',
+        analyticsLabel: 'Market Structure Digital Trilogy'
       });
 
       if (!checkoutUrl) {
