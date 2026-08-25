@@ -1,343 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SARB Rates and Their Impact on 6Z</title>
-  <meta name="description" content="A full, technical breakdown of how the South African Reserve Bank’s interest rate policy drives 6Z futures, impacts liquidity, and shapes directional bias.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/sarb-rates-impact-6z.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="SARB Rates and Their Impact on 6Z">
-  <meta property="og:description" content="A full, technical breakdown of how the South African Reserve Bank’s interest rate policy drives 6Z futures, impacts liquidity, and shapes directional bias.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/sarb-rates-impact-6z.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="SARB Rates and Their Impact on 6Z">
-  <meta name="twitter:description" content="A full, technical breakdown of how the South African Reserve Bank’s interest rate policy drives 6Z futures, impacts liquidity, and shapes directional bias.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "SARB Rates and Their Impact on 6Z",
-  "description": "A full, technical breakdown of how the South African Reserve Bank’s interest rate policy drives 6Z futures, impacts liquidity, and shapes directional bias.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/sarb-rates-impact-6z.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/sarb-rates-impact-6z.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "SARB Rates and Their Impact on 6Z",
-      "item": "https://grizzlyparrottrading.com/futures-basics/sarb-rates-impact-6z.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+  <meta charset="UTF-8"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How SARB Rate Decisions Affect 6Z Futures</title>
+  <meta name="description" content="Interpret SARB decisions through the market prior, complete policy package, relative curves, carry, confirmation and failure cases instead of a fixed hike-or-cut rule.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/sarb-rates-impact-6z.html">
+  <meta property="og:title" content="How SARB Rate Decisions Affect 6Z Futures"><meta property="og:description" content="Interpret SARB decisions through the market prior, complete policy package, relative curves, carry, confirmation and failure cases instead of a fixed hike-or-cut rule."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/sarb-rates-impact-6z.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-28"><meta property="article:modified_time" content="2026-08-25">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How SARB Rate Decisions Affect 6Z Futures"><meta name="twitter:description" content="Interpret SARB decisions through the market prior, complete policy package, relative curves, carry, confirmation and failure cases instead of a fixed hike-or-cut rule."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How SARB Rate Decisions Affect 6Z Futures","description":"Interpret SARB decisions through the market prior, complete policy package, relative curves, carry, confirmation and failure cases instead of a fixed hike-or-cut rule.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/sarb-rates-impact-6z.html"},"datePublished":"2025-11-28","dateModified":"2026-08-25","url":"https://grizzlyparrottrading.com/futures-basics/sarb-rates-impact-6z.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"How SARB Rate Decisions Affect 6Z Futures","item":"https://grizzlyparrottrading.com/futures-basics/sarb-rates-impact-6z.html"}]}</script><script src="/uet.js" defer></script>
 </head>
-<body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<body><a class="fx-skip-link" href="#main-content">Skip to article content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
 <!-- ARTICLE BODY START -->
+<header class="fx-hero"><div class="fx-hero-copy"><p class="fx-kicker">Event mechanism &middot; prior versus package &middot; relative rates</p><h1>How SARB Rate Decisions Affect 6Z Futures</h1><p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 25, 2026</p><p class="fx-hero-lede">The policy rate can match consensus and 6Z can still move sharply. The vote, forecast, risk balance, target interpretation or expected path may differ from what was priced. The usable question is not “hike or cut?” but “what changed relative to the prior, and did the relative curve confirm it?”</p><div class="fx-hero-actions"><a class="button-primary" href="#prior">Freeze the prior</a><a class="fx-text-link" href="#failure">See failure cases</a></div></div><aside class="fx-market-board" aria-label="SARB event interpretation"><div class="fx-board-head"><span>Event equation</span><strong>Surprise, not label</strong></div><div class="fx-proof"><strong>Decision</strong><span>Rate plus vote and language</span></div><div class="fx-proof"><strong>Market prior</strong><span>What was already priced</span></div><div class="fx-proof"><strong>6Z response</strong><span>Conditional net outcome</span></div><p class="fx-board-foot">6Z higher means ZAR stronger versus USD</p></aside></header>
 
-<h1>SARB Rates and Their Impact on 6Z</h1>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#prior">Prior</a><a href="#package">Package</a><a href="#curves">Curves</a><a href="#forces">Competing forces</a><a href="#confirm">Confirm</a><a href="#failure">Failures</a></nav>
 
-<p>6Z reacts aggressively to anything the South African Reserve Bank (SARB) does. Sometimes the move is instant; sometimes it bleeds out over days. But the direction is always tied back to rates, inflation expectations, bond yields, and the country’s risk premium. If you don’t understand SARB policy, you don’t understand the Rand—period.</p>
+<section class="fx-section" id="prior" aria-labelledby="prior-title"><div class="fx-section-heading"><p class="fx-kicker">Before the announcement</p><h2 id="prior-title">Archive What the Market Expected</h2><p>An event surprise is measured against a timestamped prior. A rate move that sounds large may be neutral if fully discounted; an unchanged rate may be consequential if the market expected a change.</p></div><div class="fx-trade-card"><h3>Pre-decision record</h3><dl><div><dt>Meeting</dt><dd>Official date, announcement time and source URL.</dd></div><div><dt>Expected decision</dt><dd>Survey distribution and market-implied path, each with timestamp.</dd></div><div><dt>SARB baseline</dt><dd>Previous statement, forecast, risks and vote.</dd></div><div><dt>Fed baseline</dt><dd>Expected U.S. policy path over the same horizon.</dd></div><div><dt>Market state</dt><dd>6Z contract, roll, local/U.S. curves, volatility, spread and depth.</dd></div><div><dt>Collision check</dt><dd>Other scheduled data, fiscal news or global shocks in the window.</dd></div></dl></div></section>
 
-<h2>Why SARB Matters More Than Most Traders Realize</h2>
+<section class="fx-section" id="package" aria-labelledby="package-title"><div class="fx-section-heading"><p class="fx-kicker">Read more than the number</p><h2 id="package-title">The Complete Policy Package Contains Several Surprises</h2><p>SARB&rsquo;s published framework is forward-looking. Policy affects inflation and activity with lags, so the meeting statement and forecast can matter as much as the current setting.</p></div><div class="fx-three-column"><article class="fx-panel"><h3>Rate</h3><p>Decision versus the frozen expectation.</p></article><article class="fx-panel"><h3>Vote</h3><p>Distribution of preferences and change from prior meeting.</p></article><article class="fx-panel"><h3>Forecast</h3><p>Inflation, growth and model-path revisions.</p></article><article class="fx-panel"><h3>Risk balance</h3><p>Which upside or downside risks gained weight.</p></article><article class="fx-panel"><h3>Reaction function</h3><p>How incoming information may change future decisions.</p></article><article class="fx-panel"><h3>Press conference</h3><p>Answers that clarify or qualify the statement.</p></article></div><div class="fx-caution"><strong>No mechanical sign.</strong><p>A hike can coincide with a falling 6Z if it was smaller than priced, signals growth or inflation stress, or is overwhelmed by the dollar. A cut can coincide with a rising 6Z if it is smaller than expected or improves confidence without unanchoring inflation expectations.</p></div></section>
 
-<p>The Rand is an emerging-market currency. That means it relies heavily on global capital coming in and out of South African assets—mostly bonds. SARB’s interest rate decisions change the risk/return equation for holding those assets, which impacts the Rand directly.</p>
+<section class="fx-section" id="curves" aria-labelledby="curves-title"><div class="fx-section-heading"><p class="fx-kicker">Relative path and carry</p><h2 id="curves-title">Compare Curves, Not Just Policy-Rate Levels</h2><p>Futures pricing reflects expected conditions through time. The current SARB-Fed rate gap is not the expected return on a currency trade, and nominal carry is not free yield.</p></div><div class="fx-two-column"><article class="fx-panel"><p class="fx-card-label">Curve channel</p><h3>Expected policy paths</h3><p>Measure changes at declared South African and U.S. maturities. Separate near-term policy repricing from long-end inflation, fiscal and term-premium changes.</p></article><article class="fx-panel"><p class="fx-card-label">Carry channel</p><h3>Forward pricing and risk</h3><p>Interest differentials influence forward points, but spot movement, basis, roll, spreads, slippage and tail losses can exceed the apparent carry.</p></article></div><div class="fx-formula"><strong>Conditional comparison</strong><code>relative path change = SA curve repricing − U.S. curve repricing</code><p>This is a direction-consistent diagnostic, not a forecast coefficient. Choice of tenor and market instrument must be declared before reading the result.</p></div><p class="fx-related">See <a href="how-us-dollar-moves-6z.html">the dollar-channel decomposition</a> for Fed, Treasury and funding distinctions, and <a href="6z-tick-size-and-value.html">the canonical contract guide</a> for 6Z mechanics.</p></section>
 
-<p>Here’s the simplest version of the chain reaction:</p>
+<section class="fx-section" id="forces" aria-labelledby="forces-title"><div class="fx-section-heading"><p class="fx-kicker">The event is not isolated</p><h2 id="forces-title">Competing Forces Can Overrule the Policy Surprise</h2><p>Record them rather than retrofitting the SARB interpretation to the final price.</p></div><div class="fx-reaction-grid"><article><h3>Broad-dollar move</h3><p>A simultaneous U.S. surprise or funding bid can dominate a South African policy signal.</p></article><article><h3>Fiscal repricing</h3><p>Debt, borrowing or contingent-liability news can change long yields and currency risk premia independently.</p></article><article><h3>Commodity or energy shock</h3><p>Export and import prices can alter the inflation, trade and growth outlook in opposing ways.</p></article><article><h3>Liquidity shock</h3><p>Thin depth can amplify the first orders and later reverse, producing price movement without durable macro confirmation.</p></article></div></section>
 
-<p><strong>Higher SARB rates → More attractive SA yields → Stronger Rand → Higher 6Z</strong></p>
+<section class="fx-section" id="confirm" aria-labelledby="confirm-title"><div class="fx-section-heading"><p class="fx-kicker">Event-window workflow</p><h2 id="confirm-title">Demand Confirmation in Sequence</h2><p>Use UTC or exchange time consistently and preserve the first tradable observation, not merely the release stamp.</p></div><div class="fx-contract-path"><article><h3>1. Parse package</h3><p>Compare rate, vote, forecast and language with the archived prior.</p></article><article><h3>2. Read curves</h3><p>Observe the South African path and relevant U.S. path at matched timestamps.</p></article><article><h3>3. Read currencies</h3><p>Compare 6Z, USD/ZAR and non-USD ZAR crosses to separate rand and dollar components.</p></article><article><h3>4. Gate execution</h3><p>Reject if spread, depth, slippage, gap risk or data integrity violates frozen limits.</p></article></div></section>
 
-<p><strong>Lower SARB rates → Less attractive yields → Weaker Rand → Lower 6Z</strong></p>
+<section class="fx-section" id="failure" aria-labelledby="failure-title"><div class="fx-section-heading"><p class="fx-kicker">When the interpretation fails</p><h2 id="failure-title">Downgrade or Reject the Event Claim</h2></div><div class="fx-falsification-tree"><article><p class="fx-card-label">Prior failure</p><h3>Surprise is unknown</h3><ul><li>No timestamped expectation</li><li>Forecast revision ignored</li><li>Vote not captured</li><li>Later commentary substituted</li></ul></article><article><p class="fx-card-label">Mechanism failure</p><h3>Curves do not confirm</h3><ul><li>Relative path moves opposite</li><li>Broad USD explains more</li><li>Local risk measure leads</li><li>Quote direction is inverted</li></ul></article><article><p class="fx-card-label">Execution failure</p><h3>Response is not tradable</h3><ul><li>Spread exceeds cap</li><li>Depth vanishes</li><li>Move precedes arrival</li><li>Costs erase edge</li></ul></article></div><div class="fx-caution"><strong>One meeting proves no rule.</strong><p>This page reports no event-study average, win rate or statement that hikes strengthen 6Z and cuts weaken it. Any repeated effect needs a frozen sample, surprise measure, regime controls and out-of-sample test.</p></div></section>
 
-<p>If this feels like textbook FX mechanics, it is—but the Rand magnifies it. Because South Africa isn’t a major reserve currency economy, the impact of rate decisions is far more violent than what you’d see in EUR, JPY, or GBP.</p>
+<section class="fx-section" aria-labelledby="journal-title"><div class="fx-section-heading"><p class="fx-kicker">Decision journal</p><h2 id="journal-title">Preserve the First Interpretation and Every Later Revision</h2><p>Policy-event analysis becomes unreliable when the final narrative silently replaces what was knowable at the time. A decision journal keeps contemporaneous facts, hypotheses and later evidence in separate fields.</p></div><div class="fx-trade-card"><h3>SARB event audit</h3><dl><div><dt>T minus 30 minutes</dt><dd>Freeze the expected rate, path, vote distribution, 6Z contract, curves, spreads, depth and all known event collisions.</dd></div><div><dt>Release received</dt><dd>Store the official source, receipt timestamp and complete package. Mark missing fields; do not fill them from a news summary.</dd></div><div><dt>First tradable response</dt><dd>Record bid, ask, trades and intended-size depth alongside South African and U.S. curve changes.</dd></div><div><dt>Initial hypothesis</dt><dd>State the expected transmission, strongest rival and exact observation that would falsify the label.</dd></div><div><dt>Later evidence</dt><dd>Add press-conference clarification, revisions and later market response without overwriting the initial record.</dd></div><div><dt>Final classification</dt><dd>Supported, mixed, unresolved or excluded. A profitable trade does not upgrade weak causal evidence.</dd></div></dl></div>
+<div class="fx-two-column"><article class="fx-panel"><p class="fx-card-label">Example A</p><h3>A hike smaller than priced</h3><p>The headline says “hike,” yet the expected path may shift downward. If the local curve confirms that repricing and 6Z falls, the response is directionally coherent with disappointment, not evidence that hikes weaken the rand.</p></article><article class="fx-panel"><p class="fx-card-label">Example B</p><h3>A hold with firmer guidance</h3><p>The headline says “unchanged,” yet vote, forecast and language may move the expected path upward. If 6Z rises, the package may explain the response; broad-dollar and fiscal rivals still require testing.</p></article></div><div class="fx-caution"><strong>Event direction remains conditional.</strong><p>These examples demonstrate expectation-relative logic. They are not historical reconstructions, forecasts or claims that the same package will produce the same sign in another liquidity, inflation or global-risk regime.</p></div></section>
 
-<h2>Understanding SARB’s Mandate (This Shapes Every Decision)</h2>
-
-<p>SARB’s official mandate is price stability. That means managing inflation inside a target band (typically around 3%–6%). But unlike the Fed or ECB, SARB also has to deal with structural issues like:</p>
-
-<ul>
-  <li>Energy crises / Eskom instability</li>
-  <li>Commodity dependency</li>
-  <li>Volatile foreign investment flows</li>
-  <li>Sensitivity to global risk sentiment</li>
-  <li>High unemployment</li>
-</ul>
-
-<p>This means SARB rate decisions are often “defensive.” When inflation rises—or when the Rand gets crushed—they raise rates to prevent capital flight and stabilize the currency.</p>
-
-<h2>Why SARB Often Runs Higher Rates Than Developed Markets</h2>
-
-<p>South Africa frequently keeps rates significantly higher than the U.S. or Europe. That’s not by choice. It’s a necessity to attract capital. Investors demand higher yields to compensate for:</p>
-
-<ul>
-  <li>Higher inflation risk</li>
-  <li>Political risk</li>
-  <li>Credit risk</li>
-  <li>Lower liquidity</li>
-</ul>
-
-<p>This is called the **risk premium**. If SARB drops rates too low relative to developed-market yields, capital flees the country fast—and the Rand plummets.</p>
-
-<h2>How SARB Rate Hikes Impact 6Z</h2>
-
-<p>Rate hikes almost always strengthen the Rand unless U.S. dollar strength overwhelms it. When SARB hikes:</p>
-
-<ul>
-  <li>South African bond yields rise</li>
-  <li>Carry traders rotate into ZAR positions</li>
-  <li>Foreign investment flows improve</li>
-  <li>Inflation expectations stabilize</li>
-</ul>
-
-<p>All of this pushes 6Z upward. The reaction can be immediate or staggered over hours, depending on whether the hike was expected or a surprise.</p>
-
-<h3>Expected vs Unexpected Hikes</h3>
-
-<table>
-<tr><th>Hike Type</th><th>Reaction in 6Z</th></tr>
-<tr><td>Expected</td><td>Small rally or muted reaction</td></tr>
-<tr><td>Surprise hike</td><td>Explosive spike upward</td></tr>
-</table>
-
-<p>The Rand likes being “rewarded” with high yields.</p>
-
-<h2>How Rate Cuts Impact 6Z</h2>
-
-<p>Rate cuts almost always weaken the Rand unless global risk-on sentiment or USD weakness masks the effect. When SARB cuts:</p>
-
-<ul>
-  <li>South African yields drop</li>
-  <li>Carry traders exit</li>
-  <li>Foreign capital leaves the country</li>
-  <li>The Rand sells off sharply</li>
-</ul>
-
-<p>This pushes 6Z lower—sometimes violently. South Africa is one of the most yield-sensitive economies on Earth, and a cut signals vulnerability unless inflation is collapsing.</p>
-
-<h2>The Timing of SARB Announcements and 6Z Behavior</h2>
-
-<p>SARB rate announcements occur during South African business hours. That typically lines up with London activity and thin-to-medium CME liquidity. As a result:</p>
-
-<ul>
-  <li>The initial reaction in 6Z is usually sharp</li>
-  <li>You may get 10–20 tick jumps instantly</li>
-  <li>Liquidity can vanish around the announcement</li>
-  <li>Spreads widen</li>
-</ul>
-
-<p>You cannot trade this event casually. It’s a volatility event on par with U.S. NFP for the Rand.</p>
-
-<h2>Forward Guidance: The Part Traders Ignore</h2>
-
-<p>SARB’s rate statement is as important as the decision itself. They almost always comment on:</p>
-
-<ul>
-  <li>Inflation trajectory</li>
-  <li>Growth outlook</li>
-  <li>External financial conditions</li>
-  <li>Rand volatility</li>
-  <li>Risks to the outlook</li>
-</ul>
-
-<p>If the statement suggests more hikes, the Rand usually strengthens. If the tone softens, the Rand weakens—even if the rate itself didn’t change.</p>
-
-<h2>How SARB Interacts With the U.S. Fed</h2>
-
-<p>SARB does not operate in isolation. Its choices are heavily influenced by Fed policy. When the Fed hikes rates aggressively:</p>
-
-<ul>
-  <li>SARB is forced to hike to defend the Rand</li>
-  <li>Capital outflows accelerate when they don’t</li>
-  <li>ZAR becomes extremely volatile</li>
-</ul>
-
-<p>This is why USD behavior (covered in <a href="https://grizzlyparrottrading.com/futures-basics/how-us-dollar-moves-6z.html">How USD Strength Impacts 6Z</a>) and SARB rates are inseparable.</p>
-
-<h2>Carry Trade Dynamics in 6Z</h2>
-
-<p>6Z is a prime carry-trade currency pair when SARB rates are high. Traders borrow in low-yield currencies (JPY, CHF, EUR) and buy ZAR to capture the yield differential.</p>
-
-<p>Carry flows boost ZAR strength—and 6Z rallies—when:</p>
-
-<ul>
-  <li>Volatility is low</li>
-  <li>Risk sentiment is stable</li>
-  <li>Yields are attractive</li>
-</ul>
-
-<p>But carry unwinds are brutal. When global volatility spikes, carry traders rush for the exits, dumping ZAR in size. That’s when 6Z collapses fast and hard.</p>
-
-<h2>Inflation’s Role in SARB Rate Policy</h2>
-
-<p>SARB watches inflation more obsessively than most central banks because high inflation feeds political and economic instability in South Africa. When inflation is high:</p>
-
-<ul>
-  <li>Hike probability increases</li>
-  <li>SARB’s tone becomes more hawkish</li>
-  <li>Market starts pricing in stronger Rand</li>
-</ul>
-
-<p>When inflation falls:</p>
-
-<ul>
-  <li>Rate cuts become possible</li>
-  <li>ZAR gets vulnerable</li>
-  <li>Foreign investors lighten up on SA bonds</li>
-</ul>
-
-<h2>How to Trade 6Z Around SARB Decisions</h2>
-
-<p>Here’s the practical, no-bullshit playbook:</p>
-
-<h3>1. Always know SARB meeting dates.</h3>
-<p>If you don’t, you’re gambling.</p>
-
-<h3>2. Watch forward guidance, not just the rate change.</h3>
-<p>The tone often matters more than the number.</p>
-
-<h3>3. Expect volatility</h3>
-<p>Slippage, gaps, and thin order books are normal during these events.</p>
-
-<h3>4. Pair SARB outlook with USD conditions</h3>
-<p>The strongest moves come when both central banks align (hawk/hawk or dove/dove).</p>
-
-<h3>5. Never size full risk during the announcement candle.</h3>
-<p>6Z will rip through stops like they aren’t even there.</p>
-
-<div class="highlight-box green">
-  <h3>SARB Policy Anchors the Rand</h3>
-  <p>Rate hikes strengthen it. Cuts weaken it. Guidance alone can move the market. Long-term trends in 6Z often trace back to SARB direction — layered with USD flow, global risk sentiment, and commodity cycles. That’s the macro engine under every move.</p>
-</div>
-
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 25, 2026</summary><ul>
+<li><a href="https://www.resbank.co.za/en/home/what-we-do/monetary-policy" target="_blank" rel="noopener noreferrer">SARB monetary-policy framework</a> for target, committee and transmission mechanics.</li>
+<li><a href="https://www.resbank.co.za/en/home/publications/statements/mpc-statements" target="_blank" rel="noopener noreferrer">SARB MPC statement archive</a> and <a href="https://www.resbank.co.za/content/dam/sarb/publications/reviews/monetary-policy-review/2026/april.pdf" target="_blank" rel="noopener noreferrer">April 2026 Monetary Policy Review</a>.</li>
+<li><a href="https://www.statssa.gov.za/?page_id=1854&amp;PPN=P0141" target="_blank" rel="noopener noreferrer">Statistics South Africa CPI releases</a>.</li>
+<li><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">Federal Reserve FOMC calendars and materials</a> for the U.S. relative-policy leg.</li>
+<li><a href="https://www.cmegroup.com/markets/fx/emerging-market/south-african-rand.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME South African rand futures specifications</a>.</li>
+</ul><p>Sources were reviewed August 25, 2026. This unsponsored event framework separates official facts, priors, conditional mechanisms and execution gates. It reports no original event study, forecast or profitability result.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This is general policy-event education, not a personal recommendation or a substitute for investment, legal, tax, hedge, broker or order guidance. Announcements can gap through orders, interpretations can fail, and a leveraged loss can exceed the funds posted. Recheck the official package and live book independently.</p></aside>
 <!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
-</body>
-</html>
+</article></main><footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

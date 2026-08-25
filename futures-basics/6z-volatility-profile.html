@@ -1,315 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6Z Volatility Profile Guide</title>
-  <meta name="description" content="A detailed breakdown of 6Z volatility—ATR behavior, average swing size, session ranges, liquidity shifts, and risk management tactics for emerging-market FX futures.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6z-volatility-profile.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="6Z Volatility Profile Guide">
-  <meta property="og:description" content="A detailed breakdown of 6Z volatility—ATR behavior, average swing size, session ranges, liquidity shifts, and risk management tactics for emerging-market FX futures.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6z-volatility-profile.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="6Z Volatility Profile Guide">
-  <meta name="twitter:description" content="A detailed breakdown of 6Z volatility—ATR behavior, average swing size, session ranges, liquidity shifts, and risk management tactics for emerging-market FX futures.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "6Z Volatility Profile Guide",
-  "description": "A detailed breakdown of 6Z volatility—ATR behavior, average swing size, session ranges, liquidity shifts, and risk management tactics for emerging-market FX futures.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/6z-volatility-profile.html",
-  "datePublished": "2025-11-28",
-  "dateModified": "2025-11-28",
-  "url": "https://grizzlyparrottrading.com/futures-basics/6z-volatility-profile.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6Z Volatility Profile: Measure State, Jumps and Liquidity Separately</title>
+<meta name="description" content="A measurable 6Z volatility-state framework separating returns, jumps, liquidity stress, official events and contract lifecycle without invented statistics.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/6z-volatility-profile.html">
+<meta property="og:title" content="6Z Volatility Profile: Measure State, Jumps and Liquidity Separately">
+<meta property="og:description" content="A measurable 6Z volatility-state framework separating returns, jumps, liquidity stress, official events and contract lifecycle without invented statistics.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/6z-volatility-profile.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta property="og:image:alt" content="Grizzly Parrot Trading">
+<meta property="article:published_time" content="2025-11-28">
+<meta property="article:modified_time" content="2026-08-23">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="6Z Volatility Profile: Measure State, Jumps and Liquidity Separately">
+<meta name="twitter:description" content="A measurable 6Z volatility-state framework separating returns, jumps, liquidity stress, official events and contract lifecycle without invented statistics.">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN">
 </script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "6Z Volatility Profile: ATR, Swing Size & Risk",
-      "item": "https://grizzlyparrottrading.com/futures-basics/6z-volatility-profile.html"
-    }
-  ]
-}
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"6Z Volatility Profile: Measure State, Jumps and Liquidity Separately","description":"A measurable 6Z volatility-state framework separating returns, jumps, liquidity stress, official events and contract lifecycle without invented statistics.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/6z-volatility-profile.html"},"datePublished":"2025-11-28","dateModified":"2026-08-23","url":"https://grizzlyparrottrading.com/futures-basics/6z-volatility-profile.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"6Z Volatility Profile: Measure State, Jumps and Liquidity Separately","item":"https://grizzlyparrottrading.com/futures-basics/6z-volatility-profile.html"}]}</script>
+<script src="/uet.js" defer>
 </script>
-
-  <script src="/uet.js" defer></script>
 </head>
 <body>
-
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-<h1>6Z Volatility Profile: ATR, Swing Size & Risk</h1>
-
-<p>6Z futures are volatile because the South African Rand is an emerging-market currency driven by unstable global flows, thin liquidity, and commodity-linked shocks. If you try to trade 6Z with tight stops or major-pair expectations, you’ll get blown out. You need to understand ATR behavior, session volatility, typical swing size, and what happens when the order book thins out.</p>
-
-<h2>6Z ATR Behavior: High, Lumpy, and Event-Driven</h2>
-
-<p>Average True Range (ATR) in 6Z doesn’t trend smoothly like EUR or JPY. It “steps up” during macro stress and “steps down” only slowly during quiet periods. This pattern comes from EM FX volatility clustering.</p>
-
-<h3>Key observations:</h3>
-<ul>
- <li>ATR expands violently during risk-off shocks</li>
- <li>ATR declines slowly because liquidity takes longer to return</li>
- <li>SARB events cause multi-day ATR expansion</li>
- <li>U.S. data releases trigger ATR spikes even if SA is unaffected</li>
-</ul>
-
-<p>Emerging markets amplify volatility because capital flows are thin. When investors exit EM bonds, the flows hit the currency instantly and aggressively.</p>
-
-<h2>Typical Daily Range of 6Z</h2>
-
-<p>6Z’s daily range usually sits above major FX futures. Example tendencies:</p>
-
-<ul>
- <li>Quiet day: 40–60 ticks</li>
- <li>Normal day: 70–110 ticks</li>
- <li>Volatile day: 120–200 ticks</li>
- <li>Event day: 200–350 ticks</li>
-</ul>
-
-<p>Even “quiet days” in 6Z are a full session’s move in some majors.</p>
-
-<h2>Session Volatility: The Real Structure of 6Z</h2>
-
-<p>Because 6Z trades an emerging-market currency, not a global reserve currency, session volatility is extremely uneven. Each session behaves differently.</p>
-
-<h3>Asia Session: Illiquid & Dangerous</h3>
-
-<ul>
- <li>lowest volume of the day</li>
- <li>spreads widen without warning</li>
- <li>random 10–20 tick spikes from one order</li>
- <li>ATR contribution is tiny unless news drops</li>
-</ul>
-
-<p>If you’re placing stops during Asia, you’re volunteering for slippage.</p>
-
-<h3>London Session: Primary Liquidity Window</h3>
-
-<ul>
- <li>South African banks wake up</li>
- <li>European money managers trade EM FX pairs</li>
- <li>tightest spreads of the day</li>
- <li>major trend legs often begin here</li>
-</ul>
-
-<p>This is the “real market” for 6Z.</p>
-
-<h3>U.S. Session: Volatility Multiplier</h3>
-
-<ul>
- <li>USD flows dominate</li>
- <li>risk sentiment shifts rapidly</li>
- <li>U.S. data can explode 6Z instantly</li>
-</ul>
-
-<p>This is where the largest candlesticks of the day form.</p>
-
-<h2>Average Swing Size in 6Z</h2>
-
-<p>6Z doesn't “drift”—it jumps. Swing sizes reflect the contract’s gamma and liquidity profile.</p>
-
-<table>
-<tr><th>Swing Type</th><th>Typical Size</th><th>Context</th></tr>
-<tr><td>Minor pullback</td><td>8–15 ticks</td><td>During trends</td></tr>
-<tr><td>Medium correction</td><td>20–35 ticks</td><td>Opposing flows</td></tr>
-<tr><td>Major reversal leg</td><td>40–80 ticks</td><td>Shift in global risk</td></tr>
-<tr><td>Event spike</td><td>100–300 ticks</td><td>High-impact U.S. or SARB events</td></tr>
-</table>
-
-<p>These swings explain why 6Z chews through tight stops instantly.</p>
-
-<h2>Volatility Gaps: The 6Z Trademark</h2>
-
-<p>6Z loves to gap through levels, especially:</p>
-
-<ul>
- <li>around SARB announcements</li>
- <li>during U.S. economic reports</li>
- <li>in Asia session</li>
- <li>near Globex reopen</li>
-</ul>
-
-<p>You’ll often see five-tick jumps with no prints in between. This is normal for an EM FX product.</p>
-
-<h2>High-Gamma Behavior: Why 6Z Accelerates</h2>
-
-<p>Gamma describes how fast price responds to buying or selling pressure. EM FX has higher gamma because:</p>
-
-<ul>
- <li>fewer liquidity providers during weaker sessions</li>
- <li>rapid volatility shifts</li>
- <li>thin order books</li>
- <li>heavy reaction to global macro news</li>
-</ul>
-
-<p>This creates “snap” behavior—market moves faster than your eyes can track.</p>
-
-<h2>Volatility Clustering: Why One Big Day Leads to More</h2>
-
-<p>6Z follows a classic volatility clustering pattern:</p>
-
-<ul>
- <li>big moves attract more volatility</li>
- <li>trend days chain together</li>
- <li>event shocks extend for 2–5 days</li>
-</ul>
-
-<p>After a major U.S. CPI or SARB event, don’t expect volatility to die immediately. It bleeds out slowly.</p>
-
-<h2>Risk Management Must Adapt to 6Z Volatility</h2>
-
-<p>You do not treat 6Z like 6E or ES. Your sizing and stops must adapt to swings and potential gaps.</p>
-
-<h3>1. Widen stops to survive the noise</h3>
-<p>Stops under 15 ticks are suicide. Use 25–40+ tick stops in normal volatility.</p>
-
-<h3>2. Reduce size during thin liquidity</h3>
-<p>Asia session, summer trading, holiday weeks—size down or stay flat.</p>
-
-<h3>3. Use ATR-based stop placement</h3>
-<p>Stops should be placed at fractions of ATR (e.g., 0.25 ATR or 0.33 ATR).</p>
-
-<h3>4. Do not chase breakouts</h3>
-<p>Most 6Z breakouts gap immediately and reverse if liquidity is thin.</p>
-
-<h3>5. Use limit orders whenever possible</h3>
-<p>Market orders + EM volatility = you get the worst fill imaginable.</p>
-
-<h3>6. Expect speed during U.S. data</h3>
-<p>Always flatten before major U.S. reports unless you want max risk.</p>
-
-<div class="highlight-box yellow">
-  <h3>6Z Volatility Has a Source — And a Pattern</h3>
-  <p>Big swings in 6Z don’t come out of nowhere. They reflect deeper structures: commodity price shifts, EM capital flow shocks, and global risk turns. Volatility isn’t the exception — it’s the baseline. Trade around it, not through it.</p>
+<div class="container header-inner">
+<div class="logo">
+<a href="/">Grizzly Parrot Trading</a>
 </div>
-
-<!-- ARTICLE BODY END -->
+<nav class="main-nav" aria-label="Primary navigation">
+<ul>
+<li>
+<a href="/futures-basics/">Futures Basics</a>
+</li>
+<li>
+<a href="/metals/">Metals</a>
+</li>
+<li>
+<a href="/energies/">Energies</a>
+</li>
+<li>
+<a href="/currencies/">Currencies</a>
+</li>
+<li>
+<a href="/prop-firm-trading/">Prop Firms</a>
+</li>
+<li>
+<a href="/platforms-tutorials/">Platforms</a>
+</li>
+<li>
+<a href="/market-basics/">Market Basics</a>
+</li>
+<li>
+<a href="/tools/">Tools</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main-content" class="container article-container currency-library">
+<article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+<div class="fx-hero-copy">
+<p class="fx-kicker">Distribution &middot; jumps &middot; liquidity &middot; state card</p>
+<h1>6Z Volatility Profile: Measure State, Jumps and Liquidity Separately</h1>
+<p class="fx-byline">By <a href="../about.html">Kyle Parrott</a>
+<span aria-hidden="true"> &middot; </span>Updated August 23, 2026</p>
+<p class="fx-hero-lede">Two sessions can print the same average true range while presenting different risks. One may move continuously through a two-sided book; the other may be quiet until an event gap crosses several ticks as spreads widen. A 6Z volatility profile must therefore describe the return distribution, jump concentration and executable liquidity&mdash;not reduce the market to a single ATR label.</p>
+<div class="fx-hero-actions">
+<a class="button-primary" href="#measures">Choose the measures</a>
+<a class="fx-text-link" href="#card">Build the state card</a>
+</div>
+<dl class="fx-hero-metrics" aria-label="Volatility state dimensions">
+<div>
+<dt>Range</dt>
+<dd>Path magnitude</dd>
+</div>
+<div>
+<dt>Returns</dt>
+<dd>Distribution</dd>
+</div>
+<div>
+<dt>Jumps</dt>
+<dd>Discontinuity</dd>
+</div>
+<div>
+<dt>Liquidity</dt>
+<dd>Execution stress</dd>
+</div>
+</dl>
+</div>
+<aside class="fx-market-board" aria-label="Same range different market">
+<div class="fx-board-head">
+<span>Equal daily range</span>
+<strong>Unequal execution risk</strong>
+</div>
+<div class="fx-proof-grid">
+<div class="fx-proof">
+<strong>Continuous</strong>
+<span>Many smaller changes, resilient quotes</span>
+</div>
+<div class="fx-proof is-limit">
+<strong>Discontinuous</strong>
+<span>One gap, wider spread, shallow depth</span>
+</div>
+</div>
+<p class="fx-board-foot">Classify the path and the book</p>
+</aside>
+</header>
+<nav class="fx-jump-nav" aria-label="On this page">
+<a href="#measures">Measures</a>
+<a href="#distribution">Distribution</a>
+<a href="#jumps">Jumps</a>
+<a href="#events">Events</a>
+<a href="#card">State card</a>
+<a href="#handoff">Risk handoff</a>
+</nav>
+<section class="fx-section" id="measures" aria-labelledby="measures-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">No single estimator owns volatility</p>
+<h2 id="measures-title">Use Measures That Answer Different Questions</h2>
+<p>Freeze bar construction, session boundary, timezone and contract-roll policy before calculating. Report sample period, observation count, missingness and uncertainty. A current rolling value should be compared with its own historical distribution, not labeled “high” because of an arbitrary number.</p>
+</div>
+<div class="fx-table-scroll" role="region" aria-label="6Z volatility measures" tabindex="0">
+<table class="fx-table">
+<thead>
+<tr>
+<th scope="col">Measure</th>
+<th scope="col">Question</th>
+<th scope="col">Critical limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Close-to-close return</th>
+<td>How much did the marked price change?</td>
+<td>Misses the intraperiod path</td>
+</tr>
+<tr>
+<th scope="row">High-low or true range</th>
+<td>How wide was the observed bar?</td>
+<td>Depends on sampling and does not show liquidity</td>
+</tr>
+<tr>
+<th scope="row">Realized variation</th>
+<td>How much intraday return variation accumulated?</td>
+<td>Noise, bad ticks and irregular sampling matter</td>
+</tr>
+<tr>
+<th scope="row">Gap or jump proxy</th>
+<td>Was movement concentrated discontinuously?</td>
+<td>Threshold is model-dependent and must be registered</td>
+</tr>
+<tr>
+<th scope="row">Spread and depth stress</th>
+<td>Was the move executable near displayed prices?</td>
+<td>Requires synchronized quote data</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fx-panel">
+<p class="fx-card-label">Worked state example</p>
+<h3>Distinguish a continuous high-range session from a jump session</h3>
+<p>Begin with two sessions whose true ranges fall in the same training-sample percentile band. For each, calculate returns on the same validated sampling grid, the share of total variation concentrated in the largest interval, the maximum quote-to-quote gap, time-weighted spread, lower-tail depth and recovery time after the largest move. Preserve the full path so a single bad tick can be investigated rather than absorbed into the label.</p>
+<p>If the first session accumulates variation across many intervals while spread and depth remain inside ordinary bounds, label it continuous high variation under the registered rule. If the second concentrates variation around an official event while spread widens and depth depletes, label the price and liquidity dimensions separately: jump candidate, stressed book and event proximity. Do not infer that the second state must continue or reverse. Validate each label on later data, audit transitions around threshold boundaries and return “unscorable” when quotes are missing. The distinction is useful only if it changes a declared risk or execution permission and improves that decision in holdout.</p>
+<p>Track disagreement among measures rather than forcing one label. A wide range with ordinary realized variation, or elevated returns with stale quotes, is a diagnostic state that requires review before it can receive risk permission.</p>
+</div>
+<div class="fx-caution">
+<strong>ATR is a transformation, not a forecast.</strong>
+<p>Its value changes with bar interval, session construction, lookback and smoothing. Disclose those choices; never present an undocumented “typical 6Z ATR” as a durable contract fact.</p>
 </div>
 </section>
+<section class="fx-section" id="distribution" aria-labelledby="distribution-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">Show the center and the tails</p>
+<h2 id="distribution-title">Describe a Distribution, Not an Average Day</h2>
+<p>For each registered horizon, publish quantiles, dispersion, downside and upside tails, serial dependence and the number of eligible observations. Use rolling estimates only with lagged inputs when the state would drive a live decision. Separate the training period used to set state cutoffs from the later period used to validate them.</p>
+</div>
+<div class="fx-four-grid">
+<article class="fx-panel">
+<p class="fx-card-label">Level</p>
+<h3>Current percentile</h3>
+<p>Place the lagged estimator inside the training distribution with its exact lookback.</p>
+</article>
+<article class="fx-panel">
+<p class="fx-card-label">Persistence</p>
+<h3>Transition frequency</h3>
+<p>Measure how often and how quickly states change instead of assuming clustering is constant.</p>
+</article>
+<article class="fx-panel">
+<p class="fx-card-label">Shape</p>
+<h3>Tail asymmetry</h3>
+<p>Report positive and negative quote returns separately and preserve 6Z orientation.</p>
+</article>
+<article class="fx-panel">
+<p class="fx-card-label">Quality</p>
+<h3>Missing and bad data</h3>
+<p>Fail intervals with unresolved quotes or contract seams; do not treat them as calm.</p>
+</article>
+</div>
+</section>
+<section class="fx-section" id="jumps" aria-labelledby="jumps-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">Split path risk from execution risk</p>
+<h2 id="jumps-title">Pair Return Movement with the Book</h2>
+<p>A large return with ordinary spread and replenishing depth is a different execution state from the same return during sparse updates and a widening market. Synchronize trades and quotes, then measure conditions immediately before, during and after each registered jump candidate.</p>
+</div>
+<div class="fx-table-scroll" role="region" aria-label="Jump and liquidity diagnostic" tabindex="0">
+<table class="fx-table">
+<thead>
+<tr>
+<th scope="col">Diagnostic</th>
+<th scope="col">Before</th>
+<th scope="col">During</th>
+<th scope="col">After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Price</th>
+<td>Pre-event midquote and trend</td>
+<td>Return path and largest gap</td>
+<td>Reversal, continuation or no stable quote</td>
+</tr>
+<tr>
+<th scope="row">Spread</th>
+<td>Time-weighted baseline</td>
+<td>Peak and duration</td>
+<td>Time to registered recovery</td>
+</tr>
+<tr>
+<th scope="row">Depth</th>
+<td>Quantity through fixed tick bands</td>
+<td>Depletion and cancellations</td>
+<td>Replenishment distribution</td>
+</tr>
+<tr>
+<th scope="row">Execution</th>
+<td>Arrival benchmark</td>
+<td>Fills, rejects and slippage</td>
+<td>Implementation shortfall</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="fx-source-note">The <a href="6z-liquidity-map.html">6Z Liquidity Map</a> owns descriptive market-quality mapping; <a href="why-6z-slippage-hits-harder.html">Why 6Z Slippage Can Hit Harder</a> owns realized execution-cost diagnosis.</p>
+</section>
+<section class="fx-section" id="events" aria-labelledby="events-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">Label information arrival</p>
+<h2 id="events-title">Keep Official Events and Ordinary Time Separate</h2>
+<p>Attach source timestamps for SARB decisions, FOMC decisions and other preregistered releases. Build relative-time windows around each event and comparable non-event controls. Event-day volume does not automatically imply good execution: spreads, depth and shortfall must be measured independently.</p>
+</div>
+<div class="fx-check-grid">
+<article>
+<strong>SARB package</strong>
+<p>Decision, statement and press conference timestamps from official materials.</p>
+</article>
+<article>
+<strong>U.S. policy</strong>
+<p>FOMC decision and press conference windows from Federal Reserve calendars.</p>
+</article>
+<article>
+<strong>Scheduled data</strong>
+<p>Use official release timestamps and versions; do not backdate revisions.</p>
+</article>
+<article>
+<strong>Unscheduled shock</strong>
+<p>Label from contemporaneous evidence without pretending the event was forecastable.</p>
+</article>
+<article>
+<strong>Holiday state</strong>
+<p>Keep South African, U.S. and exchange holidays distinct.</p>
+</article>
+<article>
+<strong>Contract state</strong>
+<p>Separate active, migration and expiry-proximate observations.</p>
+</article>
+</div>
+</section>
+<section class="fx-section" id="card" aria-labelledby="card-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">A state card, not a personality</p>
+<h2 id="card-title">Publish the Inputs Behind the Label</h2>
+<p>A live state card should show calculation time, dated contract, data completeness, return and range percentiles, jump flag, spread and depth condition, event proximity and transition confidence. The state name is only shorthand for these visible fields.</p>
+</div>
+<div class="fx-state-machine" aria-label="Volatility state card workflow">
+<article>
+<span>1</span>
+<h3>Observe</h3>
+<p>Use data available at the card timestamp.</p>
+</article>
+<article>
+<span>2</span>
+<h3>Score</h3>
+<p>Apply thresholds frozen in the training sample.</p>
+</article>
+<article>
+<span>3</span>
+<h3>Cross-check</h3>
+<p>Compare price state with liquidity and event state.</p>
+</article>
+<article>
+<span>4</span>
+<h3>Decide</h3>
+<p>Route to normal, reduced, wait or reject permissions.</p>
+</article>
+<article>
+<span>5</span>
+<h3>Expire</h3>
+<p>Refresh at the registered interval or material event.</p>
+</article>
+</div>
+</section>
+<section class="fx-section" id="handoff" aria-labelledby="handoff-title">
+<div class="fx-section-heading">
+<p class="fx-kicker">Volatility does not determine size by itself</p>
+<h2 id="handoff-title">Hand the State to the Risk Process</h2>
+<p>The state card supplies measured conditions. The <a href="6z-position-sizing.html">6Z Position-Sizing Guide</a> owns the calculation that combines a declared loss budget, executable stop distance, tick value, slippage and gap stress. Confirm exchange units and arithmetic in <a href="6z-tick-size-and-value.html">6Z Tick Size and Value</a>. If spread, depth or data-quality gates fail, the correct size can be zero regardless of a volatility label.</p>
+</div>
+<div class="fx-decision-strip">
+<span>Measured state</span>
+<i aria-hidden="true">&rarr;</i>
+<strong>Risk budget + execution stress + whole-contract floor</strong>
+<i aria-hidden="true">&rarr;</i>
+<span>Position or no trade</span>
+</div>
+<div class="fx-caution">
+<strong>Research status as of August 23, 2026</strong>
+<p>No original result is reported. This page publishes no 6Z ATR, session-range, realized-volatility, jump-frequency, spread or depth statistic; it is a measurement and state-classification protocol, not a forecast.</p>
+</div>
+</section>
+<details class="fx-sources">
+<summary>Sources, methods and editorial disclosure &mdash; reviewed August 25, 2026</summary>
+<ul>
+<li>
+<a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/III/250/259/259.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 259</a> for 6Z contract identity and exchange-rule context.</li>
+<li>
+<a href="https://www.cmegroup.com/datamine.html" target="_blank" rel="noopener noreferrer">CME DataMine</a> for official historical settlements and order-book data categories.</li>
+<li>
+<a href="https://www.resbank.co.za/en/home/what-we-do/monetary-policy/MPC-announcement-webcasts" target="_blank" rel="noopener noreferrer">SARB MPC announcements</a> and <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">Federal Reserve FOMC calendars</a> for official event timing.</li>
+</ul>
+<p>Sources were reviewed August 25, 2026. This unsponsored article distinguishes contract facts, proposed estimators, event labels and risk decisions. It reports no original empirical result.</p>
+</details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer">
+<strong>Educational and risk disclaimer</strong>
+<p>This state-classification material is educational and does not provide personal investment, risk or execution instructions. Volatility and liquidity can change faster than a model updates. A volatility label cannot cap risk, and leveraged losses can outrun the collateral originally required.</p>
+</aside>
+<!-- ARTICLE BODY END -->
+</article>
 </main>
-
 <footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
+<div class="container footer-inner">
+<div class="footer-book">
+<h3>Books</h3>
+<p>Market structure, risk, and execution frameworks.</p>
+<a href="/books/" class="footer-book-link">View All Books</a>
+</div>
+<div class="footer-links">
+<a href="/about.html">About</a>
+<a href="/disclaimer.html">Disclaimer</a>
+<a href="/privacy.html">Privacy</a>
+<a href="/contact.html">Contact</a>
+</div>
+<p class="footer-copy">&copy; <span id="year">
+</span> Grizzly Parrot Trading. All rights reserved.</p>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</div>
 </footer>
 </body>
 </html>
