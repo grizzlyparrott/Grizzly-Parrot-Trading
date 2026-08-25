@@ -308,7 +308,7 @@
             <li>Secure Stripe checkout for every edition</li>
             <li>Digital includes both complete files, delivered privately by email</li>
             <li>Print editions are produced and shipped on demand by Lulu</li>
-            <li>Print shipping is calculated before payment; U.S. delivery only</li>
+            <li>Flat print shipping: $7.49 U.S. or $19.99 international</li>
           </ul>
           <p class="risk-note">Educational material only. No strategy, pattern, or process can guarantee profit or freedom from loss.</p>
         </div>
@@ -325,17 +325,23 @@
           <article class="price-box is-paperback" data-edition="paperback">
             <span>Paperback edition</span>
             <strong data-price-paperback>$39</strong>
-            <small>USD &middot; shipping extra</small>
-            <a class="button button-wide button-disabled js-paperback-buy" href="#purchase" aria-disabled="true">Checking secure checkout&hellip;</a>
-            <p class="edition-status" data-status-paperback aria-live="polite">Confirming the live purchase link.</p>
+            <small>USD &middot; $7.49 U.S. / $19.99 international shipping</small>
+            <div class="print-checkout-actions" aria-label="Paperback shipping destination">
+              <button class="button button-wide button-disabled js-paperback-buy" type="button" data-shipping-region="us" disabled>U.S. checkout</button>
+              <button class="button button-wide button-disabled js-paperback-buy" type="button" data-shipping-region="international" disabled>International checkout</button>
+            </div>
+            <p class="edition-status" data-status-paperback aria-live="polite">Checking secure print checkout&hellip;</p>
           </article>
 
           <article class="price-box is-hardcover" data-edition="hardcover">
             <span>Hardcover edition</span>
             <strong data-price-hardcover>$49</strong>
-            <small>USD &middot; shipping extra</small>
-            <a class="button button-wide button-disabled js-hardcover-buy" href="#purchase" aria-disabled="true">Checking secure checkout&hellip;</a>
-            <p class="edition-status" data-status-hardcover aria-live="polite">Confirming the live purchase link.</p>
+            <small>USD &middot; $7.49 U.S. / $19.99 international shipping</small>
+            <div class="print-checkout-actions" aria-label="Hardcover shipping destination">
+              <button class="button button-wide button-disabled js-hardcover-buy" type="button" data-shipping-region="us" disabled>U.S. checkout</button>
+              <button class="button button-wide button-disabled js-hardcover-buy" type="button" data-shipping-region="international" disabled>International checkout</button>
+            </div>
+            <p class="edition-status" data-status-hardcover aria-live="polite">Checking secure print checkout&hellip;</p>
           </article>
         </div>
       </div>
@@ -362,7 +368,7 @@
           </details>
           <details>
             <summary>Who fulfills the print editions?</summary>
-            <p>Lulu prints and ships each paperback or hardcover on demand. Enter your U.S. shipping address to see the available shipping cost before secure Stripe checkout.</p>
+            <p>Lulu prints and ships each paperback or hardcover on demand. Choose U.S. or international shipping here, then enter the delivery address and payment securely on Stripe. International customs duties or import fees, if any, remain the recipient&rsquo;s responsibility.</p>
           </details>
         </div>
       </div>
@@ -387,15 +393,12 @@
     </div>
   </footer>
 
+  <script src="../print-checkout.js?v=20260825-flat-shipping"></script>
   <script>
     (function () {
       var workerBase = 'https://grizzly-parrot-paperback.grizzlyparrott04.workers.dev';
       var workerHost = 'grizzly-parrot-paperback.grizzlyparrott04.workers.dev';
       var requestedEdition = new URLSearchParams(window.location.search).get('edition');
-      var printEditions = [
-        {edition: 'paperback', buttonSelector: '.js-paperback-buy', priceSelector: '[data-price-paperback]', statusSelector: '[data-status-paperback]', label: 'Buy paperback'},
-        {edition: 'hardcover', buttonSelector: '.js-hardcover-buy', priceSelector: '[data-price-hardcover]', statusSelector: '[data-status-hardcover]', label: 'Buy hardcover'}
-      ];
 
       if (['digital', 'paperback', 'hardcover'].indexOf(requestedEdition) !== -1) {
         document.querySelectorAll('.price-box[data-edition]').forEach(function (box) {
@@ -413,17 +416,6 @@
         button.addEventListener('click', function (event) {
           if (button.getAttribute('aria-disabled') === 'true') event.preventDefault();
         });
-      }
-
-      function validPrintCheckoutUrl(value) {
-        try {
-          var parsed = new URL(value);
-          return parsed.protocol === 'https:'
-            && parsed.hostname === workerHost
-            && parsed.pathname === '/print/checkout';
-        } catch (error) {
-          return false;
-        }
       }
 
       function enableDigitalCheckout(config) {
@@ -459,38 +451,6 @@
         if (status) status.textContent = 'Please try again shortly.';
       }
 
-      function enablePrintCheckout(item, config) {
-        var button = document.querySelector(item.buttonSelector);
-        var status = document.querySelector(item.statusSelector);
-        var price = document.querySelector(item.priceSelector);
-        if (!button || !config || config.enabled !== true || !validPrintCheckoutUrl(config.checkoutUrl)) return;
-        if (Number.isInteger(config.priceCents) && config.priceCents > 0 && price) {
-          price.textContent = dollars(config.priceCents);
-        }
-        button.href = config.checkoutUrl;
-        button.target = '_blank';
-        button.rel = 'noopener';
-        button.textContent = item.label;
-        button.removeAttribute('aria-disabled');
-        button.classList.remove('button-disabled');
-        if (status) status.textContent = 'Shipping is calculated before secure Stripe checkout.';
-        button.addEventListener('click', function () {
-          if (typeof gtag === 'function') {
-            gtag('event', 'click', {
-              event_category: 'Book',
-              event_label: 'Buy Probabilistic Execution (' + item.edition + ')'
-            });
-          }
-        });
-      }
-
-      function markPrintUnavailable(item) {
-        var button = document.querySelector(item.buttonSelector);
-        var status = document.querySelector(item.statusSelector);
-        if (button) button.textContent = item.edition.charAt(0).toUpperCase() + item.edition.slice(1) + ' checkout temporarily unavailable';
-        if (status) status.textContent = 'Please try again shortly.';
-      }
-
       document.querySelectorAll('.js-digital-buy').forEach(disableButton);
 
       fetch(workerBase + '/digital-config?bookSlug=probabilistic-execution', {credentials: 'omit', cache: 'no-store'})
@@ -504,18 +464,17 @@
           /* Safe default: digital checkout remains disabled. */
         });
 
-      printEditions.forEach(function (item) {
-        document.querySelectorAll(item.buttonSelector).forEach(disableButton);
-        fetch(workerBase + '/public-config?bookSlug=probabilistic-execution&edition=' + item.edition, {credentials: 'omit', cache: 'no-store'})
-          .then(function (response) { return response.ok ? response.json() : null; })
-          .then(function (config) {
-            if (config && config.enabled === true) enablePrintCheckout(item, config);
-            else markPrintUnavailable(item);
-          })
-          .catch(function () {
-            markPrintUnavailable(item);
-            /* Safe default: this print button remains disabled. */
-          });
+      GrizzlyPrintCheckout.init({
+        workerBase: workerBase,
+        workerHost: workerHost,
+        bookSlug: 'probabilistic-execution',
+        analyticsTitle: 'Probabilistic Execution',
+        usShippingCents: 749,
+        internationalShippingCents: 1999,
+        editions: [
+          {edition: 'paperback', buttonSelector: '.js-paperback-buy', priceSelector: '[data-price-paperback]', statusSelector: '[data-status-paperback]'},
+          {edition: 'hardcover', buttonSelector: '.js-hardcover-buy', priceSelector: '[data-price-hardcover]', statusSelector: '[data-status-hardcover]'}
+        ]
       });
 
       document.getElementById('year').textContent = new Date().getFullYear();

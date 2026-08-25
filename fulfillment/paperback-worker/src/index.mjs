@@ -4,6 +4,7 @@ import { verifyAssetRequest, constantTimeEqual } from "./crypto.mjs";
 import { LuluApiError, LuluClient, shippingCents } from "./lulu.mjs";
 import { StripeApiError, StripeClient, parseVerifiedStripeEvent } from "./stripe.mjs";
 import { OrderStore } from "./order-store.mjs";
+import { countryMatchesFlatRegion, flatShippingConfig, flatShippingSelection } from "./flat-shipping.mjs";
 import {
   DigitalDeliveryError,
   digitalDeliveryConfigured,
@@ -244,6 +245,65 @@ function sessionAddress(session) {
   } : null;
 }
 
+function normalizedSessionShipping(session) {
+  const shipping = sessionAddress(session);
+  if (!shipping) return null;
+  return normalizeAddress({
+    name: shipping.name,
+    street1: shipping.address?.line1,
+    street2: shipping.address?.line2,
+    city: shipping.address?.city,
+    stateCode: shipping.address?.state,
+    postcode: shipping.address?.postal_code,
+    countryCode: shipping.address?.country,
+    phoneNumber: shipping.phone
+  });
+}
+
+function requestIdValid(value) {
+  return typeof value === "string" && /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);
+}
+
+function flatOrderFromSession(session, env) {
+  if (session.metadata?.order_type !== "print_book_flat" || session.payment_status !== "paid") return null;
+  const book = getBook(session.metadata?.book_slug);
+  const region = session.metadata?.shipping_region;
+  const shipping = flatShippingSelection(env, region);
+  const requestId = session.metadata?.request_id;
+  const address = normalizedSessionShipping(session);
+  const buyerEmail = String(session.customer_details?.email || "").trim().toLowerCase();
+  if (!book || !shipping || !address || !requestIdValid(requestId)) return null;
+  if (typeof session.id !== "string" || !/^cs_(?:live|test)_[A-Za-z0-9]+$/.test(session.id)) return null;
+  const validated = validateCheckoutRequest({ quantity: 1, buyerEmail, shippingAddress: address });
+  if (!validated.ok || !countryMatchesFlatRegion(env, region, validated.address.countryCode)) return null;
+  const shippingCostSubtotal = session.shipping_cost?.amount_subtotal;
+  const totalDetailsShipping = session.total_details?.amount_shipping;
+  const shippingSubtotal = shippingCostSubtotal ?? totalDetailsShipping;
+  if (shippingCostSubtotal !== undefined && totalDetailsShipping !== undefined && shippingCostSubtotal !== totalDetailsShipping) return null;
+  const currency = String(session.currency || "").toLowerCase();
+  if (session.mode && session.mode !== "payment") return null;
+  if (session.client_reference_id !== requestId) return null;
+  if (session.amount_subtotal !== book.priceCents) return null;
+  if (shippingSubtotal !== shipping.cents) return null;
+  if (String(session.metadata?.flat_shipping_cents) !== String(shipping.cents)) return null;
+  if (String(session.metadata?.book_price_cents) !== String(book.priceCents)) return null;
+  if (currency !== shipping.currency.toLowerCase() || !Number.isInteger(session.amount_total)) return null;
+  const taxCents = session.total_details?.amount_tax ?? 0;
+  const discountCents = session.total_details?.amount_discount ?? 0;
+  if (![taxCents, discountCents].every((value) => Number.isInteger(value) && value >= 0)) return null;
+  if (session.amount_total !== book.priceCents + shipping.cents + taxCents - discountCents) return null;
+  return {
+    book,
+    quantity: 1,
+    buyerEmail: validated.buyerEmail,
+    address: validated.address,
+    shippingOption: "MAIL",
+    shippingCents: shipping.cents,
+    currency: shipping.currency,
+    checkoutMode: session.metadata?.checkout_mode || `production_flat_rate_${region}`
+  };
+}
+
 async function sendEmail(env, message, request = fetch) {
   if (!env.RESEND_API_KEY || !env.EMAIL_FROM) throw new Error("Email delivery is not configured.");
   const payload = { from: env.EMAIL_FROM, ...message };
@@ -457,6 +517,43 @@ async function createCheckout(request, env) {
   }
 }
 
+async function createFlatCheckout(request, env) {
+  const input = await parseJson(request);
+  if (!input) return publicError("invalid_json", "Request body must be JSON.").response;
+  const book = getBook(input.bookSlug, input.edition);
+  if (!book) return publicError("unknown_book", "That print edition is not available.", 404).response;
+  const authorization = checkoutAuthorized(request, env, book);
+  if (!authorization || authorization.mode !== "production") {
+    return json({ ok: false, code: "print_checkout_disabled", message: "Print checkout is not enabled for that edition." }, 403, cors(request, env));
+  }
+  if (!requestIdValid(input.requestId)) {
+    return json({ ok: false, code: "request_id_invalid", message: "Start a new checkout from the book page." }, 400, cors(request, env));
+  }
+  const shipping = flatShippingSelection(env, input.region);
+  if (!shipping) {
+    return json({ ok: false, code: "shipping_region_unavailable", message: "That shipping region is not available." }, 422, cors(request, env));
+  }
+  try {
+    const priceId = getStripePriceId(book, env);
+    const session = await new StripeClient(env).createFlatRateCheckoutSession({
+      book,
+      priceId,
+      shipping,
+      requestId: input.requestId,
+      checkoutMode: authorization.mode
+    });
+    log("flat_checkout_created", {
+      mode: authorization.mode,
+      book: book.slug,
+      region: shipping.region,
+      sessionId: session.id
+    });
+    return json({ ok: true, checkoutUrl: session.url, sessionId: session.id }, 201, cors(request, env));
+  } catch (error) {
+    return providerError(error, request, env, "checkout");
+  }
+}
+
 export function luluStatusFromJob(job) {
   const candidate = job?.status ?? job?.print_job_status;
   if (typeof candidate === "string") return candidate;
@@ -554,9 +651,44 @@ async function stripeWebhook(request, env, {
     }
     return json({ ok: true, digitalPurchase: true, duplicate: !inserted });
   }
-  if (event.type !== "checkout.session.completed") return json({ ok: true, ignored: "not_a_paid_digital_purchase" });
   const orderType = session.metadata?.order_type;
-  if (session.payment_status !== "paid" || !["print_book", "paperback"].includes(orderType)) return json({ ok: true, ignored: "not_a_paid_print_order" });
+  if (session.payment_status !== "paid") return json({ ok: true, ignored: "not_a_paid_order" });
+  if (orderType === "print_book_flat") {
+    const flatOrder = flatOrderFromSession(session, env);
+    const store = storeFactory(env.PAPERBACK_ORDERS);
+    if (!flatOrder) {
+      log("webhook_manual_review", { eventId: event.id, sessionId: session.id, reason: "flat_order_validation_failed" });
+      await notifyAdmin(
+        env,
+        "Flat-rate print payment needs review",
+        `<p>Stripe session: ${escapeHtml(session.id || "unknown")}</p><p>The book, amount, shipping region, or delivery details did not validate.</p>`
+      );
+      return json({ ok: true, state: "manual_review" });
+    }
+    const inserted = await store.insertPaidOrder({
+      stripeSessionId: session.id,
+      stripeEventId: event.id,
+      quoteId: null,
+      bookSlug: flatOrder.book.slug,
+      quantity: flatOrder.quantity,
+      buyerEmail: flatOrder.buyerEmail,
+      address: flatOrder.address,
+      shippingOption: flatOrder.shippingOption,
+      shippingCents: flatOrder.shippingCents,
+      currency: flatOrder.currency,
+      customerTotalCents: session.amount_total,
+      taxCents: session.total_details?.amount_tax ?? null,
+      checkoutMode: flatOrder.checkoutMode,
+      now: nowIso()
+    });
+    if (!inserted) {
+      log("webhook_duplicate", { eventId: event.id, sessionId: session.id });
+      return json({ ok: true, duplicate: true });
+    }
+    await submitPaidOrder(store, env, session.id);
+    return json({ ok: true });
+  }
+  if (!["print_book", "paperback"].includes(orderType)) return json({ ok: true, ignored: "not_a_paid_print_order" });
   const quoteId = session.metadata?.quote_id || session.client_reference_id;
   const book = getBook(session.metadata?.book_slug);
   const store = new OrderStore(env.PAPERBACK_ORDERS);
@@ -723,7 +855,7 @@ export default {
     const url = new URL(request.url);
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: cors(request, env) });
     if (request.method === "GET" && url.pathname === "/health") {
-      return json({
+      const health = {
         ok: true,
         paperbackSalesEnabled: editionSalesEnabled(env, "paperback"),
         hardcoverSalesEnabled: editionSalesEnabled(env, "hardcover"),
@@ -731,7 +863,18 @@ export default {
         environment: env.PAPERBACK_ENVIRONMENT,
         readiness: productionReadiness(env),
         probabilisticDigitalDeliveryReady: digitalDeliveryConfigured(env)
-      });
+      };
+      const configuredFlatShipping = flatShippingConfig(env);
+      if (configuredFlatShipping.enabled) {
+        health.flatShipping = {
+          enabled: true,
+          currency: configuredFlatShipping.currency,
+          usCents: configuredFlatShipping.usCents,
+          internationalCents: configuredFlatShipping.internationalCents,
+          internationalCountryCount: configuredFlatShipping.internationalCountries.length
+        };
+      }
+      return json(health);
     }
     if (request.method === "GET" && url.pathname === "/public-config") {
       const book = getBook(url.searchParams.get("bookSlug"), url.searchParams.get("edition"));
@@ -740,6 +883,15 @@ export default {
         ? `${env.PAPERBACK_BASE_URL.replace(/\/$/, "")}/print/checkout?bookSlug=${encodeURIComponent(book.seriesSlug)}&edition=${encodeURIComponent(book.edition)}`
         : null;
       const response = { enabled, checkoutUrl, edition: book?.edition || null, priceCents: book?.priceCents || null };
+      const flatShipping = flatShippingConfig(env);
+      if (enabled && flatShipping.enabled) {
+        response.checkoutEndpoint = `${env.PAPERBACK_BASE_URL.replace(/\/$/, "")}/print/start`;
+        response.shippingRates = {
+          currency: flatShipping.currency,
+          usCents: flatShipping.usCents,
+          internationalCents: flatShipping.internationalCents
+        };
+      }
       if (book?.catalogStatus === "staged") response.catalogStatus = "staged";
       return json(response, 200, cors(request, env));
     }
@@ -761,6 +913,7 @@ export default {
     }
     if (request.method === "GET" && url.pathname.startsWith("/lulu-assets/")) return serveAsset(request, env, url.pathname);
     if (request.method === "POST" && ["/print/quote", "/paperback/quote"].includes(url.pathname)) return createQuote(request, env);
+    if (request.method === "POST" && url.pathname === "/print/start") return createFlatCheckout(request, env);
     if (request.method === "POST" && ["/print/checkout", "/paperback/checkout"].includes(url.pathname)) return createCheckout(request, env);
     if (request.method === "POST" && url.pathname === "/digital-conversion/claim") return claimDigitalConversion(request, env);
     if (request.method === "POST" && url.pathname === "/webhooks/stripe") return stripeWebhook(request, env);
@@ -775,6 +928,8 @@ export {
   attemptProbabilisticDigitalDelivery,
   createQuote,
   createCheckout,
+  createFlatCheckout,
+  flatOrderFromSession,
   stripeWebhook,
   claimDigitalConversion,
   digitalPurchaseFromSession,
