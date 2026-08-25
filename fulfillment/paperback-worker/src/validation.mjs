@@ -35,7 +35,9 @@ export function normalizeAddress(input) {
     street1: text(input.street1),
     street2: text(input.street2),
     city: text(input.city),
-    stateCode: text(input.stateCode, 2).toUpperCase(),
+    // Stripe can return a full province or regional name outside the U.S.; Lulu
+    // accepts that value. U.S. state validation remains strictly two letters.
+    stateCode: text(input.stateCode, 100).toUpperCase(),
     postcode: text(input.postcode, 20).toUpperCase(),
     countryCode: text(input.countryCode, 2).toUpperCase(),
     phoneNumber: text(input.phoneNumber, 40),

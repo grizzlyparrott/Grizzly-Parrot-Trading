@@ -15,6 +15,8 @@ PAPERBACK_PROOFS_APPROVED = "true"
 HARDCOVER_PROOFS_APPROVED = "true"
 PAPERBACK_POLICIES_APPROVED = "true"
 PAPERBACK_ALLOWED_COUNTRIES = "US"
+PAPERBACK_FLAT_RATE_US_CENTS = "749"
+PAPERBACK_FLAT_RATE_INTERNATIONAL_CENTS = "1999"
 # Stripe Tax is enabled in Checkout. Stripe calculates tax only for locations
 # with an active registration in the Stripe dashboard.
 PAPERBACK_STRIPE_TAX_ENABLED = "true"

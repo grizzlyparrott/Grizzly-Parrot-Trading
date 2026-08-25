@@ -6,8 +6,9 @@ import { validateCheckoutRequest, addressesMatch } from "../src/validation.mjs";
 import { hmacHex, verifyStripeSignature, signedAssetUrl, verifyAssetRequest } from "../src/crypto.mjs";
 import { LuluClient, shippingCents } from "../src/lulu.mjs";
 import { StripeClient } from "../src/stripe.mjs";
+import { DEFAULT_INTERNATIONAL_COUNTRIES, countryMatchesFlatRegion, flatShippingConfig, flatShippingSelection } from "../src/flat-shipping.mjs";
 import { OrderStore } from "../src/order-store.mjs";
-import worker, { allowedCountries, digitalCheckoutConfig, digitalPurchaseFromSession, luluStatusFromJob, productionReadiness, productionSalesEnabled, sendEmail, stripeWebhook, suggestedAddressDiffers } from "../src/index.mjs";
+import worker, { allowedCountries, digitalCheckoutConfig, digitalPurchaseFromSession, flatOrderFromSession, luluStatusFromJob, productionReadiness, productionSalesEnabled, sendEmail, stripeWebhook, suggestedAddressDiffers } from "../src/index.mjs";
 
 const validAddress = {
   name: "Test Reader",
@@ -201,6 +202,36 @@ test("production shipping countries require an explicit valid allowlist", () => 
     allowedCountries: [],
     stripeTaxDecision: "pending"
   });
+});
+
+test("flat shipping is exactly $7.49 U.S. and $19.99 across Lulu-supported international destinations", () => {
+  const env = {
+    PAPERBACK_FLAT_RATE_US_CENTS: "749",
+    PAPERBACK_FLAT_RATE_INTERNATIONAL_CENTS: "1999"
+  };
+  const config = flatShippingConfig(env);
+  assert.equal(config.enabled, true);
+  assert.equal(config.currency, "USD");
+  assert.equal(config.usCents, 749);
+  assert.equal(config.internationalCents, 1999);
+  assert.equal(config.internationalCountries, DEFAULT_INTERNATIONAL_COUNTRIES);
+  assert.equal(DEFAULT_INTERNATIONAL_COUNTRIES.includes("CA"), true);
+  assert.equal(DEFAULT_INTERNATIONAL_COUNTRIES.includes("GB"), true);
+  assert.equal(DEFAULT_INTERNATIONAL_COUNTRIES.includes("JP"), true);
+  assert.equal(DEFAULT_INTERNATIONAL_COUNTRIES.includes("US"), false);
+  assert.equal(DEFAULT_INTERNATIONAL_COUNTRIES.includes("AC"), false);
+  assert.equal(DEFAULT_INTERNATIONAL_COUNTRIES.includes("TA"), false);
+  assert.equal(DEFAULT_INTERNATIONAL_COUNTRIES.includes("RU"), false);
+  assert.equal(DEFAULT_INTERNATIONAL_COUNTRIES.includes("UA"), false);
+  assert.equal(DEFAULT_INTERNATIONAL_COUNTRIES.includes("VE"), false);
+  assert.deepEqual(flatShippingSelection(env, "us").countries, ["US"]);
+  assert.equal(countryMatchesFlatRegion(env, "us", "US"), true);
+  assert.equal(countryMatchesFlatRegion(env, "us", "CA"), false);
+  assert.equal(countryMatchesFlatRegion(env, "international", "CA"), true);
+  assert.equal(countryMatchesFlatRegion(env, "international", "US"), false);
+  assert.equal(flatShippingConfig({...env, PAPERBACK_FLAT_RATE_US_CENTS: "7.49"}).enabled, false);
+  assert.equal(flatShippingConfig({...env, PAPERBACK_FLAT_RATE_US_CENTS: "750"}).enabled, false);
+  assert.equal(flatShippingConfig({...env, PAPERBACK_FLAT_RATE_INTERNATIONAL_CENTS: "2000"}).enabled, false);
 });
 
 test("Stripe address comparison prevents fulfillment when Checkout address differs from the quoted address", () => {
@@ -460,6 +491,47 @@ test("test checkout creates a Stripe Checkout Session with customer address coll
   assert.equal(request.headers["Idempotency-Key"], "print-checkout-quote-123");
 });
 
+test("flat-rate checkout sends the customer directly to Stripe with a server-owned region and rate", async () => {
+  let request;
+  const fakeFetch = async (_url, init) => {
+    request = init;
+    return new Response(JSON.stringify({ id: "cs_test_flat", url: "https://checkout.stripe.com/c/pay/test" }), { status: 200 });
+  };
+  const env = {
+    STRIPE_SECRET_KEY: "sk_test_example",
+    PAPERBACK_SUCCESS_URL: "https://example.com/success",
+    PAPERBACK_CANCEL_URL: "https://example.com/cancel",
+    PAPERBACK_STRIPE_TAX_ENABLED: "true",
+    PAPERBACK_FLAT_RATE_US_CENTS: "749",
+    PAPERBACK_FLAT_RATE_INTERNATIONAL_CENTS: "1999"
+  };
+  const book = getBook("probabilistic-execution", "hardcover");
+  const shipping = flatShippingSelection(env, "international");
+  const requestId = "7d5cd080-1909-44e7-8f14-57e50ce66d7c";
+  const session = await new StripeClient(env, fakeFetch).createFlatRateCheckoutSession({
+    book,
+    priceId: "price_probabilistic_hardcover",
+    shipping,
+    requestId
+  });
+  assert.equal(session.id, "cs_test_flat");
+  const form = new URLSearchParams(request.body);
+  assert.equal(form.get("line_items[0][price]"), "price_probabilistic_hardcover");
+  assert.equal(form.get("line_items[0][quantity]"), "1");
+  assert.equal(form.get("shipping_options[0][shipping_rate_data][fixed_amount][amount]"), "1999");
+  assert.equal(form.get("shipping_options[0][shipping_rate_data][display_name]"), "International flat-rate shipping");
+  assert.equal(form.get("shipping_address_collection[allowed_countries][0]"), shipping.countries[0]);
+  assert.equal(form.get(`shipping_address_collection[allowed_countries][${shipping.countries.indexOf("CA")}]`), "CA");
+  assert.equal(form.get("shipping_address_collection[allowed_countries][0]"), "AD");
+  assert.equal(form.get("metadata[order_type]"), "print_book_flat");
+  assert.equal(form.get("metadata[shipping_region]"), "international");
+  assert.equal(form.get("metadata[flat_shipping_cents]"), "1999");
+  assert.equal(form.get("metadata[book_price_cents]"), "4900");
+  assert.equal(form.get("phone_number_collection[enabled]"), "true");
+  assert.equal(form.get("automatic_tax[enabled]"), "true");
+  assert.equal(request.headers["Idempotency-Key"], `print-flat-${book.slug}-international-${requestId}`);
+});
+
 test("order store reports duplicate Stripe session insertion instead of submitting a second print order", async () => {
   const sessions = new Set();
   const db = {
@@ -562,6 +634,223 @@ test("a public paperback checkout exists only after every explicit production pr
   assert.match(checkoutHtml, /name="countryCode"[^>]+readonly/);
 });
 
+test("public flat-rate configuration creates a live Stripe Session without collecting an address on the Worker", async () => {
+  const env = {
+    PAPERBACK_ENVIRONMENT: "production",
+    PAPERBACK_SALES_ENABLED: "true",
+    PAPERBACK_PROOFS_APPROVED: "true",
+    PAPERBACK_POLICIES_APPROVED: "true",
+    PAPERBACK_ALLOWED_COUNTRIES: "US",
+    PAPERBACK_FLAT_RATE_US_CENTS: "749",
+    PAPERBACK_FLAT_RATE_INTERNATIONAL_CENTS: "1999",
+    PAPERBACK_STRIPE_TAX_ENABLED: "false",
+    PAPERBACK_BASE_URL: "https://grizzly-parrot-paperback.example.workers.dev",
+    PAPERBACK_ALLOWED_ORIGIN: "https://grizzlyparrottrading.com",
+    PAPERBACK_SUCCESS_URL: "https://grizzlyparrottrading.com/books/paperback-order-confirmation.html",
+    PAPERBACK_CANCEL_URL: "https://grizzlyparrottrading.com/books/",
+    STRIPE_SECRET_KEY: "sk_test_example",
+    STRIPE_PRICE_CURRENCY_PAPERBACK: "price_currency_paperback"
+  };
+  const publicConfig = await worker.fetch(new Request("https://grizzly-parrot-paperback.example.workers.dev/public-config?bookSlug=currency-market-structure&edition=paperback", {
+    headers: { Origin: env.PAPERBACK_ALLOWED_ORIGIN }
+  }), env);
+  assert.deepEqual(await publicConfig.json(), {
+    enabled: true,
+    checkoutUrl: "https://grizzly-parrot-paperback.example.workers.dev/print/checkout?bookSlug=currency-market-structure&edition=paperback",
+    checkoutEndpoint: "https://grizzly-parrot-paperback.example.workers.dev/print/start",
+    shippingRates: { currency: "USD", usCents: 749, internationalCents: 1999 },
+    edition: "paperback",
+    priceCents: 3900
+  });
+
+  let stripeRequest;
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async (url, init) => {
+    stripeRequest = { url, init };
+    return new Response(JSON.stringify({ id: "cs_test_started", url: "https://checkout.stripe.com/c/pay/started" }), { status: 200 });
+  };
+  try {
+    const response = await worker.fetch(new Request("https://grizzly-parrot-paperback.example.workers.dev/print/start", {
+      method: "POST",
+      headers: { Origin: env.PAPERBACK_ALLOWED_ORIGIN, "content-type": "application/json" },
+      body: JSON.stringify({
+        bookSlug: "currency-market-structure",
+        edition: "paperback",
+        region: "us",
+        requestId: "bba6415f-c469-4211-b971-a6c8868fa194"
+      })
+    }), env);
+    assert.equal(response.status, 201);
+    assert.deepEqual(await response.json(), {
+      ok: true,
+      checkoutUrl: "https://checkout.stripe.com/c/pay/started",
+      sessionId: "cs_test_started"
+    });
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+  assert.equal(stripeRequest.url, "https://api.stripe.com/v1/checkout/sessions");
+  const stripeForm = new URLSearchParams(stripeRequest.init.body);
+  assert.equal(stripeForm.get("shipping_address_collection[allowed_countries][0]"), "US");
+  assert.equal(stripeForm.get("shipping_options[0][shipping_rate_data][fixed_amount][amount]"), "749");
+});
+
+test("a paid flat-rate Stripe Session must match the server rate, total, and selected destination region", () => {
+  const env = {
+    PAPERBACK_FLAT_RATE_US_CENTS: "749",
+    PAPERBACK_FLAT_RATE_INTERNATIONAL_CENTS: "1999"
+  };
+  const requestId = "4dc26c12-6bbc-47f8-8db8-670e114e5ad7";
+  const session = {
+    id: "cs_test_flatvalidated",
+    mode: "payment",
+    payment_status: "paid",
+    amount_subtotal: 3900,
+    amount_total: 4649,
+    currency: "usd",
+    client_reference_id: requestId,
+    shipping_cost: { amount_subtotal: 749 },
+    total_details: { amount_shipping: 749, amount_tax: 0, amount_discount: 0 },
+    metadata: {
+      order_type: "print_book_flat",
+      book_slug: "currency-market-structure",
+      shipping_region: "us",
+      flat_shipping_cents: "749",
+      book_price_cents: "3900",
+      request_id: requestId,
+      checkout_mode: "production_flat_rate_us"
+    },
+    customer_details: { email: "Reader@Example.com", phone: "+1 919 555 0100" },
+    shipping_details: {
+      name: "Test Reader",
+      address: { line1: "123 Test Street", line2: "", city: "Raleigh", state: "NC", postal_code: "27601", country: "US" }
+    }
+  };
+  const order = flatOrderFromSession(session, env);
+  assert.equal(order.book.slug, "currency-market-structure");
+  assert.equal(order.buyerEmail, "reader@example.com");
+  assert.equal(order.shippingCents, 749);
+  assert.equal(order.shippingOption, "MAIL");
+  assert.equal(flatOrderFromSession({ ...session, amount_total: 4648 }, env), null);
+  assert.equal(flatOrderFromSession({
+    ...session,
+    shipping_details: { ...session.shipping_details, address: { ...session.shipping_details.address, country: "CA" } }
+  }, env), null);
+  assert.equal(flatOrderFromSession({
+    ...session,
+    shipping_cost: { amount_subtotal: 1999 },
+    total_details: { amount_shipping: 1999, amount_tax: 0, amount_discount: 0 },
+    amount_total: 5899,
+    metadata: { ...session.metadata, shipping_region: "international", flat_shipping_cents: "1999" },
+    shipping_details: { ...session.shipping_details, address: { ...session.shipping_details.address, state: "ON", postal_code: "M5V 2T6", country: "CA" } }
+  }, env).address.countryCode, "CA");
+});
+
+test("a signed paid flat-rate webhook inserts one order and submits it automatically to Lulu", async () => {
+  const secret = "whsec_flat_fulfillment";
+  const requestId = "6e687b87-a10f-4fb5-b544-836b54b4f29e";
+  const event = {
+    id: "evt_flat_fulfillment",
+    type: "checkout.session.completed",
+    data: { object: {
+      id: "cs_test_flatfulfillment",
+      mode: "payment",
+      payment_status: "paid",
+      amount_subtotal: 3900,
+      amount_total: 4649,
+      currency: "usd",
+      client_reference_id: requestId,
+      shipping_cost: { amount_subtotal: 749 },
+      total_details: { amount_shipping: 749, amount_tax: 0, amount_discount: 0 },
+      metadata: {
+        order_type: "print_book_flat",
+        book_slug: "currency-market-structure",
+        shipping_region: "us",
+        flat_shipping_cents: "749",
+        book_price_cents: "3900",
+        request_id: requestId,
+        checkout_mode: "production_flat_rate_us"
+      },
+      customer_details: { email: "reader@example.com", phone: "+1 919 555 0100" },
+      shipping_details: {
+        name: "Test Reader",
+        address: { line1: "123 Test Street", line2: "", city: "Raleigh", state: "NC", postal_code: "27601", country: "US" }
+      }
+    } }
+  };
+  let row;
+  let submitted;
+  const store = {
+    async insertPaidOrder(order) {
+      row = {
+        stripe_session_id: order.stripeSessionId,
+        stripe_event_id: order.stripeEventId,
+        quote_id: order.quoteId,
+        book_slug: order.bookSlug,
+        quantity: order.quantity,
+        buyer_email: order.buyerEmail,
+        shipping_address_json: JSON.stringify(order.address),
+        shipping_option: order.shippingOption,
+        shipping_cents: order.shippingCents,
+        currency: order.currency,
+        customer_total_cents: order.customerTotalCents,
+        tax_cents: order.taxCents,
+        checkout_mode: order.checkoutMode,
+        state: "paid"
+      };
+      return true;
+    },
+    async get() { return row; },
+    async claimForSubmission() { row.state = "submitting"; return true; },
+    async markSubmitted(_sessionId, printJobId, status) {
+      row.state = "submitted";
+      row.lulu_print_job_id = printJobId;
+      row.lulu_status = status;
+      submitted = { printJobId, status };
+    },
+    async markFailure() { throw new Error("Valid flat checkout must not enter failure state."); },
+    async markEmail() { throw new Error("Email cannot be marked sent without a configured provider."); }
+  };
+  const env = {
+    STRIPE_WEBHOOK_SECRET: secret,
+    PAPERBACK_FLAT_RATE_US_CENTS: "749",
+    PAPERBACK_FLAT_RATE_INTERNATIONAL_CENTS: "1999",
+    PAPERBACK_ENVIRONMENT: "production",
+    PAPERBACK_BASE_URL: "https://grizzly-parrot-paperback.example.workers.dev",
+    PAPERBACK_ASSET_SIGNING_SECRET: "asset-signing-secret",
+    LULU_CLIENT_KEY: "lulu-key",
+    LULU_CLIENT_SECRET: "lulu-secret",
+    SHOP_CONTACT_EMAIL: "orders@example.com"
+  };
+  const payload = JSON.stringify(event);
+  const timestamp = Math.floor(Date.now() / 1000);
+  const signature = await hmacHex(secret, `${timestamp}.${payload}`);
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async (url) => {
+    if (String(url).includes("/openid-connect/token")) {
+      return new Response(JSON.stringify({ access_token: "lulu-access-token" }), { status: 200 });
+    }
+    if (String(url).endsWith("/print-jobs/")) {
+      return new Response(JSON.stringify({ id: "lulu-flat-job", status: "CREATED" }), { status: 201 });
+    }
+    throw new Error(`Unexpected provider request: ${url}`);
+  };
+  try {
+    const response = await stripeWebhook(new Request("https://paperback-api.example.com/webhooks/stripe", {
+      method: "POST",
+      headers: { "stripe-signature": `t=${timestamp},v1=${signature}` },
+      body: payload
+    }), env, { storeFactory: () => store });
+    assert.deepEqual(await response.json(), { ok: true });
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+  assert.equal(row.quote_id, null);
+  assert.equal(row.shipping_cents, 749);
+  assert.equal(row.checkout_mode, "production_flat_rate_us");
+  assert.deepEqual(submitted, { printJobId: "lulu-flat-job", status: "CREATED" });
+});
+
 test("the private live-order page can open while every public paperback stays disabled", async () => {
   const env = {
     PAPERBACK_ENVIRONMENT: "production",
@@ -613,17 +902,18 @@ test("all book pages keep print controls fail-closed and use the canonical site 
     const html = await readFile(new URL(`../../../books/${page}`, import.meta.url), "utf8");
     assert.match(html, /button-disabled js-paperback-buy/);
     assert.match(html, /button-disabled js-hardcover-buy/);
-    assert.match(html, /event\.preventDefault\(\);/);
-    assert.match(html, /public-config\?bookSlug=/);
-    assert.match(html, /edition=' \+ item\.edition/);
+    assert.match(html, /data-shipping-region="us"/);
+    assert.match(html, /data-shipping-region="international"/);
+    assert.match(html, /print-checkout\.js\?v=20260825-flat-shipping/);
+    assert.match(html, /GrizzlyPrintCheckout\.init/);
     assert.match(html, /grizzly-parrot-paperback\.grizzlyparrott04\.workers\.dev/);
-    assert.match(html, /Safe default: this print button remains disabled/);
     assert.match(html, /market-structure-series\.css\?v=20260811-google-books/);
     assert.match(html, /<div class="logo">\s*<span class="logo-mark" aria-hidden="true">GP<\/span>\s*<span class="logo-text"><a href="https:\/\/grizzlyparrottrading\.com\/">Grizzly Parrot Trading<\/a><\/span>\s*<\/div>/s);
     assert.doesNotMatch(html, /class="brand-mark"/);
     assert.match(html, />Buy digital</);
-    assert.match(html, /label: 'Buy paperback'/);
-    assert.match(html, /label: 'Buy hardcover'/);
+    assert.match(html, /usShippingCents: 749/);
+    assert.match(html, /internationalShippingCents: 1999/);
+    assert.doesNotMatch(html, /\/print\/checkout/);
     assert.doesNotMatch(html, /Buy (?:digital|paperback|hardcover) edition/);
   }
   const css = await readFile(new URL("../../../books/market-structure-series.css", import.meta.url), "utf8");
@@ -631,6 +921,7 @@ test("all book pages keep print controls fail-closed and use the canonical site 
   assert.match(css, /\.logo-mark\s*\{[^}]*border-radius:\s*999px;/s);
   assert.doesNotMatch(css, /\.brand-mark/);
   assert.match(css, /\.price-box \.button\s*\{[^}]*white-space:\s*normal;/s);
+  assert.match(css, /\.print-checkout-actions\s*\{/);
   assert.match(css, /@media \(max-width:\s*1040px\)\s*\{\s*\.purchase-card\s*\{\s*grid-template-columns:\s*1fr;/s);
   assert.match(css, /@media \(max-width:\s*760px\)\s*\{\s*\.edition-options\s*\{\s*grid-template-columns:\s*1fr;/s);
 
@@ -645,17 +936,27 @@ test("all book pages keep print controls fail-closed and use the canonical site 
   assert.match(probabilistic, /button-disabled js-hardcover-buy/);
   assert.doesNotMatch(probabilistic, /Coming soon|Sales have not opened/);
   assert.match(probabilistic, /digital-config\?bookSlug=probabilistic-execution/);
-  assert.match(probabilistic, /public-config\?bookSlug=probabilistic-execution&edition=/);
+  assert.match(probabilistic, /print-checkout\.js\?v=20260825-flat-shipping/);
+  assert.match(probabilistic, /bookSlug: 'probabilistic-execution'/);
+  assert.match(probabilistic, /data-shipping-region="us"/);
+  assert.match(probabilistic, /data-shipping-region="international"/);
   assert.match(probabilistic, /data-price-paperback/);
   assert.match(probabilistic, /data-price-hardcover/);
   assert.match(probabilistic, /Safe default: digital checkout remains disabled/);
-  assert.match(probabilistic, /Safe default: this print button remains disabled/);
   assert.match(probabilistic, /Choose your edition\./);
   assert.match(probabilistic, /<strong data-price-paperback>\$39<\/strong>/);
   assert.match(probabilistic, /<strong data-price-hardcover>\$49<\/strong>/);
   assert.doesNotMatch(probabilistic, /buy\.stripe\.com\/[A-Za-z0-9]/);
   assert.match(probabilistic, /"isbn": "9780557956548"/);
   assert.match(probabilistic, /"isbn": "9780557956531"/);
+
+  const printCheckout = await readFile(new URL("../../../books/print-checkout.js", import.meta.url), "utf8");
+  assert.match(printCheckout, /\/public-config\?bookSlug=/);
+  assert.match(printCheckout, /parsed\.pathname === '\/print\/start'/);
+  assert.match(printCheckout, /parsed\.hostname === 'checkout\.stripe\.com'/);
+  assert.match(printCheckout, /global\.location\.assign\(checkoutUrl\)/);
+  assert.match(printCheckout, /Safe default: this print edition remains disabled/);
+  assert.doesNotMatch(printCheckout, /\/print\/checkout/);
 });
 
 test("hardcover activation is independent and returns the exact hardcover checkout", async () => {

@@ -268,6 +268,7 @@
             <li>Digital includes both PDF and EPUB files</li>
             <li>Paperback and hardcover are professionally bound physical copies</li>
             <li>One-time purchase through secure Stripe checkout</li>
+            <li>Flat shipping is $7.49 U.S. or $19.99 international</li>
           </ul>
         </div>
         <div class="edition-options" aria-label="Available editions">
@@ -280,17 +281,23 @@
           </div>
           <div class="price-box is-paperback" data-edition="paperback">
             <span>Paperback edition</span>
-            <strong>$39</strong>
-            <small>USD &middot; shipping extra</small>
-            <a class="button button-secondary button-wide button-disabled js-paperback-buy" href="#purchase" aria-disabled="true">Loading paperback checkout</a>
-            <p>Printed and shipped on demand.</p>
+            <strong data-price-paperback>$39</strong>
+            <small>USD &middot; $7.49 U.S. / $19.99 international shipping</small>
+            <div class="print-checkout-actions" aria-label="Paperback shipping destination">
+              <button class="button button-secondary button-wide button-disabled js-paperback-buy" type="button" data-shipping-region="us" disabled>U.S. checkout</button>
+              <button class="button button-secondary button-wide button-disabled js-paperback-buy" type="button" data-shipping-region="international" disabled>International checkout</button>
+            </div>
+            <p data-status-paperback aria-live="polite">Checking secure print checkout&hellip;</p>
           </div>
           <div class="price-box is-hardcover" data-edition="hardcover">
             <span>Hardcover edition</span>
-            <strong>$49</strong>
-            <small>USD &middot; shipping extra</small>
-            <a class="button button-secondary button-wide button-disabled js-hardcover-buy" href="#purchase" aria-disabled="true">Loading hardcover checkout</a>
-            <p>Case-wrap hardcover, printed and shipped on demand.</p>
+            <strong data-price-hardcover>$49</strong>
+            <small>USD &middot; $7.49 U.S. / $19.99 international shipping</small>
+            <div class="print-checkout-actions" aria-label="Hardcover shipping destination">
+              <button class="button button-secondary button-wide button-disabled js-hardcover-buy" type="button" data-shipping-region="us" disabled>U.S. checkout</button>
+              <button class="button button-secondary button-wide button-disabled js-hardcover-buy" type="button" data-shipping-region="international" disabled>International checkout</button>
+            </div>
+            <p data-status-hardcover aria-live="polite">Checking secure print checkout&hellip;</p>
           </div>
         </div>
       </div>
@@ -316,14 +323,11 @@
     </div>
   </footer>
 
+  <script src="../print-checkout.js?v=20260825-flat-shipping"></script>
   <script>
     (function () {
       var checkoutUrl = "https://buy.stripe.com/dRmbJ2dSl2061Ta0UE2Nq02";
       var buttons = document.querySelectorAll('.js-buy');
-      var printEditions = [
-        {edition: 'paperback', selector: '.js-paperback-buy', label: 'Buy paperback', checkoutUrl: ''},
-        {edition: 'hardcover', selector: '.js-hardcover-buy', label: 'Buy hardcover', checkoutUrl: ''}
-      ];
 
       var requestedEdition = new URLSearchParams(window.location.search).get('edition');
       if (['digital', 'paperback', 'hardcover'].indexOf(requestedEdition) !== -1) {
@@ -353,39 +357,17 @@
         });
       });
 
-      function updatePrintButtons(item) {
-        document.querySelectorAll(item.selector).forEach(function (button) {
-          if (item.checkoutUrl) {
-            button.href = item.checkoutUrl;
-            button.target = '_blank';
-            button.rel = 'noopener';
-            button.textContent = item.label;
-            button.removeAttribute('aria-disabled');
-            button.classList.remove('button-disabled');
-          } else {
-            button.href = '#purchase';
-            button.setAttribute('aria-disabled', 'true');
-            button.classList.add('button-disabled');
-          }
-        });
-      }
-
-      printEditions.forEach(function (item) {
-        document.querySelectorAll(item.selector).forEach(function (button) {
-          button.addEventListener('click', function (event) {
-            if (!item.checkoutUrl) event.preventDefault();
-          });
-        });
-        updatePrintButtons(item);
-        fetch('https://grizzly-parrot-paperback.grizzlyparrott04.workers.dev/public-config?bookSlug=metals-market-structure&edition=' + item.edition, {credentials: 'omit'})
-          .then(function (response) { return response.ok ? response.json() : null; })
-          .then(function (config) {
-            if (config && config.enabled === true && typeof config.checkoutUrl === 'string' && config.checkoutUrl.indexOf('https://') === 0) {
-              item.checkoutUrl = config.checkoutUrl;
-              updatePrintButtons(item);
-            }
-          })
-          .catch(function () { /* Safe default: this print button remains disabled. */ });
+      GrizzlyPrintCheckout.init({
+        workerBase: 'https://grizzly-parrot-paperback.grizzlyparrott04.workers.dev',
+        workerHost: 'grizzly-parrot-paperback.grizzlyparrott04.workers.dev',
+        bookSlug: 'metals-market-structure',
+        analyticsTitle: 'Metals Market Structure',
+        usShippingCents: 749,
+        internationalShippingCents: 1999,
+        editions: [
+          {edition: 'paperback', buttonSelector: '.js-paperback-buy', priceSelector: '[data-price-paperback]', statusSelector: '[data-status-paperback]'},
+          {edition: 'hardcover', buttonSelector: '.js-hardcover-buy', priceSelector: '[data-price-hardcover]', statusSelector: '[data-status-hardcover]'}
+        ]
       });
       document.getElementById('year').textContent = new Date().getFullYear();
     })();

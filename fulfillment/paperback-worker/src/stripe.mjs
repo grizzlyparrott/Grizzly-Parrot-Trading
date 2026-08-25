@@ -75,6 +75,43 @@ export class StripeClient {
     }
     return this.request("/checkout/sessions", fields, `print-checkout-${quote.quoteId}`);
   }
+
+  async createFlatRateCheckoutSession({ book, priceId, shipping, requestId, checkoutMode = "production" }) {
+    const fields = {
+      mode: "payment",
+      success_url: `${this.env.PAPERBACK_SUCCESS_URL}?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: this.env.PAPERBACK_CANCEL_URL,
+      client_reference_id: requestId,
+      submit_type: "pay",
+      "metadata[order_type]": "print_book_flat",
+      "metadata[book_slug]": book.slug,
+      "metadata[series_slug]": book.seriesSlug,
+      "metadata[edition]": book.edition,
+      "metadata[shipping_region]": shipping.region,
+      "metadata[flat_shipping_cents]": shipping.cents,
+      "metadata[book_price_cents]": book.priceCents,
+      "metadata[request_id]": requestId,
+      "metadata[pipeline_version]": "2",
+      "metadata[checkout_mode]": `${checkoutMode}_flat_rate_${shipping.region}`,
+      "line_items[0][price]": priceId,
+      "line_items[0][quantity]": 1,
+      "phone_number_collection[enabled]": "true",
+      "shipping_options[0][shipping_rate_data][type]": "fixed_amount",
+      "shipping_options[0][shipping_rate_data][display_name]": shipping.displayName,
+      "shipping_options[0][shipping_rate_data][fixed_amount][amount]": shipping.cents,
+      "shipping_options[0][shipping_rate_data][fixed_amount][currency]": shipping.currency.toLowerCase(),
+      "shipping_options[0][shipping_rate_data][metadata][shipping_region]": shipping.region
+    };
+    shipping.countries.forEach((country, index) => {
+      fields[`shipping_address_collection[allowed_countries][${index}]`] = country;
+    });
+    if (this.env.PAPERBACK_STRIPE_TAX_ENABLED === "true") {
+      fields["automatic_tax[enabled]"] = "true";
+      fields["shipping_options[0][shipping_rate_data][tax_behavior]"] = "exclusive";
+      fields["shipping_options[0][shipping_rate_data][tax_code]"] = "txcd_92010001";
+    }
+    return this.request("/checkout/sessions", fields, `print-flat-${book.slug}-${shipping.region}-${requestId}`);
+  }
 }
 
 export async function parseVerifiedStripeEvent(request, secret) {

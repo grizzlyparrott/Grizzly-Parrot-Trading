@@ -9,22 +9,23 @@ The default configuration is safe:
 - `PAPERBACK_SALES_ENABLED = "false"`
 - `PAPERBACK_PRIVATE_ORDER_ENABLED = "false"`
 - `PAPERBACK_PROOFS_APPROVED = "false"` and `PAPERBACK_POLICIES_APPROVED = "false"`
-- production shipping countries are empty and the Stripe Tax decision is `pending`
-- public paperback pages keep `paperbackCheckoutUrl = ""`
+- flat shipping is unavailable unless both server-side cent values are valid positive integers
+- public print buttons remain disabled until `/public-config` returns the exact checkout endpoint and rates
 - sandbox checkout requests need `x-paperback-test-token`
 - a private live order uses a separate token-gated page and does not enable `/public-config`
 - public production checkout requires every approval/configuration gate plus `PAPERBACK_SALES_ENABLED=true`
 
 ## Architecture
 
-1. A checkout UI sends the buyer's address and chosen edition to `POST /print/quote`.
-2. The Worker validates the address locally and asks Lulu's Print API for an address-specific shipping quote.
-3. The quote is stored in D1 for 30 minutes. `POST /print/checkout` creates one Stripe Checkout Session using the configured edition Price plus the quoted Lulu shipping amount. Stripe Tax is included only when the explicit tax setting is `true`.
-4. Stripe collects the shipping address again. The webhook verifies Stripe's signature, verifies the address stayed the same, and writes one D1 row keyed by the Stripe Checkout Session ID.
+1. Each public book page loads its exact edition price, `POST /print/start` endpoint, and flat rates from `/public-config`. The controls fail closed unless the response is HTTPS, comes from the canonical Worker, and reports exactly $7.49 U.S. and $19.99 international shipping.
+2. The buyer chooses U.S. or international. The page sends only the book, edition, region, and a random idempotency ID to `POST /print/start`; no customer address is collected by the Worker page.
+3. The Worker creates a Stripe-hosted Checkout Session using the configured edition Price, one server-owned flat shipping rate, phone collection, and a destination allowlist. U.S. sessions permit only `US`; international sessions exclude the U.S., Stripe-unsupported destinations, and Lulu's current no-ship list. Stripe Tax is included only when the explicit tax setting is `true`.
+4. Stripe collects the customer's email, phone, shipping address, and payment once. The signed paid webhook verifies the book price, flat rate, total, currency, request ID, and destination region before writing one D1 row keyed by the Stripe Checkout Session ID.
 5. The Worker submits the corresponding Lulu Print API job using the exact paperback or case-wrap hardcover POD package and signed R2 PDF URLs. It never uses a Lulu Publishing project ID as an API order ID.
-6. D1 prevents duplicate Stripe webhook delivery from creating a second print job. Ambiguous Lulu submission failures are held for manual review rather than retried into a possible duplicate print.
+6. D1 prevents duplicate Stripe webhook delivery from creating a second print job. A changed amount, wrong destination region, invalid address, or ambiguous Lulu submission is held for manual review rather than submitted or retried into a possible duplicate print.
 7. A scheduled Worker run polls Lulu status every 15 minutes and sends confirmation/shipment emails through Resend.
-8. The same scheduled run deletes expired shipping quotes, so abandoned checkout emails and addresses are not retained after the 30-minute quote window.
+
+The address-specific `/print/quote` and `/print/checkout` flow remains available for controlled sandbox/private-order verification. It is not linked from public book pages. The scheduled run deletes its expired quotes so abandoned test/private checkout emails and addresses are not retained after 30 minutes.
 
 Digital Payment Link events take a separate path. A signed Stripe `checkout.session.completed` or `checkout.session.async_payment_succeeded` event is accepted only when it is paid, totals exactly $29 USD, and matches a configured live Payment Link ID. D1 permits the corresponding UET purchase event to be claimed once, so page visits, checkout opens, unpaid sessions, and confirmation-page refreshes cannot create purchases.
 
@@ -83,14 +84,15 @@ These IDs document the existing proof copies. Lulu's Print API instead needs the
 
 1. Copy `wrangler.example.toml` to a local, uncommitted `wrangler.toml` and create the D1 database plus R2 bucket named there.
 2. Run `wrangler d1 execute grizzly-parrot-paperback-orders --file schema.sql --remote`.
-3. Put the eight secrets in the Worker dashboard or with `wrangler secret put`:
+3. Configure `PAPERBACK_FLAT_RATE_US_CENTS="749"` and `PAPERBACK_FLAT_RATE_INTERNATIONAL_CENTS="1999"`. Leave `PAPERBACK_INTERNATIONAL_COUNTRIES` empty to use the audited Stripe/Lulu intersection, or provide a narrower comma-separated override.
+4. Put the eight secrets in the Worker dashboard or with `wrangler secret put`:
    - `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET`
    - `LULU_CLIENT_KEY` and `LULU_CLIENT_SECRET`
    - `RESEND_API_KEY`
    - `PAPERBACK_TEST_TOKEN`
    - `PAPERBACK_ASSET_SIGNING_SECRET`
    - `PAPERBACK_PRIVATE_ORDER_TOKEN`
-4. The non-secret Stripe sandbox Price IDs are already present in `wrangler.example.toml`:
+5. The non-secret Stripe sandbox Price IDs are already present in `wrangler.example.toml`:
 
 | Paperback | Stripe test Price ID |
 | --- | --- |
@@ -99,10 +101,10 @@ These IDs document the existing proof copies. Lulu's Print API instead needs the
 | Equity Market Structure: Volume III | `price_1TvNQrIA3p8RBkZI4SmXnkjj` |
 
    Replace all three with new **live** Stripe Price IDs before any production activation.
-5. Apply `migrations/0002_private_launch_and_tax.sql` and `migrations/0003_digital_uet_conversions.sql` once to the existing D1 database. Before enabling Probabilistic Execution digital delivery, apply `migrations/0004_probabilistic_digital_delivery.sql`; it preserves the three existing conversion labels, adds the fourth label, and creates the delivery queue.
-6. Run the applicable asset-manifest script with an explicit absolute source path. Execute its generated R2 commands only after the relevant proof-based or direct-site sales authorization, then download and hash every remote object before enabling checkout. The explicit path prevents an older or relocated worktree from selecting the wrong files.
-7. In Stripe, send `checkout.session.completed` and `checkout.session.async_payment_succeeded` to `/webhooks/stripe`. Use a sandbox/test endpoint first.
-8. In Lulu's **separate sandbox Print API account**, add a test card on file. Lulu holds API print jobs in `UNPAID` until a card is on file for automatic payment.
+6. Apply `migrations/0002_private_launch_and_tax.sql` and `migrations/0003_digital_uet_conversions.sql` once to the existing D1 database. Before enabling Probabilistic Execution digital delivery, apply `migrations/0004_probabilistic_digital_delivery.sql`; it preserves the three existing conversion labels, adds the fourth label, and creates the delivery queue.
+7. Run the applicable asset-manifest script with an explicit absolute source path. Execute its generated R2 commands only after the relevant proof-based or direct-site sales authorization, then download and hash every remote object before enabling checkout. The explicit path prevents an older or relocated worktree from selecting the wrong files.
+8. In Stripe, send `checkout.session.completed` and `checkout.session.async_payment_succeeded` to `/webhooks/stripe`. Use a sandbox/test endpoint first.
+9. In Lulu's **separate sandbox Print API account**, add a test card on file. Lulu holds API print jobs in `UNPAID` until a card is on file for automatic payment.
 
 ## Cloudflare Git deployment
 
@@ -134,10 +136,10 @@ Open the returned Stripe **test-mode** URL and pay only with Stripe's documented
 Do not make a public button independently authoritative. The page must load each print link from `/public-config`, and that endpoint must stay disabled until its exact edition is ready:
 
 1. Pin the final interior and cover hashes in the catalog, upload those exact objects, then download and hash them again from remote storage.
-2. Configure the exact live Stripe Price, approved countries, policy decision, and Stripe Tax decision.
+2. Configure the exact live Stripe Price, approved flat rates, destination policy, store policy decision, and Stripe Tax decision.
 3. For a release-keyed title, set `FILES_VALIDATED=true` and the scoped `DIRECT_SALES_APPROVED=true` while leaving `PROOF_APPROVED=false` unless a physical proof was actually accepted.
 4. Optionally use the token-gated private-order mode for one controlled live verification. Never treat opening a private page or creating a Stripe session as proof of successful fulfillment.
 5. Enable the title-and-edition `SALES_ENABLED` flag, deploy the complete `wrangler.toml`, and verify the Worker version retains D1, R2, and required secrets.
-6. Confirm both `/public-config` responses, both rendered checkout pages, an address-specific Lulu quote, all pre-existing book configurations, and the canonical page after propagation. Do not create a paid customer order during release QA.
+6. Confirm both `/public-config` responses, create one unpaid U.S. and one unpaid international Stripe Session, verify their fixed shipping amounts and country controls on Stripe, then confirm all pre-existing book configurations and every canonical page after propagation. Do not enter payment details or create a paid customer order during release QA.
 
 The catalog contains four paperbacks and four case-wrap hardcovers. Probabilistic Execution uses its scoped direct-site gate; its physical-proof and retailer-distribution records remain separate.
