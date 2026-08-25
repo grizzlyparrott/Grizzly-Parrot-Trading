@@ -1,6 +1,6 @@
 # Print-book fulfillment worker
 
-This Worker owns paperback and hardcover fulfillment. For the three existing Market Structure digital titles, it continues to record only the isolated Microsoft UET attribution row. For Probabilistic Execution, it preserves the established Stripe webhook to Resend delivery architecture and adds a durable, title-specific queue for the exact PDF and EPUB attachments.
+This Worker owns paperback and hardcover fulfillment. For the three individual Market Structure digital titles, it continues to record only the isolated Microsoft UET attribution row. Probabilistic Execution and the $69 Market Structure Digital Trilogy use the durable Stripe webhook to Resend delivery architecture: exact paid Checkout events create one delivery queue row, private R2 objects are hash-verified, and the buyer receives the configured PDF and EPUB attachments exactly once.
 
 ## Safety gate
 
@@ -27,9 +27,17 @@ The default configuration is safe:
 
 The address-specific `/print/quote` and `/print/checkout` flow remains available for controlled sandbox/private-order verification. It is not linked from public book pages. The scheduled run deletes its expired quotes so abandoned test/private checkout emails and addresses are not retained after 30 minutes.
 
-Digital Payment Link events take a separate path. A signed Stripe `checkout.session.completed` or `checkout.session.async_payment_succeeded` event is accepted only when it is paid, totals exactly $29 USD, and matches a configured live Payment Link ID. D1 permits the corresponding UET purchase event to be claimed once, so page visits, checkout opens, unpaid sessions, and confirmation-page refreshes cannot create purchases.
+Digital Payment Link events take a separate path. A signed Stripe `checkout.session.completed` or `checkout.session.async_payment_succeeded` event is accepted only when it is paid, matches a configured live Payment Link ID, and has that offer's exact total: $29 USD for an individual title or $69 USD for the trilogy. D1 permits the corresponding UET purchase event to be claimed once, so page visits, checkout opens, unpaid sessions, wrong-price sessions, and confirmation-page refreshes cannot create purchases.
 
-For `probabilistic_execution` only, that verified event also creates one D1 delivery row keyed by the Stripe Checkout Session ID. The Worker reads the two immutable objects from the private R2 binding, verifies each SHA-256, and sends both as Resend attachments with a deterministic idempotency key. Definitive throttling or server rejection receives at most two timed retries; an ambiguous transport result or expired in-flight lease moves to manual review instead of risking a duplicate email. Digital object keys are not admitted by the signed public print-asset route.
+For `probabilistic_execution` and `market_structure_trilogy`, that verified event also creates one D1 delivery row keyed by the Stripe Checkout Session ID. The Worker selects the delivery manifest from the verified purchase label, reads the immutable objects from the private R2 binding, verifies each SHA-256, and sends either two or six Resend attachments with an offer-specific deterministic idempotency key. Definitive throttling or server rejection receives at most two timed retries; an ambiguous transport result or expired in-flight lease moves to manual review instead of risking a duplicate email. Digital object keys are not admitted by the signed public print-asset route.
+
+## Market Structure Digital Trilogy
+
+The bundle contains the Sale Assets PDF and EPUB for Currency Market Structure Volume I, Metals Market Structure Volume II, and Equity Market Structure Volume III. The six exact keys and SHA-256 values are pinned in `src/digital-delivery.mjs`. Run `node scripts/market-structure-trilogy-digital-asset-manifest.mjs "C:\absolute\path\to\Market_Structure_Series"` to verify the immutable source files and print their private R2 upload commands; the script itself never uploads or publishes a paid file.
+
+Migration `0005_market_structure_trilogy_bundle.sql` expands the verified-purchase constraint to `market_structure_trilogy` and the exact $69 total while rebuilding the delivery table so its foreign key remains attached to the new purchase table. Checkout remains fail-closed unless both bundle release gates are true, the exact live Payment Link ID and Stripe URL are configured, Resend and private R2 are ready, and `/digital-config?bookSlug=market-structure-trilogy` returns the exact 6900-cent offer.
+
+On 2026-08-25, production D1 migration `0005_market_structure_trilogy_bundle.sql` completed with no foreign-key violations and preserved both empty digital tables. All six pinned Sale Assets were uploaded to the private R2 trilogy prefix and independently downloaded again; every byte count and SHA-256 matched the authoritative source. Stripe product `prod_V8k4cMHt5OaC9B` and Payment Link `plink_1U8ScuIA3p8RBkZIXHvFEmTX` define the active one-time $69 USD offer at `https://buy.stripe.com/dRmaEY29DdIO9lC8n62Nq05`: fixed quantity one, automatic digital-book tax, no shipping-address collection, and a verified Checkout Session redirect to the private-delivery confirmation page.
 
 ## Probabilistic Execution digital and direct-site release
 

@@ -6,7 +6,9 @@ import test from "node:test";
 import {
   DigitalDeliveryError,
   digitalDeliveryConfigured,
+  MARKET_STRUCTURE_TRILOGY_DIGITAL_DELIVERY,
   normalizeDigitalBuyerEmail,
+  sendDigitalDelivery,
   sendProbabilisticDigitalDelivery
 } from "../src/digital-delivery.mjs";
 import worker, {
@@ -57,6 +59,61 @@ test("digital delivery stays disabled until its private assets, sender, API key,
   assert.equal(digitalDeliveryConfigured({ ...env, PROBABILISTIC_EXECUTION_DIGITAL_DELIVERY_ENABLED: "false" }), false);
   assert.equal(digitalDeliveryConfigured({ ...env, RESEND_API_KEY: "" }), false);
   assert.equal(digitalDeliveryConfigured({ ...env, PRINT_ASSETS: null }), false);
+});
+
+test("the trilogy configuration pins exactly three PDFs and three EPUBs to immutable SHA-256 values", () => {
+  const assets = MARKET_STRUCTURE_TRILOGY_DIGITAL_DELIVERY.assets;
+  assert.equal(assets.length, 6);
+  assert.equal(new Set(assets.map(({ key }) => key)).size, 6);
+  assert.equal(assets.filter(({ contentType }) => contentType === "application/pdf").length, 3);
+  assert.equal(assets.filter(({ contentType }) => contentType === "application/epub+zip").length, 3);
+  for (const asset of assets) {
+    assert.match(asset.key, /^digital\/market-structure-trilogy\/2026-07-19\//);
+    assert.match(asset.sha256, /^[A-F0-9]{64}$/);
+  }
+});
+
+test("the trilogy delivery sends all six verified files with its own deterministic idempotency key", async () => {
+  const fixtures = [
+    fixtureAsset("digital/test/currency.pdf", "Currency.pdf", "application/pdf", "currency-pdf"),
+    fixtureAsset("digital/test/currency.epub", "Currency.epub", "application/epub+zip", "currency-epub"),
+    fixtureAsset("digital/test/metals.pdf", "Metals.pdf", "application/pdf", "metals-pdf"),
+    fixtureAsset("digital/test/metals.epub", "Metals.epub", "application/epub+zip", "metals-epub"),
+    fixtureAsset("digital/test/equity.pdf", "Equity.pdf", "application/pdf", "equity-pdf"),
+    fixtureAsset("digital/test/equity.epub", "Equity.epub", "application/epub+zip", "equity-epub")
+  ];
+  const objects = new Map(fixtures.map(({ descriptor, bytes }) => [descriptor.key, bytes]));
+  const configuration = {
+    ...MARKET_STRUCTURE_TRILOGY_DIGITAL_DELIVERY,
+    assets: fixtures.map(({ descriptor }) => descriptor)
+  };
+  const env = {
+    MARKET_STRUCTURE_TRILOGY_DIGITAL_DELIVERY_ENABLED: "true",
+    RESEND_API_KEY: "re_test_delivery_key",
+    DIGITAL_EMAIL_FROM: "Grizzly Parrot Trading <sales@example.com>",
+    PRINT_ASSETS: {
+      async get(key) {
+        const bytes = objects.get(key);
+        return bytes ? { async arrayBuffer() { return bytes.slice().buffer; } } : null;
+      }
+    }
+  };
+  let request;
+  const result = await sendDigitalDelivery(env, {
+    stripe_session_id: "cs_test_trilogy_delivery",
+    buyer_email: "reader@example.com"
+  }, {
+    configuration,
+    async fetchImpl(url, init) {
+      request = { url, init, body: JSON.parse(init.body) };
+      return new Response(JSON.stringify({ id: "email_trilogy_123" }), { status: 200 });
+    }
+  });
+  assert.equal(result.messageId, "email_trilogy_123");
+  assert.equal(request.init.headers["Idempotency-Key"], "market-structure-trilogy-digital-cs_test_trilogy_delivery");
+  assert.equal(request.body.attachments.length, 6);
+  assert.match(request.body.subject, /Market Structure Digital Trilogy/);
+  assert.equal(request.body.tags.find(({ name }) => name === "book")?.value, "market_structure_trilogy");
 });
 
 test("digital object keys are never served through the signed print-asset route", async () => {
@@ -341,6 +398,74 @@ test("a signed paid Probabilistic webhook queues and sends to the normalized Che
   });
 });
 
+test("a signed paid $69 trilogy webhook queues one six-file delivery and preserves the bundle label", async () => {
+  const secret = "whsec_trilogy_delivery";
+  const event = {
+    id: "evt_trilogy_delivery",
+    type: "checkout.session.completed",
+    data: { object: {
+      id: "cs_test_trilogy_delivery",
+      mode: "payment",
+      payment_status: "paid",
+      amount_total: 6900,
+      currency: "usd",
+      payment_link: "plink_trilogy_delivery",
+      customer_details: { email: " BundleReader@Example.com " }
+    } }
+  };
+  const body = JSON.stringify(event);
+  const timestamp = Math.floor(Date.now() / 1000);
+  const signature = await hmacHex(secret, `${timestamp}.${body}`);
+  const recorded = {};
+  const delivery = {
+    stripe_session_id: event.data.object.id,
+    buyer_email: "bundlereader@example.com",
+    status: "queued",
+    attempts: 1
+  };
+  const store = {
+    async insertDigitalPurchase(purchase) { recorded.purchase = purchase; return true; },
+    async ensureDigitalDelivery(sessionId, buyerEmail, _now, status) {
+      recorded.queue = { sessionId, buyerEmail, status };
+      return delivery;
+    },
+    async claimDigitalDelivery() { return delivery; },
+    async digitalDelivery() { return delivery; },
+    async markDigitalDeliverySent(sessionId, messageId) { recorded.sent = { sessionId, messageId }; },
+    async markDigitalDeliveryFailure() { throw new Error("bundle delivery should not fail"); }
+  };
+  const response = await stripeWebhook(new Request("https://paperback-api.example.com/webhooks/stripe", {
+    method: "POST",
+    headers: { "stripe-signature": `t=${timestamp},v1=${signature}` },
+    body
+  }), {
+    STRIPE_WEBHOOK_SECRET: secret,
+    STRIPE_PAYMENT_LINK_MARKET_STRUCTURE_TRILOGY_DIGITAL: "plink_trilogy_delivery"
+  }, {
+    storeFactory: () => store,
+    async sendDigital(_env, claimed, { configuration }) {
+      recorded.recipient = claimed.buyer_email;
+      recorded.configuration = configuration;
+      return { provider: "resend", messageId: "email_trilogy_delivery" };
+    }
+  });
+  assert.deepEqual(await response.json(), {
+    ok: true,
+    digitalPurchase: true,
+    duplicate: false,
+    deliveryState: "sent"
+  });
+  assert.equal(recorded.purchase.eventLabel, "market_structure_trilogy");
+  assert.equal(recorded.purchase.amountTotal, 6900);
+  assert.equal(recorded.recipient, "bundlereader@example.com");
+  assert.equal(recorded.configuration.assets.length, 6);
+  assert.equal(recorded.configuration.eventLabel, "market_structure_trilogy");
+  assert.deepEqual(recorded.sent, {
+    sessionId: "cs_test_trilogy_delivery",
+    messageId: "email_trilogy_delivery"
+  });
+});
+
 test("database schema and forward migration both admit the fourth title and durable delivery states", async () => {
   const schema = await readFile(new URL("../schema.sql", import.meta.url), "utf8");
   const migration = await readFile(new URL("../migrations/0004_probabilistic_digital_delivery.sql", import.meta.url), "utf8");
@@ -350,4 +475,16 @@ test("database schema and forward migration both admit the fourth title and dura
     assert.match(text, /retryable_failure/);
     assert.match(text, /resend_email_id/);
   }
+});
+
+test("the bundle migration admits the $69 trilogy and rebuilds the delivery foreign key safely", async () => {
+  const schema = await readFile(new URL("../schema.sql", import.meta.url), "utf8");
+  const migration = await readFile(new URL("../migrations/0005_market_structure_trilogy_bundle.sql", import.meta.url), "utf8");
+  for (const text of [schema, migration]) {
+    assert.match(text, /'market_structure_trilogy'/);
+    assert.match(text, /amount_total IN \(2900, 6900\)/);
+  }
+  assert.match(migration, /ALTER TABLE digital_deliveries RENAME TO digital_deliveries_legacy/);
+  assert.match(migration, /FOREIGN KEY \(stripe_session_id\) REFERENCES digital_purchase_conversions/);
+  assert.match(migration, /INSERT INTO digital_deliveries/);
 });

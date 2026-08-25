@@ -65,9 +65,10 @@ CREATE TABLE IF NOT EXISTS digital_purchase_conversions (
     'currency_market_structure',
     'metals_market_structure',
     'equity_market_structure',
-    'probabilistic_execution'
+    'probabilistic_execution',
+    'market_structure_trilogy'
   )),
-  amount_total INTEGER NOT NULL CHECK (amount_total = 2900),
+  amount_total INTEGER NOT NULL CHECK (amount_total IN (2900, 6900)),
   currency TEXT NOT NULL CHECK (currency = 'usd'),
   verified_at TEXT NOT NULL,
   claimed_at TEXT
@@ -76,9 +77,9 @@ CREATE TABLE IF NOT EXISTS digital_purchase_conversions (
 CREATE UNIQUE INDEX IF NOT EXISTS digital_purchase_conversions_stripe_event
   ON digital_purchase_conversions (stripe_event_id);
 
--- Probabilistic Execution preserves the established Stripe -> custom webhook
--- -> Resend attachment flow, but records every attempt so a paid buyer cannot
--- silently lose delivery. No digital object is exposed through a public route.
+-- Paid digital offers using the private Stripe -> webhook -> Resend attachment
+-- flow record every attempt so a buyer cannot silently lose delivery. No
+-- digital object is exposed through a public route.
 CREATE TABLE IF NOT EXISTS digital_deliveries (
   stripe_session_id TEXT PRIMARY KEY NOT NULL,
   buyer_email TEXT,

@@ -157,6 +157,35 @@ test("Probabilistic Execution digital checkout requires a matching Stripe ID, UR
   assert.equal(digitalCheckoutConfig("another-book", configured), null);
 });
 
+test("the $69 trilogy checkout requires its own exact Stripe link and both bundle release gates", () => {
+  const configured = {
+    MARKET_STRUCTURE_TRILOGY_DIGITAL_SALES_ENABLED: "true",
+    MARKET_STRUCTURE_TRILOGY_DIGITAL_DELIVERY_ENABLED: "true",
+    STRIPE_PAYMENT_LINK_MARKET_STRUCTURE_TRILOGY_DIGITAL: "plink_trilogy123456",
+    STRIPE_CHECKOUT_URL_MARKET_STRUCTURE_TRILOGY_DIGITAL: "https://buy.stripe.com/trilogy123456",
+    RESEND_API_KEY: "re_test_delivery_key",
+    DIGITAL_EMAIL_FROM: "Grizzly Parrot Trading <sales@example.com>",
+    PRINT_ASSETS: { async get() { return null; } }
+  };
+  assert.deepEqual(digitalCheckoutConfig("market-structure-trilogy", configured), {
+    enabled: true,
+    checkoutUrl: "https://buy.stripe.com/trilogy123456",
+    priceCents: 6900
+  });
+  assert.equal(digitalCheckoutConfig("market-structure-trilogy", {
+    ...configured,
+    MARKET_STRUCTURE_TRILOGY_DIGITAL_SALES_ENABLED: "false"
+  }).enabled, false);
+  assert.equal(digitalCheckoutConfig("market-structure-trilogy", {
+    ...configured,
+    MARKET_STRUCTURE_TRILOGY_DIGITAL_DELIVERY_ENABLED: "false"
+  }).enabled, false);
+  assert.equal(digitalCheckoutConfig("market-structure-trilogy", {
+    ...configured,
+    STRIPE_CHECKOUT_URL_MARKET_STRUCTURE_TRILOGY_DIGITAL: "https://example.com/not-stripe"
+  }).enabled, false);
+});
+
 test("a release-keyed print edition cannot inherit another title's proof or sales approval", () => {
   const book = Object.freeze({
     ...getBook("currency-market-structure"),
@@ -273,18 +302,22 @@ test("Stripe webhook HMAC verification accepts a current signed payload and reje
   assert.equal(await verifyStripeSignature(`${payload}x`, `t=${timestamp},v1=${signature}`, secret), false);
 });
 
-test("digital purchases map only paid $29 Checkout Sessions from the four configured Payment Links", () => {
+test("digital purchases map exact paid totals from the five configured Payment Links", () => {
   const env = {
     STRIPE_PAYMENT_LINK_CURRENCY_DIGITAL: "plink_currency",
     STRIPE_PAYMENT_LINK_METALS_DIGITAL: "plink_metals",
     STRIPE_PAYMENT_LINK_EQUITY_DIGITAL: "plink_equity",
-    STRIPE_PAYMENT_LINK_PROBABILISTIC_DIGITAL: "plink_probabilistic"
+    STRIPE_PAYMENT_LINK_PROBABILISTIC_DIGITAL: "plink_probabilistic",
+    STRIPE_PAYMENT_LINK_MARKET_STRUCTURE_TRILOGY_DIGITAL: "plink_trilogy"
   };
   const base = { id: "cs_live_paid", mode: "payment", payment_status: "paid", amount_total: 2900, currency: "usd" };
   assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_currency" }, env).eventLabel, "currency_market_structure");
   assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_metals" }, env).eventLabel, "metals_market_structure");
   assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_equity" }, env).eventLabel, "equity_market_structure");
   assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_probabilistic" }, env).eventLabel, "probabilistic_execution");
+  assert.equal(digitalPurchaseFromSession({ ...base, amount_total: 6900, payment_link: "plink_trilogy" }, env).eventLabel, "market_structure_trilogy");
+  assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_trilogy" }, env), null);
+  assert.equal(digitalPurchaseFromSession({ ...base, amount_total: 6900, payment_link: "plink_currency" }, env), null);
   assert.equal(digitalPurchaseFromSession({ ...base, payment_status: "unpaid", payment_link: "plink_currency" }, env), null);
   assert.equal(digitalPurchaseFromSession({ ...base, amount_total: 2800, payment_link: "plink_currency" }, env), null);
   assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_other" }, env), null);
@@ -585,6 +618,7 @@ test("default deployment is unable to sell either print edition and reports both
     privateOrderEnabled: false,
     environment: "sandbox",
     probabilisticDigitalDeliveryReady: false,
+    marketStructureTrilogyDigitalDeliveryReady: false,
     readiness: {
       paperbackProofsApproved: false,
       hardcoverProofsApproved: false,
@@ -907,10 +941,15 @@ test("all book pages keep print controls fail-closed and use the canonical site 
     assert.match(html, /print-checkout\.js\?v=20260825-flat-shipping/);
     assert.match(html, /GrizzlyPrintCheckout\.init/);
     assert.match(html, /grizzly-parrot-paperback\.grizzlyparrott04\.workers\.dev/);
-    assert.match(html, /market-structure-series\.css\?v=20260811-google-books/);
+    assert.match(html, /market-structure-series\.css\?v=20260825-trilogy/);
     assert.match(html, /<div class="logo">\s*<span class="logo-mark" aria-hidden="true">GP<\/span>\s*<span class="logo-text"><a href="https:\/\/grizzlyparrottrading\.com\/">Grizzly Parrot Trading<\/a><\/span>\s*<\/div>/s);
     assert.doesNotMatch(html, /class="brand-mark"/);
     assert.match(html, />Buy digital</);
+    assert.match(html, /button-disabled js-trilogy-buy/);
+    assert.match(html, /digital-checkout\.js\?v=20260825-trilogy/);
+    assert.match(html, /bookSlug: 'market-structure-trilogy'/);
+    assert.match(html, /expectedPriceCents: 6900/);
+    assert.match(html, /Get all three &mdash; \$69/);
     assert.match(html, /usShippingCents: 749/);
     assert.match(html, /internationalShippingCents: 1999/);
     assert.doesNotMatch(html, /\/print\/checkout/);
@@ -922,6 +961,7 @@ test("all book pages keep print controls fail-closed and use the canonical site 
   assert.doesNotMatch(css, /\.brand-mark/);
   assert.match(css, /\.price-box \.button\s*\{[^}]*white-space:\s*normal;/s);
   assert.match(css, /\.print-checkout-actions\s*\{/);
+  assert.match(css, /\.series-bundle-offer\s*\{/);
   assert.match(css, /@media \(max-width:\s*1040px\)\s*\{\s*\.purchase-card\s*\{\s*grid-template-columns:\s*1fr;/s);
   assert.match(css, /@media \(max-width:\s*760px\)\s*\{\s*\.edition-options\s*\{\s*grid-template-columns:\s*1fr;/s);
 
@@ -929,6 +969,12 @@ test("all book pages keep print controls fail-closed and use the canonical site 
   assert.match(catalog, /<span class="logo-mark" aria-hidden="true">GP<\/span>/);
   assert.match(catalog, /<span class="logo-text"><a href="https:\/\/grizzlyparrottrading\.com\/">Grizzly Parrot Trading<\/a><\/span>/);
   assert.doesNotMatch(catalog, /<nav class="main-nav">\s*<ul>/s);
+  assert.match(catalog, /id="market-structure-digital-trilogy"/);
+  assert.match(catalog, /"sku": "market-structure-digital-trilogy"/);
+  assert.match(catalog, /"price": "69\.00"/);
+  assert.match(catalog, /\$87 separately &middot; save \$18/);
+  assert.match(catalog, /button-disabled js-trilogy-buy/);
+  assert.match(catalog, /digital-checkout\.js\?v=20260825-trilogy/);
 
   const probabilistic = await readFile(new URL("../../../books/probabilistic-execution/index.html", import.meta.url), "utf8");
   assert.match(probabilistic, /button-disabled js-digital-buy/);
@@ -957,6 +1003,12 @@ test("all book pages keep print controls fail-closed and use the canonical site 
   assert.match(printCheckout, /global\.location\.assign\(checkoutUrl\)/);
   assert.match(printCheckout, /Safe default: this print edition remains disabled/);
   assert.doesNotMatch(printCheckout, /\/print\/checkout/);
+
+  const digitalCheckout = await readFile(new URL("../../../books/digital-checkout.js", import.meta.url), "utf8");
+  assert.match(digitalCheckout, /\/digital-config\?bookSlug=/);
+  assert.match(digitalCheckout, /config\.priceCents !== options\.expectedPriceCents/);
+  assert.match(digitalCheckout, /\['buy\.stripe\.com', 'book\.stripe\.com'\]/);
+  assert.match(digitalCheckout, /Digital bundle checkout is temporarily unavailable/);
 });
 
 test("hardcover activation is independent and returns the exact hardcover checkout", async () => {
