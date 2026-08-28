@@ -1,228 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ES Market Structure: Trends, Pullbacks, and Reversal Zones</title>
-  <meta name="description" content="A no-BS breakdown of ES market structure so beginners can read trends, pullbacks, and reversal zones without guessing.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-market-structure-trends-pulls-and-reversals.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="ES Market Structure: Trends, Pullbacks, and Reversal Zones">
-  <meta property="og:description" content="A no-BS breakdown of ES market structure so beginners can read trends, pullbacks, and reversal zones without guessing.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-market-structure-trends-pulls-and-reversals.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="ES Market Structure: Trends, Pullbacks, and Reversal Zones">
-  <meta name="twitter:description" content="A no-BS breakdown of ES market structure so beginners can read trends, pullbacks, and reversal zones without guessing.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "ES Market Structure: Trends, Pullbacks, and Reversal Zones",
-  "description": "A no-BS breakdown of ES market structure so beginners can read trends, pullbacks, and reversal zones without guessing.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/es-market-structure-trends-pulls-and-reversals.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/es-market-structure-trends-pulls-and-reversals.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "ES Market Structure: Trends, Pullbacks, and Reversal Zones",
-      "item": "https://grizzlyparrottrading.com/futures-basics/es-market-structure-trends-pulls-and-reversals.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ES Market Structure: Forward-Safe Trends, Pullbacks, and Reversals</title>
+<meta name="description" content="Turn ES trend, pullback and reversal language into forward-safe state definitions, transition tests and invalidation rules without hindsight labels.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-market-structure-trends-pulls-and-reversals.html">
+<meta property="og:title" content="ES Market Structure: Forward-Safe Trends, Pullbacks, and Reversals">
+<meta property="og:description" content="Turn ES trend, pullback and reversal language into forward-safe state definitions, transition tests and invalidation rules without hindsight labels.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-market-structure-trends-pulls-and-reversals.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta property="og:image:alt" content="Grizzly Parrot Trading">
+<meta property="article:published_time" content="2025-11-24">
+<meta property="article:modified_time" content="2026-08-25">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ES Market Structure: Forward-Safe Trends, Pullbacks, and Reversals">
+<meta name="twitter:description" content="Turn ES trend, pullback and reversal language into forward-safe state definitions, transition tests and invalidation rules without hindsight labels.">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ES Market Structure: Forward-Safe Trends, Pullbacks, and Reversals","description":"Turn ES trend, pullback and reversal language into forward-safe state definitions, transition tests and invalidation rules without hindsight labels.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/es-market-structure-trends-pulls-and-reversals.html"},"datePublished":"2025-11-24","dateModified":"2026-08-25","url":"https://grizzlyparrottrading.com/futures-basics/es-market-structure-trends-pulls-and-reversals.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"ES Market Structure: Forward-Safe Trends, Pullbacks, and Reversals","item":"https://grizzlyparrottrading.com/futures-basics/es-market-structure-trends-pulls-and-reversals.html"}]}</script>
+<script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
 <!-- ARTICLE BODY START -->
+<header class="fx-hero">
+<div class="fx-hero-copy"><p class="fx-kicker">Definitions &middot; decision clock &middot; transitions</p><h1>ES Market Structure: Forward-Safe Trends, Pullbacks, and Reversals</h1><p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 25, 2026</p><p class="fx-hero-lede">Show the same ES path to two analysts and one may label a healthy pullback while the other sees the start of a reversal. The disagreement is not solved by drawing more lines. It is solved by defining observable states, the time each label becomes available and the evidence that retires it.</p><div class="fx-hero-actions"><a class="button-primary" href="#definitions">Define the states</a><a class="fx-text-link" href="#unusable">Permit unusable</a></div><dl class="fx-hero-metrics" aria-label="Market structure labeling principles"><div><dt>Features</dt><dd>Past and present only</dd></div><div><dt>Label time</dt><dd>Explicit</dd></div><div><dt>Transitions</dt><dd>Estimated, not promised</dd></div><div><dt>Hindsight</dt><dd>Blocked</dd></div></dl></div>
+<aside class="fx-market-board" aria-label="Two labels for one path"><div class="fx-board-head"><span>Same retracement</span><strong>Different analyst labels</strong></div><div class="fx-proof-grid"><div class="fx-proof"><strong>Analyst A</strong><span>Pullback inside an existing up state</span></div><div class="fx-proof is-limit"><strong>Analyst B</strong><span>Early reversal after a failed extreme</span></div></div><p class="fx-board-foot">Write the rule before the outcome</p></aside>
+</header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#definitions">Definitions</a><a href="#clock">Label clock</a><a href="#transitions">Transitions</a><a href="#validate">Validation</a><a href="#unusable">Unusable</a></nav>
 
-<h1>ES Market Structure: Trends, Pullbacks, and Reversal Zones</h1>
-
-<p>
-Most ES beginners get wrecked because they trade against structure. ES trends cleanly when institutions are positioned, pulls back in predictable spots, and reverses in areas that show up every single week. This guide strips out the fluff and tells you what actually matters.
-</p>
-
-<h2>How ES Trends Form</h2>
-<p>
-A trend on ES is just a sequence of higher highs and higher lows (uptrend) or lower highs and lower lows (downtrend). Sounds basic, but most traders ignore the structure and chase candles. ES trends best when volatility (ATR) sits in the expansion zone. If you haven’t read it yet, check  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-atr-behavior-and-volatility-zones.html">ES ATR Volatility Zones</a>.
-</p>
-
-<h2>Pullbacks: Where ES Actually Respects Structure</h2>
-<p>
-ES pullbacks don’t happen randomly. They form at:
-</p>
-
-<ul>
-  <li>Prior session highs/lows</li>
-  <li>Opening range levels</li>
-  <li>VWAP and VWAP bands</li>
-  <li>Trendline retests during high-volume conditions</li>
-</ul>
-
-<p>
-Pullbacks that happen during falling ATR are usually shallow. Pullbacks during rising ATR can retrace 5–15 points easily. Your job is to match your size to the volatility.
-</p>
-
-<h2>Reversal Zones: Where ES Loves to Turn</h2>
-<p>
-ES reversals almost always occur at obvious structural levels. Don’t overthink it.
-</p>
-
-<table>
-<tr><th>Reversal Zone</th><th>Reason</th></tr>
-<tr><td>Prior day high/low</td><td>Liquidity pools and trapped traders</td></tr>
-<tr><td>Opening range boundaries</td><td>Institutional participation</td></tr>
-<tr><td>Major gap zones</td><td>Auction inefficiencies</td></tr>
-<tr><td>Session VWAP</td><td>Fair value magnet</td></tr>
-</table>
-
-<p>
-If you want to understand why ES behaves differently in these zones, see  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-opening-range-strategies-for-beginners.html">ES Opening Range Strategies</a>.
-</p>
-
-<h2>How to Read Structure Without Guessing</h2>
-<ul>
-  <li>Identify the current swing high and swing low.</li>
-  <li>Label the last break of structure (BOS).</li>
-  <li>Watch for pullbacks into prior decision points.</li>
-  <li>Track ATR so you don’t size stupidly.</li>
-</ul>
-
-<div class="highlight-box red">
-  <h3>Ignore ES Structure and It’ll Break You</h3>
-  <p>Structure isn’t optional. If you don’t follow the auction, ES will bait you, trap you, and drain your account before you even know what happened.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="fx-section" id="definitions" aria-labelledby="definitions-title">
+<div class="fx-section-heading"><p class="fx-kicker">States need necessary conditions</p><h2 id="definitions-title">Define Trend, Pullback and Reversal as Observable Rules</h2><p>Choose a price series, bar interval, session, contract-roll policy and lookback. Compute all features from completed observations. Thresholds should be scaled by returns, true range or another preregistered denominator so the same rule can be evaluated across price levels.</p></div>
+<div class="fx-table-scroll" role="region" aria-label="Forward-safe ES market structure definitions" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">State</th><th scope="col">Necessary context</th><th scope="col">Candidate observable rule</th><th scope="col">What it does not prove</th></tr></thead><tbody>
+<tr><th scope="row">Up state</th><td>Declared trailing window</td><td>Positive normalized slope or net displacement plus minimum directional efficiency</td><td>That the next return is positive</td></tr>
+<tr><th scope="row">Down state</th><td>Same feature family and horizon</td><td>Negative normalized slope or displacement plus the same efficiency gate</td><td>That selling is profitable after costs</td></tr>
+<tr><th scope="row">Pullback candidate</th><td>Pre-existing directional state</td><td>Counter-state retracement inside declared depth/duration bounds without invalidation</td><td>That the prior state will resume</td></tr>
+<tr><th scope="row">Reversal candidate</th><td>Pre-existing state or extreme</td><td>Inactivation of old state plus opposite-state evidence available now</td><td>That later follow-through is already known</td></tr>
+<tr><th scope="row">Neutral/uncertain</th><td>Any period</td><td>No directional rule passes, rules conflict or data fail</td><td>That the market is low risk</td></tr>
+</tbody></table></div>
+<div class="fx-formula"><strong>One path-efficiency feature</strong><span>E<sub>t,h</sub> = |P<sub>t</sub> &minus; P<sub>t-h</sub>| / &Sigma;<sub>i=t-h+1</sub><sup>t</sup>|P<sub>i</sub> &minus; P<sub>i-1</sub>|</span><small>E approaches one for a direct path and zero for heavy back-and-forth. It describes the completed window; it is not a forecast.</small></div>
+<div class="fx-related">Contract scale and tick math remain on <a href="es-tick-size-tick-value-and-margin.html">ES Tick Size, Tick Value and Margin</a>. Volatility-state construction is handled separately in <a href="es-atr-behavior-and-volatility-zones.html">ES ATR and Volatility Zones</a>.</div>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<section class="fx-section" id="clock" aria-labelledby="clock-title">
+<div class="fx-section-heading"><p class="fx-kicker">A chart label has an availability timestamp</p><h2 id="clock-title">Separate Detection, Confirmation and Outcome</h2><p>A common leak occurs when a swing high is defined only after several lower bars, then treated as known at the high. Preserve three clocks so research cannot move information backward.</p></div>
+<div class="fx-state-machine" aria-label="Market structure label clock"><article><span>1</span><h3>Observation</h3><p>The latest eligible quote, trade or completed bar arrives at source time t.</p></article><article><span>2</span><h3>Feature</h3><p>Inputs through t are computed under the frozen transform and session rules.</p></article><article><span>3</span><h3>Candidate</h3><p>A state becomes actionable only after the system can calculate it.</p></article><article><span>4</span><h3>Confirmation</h3><p>Later observations may confirm or reject the earlier candidate, never rewrite its decision time.</p></article><article><span>5</span><h3>Outcome</h3><p>Forward returns and fills are scored after latency and costs.</p></article></div>
+<div class="fx-caution"><strong>Zigzags and centered extrema are labels, not live signals.</strong><p>If a pivot requires future bars, it can be used as a retrospective outcome for supervised research. It cannot be supplied to a decision at the pivot timestamp. Store both pivot time and label-availability time.</p></div>
+</section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
+<section class="fx-section" id="transitions" aria-labelledby="transitions-title">
+<div class="fx-section-heading"><p class="fx-kicker">Measure what followed each frozen state</p><h2 id="transitions-title">Build a Transition Matrix With Honest Uncertainty</h2><p>For each eligible time, assign one state using only then-available data. At a fixed later horizon, record the next state. Estimate conditional transition distributions by session, volatility, event and roll regime only when sample sizes support them.</p></div>
+<div class="fx-table-scroll" role="region" aria-label="Illustrative ES state transition matrix structure" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">State at t</th><th scope="col">Up at t+h</th><th scope="col">Neutral at t+h</th><th scope="col">Down at t+h</th><th scope="col">Required report</th></tr></thead><tbody>
+<tr><th scope="row">Up</th><td>Continuation count/rate</td><td>Decay count/rate</td><td>Opposite-state count/rate</td><td>n, missing, uncertainty</td></tr>
+<tr><th scope="row">Neutral</th><td>Up-transition count/rate</td><td>Persistence count/rate</td><td>Down-transition count/rate</td><td>n, missing, uncertainty</td></tr>
+<tr><th scope="row">Down</th><td>Opposite-state count/rate</td><td>Decay count/rate</td><td>Continuation count/rate</td><td>n, missing, uncertainty</td></tr>
+</tbody></table></div>
+<p>The table above is a reporting template, not an ES finding. Use non-overlapping decision points or account for overlapping outcomes. Keep state dwell time, maximum excursion and executable returns separate from state-transition rates; they answer different questions.</p>
+<div class="fx-method"><h3>Pullback versus reversal as a sequence</h3><p>Suppose an up state exists at t<sub>0</sub>. A counter-move at t<sub>1</sub> passes the pullback-candidate bounds. At t<sub>2</sub>, either the prior up-state condition reactivates, the candidate remains unresolved, or the old state invalidates and an opposite state qualifies. The t<sub>2</sub> result can score the t<sub>1</sub> candidate. It cannot be used to claim the trader knew “pullback” or “reversal” at t<sub>1</sub>.</p></div>
+</section>
 
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
+<section class="fx-section" id="validate" aria-labelledby="validate-title">
+<div class="fx-section-heading"><p class="fx-kicker">A label must be stable enough to use</p><h2 id="validate-title">Validate Definitions Before Testing a Trade</h2><p>First test whether humans and code can apply the definitions consistently. Then test state stability across reasonable sampling choices. Only after those gates pass should a separate execution strategy be evaluated.</p></div>
+<div class="fx-four-grid">
+<article class="fx-panel"><p class="fx-card-label">Reproducibility</p><h3>Independent relabel</h3><p>Two implementations receive the same frozen data and specification. Report agreement and inspect every conflict.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Sensitivity</p><h3>Reasonable perturbations</h3><p>Vary bar boundaries, threshold edges and feed source within preregistered ranges. A useful label should not flip everywhere.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Forward test</p><h3>Untouched dates</h3><p>Lock definitions after training. Score transition calibration and any execution rule on later observations once.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Economics</p><h3>Executable costs</h3><p>Use order side, latency, spread, depth, slippage, fees and rejected signals. A correct label need not produce an edge.</p></article>
+</div>
+<p class="fx-source-note">CME provides official ES contract context and historical market-data categories through its <a href="https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html" target="_blank" rel="noopener noreferrer">ES product page</a> and <a href="https://www.cmegroup.com/market-data/browse-data/catalog/futures-and-options-data.html" target="_blank" rel="noopener noreferrer">data catalog</a>. The state definitions on this page are proposed research constructs, not exchange labels.</p>
+</section>
 
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+<section class="fx-section" id="unusable" aria-labelledby="unusable-title">
+<div class="fx-section-heading"><p class="fx-kicker">A failed labeling system is a valid result</p><h2 id="unusable-title">Retire the Model When Structure Is Not Operationally Clear</h2><p>Do not force every path into trend, pullback or reversal. The research is unusable if labels depend materially on hindsight, independent implementations disagree, thresholds are unstable, live states fall outside training support or economic results fail after costs.</p></div>
+<div class="fx-falsification-tree"><article><h3>Semantic failure</h3><p>Definitions still require discretionary phrases such as “clean” or “obvious.”</p><strong>Action: rewrite or stop</strong></article><article><h3>Timing failure</h3><p>Label availability occurs after the assumed decision price.</p><strong>Action: invalidate the test</strong></article><article><h3>Economic failure</h3><p>Forward transitions do not survive executable costs and uncertainty.</p><strong>Action: no trading claim</strong></article></div>
+<ul class="fx-checklist"><li>Every feature has a source timestamp and availability timestamp.</li><li>State definitions include neutral and data-failure outcomes.</li><li>Threshold selection is confined to the training sample.</li><li>Transition tables report counts, missingness and uncertainty.</li><li>Event, session, volatility and roll regimes are prespecified.</li><li>Retrospective labels never masquerade as live decisions.</li></ul>
+<div class="fx-caution"><strong>Research status as of August 25, 2026</strong><p>No original ES trend persistence, pullback success rate, reversal rate or after-cost strategy result is reported. This article supplies a forward-safe labeling and validation protocol only.</p></div>
+</section>
 
-  </div>
-</footer>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul>
+<li><a href="https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME E-mini S&amp;P 500 product and contract page</a> for ES identity and exchange context.</li>
+<li><a href="https://www.cmegroup.com/market-data/browse-data/catalog/futures-and-options-data.html" target="_blank" rel="noopener noreferrer">CME futures and options data catalog</a> for distinctions among trade, top-of-book, depth and market-by-order data.</li>
+<li><a href="https://www.cmegroup.com/education/files/getting-started-equity-quarterly-roll-analyzer.pdf" target="_blank" rel="noopener noreferrer">CME Equity Quarterly Roll Analyzer guide</a> for treating contract migration as a separately observable state.</li>
+<li><a href="https://www.spglobal.com/spdji/en/methodology/article/sp-us-indices-methodology/" target="_blank" rel="noopener noreferrer">S&amp;P U.S. Indices Methodology</a> for the underlying index framework.</li>
+<li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener noreferrer">CME trading-hours and holiday schedule</a> for session-integrity controls.</li>
+</ul><p>Sources were reviewed August 28, 2026. All market-structure states and formulas are disclosed research choices, not exchange classifications or completed findings.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This page is educational research design, not a signal service. Market states can change before an order arrives, and leveraged futures losses can exceed the collateral initially posted.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

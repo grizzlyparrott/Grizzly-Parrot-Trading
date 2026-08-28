@@ -60,7 +60,7 @@ class CurrencyLibraryThemeTests(unittest.TestCase):
                         r'class="[^"]*\b(?:au|gb|ca|eu|yj|mx|chf|sw)-',
                     )
 
-        self.assertEqual(len(pages), 180)
+        self.assertEqual(len(pages), 215)
         self.assertTrue(CANONICAL_CSS.is_file())
 
     def test_every_shared_component_class_has_canonical_css_definition(self):

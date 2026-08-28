@@ -804,9 +804,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Best Times of Day to Trade NQ Futures",
+    "title": "Best Times to Trade NQ: Measure Market Quality by Task",
     "url": "/futures-basics/nq-best-times.html",
-    "description": "A session-by-session breakdown of when NQ produces real opportunity and when it turns hostile.",
+    "description": "Evaluate NQ trading times by spread, depth, price impact, range, fill quality and event context instead of relying on a universal clock list.",
     "category": "Futures Basics"
   },
   {
@@ -846,9 +846,9 @@
     "category": "Energies"
   },
   {
-    "title": "Best Times to Trade ES (E-Mini S&P 500)",
+    "title": "Best Times to Trade ES: A Market-Quality Measurement Guide",
     "url": "/futures-basics/best-times-to-trade-es-e-mini-sp500.html",
-    "description": "A blunt breakdown of the best times to trade ES so beginners stop trading dead zones and stick to the high-probability sessions.",
+    "description": "Measure ES trading windows by spread, depth, volume, slippage, event risk, holidays and roll state instead of relying on a permanent clock ranking.",
     "category": "Futures Basics"
   },
   {
@@ -1002,9 +1002,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Building a Simple ES Trading Plan You Can Actually Follow",
+    "title": "Build an Auditable ES Trading Plan",
     "url": "/futures-basics/es-building-a-simple-trading-plan.html",
-    "description": "A blunt guide to building a simple ES trading plan beginners can follow without overthinking, overtrading, or blowing their account.",
+    "description": "Build a measurable ES trading plan from objectives, permissions, setup definitions, risk limits, execution branches, incident controls, review fields and versioning.",
     "category": "Futures Basics"
   },
   {
@@ -1110,9 +1110,9 @@
     "category": "Energies"
   },
   {
-    "title": "Common ES Retail Trader Mistakes",
+    "title": "Common ES Retail Trading Mistakes: Incident Controls",
     "url": "/futures-basics/es-common-retail-trader-mistakes.html",
-    "description": "A blunt breakdown of the most common ES retail trader mistakes so beginners stop repeating the same self-destructive behaviors.",
+    "description": "Reconstruct common ES trading failures through early warnings, preventive controls, containment branches and after-action evidence instead of vague discipline advice.",
     "category": "Futures Basics"
   },
   {
@@ -1122,9 +1122,9 @@
     "category": "Prop Firm Trading"
   },
   {
-    "title": "Common Execution Mistakes That Blow NQ Traders Up",
+    "title": "NQ Execution Mistakes: Prevention & Incident Review",
     "url": "/futures-basics/nq-execution-mistakes.html",
-    "description": "A structural breakdown of the execution errors that consistently cause losses on NQ futures.",
+    "description": "Prevent and contain NQ execution errors with ticket read-backs, order-state gates, fill reconciliation, emergency branches and evidence-based incident review.",
     "category": "Futures Basics"
   },
   {
@@ -1380,81 +1380,81 @@
     "category": "Books"
   },
   {
-    "title": "ES ATR Behavior and Volatility Zones",
+    "title": "ES ATR and Volatility Zones: Build a Reproducible State Card",
     "url": "/futures-basics/es-atr-behavior-and-volatility-zones.html",
-    "description": "Learn how ES ATR behavior controls volatility zones so you stop guessing and start reading the E-mini S&P 500’s real movement.",
+    "description": "Classify ES volatility with explicit return, range, jump and liquidity measures instead of treating fixed ATR bands as universal market states.",
     "category": "Futures Basics"
   },
   {
-    "title": "ES Economic Reports That Actually Move Price",
+    "title": "ES Economic Reports: How Surprises Reprice Futures",
     "url": "/futures-basics/es-key-economic-reports-that-move-price.html",
-    "description": "A blunt guide to the economic reports that actually move ES so beginners stop getting blindsided by volatility spikes.",
+    "description": "Learn how inflation, labor, growth and Fed releases can reprice ES through rates, earnings and risk premia using priors, surprises and competing channels.",
     "category": "Futures Basics"
   },
   {
-    "title": "ES Gap Behavior and How to Trade It",
+    "title": "ES Gap Behavior: Definitions, Study Design, and Trade Tests",
     "url": "/futures-basics/es-gap-behavior-and-how-to-trade-it.html",
-    "description": "A blunt breakdown of ES gap behavior so beginners understand why gaps form, how they fill, and how to trade them without getting trapped.",
+    "description": "Define ES gaps against settlement, prior cash close and overnight references, then test fill and continuation claims with forward-safe controls and costs.",
     "category": "Futures Basics"
   },
   {
-    "title": "ES Liquidity Pockets and Order Book Structure",
+    "title": "ES Liquidity Pockets: Measuring the Order Book Without Folklore",
     "url": "/futures-basics/es-liquidity-pockets-and-order-book-structure.html",
-    "description": "A blunt breakdown of ES liquidity pockets and order book structure so beginners stop misreading price jumps and thin-book movement.",
+    "description": "Measure ES order-book states with timestamped spread, depth, queue, cancellation, trade and price-response evidence instead of permanent liquidity zones.",
     "category": "Futures Basics"
   },
   {
-    "title": "ES Market Structure: Trends, Pullbacks, and Reversal Zones",
+    "title": "ES Market Structure: Forward-Safe Trends, Pullbacks, and Reversals",
     "url": "/futures-basics/es-market-structure-trends-pulls-and-reversals.html",
-    "description": "A no-BS breakdown of ES market structure so beginners can read trends, pullbacks, and reversal zones without guessing.",
+    "description": "Turn ES trend, pullback and reversal language into forward-safe state definitions, transition tests and invalidation rules without hindsight labels.",
     "category": "Futures Basics"
   },
   {
-    "title": "ES News Events and Volatility Traps to Avoid",
+    "title": "ES News Events and Volatility Traps: A Risk Workflow",
     "url": "/futures-basics/es-news-events-and-volatility-traps.html",
-    "description": "A blunt guide to the news events and volatility traps that routinely punish ES beginners who don't know when to stand down.",
+    "description": "Separate scheduled releases, surprise headlines, market halts and liquidity gaps, then use a branch-based ES event-risk workflow before and after the event.",
     "category": "Futures Basics"
   },
   {
-    "title": "ES Opening Range Strategies for Beginners",
+    "title": "ES Opening Range Strategies: A Beginner's Test Protocol",
     "url": "/futures-basics/es-opening-range-strategies-for-beginners.html",
-    "description": "A direct breakdown of ES opening range strategies so beginners can trade the first 30 minutes without getting steamrolled by volatility.",
+    "description": "Test ES opening-range ideas with explicit timing, day-type, gap, event, volatility, execution-cost and forward-holdout controls instead of folklore.",
     "category": "Futures Basics"
   },
   {
-    "title": "ES Overnight Session vs Regular Trading Hours",
+    "title": "ES Overnight vs RTH: A Market-Quality Comparison",
     "url": "/futures-basics/es-overnight-session-vs-regular-trading-hours.html",
-    "description": "A direct comparison of ES overnight session behavior versus regular trading hours so beginners stop treating them like the same market.",
+    "description": "Compare ES overnight and cash-core-aligned RTH regimes with explicit boundaries, normalized liquidity metrics, event handoffs and failure cases.",
     "category": "Futures Basics"
   },
   {
-    "title": "ES Roll Dates and How to Switch Contracts Cleanly",
+    "title": "ES Roll Dates: Contract Switching Without Hidden Risk",
     "url": "/futures-basics/es-roll-dates-and-contract-switching.html",
-    "description": "A blunt guide to ES roll dates and how to switch contracts without getting clipped by liquidity shifts or bad fills.",
+    "description": "Switch quarterly ES or MES contracts with a dated lifecycle, live liquidity comparison, basis-aware chart handling, open-order audit and post-roll reconciliation.",
     "category": "Futures Basics"
   },
   {
-    "title": "ES Scalping vs Swing Trading: Pros and Cons",
+    "title": "ES Scalping vs Swing Trading: Choose a Risk Horizon",
     "url": "/futures-basics/es-scalping-vs-swing-trading-pros-and-cons.html",
-    "description": "A blunt comparison of ES scalping vs swing trading so beginners understand the strengths, weaknesses, and account demands of each approach.",
+    "description": "Compare short-horizon and multi-session ES trading by cost, gap risk, margin, monitoring, evidence and workflow fit without promising either an edge.",
     "category": "Futures Basics"
   },
   {
-    "title": "ES Tick Size, Tick Value, and Margin Explained",
+    "title": "ES/MES Tick Size, Tick Value, Hours, Expiry & Margin",
     "url": "/futures-basics/es-tick-size-tick-value-and-margin.html",
-    "description": "A blunt walkthrough of ES tick size, tick value, and margin so beginners understand how the E-mini S&P 500 contract actually moves and what each tick costs.",
+    "description": "Verify CME ES and MES multipliers, tick values, quarterly expiry, trading hours, cash settlement, roll mechanics, P&L math and margin boundaries.",
     "category": "Futures Basics"
   },
   {
-    "title": "ES vs MES vs NQ – Grizzly Parrot Trading",
+    "title": "ES vs MES vs NQ: A Normalized Contract Comparison",
     "url": "/futures-basics/es-vs-mes-vs-nq.html",
-    "description": "Straight comparison of ES, MES, and NQ futures contracts: tick size, dollar value, volatility, and what actually changes between them.",
+    "description": "Choose among ES, MES and NQ by separating index exposure, multiplier, whole-contract risk, liquidity, event sensitivity and operational fit.",
     "category": "Futures Basics"
   },
   {
-    "title": "ES vs MES: Which S&P 500 Contract Should You Trade?",
+    "title": "ES vs MES: Choose the Contract That Fits the Risk",
     "url": "/futures-basics/es-mini-vs-mes-micro-which-should-you-trade.html",
-    "description": "A blunt comparison of ES vs MES so beginners know exactly which S&P 500 futures contract fits their account size, risk tolerance, and trading experience.",
+    "description": "Compare ES and MES by multiplier, whole-contract risk, cost concentration, liquidity and sizing resolution to choose ES, MES or no trade without hype.",
     "category": "Futures Basics"
   },
   {
@@ -1572,9 +1572,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Finding Intraday Support and Resistance on ES",
+    "title": "ES Intraday Support and Resistance: A Level Workflow",
     "url": "/futures-basics/es-intraday-support-and-resistance-levels.html",
-    "description": "A blunt guide to finding intraday support and resistance on ES so beginners stop guessing and start using real structure.",
+    "description": "Turn ES reference levels into timestamped hypotheses with candidate ranking, reaction and liquidity evidence, execution branches, invalidation and a deletion log.",
     "category": "Futures Basics"
   },
   {
@@ -2166,15 +2166,15 @@
     "category": "Market Basics"
   },
   {
-    "title": "How News Events Impact NQ More Than Other Index Futures",
+    "title": "NQ News Volatility: Rates, Growth and Competing Channels",
     "url": "/futures-basics/nq-news-volatility.html",
-    "description": "A structural explanation of why NQ reacts more violently to news than other index futures and how those reactions propagate through price.",
+    "description": "Explain NQ reactions to macro, regulatory, geopolitical and company news through priors, index weights, rates, cash flows, risk premia and liquidity.",
     "category": "Futures Basics"
   },
   {
-    "title": "How NQ Reacts to Tech Earnings and Index Weighting",
+    "title": "How Earnings Move NQ Futures Through Index Weighting",
     "url": "/futures-basics/nq-earnings-impact.html",
-    "description": "Why tech earnings move NQ more than other index futures and how index weighting concentrates impact into fewer names.",
+    "description": "Trace constituent earnings into NQ through Nasdaq-100 weights, expectations, peer information, rates and futures repricing without forcing one-company causality.",
     "category": "Futures Basics"
   },
   {
@@ -2448,9 +2448,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How to Use DOM and Time &amp; Sales on ES",
+    "title": "ES DOM and Time & Sales: What the Tape Can Prove",
     "url": "/futures-basics/es-using-dom-and-time-and-sales.html",
-    "description": "A blunt guide to using DOM and Time & Sales on ES so beginners can read real order flow instead of guessing.",
+    "description": "Use ES DOM and time-and-sales through synchronized observations, testable hypotheses, execution gates, spoofing attribution limits and replay-based review.",
     "category": "Futures Basics"
   },
   {
@@ -3366,33 +3366,33 @@
     "category": "Platforms & Tutorials"
   },
   {
-    "title": "NQ Liquidity Windows and Why Timing Matters",
+    "title": "NQ Liquidity Windows: Build a Live Market-Quality Map",
     "url": "/futures-basics/nq-liquidity-windows.html",
-    "description": "A structural breakdown of NQ liquidity windows and how participation changes execution quality and risk.",
+    "description": "Construct and monitor NQ liquidity windows using spread, depth, replenishment, price impact and scheduled-flow evidence with explicit expiry rules.",
     "category": "Futures Basics"
   },
   {
-    "title": "NQ Margin Requirements and Why They’re Misleading",
+    "title": "NQ Margin: Performance Bonds, Broker Rules & Real Risk",
     "url": "/futures-basics/nq-margin.html",
-    "description": "Why NQ margin requirements understate real risk and how volatility, not margin, determines exposure.",
+    "description": "Separate CME NQ performance bonds, broker initial and day margin, variation, add-ons, risk-budget sizing, stress loss, cash buffers and rejection conditions.",
     "category": "Futures Basics"
   },
   {
-    "title": "NQ Pullbacks vs Breakouts: What Actually Works",
+    "title": "NQ Pullbacks vs Breakouts: A Fair Forward-Only Test",
     "url": "/futures-basics/nq-pullbacks-vs-breakouts.html",
-    "description": "A structural comparison of pullback trading and breakout trading on NQ, and why outcomes differ by regime.",
+    "description": "Compare NQ pullback and breakout rules with forward-only definitions, matched regimes, identical cost treatment, an untouched holdout and retirement gates.",
     "category": "Futures Basics"
   },
   {
-    "title": "NQ Tick Value: $5 per Tick (Nasdaq Futures Explained)",
+    "title": "NQ & MNQ Ticket Decoder: Tick Value to Settlement",
     "url": "/futures-basics/nq-tick-value.html",
-    "description": "One NQ futures tick is worth $5. This page explains tick size, tick value, and how Nasdaq futures contracts work.",
+    "description": "Decode one NQ or MNQ order ticket from symbol and expiry through dollar exposure, session clock, roll handoff, Nasdaq-opening settlement and collateral checks.",
     "category": "Futures Basics"
   },
   {
-    "title": "NQ vs ES: Volatility, Liquidity, and Trader Fit",
+    "title": "NQ vs ES: Compare the Portfolios Behind the Futures",
     "url": "/futures-basics/nq-vs-es.html",
-    "description": "A structural comparison of NQ and ES futures covering volatility, liquidity behavior, and why they produce different trading outcomes.",
+    "description": "Compare NQ and ES through Nasdaq-100 and S&P 500 methodology, concentration, contract scale, catalysts, liquidity and normalized instrument fit.",
     "category": "Futures Basics"
   },
   {
@@ -3642,9 +3642,9 @@
     "category": "tools"
   },
   {
-    "title": "Position Sizing for NQ Futures",
+    "title": "NQ & MNQ Position Sizing by Risk Budget",
     "url": "/futures-basics/nq-position-sizing.html",
-    "description": "A structural explanation of position sizing for NQ futures and why identical risk rules fail when applied mechanically.",
+    "description": "Size NQ and MNQ positions with whole-contract floor math, structural invalidation, slippage and gap stress, cost reserves, margin capacity and zero-contract gates.",
     "category": "Futures Basics"
   },
   {
@@ -4020,9 +4020,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Sizing ES Positions by Account Balance and Risk Limits",
+    "title": "ES Position Sizing by Account Balance: Whole-Contract Math",
     "url": "/futures-basics/es-how-to-size-positions-by-account-balance.html",
-    "description": "A direct guide to sizing ES positions using account balance, volatility, and daily loss limits so beginners stop blowing up on one trade.",
+    "description": "Convert account risk capacity, an executable stop, ES or MES tick value, costs, gap stress and portfolio limits into a whole-contract size, including zero.",
     "category": "Futures Basics"
   },
   {
@@ -4482,15 +4482,15 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Using ES Session Highs, Lows, and VWAP to Frame Trades",
+    "title": "ES Session Highs, Lows, and VWAP: Timestamp-Safe Usage",
     "url": "/futures-basics/es-session-highs-lows-and-vwap-usage.html",
-    "description": "A blunt guide to using ES session highs, lows, and VWAP so beginners can frame trades with real structure instead of guessing.",
+    "description": "Calculate and test ES session highs, lows and VWAP with explicit resets, price inputs, volume, availability timestamps and execution cautions.",
     "category": "Futures Basics"
   },
   {
-    "title": "Using SPY and SPX to Confirm ES Trades",
+    "title": "ES, SPY and SPX: When Cross-Market Confirmation Works",
     "url": "/futures-basics/es-using-spy-and-spx-as-confirmation.html",
-    "description": "A blunt guide to using SPY and SPX as confirmation tools for ES trades so beginners stop taking low-quality setups.",
+    "description": "Compare ES futures, SPY ETF shares and the SPX index across clocks, units, basis, creation/redemption and auctions to avoid false confirmation.",
     "category": "Futures Basics"
   },
   {
@@ -4710,9 +4710,9 @@
     "category": "Market Basics"
   },
   {
-    "title": "What Is the E-mini Nasdaq-100 (NQ) Futures Contract?",
+    "title": "What Is NQ? Nasdaq-100 Futures Explained",
     "url": "/futures-basics/nq-what-is-nq.html",
-    "description": "A direct explanation of the E-mini Nasdaq-100 (NQ) futures contract, what it tracks, and why it behaves differently than other index futures.",
+    "description": "Understand the Nasdaq-100 index, the E-mini NQ futures wrapper, cash settlement, lifecycle, common uses, limits and the safe path to contract mechanics.",
     "category": "Futures Basics"
   },
   {
@@ -4866,9 +4866,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Why Futures Lead the Stock Market: The Truth Behind Early Moves",
+    "title": "Do Futures Lead Stocks? A Price-Discovery Framework",
     "url": "/futures-basics/why-futures-lead-the-stock-market.html",
-    "description": "Learn why futures lead the stock market, how price discovery happens on Globex, and why ES and NQ move before the opening bell.",
+    "description": "Understand when equity-index futures appear to lead stocks through market clocks, liquidity and arbitrage—and when cash stocks, ETFs or auctions can lead instead.",
     "category": "Futures Basics"
   },
   {
@@ -4992,15 +4992,15 @@
     "category": "Market Basics"
   },
   {
-    "title": "Why Micros (MNQ) Still Teach Bad Habits on NQ",
+    "title": "MNQ Bad Habits: A Permission Ladder Before NQ",
     "url": "/futures-basics/mnq-bad-habits.html",
-    "description": "Why MNQ can reinforce execution mistakes that fail immediately when scaled to NQ.",
+    "description": "Use MNQ to expose overtrading, averaging, stop drift and cost blindness, then require behavior, risk and execution evidence before any move to NQ.",
     "category": "Futures Basics"
   },
   {
-    "title": "Why NQ Is More Volatile Than ES",
+    "title": "NQ vs ES Volatility: A Normalized Comparison Protocol",
     "url": "/futures-basics/nq-volatility-vs-es.html",
-    "description": "A structural explanation of why NQ produces more volatility than ES and why the difference is not psychological or random.",
+    "description": "Compare NQ and ES volatility after normalizing returns, dollar exposure, liquidity, index concentration and event regimes without relying on point ranges.",
     "category": "Futures Basics"
   },
   {

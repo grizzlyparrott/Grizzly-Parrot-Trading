@@ -1,223 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <meta charset="UTF-8">
-     <!-- Standard Favicon -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-<!-- Web App Manifest -->
-<link rel="manifest" href="/site.webmanifest">
-
-<!-- PNG Fallbacks -->
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-   
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ES Tick Size, Tick Value, and Margin Explained</title>
-<meta name="description" content="A blunt walkthrough of ES tick size, tick value, and margin so beginners understand how the E-mini S&P 500 contract actually moves and what each tick costs.">
-<meta name="robots" content="index, follow">
-
-<!-- Canonical -->
-<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-tick-size-tick-value-and-margin.html">
-
-<!-- Open Graph -->
-<meta property="og:title" content="ES Tick Size, Tick Value, and Margin Explained">
-<meta property="og:description" content="A blunt walkthrough of ES tick size, tick value, and margin so beginners understand how the E-mini S&P 500 contract actually moves and what each tick costs.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-tick-size-tick-value-and-margin.html">
-<meta property="og:site_name" content="Grizzly Parrot Trading">
-    <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-    <meta property="og:image:width" content="1792">
-    <meta property="og:image:height" content="941">
-
-
-
-<!-- Twitter -->
-
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-<meta name="twitter:title" content="ES Tick Size, Tick Value, and Margin Explained">
-<meta name="twitter:description" content="A blunt walkthrough of ES tick size, tick value, and margin so beginners understand how the E-mini S&P 500 contract actually moves and what each tick costs.">
-
-<link rel="stylesheet" href="../style.css">
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-JMJVR3G5YN');
-</script>
-
-<!-- JSON-LD: Article -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "ES Tick Size, Tick Value, and Margin Explained",
-  "description": "A blunt walkthrough of ES tick size, tick value, and margin so beginners understand how the E-mini S&P 500 contract actually moves and what each tick costs.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/es-tick-size-tick-value-and-margin.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/es-tick-size-tick-value-and-margin.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-<!-- JSON-LD: Breadcrumbs -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "ES Tick Size, Tick Value, and Margin Explained",
-      "item": "https://grizzlyparrottrading.com/futures-basics/es-tick-size-tick-value-and-margin.html"
-    }
-  ]
-}
-</script>
-
-
-  <script src="/uet.js" defer></script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES/MES Tick Size, Tick Value, Hours, Expiry &amp; Margin</title>
+  <meta name="description" content="Verify CME ES and MES multipliers, tick values, quarterly expiry, trading hours, cash settlement, roll mechanics, P&amp;L math and margin boundaries.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-tick-size-tick-value-and-margin.html">
+  <meta property="og:title" content="ES/MES Tick Size, Tick Value, Hours, Expiry &amp; Margin"><meta property="og:description" content="Verify CME ES and MES multipliers, tick values, quarterly expiry, trading hours, cash settlement, roll mechanics, P&amp;L math and margin boundaries."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-tick-size-tick-value-and-margin.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-28">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ES/MES Tick Size, Tick Value, Hours, Expiry &amp; Margin"><meta name="twitter:description" content="Verify CME ES and MES multipliers, tick values, quarterly expiry, trading hours, cash settlement, roll mechanics, P&amp;L math and margin boundaries."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ES/MES Tick Size, Tick Value, Hours, Expiry & Margin","description":"Verify CME ES and MES multipliers, tick values, quarterly expiry, trading hours, cash settlement, roll mechanics, P&L math and margin boundaries.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/es-tick-size-tick-value-and-margin.html"},"datePublished":"2025-11-24","dateModified":"2026-08-28","url":"https://grizzlyparrottrading.com/futures-basics/es-tick-size-tick-value-and-margin.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"ES/MES Tick Size, Tick Value, Hours, Expiry & Margin","item":"https://grizzlyparrottrading.com/futures-basics/es-tick-size-tick-value-and-margin.html"}]}</script><script src="/uet.js" defer></script>
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
-
+<a class="fx-skip-link" href="#main-content">Skip to article content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
 <!-- ARTICLE BODY START -->
+<header class="fx-hero"><div class="fx-hero-copy"><p class="fx-kicker">Canonical contract mechanics &middot; CME ES and MES</p><h1>ES/MES Tick Size, Tick Value, Hours, Expiry &amp; Margin</h1><p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 28, 2026</p><p class="fx-hero-lede"><strong>ES: $50 &times; 0.25 = $12.50. MES: $5 &times; 0.25 = $1.25.</strong> Those are the current CME outright tick calculations. The multiplier, dated contract, session, settlement boundary and live margin record must all agree before an order is authorized.</p><div class="fx-hero-actions"><a class="button-primary" href="#specs">Verify the specification</a><a class="fx-text-link" href="#preorder">Run the pre-order check</a></div><dl class="fx-hero-metrics" aria-label="Core ES and MES contract facts"><div><dt>ES multiplier</dt><dd>$50 per point</dd></div><div><dt>ES tick</dt><dd>$12.50</dd></div><div><dt>MES multiplier</dt><dd>$5 per point</dd></div><div><dt>MES tick</dt><dd>$1.25</dd></div></dl></div><aside class="fx-market-board" aria-label="Reconciled ES and MES tick calculations"><div class="fx-board-head"><span>CME outright contracts</span><strong>ES / MES</strong></div><div class="fx-proof"><strong>Minimum increment</strong><span>0.25 index point</span></div><div class="fx-proof"><strong>ES</strong><span>$50 &times; 0.25 = $12.50</span></div><div class="fx-proof"><strong>MES</strong><span>$5 &times; 0.25 = $1.25</span></div><p class="fx-board-foot">Calendar-spread increments are a separate route</p></aside></header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#specs">Verified specs</a><a href="#pnl">P&amp;L</a><a href="#hours">Hours</a><a href="#expiry">Expiry</a><a href="#roll">Roll</a><a href="#margin">Margin</a><a href="#preorder">Pre-order</a></nav>
 
-<h1>ES Tick Size, Tick Value, and Margin Explained</h1>
+<section class="fx-section" id="specs" aria-labelledby="specs-title"><div class="fx-section-heading"><p class="fx-kicker">The exchange record controls</p><h2 id="specs-title">ES and MES Specifications Reconciled</h2><p>CME Rulebook Chapters 358 and 353 control the E-mini and Micro E-mini S&amp;P 500 contracts. Both reference the S&amp;P 500 Index and move on the same 0.25-point outright ladder, but MES carries one-tenth of the ES dollar exposure.</p></div><div class="fx-table-scroll" role="region" aria-label="Verified ES and MES contract specifications" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Field</th><th scope="col">ES</th><th scope="col">MES</th><th scope="col">Operational meaning</th></tr></thead><tbody><tr><th scope="row">CME Globex code</th><td>ES</td><td>MES</td><td>Add the month code and year; a continuous-chart alias is not an orderable expiry</td></tr><tr><th scope="row">Contract multiplier</th><td>$50 &times; S&amp;P 500 Index</td><td>$5 &times; S&amp;P 500 Index</td><td>Multiply the index-point move by the multiplier and whole contracts</td></tr><tr><th scope="row">Outright minimum increment</th><td>0.25 point = $12.50</td><td>0.25 point = $1.25</td><td>Stops, targets and limit prices must land on the valid outright ladder</td></tr><tr><th scope="row">Intermonth spread increment</th><td>0.05 point = $2.50</td><td>0.05 point = $0.25</td><td>The finer spread increment does not permit a 0.05-point outright order</td></tr><tr><th scope="row">Expiration cycle</th><td colspan="2">Quarterly March cycle: March, June, September and December</td><td>Confirm the currently listed month and year in the live security definition</td></tr><tr><th scope="row">Current listed futures (reviewed August 28, 2026)</th><td>21 consecutive March/June/September/December quarterly contracts</td><td>5 consecutive March/June/September/December quarterly contracts</td><td>Exchange-determined listings can change; verify the live product specification and security definition</td></tr><tr><th scope="row">Final delivery</th><td colspan="2">Cash settlement</td><td>No shares are delivered; an open expiring position is financially settled under the rulebook</td></tr><tr><th scope="row">Final value</th><td colspan="2">Special Opening Quotation of the S&amp;P 500</td><td>The SOQ uses component opening prices and can differ from the first displayed cash-index value</td></tr></tbody></table></div><div class="fx-caution"><strong>Do not transfer a spread tick into an outright ticket.</strong><p>ES and MES calendar spreads may trade in 0.05-point increments under the rulebook. A standard outright futures order still uses 0.25. Verify the instrument type, route and security definition.</p></div></section>
 
-<p>
-The ES (E-mini S&amp;P 500) contract moves in fixed increments, and if you don’t know the tick size, tick value, and margin requirements, you’re basically trading blind. This breakdown strips it down so you know exactly what each move in ES costs and how much capital you actually need to keep your account alive.
-</p>
+<section class="fx-section" id="pnl" aria-labelledby="pnl-title"><div class="fx-section-heading"><p class="fx-kicker">Reconcile points and ticks</p><h2 id="pnl-title">Two P&amp;L Methods Must Produce the Same Answer</h2><p>Gross P&amp;L excludes commissions, exchange and clearing fees, bid-ask spread, slippage, data charges, roll cost and liquidation effects.</p></div><div class="fx-formula" aria-label="Long ES or MES gross profit and loss formula"><code>(exit &minus; entry) &times; contract multiplier &times; contracts</code><i aria-hidden="true">=</i><strong>long gross P&amp;L</strong></div><div class="fx-formula" aria-label="Tick based gross profit and loss formula"><code>price change &divide; 0.25 &times; tick value &times; contracts</code><i aria-hidden="true">=</i><strong>the same gross P&amp;L</strong></div><div class="fx-table-scroll" role="region" aria-label="ES and MES price move values" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Index move</th><th scope="col">Ticks</th><th scope="col">One ES</th><th scope="col">One MES</th><th scope="col">Four MES</th></tr></thead><tbody><tr><th scope="row">0.25 point</th><td>1</td><td>$12.50</td><td>$1.25</td><td>$5.00</td></tr><tr><th scope="row">1.00 point</th><td>4</td><td>$50.00</td><td>$5.00</td><td>$20.00</td></tr><tr><th scope="row">7.25 points</th><td>29</td><td>$362.50</td><td>$36.25</td><td>$145.00</td></tr><tr><th scope="row">20.00 points</th><td>80</td><td>$1,000.00</td><td>$100.00</td><td>$400.00</td></tr></tbody></table></div><div class="fx-method"><div><h3>Worked long example</h3><p>Buy one ES at 6,420.25 and sell at 6,427.50. The 7.25-point move equals 29 ticks. Point method: 7.25 &times; $50 = <strong>$362.50 gross</strong>. Tick method: 29 &times; $12.50 = the same $362.50. One MES over the identical path is $36.25 gross.</p></div><dl><div><dt>Entry</dt><dd>6,420.25</dd></div><div><dt>Exit</dt><dd>6,427.50</dd></div><div><dt>Move</dt><dd>29 ticks</dd></div><div><dt>One ES</dt><dd>$362.50</dd></div></dl></div><p class="fx-source-note"><strong>Sign check:</strong> reverse the subtraction for a short. Then compare platform-reported realized P&amp;L with fills and fees rather than assuming the planned entry and exit were achieved.</p></section>
 
-<h2>What the ES Tick Size Really Means</h2>
-<p>
-ES trades in <strong>0.25-point increments</strong>. That 0.25 is the tick size. Nothing complicated. If ES is at 5300.00, the next valid prices are 5300.25, 5300.50, and 5300.75. If you're coming from forex or stocks, this rigid price ladder feels weird at first, but it’s exactly what makes ES predictable for risk calculations.
-</p>
+<section class="fx-section" id="hours" aria-labelledby="hours-title"><div class="fx-section-heading"><p class="fx-kicker">Open does not mean liquid</p><h2 id="hours-title">The Standard Globex Session Has a Daily Boundary</h2><p>CME publishes U.S. equity-index futures hours as Sunday through Friday, 5:00 p.m. to 4:00 p.m. Central Time, with a trading halt from 4:00 p.m. to 5:00 p.m. CT. Holiday schedules, exchange notices, price limits, regulatory halts and broker restrictions can shorten or interrupt that availability.</p></div><ol class="fx-process"><li><strong>Use Central Time.</strong><span>Store the exchange timestamp and convert with timezone-aware software; daylight-saving changes can shift a local-clock routine.</span></li><li><strong>Check the trade date.</strong><span>The evening session belongs to the next CME trade date. Calendar date and trade date are not interchangeable in a journal.</span></li><li><strong>Resolve the halt.</strong><span>Do not submit into the 4:00&ndash;5:00 p.m. CT daily boundary or assume queued orders will behave as a strategy expects.</span></li><li><strong>Check the holiday bulletin.</strong><span>Normal hours are not proof of a particular holiday session.</span></li><li><strong>Gate market quality.</strong><span>Measure spread, depth and intended quantity. A valid session can still be unsuitable for the order.</span></li></ol><div class="fx-two-column"><article class="fx-panel"><p class="fx-card-label">Session fact</p><h3>Nearly 23 hours is access</h3><p>It permits response outside the U.S. cash session. It does not promise identical liquidity, volatility or fill quality across the day.</p></article><article class="fx-panel"><p class="fx-card-label">Order fact</p><h3>Platform state is separate</h3><p>Connection, market-data entitlement, exchange status, account permission and working-order state each require their own check.</p></article></div></section>
 
-<h2>ES Tick Value: What Each Tick Costs You</h2>
-<p>
-Every ES tick is worth <strong>$12.50</strong>. One full point is four ticks, so a 1-point move is $50.  
-Simple table:
-</p>
+<section class="fx-section" id="expiry" aria-labelledby="expiry-title"><div class="fx-section-heading"><p class="fx-kicker">A cash contract still expires</p><h2 id="expiry-title">Quarterly Termination Is Tied to the Cash-Market Open</h2><p>Under Chapter 358, expiring ES trading terminates at the regularly scheduled start of NYSE trading on the business day used for the final settlement price. Under Chapter 353, expiring MES cannot trade after the primary listing exchange opens on that determination day. In the normal calendar, that is 8:30 a.m. CT / 9:30 a.m. ET on the third Friday of March, June, September or December.</p><p>The chapters' unscheduled Market Holiday provisions move termination to the immediately preceding business day's NYSE close and substitute that day's Official Index Closing Value. For MES component openings, Chapter 353 sends a component whose primary listing exchange is closed to its next opening and, if it does not trade, uses the last sale subject to Exchange discretion. Recheck the current CME settlement procedure rather than assuming the normal Friday path.</p></div><div class="fx-lifecycle"><article><span>1</span><h3>Last ordinary session</h3><p>Record the exact dated symbol, current holiday calendar and broker cutoff.</p></article><article><span>2</span><h3>Termination</h3><p>The expiring contract stops at the prescribed cash-market opening boundary.</p></article><article><span>3</span><h3>SOQ calculation</h3><p>S&amp;P component opening prices feed a Special Opening Quotation; not every stock opens at the same instant.</p></article><article><span>4</span><h3>Cash settlement</h3><p>Open positions settle financially through variation-margin procedures.</p></article></div><div class="fx-caution"><strong>Cash settlement removes physical delivery, not basis or gap risk.</strong><p>The expiring futures price can differ from the SOQ, and the SOQ can differ from the first continuously displayed S&amp;P 500 value. A broker may require positions closed earlier than CME termination.</p></div></section>
 
-<table>
-<tr><th>Move</th><th>Ticks</th><th>P/L</th></tr>
-<tr><td>1 tick</td><td>1</td><td>$12.50</td></tr>
-<tr><td>4 ticks (1 point)</td><td>4</td><td>$50</td></tr>
-<tr><td>10 points</td><td>40</td><td>$500</td></tr>
-</table>
+<section class="fx-section" id="roll" aria-labelledby="roll-title"><div class="fx-section-heading"><p class="fx-kicker">Convention is not compulsion</p><h2 id="roll-title">Roll When the Dated Position and Liquidity Plan Require It</h2><p>CME identifies the customary U.S. equity-index roll date as the Monday before the third Friday of the quarterly expiration month. That convention does not automatically move a position or cancel an order, and it does not require every participant to switch on Monday. Volume and depth migrate between two simultaneously tradable expiries.</p></div><div class="fx-three-column"><article class="fx-panel"><p class="fx-card-label">Calendar</p><h3>Compute the boundary</h3><p>Identify the third-Friday expiry, CME customary roll Monday, holiday exceptions and the broker's earlier cutoff.</p></article><article class="fx-panel"><p class="fx-card-label">Market</p><h3>Measure both books</h3><p>Compare spread, depth, traded volume and open interest in the expiring and next quarterly contracts.</p></article><article class="fx-panel"><p class="fx-card-label">Operations</p><h3>Move orders explicitly</h3><p>Cancel or replace working orders by dated symbol and verify the expiring position is actually flat.</p></article></div><p>The two contracts normally trade at different prices because financing, expected dividends and time to settlement enter the futures basis. A chart back-adjustment can make history visually continuous, but it does not erase the cash flow, spread or slippage of a real roll.</p><p class="fx-related">Use <a href="es-roll-dates-and-contract-switching.html">the full ES roll checklist</a> for contract selection, open-order migration and post-roll reconciliation.</p></section>
 
-<p>
-This is why ES can shred weak traders. A tiny five-point pullback against you is <strong>$250</strong> gone. If that makes your stomach clench, look at the MES contract, which is 1/10 the size. I already covered this in <a href="https://grizzlyparrottrading.com/futures-basics/es-mini-vs-mes-micro-which-should-you-trade.html">ES vs MES</a>.
-</p>
+<section class="fx-section" id="margin" aria-labelledby="margin-title"><div class="fx-section-heading"><p class="fx-kicker">Collateral is not a stop</p><h2 id="margin-title">Separate Exchange Margin, Broker Rules and Maximum Loss</h2><p>CME describes performance bond as collateral that supports obligations; requirements vary with product and market volatility. A clearing firm or retail broker can require more, set a separate intraday rate, withdraw intraday treatment near events or the close, add concentration charges, and liquidate under its agreement. None of those figures limits market loss.</p></div><div class="fx-table-scroll" role="region" aria-label="ES and MES margin layers" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Layer</th><th scope="col">Question it answers</th><th scope="col">What it does not answer</th></tr></thead><tbody><tr><th scope="row">CME performance bond</th><td>What clearing collateral applies to the portfolio under the current margin framework?</td><td>Maximum trade loss or personalized safe size</td></tr><tr><th scope="row">Broker initial/overnight</th><td>What does this broker require to open or carry the position?</td><td>Guaranteed access through stress or a fixed future rate</td></tr><tr><th scope="row">Broker day margin</th><td>What reduced intraday collateral may apply under stated hours and conditions?</td><td>A loss cap, stop distance or permission to hold beyond the window</td></tr><tr><th scope="row">Variation and cash</th><td>Can the account meet debits, calls, fees and adverse marks?</td><td>The final size if the planned risk budget is smaller</td></tr><tr><th scope="row">Maximum loss</th><td>Path-dependent loss from price, gap, execution, quantity, fees and liquidation</td><td>Any published margin number</td></tr></tbody></table></div><div class="fx-formula" aria-label="Independent risk and margin gates"><code>authorized contracts = min(risk-budget size, portfolio cap, live margin capacity)</code><i aria-hidden="true">and</i><strong>unknown gate = zero</strong></div><p>Never hard-code today's margin as a timeless contract specification. Timestamp the CME record, broker schedule, account type, session treatment and any event or concentration add-on at the decision time. Then size from loss tolerance separately.</p><p class="fx-related">For sizing arithmetic, use <a href="es-how-to-size-positions-by-account-balance.html">the ES/MES whole-contract sizing workflow</a>.</p></section>
 
-<h2>Margin Requirements: Intraday vs Overnight</h2>
-<p>
-Brokers play games with intraday margin. The exchange doesn’t. CME sets <stronginitial requirement> and <strong>maintenance requirement</strong> for holding ES, and they’re thousands of dollars. But your day-trading broker might let you open ES trades for $500–$1,500 intraday.
-</p>
+<section class="fx-section" id="preorder" aria-labelledby="preorder-title"><div class="fx-section-heading"><p class="fx-kicker">Fail closed</p><h2 id="preorder-title">Authorize the Order Only When Every Field Passes</h2></div><ul class="fx-checklist"><li><strong>Identity:</strong> ES or MES, exact month code, year, venue and account permission.</li><li><strong>Price ladder:</strong> 0.25-point outright increment; no spread-only tick copied into an outright order.</li><li><strong>Dollar math:</strong> ES $50 per point / $12.50 per tick; MES $5 per point / $1.25 per tick.</li><li><strong>Session:</strong> current CME status, holiday schedule, price-limit state and broker window checked.</li><li><strong>Liquidity:</strong> current spread, depth and executable quantity satisfy written limits.</li><li><strong>Risk:</strong> invalidation, stop path, slippage, fees, event gap and portfolio stress fit the budget.</li><li><strong>Lifecycle:</strong> roll date, termination date, broker cutoff and open-order migration are recorded.</li><li><strong>Margin:</strong> timestamped CME and broker requirements plus cash buffer pass independently.</li></ul><div class="fx-go-card"><p class="fx-card-label">Order-state output</p><h3>A missing required field means no order</h3><p>Do not substitute a continuous symbol, yesterday's margin, a chart line or an assumed broker rule for a live authoritative value. Wait, investigate or return zero contracts.</p></div></section>
 
-<p>
-Here’s the truth: low intraday margin is bait. ES volatility doesn’t care what deal your broker gives you. If you want to survive, size positions based on drawdown tolerance, not broker marketing. I covered sizing rules in another guide: <a href="https://grizzlyparrottrading.com/futures-basics/es-how-to-size-positions-by-account-balance.html">ES Position Sizing</a>.
-</p>
-<p>
-If you’re trading under evaluation or funded account rules, contract size interacts directly with trailing drawdown mechanics. A $500 ES swing is only 10 points, but under a $2,500 trailing drawdown it meaningfully shifts your liquidation line. If you want to model how a sequence of ES trades affects a trailing drawdown in real time, use the <a href="https://grizzlyparrottrading.com/tools/trailing-drawdown-simulator.html">Trailing Drawdown Simulator</a>.
-</p>
-
-<h2>Why Understanding Tick Mechanics Keeps You Alive</h2>
-<p>
-ES is liquid and clean, but the tick structure forces discipline. You aren’t dealing with random price increments—everything is quantized in $12.50 chunks. Once you know that, you stop making “hope and pray” trades and start making decisions based on actual math.
-</p>
-
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul><li><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/IV/350/358/358.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 358: E-mini S&amp;P 500 Futures</a> for the ES multiplier, outright and spread increments, trading termination and cash settlement.</li><li><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/IV/350/353/353.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 353: Micro E-mini S&amp;P 500 Futures</a> for the MES multiplier, increments, trading termination and cash settlement.</li><li><a href="https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME E-mini S&amp;P 500 specifications</a> for the current ES listing schedule and product context.</li><li><a href="https://www.cmegroup.com/markets/equities/sp/micro-e-mini-sandp-500.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME Micro E-mini S&amp;P 500 specifications</a> for the current MES listing schedule and product context.</li><li><a href="https://www.cmegroup.com/trading/equity-index/futures-and-etfs-myths-vs-facts.html" target="_blank" rel="noopener noreferrer">CME Equity Index futures guide</a> for current general equity-index trading hours and the daily halt.</li><li><a href="https://www.cmegroup.com/trading/equity-index/rolldates.html" target="_blank" rel="noopener noreferrer">CME Equity Index Roll Dates</a> for the quarterly cycle and customary Monday roll convention.</li><li><a href="https://www.cmegroup.com/trading/equity-index/settlement.html" target="_blank" rel="noopener noreferrer">CME Final Settlement Procedures</a> for the S&amp;P 500 SOQ method.</li><li><a href="https://www.cmegroup.com/solutions/risk-management/performance-bonds-margins/faq-performance-bonds-margins.html" target="_blank" rel="noopener noreferrer">CME Performance Bonds/Margins FAQ</a> for initial, maintenance and variable collateral boundaries.</li><li><a href="https://www.cftc.gov/csl/20-17/download" target="_blank" rel="noopener noreferrer">CFTC futures risk disclosure</a> for losses beyond deposited funds and additional-margin risk.</li></ul><p>Sources were reviewed August 28, 2026. Contract rules and public product records were reconciled on that date; live security definitions, calendars, margin and broker requirements can change and must be rechecked. All prices and P&amp;L examples are hypothetical arithmetic, not forecasts or reported trading results.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This reference is educational, not personalized investment, legal, tax, hedging, brokerage or execution advice. Futures are leveraged. Stops, reduced-size contracts and margin deposits do not guarantee a maximum loss; gaps and adverse fills can produce losses beyond the planned amount and deposited collateral.</p></aside>
 <!-- ARTICLE BODY END -->
-
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-       
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
-</body>
-</html>
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

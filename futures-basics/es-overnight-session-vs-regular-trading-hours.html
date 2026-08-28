@@ -1,228 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ES Overnight Session vs Regular Trading Hours</title>
-  <meta name="description" content="A direct comparison of ES overnight session behavior versus regular trading hours so beginners stop treating them like the same market.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-overnight-session-vs-regular-trading-hours.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="ES Overnight Session vs Regular Trading Hours">
-  <meta property="og:description" content="A direct comparison of ES overnight session behavior versus regular trading hours so beginners stop treating them like the same market.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-overnight-session-vs-regular-trading-hours.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="ES Overnight Session vs Regular Trading Hours">
-  <meta name="twitter:description" content="A direct comparison of ES overnight session behavior versus regular trading hours so beginners stop treating them like the same market.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "ES Overnight Session vs Regular Trading Hours",
-  "description": "A direct comparison of ES overnight session behavior versus regular trading hours so beginners stop treating them like the same market.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/es-overnight-session-vs-regular-trading-hours.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/es-overnight-session-vs-regular-trading-hours.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "ES Overnight Session vs Regular Trading Hours",
-      "item": "https://grizzlyparrottrading.com/futures-basics/es-overnight-session-vs-regular-trading-hours.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ES Overnight vs RTH: A Market-Quality Comparison</title>
+<meta name="description" content="Compare ES overnight and cash-core-aligned RTH regimes with explicit boundaries, normalized liquidity metrics, event handoffs and failure cases.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-overnight-session-vs-regular-trading-hours.html">
+<meta property="og:title" content="ES Overnight vs RTH: A Market-Quality Comparison">
+<meta property="og:description" content="Compare ES overnight and cash-core-aligned RTH regimes with explicit boundaries, normalized liquidity metrics, event handoffs and failure cases.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-overnight-session-vs-regular-trading-hours.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta property="og:image:alt" content="Grizzly Parrot Trading">
+<meta property="article:published_time" content="2025-11-24">
+<meta property="article:modified_time" content="2026-08-28">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ES Overnight vs RTH: A Market-Quality Comparison">
+<meta name="twitter:description" content="Compare ES overnight and cash-core-aligned RTH regimes with explicit boundaries, normalized liquidity metrics, event handoffs and failure cases.">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ES Overnight vs RTH: A Market-Quality Comparison","description":"Compare ES overnight and cash-core-aligned RTH regimes with explicit boundaries, normalized liquidity metrics, event handoffs and failure cases.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/es-overnight-session-vs-regular-trading-hours.html"},"datePublished":"2025-11-24","dateModified":"2026-08-28","url":"https://grizzlyparrottrading.com/futures-basics/es-overnight-session-vs-regular-trading-hours.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"ES Overnight vs RTH: A Market-Quality Comparison","item":"https://grizzlyparrottrading.com/futures-basics/es-overnight-session-vs-regular-trading-hours.html"}]}</script>
+<script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
 <!-- ARTICLE BODY START -->
+<header class="fx-hero">
+<div class="fx-hero-copy"><p class="fx-kicker">One contract &middot; two study regimes &middot; one continuous trade date</p><h1>ES Overnight vs RTH: A Market-Quality Comparison</h1><p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 28, 2026</p><p class="fx-hero-lede">ES can move while the U.S. cash core is closed, then meet a different liquidity regime when constituent stocks enter their core session. It is one futures contract, not two markets&mdash;but a fair comparison must account for unequal duration, scheduled information, holiday clocks, depth and execution cost.</p><div class="fx-hero-actions"><a class="button-primary" href="#boundaries">Set boundaries</a><a class="fx-text-link" href="#failures">Check failure cases</a></div><dl class="fx-hero-metrics" aria-label="Session comparison dimensions"><div><dt>Overnight</dt><dd>Study-defined complement</dd></div><div><dt>RTH label</dt><dd>Cash-core aligned</dd></div><div><dt>Comparison</dt><dd>Normalized</dd></div><div><dt>Always leads</dt><dd>Neither</dd></div></dl></div>
+<aside class="fx-market-board" aria-label="One ES contract across two liquidity regimes"><div class="fx-board-head"><span>Same dated ES contract</span><strong>Different context</strong></div><div class="fx-proof-grid"><div class="fx-proof"><strong>Overnight</strong><span>Global information, cash core closed, variable depth</span></div><div class="fx-proof is-limit"><strong>Cash-core aligned</strong><span>Constituents active, auctions and U.S. flow</span></div></div><p class="fx-board-foot">Measure; do not rank by folklore</p></aside>
+</header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#boundaries">Boundaries</a><a href="#metrics">Metrics</a><a href="#handoffs">Handoffs</a><a href="#use">Decision use</a><a href="#failures">Failures</a></nav>
 
-<h1>ES Overnight Session vs Regular Trading Hours</h1>
-
-<p>
-ES trades almost 23 hours a day, but the overnight session and regular trading hours (RTH) behave like two different beasts. If you treat them the same, you’ll size wrong, read volatility wrong, and walk right into low-liquidity traps. Here’s the blunt breakdown.
-</p>
-
-<h2>What Changes Overnight?</h2>
-<p>
-Overnight ES (6:00 PM–9:30 AM ET) is thinner. Fewer players. Less liquidity. The DOM is lighter, which means price jumps farther per order. You get smoother drift, sharper wicks, and fake breakouts that don’t happen during RTH.
-</p>
-
-<h2>Volatility and ATR Differences</h2>
-<p>
-ATR tells the story:
-</p>
-
-<table>
-<tr><th>Session</th><th>Typical ATR (1m)</th><th>Behavior</th></tr>
-<tr><td>Overnight</td><td>0.50–0.80</td><td>Thin, slow, random pushes</td></tr>
-<tr><td>London Open</td><td>0.80–1.20</td><td>Volatility bump</td></tr>
-<tr><td>RTH</td><td>1.00–2.00+</td><td>Real movement, real liquidity</td></tr>
-</table>
-
-<p>
-If you don’t understand the ATR zones, read  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-atr-behavior-and-volatility-zones.html">ES ATR Volatility Zones</a>.
-</p>
-
-<h2>Overnight Session Characteristics</h2>
-<ul>
-  <li>Smoother, slower directional moves</li>
-  <li>Random liquidity void wicks</li>
-  <li>Asia session = drift</li>
-  <li>London = the only real action before RTH</li>
-</ul>
-
-<h2>Regular Trading Hours Characteristics</h2>
-<ul>
-  <li>High participation</li>
-  <li>Cleaner structure</li>
-  <li>Opening range defines the day</li>
-  <li>Economic news hits hard</li>
-  <li>Closing hour repositioning</li>
-</ul>
-
-<p>
-If you’re learning ES structure, review  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-opening-range-strategies-for-beginners.html">ES Opening Range Strategies</a>.
-</p>
-
-<h2>Which Session Should Beginners Trade?</h2>
-<p>
-RTH. Period. Overnight movement is unpredictable for new traders because low liquidity magnifies every small order. Until you’re experienced enough to understand thin-book price action, stick to the sessions where the auction is stable.
-</p>
-<div class="highlight-box red">
-  <h3>Overnight ES Is a Trap If You Don’t Respect Liquidity</h3>
-  <p>Just because it looks smooth doesn’t mean it’s safe. Thin books exaggerate moves. Stick to RTH unless you know exactly what you’re doing — or prepare to get wicked out for no reason.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="fx-section" id="boundaries" aria-labelledby="boundaries-title">
+<div class="fx-section-heading"><p class="fx-kicker">RTH is an ambiguous label unless defined</p><h2 id="boundaries-title">Declare the Session Split and Preserve the Full CME Schedule</h2><p>For this protocol, “cash-core-aligned RTH” means 9:30 a.m.–4:00 p.m. America/New_York on a normal full NYSE day. “Overnight” is the remaining eligible ES trading time inside the same CME trade date after removing official pauses. This is a research convention, not a claim that every platform&rsquo;s RTH template uses the same boundary.</p></div>
+<div class="fx-table-scroll" role="region" aria-label="ES overnight and RTH boundary record" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Field</th><th scope="col">Cash-core-aligned RTH</th><th scope="col">Overnight complement</th><th scope="col">Integrity rule</th></tr></thead><tbody>
+<tr><th scope="row">Clock</th><td>9:30 a.m.–4:00 p.m. New York on normal days</td><td>Other matchable CME periods in the trade date</td><td>Retain UTC and timezone identifier</td></tr>
+<tr><th scope="row">Schedule source</th><td>NYSE core-session calendar</td><td>CME product/holiday schedule</td><td>Use dated official calendars</td></tr>
+<tr><th scope="row">Pauses</th><td>Any official halt/closure recorded</td><td>Maintenance and nonmatching states removed</td><td>Do not manufacture zero-return minutes</td></tr>
+<tr><th scope="row">Contract</th><td colspan="2">Same dated ES contract and trade date wherever possible</td><td>Flag roll migration and expiry</td></tr>
+<tr><th scope="row">Early close</th><td>Separate regime</td><td>Recomputed complement</td><td>Never treat as a full normal day</td></tr>
+</tbody></table></div>
+<p class="fx-source-note">CME markets U.S. equity-index futures as nearly 24-hour products, but current hours, pauses and holidays must be checked on the <a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener noreferrer">official CME schedule</a>. The <a href="https://www.nyse.com/publicdocs/nyse/NYSE_Extended_Hours_Trading_FAQ.pdf" target="_blank" rel="noopener noreferrer">NYSE session guide</a> supplies the normal cash core clock. U.S. daylight-saving rules can shift UTC offsets, so do not hard-code them.</p>
+<div class="fx-related">Contract mechanics and price-value conversion belong in <a href="es-tick-size-tick-value-and-margin.html">ES Tick Size, Tick Value and Margin</a>.</div>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<section class="fx-section" id="metrics" aria-labelledby="metrics-title">
+<div class="fx-section-heading"><p class="fx-kicker">A six-and-a-half-hour window cannot be compared to a longer complement by totals alone</p><h2 id="metrics-title">Normalize Market Quality by Time, Activity and Order Size</h2><p>Report raw totals, then comparable rates and distributions. Volume per session, for example, confounds duration with activity. A strategy cares about the book and price available for its order, not which interval accumulated the larger total.</p></div>
+<div class="fx-four-grid">
+<article class="fx-panel"><p class="fx-card-label">Activity</p><h3>Rates and clustering</h3><p>Trades and quantity per eligible minute, inter-trade duration and concentration around scheduled events. Keep totals for capacity context.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Price</p><h3>Comparable returns</h3><p>Return distributions at equal horizons, realized variation, range and jump contribution. Avoid comparing raw point ranges over unequal hours.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Book</p><h3>Width and depth</h3><p>Time-weighted spread, depth through fixed tick bands, replenishment and size-conditioned sweep cost.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Execution</p><h3>Experienced quality</h3><p>Fill rate, delay, partial fills and shortfall for the same order policy, size and urgency in each state.</p></article>
+</div>
+<div class="fx-formula"><strong>Equal-horizon return</strong><span>r<sub>t,h</sub> = ln(P<sub>t</sub> / P<sub>t-h</sub>) for the same h in both regimes</span><small>Use synchronized, valid prices and disclose sampling. Overnight-to-open returns are a separate endpoint measure, not interchangeable with intraregime returns.</small></div>
+<p>CME&rsquo;s data catalog offers trades, top-of-book, depth and market-by-order records, while its equity execution statistics distinguish width, depth, fill percentage and slippage. Bar data alone can support return and range comparisons but not a queue or executable-capacity claim.</p>
+</section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
+<section class="fx-section" id="handoffs" aria-labelledby="handoffs-title">
+<div class="fx-section-heading"><p class="fx-kicker">Information crosses the boundary before and after 9:30</p><h2 id="handoffs-title">Treat Event and Auction Handoffs as Separate States</h2><p>Many scheduled U.S. releases occur before the cash core opens; FOMC statements are released on their announced calendar during the U.S. day. The resulting overnight or RTH label is a clock classification, not a causal conclusion. Preserve the prior, timestamp and liquidity response.</p></div>
+<div class="fx-decision-strip">
+<article><p class="fx-card-label">Before information</p><h3>Baseline</h3><p>Capture price, return state, spread, depth, active contract and cash-market status.</p></article>
+<article><p class="fx-card-label">At timestamp</p><h3>Repricing</h3><p>Measure jumps, quote depletion, trades and recovery using source time; direction remains unknown ex ante.</p></article>
+<article><p class="fx-card-label">Cash open</p><h3>Handoff</h3><p>Record opening auction/cash-core activation and whether ES retains, extends or reverses the prior move.</p></article>
+<article><p class="fx-card-label">Afterward</p><h3>Attribution limit</h3><p>Separate observed path from any mechanism not supported by primary contemporaneous evidence.</p></article>
+</div>
+<p class="fx-source-note">Use the responsible primary calendars: <a href="https://www.bls.gov/schedule/news_release/" target="_blank" rel="noopener noreferrer">BLS releases</a>, <a href="https://www.bea.gov/news/schedule/" target="_blank" rel="noopener noreferrer">BEA releases</a> and <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">FOMC communications</a>. Their timestamps support event labels; they do not establish which session “should” lead.</p>
+</section>
 
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
+<section class="fx-section" id="use" aria-labelledby="use-title">
+<div class="fx-section-heading"><p class="fx-kicker">The comparison should change permissions, not produce a slogan</p><h2 id="use-title">Map Session Evidence to the Actual Task</h2><p>Build separate distributions for urgent hedging, passive execution, stop exposure and research observation. A session can offer attractive typical spreads but worse adverse-tail depth. Require the current state to match the validated sample.</p></div>
+<div class="fx-table-scroll" role="region" aria-label="Session comparison decision matrix" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Task</th><th scope="col">Compare</th><th scope="col">Permit</th><th scope="col">Reject when</th></tr></thead><tbody>
+<tr><th scope="row">Urgent risk reduction</th><td>Tail sweep cost, fill delay and capacity</td><td>Execute / reduce / wait</td><td>Current depth is out of distribution</td></tr>
+<tr><th scope="row">Passive order</th><td>Queue turnover, fill rate and adverse selection</td><td>Join / improve / cancel</td><td>Event repricing invalidates the state</td></tr>
+<tr><th scope="row">Overnight hold</th><td>Gap path, maintenance exposure and stop slippage</td><td>Hold / hedge / flatten under policy</td><td>Stress loss exceeds risk authority</td></tr>
+<tr><th scope="row">Session strategy</th><td>Forward net results inside matched regimes</td><td>Enable only after holdout</td><td>Costs or calibration fail</td></tr>
+</tbody></table></div>
+</section>
 
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+<section class="fx-section" id="failures" aria-labelledby="failures-title">
+<div class="fx-section-heading"><p class="fx-kicker">Most session conclusions fail at the boundary</p><h2 id="failures-title">Know When the Comparison Is Invalid</h2><p>Fail closed when the data cannot distinguish the regimes or when results do not survive fair controls. “Overnight is thinner” and “RTH is best” are not sufficient conclusions without a defined sample, order and uncertainty.</p></div>
+<div class="fx-falsification-tree"><article><h3>Clock failure</h3><p>Timezone conversion, holiday, early close or maintenance state is unresolved.</p><strong>Output: unscorable day</strong></article><article><h3>Composition failure</h3><p>Events, roll days or volatility regimes explain the apparent session difference.</p><strong>Output: conditional only</strong></article><article><h3>Execution failure</h3><p>Return differences do not survive state-matched spread, depth, slippage and fees.</p><strong>Output: no tradable evidence</strong></article></div>
+<ul class="fx-checklist"><li>Both regimes use the same dated contract and trade-date logic.</li><li>Minutes when the market cannot match orders are not treated as quiet liquidity.</li><li>Totals and normalized rates are shown together.</li><li>Event, holiday, volatility and roll strata are fixed before comparison.</li><li>Order size, type, side and latency are identical across matched tests.</li><li>No session is declared a permanent price-discovery leader.</li></ul>
+<div class="fx-caution"><strong>Research status as of August 28, 2026</strong><p>No original ES overnight-versus-RTH return, liquidity, price-discovery or trading-edge result is reported. This article defines a comparison protocol and failure cases.</p></div>
+</section>
 
-  </div>
-</footer>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul>
+<li><a href="https://www.cmegroup.com/markets/equities/us-index.html" target="_blank" rel="noopener noreferrer">CME U.S. Equity Index futures</a> and <a href="https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contract.html" target="_blank" rel="noopener noreferrer">CME ES product page</a> for the nearly 24-hour futures-market context.</li>
+<li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener noreferrer">CME current trading-hours and holiday calendar</a> for changeable schedule controls.</li>
+<li><a href="https://www.nyse.com/publicdocs/nyse/NYSE_Extended_Hours_Trading_FAQ.pdf" target="_blank" rel="noopener noreferrer">NYSE trading-session FAQ</a> for the normal cash core-session clock.</li>
+<li><a href="https://www.cmegroup.com/market-data/browse-data/catalog/futures-and-options-data.html" target="_blank" rel="noopener noreferrer">CME futures and options data catalog</a> and <a href="https://www.cmegroup.com/market-data/files/datamine-equity-faq.pdf" target="_blank" rel="noopener noreferrer">CME Equity Execution Statistics FAQ</a> for measurement layers.</li>
+<li><a href="https://www.transportation.gov/regulations/time-act" target="_blank" rel="noopener noreferrer">U.S. DOT uniform-time guidance</a> for timezone and daylight-saving controls.</li>
+</ul><p>Sources were reviewed August 28, 2026. The overnight and cash-core-aligned RTH labels are explicit research conventions, and no original result is claimed.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This ES session comparison is educational, not individualized investment or execution advice. ES trades across changing liquidity regimes; stops may slip, schedules can change and leveraged losses can exceed the collateral initially posted.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

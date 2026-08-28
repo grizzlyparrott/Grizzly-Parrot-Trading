@@ -1,202 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <meta charset="UTF-8">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NQ Pullbacks vs Breakouts: What Actually Works</title>
-  <meta name="description" content="A structural comparison of pullback trading and breakout trading on NQ, and why outcomes differ by regime.">
-  <meta name="robots" content="index, follow">
-
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/nq-pullbacks-vs-breakouts.html">
-
-  <meta property="og:title" content="NQ Pullbacks vs Breakouts: What Actually Works">
-  <meta property="og:description" content="A structural comparison of pullback trading and breakout trading on NQ, and why outcomes differ by regime.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/nq-pullbacks-vs-breakouts.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="NQ Pullbacks vs Breakouts: What Actually Works">
-  <meta name="twitter:description" content="A structural comparison of pullback trading and breakout trading on NQ, and why outcomes differ by regime.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "NQ Pullbacks vs Breakouts: What Actually Works",
-  "description": "A structural comparison of pullback trading and breakout trading on NQ, and why outcomes differ by regime.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/nq-pullbacks-vs-breakouts.html",
-  "datePublished": "2025-12-12",
-  "dateModified": "2025-12-12",
-  "url": "https://grizzlyparrottrading.com/futures-basics/nq-pullbacks-vs-breakouts.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "NQ Pullbacks vs Breakouts: What Actually Works",
-      "item": "https://grizzlyparrottrading.com/futures-basics/nq-pullbacks-vs-breakouts.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NQ Pullbacks vs Breakouts: A Fair Forward-Only Test</title>
+<meta name="description" content="Compare NQ pullback and breakout rules with forward-only definitions, matched regimes, identical cost treatment, an untouched holdout and retirement gates.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/nq-pullbacks-vs-breakouts.html">
+<meta property="og:title" content="NQ Pullbacks vs Breakouts: A Fair Forward-Only Test">
+<meta property="og:description" content="Compare NQ pullback and breakout rules with forward-only definitions, matched regimes, identical cost treatment, an untouched holdout and retirement gates.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/nq-pullbacks-vs-breakouts.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta property="og:image:alt" content="Grizzly Parrot Trading">
+<meta property="article:published_time" content="2025-12-12">
+<meta property="article:modified_time" content="2026-08-26">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NQ Pullbacks vs Breakouts: A Fair Forward-Only Test">
+<meta name="twitter:description" content="Compare NQ pullback and breakout rules with forward-only definitions, matched regimes, identical cost treatment, an untouched holdout and retirement gates.">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"NQ Pullbacks vs Breakouts: A Fair Forward-Only Test","description":"Compare NQ pullback and breakout rules with forward-only definitions, matched regimes, identical cost treatment, an untouched holdout and retirement gates.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/nq-pullbacks-vs-breakouts.html"},"datePublished":"2025-12-12","dateModified":"2026-08-26","url":"https://grizzlyparrottrading.com/futures-basics/nq-pullbacks-vs-breakouts.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"NQ Pullbacks vs Breakouts: A Fair Forward-Only Test","item":"https://grizzlyparrottrading.com/futures-basics/nq-pullbacks-vs-breakouts.html"}]}</script>
+<script src="/uet.js" defer></script>
 </head>
-
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+<div class="fx-hero-copy"><p class="fx-kicker">Known levels &middot; matched regimes &middot; equal costs</p><h1>NQ Pullbacks vs Breakouts: A Fair Forward-Only Test</h1><p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 26, 2026</p><p class="fx-hero-lede">A chart makes the best pullback and the true breakout obvious after the move is complete. At the decision time, neither label may exist yet. A fair NQ comparison must define both entries from levels known before the order, match the market states they face and charge the same execution reality.</p><div class="fx-hero-actions"><a class="button-primary" href="#entries">Define entries</a><a class="fx-text-link" href="#retire">Write retirement</a></div><dl class="fx-hero-metrics" aria-label="Comparison fairness gates"><div><dt>Levels</dt><dd>Known before trigger</dd></div><div><dt>Samples</dt><dd>Regime matched</dd></div><div><dt>Costs</dt><dd>Same standard</dd></div><div><dt>Winner in advance</dt><dd>None</dd></div></dl></div>
+<aside class="fx-market-board" aria-label="Hindsight labels versus live decisions"><div class="fx-board-head"><span>Completed chart</span><strong>Looks obvious</strong></div><div class="fx-proof-grid"><div class="fx-proof is-limit"><strong>Hindsight</strong><span>Final swing and follow-through already visible</span></div><div class="fx-proof"><strong>Live</strong><span>Only prior levels and current book available</span></div></div><p class="fx-board-foot">Move no future information backward</p></aside>
 </header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#entries">Entries</a><a href="#regimes">Regimes</a><a href="#match">Match</a><a href="#costs">Costs</a><a href="#holdout">Holdout</a><a href="#retire">Retire</a></nav>
 
-<main>
-<section class="section">
-<div class="container article-content">
-
-<h1>NQ Pullbacks vs Breakouts: What Actually Works</h1>
-
-<p>
-Pullbacks and breakouts behave differently on NQ because of volatility structure and liquidity response. Results depend on regime alignment rather than preference for one entry style over another.
-</p>
-
-<h2>Breakouts on NQ</h2>
-
-<p>
-Breakouts on NQ require immediate participation and liquidity follow-through. When conditions align, price accelerates rapidly and covers large distance before mean reversion develops. Failed breakouts reverse quickly and often violently.
-</p>
-
-<h2>Pullbacks on NQ</h2>
-
-<p>
-Pullbacks perform best during established trends with orderly rotation. Volatility compresses temporarily, allowing entry with defined invalidation. In choppy conditions, pullbacks degrade into noise.
-</p>
-
-<h2>Volatility regime determines viability</h2>
-
-<p>
-High-volatility regimes favor momentum continuation and breakout behavior. Low-to-moderate volatility regimes favor pullbacks and range continuation. Mixing entry logic across regimes produces inconsistent results.
-</p>
-
-<p>
-The drivers behind these regimes are detailed in <a href="https://grizzlyparrottrading.com/futures-basics/nq-volatility-vs-es.html">Why NQ Is More Volatile Than ES</a>.
-</p>
-
-<h2>Risk differences between styles</h2>
-
-<p>
-Breakouts require wider tolerance and faster execution. Pullbacks require patience and acceptance of delayed movement. Both styles must account for NQ’s range expansion, outlined in <a href="https://grizzlyparrottrading.com/futures-basics/nq-tick-value.html">NQ Tick Size, Tick Value, and Dollar Risk Explained</a>.
-</p>
-
-<h2>Execution alignment</h2>
-
-<p>
-Execution errors compound faster when entry style conflicts with volatility conditions. Many losses attributed to “strategy failure” originate from regime mismatch rather than directional error.
-</p>
-
-<div class="highlight-box yellow">
-  <h3>NQ Doesn’t Care About Your Favorite Entry Type</h3>
-  <p>Breakouts and pullbacks both work — until they don’t. Volatility regime, liquidity, and timing decide which one lands. Treat them like plug-and-play setups, and inconsistency is the only guarantee.</p>
+<section class="fx-section" id="entries" aria-labelledby="entries-title">
+<div class="fx-section-heading"><p class="fx-kicker">Define the signal at its true availability time</p><h2 id="entries-title">Create Complete Pullback and Breakout Rules</h2><p>Both rules need the same data clock, order clock and evidence standard. Use completed observations through t to create a candidate. Apply computation, decision and submission latency before determining the first price the strategy could receive.</p></div>
+<div class="fx-two-column">
+<article class="fx-panel"><p class="fx-card-label">Pullback candidate</p><h3>Counter-move inside a prior state</h3><ol><li>Define an up or down state from trailing, completed data.</li><li>Measure a counter-state retracement inside fixed depth and duration bounds.</li><li>Require a resumption trigger available now; do not name it a successful pullback yet.</li><li>Enter under the declared order rule or record no fill.</li></ol></article>
+<article class="fx-panel"><p class="fx-card-label">Breakout candidate</p><h3>Move beyond a prior-known boundary</h3><ol><li>Define the boundary using data completed before the trigger interval.</li><li>Require a fixed executable extension, dwell or confirmation rule.</li><li>Apply the same source, computation and order latency.</li><li>Enter under the declared order rule or record no fill.</li></ol></article>
 </div>
+<div class="fx-table-scroll" role="region" aria-label="Forward-safe entry specification" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Field</th><th scope="col">Pullback rule</th><th scope="col">Breakout rule</th><th scope="col">Fairness requirement</th></tr></thead><tbody>
+<tr><th scope="row">Reference</th><td>Prior state and retracement anchor</td><td>Prior-known high/low or range</td><td>Both available before trigger</td></tr>
+<tr><th scope="row">Trigger</th><td>Resumption evidence</td><td>Extension/dwell evidence</td><td>Machine-readable and timestamped</td></tr>
+<tr><th scope="row">Order</th><td>Side, type, quantity, time-in-force</td><td>Same fields</td><td>No optimistic fill convention for either</td></tr>
+<tr><th scope="row">Invalidation</th><td>Price/state/time rule</td><td>Price/state/time rule</td><td>Fixed before outcome</td></tr>
+<tr><th scope="row">No-trade</th><td>Missing state, cost or risk gate</td><td>Missing level, cost or risk gate</td><td>Count every rejection</td></tr>
+</tbody></table></div>
+<div class="fx-caution"><strong>Centered pivots cannot be live references.</strong><p>If a swing high or low requires later bars for confirmation, its label-availability time is later than the pivot. Use it only as a retrospective outcome or delay the decision until confirmation exists.</p></div>
+<div class="fx-related">For NQ/MNQ point-value and tick arithmetic, use <a href="nq-tick-value.html">NQ Tick Value</a>.</div>
+</section>
 
-</main>
+<section class="fx-section" id="regimes" aria-labelledby="regimes-title">
+<div class="fx-section-heading"><p class="fx-kicker">Strategy labels can select different markets</p><h2 id="regimes-title">Freeze Comparable Pre-Entry State Variables</h2><p>A breakout rule may fire more often in high-volatility expansion, while a pullback rule may select established directional states. Comparing their raw averages can compare regimes rather than entry logic. Capture pre-entry covariates for matching and stratification.</p></div>
+<div class="fx-four-grid">
+<article class="fx-panel"><p class="fx-card-label">Path</p><h3>Prior direction and efficiency</h3><p>Trailing return, range, directional efficiency, age of state and distance from prior-known extremes.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Volatility</p><h3>Scale and jump state</h3><p>Pre-entry realized variation, range percentile and scheduled-event flag. Never use full-day data at an intraday decision.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Liquidity</p><h3>Spread and capacity</h3><p>Decision-time spread, depth for the order size, replenishment state and recent impact.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Calendar</p><h3>Session and contract</h3><p>UTC window, cash state, macro event, holiday, dated contract and roll migration.</p></article>
+</div>
+<p class="fx-source-note">Use the current <a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener noreferrer">CME schedule</a> and official <a href="https://www.bls.gov/schedule/news_release/" target="_blank" rel="noopener noreferrer">BLS</a>, <a href="https://www.bea.gov/news/schedule/" target="_blank" rel="noopener noreferrer">BEA</a> and <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">Federal Reserve</a> calendars. These sources establish timing and market availability, not a strategy outcome.</p>
+</section>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<section class="fx-section" id="match" aria-labelledby="match-title">
+<div class="fx-section-heading"><p class="fx-kicker">Compare overlap, then disclose what does not overlap</p><h2 id="match-title">Build Matched Samples Without Erasing Strategy Identity</h2><p>Estimate the probability of each signal from pre-entry variables on the training period, or use exact/coarsened matching on prespecified state bins. Compare only observations with credible overlap. Report unmatched signals separately because excluding them changes the population being studied.</p></div>
+<div class="fx-state-machine" aria-label="Matched comparison workflow"><article><span>1</span><h3>Define unit</h3><p>Choose independent decision opportunities and a rule for overlapping signals.</p></article><article><span>2</span><h3>Record state</h3><p>Freeze all matching variables before either order can arrive.</p></article><article><span>3</span><h3>Check overlap</h3><p>Reject comparisons where one strategy has no comparable state in the other sample.</p></article><article><span>4</span><h3>Match/weight</h3><p>Apply the frozen training method without outcome-aware edits.</p></article><article><span>5</span><h3>Report coverage</h3><p>Show eligible, matched, unmatched, rejected and missing observations.</p></article></div>
+<div class="fx-method"><h3>Two estimands, two honest answers</h3><p><strong>Strategy-population result:</strong> each rule trades every eligible signal under its own definition. This answers how the full frozen systems performed, but regime mix can differ. <strong>Overlap result:</strong> compare rules only in states supported by both samples. This improves like-for-like interpretation but applies to a narrower population. Report both rather than letting one replace the other.</p><p>Do not match on variables measured after the trigger, on realized fill quality or on future path. Matching can reduce observed imbalance; it does not prove that all confounding is removed.</p></div>
+</section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
+<section class="fx-section" id="costs" aria-labelledby="costs-title">
+<div class="fx-section-heading"><p class="fx-kicker">Charge both strategies the same execution reality</p><h2 id="costs-title">Use a Shared Cost and Risk Model</h2><p>Apply identical conventions for source latency, decision delay, order acknowledgement, bid/ask side, visible depth, partial fills, slippage stress and dated fees. Equal contract count is not equal risk if stop distances differ.</p></div>
+<div class="fx-formula"><strong>Comparable net result per risk unit</strong><span>R<sub>net</sub> = (fill-to-fill P&amp;L &minus; reconciled actual transaction-fee ledger counted once) / authorized dollars at risk</span><small>Actual fills already contain realized slippage. Reconcile broker commission, exchange, clearing, regulatory and other charges into one non-overlapping ledger. Or use benchmark P&amp;L minus a modeled execution package; never subtract modeled slippage from a fill-based result.</small></div>
+<div class="fx-table-scroll" role="region" aria-label="Pullback breakout cost comparison" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Cost/risk item</th><th scope="col">Shared standard</th><th scope="col">Bias if omitted</th></tr></thead><tbody>
+<tr><th scope="row">Marketable entry</th><td>Decision book plus latency and size-conditioned sweep</td><td>Rewards fast breakout triggers at unavailable prices</td></tr>
+<tr><th scope="row">Passive entry</th><td>Queue/fill model plus adverse selection</td><td>Counts touches as free fills</td></tr>
+<tr><th scope="row">Stop</th><td>Executable trigger behavior and gap-through</td><td>Caps losses unrealistically</td></tr>
+<tr><th scope="row">Time in market</th><td>Report duration and overnight exposure</td><td>Hides unequal risk occupation</td></tr>
+<tr><th scope="row">Capacity</th><td>Same order-size tiers and depth rules</td><td>Compares small-order fiction with scalable execution</td></tr>
+</tbody></table></div>
+</section>
 
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-       
-    </div>
+<section class="fx-section" id="holdout" aria-labelledby="holdout-title">
+<div class="fx-section-heading"><p class="fx-kicker">Lock every choice before the deciding sample</p><h2 id="holdout-title">Use a Chronological Holdout and Full Scorecard</h2><p>Training data may define states, thresholds, matching and costs. Freeze the systems, then run one later period without retuning. The scorecard should show coverage, fill outcomes, net economics, uncertainty and tail behavior.</p></div>
+<div class="fx-table-scroll" role="region" aria-label="Forward holdout scorecard" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Score family</th><th scope="col">Required outputs</th><th scope="col">Reason</th></tr></thead><tbody>
+<tr><th scope="row">Coverage</th><td>Eligible, signaled, matched, unmatched, rejected, missing</td><td>Shows what the result represents</td></tr>
+<tr><th scope="row">Execution</th><td>Fill rate, partials, delay, shortfall, capacity by size</td><td>Tests attainability</td></tr>
+<tr><th scope="row">Economics</th><td>Gross/net P&amp;L, risk units, drawdown, tail loss</td><td>Separates pattern from cost</td></tr>
+<tr><th scope="row">Stability</th><td>Subperiod, session, event, volatility and roll strata</td><td>Exposes conditional dependence</td></tr>
+<tr><th scope="row">Uncertainty</th><td>Counts and intervals under declared dependence treatment</td><td>Prevents false precision</td></tr>
+</tbody></table></div>
+</section>
 
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+<section class="fx-section" id="retire" aria-labelledby="retire-title">
+<div class="fx-section-heading"><p class="fx-kicker">A comparison must be allowed to end with neither</p><h2 id="retire-title">Precommit Retirement Rules</h2><p>Retire a rule if its labels leak future information, its sample lacks overlap, its economics fail after costs, its forward calibration decays or current states leave training support. Do not automatically switch to the other strategy; it must pass independently.</p></div>
+<div class="fx-falsification-tree"><article><h3>Definition failure</h3><p>Entry needs a future-confirmed swing, day type or path label.</p><strong>Invalidate all affected results</strong></article><article><h3>Comparison failure</h3><p>Matched overlap is too small or unstable for the planned claim.</p><strong>Report incomparable</strong></article><article><h3>Economic failure</h3><p>Neither frozen rule clears the forward net threshold.</p><strong>Retire both</strong></article></div>
+<ul class="fx-checklist"><li>All features and levels are available before the simulated order.</li><li>Both strategies use the same data, latency and fee evidence.</li><li>Full-population and overlap results are separately reported.</li><li>Parameter searches and losing variants remain in the research ledger.</li><li>The untouched holdout is not reused for repair.</li><li>Neither strategy is presumed superior from its name or chart appearance.</li></ul>
+<div class="fx-caution"><strong>Research status as of August 26, 2026</strong><p>No original NQ pullback or breakout win rate, profitability estimate or superiority finding is reported. This article defines a fair comparative protocol and retirement policy.</p></div>
+</section>
 
-  </div>
-</footer>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul>
+<li><a href="https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME E-mini Nasdaq-100 product page</a> for NQ contract context.</li>
+<li><a href="https://www.cmegroup.com/market-data/browse-data/catalog/futures-and-options-data.html" target="_blank" rel="noopener noreferrer">CME futures and options data catalog</a> for trade, top-of-book, depth and market-by-order evidence layers.</li>
+<li><a href="https://www.cmegroup.com/market-data/files/datamine-equity-faq.pdf" target="_blank" rel="noopener noreferrer">CME Equity Execution Statistics FAQ</a> for width, depth, fill and slippage measurement categories.</li>
+<li><a href="https://indexes.nasdaqomx.com/docs/methodology_NDX.pdf" target="_blank" rel="noopener noreferrer">Nasdaq-100 Index Methodology</a> for the underlying index identity.</li>
+<li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener noreferrer">CME current trading-hours and holiday calendar</a> for session controls.</li>
+</ul><p>Sources were reviewed August 28, 2026. Entry and matching rules define how a future comparison should be run. No pullback or breakout advantage is reported here.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This is educational research design, not a pullback or breakout recommendation. NQ is leveraged; signals can fail, stops can slip and losses can exceed the collateral initially posted.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

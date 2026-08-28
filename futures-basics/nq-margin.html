@@ -1,202 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head><meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NQ Margin: Performance Bonds, Broker Rules &amp; Real Risk</title>
+<meta name="description" content="Separate CME NQ performance bonds, broker initial and day margin, variation, add-ons, risk-budget sizing, stress loss, cash buffers and rejection conditions.">
+<meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/nq-margin.html">
+<meta property="og:title" content="NQ Margin: Performance Bonds, Broker Rules &amp; Real Risk"><meta property="og:description" content="Separate CME NQ performance bonds, broker initial and day margin, variation, add-ons, risk-budget sizing, stress loss, cash buffers and rejection conditions."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/nq-margin.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-12-12"><meta property="article:modified_time" content="2026-08-27">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="NQ Margin: Performance Bonds, Broker Rules &amp; Real Risk"><meta name="twitter:description" content="Separate CME NQ performance bonds, broker initial and day margin, variation, add-ons, risk-budget sizing, stress loss, cash buffers and rejection conditions."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"NQ Margin: Performance Bonds, Broker Rules & Real Risk","description":"Separate CME NQ performance bonds, broker initial and day margin, variation, add-ons, risk-budget sizing, stress loss, cash buffers and rejection conditions.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/nq-margin.html"},"datePublished":"2025-12-12","dateModified":"2026-08-27","url":"https://grizzlyparrottrading.com/futures-basics/nq-margin.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"NQ Margin: Performance Bonds, Broker Rules & Real Risk","item":"https://grizzlyparrottrading.com/futures-basics/nq-margin.html"}]}</script><script src="/uet.js" defer></script></head>
+<body><a class="fx-skip-link" href="#main-content">Skip to article content</a><header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article><!-- ARTICLE BODY START -->
+<header class="fx-hero"><div class="fx-hero-copy"><p class="fx-kicker">Collateral layers &middot; cash stress &middot; independent risk</p><h1>NQ Margin: Performance Bonds, Broker Rules &amp; Real Risk</h1><p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 27, 2026</p><p class="fx-hero-lede">A CME margin tool and a broker account page can show two different NQ amounts while both are valid for their own layer and timestamp. The dangerous conclusion is that either figure measures maximum loss. Margin supports obligations; price path, quantity, gaps, fills, fees and liquidation determine loss.</p><div class="fx-hero-actions"><a class="button-primary" href="#layers">Separate the layers</a><a class="fx-text-link" href="#workflow">Run the buffer workflow</a></div></div><aside class="fx-market-board" aria-label="NQ margin boundary"><div class="fx-board-head"><span>Three different questions</span><strong>DO NOT MERGE</strong></div><div class="fx-proof"><strong>Margin</strong><span>Collateral required</span></div><div class="fx-proof"><strong>Notional</strong><span>Index level &times; multiplier</span></div><div class="fx-proof"><strong>Loss</strong><span>Path-dependent cash outcome</span></div><p class="fx-board-foot">Day margin is never a loss ceiling</p></aside></header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#layers">Layers</a><a href="#updates">Updates</a><a href="#variation">Variation</a><a href="#stress">Stress</a><a href="#workflow">Buffer</a><a href="#reject">Reject</a><a href="#review">Review</a></nav>
 
-  <meta charset="UTF-8">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<section class="fx-section" id="layers" aria-labelledby="layers-title"><div class="fx-section-heading"><p class="fx-kicker">Start by naming the quantity</p><h2 id="layers-title">Six NQ Margin and Risk Layers</h2></div><div class="fx-table-scroll" role="region" aria-label="NQ margin and risk layers" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Layer</th><th scope="col">Owner/source</th><th scope="col">Question answered</th><th scope="col">Boundary</th></tr></thead><tbody><tr><th scope="row">CME performance bond</th><td>CME Clearing margin framework</td><td>What clearing collateral applies to this portfolio and risk cycle?</td><td>Varies with product, volatility and offsets</td></tr><tr><th scope="row">Initial margin</th><td>Clearing firm/broker account terms</td><td>What must be available to initiate the position?</td><td>May be higher than exchange minimum</td></tr><tr><th scope="row">Maintenance margin</th><td>CME/broker process</td><td>What minimum must be maintained before restoration to initial is required?</td><td>Does not prevent intraday liquidation rules</td></tr><tr><th scope="row">Reduced day margin</th><td>Broker policy</td><td>What lower collateral may apply in a specific window?</td><td>Can change, expire or be withdrawn; not maximum loss</td></tr><tr><th scope="row">Add-ons</th><td>Clearing firm/broker risk controls</td><td>What event, concentration, liquidity or account charges also apply?</td><td>Portfolio- and state-dependent</td></tr><tr><th scope="row">Risk budget</th><td>Trader/account risk policy</td><td>How much stressed loss is authorized?</td><td>Calculated independently from margin</td></tr></tbody></table></div><div class="fx-caution"><strong>Do not compare numbers without matching scope.</strong><p>A CME indicative outright requirement, broker overnight requirement and broker intraday promotion may use different portfolio assumptions, effective times and add-ons. Record the source, account, product, quantity, timestamp and holding window.</p></div></section>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NQ Margin Requirements and Why They’re Misleading</title>
-  <meta name="description" content="Why NQ margin requirements understate real risk and how volatility, not margin, determines exposure.">
-  <meta name="robots" content="index, follow">
+<section class="fx-section" id="updates" aria-labelledby="updates-title"><div class="fx-section-heading"><p class="fx-kicker">Margin is a live input</p><h2 id="updates-title">Build a Timestamped Source Chain</h2><p>CME states that performance bond requirements vary by product and market volatility. Equity contracts are within the SPAN 2 framework, and portfolio margin can reflect offsets and additional risk components. The broker applies its own house rules to the customer account.</p></div><ol class="fx-process"><li><strong>Identify the portfolio.</strong><span>NQ or MNQ, exact expiry, direction, quantity, other futures/options and spread relationships.</span></li><li><strong>Check current CME data.</strong><span>Use the current margin service or product-margin record for the applicable cycle and framework.</span></li><li><strong>Check the broker account.</strong><span>Initial, maintenance, overnight, day, event and concentration rules for the actual account type.</span></li><li><strong>Resolve the clock.</strong><span>Effective time, intraday cutoff, maintenance window, holiday and scheduled event treatment.</span></li><li><strong>Preserve evidence.</strong><span>Timestamped URL/screen, applicable terms, calculated requirement and any support clarification.</span></li><li><strong>Recheck before carry.</strong><span>An intraday position that remains open can enter a different requirement without a new trade.</span></li></ol><div class="fx-two-column"><article class="fx-panel"><p class="fx-card-label">Stable mechanics</p><h3>Multiplier and tick</h3><p>NQ remains $20 per index point and $5 per 0.25-point tick under Chapter 359; MNQ is $2 per point and $0.50 per tick under Chapter 361.</p></article><article class="fx-panel"><p class="fx-card-label">Changeable input</p><h3>Margin amount</h3><p>Do not place a current dollar requirement in a timeless specification card. Link the live source and record the decision-time value.</p></article></div><p class="fx-related">The stable contract arithmetic and lifecycle live on <a href="nq-tick-value.html">the NQ/MNQ canonical mechanics page</a>.</p></section>
 
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/nq-margin.html">
+<section class="fx-section" id="variation" aria-labelledby="variation-title"><div class="fx-section-heading"><p class="fx-kicker">Collateral moves with account equity</p><h2 id="variation-title">Plan for Variation, Calls and Liquidation Authority</h2><p>Futures positions are marked as prices change, and accounts are debited or credited through variation processes. CME's margin FAQ distinguishes initial from maintenance: when equity falls below maintenance, funds can be required to restore the account to initial. A broker agreement may authorize earlier or automated action.</p></div><div class="fx-three-column"><article class="fx-panel"><p class="fx-card-label">Cash</p><h3>Available equity changes</h3><p>Adverse marks, commissions and other positions reduce the buffer even when the NQ contract count is unchanged.</p></article><article class="fx-panel"><p class="fx-card-label">Requirement</p><h3>Margin can rise</h3><p>Volatility, event, concentration or house-policy changes can increase required collateral during the holding period.</p></article><article class="fx-panel"><p class="fx-card-label">Broker action</p><h3>Liquidation is not a stop order</h3><p>The timing, order type and price may follow broker risk procedures rather than the strategy's chosen exit.</p></article></div><div class="fx-caution"><strong>“I can meet today's initial margin” is not a carry plan.</strong><p>The account must survive adverse variation, a higher requirement, fees, other positions and the broker's liquidation terms. A cash buffer reduces fragility but cannot guarantee against loss.</p></div></section>
 
-  <meta property="og:title" content="NQ Margin Requirements and Why They’re Misleading">
-  <meta property="og:description" content="Why NQ margin requirements understate real risk and how volatility, not margin, determines exposure.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/nq-margin.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
+<section class="fx-section" id="stress" aria-labelledby="stress-title"><div class="fx-section-heading"><p class="fx-kicker">Stress the price path in dollars</p><h2 id="stress-title">Translate NQ Movement Before Looking at Margin</h2><p>At a hypothetical Nasdaq-100 level of 25,000, one NQ represents $500,000 of notional index exposure (25,000 &times; $20). One MNQ represents $50,000. Notional is not the amount paid and not maximum loss, but it reveals the leverage scale behind a collateral deposit.</p></div><div class="fx-table-scroll" role="region" aria-label="Hypothetical NQ and MNQ movement stress" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Hypothetical index move</th><th scope="col">Points</th><th scope="col">Ticks</th><th scope="col">One NQ</th><th scope="col">One MNQ</th></tr></thead><tbody><tr><th scope="row">0.25%</th><td>62.5</td><td>250</td><td>$1,250</td><td>$125</td></tr><tr><th scope="row">0.50%</th><td>125</td><td>500</td><td>$2,500</td><td>$250</td></tr><tr><th scope="row">1.00%</th><td>250</td><td>1,000</td><td>$5,000</td><td>$500</td></tr><tr><th scope="row">2.00%</th><td>500</td><td>2,000</td><td>$10,000</td><td>$1,000</td></tr></tbody></table></div><p>These are symmetric gross arithmetic magnitudes at a hypothetical starting index, before costs. They are not daily forecasts, historical quantiles or exchange margin scenarios. A gap, halt, thin book or forced exit can create a different path and execution price.</p><div class="fx-formula" aria-label="NQ hypothetical movement loss"><code>gross movement = index-point change &times; $20 NQ or $2 MNQ &times; contracts</code></div></section>
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="NQ Margin Requirements and Why They’re Misleading">
-  <meta name="twitter:description" content="Why NQ margin requirements understate real risk and how volatility, not margin, determines exposure.">
+<section class="fx-section" id="workflow" aria-labelledby="workflow-title"><div class="fx-section-heading"><p class="fx-kicker">Two calculations, then the lower permission</p><h2 id="workflow-title">Run the Risk and Cash-Buffer Workflow</h2></div><div class="fx-decision-tree"><article><p class="fx-card-label">Risk size</p><h3>How many contracts fit planned stressed loss?</h3><p>Use invalidation, entry/exit slippage, gap/event reserve and fees. Floor to whole contracts.</p></article><article><p class="fx-card-label">Margin capacity</p><h3>How many contracts fit current collateral plus buffer?</h3><p>Use the higher applicable broker/exchange layer, other positions, adverse variation and policy add-ons.</p></article><article><p class="fx-card-label">Final permission</p><h3>Which cap is smaller?</h3><p>Risk size, portfolio cap and margin capacity are independent. The smallest controls; any unknown means zero.</p></article></div><div class="fx-formula" aria-label="Margin buffer calculation"><code>cash buffer = liquid account equity &minus; current applicable margin &minus; stressed open-position loss &minus; reserves</code></div><div class="fx-table-scroll" role="region" aria-label="NQ cash buffer checklist" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Buffer input</th><th scope="col">Include</th><th scope="col">Do not assume</th></tr></thead><tbody><tr><th scope="row">Open positions</th><td>Joint adverse stress, including correlated equity exposure</td><td>Historical diversification persists in a shock</td></tr><tr><th scope="row">Execution</th><td>Spread, depth, stop-exit slippage and gap allowance</td><td>Trigger price equals fill price</td></tr><tr><th scope="row">Margin change</th><td>Documented event/overnight policy or conservative increase</td><td>Current rate remains through hold</td></tr><tr><th scope="row">Fees</th><td>Commissions, exchange, clearing and applicable charges</td><td>Micros and minis have equal cost concentration</td></tr><tr><th scope="row">Operations</th><td>Broker liquidation timing and account restrictions</td><td>Time to wire funds or manually exit</td></tr></tbody></table></div><p class="fx-related">Calculate the risk-size branch with <a href="nq-position-sizing.html">the NQ/MNQ whole-contract sizing system</a>.</p></section>
 
-  <link rel="stylesheet" href="../style.css">
+<section class="fx-section" id="reject" aria-labelledby="reject-title"><div class="fx-section-heading"><p class="fx-kicker">Fail closed before leverage</p><h2 id="reject-title">Reject the Position Under Any of These Conditions</h2></div><ul class="fx-checklist"><li><strong>Source mismatch:</strong> the margin number lacks product, quantity, account, portfolio, effective time or initial/maintenance label.</li><li><strong>Day-window uncertainty:</strong> the broker's intraday cutoff, event treatment or automatic liquidation rule is unclear.</li><li><strong>Margin-based sizing:</strong> proposed contracts fit collateral but not the planned stressed-loss budget.</li><li><strong>No gap branch:</strong> the hold crosses an event, session boundary or outage without a defensible reserve or exclusion.</li><li><strong>Thin buffer:</strong> a modest adverse move or margin increase would force action before the strategy invalidates.</li><li><strong>Concentration unknown:</strong> NQ overlaps other equity or options risk that has not been stressed jointly.</li><li><strong>Funding dependency:</strong> the plan assumes new funds arrive before a call or liquidation deadline.</li><li><strong>Broker terms unavailable:</strong> liquidation authority or order treatment cannot be verified.</li></ul><div class="fx-go-card"><p class="fx-card-label">Reject output</p><h3>Enough buying power is not enough evidence</h3><p>Reduce to a quantity that passes every gate or return zero. Do not substitute optimism about an exit for cash and risk capacity.</p></div></section>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
+<section class="fx-section" id="review" aria-labelledby="review-title"><div class="fx-section-heading"><p class="fx-kicker">Compare plan, peak demand and broker action</p><h2 id="review-title">Review the Margin Path After Every Carry or Incident</h2></div><div class="fx-table-scroll" role="region" aria-label="NQ margin review record" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Record</th><th scope="col">Before trade</th><th scope="col">After trade</th><th scope="col">Update</th></tr></thead><tbody><tr><th scope="row">Requirement</th><td>Source, timestamp, initial/maintenance/day/overnight labels</td><td>Peak requirement and changes</td><td>Refresh source and buffer assumption</td></tr><tr><th scope="row">Equity</th><td>Liquid equity and reserved cash</td><td>Lowest equity and variation path</td><td>Change capacity gate</td></tr><tr><th scope="row">Risk estimate</th><td>Stop, execution, gap and fee stress</td><td>Actual path and fills</td><td>Change loss model, not margin definition</td></tr><tr><th scope="row">Broker action</th><td>Expected cutoff and liquidation terms</td><td>Warnings, restrictions or liquidations</td><td>Repair operational plan</td></tr><tr><th scope="row">Portfolio</th><td>Offsets and concentration assumptions</td><td>Observed co-movement and margin offsets</td><td>Stress adverse correlation</td></tr></tbody></table></div></section>
 
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "NQ Margin Requirements and Why They’re Misleading",
-  "description": "Why NQ margin requirements understate real risk and how volatility, not margin, determines exposure.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/nq-margin.html",
-  "datePublished": "2025-12-12",
-  "dateModified": "2025-12-12",
-  "url": "https://grizzlyparrottrading.com/futures-basics/nq-margin.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "NQ Margin Requirements and Why They’re Misleading",
-      "item": "https://grizzlyparrottrading.com/futures-basics/nq-margin.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
-</head>
-
-<body>
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
-
-<h1>NQ Margin Requirements and Why They’re Misleading</h1>
-
-<p>
-Margin requirements for NQ are commonly mistaken for a risk boundary. They are not. Margin defines access to the contract, not the magnitude or speed of potential loss. On NQ, volatility overwhelms margin math quickly.
-</p>
-
-<h2>What margin actually represents</h2>
-
-<p>
-Initial and maintenance margin are collateral thresholds set by the exchange and broker. They ensure performance of the contract, not protection from adverse movement. Margin does not cap loss and does not adapt to changing volatility.
-</p>
-
-<h2>Why margin understates NQ risk</h2>
-
-<p>
-NQ routinely travels large distances intraday. When price expands range rapidly, losses can exceed margin buffers before risk controls react. This disconnect is structural and becomes visible during news and high-liquidity windows.
-</p>
-
-<p>
-The volatility drivers responsible for this behavior are outlined in <a href="https://grizzlyparrottrading.com/futures-basics/nq-volatility-vs-es.html">Why NQ Is More Volatile Than ES</a>.
-</p>
-
-<h2>Day-trade margin vs reality</h2>
-
-<p>
-Reduced intraday margin offered by brokers increases leverage without changing contract behavior. The contract does not become safer because margin is lower. Exposure scales up while tolerance remains fixed.
-</p>
-
-<h2>Margin vs dollar exposure</h2>
-
-<p>
-Dollar exposure is determined by expected range and stop distance, not by posted margin. Tick structure and range expansion combine to create realized exposure far in excess of margin assumptions. Tick mechanics are detailed in <a href="https://grizzlyparrottrading.com/futures-basics/nq-tick-value.html">NQ Tick Size, Tick Value, and Dollar Risk Explained</a>.
-</p>
-
-<h2>Position sizing overrides margin</h2>
-
-<p>
-Effective risk control on NQ comes from size reduction and wider invalidation, not from minimum margin compliance. Position sizing constraints are covered in <a href="https://grizzlyparrottrading.com/futures-basics/nq-position-sizing.html">Position Sizing for NQ Futures</a>.
-</p>
-
-<div class="highlight-box red">
-  <h3>Margin Lets You In — It Doesn’t Keep You Safe</h3>
-  <p>NQ’s volatility can blow through margin assumptions in seconds. The exchange sets the minimum, not the warning label. If you’re using margin as a risk gauge, you’re already mispricing the trade.</p>
-</div>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-       
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
-</body>
-</html>
+<details class="fx-sources"><summary>Sources, margin boundaries and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul><li><a href="https://www.cmegroup.com/solutions/risk-management/performance-bonds-margins/faq-performance-bonds-margins.html" target="_blank" rel="noopener noreferrer">CME Performance Bonds/Margins FAQ</a> for performance-bond purpose, variability, initial/maintenance and variation concepts.</li><li><a href="https://www.cmegroup.com/solutions/risk-management/margin-services/product-margins.html" target="_blank" rel="noopener noreferrer">CME Product Margins</a> for current product-level performance-bond access and the variability boundary.</li><li><a href="https://www.cmegroup.com/solutions/risk-management/performance-bonds-margins/span-methodology-overview/launching-span-2.html" target="_blank" rel="noopener noreferrer">CME SPAN 2 Framework Rollout</a> for Equity-product framework status and portfolio-calculation tools.</li><li><a href="https://www.cftc.gov/csl/20-17/download" target="_blank" rel="noopener noreferrer">CFTC futures risk disclosure</a> for additional-margin, liquidation and loss-beyond-deposit risk.</li><li><a href="nq-tick-value.html">NQ/MNQ canonical contract mechanics</a> for the stable multipliers, tick values and settlement boundaries.</li></ul><p>Sources were reviewed August 28, 2026. No live broker margin was quoted because exchange and broker requirements are changeable, account-specific inputs. All index levels, moves and dollar examples are hypothetical arithmetic rather than forecasts or margin estimates.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This margin workflow is educational, not personalized financial or brokerage advice. Margin is not a down payment or loss limit. Futures losses and required funds can exceed the original deposit, and brokers may liquidate positions under their terms.</p></aside>
+<!-- ARTICLE BODY END --></article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer></body></html>

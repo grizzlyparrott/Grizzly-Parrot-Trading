@@ -1,221 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<html lang="en"><head><meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ES Intraday Support and Resistance: A Level Workflow</title>
+<meta name="description" content="Turn ES reference levels into timestamped hypotheses with candidate ranking, reaction and liquidity evidence, execution branches, invalidation and a deletion log.">
+<meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-intraday-support-and-resistance-levels.html">
+<meta property="og:title" content="ES Intraday Support and Resistance: A Level Workflow"><meta property="og:description" content="Turn ES reference levels into timestamped hypotheses with candidate ranking, reaction and liquidity evidence, execution branches, invalidation and a deletion log."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-intraday-support-and-resistance-levels.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-27">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ES Intraday Support and Resistance: A Level Workflow"><meta name="twitter:description" content="Turn ES reference levels into timestamped hypotheses with candidate ranking, reaction and liquidity evidence, execution branches, invalidation and a deletion log."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ES Intraday Support and Resistance: A Level Workflow","description":"Turn ES reference levels into timestamped hypotheses with candidate ranking, reaction and liquidity evidence, execution branches, invalidation and a deletion log.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/es-intraday-support-and-resistance-levels.html"},"datePublished":"2025-11-24","dateModified":"2026-08-27","url":"https://grizzlyparrottrading.com/futures-basics/es-intraday-support-and-resistance-levels.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"ES Intraday Support and Resistance: A Level Workflow","item":"https://grizzlyparrottrading.com/futures-basics/es-intraday-support-and-resistance-levels.html"}]}</script><script src="/uet.js" defer></script></head>
+<body><a class="fx-skip-link" href="#main-content">Skip to article content</a><header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article><!-- ARTICLE BODY START -->
+<header class="fx-hero"><div class="fx-hero-copy"><p class="fx-kicker">Candidate &rarr; hypothesis &rarr; reaction &rarr; deletion</p><h1>ES Intraday Support and Resistance: A Level Workflow</h1><p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 27, 2026</p><p class="fx-hero-lede">An ES chart can offer yesterday's high, overnight low, settlement, open, VWAP, swing points, round numbers and several profile references before the first order. If every line is “important,” any reversal can be explained afterward. A usable level is a timestamped hypothesis with a reason, rank, trigger, invalidation and deletion rule.</p><div class="fx-hero-actions"><a class="button-primary" href="#candidates">Build the candidate set</a><a class="fx-text-link" href="#branches">Define the reaction branches</a></div></div><aside class="fx-market-board" aria-label="Level hypothesis record"><div class="fx-board-head"><span>Level ID ES-L-017</span><strong>HYPOTHESIS</strong></div><div class="fx-proof"><strong>Known at</strong><span>08:20:00 CT</span></div><div class="fx-proof"><strong>Reference</strong><span>6,412.25 &plusmn; stated tolerance</span></div><div class="fx-proof"><strong>Delete when</strong><span>Invalidated or expired</span></div><p class="fx-board-foot">Hypothetical example; not a trade call</p></aside></header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#candidates">Candidates</a><a href="#rank">Rank</a><a href="#tolerance">Tolerance</a><a href="#branches">Branches</a><a href="#liquidity">Liquidity</a><a href="#invalidation">Invalidation</a><a href="#ledger">Ledger</a></nav>
 
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+<section class="fx-section" id="candidates" aria-labelledby="candidates-title"><div class="fx-section-heading"><p class="fx-kicker">Use only values knowable at the decision time</p><h2 id="candidates-title">Create a Bounded Candidate Set</h2><p>A level source is a way to generate a hypothesis, not evidence that price must react. Fix the session definitions, data feed and calculation rules before using any candidate.</p></div><div class="fx-table-scroll" role="region" aria-label="ES candidate reference levels" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Candidate source</th><th scope="col">Timestamp rule</th><th scope="col">Primary use</th><th scope="col">Common contamination</th></tr></thead><tbody><tr><th scope="row">Prior RTH high/low</th><td>Complete only after the defined prior RTH close</td><td>Previously observed session extremes</td><td>Platform RTH template differs</td></tr><tr><th scope="row">Prior settlement</th><td>Use exchange/vendor settlement field and trade date</td><td>Official daily accounting reference</td><td>Confused with cash close or last trade</td></tr><tr><th scope="row">Overnight high/low</th><td>Known only as of the current timestamp until the overnight window ends</td><td>Current-session extremes</td><td>Later high/low leaks future information</td></tr><tr><th scope="row">Cash open</th><td>Available after the opening print under the chosen definition</td><td>Opening reference</td><td>Futures open substituted for cash open</td></tr><tr><th scope="row">VWAP</th><td>Recomputed using declared reset, price and volume inputs</td><td>Evolving volume-weighted benchmark</td><td>Different platforms use different resets or prices</td></tr><tr><th scope="row">Predefined swing</th><td>Confirmation must use only completed data under a frozen rule</td><td>Recent structural pivot</td><td>Future bars required to label the pivot</td></tr><tr><th scope="row">Round increment</th><td>Mechanical grid declared before the session</td><td>Candidate only</td><td>Selective attention after price turns</td></tr></tbody></table></div><p>Limit the number of active candidates. For example, a plan may allow no more than five primary references and three secondary references. The exact cap is a policy choice to test; the important control is that the set cannot expand whenever price approaches a new line.</p><p class="fx-related">Session high/low and VWAP calculation choices are treated in <a href="es-session-highs-lows-and-vwap-usage.html">the dedicated benchmark workflow</a>. Opening-range definitions belong to <a href="es-opening-range-strategies-for-beginners.html">the opening-range protocol</a>.</p></section>
 
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<section class="fx-section" id="rank" aria-labelledby="rank-title"><div class="fx-section-heading"><p class="fx-kicker">Rank before price arrives</p><h2 id="rank-title">Score Relevance Without Inventing Precision</h2><p>A ranking rubric makes candidate selection auditable. It does not turn an ordinal score into a probability.</p></div><div class="fx-table-scroll" role="region" aria-label="ES level ranking rubric" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Dimension</th><th scope="col">0</th><th scope="col">1</th><th scope="col">2</th></tr></thead><tbody><tr><th scope="row">Definition quality</th><td>Ambiguous or platform-dependent</td><td>Defined but weakly verified</td><td>Reproducible from stored data</td></tr><tr><th scope="row">Age</th><td>Outside permitted lookback</td><td>Older but still allowed</td><td>Current or immediately prior session</td></tr><tr><th scope="row">Independent confluence</th><td>None</td><td>Same calculation family</td><td>Different source/clock agrees within tolerance</td></tr><tr><th scope="row">Prior interaction</th><td>Already repeatedly crossed</td><td>One ambiguous test</td><td>Untested under the written definition</td></tr><tr><th scope="row">Execution quality</th><td>Spread/depth fails</td><td>Borderline</td><td>Passes for intended quantity</td></tr></tbody></table></div><div class="fx-caution"><strong>Do not double-count aliases.</strong><p>A prior close, settlement and platform “close line” may be the same or nearly the same input. Calling that three independent confirmations exaggerates evidence.</p></div><div class="fx-formula" aria-label="Level ranking output"><code>rank = declared rubric applied before first test</code><i aria-hidden="true">not</i><strong>estimated win probability</strong></div></section>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Finding Intraday Support and Resistance on ES</title>
-  <meta name="description" content="A blunt guide to finding intraday support and resistance on ES so beginners stop guessing and start using real structure.">
-  <meta name="robots" content="index, follow">
+<section class="fx-section" id="tolerance" aria-labelledby="tolerance-title"><div class="fx-section-heading"><p class="fx-kicker">A price is not always a one-tick wall</p><h2 id="tolerance-title">Declare the Test Region and Clock</h2><p>ES outright prices move in 0.25-point increments. A research definition may test an exact price or a bounded tolerance around it, but the tolerance must be fixed before observing the reaction and expressed on the valid tick ladder.</p></div><div class="fx-three-column"><article class="fx-panel"><p class="fx-card-label">Exact touch</p><h3>Trade at the reference tick</h3><p>Simple to label, but it can treat one tick above and one tick below as fundamentally different without evidence.</p></article><article class="fx-panel"><p class="fx-card-label">Fixed band</p><h3>Predeclared tick radius</h3><p>For example, a hypothetical &plusmn;2-tick band. This is a test parameter, not a recommended zone.</p></article><article class="fx-panel"><p class="fx-card-label">State-scaled band</p><h3>Forward-known volatility rule</h3><p>The scale must be available before contact, capped, rounded to ticks and frozen for evaluation.</p></article></div><ul class="fx-checklist"><li><strong>First-touch clock:</strong> define whether a touch means trade, bid/offer contact or bar range.</li><li><strong>Entry clock:</strong> define whether action can occur on contact or only after a completed confirmation.</li><li><strong>Expiry clock:</strong> delete or downgrade the candidate after a stated time, event or number of tests.</li><li><strong>Crossing rule:</strong> decide whether price traversing the full band invalidates, changes side or merely records a test.</li></ul></section>
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-intraday-support-and-resistance-levels.html">
+<section class="fx-section" id="branches" aria-labelledby="branches-title"><div class="fx-section-heading"><p class="fx-kicker">Observation before action</p><h2 id="branches-title">Define Acceptance, Rejection and No-Decision Branches</h2></div><div class="fx-decision-tree"><article><p class="fx-card-label">Price enters the band</p><h3>Does the reaction meet the prewritten trigger?</h3><p><strong>Yes:</strong> continue to market-quality and risk gates. <strong>No:</strong> wait; a touch alone is not an entry.</p></article><article><p class="fx-card-label">Price holds beyond the band</p><h3>Has acceptance been defined?</h3><p><strong>Yes:</strong> invalidate the rejection thesis or evaluate a separate acceptance setup. <strong>No:</strong> delete the level; do not reverse automatically.</p></article><article><p class="fx-card-label">Price oscillates through</p><h3>Has the test count or time expired?</h3><p><strong>Yes:</strong> retire the candidate. <strong>No:</strong> retain only under the stated decay rule.</p></article></div><div class="fx-table-scroll" role="region" aria-label="ES level reaction evidence" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Observable</th><th scope="col">What it can support</th><th scope="col">What it cannot prove</th></tr></thead><tbody><tr><th scope="row">Price displacement</th><td>Direction and distance after contact</td><td>Who caused the move</td></tr><tr><th scope="row">Trade flow</th><td>Executed volume at price over time</td><td>Participant identity or future intent</td></tr><tr><th scope="row">Displayed depth</th><td>Visible queued quantity at timestamps</td><td>Guaranteed future liquidity</td></tr><tr><th scope="row">Replenishment</th><td>Displayed quantity returning after executions</td><td>One hidden participant or permanent support</td></tr><tr><th scope="row">Spread/impact</th><td>Current execution quality</td><td>Profitable reaction</td></tr></tbody></table></div></section>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Finding Intraday Support and Resistance on ES">
-  <meta property="og:description" content="A blunt guide to finding intraday support and resistance on ES so beginners stop guessing and start using real structure.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-intraday-support-and-resistance-levels.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
+<section class="fx-section" id="liquidity" aria-labelledby="liquidity-title"><div class="fx-section-heading"><p class="fx-kicker">A valid hypothesis can still be untradeable</p><h2 id="liquidity-title">Run Execution Gates at the Moment of Action</h2><p>Displayed book state changes through new orders, cancellations and trades. CME Market by Price aggregates quantity at price; Market by Order can provide anonymous order-level granularity, but neither identifies the customer or guarantees displayed size remains.</p></div><div class="fx-four-grid"><article class="fx-panel"><p class="fx-card-label">Spread</p><h3>Maximum ticks</h3><p>Reject action if the inside spread exceeds the plan's stated threshold.</p></article><article class="fx-panel"><p class="fx-card-label">Depth</p><h3>Quantity-aware</h3><p>Estimate price impact for the intended order, not for one contract unless size is one.</p></article><article class="fx-panel"><p class="fx-card-label">Staleness</p><h3>Feed-age limit</h3><p>Block on delayed data, dropped sequence or mismatched contract timestamps.</p></article><article class="fx-panel"><p class="fx-card-label">Event</p><h3>State override</h3><p>Scheduled release, halt, roll migration or abnormal cancellation can invalidate ordinary cost assumptions.</p></article></div><p class="fx-related">For the observation and attribution boundary, see <a href="es-using-dom-and-time-and-sales.html">the ES DOM and time-and-sales workflow</a>.</p></section>
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Finding Intraday Support and Resistance on ES">
-  <meta name="twitter:description" content="A blunt guide to finding intraday support and resistance on ES so beginners stop guessing and start using real structure.">
+<section class="fx-section" id="invalidation" aria-labelledby="invalidation-title"><div class="fx-section-heading"><p class="fx-kicker">A line must be allowed to die</p><h2 id="invalidation-title">Specify Invalidation Before Contact</h2></div><div class="fx-table-scroll" role="region" aria-label="ES level invalidation rules" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Invalidation type</th><th scope="col">Example definition</th><th scope="col">Action</th></tr></thead><tbody><tr><th scope="row">Price</th><td>Completed acceptance beyond the far side under a fixed rule</td><td>Delete rejection hypothesis</td></tr><tr><th scope="row">Time</th><td>No qualifying contact before stated session time</td><td>Expire candidate</td></tr><tr><th scope="row">Tests</th><td>Maximum number of traversals reached</td><td>Retire or downgrade</td></tr><tr><th scope="row">Event</th><td>Scheduled release or verified unscheduled shock changes state</td><td>Rebuild candidate set</td></tr><tr><th scope="row">Contract</th><td>Liquidity migrates to a different ES expiry</td><td>Recalculate from the new dated contract</td></tr><tr><th scope="row">Data</th><td>Session template, source or calculation is wrong</td><td>Void the level and affected decisions</td></tr></tbody></table></div><div class="fx-caution"><strong>Invalidation is not automatic reversal.</strong><p>Failure of a support hypothesis only says that hypothesis no longer authorizes a long. A short requires its own context, trigger, risk and execution permissions.</p></div></section>
 
-  <link rel="stylesheet" href="../style.css">
+<section class="fx-section" id="ledger" aria-labelledby="ledger-title"><div class="fx-section-heading"><p class="fx-kicker">Preserve misses and deletions</p><h2 id="ledger-title">Use a Level Ledger, Not an Annotated Victory Chart</h2></div><div class="fx-table-scroll" role="region" aria-label="ES level ledger fields" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Field</th><th scope="col">Record</th></tr></thead><tbody><tr><th scope="row">Identity</th><td>Level ID, dated ES/MES contract, source, price/band and creation timestamp</td></tr><tr><th scope="row">Calculation</th><td>Session template, raw data reference, formula and tick rounding</td></tr><tr><th scope="row">Rank</th><td>Every rubric component before contact</td></tr><tr><th scope="row">Contact</th><td>First eligible touch timestamp and market-quality snapshot</td></tr><tr><th scope="row">Branch</th><td>Reject, accept, wait, expire or data-invalid</td></tr><tr><th scope="row">Execution</th><td>Decision, arrival, order, fill and exit fields if a trade was authorized</td></tr><tr><th scope="row">Deletion</th><td>Exact invalidation, time, test count, event or contract-roll reason</td></tr></tbody></table></div><p>Review all candidates, including untouched levels, ambiguous reactions, no-trades and deleted hypotheses. Selecting only lines that preceded a visible turn manufactures accuracy after the fact.</p><div class="fx-go-card"><p class="fx-card-label">Final state</p><h3>No reaction, no trade</h3><p>A high-ranked level is still only a candidate. Without the declared reaction, liquidity, risk and order gates, the correct output is wait or delete.</p></div></section>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Finding Intraday Support and Resistance on ES",
-  "description": "A blunt guide to finding intraday support and resistance on ES so beginners stop guessing and start using real structure.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/es-intraday-support-and-resistance-levels.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/es-intraday-support-and-resistance-levels.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Finding Intraday Support and Resistance on ES",
-      "item": "https://grizzlyparrottrading.com/futures-basics/es-intraday-support-and-resistance-levels.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
-</head>
-<body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-<h1>Finding Intraday Support and Resistance on ES</h1>
-
-<p>
-If your ES chart looks like a coloring book, you’re doing support and resistance wrong. ES doesn’t care about your random lines — it reacts to real auction levels. This guide gives you the levels that actually matter intraday and how to map them without overthinking.
-</p>
-
-<h2>1. Prior Day High and Low</h2>
-<p>
-These two levels matter more than anything else on your chart. Institutions anchor liquidity around them. ES constantly retests, rejects, or blasts through these levels because that’s where positions from yesterday are trapped or freed.
-</p>
-
-<table>
-<tr><th>Level</th><th>Impact</th></tr>
-<tr><td>Prior Day High</td><td>Major resistance and liquidity pool</td></tr>
-<tr><td>Prior Day Low</td><td>Major support and liquidity pool</td></tr>
-</table>
-
-<p>
-If you don’t understand why liquidity clusters here, read  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-liquidity-pockets-and-order-book-structure.html">ES Liquidity Pockets</a>.
-</p>
-
-<h2>2. Opening Range High and Low</h2>
-<p>
-The opening range sets the tone for the session. Price respects these boundaries all day long. Breaks of OR levels often lead to trend continuation or complete reversals depending on volume and ATR.
-</p>
-
-<p>
-If you haven’t learned opening range mechanics, check  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-opening-range-strategies-for-beginners.html">Opening Range Strategies</a>.
-</p>
-
-<h2>3. Session VWAP</h2>
-<p>
-VWAP is a magnet on ES. Price pulls back to it repeatedly throughout the day. When ES is trending hard, VWAP acts as dynamic support or resistance; when ES is balanced, VWAP chops traders who don’t understand structure.
-</p>
-
-<h2>4. Key Intraday Swing Points</h2>
-<p>
-These are the most recent, obvious swing highs and lows on the chart. ES uses these points to define structure and break of structure (BOS). They help you track the direction of the auction without guessing.
-</p>
-
-<h2>5. Premarket Levels</h2>
-<p>
-High, low, and midline of the premarket session often act as soft intraday levels once RTH opens. Not as strong as prior day or OR, but still useful markers for intraday bias.
-</p>
-
-<div class="highlight-box yellow">
-  <h3>Clean Charts Catch Real Moves</h3>
-  <p>ES doesn’t care about your rainbow spaghetti. Mark what matters, delete the rest, and trade what real participants are watching—not what you dreamed up in isolation.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
-</body>
-</html>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul><li><a href="es-tick-size-tick-value-and-margin.html">ES/MES canonical mechanics</a> for the current 0.25-point outright ladder and dated-contract boundaries.</li><li><a href="https://www.cmegroup.com/articles/faqs/market-by-order-mbo.html" target="_blank" rel="noopener noreferrer">CME Market by Order FAQ</a> for anonymous MBO/MBP data scope, depth and queue-information boundaries.</li><li><a href="https://www.cmegroup.com/education/articles-and-reports/understanding-the-cme-liquidity-tool-methodology" target="_blank" rel="noopener noreferrer">CME Liquidity Tool Methodology</a> for order-book inputs, spread and depth measurement.</li><li><a href="https://www.cmegroup.com/trading/price-limits.html" target="_blank" rel="noopener noreferrer">CME Equity Index Price Limits</a> for current exchange limit references, which must not be repurposed as ordinary support/resistance.</li></ul><p>Sources were reviewed August 28, 2026. This page defines a forward-safe workflow and reports no original level study, hit rate, reversal probability, optimal tolerance or trading edge. All level IDs, prices, times and rubric examples are hypothetical.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This workflow is educational, not personalized financial or execution advice. Reference levels do not guarantee reactions or fills. Futures can gap through stops and create losses beyond planned risk and margin.</p></aside>
+<!-- ARTICLE BODY END --></article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer></body></html>

@@ -1,241 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<html lang="en"><head><meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NQ &amp; MNQ Ticket Decoder: Tick Value to Settlement</title>
+<meta name="description" content="Decode one NQ or MNQ order ticket from symbol and expiry through dollar exposure, session clock, roll handoff, Nasdaq-opening settlement and collateral checks.">
+<meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/nq-tick-value.html">
+<meta property="og:title" content="NQ &amp; MNQ Ticket Decoder: Tick Value to Settlement"><meta property="og:description" content="Decode one NQ or MNQ order ticket from symbol and expiry through dollar exposure, session clock, roll handoff, Nasdaq-opening settlement and collateral checks."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/nq-tick-value.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-12-12"><meta property="article:modified_time" content="2026-08-26">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="NQ &amp; MNQ Ticket Decoder: Tick Value to Settlement"><meta name="twitter:description" content="Decode one NQ or MNQ order ticket from symbol and expiry through dollar exposure, session clock, roll handoff, Nasdaq-opening settlement and collateral checks."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"NQ & MNQ Ticket Decoder: Tick Value to Settlement","description":"Decode one NQ or MNQ order ticket from symbol and expiry through dollar exposure, session clock, roll handoff, Nasdaq-opening settlement and collateral checks.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/nq-tick-value.html"},"datePublished":"2025-12-12","dateModified":"2026-08-26","url":"https://grizzlyparrottrading.com/futures-basics/nq-tick-value.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"NQ & MNQ Ticket Decoder: Tick Value to Settlement","item":"https://grizzlyparrottrading.com/futures-basics/nq-tick-value.html"}]}</script><script src="/uet.js" defer></script></head>
+<body><a class="fx-skip-link" href="#main-content">Skip to article content</a><header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article><!-- ARTICLE BODY START -->
+<header class="fx-hero"><div class="fx-hero-copy"><p class="fx-kicker">Canonical NQ/MNQ authority &middot; ticket-first mechanics</p><h1>NQ &amp; MNQ Ticket Decoder: Tick Value to Settlement</h1><p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 26, 2026</p><p class="fx-hero-lede"><strong>Read the order from left to right before calculating anything:</strong> product, dated quarter, route, side, quantity and price. NQ and MNQ can chart the same Nasdaq-100 path while assigning tenfold-different dollars to it. The correct ticket also carries a session, roll decision, termination boundary and cash-settlement path.</p><div class="fx-hero-actions"><a class="button-primary" href="#ticket">Decode the ticket</a><a class="fx-text-link" href="#certificate">Run the final read-back</a></div></div><aside class="fx-hero-visual" aria-label="NQ and MNQ scale proof"><div class="fx-proof-grid"><div class="fx-proof"><strong>NQ</strong><span>$20 per point</span></div><div class="fx-proof"><strong>MNQ</strong><span>$2 per point</span></div><div class="fx-proof"><strong>NQ tick</strong><span>0.25 = $5</span></div><div class="fx-proof"><strong>MNQ tick</strong><span>0.25 = $0.50</span></div></div></aside></header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#ticket">Ticket</a><a href="#scale-proof">Scale proof</a><a href="#clock">Lifecycle clock</a><a href="#handoff">Handoff</a><a href="#dollars">Dollar boundaries</a><a href="#certificate">Certificate</a></nav>
 
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+<section class="fx-section" id="ticket" aria-labelledby="ticket-title"><div class="fx-section-heading"><p class="fx-kicker">Six fields before Submit</p><h2 id="ticket-title">Read Back the Tradable Instrument, Not the Chart Label</h2><p>A continuous symbol is an analytical series, not a complete order instruction. A live ticket must identify a listed product and a quarterly month/year. NQ and MNQ expire on the March cycle: March, June, September and December. As reviewed August 28, 2026, CME lists NQ for 6 consecutive quarterly contracts plus 2 additional June and 4 additional December contracts; MNQ is listed for 5 consecutive quarterly contracts. The formal multipliers are NQ $20 &times; Nasdaq-100 Index and MNQ $2 &times; Nasdaq-100 Index.</p></div><div class="fx-check-grid"><article><strong>Product</strong><p>NQ means E-mini Nasdaq-100; MNQ means Micro E-mini Nasdaq-100. Their dollar multipliers are different.</p></article><article><strong>Dated expiry</strong><p>State the quarterly month and year. Never infer it from a back-adjusted chart.</p></article><article><strong>Route</strong><p>Distinguish a standard outright from an exchange-recognized intermonth spread.</p></article><article><strong>Side and quantity</strong><p>Read the resulting net position, including working orders and current exposure.</p></article><article><strong>Price ladder</strong><p>Standard outright orders use 0.25-point increments in both NQ and MNQ.</p></article><article><strong>Account permission</strong><p>Verify current session, product, margin and broker eligibility independently.</p></article></div><div class="fx-caution"><strong>The 0.05-point increment belongs to specified intermonth spread trading, not the standard outright ticket.</strong><p>Chapter 359 values an NQ spread tick at $1; Chapter 361 values an MNQ spread tick at $0.10. Outright ticks remain 0.25 point, worth $5 and $0.50 respectively.</p></div></section>
 
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<section class="fx-section" id="scale-proof" aria-labelledby="scale-title"><div class="fx-section-heading"><p class="fx-kicker">Make points and ticks agree</p><h2 id="scale-title">Prove Dollar Exposure Two Ways Before Sizing</h2><p>For a long, gross P&amp;L uses exit minus entry; for a short, use entry minus exit. Costs are separate. A correct calculation returns the same gross dollars from the point method and the tick method.</p></div><div class="fx-window-equation" aria-label="NQ and MNQ contract arithmetic"><strong>price change &divide; 0.25</strong><span>= outright ticks</span><strong>ticks &times; tick value</strong><span>= gross dollars per contract</span><strong>points &times; multiplier</strong><span>= the same gross dollars</span></div><div class="fx-table-scroll" role="region" aria-label="NQ and MNQ scale reconciliation" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Price movement</th><th scope="col">Outright ticks</th><th scope="col">One NQ</th><th scope="col">One MNQ</th><th scope="col">Ten MNQ</th></tr></thead><tbody><tr><th scope="row">0.25 point</th><td>1</td><td>$5.00</td><td>$0.50</td><td>$5.00</td></tr><tr><th scope="row">1.00 point</th><td>4</td><td>$20.00</td><td>$2.00</td><td>$20.00</td></tr><tr><th scope="row">18.75 points</th><td>75</td><td>$375.00</td><td>$37.50</td><td>$375.00</td></tr><tr><th scope="row">50.00 points</th><td>200</td><td>$1,000.00</td><td>$100.00</td><td>$1,000.00</td></tr></tbody></table></div><div class="fx-method"><div><h3>Short-ticket reconciliation</h3><p>Sell one NQ at 25,180.50 and buy at 25,161.75. The favorable 18.75-point move equals 75 ticks. Point proof: 18.75 &times; $20 = <strong>$375 gross</strong>. Tick proof: 75 &times; $5 = the same $375. One MNQ over that path is $37.50 gross.</p></div><dl><div><dt>Direction</dt><dd>Short</dd></div><div><dt>Move</dt><dd>18.75 points</dd></div><div><dt>NQ proof</dt><dd>$375 gross</dd></div><div><dt>MNQ proof</dt><dd>$37.50 gross</dd></div></dl></div><p>Ten MNQ and one NQ have equivalent gross price exposure, but not necessarily equal commission totals, spread, slippage, depth or queue outcomes. Subtract each product's actual execution and account costs.</p></section>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NQ Tick Value: $5 per Tick (Nasdaq Futures Explained)</title>
-  <meta name="description" content="One NQ futures tick is worth $5. This page explains tick size, tick value, and how Nasdaq futures contracts work.">
-  <meta name="robots" content="index, follow">
+<section class="fx-section" id="clock" aria-labelledby="clock-title"><div class="fx-section-heading"><p class="fx-kicker">One contract travels through four clock states</p><h2 id="clock-title">Attach the Trade Date, Roll Window and Termination to the Ticket</h2><p>CME publishes general U.S. equity-index futures trading hours from Sunday through Friday, 5:00 p.m. to 4:00 p.m. Central Time, with a daily halt from 4:00 p.m. to 5:00 p.m. CT. Final trading termination is a separate expiration event. The evening opening belongs to the next CME trade date. Holiday notices, regulatory or price-limit halts and broker restrictions can change actual availability.</p></div><div class="fx-contract-path"><article><h3>Select the quarter</h3><p>Choose the listed March, June, September or December NQ/MNQ contract and record its year.</p></article><article><h3>Trade the session</h3><p>Translate Chicago time with timezone-aware software and confirm current open, halt, pre-open or closed status.</p></article><article><h3>Decide the handoff</h3><p>Compare expiring and next-quarter books; the customary roll date is an observation point, not an automatic switch.</p></article><article><h3>Resolve expiration</h3><p>Exit, roll or enter the specifically approved cash-settlement branch before the earliest applicable cutoff.</p></article></div><div class="fx-decision-strip" aria-label="NQ and MNQ schedule controls"><span><strong>Normal session</strong>5 p.m.&ndash;4 p.m. CT with 4&ndash;5 p.m. halt</span><span><strong>Exception day</strong>Current CME holiday or special notice controls</span><span><strong>Broker boundary</strong>Can be earlier or more restrictive</span></div><p>Hours state when the market is generally available; they do not promise a tight spread, deep book or ordinary slippage. A valid ticket still needs a product-specific liquidity gate.</p></section>
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/nq-tick-value.html">
+<section class="fx-section" id="handoff" aria-labelledby="handoff-title"><div class="fx-section-heading"><p class="fx-kicker">Old quarter, next quarter, final value</p><h2 id="handoff-title">Reconcile the Roll Handoff or the Nasdaq-Opening Settlement</h2><p>CME identifies the customary U.S. equity-index roll date as the Monday before the third Friday of the expiration month. Market participants can move earlier or later, and both quarters can trade while volume and depth migrate. The roll is not mandatory, automatic or costless.</p></div><div class="fx-task-paths"><article><h3>Compare</h3><p>Observe both dated books at the same time: spread, depth, recent trades and expected impact for the actual quantity.</p></article><article><h3>Route</h3><p>Choose a recognized calendar spread or controlled separate legs. Separate execution can create temporary gap or overlap exposure.</p></article><article><h3>Prove</h3><p>Old-month position zero, old working orders zero, new quantity correct and new protection acknowledged.</p></article><article><h3>Settle branch</h3><p>If deliberately held to expiration, follow the exchange process and the broker's earlier instructions without assuming the chart close is final value.</p></article></div><div class="fx-table-scroll" role="region" aria-label="Product-specific NQ and MNQ final settlement record" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Settlement field</th><th scope="col">NQ &mdash; Chapter 359</th><th scope="col">MNQ &mdash; Chapter 361</th><th scope="col">Operational meaning</th></tr></thead><tbody><tr><th scope="row">Trading termination</th><td>Regularly scheduled start of Nasdaq Stock Market trading on the final settlement business day</td><td>No trading after the Primary Listing Exchange opens on the final settlement business day</td><td>Normally 8:30 a.m. CT / 9:30 a.m. ET on the third Friday, subject to the product's rulebook contingencies</td></tr><tr><th scope="row">Final settlement</th><td>Cash settlement</td><td>Cash settlement</td><td>No stock basket is delivered</td></tr><tr><th scope="row">SOQ basis</th><td>Nasdaq-100 Special Opening Quotation expressly based on each component's Nasdaq Official Opening Price (NOOP)</td><td>Nasdaq-100 Special Opening Quotation based on component opening prices</td><td>Neither record authorizes substituting the chart close or first displayed continuous index value</td></tr><tr><th scope="row">Component contingency</th><td>If Nasdaq does not open, use the next Nasdaq trading day; a nontrading component uses its prior Nasdaq close, subject to Exchange discretion to use the next NOOP</td><td>A closed component Primary Listing Exchange moves to its next opening; if the component does not trade, use its last sale, subject to Exchange discretion</td><td>Current CME procedures control; the chapters do not use identical wording</td></tr><tr><th scope="row">Unscheduled Market Holiday</th><td colspan="2">Termination moves to the immediately preceding business day's NYSE close and final value becomes that prior day's Official Index Closing Value</td><td>This replaces the normal third-Friday opening path</td></tr></tbody></table></div><ul class="fx-checklist"><li>Every chart, alert, order and protective order points to the intended dated contract.</li><li>Open interest is treated as lagged context, not a real-time roll command.</li><li>The observed basis between quarters is not erased by a back-adjusted history.</li><li>Roll fees, spread, slippage and leg risk enter the net result.</li><li>Broker liquidation/position deadlines are checked separately from exchange termination.</li><li>Final settlement is used only when explicitly authorized and operationally understood.</li></ul></section>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="NQ Tick Value: $5 per Tick (Nasdaq Futures Explained)">
-  <meta property="og:description" content="One NQ futures tick is worth $5. This page explains tick size, tick value, and how Nasdaq futures contracts work.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/nq-tick-value.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
+<section class="fx-section" id="dollars" aria-labelledby="dollars-title"><div class="fx-section-heading"><p class="fx-kicker">Four dollar questions, four separate answers</p><h2 id="dollars-title">Do Not Substitute Margin for Exposure or Loss</h2><p>CME performance bond requirements vary with product and market conditions. Broker initial, maintenance, overnight and reduced intraday requirements can differ from exchange figures, include house add-ons and change by account or session. A current margin figure belongs in a timestamped capacity check, not in the permanent contract definition.</p></div><div class="fx-limit-grid"><article><strong>Notional exposure</strong><p>Current index level &times; $20 per NQ or $2 per MNQ. This is represented market exposure, not cash paid.</p></article><article><strong>Collateral requirement</strong><p>Current CME risk model plus the actual broker/account schedule. This is funding capacity, not loss tolerance.</p></article><article><strong>Planned trade loss</strong><p>Invalidation path plus adverse slippage, gap reserve and all expected costs, multiplied by whole contracts.</p></article><article><strong>Maximum loss</strong><p>Not defined by the margin deposit or stop trigger. A gap, reject or delayed exit can exceed planned and deposited amounts.</p></article><article><strong>Cash buffer</strong><p>Separate resources for variation, requirement increases and ordinary account obligations under written policy.</p></article><article><strong>Authorized quantity</strong><p>The smallest whole-contract result from risk, margin, portfolio and liquidity caps; an unknown cap returns zero.</p></article></div><div class="fx-formula" aria-label="NQ and MNQ authorization boundary"><code>authorized quantity = min(loss-budget size, margin capacity, portfolio cap, liquidity cap)</code><i aria-hidden="true">|</i><strong>margin &ne; maximum loss</strong></div><p class="fx-related">Use <a href="nq-margin.html">the NQ collateral and buffer workflow</a> for current margin decisions and <a href="nq-position-sizing.html">the NQ/MNQ floor-math page</a> for worked whole-contract cases.</p></section>
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="NQ Tick Value: $5 per Tick (Nasdaq Futures Explained)">
-  <meta name="twitter:description" content="One NQ futures tick is worth $5. This page explains tick size, tick value, and how Nasdaq futures contracts work.">
+<section class="fx-section" id="certificate" aria-labelledby="certificate-title"><div class="fx-section-heading"><p class="fx-kicker">Final pre-order certificate</p><h2 id="certificate-title">Say the Complete Ticket Out Loud</h2><p>Before release, a ticket record should be specific enough for another person to reproduce the intended exposure without looking at the chart.</p></div><div class="fx-quote-board" aria-label="NQ and MNQ final read-back"><span><strong>Identity</strong>NQ or MNQ + quarterly month + year</span><span><strong>Instruction</strong>Account + side + quantity + order type + price + time-in-force</span><span><strong>Dollar scale</strong>NQ $20/point and $5/tick; MNQ $2/point and $0.50/tick</span><span><strong>Clock</strong>CME trade date + current status + holiday/event branch</span><span><strong>Lifecycle</strong>Roll plan + termination + broker deadline + settlement branch</span><span><strong>Risk</strong>Invalidation + stress + costs + margin + portfolio + liquidity caps</span></div><div class="fx-go-card"><p class="fx-card-label">Certificate result</p><h3>Unresolved identity, clock, lifecycle or risk means no order</h3><p>Do not guess the active quarter, transfer a spread tick to an outright, treat a continuous series as tradable or infer maximum loss from collateral.</p></div></section>
 
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "NQ Tick Value: $5 per Tick (Nasdaq Futures Explained)",
-  "description": "One NQ futures tick is worth $5. This page explains tick size, tick value, and how Nasdaq futures contracts work.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/nq-tick-value.html",
-  "datePublished": "2025-12-12",
-  "dateModified": "2025-12-12",
-  "url": "https://grizzlyparrottrading.com/futures-basics/nq-tick-value.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Why Every NQ Tick Is Worth $5: Tick Size and Risk Explained",
-      "item": "https://grizzlyparrottrading.com/futures-basics/nq-tick-value.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
-</head>
-<body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-<h1>Why Every NQ Tick Is Worth $5: Tick Size and Risk Explained</h1>
-
-<p>
-The E-mini Nasdaq-100 (NQ) moves in fixed increments called ticks. Understanding tick size and tick value is not optional. These mechanics define how fast dollar risk expands and explain why NQ feels disproportionately aggressive compared to other index futures.
-</p>
-
-<h2>NQ tick size and tick value</h2>
-<div class="highlight-box blue">
-  <strong>One NQ tick = $5 per contract.</strong>
-</div>
-
-<p>
-NQ has a minimum price fluctuation of <strong>0.25 index points</strong>. Each 0.25-point move is worth <strong>$5 per contract</strong>.
-</p>
-
-<ul>
-  <li>1.00 index point = $20 per contract</li>
-  <li>5.00 index points = $100 per contract</li>
-  <li>10.00 index points = $200 per contract</li>
-</ul>
-
-<p>
-These numbers look tame in isolation. The problem appears when price covers multiple points in seconds during active sessions.
-</p>
-
-<h2>Why NQ risk expands faster than expected</h2>
-
-<p>
-NQ routinely prints larger intraday ranges than broader index futures. The combination of fast movement and tight tick spacing causes dollar exposure to compound rapidly. Identical stop distances applied across contracts do not create equivalent outcomes.
-</p>
-
-<p>
-This behavior is structural, not emotional, and is tied directly to how the Nasdaq-100 is constructed and traded. That structure is covered in <a href="https://grizzlyparrottrading.com/futures-basics/nq-what-is-nq.html">What Is the E-mini Nasdaq-100 (NQ) Futures Contract?</a>.
-</p>
-
-<h2>Comparing NQ to ES in dollar terms</h2>
-
-<p>
-ES ticks are larger in dollar value but typically move more slowly. NQ ticks are smaller but print more frequently and travel further per session. Over time, NQ produces larger realized dollar swings per contract despite the lower tick value.
-</p>
-
-<p>
-A side-by-side volatility and liquidity comparison is outlined in <a href="https://grizzlyparrottrading.com/futures-basics/nq-vs-es.html">NQ vs ES: Volatility, Liquidity, and Trader Fit</a>.
-</p>
-
-<h2>MNQ tick values</h2>
-
-<p>
-MNQ, the Micro E-mini Nasdaq-100, mirrors NQ’s price behavior at one-tenth the contract size:
-</p>
-
-<ul>
-  <li>MNQ tick size: 0.25 points</li>
-  <li>MNQ tick value: $0.50</li>
-  <li>1.00 index point = $2.00</li>
-</ul>
-
-<p>
-The micro contract preserves identical chart structure while reducing capital exposure.
-</p>
-
-<h2>Dollar risk is defined by range, not ticks</h2>
-
-<p>
-Tick math alone does not define risk. Risk is determined by how many ticks price is likely to travel before invalidation. NQ’s volatility profile makes wide stops common, which multiplies dollar exposure even when tick value appears small.
-</p>
-
-<div class="highlight-box red">
-  <h3>The Problem with NQ Isn’t the Tick — It’s the Distance</h3>
-  <p>Each tick is small, but NQ doesn’t move in small numbers. Real swings cover dozens of points fast, and that’s where the dollar risk piles up. It’s not the tick value that hurts — it’s how fast they stack.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
-</body>
-</html>
+<details class="fx-sources"><summary>Sources and canonical ticket disclosure &mdash; reviewed August 28, 2026</summary><ul><li><a href="https://www.cmegroup.com/rulebook/CME/IV/350/359/359.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 359: E-mini Nasdaq-100 Futures</a> for NQ's multiplier, increments, quarterly termination and cash settlement.</li><li><a href="https://www.cmegroup.com/rulebook/CME/IV/350/361.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 361: Micro E-mini Nasdaq-100 Futures</a> for MNQ's multiplier, increments, termination and cash settlement.</li><li><a href="https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME E-mini Nasdaq-100 specifications</a> for current NQ product context.</li><li><a href="https://www.cmegroup.com/markets/equities/nasdaq/micro-e-mini-nasdaq-100.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME Micro E-mini Nasdaq-100 specifications</a> for current MNQ product context.</li><li><a href="https://www.cmegroup.com/trading/equity-index/futures-and-etfs-myths-vs-facts.html" target="_blank" rel="noopener noreferrer">CME Equity Index futures guide</a> for general session hours and the daily halt.</li><li><a href="https://www.cmegroup.com/trading/equity-index/rolldates.html" target="_blank" rel="noopener noreferrer">CME Equity Index Roll Dates</a> for the quarterly handoff convention.</li><li><a href="https://www.cmegroup.com/trading/equity-index/settlement.html" target="_blank" rel="noopener noreferrer">CME Final Settlement Procedures</a> for Nasdaq-100 SOQ and NOOP mechanics.</li><li><a href="https://www.cmegroup.com/solutions/risk-management/performance-bonds-margins/faq-performance-bonds-margins.html" target="_blank" rel="noopener noreferrer">CME Performance Bonds/Margins FAQ</a> for variable collateral and initial/maintenance distinctions.</li><li><a href="https://www.cftc.gov/csl/20-17/download" target="_blank" rel="noopener noreferrer">CFTC futures risk disclosure</a> for leverage, margin-call and loss-beyond-deposit risk.</li></ul><p>Sources were reviewed August 28, 2026. This canonical record fixes the cited contract arithmetic and lifecycle language while treating holiday schedules, live books, margin and broker deadlines as current-check fields. Worked prices illustrate reconciliation only and are not forecasts or reported trades.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This contract decoder is educational, not personalized investment, legal, tax, hedging, brokerage or execution advice. NQ and MNQ are leveraged; stops and collateral do not cap loss, and adverse gaps or fills can produce losses beyond the plan and deposited funds.</p></aside>
+<!-- ARTICLE BODY END --></article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer></body></html>

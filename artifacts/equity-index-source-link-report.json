@@ -1,0 +1,923 @@
+{
+  "pageCount": 35,
+  "sourceBasisIncluded": true,
+  "checkedDocumentCount": 36,
+  "uniqueUrlCount": 68,
+  "passCount": 65,
+  "warningCount": 3,
+  "errorCount": 0,
+  "records": [
+    {
+      "url": "https://indexes.nasdaqomx.com/Index/Weighting/NDX",
+      "pages": [
+        "nq-earnings-impact.html",
+        "nq-vs-es.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://indexes.nasdaqomx.com/Index/Weighting/NDX",
+      "contentType": "text/html; charset=utf-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://indexes.nasdaqomx.com/Index/overview/NDX",
+      "pages": [
+        "nq-what-is-nq.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://indexes.nasdaqomx.com/Index/overview/NDX",
+      "contentType": "text/html; charset=utf-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://indexes.nasdaqomx.com/docs/Methodology_NDX.pdf",
+      "pages": [
+        "es-vs-mes-vs-nq.html",
+        "nq-earnings-impact.html",
+        "nq-news-volatility.html",
+        "nq-vs-es.html",
+        "nq-what-is-nq.html",
+        "why-futures-lead-the-stock-market.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://indexes.nasdaqomx.com/docs/Methodology_NDX.pdf",
+      "contentType": "application/pdf",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://indexes.nasdaqomx.com/docs/methodology_NDX.pdf",
+      "pages": [
+        "artifacts/equity-index-source-basis.md",
+        "nq-best-times.html",
+        "nq-liquidity-windows.html",
+        "nq-pullbacks-vs-breakouts.html",
+        "nq-volatility-vs-es.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://indexes.nasdaqomx.com/docs/methodology_NDX.pdf",
+      "contentType": "application/pdf",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.bea.gov/data/gdp/gross-domestic-product",
+      "pages": [
+        "artifacts/equity-index-source-basis.md",
+        "nq-news-volatility.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.bea.gov/data/gdp/gross-domestic-product",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.bea.gov/data/personal-consumption-expenditures-price-index",
+      "pages": [
+        "es-key-economic-reports-that-move-price.html",
+        "nq-news-volatility.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.bea.gov/data/personal-consumption-expenditures-price-index",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.bea.gov/news/current-releases",
+      "pages": [
+        "es-key-economic-reports-that-move-price.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.bea.gov/news/current-releases",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.bea.gov/news/schedule",
+      "pages": [
+        "es-news-events-and-volatility-traps.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.bea.gov/news/schedule",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.bea.gov/news/schedule/",
+      "pages": [
+        "es-atr-behavior-and-volatility-zones.html",
+        "es-opening-range-strategies-for-beginners.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.bea.gov/news/schedule/",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.bls.gov/cpi/",
+      "pages": [
+        "artifacts/equity-index-source-basis.md",
+        "nq-news-volatility.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.bls.gov/cpi/",
+      "contentType": "text/html",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.bls.gov/cpi/news.htm",
+      "pages": [
+        "es-key-economic-reports-that-move-price.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.bls.gov/cpi/news.htm",
+      "contentType": "text/html",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.bls.gov/schedule/news_release/",
+      "pages": [
+        "es-atr-behavior-and-volatility-zones.html",
+        "es-news-events-and-volatility-traps.html",
+        "es-opening-range-strategies-for-beginners.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.bls.gov/schedule/2026/08_sched.htm",
+      "contentType": "text/html",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.bls.gov/schedule/news_release/empsit.htm",
+      "pages": [
+        "es-key-economic-reports-that-move-price.html",
+        "nq-news-volatility.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.bls.gov/schedule/news_release/empsit.htm",
+      "contentType": "text/html",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cftc.gov/LawRegulation/FederalRegister/FinalRules/2013-12365.html",
+      "pages": [
+        "es-using-dom-and-time-and-sales.html",
+        "nq-execution-mistakes.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.cftc.gov/LawRegulation/FederalRegister/FinalRules/2013-12365.html",
+      "contentType": "text/html; charset=utf-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cftc.gov/csl/20-17/download",
+      "pages": [
+        "es-building-a-simple-trading-plan.html",
+        "es-common-retail-trader-mistakes.html",
+        "es-how-to-size-positions-by-account-balance.html",
+        "es-tick-size-tick-value-and-margin.html",
+        "mnq-bad-habits.html",
+        "nq-execution-mistakes.html",
+        "nq-margin.html",
+        "nq-position-sizing.html",
+        "nq-tick-value.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.cftc.gov/csl/20-17/download",
+      "contentType": "application/pdf",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/articles/faqs/market-by-order-mbo.html",
+      "pages": [
+        "es-intraday-support-and-resistance-levels.html",
+        "es-using-dom-and-time-and-sales.html",
+        "nq-execution-mistakes.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/articles/faqs/market-by-order-mbo.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/IV/350/353/353.pdf",
+      "pages": [
+        "es-roll-dates-and-contract-switching.html",
+        "es-tick-size-tick-value-and-margin.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/IV/350/353/353.pdf",
+      "contentType": "application/pdf",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/IV/350/358/358.pdf",
+      "pages": [
+        "es-roll-dates-and-contract-switching.html",
+        "es-tick-size-tick-value-and-margin.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/IV/350/358/358.pdf",
+      "contentType": "application/pdf",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/education/articles-and-reports/understanding-price-limits-and-circuit-breakers",
+      "pages": [
+        "es-news-events-and-volatility-traps.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.cmegroup.com/education/articles-and-reports/understanding-price-limits-and-circuit-breakers",
+      "contentType": "text/html; charset=utf-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/education/articles-and-reports/understanding-the-cme-liquidity-tool-methodology",
+      "pages": [
+        "es-intraday-support-and-resistance-levels.html",
+        "es-using-dom-and-time-and-sales.html",
+        "mnq-bad-habits.html",
+        "nq-position-sizing.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.cmegroup.com/education/articles-and-reports/understanding-the-cme-liquidity-tool-methodology",
+      "contentType": "text/html; charset=utf-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/education/courses/futures-trading-mechanics-and-regulation/futures-order-types",
+      "pages": [
+        "es-building-a-simple-trading-plan.html",
+        "es-common-retail-trader-mistakes.html",
+        "es-using-dom-and-time-and-sales.html",
+        "nq-execution-mistakes.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.cmegroup.com/education/courses/futures-trading-mechanics-and-regulation/futures-order-types",
+      "contentType": "text/html; charset=utf-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/education/courses/micro-e-mini-futures/managing-micro-e-mini-futures-expiration",
+      "pages": [
+        "es-roll-dates-and-contract-switching.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.cmegroup.com/education/courses/micro-e-mini-futures/managing-micro-e-mini-futures-expiration",
+      "contentType": "text/html; charset=utf-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/education/courses/things-to-know-before-trading-cme-futures/position-and-risk-management",
+      "pages": [
+        "es-building-a-simple-trading-plan.html",
+        "es-common-retail-trader-mistakes.html",
+        "es-how-to-size-positions-by-account-balance.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.cmegroup.com/education/courses/things-to-know-before-trading-cme-futures/position-and-risk-management",
+      "contentType": "text/html; charset=utf-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/education/files/getting-started-equity-quarterly-roll-analyzer.pdf",
+      "pages": [
+        "es-atr-behavior-and-volatility-zones.html",
+        "es-market-structure-trends-pulls-and-reversals.html",
+        "nq-liquidity-windows.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.cmegroup.com/content/dam/cmegroup/education/files/getting-started-equity-quarterly-roll-analyzer.pdf",
+      "contentType": "application/pdf",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/globex.html",
+      "pages": [
+        "es-liquidity-pockets-and-order-book-structure.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/solutions/market-access/globex.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/market-data/browse-data/catalog/futures-and-options-data.html",
+      "pages": [
+        "best-times-to-trade-es-e-mini-sp500.html",
+        "es-atr-behavior-and-volatility-zones.html",
+        "es-gap-behavior-and-how-to-trade-it.html",
+        "es-liquidity-pockets-and-order-book-structure.html",
+        "es-market-structure-trends-pulls-and-reversals.html",
+        "es-opening-range-strategies-for-beginners.html",
+        "es-overnight-session-vs-regular-trading-hours.html",
+        "es-session-highs-lows-and-vwap-usage.html",
+        "nq-best-times.html",
+        "nq-liquidity-windows.html",
+        "nq-pullbacks-vs-breakouts.html",
+        "nq-volatility-vs-es.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/market-data/browse-data/catalog/futures-and-options-data.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/market-data/browse-data/equity-index-data.html",
+      "pages": [
+        "es-atr-behavior-and-volatility-zones.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/market-data/browse-data/equity-index-data.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/market-data/cme-group-settlement-procedures.html",
+      "pages": [
+        "es-gap-behavior-and-how-to-trade-it.html",
+        "es-session-highs-lows-and-vwap-usage.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/market-data/cme-group-settlement-procedures.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/market-data/files/cme-group-market-depth-faq.pdf",
+      "pages": [
+        "es-liquidity-pockets-and-order-book-structure.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.cmegroup.com/market-data/files/cme-group-market-depth-faq.pdf",
+      "contentType": "application/pdf",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/market-data/files/datamine-equity-faq.pdf",
+      "pages": [
+        "best-times-to-trade-es-e-mini-sp500.html",
+        "es-liquidity-pockets-and-order-book-structure.html",
+        "es-overnight-session-vs-regular-trading-hours.html",
+        "es-session-highs-lows-and-vwap-usage.html",
+        "nq-best-times.html",
+        "nq-liquidity-windows.html",
+        "nq-pullbacks-vs-breakouts.html",
+        "nq-volatility-vs-es.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.cmegroup.com/market-data/files/datamine-equity-faq.pdf",
+      "contentType": "application/pdf",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/markets/equities.html",
+      "pages": [
+        "why-futures-lead-the-stock-market.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/markets/equities.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.contractSpecs.html",
+      "pages": [
+        "artifacts/equity-index-source-basis.md",
+        "es-vs-mes-vs-nq.html",
+        "nq-best-times.html",
+        "nq-earnings-impact.html",
+        "nq-liquidity-windows.html",
+        "nq-pullbacks-vs-breakouts.html",
+        "nq-tick-value.html",
+        "nq-volatility-vs-es.html",
+        "nq-vs-es.html",
+        "nq-what-is-nq.html",
+        "why-futures-lead-the-stock-market.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.contractSpecs.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/markets/equities/nasdaq/micro-e-mini-nasdaq-100.contractSpecs.html",
+      "pages": [
+        "artifacts/equity-index-source-basis.md",
+        "nq-tick-value.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/markets/equities/nasdaq/micro-e-mini-nasdaq-100.contractSpecs.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contract.html",
+      "pages": [
+        "es-opening-range-strategies-for-beginners.html",
+        "es-overnight-session-vs-regular-trading-hours.html",
+        "es-scalping-vs-swing-trading-pros-and-cons.html",
+        "es-session-highs-lows-and-vwap-usage.html",
+        "nq-volatility-vs-es.html",
+        "nq-vs-es.html",
+        "why-futures-lead-the-stock-market.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contract.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html",
+      "pages": [
+        "artifacts/equity-index-source-basis.md",
+        "best-times-to-trade-es-e-mini-sp500.html",
+        "es-atr-behavior-and-volatility-zones.html",
+        "es-gap-behavior-and-how-to-trade-it.html",
+        "es-key-economic-reports-that-move-price.html",
+        "es-market-structure-trends-pulls-and-reversals.html",
+        "es-mini-vs-mes-micro-which-should-you-trade.html",
+        "es-news-events-and-volatility-traps.html",
+        "es-tick-size-tick-value-and-margin.html",
+        "es-using-spy-and-spx-as-confirmation.html",
+        "es-vs-mes-vs-nq.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/markets/equities/sp/micro-e-mini-sandp-500.contractSpecs.html",
+      "pages": [
+        "artifacts/equity-index-source-basis.md",
+        "es-mini-vs-mes-micro-which-should-you-trade.html",
+        "es-tick-size-tick-value-and-margin.html",
+        "es-vs-mes-vs-nq.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/markets/equities/sp/micro-e-mini-sandp-500.contractSpecs.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/markets/equities/us-index.html",
+      "pages": [
+        "es-overnight-session-vs-regular-trading-hours.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/markets/equities/us-index.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/rulebook/CME/IV/350/353/353.pdf",
+      "pages": [
+        "artifacts/equity-index-source-basis.md",
+        "es-scalping-vs-swing-trading-pros-and-cons.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.cmegroup.com/rulebook/CME/IV/350/353/353.pdf",
+      "contentType": "application/pdf",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/rulebook/CME/IV/350/358/358.pdf",
+      "pages": [
+        "artifacts/equity-index-source-basis.md",
+        "es-scalping-vs-swing-trading-pros-and-cons.html",
+        "nq-volatility-vs-es.html",
+        "nq-vs-es.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.cmegroup.com/rulebook/CME/IV/350/358/358.pdf",
+      "contentType": "application/pdf",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/rulebook/CME/IV/350/359/359.pdf",
+      "pages": [
+        "artifacts/equity-index-source-basis.md",
+        "mnq-bad-habits.html",
+        "nq-earnings-impact.html",
+        "nq-news-volatility.html",
+        "nq-position-sizing.html",
+        "nq-tick-value.html",
+        "nq-volatility-vs-es.html",
+        "nq-vs-es.html",
+        "nq-what-is-nq.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.cmegroup.com/rulebook/CME/IV/350/359/359.pdf",
+      "contentType": "application/pdf",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/rulebook/CME/IV/350/361.pdf",
+      "pages": [
+        "artifacts/equity-index-source-basis.md",
+        "mnq-bad-habits.html",
+        "nq-position-sizing.html",
+        "nq-tick-value.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.cmegroup.com/rulebook/CME/IV/350/361.pdf",
+      "contentType": "application/pdf",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/rulebook/files/cme-group-Rule-575.pdf",
+      "pages": [
+        "es-liquidity-pockets-and-order-book-structure.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.cmegroup.com/rulebook/files/cme-group-Rule-575.pdf",
+      "contentType": "application/pdf",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/solutions/market-access/globex/trade-on-globex/pre-trade-risk-management.html",
+      "pages": [
+        "es-building-a-simple-trading-plan.html",
+        "es-common-retail-trader-mistakes.html",
+        "nq-execution-mistakes.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/solutions/market-access/globex/trade-on-globex/pre-trade-risk-management.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/solutions/risk-management/margin-services/product-margins.html",
+      "pages": [
+        "nq-margin.html",
+        "nq-position-sizing.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/solutions/risk-management/margin-services/product-margins.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/solutions/risk-management/performance-bonds-margins/faq-performance-bonds-margins.html",
+      "pages": [
+        "es-how-to-size-positions-by-account-balance.html",
+        "es-mini-vs-mes-micro-which-should-you-trade.html",
+        "es-news-events-and-volatility-traps.html",
+        "es-scalping-vs-swing-trading-pros-and-cons.html",
+        "es-tick-size-tick-value-and-margin.html",
+        "es-vs-mes-vs-nq.html",
+        "mnq-bad-habits.html",
+        "nq-margin.html",
+        "nq-position-sizing.html",
+        "nq-tick-value.html",
+        "nq-what-is-nq.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/solutions/risk-management/performance-bonds-margins/faq-performance-bonds-margins.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/solutions/risk-management/performance-bonds-margins/span-methodology-overview/launching-span-2.html",
+      "pages": [
+        "nq-margin.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/solutions/risk-management/performance-bonds-margins/span-methodology-overview/launching-span-2.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/trading-hours.html",
+      "pages": [
+        "best-times-to-trade-es-e-mini-sp500.html",
+        "es-gap-behavior-and-how-to-trade-it.html",
+        "es-market-structure-trends-pulls-and-reversals.html",
+        "es-opening-range-strategies-for-beginners.html",
+        "es-overnight-session-vs-regular-trading-hours.html",
+        "es-session-highs-lows-and-vwap-usage.html",
+        "nq-best-times.html",
+        "nq-liquidity-windows.html",
+        "nq-pullbacks-vs-breakouts.html",
+        "nq-volatility-vs-es.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/trading-hours.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/trading/about-time-sales.html",
+      "pages": [
+        "es-using-dom-and-time-and-sales.html",
+        "nq-execution-mistakes.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/trading/about-time-sales.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/trading/equity-index/futures-and-etfs-myths-vs-facts.html",
+      "pages": [
+        "es-tick-size-tick-value-and-margin.html",
+        "nq-tick-value.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/markets/equities/sp-500-and-nasdaq-100-futures.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/trading/equity-index/rolldates.html",
+      "pages": [
+        "es-roll-dates-and-contract-switching.html",
+        "es-tick-size-tick-value-and-margin.html",
+        "nq-tick-value.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/trading/equity-index/rolldates.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/trading/equity-index/settlement.html",
+      "pages": [
+        "es-gap-behavior-and-how-to-trade-it.html",
+        "es-roll-dates-and-contract-switching.html",
+        "es-tick-size-tick-value-and-margin.html",
+        "es-using-spy-and-spx-as-confirmation.html",
+        "nq-tick-value.html",
+        "nq-what-is-nq.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/trading/equity-index/settlement.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.cmegroup.com/trading/price-limits.html",
+      "pages": [
+        "artifacts/equity-index-source-basis.md",
+        "es-intraday-support-and-resistance-levels.html",
+        "es-news-events-and-volatility-traps.html",
+        "es-scalping-vs-swing-trading-pros-and-cons.html",
+        "nq-news-volatility.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.cmegroup.com/trading/price-limits.html",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.federalreserve.gov/econres/notes/feds-notes/which-days-matter-for-global-equity-markets-using-options-to-price-events-in-the-global-calendar-20251003.html",
+      "pages": [
+        "es-key-economic-reports-that-move-price.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.federalreserve.gov/econres/notes/feds-notes/which-days-matter-for-global-equity-markets-using-options-to-price-events-in-the-global-calendar-20251003.html",
+      "contentType": "text/html",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "pages": [
+        "artifacts/equity-index-source-basis.md",
+        "es-atr-behavior-and-volatility-zones.html",
+        "es-key-economic-reports-that-move-price.html",
+        "es-news-events-and-volatility-traps.html",
+        "es-opening-range-strategies-for-beginners.html",
+        "nq-news-volatility.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "contentType": "text/html",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.federalreserve.gov/pubs/feds/2014/201433/201433pap.pdf",
+      "pages": [
+        "why-futures-lead-the-stock-market.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.federalreserve.gov/pubs/feds/2014/201433/201433pap.pdf",
+      "contentType": "application/pdf",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.federalreserve.gov/pubs/ifdp/2006/871/ifdp871.htm",
+      "pages": [
+        "why-futures-lead-the-stock-market.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.federalreserve.gov/pubs/ifdp/2006/871/ifdp871.htm",
+      "contentType": "text/html",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-24",
+      "pages": [
+        "es-using-spy-and-spx-as-confirmation.html",
+        "why-futures-lead-the-stock-market.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-24",
+      "contentType": "text/html; charset=utf-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.investor.gov/introduction-investing/getting-started/researching-investments/using-edgar-research-investments",
+      "pages": [
+        "nq-earnings-impact.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.investor.gov/introduction-investing/getting-started/researching-investments/using-edgar-research-investments",
+      "contentType": "text/html; charset=utf-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.nyse.com/publicdocs/nyse/NYSE_Extended_Hours_Trading_FAQ.pdf",
+      "pages": [
+        "best-times-to-trade-es-e-mini-sp500.html",
+        "es-gap-behavior-and-how-to-trade-it.html",
+        "es-opening-range-strategies-for-beginners.html",
+        "es-overnight-session-vs-regular-trading-hours.html",
+        "es-session-highs-lows-and-vwap-usage.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.nyse.com/publicdocs/nyse/NYSE_Extended_Hours_Trading_FAQ.pdf",
+      "contentType": "application/pdf",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.nyse.com/publicdocs/nyse/markets/nyse/NYSE_Opening_and_Closing_Auctions_Fact_Sheet.pdf",
+      "pages": [
+        "es-using-spy-and-spx-as-confirmation.html",
+        "why-futures-lead-the-stock-market.html"
+      ],
+      "status": 206,
+      "resolvedUrl": "https://www.nyse.com/publicdocs/nyse/markets/nyse/NYSE_Opening_and_Closing_Auctions_Fact_Sheet.pdf",
+      "contentType": "application/pdf",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.nyse.com/trade/trading-information",
+      "pages": [
+        "es-news-events-and-volatility-traps.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.nyse.com/trade/trading-information",
+      "contentType": "text/html; charset=utf-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/884394/000119312526022775/d77353d497.htm",
+      "pages": [
+        "es-using-spy-and-spx-as-confirmation.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.sec.gov/Archives/edgar/data/884394/000119312526022775/d77353d497.htm",
+      "contentType": "text/html",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.sec.gov/edgar/search/",
+      "pages": [
+        "artifacts/equity-index-source-basis.md",
+        "nq-earnings-impact.html",
+        "nq-news-volatility.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.sec.gov/edgar/search/",
+      "contentType": "text/html",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.spglobal.com/spdji/en/indices/equity/sp-500/",
+      "pages": [
+        "nq-vs-es.html"
+      ],
+      "status": 403,
+      "resolvedUrl": "https://www.spglobal.com/spdji/en/indices/equity/sp-500/",
+      "contentType": "text/html",
+      "verdict": "warning",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.spglobal.com/spdji/en/methodology/article/index-mathematics-methodology/",
+      "pages": [
+        "es-using-spy-and-spx-as-confirmation.html",
+        "why-futures-lead-the-stock-market.html"
+      ],
+      "status": 403,
+      "resolvedUrl": "https://www.spglobal.com/spdji/en/methodology/article/index-mathematics-methodology/",
+      "contentType": "text/html",
+      "verdict": "warning",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.spglobal.com/spdji/en/methodology/article/sp-us-indices-methodology/",
+      "pages": [
+        "artifacts/equity-index-source-basis.md",
+        "es-atr-behavior-and-volatility-zones.html",
+        "es-key-economic-reports-that-move-price.html",
+        "es-market-structure-trends-pulls-and-reversals.html",
+        "es-mini-vs-mes-micro-which-should-you-trade.html",
+        "es-using-spy-and-spx-as-confirmation.html",
+        "es-vs-mes-vs-nq.html",
+        "nq-volatility-vs-es.html",
+        "nq-vs-es.html"
+      ],
+      "status": 403,
+      "resolvedUrl": "https://www.spglobal.com/spdji/en/methodology/article/sp-us-indices-methodology/",
+      "contentType": "text/html",
+      "verdict": "warning",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy",
+      "pages": [
+        "es-using-spy-and-spx-as-confirmation.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy",
+      "contentType": "text/html;charset=utf-8",
+      "verdict": "pass",
+      "error": null
+    },
+    {
+      "url": "https://www.transportation.gov/regulations/time-act",
+      "pages": [
+        "best-times-to-trade-es-e-mini-sp500.html",
+        "es-opening-range-strategies-for-beginners.html",
+        "es-overnight-session-vs-regular-trading-hours.html",
+        "nq-best-times.html"
+      ],
+      "status": 200,
+      "resolvedUrl": "https://www.transportation.gov/regulations/time-act",
+      "contentType": "text/html; charset=UTF-8",
+      "verdict": "pass",
+      "error": null
+    }
+  ]
+}

@@ -1,252 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<html lang="en"><head><meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ES Position Sizing by Account Balance: Whole-Contract Math</title>
+<meta name="description" content="Convert account risk capacity, an executable stop, ES or MES tick value, costs, gap stress and portfolio limits into a whole-contract size, including zero.">
+<meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-how-to-size-positions-by-account-balance.html">
+<meta property="og:title" content="ES Position Sizing by Account Balance: Whole-Contract Math"><meta property="og:description" content="Convert account risk capacity, an executable stop, ES or MES tick value, costs, gap stress and portfolio limits into a whole-contract size, including zero."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-how-to-size-positions-by-account-balance.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-26">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ES Position Sizing by Account Balance: Whole-Contract Math"><meta name="twitter:description" content="Convert account risk capacity, an executable stop, ES or MES tick value, costs, gap stress and portfolio limits into a whole-contract size, including zero."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ES Position Sizing by Account Balance: Whole-Contract Math","description":"Convert account risk capacity, an executable stop, ES or MES tick value, costs, gap stress and portfolio limits into a whole-contract size, including zero.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/es-how-to-size-positions-by-account-balance.html"},"datePublished":"2025-11-24","dateModified":"2026-08-26","url":"https://grizzlyparrottrading.com/futures-basics/es-how-to-size-positions-by-account-balance.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"ES Position Sizing by Account Balance: Whole-Contract Math","item":"https://grizzlyparrottrading.com/futures-basics/es-how-to-size-positions-by-account-balance.html"}]}</script><script src="/uet.js" defer></script></head>
+<body><a class="fx-skip-link" href="#main-content">Skip to article content</a><header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article><!-- ARTICLE BODY START -->
+<header class="fx-hero"><div><p class="fx-kicker">Risk capacity &middot; floor function &middot; zero is valid</p><h1>ES Position Sizing by Account Balance: Whole-Contract Math</h1><p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 26, 2026</p><p class="fx-hero-lede"><strong>Size = floor(usable risk budget &divide; stressed loss per contract).</strong> If the result is 0.73 ES, the authorized ES size is zero&mdash;not one. Account balance helps define capacity; it does not override the stop, costs, event risk or contract granularity.</p><div class="fx-hero-actions"><a class="button-primary" href="#budget">Define usable risk</a><a class="fx-text-link" href="#worked">Check the arithmetic</a></div></div></header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#budget">Budget</a><a href="#inputs">Inputs</a><a href="#formula">Formula</a><a href="#worked">ES/MES cases</a><a href="#stress">Stress</a><a href="#portfolio">Portfolio</a><a href="#review">Review</a></nav>
 
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+<section class="fx-section" id="budget" aria-labelledby="budget-title"><div class="fx-section-heading"><p class="fx-kicker">Balance is the first ceiling, not the answer</p><h2 id="budget-title">Define the Dollars Available to This Decision</h2><p>A fixed percentage of account equity can be a policy input, but no universal percentage is safe or optimal. The usable amount is the smallest remaining allowance across the account, strategy, day and portfolio after including open risk.</p></div><div class="fx-formula" aria-label="Usable trade risk budget"><code>usable risk = min(trade cap, daily remaining, drawdown remaining, portfolio remaining)</code></div><div class="fx-table-scroll" role="region" aria-label="Risk budget controls" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Control</th><th scope="col">Required value</th><th scope="col">Why it can bind first</th></tr></thead><tbody><tr><th scope="row">Trade cap</th><td>Predeclared dollars for this setup</td><td>Prevents one idea consuming the full account limit</td></tr><tr><th scope="row">Daily remaining</th><td>Daily cap minus realized and still-open stressed risk</td><td>Earlier losses reduce new permission</td></tr><tr><th scope="row">Drawdown remaining</th><td>Distance to the hard account or program boundary</td><td>A nominal account balance may overstate usable cushion</td></tr><tr><th scope="row">Portfolio remaining</th><td>Loss capacity after correlated positions</td><td>ES can duplicate broad-equity exposure elsewhere</td></tr><tr><th scope="row">Operational reserve</th><td>Cash not allocated to planned loss</td><td>Supports variation, fees and errors without redefining risk</td></tr></tbody></table></div><p class="fx-source-note"><strong>Illustration only:</strong> 0.50% of a hypothetical $60,000 account is $300. That shows arithmetic, not a recommended risk percentage. A $300 trade cap still falls to $175 if only $175 remains under the daily limit.</p></section>
 
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<section class="fx-section" id="inputs" aria-labelledby="inputs-title"><div class="fx-section-heading"><p class="fx-kicker">Measure before dividing</p><h2 id="inputs-title">A Tradable Size Requires Six More Inputs</h2></div><div class="fx-three-column"><article class="fx-panel"><p class="fx-card-label">Thesis</p><h3>Executable invalidation</h3><p>Set the price that invalidates the trade before entry. Do not tighten it merely to manufacture a larger size.</p></article><article class="fx-panel"><p class="fx-card-label">Market</p><h3>Entry and exit cost</h3><p>Estimate spread and adverse fills from comparable contract, quantity, session, event and liquidity states.</p></article><article class="fx-panel"><p class="fx-card-label">Tail</p><h3>Gap or event reserve</h3><p>Add a distinct allowance for movement that a resting stop may not contain, or reject the hold window.</p></article></div><div class="fx-table-scroll" role="region" aria-label="ES position sizing inputs" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Input</th><th scope="col">Definition</th><th scope="col">Unknown result</th></tr></thead><tbody><tr><th scope="row">Planned entry</th><td>Executable order or conservative arrival price</td><td>Wait for a quote or use a bounded entry rule</td></tr><tr><th scope="row">Invalidation</th><td>Thesis failure level on the valid 0.25-point ladder</td><td>Zero contracts</td></tr><tr><th scope="row">Stop-exit slippage</th><td>Trigger-to-fill stress for comparable exits</td><td>Widen conservatively or zero</td></tr><tr><th scope="row">Gap/event allowance</th><td>Non-continuous move stress for the actual hold</td><td>Exclude the event or zero</td></tr><tr><th scope="row">Round-turn fees</th><td>Current account commission, exchange, clearing and applicable charges</td><td>Use a documented upward estimate</td></tr><tr><th scope="row">Tick value</th><td>ES $12.50; MES $1.25 for a 0.25-point outright tick</td><td>Verify on the canonical page before sizing</td></tr></tbody></table></div><p class="fx-related">Current exchange mechanics and their primary sources are maintained on <a href="es-tick-size-tick-value-and-margin.html">the ES/MES specification authority</a>.</p></section>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sizing ES Positions by Account Balance and Risk Limits</title>
-  <meta name="description" content="A direct guide to sizing ES positions using account balance, volatility, and daily loss limits so beginners stop blowing up on one trade.">
-  <meta name="robots" content="index, follow">
+<section class="fx-section" id="formula" aria-labelledby="formula-title"><div class="fx-section-heading"><p class="fx-kicker">Round loss up and size down</p><h2 id="formula-title">Calculate Stressed Loss Per Contract</h2></div><div class="fx-formula" aria-label="Stop distance in ticks"><code>stop ticks = ceiling(abs(entry &minus; invalidation) &divide; 0.25)</code></div><div class="fx-formula" aria-label="Stressed loss per contract"><code>loss/contract = (stop ticks + execution ticks + gap ticks) &times; tick value + fees</code></div><div class="fx-formula" aria-label="Whole contract sizing"><code>contracts = floor(usable risk &divide; loss/contract)</code><i aria-hidden="true">then</i><strong>apply portfolio and live-margin caps</strong></div><div class="fx-caution"><strong>Margin never rounds the floor result up.</strong><p>A broker may allow an order under its collateral rules while the planned loss exceeds the risk budget. Risk size and margin capacity are independent gates; the lower result controls.</p></div></section>
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-how-to-size-positions-by-account-balance.html">
+<section class="fx-section" id="worked" aria-labelledby="worked-title"><div class="fx-section-heading"><p class="fx-kicker">Same thesis, different granularity</p><h2 id="worked-title">Worked ES and MES Cases</h2><p>Assume a hypothetical $300 usable budget, an 8.75-point invalidation distance, 3 ticks of stressed execution, 6 ticks of gap/event allowance, $8 round-turn fees for one ES and $3 for one MES. Fee inputs are examples; use the actual account schedule.</p></div><div class="fx-method"><div><h3>Reconcile the per-contract loss</h3><p>8.75 points &divide; 0.25 = 35 stop ticks. Total stressed ticks = 35 + 3 + 6 = 44. ES: 44 &times; $12.50 + $8 = <strong>$558</strong>. MES: 44 &times; $1.25 + $3 = <strong>$58</strong>.</p></div><dl><div><dt>Budget</dt><dd>$300</dd></div><div><dt>Stress</dt><dd>44 ticks</dd></div><div><dt>ES loss</dt><dd>$558</dd></div><div><dt>MES loss</dt><dd>$58</dd></div></dl></div><div class="fx-table-scroll" role="region" aria-label="Hypothetical ES and MES whole-contract sizing cases" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Case</th><th scope="col">Usable budget</th><th scope="col">Loss/contract</th><th scope="col">Floor result</th><th scope="col">Planned stressed loss</th></tr></thead><tbody><tr><th scope="row">ES below minimum</th><td>$300</td><td>$558</td><td><strong>0 ES</strong></td><td>$0</td></tr><tr><th scope="row">MES granularity</th><td>$300</td><td>$58</td><td><strong>5 MES</strong></td><td>$290</td></tr><tr><th scope="row">Daily room reduced</th><td>$170</td><td>$58</td><td><strong>2 MES</strong></td><td>$116</td></tr><tr><th scope="row">Event estimate missing</th><td>$300</td><td>Unknown</td><td><strong>0</strong></td><td>$0</td></tr><tr><th scope="row">One ES becomes possible</th><td>$600</td><td>$558</td><td><strong>1 ES</strong></td><td>$558</td></tr></tbody></table></div><p>Five MES equals half of one ES multiplier exposure, not five ES. Product choice also affects aggregate fees, queue position and execution. Recalculate rather than using a simple “ten micros equals one mini” substitution after costs.</p><div class="fx-caution"><strong>Do not force the stop inside the valid invalidation to obtain one ES.</strong><p>If one ES does not fit, choose a properly calculated MES quantity, wait for a different valid setup or take zero. Changing the thesis to satisfy contract size reverses the logic of sizing.</p></div></section>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Sizing ES Positions by Account Balance and Risk Limits">
-  <meta property="og:description" content="A direct guide to sizing ES positions using account balance, volatility, and daily loss limits so beginners stop blowing up on one trade.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-how-to-size-positions-by-account-balance.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
+<section class="fx-section" id="stress" aria-labelledby="stress-title"><div class="fx-section-heading"><p class="fx-kicker">The chart stop is not the loss ceiling</p><h2 id="stress-title">Overlay Execution, Event and Model Error</h2></div><div class="fx-four-grid"><article class="fx-panel"><p class="fx-card-label">Liquidity</p><h3>Book sweep</h3><p>Price intended quantity against available depth, not only the best bid or offer. Increase stress when depth is thin or replenishment is weak.</p></article><article class="fx-panel"><p class="fx-card-label">Event</p><h3>Discontinuous move</h3><p>Scheduled releases, headlines, halts and session reopenings can bypass a trigger price. Exclude the hold if the reserve is not defensible.</p></article><article class="fx-panel"><p class="fx-card-label">Lifecycle</p><h3>Roll and expiry</h3><p>Add two-leg costs when the holding horizon crosses the planned roll and block proximity to the broker cutoff.</p></article><article class="fx-panel"><p class="fx-card-label">Estimate</p><h3>Parameter error</h3><p>Recalculate at a wider stop, worse exit and higher fees. A size that survives only the central estimate is fragile.</p></article></div><div class="fx-table-scroll" role="region" aria-label="MES stress sensitivity example" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">MES scenario</th><th scope="col">Stop ticks</th><th scope="col">Execution + gap</th><th scope="col">Fees</th><th scope="col">Loss/contract</th><th scope="col">$300 size</th></tr></thead><tbody><tr><th scope="row">Base</th><td>35</td><td>9 ticks</td><td>$3</td><td>$58.00</td><td>5</td></tr><tr><th scope="row">Worse exit</th><td>35</td><td>17 ticks</td><td>$3</td><td>$68.00</td><td>4</td></tr><tr><th scope="row">Wider thesis</th><td>51</td><td>17 ticks</td><td>$3</td><td>$88.00</td><td>3</td></tr><tr><th scope="row">Unbounded event</th><td>35</td><td>Unknown</td><td>$3</td><td>Unknown</td><td>0</td></tr></tbody></table></div></section>
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Sizing ES Positions by Account Balance and Risk Limits">
-  <meta name="twitter:description" content="A direct guide to sizing ES positions using account balance, volatility, and daily loss limits so beginners stop blowing up on one trade.">
+<section class="fx-section" id="portfolio" aria-labelledby="portfolio-title"><div class="fx-section-heading"><p class="fx-kicker">One trade can duplicate another</p><h2 id="portfolio-title">Cap ES/MES After Aggregating Shared Equity Risk</h2><p>ES exposure can overlap with SPY, options, NQ, sector futures or concentrated stock positions. Historical correlation is not a guaranteed diversification credit, especially during a market-wide shock.</p></div><ol class="fx-process"><li><strong>Translate to dollars.</strong><span>Compute each position's loss under its own stressed move and execution path.</span></li><li><strong>Group common drivers.</strong><span>Tag broad equity, rates, volatility, event and index-concentration exposure.</span></li><li><strong>Stress jointly.</strong><span>Assume positions can move adversely together; include gap and liquidation effects.</span></li><li><strong>Apply the lower cap.</strong><span>Authorized quantity is the minimum of trade size, portfolio size and current margin capacity.</span></li></ol><div class="fx-go-card"><p class="fx-card-label">Cap example</p><h3>Risk size 5 MES, portfolio cap 3, margin cap 8 means 3 MES</h3><p>The smallest independent permission controls. If a cap is unknown, zero is the only auditable result.</p></div></section>
 
-  <link rel="stylesheet" href="../style.css">
+<section class="fx-section" id="review" aria-labelledby="review-title"><div class="fx-section-heading"><p class="fx-kicker">Review estimate error</p><h2 id="review-title">Keep the Planned and Actual Risk Record</h2></div><div class="fx-table-scroll" role="region" aria-label="ES sizing review fields" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Field</th><th scope="col">Before order</th><th scope="col">After close</th><th scope="col">Control update</th></tr></thead><tbody><tr><th scope="row">Budget</th><td>Balance timestamp and binding cap</td><td>Any unauthorized breach</td><td>Repair permission logic</td></tr><tr><th scope="row">Entry</th><td>Decision and expected arrival</td><td>Submitted, acknowledged and fill prices</td><td>Refresh entry-cost distribution</td></tr><tr><th scope="row">Stop exit</th><td>Trigger and stressed fill</td><td>Trigger, latency, partials and final fill</td><td>Refresh exit stress</td></tr><tr><th scope="row">Gap/event</th><td>Allowance or exclusion</td><td>Observed discontinuity</td><td>Change reserve or block window</td></tr><tr><th scope="row">Fees</th><td>Expected all-in amount</td><td>Account statement amount</td><td>Correct product schedule</td></tr><tr><th scope="row">Margin</th><td>Timestamped requirement</td><td>Peak demand and broker action</td><td>Change collateral buffer, not loss math</td></tr></tbody></table></div><p>Preserve zero-contract decisions. Removing them hides the times contract granularity, event uncertainty or portfolio concentration correctly prevented exposure.</p></section>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Sizing ES Positions by Account Balance and Risk Limits",
-  "description": "A direct guide to sizing ES positions using account balance, volatility, and daily loss limits so beginners stop blowing up on one trade.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/es-how-to-size-positions-by-account-balance.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/es-how-to-size-positions-by-account-balance.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Sizing ES Positions by Account Balance and Risk Limits",
-      "item": "https://grizzlyparrottrading.com/futures-basics/es-how-to-size-positions-by-account-balance.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
-</head>
-<body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-<h1>Sizing ES Positions by Account Balance and Risk Limits</h1>
-
-<p>
-Most ES beginners size trades based on “what feels right,” which is why they blow their accounts in a week. ES moves fast, and one bad trade can hit your daily loss limit instantly. This guide gives you the exact position sizing logic pros use so you can survive long enough to learn.
-</p>
-
-<h2>Step 1: Know Your Dollar Risk Per Trade</h2>
-<p>
-Forget fancy formulas. You only need one number:  
-<strong>Max dollar loss you’re willing to take on a single ES trade.</strong>
-</p>
-
-<p>
-Standard recommendations:  
-<ul>
-  <li>Small accounts: 0.5%–1% of total balance</li>
-  <li>Prop accounts: 1/20th of daily loss limit</li>
-</ul>
-</p>
-
-<p>
-If you don't know how your daily volatility affects stops, review  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-atr-behavior-and-volatility-zones.html">ES ATR Volatility Zones</a>.
-</p>
-
-<h2>Step 2: Calculate the Stop Size Based on ES Volatility</h2>
-<p>
-ES stop size depends on ATR and structure. Typical intraday stops:
-</p>
-
-<table>
-<tr><th>Market Condition</th><th>Typical Stop</th></tr>
-<tr><td>Low volatility</td><td>3–5 points</td></tr>
-<tr><td>Normal volatility</td><td>5–8 points</td></tr>
-<tr><td>High volatility</td><td>10–15 points</td></tr>
-</table>
-
-<p>
-Stops smaller than volatility guarantee getting wicked out.
-</p>
-
-<h2>Step 3: Convert Stop Size Into Dollar Risk</h2>
-<p>
-ES = $50 per point.  
-So:
-</p>
-
-<table>
-<tr><th>Stop Size</th><th>Dollar Risk (per contract)</th></tr>
-<tr><td>5 points</td><td>$250</td></tr>
-<tr><td>8 points</td><td>$400</td></tr>
-<tr><td>10 points</td><td>$500</td></tr>
-</table>
-
-<p>
-If a 5-point stop is too expensive, your account is too small for ES — use MES.
-</p>
-
-<h2>Step 4: Position Size Formula</h2>
-<p>
-The formula is brutally simple:
-</p>
-
-<p><strong>Contracts = (Max risk per trade) ÷ (Stop dollar value)</strong></p>
-
-<p>
-Example:  
-$300 risk per trade and $250 stop size → 1 contract.  
-$600 risk per trade and $250 stop size → 2 contracts.
-</p>
-
-<h2>Step 5: Respect the Daily Loss Limit</h2>
-<p>
-Prop accounts get blown because traders take three “one last try” trades.  
-Your daily loss limit = your hard ceiling.  
-One ES stop can equal half the daily limit — be smart.
-</p>
-
-<div class="highlight-box green">
-  <h3>Sizing on ES Is Where Discipline Begins</h3>
-  <p>ES will forgive bad entries before it forgives oversized trades. Respect your risk cap, match size to volatility, and stop pretending math doesn’t matter.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
-</body>
-</html>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul><li><a href="es-tick-size-tick-value-and-margin.html">ES/MES canonical mechanics</a> for the current 0.25-point increment, ES $12.50 tick and MES $1.25 tick.</li><li><a href="https://www.cmegroup.com/education/courses/things-to-know-before-trading-cme-futures/position-and-risk-management" target="_blank" rel="noopener noreferrer">CME Position and Risk Management</a> for risk-scenario-based sizing and position management.</li><li><a href="https://www.cmegroup.com/solutions/risk-management/performance-bonds-margins/faq-performance-bonds-margins.html" target="_blank" rel="noopener noreferrer">CME Performance Bonds/Margins FAQ</a> for variable collateral and initial/maintenance distinctions.</li><li><a href="https://www.cftc.gov/csl/20-17/download" target="_blank" rel="noopener noreferrer">CFTC futures risk disclosure</a> for gap, margin-call and loss-beyond-deposit risk.</li></ul><p>Sources were reviewed August 28, 2026. All balances, percentages, fees, stops, stress values and results are hypothetical arithmetic. No safe account size, recommended risk percentage, typical slippage or profitable configuration is claimed. A stop order and stress reserve cannot guarantee a maximum loss.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This sizing framework is educational, not personalized financial or brokerage advice. Futures are leveraged; gaps, adverse fills, platform failure and forced liquidation can create losses beyond planned risk and deposited margin.</p></aside>
+<!-- ARTICLE BODY END --></article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer></body></html>
