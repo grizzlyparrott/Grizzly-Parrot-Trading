@@ -1,238 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ES Gap Behavior and How to Trade It</title>
-  <meta name="description" content="A blunt breakdown of ES gap behavior so beginners understand why gaps form, how they fill, and how to trade them without getting trapped.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-gap-behavior-and-how-to-trade-it.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="ES Gap Behavior and How to Trade It">
-  <meta property="og:description" content="A blunt breakdown of ES gap behavior so beginners understand why gaps form, how they fill, and how to trade them without getting trapped.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-gap-behavior-and-how-to-trade-it.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="ES Gap Behavior and How to Trade It">
-  <meta name="twitter:description" content="A blunt breakdown of ES gap behavior so beginners understand why gaps form, how they fill, and how to trade them without getting trapped.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "ES Gap Behavior and How to Trade It",
-  "description": "A blunt breakdown of ES gap behavior so beginners understand why gaps form, how they fill, and how to trade them without getting trapped.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/es-gap-behavior-and-how-to-trade-it.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/es-gap-behavior-and-how-to-trade-it.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "ES Gap Behavior and How to Trade It",
-      "item": "https://grizzlyparrottrading.com/futures-basics/es-gap-behavior-and-how-to-trade-it.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ES Gap Behavior: Definitions, Study Design, and Trade Tests</title>
+<meta name="description" content="Define ES gaps against settlement, prior cash close and overnight references, then test fill and continuation claims with forward-safe controls and costs.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-gap-behavior-and-how-to-trade-it.html">
+<meta property="og:title" content="ES Gap Behavior: Definitions, Study Design, and Trade Tests">
+<meta property="og:description" content="Define ES gaps against settlement, prior cash close and overnight references, then test fill and continuation claims with forward-safe controls and costs.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-gap-behavior-and-how-to-trade-it.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta property="og:image:alt" content="Grizzly Parrot Trading">
+<meta property="article:published_time" content="2025-11-24">
+<meta property="article:modified_time" content="2026-08-25">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ES Gap Behavior: Definitions, Study Design, and Trade Tests">
+<meta name="twitter:description" content="Define ES gaps against settlement, prior cash close and overnight references, then test fill and continuation claims with forward-safe controls and costs.">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ES Gap Behavior: Definitions, Study Design, and Trade Tests","description":"Define ES gaps against settlement, prior cash close and overnight references, then test fill and continuation claims with forward-safe controls and costs.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/es-gap-behavior-and-how-to-trade-it.html"},"datePublished":"2025-11-24","dateModified":"2026-08-25","url":"https://grizzlyparrottrading.com/futures-basics/es-gap-behavior-and-how-to-trade-it.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"ES Gap Behavior: Definitions, Study Design, and Trade Tests","item":"https://grizzlyparrottrading.com/futures-basics/es-gap-behavior-and-how-to-trade-it.html"}]}</script>
+<script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
 <!-- ARTICLE BODY START -->
+<header class="fx-hero">
+<div class="fx-hero-copy"><p class="fx-kicker">Reference price &middot; path label &middot; falsification</p><h1>ES Gap Behavior: Definitions, Study Design, and Trade Tests</h1><p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 25, 2026</p><p class="fx-hero-lede">An ES chart can show three legitimate “gaps” at the U.S. cash open: the difference from CME&rsquo;s prior daily settlement, the difference from the prior 4:00 p.m. ET cash-session reference, and the difference from an overnight reference chosen by the researcher. Those gaps can disagree in size or even sign. A fill-rate claim without the reference is not a result.</p><div class="fx-hero-actions"><a class="button-primary" href="#reference">Choose the reference</a><a class="fx-text-link" href="#falsify">Write the failure rule</a></div><dl class="fx-hero-metrics" aria-label="ES gap study requirements"><div><dt>Reference</dt><dd>Named and timestamped</dd></div><div><dt>Open</dt><dd>Executable rule</dd></div><div><dt>Path</dt><dd>Forward-safe labels</dd></div><div><dt>Fixed fill odds</dt><dd>Not claimed</dd></div></dl></div>
+<aside class="fx-window-equation" aria-label="Three possible gap references"><strong>One cash open</strong><span>&minus; official CME settlement</span><span>&minus; prior cash-close study price</span><span>&minus; registered overnight reference</span><span>= three different gap labels</span></aside>
+</header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#reference">Reference</a><a href="#sample">Sample</a><a href="#paths">Paths</a><a href="#controls">Controls</a><a href="#costs">Costs</a><a href="#falsify">Falsify</a></nav>
 
-<h1>ES Gap Behavior and How to Trade It</h1>
-
-<p>
-ES gaps confuse most beginners because they don’t understand why they form or why some gaps fill immediately while others don’t. Gaps are just the market resetting after low-liquidity periods, and if you know the mechanics, you stop trading them like a guessing game.
-</p>
-
-<h2>Why ES Gaps Form</h2>
-<p>
-Gaps happen when ES opens at a price different from the prior session’s close. It’s not magic — it’s simply:
-</p>
-
-<ul>
-  <li>Overnight imbalance</li>
-  <li>News hitting during the closed window</li>
-  <li>Low liquidity shifts</li>
-  <li>Institutional repositioning</li>
-</ul>
-
-<p>
-If you want the full breakdown on why overnight trading behaves differently, read  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-overnight-session-vs-regular-trading-hours.html">Overnight vs RTH</a>.
-</p>
-
-<h2>Types of ES Gaps</h2>
-
-<table>
-<tr><th>Gap Type</th><th>Description</th></tr>
-<tr><td>Common Gap</td><td>Small gaps that typically fill quickly</td></tr>
-<tr><td>Breakaway Gap</td><td>Strong directional gaps with momentum</td></tr>
-<tr><td>Continuation Gap</td><td>Gaps forming mid-trend, usually not filled soon</td></tr>
-<tr><td>Exhaustion Gap</td><td>Gaps that mark the end of a trend</td></tr>
-</table>
-
-<h2>Do ES Gaps Actually Fill?</h2>
-<p>
-Most gaps fill — but not immediately. ES fills small gaps fast because liquidity rebalances at the open. Large gaps can take days, weeks, or never fill during the same trend leg.
-</p>
-
-<h2>How to Trade ES Gaps Without Getting Trapped</h2>
-
-<h3>1. Identify the Gap Size</h3>
-<p>
-Small gap? Expect a fast fill. Big gap? Expect continuation first.  
-Beginners blow up by assuming every gap must fill immediately. It doesn’t.
-</p>
-
-<h3>2. Wait for the Opening Range</h3>
-<p>
-Do not take a gap fill trade before the opening range sets the tone. If you don’t know OR mechanics, check  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-opening-range-strategies-for-beginners.html">Opening Range Strategies</a>.
-</p>
-
-<h3>3. Watch ATR Expansion</h3>
-<p>
-If ATR is exploding, chasing a gap fill is suicide.  
-ATR context is everything — see  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-atr-behavior-and-volatility-zones.html">ES ATR Volatility Zones</a>.
-</p>
-
-<h3>4. Trade the First Pullback Into Structure</h3>
-<p>
-The cleanest gap trades happen when ES pulls back into a key level after the morning volatility sweep. Don’t chase candles.
-</p>
-
-<div class="highlight-box red">
-  <h3>Gaps Will Gut You If You Trade Them Blind</h3>
-  <p>Most traders get wrecked trying to force the fill. Respect the imbalance, read the structure, and wait for the market to tip its hand first.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="fx-section" id="reference" aria-labelledby="reference-title">
+<div class="fx-section-heading"><p class="fx-kicker">A gap is a subtraction, not a story</p><h2 id="reference-title">Name Both Endpoints and Their Price Rules</h2><p>The study must define the old reference and the new observation with exact timestamps, instruments and price construction. CME distinguishes daily settlement from final settlement, and the NYSE core cash session has its own close. None should be silently substituted for a last chart print.</p></div>
+<div class="fx-table-scroll" role="region" aria-label="ES gap definitions" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Gap name</th><th scope="col">Old reference</th><th scope="col">New reference</th><th scope="col">Main question</th></tr></thead><tbody>
+<tr><th scope="row">Settlement-to-open</th><td>Prior official CME ES daily settlement</td><td>Registered cash-open execution benchmark</td><td>How far is the open from the exchange benchmark?</td></tr>
+<tr><th scope="row">Cash-close-to-open</th><td>Prior 4:00 p.m. ET cash-core reference, with an explicit price rule</td><td>Same registered cash-open benchmark</td><td>How much repricing occurred between cash cores?</td></tr>
+<tr><th scope="row">Globex-session gap</th><td>Prior trade-date close or session reference</td><td>Next official session&rsquo;s first eligible quote/trade</td><td>What happened across the exchange pause or session boundary?</td></tr>
+<tr><th scope="row">Overnight inventory gap</th><td>Research-defined overnight anchor such as VWAP</td><td>Cash-open benchmark</td><td>Where did the cash open occur relative to overnight trading?</td></tr>
+</tbody></table></div>
+<div class="fx-formula"><strong>Signed normalized gap</strong><span>g<sub>t</sub> = (P<sub>new,t</sub> &minus; P<sub>reference,t</sub>) / P<sub>reference,t</sub></span><small>Keep the raw point gap too. If using volatility scaling, the denominator must be available before the new observation.</small></div>
+<p class="fx-source-note">CME publishes <a href="https://www.cmegroup.com/market-data/cme-group-settlement-procedures.html" target="_blank" rel="noopener noreferrer">daily settlement procedures</a> and separately explains <a href="https://www.cmegroup.com/trading/equity-index/settlement.html" target="_blank" rel="noopener noreferrer">final settlement through Special Opening Quotations</a>. The <a href="https://www.nyse.com/publicdocs/nyse/NYSE_Extended_Hours_Trading_FAQ.pdf" target="_blank" rel="noopener noreferrer">NYSE session guide</a> identifies the normal 9:30 a.m.–4:00 p.m. ET cash core. These are distinct clocks and prices.</p>
+<div class="fx-related">For ES contract and tick arithmetic, use <a href="es-tick-size-tick-value-and-margin.html">ES Tick Size, Tick Value and Margin</a>.</div>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<section class="fx-section" id="sample" aria-labelledby="sample-title">
+<div class="fx-section-heading"><p class="fx-kicker">Build the eligible day before seeing the path</p><h2 id="sample-title">Construct a Timestamp-Safe Sample</h2><p>Use dated ES contracts and a documented roll policy. Record source timestamps, sequence integrity, holidays, early closes and whether the cash open existed as expected. If a platform supplies a continuous chart, keep the raw contracts so adjustment artifacts can be audited.</p></div>
+<ol class="fx-process"><li><strong>Resolve the trade date.</strong><span>Map exchange time, UTC and cash-market calendar without hard-coded daylight offsets.</span></li><li><strong>Choose the active contract.</strong><span>Use a rule based on information available then; flag migration rather than selecting the eventual volume leader with hindsight.</span></li><li><strong>Capture endpoints.</strong><span>Store the official settlement and the quote/trade records needed to reproduce each open or close benchmark.</span></li><li><strong>Run integrity gates.</strong><span>Reject missing sequences, stale or crossed books, unverified timestamps and incorrect instrument joins.</span></li><li><strong>Freeze eligibility.</strong><span>Apply event, holiday and minimum-liquidity rules before labeling fill or continuation outcomes.</span></li></ol>
+<div class="fx-caution"><strong>First print is not automatically an executable open.</strong><p>A trade print records a transaction between specific counterparties. If the strategy assumes an order at the cash open, simulate its arrival, order type, latency, visible capacity and partial fills. Otherwise the study measures price paths, not attainable trades.</p></div>
+</section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
+<section class="fx-section" id="paths" aria-labelledby="paths-title">
+<div class="fx-section-heading"><p class="fx-kicker">Label only after the required horizon ends</p><h2 id="paths-title">Define Fill, Partial Fill and Continuation Without Leakage</h2><p>The decision features must be frozen at entry time. Outcome labels may use later prices, but those labels cannot be inputs to the same decision. Declare the horizon and touch rule in advance.</p></div>
+<div class="fx-four-grid">
+<article class="fx-panel"><p class="fx-card-label">Full fill</p><h3>Reference is reached</h3><p>The eligible bid, ask or trade&mdash;whichever was preregistered&mdash;reaches the entire gap reference within the horizon. State whether a touch counts.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Partial</p><h3>Path retraces but stops short</h3><p>Record maximum favorable retracement as a fraction of initial gap size rather than hiding it inside a binary miss.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Continuation</p><h3>Path extends away first</h3><p>Measure adverse extension before any fill, with the same price side and latency rules used for execution.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Censored</p><h3>Horizon ends or data fails</h3><p>Keep “not observed” separate from “did not fill.” Early close, halt or feed loss can censor the outcome.</p></article>
+</div>
+<div class="fx-method"><h3>A path record that can be audited</h3><p>Store gap definition, signed and absolute size, volatility-scaled size, opening spread and depth, maximum favorable and adverse excursion, first-touch time, eligible fill quantity, close-of-horizon state and censor reason. Report both directions and do not combine them until symmetry is tested.</p><p>For limit-style fill studies, a price touch is insufficient when queue and quantity matter. For marketable entries, measure the book sweep and realized shortfall. A directional backtest that enters at an untradeable print must remain a hypothetical price-path study.</p></div>
+</section>
 
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
+<section class="fx-section" id="controls" aria-labelledby="controls-title">
+<div class="fx-section-heading"><p class="fx-kicker">The gap carries overnight information</p><h2 id="controls-title">Condition on Information and Market State</h2><p>Compare outcomes inside prespecified strata rather than searching every combination for a flattering fill rate. A useful minimum set covers gap size, direction, overnight path, prior-day state, scheduled information, opening liquidity, weekday, holiday and roll regime.</p></div>
+<div class="fx-check-grid">
+<article class="fx-go-card"><h3>Gap-scale controls</h3><ul><li>Raw points</li><li>Return percentage</li><li>Pre-open volatility units</li><li>Sign and absolute magnitude</li></ul></article>
+<article class="fx-go-card"><h3>Information controls</h3><ul><li>BLS/BEA release timestamp</li><li>FOMC communication state</li><li>Unscheduled official notices</li><li>Unknown event label retained</li></ul></article>
+<article class="fx-go-card"><h3>Execution controls</h3><ul><li>Spread and depth at decision</li><li>Order size and latency</li><li>Roll and holiday status</li><li>Rejected/censored observations</li></ul></article>
+</div>
+<p>Use the official <a href="https://www.bls.gov/schedule/news_release/" target="_blank" rel="noopener noreferrer">BLS</a>, <a href="https://www.bea.gov/news/schedule/" target="_blank" rel="noopener noreferrer">BEA</a> and <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">Federal Reserve</a> calendars for scheduled labels. They establish publication timing, not the sign or duration of a price reaction.</p>
+</section>
 
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+<section class="fx-section" id="costs" aria-labelledby="costs-title">
+<div class="fx-section-heading"><p class="fx-kicker">A filled gap can still be a losing trade</p><h2 id="costs-title">Simulate the Entire Order Path and Cost Stack</h2><p>Separate the descriptive question “did price revisit the reference?” from the economic question “could the declared order policy earn after costs?” The second requires entries, exits, stop behavior, latency, queue assumptions, commissions and slippage.</p></div>
+<div class="fx-table-scroll" role="region" aria-label="ES gap execution cost model" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Element</th><th scope="col">Required assumption</th><th scope="col">Conservative treatment</th></tr></thead><tbody>
+<tr><th scope="row">Entry</th><td>Order type, side, arrival time, quantity</td><td>Cross the spread or model queue; never use an unavailable midpoint</td></tr>
+<tr><th scope="row">Exit</th><td>Reference touch, target or time stop</td><td>Use executable side and available depth</td></tr>
+<tr><th scope="row">Protection</th><td>Stop trigger and order behavior</td><td>Include gap-through and partial-fill risk</td></tr>
+<tr><th scope="row">Fees</th><td>Commission and exchange/broker charges</td><td>Use dated all-in rates, not a zero-cost placeholder</td></tr>
+<tr><th scope="row">Capacity</th><td>Size relative to displayed/replenished depth</td><td>Stress reduced depth and slower acknowledgement</td></tr>
+</tbody></table></div>
+</section>
 
-  </div>
-</footer>
+<section class="fx-section" id="falsify" aria-labelledby="falsify-title">
+<div class="fx-section-heading"><p class="fx-kicker">Write the result that would make you stop</p><h2 id="falsify-title">Use Holdout and Retirement Rules</h2><p>Fit definitions and thresholds on a training period, lock them, then run one forward holdout. Report uncertainty, sample sizes and all attempted variants. A research claim fails if it depends on one reference, one subperiod or optimistic fills.</p></div>
+<div class="fx-falsification-tree"><article><h3>Reference instability</h3><p>Settlement-gap and cash-close-gap conclusions conflict materially.</p><strong>Result: narrow or reject the claim</strong></article><article><h3>Cost failure</h3><p>Gross path behavior disappears under plausible executable costs.</p><strong>Result: no tradable evidence</strong></article><article><h3>Holdout failure</h3><p>The frozen rule fails its preregistered forward threshold.</p><strong>Result: retire, do not retune</strong></article></div>
+<ul class="fx-checklist"><li>Date ranges, exclusions and observation counts are visible.</li><li>Each gap definition is reported separately.</li><li>Open, touch and exit price sides are explicit.</li><li>Partial paths and censored sessions are not forced into binary outcomes.</li><li>Event and roll strata retain enough observations for honest uncertainty.</li><li>Multiple-testing choices and abandoned variants remain in the research log.</li></ul>
+<div class="fx-caution"><strong>Research status as of August 25, 2026</strong><p>No original ES gap-fill probability, continuation rate or after-cost edge is reported. This page is a test protocol. Claims that gaps “usually fill” remain unverified here until a defined sample, execution model and untouched holdout pass.</p></div>
+</section>
+
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul>
+<li><a href="https://www.cmegroup.com/market-data/cme-group-settlement-procedures.html" target="_blank" rel="noopener noreferrer">CME daily settlement procedures</a> for official daily benchmarks.</li>
+<li><a href="https://www.cmegroup.com/trading/equity-index/settlement.html" target="_blank" rel="noopener noreferrer">CME Equity Index final settlement procedures</a> for the separate Special Opening Quotation process.</li>
+<li><a href="https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME E-mini S&amp;P 500 contract page</a> and <a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener noreferrer">CME trading-hours calendar</a> for contract and schedule controls.</li>
+<li><a href="https://www.nyse.com/publicdocs/nyse/NYSE_Extended_Hours_Trading_FAQ.pdf" target="_blank" rel="noopener noreferrer">NYSE trading-session FAQ</a> for the cash core-session clock.</li>
+<li><a href="https://www.cmegroup.com/market-data/browse-data/catalog/futures-and-options-data.html" target="_blank" rel="noopener noreferrer">CME historical futures and options data catalog</a> for trade, top-of-book, depth and market-by-order distinctions.</li>
+</ul><p>Sources were reviewed August 28, 2026. The proposed labels and tests are editorial research design, not CME definitions or completed empirical findings.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This article is educational research design, not a recommendation to fade or follow an ES gap. Futures are leveraged; gaps can extend, stops can fill poorly and losses can exceed the collateral initially posted.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

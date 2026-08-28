@@ -1,254 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<html lang="en"><head><meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ES DOM and Time &amp; Sales: What the Tape Can Prove</title>
+<meta name="description" content="Use ES DOM and time-and-sales through synchronized observations, testable hypotheses, execution gates, spoofing attribution limits and replay-based review.">
+<meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-using-dom-and-time-and-sales.html">
+<meta property="og:title" content="ES DOM and Time &amp; Sales: What the Tape Can Prove"><meta property="og:description" content="Use ES DOM and time-and-sales through synchronized observations, testable hypotheses, execution gates, spoofing attribution limits and replay-based review."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-using-dom-and-time-and-sales.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-27">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ES DOM and Time &amp; Sales: What the Tape Can Prove"><meta name="twitter:description" content="Use ES DOM and time-and-sales through synchronized observations, testable hypotheses, execution gates, spoofing attribution limits and replay-based review."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ES DOM and Time & Sales: What the Tape Can Prove","description":"Use ES DOM and time-and-sales through synchronized observations, testable hypotheses, execution gates, spoofing attribution limits and replay-based review.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/es-using-dom-and-time-and-sales.html"},"datePublished":"2025-11-24","dateModified":"2026-08-27","url":"https://grizzlyparrottrading.com/futures-basics/es-using-dom-and-time-and-sales.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"ES DOM and Time & Sales: What the Tape Can Prove","item":"https://grizzlyparrottrading.com/futures-basics/es-using-dom-and-time-and-sales.html"}]}</script><script src="/uet.js" defer></script></head>
+<body><a class="fx-skip-link" href="#main-content">Skip to article content</a><header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article><!-- ARTICLE BODY START -->
+<header class="fx-hero"><div class="fx-hero-copy"><p class="fx-kicker">Displayed orders &middot; executed trades &middot; bounded inference</p><h1>ES DOM and Time &amp; Sales: What the Tape Can Prove</h1><p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 27, 2026</p><p class="fx-hero-lede">A large ES bid appears, price approaches, and the size vanishes without trading. The DOM proved that displayed quantity changed. It did not prove a buyer defended the price, a seller was trapped, or anyone spoofed. Useful tape reading begins by separating orders, cancellations, executions and price response on one clock.</p><div class="fx-hero-actions"><a class="button-primary" href="#layers">Map the observation layers</a><a class="fx-text-link" href="#replay">Build a replay review</a></div></div><aside class="fx-market-board" aria-label="DOM observation boundary"><div class="fx-board-head"><span>Displayed bid at 6,410.00</span><strong>600 &rarr; 40</strong></div><div class="fx-proof"><strong>Trade volume</strong><span>0 at that price in interval</span></div><div class="fx-proof"><strong>Observed</strong><span>Displayed quantity removed</span></div><div class="fx-proof"><strong>Not observed</strong><span>Participant identity or intent</span></div><p class="fx-board-foot">Hypothetical sequence; not a market call</p></aside></header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#layers">Layers</a><a href="#feed">Feed</a><a href="#sync">Synchronize</a><a href="#hypotheses">Hypotheses</a><a href="#gates">Execution</a><a href="#spoofing">Attribution</a><a href="#replay">Replay</a></nav>
 
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+<section class="fx-section" id="layers" aria-labelledby="layers-title"><div class="fx-section-heading"><p class="fx-kicker">Four views, four different claims</p><h2 id="layers-title">Know What Each Screen Observes</h2></div><div class="fx-table-scroll" role="region" aria-label="ES DOM and tape observation layers" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Layer</th><th scope="col">Direct observation</th><th scope="col">Does not directly identify</th></tr></thead><tbody><tr><th scope="row">DOM / order book</th><td>Displayed bid and offer prices, quantities and updates within the feed's depth</td><td>Undisplayed interest, participant identity, future cancellation or future execution</td></tr><tr><th scope="row">Time &amp; sales</th><td>Executed trade price, time and size as represented by the feed</td><td>Full strategy, inventory, motive or whether the same participant returns</td></tr><tr><th scope="row">Own order state</th><td>Submitted, acknowledged, queued, partially filled, filled, cancelled or rejected states</td><td>Other customers' identities or intentions</td></tr><tr><th scope="row">Price response</th><td>Subsequent trades, quote movement, spread, impact and replenishment</td><td>A unique cause when several events coincide</td></tr></tbody></table></div><div class="fx-caution"><strong>“Buying” and “selling” happen in every execution.</strong><p>A trade has both sides. An aggressor-side classification can describe which resting quote was hit under a chosen rule; it does not prove whether either participant is opening, closing, hedging or expressing a directional view.</p></div></section>
 
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<section class="fx-section" id="feed" aria-labelledby="feed-title"><div class="fx-section-heading"><p class="fx-kicker">The DOM is a rendering of a data product</p><h2 id="feed-title">Resolve Market by Price, Market by Order and Platform Transformations</h2><p>CME describes Market by Price (MBP) as aggregated quantity and order count at each price, with a maximum of ten disseminated levels. Market by Order (MBO) provides anonymous order-level granularity and full depth, including exchange order and priority identifiers. MBO still contains no customer-identifiable information.</p></div><div class="fx-two-column"><article class="fx-panel"><p class="fx-card-label">MBP</p><h3>Price-level aggregate</h3><p>Useful for spread, top-of-book depth and changes by level. Individual order size and exact queue position cannot be inferred reliably from the aggregate.</p></article><article class="fx-panel"><p class="fx-card-label">MBO</p><h3>Anonymous order detail</h3><p>Can expose individual displayed orders and queue sorting. It does not reveal firm identity, beneficial owner, motive or off-book interest.</p></article></div><ul class="fx-checklist"><li><strong>Entitlement:</strong> confirm whether the account receives real-time or delayed data and which depth product.</li><li><strong>Platform:</strong> document aggregation, filtering, update throttling, trade bundling and color rules.</li><li><strong>Contract:</strong> ensure DOM, tape, chart and order ticket all use the same ES month and year.</li><li><strong>Sequence:</strong> detect feed gaps, reconnects and book resets; do not interpret an incomplete book.</li><li><strong>Clock:</strong> retain exchange or feed timestamps when available, not only the local display clock.</li></ul><p class="fx-related">Current ES multiplier, tick, session and lifecycle details are maintained on <a href="es-tick-size-tick-value-and-margin.html">the canonical ES/MES mechanics page</a>.</p></section>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Use DOM and Time &amp; Sales on ES</title>
-  <meta name="description" content="A blunt guide to using DOM and Time & Sales on ES so beginners can read real order flow instead of guessing.">
-  <meta name="robots" content="index, follow">
+<section class="fx-section" id="sync" aria-labelledby="sync-title"><div class="fx-section-heading"><p class="fx-kicker">Order matters at millisecond scale</p><h2 id="sync-title">Put Book Updates, Trades and Your Order on One Timeline</h2></div><div class="fx-lifecycle"><article><span>1</span><h3>Exchange event</h3><p>Quote add, modify, cancel or trade occurs in venue sequence.</p></article><article><span>2</span><h3>Feed distribution</h3><p>The message travels through the market-data path.</p></article><article><span>3</span><h3>Local receipt</h3><p>The platform receives and processes the update.</p></article><article><span>4</span><h3>Screen render</h3><p>The DOM or tape visually updates after local processing.</p></article><article><span>5</span><h3>Decision and order</h3><p>The trader reacts; the order follows a separate outbound/acknowledgement path.</p></article></div><div class="fx-table-scroll" role="region" aria-label="ES tape synchronization fields" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Timestamp</th><th scope="col">Why retain it</th><th scope="col">Failure if substituted</th></tr></thead><tbody><tr><th scope="row">Exchange/feed event</th><td>Orders venue events</td><td>Local latency is mistaken for market sequence</td></tr><tr><th scope="row">Local receive</th><td>Measures inbound delay and gaps</td><td>Display time hides processing backlog</td></tr><tr><th scope="row">Decision</th><td>Defines information actually available</td><td>Later book state leaks into rationale</td></tr><tr><th scope="row">Order submit</th><td>Starts outbound execution path</td><td>Reaction time and routing delay are merged</td></tr><tr><th scope="row">Acknowledgement/fill</th><td>Establishes authoritative order state</td><td>Screen intent is mistaken for venue acceptance</td></tr></tbody></table></div><p>If a replay cannot preserve or reconstruct these clocks, label the limitation. A screen recording can help review what the operator saw, but it is not a lossless substitute for sequenced order-book, trade and order-event data.</p></section>
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-using-dom-and-time-and-sales.html">
+<section class="fx-section" id="hypotheses" aria-labelledby="hypotheses-title"><div class="fx-section-heading"><p class="fx-kicker">Translate visual impressions into tests</p><h2 id="hypotheses-title">Write a Tape Hypothesis With Rival Explanations</h2></div><div class="fx-method"><div><h3>Hypothetical replenishment test</h3><p><strong>Candidate:</strong> executed sell volume repeatedly reaches a bid while displayed quantity refreshes and price does not trade through for a declared interval. <strong>Rivals:</strong> several independent orders arrive, price is constrained by another market, trade classification is wrong, feed updates are missing, or the response is random. <strong>Invalidation:</strong> price traverses the level with specified impact or the data-quality gate fails.</p></div><dl><div><dt>Window</dt><dd>Predeclared</dd></div><div><dt>Quantity</dt><dd>Measured</dd></div><div><dt>Response</dt><dd>Forward only</dd></div><div><dt>Finding</dt><dd>Not reported</dd></div></dl></div><div class="fx-table-scroll" role="region" aria-label="Order-flow hypothesis definitions" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Label</th><th scope="col">Minimum observable definition</th><th scope="col">Rival to test</th></tr></thead><tbody><tr><th scope="row">Replenishment</th><td>Displayed quantity returns at a price after executions remove quantity</td><td>Independent new orders rather than one hidden order</td></tr><tr><th scope="row">Cancellation burst</th><td>Displayed quantity falls without matching executed volume in synchronized data</td><td>Feed reset, state change or routine order management</td></tr><tr><th scope="row">Price impact</th><td>Forward price change per aggressive quantity over fixed horizon</td><td>Concurrent news or cross-market repricing</td></tr><tr><th scope="row">Failed impact</th><td>Large classified flow with response below a threshold</td><td>Threshold chosen after seeing outcome</td></tr><tr><th scope="row">Queue persistence</th><td>Order/level remains displayed through a defined event count</td><td>Display throttling or aggregation artifact</td></tr></tbody></table></div><div class="fx-caution"><strong>Do not trade a label that cannot be computed.</strong><p>“Absorption,” “iceberg,” “trapped traders” and “buyers in control” are not executable definitions. State the data, window, threshold, response and invalidation.</p></div></section>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="How to Use DOM and Time &amp; Sales on ES">
-  <meta property="og:description" content="A blunt guide to using DOM and Time & Sales on ES so beginners can read real order flow instead of guessing.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-using-dom-and-time-and-sales.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
+<section class="fx-section" id="gates" aria-labelledby="gates-title"><div class="fx-section-heading"><p class="fx-kicker">Observation does not grant order permission</p><h2 id="gates-title">Run Risk and Execution Gates After the Signal</h2></div><div class="fx-decision-tree"><article><p class="fx-card-label">Hypothesis passes</p><h3>Is the feed complete and current?</h3><p><strong>No:</strong> no order. <strong>Yes:</strong> confirm exact contract, event state and session.</p></article><article><p class="fx-card-label">Market quality passes</p><h3>Does intended quantity fit the book and cost ceiling?</h3><p><strong>No:</strong> reduce to a recalculated whole-contract quantity or zero. <strong>Yes:</strong> choose the approved order branch.</p></article><article><p class="fx-card-label">Order submitted</p><h3>Did acknowledgement and fill state reconcile?</h3><p><strong>No:</strong> execute the unknown-order incident procedure. <strong>Yes:</strong> protect actual filled quantity and log slippage.</p></article></div><div class="fx-table-scroll" role="region" aria-label="Passive and aggressive ES order tradeoffs" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Choice</th><th scope="col">Potential benefit</th><th scope="col">Cost or failure</th><th scope="col">Required measurement</th></tr></thead><tbody><tr><th scope="row">Resting limit</th><td>Price control and possible passive fill</td><td>Non-fill, adverse selection, queue uncertainty</td><td>Queue, fill rate and post-fill path</td></tr><tr><th scope="row">Executable order</th><td>Greater immediacy within order protections</td><td>Spread, book sweep and adverse movement</td><td>Decision/arrival/fill prices and depth</td></tr><tr><th scope="row">Stop limit</th><td>Trigger plus explicit limit</td><td>Can remain unfilled beyond the limit</td><td>Trigger, eligible range and residual state</td></tr><tr><th scope="row">Stop with protection</th><td>Exchange-defined protected range after trigger</td><td>Residual quantity can remain at protection limit</td><td>Current product support and protection points</td></tr></tbody></table></div><p>Platform names can represent synthetic broker behavior rather than the exact CME order type. Verify the current order definition and test the rejection, partial-fill and cancellation paths before live use.</p></section>
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="How to Use DOM and Time &amp; Sales on ES">
-  <meta name="twitter:description" content="A blunt guide to using DOM and Time & Sales on ES so beginners can read real order flow instead of guessing.">
+<section class="fx-section" id="spoofing" aria-labelledby="spoofing-title"><div class="fx-section-heading"><p class="fx-kicker">Intent is not a DOM field</p><h2 id="spoofing-title">Do Not Diagnose Spoofing From One Visual Sequence</h2><p>The Commodity Exchange Act prohibition concerns bidding or offering with intent to cancel before execution. CFTC guidance evaluates intent using market context, trading patterns, fill characteristics and other facts. Legitimate orders are routinely modified or cancelled. A retail display supplies neither participant identity nor the full evidence needed to determine intent.</p></div><div class="fx-three-column"><article class="fx-panel"><p class="fx-card-label">You may say</p><h3>Displayed size was cancelled</h3><p>When synchronized order-book data show quantity removed without corresponding trade volume.</p></article><article class="fx-panel"><p class="fx-card-label">You may test</p><h3>Cancellation predicted response</h3><p>Using a frozen, repeatable protocol with rivals, costs and out-of-sample data.</p></article><article class="fx-panel"><p class="fx-card-label">You may not infer</p><h3>A named manipulator or intent</h3><p>Not from an anonymous DOM snapshot or a single cancellation pattern.</p></article></div><div class="fx-caution"><strong>Attribution language is a risk control.</strong><p>Use “displayed quantity was added/removed,” “trades occurred,” and “price responded.” Reserve legal conclusions for authorities with the required records and investigation.</p></div></section>
 
-  <link rel="stylesheet" href="../style.css">
+<section class="fx-section" id="replay" aria-labelledby="replay-title"><div class="fx-section-heading"><p class="fx-kicker">Review the full decision path</p><h2 id="replay-title">Build a Replay Record That Can Falsify the Method</h2></div><ol class="fx-process"><li><strong>Capture source identity.</strong><span>Provider, MBP/MBO entitlement, contract, trade date, sequence status and platform transformations.</span></li><li><strong>Freeze the hypothesis.</strong><span>Observable definition, window, threshold, rivals, expiry and invalidation.</span></li><li><strong>Mark the decision clock.</strong><span>Preserve exactly what was known before action.</span></li><li><strong>Reconstruct the order.</strong><span>Submission, acknowledgement, queue/partial states, fills, cancels and protection.</span></li><li><strong>Measure costs.</strong><span>Spread, arrival shortfall, adverse selection, fees and missed-trade outcomes.</span></li><li><strong>Keep failures.</strong><span>False signals, no-fills, data gaps, rejected orders and zero-contract decisions remain in the sample.</span></li><li><strong>Retire when falsified.</strong><span>If the hypothesis fails after costs or cannot be observed reliably, stop using it.</span></li></ol><div class="fx-go-card"><p class="fx-card-label">Decision standard</p><h3>The tape must improve a defined decision after costs</h3><p>A compelling replay clip is not an edge. Require a prospective protocol and independent evaluation before granting the observation live authority.</p></div></section>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How to Use DOM and Time &amp; Sales on ES",
-  "description": "A blunt guide to using DOM and Time & Sales on ES so beginners can read real order flow instead of guessing.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/es-using-dom-and-time-and-sales.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/es-using-dom-and-time-and-sales.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "How to Use DOM and Time &amp; Sales on ES",
-      "item": "https://grizzlyparrottrading.com/futures-basics/es-using-dom-and-time-and-sales.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
-</head>
-<body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-<h1>How to Use DOM and Time &amp; Sales on ES</h1>
-
-<p>
-Most beginners stare at the DOM and Time &amp; Sales like it’s encrypted data. ES order flow isn’t mystical — it’s just showing who is hitting the bids, who is lifting the offers, and where liquidity is stacking or vanishing. If you know how to read it, you stop entering blindly and start timing trades with actual intent behind them.
-</p>
-
-<h2>What the DOM Actually Tells You</h2>
-<p>
-The DOM (Depth of Market) displays:
-</p>
-
-<ul>
-  <li>Bids and offers at each price level</li>
-  <li>How much size is sitting there</li>
-  <li>How quickly that size appears or disappears</li>
-</ul>
-
-<p>
-The DOM shows where liquidity wants to trade — or wants to pretend it wants to trade. On ES, spoofing and fake size are common, so focus on <strong>reaction</strong>, not static levels.
-</p>
-
-<table>
-<tr><th>DOM Signal</th><th>Meaning</th></tr>
-<tr><td>Bids stacking and holding</td><td>Support forming</td></tr>
-<tr><td>Offers stacking and holding</td><td>Resistance forming</td></tr>
-<tr><td>Size disappearing before trades hit</td><td>Fake liquidity</td></tr>
-<tr><td>Fast bid/ask depletion</td><td>Momentum shift</td></tr>
-</table>
-
-<h2>What Time &amp; Sales Shows</h2>
-<p>
-Time &amp; Sales is the tape — actual executed orders.  
-It tells you:
-</p>
-
-<ul>
-  <li>Whether traders are lifting the offer (aggressive buying)</li>
-  <li>Whether they’re hitting the bid (aggressive selling)</li>
-  <li>Speed and aggression of trades</li>
-  <li>Large prints signaling institutions</li>
-</ul>
-
-<h2>How to Use DOM + Time &amp; Sales Together</h2>
-
-<h3>1. Confirm Breakouts</h3>
-<p>
-If ES breaks a key level, you want:
-<ul>
-  <li>Offers getting lifted aggressively</li>
-  <li>Bid support building under the breakout level</li>
-  <li>Fast prints hitting the tape</li>
-</ul>
-If none of this shows up, the breakout is weak and likely to fail.
-</p>
-
-<h3>2. Confirm Reversals</h3>
-<p>
-A real reversal shows:
-<ul>
-  <li>Bid absorption slowing the drop</li>
-  <li>Large buyers hitting offers at the turn</li>
-  <li>Stacked offers getting pulled (liquidity vacuum)</li>
-</ul>
-</p>
-
-<h3>3. Sniff Out Fake Liquidity</h3>
-<p>
-If 500 lots are sitting on the bid but disappear seconds before price reaches them, that size was never real. Don’t base trades on static DOM — watch liquidity behavior.
-</p>
-
-<h3>4. Enhance Your Level Tests</h3>
-<p>
-At key levels like VWAP, session high/low, or the opening range, the DOM slows down before the turn. The tape flips direction. This is how pros confirm entries.
-</p>
-
-<p>
-If you don't know how to use these levels yet, read  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-session-highs-lows-and-vwap-usage.html">Session Highs/Lows &amp; VWAP</a>.
-</p>
-
-<div class="highlight-box green">
-  <h3>Order Flow Is the Foundation, Not a Flex</h3>
-  <p>DOM and Time &amp; Sales aren’t advanced — they’re table stakes. Read aggression, spot liquidity shifts, and track how levels react. Entries tighten, stops shrink, and fakeouts stop catching you off guard.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
-</body>
-</html>
+<details class="fx-sources"><summary>Sources, data boundaries and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul><li><a href="https://www.cmegroup.com/articles/faqs/market-by-order-mbo.html" target="_blank" rel="noopener noreferrer">CME Market by Order FAQ</a> for MBO, MBP, full-depth, anonymous order and queue-information scope.</li><li><a href="https://www.cmegroup.com/trading/about-time-sales.html" target="_blank" rel="noopener noreferrer">CME About Time &amp; Sales</a> for the exchange report's trade-date, time, price, size and condition fields.</li><li><a href="https://www.cmegroup.com/education/articles-and-reports/understanding-the-cme-liquidity-tool-methodology" target="_blank" rel="noopener noreferrer">CME Liquidity Tool Methodology</a> for order-book construction, spread and depth measurements.</li><li><a href="https://www.cmegroup.com/education/courses/futures-trading-mechanics-and-regulation/futures-order-types" target="_blank" rel="noopener noreferrer">CME Futures Order Types</a> for current order types and protection mechanics.</li><li><a href="https://www.cftc.gov/LawRegulation/FederalRegister/FinalRules/2013-12365.html" target="_blank" rel="noopener noreferrer">CFTC interpretive guidance on disruptive practices</a> for the intent and context boundary around spoofing.</li><li><a href="es-tick-size-tick-value-and-margin.html">ES/MES canonical mechanics</a> for current contract arithmetic and lifecycle controls.</li></ul><p>Sources were reviewed August 28, 2026. This page reports no original DOM study, predictive accuracy, fill advantage or trading edge. All sequences and thresholds are hypothetical examples; data entitlements and platform transformations must be verified for the actual setup.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This material is educational, not personalized financial, legal or execution advice. Displayed liquidity can change or disappear, orders can remain unfilled, and futures losses can exceed planned risk and deposited margin.</p></aside>
+<!-- ARTICLE BODY END --></article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer></body></html>

@@ -1,206 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <meta charset="UTF-8">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NQ Liquidity Windows and Why Timing Matters</title>
-  <meta name="description" content="A structural breakdown of NQ liquidity windows and how participation changes execution quality and risk.">
-  <meta name="robots" content="index, follow">
-
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/nq-liquidity-windows.html">
-
-  <meta property="og:title" content="NQ Liquidity Windows and Why Timing Matters">
-  <meta property="og:description" content="A structural breakdown of NQ liquidity windows and how participation changes execution quality and risk.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/nq-liquidity-windows.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="NQ Liquidity Windows and Why Timing Matters">
-  <meta name="twitter:description" content="A structural breakdown of NQ liquidity windows and how participation changes execution quality and risk.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "NQ Liquidity Windows and Why Timing Matters",
-  "description": "A structural breakdown of NQ liquidity windows and how participation changes execution quality and risk.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/nq-liquidity-windows.html",
-  "datePublished": "2025-12-12",
-  "dateModified": "2025-12-12",
-  "url": "https://grizzlyparrottrading.com/futures-basics/nq-liquidity-windows.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "NQ Liquidity Windows and Why Timing Matters",
-      "item": "https://grizzlyparrottrading.com/futures-basics/nq-liquidity-windows.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NQ Liquidity Windows: Build a Live Market-Quality Map</title>
+<meta name="description" content="Construct and monitor NQ liquidity windows using spread, depth, replenishment, price impact and scheduled-flow evidence with explicit expiry rules.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/nq-liquidity-windows.html">
+<meta property="og:title" content="NQ Liquidity Windows: Build a Live Market-Quality Map">
+<meta property="og:description" content="Construct and monitor NQ liquidity windows using spread, depth, replenishment, price impact and scheduled-flow evidence with explicit expiry rules.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/nq-liquidity-windows.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta property="og:image:alt" content="Grizzly Parrot Trading">
+<meta property="article:published_time" content="2025-12-12">
+<meta property="article:modified_time" content="2026-08-28">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NQ Liquidity Windows: Build a Live Market-Quality Map">
+<meta name="twitter:description" content="Construct and monitor NQ liquidity windows using spread, depth, replenishment, price impact and scheduled-flow evidence with explicit expiry rules.">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"NQ Liquidity Windows: Build a Live Market-Quality Map","description":"Construct and monitor NQ liquidity windows using spread, depth, replenishment, price impact and scheduled-flow evidence with explicit expiry rules.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/nq-liquidity-windows.html"},"datePublished":"2025-12-12","dateModified":"2026-08-28","url":"https://grizzlyparrottrading.com/futures-basics/nq-liquidity-windows.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"NQ Liquidity Windows: Build a Live Market-Quality Map","item":"https://grizzlyparrottrading.com/futures-basics/nq-liquidity-windows.html"}]}</script>
+<script src="/uet.js" defer></script>
 </head>
-
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+<div class="fx-hero-copy"><p class="fx-kicker">Width &middot; capacity &middot; replenishment &middot; impact</p><h1>NQ Liquidity Windows: Build a Live Market-Quality Map</h1><p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 28, 2026</p><p class="fx-hero-lede">NQ volume can rise while displayed depth falls. That is more activity, but it may be less immediately available capacity for a marketable order. A useful liquidity window starts and ends when a declared stack of market-quality conditions changes&mdash;not merely when the clock reaches a popular hour.</p><div class="fx-hero-actions"><a class="button-primary" href="#stack">Build the stack</a><a class="fx-text-link" href="#expiry">Define expiry</a></div><dl class="fx-hero-metrics" aria-label="NQ live liquidity stack"><div><dt>Spread</dt><dd>Time weighted</dd></div><div><dt>Depth</dt><dd>Size conditioned</dd></div><div><dt>Replenishment</dt><dd>After depletion</dd></div><div><dt>Volume alone</dt><dd>Insufficient</dd></div></dl></div>
+<aside class="fx-cost-tape" aria-label="NQ volume and depth divergence"><span><strong>Trade rate</strong>Rising</span><span><strong>Displayed depth</strong>Falling</span><span><strong>Activity</strong>More transactions</span><span><strong>Capacity</strong>Less near the touch</span></aside>
 </header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#stack">Metric stack</a><a href="#construct">Construction</a><a href="#overlays">Overlays</a><a href="#rules">Decision rules</a><a href="#expiry">Expiry</a></nav>
 
-<main>
-<section class="section">
-<div class="container article-content">
+<section class="fx-section" id="stack" aria-labelledby="stack-title">
+<div class="fx-section-heading"><p class="fx-kicker">Measure quoted, traded and experienced liquidity separately</p><h2 id="stack-title">Assemble the Live Metric Stack</h2><p>Use source-sequenced NQ trades and book updates when the claim needs intrawindow execution quality. Bar volume can describe activity; it cannot reconstruct the spread, near-touch capacity or an order&rsquo;s queue.</p></div>
+<div class="fx-table-scroll" role="region" aria-label="NQ liquidity metric stack" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Layer</th><th scope="col">Live measures</th><th scope="col">Calibration target</th><th scope="col">Hard boundary</th></tr></thead><tbody>
+<tr><th scope="row">Width</th><td>Inside spread, quote age, locked/crossed share</td><td>Time-weighted distribution by state</td><td>Message count is not time weighting</td></tr>
+<tr><th scope="row">Capacity</th><td>Depth through K ticks, sweep cost for Q</td><td>Median and adverse tail by side/size</td><td>Displayed size can cancel</td></tr>
+<tr><th scope="row">Durability</th><td>Executed fraction, cancellation, refill time</td><td>Post-depletion replenishment distribution</td><td>Public data do not reveal intent</td></tr>
+<tr><th scope="row">Impact</th><td>Signed response after aggressive quantity</td><td>Size- and state-conditioned price response</td><td>Correlation is not actor attribution</td></tr>
+<tr><th scope="row">Experienced</th><td>Fill rate, delay, shortfall, partials, rejects</td><td>Actual order-policy outcomes</td><td>Historical book is not your latency</td></tr>
+</tbody></table></div>
+<div class="fx-formula"><strong>Live capacity gate for order Q</strong><span>pass only if spread &le; S*, depth through K ticks &ge; D*(Q), and stressed sweep cost C(Q) &le; C*</span><small>S*, K, D* and C* must be estimated on training data and registered before live use. This is a rule template, not a calibrated NQ threshold.</small></div>
+<p class="fx-source-note">CME&rsquo;s <a href="https://www.cmegroup.com/market-data/browse-data/catalog/futures-and-options-data.html" target="_blank" rel="noopener noreferrer">data catalog</a> distinguishes top-of-book, depth and market-by-order products, while the <a href="https://www.cmegroup.com/market-data/files/datamine-equity-faq.pdf" target="_blank" rel="noopener noreferrer">Equity Execution Statistics FAQ</a> separates width, depth, fill and slippage measures.</p>
+<div class="fx-related">NQ/MNQ multiplier and tick-value mechanics belong in <a href="nq-tick-value.html">NQ Tick Value</a>.</div>
+</section>
 
-<h1>NQ Liquidity Windows and Why Timing Matters</h1>
+<section class="fx-section" id="construct" aria-labelledby="construct-title">
+<div class="fx-section-heading"><p class="fx-kicker">A window is a state interval, not a favorite hour</p><h2 id="construct-title">Construct Start, Persistence and End Rules</h2><p>Calculate features in rolling windows using only completed source events. Require persistence to reduce one-message flips, but include the delay that persistence creates. The state becomes actionable only after computation and system latency.</p></div>
+<div class="fx-state-machine" aria-label="Liquidity window construction"><article><span>1</span><h3>Validate</h3><p>Resolve dated contract, sequence, timestamp, schedule and book integrity.</p></article><article><span>2</span><h3>Measure</h3><p>Compute width, capacity, durability and impact over the registered lookback.</p></article><article><span>3</span><h3>Enter</h3><p>Open a window after all gates persist for p completed observations.</p></article><article><span>4</span><h3>Monitor</h3><p>Recompute with the same rule and compare realized fills to capacity.</p></article><article><span>5</span><h3>Exit</h3><p>Close after a hard breach, q failed observations or an event reset.</p></article></div>
+<div class="fx-method"><h3>Store the full window record</h3><p>Archive start decision time, source cutoff, contract, session/event state, lookback, every component value, gate version, order-size class, end time and end reason. A window that starts after a clock event may recur, but the clock event is only an overlay; the measured stack creates eligibility.</p><p>Estimate thresholds by task. A passive order may require replenishment and acceptable adverse-selection evidence. An urgent hedge may accept a wider spread if tail sweep cost remains inside authority. Never collapse those policies into one universal “liquid” flag.</p></div>
+</section>
 
-<p>
-NQ liquidity is not evenly distributed throughout the trading day. Participation expands and contracts in predictable windows, directly affecting execution quality, volatility, and risk.
-</p>
-
-<h2>Primary liquidity windows</h2>
-
-<p>
-The highest participation occurs during the U.S. cash equity open and the overlap with European markets. Order flow deepens, spreads tighten, and price discovery accelerates.
-</p>
-
-<h2>Low-liquidity transitions</h2>
-
-<p>
-Liquidity thins sharply during session handoffs and between major participation windows. Price movement during these periods is more erratic, and slippage increases materially.
-</p>
-
-<h2>Impact on execution</h2>
-
-<p>
-Market orders placed outside primary liquidity windows experience poorer fills and wider variance. Execution errors compound when liquidity contracts unexpectedly.
-</p>
-
-<p>
-Execution sensitivity is addressed in <a href="https://grizzlyparrottrading.com/futures-basics/nq-execution-mistakes.html">Common Execution Mistakes That Blow NQ Traders Up</a>.
-</p>
-
-<h2>Volatility expansion during thin liquidity</h2>
-
-<p>
-Reduced participation allows smaller orders to move price further. This produces abrupt range expansion that is not supported by sustained flow.
-</p>
-
-<p>
-Volatility behavior across regimes is explained in <a href="https://grizzlyparrottrading.com/futures-basics/nq-volatility-vs-es.html">Why NQ Is More Volatile Than ES</a>.
-</p>
-
-<h2>Timing and position sizing</h2>
-
-<p>
-Size that is acceptable during high-liquidity periods becomes dangerous when liquidity contracts. Position sizing must adapt to timing as well as volatility.
-</p>
-
-<div class="highlight-box yellow">
-  <h3>In NQ, Timing *Is* a Technical Indicator</h3>
-  <p>Liquidity windows define how well your trade fills, holds, or slips. It’s not just about the setup — it’s about when you hit it. Ignore timing, and even good trades fall apart.</p>
+<section class="fx-section" id="overlays" aria-labelledby="overlays-title">
+<div class="fx-section-heading"><p class="fx-kicker">Scheduled flow can invalidate the recent window</p><h2 id="overlays-title">Overlay Events, Session Transitions and Roll State</h2><p>Attach known calendar and contract events before live scoring. A window can be terminated at a scheduled timestamp and requalified afterward rather than assuming the pre-event distribution still applies.</p></div>
+<div class="fx-four-grid">
+<article class="fx-panel"><p class="fx-card-label">Macro event</p><h3>Known time, new distribution</h3><p>BLS, BEA and FOMC calendars supply official timing. Close or suspend the routine state under the registered policy.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Cash transition</p><h3>Constituents enter or leave core</h3><p>Tag the cash open and close rather than blending the transition into the preceding state.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Quarterly roll</p><h3>Capacity migrates by contract</h3><p>Monitor dated-contract volume and depth. Do not carry front-contract thresholds into a new expiry without requalification.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Holiday/schedule</p><h3>Clock exceptions</h3><p>Use current CME calendars. Early closes and maintenance changes create their own state or exclusion.</p></article>
 </div>
+<p>The Nasdaq-100 methodology defines the index exposure that NQ wraps, but index concentration is not itself a live liquidity measure. Keep index-event hypotheses separate from the exchange-book evidence used to authorize an order.</p>
+<p class="fx-source-note">Authoritative overlays come from the <a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener noreferrer">CME schedule</a>, <a href="https://www.cmegroup.com/education/files/getting-started-equity-quarterly-roll-analyzer.pdf" target="_blank" rel="noopener noreferrer">CME roll analyzer guide</a>, <a href="https://www.bls.gov/schedule/news_release/" target="_blank" rel="noopener noreferrer">BLS</a>, <a href="https://www.bea.gov/news/schedule/" target="_blank" rel="noopener noreferrer">BEA</a> and <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">Federal Reserve</a>.</p>
+</section>
 
-</main>
+<section class="fx-section" id="rules" aria-labelledby="rules-title">
+<div class="fx-section-heading"><p class="fx-kicker">Convert the stack into four explicit outcomes</p><h2 id="rules-title">Go, Reduce, Wait or Reject</h2><p>Score the declared order, not NQ in the abstract. Use the current side, quantity, urgency, route and latency. The decision rule should fail closed when any required field is absent.</p></div>
+<div class="fx-decision-tree"><article><p class="fx-card-label">Go</p><h3>All gates represented</h3><p>Current values sit inside validated support, modeled capacity covers Q and recent real fills remain calibrated.</p></article><article><p class="fx-card-label">Reduce</p><h3>Smaller Q passes</h3><p>A lower preregistered whole-contract tier clears depth, impact and risk limits.</p></article><article><p class="fx-card-label">Wait</p><h3>State may requalify</h3><p>Event recovery, spread normalization or replenishment has not persisted long enough.</p></article><article><p class="fx-card-label">Reject</p><h3>Unscorable or expired</h3><p>Sequence loss, stale quotes, unknown contract, out-of-distribution state or platform failure blocks execution.</p></article></div>
+<div class="fx-caution"><strong>Displayed depth is conditional and revocable.</strong><p>It can change before an order arrives. Use conservative sweep and cancellation assumptions, then calibrate against acknowledgement and fill records. A dashboard green light is not a guaranteed price.</p></div>
+</section>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<section class="fx-section" id="expiry" aria-labelledby="expiry-title">
+<div class="fx-section-heading"><p class="fx-kicker">Every live map needs a kill switch</p><h2 id="expiry-title">Expire the Window on Drift, Mismatch or Missing Evidence</h2><p>Use both immediate and statistical expiry. A sequence gap or schedule transition can terminate eligibility instantly. Sustained cost or distribution drift can invalidate the calibration until a new frozen model passes forward validation.</p></div>
+<div class="fx-falsification-tree"><article><h3>Integrity expiry</h3><p>Source sequence, timestamp, contract or market state cannot be verified.</p><strong>Immediate reject</strong></article><article><h3>Distribution expiry</h3><p>Spread, depth, replenishment or impact repeatedly leave registered bounds.</p><strong>Rebuild calibration</strong></article><article><h3>Execution expiry</h3><p>Realized shortfall exceeds the conservative model by the preregistered amount.</p><strong>Disable orders</strong></article></div>
+<ul class="fx-checklist"><li>Thresholds and persistence rules are learned before the forward period.</li><li>Every live feature has a source timestamp and freshness limit.</li><li>Book reconstruction fails closed on sequence loss.</li><li>Event, cash-transition, roll and holiday overlays can reset the state.</li><li>Go/reduce/wait/reject outcomes are stored, including no orders.</li><li>Actual fills calibrate the model by size, side, urgency and latency.</li></ul>
+<div class="fx-caution"><strong>Research status as of August 28, 2026</strong><p>No original NQ liquidity-window clock, threshold, price-impact estimate or execution edge is reported. This page defines a live construction, permission and expiry protocol.</p></div>
+</section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-       
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul>
+<li><a href="https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME E-mini Nasdaq-100 product page</a> for NQ context.</li>
+<li><a href="https://www.cmegroup.com/market-data/browse-data/catalog/futures-and-options-data.html" target="_blank" rel="noopener noreferrer">CME futures and options data catalog</a> for top-of-book, depth and market-by-order distinctions.</li>
+<li><a href="https://www.cmegroup.com/market-data/files/datamine-equity-faq.pdf" target="_blank" rel="noopener noreferrer">CME Equity Execution Statistics FAQ</a> for width, depth, fill and slippage categories.</li>
+<li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener noreferrer">CME current trading-hours calendar</a> and <a href="https://www.cmegroup.com/education/files/getting-started-equity-quarterly-roll-analyzer.pdf" target="_blank" rel="noopener noreferrer">CME roll analyzer guide</a> for schedule and migration states.</li>
+<li><a href="https://indexes.nasdaqomx.com/docs/methodology_NDX.pdf" target="_blank" rel="noopener noreferrer">Nasdaq-100 Index Methodology</a> for the underlying index identity.</li>
+</ul><p>Sources were reviewed August 28, 2026. The metric stack is an evaluation protocol awaiting measured data; its thresholds and expiry rules are not empirical results.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This is educational execution research, not individualized advice. Displayed NQ liquidity can vanish, fills can be worse than modeled and leveraged losses can exceed the collateral initially posted.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

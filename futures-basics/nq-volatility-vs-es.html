@@ -1,211 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <meta charset="UTF-8">
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why NQ Is More Volatile Than ES</title>
-  <meta name="description" content="A structural explanation of why NQ produces more volatility than ES and why the difference is not psychological or random.">
-  <meta name="robots" content="index, follow">
-
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/nq-volatility-vs-es.html">
-
-  <meta property="og:title" content="Why NQ Is More Volatile Than ES">
-  <meta property="og:description" content="A structural explanation of why NQ produces more volatility than ES and why the difference is not psychological or random.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/nq-volatility-vs-es.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Why NQ Is More Volatile Than ES">
-  <meta name="twitter:description" content="A structural explanation of why NQ produces more volatility than ES and why the difference is not psychological or random.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Why NQ Is More Volatile Than ES",
-  "description": "A structural explanation of why NQ produces more volatility than ES and why the difference is not psychological or random.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/nq-volatility-vs-es.html",
-  "datePublished": "2025-12-12",
-  "dateModified": "2025-12-12",
-  "url": "https://grizzlyparrottrading.com/futures-basics/nq-volatility-vs-es.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Why NQ Is More Volatile Than ES",
-      "item": "https://grizzlyparrottrading.com/futures-basics/nq-volatility-vs-es.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NQ vs ES Volatility: A Normalized Comparison Protocol</title>
+<meta name="description" content="Compare NQ and ES volatility after normalizing returns, dollar exposure, liquidity, index concentration and event regimes without relying on point ranges.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/nq-volatility-vs-es.html">
+<meta property="og:title" content="NQ vs ES Volatility: A Normalized Comparison Protocol">
+<meta property="og:description" content="Compare NQ and ES volatility after normalizing returns, dollar exposure, liquidity, index concentration and event regimes without relying on point ranges.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/nq-volatility-vs-es.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta property="og:image:alt" content="Grizzly Parrot Trading">
+<meta property="article:published_time" content="2025-12-12">
+<meta property="article:modified_time" content="2026-08-27">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NQ vs ES Volatility: A Normalized Comparison Protocol">
+<meta name="twitter:description" content="Compare NQ and ES volatility after normalizing returns, dollar exposure, liquidity, index concentration and event regimes without relying on point ranges.">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"NQ vs ES Volatility: A Normalized Comparison Protocol","description":"Compare NQ and ES volatility after normalizing returns, dollar exposure, liquidity, index concentration and event regimes without relying on point ranges.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/nq-volatility-vs-es.html"},"datePublished":"2025-12-12","dateModified":"2026-08-27","url":"https://grizzlyparrottrading.com/futures-basics/nq-volatility-vs-es.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"NQ vs ES Volatility: A Normalized Comparison Protocol","item":"https://grizzlyparrottrading.com/futures-basics/nq-volatility-vs-es.html"}]}</script>
+<script src="/uet.js" defer></script>
 </head>
-
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero">
+<div class="fx-hero-copy"><p class="fx-kicker">Returns &middot; exposure &middot; liquidity &middot; index weights</p><h1>NQ vs ES Volatility: A Normalized Comparison Protocol</h1><p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 27, 2026</p><p class="fx-hero-lede">A 100-point NQ move and a 40-point ES move cannot be ranked by their point counts. The indexes have different levels, the futures have different multipliers, and the same number of contracts creates different dollar exposure. Normalize first; then compare distributions, liquidity and regimes.</p><div class="fx-hero-actions"><a class="button-primary" href="#normalize">Normalize the inputs</a><a class="fx-text-link" href="#limits">Read the limits</a></div><dl class="fx-hero-metrics" aria-label="Normalized volatility comparison"><div><dt>Price scale</dt><dd>Returns</dd></div><div><dt>Contract scale</dt><dd>Dollar exposure</dd></div><div><dt>Market quality</dt><dd>Relative cost</dd></div><div><dt>Permanent winner</dt><dd>Not claimed</dd></div></dl></div>
+<aside class="fx-level-ledger" aria-label="Normalize a point move in three stages"><span><strong>Raw</strong>Retain each instrument&rsquo;s point move</span><span><strong>Price scale</strong>Convert to synchronized returns</span><span><strong>Risk scale</strong>Apply verified multipliers and matched exposure</span></aside>
 </header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#normalize">Normalize</a><a href="#distributions">Distributions</a><a href="#decompose">Decompose</a><a href="#regimes">Regimes</a><a href="#limits">Limits</a></nav>
 
-<main>
-<section class="section">
-<div class="container article-content">
+<section class="fx-section" id="normalize" aria-labelledby="normalize-title">
+<div class="fx-section-heading"><p class="fx-kicker">One comparison needs several denominators</p><h2 id="normalize-title">Normalize Price Change, Dollar Exposure and Trading Cost</h2><p>Use synchronized prices for the active dated NQ and ES contracts under the same roll rule. Preserve raw contracts. Compare point changes only for instrument-specific stop arithmetic; use returns for price volatility and dollar-normalized measures for contract risk.</p></div>
+<div class="fx-table-scroll" role="region" aria-label="NQ ES normalization choices" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Question</th><th scope="col">Normalization</th><th scope="col">Required inputs</th><th scope="col">Invalid comparison</th></tr></thead><tbody>
+<tr><th scope="row">Which price moved more proportionally?</th><td>Simple or log return over identical timestamps</td><td>Instrument price at t and t&minus;h</td><td>Raw NQ points versus raw ES points</td></tr>
+<tr><th scope="row">Which one-contract P&amp;L varied more?</th><td>Point change &times; current contract multiplier</td><td>Verified NQ/ES rules and prices</td><td>Assuming one contract equals one risk unit</td></tr>
+<tr><th scope="row">Which matched exposure varied more?</th><td>P&amp;L scaled to equal starting notional or risk budget</td><td>Index level, multiplier, whole-contract constraint</td><td>Fractional futures contracts in a live plan</td></tr>
+<tr><th scope="row">Which market cost more to trade?</th><td>Spread/impact as return or basis points of notional</td><td>Decision book, order Q, multiplier, fees</td><td>Comparing tick counts alone</td></tr>
+<tr><th scope="row">Which had worse tail path?</th><td>Matched-horizon return quantiles and drawdown</td><td>Synchronized sampling and state labels</td><td>Comparing unequal session durations</td></tr>
+</tbody></table></div>
+<div class="fx-formula"><strong>Synchronized log return</strong><span>r<sub>j,t,h</sub> = ln(P<sub>j,t</sub> / P<sub>j,t-h</sub>), j &isin; {NQ, ES}</span><small>Use the same h, valid timestamps and contract-selection rule. Do not forward-fill across a market pause and call the inserted observations zero volatility.</small></div>
+<div class="fx-related">Current multipliers and tick values belong in <a href="nq-tick-value.html">NQ Tick Value</a> and <a href="es-tick-size-tick-value-and-margin.html">ES Tick Size, Tick Value and Margin</a>. This comparison does not duplicate their specification cards.</div>
+</section>
 
-<h1>Why NQ Is More Volatile Than ES</h1>
-
-<p>
-NQ and ES are both equity index futures, but they do not behave the same. NQ consistently produces larger intraday ranges, faster rotations, and more abrupt reversals than ES. This difference is structural and repeatable.
-</p>
-
-<h2>Index concentration</h2>
-
-<p>
-The Nasdaq-100 is heavily weighted toward large-cap technology and growth companies. A small group of stocks exerts disproportionate influence on index movement. When those names move, NQ moves immediately and aggressively.
-</p>
-
-<p>
-By contrast, ES tracks the S&amp;P 500, which spreads weight across far more sectors. Broader distribution dampens single-sector shocks.
-</p>
-
-<h2>Rate sensitivity</h2>
-
-<p>
-Growth-heavy indexes respond sharply to interest rate expectations. Changes in yields and forward guidance compress or expand valuation assumptions rapidly, which translates into faster price movement in NQ.
-</p>
-
-<h2>Liquidity behavior</h2>
-
-<p>
-NQ liquidity thins faster during transitions between sessions and around news events. Reduced depth allows price to travel further per order flow impulse, increasing realized volatility even without extreme volume.
-</p>
-
-<h2>Range expansion and dollar impact</h2>
-
-<p>
-Although NQ ticks are smaller than ES in dollar terms, NQ covers more points per session. Over time, realized dollar swings per contract exceed ES despite the lower tick value.
-</p>
-
-<p>
-Tick mechanics and dollar exposure are detailed in <a href="https://grizzlyparrottrading.com/futures-basics/nq-tick-value.html">NQ Tick Size, Tick Value, and Dollar Risk Explained</a>.
-</p>
-
-<h2>Why this matters</h2>
-
-<p>
-Volatility differences affect stop placement, position sizing, and execution tolerance. Treating NQ and ES as interchangeable instruments produces inconsistent outcomes because their range behavior is not interchangeable.
-</p>
-
-<p>
-A broader comparison of trader fit and contract behavior is covered in <a href="https://grizzlyparrottrading.com/futures-basics/nq-vs-es.html">NQ vs ES: Volatility, Liquidity, and Trader Fit</a>.
-</p>
-
-<div class="highlight-box red">
-  <h3>NQ Volatility Isn’t Random — It’s Built In</h3>
-  <p>Index concentration, rate exposure, and thinner liquidity make NQ faster and more aggressive than ES. It’s not just “more volatile” — it’s structurally different. Trade it the same way, and your risk math won’t hold up.</p>
+<section class="fx-section" id="distributions" aria-labelledby="distributions-title">
+<div class="fx-section-heading"><p class="fx-kicker">Volatility is a distribution, not one average</p><h2 id="distributions-title">Measure Scale, Tails, Jumps and Persistence</h2><p>Choose sampling intervals and estimators before inspecting which contract looks larger. Report counts and missingness. Use multiple descriptive measures because standard deviation, absolute return and intraperiod range respond differently to tails and path shape.</p></div>
+<div class="fx-four-grid">
+<article class="fx-panel"><p class="fx-card-label">Typical scale</p><h3>Center of absolute movement</h3><p>Median absolute return and interquantile ranges reduce dependence on a few extremes while preserving scale.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Dispersion</p><h3>Realized variation</h3><p>Variance or realized-volatility estimates on synchronized returns, with estimator and annualization disclosed.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Tails</p><h3>Adverse quantiles</h3><p>Lower and upper return quantiles, drawdown, gap-through and expected shortfall estimates with uncertainty.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Path</p><h3>Jump and persistence</h3><p>Predefined jump contribution, volatility-state transitions and dwell times. Feed errors must fail integrity first.</p></article>
 </div>
+<div class="fx-method"><h3>Report paired differences, not two isolated summaries</h3><p>At each valid timestamp, calculate both returns and their paired difference in absolute movement or squared return. This preserves shared information shocks. Then report NQ, ES and the paired difference with confidence intervals that account for serial dependence and overlapping horizons.</p><p>Use raw return distributions for descriptive comparison and a separate matched-dollar simulation for account impact. The matched-dollar simulation must honor whole contracts; if equal exposure cannot be represented closely enough, report the mismatch instead of inventing fractional fills.</p></div>
+</section>
 
-</main>
+<section class="fx-section" id="decompose" aria-labelledby="decompose-title">
+<div class="fx-section-heading"><p class="fx-kicker">Index composition and book quality are competing channels</p><h2 id="decompose-title">Decompose Liquidity and Concentration Without Claiming Causality</h2><p>S&amp;P DJI describes the S&amp;P 500 as a float-adjusted market-capitalization-weighted large-cap U.S. equity index composed of 500 constituent companies. Nasdaq describes the Nasdaq-100 as modified-market-capitalization weighted and designed to measure 100 of the largest Nasdaq-listed non-financial companies. Those constructions differ, but a volatility gap cannot be assigned to “technology” or concentration without a dated decomposition.</p></div>
+<div class="fx-table-scroll" role="region" aria-label="Volatility decomposition inputs" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Channel</th><th scope="col">Measurement</th><th scope="col">As-of requirement</th><th scope="col">Claim boundary</th></tr></thead><tbody>
+<tr><th scope="row">Constituent weights</th><td>Top-weight share, Herfindahl index, sector weights</td><td>Official weights/methodology effective then</td><td>Association, not automatic causation</td></tr>
+<tr><th scope="row">Constituent returns</th><td>Weighted contributions and cross-sectional dispersion</td><td>Contemporaneous constituent data</td><td>Do not infer from index return alone</td></tr>
+<tr><th scope="row">Futures liquidity</th><td>Spread, depth, replenishment, sweep cost</td><td>Same timestamp, size and contract state</td><td>Volume is not executable capacity</td></tr>
+<tr><th scope="row">Rates/macro</th><td>Scheduled timestamp and market-rate response</td><td>Official calendar plus synchronized data</td><td>No fixed directional rule</td></tr>
+<tr><th scope="row">Idiosyncratic news</th><td>Issuer release/SEC filing and weight</td><td>Public availability timestamp</td><td>Do not assign unverified headlines</td></tr>
+</tbody></table></div>
+<div class="fx-formula"><strong>Weight concentration snapshot</strong><span>HHI<sub>t</sub> = &Sigma;<sub>i=1</sub><sup>N</sup>w<sub>i,t</sub><sup>2</sup></span><small>Use official as-of constituent weights and state whether multiple securities represent one company. HHI is a concentration descriptor, not a volatility forecast.</small></div>
+<p class="fx-source-note">Use the current <a href="https://www.spglobal.com/spdji/en/methodology/article/sp-us-indices-methodology/" target="_blank" rel="noopener noreferrer">S&amp;P U.S. Indices Methodology</a> and <a href="https://indexes.nasdaqomx.com/docs/methodology_NDX.pdf" target="_blank" rel="noopener noreferrer">Nasdaq-100 Methodology</a>. Neither supports treating the S&amp;P 500 as a passive list of the 500 largest companies, and Nasdaq-100 company/security counts must not be casually conflated.</p>
+</section>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<section class="fx-section" id="regimes" aria-labelledby="regimes-title">
+<div class="fx-section-heading"><p class="fx-kicker">The comparison can reverse across states</p><h2 id="regimes-title">Build a Prespecified Regime Table</h2><p>Measure paired distributions inside states known at the beginning of each interval. Do not classify a day with its eventual full-day volatility and then claim the label was tradable at the open.</p></div>
+<div class="fx-table-scroll" role="region" aria-label="NQ ES volatility regime table template" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Regime</th><th scope="col">Pre-interval label</th><th scope="col">Paired outputs</th><th scope="col">Failure condition</th></tr></thead><tbody>
+<tr><th scope="row">Routine cash core</th><td>Normal schedule, no registered event in interval</td><td>Return scale, tails, spread/depth cost</td><td>Unresolved cash/session clock</td></tr>
+<tr><th scope="row">Scheduled macro</th><td>Official BLS/BEA/FOMC timestamp</td><td>Jump, recovery, impact and liquidity tails</td><td>Direction encoded from event name</td></tr>
+<tr><th scope="row">Overnight</th><td>Declared UTC interval outside cash core</td><td>Equal-horizon returns and market quality</td><td>Unequal or holiday-contaminated duration</td></tr>
+<tr><th scope="row">Constituent event</th><td>Issuer/SEC release available before interval</td><td>Index contributions and futures response</td><td>Missing as-of index weights</td></tr>
+<tr><th scope="row">Quarterly roll</th><td>Contract migration state observed then</td><td>Raw-contract returns and liquidity</td><td>Back-adjustment artifact</td></tr>
+</tbody></table></div>
+<p class="fx-source-note">Official candidate event clocks come from <a href="https://www.bls.gov/schedule/news_release/" target="_blank" rel="noopener noreferrer">BLS</a>, <a href="https://www.bea.gov/news/schedule/" target="_blank" rel="noopener noreferrer">BEA</a> and the <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">FOMC calendar</a>. Issuer events require the issuer&rsquo;s investor-relations release or <a href="https://www.sec.gov/edgar/search/" target="_blank" rel="noopener noreferrer">SEC EDGAR</a> availability time.</p>
+</section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
+<section class="fx-section" id="limits" aria-labelledby="limits-title">
+<div class="fx-section-heading"><p class="fx-kicker">A descriptive gap is not a permanent law</p><h2 id="limits-title">Validate Forward and State the Limits</h2><p>Choose metrics, regimes and decomposition variables on a training period. Lock them before an untouched later sample. A stable average difference can still be useless for timing, sizing or execution.</p></div>
+<div class="fx-falsification-tree"><article><h3>Normalization failure</h3><p>The conclusion depends on points, unequal horizons or unmatched contract exposure.</p><strong>Reject the comparison</strong></article><article><h3>Regime failure</h3><p>The ordering changes materially across prespecified states.</p><strong>Report conditional only</strong></article><article><h3>Execution failure</h3><p>Matched-dollar conclusions disappear after relative spread, impact and fees.</p><strong>No tradable evidence</strong></article></div>
+<ul class="fx-checklist"><li>NQ and ES timestamps, horizons and dated-contract rules are synchronized.</li><li>Point, return, dollar and cost scales remain visibly distinct.</li><li>Index weights and methodologies carry as-of dates.</li><li>Liquidity is measured for the same dollar exposure and order policy.</li><li>Event, overnight, cash-core and roll regimes are fixed before outcomes.</li><li>Counts, missingness, uncertainty and multiple tests are reported.</li><li>A later methodology or schedule change triggers requalification.</li></ul>
+<div class="fx-caution"><strong>Research status as of August 27, 2026</strong><p>No original NQ-versus-ES volatility magnitude, concentration effect, liquidity difference or trading edge is reported. This article defines a normalized comparison protocol and its rejection conditions.</p></div>
+</section>
 
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-       
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul>
+<li><a href="https://www.cmegroup.com/rulebook/CME/IV/350/359/359.pdf" target="_blank" rel="noopener noreferrer">CME Chapter 359 for NQ</a> and <a href="https://www.cmegroup.com/rulebook/CME/IV/350/358/358.pdf" target="_blank" rel="noopener noreferrer">CME Chapter 358 for ES</a> for authoritative contract rules.</li>
+<li><a href="https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME NQ product page</a> and <a href="https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contract.html" target="_blank" rel="noopener noreferrer">CME ES product page</a> for current product context.</li>
+<li><a href="https://www.spglobal.com/spdji/en/methodology/article/sp-us-indices-methodology/" target="_blank" rel="noopener noreferrer">S&amp;P U.S. Indices Methodology</a> and <a href="https://indexes.nasdaqomx.com/docs/methodology_NDX.pdf" target="_blank" rel="noopener noreferrer">Nasdaq-100 Index Methodology</a> for underlying-index construction.</li>
+<li><a href="https://www.cmegroup.com/market-data/browse-data/catalog/futures-and-options-data.html" target="_blank" rel="noopener noreferrer">CME futures and options data catalog</a> and <a href="https://www.cmegroup.com/market-data/files/datamine-equity-faq.pdf" target="_blank" rel="noopener noreferrer">CME Equity Execution Statistics FAQ</a> for price, book and execution evidence.</li>
+<li><a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener noreferrer">CME current trading-hours calendar</a> for changeable schedule controls.</li>
+</ul><p>Sources were reviewed August 28, 2026. The regime decomposition is a measurement specification, not evidence that one contract is predictably more volatile or more tradable.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This is educational comparative research, not an instrument recommendation. NQ and ES are leveraged, liquidity and volatility can change abruptly, and losses can exceed the collateral initially posted.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

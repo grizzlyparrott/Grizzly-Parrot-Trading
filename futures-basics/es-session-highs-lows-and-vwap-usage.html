@@ -1,242 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Using ES Session Highs, Lows, and VWAP to Frame Trades</title>
-  <meta name="description" content="A blunt guide to using ES session highs, lows, and VWAP so beginners can frame trades with real structure instead of guessing.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-session-highs-lows-and-vwap-usage.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Using ES Session Highs, Lows, and VWAP to Frame Trades">
-  <meta property="og:description" content="A blunt guide to using ES session highs, lows, and VWAP so beginners can frame trades with real structure instead of guessing.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-session-highs-lows-and-vwap-usage.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Using ES Session Highs, Lows, and VWAP to Frame Trades">
-  <meta name="twitter:description" content="A blunt guide to using ES session highs, lows, and VWAP so beginners can frame trades with real structure instead of guessing.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Using ES Session Highs, Lows, and VWAP to Frame Trades",
-  "description": "A blunt guide to using ES session highs, lows, and VWAP so beginners can frame trades with real structure instead of guessing.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/es-session-highs-lows-and-vwap-usage.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/es-session-highs-lows-and-vwap-usage.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Using ES Session Highs, Lows, and VWAP to Frame Trades",
-      "item": "https://grizzlyparrottrading.com/futures-basics/es-session-highs-lows-and-vwap-usage.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ES Session Highs, Lows, and VWAP: Timestamp-Safe Usage</title>
+<meta name="description" content="Calculate and test ES session highs, lows and VWAP with explicit resets, price inputs, volume, availability timestamps and execution cautions.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-session-highs-lows-and-vwap-usage.html">
+<meta property="og:title" content="ES Session Highs, Lows, and VWAP: Timestamp-Safe Usage">
+<meta property="og:description" content="Calculate and test ES session highs, lows and VWAP with explicit resets, price inputs, volume, availability timestamps and execution cautions.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-session-highs-lows-and-vwap-usage.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta property="og:image:alt" content="Grizzly Parrot Trading">
+<meta property="article:published_time" content="2025-11-24">
+<meta property="article:modified_time" content="2026-08-26">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ES Session Highs, Lows, and VWAP: Timestamp-Safe Usage">
+<meta name="twitter:description" content="Calculate and test ES session highs, lows and VWAP with explicit resets, price inputs, volume, availability timestamps and execution cautions.">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ES Session Highs, Lows, and VWAP: Timestamp-Safe Usage","description":"Calculate and test ES session highs, lows and VWAP with explicit resets, price inputs, volume, availability timestamps and execution cautions.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/es-session-highs-lows-and-vwap-usage.html"},"datePublished":"2025-11-24","dateModified":"2026-08-26","url":"https://grizzlyparrottrading.com/futures-basics/es-session-highs-lows-and-vwap-usage.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"ES Session Highs, Lows, and VWAP: Timestamp-Safe Usage","item":"https://grizzlyparrottrading.com/futures-basics/es-session-highs-lows-and-vwap-usage.html"}]}</script>
+<script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
 <!-- ARTICLE BODY START -->
+<header class="fx-hero">
+<div class="fx-hero-copy"><p class="fx-kicker">Reset &middot; price input &middot; availability clock</p><h1>ES Session Highs, Lows, and VWAP: Timestamp-Safe Usage</h1><p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 26, 2026</p><p class="fx-hero-lede">Two platforms can display different ES VWAPs without either calculation being broken. One may reset at the CME trade date and use every trade; another may reset at the U.S. cash open and approximate price from bars. The labels look identical while the inputs are not.</p><div class="fx-hero-actions"><a class="button-primary" href="#choices">Specify the benchmark</a><a class="fx-text-link" href="#log">Build the review log</a></div><dl class="fx-hero-metrics" aria-label="Benchmark construction fields"><div><dt>Reset</dt><dd>Named session event</dd></div><div><dt>Price</dt><dd>Trades or declared proxy</dd></div><div><dt>Volume</dt><dd>Eligible ES quantity</dd></div><div><dt>Final high/low</dt><dd>Known after session</dd></div></dl></div>
+<aside class="fx-quote-board" aria-label="Two platforms with different VWAP inputs"><span><strong>Platform A</strong>Globex reset + tick trades</span><span><strong>Platform B</strong>Cash-open reset + bar approximation</span><span><strong>Audit first</strong>Compare inputs before values</span></aside>
+</header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#choices">Choices</a><a href="#safe">Timestamp safety</a><a href="#tests">Test cases</a><a href="#execution">Execution</a><a href="#log">Review log</a></nav>
 
-<h1>Using ES Session Highs, Lows, and VWAP to Frame Trades</h1>
-
-<p>
-If you don’t track session highs, session lows, and VWAP on ES, you’re basically trading blind. These three levels anchor the entire auction. They define bias, trend strength, and whether you should be looking for continuation or reversals. Beginners overcomplicate this — but ES structure is simple once you focus on these core levels.
-</p>
-
-<h2>Why Session Highs and Lows Matter</h2>
-<p>
-Session highs and lows are the edges of the live auction. Every breakout, reversal, and liquidity sweep revolves around these boundaries. ES constantly probes these areas because that’s where stop orders, breakout orders, and trapped traders are stacked.
-</p>
-
-<table>
-<tr><th>Level</th><th>Behavior</th></tr>
-<tr><td>Session High</td><td>A breakout or rejection level with heavy liquidity</td></tr>
-<tr><td>Session Low</td><td>Same idea — major test zone for buyers</td></tr>
-</table>
-
-<p>
-If you don’t understand why liquidity forms at extremes, read  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-liquidity-pockets-and-order-book-structure.html">ES Liquidity Pockets</a>.
-</p>
-
-<h2>VWAP: The Fair Value Magnet</h2>
-<p>
-VWAP tells you where the average session price is. ES gravitates to VWAP repeatedly, especially during balanced sessions. When trending, VWAP becomes dynamic support or resistance. When ranging, VWAP chops up new traders who don’t understand it.
-</p>
-
-<h2>How These Levels Create Your Trade Bias</h2>
-
-<h3>1. Price Above VWAP and Holding</h3>
-<p>
-This usually signals bullish control. Pullbacks into VWAP or prior swings often give you clean entries.
-</p>
-
-<h3>2. Price Below VWAP and Holding</h3>
-<p>
-Bearish bias. Look for rallies into VWAP or previous highs to fail.
-</p>
-
-<h3>3. Price Ping-Ponging Through VWAP</h3>
-<p>
-This is a balanced, choppy auction. Don’t pretend it’s trending. Either trade fades at the extremes or sit out.
-</p>
-
-<h2>Combining Highs, Lows, and VWAP</h2>
-<p>
-You don’t need indicators when you use real structure. Here’s how ES behaves:
-</p>
-
-<ul>
-  <li>Break above session high + hold above VWAP → trend continuation</li>
-  <li>Break below session low + fail back above VWAP → failed breakdown → strong reversal</li>
-  <li>Price trapped between VWAP and a session extreme → compression before a breakout</li>
-</ul>
-
-<h2>A Simple Framework for Beginners</h2>
-<ul>
-  <li>Mark session high and low</li>
-  <li>Plot VWAP</li>
-  <li>Wait for price to interact with one of these three levels</li>
-  <li>Decide: continuation or rejection?</li>
-</ul>
-
-<p>
-This is the same process pros use every day because ES reacts reliably to these levels. If you want to understand how the opening structure affects these tests, read  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-opening-range-strategies-for-beginners.html">ES Opening Range Strategies</a>.
-</p>
-
-<div class="highlight-box green">
-  <h3>Structure Comes from Session Anchors</h3>
-  <p>Session highs, lows, and VWAP shape the intraday map. Use them right, and you’ll see trend, pullback, reversal — and when to do nothing. Keep it clean. Let the auction speak.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="fx-section" id="choices" aria-labelledby="choices-title">
+<div class="fx-section-heading"><p class="fx-kicker">A benchmark is a complete recipe</p><h2 id="choices-title">Specify Session, Price and Volume Inputs</h2><p>Store the dated contract, timezone and reset event. CME and NYSE schedules can change around holidays; a platform template is not a permanent authoritative calendar. Use raw trades when the claim is trade-weighted VWAP, and label any bar-based calculation as an approximation.</p></div>
+<div class="fx-formula"><strong>Trade-based session VWAP through time t</strong><span>VWAP<sub>t</sub> = &Sigma;<sub>i&le;t</sub>(p<sub>i</sub>q<sub>i</sub>) / &Sigma;<sub>i&le;t</sub>q<sub>i</sub></span><small>p<sub>i</sub> is an eligible ES trade price and q<sub>i</sub> its quantity after the declared reset. Corrections and zero/missing quantity require a written rule.</small></div>
+<div class="fx-table-scroll" role="region" aria-label="ES VWAP calculation choices" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Choice</th><th scope="col">Option A</th><th scope="col">Option B</th><th scope="col">Why results differ</th></tr></thead><tbody>
+<tr><th scope="row">Reset</th><td>CME trade-date/session event</td><td>9:30 a.m. ET cash core open</td><td>Different observations and overnight inventory</td></tr>
+<tr><th scope="row">Price</th><td>Every eligible trade</td><td>Bar close or typical-price proxy</td><td>Aggregation loses within-bar path and size detail</td></tr>
+<tr><th scope="row">Contract</th><td>One dated ES expiry</td><td>Continuous series</td><td>Roll mixing and adjustment can change levels</td></tr>
+<tr><th scope="row">Corrections</th><td>Apply source correction state</td><td>Ignore corrections</td><td>Numerator and denominator can diverge</td></tr>
+<tr><th scope="row">Missing data</th><td>Invalidate interval</td><td>Silently continue</td><td>Benchmark may look precise but be incomplete</td></tr>
+</tbody></table></div>
+<p class="fx-source-note">CME&rsquo;s <a href="https://www.cmegroup.com/market-data/browse-data/catalog/futures-and-options-data.html" target="_blank" rel="noopener noreferrer">historical data catalog</a> distinguishes time-and-sales, top-of-book, depth and market-by-order records. Use the <a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener noreferrer">current CME schedule</a> and, for a cash-core reset, the <a href="https://www.nyse.com/publicdocs/nyse/NYSE_Extended_Hours_Trading_FAQ.pdf" target="_blank" rel="noopener noreferrer">NYSE session guide</a>.</p>
+<div class="fx-related">ES multiplier and tick arithmetic belong in <a href="es-tick-size-tick-value-and-margin.html">ES Tick Size, Tick Value and Margin</a>.</div>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<section class="fx-section" id="safe" aria-labelledby="safe-title">
+<div class="fx-section-heading"><p class="fx-kicker">Developing and final levels are different variables</p><h2 id="safe-title">Keep Every Level on Its True Availability Clock</h2><p>At 11:00 a.m., the developing session high, low and VWAP are knowable through 11:00 after source and processing latency. The final session high, low and VWAP are not. Using final levels earlier creates look-ahead bias.</p></div>
+<div class="fx-table-scroll" role="region" aria-label="Timestamp-safe session benchmark levels" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Level</th><th scope="col">Available at decision time t</th><th scope="col">Valid research use</th><th scope="col">Leakage example</th></tr></thead><tbody>
+<tr><th scope="row">Developing high</th><td>Maximum eligible price from reset through t</td><td>Candidate live reference after latency</td><td>Using the day&rsquo;s eventual high at noon</td></tr>
+<tr><th scope="row">Developing low</th><td>Minimum eligible price from reset through t</td><td>Candidate live reference after latency</td><td>Using the eventual low before it forms</td></tr>
+<tr><th scope="row">Developing VWAP</th><td>Eligible price-volume observations through t</td><td>State feature or execution benchmark</td><td>Using full-session VWAP for an earlier entry</td></tr>
+<tr><th scope="row">Prior-session final</th><td>Known after prior session completion and corrections</td><td>Next-session reference with version timestamp</td><td>Substituting current-session final value</td></tr>
+<tr><th scope="row">CME settlement</th><td>Officially disseminated under CME procedure</td><td>Separate official benchmark</td><td>Calling it the same as platform VWAP or last trade</td></tr>
+</tbody></table></div>
+<div class="fx-caution"><strong>VWAP and CME daily settlement are not interchangeable.</strong><p>CME determines official settlements under product procedures. A user-calculated session VWAP depends on the declared input interval and data. Keep the names, timestamps and uses separate.</p></div>
+</section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
+<section class="fx-section" id="tests" aria-labelledby="tests-title">
+<div class="fx-section-heading"><p class="fx-kicker">A benchmark does not generate a trade by itself</p><h2 id="tests-title">Turn Each Use Case Into a Falsifiable Test</h2><p>Define the state at t, the eligible order after t, the forward horizon and the outcome. Avoid flexible phrases such as “VWAP held” or “the high rejected” unless the price, quantity and time rules are machine-readable.</p></div>
+<div class="fx-three-column">
+<article class="fx-panel"><p class="fx-card-label">VWAP interaction</p><h3>Cross, touch or rejection?</h3><p>Specify bid/ask/trade side, minimum distance, dwell or recross condition, latency and target horizon. Test continuation and reversal as separate hypotheses.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Developing extreme</p><h3>Break or retreat?</h3><p>Freeze the high/low at t, then measure an executable extension and later path. Never move the reference to the eventual session extreme.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Prior-session level</p><h3>Arrival response</h3><p>Measure spread, depth, traded quantity and forward return when price approaches a known prior level. A touch does not prove support or resistance.</p></article>
+</div>
+<div class="fx-method"><h3>Minimum observation record</h3><p>For every candidate, retain decision time, level type and version, reset, contract, price source, distance in points and volatility units, spread, depth, event state, session state, order policy, fill record and forward path. Report non-events and repeated touches under a declared independence rule.</p><p>Condition the analysis on scheduled releases, gap state, volatility, time of day, holiday and roll. Use a chronological holdout. If a benchmark appears useful only after selecting one reset, one band and one horizon from many, report the multiple-testing problem rather than a clean edge.</p></div>
+</section>
 
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
+<section class="fx-section" id="execution" aria-labelledby="execution-title">
+<div class="fx-section-heading"><p class="fx-kicker">A visible line is not executable capacity</p><h2 id="execution-title">Apply Spread, Depth and Order-Side Cautions</h2><p>VWAP, session highs and lows are computed prices, not standing orders. Before acting, inspect the current book and simulate the declared quantity. A stop near a reference can gap through; a passive order can sit unfilled while a last-trade chart touches.</p></div>
+<div class="fx-decision-tree"><article><p class="fx-card-label">Eligible</p><h3>Level and state valid</h3><p>The reference is timestamp-safe, source data are complete and current spread/depth fit the validated sample.</p></article><article><p class="fx-card-label">Reduce</p><h3>Capacity supports less</h3><p>A smaller whole-contract quantity passes the preregistered sweep and risk stress.</p></article><article><p class="fx-card-label">Wait</p><h3>Benchmark still forming</h3><p>The range or VWAP is changing rapidly, or an event transition requires a new observation.</p></article><article><p class="fx-card-label">Reject</p><h3>Reference contaminated</h3><p>Wrong reset, contract mix, missing data, stale quote or future-known level makes the signal invalid.</p></article></div>
+<p>For actual risk authorization, send the executable entry, invalidation distance and stressed cost to <a href="es-how-to-size-positions-by-account-balance.html">ES Position Sizing by Account Balance</a>. A benchmark never overrides the account&rsquo;s risk limit.</p>
+</section>
 
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+<section class="fx-section" id="log" aria-labelledby="log-title">
+<div class="fx-section-heading"><p class="fx-kicker">Version the benchmark and the conclusion</p><h2 id="log-title">Maintain a Calculation and Review Log</h2><p>A reviewer should be able to recreate the plotted value and the order decision. Archive the exact code version, data revision, reset, instrument, rules and outcome. Never update only unfavorable observations.</p></div>
+<ul class="fx-checklist"><li>Dated ES contract and roll rule are explicit.</li><li>Reset event, timezone and holiday treatment are explicit.</li><li>Trade-based VWAP and any bar proxy have different names.</li><li>Every high, low and VWAP level carries an as-of timestamp.</li><li>Corrections, missing intervals and feed changes have visible status.</li><li>Tests include executable side, latency, capacity, slippage and fees.</li><li>Training choices are locked before the untouched forward period.</li></ul>
+<div class="fx-falsification-tree"><article><h3>Platform mismatch</h3><p>Values diverge because hidden inputs cannot be reconciled.</p><strong>Action: do not combine series</strong></article><article><h3>Leakage</h3><p>A final high, low or VWAP enters before session completion.</p><strong>Action: invalidate result</strong></article><article><h3>Economic failure</h3><p>Forward behavior does not survive executable costs.</p><strong>Action: no trading claim</strong></article></div>
+<div class="fx-caution"><strong>Research status as of August 26, 2026</strong><p>No original ES VWAP, session-high or session-low reaction probability or after-cost edge is reported. This page defines calculations, tests and audit controls only.</p></div>
+</section>
 
-  </div>
-</footer>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul>
+<li><a href="https://www.cmegroup.com/market-data/browse-data/catalog/futures-and-options-data.html" target="_blank" rel="noopener noreferrer">CME futures and options data catalog</a> for official trade, top-of-book, depth and market-by-order data categories.</li>
+<li><a href="https://www.cmegroup.com/market-data/cme-group-settlement-procedures.html" target="_blank" rel="noopener noreferrer">CME daily settlement procedures</a> for the boundary between official settlement and a user-calculated VWAP.</li>
+<li><a href="https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contract.html" target="_blank" rel="noopener noreferrer">CME E-mini S&amp;P 500 product page</a> and <a href="https://www.cmegroup.com/trading-hours.html" target="_blank" rel="noopener noreferrer">CME current schedule</a> for contract and session context.</li>
+<li><a href="https://www.nyse.com/publicdocs/nyse/NYSE_Extended_Hours_Trading_FAQ.pdf" target="_blank" rel="noopener noreferrer">NYSE trading-session FAQ</a> for the normal cash core reset used in one disclosed variant.</li>
+<li><a href="https://www.cmegroup.com/market-data/files/datamine-equity-faq.pdf" target="_blank" rel="noopener noreferrer">CME Equity Execution Statistics FAQ</a> for width, depth, fill and slippage measurement categories.</li>
+</ul><p>Sources were reviewed August 28, 2026. The VWAP formula is conventional, while the benchmark cases are test specifications; this article reports no tested level reliability or trading edge.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This is educational benchmark research, not individualized advice. VWAP and session levels do not guarantee liquidity or reversal; futures are leveraged and losses can exceed the collateral initially posted.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

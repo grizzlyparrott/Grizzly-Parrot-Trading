@@ -1,228 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ES Liquidity Pockets and Order Book Structure</title>
-  <meta name="description" content="A blunt breakdown of ES liquidity pockets and order book structure so beginners stop misreading price jumps and thin-book movement.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-liquidity-pockets-and-order-book-structure.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="ES Liquidity Pockets and Order Book Structure">
-  <meta property="og:description" content="A blunt breakdown of ES liquidity pockets and order book structure so beginners stop misreading price jumps and thin-book movement.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-liquidity-pockets-and-order-book-structure.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="ES Liquidity Pockets and Order Book Structure">
-  <meta name="twitter:description" content="A blunt breakdown of ES liquidity pockets and order book structure so beginners stop misreading price jumps and thin-book movement.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "ES Liquidity Pockets and Order Book Structure",
-  "description": "A blunt breakdown of ES liquidity pockets and order book structure so beginners stop misreading price jumps and thin-book movement.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/es-liquidity-pockets-and-order-book-structure.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/es-liquidity-pockets-and-order-book-structure.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "ES Liquidity Pockets and Order Book Structure",
-      "item": "https://grizzlyparrottrading.com/futures-basics/es-liquidity-pockets-and-order-book-structure.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ES Liquidity Pockets: Measuring the Order Book Without Folklore</title>
+<meta name="description" content="Measure ES order-book states with timestamped spread, depth, queue, cancellation, trade and price-response evidence instead of permanent liquidity zones.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-liquidity-pockets-and-order-book-structure.html">
+<meta property="og:title" content="ES Liquidity Pockets: Measuring the Order Book Without Folklore">
+<meta property="og:description" content="Measure ES order-book states with timestamped spread, depth, queue, cancellation, trade and price-response evidence instead of permanent liquidity zones.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-liquidity-pockets-and-order-book-structure.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta property="og:image:alt" content="Grizzly Parrot Trading">
+<meta property="article:published_time" content="2025-11-24">
+<meta property="article:modified_time" content="2026-08-24">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ES Liquidity Pockets: Measuring the Order Book Without Folklore">
+<meta name="twitter:description" content="Measure ES order-book states with timestamped spread, depth, queue, cancellation, trade and price-response evidence instead of permanent liquidity zones.">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ES Liquidity Pockets: Measuring the Order Book Without Folklore","description":"Measure ES order-book states with timestamped spread, depth, queue, cancellation, trade and price-response evidence instead of permanent liquidity zones.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/es-liquidity-pockets-and-order-book-structure.html"},"datePublished":"2025-11-24","dateModified":"2026-08-24","url":"https://grizzlyparrottrading.com/futures-basics/es-liquidity-pockets-and-order-book-structure.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"ES Liquidity Pockets: Measuring the Order Book Without Folklore","item":"https://grizzlyparrottrading.com/futures-basics/es-liquidity-pockets-and-order-book-structure.html"}]}</script>
+<script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
 <!-- ARTICLE BODY START -->
+<header class="fx-hero">
+<div class="fx-hero-copy"><p class="fx-kicker">Displayed &middot; traded &middot; replenished &middot; realized</p><h1>ES Liquidity Pockets: Measuring the Order Book Without Folklore</h1><p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 24, 2026</p><p class="fx-hero-lede">A large ES bid can disappear before a sell order reaches it. The same price may later absorb repeated trades, or the market may move through it without hesitation. A screenshot cannot tell those states apart, and none proves a permanent “institutional liquidity pocket.”</p><div class="fx-hero-actions"><a class="button-primary" href="#observable">Define observables</a><a class="fx-text-link" href="#limits">Set execution limits</a></div><dl class="fx-hero-metrics" aria-label="Order book evidence layers"><div><dt>Book</dt><dd>Sequenced messages</dd></div><div><dt>Trades</dt><dd>Executed quantity</dd></div><div><dt>Response</dt><dd>Price + replenishment</dd></div><div><dt>Actor identity</dt><dd>Not inferred</dd></div></dl></div>
+<aside class="fx-market-board" aria-label="Displayed size changing state"><div class="fx-board-head"><span>500 displayed</span><strong>What happens next?</strong></div><div class="fx-proof-grid"><div class="fx-proof"><strong>Add</strong><span>Quantity joins a price level</span></div><div class="fx-proof is-limit"><strong>Cancel</strong><span>Quantity leaves before execution</span></div><div class="fx-proof"><strong>Trade</strong><span>A transaction consumes quantity</span></div></div><p class="fx-board-foot">Sequence determines meaning</p></aside>
+</header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#observable">Observables</a><a href="#sync">Synchronization</a><a href="#metrics">Metrics</a><a href="#rivals">Rival explanations</a><a href="#limits">Limits</a></nav>
 
-<h1>ES Liquidity Pockets and Order Book Structure</h1>
-
-<p>
-If you don’t understand liquidity pockets and the ES order book (DOM), you’ll keep getting blindsided by sudden price jumps that “don’t make sense.” They make perfect sense — you just aren’t reading the auction mechanics yet. This breakdown fixes that.
-</p>
-
-<h2>What the ES Order Book Actually Shows</h2>
-<p>
-The DOM shows stacked limit orders waiting to trade. That’s it. But ES liquidity isn’t evenly distributed — it clusters. Big players stack size at certain levels and ignore others. When price hits a level with no size behind it, the market jumps straight through it. That jump is a liquidity pocket.
-</p>
-
-<h2>What a Liquidity Pocket Really Is</h2>
-<p>
-A liquidity pocket is simply a zone where the order book is thin and price can travel farther with fewer contracts. These pockets explain most “random” ES candles that rip five points for no reason. The reason is right on the DOM — there was nothing in the way.
-</p>
-
-<table>
-<tr><th>Order Book Condition</th><th>Price Behavior</th></tr>
-<tr><td>Heavy stacked bids/offers</td><td>Price slows or stalls</td></tr>
-<tr><td>Even distribution</td><td>Normal auction flow</td></tr>
-<tr><td>Thin pocket</td><td>Fast impulsive move</td></tr>
-</table>
-
-<p>
-If you aren’t sure when these moves are likely, review  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-overnight-session-vs-regular-trading-hours.html">Overnight vs RTH</a>.  
-Thin pockets show up constantly overnight.
-</p>
-
-<h2>Why Liquidity Pockets Form</h2>
-<ul>
-  <li>Institutions avoid certain price zones</li>
-  <li>Stops cluster above/below key levels</li>
-  <li>News clears the book temporarily</li>
-  <li>Overnight algos remove passive orders</li>
-</ul>
-
-<h2>How to Trade Around Liquidity Pockets</h2>
-
-<h3>1. Don’t Fade Into a Pocket</h3>
-<p>
-If ES is pushing into a thin area, don’t be the genius trying to short the breakout or buy the breakdown. It will run you over.
-</p>
-
-<h3>2. Expect Acceleration</h3>
-<p>
-Every pocket carries momentum. ES moves faster through empty space than stacked size. This isn’t theory — it’s the structure of the auction.
-</p>
-
-<h3>3. Watch for Traps After a Pocket</h3>
-<p>
-When price exits a pocket and slams into stacked liquidity, expect a reaction. Sometimes reversal, sometimes continuation. Read context.
-</p>
-
-<div class="highlight-box yellow">
-  <h3>Read the DOM, Read the Truth</h3>
-  <p>ES liquidity isn’t hidden—it’s right there in the DOM. Learn to see where size lives and you’ll stop being surprised when price hits the brakes or hits the gas.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
+<section class="fx-section" id="observable" aria-labelledby="observable-title">
+<div class="fx-section-heading"><p class="fx-kicker">Do not ask bar data to answer order-book questions</p><h2 id="observable-title">Match the Claim to the Data Layer</h2><p>CME&rsquo;s historical catalog separates trades, top-of-book, depth and market-by-order products. Each supports different statements. Choose the minimum sufficient layer and document feed depth, sequencing, timestamps and recovery behavior.</p></div>
+<div class="fx-table-scroll" role="region" aria-label="ES order book data layers" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Data layer</th><th scope="col">What can be observed</th><th scope="col">What remains unknown</th><th scope="col">Eligible question</th></tr></thead><tbody>
+<tr><th scope="row">Bars</th><td>Open, high, low, close, aggregate volume</td><td>Spread, message order, queue and depth</td><td>Where did price and volume travel?</td></tr>
+<tr><th scope="row">Trades</th><td>Transaction price, size, time, corrections</td><td>Unexecuted displayed interest</td><td>Where and how much traded?</td></tr>
+<tr><th scope="row">Top of book</th><td>Best bid/ask, quantities and changes</td><td>Capacity beyond the inside</td><td>How did inside width and size evolve?</td></tr>
+<tr><th scope="row">Market depth</th><td>Displayed levels through the feed&rsquo;s depth</td><td>Individual order identity where aggregated</td><td>How much displayed capacity sat near price?</td></tr>
+<tr><th scope="row">Market by order</th><td>Order-level add, modify, cancel and execute sequence</td><td>Trader identity, private intent and hidden decisions</td><td>How did the visible queue evolve?</td></tr>
+</tbody></table></div>
+<p class="fx-source-note">The <a href="https://www.cmegroup.com/market-data/browse-data/catalog/futures-and-options-data.html" target="_blank" rel="noopener noreferrer">CME futures and options data catalog</a> describes data resolutions from top-of-book to full depth and market-by-order. CME Globex is a central electronic marketplace where participants can view the book and enter orders; a vendor&rsquo;s reconstructed view may still differ by entitlement, latency and processing.</p>
+<div class="fx-related">Use <a href="es-tick-size-tick-value-and-margin.html">ES Tick Size, Tick Value and Margin</a> for the exchange&rsquo;s price increment and contract arithmetic.</div>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<section class="fx-section" id="sync" aria-labelledby="sync-title">
+<div class="fx-section-heading"><p class="fx-kicker">One dropped message can manufacture a pocket</p><h2 id="sync-title">Reconstruct a Valid Book Before Measuring It</h2><p>Order-book analysis is a state-reconstruction problem. A snapshot and subsequent incremental messages must align. Sequence gaps, duplicate messages, late corrections or timestamp drift can leave phantom size in the book.</p></div>
+<div class="fx-state-machine" aria-label="Order book reconstruction process"><article><span>1</span><h3>Identify</h3><p>Resolve venue, product, dated contract, channel, schema and session.</p></article><article><span>2</span><h3>Seed</h3><p>Load an authoritative snapshot or start at a documented recovery point.</p></article><article><span>3</span><h3>Sequence</h3><p>Apply messages in exchange sequence; quarantine gaps and duplicates.</p></article><article><span>4</span><h3>Join</h3><p>Synchronize trades and book events using source timestamps and sequence rules.</p></article><article><span>5</span><h3>Validate</h3><p>Reject crossed, negative, impossible or stale states before analysis.</p></article></div>
+<div class="fx-caution"><strong>Receipt time is not exchange event time.</strong><p>If a feed supplies both, retain both and label them. Local receipt timestamps measure the observer&rsquo;s path and cannot substitute for the authoritative event timestamp required to sequence the source book.</p></div>
+</section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
+<section class="fx-section" id="metrics" aria-labelledby="metrics-title">
+<div class="fx-section-heading"><p class="fx-kicker">Describe a state, then its response</p><h2 id="metrics-title">Measure Pockets as Timestamped Conditional Distributions</h2><p>A candidate pocket is a repeatable record of displayed capacity, trading and response inside a defined state&mdash;not a horizontal line copied forward forever. Normalize distance in ticks or volatility units and report the sample and expiry.</p></div>
+<div class="fx-four-grid">
+<article class="fx-panel"><p class="fx-card-label">Width</p><h3>Time-weighted spread</h3><p>Measure inside spread in ticks and time spent locked, crossed or unavailable. Quote counts alone overweight message bursts.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Capacity</p><h3>Depth and sweep cost</h3><p>Sum displayed quantity through fixed tick bands and estimate the cost to execute declared sizes on each side.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Durability</p><h3>Age and replenishment</h3><p>Track dwell time, executed fraction, cancellations and quantity returning after depletion. State the matching assumptions.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Response</p><h3>Impact and recovery</h3><p>Measure signed price response after an aggressive quantity, the time to refill and whether spread/depth normalize.</p></article>
+</div>
+<div class="fx-formula"><strong>Illustrative depth imbalance</strong><span>I<sub>K</sub> = (B<sub>K</sub> &minus; A<sub>K</sub>) / (B<sub>K</sub> + A<sub>K</sub>)</span><small>B<sub>K</sub> and A<sub>K</sub> are displayed bid and ask quantities through K ticks. The metric is descriptive; it does not identify intent or guarantee direction.</small></div>
+<div class="fx-method"><h3>Candidate pocket record</h3><p>Store the exact interval, contract, price-relative location, book depth K, median and tail displayed quantity, time-weighted spread, executed quantity, cancel-to-add measures, replenishment after depletion, size-conditioned sweep cost and subsequent price response. Attach event, volatility, session and roll labels.</p><p>Define the candidate on a training sample and test on later observations. If the price-relative location moves when volatility or index level changes, a fixed historical level should expire. If current depth is outside the trained distribution, the pocket is unscorable rather than “still valid.”</p></div>
+</section>
 
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
+<section class="fx-section" id="rivals" aria-labelledby="rivals-title">
+<div class="fx-section-heading"><p class="fx-kicker">The same trace supports multiple stories</p><h2 id="rivals-title">Test Rival Explanations Before Naming Behavior</h2><p>Displayed size that cancels is not proof of manipulation. CME Rule 575 prohibits specified disruptive practices and turns on conduct and intent; public book data alone does not reveal the owner, purpose or full order context. Use neutral event descriptions.</p></div>
+<div class="fx-table-scroll" role="region" aria-label="Rival explanations for ES book events" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Observed trace</th><th scope="col">Possible explanation A</th><th scope="col">Possible explanation B</th><th scope="col">Safe label</th></tr></thead><tbody>
+<tr><th scope="row">Large quantity cancels near touch</th><td>Risk or quote update</td><td>Strategic cancellation</td><td>Displayed quantity canceled before execution</td></tr>
+<tr><th scope="row">Repeated replenishment</th><td>Multiple independent orders</td><td>Reserve/algorithmic execution</td><td>Visible quantity replenished after trades</td></tr>
+<tr><th scope="row">High volume, falling depth</th><td>Fast two-sided risk transfer</td><td>Liquidity withdrawal during repricing</td><td>Trade activity rose while displayed depth fell</td></tr>
+<tr><th scope="row">Price stalls at a level</th><td>Balanced flow</td><td>Large passive interest</td><td>Conditional price response was small</td></tr>
+</tbody></table></div>
+<p class="fx-source-note"><a href="https://www.cmegroup.com/rulebook/files/cme-group-Rule-575.pdf" target="_blank" rel="noopener noreferrer">CME Rule 575 and its advisory</a> provide the official disruptive-practices framework. An educational chart label is not a regulatory determination.</p>
+</section>
 
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+<section class="fx-section" id="limits" aria-labelledby="limits-title">
+<div class="fx-section-heading"><p class="fx-kicker">Translate evidence into conservative permissions</p><h2 id="limits-title">Use the Book as an Execution Gate, Not a Direction Oracle</h2><p>Declare size, urgency, order type, maximum spread, minimum near-touch depth and tail sweep cost before looking at the signal. The current state must match the validated sample. Directional forecasts require separate evidence.</p></div>
+<div class="fx-decision-tree"><article><p class="fx-card-label">Go</p><h3>State represented</h3><p>Sequence is valid, current spread/depth fit the sample and modeled capacity covers the order with stress.</p></article><article><p class="fx-card-label">Reduce</p><h3>Capacity supports less</h3><p>A preregistered lower quantity passes while the requested size fails the sweep or impact limit.</p></article><article><p class="fx-card-label">Wait</p><h3>Transient instability</h3><p>Replenishment, spread or event state is changing too quickly for the model&rsquo;s observation horizon.</p></article><article><p class="fx-card-label">Reject</p><h3>Evidence incomplete</h3><p>Sequence gaps, stale quotes, out-of-distribution depth or unknown contract state make the order unscorable.</p></article></div>
+<ul class="fx-checklist"><li>Quoted, traded and experienced liquidity remain separate.</li><li>All metrics are conditioned on order size and time horizon.</li><li>Event, holiday and roll states are attached before measurement.</li><li>Price response uses forward-only windows and reports both sides.</li><li>Actor identity and intent are not inferred from public order messages.</li><li>Realized fills calibrate, and can invalidate, the pretrade capacity model.</li></ul>
+<div class="fx-caution"><strong>Research status as of August 24, 2026</strong><p>No original ES liquidity-pocket location, imbalance threshold, queue signal or after-cost execution advantage is reported. This page defines observable states, candidate metrics and rejection rules.</p></div>
+</section>
 
-  </div>
-</footer>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul>
+<li><a href="https://www.cmegroup.com/globex.html" target="_blank" rel="noopener noreferrer">CME Globex</a> for central electronic-book and platform context.</li>
+<li><a href="https://www.cmegroup.com/market-data/browse-data/catalog/futures-and-options-data.html" target="_blank" rel="noopener noreferrer">CME futures and options data catalog</a> for trade, top-of-book, depth and market-by-order data distinctions.</li>
+<li><a href="https://www.cmegroup.com/market-data/files/cme-group-market-depth-faq.pdf" target="_blank" rel="noopener noreferrer">CME DataMine Market Depth FAQ</a> for historical book-reconstruction scope.</li>
+<li><a href="https://www.cmegroup.com/market-data/files/datamine-equity-faq.pdf" target="_blank" rel="noopener noreferrer">CME DataMine Equity Execution Statistics FAQ</a> for width, depth, fill and slippage measurement categories.</li>
+<li><a href="https://www.cmegroup.com/rulebook/files/cme-group-Rule-575.pdf" target="_blank" rel="noopener noreferrer">CME Rule 575 advisory</a> for official disruptive-practices language and the boundary against casual intent attribution.</li>
+</ul><p>Sources were reviewed August 28, 2026. The page separates official market/data structure from proposed metrics and reports no proprietary empirical result.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This is educational market-structure analysis, not individualized execution advice. Displayed liquidity can change or vanish, queue position is uncertain, and futures losses can exceed the collateral initially posted.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

@@ -1,233 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ES ATR Behavior and Volatility Zones</title>
-  <meta name="description" content="Learn how ES ATR behavior controls volatility zones so you stop guessing and start reading the E-mini S&P 500’s real movement.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-atr-behavior-and-volatility-zones.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="ES ATR Behavior and Volatility Zones">
-  <meta property="og:description" content="Learn how ES ATR behavior controls volatility zones so you stop guessing and start reading the E-mini S&P 500’s real movement.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-atr-behavior-and-volatility-zones.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="ES ATR Behavior and Volatility Zones">
-  <meta name="twitter:description" content="Learn how ES ATR behavior controls volatility zones so you stop guessing and start reading the E-mini S&P 500’s real movement.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "ES ATR Behavior and Volatility Zones",
-  "description": "Learn how ES ATR behavior controls volatility zones so you stop guessing and start reading the E-mini S&P 500’s real movement.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/es-atr-behavior-and-volatility-zones.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/es-atr-behavior-and-volatility-zones.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "ES ATR Behavior and Volatility Zones",
-      "item": "https://grizzlyparrottrading.com/futures-basics/es-atr-behavior-and-volatility-zones.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ES ATR and Volatility Zones: Build a Reproducible State Card</title>
+<meta name="description" content="Classify ES volatility with explicit return, range, jump and liquidity measures instead of treating fixed ATR bands as universal market states.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-atr-behavior-and-volatility-zones.html">
+<meta property="og:title" content="ES ATR and Volatility Zones: Build a Reproducible State Card">
+<meta property="og:description" content="Classify ES volatility with explicit return, range, jump and liquidity measures instead of treating fixed ATR bands as universal market states.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-atr-behavior-and-volatility-zones.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta property="og:image:alt" content="Grizzly Parrot Trading">
+<meta property="article:published_time" content="2025-11-24">
+<meta property="article:modified_time" content="2026-08-25">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ES ATR and Volatility Zones: Build a Reproducible State Card">
+<meta name="twitter:description" content="Classify ES volatility with explicit return, range, jump and liquidity measures instead of treating fixed ATR bands as universal market states.">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+<meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ES ATR and Volatility Zones: Build a Reproducible State Card","description":"Classify ES volatility with explicit return, range, jump and liquidity measures instead of treating fixed ATR bands as universal market states.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/es-atr-behavior-and-volatility-zones.html"},"datePublished":"2025-11-24","dateModified":"2026-08-25","url":"https://grizzlyparrottrading.com/futures-basics/es-atr-behavior-and-volatility-zones.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"ES ATR and Volatility Zones: Build a Reproducible State Card","item":"https://grizzlyparrottrading.com/futures-basics/es-atr-behavior-and-volatility-zones.html"}]}</script>
+<script src="/uet.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
+<a class="fx-skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
 <!-- ARTICLE BODY START -->
+<header class="fx-hero">
+<div class="fx-hero-copy"><p class="fx-kicker">Path shape &middot; return scale &middot; liquidity state</p><h1>ES ATR and Volatility Zones: Build a Reproducible State Card</h1><p class="fx-byline">By <a href="../about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 25, 2026</p><p class="fx-hero-lede">Two ES sessions can end with the same average true range and still impose different risks. One may grind through overlapping bars; another may sit still, jump on a release and finish with a thin book. ATR records range scale. It does not, by itself, identify the path, the jump contribution or the cost of trading that path.</p><div class="fx-hero-actions"><a class="button-primary" href="#choices">Define the measure</a><a class="fx-text-link" href="#stale">Test state decay</a></div><dl class="fx-hero-metrics" aria-label="Volatility state card"><div><dt>Range</dt><dd>True range + session range</dd></div><div><dt>Path</dt><dd>Returns + overlap</dd></div><div><dt>Jump</dt><dd>Gap/event share</dd></div><div><dt>Liquidity</dt><dd>Spread + depth</dd></div></dl></div>
+<aside class="fx-market-board" aria-label="Equal ATR with unequal paths"><div class="fx-board-head"><span>Same ATR</span><strong>Different exposure</strong></div><div class="fx-proof-grid"><div class="fx-proof"><strong>Path A</strong><span>Many small, overlapping bars and stable depth</span></div><div class="fx-proof is-limit"><strong>Path B</strong><span>One jump, rapid reversal and depleted depth</span></div></div><p class="fx-board-foot">Range is one dimension, not the state</p></aside>
+</header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#choices">Choices</a><a href="#dimensions">Dimensions</a><a href="#events">Events</a><a href="#handoff">Risk handoff</a><a href="#stale">Stale test</a></nav>
 
-<h1>ES ATR Behavior and Volatility Zones</h1>
-
-<p>
-ATR on ES isn’t some decoration indicator. It tells you exactly how violent the E-mini S&amp;P 500 is moving and whether you’re trading in a calm zone, a chop zone, or an outright expansion zone. If you don’t know the ATR ranges, you size wrong and stop out for stupid reasons.
-</p>
-
-<h2>What ATR Actually Measures on ES</h2>
-<p>
-ATR measures how much ES moves per candle on average. On a 5-minute chart, ATR tells you the typical bar range. On a 1-minute chart, it exposes whether the market is expanding or compressing. On a daily chart, ATR shows the overall volatility climate driving intraday movement.
-</p>
-
-<h2>Common ES ATR Ranges</h2>
-<p>
-These aren’t theoretical numbers. These are real-world ranges most ES traders reference day to day:
-</p>
-
-<table>
-<tr><th>ATR (1m)</th><th>Condition</th></tr>
-<tr><td>0.50–0.75</td><td>Dead, slow, algo drift</td></tr>
-<tr><td>0.75–1.25</td><td>Normal intraday flow</td></tr>
-<tr><td>1.25–2.00</td><td>High volatility and sharp bursts</td></tr>
-<tr><td>2.00+</td><td>News-level volatility</td></tr>
-</table>
-
-<p>
-You don’t need fancy models. ES respects these zones almost every session. Understanding them keeps you from trading size during high-velocity periods that blow accounts. If you want to see how ES reacts during economic releases, check the article <a href="https://grizzlyparrottrading.com/futures-basics/es-key-economic-reports-that-move-price.html">ES Economic Reports</a>.
-</p>
-
-<h2>How ATR Defines Volatility Zones</h2>
-<p>
-Every ES session moves through three types of volatility:
-</p>
-
-<h3>1. Compression Zone</h3>
-<ul>
-  <li>Price barely moves.</li>
-  <li>ATR near lower bounds (0.50–0.75).</li>
-  <li>Breakouts from here are usually violent.</li>
-</ul>
-
-<h3>2. Expansion Zone</h3>
-<ul>
-  <li>Wide candles, directional pushes.</li>
-  <li>ATR spikes above 1.25.</li>
-  <li>If you size too big here, you get steamrolled.</li>
-</ul>
-
-<h3>3. Exhaustion Zone</h3>
-<ul>
-  <li>High range but slowing momentum.</li>
-  <li>ATR peaks then begins to fall.</li>
-  <li>Late chase traders get punished here.</li>
-</ul>
-
-<h2>Using ATR for Real Position Sizing</h2>
-<p>
-If ATR doubles, your stop must widen or you get clipped. Most traders ignore this and blow up. ES does not care that you want a “tight stop.” Match your stop to ATR or size down. I cover details in <a href="https://grizzlyparrottrading.com/futures-basics/es-how-to-size-positions-by-account-balance.html">ES Position Sizing</a>.
-</p>
-
-<div class="highlight-box green">
-  <h3>ATR Tells You How Hard ES Is Breathing</h3>
-  <p>If you’re not tracking volatility, you’re sizing blind. ATR gives you the rhythm — trade with it, or get run over by moves you weren’t prepared for.</p>
+<section class="fx-section" id="choices" aria-labelledby="choices-title">
+<div class="fx-section-heading"><p class="fx-kicker">Make every calculation auditable</p><h2 id="choices-title">Define the Bar, Session and Smoothing Before Calculating ATR</h2><p>“ES ATR” is incomplete. A reproducible record states the dated contract or continuous-series rule, bar interval, session boundary, timezone, treatment of missing bars, true-range formula, lookback and smoothing method. Changing any one can change the number.</p></div>
+<div class="fx-formula"><strong>True range for bar t</strong><span>TR<sub>t</sub> = max(H<sub>t</sub> &minus; L<sub>t</sub>, |H<sub>t</sub> &minus; C<sub>t&minus;1</sub>|, |L<sub>t</sub> &minus; C<sub>t&minus;1</sub>|)</span><small>ATR is a declared average or smoothing of TR. State the method; do not treat software defaults as a universal definition.</small></div>
+<div class="fx-three-column">
+<article class="fx-panel"><p class="fx-card-label">Clock</p><h3>What enters a bar?</h3><p>Use exchange timestamps, retain UTC, and state whether bars span maintenance pauses. A “daily” RTH series is not interchangeable with a full Globex trade-date series.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Contract</p><h3>Which price history?</h3><p>Keep raw dated contracts. If research uses a back-adjusted series, store roll dates, adjustment method and the unadjusted returns used to prevent artificial roll ranges.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Scale</p><h3>Points or returns?</h3><p>Point ranges matter for stop arithmetic; percentage or log returns improve comparison across index levels. Preserve both when the decision needs both.</p></article>
 </div>
-
-<!-- ARTICLE BODY END -->
-</div>
+<div class="fx-related">Verify the multiplier, tick and P&amp;L conversion in <a href="es-tick-size-tick-value-and-margin.html">ES Tick Size, Tick Value and Margin</a>. This page intentionally does not duplicate that specification block.</div>
 </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<section class="fx-section" id="dimensions" aria-labelledby="dimensions-title">
+<div class="fx-section-heading"><p class="fx-kicker">Classify the state, not a colored band</p><h2 id="dimensions-title">Use a Multidimensional ES Volatility Card</h2><p>Estimate thresholds only from the training sample, preferably as rolling or expanding quantiles, and publish the observation count. Labels such as low, typical and high describe a sample-relative position; they are not permanent point values.</p></div>
+<div class="fx-table-scroll" role="region" aria-label="ES volatility state dimensions" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Dimension</th><th scope="col">Candidate measure</th><th scope="col">Why ATR alone misses it</th><th scope="col">Failure check</th></tr></thead><tbody>
+<tr><th scope="row">Return dispersion</th><td>Absolute returns, realized variance, quantiles</td><td>Equal ranges can contain different close-to-close movement</td><td>Sampling interval sensitivity</td></tr>
+<tr><th scope="row">Range path</th><td>True range, session range, overlap, directional efficiency</td><td>ATR does not say whether bars trend or overlap</td><td>Overnight and RTH boundary drift</td></tr>
+<tr><th scope="row">Jump share</th><td>Large discrete moves as share of total variation</td><td>A jump can dominate an otherwise quiet session</td><td>Bad ticks and feed gaps</td></tr>
+<tr><th scope="row">Liquidity stress</th><td>Spread, depth, sweep cost, fill shortfall</td><td>Price movement can occur with stable or depleted capacity</td><td>Insufficient book resolution</td></tr>
+<tr><th scope="row">Persistence</th><td>State transition and dwell-time distributions</td><td>One ATR reading does not show how quickly state changes</td><td>Look-ahead in state labeling</td></tr>
+</tbody></table></div>
+<div class="fx-method"><h3>Example state-card fields</h3><p><strong>As-of time:</strong> 14:00:00 UTC; <strong>data:</strong> active dated ES contract; <strong>horizon:</strong> trailing, fully completed observations only; <strong>range percentile:</strong> calculated against the frozen training distribution; <strong>jump flag:</strong> rule declared before inspection; <strong>liquidity:</strong> spread and depth percentile; <strong>event:</strong> official calendar label; <strong>valid until:</strong> the next scheduled refresh or an integrity break.</p><p>The card does not need to force a single “volatility zone.” It can report combinations such as high range / low jump / normal depth or typical range / high jump / stressed depth. Those combinations preserve information that a one-color indicator discards.</p></div>
+</section>
 
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
+<section class="fx-section" id="events" aria-labelledby="events-title">
+<div class="fx-section-heading"><p class="fx-kicker">Information regimes need explicit labels</p><h2 id="events-title">Separate Scheduled Events From Unscheduled Jumps</h2><p>Join official release calendars by exact publication timestamp, not by date alone. Mark pre-release, release and post-release windows without assuming a fixed reaction direction. A large move outside the calendar remains “unattributed” unless independent evidence supports a label.</p></div>
+<div class="fx-decision-tree">
+<article><p class="fx-card-label">Scheduled</p><h3>Known time, unknown surprise</h3><p>BLS and BEA releases and FOMC communications can be labeled in advance. Preserve the market state before the timestamp.</p></article>
+<article><p class="fx-card-label">Unscheduled</p><h3>Timestamp first, story second</h3><p>Detect a path discontinuity from price data, then archive any contemporaneous official notice. Do not reverse-engineer a convenient cause.</p></article>
+<article><p class="fx-card-label">Operational</p><h3>Feed defect is not volatility</h3><p>Sequence gaps, stale quotes, corrections and contract mix-ups must fail integrity checks before entering the distribution.</p></article>
+<article><p class="fx-card-label">Unknown</p><h3>Unattributed is valid</h3><p>Keep the observation without a causal story or exclude it under a preregistered rule. Never invent an event label.</p></article>
+</div>
+<p class="fx-source-note">Use the official <a href="https://www.bls.gov/schedule/news_release/" target="_blank" rel="noopener noreferrer">BLS release schedule</a>, <a href="https://www.bea.gov/news/schedule/" target="_blank" rel="noopener noreferrer">BEA release schedule</a> and <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">FOMC calendar</a>. These sources establish timing, not a guaranteed ES response.</p>
+</section>
 
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
+<section class="fx-section" id="handoff" aria-labelledby="handoff-title">
+<div class="fx-section-heading"><p class="fx-kicker">A state estimate changes permissions, not physics</p><h2 id="handoff-title">Hand the Card to Sizing and Execution Without Promising Safety</h2><p>A higher volatility classification does not mechanically dictate a smaller or larger trade. It changes the inputs that a separate risk policy must consider: stop distance, expected slippage, gap stress, order type, maximum exposure and the option to trade zero contracts.</p></div>
+<div class="fx-limit-grid">
+<article class="fx-panel"><p class="fx-card-label">Stop input</p><h3>Use executable invalidation</h3><p>Measure the distance from entry to a strategy-defined invalidation. ATR may provide context, but an arbitrary ATR multiple does not create a valid thesis.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Cost input</p><h3>Stress the tail</h3><p>Use state-matched spread and slippage distributions. A quiet-state average is not an event-state bound.</p></article>
+<article class="fx-panel"><p class="fx-card-label">Permission</p><h3>Allow zero</h3><p>If whole-contract risk, tail cost or data quality exceeds policy, the valid result is no position.</p></article>
+</div>
+<p>Send the verified distance and stress assumptions to <a href="es-how-to-size-positions-by-account-balance.html">ES Position Sizing by Account Balance</a>. Keep model-state estimation and account-risk authorization as separate versioned systems.</p>
+</section>
 
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+<section class="fx-section" id="stale" aria-labelledby="stale-title">
+<div class="fx-section-heading"><p class="fx-kicker">A volatility label needs an expiry</p><h2 id="stale-title">Reject the State When the Reference Distribution Decays</h2><p>Monitor state coverage, forecast calibration and live execution rather than assuming yesterday&rsquo;s bins remain meaningful. Rebuild after contract-roll, session-rule, data-vendor or structural changes, using only information available at each historical decision time.</p></div>
+<div class="fx-falsification-tree"><article><h3>Distribution shift</h3><p>Recent return, range or liquidity values repeatedly fall beyond registered bounds.</p><strong>Action: expire thresholds</strong></article><article><h3>Classification instability</h3><p>Small, reasonable changes in bar interval or lookback reverse the state label.</p><strong>Action: report unscorable</strong></article><article><h3>Execution mismatch</h3><p>Realized spread or shortfall exceeds the state-matched cost model.</p><strong>Action: halt and recalibrate</strong></article></div>
+<ul class="fx-checklist"><li>Thresholds are learned only from data available before the classified observation.</li><li>Every cell reports eligible observations, excluded observations and missingness.</li><li>Back-adjustments cannot manufacture return jumps at a roll.</li><li>Event-state and routine-state results remain separate.</li><li>Point, return and dollar-risk scales are not substituted for one another.</li><li>A stale state produces “unknown,” not forced low/medium/high.</li></ul>
+<div class="fx-caution"><strong>Research status as of August 25, 2026</strong><p>No original ES ATR threshold, volatility-zone boundary, persistence estimate or trading result is reported. This article defines a reproducible classification protocol and its rejection conditions.</p></div>
+</section>
 
-  </div>
-</footer>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul>
+<li><a href="https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME E-mini S&amp;P 500 product and contract page</a> for the underlying contract identity.</li>
+<li><a href="https://www.cmegroup.com/market-data/browse-data/equity-index-data.html" target="_blank" rel="noopener noreferrer">CME Equity Index Data</a> and <a href="https://www.cmegroup.com/market-data/browse-data/catalog/futures-and-options-data.html" target="_blank" rel="noopener noreferrer">CME futures and options data catalog</a> for official settlement, volume, depth and historical-data categories.</li>
+<li><a href="https://www.cmegroup.com/education/files/getting-started-equity-quarterly-roll-analyzer.pdf" target="_blank" rel="noopener noreferrer">CME Equity Quarterly Roll Analyzer guide</a> for identifying contract migration as a distinct research state.</li>
+<li><a href="https://www.spglobal.com/spdji/en/methodology/article/sp-us-indices-methodology/" target="_blank" rel="noopener noreferrer">S&amp;P U.S. Indices Methodology</a> for the underlying S&amp;P 500 index framework.</li>
+<li><a href="https://www.bls.gov/schedule/news_release/" target="_blank" rel="noopener noreferrer">BLS</a>, <a href="https://www.bea.gov/news/schedule/" target="_blank" rel="noopener noreferrer">BEA</a> and <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">Federal Reserve</a> calendars for candidate scheduled-event labels.</li>
+</ul><p>Sources were reviewed August 28, 2026. Formula choices and state dimensions are a disclosed research design, not claimed exchange standards or completed findings.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This framework is educational and does not predict returns or prescribe position size. Futures are leveraged, volatility can change abruptly and losses can exceed the collateral initially posted.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

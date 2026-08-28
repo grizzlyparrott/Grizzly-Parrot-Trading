@@ -1,189 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-        <meta charset="UTF-8">
-     <!-- Standard Favicon -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-<!-- Web App Manifest -->
-<link rel="manifest" href="/site.webmanifest">
-
-<!-- PNG Fallbacks -->
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ES vs MES vs NQ – Grizzly Parrot Trading</title>
-    <meta name="description" content="Straight comparison of ES, MES, and NQ futures contracts: tick size, dollar value, volatility, and what actually changes between them.">
-        <!-- Open Graph -->
-    <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-    <meta property="og:image:width" content="1792">
-    <meta property="og:image:height" content="941">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-JMJVR3G5YN');
-    </script>
-
-    <link rel="stylesheet" href="../style.css">
-
-  <script src="/uet.js" defer></script>
-<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-vs-mes-vs-nq.html">
-<meta property="og:title" content="ES vs MES vs NQ – Grizzly Parrot Trading">
-<meta property="og:description" content="Straight comparison of ES, MES, and NQ futures contracts: tick size, dollar value, volatility, and what actually changes between them.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-vs-mes-vs-nq.html">
-<meta property="og:site_name" content="Grizzly Parrot Trading">
-<meta name="twitter:title" content="ES vs MES vs NQ – Grizzly Parrot Trading">
-<meta name="twitter:description" content="Straight comparison of ES, MES, and NQ futures contracts: tick size, dollar value, volatility, and what actually changes between them.">
+  <meta charset="UTF-8"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES vs MES vs NQ: A Normalized Contract Comparison</title>
+  <meta name="description" content="Choose among ES, MES and NQ by separating index exposure, multiplier, whole-contract risk, liquidity, event sensitivity and operational fit.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-vs-mes-vs-nq.html">
+  <meta property="og:title" content="ES vs MES vs NQ: A Normalized Contract Comparison"><meta property="og:description" content="Choose among ES, MES and NQ by separating index exposure, multiplier, whole-contract risk, liquidity, event sensitivity and operational fit."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-vs-mes-vs-nq.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-17"><meta property="article:modified_time" content="2026-08-28">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ES vs MES vs NQ: A Normalized Contract Comparison"><meta name="twitter:description" content="Choose among ES, MES and NQ by separating index exposure, multiplier, whole-contract risk, liquidity, event sensitivity and operational fit."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ES vs MES vs NQ: A Normalized Contract Comparison","description":"Choose among ES, MES and NQ by separating index exposure, multiplier, whole-contract risk, liquidity, event sensitivity and operational fit.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/es-vs-mes-vs-nq.html"},"datePublished":"2025-11-17","dateModified":"2026-08-28","url":"https://grizzlyparrottrading.com/futures-basics/es-vs-mes-vs-nq.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"ES vs MES vs NQ: A Normalized Contract Comparison","item":"https://grizzlyparrottrading.com/futures-basics/es-vs-mes-vs-nq.html"}]}</script><script src="/uet.js" defer></script>
 </head>
-<body>
+<body><a class="fx-skip-link" href="#main-content">Skip to article content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
+<!-- ARTICLE BODY START -->
+<header class="fx-hero"><div class="fx-hero-copy"><p class="fx-kicker">Instrument selection &middot; two index exposures &middot; normalized risk</p><h1>ES vs MES vs NQ: A Normalized Contract Comparison</h1><p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 28, 2026</p><p class="fx-hero-lede">ES, MES and NQ are three ways to take U.S. equity-index futures exposure, but only ES and MES reference the same portfolio. MES changes the scale of S&amp;P 500 exposure; NQ changes the underlying index to the Nasdaq-100. Choose the index first, then the multiplier, then the executable contract&mdash;and allow the answer to be no trade.</p><div class="fx-hero-actions"><a class="button-primary" href="#identity">Separate the exposures</a><a class="fx-text-link" href="#selection">Use the selection gates</a></div></div><aside class="fx-market-board" aria-label="ES MES NQ exposure map"><div class="fx-board-head"><span>Three contracts</span><strong>Two portfolios</strong></div><div class="fx-proof"><strong>ES</strong><span>S&amp;P 500 &times; $50</span></div><div class="fx-proof"><strong>MES</strong><span>S&amp;P 500 &times; $5</span></div><div class="fx-proof"><strong>NQ</strong><span>Nasdaq-100 &times; $20</span></div><p class="fx-board-foot">Point ranges are not normalized risk</p></aside></header>
 
-<header class="site-header">
-    <div class="container header-inner">
-        <div class="logo">
-            <span class="logo-mark">GP</span>
-            <span class="logo-text">Grizzly Parrot Trading</span>
-        </div>
-        <nav class="main-nav">
-             <a href="https://grizzlyparrottrading.com/#articles">Articles</a>
-             <a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a>
-             <a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a>
-             <a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a>
-             <a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a>
-            </nav>
-    </div>
-</header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#identity">Identity</a><a href="#normalize">Normalize</a><a href="#scenarios">Scenarios</a><a href="#operations">Operations</a><a href="#selection">Selection</a><a href="#failures">Failures</a></nav>
 
-<main class="section">
-    <div class="container">
+<section class="fx-section" id="identity" aria-labelledby="identity-title"><div class="fx-section-heading"><p class="fx-kicker">Index before instrument</p><h2 id="identity-title">ES and MES Share an Underlying; NQ Does Not</h2><p>S&amp;P Dow Jones Indices describes the S&amp;P 500 as a float-adjusted market-cap-weighted measure of the U.S. large-cap segment. Nasdaq describes the Nasdaq-100 as 100 of the largest Nasdaq-listed non-financial companies using modified market-cap weighting. Those rules create different constituent and sector exposures even when the charts are correlated.</p></div><div class="fx-three-column"><article class="fx-panel"><p class="fx-card-label">ES</p><h3>Full E-mini S&amp;P 500 scale</h3><p>$50 per index point. Use when the S&amp;P 500 is the intended exposure and one whole ES fits every risk and operational gate.</p></article><article class="fx-panel"><p class="fx-card-label">MES</p><h3>Micro E-mini S&amp;P 500 scale</h3><p>$5 per index point. The underlying thesis matches ES, while whole-contract sizing resolution is one-tenth as large.</p></article><article class="fx-panel"><p class="fx-card-label">NQ</p><h3>E-mini Nasdaq-100 exposure</h3><p>$20 per index point. Choosing NQ changes the portfolio and its constituent information channels, not just the contract size.</p></article></div><div class="fx-caution"><strong>Do not use NQ as a smaller ES.</strong><p>NQ&rsquo;s multiplier lies between ES and MES, but its Nasdaq-100 exposure is different. A smaller dollar-per-point number does not make the portfolio equivalent.</p></div></section>
 
-        <h1>ES vs MES vs NQ</h1>
-        <p class="section-intro">
-            ES, MES, and NQ are all index futures. They move differently and have different dollar values, 
-            but the underlying idea is the same: one contract tracks one index.
-        </p>
+<section class="fx-section" id="normalize" aria-labelledby="normalize-title"><div class="fx-section-heading"><p class="fx-kicker">Raw points conceal scale</p><h2 id="normalize-title">Normalize Exposure, Stop Risk and Trading Friction Separately</h2><p>A 20-point move is $1,000 in ES, $100 in MES and $400 in NQ before costs. That arithmetic still does not compare volatility because the index levels and return distributions differ.</p></div><div class="fx-table-scroll" role="region" aria-label="Normalized comparison inputs for ES MES and NQ" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Dimension</th><th scope="col">ES</th><th scope="col">MES</th><th scope="col">NQ</th><th scope="col">Correct normalization</th></tr></thead><tbody>
+<tr><th scope="row">Index</th><td>S&amp;P 500</td><td>S&amp;P 500</td><td>Nasdaq-100</td><td>Compare methodology and current composition</td></tr>
+<tr><th scope="row">Multiplier</th><td>$50/point</td><td>$5/point</td><td>$20/point</td><td>Point distance &times; multiplier</td></tr>
+<tr><th scope="row">Outright minimum increment</th><td>0.25 point</td><td>0.25 point</td><td>0.25 point</td><td>Tick &times; multiplier for dollar tick value</td></tr>
+<tr><th scope="row">Directional exposure</th><td colspan="2">Same index at different scale</td><td>Different index</td><td>Dollar notional and index return</td></tr>
+<tr><th scope="row">Volatility</th><td colspan="3">Horizon- and regime-dependent distributions</td><td>Percentage returns and dollar loss at a declared stop</td></tr>
+<tr><th scope="row">Liquidity cost</th><td colspan="3">Current dated-contract spread, depth, impact and fees</td><td>Dollars and basis points at intended quantity</td></tr>
+</tbody></table></div><div class="fx-formula fx-formula--sequence"><span>Whole-contract selection input</span><strong>stop points &times; multiplier + slippage + fees + stress</strong><span>then floor the allowed contract count; never round up</span></div><p class="fx-source-note"><strong>Mechanics ownership:</strong> use the <a href="es-tick-size-tick-value-and-margin.html">ES/MES mechanics guide</a> and <a href="nq-tick-value.html">NQ/MNQ mechanics guide</a> for current contract rules and full arithmetic.</p></section>
 
-        <h2>The Underlyings</h2>
-        <ul>
-            <li><strong>ES:</strong> E-mini S&amp;P 500 futures (tracks the S&amp;P 500 index)</li>
-            <li><strong>MES:</strong> Micro E-mini S&amp;P 500 futures (same index, 1/10th the size of ES)</li>
-            <li><strong>NQ:</strong> E-mini Nasdaq-100 futures (tracks the Nasdaq-100 index)</li>
-        </ul>
+<section class="fx-section" id="scenarios" aria-labelledby="scenarios-title"><div class="fx-section-heading"><p class="fx-kicker">Catalyst-to-index fit</p><h2 id="scenarios-title">The Catalyst Chooses the Research Lens, Not the Direction</h2><p>The table shows where to begin measuring. It does not predict which contract will rise, fall or outperform.</p></div><div class="fx-table-scroll" role="region" aria-label="ES MES NQ catalyst scenario matrix" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Research scenario</th><th scope="col">ES / MES lens</th><th scope="col">NQ lens</th><th scope="col">Competing channel</th></tr></thead><tbody>
+<tr><th scope="row">Broad U.S. growth surprise</th><td>Large-cap cross-sector cash-flow and rate response</td><td>Non-financial large-cap response with different weights</td><td>Discount rates can oppose expected earnings</td></tr>
+<tr><th scope="row">Inflation or Fed surprise</th><td>Broad index valuation and sector rotation</td><td>Index-specific weighting can change aggregate sensitivity</td><td>Growth, rates and risk premium may point differently</td></tr>
+<tr><th scope="row">Large Nasdaq constituent earnings</th><td>Spillover through any S&amp;P weight and broad sentiment</td><td>Direct Nasdaq-100 index contribution plus peer channels</td><td>Company news may not be market-wide information</td></tr>
+<tr><th scope="row">Financial-sector shock</th><td>S&amp;P 500 includes financial-company exposure</td><td>Nasdaq-100 eligibility excludes financial companies under current methodology</td><td>Funding and broad-risk spillovers can still affect NQ</td></tr>
+<tr><th scope="row">Account needs finer S&amp;P sizing</th><td>MES changes scale without changing the index</td><td>NQ changes the exposure and is not a substitute</td><td>Fees and liquidity can offset a sizing benefit</td></tr>
+<tr><th scope="row">No clean index thesis</th><td>Reject</td><td>Reject</td><td>Correlation alone does not select an instrument</td></tr>
+</tbody></table></div><p class="fx-related">For a deeper portfolio-level ES/NQ comparison, see <a href="nq-vs-es.html">NQ vs ES: compare the portfolios behind the futures</a>. This page owns the three-contract implementation choice.</p></section>
 
-        <p>
-            ES and MES follow the same index.  
-            NQ is a different index with more tech-heavy names, which usually means faster moves.
-        </p>
+<section class="fx-section" id="operations" aria-labelledby="operations-title"><div class="fx-section-heading"><p class="fx-kicker">A good exposure can be a bad order</p><h2 id="operations-title">Operational Fit Can Override the Preferred Index</h2><p>Once the thesis identifies an exposure, the live market and account determine whether that contract is usable.</p></div><div class="fx-risk-grid"><article><h3>Whole-contract fit</h3><p>One contract must stay inside stop, slippage, gap, daily and portfolio loss limits.</p></article><article><h3>Market quality</h3><p>Spread, usable depth, price impact and roll state must pass at the exact quantity and time.</p></article><article><h3>Cost concentration</h3><p>Commissions and fees are charged per contract; matching exposure with more micros can change total friction.</p></article><article><h3>Margin buffer</h3><p>Exchange performance bond and broker requirements can change. Neither is maximum loss.</p></article><article><h3>Event permission</h3><p>The plan must cover scheduled releases, earnings spillovers, halts and overnight exposure.</p></article><article><h3>Data and lifecycle</h3><p>Use the correct month, verified market data, roll procedure and settlement policy.</p></article></div><div class="fx-caution"><strong>A high-volume label is not a fill guarantee.</strong><p>Volume aggregates transactions. It does not state the price available for your next order or the depth that will remain after a catalyst.</p></div></section>
 
-        <h2>Tick Size And Dollar Value</h2>
+<section class="fx-section" id="selection" aria-labelledby="selection-title"><div class="fx-section-heading"><p class="fx-kicker">Ordered decision process</p><h2 id="selection-title">Choose Exposure, Then Scale, Then Venue State</h2><p>Changing the order of these decisions encourages chart chasing.</p></div><ol class="fx-process"><li><strong>Name the exposure.</strong><span>S&amp;P 500 or Nasdaq-100, with a stated mechanism and invalidation.</span></li><li><strong>Choose the scale.</strong><span>If S&amp;P 500, test ES and MES whole-contract counts after all costs and stress.</span></li><li><strong>Normalize alternatives.</strong><span>Compare percentage exposure, dollar risk and cost&mdash;not contract count or raw points.</span></li><li><strong>Inspect the dated books.</strong><span>Spread, depth, impact, session, event and roll state at intended quantity.</span></li><li><strong>Pass account controls.</strong><span>Permissions, margin buffer, working orders, correlated risk and emergency branch.</span></li><li><strong>Record the outcome.</strong><span>ES, MES, NQ or no trade, plus the reason and expiry time of the decision.</span></li></ol><div class="fx-trade-card"><h3>Instrument-selection record</h3><dl><div><dt>Question</dt><dd>What exposure is needed and what observation would invalidate it?</dd></div><div><dt>Index</dt><dd>S&amp;P 500 or Nasdaq-100 methodology and the relevant information channel.</dd></div><div><dt>Risk</dt><dd>Whole-contract loss under base and stress assumptions.</dd></div><div><dt>Cost</dt><dd>Round-trip spread, impact and fees at equivalent intended exposure.</dd></div><div><dt>Operations</dt><dd>Month, session, roll, margin, data and impairment status.</dd></div><div><dt>Decision</dt><dd>Contract or no trade; timestamp and next reassessment condition.</dd></div></dl></div></section>
 
-        <p>All three contracts use the same tick size: <strong>0.25 index points per tick</strong>.</p>
+<section class="fx-section" id="failures" aria-labelledby="failures-title"><div class="fx-section-heading"><p class="fx-kicker">Comparison failures</p><h2 id="failures-title">Discard the Ranking When the Inputs Are Not Comparable</h2></div><div class="fx-decision-strip"><article><strong>Raw points</strong><span>Different index levels and multipliers</span><p>Use percentage movement and dollar consequence.</p></article><article><strong>One contract each</strong><span>Unequal exposure</span><p>Normalize notional and stop risk first.</p></article><article><strong>&ldquo;NQ is tech&rdquo;</strong><span>Incomplete identity</span><p>Use current Nasdaq methodology and weights.</p></article><article><strong>Margin as risk</strong><span>Deposit mistaken for loss</span><p>Model gap and slippage independently.</p></article><article><strong>Permanent winner</strong><span>Regime and book ignored</span><p>Expire the selection when conditions change.</p></article></div><div class="fx-go-card"><p class="fx-card-label">Decision boundary</p><h3>ES and MES solve scale for one index; NQ changes the index</h3><p>If neither the exposure nor the executable loss can be stated precisely, choosing among the three is premature.</p></div></section>
 
-        <ul>
-            <li><strong>ES:</strong> $12.50 per tick, $50 per point (4 ticks per point)</li>
-            <li><strong>MES:</strong> $1.25 per tick, $5 per point</li>
-            <li><strong>NQ:</strong> $5.00 per tick, $20 per point</li>
-        </ul>
-
-        <p>
-            MES is exactly 1/10th of ES.  
-            NQ has its own value structure but follows the same tick/point logic.
-        </p>
-
-        <h2>Contract Size Relationship</h2>
-        <ul>
-            <li>1 ES ≈ 10 MES</li>
-            <li>1 NQ ≈ 10 MNQ (if you also look at the micro version)</li>
-        </ul>
-        <p>
-            This is useful when you see people compare “1 ES vs 10 MES” or “1 NQ vs 10 MNQ” — 
-            they’re talking about matching approximate dollar exposure.
-        </p>
-
-        <h2>Volatility Differences</h2>
-
-        <p>
-            ES and MES usually move slower and with tighter range compared to NQ.  
-            NQ often has larger intraday swings (in points) because the Nasdaq-100 is more concentrated in big tech and growth stocks.
-        </p>
-
-        <p>In simple terms:</p>
-        <ul>
-            <li><strong>ES / MES:</strong> Smoother, more “index-like” movement</li>
-            <li><strong>NQ:</strong> Sharper spikes and drops, bigger point swings</li>
-        </ul>
-
-        <h2>Margin (High Level)</h2>
-        <p>
-            Margin numbers change by broker and over time, but the pattern is consistent:
-        </p>
-        <ul>
-            <li>Day-trade margin on ES is much higher than on MES</li>
-            <li>Day-trade margin on NQ is similar or slightly higher than ES for many brokers</li>
-            <li>Micro contracts (MES, MNQ) are designed to require less capital per contract</li>
-        </ul>
-        <p>
-            Exact margin is published by each broker and prop firm in their documentation.
-        </p>
-
-        <h2>What Stays The Same Between Them</h2>
-        <ul>
-            <li>They all trade nearly 23 hours a day during the week</li>
-            <li>They all have quarterly expiration cycles (H, M, U, Z months)</li>
-            <li>They all use the same tick size of 0.25</li>
-            <li>They all follow their respective index closely</li>
-        </ul>
-
-        <h2>The Core Difference In One Line</h2>
-        <p>
-            ES vs MES is mainly <strong>contract size</strong>.  
-            ES/MES vs NQ is mainly <strong>which index you’re tracking and how violently it moves</strong>.
-        </p>
-
-        
-
-    </div>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-       
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
-</body>
-</html>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul>
+<li><a href="https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME E-mini S&amp;P 500 specifications</a>, <a href="https://www.cmegroup.com/markets/equities/sp/micro-e-mini-sandp-500.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME Micro E-mini S&amp;P 500 specifications</a> and <a href="https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME E-mini Nasdaq-100 specifications</a>.</li>
+<li><a href="https://www.spglobal.com/spdji/en/methodology/article/sp-us-indices-methodology/" target="_blank" rel="noopener noreferrer">S&amp;P U.S. Indices Methodology</a>.</li>
+<li><a href="https://indexes.nasdaqomx.com/docs/Methodology_NDX.pdf" target="_blank" rel="noopener noreferrer">Nasdaq-100 Index Methodology</a>.</li>
+<li><a href="https://www.cmegroup.com/solutions/risk-management/performance-bonds-margins/faq-performance-bonds-margins.html" target="_blank" rel="noopener noreferrer">CME performance-bond and margin FAQ</a>.</li>
+</ul><p>Sources were reviewed August 28, 2026. This unsponsored comparison reports no original volatility, liquidity or performance ranking. Contract rules and index composition can change; verify current official materials before making an operational decision.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>The three-contract selector is a research aid; it does not recommend an investment, hedge, tax treatment, legal position, broker or order. Different portfolios do not dilute leverage: each future can lose more than posted margin. Use current index rules, contract terms and book conditions to set a separate risk cap.</p></aside>
+<!-- ARTICLE BODY END -->
+</article></main><footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

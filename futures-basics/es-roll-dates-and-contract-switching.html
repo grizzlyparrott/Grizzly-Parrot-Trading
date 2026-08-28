@@ -1,257 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<html lang="en"><head><meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ES Roll Dates: Contract Switching Without Hidden Risk</title>
+<meta name="description" content="Switch quarterly ES or MES contracts with a dated lifecycle, live liquidity comparison, basis-aware chart handling, open-order audit and post-roll reconciliation.">
+<meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-roll-dates-and-contract-switching.html">
+<meta property="og:title" content="ES Roll Dates: Contract Switching Without Hidden Risk"><meta property="og:description" content="Switch quarterly ES or MES contracts with a dated lifecycle, live liquidity comparison, basis-aware chart handling, open-order audit and post-roll reconciliation."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-roll-dates-and-contract-switching.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-24">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ES Roll Dates: Contract Switching Without Hidden Risk"><meta name="twitter:description" content="Switch quarterly ES or MES contracts with a dated lifecycle, live liquidity comparison, basis-aware chart handling, open-order audit and post-roll reconciliation."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ES Roll Dates: Contract Switching Without Hidden Risk","description":"Switch quarterly ES or MES contracts with a dated lifecycle, live liquidity comparison, basis-aware chart handling, open-order audit and post-roll reconciliation.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/es-roll-dates-and-contract-switching.html"},"datePublished":"2025-11-24","dateModified":"2026-08-24","url":"https://grizzlyparrottrading.com/futures-basics/es-roll-dates-and-contract-switching.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"ES Roll Dates: Contract Switching Without Hidden Risk","item":"https://grizzlyparrottrading.com/futures-basics/es-roll-dates-and-contract-switching.html"}]}</script><script src="/uet.js" defer></script></head>
+<body><a class="fx-skip-link" href="#main-content">Skip to article content</a><header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article><!-- ARTICLE BODY START -->
+<header class="fx-hero"><div class="fx-hero-copy"><p class="fx-kicker">Quarterly lifecycle &middot; liquidity migration &middot; order control</p><h1>ES Roll Dates: Contract Switching Without Hidden Risk</h1><p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 24, 2026</p><p class="fx-hero-lede">On roll week, two ES contracts can both be valid and actively trading. The job is not to guess which symbol a chart vendor calls “front month.” The job is to choose a dated contract from current liquidity, migrate the position and every working order, and prove the old expiry is flat.</p><div class="fx-hero-actions"><a class="button-primary" href="#timeline">Build the timeline</a><a class="fx-text-link" href="#audit">Run the order audit</a></div></div><aside class="fx-market-board" aria-label="ES quarterly roll control"><div class="fx-board-head"><span>March quarterly cycle</span><strong>H &rarr; M &rarr; U &rarr; Z</strong></div><div class="fx-proof"><strong>Customary roll</strong><span>Monday before third Friday</span></div><div class="fx-proof"><strong>Decision input</strong><span>Both dated order books</span></div><div class="fx-proof"><strong>Completion proof</strong><span>Old position and orders = 0</span></div><p class="fx-board-foot">Convention never moves an account automatically</p></aside></header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#timeline">Timeline</a><a href="#migration">Liquidity</a><a href="#basis">Basis</a><a href="#switch">Switch</a><a href="#audit">Order audit</a><a href="#expiry">Expiration</a><a href="#verify">Verify</a></nav>
 
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+<section class="fx-section" id="timeline" aria-labelledby="timeline-title"><div class="fx-section-heading"><p class="fx-kicker">Start from the dated contract</p><h2 id="timeline-title">Map the Quarter Before Roll Week Begins</h2><p>ES and MES follow the March quarterly cycle: March (H), June (M), September (U) and December (Z). CME publishes the customary U.S. equity-index roll date as the Monday before the third Friday of the expiration month. It is a market convention, not a mandatory account instruction.</p></div><div class="fx-lifecycle"><article><span>1</span><h3>Contract opens</h3><p>The deferred month trades alongside nearer expiries. Record its exact root, month code and year.</p></article><article><span>2</span><h3>Pre-roll observation</h3><p>Monitor both books before the customary date so migration is measured rather than discovered late.</p></article><article><span>3</span><h3>Customary Monday</h3><p>The second-nearest quarterly contract is commonly identified as the lead month after this point.</p></article><article><span>4</span><h3>Third-Friday termination</h3><p>The expiring contract reaches its cash-market-open termination boundary, subject to holiday rules.</p></article><article><span>5</span><h3>Cash settlement</h3><p>Remaining positions settle to the S&amp;P 500 Special Opening Quotation.</p></article></div><p class="fx-related">The exact ES/MES multiplier, hours, termination and settlement rules live on <a href="es-tick-size-tick-value-and-margin.html">the canonical contract-mechanics page</a>.</p></section>
 
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<section class="fx-section" id="migration" aria-labelledby="migration-title"><div class="fx-section-heading"><p class="fx-kicker">The lead month is an observed market state</p><h2 id="migration-title">Compare Liquidity Instead of Obeying a Calendar Label</h2><p>Volume can migrate quickly, gradually or unevenly by time of day. A single daily-volume total is not enough for an execution decision. Compare the expiring and next contracts at the same timestamp and for the intended quantity.</p></div><div class="fx-table-scroll" role="region" aria-label="ES contract migration measurements" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Measure</th><th scope="col">Expiring contract</th><th scope="col">Next contract</th><th scope="col">Decision use</th></tr></thead><tbody><tr><th scope="row">Inside spread</th><td>Record in ticks</td><td>Record in ticks</td><td>Reject a switch that compares stale or crossed snapshots</td></tr><tr><th scope="row">Displayed depth</th><td>Quantity at and near best prices</td><td>Same depth window</td><td>Estimate immediate cost for intended size</td></tr><tr><th scope="row">Trade flow</th><td>Recent volume and replenishment</td><td>Same clock interval</td><td>Find where executable activity has moved</td></tr><tr><th scope="row">Open interest</th><td>Prior clearing snapshot</td><td>Prior clearing snapshot</td><td>Context only; it is not a real-time fill guarantee</td></tr><tr><th scope="row">Platform readiness</th><td>Data, routing, risk controls</td><td>Data, routing, risk controls</td><td>Block the switch if either security definition is unresolved</td></tr></tbody></table></div><div class="fx-decision-strip"><article><strong>GO</strong><span>Next contract passes spread, depth, trade-flow and platform checks.</span></article><article><strong>WAIT</strong><span>Liquidity is split and the holding deadline permits observation.</span></article><article><strong>EXIT</strong><span>Neither outright nor calendar-spread route fits cost and risk limits.</span></article></div></section>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ES Roll Dates and How to Switch Contracts Cleanly</title>
-  <meta name="description" content="A blunt guide to ES roll dates and how to switch contracts without getting clipped by liquidity shifts or bad fills.">
-  <meta name="robots" content="index, follow">
+<section class="fx-section" id="basis" aria-labelledby="basis-title"><div class="fx-section-heading"><p class="fx-kicker">Different prices are not a chart error</p><h2 id="basis-title">Carry and Dividends Create a Contract Spread</h2><p>The expiring and next ES contracts reference the same index but settle on different dates. Financing, expected dividends and time to settlement help shape the difference between them. Therefore, selling one month and buying the next at different numerical prices does not by itself create a gain or loss equal to the price gap.</p></div><div class="fx-formula" aria-label="Calendar spread definition"><code>roll spread = next-quarter price &minus; expiring-quarter price</code><i aria-hidden="true">|</i><strong>timestamp and side both legs</strong></div><div class="fx-two-column"><article class="fx-panel"><p class="fx-card-label">Execution record</p><h3>Keep the real cash flows</h3><p>Record decision, arrival and fill prices for both legs, commissions and slippage. If legs are executed separately, also record the unhedged interval.</p></article><article class="fx-panel"><p class="fx-card-label">Research record</p><h3>Keep the adjustment rule</h3><p>A back-adjusted continuous series may remove visible jumps for analysis. Preserve raw dated prices and the vendor's roll and adjustment method so signals are reproducible.</p></article></div><div class="fx-caution"><strong>Do not compare a continuous chart with a dated order ticket as if they were the same instrument.</strong><p>The chart may already have switched or adjusted history while an existing order still points to the expiring security.</p></div></section>
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-roll-dates-and-contract-switching.html">
+<section class="fx-section" id="switch" aria-labelledby="switch-title"><div class="fx-section-heading"><p class="fx-kicker">Choose a migration route</p><h2 id="switch-title">Separate-Leg and Calendar-Spread Rolls Have Different Risks</h2></div><div class="fx-table-scroll" role="region" aria-label="ES roll execution routes" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Route</th><th scope="col">What happens</th><th scope="col">Primary risk</th><th scope="col">Required record</th></tr></thead><tbody><tr><th scope="row">Exit, then enter</th><td>Close the old contract before opening the new one</td><td>Market exposure is absent between fills; replacement price can move</td><td>Both fills and flat interval</td></tr><tr><th scope="row">Enter, then exit</th><td>Open the new contract before closing the old one</td><td>Temporary doubled directional exposure and margin demand</td><td>Overlap duration and aggregate exposure</td></tr><tr><th scope="row">Calendar spread</th><td>Submit a recognized intermonth spread</td><td>Spread liquidity, partial-fill behavior and route configuration</td><td>Spread symbol, ratio, spread price and resulting legs</td></tr><tr><th scope="row">Close only</th><td>Exit the expiring position without replacement</td><td>Strategy exposure ends</td><td>Reason the next month failed authorization</td></tr></tbody></table></div><p>For a one-to-one ES roll, the intended result is the same number and direction of contracts in the new expiry with zero in the old expiry. MES must remain MES unless a separate sizing decision authorizes a product change. Ten MES and one ES have equivalent multiplier exposure, but substituting them can change fees, queue, execution and margin treatment.</p><div class="fx-caution"><strong>Never rely on an unchecked “auto-roll” setting.</strong><p>Chart rollover, symbol mapping and broker position management are different functions. Require explicit confirmation of what the platform changes and what it leaves working.</p></div></section>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="ES Roll Dates and How to Switch Contracts Cleanly">
-  <meta property="og:description" content="A blunt guide to ES roll dates and how to switch contracts without getting clipped by liquidity shifts or bad fills.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-roll-dates-and-contract-switching.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
+<section class="fx-section" id="audit" aria-labelledby="audit-title"><div class="fx-section-heading"><p class="fx-kicker">Orders belong to symbols, not ideas</p><h2 id="audit-title">Audit Every Working Order Before and After the Switch</h2></div><ol class="fx-process"><li><strong>Freeze new automation.</strong><span>Pause strategies that could repopulate the expiring symbol while migration is underway.</span></li><li><strong>Inventory the old expiry.</strong><span>Export position, open orders, child orders, brackets, alerts and server-side contingencies by account.</span></li><li><strong>Cancel and confirm.</strong><span>Obtain cancellation acknowledgements; a local screen disappearing is not enough if connectivity is uncertain.</span></li><li><strong>Execute the chosen route.</strong><span>Use the pre-authorized quantity, order type and maximum cost. Abort on rejects, partials outside policy or a stale book.</span></li><li><strong>Rebuild deliberately.</strong><span>Create protective and exit orders against the new dated position; do not clone old numerical prices without adjusting the thesis.</span></li><li><strong>Reconcile all accounts.</strong><span>Old position zero, old working orders zero, new position correct, new protection active, buying power and cash consistent.</span></li></ol><div class="fx-go-card"><p class="fx-card-label">Completion condition</p><h3>“The chart rolled” is not evidence</h3><p>The roll is complete only when broker acknowledgements and the account position report show the intended new expiry and no residual exposure or working orders in the old one.</p></div></section>
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="ES Roll Dates and How to Switch Contracts Cleanly">
-  <meta name="twitter:description" content="A blunt guide to ES roll dates and how to switch contracts without getting clipped by liquidity shifts or bad fills.">
+<section class="fx-section" id="expiry" aria-labelledby="expiry-title"><div class="fx-section-heading"><p class="fx-kicker">Do not drift into final settlement</p><h2 id="expiry-title">Use the Earlier of Exchange and Broker Cutoffs</h2><p>ES and MES are cash settled, but the expiring contract still terminates. CME rules tie termination to the cash-market open on the final settlement determination day, normally the third Friday of the quarterly month. Brokers may impose an earlier close-only, liquidation or position-reduction deadline.</p></div><div class="fx-three-column"><article class="fx-panel"><p class="fx-card-label">Exchange</p><h3>Rulebook boundary</h3><p>Verify the third-Friday calendar, holiday contingency, trading termination and SOQ procedure.</p></article><article class="fx-panel"><p class="fx-card-label">Broker</p><h3>Operational boundary</h3><p>Record the account-specific deadline, eligible order types, margin treatment and liquidation rights.</p></article><article class="fx-panel"><p class="fx-card-label">Strategy</p><h3>Internal boundary</h3><p>Set an earlier deadline that leaves time to handle rejects, partial fills and connectivity failure.</p></article></div><p>A cash-settled contract has no physical share delivery, but holding through settlement still exposes the account to the difference between its position value and the final SOQ plus broker and variation-margin processes. If settlement is not an approved strategy branch, exit earlier.</p></section>
 
-  <link rel="stylesheet" href="../style.css">
+<section class="fx-section" id="verify" aria-labelledby="verify-title"><div class="fx-section-heading"><p class="fx-kicker">Post-roll control</p><h2 id="verify-title">Verify the New State Before Trading Resumes</h2></div><ul class="fx-checklist"><li><strong>Symbol:</strong> root, quarterly month code and year match the intended ES or MES security.</li><li><strong>Data:</strong> live quote, depth and trade feed belong to the same dated contract as the order ticket.</li><li><strong>Position:</strong> old expiry is zero; new expiry has the approved direction and whole-contract quantity.</li><li><strong>Orders:</strong> no stale brackets, stops or targets remain in the old contract; new protection is acknowledged.</li><li><strong>Risk:</strong> stop distance, tick value, slippage reserve, event exposure and current margin are recalculated.</li><li><strong>Charts:</strong> continuous-series roll and back-adjustment settings are recorded; raw dated data remain available.</li><li><strong>Accounting:</strong> both-leg fills, spread, fees, realized P&amp;L and cash balance reconcile.</li></ul><div class="fx-method"><div><h3>Incident branch</h3><p>If the old expiry is not flat, a cancellation is unacknowledged or the new protection is missing, stop automation and reduce exposure under the prewritten emergency procedure. Do not continue normal trading while investigating.</p></div><dl><div><dt>Old position</dt><dd>0 required</dd></div><div><dt>Old orders</dt><dd>0 required</dd></div><div><dt>New protection</dt><dd>Acknowledged</dd></div><div><dt>Unknown</dt><dd>Trading paused</dd></div></dl></div></section>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "ES Roll Dates and How to Switch Contracts Cleanly",
-  "description": "A blunt guide to ES roll dates and how to switch contracts without getting clipped by liquidity shifts or bad fills.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/es-roll-dates-and-contract-switching.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/es-roll-dates-and-contract-switching.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "ES Roll Dates and How to Switch Contracts Cleanly",
-      "item": "https://grizzlyparrottrading.com/futures-basics/es-roll-dates-and-contract-switching.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
-</head>
-<body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-<h1>ES Roll Dates and How to Switch Contracts Cleanly</h1>
-
-<p>
-Most beginners have no idea when ES rolls or how to switch contracts without getting terrible fills. ES roll dates follow a strict schedule, and liquidity shifts in predictable ways. If you don’t understand this, you end up trading the wrong contract — the one nobody else is using.
-</p>
-
-<h2>How ES Roll Dates Work</h2>
-<p>
-ES contracts follow the quarterly expiration cycle: March (H), June (M), September (U), December (Z).  
-But here’s the key: <strong>traders roll early — long before expiration.</strong>
-</p>
-
-<table>
-<tr><th>Month Code</th><th>Contract Month</th></tr>
-<tr><td>H</td><td>March</td></tr>
-<tr><td>M</td><td>June</td></tr>
-<tr><td>U</td><td>September</td></tr>
-<tr><td>Z</td><td>December</td></tr>
-</table>
-
-<h2>When Traders Actually Roll</h2>
-<p>
-The real roll happens on the <strong>Thursday before the second Friday</strong> of the contract expiration month.  
-That’s when liquidity jumps from the expiring contract to the next one.
-</p>
-
-<p>
-Typical pattern:
-<ul>
-  <li>Day before roll: liquidity split</li>
-  <li>Roll day: majority shifts to new contract</li>
-  <li>Next day: old contract becomes unusable</li>
-</ul>
-</p>
-
-<h2>How to Know Which Contract to Trade</h2>
-<p>
-Check depth, volume, and the DOM. The contract with the highest volume is the real ES for the day.  
-Trading the wrong one means:
-<ul>
-  <li>Worse fills</li>
-  <li>Wider spreads</li>
-  <li>No follow-through</li>
-</ul>
-</p>
-
-<h2>How to Switch Contracts Cleanly</h2>
-<p>
-Switching contracts is simple — people just overthink it.
-</p>
-
-<h3>1. Close or flatten your position</h3>
-<p>
-Never roll while still holding a trade unless you know what you’re doing.</p>
-
-<h3>2. Change your chart and DOM symbol</h3>
-<p>
-Example: from ESZ5 → ESH6.</p>
-
-<h3>3. Rebuild your levels</h3>
-<p>
-New contract means slightly different prices.  
-Rebuild your:
-<ul>
-  <li>Session highs/lows</li>
-  <li>VWAP</li>
-  <li>Opening range</li>
-  <li>Premarket levels</li>
-</ul>
-</p>
-
-<p>
-If you need help re-marking key levels, read  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-session-highs-lows-and-vwap-usage.html">Session Highs/Lows & VWAP</a>.
-</p>
-
-<h3>4. Check ATR again</h3>
-<p>
-New contract = new volatility.  
-If you're not using ATR properly yet, review  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-atr-behavior-and-volatility-zones.html">ES ATR Volatility Zones</a>.
-</p>
-
-<div class="highlight-box green">
-  <h3>Roll with the Volume, Not the Calendar</h3>
-  <p>ES rolls don’t sneak up on you. Watch the volume, follow the crowd, and switch contracts when liquidity moves. It’s not about expiration — it’s about where the real market is trading.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
-</body>
-</html>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul><li><a href="https://www.cmegroup.com/trading/equity-index/rolldates.html" target="_blank" rel="noopener noreferrer">CME Equity Index Roll Dates</a> for the March quarterly cycle, customary Monday roll date and lead-month convention.</li><li><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/IV/350/358/358.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 358</a> for ES termination and cash-settlement rules.</li><li><a href="https://www.cmegroup.com/content/dam/cmegroup/rulebook/CME/IV/350/353/353.pdf" target="_blank" rel="noopener noreferrer">CME Rulebook Chapter 353</a> for MES termination and cash-settlement rules.</li><li><a href="https://www.cmegroup.com/trading/equity-index/settlement.html" target="_blank" rel="noopener noreferrer">CME Final Settlement Procedures</a> for the S&amp;P 500 Special Opening Quotation.</li><li><a href="https://www.cmegroup.com/education/courses/micro-e-mini-futures/managing-micro-e-mini-futures-expiration" target="_blank" rel="noopener noreferrer">CME Managing Micro E-mini Futures Expiration</a> for offset, settlement and roll choices.</li><li><a href="es-tick-size-tick-value-and-margin.html">ES/MES canonical contract mechanics</a> for current multipliers, ticks, session and margin boundaries.</li></ul><p>Sources were reviewed August 28, 2026. This is an operational workflow, not a claim that a particular day, execution route or continuous-contract setting is universally best. Liquidity, broker cutoffs and platform behavior require live verification.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This material is educational, not personalized investment or brokerage advice. Rolling can create spread, slippage, partial-fill, gap, doubled-exposure and operational risks. Futures losses can exceed planned risk and deposited margin.</p></aside>
+<!-- ARTICLE BODY END --></article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer></body></html>

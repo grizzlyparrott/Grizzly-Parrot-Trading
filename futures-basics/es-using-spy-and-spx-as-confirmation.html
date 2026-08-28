@@ -1,243 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <meta charset="UTF-8">
-     <!-- Standard Favicon -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-<!-- Web App Manifest -->
-<link rel="manifest" href="/site.webmanifest">
-
-<!-- PNG Fallbacks -->
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-   
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Using SPY and SPX to Confirm ES Trades</title>
-<meta name="description" content="A blunt guide to using SPY and SPX as confirmation tools for ES trades so beginners stop taking low-quality setups.">
-<meta name="robots" content="index, follow">
-
-<!-- Canonical -->
-<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-using-spy-and-spx-as-confirmation.html">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Using SPY and SPX to Confirm ES Trades">
-<meta property="og:description" content="Learn how SPY and SPX help confirm ES trend strength, reversals, and momentum so your entries aren't blind." content="A blunt guide to using SPY and SPX as confirmation tools for ES trades so beginners stop taking low-quality setups." >
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-using-spy-and-spx-as-confirmation.html">
-<meta property="og:site_name" content="Grizzly Parrot Trading">
-    <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-    <meta property="og:image:width" content="1792">
-    <meta property="og:image:height" content="941">
-
-
-
-<!-- Twitter -->
-
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-<meta name="twitter:title" content="Using SPY and SPX to Confirm ES Trades">
-<meta name="twitter:description" content="A blunt guide to using SPY and SPX as confirmation tools for ES trades so beginners stop taking low-quality setups.">
-
-<link rel="stylesheet" href="../style.css">
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-JMJVR3G5YN');
-</script>
-
-<!-- JSON-LD: Article -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Using SPY and SPX to Confirm ES Trades",
-  "description": "A blunt guide to using SPY and SPX as confirmation tools for ES trades so beginners stop taking low-quality setups.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/es-using-spy-and-spx-as-confirmation.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/es-using-spy-and-spx-as-confirmation.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-<!-- JSON-LD: Breadcrumbs -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Using SPY and SPX to Confirm ES Trades",
-      "item": "https://grizzlyparrottrading.com/futures-basics/es-using-spy-and-spx-as-confirmation.html"
-    }
-  ]
-}
-</script>
-
-
-  <script src="/uet.js" defer></script>
+  <meta charset="UTF-8"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES, SPY and SPX: When Cross-Market Confirmation Works</title>
+  <meta name="description" content="Compare ES futures, SPY ETF shares and the SPX index across clocks, units, basis, creation/redemption and auctions to avoid false confirmation.">
+  <meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-using-spy-and-spx-as-confirmation.html">
+  <meta property="og:title" content="ES, SPY and SPX: When Cross-Market Confirmation Works"><meta property="og:description" content="Compare ES futures, SPY ETF shares and the SPX index across clocks, units, basis, creation/redemption and auctions to avoid false confirmation."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-using-spy-and-spx-as-confirmation.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-28">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ES, SPY and SPX: When Cross-Market Confirmation Works"><meta name="twitter:description" content="Compare ES futures, SPY ETF shares and the SPX index across clocks, units, basis, creation/redemption and auctions to avoid false confirmation."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ES, SPY and SPX: When Cross-Market Confirmation Works","description":"Compare ES futures, SPY ETF shares and the SPX index across clocks, units, basis, creation/redemption and auctions to avoid false confirmation.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/es-using-spy-and-spx-as-confirmation.html"},"datePublished":"2025-11-24","dateModified":"2026-08-28","url":"https://grizzlyparrottrading.com/futures-basics/es-using-spy-and-spx-as-confirmation.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"ES, SPY and SPX: When Cross-Market Confirmation Works","item":"https://grizzlyparrottrading.com/futures-basics/es-using-spy-and-spx-as-confirmation.html"}]}</script><script src="/uet.js" defer></script>
 </head>
-<body>
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo"><a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a></div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
-
+<body><a class="fx-skip-link" href="#main-content">Skip to article content</a>
+<header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article>
 <!-- ARTICLE BODY START -->
+<header class="fx-hero"><div class="fx-hero-copy"><p class="fx-kicker">Identity map &middot; clocks and units &middot; basis-aware comparison</p><h1>ES, SPY and SPX: When Cross-Market Confirmation Works</h1><p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 28, 2026</p><p class="fx-hero-lede">Three screens can disagree without one being wrong. ES is a dated futures contract, SPY is an exchange-traded trust share, and SPX is an index level calculated from constituent stocks. Before treating one as confirmation for another, align the economic exposure, timestamp, return unit and market phase.</p><div class="fx-hero-actions"><a class="button-primary" href="#identity">Map the three instruments</a><a class="fx-text-link" href="#protocol">Use the comparison protocol</a></div></div><aside class="fx-quote-board" aria-label="ES SPY SPX identity summary"><div><span>ES</span><strong>Dated futures price</strong><small>CME order book</small></div><div><span>SPY</span><strong>ETF share price</strong><small>Secondary market</small></div><div><span>SPX</span><strong>Calculated index level</strong><small>Not a share</small></div></aside></header>
 
-<h1>Using SPY and SPX to Confirm ES Trades</h1>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#identity">Identity</a><a href="#clocks">Clocks</a><a href="#links">Arbitrage links</a><a href="#scenarios">Scenarios</a><a href="#protocol">Protocol</a><a href="#invalid">Invalid uses</a></nav>
 
-<p>
-If you're trading ES without looking at SPY or SPX, you're handicapping yourself. ES doesn’t move in a vacuum — it’s tied directly to the S&amp;P 500 index (SPX) and its ETF proxy (SPY). When these three aren’t aligned, your trade gets weak follow-through or fails outright. Here's how to use SPY and SPX as confirmation tools without overcomplicating them.
-</p>
+<section class="fx-section" id="identity" aria-labelledby="identity-title"><div class="fx-section-heading"><p class="fx-kicker">Related exposure, different legal objects</p><h2 id="identity-title">Start With What Each Screen Actually Represents</h2><p>All three connect to the S&amp;P 500, but they do not have the same issuer, trading mechanism, carrying costs or settlement lifecycle.</p></div><div class="fx-table-scroll" role="region" aria-label="Identity comparison of ES SPY and SPX" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Dimension</th><th scope="col">ES</th><th scope="col">SPY</th><th scope="col">SPX</th></tr></thead><tbody>
+<tr><th scope="row">What it is</th><td>CME cash-settled, dated equity-index futures contract</td><td>Tradable unit of the State Street SPDR S&amp;P 500 ETF Trust</td><td>S&amp;P Dow Jones Indices calculation of the S&amp;P 500 price index</td></tr>
+<tr><th scope="row">Price formation</th><td>Bids and offers in the futures order book</td><td>Bids and offers for ETF shares across equity venues</td><td>Formula using constituent prices, float-adjusted shares and a divisor</td></tr>
+<tr><th scope="row">Economic holder</th><td>Futures position with performance bond and daily variation</td><td>Beneficial owner of trust units bought in the secondary market</td><td>No position from viewing the index; separate products may reference it</td></tr>
+<tr><th scope="row">Lifecycle</th><td>Contract month, roll and final cash settlement</td><td>Open-ended ETF share supply via large creation/redemption units</td><td>Index maintenance, constituent changes and divisor adjustments</td></tr>
+<tr><th scope="row">Income/carry</th><td>Financing and expected dividends enter futures basis</td><td>Trust holds portfolio securities and makes distributions subject to its documents</td><td>Price index does not itself pay a distribution to the viewer</td></tr>
+<tr><th scope="row">Execution unit</th><td>Whole contracts</td><td>ETF shares</td><td>No executable unit in the index value itself</td></tr>
+</tbody></table></div><div class="fx-caution"><strong>Do not confuse SPX with an SPX option.</strong><p>SPX commonly names the S&amp;P 500 index, while Cboe also lists options that reference that index. An option quote adds strike, expiry and volatility dimensions; it is not the cash index level used here.</p></div></section>
 
-<h2>Why SPY and SPX Matter for ES</h2>
-<p>
-SPX is the actual S&amp;P 500 index. ES is the futures market for it. SPY is the ETF tracking it.  
-When all three move together, momentum is clean. When one lags or diverges, something’s off — usually liquidity or short-term rotation.
-</p>
+<section class="fx-section" id="clocks" aria-labelledby="clocks-title"><div class="fx-section-heading"><p class="fx-kicker">A timestamp is part of the instrument</p><h2 id="clocks-title">The Same Minute Can Belong to Different Market Phases</h2><p>ES trades through a long Globex session with a daily maintenance break. SPY&rsquo;s primary U.S. listing has regular and extended equity-market sessions. The real-time SPX calculation depends on constituent prices, so the cash open, individual stock halts and official auctions matter.</p></div><div class="fx-lifecycle"><article><span>Overnight</span><h3>ES can discover price</h3><p>SPY may be closed or in a thinner extended session, while many constituent stocks have no contemporaneous regular-session trade.</p></article><article><span>Pre-open</span><h3>References multiply</h3><p>ES and premarket securities can react, but indicative quotes are not the official opening prices of all constituents.</p></article><article><span>Cash open</span><h3>Stocks enter through auctions</h3><p>Constituents open at different moments. Early SPX values and ES basis can adjust as more primary prices become available.</p></article><article><span>Continuous cash</span><h3>All three links are active</h3><p>Index calculation, ETF arbitrage and futures-cash trading can transmit information in either direction.</p></article><article><span>Cash close</span><h3>Auctions set benchmark prices</h3><p>Closing imbalances, ETF flow and futures basis can shift without implying a new macro thesis.</p></article></div><p class="fx-source-note"><strong>Clock rule:</strong> compare exchange timestamps in one declared time zone and label the session. A last SPX value from the cash close is not live overnight confirmation for ES.</p></section>
 
-<table>
-<tr><th>Symbol</th><th>What It Represents</th><th>Use Case</th></tr>
-<tr><td>ES</td><td>S&amp;P 500 futures</td><td>Primary market to trade</td></tr>
-<tr><td>SPX</td><td>S&amp;P 500 index</td><td>Trend confirmation</td></tr>
-<tr><td>SPY</td><td>ETF tracking the index</td><td>Retail-driven intraday sentiment</td></tr>
-</table>
+<section class="fx-section" id="links" aria-labelledby="links-title"><div class="fx-section-heading"><p class="fx-kicker">Why prices stay related but not equal</p><h2 id="links-title">Arbitrage Connects the Markets Through Different Mechanisms</h2><p>Related prices create incentives to trade baskets, ETF shares and futures, but each link has financing, dividends, fees, execution delay and balance-sheet constraints. Exact equality is not the expected condition.</p></div><div class="fx-three-column"><article class="fx-panel"><p class="fx-card-label">Futures versus cash</p><h3>Basis carries time</h3><p>A futures price reflects the cash-index exposure carried to a contract date, including financing and expected distributions. Changes in rates, dividend expectations and time to expiry can move basis while exposure remains aligned.</p></article><article class="fx-panel"><p class="fx-card-label">ETF versus portfolio</p><h3>Creation and redemption adjust supply</h3><p>Authorized participants can transact with the trust in large creation units. Retail investors trade individual SPY shares at market prices that can differ from NAV.</p></article><article class="fx-panel"><p class="fx-card-label">Index versus stocks</p><h3>A divisor turns a portfolio into a level</h3><p>SPX aggregates float-adjusted constituent market values and uses divisor adjustments to preserve continuity around specified non-price changes.</p></article></div><div class="fx-formula"><span>Conceptual futures relationship</span><strong>ES &asymp; cash index + financing carry &minus; expected dividends</strong><small>an intuition, not an executable quote or exact pricing model</small></div><div class="fx-caution"><strong>A raw point spread is not confirmation.</strong><p>Use matched percentage returns or a measured fair-value/basis residual. ES, SPY and SPX have different numerical scales, and the relationship changes with contract month and time.</p></div></section>
 
-<h2>How to Use SPY and SPX to Confirm ES Direction</h2>
+<section class="fx-section" id="scenarios" aria-labelledby="scenarios-title"><div class="fx-section-heading"><p class="fx-kicker">Scenario matrix</p><h2 id="scenarios-title">Ask Which Market Has the Cleanest Current Information</h2><p>Leadership is conditional. The most informative screen can change with the clock, catalyst and liquidity.</p></div><div class="fx-table-scroll" role="region" aria-label="ES SPY SPX comparison scenarios" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Scenario</th><th scope="col">Useful comparison</th><th scope="col">What disagreement may mean</th><th scope="col">Invalid conclusion</th></tr></thead><tbody>
+<tr><th scope="row">Macro release before cash open</th><td>ES with rates and other open futures; label SPY/SPX clock limits</td><td>Cash references are stale or premarket liquidity differs</td><td>SPX &ldquo;rejected&rdquo; the ES move while SPX was not updating normally</td></tr>
+<tr><th scope="row">First minutes after open</th><td>ES, SPY, opening breadth and constituent-open coverage</td><td>Auctions and asynchronous stock openings are resolving</td><td>The first index print is a stable fair-value anchor</td></tr>
+<tr><th scope="row">Continuous cash session</th><td>Matched returns, measured ES basis and SPY premium/discount</td><td>Carry, ETF flow, sector concentration or temporary execution friction</td><td>Any one-tick divergence predicts reversal</td></tr>
+<tr><th scope="row">Large constituent shock</th><td>Constituent weight, peers, SPX contribution, SPY and ES</td><td>Index weighting transmits unevenly; broad macro exposure may not change</td><td>SPY volume proves broad institutional buying or selling</td></tr>
+<tr><th scope="row">Cash close</th><td>Closing-auction information, SPY flow and measured futures basis</td><td>Benchmark execution or imbalance rather than new information</td><td>A closing divergence will mechanically reverse overnight</td></tr>
+<tr><th scope="row">Quarterly futures expiry</th><td>Current/next ES contracts and official settlement procedure</td><td>Roll and settlement mechanics dominate the displayed spread</td><td>The expiring contract is a clean directional confirmation signal</td></tr>
+</tbody></table></div></section>
 
-<h3>1. Check if SPX Confirms the Trend</h3>
-<p>
-SPX moves cleaner than SPY because it’s not affected by ETF flows.  
-If ES is pushing higher but SPX isn’t making higher highs, your ES long is weak.  
-If ES breaks down but SPX doesn’t follow, expect chop or reversal.
-</p>
+<section class="fx-section" id="protocol" aria-labelledby="protocol-title"><div class="fx-section-heading"><p class="fx-kicker">Confirmation protocol</p><h2 id="protocol-title">Define the Comparison Before Looking at Agreement</h2><p>&ldquo;SPY confirms ES&rdquo; is too vague to test. A usable rule names the reference, transformation, tolerance, timestamp and invalidation.</p></div><ol class="fx-process"><li><strong>State the question.</strong><span>Direction, fair-value alignment, breadth, executable liquidity or opening/closing transition?</span></li><li><strong>Identify each series.</strong><span>Dated ES contract, SPY market price or NAV field, SPX price-index field and data vendor.</span></li><li><strong>Normalize the units.</strong><span>Use matched percentage returns or a declared basis model, not raw points.</span></li><li><strong>Align the clocks.</strong><span>One time zone, same observation window, known feed latency and labeled market phase.</span></li><li><strong>Set tolerance.</strong><span>Predeclare how much disagreement is economically meaningful after spread, carry and measurement noise.</span></li><li><strong>Require a decision consequence.</strong><span>Proceed, reduce, wait or reject&mdash;with a reason that can be reviewed.</span></li></ol><div class="fx-trade-card"><h3>Cross-market comparison record</h3><dl><div><dt>ES field</dt><dd>Contract month, bid/ask or trade, timestamp, spread, depth and roll state.</dd></div><div><dt>SPY field</dt><dd>Bid/ask or trade, primary/extended session, premium/discount field and timestamp.</dd></div><div><dt>SPX field</dt><dd>Index variant, calculation status, constituent-open coverage if relevant and timestamp.</dd></div><div><dt>Transformation</dt><dd>Return interval or basis model, carry inputs, dividend assumption and costs.</dd></div><div><dt>Rule</dt><dd>Agreement band, disagreement branch, expiry time and invalidation.</dd></div><div><dt>Outcome</dt><dd>Observed evidence and execution decision; no causality inferred from agreement alone.</dd></div></dl></div><p class="fx-related">For current ES multiplier, tick, sessions, settlement and margin boundaries, use the <a href="es-tick-size-tick-value-and-margin.html">canonical ES and MES mechanics guide</a>.</p></section>
 
-<h3>2. Check SPY for Intraday Momentum</h3>
-<p>
-SPY reacts slightly differently because it's traded heavily by retail and funds.  
-If SPY and ES are aligned during a trend push, continuation is likely.  
-If SPY lags, your breakout can fail.
-</p>
+<section class="fx-section" id="invalid" aria-labelledby="invalid-title"><div class="fx-section-heading"><p class="fx-kicker">Comparison failures</p><h2 id="invalid-title">Reject Confirmation When Identity, Time or Price Type Is Mixed</h2></div><div class="fx-falsification-tree"><article><p class="fx-card-label">Identity failure</p><h3>Different objects treated as one</h3><ul><li>SPX index confused with SPX options</li><li>SPY market price treated as NAV</li><li>Continuous ES series treated as a dated contract</li><li>Price-return and total-return indices mixed</li></ul></article><article><p class="fx-card-label">Clock failure</p><h3>Stale and live values compared</h3><ul><li>Overnight ES versus cash-close SPX</li><li>Premarket SPY versus official open</li><li>Feed latencies ignored</li><li>Stock halts or auctions omitted</li></ul></article><article><p class="fx-card-label">Inference failure</p><h3>Agreement promoted to a signal</h3><ul><li>No basis adjustment</li><li>No predeclared tolerance</li><li>Direction chosen after the move</li><li>No test after costs</li></ul></article></div><div class="fx-go-card"><p class="fx-card-label">Bottom line</p><h3>Cross-market agreement is context, not independent proof of a profitable trade</h3><p>ES, SPY and SPX are linked strongly enough to compare and different enough to disagree for legitimate reasons. Use the disagreement to diagnose the market state before using it to change risk.</p></div></section>
 
-<p>
-If you don't understand breakout structure yet, read  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-market-structure-trends-pulls-and-reversals.html">ES Market Structure</a>.
-</p>
-
-<h3>3. Watch for Divergences</h3>
-<p>
-Divergences aren't magic — they just show conflicting order flow.  
-Examples:
-<ul>
-  <li>ES makes a higher high, SPY doesn’t → weak breakout</li>
-  <li>ES makes a lower low, SPX holds steady → failed breakdown coming</li>
-</ul>
-</p>
-
-<h2>How SPY and SPX Help With Timing</h2>
-<p>
-During trend days, SPX leads.  
-During choppy days, SPY leads.  
-If you see all three aligning at a key level like VWAP or prior day high/low, that’s a high-probability continuation or reversal point.
-</p>
-
-<p>
-If you're not using VWAP and session levels yet, check  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-session-highs-lows-and-vwap-usage.html">Session Highs/Lows &amp; VWAP</a>.
-</p>
-
-<div class="highlight-box green">
-  <h3>Watch SPY and SPX to Trade ES with Context</h3>
-  <p>SPY and SPX confirm alignment, expose disconnects, and add weight to your setups. They’re not predictors — they’re context. Use them right, and your ES entries get sharp fast.</p>
-</div>
-
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul>
+<li><a href="https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html" target="_blank" rel="noopener noreferrer">CME E-mini S&amp;P 500 contract specifications</a> and <a href="https://www.cmegroup.com/trading/equity-index/settlement.html" target="_blank" rel="noopener noreferrer">CME equity-index final-settlement procedures</a>.</li>
+<li><a href="https://www.spglobal.com/spdji/en/methodology/article/sp-us-indices-methodology/" target="_blank" rel="noopener noreferrer">S&amp;P U.S. Indices Methodology</a> and <a href="https://www.spglobal.com/spdji/en/methodology/article/index-mathematics-methodology/" target="_blank" rel="noopener noreferrer">S&amp;P DJI Index Mathematics Methodology</a>.</li>
+<li><a href="https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy" target="_blank" rel="noopener noreferrer">State Street SPY fund page and current fund documents</a> and <a href="https://www.sec.gov/Archives/edgar/data/884394/000119312526022775/d77353d497.htm" target="_blank" rel="noopener noreferrer">2026 SPY prospectus filed with the SEC</a>.</li>
+<li><a href="https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-24" target="_blank" rel="noopener noreferrer">SEC Investor.gov bulletin on ETF market prices and creation/redemption</a>.</li>
+<li><a href="https://www.nyse.com/publicdocs/nyse/markets/nyse/NYSE_Opening_and_Closing_Auctions_Fact_Sheet.pdf" target="_blank" rel="noopener noreferrer">NYSE opening and closing auctions fact sheet</a>.</li>
+</ul><p>Sources were reviewed August 28, 2026. This unsponsored guide reports no original lead-lag study, basis strategy or profitable confirmation rule. Product rules, fund documents and market hours can change and must be checked at the source.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>Treat the cross-market method as research education, not personal advice on investing, hedging, taxes, law, brokerage or execution. Basis, gaps and leverage can produce loss beyond a chart level or deposited margin. Validate each market&rsquo;s status, price field and risk boundary at decision time.</p></aside>
 <!-- ARTICLE BODY END -->
-
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-       
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
-</body>
-</html>
+</article></main><footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
+</body></html>

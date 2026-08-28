@@ -1,286 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<html lang="en"><head><meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Build an Auditable ES Trading Plan</title>
+<meta name="description" content="Build a measurable ES trading plan from objectives, permissions, setup definitions, risk limits, execution branches, incident controls, review fields and versioning.">
+<meta name="robots" content="index, follow"><link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-building-a-simple-trading-plan.html">
+<meta property="og:title" content="Build an Auditable ES Trading Plan"><meta property="og:description" content="Build a measurable ES trading plan from objectives, permissions, setup definitions, risk limits, execution branches, incident controls, review fields and versioning."><meta property="og:type" content="article"><meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-building-a-simple-trading-plan.html"><meta property="og:site_name" content="Grizzly Parrot Trading"><meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta property="og:image:alt" content="Grizzly Parrot Trading"><meta property="article:published_time" content="2025-11-24"><meta property="article:modified_time" content="2026-08-26">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Build an Auditable ES Trading Plan"><meta name="twitter:description" content="Build a measurable ES trading plan from objectives, permissions, setup definitions, risk limits, execution branches, incident controls, review fields and versioning."><meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png"><meta name="twitter:image:alt" content="Grizzly Parrot Trading">
+<link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="/futures-basics/currency-research-library.css?v=20260820a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Build an Auditable ES Trading Plan","description":"Build a measurable ES trading plan from objectives, permissions, setup definitions, risk limits, execution branches, incident controls, review fields and versioning.","author":{"@type":"Person","name":"Kyle Parrott","url":"https://grizzlyparrottrading.com/about.html"},"publisher":{"@type":"Organization","name":"Grizzly Parrot Trading","url":"https://grizzlyparrottrading.com/","logo":{"@type":"ImageObject","url":"https://grizzlyparrottrading.com/OG-default.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grizzlyparrottrading.com/futures-basics/es-building-a-simple-trading-plan.html"},"datePublished":"2025-11-24","dateModified":"2026-08-26","url":"https://grizzlyparrottrading.com/futures-basics/es-building-a-simple-trading-plan.html","image":"https://grizzlyparrottrading.com/OG-default.png","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrottrading.com/"},{"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrottrading.com/futures-basics/"},{"@type":"ListItem","position":3,"name":"Build an Auditable ES Trading Plan","item":"https://grizzlyparrottrading.com/futures-basics/es-building-a-simple-trading-plan.html"}]}</script><script src="/uet.js" defer></script></head>
+<body><a class="fx-skip-link" href="#main-content">Skip to article content</a><header class="site-header"><div class="container header-inner"><div class="logo"><a href="/">Grizzly Parrot Trading</a></div><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/futures-basics/">Futures Basics</a></li><li><a href="/metals/">Metals</a></li><li><a href="/energies/">Energies</a></li><li><a href="/currencies/">Currencies</a></li><li><a href="/prop-firm-trading/">Prop Firms</a></li><li><a href="/platforms-tutorials/">Platforms</a></li><li><a href="/market-basics/">Market Basics</a></li><li><a href="/tools/">Tools</a></li></ul></nav></div></header>
+<main id="main-content" class="container article-container currency-library"><article><!-- ARTICLE BODY START -->
+<header class="fx-hero"><div><p class="fx-kicker">Decision rights &middot; measurable rules &middot; controlled change</p><h1>Build an Auditable ES Trading Plan</h1><p class="fx-byline">By <a href="/about.html">Kyle Parrott</a><span aria-hidden="true"> &middot; </span>Updated August 26, 2026</p><p class="fx-hero-lede">“Trade pullbacks, use discipline, stop after a bad day” is not a plan. Nobody can reconstruct what was permitted, what triggered the order or whether the stop was changed. An ES plan becomes useful when a second person can apply its rules to the same timestamped evidence and reach the same trade, wait or stop result.</p><div class="fx-hero-actions"><a class="button-primary" href="#objective">Define the objective</a><a class="fx-text-link" href="#template">Build the setup card</a></div></div></header>
+<nav class="fx-jump-nav" aria-label="On this page"><a href="#objective">Objective</a><a href="#permissions">Permissions</a><a href="#template">Setup card</a><a href="#risk">Risk</a><a href="#execution">Execution</a><a href="#incident">Incidents</a><a href="#review">Review</a><a href="#version">Versioning</a></nav>
 
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+<section class="fx-section" id="objective" aria-labelledby="objective-title"><div class="fx-section-heading"><p class="fx-kicker">One plan, one stated job</p><h2 id="objective-title">Define What the Plan Is Trying to Control</h2><p>An objective should name the instrument, holding horizon, decision frequency and evidence standard. “Make money trading ES” cannot distinguish a process failure from ordinary outcome variance.</p></div><div class="fx-two-column"><article class="fx-panel"><p class="fx-card-label">Unusable objective</p><h3>Capture good moves</h3><p>“Good,” “move” and “capture” have no timestamped definition. Any outcome can be rationalized afterward.</p></article><article class="fx-panel"><p class="fx-card-label">Auditable objective</p><h3>Execute one defined setup</h3><p>For example: test a named intraday setup in a declared session, with no hold through scheduled exclusions, fixed permission limits and order-level review.</p></article></div><div class="fx-caution"><strong>A plan is not evidence of an edge.</strong><p>It controls how a hypothesis is executed and measured. Profitability requires separate, forward-safe research with costs and out-of-sample evaluation. A clean plan can still produce a negative result.</p></div></section>
 
-  <!-- PNG Fallbacks -->
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<section class="fx-section" id="permissions" aria-labelledby="permissions-title"><div class="fx-section-heading"><p class="fx-kicker">Set gates before the chart becomes persuasive</p><h2 id="permissions-title">Build a Permission Matrix</h2></div><div class="fx-table-scroll" role="region" aria-label="ES trading permission matrix" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Gate</th><th scope="col">Required pass</th><th scope="col">Reduce branch</th><th scope="col">Stop branch</th></tr></thead><tbody><tr><th scope="row">Product</th><td>Exact ES or MES month/year, live data and routing permission</td><td>Use smaller product only after fresh sizing</td><td>Unknown symbol or entitlement</td></tr><tr><th scope="row">Session</th><td>Permitted clock window and CME status</td><td>Narrower subwindow supported by evidence</td><td>Maintenance, halt, holiday uncertainty</td></tr><tr><th scope="row">Event</th><td>No excluded release or hold risk</td><td>Lower cap if prewritten and tested</td><td>Unbounded scheduled or unscheduled event risk</td></tr><tr><th scope="row">Market quality</th><td>Spread, depth and intended quantity within thresholds</td><td>Smaller whole-contract quantity</td><td>Stale feed, wide spread or insufficient depth</td></tr><tr><th scope="row">Account</th><td>Daily, drawdown, portfolio and live-margin gates pass</td><td>Lower independent cap</td><td>Any breached or unknown limit</td></tr><tr><th scope="row">Operator</th><td>Connection, platform and required attention available</td><td>Simulation-only session</td><td>Fatigue rule, interruption or unresolved incident</td></tr></tbody></table></div><p>A permission matrix should return a machine-like outcome: <strong>GO, REDUCE, WAIT or STOP</strong>. “Use judgment” may be unavoidable in a narrow field, but the plan should identify the evidence and who has authority to exercise that judgment.</p></section>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Building a Simple ES Trading Plan You Can Actually Follow</title>
-  <meta name="description" content="A blunt guide to building a simple ES trading plan beginners can follow without overthinking, overtrading, or blowing their account.">
-  <meta name="robots" content="index, follow">
+<section class="fx-section" id="template" aria-labelledby="template-title"><div class="fx-section-heading"><p class="fx-kicker">Turn the setup into observable fields</p><h2 id="template-title">Write a Setup Card That Can Be Replayed</h2><p>The setup card separates facts available before the order from labels assigned afterward. Every level and state needs a calculation clock, source and expiry.</p></div><div class="fx-method"><div><h3>Hypothetical setup card</h3><p><strong>Context:</strong> exact dated ES contract; session window; no excluded event. <strong>Candidate:</strong> price returns to a timestamped reference after a forward-defined impulse. <strong>Trigger:</strong> a specified close or order-flow condition known at bar completion. <strong>Invalidation:</strong> a predeclared price proving the setup no longer applies. <strong>Expiry:</strong> cancel if not triggered by the stated clock or if market quality fails.</p></div><dl><div><dt>Data clock</dt><dd>Known at decision</dd></div><div><dt>Entry</dt><dd>Exact branch</dd></div><div><dt>Invalidation</dt><dd>Price + reason</dd></div><div><dt>Expiry</dt><dd>Time/state</dd></div></dl></div><div class="fx-check-grid"><article class="fx-panel"><p class="fx-card-label">Context</p><h3>What must already be true?</h3><p>Dated contract, session, event state, market quality, volatility state and any directional filter.</p></article><article class="fx-panel"><p class="fx-card-label">Trigger</p><h3>What new observation acts?</h3><p>Exact price, timestamp, completion rule and permitted order type. No future bar may redefine the trigger.</p></article><article class="fx-panel"><p class="fx-card-label">Invalidation</p><h3>What proves the idea wrong?</h3><p>A market observation independent of the desired contract count. It is not “when the loss feels large.”</p></article><article class="fx-panel"><p class="fx-card-label">Expiry</p><h3>When does the idea become stale?</h3><p>Time, event, roll, liquidity or structural change that cancels the setup even without a fill.</p></article></div><p class="fx-related">For hypothesis-level reference lines, use <a href="es-intraday-support-and-resistance-levels.html">the ES level ranking and deletion workflow</a>.</p></section>
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/es-building-a-simple-trading-plan.html">
+<section class="fx-section" id="risk" aria-labelledby="risk-title"><div class="fx-section-heading"><p class="fx-kicker">Risk permission comes before order permission</p><h2 id="risk-title">Separate Trade, Day, Portfolio and Collateral Limits</h2></div><div class="fx-table-scroll" role="region" aria-label="ES trading plan risk hierarchy" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Limit</th><th scope="col">Plan field</th><th scope="col">Required action at boundary</th></tr></thead><tbody><tr><th scope="row">Per decision</th><td>Stressed dollars from stop, slippage, fees and gap reserve</td><td>Floor to whole contracts; zero is valid</td></tr><tr><th scope="row">Open aggregate</th><td>Stressed loss across all current positions</td><td>Block new correlated exposure</td></tr><tr><th scope="row">Daily</th><td>Realized loss plus open stressed risk</td><td>Cancel new entries and follow reduction protocol</td></tr><tr><th scope="row">Drawdown</th><td>Distance to account or program hard boundary</td><td>Stop trading before forced breach</td></tr><tr><th scope="row">Margin</th><td>Timestamped CME and broker requirement plus buffer</td><td>Use as an independent cap, never as maximum loss</td></tr></tbody></table></div><div class="fx-formula" aria-label="Final ES position permission"><code>final size = min(trade-risk size, daily cap, portfolio cap, margin cap)</code><i aria-hidden="true">|</i><strong>unknown = zero</strong></div><p class="fx-related">Calculate whole contracts using <a href="es-how-to-size-positions-by-account-balance.html">the ES/MES sizing system</a>; verify current tick and margin boundaries on <a href="es-tick-size-tick-value-and-margin.html">the canonical mechanics page</a>.</p></section>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Building a Simple ES Trading Plan You Can Actually Follow">
-  <meta property="og:description" content="A blunt guide to building a simple ES trading plan beginners can follow without overthinking, overtrading, or blowing their account.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/es-building-a-simple-trading-plan.html">
-  <meta property="og:site_name" content="Grizzly Parrot Trading">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
+<section class="fx-section" id="execution" aria-labelledby="execution-title"><div class="fx-section-heading"><p class="fx-kicker">A signal does not choose an order</p><h2 id="execution-title">Write the Execution Branches Before Entry</h2><p>CME Globex supports defined order types, while platforms may add synthetic behavior. The plan must describe the actual exchange or broker order, its trigger, price protection, duration and failure branch.</p></div><div class="fx-decision-tree"><article><p class="fx-card-label">Entry condition passes</p><h3>Is price control more important than immediacy?</h3><p><strong>Yes:</strong> use the specified limit logic, accept non-fill and set cancellation time. <strong>No:</strong> use only an approved executable order with a maximum cost and protection rule.</p></article><article><p class="fx-card-label">Partial fill</p><h3>Is partial quantity permitted?</h3><p><strong>Yes:</strong> recalculate risk from actual average fill and protect filled quantity. <strong>No:</strong> cancel remainder and follow the written flatten-or-keep branch.</p></article><article><p class="fx-card-label">Stop trigger</p><h3>Did the exit behave as modeled?</h3><p><strong>Yes:</strong> record trigger-to-fill slippage. <strong>No:</strong> follow emergency exposure reduction; do not widen the stop to preserve the thesis.</p></article></div><ul class="fx-checklist"><li><strong>Before submit:</strong> symbol, side, quantity, order type, price, duration and attached orders read back correctly.</li><li><strong>After submit:</strong> exchange or broker acknowledgement received; rejects and pending states handled.</li><li><strong>After fill:</strong> actual average price, remaining quantity and protective order reconcile.</li><li><strong>After cancel:</strong> acknowledgement proves no working order remains.</li><li><strong>After exit:</strong> account position is flat or equals the explicitly approved remainder.</li></ul></section>
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-  <meta name="twitter:title" content="Building a Simple ES Trading Plan You Can Actually Follow">
-  <meta name="twitter:description" content="A blunt guide to building a simple ES trading plan beginners can follow without overthinking, overtrading, or blowing their account.">
+<section class="fx-section" id="incident" aria-labelledby="incident-title"><div class="fx-section-heading"><p class="fx-kicker">Define emergency authority</p><h2 id="incident-title">An Incident Plan Is Part of the Trading Plan</h2></div><div class="fx-table-scroll" role="region" aria-label="ES incident response branches" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Incident</th><th scope="col">Immediate control</th><th scope="col">Evidence to retain</th><th scope="col">Resume gate</th></tr></thead><tbody><tr><th scope="row">Market data stale</th><td>Stop new orders; verify position through an independent channel</td><td>Last update time, connection state, screenshots/logs</td><td>Fresh synchronized data and reconciled position</td></tr><tr><th scope="row">Order state unknown</th><td>Do not resubmit blindly; contact broker or use approved order-status channel</td><td>Client ID, acknowledgements, rejects and timestamps</td><td>One authoritative working-order inventory</td></tr><tr><th scope="row">Protection missing</th><td>Use prewritten reduce/flatten procedure</td><td>Fill, attempted child order and error</td><td>Cause repaired and tested in simulation</td></tr><tr><th scope="row">Risk limit breached</th><td>Cancel entry authority and reduce under policy</td><td>Equity, positions, fills and cause</td><td>Formal incident review; no same-session improvisation</td></tr><tr><th scope="row">Wrong contract</th><td>Stop automation and correct exposure under cost controls</td><td>Old/new symbols and every fill</td><td>Symbol mapping and roll process repaired</td></tr></tbody></table></div><div class="fx-caution"><strong>“Stay calm” is not an incident procedure.</strong><p>Name the action, account, communication route, authority and evidence. If the plan assumes a tool remains available during the failure that disables it, the branch is not operational.</p></div></section>
 
-  <link rel="stylesheet" href="../style.css">
+<section class="fx-section" id="review" aria-labelledby="review-title"><div class="fx-section-heading"><p class="fx-kicker">Judge process before outcome</p><h2 id="review-title">Review Every Decision, Including No-Trade Outcomes</h2></div><div class="fx-table-scroll" role="region" aria-label="ES trading plan review record" tabindex="0"><table class="fx-table"><thead><tr><th scope="col">Record</th><th scope="col">Minimum fields</th><th scope="col">Question</th></tr></thead><tbody><tr><th scope="row">Permission</th><td>All gate values and pass/reduce/wait/stop output</td><td>Was the decision authorized?</td></tr><tr><th scope="row">Setup</th><td>Context, trigger, invalidation, expiry and screenshots/data IDs</td><td>Could another reviewer reproduce the label?</td></tr><tr><th scope="row">Risk</th><td>Budget, stress inputs, floor math and binding cap</td><td>Was size computed before entry?</td></tr><tr><th scope="row">Execution</th><td>Decision, arrival, submission, acknowledgement and fill timestamps</td><td>Where did cost enter?</td></tr><tr><th scope="row">Management</th><td>Every modification with reason and timestamp</td><td>Did the plan change after risk was known?</td></tr><tr><th scope="row">Outcome</th><td>Gross, costs, net, maximum adverse/favorable path</td><td>What happened, without confusing it with plan quality?</td></tr><tr><th scope="row">No trade</th><td>Binding rejection gate</td><td>Are filters blocking too much, too little or appropriately?</td></tr></tbody></table></div></section>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
+<section class="fx-section" id="version" aria-labelledby="version-title"><div class="fx-section-heading"><p class="fx-kicker">Change one controlled version at a time</p><h2 id="version-title">Freeze the Plan Before Evaluating It</h2></div><ol class="fx-process"><li><strong>Assign an ID.</strong><span>Version, effective date, instrument set, data sources and author.</span></li><li><strong>State the hypothesis.</strong><span>What behavior is expected and what would falsify it after costs?</span></li><li><strong>Freeze the rules.</strong><span>Do not edit triggers or exclusions after seeing the same-period outcomes.</span></li><li><strong>Collect a declared sample.</strong><span>Include rejects, misses, partials, incidents and no-trades.</span></li><li><strong>Evaluate separately.</strong><span>Measure adherence, cost estimate error and outcome uncertainty.</span></li><li><strong>Retire or revise.</strong><span>Create a new version with a reason; preserve the old record unchanged.</span></li></ol><div class="fx-go-card"><p class="fx-card-label">Minimum viable plan state</p><h3>Simple means few rules, not vague rules</h3><p>A production-quality first plan may trade only one setup, one session and one product. It still needs complete permissions, sizing, execution, incident and review branches before live risk.</p></div></section>
 
-  <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Building a Simple ES Trading Plan You Can Actually Follow",
-  "description": "A blunt guide to building a simple ES trading plan beginners can follow without overthinking, overtrading, or blowing their account.",
-  "author": {
-    "@type": "Person",
-    "name": "Kyle Parrott",
-    "url": "https://grizzlyparrottrading.com/about.html"
-  },
-  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/es-building-a-simple-trading-plan.html",
-  "datePublished": "2025-11-24",
-  "dateModified": "2025-11-24",
-  "url": "https://grizzlyparrottrading.com/futures-basics/es-building-a-simple-trading-plan.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Grizzly Parrot Trading",
-    "url": "https://grizzlyparrottrading.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://grizzlyparrottrading.com/OG-default.png"
-    }
-  },
-  "image": "https://grizzlyparrottrading.com/OG-default.png"
-}
-</script>
-
-  <!-- JSON-LD: Breadcrumbs -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://grizzlyparrottrading.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Futures Basics",
-      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Building a Simple ES Trading Plan You Can Actually Follow",
-      "item": "https://grizzlyparrottrading.com/futures-basics/es-building-a-simple-trading-plan.html"
-    }
-  ]
-}
-</script>
-
-  <script src="/uet.js" defer></script>
-</head>
-<body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="https://grizzlyparrottrading.com/">
-Grizzly Parrot Trading</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li>
-        <li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li>
-        <li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li>
-        <li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li>
-        <li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="section">
-<div class="container article-content">
-<!-- ARTICLE BODY START -->
-
-<h1>Building a Simple ES Trading Plan You Can Actually Follow</h1>
-
-<p>
-Most ES beginners fail because they don’t have a real plan. They trade whatever looks “good enough,” size randomly, ignore volatility, and enter at the worst possible times. A trading plan doesn’t need to be complicated — it needs to be strict, simple, and brutally honest about your limits. Here’s how to build one you can actually stick to.
-</p>
-
-<h2>1. Define Your Trading Session</h2>
-<p>
-Don’t trade the whole day. Pick the cleanest windows:
-</p>
-
-<ul>
-  <li>9:35–11:00 AM ET (post-open structure)</li>
-  <li>2:00–3:30 PM ET (afternoon trend or reversal)</li>
-</ul>
-
-<p>
-Avoid low-liquidity dead zones. If you don’t understand why, read  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-news-events-and-volatility-traps.html">ES Volatility Traps</a>.
-</p>
-
-<h2>2. Set Your Daily Loss Limit</h2>
-<p>
-Your daily loss limit is your survival guardrail.  
-Rule of thumb:
-</p>
-
-<ul>
-  <li>Prop accounts: half the firm’s daily loss limit</li>
-  <li>Personal accounts: 1–2% max</li>
-</ul>
-
-<p>
-Hit the limit → stop trading for the day. No negotiation.
-</p>
-
-<h2>3. Know Your Setup Criteria</h2>
-<p>
-Pick 1–2 setups and stop bouncing between strategies. For ES, the simplest beginner-friendly setups are:
-</p>
-
-<ul>
-  <li>Trend pullback into VWAP or prior swing</li>
-  <li>Breakout retest after clear opening range expansion</li>
-</ul>
-
-<p>
-If you don't understand these levels yet, study  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-session-highs-lows-and-vwap-usage.html">Session Highs/Lows & VWAP</a>.
-</p>
-
-<h2>4. Define Your Entry Timing Rules</h2>
-<p>
-Your entry should respect:
-</p>
-
-<ul>
-  <li>Direction of VWAP</li>
-  <li>Current ATR level</li>
-  <li>Break of structure (BOS)</li>
-</ul>
-
-<p>
-ES trends cleanly when these three line up.  
-For volatility context, see  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-atr-behavior-and-volatility-zones.html">ES ATR Volatility Zones</a>.
-</p>
-
-<h2>5. Pre-Define Stop Size and Position Size</h2>
-<p>
-No stop = no plan.  
-Use actual volatility — not hope — to set stops.  
-If your stop is 6 points, your risk is $300 per ES contract. Adjust size accordingly.
-</p>
-
-<p>
-If you need position sizing help, review  
-<a href="https://grizzlyparrottrading.com/futures-basics/es-how-to-size-positions-by-account-balance.html">ES Position Sizing</a>.
-</p>
-
-<h2>6. Have Rules for When NOT to Trade</h2>
-<p>
-You must stand down during:
-</p>
-
-<ul>
-  <li>CPI</li>
-  <li>NFP</li>
-  <li>FOMC</li>
-  <li>10 AM economic releases</li>
-  <li>Low-volume lunch chop</li>
-</ul>
-
-<p>
-Trading during these windows is financial suicide for beginners.
-</p>
-
-<h2>7. Create a Daily Routine</h2>
-
-<table>
-<tr><th>Stage</th><th>What You Do</th></tr>
-<tr><td>Pre-Market</td><td>Mark highs, lows, VWAP, OR prep</td></tr>
-<tr><td>During Session</td><td>Trade only your setups</td></tr>
-<tr><td>Post-Market</td><td>Review trades, update journal</td></tr>
-</table>
-
-<p>
-If you are deciding whether a dedicated journal is worth paying for, read the factual
-<a href="https://grizzlyparrottrading.com/platforms-tutorials/tradersync-futures-trading-journal-explained.html">TraderSync futures-journal explainer</a>.
-It covers pricing, import methods, replay limits, AI features, and a trial checklist. Grizzly Parrot Trading has not personally used TraderSync, and the explainer clearly identifies its affiliate links.
-</p>
-
-<div class="highlight-box red">
-  <h3>Without a Plan, ES Will Eat You Alive</h3>
-  <p>If you’re trading without a defined process, you’re just gambling in the world’s most efficient market. Discipline isn’t optional here — it’s survival.</p>
-</div>
-
-<!-- ARTICLE BODY END -->
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
-</body>
-</html>
+<details class="fx-sources"><summary>Sources, methods and editorial disclosure &mdash; reviewed August 28, 2026</summary><ul><li><a href="https://www.cmegroup.com/education/courses/things-to-know-before-trading-cme-futures/position-and-risk-management" target="_blank" rel="noopener noreferrer">CME Position and Risk Management</a> for scenario-based position and risk controls.</li><li><a href="https://www.cmegroup.com/education/courses/futures-trading-mechanics-and-regulation/futures-order-types" target="_blank" rel="noopener noreferrer">CME Futures Order Types</a> for current exchange order-type mechanics and protection behavior.</li><li><a href="https://www.cmegroup.com/solutions/market-access/globex/trade-on-globex/pre-trade-risk-management.html" target="_blank" rel="noopener noreferrer">CME Pre-Trade Risk Management</a> for permission and order-management control concepts.</li><li><a href="https://www.cftc.gov/csl/20-17/download" target="_blank" rel="noopener noreferrer">CFTC futures risk disclosure</a> for leverage, margin-call and loss-beyond-deposit risks.</li><li><a href="es-tick-size-tick-value-and-margin.html">ES/MES contract-mechanics authority</a> and <a href="es-how-to-size-positions-by-account-balance.html">ES/MES sizing workflow</a> for current contract inputs and whole-contract math.</li></ul><p>Sources were reviewed August 28, 2026. The setup language is an illustrative control template, not a strategy recommendation or empirical finding. No profitability, optimal session, order type, risk percentage or setup edge is claimed.</p></details>
+<aside class="fx-disclaimer" aria-label="Educational and risk disclaimer"><strong>Educational and risk disclaimer</strong><p>This planning framework is educational, not personalized financial, legal or brokerage advice. A written plan cannot prevent gaps, adverse fills, technical failures or losses beyond deposited margin.</p></aside>
+<!-- ARTICLE BODY END --></article></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer></body></html>
