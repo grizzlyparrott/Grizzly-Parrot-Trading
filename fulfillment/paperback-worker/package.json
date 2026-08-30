@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "check": "node --check ../../books/commerce-analytics.js && node --check ../../books/print-checkout.js && node --check ../../books/digital-checkout.js && node --check src/index.mjs && node --check src/catalog.mjs && node --check src/digital-delivery.mjs && node --check src/flat-shipping.mjs && node --check src/lulu.mjs && node --check src/stripe.mjs && node --check scripts/probabilistic-execution-asset-manifest.mjs && node --check scripts/probabilistic-execution-digital-asset-manifest.mjs && node --check scripts/market-structure-trilogy-digital-asset-manifest.mjs && node --check scripts/validate-probabilistic-release.mjs",
+    "check": "node --check ../../books/checkout-events.js && node --check ../../books/print-checkout.js && node --check ../../books/digital-checkout.js && node --check src/index.mjs && node --check src/catalog.mjs && node --check src/digital-delivery.mjs && node --check src/flat-shipping.mjs && node --check src/lulu.mjs && node --check src/stripe.mjs && node --check scripts/probabilistic-execution-asset-manifest.mjs && node --check scripts/probabilistic-execution-digital-asset-manifest.mjs && node --check scripts/market-structure-trilogy-digital-asset-manifest.mjs && node --check scripts/validate-probabilistic-release.mjs",
     "deploy": "wrangler deploy --config wrangler.toml"
   },
   "devDependencies": {

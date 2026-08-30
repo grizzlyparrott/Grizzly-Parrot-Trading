@@ -939,7 +939,7 @@ test("all book pages keep print controls fail-closed and use the canonical site 
     assert.match(html, /button-disabled js-hardcover-buy/);
     assert.match(html, /data-shipping-region="us"/);
     assert.match(html, /data-shipping-region="international"/);
-    assert.match(html, /commerce-analytics\.js\?v=20260829-begin-checkout/);
+    assert.match(html, /checkout-events\.js\?v=20260829-begin-checkout/);
     assert.match(html, /print-checkout\.js\?v=20260829-begin-checkout/);
     assert.match(html, /GrizzlyPrintCheckout\.init/);
     assert.match(html, /grizzly-parrot-paperback\.grizzlyparrott04\.workers\.dev/);
@@ -977,7 +977,7 @@ test("all book pages keep print controls fail-closed and use the canonical site 
   assert.match(catalog, /"price": "69\.00"/);
   assert.match(catalog, /\$87 separately &middot; save \$18/);
   assert.match(catalog, /button-disabled js-trilogy-buy/);
-  assert.match(catalog, /commerce-analytics\.js\?v=20260829-begin-checkout/);
+  assert.match(catalog, /checkout-events\.js\?v=20260829-begin-checkout/);
   assert.match(catalog, /digital-checkout\.js\?v=20260829-begin-checkout/);
 
   const probabilistic = await readFile(new URL("../../../books/probabilistic-execution/index.html", import.meta.url), "utf8");
@@ -986,7 +986,7 @@ test("all book pages keep print controls fail-closed and use the canonical site 
   assert.match(probabilistic, /button-disabled js-hardcover-buy/);
   assert.doesNotMatch(probabilistic, /Coming soon|Sales have not opened/);
   assert.match(probabilistic, /digital-config\?bookSlug=probabilistic-execution/);
-  assert.match(probabilistic, /commerce-analytics\.js\?v=20260829-begin-checkout/);
+  assert.match(probabilistic, /checkout-events\.js\?v=20260829-begin-checkout/);
   assert.match(probabilistic, /print-checkout\.js\?v=20260829-begin-checkout/);
   assert.match(probabilistic, /GrizzlyCommerceAnalytics\.beginCheckout/);
   assert.match(probabilistic, /bookSlug: 'probabilistic-execution'/);
@@ -1018,14 +1018,14 @@ test("all book pages keep print controls fail-closed and use the canonical site 
   assert.match(digitalCheckout, /Digital bundle checkout is temporarily unavailable/);
   assert.match(digitalCheckout, /GrizzlyCommerceAnalytics\.beginCheckout/);
 
-  const commerceAnalytics = await readFile(new URL("../../../books/commerce-analytics.js", import.meta.url), "utf8");
+  const commerceAnalytics = await readFile(new URL("../../../books/checkout-events.js", import.meta.url), "utf8");
   assert.match(commerceAnalytics, /global\.uetq\.push\('event', 'begin_checkout', payload\)/);
   assert.match(commerceAnalytics, /event_category: 'Book'/);
   assert.doesNotMatch(commerceAnalytics, /purchase/);
 });
 
 test("checkout analytics emits a secondary Microsoft UET begin_checkout event", async () => {
-  const source = await readFile(new URL("../../../books/commerce-analytics.js", import.meta.url), "utf8");
+  const source = await readFile(new URL("../../../books/checkout-events.js", import.meta.url), "utf8");
   const browserWindow = { uetq: [] };
   runInNewContext(source, { window: browserWindow });
 
