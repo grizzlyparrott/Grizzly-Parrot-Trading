@@ -79,6 +79,15 @@
       button.addEventListener('click', function () {
         var region = button.getAttribute('data-shipping-region');
         if (region !== 'us' && region !== 'international') return;
+        if (global.GrizzlyCommerceAnalytics) {
+          var shippingCents = region === 'us'
+            ? config.shippingRates.usCents
+            : config.shippingRates.internationalCents;
+          global.GrizzlyCommerceAnalytics.beginCheckout(
+            options.analyticsTitle + ' (' + item.edition + ', ' + region + ')',
+            (config.priceCents + shippingCents) / 100
+          );
+        }
         setBusy(buttons, true);
         var originalText = button.textContent;
         button.textContent = 'Opening Stripe checkout…';

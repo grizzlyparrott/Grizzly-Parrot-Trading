@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
+import { runInNewContext } from "node:vm";
 import { getBook, getStripePriceId, catalogReady, POD_PACKAGE_ID, HARDCOVER_POD_PACKAGE_ID, PRINT_EDITIONS, PROBABILISTIC_EXECUTION_PRINT_EDITIONS, ALL_PRINT_EDITIONS, SHIPPING_OPTIONS } from "../src/catalog.mjs";
 import { validateCheckoutRequest, addressesMatch } from "../src/validation.mjs";
 import { hmacHex, verifyStripeSignature, signedAssetUrl, verifyAssetRequest } from "../src/crypto.mjs";
@@ -938,7 +939,8 @@ test("all book pages keep print controls fail-closed and use the canonical site 
     assert.match(html, /button-disabled js-hardcover-buy/);
     assert.match(html, /data-shipping-region="us"/);
     assert.match(html, /data-shipping-region="international"/);
-    assert.match(html, /print-checkout\.js\?v=20260825-flat-shipping/);
+    assert.match(html, /commerce-analytics\.js\?v=20260829-begin-checkout/);
+    assert.match(html, /print-checkout\.js\?v=20260829-begin-checkout/);
     assert.match(html, /GrizzlyPrintCheckout\.init/);
     assert.match(html, /grizzly-parrot-paperback\.grizzlyparrott04\.workers\.dev/);
     assert.match(html, /market-structure-series\.css\?v=20260825-trilogy/);
@@ -946,7 +948,8 @@ test("all book pages keep print controls fail-closed and use the canonical site 
     assert.doesNotMatch(html, /class="brand-mark"/);
     assert.match(html, />Buy digital</);
     assert.match(html, /button-disabled js-trilogy-buy/);
-    assert.match(html, /digital-checkout\.js\?v=20260825-trilogy/);
+    assert.match(html, /digital-checkout\.js\?v=20260829-begin-checkout/);
+    assert.match(html, /GrizzlyCommerceAnalytics\.beginCheckout/);
     assert.match(html, /bookSlug: 'market-structure-trilogy'/);
     assert.match(html, /expectedPriceCents: 6900/);
     assert.match(html, /Get all three &mdash; \$69/);
@@ -974,7 +977,8 @@ test("all book pages keep print controls fail-closed and use the canonical site 
   assert.match(catalog, /"price": "69\.00"/);
   assert.match(catalog, /\$87 separately &middot; save \$18/);
   assert.match(catalog, /button-disabled js-trilogy-buy/);
-  assert.match(catalog, /digital-checkout\.js\?v=20260825-trilogy/);
+  assert.match(catalog, /commerce-analytics\.js\?v=20260829-begin-checkout/);
+  assert.match(catalog, /digital-checkout\.js\?v=20260829-begin-checkout/);
 
   const probabilistic = await readFile(new URL("../../../books/probabilistic-execution/index.html", import.meta.url), "utf8");
   assert.match(probabilistic, /button-disabled js-digital-buy/);
@@ -982,7 +986,9 @@ test("all book pages keep print controls fail-closed and use the canonical site 
   assert.match(probabilistic, /button-disabled js-hardcover-buy/);
   assert.doesNotMatch(probabilistic, /Coming soon|Sales have not opened/);
   assert.match(probabilistic, /digital-config\?bookSlug=probabilistic-execution/);
-  assert.match(probabilistic, /print-checkout\.js\?v=20260825-flat-shipping/);
+  assert.match(probabilistic, /commerce-analytics\.js\?v=20260829-begin-checkout/);
+  assert.match(probabilistic, /print-checkout\.js\?v=20260829-begin-checkout/);
+  assert.match(probabilistic, /GrizzlyCommerceAnalytics\.beginCheckout/);
   assert.match(probabilistic, /bookSlug: 'probabilistic-execution'/);
   assert.match(probabilistic, /data-shipping-region="us"/);
   assert.match(probabilistic, /data-shipping-region="international"/);
@@ -1001,6 +1007,7 @@ test("all book pages keep print controls fail-closed and use the canonical site 
   assert.match(printCheckout, /parsed\.pathname === '\/print\/start'/);
   assert.match(printCheckout, /parsed\.hostname === 'checkout\.stripe\.com'/);
   assert.match(printCheckout, /global\.location\.assign\(checkoutUrl\)/);
+  assert.match(printCheckout, /GrizzlyCommerceAnalytics\.beginCheckout/);
   assert.match(printCheckout, /Safe default: this print edition remains disabled/);
   assert.doesNotMatch(printCheckout, /\/print\/checkout/);
 
@@ -1009,6 +1016,29 @@ test("all book pages keep print controls fail-closed and use the canonical site 
   assert.match(digitalCheckout, /config\.priceCents !== options\.expectedPriceCents/);
   assert.match(digitalCheckout, /\['buy\.stripe\.com', 'book\.stripe\.com'\]/);
   assert.match(digitalCheckout, /Digital bundle checkout is temporarily unavailable/);
+  assert.match(digitalCheckout, /GrizzlyCommerceAnalytics\.beginCheckout/);
+
+  const commerceAnalytics = await readFile(new URL("../../../books/commerce-analytics.js", import.meta.url), "utf8");
+  assert.match(commerceAnalytics, /global\.uetq\.push\('event', 'begin_checkout', payload\)/);
+  assert.match(commerceAnalytics, /event_category: 'Book'/);
+  assert.doesNotMatch(commerceAnalytics, /purchase/);
+});
+
+test("checkout analytics emits a secondary Microsoft UET begin_checkout event", async () => {
+  const source = await readFile(new URL("../../../books/commerce-analytics.js", import.meta.url), "utf8");
+  const browserWindow = { uetq: [] };
+  runInNewContext(source, { window: browserWindow });
+
+  browserWindow.GrizzlyCommerceAnalytics.beginCheckout("Probabilistic Execution (digital)", 29);
+  browserWindow.GrizzlyCommerceAnalytics.beginCheckout("", 49);
+
+  assert.equal(browserWindow.uetq.length, 3);
+  assert.equal(browserWindow.uetq[0], "event");
+  assert.equal(browserWindow.uetq[1], "begin_checkout");
+  assert.equal(browserWindow.uetq[2].event_category, "Book");
+  assert.equal(browserWindow.uetq[2].event_label, "Probabilistic Execution (digital)");
+  assert.equal(browserWindow.uetq[2].event_value, 29);
+  assert.equal("revenue_value" in browserWindow.uetq[2], false);
 });
 
 test("hardcover activation is independent and returns the exact hardcover checkout", async () => {

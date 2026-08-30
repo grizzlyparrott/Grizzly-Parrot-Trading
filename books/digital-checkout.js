@@ -53,6 +53,12 @@
         button.setAttribute('aria-disabled', 'false');
         if (status) status.textContent = options.readyMessage;
         button.addEventListener('click', function () {
+          if (global.GrizzlyCommerceAnalytics) {
+            global.GrizzlyCommerceAnalytics.beginCheckout(
+              options.analyticsLabel,
+              options.expectedPriceCents / 100
+            );
+          }
           if (typeof global.gtag === 'function') {
             global.gtag('event', 'begin_checkout', {
               event_category: 'Book',

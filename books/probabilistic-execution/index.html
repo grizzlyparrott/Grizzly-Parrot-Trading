@@ -393,7 +393,8 @@
     </div>
   </footer>
 
-  <script src="../print-checkout.js?v=20260825-flat-shipping"></script>
+  <script src="../commerce-analytics.js?v=20260829-begin-checkout"></script>
+  <script src="../print-checkout.js?v=20260829-begin-checkout"></script>
   <script>
     (function () {
       var workerBase = 'https://grizzly-parrot-paperback.grizzlyparrott04.workers.dev';
@@ -435,6 +436,10 @@
         button.classList.remove('button-disabled');
         if (status) status.textContent = 'Secure Stripe checkout. Both files are emailed privately.';
         button.addEventListener('click', function () {
+          GrizzlyCommerceAnalytics.beginCheckout(
+            'Probabilistic Execution (digital)',
+            Number.isInteger(config.priceCents) ? config.priceCents / 100 : undefined
+          );
           if (typeof gtag === 'function') {
             gtag('event', 'click', {
               event_category: 'Book',

@@ -335,8 +335,9 @@
     </div>
   </footer>
 
-  <script src="../print-checkout.js?v=20260825-flat-shipping"></script>
-  <script src="../digital-checkout.js?v=20260825-trilogy"></script>
+  <script src="../commerce-analytics.js?v=20260829-begin-checkout"></script>
+  <script src="../print-checkout.js?v=20260829-begin-checkout"></script>
+  <script src="../digital-checkout.js?v=20260829-begin-checkout"></script>
   <script>
     (function () {
       var checkoutUrl = "https://buy.stripe.com/3cI4gA7tX8ou7du1YI2Nq01";
@@ -356,6 +357,7 @@
         button.target = '_blank';
         button.rel = 'noopener';
         button.addEventListener('click', function () {
+          GrizzlyCommerceAnalytics.beginCheckout('Currency Market Structure (digital)', 29);
           if (typeof gtag === 'function') {
             gtag('event', 'click', {
               event_category: 'Book',
