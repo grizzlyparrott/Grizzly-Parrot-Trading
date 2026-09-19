@@ -1002,6 +1002,7 @@ test("all book pages keep print controls fail-closed and use the canonical site 
   assert.match(probabilistic, /Choose your edition\./);
   assert.match(probabilistic, /<strong data-price-paperback>\$39<\/strong>/);
   assert.match(probabilistic, /<strong data-price-hardcover>\$49<\/strong>/);
+  assert.match(probabilistic, /toFixed\(cents % 100 === 0 \? 0 : 2\)/);
   assert.doesNotMatch(probabilistic, /buy\.stripe\.com\/[A-Za-z0-9]/);
   assert.match(probabilistic, /"isbn": "9780557956548"/);
   assert.match(probabilistic, /"isbn": "9780557956531"/);
