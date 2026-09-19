@@ -158,6 +158,8 @@ The content-quality gate now uses a hard 1,200 substantive-body-word floor for e
 
 The added material develops actual reasoning: volatility now works through tick-value risk recalculation and observation records; liquidity works through stated-size price averaging, live-condition evaluation, and order-instruction tradeoffs; microstructure works through queue limits, observable versus unobservable evidence, and execution review; open interest works through a beginning-to-ending contract ledger, roll interpretation, and reporting-version discipline; and NinjaTrader works through object selection, same-series testing, safe troubleshooting, and recoverable change control. No duplicates were restored and no additional survivor cluster was changed.
 
+Focused survivor acceptance passed 9/9 and the full suite passed 131/131. Content commit `5c055c33bbe048cab0ce1b5c3b59d307bf5ab8fb` was deployed by successful Pages run `35475526595`. No-cache live verification returned HTTP 200 for each survivor and confirmed one newly added developed section on every page. The primary IndexNow run `35475527245` succeeded; a later automated run remained in progress at record time. Batch 2 remains unstarted.
+
 ## Discovery and redirect work
 
 - Every live HTML reference to a removed URL was migrated to its survivor.
