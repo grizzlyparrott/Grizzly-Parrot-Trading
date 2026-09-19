@@ -27,6 +27,7 @@
   <meta name="twitter:title" content="Market Microstructure: Orders, Quotes, Trades, and Price Formation">
   <meta name="twitter:description" content="A practical introduction to how order types, quotes, executions, matching rules, and liquidity shape price formation without claiming the tape reveals trader intent.">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../editorial-guide-visuals.css?v=20260919-1">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
   <script type="application/ld+json">
@@ -63,11 +64,12 @@
   <div class="logo"><a href="https://grizzlyparrottrading.com/">Grizzly Parrot Trading</a></div>
   <nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li><li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li><li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li><li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li><li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li><li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li><li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li><li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li></ul></nav>
 </div></header>
-<main><section class="section"><div class="container article-content">
+<main><section class="section"><div class="container article-content editorial-guide">
 <h1>Market Microstructure: Orders, Quotes, Trades, and Price Formation</h1>
 <p class="trust-reviewed">Updated September 19, 2026</p>
 <!-- ARTICLE BODY START -->
 <p>Market microstructure studies how trading rules, order types, quotes, matching, and participant constraints turn buying and selling decisions into transactions. It explains the mechanism around a price move; it does not let an observer identify a trader's motive from a candle or one order-book snapshot.</p>
+<figure class="eg-visual"><img src="market-microstructure-order-lifecycle.svg" width="1200" height="720" fetchpriority="high" alt="Order lifecycle diagram separating a resting quote, a marketable order, and a completed trade, with a warning that observations do not prove participant intent."><figcaption>Quotes and trades are useful observations, but neither by itself identifies who acted, why they acted, or what price will do next.</figcaption></figure>
 <h2>Quotes are not trades</h2>
 <p>A limit order can add displayed liquidity at a specified price. A marketable order can execute against available resting orders. Quotes may be added, modified, canceled, partially filled, or fully executed, so displayed size is conditional rather than a promise to remain.</p>
 <h2>Price changes and the order book</h2>

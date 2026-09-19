@@ -27,6 +27,7 @@
   <meta name="twitter:title" content="NinjaTrader 8 Chart Templates: Save, Load, Default, and Troubleshoot">
   <meta name="twitter:description" content="Use NinjaTrader 8 chart templates correctly: what they save, compatibility limits, defaults, loading, management, workspaces, and backup caveats.">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../editorial-guide-visuals.css?v=20260919-1">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
   <script type="application/ld+json">
@@ -62,11 +63,12 @@
   <div class="logo"><a href="https://grizzlyparrottrading.com/">Grizzly Parrot Trading</a></div>
   <nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li><li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li><li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li><li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li><li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li><li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li><li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li><li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li></ul></nav>
 </div></header>
-<main><section class="section"><div class="container article-content">
+<main><section class="section"><div class="container article-content editorial-guide">
 <h1>NinjaTrader 8 Chart Templates: Save, Load, Default, and Troubleshoot</h1>
 <p class="trust-reviewed">Updated September 19, 2026</p>
 <!-- ARTICLE BODY START -->
 <p>NinjaTrader 8 chart templates save reusable chart configuration. They are different from workspaces, indicator templates, strategy templates, drawing-object templates, and data-series presets. Keeping those objects separate prevents many “template did not load” misunderstandings.</p>
+<figure class="eg-visual"><img src="ninjatrader-template-map.svg" width="1200" height="720" fetchpriority="high" alt="Conceptual map distinguishing a NinjaTrader chart template from a workspace, Data Series preset, indicator template, and drawing template."><figcaption>Use the save object that matches the job. Before loading a chart template, confirm the source and destination have the same number of Data Series.</figcaption></figure>
 <h2>What a chart template saves</h2>
 <p>NinjaTrader's current help guide says chart templates can save chart properties, chart-panel properties, and indicator settings. They can be applied to new or existing charts when the source and destination charts have the same number of Data Series. Drawing objects are not included because they can be specific to an instrument or price.</p>
 <h2>Save and load a chart template</h2>

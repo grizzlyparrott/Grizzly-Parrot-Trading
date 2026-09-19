@@ -1,0 +1,58 @@
+/* Shared visual treatment for the reviewed GPT-A3 guide survivors. */
+.editorial-guide {
+  --eg-ink: #071426;
+  --eg-panel: #071827;
+  --eg-cyan: #50d8ff;
+  --eg-green: #62e6a0;
+  --eg-muted: #607187;
+  max-width: 1120px;
+}
+
+.editorial-guide .eg-visual {
+  margin: 2.2rem 0 2.7rem;
+  padding: clamp(.65rem, 1.5vw, 1rem);
+  border: 1px solid rgba(80, 216, 255, .28);
+  border-radius: 1.3rem;
+  background: linear-gradient(145deg, #0a1b2c, #04101d);
+  box-shadow: 0 22px 55px rgba(3, 15, 28, .2);
+}
+
+.editorial-guide .eg-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: .85rem;
+}
+
+.editorial-guide .eg-visual figcaption {
+  padding: .85rem .35rem .2rem;
+  color: #c5d4e3;
+  font-size: .88rem;
+  line-height: 1.55;
+}
+
+.editorial-guide > h1 {
+  max-width: 900px;
+  margin-bottom: .6rem;
+  color: #f7fbff !important;
+  font-size: clamp(2.25rem, 5vw, 4.3rem);
+  letter-spacing: -.045em;
+  line-height: 1.02;
+}
+
+.editorial-guide .trust-reviewed {
+  display: inline-flex;
+  margin: 0 0 1.35rem;
+  padding: .42rem .7rem;
+  border: 1px solid rgba(22, 132, 92, .26);
+  border-radius: 999px;
+  color: #146b4c;
+  background: #eefaf3;
+  font-size: .82rem;
+  font-weight: 750;
+}
+
+@media (max-width: 640px) {
+  .editorial-guide .eg-visual { margin: 1.6rem 0 2rem; border-radius: 1rem; }
+  .editorial-guide > h1 { font-size: clamp(2.1rem, 12vw, 3.15rem); }
+}

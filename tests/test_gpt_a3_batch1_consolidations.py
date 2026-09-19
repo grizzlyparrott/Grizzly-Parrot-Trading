@@ -17,6 +17,14 @@ MAPPINGS = {
     "/platforms-tutorials/ninjatrader-chart-templates-basics.html": "/platforms-tutorials/ninjatrader-advanced-templates.html",
 }
 
+VISUALS = {
+    "/market-basics/volatility-clustering-basics.html": "market-basics/volatility-clustering-regime-map.svg",
+    "/market-basics/liquidity-basics.html": "market-basics/liquidity-execution-map.svg",
+    "/market-basics/market-microstructure-the-hidden-engine.html": "market-basics/market-microstructure-order-lifecycle.svg",
+    "/futures-basics/futures-open-interest-explained.html": "futures-basics/open-interest-lifecycle.svg",
+    "/platforms-tutorials/ninjatrader-advanced-templates.html": "platforms-tutorials/ninjatrader-template-map.svg",
+}
+
 
 class GPTA3Batch1Tests(unittest.TestCase):
     def test_batch_scope_is_five_clusters(self):
@@ -124,6 +132,21 @@ class GPTA3Batch1Tests(unittest.TestCase):
             for phrase in phrases:
                 with self.subTest(survivor=survivor, phrase=phrase):
                     self.assertNotIn(phrase.lower(), html.lower())
+
+    def test_each_survivor_has_an_original_explanatory_visual(self):
+        self.assertEqual(set(MAPPINGS.values()), set(VISUALS))
+        stylesheet = (ROOT / "editorial-guide-visuals.css").read_text(encoding="utf-8")
+        self.assertIn(".editorial-guide .eg-visual", stylesheet)
+        for survivor, asset in VISUALS.items():
+            with self.subTest(survivor=survivor):
+                html = (ROOT / survivor.lstrip("/")).read_text(encoding="utf-8")
+                svg = (ROOT / asset).read_text(encoding="utf-8")
+                self.assertIn('class="container article-content editorial-guide"', html)
+                self.assertIn(f'src="{Path(asset).name}"', html)
+                self.assertIn('class="eg-visual"', html)
+                self.assertRegex(svg, r'<svg[^>]+role="img"')
+                self.assertIn("<title", svg)
+                self.assertIn("<desc", svg)
 
 
 if __name__ == "__main__":

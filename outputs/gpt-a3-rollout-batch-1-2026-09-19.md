@@ -120,6 +120,18 @@ All five survivors now include:
 
 Sources checked included NinjaTrader's current chart-template help, CME's liquidity methodology, CME and CFTC open-interest definitions/reports, Investor.gov order-type guidance, CFTC Futures Market Basics, and Cboe's VIX FAQ.
 
+## Visual correction
+
+The original rollout used the legacy plain-article shell despite the stronger visual system already present on newer Grizzly Parrot guides. On September 19, 2026, the five preserved survivor pages were corrected without altering their consolidation or trust decisions. Each now uses the shared editorial visual treatment and a purpose-built, accessible SVG diagram:
+
+- volatility clustering: an illustrative quiet/elevated regime map that explicitly distinguishes return magnitude from a directional forecast;
+- liquidity: an order-size, spread, depth, and conditions-to-execution-cost map that states displayed depth is not a guaranteed fill;
+- market microstructure: a quote-to-marketable-order-to-completed-trade lifecycle that separates observations from participant intent;
+- futures open interest: a lifecycle that distinguishes new positions, both sides closing, and transfers, without inferring motive; and
+- NinjaTrader templates: a conceptual object map that differentiates chart templates from workspaces and other template types, including the Data Series compatibility check.
+
+These are original explanatory graphics, not generic market imagery or platform screenshots. Their captions and alternative text preserve the corresponding YMYL limitations.
+
 ## Discovery and redirect work
 
 - Every live HTML reference to a removed URL was migrated to its survivor.
@@ -138,6 +150,8 @@ These exclusions confirm that low traffic and textual similarity remain screenin
 
 ## Verification gate
 
+### Original consolidation release
+
 Focused regression coverage verifies the five mappings, trust metadata, parsable JSON-LD, redirect behavior, hub-card uniqueness, internal-link migration, sitemap/search-index uniqueness, and removal of the most material unsupported claims.
 
 Verification results:
@@ -151,6 +165,14 @@ Verification results:
 - Live browser verification: all five survivor URLs rendered the expected reviewed title, September 19, 2026 date, and survivor canonical.
 - Live redirect verification: all five old URLs navigated to the exact intended survivor.
 - Discovery verification: the released sitemap contains 851 canonical URLs and the released search index contains 843 entries; the five old URLs are absent and each survivor is present exactly once. Hub regression checks confirm one primary card per survivor.
+
+### Visual correction release
+
+- Visual-specific regression coverage: 8 passed, including one original SVG and one accessible figure on every survivor.
+- Full repository suite: 130 passed.
+- SVG XML parsing: passed for all five new diagrams.
+- Local browser visual QA: passed for the volatility and NinjaTrader guide layouts; headings, update badges, graphics, captions, and responsive-width rendering were checked after a heading-contrast correction.
+- The correction changes neither canonical URLs, redirects, sitemap membership, search-index membership, Article dates, source disclosures, nor the original consolidation evidence.
 
 ## Pattern verdict
 
