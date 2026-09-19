@@ -148,6 +148,8 @@ Major additions are topic-specific. Volatility now includes absolute/squared-ret
 
 The test suite now includes a topic-specific survivor content gate. It requires a scoped broad-topic body floor, at least eight substantive sections, named topic-required sections, a practical workflow, a non-paragraph explanatory structure, preserved trust disclosure, and the existing visual/redirect/discovery checks. No global word count is used as a sole pass condition. The earlier five versions would have failed their scoped body-depth and required-section checks.
 
+Verification for this correction: focused survivor acceptance checks passed 9/9; the full repository suite passed 131/131; and `git diff --check` passed. Content commit `48327ef935cdd316c68b78c35fa10c5b36808671` was deployed by successful GitHub Pages run `35475071691`. No-cache live checks returned HTTP 200 for all five survivor URLs and confirmed a newly required section on each. The primary IndexNow run `35475072177` succeeded; a subsequent automated IndexNow run was still in progress at this record time. No additional survivor clusters were changed.
+
 ## Discovery and redirect work
 
 - Every live HTML reference to a removed URL was migrated to its survivor.
