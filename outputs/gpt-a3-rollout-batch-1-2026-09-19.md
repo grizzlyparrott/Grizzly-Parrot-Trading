@@ -150,6 +150,14 @@ The test suite now includes a topic-specific survivor content gate. It requires 
 
 Verification for this correction: focused survivor acceptance checks passed 9/9; the full repository suite passed 131/131; and `git diff --check` passed. Content commit `48327ef935cdd316c68b78c35fa10c5b36808671` was deployed by successful GitHub Pages run `35475071691`. No-cache live checks returned HTTP 200 for all five survivor URLs and confirmed a newly required section on each. The primary IndexNow run `35475072177` succeeded; a subsequent automated IndexNow run was still in progress at this record time. No additional survivor clusters were changed.
 
+## Batch 2 hold and second content-depth correction
+
+Batch 2 is explicitly on hold. No additional pages were selected, edited, consolidated, or evaluated for release. The same five survivors were revised again because the 847–1,002 word versions, while structurally improved, remained too compressed for broad educational topics.
+
+The content-quality gate now uses a hard 1,200 substantive-body-word floor for every one of these five broad survivor topics, in addition to—not instead of—the topic-specific heading, workflow/example, explanatory-structure, source, trust, visual, redirect, and discovery checks. The final counts for this revision are volatility clustering 1,339; liquidity basics 1,258; market microstructure 1,204; futures open interest 1,235; and NinjaTrader templates 1,216.
+
+The added material develops actual reasoning: volatility now works through tick-value risk recalculation and observation records; liquidity works through stated-size price averaging, live-condition evaluation, and order-instruction tradeoffs; microstructure works through queue limits, observable versus unobservable evidence, and execution review; open interest works through a beginning-to-ending contract ledger, roll interpretation, and reporting-version discipline; and NinjaTrader works through object selection, same-series testing, safe troubleshooting, and recoverable change control. No duplicates were restored and no additional survivor cluster was changed.
+
 ## Discovery and redirect work
 
 - Every live HTML reference to a removed URL was migrated to its survivor.

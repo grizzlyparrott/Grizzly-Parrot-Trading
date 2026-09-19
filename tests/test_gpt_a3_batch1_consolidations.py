@@ -29,7 +29,7 @@ VISUALS = {
 # deliberately topic-specific: word count is only one signal of completeness.
 CONTENT_REQUIREMENTS = {
     "/market-basics/volatility-clustering-basics.html": {
-        "minimum_words": 900,
+        "minimum_words": 1200,
         "headings": (
             "What clustering does and does not say",
             "Why absolute and squared returns are useful",
@@ -40,7 +40,7 @@ CONTENT_REQUIREMENTS = {
         "practical": "Practical risk workflow",
     },
     "/market-basics/liquidity-basics.html": {
-        "minimum_words": 800,
+        "minimum_words": 1200,
         "headings": (
             "Executable size, not just displayed size",
             "Volume is not liquidity",
@@ -51,7 +51,7 @@ CONTENT_REQUIREMENTS = {
         "practical": "A practical pre-trade check",
     },
     "/market-basics/market-microstructure-the-hidden-engine.html": {
-        "minimum_words": 850,
+        "minimum_words": 1200,
         "headings": (
             "Matching, queues, and price impact",
             "Concrete execution example",
@@ -62,7 +62,7 @@ CONTENT_REQUIREMENTS = {
         "practical": "Practical observation workflow",
     },
     "/futures-basics/futures-open-interest-explained.html": {
-        "minimum_words": 850,
+        "minimum_words": 1200,
         "headings": (
             "Three contract-lifecycle examples",
             "Contract-month selection and the roll",
@@ -73,7 +73,7 @@ CONTENT_REQUIREMENTS = {
         "practical": "Practical report check",
     },
     "/platforms-tutorials/ninjatrader-advanced-templates.html": {
-        "minimum_words": 800,
+        "minimum_words": 1200,
         "headings": (
             "What a chart template does not replace",
             "Concrete workflow: build a repeatable chart",

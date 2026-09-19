@@ -79,6 +79,8 @@
 <p>Spread, depth, and price impact are related but different measurements. The spread is the gap between the best displayed bid and offer. Depth is displayed quantity across levels. Price impact is the change in average execution price for a stated order under current conditions. A narrow spread can coexist with shallow depth; a deeper book can still change before an order arrives.</p>
 <h2>Concrete execution example</h2>
 <p>Suppose a buy order is larger than the quantity offered at the best price. Part may execute at that offer and the rest at higher offers. The prints establish completed trades, but they do not identify whether the initiating participant was hedging, liquidating, reacting to news, or expressing a directional view. The appropriate conclusion is about the observed execution and available liquidity, not hidden motive.</p>
+<p>Put numbers around the same idea. If two contracts are offered at 100.00 and three at 100.25, a four-contract marketable buy may fill two at 100.00 and two at 100.25 if nothing changes first. Its average execution price would be 100.125, not 100.00. That is a simple depth-and-size illustration, not a claim about any particular exchange's matching engine or a promise that the visible book will remain in place.</p>
+<p>A resting buy limit at 100.00 presents a different trade-off. It may keep the worst execution price at the limit, but it can sit behind earlier orders at the same level and receive no fill while price moves away. A useful microstructure review asks which risk matters for the situation—price certainty or execution certainty—without pretending either order type removes risk.</p>
 <h2>Order instructions have tradeoffs</h2>
 <table><thead><tr><th scope="col">Instruction</th><th scope="col">Primary control</th><th scope="col">Main risk</th></tr></thead><tbody>
 <tr><td>Market order</td><td>Execution priority</td><td>Execution price can differ from the displayed quote.</td></tr>
@@ -87,6 +89,9 @@
 </tbody></table>
 <h2>What the data can support</h2>
 <ul><li>Quotes can show displayed supply and demand at recorded moments.</li><li>Trades show executions, not the full reason behind them.</li><li>Repeated replenishment can be observed, but participant identity or intent requires stronger evidence.</li><li>Spread, depth, and cost-to-trade measures describe different parts of execution quality.</li></ul>
+<h2>What a reader can observe without overclaiming</h2>
+<p>A careful observer can note that the spread widened, that displayed depth declined, that trades repeatedly printed at a price, or that a stated quantity would have reached multiple levels in the visible book. Those statements retain the time, venue, and feed limits of the data. The observer cannot infer a named participant, an unobserved inventory, or a guaranteed next price path from those facts alone.</p>
+<p>Latency and aggregation matter here. A chart, tape, or depth display may show events after a delay or combine activity in a way that changes the apparent sequence. During a rapid move, the state seen on screen can be stale by the time an order is entered. When the conclusion depends on sequence or queue position, use data with known scope and precision rather than a visual impression.</p>
 <h2>A disciplined review</h2>
 <ol><li>Name the venue, instrument, contract, session, and feed.</li><li>Separate order-book events from completed trades.</li><li>Measure the relevant size across multiple levels, not only top of book.</li><li>Record data gaps, aggregation, and latency.</li><li>Treat motive labels such as accumulation, spoofing, or liquidation as unverified unless evidence supports them.</li></ol>
 <h2>Common bad inferences</h2>
@@ -96,6 +101,7 @@
 <p>Different asset classes and venues also publish different levels of detail. A workflow designed around one exchange's full-depth futures feed should not be assumed to describe another venue's consolidated, delayed, or partial book. Read the exchange rulebook and the data-vendor documentation when execution decisions depend on a specific order type, matching behavior, or timestamp.</p>
 <h2>Practical observation workflow</h2>
 <ol><li>State the contract, exchange, session, and data-feed scope.</li><li>Observe best prices and depth at the quantity relevant to the question.</li><li>Separate changed quotes from completed trades and record the time resolution.</li><li>Compare conditions with spread, volatility, and scheduled events.</li><li>Write conclusions at the strength of the evidence: “depth declined” is narrower than “one side took control.”</li></ol>
+<p>Review the record after the session. Compare the anticipated spread and depth with the actual fills for the stated size. If the visible book repeatedly failed to describe executable conditions, identify whether the issue was timing, feed coverage, order size, or an exceptional market condition. This is an execution-quality audit, not a trading signal.</p>
 <p>Continue with <a href="/market-basics/liquidity-basics.html">market liquidity basics</a> for spread, depth, and cost-to-trade measurement.</p>
 <section class="trust-disclosure" aria-labelledby="sources-heading">
   <h2 id="sources-heading">Sources, scope, and change risk</h2>
