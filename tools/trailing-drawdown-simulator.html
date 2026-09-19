@@ -16,15 +16,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Trailing Drawdown Simulator | Grizzly Parrot Trading</title>
-    <meta name="description" content="Simulate trailing drawdown rules on a sequence of trades. See exactly when a prop firm account would have blown up, with a visual equity vs. trail chart.">
+    <meta name="description" content="Simulate an illustrative completed-trade trailing drawdown formula and compare it carefully with a provider's current written rules.">
     <meta name="robots" content="index, follow">
+    <meta name="date" content="2026-09-19">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://grizzlyparrottrading.com/tools/trailing-drawdown-simulator.html">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Trailing Drawdown Simulator | Grizzly Parrot Trading">
-    <meta property="og:description" content="Simulate trailing drawdown rules on a sequence of trades. See exactly when a prop firm account would have blown up, with a visual equity vs. trail chart.">
+    <meta property="og:description" content="Simulate an illustrative completed-trade trailing drawdown formula and compare it carefully with a provider's current written rules.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://grizzlyparrottrading.com/tools/trailing-drawdown-simulator.html">
     <meta property="og:site_name" content="Grizzly Parrot Trading">
@@ -36,7 +37,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
     <meta name="twitter:title" content="Trailing Drawdown Simulator | Grizzly Parrot Trading">
-    <meta name="twitter:description" content="Simulate trailing drawdown rules on a sequence of trades. See exactly when a prop firm account would have blown up, with a visual equity vs. trail chart.">
+    <meta name="twitter:description" content="Simulate an illustrative completed-trade trailing drawdown formula and compare it carefully with a provider's current written rules.">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
@@ -77,9 +78,10 @@
             <div class="container hero-inner">
                 <div class="hero-text">
                     <h1>Trailing Drawdown Simulator</h1>
+                    <p class="trust-reviewed">Reviewed September 19, 2026</p>
                     <p>
                         Drop in a sequence of trades and a trailing drawdown amount. This shows you exactly where a 
-                        prop-style trailing drawdown would have blown the account, instead of guessing.
+                        the selected illustrative trailing formula would have breached, instead of guessing. It does not reproduce any provider's current rules unless every input and update rule matches.
                     </p>
                 </div>
             </div>
@@ -115,7 +117,7 @@
                         <div class="tool-inline">
                             <label>
                                 <input type="radio" name="td-style" value="apex">
-                                Trails equity but stops at starting balance (Apex-style cap)
+                                Trails equity but stops at starting balance (illustrative cap)
                             </label>
                         </div>
                     </div>
@@ -203,15 +205,23 @@
                         </p>
                     </article>
                     <article class="card">
-                        <h3>Apex-Style Cap</h3>
+                        <h3>Illustrative Starting-Balance Cap</h3>
                         <p>
-                            In Apex mode, the trailing line never moves above the starting balance. Once your high-water
-                            mark is high enough, the line stops climbing and effectively becomes a fixed max drawdown.
+                            In the capped mode, the simulated line never moves above the starting balance. This is a generic mathematical option, not a representation of Apex or any other provider's current rule. Verify the plan, stage, high-water input, update frequency, cap, breach comparison, and fees in the provider's live documentation.
                         </p>
                     </article>
                 </div>
             </div>
         </section>
+                <section class="trust-disclosure" aria-labelledby="drawdown-tool-sources">
+                    <h2 id="drawdown-tool-sources">Model scope and rule sources</h2>
+                    <p>The calculator processes one completed trade P/L value at a time. It does not model intratrade equity highs, commissions unless included in each input, daily-loss limits, consistency rules, resets, liquidation latency, or provider-specific stage transitions.</p>
+                    <ul>
+                      <li><a href="https://help.myfundedfutures.com/en/articles/12802721-intraday-drawdown-explained" target="_blank" rel="noopener noreferrer">My Funded Futures intraday drawdown explanation</a> and <a href="https://help.myfundedfutures.com/en/articles/8348565-end-of-day-eod-drawdown-explained" target="_blank" rel="noopener noreferrer">end-of-day drawdown explanation</a>, reviewed September 19, 2026, illustrate why update clocks and high-water inputs must be explicit.</li>
+                      <li><a href="https://help.topstep.com/en/articles/8284197-trading-combine-parameters" target="_blank" rel="noopener noreferrer">Topstep Trading Combine parameters</a>, reviewed September 19, 2026, provide a separate current rule example and demonstrate that provider terminology and breach comparisons vary.</li>
+                    </ul>
+                    <p>Examples are educational. Provider rules change; use the provider's current written terms and dashboard threshold for an operational decision.</p>
+                </section>
     </main>
 
     

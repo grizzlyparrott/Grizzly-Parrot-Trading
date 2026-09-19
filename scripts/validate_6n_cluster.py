@@ -59,7 +59,7 @@ MODIFIED_DATES = {
     "how-exports-drive-6n-trends.html": "2026-08-19",
     "how-to-read-6n-price-quotes.html": "2026-08-19",
     "how-to-trade-6n-economic-releases.html": "2026-08-19",
-    "m6n-micro-contract-guide.html": "2026-08-19",
+    "m6n-micro-contract-guide.html": "2026-09-19",
     "us-dollar-impact-on-6n.html": "2026-08-20",
     "using-6n-to-hedge-nzdusd-exposure.html": "2026-08-20",
     "what-are-6n-futures.html": "2026-08-20",
@@ -71,6 +71,7 @@ VISIBLE_MODIFIED_DATES = {
     "2026-08-18": "Updated August 18, 2026",
     "2026-08-19": "Updated August 19, 2026",
     "2026-08-20": "Updated August 20, 2026",
+    "2026-09-19": "Updated September 19, 2026",
 }
 CANONICAL_MECHANICS = "6n-contract-specs-explained.html"
 EMPIRICAL_PROTOCOL_PAGES = {
@@ -694,8 +695,13 @@ def validate_page(path: Path, id_cache: dict[Path, set[str]]):
     if not source_text:
         errors.append("missing visible fx-sources disclosure")
     else:
-        if "reviewed august 20, 2026" not in source_text.lower():
-            errors.append("source disclosure lacks an August 20, 2026 review statement")
+        expected_review = (
+            "reviewed september 19, 2026"
+            if path.name == "m6n-micro-contract-guide.html"
+            else "reviewed august 20, 2026"
+        )
+        if expected_review not in source_text.lower():
+            errors.append(f"source disclosure lacks the required review statement: {expected_review}")
         external_source_hrefs = [
             href for href in source_hrefs if urlparse(href).scheme in {"http", "https"}
         ]

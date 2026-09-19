@@ -15,7 +15,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GC Tick Size, Tick Value, and Contract Specs</title>
-  <meta name="description" content="Understand GC tick size, tick value, and core contract specifications so you know exactly how Gold futures move and how each tick hits your account.">
+  <meta name="description" content="Understand current GC tick size, tick value, contract unit, listed months, delivery context, and how each minimum move changes contract value.">
   <meta name="robots" content="index, follow">
 
   <!-- Canonical -->
@@ -23,10 +23,12 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="GC Tick Size, Tick Value, and Contract Specs">
-  <meta property="og:description" content="Understand GC tick size, tick value, and core contract specifications so you know exactly how Gold futures move and how each tick hits your account.">
+  <meta property="og:description" content="Understand current GC tick size, tick value, contract unit, listed months, delivery context, and how each minimum move changes contract value.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/gc-tick-size-tick-value-specs.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-30">
+  <meta property="article:modified_time" content="2026-09-19">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
@@ -35,7 +37,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta name="twitter:title" content="GC Tick Size, Tick Value, and Contract Specs">
-  <meta name="twitter:description" content="Understand GC tick size, tick value, and core contract specifications so you know exactly how Gold futures move and how each tick hits your account.">
+  <meta name="twitter:description" content="Understand current GC tick size, tick value, contract unit, listed months, delivery context, and how each minimum move changes contract value.">
 
   <link rel="stylesheet" href="../style.css">
 
@@ -54,7 +56,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "GC Tick Size, Tick Value, and Contract Specs",
-  "description": "Understand GC tick size, tick value, and core contract specifications so you know exactly how Gold futures move and how each tick hits your account.",
+  "description": "Understand current GC tick size, tick value, contract unit, listed months, delivery context, and how each minimum move changes contract value.",
   "author": {
     "@type": "Person",
     "name": "Kyle Parrott",
@@ -62,7 +64,7 @@
   },
   "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/gc-tick-size-tick-value-specs.html",
   "datePublished": "2025-11-30",
-  "dateModified": "2025-11-30",
+  "dateModified": "2026-09-19",
   "url": "https://grizzlyparrottrading.com/futures-basics/gc-tick-size-tick-value-specs.html",
   "publisher": {
     "@type": "Organization",
@@ -136,9 +138,10 @@ Grizzly Parrot Trading</a>
 <!-- ARTICLE BODY START -->
 
 <h1>GC Tick Size, Tick Value, and Contract Specs</h1>
+<p class="trust-reviewed">Updated September 19, 2026</p>
 
 <p>
-If you trade Gold futures without knowing GC tick size, tick value, and the basic contract specs, you’re guessing at risk. GC is simple: every tick has a fixed dollar value, the contract size is fixed, and the exchange rules never change just because you didn’t bother to read them.
+If you trade Gold futures without knowing GC tick size, tick value, and the basic contract specs, you’re guessing at risk. The current contract defines a fixed unit and minimum price increment, but exchange rules, listed products, performance bonds, and broker requirements can change.
 </p>
 
 <h2>GC Tick Size: The Smallest Price Movement</h2>
@@ -211,7 +214,7 @@ You don’t have to memorize the entire CME rulebook, but the core GC contract s
   <tr><td>Tick Size</td><td>0.10</td></tr>
   <tr><td>Tick Value</td><td>$10 per tick</td></tr>
   <tr><td>Trading Hours</td><td>Mostly nearly 24h electronic (Globex), with brief daily pauses</td></tr>
-  <tr><td>Active Months</td><td>Feb, Apr, Jun, Aug, Dec most liquid</td></tr>
+  <tr><td>Listed Months</td><td>Current and next two months; selected Feb, Apr, Aug, Oct months within 23 months; Jun and Dec months within 72 months under the current CME schedule</td></tr>
 </table>
 
 <p>
@@ -220,7 +223,7 @@ For intraday trading, the main things that hit you in the face every day are <st
 
 <h2>How Tick Size and Tick Value Tie Into Risk Per Trade</h2>
 <p>
-GC will happily move 2–5 points in a short burst when volatility picks up. That’s 20–50 ticks:
+Illustrative arithmetic: a 2–5 point move is 20–50 ticks. This is not a forecast or a claim about a typical interval:
 </p>
 
 <ul>
@@ -254,6 +257,12 @@ GC can run hard around major economic releases and Fed events. When tick value i
   <h3>GC Specs Aren’t Trivia — They’re Risk Rules</h3>
   <p>Tick size is 0.10, tick value is $10, and each contract controls 100 oz. Know it cold. Size your trades around it, or keep trading blind while your P&amp;L does the math for you.</p>
 </div>
+
+<section class="trust-disclosure" aria-labelledby="trust-sources-gc-tick-size-tick-value-specs">
+  <h2 id="trust-sources-gc-tick-size-tick-value-specs">Sources, scope, and change risk</h2>
+  <p>Specifications were checked September 19, 2026 against CME's <a href="https://www.cmegroup.com/trading/metals/files/fact-card-gold-futures-options.pdf" target="_blank" rel="noopener noreferrer">Gold futures fact card</a>, <a href="https://www.cmegroup.com/rulebook/COMEX/1a/113.pdf" target="_blank" rel="noopener noreferrer">COMEX Rulebook Chapter 113</a>, and <a href="https://www.cmegroup.com/markets/metals/precious/gold.contractSpecs.html" target="_blank" rel="noopener noreferrer">current Gold contract page</a>.</p>
+  <p>CME rules control contract size, minimum fluctuation, delivery, and termination. Hours, performance bonds, broker margins, cutoffs, and available smaller gold products can change. Dollar-risk examples are illustrative and exclude commissions and slippage.</p>
+</section>
 
 <!-- ARTICLE BODY END -->
 </div>

@@ -1736,7 +1736,7 @@
   {
     "title": "GC Liquidity Levels and Market Structure",
     "url": "/futures-basics/gc-liquidity-levels-structure.html",
-    "description": "A hard-edged breakdown of how liquidity levels and market structure work on Gold futures (GC): key levels, liquidity pockets, and predictable behavior.",
+    "description": "A measurement-focused guide to GC liquidity references, volume-profile nodes, VWAP, prior extremes, and the limits of predictive claims.",
     "category": "Futures Basics"
   },
   {
@@ -1766,7 +1766,7 @@
   {
     "title": "GC Tick Size, Tick Value, and Contract Specs",
     "url": "/futures-basics/gc-tick-size-tick-value-specs.html",
-    "description": "Understand GC tick size, tick value, and core contract specifications so you know exactly how Gold futures move and how each tick hits your account.",
+    "description": "Understand current GC tick size, tick value, contract unit, listed months, delivery context, and how each minimum move changes contract value.",
     "category": "Futures Basics"
   },
   {
@@ -3212,7 +3212,7 @@
   {
     "title": "Micro Pullbacks: The Tiny Retracements That Reveal Intent",
     "url": "/market-basics/micro-pullbacks-tiny-retracements-reveal-intent.html",
-    "description": "Micro pullbacks show whether buyers or sellers truly control the move. Learn how tiny retracements expose real market intent and trend quality.",
+    "description": "Define and test micro pullbacks without treating small retracements as proof of hidden intent or guaranteed trend continuation.",
     "category": "Market Basics"
   },
   {
@@ -3752,7 +3752,7 @@
   {
     "title": "Prop Firm Refund Policies: When You Actually Get Your Evaluation Fee Back",
     "url": "/prop-firm-trading/prop-firm-refund-policy-explained.html",
-    "description": "A clear breakdown of prop firm refund policies, when evaluation fees are returned, and the exact conditions traders must meet to qualify for refunds.",
+    "description": "How to audit a prop firm's current refund, rebill, reset, activation, cancellation, and processing terms before paying.",
     "category": "Prop Firm Trading"
   },
   {
@@ -4274,7 +4274,7 @@
   {
     "title": "Tradovate Chart Settings: Complete Guide for New Traders",
     "url": "/platforms-tutorials/tradovate-chart-settings-complete-guide.html",
-    "description": "A blunt, complete guide to Tradovate chart settings. Learn exactly which chart options matter, which ones to disable, and how to create a clean, readable trading screen.",
+    "description": "A practical guide to current Tradovate chart controls, chart types, display preferences, and settings that should be rechecked in the live platform.",
     "category": "Platforms & Tutorials"
   },
   {
@@ -4412,7 +4412,7 @@
   {
     "title": "Trailing Drawdown Simulator | Grizzly Parrot Trading",
     "url": "/tools/trailing-drawdown-simulator.html",
-    "description": "Simulate trailing drawdown rules on a sequence of trades. See exactly when a prop firm account would have blown up, with a visual equity vs. trail chart.",
+    "description": "Simulate an illustrative completed-trade trailing drawdown formula and compare it carefully with a provider's current written rules.",
     "category": "tools"
   },
   {
@@ -4718,7 +4718,7 @@
   {
     "title": "What Is Trailing Drawdown in Prop Firms?",
     "url": "/prop-firm-trading/trailing-drawdown-explained.html",
-    "description": "Trailing drawdown is the rule that ends most prop firm evaluations. Here's exactly how it works, why it's stricter than it looks, and what traders consistently get wrong.",
+    "description": "Understand trailing drawdown formulas, high-water marks, intraday versus end-of-day updates, caps, and provider-specific rule differences.",
     "category": "Prop Firm Trading"
   },
   {

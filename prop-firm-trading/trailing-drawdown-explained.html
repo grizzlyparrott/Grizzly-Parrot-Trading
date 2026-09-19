@@ -15,7 +15,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What Is Trailing Drawdown in Prop Firms?</title>
-  <meta name="description" content="Trailing drawdown is the rule that ends most prop firm evaluations. Here's exactly how it works, why it's stricter than it looks, and what traders consistently get wrong.">
+  <meta name="description" content="Understand trailing drawdown formulas, high-water marks, intraday versus end-of-day updates, caps, and provider-specific rule differences.">
   <meta name="robots" content="index, follow">
 
   <!-- Canonical -->
@@ -23,10 +23,12 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="What Is Trailing Drawdown in Prop Firms?">
-  <meta property="og:description" content="Trailing drawdown is the rule that ends most prop firm evaluations. Here's exactly how it works, why it's stricter than it looks, and what traders consistently get wrong.">
+  <meta property="og:description" content="Understand trailing drawdown formulas, high-water marks, intraday versus end-of-day updates, caps, and provider-specific rule differences.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/prop-firm-trading/trailing-drawdown-explained.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2026-01-10">
+  <meta property="article:modified_time" content="2026-09-19">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
@@ -35,7 +37,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta name="twitter:title" content="What Is Trailing Drawdown in Prop Firms?">
-  <meta name="twitter:description" content="Trailing drawdown is the rule that ends most prop firm evaluations. Here's exactly how it looks, why it's stricter than it looks, and what traders consistently get wrong.">
+  <meta name="twitter:description" content="Understand trailing drawdown formulas, high-water marks, intraday versus end-of-day updates, caps, and provider-specific rule differences.">
 
   <link rel="stylesheet" href="../style.css">
 
@@ -54,7 +56,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "What Is Trailing Drawdown in Prop Firms?",
-  "description": "Trailing drawdown is the rule that ends most prop firm evaluations. Here's exactly how it works, why it's stricter than it looks, and what traders consistently get wrong.",
+  "description": "Understand trailing drawdown formulas, high-water marks, intraday versus end-of-day updates, caps, and provider-specific rule differences.",
   "author": {
     "@type": "Person",
     "name": "Kyle Parrott",
@@ -62,7 +64,7 @@
   },
   "mainEntityOfPage": "https://grizzlyparrottrading.com/prop-firm-trading/trailing-drawdown-explained.html",
   "datePublished": "2026-01-10",
-  "dateModified": "2026-04-12",
+  "dateModified": "2026-09-19",
   "url": "https://grizzlyparrottrading.com/prop-firm-trading/trailing-drawdown-explained.html",
   "publisher": {
     "@type": "Organization",
@@ -136,14 +138,15 @@ Grizzly Parrot Trading</a>
 <!-- ARTICLE BODY START -->
 
 <h1>What Is Trailing Drawdown in Prop Firms?</h1>
+<p class="trust-reviewed">Updated September 19, 2026</p>
 
-<p><strong>Trailing drawdown is the rule that ends most prop firm evaluations — not bad trading, not bad luck, but a misunderstanding of a mechanic that was working against the trader the entire time.</strong> It is one of the simpler concepts in prop firm evaluations to explain, and one of the most reliably misunderstood in practice. The explanation takes two minutes. The implications take longer to fully absorb.</p>
+<p><strong>Trailing drawdown is a moving loss threshold used by some trading-evaluation and funded-account programs.</strong> The exact calculation is not standardized: a provider may use balance or equity, update intraday or end of day, apply different breach comparisons, and stop the trail at a specified level—or use a different risk rule entirely.</p>
 
-<p>The core idea: trailing drawdown is a moving floor on your account equity or balance. As you make new profit highs, the floor rises behind you. If your account falls below that floor at any point, the evaluation ends. You do not get credit for having been profitable earlier. The floor is where it is, and if you are below it, you are done.</p>
+<p>The general idea is a floor derived from a high-water mark minus a stated drawdown amount. Whether open profit moves the high-water mark, when the floor updates, whether equality counts as a breach, and what happens after a breach are current-plan terms. The provider's dashboard and written rules control.</p>
 
 <h2>How It Works in Practice</h2>
 
-<p>Start with a simple example. An evaluation account begins at $50,000 with a $2,500 maximum trailing drawdown. Your initial floor is $47,500 — the starting balance minus the drawdown allowance. That floor will never move down. It only moves up.</p>
+<p><strong>Illustrative example—not a current firm's rule:</strong> an account begins at $50,000 with a hypothetical $2,500 trailing amount, producing an initial floor of $47,500. This example assumes a close-to-close balance trail, no fees, no daily-loss rule, and a strict breach below the floor.</p>
 
 <p>You make $1,000 on your first day. Your account is now at $51,000. The floor follows: it rises to $48,500. You have not locked in any profit — the floor is still $2,500 below your new high. Now you give back $600 the next morning. Balance drops to $50,400. The floor stays at $48,500. It does not follow the account down.</p>
 
@@ -153,7 +156,7 @@ Grizzly Parrot Trading</a>
 
 <h2>Balance-Based vs Equity-Based Trailing</h2>
 
-<p>This is the variation that creates the most unexpected failures, and firms are not always as clear about it in their documentation as they should be.</p>
+<p>This distinction materially changes the calculation. Read the provider's definitions and examples rather than relying on the label alone.</p>
 
 <p>Balance-based trailing only updates the floor when trades are closed. Unrealized profit — open positions running in your favor — does not move the floor. If you are up $2,000 on an open trade, the floor has not moved yet. You can let the trade run, take the profit, and then the floor adjusts. The risk is at close, not during the trade.</p>
 
@@ -163,7 +166,7 @@ Grizzly Parrot Trading</a>
 
 <h2>End-of-Day vs Intraday Trailing</h2>
 
-<p>A related but separate variation: some firms only update the trailing floor once per day at the closing balance, while others move it continuously throughout the session.</p>
+<p>A related but separate variation: current programs can update the floor from an end-of-day value or intraday from a high-water mark. The evaluation stage and funded stage may use different methods.</p>
 
 <p>End-of-day trailing gives you more room to maneuver intraday. A session that spikes to a new equity high and then gives it back before the close does not permanently move your floor — only where you actually end the day matters. Intraday trailing treats every new high as a floor adjustment in real time, which means a morning rally followed by an afternoon reversal can leave you with a meaningfully tighter floor even if the day ends flat.</p>
 
@@ -173,22 +176,28 @@ Grizzly Parrot Trading</a>
 
 <p>Some firms build in a lock-in feature: once your profit exceeds the drawdown amount, the floor stops trailing and becomes fixed at the starting balance or some defined level. The idea is that once you have cleared the hurdle by enough, you cannot fall back below your starting point regardless of what happens next.</p>
 
-<p>This is favorable when it applies and worth identifying in any evaluation you are considering. It means that a strong early run can effectively convert a trailing drawdown evaluation into a static one — which is a meaningfully different risk profile. A trader who knows they have reached the lock-in threshold can size and hold positions with more confidence that one bad session will not erase the evaluation entirely.</p>
+<p>A cap changes the risk profile and is worth identifying in any evaluation you are considering. Reaching it does not justify more size: daily-loss rules, consistency rules, position limits, liquidation terms, and ordinary market risk can still apply.</p>
 
 <p>Not all firms offer this. Some trail indefinitely until the evaluation ends or the profit target is hit. Knowing which type you are in changes how you should think about protecting profit versus pressing for the target.</p>
 
 <h2>The Practical Mistakes</h2>
 
-<p>The most common one is scaling up size after a good run. The trader has built a comfortable buffer — the account is well above the floor — and interprets that buffer as permission to take on more risk. What they have actually done is raise the floor. A larger position that goes wrong from an elevated floor is a faster path to failure than the same position would have been from the starting balance. The buffer and the floor move together.</p>
+<p>One practical mistake is scaling up size after a good run. Under a still-trailing model, the high-water mark and floor may have risen together, so the visible account gain is not necessarily additional room below the current threshold. Recalculate from the provider's live value before changing size.</p>
 
 <p>The second is ignoring the distinction between balance-based and equity-based trailing until it matters. Equity-based trailing changes the risk profile of every volatile trade, not just the ones that lose. A trader who lets winners run without understanding that open profit is moving the floor in real time will eventually have the floor catch up to them on a reversal they did not treat as dangerous.</p>
 
 <p>The third is simply not knowing the specific rules of the firm they are evaluating with. Drawdown amount, trailing method, intraday versus end-of-day, lock-in provisions — these are not standard across firms. Reading the documentation once, carefully, before trading a dollar is not optional. It is the minimum.</p>
 
 <div class="highlight-box red">
-  <h3>The Floor Rises. It Does Not Fall.</h3>
-  <p>Trailing drawdown only moves in one direction. Every new profit high raises the floor behind you, permanently. The floor does not care that the market reversed, that you had an unlucky session, or that you are still up overall from where you started. If your account is below the floor, the evaluation is over. The traders who survive trailing drawdown evaluations are not necessarily the most profitable ones — they are the ones who never let the floor catch up to them, which requires understanding exactly where it is at all times and managing their equity curve accordingly.</p>
+  <h3>Model the Exact Written Rule</h3>
+  <p>A trailing floor generally does not move downward while it is active, but the high-water input, update clock, cap, breach comparison, fees, resets, and stage transitions are program-specific. Save the dated rule page and test the formula against the provider's displayed threshold before relying on a simulation.</p>
 </div>
+
+<section class="trust-disclosure" aria-labelledby="trust-sources-trailing-drawdown-explained">
+  <h2 id="trust-sources-trailing-drawdown-explained">Sources, scope, and change risk</h2>
+  <p>Rule variation was checked September 19, 2026 using current first-party examples: <a href="https://help.myfundedfutures.com/en/articles/12802721-intraday-drawdown-explained" target="_blank" rel="noopener noreferrer">intraday trailing drawdown</a>, <a href="https://help.myfundedfutures.com/en/articles/8348565-end-of-day-eod-drawdown-explained" target="_blank" rel="noopener noreferrer">end-of-day trailing drawdown</a>, and <a href="https://help.topstep.com/en/articles/8284197-trading-combine-parameters" target="_blank" rel="noopener noreferrer">Topstep Trading Combine parameters</a>.</p>
+  <p>The numerical walkthrough is illustrative and is not a current plan quote. Providers can change rules, terminology, account stages, breach logic, fees, and reset terms. Save the dated rules for the exact product and verify the live dashboard before trading.</p>
+</section>
 
 <!-- ARTICLE BODY END -->
 </div>

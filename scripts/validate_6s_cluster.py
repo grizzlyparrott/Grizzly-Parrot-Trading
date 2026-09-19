@@ -47,7 +47,7 @@ CLUSTER = (
 MODIFIED_DATES = {
     "6s-behavior-during-fomc-weeks-not-just-fomc-day.html": "2026-08-17",
     "6s-best-times-of-day-to-trade-swiss-franc-futures.html": "2026-08-17",
-    "6s-chf-usd-spot-vs-futures-differences.html": "2026-08-17",
+    "6s-chf-usd-spot-vs-futures-differences.html": "2026-09-19",
     "6s-contract-specs-tick-size-margin.html": "2026-08-17",
     "6s-how-6s-reacts-to-snb-rate-decisions.html": "2026-08-18",
     "6s-how-snb-interventions-still-impact-swiss-franc-today.html": "2026-08-18",
@@ -73,6 +73,7 @@ VISIBLE_MODIFIED_DATES = {
     "2026-08-19": "Updated August 19, 2026",
     "2026-08-20": "Updated August 20, 2026",
     "2026-08-21": "Updated August 21, 2026",
+    "2026-09-19": "Updated September 19, 2026",
 }
 CANONICAL_MECHANICS = "6s-contract-specs-tick-size-margin.html"
 EMPIRICAL_PROTOCOL_PAGES = {

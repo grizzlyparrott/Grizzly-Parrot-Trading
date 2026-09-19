@@ -15,7 +15,8 @@ class SixNCorrectnessRegressionTests(unittest.TestCase):
             with self.subTest(filename=filename):
                 html = (FUTURES / filename).read_text(encoding="utf-8")
                 day = int(modified_date[-2:])
-                visible = f"Updated August {day}, 2026"
+                month = "September" if modified_date.startswith("2026-09") else "August"
+                visible = f"Updated {month} {day}, 2026"
                 self.assertEqual(
                     html.count(
                         f'<meta property="article:modified_time" content="{modified_date}">'
@@ -33,12 +34,18 @@ class SixNCorrectnessRegressionTests(unittest.TestCase):
                 self.assertEqual(html.count('"datePublished":"2025-11-28"'), 1)
 
     def test_source_disclosure_is_uniform_and_keyboard_native(self):
-        summary = (
-            "Sources, methods and editorial disclosure &mdash; reviewed August 20, 2026"
-        )
         for filename in CLUSTER:
             with self.subTest(filename=filename):
                 html = (FUTURES / filename).read_text(encoding="utf-8")
+                review_date = (
+                    "September 19, 2026"
+                    if filename == "m6n-micro-contract-guide.html"
+                    else "August 20, 2026"
+                )
+                summary = (
+                    "Sources, methods and editorial disclosure &mdash; reviewed "
+                    f"{review_date}"
+                )
                 self.assertEqual(html.count('<details class="fx-sources">'), 1)
                 self.assertEqual(html.count(summary), 1)
                 self.assertNotIn('<details class="fx-sources" open>', html)

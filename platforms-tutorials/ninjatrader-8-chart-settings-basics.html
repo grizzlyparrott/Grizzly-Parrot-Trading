@@ -27,6 +27,8 @@
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/platforms-tutorials/ninjatrader-8-chart-settings-basics.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-22">
+  <meta property="article:modified_time" content="2026-09-19">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
@@ -62,7 +64,7 @@
   },
   "mainEntityOfPage": "https://grizzlyparrottrading.com/platforms-tutorials/ninjatrader-8-chart-settings-basics.html",
   "datePublished": "2025-11-22",
-  "dateModified": "2025-11-22",
+  "dateModified": "2026-09-19",
   "url": "https://grizzlyparrottrading.com/platforms-tutorials/ninjatrader-8-chart-settings-basics.html",
   "publisher": {
     "@type": "Organization",
@@ -136,6 +138,7 @@ Grizzly Parrot Trading</a>
 <!-- ARTICLE BODY START -->
 
 <h1>NinjaTrader 8 Chart Settings Basics</h1>
+<p class="trust-reviewed">Updated September 19, 2026</p>
 
 <p>NinjaTrader 8 gives you extremely customizable charts. That’s good, but it also means beginners get lost in the menus. This guide strips out the noise and shows you the basic settings you actually need to control—data series, bar types, scaling, colors, trading display, and templates.</p>
 
@@ -198,18 +201,14 @@ These two menus control 90% of the chart behavior you care about.</p>
 
 <h2>Scaling: How to Stop the Chart From Jumping</h2>
 
-<p>NinjaTrader 8 supports three major scale modes:</p>
+<p>NinjaTrader documents automatic and fixed vertical scaling:</p>
 
 <ul>
-  <li><strong>Automatic</strong> – chart adjusts to show all price action</li>
-  <li><strong>Fixed</strong> – chart stays locked to set values</li>
-  <li><strong>Fixed + Auto</strong> – mix of the two</li>
+  <li><strong>Automatic</strong> – the visible chart objects participate in the price range when Auto Scale is enabled.</li>
+  <li><strong>Fixed</strong> – manually adjusting the vertical axis fixes the scale; NinjaTrader shows an <strong>F</strong> button that returns the chart to automatic scaling.</li>
 </ul>
 
-<p>If your chart keeps snapping up and down when price moves, switch to:  
-<strong>Right-click → Properties → Scale Justify = Right</strong></p>
-
-<p>Or scroll the price axis until NT8 offers a reset option.</p>
+<p>If the chart is fixed or compressed, drag the vertical price axis to adjust it. Select the <strong>F</strong> button in the upper-right chart margin to return to automatic scaling. <strong>Scale justification</strong> chooses the left, right, or overlay scale for an object; it is not the fixed/automatic control.</p>
 
 <h2>How to Change Candle Colors</h2>
 
@@ -237,7 +236,7 @@ These two menus control 90% of the chart behavior you care about.</p>
 
 <ol>
   <li>Right-click chart</li>
-  <li>Click <strong>Templates → Save</strong></li>
+  <li>Click <strong>Templates → Save As</strong></li>
   <li>Give it a name like <strong>“MyBasicChart”</strong></li>
 </ol>
 
@@ -275,6 +274,12 @@ These two menus control 90% of the chart behavior you care about.</p>
   <h3>Chart Settings Are the Foundation of NT8</h3>
   <p>NinjaTrader 8 only feels complicated until you master the basics: Data Series, chart Properties, scaling, and templates. These settings shape every trade you see. Nail them first, and the entire platform stops feeling clunky and starts working with you — not against you.</p>
 </div>
+
+<section class="trust-disclosure" aria-labelledby="trust-sources-ninjatrader-8-chart-settings-basics">
+  <h2 id="trust-sources-ninjatrader-8-chart-settings-basics">Sources, scope, and change risk</h2>
+  <p>Platform behavior was checked September 19, 2026 against NinjaTrader's official guides for <a href="https://ninjatrader.com/support/helpguides/nt8/working_with_price_data.htm" target="_blank" rel="noopener noreferrer">Data Series</a>, <a href="https://ninjatrader.com/support/helpguides/nt8/chart_properties.htm" target="_blank" rel="noopener noreferrer">Chart Properties</a>, <a href="https://ninjatrader.com/support/helpguides/nt8/navigating_a_chart.htm" target="_blank" rel="noopener noreferrer">chart navigation and scaling</a>, and <a href="https://ninjatrader.com/support/helpguides/nt8/saving_chart_defaults_and_templates.htm" target="_blank" rel="noopener noreferrer">chart templates</a>.</p>
+  <p>NinjaTrader can change labels, defaults, and features by release, license, data connection, and custom add-on. Confirm the live platform and back up templates before changing a production workspace. Example chart values are preferences, not trading rules.</p>
+</section>
 
 <!-- ARTICLE BODY END -->
 </div>

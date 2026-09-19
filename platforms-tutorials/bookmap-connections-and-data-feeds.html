@@ -27,6 +27,8 @@
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://grizzlyparrottrading.com/platforms-tutorials/bookmap-connections-and-data-feeds.html">
   <meta property="og:site_name" content="Grizzly Parrot Trading">
+  <meta property="article:published_time" content="2025-11-22">
+  <meta property="article:modified_time" content="2026-09-19">
   <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
   <meta property="og:image:width" content="1792">
   <meta property="og:image:height" content="941">
@@ -62,7 +64,7 @@
   },
   "mainEntityOfPage": "https://grizzlyparrottrading.com/platforms-tutorials/bookmap-connections-and-data-feeds.html",
   "datePublished": "2025-11-22",
-  "dateModified": "2025-11-22",
+  "dateModified": "2026-09-19",
   "url": "https://grizzlyparrottrading.com/platforms-tutorials/bookmap-connections-and-data-feeds.html",
   "publisher": {
     "@type": "Organization",
@@ -136,23 +138,24 @@ Grizzly Parrot Trading</a>
 <!-- ARTICLE BODY START -->
 
 <h1>Bookmap Connections and Data Feeds: How to Get Real-Time Order Flow</h1>
+<p class="trust-reviewed">Updated September 19, 2026</p>
 
-<p>Bookmap is worthless without a proper data feed. The platform needs real-time depth, liquidity, and executed order data—otherwise the heatmap and bubbles won’t mean anything. This guide shows you how to connect Bookmap to the three feeds that matter: Rithmic, CQG, and dxFeed.</p>
+<p>Bookmap visualizations depend on the data delivered by the selected connection and entitlement. Rithmic, CQG, and dxFeed are three supported paths, but they are not the entire connection list. Provider availability, depth, trading support, backfill, exchange entitlements, and plan requirements can change.</p>
 
 <h2>Supported Bookmap Data Feeds</h2>
 
-<p>Bookmap supports three main data sources depending on what you’re trading:</p>
+<p>These are three commonly encountered connection families. Bookmap's current connectivity documentation also lists other providers, so choose from the live connection list for your Bookmap version:</p>
 
 <table>
 <tr><th>Feed</th><th>Used For</th><th>Notes</th></tr>
-<tr><td><strong>Rithmic</strong></td><td>Futures</td><td>Fastest feed for depth; used by prop firms</td></tr>
-<tr><td><strong>CQG</strong></td><td>Futures</td><td>Widely supported; stable but slightly slower</td></tr>
-<tr><td><strong>dxFeed</strong></td><td>Crypto & US equities</td><td>Good for Bookmap’s crypto package</td></tr>
+<tr><td><strong>Rithmic</strong></td><td>Futures</td><td>Bookmap documents full-depth data for many futures markets and CME market-by-order data; availability depends on entitlement.</td></tr>
+<tr><td><strong>CQG Continuum</strong></td><td>Futures</td><td>Supported connection; depth and trading permissions depend on the broker, provider, and subscription.</td></tr>
+<tr><td><strong>dxFeed</strong></td><td>Provider-dependent markets</td><td>Coverage and depth depend on the current Bookmap plan and data subscription.</td></tr>
 </table>
 
 <h2>1. Connecting Bookmap to Rithmic</h2>
 
-<p>Rithmic is the fastest and most detailed futures feed available. If you’re using a prop firm like Apex or Topstep, you’re almost certainly connecting through Rithmic.</p>
+<p>Bookmap documents Rithmic as a futures connection that can provide full depth and, for CME futures, market-by-order data. Do not assume a prop firm, broker, or account supports Rithmic: confirm the current provider, credentials, gateway, exchange agreement, and concurrent-login policy with the account issuer.</p>
 
 <h3>Steps:</h3>
 
@@ -160,14 +163,14 @@ Grizzly Parrot Trading</a>
   <li>Open Bookmap</li>
   <li>Go to <strong>Connections → Configure</strong></li>
   <li>Click <strong>Add</strong> → choose <strong>Rithmic</strong></li>
-  <li>Select your <strong>login type</strong> (Live, Paper, or Prop Firm)</li>
+  <li>Select the account environment and system supplied by your provider</li>
   <li>Enter <strong>username/password</strong></li>
-  <li>Choose the correct <strong>server location</strong> (faster if closer)</li>
-  <li>Enable <strong>Market Depth</strong> and <strong>Full Order Book</strong></li>
+  <li>Choose the provider-specified system or gateway</li>
+  <li>Confirm the exchange and depth entitlement before subscribing to an instrument</li>
   <li>Click <strong>Connect</strong></li>
 </ol>
 
-<p>If you’re with a prop firm, make sure you use their credentials—not your broker credentials. They are not the same.</p>
+<p>Use only the credentials issued for that Bookmap connection. Credential scope and simultaneous-session rules vary by provider and account program.</p>
 
 <h3>Common Rithmic Problems</h3>
 
@@ -177,11 +180,11 @@ Grizzly Parrot Trading</a>
   <li>Trying to connect during maintenance windows</li>
 </ul>
 
-<p>Rithmic is fast but picky. If one thing is off, the connection fails.</p>
+<p>Use Bookmap's current Rithmic troubleshooting guide for login, system, gateway, plugin-mode, and entitlement errors.</p>
 
 <h2>2. Connecting Bookmap to CQG</h2>
 
-<p>CQG is the most widely supported futures data feed, especially for retail brokers.</p>
+<p>CQG Continuum is one supported futures connection. Confirm that your broker or provider permits Bookmap access and that your credentials include the required market data.</p>
 
 <h3>Steps:</h3>
 
@@ -216,34 +219,34 @@ Grizzly Parrot Trading</a>
   <li>Connect</li>
 </ol>
 
-<p>dxFeed is the easiest feed to connect since Bookmap manages the subscription directly.</p>
+<p>The sign-in and subscription path depends on the current Bookmap/dxFeed offering. Follow the live Bookmap connection screen and current documentation rather than assuming a universal login flow.</p>
 
 <h2>Which Feed Should You Use?</h2>
 
 <table>
 <tr><th>If You Trade…</th><th>Use This</th></tr>
-<tr><td><strong>Futures through a prop firm</strong></td><td>Rithmic</td></tr>
-<tr><td><strong>Futures through a broker</strong></td><td>CQG or Rithmic</td></tr>
-<tr><td><strong>Crypto</strong></td><td>dxFeed</td></tr>
-<tr><td><strong>US equities</strong></td><td>dxFeed</td></tr>
+<tr><td><strong>Futures through a prop program</strong></td><td>The connection explicitly authorized by that program</td></tr>
+<tr><td><strong>Futures through a broker</strong></td><td>A Bookmap-supported provider enabled by that broker</td></tr>
+<tr><td><strong>Crypto</strong></td><td>A currently supported venue or provider for the intended symbols</td></tr>
+<tr><td><strong>US equities</strong></td><td>A current equities feed with the required depth entitlement</td></tr>
 </table>
 
-<p>If you only care about futures, Rithmic is the cleanest and fastest feed.</p>
+<p>There is no universally best futures feed. Compare supported markets, depth model, latency at your location, reliability, backfill, trading permissions, concurrent-login limits, and total cost for your specific account.</p>
 
 <h2>Required Subscriptions</h2>
 
 <ul>
-  <li><strong>Bookmap subscription</strong> (Global or above)</li>
+  <li><strong>Bookmap plan</strong> that supports the intended connection and features</li>
   <li><strong>Market data fees</strong> for each exchange</li>
   <li><strong>Feed-specific fees</strong> depending on provider</li>
 </ul>
 
-<p>Bookmap is not plug-and-play—you must have the correct exchange data activated or nothing will load.</p>
+<p>Bookmap access is not uniform across products: confirm the connection, symbol, exchange agreement, and depth entitlement required for the view you expect.</p>
 
 <h2>Troubleshooting Common Problems</h2>
 
 <h3>1. Bookmap loads but shows no liquidity</h3>
-<p>You subscribed to top-of-book only. You need <strong>full depth</strong>.</p>
+<p>Confirm the instrument is subscribed, the market is open, the connection is live, and your entitlement includes the depth the visualization requires. Top-of-book and full-depth products are not interchangeable.</p>
 
 <h3>2. Error: “Login failed”</h3>
 <ul>
@@ -260,12 +263,18 @@ Grizzly Parrot Trading</a>
 </ul>
 
 <h3>4. Depth missing on CQG</h3>
-<p>You didn’t subscribe to the depth package. Most brokers disable it by default.</p>
+<p>Confirm that the connection supports the requested depth and that the account is entitled to receive it. Top-of-book, market-by-price, and market-by-order feeds expose different records.</p>
 
 <div class="highlight-box green">
-  <h3>Clean Data Is What Makes Bookmap Work</h3>
-  <p>Bookmap’s edge comes from showing you full-depth, real-time liquidity — but that only happens if your data feed delivers. Rithmic, CQG, and dxFeed all work, but the best choice depends on your product. Set it up right once, save the profile, and your feed stays clean every session.</p>
+  <h3>Match the Connection to the Market and Account</h3>
+  <p>Bookmap can only display the records delivered by the selected provider and entitlement. Recheck the plan, connection, symbol, depth, and account permissions when anything changes; a saved profile does not guarantee a continuing entitlement or clean feed.</p>
 </div>
+
+<section class="trust-disclosure" aria-labelledby="trust-sources-bookmap-connections-and-data-feeds">
+  <h2 id="trust-sources-bookmap-connections-and-data-feeds">Sources, scope, and change risk</h2>
+  <p>Connection scope was checked September 19, 2026 against Bookmap's <a href="https://bookmap.com/wp-content/themes/bookmap/Bookmap_Connectivity.pdf" target="_blank" rel="noopener noreferrer">official connectivity guide</a> and <a href="https://bookmap.com/learning-center/getting-started/connecting-to-data/rithmic" target="_blank" rel="noopener noreferrer">current Rithmic connection guide</a>.</p>
+  <p>Supported providers, exchanges, plans, login modes, entitlements, fees, backfill, and concurrent-session rules can change. The provider, broker, exchange agreement, and prop program remain controlling. The affiliate relationship does not change the verification standard.</p>
+</section>
 
 <!-- ARTICLE BODY END -->
 

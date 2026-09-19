@@ -64,7 +64,7 @@ MODIFIED_DATES = {
     "es-building-a-simple-trading-plan.html": "2026-08-26",
     "es-how-to-size-positions-by-account-balance.html": "2026-08-26",
     "es-mini-vs-mes-micro-which-should-you-trade.html": "2026-08-26",
-    "es-session-highs-lows-and-vwap-usage.html": "2026-08-26",
+    "es-session-highs-lows-and-vwap-usage.html": "2026-09-19",
     "nq-earnings-impact.html": "2026-08-26",
     "nq-pullbacks-vs-breakouts.html": "2026-08-26",
     "nq-tick-value.html": "2026-08-26",
@@ -93,7 +93,11 @@ PUBLISHED_DATES = {
 }
 
 VISIBLE_MODIFIED_DATES = {
-    value: f"Updated August {int(value[-2:])}, 2026"
+    value: (
+        "Updated September 19, 2026"
+        if value == "2026-09-19"
+        else f"Updated August {int(value[-2:])}, 2026"
+    )
     for value in set(MODIFIED_DATES.values())
 }
 

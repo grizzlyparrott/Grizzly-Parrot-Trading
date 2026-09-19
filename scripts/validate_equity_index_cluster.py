@@ -313,8 +313,16 @@ def validate_page(path: Path, id_cache: dict[Path, set[str]]):
             errors.append("source disclosure must contain at least three descriptive links")
         if primary_source_count(source_hrefs) < 1:
             errors.append("source disclosure must include an authoritative primary source")
-        review_phrase = "reviewed August 28, 2026"
-        if not re.search(r"\breviewed(?:\s+on)?\s+august\s+28,\s+2026\b", source_text, re.I):
+        review_phrase = (
+            "reviewed September 19, 2026"
+            if path.name == "es-session-highs-lows-and-vwap-usage.html"
+            else "reviewed August 28, 2026"
+        )
+        if not re.search(
+            rf"\b{re.escape(review_phrase).replace(r'\ ', r'\s+')}\b",
+            source_text,
+            re.I,
+        ):
             errors.append(f"source disclosure must state that sources were {review_phrase}")
     for href in source_hrefs:
         if href.startswith("http://"):

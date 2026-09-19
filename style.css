@@ -5329,3 +5329,41 @@ a:hover {
     min-width: 760px;
   }
 }
+
+
+/* Focused freshness and source disclosures for reviewed priority pages. */
+.trust-reviewed {
+  margin: -0.35rem 0 1.25rem;
+  color: #94a7a0;
+  font-size: 0.92rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+.trust-disclosure {
+  margin: 2rem 0 0;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid rgba(95, 255, 178, 0.22);
+  border-radius: 14px;
+  background: rgba(8, 24, 20, 0.72);
+}
+
+.trust-disclosure h2 {
+  margin-top: 0;
+  font-size: 1.18rem;
+}
+
+.trust-disclosure p,
+.trust-disclosure li {
+  color: #c4d0cc;
+  font-size: 0.95rem;
+}
+
+.trust-disclosure p:last-child,
+.trust-disclosure ul:last-child {
+  margin-bottom: 0;
+}
+
+.trust-disclosure a {
+  overflow-wrap: anywhere;
+}

@@ -15,7 +15,8 @@ class SixSCorrectnessRegressionTests(unittest.TestCase):
             with self.subTest(filename=filename):
                 html = (FUTURES / filename).read_text(encoding="utf-8")
                 day = int(modified_date[-2:])
-                visible = f"Updated August {day}, 2026"
+                month = "September" if modified_date.startswith("2026-09") else "August"
+                visible = f"Updated {month} {day}, 2026"
                 self.assertEqual(
                     html.count(
                         f'<meta property="article:modified_time" content="{modified_date}">'

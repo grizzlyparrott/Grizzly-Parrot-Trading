@@ -33,9 +33,10 @@ class EquityIndexCorrectnessTests(unittest.TestCase):
             {
                 "2026-08-24": 7,
                 "2026-08-25": 7,
-                "2026-08-26": 7,
+                "2026-08-26": 6,
                 "2026-08-27": 7,
                 "2026-08-28": 7,
+                "2026-09-19": 1,
             },
         )
 
@@ -45,7 +46,8 @@ class EquityIndexCorrectnessTests(unittest.TestCase):
                 html = (FUTURES / filename).read_text(encoding="utf-8")
                 modified = MODIFIED_DATES[filename]
                 published = PUBLISHED_DATES[filename]
-                visible = f"Updated August {int(modified[-2:])}, 2026"
+                month = "September" if modified.startswith("2026-09") else "August"
+                visible = f"Updated {month} {int(modified[-2:])}, 2026"
                 self.assertEqual(
                     html.count(
                         f'<meta property="article:modified_time" content="{modified}">'
