@@ -173,6 +173,10 @@ Verification results:
 - SVG XML parsing: passed for all five new diagrams.
 - Local browser visual QA: passed for the volatility and NinjaTrader guide layouts; headings, update badges, graphics, captions, and responsive-width rendering were checked after a heading-contrast correction.
 - The correction changes neither canonical URLs, redirects, sitemap membership, search-index membership, Article dates, source disclosures, nor the original consolidation evidence.
+- Visual-correction content commit: `88e8f711a8f482d92af6f736310d432aa5129670` (`Restore visual treatment for GPT-A3 survivors`).
+- GitHub Pages deployment `35474484748`: succeeded (build, status report, and deploy jobs).
+- IndexNow submission `35474485264`: succeeded. A second automated IndexNow run was still in progress when this record was updated.
+- Final live verification: all five survivor URLs returned HTTP 200 with no-cache requests and contained their exact new SVG reference. The volatility page was also browser-verified live with the visual visible and its accessible alternative text exposed.
 
 ## Pattern verdict
 
