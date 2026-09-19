@@ -25,6 +25,77 @@ VISUALS = {
     "/platforms-tutorials/ninjatrader-advanced-templates.html": "platforms-tutorials/ninjatrader-template-map.svg",
 }
 
+# These are content-review gates for the five broad survivor topics. They are
+# deliberately topic-specific: word count is only one signal of completeness.
+CONTENT_REQUIREMENTS = {
+    "/market-basics/volatility-clustering-basics.html": {
+        "minimum_words": 900,
+        "headings": (
+            "What clustering does and does not say",
+            "Why absolute and squared returns are useful",
+            "Worked measurement example",
+            "Regimes, GARCH-style thinking, and limits",
+            "Practical risk workflow",
+        ),
+        "practical": "Practical risk workflow",
+    },
+    "/market-basics/liquidity-basics.html": {
+        "minimum_words": 800,
+        "headings": (
+            "Executable size, not just displayed size",
+            "Volume is not liquidity",
+            "Conditions where a normal reading can fail",
+            "Example: two orders, one spread",
+            "A practical pre-trade check",
+        ),
+        "practical": "A practical pre-trade check",
+    },
+    "/market-basics/market-microstructure-the-hidden-engine.html": {
+        "minimum_words": 850,
+        "headings": (
+            "Matching, queues, and price impact",
+            "Concrete execution example",
+            "Order instructions have tradeoffs",
+            "Common bad inferences",
+            "Practical observation workflow",
+        ),
+        "practical": "Practical observation workflow",
+    },
+    "/futures-basics/futures-open-interest-explained.html": {
+        "minimum_words": 850,
+        "headings": (
+            "Three contract-lifecycle examples",
+            "Contract-month selection and the roll",
+            "Use cases and edge cases",
+            "Why the classic trend matrix is only a heuristic",
+            "Practical report check",
+        ),
+        "practical": "Practical report check",
+    },
+    "/platforms-tutorials/ninjatrader-advanced-templates.html": {
+        "minimum_words": 800,
+        "headings": (
+            "What a chart template does not replace",
+            "Concrete workflow: build a repeatable chart",
+            "Templates and workspaces are not the same thing",
+            "Troubleshooting checklist",
+            "Backup, import, and change-control caveat",
+        ),
+        "practical": "Concrete workflow: build a repeatable chart",
+    },
+}
+
+
+def article_body(html):
+    return html.split("<!-- ARTICLE BODY START -->", 1)[1].split(
+        "<!-- ARTICLE BODY END -->", 1
+    )[0]
+
+
+def body_word_count(body):
+    plain = re.sub(r"<[^>]+>", " ", body)
+    return len(re.findall(r"\b[\w'-]+\b", plain))
+
 
 class GPTA3Batch1Tests(unittest.TestCase):
     def test_batch_scope_is_five_clusters(self):
@@ -147,6 +218,25 @@ class GPTA3Batch1Tests(unittest.TestCase):
                 self.assertRegex(svg, r'<svg[^>]+role="img"')
                 self.assertIn("<title", svg)
                 self.assertIn("<desc", svg)
+
+    def test_survivors_pass_topic_specific_content_quality_gate(self):
+        self.assertEqual(set(CONTENT_REQUIREMENTS), set(MAPPINGS.values()))
+        for survivor, requirement in CONTENT_REQUIREMENTS.items():
+            with self.subTest(survivor=survivor):
+                html = (ROOT / survivor.lstrip("/")).read_text(encoding="utf-8")
+                body = article_body(html)
+                headings = re.findall(r"<h2[^>]*>(.*?)</h2>", body, re.S)
+                heading_text = " ".join(re.sub(r"<[^>]+>", "", h) for h in headings)
+                self.assertGreaterEqual(
+                    body_word_count(body), requirement["minimum_words"],
+                    "broad topic lacks sufficient substantive body depth",
+                )
+                self.assertGreaterEqual(len(headings), 8)
+                for expected in requirement["headings"]:
+                    self.assertIn(expected, heading_text)
+                self.assertIn(requirement["practical"], heading_text)
+                self.assertIn('class="trust-disclosure"', body)
+                self.assertRegex(body, r"<table|<ol|<ul")
 
 
 if __name__ == "__main__":

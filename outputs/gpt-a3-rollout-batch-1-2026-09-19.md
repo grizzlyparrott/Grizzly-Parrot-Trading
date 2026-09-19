@@ -132,6 +132,22 @@ The original rollout used the legacy plain-article shell despite the stronger vi
 
 These are original explanatory graphics, not generic market imagery or platform screenshots. Their captions and alternative text preserve the corresponding YMYL limitations.
 
+## Content-quality correction and rollout stop
+
+Further GPT-A3 consolidation rollout is stopped. The five existing survivors were re-reviewed against internal completeness benchmarks before any other survivor page can be considered: `futures-basics/gc-market-microstructure.html` (3,446 body words), `platforms-tutorials/tradovate-chart-drawing-tools-explained.html` (1,890 body words), and the subject-matter depth of `platforms-tutorials/insignia-futures-options-overview.html`. The benchmarks inform scope; they are not templates or arbitrary length targets.
+
+The prior versions were 419–501 body words and could pass only technical, trust, redirect, and visual checks. The revised body counts are:
+
+- volatility clustering: 1,002 words;
+- liquidity basics: 856 words;
+- market microstructure: 871 words;
+- futures open interest: 881 words; and
+- NinjaTrader chart templates: 847 words.
+
+Major additions are topic-specific. Volatility now includes absolute/squared-return measurement, a worked regime comparison, conceptual GARCH-style thinking, and a risk workflow. Liquidity now covers executable versus displayed size, volume versus liquidity, fragile conditions, and a stated-size example. Microstructure now covers matching and queue limits, price impact, a concrete execution example, failure modes, and a disciplined observation workflow. Open interest now includes contract-lifecycle examples, contract-month/roll treatment, report-status checks, spread/hedging caveats, and practical use cases. NinjaTrader now distinguishes each saved object, provides a tested-chart workflow, and adds backup/change-control limits.
+
+The test suite now includes a topic-specific survivor content gate. It requires a scoped broad-topic body floor, at least eight substantive sections, named topic-required sections, a practical workflow, a non-paragraph explanatory structure, preserved trust disclosure, and the existing visual/redirect/discovery checks. No global word count is used as a sole pass condition. The earlier five versions would have failed their scoped body-depth and required-section checks.
+
 ## Discovery and redirect work
 
 - Every live HTML reference to a removed URL was migrated to its survivor.
