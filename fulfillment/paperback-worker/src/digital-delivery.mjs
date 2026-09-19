@@ -88,7 +88,54 @@ export const MARKET_STRUCTURE_TRILOGY_DIGITAL_DELIVERY = Object.freeze({
   ])
 });
 
+function marketStructureTitleDelivery({ eventLabel, title, deliveryEnabledEnv, idempotencyPrefix, filenamePrefix }) {
+  return Object.freeze({
+    eventLabel,
+    title,
+    deliveryEnabledEnv,
+    idempotencyPrefix,
+    tagValue: eventLabel,
+    liveSubject: `Your ${title} Download (PDF + EPUB)`,
+    testSubject: `[TEST - NO PURCHASE] ${title} Delivery (PDF + EPUB)`,
+    liveHtml: `<p>Thanks for purchasing <strong>${title}</strong>.</p>
+      <p>Your PDF and EPUB editions are attached to this email.</p>
+      <p>If an attachment is blocked by your email provider, reply to this email and we will help.</p>`,
+    testHtml: `<p><strong>This is a delivery-pipeline test. No purchase or charge occurred.</strong></p>
+      <p>The PDF and EPUB editions of <strong>${title}</strong> are attached for verification.</p>`,
+    assets: Object.freeze(MARKET_STRUCTURE_TRILOGY_DIGITAL_DELIVERY.assets.filter(
+      ({ filename }) => filename.startsWith(filenamePrefix)
+    ))
+  });
+}
+
+export const CURRENCY_MARKET_STRUCTURE_DIGITAL_DELIVERY = marketStructureTitleDelivery({
+  eventLabel: "currency_market_structure",
+  title: "Currency Market Structure",
+  deliveryEnabledEnv: "MARKET_STRUCTURE_INDIVIDUAL_DIGITAL_DELIVERY_ENABLED",
+  idempotencyPrefix: "currency-market-structure-digital",
+  filenamePrefix: "Currency-Market-Structure-Volume-I."
+});
+
+export const METALS_MARKET_STRUCTURE_DIGITAL_DELIVERY = marketStructureTitleDelivery({
+  eventLabel: "metals_market_structure",
+  title: "Metals Market Structure",
+  deliveryEnabledEnv: "MARKET_STRUCTURE_INDIVIDUAL_DIGITAL_DELIVERY_ENABLED",
+  idempotencyPrefix: "metals-market-structure-digital",
+  filenamePrefix: "Metals-Market-Structure-Volume-II."
+});
+
+export const EQUITY_MARKET_STRUCTURE_DIGITAL_DELIVERY = marketStructureTitleDelivery({
+  eventLabel: "equity_market_structure",
+  title: "Equity Market Structure",
+  deliveryEnabledEnv: "MARKET_STRUCTURE_INDIVIDUAL_DIGITAL_DELIVERY_ENABLED",
+  idempotencyPrefix: "equity-market-structure-digital",
+  filenamePrefix: "Equity-Market-Structure-Volume-III."
+});
+
 export const DIGITAL_DELIVERY_CONFIGURATIONS = Object.freeze({
+  [CURRENCY_MARKET_STRUCTURE_DIGITAL_DELIVERY.eventLabel]: CURRENCY_MARKET_STRUCTURE_DIGITAL_DELIVERY,
+  [METALS_MARKET_STRUCTURE_DIGITAL_DELIVERY.eventLabel]: METALS_MARKET_STRUCTURE_DIGITAL_DELIVERY,
+  [EQUITY_MARKET_STRUCTURE_DIGITAL_DELIVERY.eventLabel]: EQUITY_MARKET_STRUCTURE_DIGITAL_DELIVERY,
   [PROBABILISTIC_DIGITAL_DELIVERY.eventLabel]: PROBABILISTIC_DIGITAL_DELIVERY,
   [MARKET_STRUCTURE_TRILOGY_DIGITAL_DELIVERY.eventLabel]: MARKET_STRUCTURE_TRILOGY_DIGITAL_DELIVERY
 });

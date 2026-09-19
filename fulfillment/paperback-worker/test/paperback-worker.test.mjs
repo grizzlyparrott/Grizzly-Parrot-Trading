@@ -328,32 +328,24 @@ test("digital purchases map exact paid totals from the five configured Payment L
   assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_other" }, env), null);
 });
 
-test("one signed, paid Stripe event is accepted for each existing digital title without entering paperback fulfillment", async () => {
+test("each paid Market Structure title is recorded and delivered through its exact two-file configuration", async () => {
   const purchases = new Map();
-  const db = {
-    prepare(sql) {
-      return {
-        bind(...args) {
-          return {
-            async run() {
-              if (!sql.includes("INSERT OR IGNORE INTO digital_purchase_conversions")) {
-                throw new Error(`Digital test unexpectedly entered paperback SQL: ${sql}`);
-              }
-              if (purchases.has(args[0])) return { meta: { changes: 0 } };
-              purchases.set(args[0], {
-                stripe_session_id: args[0],
-                stripe_event_id: args[1],
-                stripe_payment_link_id: args[2],
-                event_label: args[3],
-                amount_total: args[4],
-                currency: args[5]
-              });
-              return { meta: { changes: 1 } };
-            }
-          };
-        }
-      };
-    }
+  const deliveries = new Map();
+  const store = {
+    async insertDigitalPurchase(purchase) {
+      purchases.set(purchase.stripeSessionId, purchase);
+      return true;
+    },
+    async ensureDigitalDelivery(sessionId, buyerEmail, _now, status) {
+      deliveries.set(sessionId, { stripe_session_id: sessionId, buyer_email: buyerEmail, status, attempts: 1 });
+    },
+    async claimDigitalDelivery(sessionId) { return deliveries.get(sessionId); },
+    async digitalDelivery(sessionId) { return deliveries.get(sessionId); },
+    async markDigitalDeliverySent(sessionId, messageId) {
+      deliveries.get(sessionId).resend_email_id = messageId;
+      deliveries.get(sessionId).status = "sent";
+    },
+    async markDigitalDeliveryFailure() { throw new Error("Market Structure delivery should not fail"); }
   };
   const secret = "whsec_digital_test";
   const env = {
@@ -362,7 +354,7 @@ test("one signed, paid Stripe event is accepted for each existing digital title 
     STRIPE_PAYMENT_LINK_METALS_DIGITAL: "plink_metals",
     STRIPE_PAYMENT_LINK_EQUITY_DIGITAL: "plink_equity",
     STRIPE_PAYMENT_LINK_PROBABILISTIC_DIGITAL: "plink_probabilistic",
-    PAPERBACK_ORDERS: db
+    PAPERBACK_ORDERS: {}
   };
   const cases = [
     ["currency", "plink_currency", "currency_market_structure"],
@@ -380,7 +372,8 @@ test("one signed, paid Stripe event is accepted for each existing digital title 
         payment_status: "paid",
         amount_total: 1499,
         currency: "usd",
-        payment_link: paymentLink
+        payment_link: paymentLink,
+        customer_details: { email: `${slug}@example.com` }
       } }
     };
     const payload = JSON.stringify(event);
@@ -390,12 +383,22 @@ test("one signed, paid Stripe event is accepted for each existing digital title 
       method: "POST",
       headers: { "stripe-signature": `t=${timestamp},v1=${signature}` },
       body: payload
-    }), env);
+    }), env, {
+      storeFactory: () => store,
+      async sendDigital(_deliveryEnv, claimed, { configuration }) {
+        assert.equal(configuration.eventLabel, eventLabel);
+        assert.equal(configuration.assets.length, 2);
+        assert.equal(claimed.buyer_email, `${slug}@example.com`);
+        return { provider: "resend", messageId: `email_${slug}` };
+      }
+    });
     assert.equal(response.status, 200);
-    assert.deepEqual(await response.json(), { ok: true, digitalPurchase: true, duplicate: false });
-    assert.equal(purchases.get(`cs_test_${slug}`).event_label, eventLabel);
+    assert.deepEqual(await response.json(), { ok: true, digitalPurchase: true, duplicate: false, deliveryState: "sent" });
+    assert.equal(purchases.get(`cs_test_${slug}`).eventLabel, eventLabel);
+    assert.equal(deliveries.get(`cs_test_${slug}`).status, "sent");
   }
   assert.equal(purchases.size, 3);
+  assert.equal(deliveries.size, 3);
 });
 
 test("a verified digital Stripe session can be claimed for Microsoft UET only once", async () => {

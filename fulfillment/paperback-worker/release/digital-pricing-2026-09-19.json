@@ -11,7 +11,7 @@
   "deployment": {
     "d1Migration": "0006_digital_price_1499.sql",
     "d1ForeignKeyCheckPassed": true,
-    "workerVersionId": "4691421a-9b1c-4e74-ba6e-919d86996078"
+    "workerVersionId": "301c26d7-d3b3-449d-9dc1-4fddbdb18629"
   },
   "offers": [
     {
@@ -20,7 +20,7 @@
       "stripeProductId": "prod_U3PgS3BQRnQyrX",
       "old": {"priceCents": 2900, "stripePriceId": "price_1T5IrQIA3p8RBkZIyDidzc74", "paymentLinkId": "plink_1T6ckkIA3p8RBkZIbTKBQpYh", "checkoutUrl": "https://buy.stripe.com/3cI4gA7tX8ou7du1YI2Nq01"},
       "current": {"priceCents": 1499, "stripePriceId": "price_1UHU2zIA3p8RBkZIN4HRZ8dS", "paymentLinkId": "plink_1UHU5vIA3p8RBkZIVcQVfrap", "checkoutUrl": "https://buy.stripe.com/00w3cweWpcEKapG6eY2Nq06"},
-      "fulfillment": "verified-webhook-uet-attribution"
+      "fulfillment": "verified-webhook-private-r2-resend-attachments"
     },
     {
       "slug": "metals-market-structure",
@@ -28,7 +28,7 @@
       "stripeProductId": "prod_UBtK7OMtYNOCBV",
       "old": {"priceCents": 2900, "stripePriceId": "price_1TDVXUIA3p8RBkZIJqlsmbzn", "paymentLinkId": "plink_1TDVahIA3p8RBkZIweogwKgN", "checkoutUrl": "https://buy.stripe.com/dRmbJ2dSl2061Ta0UE2Nq02"},
       "current": {"priceCents": 1499, "stripePriceId": "price_1UHU3gIA3p8RBkZIRsryEksL", "paymentLinkId": "plink_1UHU6aIA3p8RBkZIPQWkoU4o", "checkoutUrl": "https://buy.stripe.com/7sY5kE01v48e2XedHq2Nq07"},
-      "fulfillment": "verified-webhook-uet-attribution"
+      "fulfillment": "verified-webhook-private-r2-resend-attachments"
     },
     {
       "slug": "equity-market-structure",
@@ -36,7 +36,7 @@
       "stripeProductId": "prod_UvBx2DMIjVvbBC",
       "old": {"priceCents": 2900, "stripePriceId": "price_1TvLZIIA3p8RBkZI00Jf3TV4", "paymentLinkId": "plink_1TvLgXIA3p8RBkZIZ0x8nKlu", "checkoutUrl": "https://book.stripe.com/9B6dRacOh206apG6eY2Nq03"},
       "current": {"priceCents": 1499, "stripePriceId": "price_1UHU4GIA3p8RBkZID9zokwOI", "paymentLinkId": "plink_1UHU7NIA3p8RBkZIYZ074dez", "checkoutUrl": "https://buy.stripe.com/7sY9AUg0t34a9lC9ra2Nq08"},
-      "fulfillment": "verified-webhook-uet-attribution"
+      "fulfillment": "verified-webhook-private-r2-resend-attachments"
     },
     {
       "slug": "probabilistic-execution",

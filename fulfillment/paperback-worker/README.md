@@ -1,6 +1,6 @@
 # Print-book fulfillment worker
 
-This Worker owns paperback and hardcover fulfillment. For the three individual Market Structure digital titles, it continues to record only the isolated Microsoft UET attribution row. Probabilistic Execution and the $44.97 Market Structure Digital Trilogy use the durable Stripe webhook to Resend delivery architecture: exact paid Checkout events create one delivery queue row, private R2 objects are hash-verified, and the buyer receives the configured PDF and EPUB attachments exactly once.
+This Worker owns paperback and hardcover fulfillment. All four individual digital titles and the $44.97 Market Structure Digital Trilogy use the durable Stripe webhook to Resend delivery architecture: exact paid Checkout events create one delivery queue row, private R2 objects are hash-verified, and the buyer receives the configured PDF and EPUB attachments exactly once. The three individual Market Structure configurations select their two title-specific assets from the same six immutable objects pinned for the trilogy.
 
 ## Safety gate
 
@@ -29,7 +29,7 @@ The address-specific `/print/quote` and `/print/checkout` flow remains available
 
 Digital Payment Link events take a separate path. A signed Stripe `checkout.session.completed` or `checkout.session.async_payment_succeeded` event is accepted only when it is paid, matches a configured Payment Link ID, and has that offer's exact total: $14.99 USD for a current individual title or $44.97 USD for the current trilogy link. The historical $29/$69 links remain recognized at their exact legacy totals so an already-shared link still records and fulfills correctly; they are not advertised as current. D1 permits the corresponding UET purchase event to be claimed once, so page visits, checkout opens, unpaid sessions, wrong-price sessions, and confirmation-page refreshes cannot create purchases.
 
-For `probabilistic_execution` and `market_structure_trilogy`, that verified event also creates one D1 delivery row keyed by the Stripe Checkout Session ID. The Worker selects the delivery manifest from the verified purchase label, reads the immutable objects from the private R2 binding, verifies each SHA-256, and sends either two or six Resend attachments with an offer-specific deterministic idempotency key. Definitive throttling or server rejection receives at most two timed retries; an ambiguous transport result or expired in-flight lease moves to manual review instead of risking a duplicate email. Digital object keys are not admitted by the signed public print-asset route.
+For every current and recognized legacy digital offer, that verified event also creates one D1 delivery row keyed by the Stripe Checkout Session ID. The Worker selects the delivery manifest from the verified purchase label, reads the immutable objects from the private R2 binding, verifies each SHA-256, and sends either two or six Resend attachments with an offer-specific deterministic idempotency key. Definitive throttling or server rejection receives at most two timed retries; an ambiguous transport result or expired in-flight lease moves to manual review instead of risking a duplicate email. Digital object keys are not admitted by the signed public print-asset route.
 
 ## Market Structure Digital Trilogy
 
@@ -41,7 +41,7 @@ On 2026-08-25, production D1 migration `0005_market_structure_trilogy_bundle.sql
 
 ## 2026-09-19 digital pricing release record
 
-All four individual digital editions changed from $29.00 to $14.99 USD on their existing Stripe products. The existing three-title bundle changed from $69.00 to $44.97 so its unit price remains exactly $14.99 per title. New one-time live Prices and Payment Links were created; old Stripe products, prices, links, and payment records were preserved. Production D1 migration `0006_digital_price_1499.sql` completed with no foreign-key violations, and Worker version `4691421a-9b1c-4e74-ba6e-919d86996078` deployed the current and legacy mappings. The exact provider lineage is tracked in `release/digital-pricing-2026-09-19.json`. Print prices remain $39 paperback and $49 hardcover.
+All four individual digital editions changed from $29.00 to $14.99 USD on their existing Stripe products. The existing three-title bundle changed from $69.00 to $44.97 so its unit price remains exactly $14.99 per title. New one-time live Prices and Payment Links were created; old Stripe products, prices, links, and payment records were preserved. Production D1 migration `0006_digital_price_1499.sql` completed with no foreign-key violations. Worker version `301c26d7-d3b3-449d-9dc1-4fddbdb18629` also attached Currency, Metals, and Equity to the same verified R2-to-Resend delivery system already used by Probabilistic Execution and the trilogy, removing the prior conversion-only gap. The exact provider lineage is tracked in `release/digital-pricing-2026-09-19.json`. Print prices remain $39 paperback and $49 hardcover.
 
 ## Probabilistic Execution digital and direct-site release
 

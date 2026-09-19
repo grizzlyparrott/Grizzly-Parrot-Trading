@@ -4,9 +4,13 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 import {
+  CURRENCY_MARKET_STRUCTURE_DIGITAL_DELIVERY,
   DigitalDeliveryError,
+  DIGITAL_DELIVERY_CONFIGURATIONS,
   digitalDeliveryConfigured,
+  EQUITY_MARKET_STRUCTURE_DIGITAL_DELIVERY,
   MARKET_STRUCTURE_TRILOGY_DIGITAL_DELIVERY,
+  METALS_MARKET_STRUCTURE_DIGITAL_DELIVERY,
   normalizeDigitalBuyerEmail,
   sendDigitalDelivery,
   sendProbabilisticDigitalDelivery
@@ -71,6 +75,26 @@ test("the trilogy configuration pins exactly three PDFs and three EPUBs to immut
     assert.match(asset.key, /^digital\/market-structure-trilogy\/2026-07-19\//);
     assert.match(asset.sha256, /^[A-F0-9]{64}$/);
   }
+});
+
+test("each individual Market Structure delivery selects exactly its own PDF and EPUB from the pinned trilogy assets", () => {
+  const configurations = [
+    CURRENCY_MARKET_STRUCTURE_DIGITAL_DELIVERY,
+    METALS_MARKET_STRUCTURE_DIGITAL_DELIVERY,
+    EQUITY_MARKET_STRUCTURE_DIGITAL_DELIVERY
+  ];
+  const individualKeys = [];
+  for (const configuration of configurations) {
+    assert.equal(DIGITAL_DELIVERY_CONFIGURATIONS[configuration.eventLabel], configuration);
+    assert.equal(configuration.assets.length, 2);
+    assert.equal(configuration.assets.filter(({ contentType }) => contentType === "application/pdf").length, 1);
+    assert.equal(configuration.assets.filter(({ contentType }) => contentType === "application/epub+zip").length, 1);
+    individualKeys.push(...configuration.assets.map(({ key }) => key));
+  }
+  assert.deepEqual(
+    new Set(individualKeys),
+    new Set(MARKET_STRUCTURE_TRILOGY_DIGITAL_DELIVERY.assets.map(({ key }) => key))
+  );
 });
 
 test("the trilogy delivery sends all six verified files with its own deterministic idempotency key", async () => {
