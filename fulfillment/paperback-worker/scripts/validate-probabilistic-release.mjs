@@ -19,7 +19,7 @@ const EXPECTED = Object.freeze({
     postAdjudicationMasterSha256: "6D17E31911779F8FFFCE9CD66D37057FB6D3F292E68162880619D497C3CA236B"
   }),
   digital: Object.freeze({
-    priceCents: 2900,
+    priceCents: 1499,
     currency: "USD",
     pdf: Object.freeze({
       filename: "Probabilistic-Execution-Digital.pdf",
@@ -212,7 +212,7 @@ function localChecks(manifest) {
     add(errors, manifest?.editorialReview?.[field] === true, `editorialReview.${field} must be true after proofread adjudication`);
   }
 
-  add(errors, manifest?.digital?.priceCents === EXPECTED.digital.priceCents, "digital.priceCents must remain 2900");
+  add(errors, manifest?.digital?.priceCents === EXPECTED.digital.priceCents, "digital.priceCents must equal 1499");
   add(errors, manifest?.digital?.currency === EXPECTED.digital.currency, "digital.currency must remain USD");
   for (const format of ["pdf", "epub"]) {
     const expected = EXPECTED.digital[format];

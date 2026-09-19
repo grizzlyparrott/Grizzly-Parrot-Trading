@@ -295,7 +295,7 @@ def validate_probabilistic_staging(root: Path, audit: Audit) -> None:
     digital = by_id[f"{base}#digital"]
     offer = digital.get("offers", {})
     audit.require(digital.get("bookFormat") == "https://schema.org/EBook", "probabilistic-execution: digital format is wrong")
-    audit.require(offer.get("price") == "29.00" and offer.get("priceCurrency") == "USD", "probabilistic-execution: preserved digital price is wrong")
+    audit.require(offer.get("price") == "14.99" and offer.get("priceCurrency") == "USD", "probabilistic-execution: digital price is wrong")
     audit.require(offer.get("availability") == "https://schema.org/InStock", "probabilistic-execution: live digital checkout must claim in-stock availability")
 
     node_ids = set(by_id)
@@ -369,7 +369,7 @@ def validate_book_pages(
         audit.require(node_types(digital) == {"Book"}, f"{slug}: digital edition must be a Book, not a Shopping product")
         audit.require(digital.get("bookFormat") == "https://schema.org/EBook", f"{slug}: digital book format is wrong")
         audit.require(digital.get("url") == digital_url and digital_offer.get("url") == digital_url, f"{slug}: digital landing URL is wrong")
-        audit.require(digital_offer.get("price") == "29.00" and digital_offer.get("priceCurrency") == "USD", f"{slug}: digital price is wrong")
+        audit.require(digital_offer.get("price") == "14.99" and digital_offer.get("priceCurrency") == "USD", f"{slug}: digital price is wrong")
 
         for edition in EDITIONS:
             entry = entries[(slug, edition)]

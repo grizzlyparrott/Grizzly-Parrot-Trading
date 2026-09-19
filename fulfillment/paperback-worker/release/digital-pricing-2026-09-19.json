@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "changedAt": "2026-09-19",
+  "currency": "USD",
+  "preserveHistoricalObjects": true,
+  "printPricingChanged": false,
+  "printPricesCents": {
+    "paperback": 3900,
+    "hardcover": 4900
+  },
+  "deployment": {
+    "d1Migration": "0006_digital_price_1499.sql",
+    "d1ForeignKeyCheckPassed": true,
+    "workerVersionId": "4691421a-9b1c-4e74-ba6e-919d86996078"
+  },
+  "offers": [
+    {
+      "slug": "currency-market-structure",
+      "title": "Currency Market Structure",
+      "stripeProductId": "prod_U3PgS3BQRnQyrX",
+      "old": {"priceCents": 2900, "stripePriceId": "price_1T5IrQIA3p8RBkZIyDidzc74", "paymentLinkId": "plink_1T6ckkIA3p8RBkZIbTKBQpYh", "checkoutUrl": "https://buy.stripe.com/3cI4gA7tX8ou7du1YI2Nq01"},
+      "current": {"priceCents": 1499, "stripePriceId": "price_1UHU2zIA3p8RBkZIN4HRZ8dS", "paymentLinkId": "plink_1UHU5vIA3p8RBkZIVcQVfrap", "checkoutUrl": "https://buy.stripe.com/00w3cweWpcEKapG6eY2Nq06"},
+      "fulfillment": "verified-webhook-uet-attribution"
+    },
+    {
+      "slug": "metals-market-structure",
+      "title": "Metals Market Structure",
+      "stripeProductId": "prod_UBtK7OMtYNOCBV",
+      "old": {"priceCents": 2900, "stripePriceId": "price_1TDVXUIA3p8RBkZIJqlsmbzn", "paymentLinkId": "plink_1TDVahIA3p8RBkZIweogwKgN", "checkoutUrl": "https://buy.stripe.com/dRmbJ2dSl2061Ta0UE2Nq02"},
+      "current": {"priceCents": 1499, "stripePriceId": "price_1UHU3gIA3p8RBkZIRsryEksL", "paymentLinkId": "plink_1UHU6aIA3p8RBkZIPQWkoU4o", "checkoutUrl": "https://buy.stripe.com/7sY5kE01v48e2XedHq2Nq07"},
+      "fulfillment": "verified-webhook-uet-attribution"
+    },
+    {
+      "slug": "equity-market-structure",
+      "title": "Equity Market Structure",
+      "stripeProductId": "prod_UvBx2DMIjVvbBC",
+      "old": {"priceCents": 2900, "stripePriceId": "price_1TvLZIIA3p8RBkZI00Jf3TV4", "paymentLinkId": "plink_1TvLgXIA3p8RBkZIZ0x8nKlu", "checkoutUrl": "https://book.stripe.com/9B6dRacOh206apG6eY2Nq03"},
+      "current": {"priceCents": 1499, "stripePriceId": "price_1UHU4GIA3p8RBkZID9zokwOI", "paymentLinkId": "plink_1UHU7NIA3p8RBkZIYZ074dez", "checkoutUrl": "https://buy.stripe.com/7sY9AUg0t34a9lC9ra2Nq08"},
+      "fulfillment": "verified-webhook-uet-attribution"
+    },
+    {
+      "slug": "probabilistic-execution",
+      "title": "Probabilistic Execution",
+      "stripeProductId": "prod_V3srxa7RUc6r4L",
+      "old": {"priceCents": 2900, "stripePriceId": "price_1U3l5aIA3p8RBkZI2wwqXILV", "paymentLinkId": "plink_1U3l6oIA3p8RBkZIwwzIcM95", "checkoutUrl": "https://buy.stripe.com/3cIdRabKd6gm8hydHq2Nq04"},
+      "current": {"priceCents": 1499, "stripePriceId": "price_1UHU4wIA3p8RBkZI0Af8yELY", "paymentLinkId": "plink_1UHU7sIA3p8RBkZI3TFP6bIL", "checkoutUrl": "https://buy.stripe.com/3cIbJ2g0t6gm9lCbzi2Nq09"},
+      "fulfillment": "verified-webhook-private-r2-resend-attachments"
+    },
+    {
+      "slug": "market-structure-trilogy",
+      "title": "Market Structure Digital Trilogy",
+      "stripeProductId": "prod_V8k4cMHt5OaC9B",
+      "old": {"priceCents": 6900, "stripePriceId": "price_1U8SapIA3p8RBkZIAr2LdNNb", "paymentLinkId": "plink_1U8ScuIA3p8RBkZIXHvFEmTX", "checkoutUrl": "https://buy.stripe.com/dRmaEY29DdIO9lC8n62Nq05"},
+      "current": {"priceCents": 4497, "stripePriceId": "price_1UHUCsIA3p8RBkZIkwtK0qX8", "paymentLinkId": "plink_1UHUDXIA3p8RBkZI5IYcPczV", "checkoutUrl": "https://buy.stripe.com/bJe3cweWp0W21Ta46Q2Nq0a"},
+      "fulfillment": "verified-webhook-private-r2-resend-attachments"
+    }
+  ]
+}

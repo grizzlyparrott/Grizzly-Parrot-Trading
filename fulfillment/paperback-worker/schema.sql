@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS digital_purchase_conversions (
     'probabilistic_execution',
     'market_structure_trilogy'
   )),
-  amount_total INTEGER NOT NULL CHECK (amount_total IN (2900, 6900)),
+  amount_total INTEGER NOT NULL CHECK (amount_total IN (1499, 2900, 4497, 6900)),
   currency TEXT NOT NULL CHECK (currency = 'usd'),
   verified_at TEXT NOT NULL,
   claimed_at TEXT

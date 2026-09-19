@@ -44,7 +44,7 @@
   "isbnBibliographicPublisher": "Lulu.com",
   "isbnAssignmentVerified": true,
   "digital": {
-    "priceCents": 2900,
+    "priceCents": 1499,
     "currency": "USD",
     "assets": {
       "pdf": {
@@ -57,12 +57,12 @@
       }
     },
     "stripeProductId": "prod_V3srxa7RUc6r4L",
-    "stripePriceId": "price_1U3l5aIA3p8RBkZI2wwqXILV",
-    "paymentLinkId": "plink_1U3l6oIA3p8RBkZIwwzIcM95",
-    "checkoutUrl": "https://buy.stripe.com/3cIdRabKd6gm8hydHq2Nq04",
+    "stripePriceId": "price_1UHU4wIA3p8RBkZI0Af8yELY",
+    "paymentLinkId": "plink_1UHU7sIA3p8RBkZI3TFP6bIL",
+    "checkoutUrl": "https://buy.stripe.com/3cIbJ2g0t6gm9lCbzi2Nq09",
     "paymentLinkActive": true,
-    "paymentLinkActivatedAt": "2026-08-12",
-    "providerConfigurationVerifiedAt": "2026-08-12",
+    "paymentLinkActivatedAt": "2026-09-19",
+    "providerConfigurationVerifiedAt": "2026-09-19",
     "deliveryProvider": "resend",
     "deliveryMode": "private-email-attachments",
     "deliveryAssetRevision": "list-restart-2026-08-13",

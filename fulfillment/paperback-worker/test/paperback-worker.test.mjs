@@ -148,7 +148,7 @@ test("Probabilistic Execution digital checkout requires a matching Stripe ID, UR
   assert.deepEqual(digitalCheckoutConfig("probabilistic-execution", configured), {
     enabled: true,
     checkoutUrl: "https://buy.stripe.com/abcprobabilistic123",
-    priceCents: 2900
+    priceCents: 1499
   });
   assert.equal(digitalCheckoutConfig("probabilistic-execution", {...configured, PROBABILISTIC_EXECUTION_DIGITAL_SALES_ENABLED: "false"}).enabled, false);
   assert.equal(digitalCheckoutConfig("probabilistic-execution", {...configured, STRIPE_CHECKOUT_URL_PROBABILISTIC_DIGITAL: "https://example.com/not-stripe"}).enabled, false);
@@ -158,7 +158,7 @@ test("Probabilistic Execution digital checkout requires a matching Stripe ID, UR
   assert.equal(digitalCheckoutConfig("another-book", configured), null);
 });
 
-test("the $69 trilogy checkout requires its own exact Stripe link and both bundle release gates", () => {
+test("the $44.97 trilogy checkout requires its own exact Stripe link and both bundle release gates", () => {
   const configured = {
     MARKET_STRUCTURE_TRILOGY_DIGITAL_SALES_ENABLED: "true",
     MARKET_STRUCTURE_TRILOGY_DIGITAL_DELIVERY_ENABLED: "true",
@@ -171,7 +171,7 @@ test("the $69 trilogy checkout requires its own exact Stripe link and both bundl
   assert.deepEqual(digitalCheckoutConfig("market-structure-trilogy", configured), {
     enabled: true,
     checkoutUrl: "https://buy.stripe.com/trilogy123456",
-    priceCents: 6900
+    priceCents: 4497
   });
   assert.equal(digitalCheckoutConfig("market-structure-trilogy", {
     ...configured,
@@ -309,16 +309,20 @@ test("digital purchases map exact paid totals from the five configured Payment L
     STRIPE_PAYMENT_LINK_METALS_DIGITAL: "plink_metals",
     STRIPE_PAYMENT_LINK_EQUITY_DIGITAL: "plink_equity",
     STRIPE_PAYMENT_LINK_PROBABILISTIC_DIGITAL: "plink_probabilistic",
-    STRIPE_PAYMENT_LINK_MARKET_STRUCTURE_TRILOGY_DIGITAL: "plink_trilogy"
+    STRIPE_PAYMENT_LINK_MARKET_STRUCTURE_TRILOGY_DIGITAL: "plink_trilogy",
+    STRIPE_PAYMENT_LINK_CURRENCY_DIGITAL_LEGACY: "plink_currency_legacy",
+    STRIPE_PAYMENT_LINK_MARKET_STRUCTURE_TRILOGY_DIGITAL_LEGACY: "plink_trilogy_legacy"
   };
-  const base = { id: "cs_live_paid", mode: "payment", payment_status: "paid", amount_total: 2900, currency: "usd" };
+  const base = { id: "cs_live_paid", mode: "payment", payment_status: "paid", amount_total: 1499, currency: "usd" };
   assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_currency" }, env).eventLabel, "currency_market_structure");
   assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_metals" }, env).eventLabel, "metals_market_structure");
   assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_equity" }, env).eventLabel, "equity_market_structure");
   assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_probabilistic" }, env).eventLabel, "probabilistic_execution");
-  assert.equal(digitalPurchaseFromSession({ ...base, amount_total: 6900, payment_link: "plink_trilogy" }, env).eventLabel, "market_structure_trilogy");
+  assert.equal(digitalPurchaseFromSession({ ...base, amount_total: 4497, payment_link: "plink_trilogy" }, env).eventLabel, "market_structure_trilogy");
+  assert.equal(digitalPurchaseFromSession({ ...base, amount_total: 2900, payment_link: "plink_currency_legacy" }, env).eventLabel, "currency_market_structure");
+  assert.equal(digitalPurchaseFromSession({ ...base, amount_total: 6900, payment_link: "plink_trilogy_legacy" }, env).eventLabel, "market_structure_trilogy");
   assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_trilogy" }, env), null);
-  assert.equal(digitalPurchaseFromSession({ ...base, amount_total: 6900, payment_link: "plink_currency" }, env), null);
+  assert.equal(digitalPurchaseFromSession({ ...base, amount_total: 4497, payment_link: "plink_currency" }, env), null);
   assert.equal(digitalPurchaseFromSession({ ...base, payment_status: "unpaid", payment_link: "plink_currency" }, env), null);
   assert.equal(digitalPurchaseFromSession({ ...base, amount_total: 2800, payment_link: "plink_currency" }, env), null);
   assert.equal(digitalPurchaseFromSession({ ...base, payment_link: "plink_other" }, env), null);
@@ -374,7 +378,7 @@ test("one signed, paid Stripe event is accepted for each existing digital title 
         id: `cs_test_${slug}`,
         mode: "payment",
         payment_status: "paid",
-        amount_total: 2900,
+        amount_total: 1499,
         currency: "usd",
         payment_link: paymentLink
       } }
@@ -951,8 +955,8 @@ test("all book pages keep print controls fail-closed and use the canonical site 
     assert.match(html, /digital-checkout\.js\?v=20260829-begin-checkout/);
     assert.match(html, /GrizzlyCommerceAnalytics\.beginCheckout/);
     assert.match(html, /bookSlug: 'market-structure-trilogy'/);
-    assert.match(html, /expectedPriceCents: 6900/);
-    assert.match(html, /Get all three &mdash; \$69/);
+    assert.match(html, /expectedPriceCents: 4497/);
+    assert.match(html, /Get all three &mdash; \$44\.97/);
     assert.match(html, /usShippingCents: 749/);
     assert.match(html, /internationalShippingCents: 1999/);
     assert.doesNotMatch(html, /\/print\/checkout/);
@@ -974,8 +978,8 @@ test("all book pages keep print controls fail-closed and use the canonical site 
   assert.doesNotMatch(catalog, /<nav class="main-nav">\s*<ul>/s);
   assert.match(catalog, /id="market-structure-digital-trilogy"/);
   assert.match(catalog, /"sku": "market-structure-digital-trilogy"/);
-  assert.match(catalog, /"price": "69\.00"/);
-  assert.match(catalog, /\$87 separately &middot; save \$18/);
+  assert.match(catalog, /"price": "44\.97"/);
+  assert.match(catalog, /\$14\.99 per title/);
   assert.match(catalog, /button-disabled js-trilogy-buy/);
   assert.match(catalog, /checkout-events\.js\?v=20260829-begin-checkout/);
   assert.match(catalog, /digital-checkout\.js\?v=20260829-begin-checkout/);

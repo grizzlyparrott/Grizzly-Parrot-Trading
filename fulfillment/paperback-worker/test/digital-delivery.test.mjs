@@ -338,7 +338,7 @@ test("a signed paid Probabilistic webhook queues and sends to the normalized Che
       id: "cs_test_probabilistic_delivery",
       mode: "payment",
       payment_status: "paid",
-      amount_total: 2900,
+      amount_total: 1499,
       currency: "usd",
       payment_link: "plink_probabilistic_delivery",
       customer_details: { email: " Reader@Example.com " }
@@ -398,7 +398,7 @@ test("a signed paid Probabilistic webhook queues and sends to the normalized Che
   });
 });
 
-test("a signed paid $69 trilogy webhook queues one six-file delivery and preserves the bundle label", async () => {
+test("a signed paid $44.97 trilogy webhook queues one six-file delivery and preserves the bundle label", async () => {
   const secret = "whsec_trilogy_delivery";
   const event = {
     id: "evt_trilogy_delivery",
@@ -407,7 +407,7 @@ test("a signed paid $69 trilogy webhook queues one six-file delivery and preserv
       id: "cs_test_trilogy_delivery",
       mode: "payment",
       payment_status: "paid",
-      amount_total: 6900,
+      amount_total: 4497,
       currency: "usd",
       payment_link: "plink_trilogy_delivery",
       customer_details: { email: " BundleReader@Example.com " }
@@ -456,7 +456,7 @@ test("a signed paid $69 trilogy webhook queues one six-file delivery and preserv
     deliveryState: "sent"
   });
   assert.equal(recorded.purchase.eventLabel, "market_structure_trilogy");
-  assert.equal(recorded.purchase.amountTotal, 6900);
+  assert.equal(recorded.purchase.amountTotal, 4497);
   assert.equal(recorded.recipient, "bundlereader@example.com");
   assert.equal(recorded.configuration.assets.length, 6);
   assert.equal(recorded.configuration.eventLabel, "market_structure_trilogy");
@@ -477,12 +477,12 @@ test("database schema and forward migration both admit the fourth title and dura
   }
 });
 
-test("the bundle migration admits the $69 trilogy and rebuilds the delivery foreign key safely", async () => {
+test("the current digital-price migration admits $14.99 titles and the $44.97 trilogy while preserving historical totals", async () => {
   const schema = await readFile(new URL("../schema.sql", import.meta.url), "utf8");
-  const migration = await readFile(new URL("../migrations/0005_market_structure_trilogy_bundle.sql", import.meta.url), "utf8");
+  const migration = await readFile(new URL("../migrations/0006_digital_price_1499.sql", import.meta.url), "utf8");
   for (const text of [schema, migration]) {
     assert.match(text, /'market_structure_trilogy'/);
-    assert.match(text, /amount_total IN \(2900, 6900\)/);
+    assert.match(text, /amount_total IN \(1499, 2900, 4497, 6900\)/);
   }
   assert.match(migration, /ALTER TABLE digital_deliveries RENAME TO digital_deliveries_legacy/);
   assert.match(migration, /FOREIGN KEY \(stripe_session_id\) REFERENCES digital_purchase_conversions/);

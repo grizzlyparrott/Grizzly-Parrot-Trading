@@ -24,23 +24,23 @@ const DIGITAL_DELIVERY_RETRY_MS = [15 * 60 * 1000, 60 * 60 * 1000];
 const DIGITAL_OFFERS = Object.freeze([
   Object.freeze({
     eventLabel: "currency_market_structure",
-    priceCents: 2900,
+    priceCents: 1499,
     paymentLinkEnv: "STRIPE_PAYMENT_LINK_CURRENCY_DIGITAL"
   }),
   Object.freeze({
     eventLabel: "metals_market_structure",
-    priceCents: 2900,
+    priceCents: 1499,
     paymentLinkEnv: "STRIPE_PAYMENT_LINK_METALS_DIGITAL"
   }),
   Object.freeze({
     eventLabel: "equity_market_structure",
-    priceCents: 2900,
+    priceCents: 1499,
     paymentLinkEnv: "STRIPE_PAYMENT_LINK_EQUITY_DIGITAL"
   }),
   Object.freeze({
     slug: "probabilistic-execution",
     eventLabel: "probabilistic_execution",
-    priceCents: 2900,
+    priceCents: 1499,
     paymentLinkEnv: "STRIPE_PAYMENT_LINK_PROBABILISTIC_DIGITAL",
     checkoutUrlEnv: "STRIPE_CHECKOUT_URL_PROBABILISTIC_DIGITAL",
     salesEnabledEnv: "PROBABILISTIC_EXECUTION_DIGITAL_SALES_ENABLED"
@@ -48,11 +48,18 @@ const DIGITAL_OFFERS = Object.freeze([
   Object.freeze({
     slug: "market-structure-trilogy",
     eventLabel: "market_structure_trilogy",
-    priceCents: 6900,
+    priceCents: 4497,
     paymentLinkEnv: "STRIPE_PAYMENT_LINK_MARKET_STRUCTURE_TRILOGY_DIGITAL",
     checkoutUrlEnv: "STRIPE_CHECKOUT_URL_MARKET_STRUCTURE_TRILOGY_DIGITAL",
     salesEnabledEnv: "MARKET_STRUCTURE_TRILOGY_DIGITAL_SALES_ENABLED"
   })
+]);
+const LEGACY_DIGITAL_OFFERS = Object.freeze([
+  Object.freeze({ eventLabel: "currency_market_structure", priceCents: 2900, paymentLinkEnv: "STRIPE_PAYMENT_LINK_CURRENCY_DIGITAL_LEGACY" }),
+  Object.freeze({ eventLabel: "metals_market_structure", priceCents: 2900, paymentLinkEnv: "STRIPE_PAYMENT_LINK_METALS_DIGITAL_LEGACY" }),
+  Object.freeze({ eventLabel: "equity_market_structure", priceCents: 2900, paymentLinkEnv: "STRIPE_PAYMENT_LINK_EQUITY_DIGITAL_LEGACY" }),
+  Object.freeze({ eventLabel: "probabilistic_execution", priceCents: 2900, paymentLinkEnv: "STRIPE_PAYMENT_LINK_PROBABILISTIC_DIGITAL_LEGACY" }),
+  Object.freeze({ eventLabel: "market_structure_trilogy", priceCents: 6900, paymentLinkEnv: "STRIPE_PAYMENT_LINK_MARKET_STRUCTURE_TRILOGY_DIGITAL_LEGACY" })
 ]);
 
 function nowIso() { return new Date().toISOString(); }
@@ -180,7 +187,7 @@ function cors(request, env) {
 }
 
 function digitalPaymentLinks(env) {
-  return new Map(DIGITAL_OFFERS
+  return new Map([...DIGITAL_OFFERS, ...LEGACY_DIGITAL_OFFERS]
     .map((offer) => [env[offer.paymentLinkEnv], offer])
     .filter(([paymentLinkId]) => typeof paymentLinkId === "string" && paymentLinkId.startsWith("plink_")));
 }
