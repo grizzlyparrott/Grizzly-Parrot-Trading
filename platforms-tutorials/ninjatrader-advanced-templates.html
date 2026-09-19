@@ -1,192 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-        <meta charset="UTF-8">
-     <!-- Standard Favicon -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-<!-- Web App Manifest -->
-<link rel="manifest" href="/site.webmanifest">
-
-<!-- PNG Fallbacks -->
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NinjaTrader Advanced Chart Templates | Grizzly Parrot Trading</title>
-    <meta name="description" content="Advanced NinjaTrader chart template setup: global templates, local templates, duplicating templates, linking templates to workspaces, and exporting/importing layouts.">
-        <!-- Open Graph -->
-    <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
-    <meta property="og:image:width" content="1792">
-    <meta property="og:image:height" content="941">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-JMJVR3G5YN');
-    </script>
-
-    <link rel="stylesheet" href="../style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+  <title>NinjaTrader 8 Chart Templates: Save, Load, Default, and Troubleshoot</title>
+  <meta name="description" content="Use NinjaTrader 8 chart templates correctly: what they save, compatibility limits, defaults, loading, management, workspaces, and backup caveats.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://grizzlyparrottrading.com/platforms-tutorials/ninjatrader-advanced-templates.html">
+  <meta property="og:title" content="NinjaTrader 8 Chart Templates: Save, Load, Default, and Troubleshoot">
+  <meta property="og:description" content="Use NinjaTrader 8 chart templates correctly: what they save, compatibility limits, defaults, loading, management, workspaces, and backup caveats.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://grizzlyparrottrading.com/platforms-tutorials/ninjatrader-advanced-templates.html">
+  <meta property="og:site_name" content="Grizzly Parrot Trading">
+  <meta property="og:image" content="https://grizzlyparrottrading.com/OG-default.png">
+  <meta property="og:image:width" content="1792">
+  <meta property="og:image:height" content="941">
+  <meta property="article:modified_time" content="2026-09-19">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/OG-default.png">
+  <meta name="twitter:title" content="NinjaTrader 8 Chart Templates: Save, Load, Default, and Troubleshoot">
+  <meta name="twitter:description" content="Use NinjaTrader 8 chart templates correctly: what they save, compatibility limits, defaults, loading, management, workspaces, and backup caveats.">
+  <link rel="stylesheet" href="../style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JMJVR3G5YN');</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "NinjaTrader 8 Chart Templates: Save, Load, Default, and Troubleshoot",
+  "description": "Use NinjaTrader 8 chart templates correctly: what they save, compatibility limits, defaults, loading, management, workspaces, and backup caveats.",
+  "author": {"@type": "Person", "name": "Kyle Parrott", "url": "https://grizzlyparrottrading.com/about.html"},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://grizzlyparrottrading.com/platforms-tutorials/ninjatrader-advanced-templates.html"},
+  "dateModified": "2026-09-19",
+  "url": "https://grizzlyparrottrading.com/platforms-tutorials/ninjatrader-advanced-templates.html",
+  "publisher": {"@type": "Organization", "name": "Grizzly Parrot Trading", "url": "https://grizzlyparrottrading.com/", "logo": {"@type": "ImageObject", "url": "https://grizzlyparrottrading.com/OG-default.png"}},
+  "image": "https://grizzlyparrottrading.com/OG-default.png",
+  "inLanguage": "en-US"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrottrading.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Platforms & Tutorials", "item": "https://grizzlyparrottrading.com/platforms-tutorials/"},
+    {"@type": "ListItem", "position": 3, "name": "NinjaTrader 8 Chart Templates: Save, Load, Default, and Troubleshoot", "item": "https://grizzlyparrottrading.com/platforms-tutorials/ninjatrader-advanced-templates.html"}
+  ]
+}
+  </script>
   <script src="/uet.js" defer></script>
-<link rel="canonical" href="https://grizzlyparrottrading.com/platforms-tutorials/ninjatrader-advanced-templates.html">
-<meta property="og:title" content="NinjaTrader Advanced Chart Templates | Grizzly Parrot Trading">
-<meta property="og:description" content="Advanced NinjaTrader chart template setup: global templates, local templates, duplicating templates, linking templates to workspaces, and exporting/importing layouts.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://grizzlyparrottrading.com/platforms-tutorials/ninjatrader-advanced-templates.html">
-<meta property="og:site_name" content="Grizzly Parrot Trading">
-<meta name="twitter:title" content="NinjaTrader Advanced Chart Templates | Grizzly Parrot Trading">
-<meta name="twitter:description" content="Advanced NinjaTrader chart template setup: global templates, local templates, duplicating templates, linking templates to workspaces, and exporting/importing layouts.">
 </head>
-
 <body>
-<header class="site-header">
-    <div class="container header-inner">
-        <div class="logo">
-            <span class="logo-mark">GP</span>
-            <span class="logo-text">Grizzly Parrot Trading</span>
-        </div>
-
-        <nav class="main-nav">
-            <a href="https://grizzlyparrottrading.com/#articles">Articles</a>
-            <a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a>
-            <a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a>
-            <a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a>
-            <a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a>
-        </nav>
-    </div>
-</header>
-
-<main>
-<section class="hero">
-    <div class="container hero-inner">
-        <div class="hero-text">
-            <h1>NinjaTrader Advanced Chart Templates</h1>
-            <p>Global templates, local templates, duplicate templates, and layout exports—everything NinjaTrader doesn’t explain clearly.</p>
-        </div>
-    </div>
+<header class="site-header"><div class="container header-inner">
+  <div class="logo"><a href="https://grizzlyparrottrading.com/">Grizzly Parrot Trading</a></div>
+  <nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="https://grizzlyparrottrading.com/futures-basics/">Futures Basics</a></li><li><a href="https://grizzlyparrottrading.com/metals/">Metals</a></li><li><a href="https://grizzlyparrottrading.com/energies/">Energies</a></li><li><a href="https://grizzlyparrottrading.com/currencies/">Currencies</a></li><li><a href="https://grizzlyparrottrading.com/prop-firm-trading/">Prop Firms</a></li><li><a href="https://grizzlyparrottrading.com/platforms-tutorials/">Platforms</a></li><li><a href="https://grizzlyparrottrading.com/market-basics/">Market Basics</a></li><li><a href="https://grizzlyparrottrading.com/tools/">Tools</a></li></ul></nav>
+</div></header>
+<main><section class="section"><div class="container article-content">
+<h1>NinjaTrader 8 Chart Templates: Save, Load, Default, and Troubleshoot</h1>
+<p class="trust-reviewed">Updated September 19, 2026</p>
+<!-- ARTICLE BODY START -->
+<p>NinjaTrader 8 chart templates save reusable chart configuration. They are different from workspaces, indicator templates, strategy templates, drawing-object templates, and data-series presets. Keeping those objects separate prevents many “template did not load” misunderstandings.</p>
+<h2>What a chart template saves</h2>
+<p>NinjaTrader's current help guide says chart templates can save chart properties, chart-panel properties, and indicator settings. They can be applied to new or existing charts when the source and destination charts have the same number of Data Series. Drawing objects are not included because they can be specific to an instrument or price.</p>
+<h2>Save and load a chart template</h2>
+<ol><li>Configure the chart and confirm its Data Series count.</li><li>Right-click the chart and choose <strong>Templates → Save As</strong>.</li><li>Use a descriptive name that identifies purpose and data-series layout.</li><li>To apply it, right-click the destination chart and choose <strong>Templates → Load</strong>.</li><li>Confirm the Trading Hours and Data Series settings after loading; a template can override manually configured Data Series settings.</li></ol>
+<h2>Default template versus other defaults</h2>
+<p><strong>Save as Default</strong> sets the default chart template for new charts. NinjaTrader documents that a chart template, including the default chart template, can override chart-property defaults. Data Series presets, indicator templates, strategy templates, and drawing-object templates have their own save and load controls.</p>
+<h2>Templates and workspaces are not the same thing</h2>
+<p>A workspace preserves a collection of windows and their state. A chart template stores reusable chart configuration. The prior version of this guide incorrectly described “local” and “global” chart templates tied to individual workspaces; that distinction belongs to other NinjaTrader objects and is not how the current chart-template guide defines templates.</p>
+<h2>Troubleshooting checklist</h2>
+<ul><li>Confirm both charts have the same number of Data Series.</li><li>Confirm required indicators or custom NinjaScript components are installed.</li><li>Check whether the loaded template changed Trading Hours or other Data Series settings.</li><li>Use <strong>Templates → Manage</strong> for rename or remove operations in the current help guide.</li><li>Before upgrades, migrations, or reinstalls, use NinjaTrader's current backup/restore instructions and verify the backup contents.</li></ul>
+<h2>Operational caveat</h2>
+<p>Menu labels and supported behavior can change by NinjaTrader release. This walkthrough describes NinjaTrader 8 documentation reviewed on the date shown above; it is not a substitute for the help guide matching the installed build.</p>
+<section class="trust-disclosure" aria-labelledby="sources-heading">
+  <h2 id="sources-heading">Sources, scope, and change risk</h2>
+  <p>Reviewed September 19, 2026 against the following first-party or regulatory sources:</p>
+  <ul>
+      <li><a href="https://ninjatrader-live.ninjatrader.com/support/helpguides/nt8/saving_chart_defaults_and_templates.htm" target="_blank" rel="noopener noreferrer">NinjaTrader 8: Saving Chart Defaults and Templates</a></li>
+      <li><a href="https://ninjatrader-live.ninjatrader.com/support/helpguides/nt8/charts.htm" target="_blank" rel="noopener noreferrer">NinjaTrader 8 Charts overview</a></li>
+      <li><a href="https://ninjatrader.com/support/helpGuides/nt8.pdf" target="_blank" rel="noopener noreferrer">NinjaTrader 8 Help Guide PDF</a></li>
+  </ul>
+  <p>NinjaTrader menus, backup behavior, templates, indicators, and compatibility can change by build. Confirm the installed version and current official help before overwriting templates or migrating a workspace. NinjaTrader is a third-party trademark; this site is not affiliated with or endorsed by NinjaTrader.</p>
 </section>
-
-<section class="section">
-<div class="container article">
-
-    <h2>Local Templates vs Global Templates</h2>
-    <p>NinjaTrader chart templates are stored in two different ways:</p>
-
-    <h3>Local Templates</h3>
-    <ul>
-        <li>Stored inside the specific workspace</li>
-        <li>Only load correctly in that workspace</li>
-        <li>Break when moving charts between workspaces</li>
-    </ul>
-
-    <h3>Global Templates</h3>
-    <ul>
-        <li>Stored globally on your system</li>
-        <li>Can be applied to any chart in any workspace</li>
-        <li>Safest for long-term layouts</li>
-    </ul>
-
-    <p>Check or uncheck “Save as Default” to control global behavior.</p>
-
-    <h2>How to Duplicate a Template</h2>
-    <ol>
-        <li>Open a chart using the base template.</li>
-        <li>Right-click the chart → <strong>Templates → Save As</strong>.</li>
-        <li>Name the duplicate something like <code>clean-template-2</code>.</li>
-    </ol>
-    <p>
-        Use this when modifying indicator stacks like in 
-        <a href="https://grizzlyparrottrading.com/platforms-tutorials/ninjatrader-indicators.html">NinjaTrader Indicators</a>.
-    </p>
-
-    <h2>How to Apply a Template to a New Instrument</h2>
-    <p>Templates are NOT instrument-specific.</p>
-    <p>You can load a template for ES on NQ, YM, CL, whatever:</p>
-    <ol>
-        <li>Open the chart.</li>
-        <li>Right-click → <strong>Templates → Load</strong>.</li>
-        <li>Select the template.</li>
-    </ol>
-
-    <h2>Linking Templates to Workspaces</h2>
-    <p>Templates behave differently depending on workspace:</p>
-    <ul>
-        <li>If the template was created inside Workspace A, it may not load properly in Workspace B.</li>
-        <li>Global templates avoid this problem entirely.</li>
-    </ul>
-
-    <p>Use the structure from your
-        <a href="https://grizzlyparrottrading.com/platforms-tutorials/ninjatrader-workspaces.html">NinjaTrader Workspaces</a>
-        guide for consistency.
-    </p>
-
-    <h2>Fixing “Template Won’t Load” Problems</h2>
-    <p>Common causes:</p>
-    <ul>
-        <li>Local template created in a different workspace</li>
-        <li>Indicators missing or not loaded</li>
-        <li>Chart type mismatch (Renko → Candles, etc.)</li>
-        <li>Corrupt workspace</li>
-    </ul>
-
-    <h2>Exporting Chart Templates</h2>
-    <ol>
-        <li>Control Center → <strong>Tools → Export → Backup File</strong>.</li>
-        <li>Select <strong>Templates</strong>.</li>
-        <li>Export the file to your desktop.</li>
-    </ol>
-
-    <h2>Importing Templates</h2>
-    <ol>
-        <li>Control Center → <strong>Tools → Import → Backup File</strong>.</li>
-        <li>Select the exported file.</li>
-        <li>Restart NinjaTrader.</li>
-    </ol>
-
-    
-</div>
-</section>
-<p><em>All third-party product names, company names, platforms, and trademarks mentioned on this page are the property of their respective owners. This content is for educational purposes only and is not affiliated with, endorsed by, or sponsored by any third party referenced unless explicitly stated otherwise.</em></p>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div class="footer-book">
-      <h3>Books</h3>
-      <p>Market structure, risk, and execution frameworks.</p>
-      <a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a>
-    </div>
-
-    <div class="footer-links">
-      <a href="https://grizzlyparrottrading.com/about.html">About</a>
-      <a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a>
-      <a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a>
-      <a href="https://grizzlyparrottrading.com/contact.html">Contact</a>
-       
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
-    </p>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-  </div>
-</footer>
+<aside class="highlight-box yellow" aria-label="Educational and risk disclaimer"><h3>Educational and risk disclaimer</h3><p>This article is educational, not individualized trading, investment, legal, tax, brokerage, or platform-support advice. Futures and options are leveraged and can lose more than the initial deposit. Verify current exchange, broker, data-vendor, and software rules before acting.</p></aside>
+<!-- ARTICLE BODY END -->
+</div></section></main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-book"><h3>Books</h3><p>Market structure, risk, and execution frameworks.</p><a href="https://grizzlyparrottrading.com/books/" class="footer-book-link">View All Books</a></div><div class="footer-links"><a href="https://grizzlyparrottrading.com/about.html">About</a><a href="https://grizzlyparrottrading.com/disclaimer.html">Disclaimer</a><a href="https://grizzlyparrottrading.com/privacy.html">Privacy</a><a href="https://grizzlyparrottrading.com/contact.html">Contact</a></div><p class="footer-copy">&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p><script>document.getElementById('year').textContent=new Date().getFullYear();</script></div></footer>
 </body>
 </html>

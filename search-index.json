@@ -1668,9 +1668,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Futures Open Interest Explained: What It Really Tells You",
+    "title": "Futures Open Interest: Definition, Uses, and Limits",
     "url": "/futures-basics/futures-open-interest-explained.html",
-    "description": "Learn what open interest means in futures trading, how it’s calculated, and how traders use it to confirm trends, liquidity, and market participation.",
+    "description": "Learn how futures open interest differs from volume, how it changes, where to verify it, and why it cannot identify direction or participant intent by itself.",
     "category": "Futures Basics"
   },
   {
@@ -2190,12 +2190,6 @@
     "category": "Energies"
   },
   {
-    "title": "How Open Interest Signals Futures Trend Strength",
-    "url": "/futures-basics/how-open-interest-signals-futures-trend-strength.html",
-    "description": "A blunt breakdown of how open interest confirms futures trend strength, when rising OI matters, and when it warns a move is about to fail.",
-    "category": "Futures Basics"
-  },
-  {
     "title": "How Options Flow Can Influence 6E | Evidence &amp; Limits",
     "url": "/futures-basics/how-options-flow-influences-6e.html",
     "description": "How listed and OTC FX options may transmit into 6E through hedging, expiry and volatility—plus what strike open interest cannot tell you.",
@@ -2664,9 +2658,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Liquidity Basics: How Liquidity Controls Volatility, Fills, and Price Movement",
+    "title": "Market Liquidity Basics: Spread, Depth, Cost, and Execution",
     "url": "/market-basics/liquidity-basics.html",
-    "description": "Learn liquidity basics—how liquidity affects volatility, fills, order flow, and why thin markets create traps for new traders.",
+    "description": "Understand market liquidity through bid-ask spread, executable depth, cost to trade, order size, and time of day without treating one metric as the whole picture.",
     "category": "Market Basics"
   },
   {
@@ -2940,12 +2934,6 @@
     "category": "Market Basics"
   },
   {
-    "title": "Market Liquidity Basics: Why Depth Matters More Than Price",
-    "url": "/market-basics/market-liquidity-basics.html",
-    "description": "Learn the basics of market liquidity, how depth affects fills, volatility, and slippage, and why beginners blow trades by ignoring it.",
-    "category": "Market Basics"
-  },
-  {
     "title": "Market Liquidity Shocks: What They Are and How to Survive Them",
     "url": "/market-basics/market-liquidity-shocks.html",
     "description": "A blunt breakdown of market liquidity shocks, why they happen, what they do to price, and how traders can avoid getting blindsided when depth collapses.",
@@ -2970,9 +2958,9 @@
     "category": "Market Basics"
   },
   {
-    "title": "Market Microstructure: The Hidden Engine Behind Price",
+    "title": "Market Microstructure: Orders, Quotes, Trades, and Price Formation",
     "url": "/market-basics/market-microstructure-the-hidden-engine.html",
-    "description": "A blunt breakdown of market microstructure, how orders actually get filled, and why understanding this hidden engine changes how you read price.",
+    "description": "A practical introduction to how order types, quotes, executions, matching rules, and liquidity shape price formation without claiming the tape reveals trader intent.",
     "category": "Market Basics"
   },
   {
@@ -3300,9 +3288,9 @@
     "category": "Platforms & Tutorials"
   },
   {
-    "title": "NinjaTrader Advanced Chart Templates | Grizzly Parrot Trading",
+    "title": "NinjaTrader 8 Chart Templates: Save, Load, Default, and Troubleshoot",
     "url": "/platforms-tutorials/ninjatrader-advanced-templates.html",
-    "description": "Advanced NinjaTrader chart template setup: global templates, local templates, duplicating templates, linking templates to workspaces, and exporting/importing layouts.",
+    "description": "Use NinjaTrader 8 chart templates correctly: what they save, compatibility limits, defaults, loading, management, workspaces, and backup caveats.",
     "category": "Platforms & Tutorials"
   },
   {
@@ -3333,12 +3321,6 @@
     "title": "NinjaTrader Chart Properties Basics",
     "url": "/platforms-tutorials/ninjatrader-chart-properties-basics.html",
     "description": "Learn how to configure NinjaTrader chart properties: colors, grid lines, crosshairs, autoscroll, axis settings, session breaks, and visual behavior.",
-    "category": "Platforms & Tutorials"
-  },
-  {
-    "title": "NinjaTrader Chart Templates Basics",
-    "url": "/platforms-tutorials/ninjatrader-chart-templates-basics.html",
-    "description": "Learn how to save, load, and manage chart templates in NinjaTrader to speed up your workflow and keep your chart layouts consistent.",
     "category": "Platforms & Tutorials"
   },
   {
@@ -4464,12 +4446,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Understanding Volatility Clustering in Markets",
-    "url": "/market-basics/volatility-clustering-in-markets.html",
-    "description": "A blunt breakdown of volatility clustering, why markets shift between calm and chaotic periods, and how traders can read these cycles.",
-    "category": "Market Basics"
-  },
-  {
     "title": "USD Strength and 6M: Identity, Common Factor, and Test",
     "url": "/futures-basics/usd-strength-6m.html",
     "description": "Separate 6M's inverse quote identity from a genuine common-dollar factor, compare dollar baskets, use non-circular confirmation, and design a falsifiable test.",
@@ -4494,9 +4470,9 @@
     "category": "Futures Basics"
   },
   {
-    "title": "Volatility Clustering Basics: Why Big Moves Follow Big Moves",
+    "title": "Volatility Clustering: What It Means and How to Measure It",
     "url": "/market-basics/volatility-clustering-basics.html",
-    "description": "Learn volatility clustering basics: why markets flip between quiet and explosive periods, and how to read shifting volatility conditions.",
+    "description": "Learn what volatility clustering means, how to observe it without predicting direction, and how traders can translate changing variability into risk controls.",
     "category": "Market Basics"
   },
   {
@@ -4690,12 +4666,6 @@
     "url": "/futures-basics/what-is-liquidity.html",
     "description": "A clean explanation of liquidity in futures trading, why it matters, how it affects fills, and why thin markets destroy beginner accounts.",
     "category": "Futures Basics"
-  },
-  {
-    "title": "What Is Market Microstructure? A Straightforward Breakdown for New Traders",
-    "url": "/market-basics/what-is-market-microstructure.html",
-    "description": "Learn what market microstructure is, how orders interact beneath the surface, and why understanding it helps beginners avoid blind trading decisions.",
-    "category": "Market Basics"
   },
   {
     "title": "What Is Slippage in Trading and Why It Hits Your P&amp;L",
