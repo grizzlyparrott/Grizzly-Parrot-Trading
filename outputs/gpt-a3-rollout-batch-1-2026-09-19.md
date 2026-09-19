@@ -138,7 +138,19 @@ These exclusions confirm that low traffic and textual similarity remain screenin
 
 ## Verification gate
 
-Focused regression coverage verifies the five mappings, trust metadata, parsable JSON-LD, redirect behavior, hub-card uniqueness, internal-link migration, sitemap/search-index uniqueness, and removal of the most material unsupported claims. Full repository tests and live deployment verification are recorded in the deployment section after release.
+Focused regression coverage verifies the five mappings, trust metadata, parsable JSON-LD, redirect behavior, hub-card uniqueness, internal-link migration, sitemap/search-index uniqueness, and removal of the most material unsupported claims.
+
+Verification results:
+
+- Focused GPT-A3 batch tests: 7 passed.
+- Full repository suite: 129 passed.
+- `git diff --check`: passed; only the repository's existing Windows line-ending notices were emitted.
+- GitHub Pages content commit: `b13041e2c903417e240bc709e0375cf3d21849b2`.
+- GitHub Pages run `35468161271`: build, status report, and deploy jobs all succeeded.
+- IndexNow runs `35468161621` and `35468182913`: both succeeded for the same content commit.
+- Live browser verification: all five survivor URLs rendered the expected reviewed title, September 19, 2026 date, and survivor canonical.
+- Live redirect verification: all five old URLs navigated to the exact intended survivor.
+- Discovery verification: the released sitemap contains 851 canonical URLs and the released search index contains 843 entries; the five old URLs are absent and each survivor is present exactly once. Hub regression checks confirm one primary card per survivor.
 
 ## Pattern verdict
 
